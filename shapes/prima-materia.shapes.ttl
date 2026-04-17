@@ -1,0 +1,63 @@
+@prefix pm:      <https://pajew-ski.github.io/prima-materia/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — SHACL validation shapes
+#
+
+#
+# Every class declared in the ontology must carry at least one
+# language-tagged rdfs:label and one skos:definition. Named "ProcessShape"
+# per SPEC §5; in practice it applies to every owl:Class so that
+# AwarenessContext and AwarenessSpace are covered as well.
+#
+pm:ProcessShape a sh:NodeShape ;
+    sh:targetClass owl:Class ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Every class requires at least one language-tagged rdfs:label."
+    ] ;
+    sh:property [
+        sh:path skos:definition ;
+        sh:minCount 1 ;
+        sh:message "Every class requires a skos:definition."
+    ] .
+
+#
+# Every instance of pm:Conceptualizing must carry a source reference and a
+# tradition assignment.
+#
+pm:ConceptInstanceShape a sh:NodeShape ;
+    sh:targetClass pm:Conceptualizing ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every concept instance requires at least one dcterms:source."
+    ] ;
+    sh:property [
+        sh:path pm:withinTradition ;
+        sh:minCount 1 ;
+        sh:message "Every concept must be situated within at least one tradition."
+    ] .
+
+#
+# Static-substance classes are forbidden. The shape targets the four
+# blacklisted URIs directly; if any of them is ever asserted as owl:Class,
+# validation fails.
+#
+pm:NoSubstanceClassesShape a sh:NodeShape ;
+    sh:targetNode pm:Symbol, pm:Concept, pm:Entity, pm:Object ;
+    sh:not [
+        sh:property [
+            sh:path rdf:type ;
+            sh:hasValue owl:Class
+        ]
+    ] ;
+    sh:message "Static substance classes (pm:Symbol, pm:Concept, pm:Entity, pm:Object) are forbidden. Use process classes instead (pm:Symbolizing, pm:Conceptualizing, etc.)." .
