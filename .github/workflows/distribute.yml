@@ -1,0 +1,74 @@
+name: Distribute
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Checkout dist
+        uses: actions/checkout@v4
+        with:
+          repository: pajew-ski/prima-materia-dist
+          path: dist
+          token: ${{ secrets.DIST_REPO_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: source/requirements.txt
+
+      - name: Install dependencies
+        working-directory: source
+        run: pip install -r requirements.txt
+
+      - name: Validate, compile, transmute
+        working-directory: source
+        run: |
+          python scripts/validate.py
+          python scripts/compile.py --output build/prima-materia.ttl
+          python scripts/transmute.py \
+            --input build/prima-materia.ttl \
+            --context context/prima-materia-context.jsonld \
+            --output build/prima-materia.jsonld
+
+      - name: Sync artefacts to dist
+        run: |
+          mkdir -p dist/traditions
+          cp source/build/prima-materia.ttl dist/prima-materia.ttl
+          cp source/build/prima-materia.jsonld dist/prima-materia.jsonld
+          cp source/context/prima-materia-context.jsonld dist/context.jsonld
+          python - <<'PY'
+          import json, os, subprocess, datetime
+          sha = os.environ["GITHUB_SHA"]
+          version = {
+              "version": datetime.datetime.utcnow().strftime("%Y.%m.%d"),
+              "git_sha": sha,
+              "built_at": datetime.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+          }
+          with open("dist/version.json", "w", encoding="utf-8") as fh:
+              json.dump(version, fh, indent=2, sort_keys=True)
+              fh.write("\n")
+          PY
+
+      - name: Commit and push to dist
+        working-directory: dist
+        run: |
+          git config user.name "prima-materia bot"
+          git config user.email "bot@pajewski.net"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to publish."
+          else
+            git commit -m "Auto-build from source@${GITHUB_SHA}"
+            git push
+          fi
