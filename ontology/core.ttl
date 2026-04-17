@@ -1,0 +1,146 @@
+@prefix pm:      <https://pajew-ski.github.io/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew-ski.github.io/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew-ski.github.io/prima-materia/concepts/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — core meta-ontology
+#
+# Every main class is a gerund (process noun). Static-substance classes
+# (Symbol, Concept, Entity, Object) are deliberately absent and are
+# blacklisted by SHACL.
+#
+
+<https://pajew-ski.github.io/prima-materia/ontology> a owl:Ontology ;
+    dcterms:title "prima-materia core ontology"@en ;
+    dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    rdfs:comment "Consciousness-first meta-ontology. Processes, not substances."@en .
+
+#
+# Root process class
+#
+
+pm:Process a owl:Class ;
+    rdfs:label "Process"@en, "Prozess"@de ;
+    skos:definition "The root class of all ongoing acts modelled by prima-materia. Every substantive class in the ontology is a subclass of pm:Process."@en .
+
+#
+# Core process subclasses
+#
+
+pm:Symbolizing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Symbolizing"@en, "Symbolisieren"@de ;
+    skos:definition "The act of one form standing for another within awareness."@en .
+
+pm:Manifesting a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Manifesting"@en, "Manifestieren"@de ;
+    skos:definition "The emergence of a form out of a prior undifferentiated ground."@en .
+
+pm:Perceiving a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Perceiving"@en, "Wahrnehmen"@de ;
+    skos:definition "The act of apprehending form within an awareness context."@en .
+
+pm:Practicing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Practicing"@en, "Praktizieren"@de ;
+    skos:definition "An operative procedure enacted within a tradition."@en .
+
+pm:Tradition a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Tradition"@en, "Tradition"@de ;
+    skos:definition "A knowledge tradition understood as an ongoing act of transmission rather than a static corpus."@en .
+
+pm:Conceptualizing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Conceptualizing"@en, "Begriffsbildung"@de ;
+    skos:definition "The formation of a concept as an act within awareness; instances of this class are concept nodes such as pmc:Pleroma or pmc:Hen."@en .
+
+pm:Relating a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Relating"@en, "Beziehen"@de ;
+    skos:definition "The act of placing one concept in relation to another."@en .
+
+#
+# Sphoṭa — bounded subgraph as meaning unit
+#
+
+pm:MeaningCluster a owl:Class ;
+    rdfs:label "Meaning Cluster"@en, "Bedeutungs-Cluster"@de ;
+    skos:definition "A bounded subgraph that carries emergent meaning irreducible to its individual triples. Designed for vector embedding as a unit."@en ;
+    skos:note "Implements the Sphoṭa principle (Bhartṛhari): meaning resides in the whole utterance, not in isolated phonemes. The subgraph is the phoneme-analog; the cluster is the sphoṭa."@en .
+
+#
+# AwarenessContext — epistemic mode of an assertion
+#
+
+pm:AwarenessContext a owl:Class ;
+    rdfs:label "Awareness Context"@en, "Bewusstseinskontext"@de ;
+    skos:definition "An epistemic mode in which a statement is asserted. Individual instances are defined in ontology/consciousness.ttl."@en .
+
+#
+# AwarenessSpace — inclusive/exclusive pronominal spectrum
+#
+
+pm:AwarenessSpace a owl:Class ;
+    rdfs:label "Awareness Space"@en, "Bewusstseinsraum"@de ;
+    skos:definition "The pronominal reach of an awareness act, ranging from individual through dyadic and collective to universal."@en .
+
+pm:individualAwareness a pm:AwarenessSpace ;
+    rdfs:label "Individual awareness"@en, "Individuelles Bewusstsein"@de ;
+    skos:definition "First-person singular awareness bounded to a single subject."@en .
+
+pm:dyadicAwareness a pm:AwarenessSpace ;
+    rdfs:label "Dyadic awareness"@en, "Dyadisches Bewusstsein"@de ;
+    skos:definition "First-person exclusive awareness shared between two subjects (I and you)."@en .
+
+pm:collectiveAwareness a pm:AwarenessSpace ;
+    rdfs:label "Collective awareness"@en, "Kollektives Bewusstsein"@de ;
+    skos:definition "First-person inclusive awareness bounded to an identified group."@en .
+
+pm:universalAwareness a pm:AwarenessSpace ;
+    rdfs:label "Universal awareness"@en, "Universelles Bewusstsein"@de ;
+    skos:definition "Awareness whose reach is unbounded across all possible subjects."@en .
+
+#
+# Core properties
+#
+
+pm:assertedIn a owl:ObjectProperty ;
+    rdfs:label "asserted in"@en ;
+    rdfs:domain rdf:Statement ;
+    rdfs:range pm:AwarenessContext ;
+    skos:definition "The awareness context in which a statement is asserted."@en .
+
+pm:withinTradition a owl:ObjectProperty ;
+    rdfs:label "within tradition"@en ;
+    rdfs:range pm:Tradition ;
+    skos:definition "Associates a process instance with the tradition in which it is situated."@en .
+
+pm:analogueConcept a owl:ObjectProperty ;
+    rdfs:label "analogue concept"@en ;
+    rdfs:domain pm:Conceptualizing ;
+    rdfs:range pm:Conceptualizing ;
+    skos:definition "A cross-tradition structural analogue, weaker than owl:sameAs and distinct from skos:closeMatch in that it asserts role-in-process similarity rather than lexical overlap."@en .
+
+pm:hasSymbolicForm a owl:ObjectProperty ;
+    rdfs:label "has symbolic form"@en ;
+    rdfs:range pm:Symbolizing ;
+    skos:definition "Associates a concept with one or more symbolic representations (sigils, diagrams, glyphs)."@en .
+
+pm:hasClusterMember a owl:ObjectProperty ;
+    rdfs:label "has cluster member"@en ;
+    rdfs:domain pm:MeaningCluster ;
+    skos:definition "Associates a MeaningCluster with the individual nodes that constitute it as a bounded subgraph."@en .
+
+pm:hasAwarenessSpace a owl:ObjectProperty ;
+    rdfs:label "has awareness space"@en ;
+    rdfs:range pm:AwarenessSpace ;
+    skos:definition "Associates a process instance with the pronominal reach of its awareness."@en .
