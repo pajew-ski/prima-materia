@@ -126,8 +126,8 @@ def test_attribution_without_attestation_is_rejected() -> None:
 def test_compiler_inference_cannot_attest_an_attribution() -> None:
     # An order may belong to the compiler; the claim being ordered may not.
     offending = """
-    @prefix pm:      <https://w3id.org/prima-materia/ontology#> .
-    @prefix pmc:     <https://w3id.org/prima-materia/concepts/> .
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
     @prefix dcterms: <http://purl.org/dc/terms/> .
 
     pmc:InferredAscription a pm:Attributing ;
