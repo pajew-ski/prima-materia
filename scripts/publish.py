@@ -28,7 +28,7 @@ DEFAULT_INPUTS = (REPO_ROOT / "ontology", REPO_ROOT / "traditions")
 DEFAULT_CONTEXT = REPO_ROOT / "context" / "prima-materia-context.jsonld"
 DEFAULT_OUTPUT = REPO_ROOT / "build" / "site"
 
-PM = Namespace("https://w3id.org/prima-materia/ontology#")
+PM = Namespace("https://pajew.ski/prima-materia/ontology#")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
 
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
