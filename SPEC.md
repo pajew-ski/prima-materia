@@ -60,7 +60,7 @@ prima-materia-dist/              # Distribution Repository (auto-generiert, nie 
 
 ## 2. Namespace & URI-Strategie
 
-**Base Namespace:** `https://pajew-ski.github.io/prima-materia/ontology#`
+**Base Namespace:** `https://pajew.ski/prima-materia/ontology#`
 
 **Präfixe (in jeder TTL-Datei zu deklarieren):**
 
