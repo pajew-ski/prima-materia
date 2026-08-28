@@ -141,8 +141,8 @@ def test_compiler_inference_cannot_attest_an_attribution() -> None:
 
 def test_test_without_falsifier_is_rejected() -> None:
     offending = """
-    @prefix pm:  <https://w3id.org/prima-materia/ontology#> .
-    @prefix pmp: <https://w3id.org/prima-materia/practices/> .
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
 
     pmp:UnfalsifiableProtocol a pm:Testing ;
         pm:caseCount 30 .
