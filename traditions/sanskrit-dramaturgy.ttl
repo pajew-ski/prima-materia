@@ -1,0 +1,35 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Sanskrit dramaturgy
+#
+# Included for one reason. The eight involuntary bodily signs of the
+# dramaturgical treatise are the closest classical counterpart to the modern
+# claim that a bodily reaction marks an inner state, and they are attested in
+# a genre that has nothing to do with meditation manuals. Where a physiology
+# is codified twice in unrelated genres, the codification is worth more than
+# either instance alone.
+#
+
+pmt:SanskritDramaturgy a pm:Tradition ;
+    rdfs:label "Sanskrit dramaturgy"@en, "Sanskritische Dramaturgie"@de ;
+    skos:definition "The transmission of the Nāṭyaśāstra and the theory of aesthetic states that follows from it."@en ;
+    dcterms:source "Nāṭyaśāstra VII" .
+
+pmc:SattvikaBhava a pm:Conceptualizing ;
+    rdfs:label "Involuntary bodily states"@en, "Unwillkürliche Körperzustände"@de ;
+    skos:definition "Eight bodily signs held to arise from the inner constitution rather than from will: paralysis, perspiration, horripilation, change of voice, trembling, change of colour, tears, and fainting."@en ;
+    pm:withinTradition pmt:SanskritDramaturgy ;
+    dcterms:source "Nāṭyaśāstra VII" .
+
+pmc:Romanca a pm:Conceptualizing ;
+    rdfs:label "Horripilation"@en, "Haaraufrichtung"@de ;
+    skos:definition "The raising of the body hair, counted among the eight involuntary signs and treated as a mark of an inner state, not as something to be produced for its own sake."@en ;
+    skos:note "Attested outside the dramaturgical treatise in the epic corpus, where trembling and horripilation are named together as signs of an overwhelming state."@en ;
+    pm:withinTradition pmt:SanskritDramaturgy ;
+    dcterms:source "Nāṭyaśāstra VII", "Bhagavadgītā 1.29" .
