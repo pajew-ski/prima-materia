@@ -24,7 +24,11 @@ import transmute as transmute_script
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_ASSETS = REPO_ROOT / "site"
-DEFAULT_INPUTS = (REPO_ROOT / "ontology", REPO_ROOT / "traditions")
+DEFAULT_INPUTS = (
+    REPO_ROOT / "ontology",
+    REPO_ROOT / "traditions",
+    REPO_ROOT / "convergences",
+)
 DEFAULT_CONTEXT = REPO_ROOT / "context" / "prima-materia-context.jsonld"
 DEFAULT_OUTPUT = REPO_ROOT / "build" / "site"
 
