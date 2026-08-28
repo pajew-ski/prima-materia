@@ -60,7 +60,9 @@ prima-materia-dist/              # Distribution Repository (auto-generiert, nie 
 
 ## 2. Namespace & URI-Strategie
 
-**Base Namespace:** `https://pajew.ski/prima-materia/ontology#`
+**Base Namespace:** `https://w3id.org/prima-materia/ontology#`
+
+Terme werden unter `w3id.org` geprägt, nicht unter dem Host, der sie ausliefert. Die beiden Namen tun Verschiedenes: `w3id.org/prima-materia/` ist der Bezeichner und überlebt einen Host- oder Accountwechsel, `https://pajew.ski/prima-materia/` ist der Ort, an den er umleitet und an dem die Serialisierungen liegen. Nur der Bezeichner steht in den Daten. Beide gleichzeitig zu prägen würde jeden Term verdoppeln, weil RDF-Identität keiner Umleitung folgt.
 
 **Präfixe (in jeder TTL-Datei zu deklarieren):**
 
