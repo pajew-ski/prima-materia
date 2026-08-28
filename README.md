@@ -20,7 +20,7 @@ Bhartṛhari's Sphoṭa principle.
 ## Website
 
 The ontology is published as a browsable page at
-<https://pajew-ski.github.io/prima-materia/>: every class, property, and
+<https://pajew.ski/prima-materia/>: every class, property, and
 instance drawn as the graph it is, with definitions, sources, and bilingual
 labels. Selecting a term gives it a URL, so a definition can be cited rather
 than described.
@@ -28,9 +28,8 @@ than described.
 The site is built from the same sources as the distribution artefacts and
 deployed by the `Pages` workflow on every push to `main`. It also serves
 `prima-materia.ttl`, `prima-materia.jsonld`, and `context.jsonld`, so the
-namespace IRI resolves to the ontology it names — dereferencing
-`https://pajew-ski.github.io/prima-materia/ontology#Symbolizing` lands on
-that term.
+namespace IRI resolves to the ontology it names: dereferencing
+`https://pajew.ski/prima-materia/ontology#Symbolizing` lands on that term.
 
 Build it locally with:
 

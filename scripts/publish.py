@@ -28,15 +28,16 @@ DEFAULT_INPUTS = (REPO_ROOT / "ontology", REPO_ROOT / "traditions")
 DEFAULT_CONTEXT = REPO_ROOT / "context" / "prima-materia-context.jsonld"
 DEFAULT_OUTPUT = REPO_ROOT / "build" / "site"
 
-PM = Namespace("https://pajew-ski.github.io/prima-materia/ontology#")
+PM = Namespace("https://pajew.ski/prima-materia/ontology#")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
 
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
 # a pmt:/pmc: term by accident.
 PREFIXES: tuple[tuple[str, str], ...] = (
-    ("pmt", "https://pajew-ski.github.io/prima-materia/traditions/"),
-    ("pmc", "https://pajew-ski.github.io/prima-materia/concepts/"),
-    ("pm", "https://pajew-ski.github.io/prima-materia/ontology#"),
+    ("pmt", "https://pajew.ski/prima-materia/traditions/"),
+    ("pmc", "https://pajew.ski/prima-materia/concepts/"),
+    ("pmp", "https://pajew.ski/prima-materia/practices/"),
+    ("pm", "https://pajew.ski/prima-materia/ontology#"),
     ("owl", "http://www.w3.org/2002/07/owl#"),
     ("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
     ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),

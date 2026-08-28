@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 SCAN_DIRS = (REPO_ROOT / "ontology", REPO_ROOT / "traditions")
 
 FORBIDDEN_LOCAL_NAMES = ("Symbol", "Concept", "Entity", "Object")
-FORBIDDEN_FULL_IRI = "https://pajew-ski.github.io/prima-materia/ontology#"
+FORBIDDEN_FULL_IRI = "https://pajew.ski/prima-materia/ontology#"
 
 # Matches `pm:Symbol` (token boundaries) or the full IRI form, but only when
 # followed by whitespace/punctuation that suggests a subject position — i.e.

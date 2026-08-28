@@ -60,14 +60,17 @@ prima-materia-dist/              # Distribution Repository (auto-generiert, nie 
 
 ## 2. Namespace & URI-Strategie
 
-**Base Namespace:** `https://pajew-ski.github.io/prima-materia/ontology#`
+**Base Namespace:** `https://pajew.ski/prima-materia/ontology#`
+
+Die Ontologie erscheint unter `https://pajew.ski/prima-materia/` und wird dort geprägt und ausgeliefert. Bezeichner und Auslieferungsort fallen bewusst zusammen: ein zweiter Name für dieselben Terme würde jeden Term verdoppeln, weil RDF-Identität keiner Umleitung folgt.
 
 **Präfixe (in jeder TTL-Datei zu deklarieren):**
 
 ```turtle
-@prefix pm:      <https://pajew-ski.github.io/prima-materia/ontology#> .
-@prefix pmt:     <https://pajew-ski.github.io/prima-materia/traditions/> .
-@prefix pmc:     <https://pajew-ski.github.io/prima-materia/concepts/> .
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -213,13 +216,13 @@ Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte sp
 
 1. `traditions/valentinian.ttl` — Valentinianische Gnosis als Prozess-Ontologie. Migration der bestehenden Neo4j-Ontologie (Aeonen, Syzygies, Pleroma, Sophia-Fall, etc.) in die `pm:`-Klassenstruktur. Konkret: bestehende `Aeon`-Knoten werden zu `pm:Conceptualizing`-Instanzen mit `pm:withinTradition pmt:ValentinianGnosis`.
 2. `traditions/greek-cosmological.ttl` — 13-Prinzipien-System (Kairos durch Hen) inklusive der hierarchischen Struktur und der existierenden SVG-Sigil-Referenzen via `pm:hasSymbolicForm`.
-3. `traditions/opus-purum-axioms.ttl` — die fünf Axiome des Opus Purum als formale `pm:Axiom`-Subklasse, plus die sieben Kapitel als `pm:Practice`-Instanzen.
+3. ~~`traditions/opus-purum-axioms.ttl`~~ — **gestrichen.** Der Richtungssinn in Abschnitt 10 schließt das aus: prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden. Die Axiome sind unveröffentlichtes eigenes Material und tragen keine Quelle im Sinne dieser Spezifikation. Ihre Bestandteile können einzeln eingehen, sobald sie gegen überliefertes Schrifttum gegroundet sind, dann aber unter der Tradition, aus der der Beleg stammt, nicht unter dem Namen des Entwurfs.
 4. `prima-materia-dist`-Repository deployen — automatischer Build & Push via Action `distribute.yml`.
 5. jsDelivr-CDN-Verifikation — Distribution-URLs sind via `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.jsonld` abrufbar.
 
 **Akzeptanzkriterien Phase 1:**
 
-- [ ] Drei Tradition-TTL-Dateien existieren und validieren gegen SHACL-Shapes
+- [ ] Die Tradition-TTL-Dateien existieren und validieren gegen SHACL-Shapes
 - [ ] Keine Verwendung verbotener statischer Substanzklassen (siehe Abschnitt 3, Parameter 1)
 - [ ] Alle Konzepte tragen `dcterms:source` mit Primärquellen-Referenz
 - [ ] Distribution-Repository wird auto-gebaut und gepusht
@@ -227,7 +230,7 @@ Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte sp
 
 ### Phase 2 — Erweiterung & Integration (außerhalb des aktuellen Agent-Auftrags, hier nur referenziert)
 
-Hermetik-Kernontologie, vollständige named-graph-Implementierung, llms.txt-Integration auf pajew-ski.github.io, Exocortex-n8n-Webhook-Pipeline.
+Hermetik-Kernontologie, vollständige named-graph-Implementierung, llms.txt-Integration auf pajew.ski, Exocortex-n8n-Webhook-Pipeline.
 
 ## 5. SHACL Shapes (Validierungsregeln)
 
@@ -235,7 +238,7 @@ Hermetik-Kernontologie, vollständige named-graph-Implementierung, llms.txt-Inte
 
 ```turtle
 @prefix sh:  <http://www.w3.org/ns/shacl#> .
-@prefix pm:  <https://pajew-ski.github.io/prima-materia/ontology#> .
+@prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
@@ -427,12 +430,18 @@ Pytest-Tests in `tests/`:
 
 **Code & Ontologie:** CC0 1.0 Universal (Public Domain Dedication). Datei `LICENSE` enthält den vollständigen CC0-Text.
 
-**Quellenführung:** Jede Konzept-Instanz **muss** mindestens ein `dcterms:source` mit einer der folgenden Formen tragen:
+**Quellenführung.** Der Graph enthält keine Wahrheiten, sondern Behauptungen mit Herkunft. Die Herkunft zu prüfen ist die Kernaufgabe jedes Agenten an diesem Repo; der Mensch ist die letzte Instanz vor dem Merge, nicht die einzige.
 
-- Bibliographische Referenz als Plain-String: `"Irenaeus, Adversus Haereses I.1 (c. 180 CE)"`
-- DOI als URI: `<https://doi.org/...>`
-- ISBN-URN: `<urn:isbn:978-...>`
-- URL einer Open-Access-Edition
+Jede Behauptung **muss** mindestens ein `dcterms:source` tragen, und zwar als bibliographische Referenz auf ein überliefertes Werk mit der Stelle, die sie trägt: `"1 Henoch 8:1"`, `"Irenaeus, Adversus Haereses I.1"`, `"Patañjali, Yogasūtra III.16-49"`.
+
+Ausgeschlossen sind:
+
+- **URLs jeder Art**, DOI und Open-Access-Editionen eingeschlossen. Ein Link benennt einen Ort, der sich ändert und für den nur sein Betreiber einsteht; ein Werk benennt etwas, das ein Leser unabhängig von diesem Graphen beschaffen kann. `pm:SourceIsLiteratureShape` weist `dcterms:source`-Werte mit `http`-Präfix maschinell ab.
+- **Videos, Blogs, Wikipedia, Foren.** Rechercheeinstieg, nie Beleg. Zurückverfolgen bis zum Werk, dann zählt das Werk.
+- **Unveröffentlichte eigene Texte, Arbeitsfassungen, Methodenentwürfe**, auch die des Betreibers.
+- **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen.
+
+**Richtungssinn.** prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden, nicht umgekehrt. Ein Methodenentwurf ist keine Quelle, sondern eine Menge von Behauptungen, die einzeln gegen überliefertes Schrifttum zu grounden sind. Was sich nicht grounden lässt, bleibt Entwurf und kommt nicht in den Graphen.
 
 **Verboten:** Reproduktion urheberrechtlich geschützter Primärtexte. Konzept-Definitionen sind eigene Paraphrasen, niemals Direktzitate aus modernen Übersetzungen.
 

@@ -34,7 +34,7 @@ def test_seed_ontology_conforms() -> None:
 
 def test_substance_class_is_rejected() -> None:
     offending = """
-    @prefix pm:   <https://pajew-ski.github.io/prima-materia/ontology#> .
+    @prefix pm:   <https://pajew.ski/prima-materia/ontology#> .
     @prefix owl:  <http://www.w3.org/2002/07/owl#> .
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -50,9 +50,9 @@ def test_substance_class_is_rejected() -> None:
 
 def test_concept_instance_without_source_is_rejected() -> None:
     offending = """
-    @prefix pm:  <https://pajew-ski.github.io/prima-materia/ontology#> .
-    @prefix pmc: <https://pajew-ski.github.io/prima-materia/concepts/> .
-    @prefix pmt: <https://pajew-ski.github.io/prima-materia/traditions/> .
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
 
     pmc:OrphanConcept a pm:Conceptualizing ;
         pm:withinTradition pmt:Placeholder .
@@ -64,8 +64,8 @@ def test_concept_instance_without_source_is_rejected() -> None:
 
 def test_concept_instance_without_tradition_is_rejected() -> None:
     offending = """
-    @prefix pm:      <https://pajew-ski.github.io/prima-materia/ontology#> .
-    @prefix pmc:     <https://pajew-ski.github.io/prima-materia/concepts/> .
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
     @prefix dcterms: <http://purl.org/dc/terms/> .
 
     pmc:FloatingConcept a pm:Conceptualizing ;
@@ -78,7 +78,7 @@ def test_concept_instance_without_tradition_is_rejected() -> None:
 
 def test_class_without_definition_is_rejected() -> None:
     offending = """
-    @prefix pm:   <https://pajew-ski.github.io/prima-materia/ontology#> .
+    @prefix pm:   <https://pajew.ski/prima-materia/ontology#> .
     @prefix owl:  <http://www.w3.org/2002/07/owl#> .
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
@@ -89,3 +89,64 @@ def test_class_without_definition_is_rejected() -> None:
     conforms, report = _validate(offending)
     assert not conforms, "A class without skos:definition must fail SHACL."
     assert "skos:definition" in report
+
+
+def test_url_source_is_rejected() -> None:
+    # Sources are literature, not links. A guard that has never been shown to
+    # fire is not known to work, so the rule gets a fixture rather than trust.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:LinkedConcept a pm:Conceptualizing ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "https://example.org/some-page" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A dcterms:source that is a URL must fail SHACL."
+    assert "never a URL" in report
+
+
+def test_attribution_without_attestation_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:UnattestedAscription a pm:Attributing ;
+        dcterms:source "1 Henoch 8:1" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "An attribution without pm:attestedBy must fail SHACL."
+    assert "how it entered the record" in report
+
+
+def test_compiler_inference_cannot_attest_an_attribution() -> None:
+    # An order may belong to the compiler; the claim being ordered may not.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:InferredAscription a pm:Attributing ;
+        pm:attestedBy pm:compilerInference ;
+        dcterms:source "1 Henoch 8:1" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "Compiler inference must not attest an attribution."
+    assert "ordering act" in report
+
+
+def test_test_without_falsifier_is_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:UnfalsifiableProtocol a pm:Testing ;
+        pm:caseCount 30 .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A pm:Testing node without pm:falsifiedBy must fail."
+    assert "falsifying condition" in report

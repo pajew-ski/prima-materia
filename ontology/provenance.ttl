@@ -1,0 +1,163 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — provenance and testing
+#
+# The graph holds no truths, only claims with an origin. These classes carry
+# that origin: who ascribed what to whom, how the ascription entered the
+# record, who imposed an order the material itself did not carry, where
+# traditions correspond without a route of contact between them, and under
+# what condition a claim would count as refuted.
+#
+# The distinction these classes exist for is the one a wiki cannot hold: a
+# claim and the reason it is in the record are separate facts, and the second
+# is the one that decays silently when it is not modelled.
+#
+
+#
+# Classes
+#
+
+pm:Attributing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Attributing"@en, "Zuschreiben"@de ;
+    skos:definition "The act of ascribing a capacity, property, or deed to a subject. A lost faculty is never a finding; it is an ascription made in a work, and the work is what the graph can hold."@en .
+
+pm:Attesting a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Attesting"@en, "Bezeugen"@de ;
+    skos:definition "The act by which a claim entered the record. Instances of this class are modes of entry, not claims; a claim points at one of them through pm:attestedBy."@en ;
+    skos:note "Orthogonal to pm:AwarenessContext, which describes the state the asserter was in rather than the route by which the assertion reached the record."@en .
+
+pm:Systematizing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Systematizing"@en, "Systematisieren"@de ;
+    skos:definition "The act of imposing an order on material that did not carry it: a list, a sequence, a correspondence table. Named, dated, and attributed to the compiler who performed it, never to the source that is being ordered."@en .
+
+pm:Converging a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Converging"@en, "Konvergieren"@de ;
+    skos:definition "A structural correspondence observed across traditions, held as a node so that it can carry its routes of transmission and its counterexamples instead of asserting universality."@en ;
+    skos:note "Most apparent universality in the Western esoteric record is diffusion from few sources. A graph that counts a citation chain as independent confirmation measures reception history and reports it as structure."@en .
+
+pm:Testing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Testing"@en, "Prüfen"@de ;
+    skos:definition "An ongoing attempt to fail a claim under a stated condition. A protocol that names no condition under which the claim would be refuted is not a test of it."@en .
+
+#
+# Modes of attestation
+#
+
+pm:textualAttestation a pm:Attesting ;
+    rdfs:label "Textual attestation"@en, "Textzeugnis"@de ;
+    skos:definition "The claim stands in a received work, at a passage that can be cited and read independently of this graph."@en .
+
+pm:firstPersonReport a pm:Attesting ;
+    rdfs:label "First-person report"@en, "Erfahrungsbericht"@de ;
+    skos:definition "An experiential account given in the first person by the one who had it, recorded once."@en .
+
+pm:protocolledPractice a pm:Attesting ;
+    rdfs:label "Protocolled practice"@en, "Protokollierte Praxis"@de ;
+    skos:definition "A practice repeated under a stated procedure that records its failures alongside its successes."@en .
+
+pm:thirdPartyAscription a pm:Attesting ;
+    rdfs:label "Third-party ascription"@en, "Fremdzuschreibung"@de ;
+    skos:definition "One party ascribes the capacity to another, who does not report it. Common for capacities said to be lost, since no bearer remains to be asked."@en .
+
+pm:compilerInference a pm:Attesting ;
+    rdfs:label "Compiler inference"@en, "Schluss des Bearbeiters"@de ;
+    skos:definition "A conclusion drawn by an editor or compiler that the source does not state."@en ;
+    skos:note "Admissible as attestation of an ordering act, never of the claim being ordered. Enforced by pm:AttributionShape."@en .
+
+#
+# Properties of attribution
+#
+
+pm:attestedBy a owl:ObjectProperty ;
+    rdfs:label "attested by"@en, "bezeugt durch"@de ;
+    rdfs:range pm:Attesting ;
+    skos:definition "Declares by which route a claim entered the record. Mandatory on every attribution, so that non-evidence cannot be forgotten."@en .
+
+pm:ascribedCapacity a owl:ObjectProperty ;
+    rdfs:label "ascribed capacity"@en, "zugeschriebenes Vermögen"@de ;
+    rdfs:domain pm:Attributing ;
+    rdfs:range pm:Conceptualizing ;
+    skos:definition "The capacity that an attribution ascribes."@en .
+
+pm:ascribedTo a owl:ObjectProperty ;
+    rdfs:label "ascribed to"@en, "zugeschrieben an"@de ;
+    rdfs:domain pm:Attributing ;
+    skos:definition "The bearer to whom the capacity is ascribed: a named figure, a class of beings, humanity before a stated event."@en .
+
+#
+# Properties of ordering
+#
+
+pm:compiledBy a owl:DatatypeProperty ;
+    rdfs:label "compiled by"@en, "geordnet von"@de ;
+    rdfs:domain pm:Systematizing ;
+    skos:definition "The named compiler who performed the ordering act. Without it, an order made in the present is indistinguishable from an order found in the source."@en .
+
+pm:ordersClaim a owl:ObjectProperty ;
+    rdfs:label "orders claim"@en, "ordnet Behauptung"@de ;
+    rdfs:domain pm:Systematizing ;
+    skos:definition "A claim that this ordering act groups. The claims keep their own attestation; only the grouping belongs to the compiler."@en .
+
+#
+# Properties of convergence
+#
+
+pm:convergingConcept a owl:ObjectProperty ;
+    rdfs:label "converging concept"@en, "konvergierender Begriff"@de ;
+    rdfs:domain pm:Converging ;
+    rdfs:range pm:Conceptualizing ;
+    skos:definition "A concept that participates in the observed correspondence."@en .
+
+pm:transmissionPath a owl:DatatypeProperty ;
+    rdfs:label "transmission path"@en, "Übertragungsweg"@de ;
+    rdfs:domain pm:Converging ;
+    skos:definition "A documented route of historical contact between the traditions in which the correspondence appears. Its presence downgrades the correspondence from convergence to reception."@en .
+
+pm:independentAttestation a owl:ObjectProperty ;
+    rdfs:label "independent attestation"@en, "unabhängige Bezeugung"@de ;
+    rdfs:domain pm:Converging ;
+    rdfs:range pm:Tradition ;
+    skos:definition "A tradition attesting the correspondence for which no route of contact is documented. This is the only kind of attestation that makes a correspondence a finding rather than a citation chain."@en .
+
+#
+# Properties of testing
+#
+
+pm:tests a owl:ObjectProperty ;
+    rdfs:label "tests"@en, "prüft"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "The claim this protocol attempts to fail."@en .
+
+pm:falsifiedBy a owl:DatatypeProperty ;
+    rdfs:label "falsified by"@en, "widerlegt durch"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "The stated condition under which the claim counts as refuted."@en .
+
+pm:baseRate a owl:DatatypeProperty ;
+    rdfs:label "base rate"@en, "Basisrate"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "The rate against which observed outcomes are compared, with the population it was taken from."@en .
+
+pm:caseCount a owl:DatatypeProperty ;
+    rdfs:label "case count"@en, "Fallzahl"@de ;
+    rdfs:domain pm:Testing ;
+    rdfs:range xsd:integer ;
+    skos:definition "The number of cases recorded under this protocol so far."@en .
+
+pm:protocolUpdated a owl:DatatypeProperty ;
+    rdfs:label "protocol updated"@en, "Protokollstand"@de ;
+    rdfs:domain pm:Testing ;
+    rdfs:range xsd:date ;
+    skos:definition "The date on which the count was last carried forward. A protocol without this date claims a scrutiny it does not document."@en .
