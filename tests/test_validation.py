@@ -95,9 +95,9 @@ def test_url_source_is_rejected() -> None:
     # Sources are literature, not links. A guard that has never been shown to
     # fire is not known to work, so the rule gets a fixture rather than trust.
     offending = """
-    @prefix pm:      <https://w3id.org/prima-materia/ontology#> .
-    @prefix pmc:     <https://w3id.org/prima-materia/concepts/> .
-    @prefix pmt:     <https://w3id.org/prima-materia/traditions/> .
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
     @prefix dcterms: <http://purl.org/dc/terms/> .
 
     pmc:LinkedConcept a pm:Conceptualizing ;
