@@ -74,11 +74,26 @@ pytest tests/
 
 ## Quellenführung (verpflichtend)
 
-Jede Konzept-Instanz braucht mindestens ein `dcterms:source` als:
-- Bibliographische Referenz: `"Irenaeus, Adversus Haereses I.1 (c. 180 CE)"`
-- DOI-URI: `<https://doi.org/...>`
-- ISBN-URN: `<urn:isbn:978-...>`
-- URL einer Open-Access-Edition
+**Der Graph enthält keine Wahrheiten, sondern Behauptungen mit Herkunft.** Diese Herkunft zu prüfen ist die Kernaufgabe jedes Agenten an diesem Repo, nicht eine Sorgfaltspflicht am Rand. Der Mensch ist die letzte Instanz vor dem Merge, nicht die erste und nicht die einzige.
+
+Jede Behauptung braucht mindestens ein `dcterms:source` als bibliographische Referenz auf ein überliefertes Werk, mit der Stelle, die sie trägt:
+
+- `"1 Henoch 8:1"`
+- `"Irenaeus, Adversus Haereses I.1"`
+- `"Patañjali, Yogasūtra III.16-49"`
+
+Nicht zulässig, weder als Quelle noch als Ersatz:
+
+- ❌ **URLs jeder Art**, auch DOI und Open-Access-Editionen. Ein Link benennt einen Ort, der sich ändert; ein Werk benennt etwas, das ein Leser unabhängig von diesem Graphen beschaffen kann. `pm:SourceIsLiteratureShape` weist jeden `dcterms:source`-Wert mit `http`-Präfix ab.
+- ❌ **YouTube-Videos, Blogs, Wikipedia, Forenbeiträge.** Als Rechercheeinstieg brauchbar, als Beleg nie. Was dort steht, ist bis zum Werk zurückzuverfolgen, und dann zählt das Werk.
+- ❌ **Unveröffentlichte eigene Texte, Arbeitsfassungen, Methodenentwürfe.** Auch die des Betreibers nicht.
+- ❌ **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen.
+
+Es geht um uraltes magisches Wissen, nicht um aktuelle Meinungen. Ein Beleg aus dem Jahr 2024 belegt, was 2024 jemand behauptet hat, und das ist selten das, was der Knoten aussagt.
+
+**Richtungssinn.** prima-materia ist die Basis, aus der die Methoden des **Opus Purum** extrahiert werden, nicht umgekehrt. Ein Methodenentwurf ist kein Beleg, sondern eine Menge von Behauptungen, die einzeln gegen überliefertes Schrifttum zu grounden sind. Was sich nicht grounden lässt, kommt nicht in den Graphen und bleibt Entwurf.
+
+**Vor jedem inhaltlichen PR:** für jede eingetragene Behauptung die Stelle im Werk benannt, die sie trägt, und `pm:attestedBy` gesetzt. Bei Unsicherheit über eine Zuschreibung nicht eintragen. Ein gemergter Fehler ist über `prima-materia-dist` und jsDelivr nicht privat und nicht zurückholbar.
 
 ## Designprinzipien (kurz)
 
