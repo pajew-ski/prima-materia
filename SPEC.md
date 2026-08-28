@@ -238,7 +238,7 @@ Hermetik-Kernontologie, vollständige named-graph-Implementierung, llms.txt-Inte
 
 ```turtle
 @prefix sh:  <http://www.w3.org/ns/shacl#> .
-@prefix pm:  <https://w3id.org/prima-materia/ontology#> .
+@prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
