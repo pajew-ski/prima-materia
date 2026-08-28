@@ -16,7 +16,11 @@ from rdflib import Graph
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_SHAPES = REPO_ROOT / "shapes" / "prima-materia.shapes.ttl"
-DEFAULT_DATA_DIRS = (REPO_ROOT / "ontology", REPO_ROOT / "traditions")
+DEFAULT_DATA_DIRS = (
+    REPO_ROOT / "ontology",
+    REPO_ROOT / "traditions",
+    REPO_ROOT / "convergences",
+)
 
 
 def _iter_ttl(paths: Iterable[Path]) -> Iterable[Path]:
