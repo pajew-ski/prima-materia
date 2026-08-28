@@ -1,0 +1,37 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Daoist tradition
+#
+# Deliberately thin. The Xingqi inscription is the one place where deliberate
+# circulation of qi through the body is attested at an exact and datable
+# source. Practices of absorbing solar, lunar and stellar qi (fuqi) and of
+# abstaining from grain (bigu) are widely reported in the later literature but
+# were not run down to a citable passage; they are therefore absent rather
+# than approximated.
+#
+
+pmt:Daoist a pm:Tradition ;
+    rdfs:label "Daoist tradition"@en, "Daoistische Überlieferung"@de ;
+    skos:definition "The transmission of Chinese texts and practices concerned with the cultivation and circulation of qi."@en ;
+    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" .
+
+pmc:Qi a pm:Conceptualizing ;
+    rdfs:label "Qi"@en, "Qi"@de ;
+    skos:definition "The vital breath or energy held to circulate in the body and to be susceptible of deliberate direction."@en ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" .
+
+pmp:Xingqi a pm:Practicing ;
+    rdfs:label "Circulating the qi"@en, "Zirkulation des Qi"@de ;
+    skos:definition "A breath practice inscribed in forty-five characters on a twelve-sided jade block, setting out the deliberate movement of qi through the body."@en ;
+    skos:note "The two axes of disagreement belong to the claim and are recorded with it. Dating: Harper places the inscription in the late fourth or early third century BCE, Needham in the middle of the sixth. Reading: Harper takes the opening two characters as the title and begins the text at the second line, where Roth counts and construes differently. A citation that names only the inscription conceals both."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125", "Xingqi yupei ming, in J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" .

@@ -1,0 +1,119 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Pātañjala Yoga
+#
+# The claim form here differs from the Enochic one. Nothing is ascribed to a
+# named figure: the text says that a practice yields a capacity. That is why
+# these nodes are pm:Practicing with pm:yieldsCapacity and not pm:Attributing.
+#
+
+pmt:PatanjalaYoga a pm:Tradition ;
+    rdfs:label "Pātañjala Yoga"@en, "Pātañjala-Yoga"@de ;
+    skos:definition "The transmission of the Yogasūtra of Patañjali and its commentarial literature."@en ;
+    dcterms:source "Patañjali, Yogasūtra" .
+
+#
+# Practices
+#
+
+pmp:Samyama a pm:Practicing ;
+    rdfs:label "Saṃyama"@en, "Saṃyama"@de ;
+    skos:definition "The combined application of dhāraṇā, dhyāna and samādhi to a single object, presented as the general operator from which the capacities of the third chapter follow."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.1-3" .
+
+#
+# Yielding claims
+#
+# One node per pairing, each with the verse that carries it. The general
+# operator is the same throughout; what differs is the object it is applied
+# to and the capacity said to follow, and that difference is what a later
+# protocol would have to test one pairing at a time.
+#
+
+pmc:SamyamaYieldsParacittaJnana a pm:Yielding ;
+    rdfs:label "Saṃyama on the presented idea yields knowledge of another mind"@en, "Saṃyama auf die Vorstellung bringt Kenntnis fremden Bewusstseins hervor"@de ;
+    pm:byPractice pmp:Samyama ;
+    pm:yieldsCapacity pmc:ParacittaJnana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.19" .
+
+pmc:SamyamaYieldsDivyaCaksus a pm:Yielding ;
+    rdfs:label "Saṃyama on the sun yields knowledge of the world"@en, "Saṃyama auf die Sonne bringt Weltkenntnis hervor"@de ;
+    pm:byPractice pmp:Samyama ;
+    pm:yieldsCapacity pmc:DivyaCaksus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.26" .
+
+pmc:SamyamaYieldsDivyaSrotra a pm:Yielding ;
+    rdfs:label "Saṃyama yields the divine ear"@en, "Saṃyama bringt das göttliche Ohr hervor"@de ;
+    pm:byPractice pmp:Samyama ;
+    pm:yieldsCapacity pmc:DivyaSrotra ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.41" .
+
+pmc:SamyamaYieldsParakayaPravesa a pm:Yielding ;
+    rdfs:label "Saṃyama yields entry into another body"@en, "Saṃyama bringt den Eintritt in einen anderen Körper hervor"@de ;
+    pm:byPractice pmp:Samyama ;
+    pm:yieldsCapacity pmc:ParakayaPravesa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.38" .
+
+pmp:Pranayama a pm:Practicing ;
+    rdfs:label "Prāṇāyāma"@en, "Prāṇāyāma"@de ;
+    skos:definition "The regulation of the breath as a distinct limb of practice, following posture and preceding the withdrawal of the senses."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra II.49-53" .
+
+#
+# Capacities
+#
+
+pmc:ParacittaJnana a pm:Conceptualizing ;
+    rdfs:label "Knowledge of another mind"@en, "Kenntnis fremden Bewusstseins"@de ;
+    skos:definition "Knowledge of the contents of another consciousness, said to follow from saṃyama on the presented idea."@en ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.19" .
+
+pmc:DivyaCaksus a pm:Conceptualizing ;
+    rdfs:label "Divine eye"@en, "Göttliches Auge"@de ;
+    skos:definition "Perception of what is distant, hidden or obstructed."@en ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.26" .
+
+pmc:DivyaSrotra a pm:Conceptualizing ;
+    rdfs:label "Divine ear"@en, "Göttliches Ohr"@de ;
+    skos:definition "Hearing beyond the range of the physical ear."@en ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.41" .
+
+pmc:ParakayaPravesa a pm:Conceptualizing ;
+    rdfs:label "Entering another body"@en, "Eintritt in einen anderen Körper"@de ;
+    skos:definition "The transfer of the seat of awareness into a body other than one's own."@en ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.38" .
+
+#
+# Caution
+#
+
+pmc:SiddhisAsObstacle a pm:Cautioning ;
+    rdfs:label "The powers are obstacles to samādhi"@en, "Die Kräfte sind Hindernisse für samādhi"@de ;
+    skos:definition "The capacities of the third chapter are named obstacles with respect to samādhi and attainments only with respect to the outward-turned state. The tradition that catalogues them is the same one that warns against them."@en ;
+    pm:cautionsAbout pmc:ParacittaJnana, pmc:DivyaCaksus, pmc:DivyaSrotra, pmc:ParakayaPravesa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.37" .

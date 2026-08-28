@@ -51,6 +51,18 @@ pm:Testing a owl:Class ;
     rdfs:label "Testing"@en, "Prüfen"@de ;
     skos:definition "An ongoing attempt to fail a claim under a stated condition. A protocol that names no condition under which the claim would be refuted is not a test of it."@en .
 
+pm:Yielding a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Yielding"@en, "Hervorbringen"@de ;
+    skos:definition "The claim, made within a tradition, that a named practice produces a named capacity."@en ;
+    skos:note "Held as a node and not as an edge for the same reason pm:Attributing is: only a node can carry its own source, its own mode of attestation, and a protocol that tries to fail it. A bare edge would make every such claim look alike, whatever it rests on, and would leave nothing for pm:Testing to point at. The question of which capacities a practice actually develops is answerable only where the pairing itself is addressable."@en .
+
+pm:Cautioning a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Cautioning"@en, "Warnen"@de ;
+    skos:definition "The act, within a tradition, of warning against a capacity, a practice, or the pursuit of either."@en ;
+    skos:note "Held as a node rather than as commentary, because what a tradition warns against is part of what it teaches. A record that carries only the capacities and not the cautions misreports the tradition it claims to hold."@en .
+
 #
 # Modes of attestation
 #
@@ -130,6 +142,27 @@ pm:independentAttestation a owl:ObjectProperty ;
     rdfs:domain pm:Converging ;
     rdfs:range pm:Tradition ;
     skos:definition "A tradition attesting the correspondence for which no route of contact is documented. This is the only kind of attestation that makes a correspondence a finding rather than a citation chain."@en .
+
+#
+# Properties of practice and caution
+#
+
+pm:byPractice a owl:ObjectProperty ;
+    rdfs:label "by practice"@en, "durch Praxis"@de ;
+    rdfs:domain pm:Yielding ;
+    rdfs:range pm:Practicing ;
+    skos:definition "The practice a yielding claim proceeds from."@en .
+
+pm:yieldsCapacity a owl:ObjectProperty ;
+    rdfs:label "yields capacity"@en, "bringt Vermögen hervor"@de ;
+    rdfs:domain pm:Yielding ;
+    rdfs:range pm:Conceptualizing ;
+    skos:definition "The capacity a yielding claim arrives at. That the tradition says so is the claim; that the practice produces it is not asserted."@en .
+
+pm:cautionsAbout a owl:ObjectProperty ;
+    rdfs:label "cautions about"@en, "warnt vor"@de ;
+    rdfs:domain pm:Cautioning ;
+    skos:definition "The capacity, practice or pursuit a warning is directed at."@en .
 
 #
 # Properties of testing
