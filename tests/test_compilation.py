@@ -11,7 +11,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 ONTOLOGY_DIR = REPO_ROOT / "ontology"
 TRADITIONS_DIR = REPO_ROOT / "traditions"
 
-PM = Namespace("https://pajew.ski/prima-materia/ontology#")
+PM = Namespace("https://w3id.org/prima-materia/ontology#")
 
 
 def test_every_fragment_parses() -> None:
