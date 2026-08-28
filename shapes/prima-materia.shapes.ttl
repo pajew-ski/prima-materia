@@ -48,6 +48,99 @@ pm:ConceptInstanceShape a sh:NodeShape ;
     ] .
 
 #
+# Every attribution declares how it entered the record and which work carries
+# it. This is the constraint the whole project rests on: a claim whose
+# non-evidence is correctly recorded asserts nothing it does not exhibit.
+#
+pm:AttributionShape a sh:NodeShape ;
+    sh:targetClass pm:Attributing ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every attribution must declare how it entered the record."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every attribution requires at least one dcterms:source."
+    ] .
+
+#
+# An order may be the compiler's; the claim being ordered may not.
+#
+pm:CompilerInferenceScopeShape a sh:NodeShape ;
+    sh:targetClass pm:Attributing ;
+    sh:not [
+        a sh:NodeShape ;
+        sh:property [
+            sh:path pm:attestedBy ;
+            sh:hasValue pm:compilerInference
+        ]
+    ] ;
+    sh:message "Compiler inference attests an ordering act (pm:Systematizing), never the claim being ordered." .
+
+#
+# An order imposed in the present is indistinguishable from an order found in
+# the source unless it carries its author and its date.
+#
+pm:SystematizationShape a sh:NodeShape ;
+    sh:targetClass pm:Systematizing ;
+    sh:property [
+        sh:path pm:compiledBy ;
+        sh:minCount 1 ;
+        sh:message "Every ordering act names the compiler who performed it."
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:minCount 1 ;
+        sh:message "Every ordering act carries the date on which it was performed."
+    ] .
+
+#
+# Undifferentiated, a correspondence measures reception history. It must state
+# either the route of contact that explains it or the attestation that has none.
+#
+pm:ConvergenceShape a sh:NodeShape ;
+    sh:targetClass pm:Converging ;
+    sh:or (
+        [ sh:property [ sh:path pm:transmissionPath ; sh:minCount 1 ] ]
+        [ sh:property [ sh:path pm:independentAttestation ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "A convergence states either a documented transmission path or an attestation without one." .
+
+#
+# A protocol that names no falsifying condition, or no date on which its count
+# was last carried forward, claims a scrutiny it does not document.
+#
+pm:TestingShape a sh:NodeShape ;
+    sh:targetClass pm:Testing ;
+    sh:property [
+        sh:path pm:falsifiedBy ;
+        sh:minCount 1 ;
+        sh:message "A test without a stated falsifying condition is not a test."
+    ] ;
+    sh:property [
+        sh:path pm:protocolUpdated ;
+        sh:minCount 1 ;
+        sh:message "A protocol must state the date its count was last carried forward."
+    ] .
+
+#
+# Sources are literature, not links. A URL names a location that changes and
+# that only its author can vouch for; a work names something a reader can
+# obtain independently of this graph. The rule is machine-checked here rather
+# than left to the discipline of whoever writes the next node.
+#
+pm:SourceIsLiteratureShape a sh:NodeShape ;
+    sh:targetSubjectsOf dcterms:source ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:nodeKind sh:Literal ;
+        sh:not [ sh:pattern "^https?://" ] ;
+        sh:message "dcterms:source carries a bibliographic reference to a received work, never a URL."
+    ] .
+
+#
 # Static-substance classes are forbidden. The shape targets the four
 # blacklisted URIs directly; if any of them is ever asserted as owl:Class,
 # validation fails.
