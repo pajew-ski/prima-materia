@@ -190,6 +190,23 @@ pm:cautionsAbout a owl:ObjectProperty ;
 # Properties of testing
 #
 
+pm:examinationState a owl:ObjectProperty ;
+    rdfs:label "examination state"@en, "Prüfstand"@de ;
+    rdfs:domain pm:Testing ;
+    rdfs:range pm:ExaminationState ;
+    skos:definition "How far the attempt to fail the claim has been carried."@en .
+
+pm:examinedBy a owl:DatatypeProperty ;
+    rdfs:label "examined by"@en, "geprüft von"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "Who devised or carried the protocol. A protocol without a named author is unaccountable, and an unaccountable protocol is not evidence of anything."@en .
+
+pm:evidenceFrom a owl:DatatypeProperty ;
+    rdfs:label "evidence from"@en, "Evidenz aus"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "A modern work bearing on the claim under examination, given as a bibliographic reference or a work identifier."@en ;
+    skos:note "Deliberately not dcterms:source. A modern study is never a witness to a tradition and must never appear as the source of one of its claims; it bears on a claim only as evidence inside an examination. Keeping the two predicates apart is what allows research to enter the record at all without loosening the rule that sources are received works."@en .
+
 pm:tests a owl:ObjectProperty ;
     rdfs:label "tests"@en, "prüft"@de ;
     rdfs:domain pm:Testing ;
