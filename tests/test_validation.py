@@ -150,3 +150,52 @@ def test_test_without_falsifier_is_rejected() -> None:
     conforms, report = _validate(offending)
     assert not conforms, "A pm:Testing node without pm:falsifiedBy must fail."
     assert "falsifying condition" in report
+
+
+def test_test_without_examination_state_is_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:StatelessProtocol a pm:Testing ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-08-28" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A pm:Testing node without pm:examinationState must fail."
+    assert "how far the examination has been carried" in report
+
+
+def test_unexamined_claim_may_omit_the_falsifier() -> None:
+    # The one permitted absence, and the reason the state vocabulary exists:
+    # a claim nobody has devised a way to examine must be recordable as such,
+    # and must not be forced to look like a claim that was examined and left
+    # unsupported.
+    permitted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:UnexaminedClaim a pm:Testing ;
+        pm:examinationState pm:noProcedureDevised ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-08-28" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A protocol declared as having no devised procedure must conform.\n{report}"
+
+
+def test_url_evidence_is_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:LinkedEvidence a pm:Testing ;
+        pm:examinationState pm:noProcedureDevised ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-08-28" ;
+        pm:evidenceFrom "https://example.org/some-study" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:evidenceFrom holding a URL must fail SHACL."
+    assert "never a URL" in report
