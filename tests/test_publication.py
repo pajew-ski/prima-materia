@@ -15,7 +15,7 @@ ONTOLOGY_DIR = REPO_ROOT / "ontology"
 TRADITIONS_DIR = REPO_ROOT / "traditions"
 CONTEXT = REPO_ROOT / "context" / "prima-materia-context.jsonld"
 
-PM = Namespace("https://pajew-ski.github.io/prima-materia/ontology#")
+PM = Namespace("https://pajew.ski/prima-materia/ontology#")
 
 # Assets the page loads by name; a rename that misses one breaks the site
 # silently, because a missing module logs to the console and nowhere else.
