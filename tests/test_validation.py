@@ -34,7 +34,7 @@ def test_seed_ontology_conforms() -> None:
 
 def test_substance_class_is_rejected() -> None:
     offending = """
-    @prefix pm:   <https://w3id.org/prima-materia/ontology#> .
+    @prefix pm:   <https://pajew.ski/prima-materia/ontology#> .
     @prefix owl:  <http://www.w3.org/2002/07/owl#> .
     @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
     @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
