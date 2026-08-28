@@ -143,6 +143,34 @@ pm:PracticeShape a sh:NodeShape ;
     ] .
 
 #
+# The claim that a practice produces a capacity is the one the project exists
+# to sort. It therefore carries the full burden: which practice, which
+# capacity, how it entered the record, and which work says so.
+#
+pm:YieldingShape a sh:NodeShape ;
+    sh:targetClass pm:Yielding ;
+    sh:property [
+        sh:path pm:byPractice ;
+        sh:minCount 1 ;
+        sh:message "Every yielding claim must name the practice it proceeds from."
+    ] ;
+    sh:property [
+        sh:path pm:yieldsCapacity ;
+        sh:minCount 1 ;
+        sh:message "Every yielding claim must name the capacity it arrives at."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every yielding claim must declare how it entered the record."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every yielding claim requires at least one dcterms:source."
+    ] .
+
+#
 # A warning without its object is a mood, not a claim.
 #
 pm:CautioningShape a sh:NodeShape ;
