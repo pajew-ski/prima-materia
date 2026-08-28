@@ -29,7 +29,7 @@ The site is built from the same sources as the distribution artefacts and
 deployed by the `Pages` workflow on every push to `main`. It also serves
 `prima-materia.ttl`, `prima-materia.jsonld`, and `context.jsonld`, so the
 namespace IRI resolves to the ontology it names — dereferencing
-`https://pajew-ski.github.io/prima-materia/ontology#Symbolizing` lands on
+`https://pajew.ski/prima-materia/ontology#Symbolizing` lands on
 that term.
 
 Build it locally with:
