@@ -1,0 +1,114 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Theravāda Buddhism
+#
+# The tradition with the closest thing to a graded phenomenology of the
+# bodily rapture the modern draft calls a wave, and with the strongest
+# counterweight: it catalogues the capacities and forbids their display in
+# the same corpus.
+#
+
+pmt:Theravada a pm:Tradition ;
+    rdfs:label "Theravāda"@en, "Theravāda"@de ;
+    skos:definition "The transmission of the Pāli canon and its commentarial literature, of which the Visuddhimagga of Buddhaghosa is the systematising handbook."@en ;
+    dcterms:source "Buddhaghosa, Visuddhimagga (trans. Ñāṇamoli 1956)" .
+
+#
+# Practices
+#
+
+pmp:Anapanasati a pm:Practicing ;
+    rdfs:label "Ānāpānasati"@en, "Ānāpānasati"@de ;
+    skos:definition "Mindfulness of in-breath and out-breath, set out as a sixteen-step progression in the discourse and as a meditation subject in the handbook."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    pm:yieldsCapacity pmc:Piti ;
+    dcterms:source "Majjhima Nikāya 118", "Buddhaghosa, Visuddhimagga VIII (trans. Ñāṇamoli 1956)" .
+
+pmp:BrahmaviharaBhavana a pm:Practicing ;
+    rdfs:label "Cultivation of the divine abidings"@en, "Kultivierung der göttlichen Verweilungen"@de ;
+    skos:definition "The deliberate raising and sustaining of a chosen affective state as a meditation subject in its own right."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IX (trans. Ñāṇamoli 1956)" .
+
+#
+# Capacities and states
+#
+
+pmc:Piti a pm:Conceptualizing ;
+    rdfs:label "Pīti"@en, "Pīti"@de ;
+    skos:definition "Rapture as a bodily felt state, graded in the handbook into five degrees of increasing pervasion."@en ;
+    skos:note "The five degrees are khuddikā, khaṇikā, okkantikā, ubbegā and pharaṇā."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.94ff. (trans. Ñāṇamoli 1956)" .
+
+pmc:KhuddikaPiti a pm:Conceptualizing ;
+    rdfs:label "Minor rapture"@en, "Geringe Verzückung"@de ;
+    skos:definition "The least of the five degrees of rapture, described as able to raise the hairs of the body."@en ;
+    skos:note "This is the passage that attests piloerection as a recognised concomitant of a meditative state, not as its object."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.94ff. (trans. Ñāṇamoli 1956)" .
+
+pmc:UbbegaPiti a pm:Conceptualizing ;
+    rdfs:label "Uplifting rapture"@en, "Erhebungsverzückung"@de ;
+    skos:definition "The fourth of the five degrees of rapture, described as strong enough to lift the body."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.94ff. (trans. Ñāṇamoli 1956)" .
+
+pmc:Manomayakaya a pm:Conceptualizing ;
+    rdfs:label "Mind-made body"@en, "Geistgemachter Körper"@de ;
+    skos:definition "A second body, formed and complete in its faculties, said to be produced from this one; the classical form of the claim the modern draft calls exteriorisation."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Dīgha Nikāya 2 (Sāmaññaphala Sutta, DN i.77)", "Buddhaghosa, Visuddhimagga XII (trans. Ñāṇamoli 1956)" .
+
+pmc:Dibbacakkhu a pm:Conceptualizing ;
+    rdfs:label "Divine eye"@en, "Göttliches Auge"@de ;
+    skos:definition "Sight beyond the range of the physical eye."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XIII (trans. Ñāṇamoli 1956)" .
+
+pmc:Dibbasota a pm:Conceptualizing ;
+    rdfs:label "Divine ear"@en, "Göttliches Ohr"@de ;
+    skos:definition "Hearing beyond the range of the physical ear."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XIII (trans. Ñāṇamoli 1956)" .
+
+pmc:Cetopariyanana a pm:Conceptualizing ;
+    rdfs:label "Knowledge encompassing another mind"@en, "Kenntnis fremden Bewusstseins"@de ;
+    skos:definition "Knowledge of the state of another consciousness."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XIII (trans. Ñāṇamoli 1956)" .
+
+#
+# Cautions
+#
+# Both are load-bearing for any project that collects capacity claims: one
+# refuses the display of powers as a means of persuasion, the other names
+# the states of practice that are mistaken for its completion.
+#
+
+pmc:DisplayOfPowersRefused a pm:Cautioning ;
+    rdfs:label "Display of powers refused"@en, "Zurschaustellung der Kräfte verweigert"@de ;
+    skos:definition "The discourse distinguishes three marvels, of psychic power, of mind-reading and of instruction, and holds only instruction to be reliable; the display of power for the sake of persuasion is refused as something to be ashamed of."@en ;
+    skos:note "The Vinaya rule against displaying superhuman states to laypeople stands alongside it."@en ;
+    pm:cautionsAbout pmc:Dibbacakkhu, pmc:Dibbasota, pmc:Cetopariyanana, pmc:Manomayakaya ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Dīgha Nikāya 11 (Kevaṭṭa Sutta)", "Vinaya, Cūḷavagga V.8" .
+
+pmc:ImperfectionsOfInsight a pm:Cautioning ;
+    rdfs:label "The imperfections of insight"@en, "Die Unvollkommenheiten der Einsicht"@de ;
+    skos:definition "Ten states arising in practice, among them luminosity, rapture, tranquillity, pleasure and resolve, which are not defilements in themselves but become obstacles when taken as proof of attainment."@en ;
+    skos:note "The handbook illustrates the error with the monk who held himself awakened for sixty years. This is the tradition's own answer to the question of how a practitioner mistakes a state for a result."@en ;
+    pm:cautionsAbout pmc:Piti ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XX.105ff. (trans. Ñāṇamoli 1956)" .
