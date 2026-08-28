@@ -227,7 +227,7 @@ Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte sp
 
 ### Phase 2 — Erweiterung & Integration (außerhalb des aktuellen Agent-Auftrags, hier nur referenziert)
 
-Hermetik-Kernontologie, vollständige named-graph-Implementierung, llms.txt-Integration auf pajew-ski.github.io, Exocortex-n8n-Webhook-Pipeline.
+Hermetik-Kernontologie, vollständige named-graph-Implementierung, llms.txt-Integration auf pajew.ski, Exocortex-n8n-Webhook-Pipeline.
 
 ## 5. SHACL Shapes (Validierungsregeln)
 
