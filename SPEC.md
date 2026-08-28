@@ -67,10 +67,10 @@ Die Ontologie erscheint unter `https://pajew.ski/prima-materia/` und wird dort g
 **Präfixe (in jeder TTL-Datei zu deklarieren):**
 
 ```turtle
-@prefix pm:      <https://w3id.org/prima-materia/ontology#> .
-@prefix pmt:     <https://w3id.org/prima-materia/traditions/> .
-@prefix pmc:     <https://w3id.org/prima-materia/concepts/> .
-@prefix pmp:     <https://w3id.org/prima-materia/practices/> .
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
