@@ -1,0 +1,28 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Sefer Yetzirah
+#
+# Entered at cosmogonic strength and no further. Breath here is the first
+# thing to issue and the medium in which the letters are stirred; it is not
+# a substance the practitioner conducts through the limbs. The correspondence
+# with the Chinese and Indian material is thematic, not operative, and any
+# convergence node built on it must say so.
+#
+
+pmt:SeferYetzirah a pm:Tradition ;
+    rdfs:label "Sefer Yetzirah"@en, "Sefer Jetzira"@de ;
+    skos:definition "The transmission of the Book of Formation and its commentaries, in which the world is formed through letters, number and breath."@en ;
+    dcterms:source "Sefer Yetzirah 1:9-10" .
+
+pmc:Ruach a pm:Conceptualizing ;
+    rdfs:label "Ruaḥ"@en, "Ruach"@de ;
+    skos:definition "Breath or spirit, named as the first of the ten emanations, from which air issues, from air water, and from water fire."@en ;
+    skos:note "The text also has the patriarch stirring the letters with breath, which is the closest the source comes to breath as an operative medium; it remains an act of formation, not a conduction through the body."@en ;
+    pm:withinTradition pmt:SeferYetzirah ;
+    dcterms:source "Sefer Yetzirah 1:9-10", "Sefer Yetzirah 6:7" .
