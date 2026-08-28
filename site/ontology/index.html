@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>prima materia · namespace</title>
+  <meta name="description" content="The prima-materia ontology namespace. Terms are documented on the site; the graph is served as Turtle and JSON-LD.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23808080'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="alternate" type="text/turtle" href="../prima-materia.ttl">
+  <link rel="alternate" type="application/ld+json" href="../prima-materia.jsonld">
+</head>
+<body>
+  <header class="hero shell">
+    <h1>namespace</h1>
+    <p><code>https://pajew-ski.github.io/prima-materia/ontology#</code> — the IRI every <code>pm:</code> term is minted under. Following one lands on that term.</p>
+  </header>
+
+  <main class="shell">
+    <section>
+      <h2>Where to go</h2>
+      <ul class="artefacts">
+        <li><a href="../">the ontology</a> <span>every term, drawn as the graph it is</span></li>
+        <li><a href="../prima-materia.ttl">prima-materia.ttl</a> <span>the compiled graph, Turtle</span></li>
+        <li><a href="../prima-materia.jsonld">prima-materia.jsonld</a> <span>the same graph, JSON-LD</span></li>
+        <li><a href="../context.jsonld">context.jsonld</a> <span>the JSON-LD context alone</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">prima materia · CC0 1.0</div>
+  </footer>
+
+  <script type="module">
+    // Dereferencing a term IRI — .../ontology#Symbolizing — should show that
+    // term, not this signpost. The site addresses terms by CURIE, so the
+    // fragment is prefixed and handed over. Without a fragment the page stays
+    // put: the bare namespace IRI is a question about the vocabulary itself,
+    // and the links above are the answer.
+    // hashchange as well as load: arriving at a term IRI from this page is a
+    // same-document navigation, which runs no script of its own.
+    function handOver() {
+      const term = decodeURIComponent(location.hash.slice(1));
+      if (/^[A-Za-z][\w-]*$/.test(term)) location.replace(`../#pm:${term}`);
+    }
+    window.addEventListener("hashchange", handOver);
+    handOver();
+  </script>
+</body>
+</html>

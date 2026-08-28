@@ -1,0 +1,330 @@
+/* Design tokens.
+   Color is strictly achromatic: oklch with chroma 0 cannot tint, light and
+   dark share one scale. Geometry derives from φ: the spacing ladder is the
+   Fibonacci sequence, the type scale is powers of φ, layout splits at φ:1. */
+
+:root {
+  color-scheme: light dark;
+  --bg: oklch(98% 0 0);
+  --surface: oklch(94% 0 0);
+  --border: oklch(85% 0 0);
+  --text: oklch(15% 0 0);
+  --text-muted: oklch(40% 0 0);
+
+  --space-1: 5px;
+  --space-2: 8px;
+  --space-3: 13px;
+  --space-4: 21px;
+  --space-5: 34px;
+  --space-6: 55px;
+  --space-7: 89px;
+  --space-8: 144px;
+  --radius-sm: var(--space-1);
+  --radius-md: var(--space-2);
+  --radius-lg: var(--space-3);
+
+  --text-sm: 0.875rem;     /* 14px, captions; deliberately not 1/φ, legibility floor */
+  --text-base: 1rem;       /* browser default, respects user zoom */
+  --text-lg: 1.618rem;     /* φ¹ */
+  --text-xl: 2.618rem;     /* φ² */
+  --text-2xl: 4.236rem;    /* φ³ */
+
+  font-family: system-ui, sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.618;
+  background: var(--bg);
+  color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: oklch(15% 0 0);
+    --surface: oklch(20% 0 0);
+    --border: oklch(30% 0 0);
+    --text: oklch(95% 0 0);
+    --text-muted: oklch(70% 0 0);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+.shell {
+  max-width: 987px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+code {
+  font-size: 0.9em;
+  word-break: break-word;
+}
+
+:focus-visible {
+  outline: 2px solid var(--text-muted);
+  outline-offset: 2px;
+}
+
+/* Hero */
+
+.hero {
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(var(--text-xl), 9vw, var(--text-2xl));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.hero p {
+  margin: var(--space-4) 0 0;
+  max-width: 34rem;
+  color: var(--text-muted);
+}
+
+/* Sections */
+
+main section {
+  margin: 0 0 var(--space-7);
+}
+
+main h2 {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+main section > p {
+  margin: 0 0 var(--space-3);
+  max-width: 42rem;
+}
+
+.caption {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Graph: canvas and detail panel split at φ:1. The canvas fills a share of the
+   viewport height so the graph scales up on large screens instead of sitting in
+   a fixed strip; the panel matches that height and scrolls its own overflow.
+   Portrait stacks them (see the orientation query below). */
+
+.layout {
+  /* minmax(0, …) caps each track's automatic minimum: cytoscape gives its
+     inner wrapper an explicit pixel size on every resize, and a bare fr track
+     treats that as a content minimum. After an orientation flip the stale
+     wrapper size would feed back into the track, locking the canvas at the
+     old width (misaligned with the panel, or wider than the viewport). */
+  display: grid;
+  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+#canvas {
+  height: clamp(340px, 62vh, 700px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  /* The box is sized by the grid alone; never let cytoscape's pixel-sized
+     wrapper push layout mid-rotation. Also clips the square canvas to the
+     rounded corner. */
+  overflow: hidden;
+}
+
+.panel {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  min-height: var(--space-8);
+  max-height: clamp(340px, 62vh, 700px);
+  overflow-y: auto;
+}
+
+.panel-type {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.panel h3 {
+  margin: var(--space-1) 0 var(--space-2);
+  font-size: var(--text-base);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.panel h4 {
+  margin: var(--space-3) 0 var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+
+.panel p {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.panel ul {
+  margin: 0;
+  padding-left: var(--space-4);
+}
+
+.panel li {
+  margin-bottom: var(--space-1);
+  font-size: var(--text-sm);
+}
+
+.panel-empty {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* The CURIE is the term's real name; the label is the reading of it. Setting
+   the identifier in monospace keeps the two apart at a glance. */
+.panel-id {
+  margin: 0 0 var(--space-3);
+  color: var(--text-muted);
+  font-family: ui-monospace, monospace;
+  font-size: var(--text-sm);
+  word-break: break-all;
+}
+
+/* Secondary-language label and the property signature: one line each, muted. */
+.panel-aside {
+  color: var(--text-muted);
+}
+
+.panel-note {
+  color: var(--text-muted);
+}
+
+.edge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.edge-chip {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: none;
+  padding: var(--space-1) var(--space-2);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.edge-chip:hover {
+  background: var(--surface);
+}
+
+.edge-chip .rel {
+  color: var(--text-muted);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  margin-top: var(--space-3);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.legend svg {
+  display: block;
+}
+
+/* Artefact list: name, then what it is. Two columns where there is room, one
+   below it, so the descriptions line up without a table. */
+
+.artefacts {
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+  max-width: 42rem;
+}
+
+.artefacts li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.artefacts li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.artefacts a {
+  font-family: ui-monospace, monospace;
+  font-size: var(--text-sm);
+  min-width: 21ch;
+}
+
+.artefacts span {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-5) 0 var(--space-6);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 800px) {
+  .hero {
+    padding-block-start: var(--space-7);
+  }
+}
+
+/* Portrait or narrow: stack the panel below a full-width canvas so both use the
+   full column width, and let the panel grow to its natural height beneath it.
+   The canvas turns square here. The graph is radial, so it fits to the shorter
+   axis: a landscape box would scale the whole circle down to the height and
+   waste the width on margins, and the labels are already the tightest thing on
+   a phone. The square is computed from 100vw rather than declared with
+   aspect-ratio because WebKit mis-sizes an empty grid item that carries an
+   aspect-ratio, collapsing the canvas to nothing on phones and tablets in
+   portrait; a height derived from 100vw needs no interop luck. The cap is the
+   shell's max content width (987px − 2·21px padding), so the box stops growing
+   exactly when the column does. */
+@media (orientation: portrait), (max-width: 800px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #canvas {
+    height: min(calc(100vw - 2 * var(--space-4)), 945px);
+  }
+  .panel {
+    max-height: none;
+  }
+}

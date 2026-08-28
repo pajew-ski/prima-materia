@@ -17,6 +17,31 @@ embeds triples in `AwarenessContext` named graphs, and treats bounded
 subgraphs (`MeaningCluster`) as the fundamental units of meaning — following
 Bhartṛhari's Sphoṭa principle.
 
+## Website
+
+The ontology is published as a browsable page at
+<https://pajew-ski.github.io/prima-materia/>: every class, property, and
+instance drawn as the graph it is, with definitions, sources, and bilingual
+labels. Selecting a term gives it a URL, so a definition can be cited rather
+than described.
+
+The site is built from the same sources as the distribution artefacts and
+deployed by the `Pages` workflow on every push to `main`. It also serves
+`prima-materia.ttl`, `prima-materia.jsonld`, and `context.jsonld`, so the
+namespace IRI resolves to the ontology it names — dereferencing
+`https://pajew-ski.github.io/prima-materia/ontology#Symbolizing` lands on
+that term.
+
+Build it locally with:
+
+```bash
+python scripts/publish.py --output build/site
+python -m http.server -d build/site
+```
+
+Page assets are hand-written under `site/`; everything else in the output is
+generated. Do not edit `build/site/` — it is rebuilt from scratch on every run.
+
 ## Repository Layout
 
 - **Source (this repo):** `pajew-ski/prima-materia` — manually maintained
@@ -39,6 +64,7 @@ python scripts/transmute.py \
     --input build/prima-materia.ttl \
     --context context/prima-materia-context.jsonld \
     --output build/prima-materia.jsonld
+python scripts/publish.py --output build/site
 
 pytest tests/
 ```
@@ -50,6 +76,8 @@ without errors.
 ## Manual Setup Steps (not agent-automatable)
 
 - Create the `pajew-ski/prima-materia-dist` repository on GitHub.
+- Enable GitHub Pages for this repository with **Settings → Pages → Source:
+  GitHub Actions**. The `Pages` workflow cannot switch the source on.
 - Set the `DIST_REPO_TOKEN` secret in this repository's settings (Personal
   Access Token with write access to `prima-materia-dist`).
 - Purge the jsDelivr cache when a release needs to propagate immediately.
