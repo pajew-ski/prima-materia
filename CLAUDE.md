@@ -19,11 +19,23 @@ python scripts/validate.py
 python scripts/compile.py --output build/prima-materia.ttl
 python scripts/transmute.py --input build/prima-materia.ttl --context context/prima-materia-context.jsonld --output build/prima-materia.jsonld
 
+# GitHub-Pages-Seite bauen und lokal ansehen
+python scripts/publish.py --output build/site
+python -m http.server -d build/site
+
 # Tests (immer vor Commit)
 pytest tests/
 ```
 
 **Pre-Commit-Pflicht:** `python scripts/validate.py && pytest tests/` muss grün sein. Niemals committen wenn rot.
+
+## Website
+
+`site/` enthält die handgeschriebenen Assets der GitHub-Pages-Seite (`index.html`, `style.css`, `ontology.js`, `theme.js`, `ontology/index.html`). `scripts/publish.py` kopiert sie nach `build/site/` und legt die aus dem Graphen abgeleiteten Daten (`ontology-data.json`) sowie die Serialisierungen daneben. Der `Pages`-Workflow deployt das bei jedem Push auf `main`.
+
+- Die Seite wird **komplett aus dem kompilierten Graphen** gespeist. Neue Klassen, Properties und Instanzen erscheinen ohne Code-Änderung; Zähler, Legende und Panel leiten sich aus den Daten ab.
+- Design-Vorbild ist `pajew-ski/temet-nosce`: achromatische oklch-Tokens, φ-basierte Spacing- und Typo-Leiter, Canvas/Panel im Verhältnis φ:1, Cytoscape über jsDelivr.
+- Neue Node-Art im Graphen → `KINDS` in `site/ontology.js` erweitern (Shape, Legenden-Name, Plural) und in `_kind()` in `scripts/publish.py` klassifizieren.
 
 ## Namespaces (in jeder neuen TTL-Datei)
 
@@ -56,6 +68,8 @@ pytest tests/
 - ❌ Deutsche Identifier in URIs/Klassennamen
 - ❌ Network-Calls in `scripts/` — alles muss offline reproduzierbar sein
 - ❌ Direkte Edits am Distribution-Repo (`prima-materia-dist`) — wird auto-generiert
+- ❌ Direkte Edits an `build/site/` — wird bei jedem `publish.py`-Lauf neu erzeugt; Quelle ist `site/`
+- ❌ Fakten über die Ontologie in `site/index.html` hart kodieren (Anzahl Terme, Klassenlisten) — aus `ontology-data.json` ableiten
 
 ## Quellenführung (verpflichtend)
 
@@ -89,6 +103,7 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 
 ## Manuelle User-Aktionen (nicht Agent-automatisierbar)
 
+- Aktivieren von GitHub Pages: **Settings → Pages → Source: GitHub Actions**. Der Workflow kann die Quelle nicht selbst umstellen.
 - Setzen des `DIST_REPO_TOKEN`-Secrets im Source-Repo (Personal Access Token mit Write-Access auf `prima-materia-dist`)
 - Anlage des `prima-materia-dist`-Repos in GitHub
 - jsDelivr-Cache-Purge bei Bedarf

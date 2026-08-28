@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>prima materia</title>
+  <meta name="description" content="An open-data ontology of magical and esoteric knowledge, modelled consciousness-first: processes instead of substances.">
+  <!-- The root process node itself: a filled circle on transparent ground,
+       inheriting neither light nor dark, legible on either. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23808080'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="alternate" type="text/turtle" href="prima-materia.ttl">
+  <link rel="alternate" type="application/ld+json" href="prima-materia.jsonld">
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3/dist/cytoscape.min.js" defer></script>
+</head>
+<body>
+  <header class="hero shell">
+    <h1>prima materia</h1>
+    <p>The undifferentiated ground. An open-data ontology of magical and esoteric knowledge, modelled consciousness-first: processes instead of substances.</p>
+  </header>
+
+  <main class="shell">
+    <section id="principle">
+      <h2>The principle</h2>
+      <p>Most vocabularies begin with things. This one begins with acts. Every substantive class is a gerund — <em>Symbolizing</em>, <em>Manifesting</em>, <em>Perceiving</em> — because a symbol is not an object that happens to mean something, it is a standing-for that is happening. The static counterparts (<code>pm:Symbol</code>, <code>pm:Concept</code>, <code>pm:Entity</code>, <code>pm:Object</code>) are not merely unused; a SHACL shape rejects them.</p>
+      <p>Three further commitments follow from that one. An <em>awareness context</em> tags every assertion with the epistemic mode it was made in, so a claim spoken from inside a tradition and a philologist's report about that tradition can live in one graph without collapsing into each other. A <em>meaning cluster</em> treats a bounded subgraph, not an isolated triple, as the unit that carries meaning — Bhartṛhari's sphoṭa, where the whole utterance means and the phonemes only participate. And an <em>awareness space</em> replaces the isolated self/other pair with a spectrum: individual, dyadic, collective, universal.</p>
+      <p>What follows is the vocabulary as it currently stands: <span id="term-count">every term</span> compiled from the Turtle sources in this repository, drawn as the graph it is.</p>
+    </section>
+
+    <section id="graph">
+      <h2>The ontology</h2>
+      <div class="layout">
+        <div id="canvas" role="img" aria-label="Interactive visualization of the prima-materia ontology"></div>
+        <aside class="panel" id="panel" aria-live="polite">
+          <p class="panel-empty">Loading the ontology.</p>
+        </aside>
+      </div>
+      <div class="legend" id="legend"></div>
+    </section>
+
+    <section id="use">
+      <h2>Use it</h2>
+      <p>The ontology is released into the public domain under CC0 1.0. No attribution is required, and none of it is fenced. Namespace: <code>https://pajew-ski.github.io/prima-materia/ontology#</code>.</p>
+      <ul class="artefacts">
+        <li><a href="prima-materia.ttl">prima-materia.ttl</a> <span>the compiled graph, Turtle</span></li>
+        <li><a href="prima-materia.jsonld">prima-materia.jsonld</a> <span>the same graph, JSON-LD</span></li>
+        <li><a href="context.jsonld">context.jsonld</a> <span>the JSON-LD context alone</span></li>
+      </ul>
+      <p class="caption">Versioned builds are mirrored to the distribution repository and served over jsDelivr at <code>https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/</code>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      prima materia · <span id="build-meta"></span><a id="source-link" href="https://github.com/pajew-ski/prima-materia">source on GitHub</a> · CC0 1.0
+    </div>
+  </footer>
+
+  <script type="module">
+    // Point the footer at whichever repository this site was deployed from, so
+    // a fork needs no manual edit. On <owner>.github.io/<repo>/ the owner and
+    // repo come straight from the URL; anywhere else (localhost, a custom
+    // domain) the static href above stays as the fallback.
+    const host = location.hostname;
+    if (host.endsWith(".github.io")) {
+      const owner = host.slice(0, -".github.io".length);
+      const repo = location.pathname.split("/").filter(Boolean)[0] || `${owner}.github.io`;
+      document.querySelector("#source-link").href = `https://github.com/${owner}/${repo}`;
+    }
+  </script>
+  <script type="module" src="ontology.js"></script>
+</body>
+</html>
