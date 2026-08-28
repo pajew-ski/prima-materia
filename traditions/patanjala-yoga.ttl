@@ -28,8 +28,48 @@ pmp:Samyama a pm:Practicing ;
     skos:definition "The combined application of dhāraṇā, dhyāna and samādhi to a single object, presented as the general operator from which the capacities of the third chapter follow."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:PatanjalaYoga ;
-    pm:yieldsCapacity pmc:ParacittaJnana, pmc:DivyaCaksus, pmc:DivyaSrotra, pmc:ParakayaPravesa ;
     dcterms:source "Patañjali, Yogasūtra III.1-3" .
+
+#
+# Yielding claims
+#
+# One node per pairing, each with the verse that carries it. The general
+# operator is the same throughout; what differs is the object it is applied
+# to and the capacity said to follow, and that difference is what a later
+# protocol would have to test one pairing at a time.
+#
+
+pmc:SamyamaYieldsParacittaJnana a pm:Yielding ;
+    rdfs:label "Saṃyama on the presented idea yields knowledge of another mind"@en, "Saṃyama auf die Vorstellung bringt Kenntnis fremden Bewusstseins hervor"@de ;
+    pm:byPractice pmp:Samyama ;
+    pm:yieldsCapacity pmc:ParacittaJnana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.19" .
+
+pmc:SamyamaYieldsDivyaCaksus a pm:Yielding ;
+    rdfs:label "Saṃyama on the sun yields knowledge of the world"@en, "Saṃyama auf die Sonne bringt Weltkenntnis hervor"@de ;
+    pm:byPractice pmp:Samyama ;
+    pm:yieldsCapacity pmc:DivyaCaksus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.26" .
+
+pmc:SamyamaYieldsDivyaSrotra a pm:Yielding ;
+    rdfs:label "Saṃyama yields the divine ear"@en, "Saṃyama bringt das göttliche Ohr hervor"@de ;
+    pm:byPractice pmp:Samyama ;
+    pm:yieldsCapacity pmc:DivyaSrotra ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.41" .
+
+pmc:SamyamaYieldsParakayaPravesa a pm:Yielding ;
+    rdfs:label "Saṃyama yields entry into another body"@en, "Saṃyama bringt den Eintritt in einen anderen Körper hervor"@de ;
+    pm:byPractice pmp:Samyama ;
+    pm:yieldsCapacity pmc:ParakayaPravesa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra III.38" .
 
 pmp:Pranayama a pm:Practicing ;
     rdfs:label "Prāṇāyāma"@en, "Prāṇāyāma"@de ;
