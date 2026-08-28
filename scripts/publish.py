@@ -34,9 +34,10 @@ DCTERMS = Namespace("http://purl.org/dc/terms/")
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
 # a pmt:/pmc: term by accident.
 PREFIXES: tuple[tuple[str, str], ...] = (
-    ("pmt", "https://pajew.ski/prima-materia/traditions/"),
-    ("pmc", "https://pajew.ski/prima-materia/concepts/"),
-    ("pm", "https://pajew.ski/prima-materia/ontology#"),
+    ("pmt", "https://w3id.org/prima-materia/traditions/"),
+    ("pmc", "https://w3id.org/prima-materia/concepts/"),
+    ("pmp", "https://w3id.org/prima-materia/practices/"),
+    ("pm", "https://w3id.org/prima-materia/ontology#"),
     ("owl", "http://www.w3.org/2002/07/owl#"),
     ("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
     ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),
