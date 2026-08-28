@@ -40,9 +40,9 @@ pytest tests/
 ## Namespaces (in jeder neuen TTL-Datei)
 
 ```turtle
-@prefix pm:      <https://pajew-ski.github.io/prima-materia/ontology#> .
-@prefix pmt:     <https://pajew-ski.github.io/prima-materia/traditions/> .
-@prefix pmc:     <https://pajew-ski.github.io/prima-materia/concepts/> .
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
