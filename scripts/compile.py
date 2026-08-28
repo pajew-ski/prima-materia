@@ -14,7 +14,11 @@ from rdflib import Graph
 from rdflib.namespace import NamespaceManager
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_INPUTS = (REPO_ROOT / "ontology", REPO_ROOT / "traditions")
+DEFAULT_INPUTS = (
+    REPO_ROOT / "ontology",
+    REPO_ROOT / "traditions",
+    REPO_ROOT / "convergences",
+)
 DEFAULT_OUTPUT = REPO_ROOT / "build" / "prima-materia.ttl"
 
 PREFIXES: dict[str, str] = {
