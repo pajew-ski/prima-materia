@@ -1,0 +1,68 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Christian ascetic discernment
+#
+# This tradition answers a question the modern draft raises and no other
+# tradition here answers: how a practitioner is to tell a state worth trusting
+# from one that only feels like it. What it supplies is a qualitative test
+# with a counter-check, not a count of hits against a base rate. That
+# distinction is recorded on the nodes rather than smoothed over, because it
+# is the difference between an old testimony and a modern claim.
+#
+
+pmt:ChristianAsceticDiscernment a pm:Tradition ;
+    rdfs:label "Christian ascetic discernment"@en, "Christliche Unterscheidung der Geister"@de ;
+    skos:definition "The transmission of the practice of discerning the origin of inner movements, running from the desert monastic literature through the Byzantine ascetic corpus into the Latin spiritual exercises."@en ;
+    dcterms:source "John Cassian, Collationes I-II" .
+
+pmc:DiscernmentOfOrigins a pm:Conceptualizing ;
+    rdfs:label "Discernment of origins"@en, "Unterscheidung der Herkunft"@de ;
+    skos:definition "The examination of an inner movement for its origin, distinguished threefold as angelic, human or demonic."@en ;
+    pm:withinTradition pmt:ChristianAsceticDiscernment ;
+    dcterms:source "Evagrius Ponticus, On Thoughts 8", "Evagrius Ponticus, Praktikos 80" .
+
+pmc:AngelOfLightDeception a pm:Cautioning ;
+    rdfs:label "The deception that appears as light"@en, "Die Täuschung, die als Licht erscheint"@de ;
+    skos:definition "The warning that an experience of luminosity or consolation may be counterfeit, and that the counterfeit is recognised by its circumstances rather than by its brightness."@en ;
+    skos:note "Diadochus distinguishes the true consolation, which comes with the body awake and in warm love, from the false, which comes in a light half-sleep."@en ;
+    pm:cautionsAbout pmc:DiscernmentOfOrigins ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChristianAsceticDiscernment ;
+    dcterms:source "Evagrius Ponticus, On Thoughts 39", "Diadochus of Photice, Gnostic Chapters 40" .
+
+pmc:ExcessiveAsceticismCaution a pm:Cautioning ;
+    rdfs:label "Discretion against excess"@en, "Unterscheidung gegen das Übermaß"@de ;
+    skos:definition "The teaching that discretion is the mother of the virtues, directed against the practitioner who is undone not by laxity but by an excess undertaken in good faith."@en ;
+    pm:cautionsAbout pmc:DiscernmentOfOrigins ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChristianAsceticDiscernment ;
+    dcterms:source "John Cassian, Collationes II (De discretione)" .
+
+#
+# The test protocol
+#
+
+pmc:TestingOfThoughts a pm:Testing ;
+    rdfs:label "The examination of thoughts"@en, "Die Prüfung der Gedanken"@de ;
+    skos:definition "A four-part examination of an inner movement, set out in the image of the money-changer who tests a coin: for the metal, for the stamp, for the lawfulness of its provenance, and for its weight."@en ;
+    skos:note "Ignatius adds the rule that the whole course of a train of thought is to be examined, since a bad end reveals the origin, and that a consolation arriving after the fact is to be examined well before it is believed."@en ;
+    pm:tests pmc:DiscernmentOfOrigins ;
+    pm:falsifiedBy "A movement fails the test if its metal is false, its stamp is not that of right teaching, its provenance is unlawful, or it weighs light of the fear of God and heavy of human vanity; and it fails if the end of the train of thought is bad, however good its beginning." ;
+    pm:protocolUpdated "2026-08-28" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChristianAsceticDiscernment ;
+    dcterms:source "John Cassian, Collationes I.20-22", "Ignatius of Loyola, Spiritual Exercises 334", "Ignatius of Loyola, Spiritual Exercises 336" .
+
+pmc:NoQuantitativeVerification a pm:Cautioning ;
+    rdfs:label "No count against chance in the old sources"@en, "Keine Zählung gegen den Zufall in den alten Quellen"@de ;
+    skos:definition "A negative finding, held as a node so that it is not lost: the old traditions test a claimed movement by its origin and its fruits, and none of those examined here tests a claimed capacity by counting hits against the rate obtainable by guessing."@en ;
+    skos:note "Any protocol that counts outcomes against a base rate is a modern addition and is to be recorded as one, not as the recovery of an ancient method."@en ;
+    pm:cautionsAbout pmc:TestingOfThoughts ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "John Cassian, Collationes I.20-22", "Ignatius of Loyola, Spiritual Exercises 313-336" .
