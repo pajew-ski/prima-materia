@@ -216,7 +216,7 @@ Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte sp
 
 1. `traditions/valentinian.ttl` — Valentinianische Gnosis als Prozess-Ontologie. Migration der bestehenden Neo4j-Ontologie (Aeonen, Syzygies, Pleroma, Sophia-Fall, etc.) in die `pm:`-Klassenstruktur. Konkret: bestehende `Aeon`-Knoten werden zu `pm:Conceptualizing`-Instanzen mit `pm:withinTradition pmt:ValentinianGnosis`.
 2. `traditions/greek-cosmological.ttl` — 13-Prinzipien-System (Kairos durch Hen) inklusive der hierarchischen Struktur und der existierenden SVG-Sigil-Referenzen via `pm:hasSymbolicForm`.
-3. `traditions/opus-purum-axioms.ttl` — die fünf Axiome des Opus Purum als formale `pm:Axiom`-Subklasse, plus die sieben Kapitel als `pm:Practice`-Instanzen.
+3. ~~`traditions/opus-purum-axioms.ttl`~~ — **gestrichen.** Der Richtungssinn in Abschnitt 10 schließt das aus: prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden. Die Axiome sind unveröffentlichtes eigenes Material und tragen keine Quelle im Sinne dieser Spezifikation. Ihre Bestandteile können einzeln eingehen, sobald sie gegen überliefertes Schrifttum gegroundet sind, dann aber unter der Tradition, aus der der Beleg stammt, nicht unter dem Namen des Entwurfs.
 4. `prima-materia-dist`-Repository deployen — automatischer Build & Push via Action `distribute.yml`.
 5. jsDelivr-CDN-Verifikation — Distribution-URLs sind via `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.jsonld` abrufbar.
 
