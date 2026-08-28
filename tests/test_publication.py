@@ -53,7 +53,7 @@ def test_kinds_are_classified() -> None:
 
 def test_ontology_header_is_not_a_node() -> None:
     # The owl:Ontology declaration describes the file, not a term in it.
-    assert "https://pajew-ski.github.io/prima-materia/ontology" not in {
+    assert "https://pajew.ski/prima-materia/ontology" not in {
         node["iri"] for node in _data()["nodes"]
     }
 
