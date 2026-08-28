@@ -1,0 +1,25 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Upaniṣadic tradition
+#
+# Held to the one claim that is attested at an exact place: prāṇa as that on
+# which everything else in the person rests. The later technical apparatus of
+# channels and centres belongs to other files and other traditions.
+#
+
+pmt:Upanisadic a pm:Tradition ;
+    rdfs:label "Upaniṣadic tradition"@en, "Upaniṣadische Überlieferung"@de ;
+    skos:definition "The transmission of the Upaniṣads as the speculative layer of the Vedic corpus."@en ;
+    dcterms:source "Chāndogya Upaniṣad" .
+
+pmc:Prana a pm:Conceptualizing ;
+    rdfs:label "Prāṇa"@en, "Prāṇa"@de ;
+    skos:definition "Vital breath, presented as that on which the parts of the person rest and out of which beings come forth, in the image of a wheel resting on its hub."@en ;
+    pm:withinTradition pmt:Upanisadic ;
+    dcterms:source "Chāndogya Upaniṣad 7.15.1", "Chāndogya Upaniṣad 1.11.5" .
