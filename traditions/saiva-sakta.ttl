@@ -1,0 +1,65 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Śaiva and Śākta tantric tradition
+#
+# One caution belongs at the head of this file. The number of centres varies
+# across the older tantras; what is old is a set of subtle centres carrying
+# seed syllables. The fixed system of seven centres with rainbow colours and
+# assigned psychological qualities is a twentieth-century construction and is
+# recorded as such below, not as part of this tradition.
+#
+
+pmt:SaivaSakta a pm:Tradition ;
+    rdfs:label "Śaiva and Śākta tantra"@en, "Śaiva- und Śākta-Tantra"@de ;
+    skos:definition "The transmission of the Śaiva and Śākta tantric corpus and its Kashmirian exegesis."@en ;
+    dcterms:source "Pūrṇānanda, Ṣaṭcakranirūpaṇa (1577)" .
+
+pmc:Kundalini a pm:Conceptualizing ;
+    rdfs:label "Kuṇḍalinī"@en, "Kuṇḍalinī"@de ;
+    skos:definition "A power held to rest coiled at the base of the subtle body and to rise through it when roused."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Pūrṇānanda, Ṣaṭcakranirūpaṇa (1577)" .
+
+pmc:Cakra a pm:Conceptualizing ;
+    rdfs:label "Cakra"@en, "Cakra"@de ;
+    skos:definition "A centre of the subtle body, described in the source with its seed syllables and its position along the central channel."@en ;
+    skos:note "The count varies across the older tantras, which give four, five or six. The tradition does not assign the centres the psychological qualities that modern presentations attach to them."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Pūrṇānanda, Ṣaṭcakranirūpaṇa (1577)" .
+
+pmc:Saktipata a pm:Conceptualizing ;
+    rdfs:label "Descent of power"@en, "Herabkunft der Kraft"@de ;
+    skos:definition "The transfer of power from one who has it to one who does not, graded in the Kashmirian exegesis into nine degrees."@en ;
+    skos:note "The sources give transfer by glance, by touch and by word. The specifically manual modality of the modern draft is not attested here."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Abhinavagupta, Tantrāloka XIII", "Abhinavagupta, Tantrasāra XI", "Mālinīvijayottaratantra" .
+
+pmp:SaktipataTransmission a pm:Practicing ;
+    rdfs:label "Conferring the descent of power"@en, "Übertragung der Herabkunft der Kraft"@de ;
+    skos:definition "The initiatory act by which the descent of power is conferred."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SaivaSakta ;
+    pm:yieldsCapacity pmc:Saktipata ;
+    dcterms:source "Abhinavagupta, Tantrāloka XIII", "Abhinavagupta, Tantrasāra XI" .
+
+#
+# The modern ordering, held as such
+#
+
+pmc:SevenCentreQualityMapping a pm:Systematizing ;
+    rdfs:label "The seven-centre quality mapping"@en, "Die Zuordnung von sieben Zentren zu Eigenschaften"@de ;
+    skos:definition "The assignment of a fixed set of seven centres to spectral colours and to psychological qualities such as will, expression and security. An ordering imposed in the twentieth century on material that did not carry it."@en ;
+    skos:note "Colour scheme in Leadbeater 1927, rainbow spectrum in Hills 1977, on the textual basis made available by Avalon's 1919 translation of the Ṣaṭcakranirūpaṇa. Recorded here so that the mapping is available in the graph as what it is, and cannot be mistaken for the tantric material it was built on."@en ;
+    pm:cautionsAbout pmc:Cakra ;
+    pm:ordersClaim pmc:Cakra ;
+    pm:compiledBy "C. W. Leadbeater, extended by Christopher Hills" ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:date "1927" ;
+    dcterms:source "C. W. Leadbeater, The Chakras (1927)", "Christopher Hills, Nuclear Evolution (1977)", "A. Avalon, The Serpent Power (1919)" .
