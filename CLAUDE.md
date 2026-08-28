@@ -120,6 +120,7 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 ## Manuelle User-Aktionen (nicht Agent-automatisierbar)
 
 - Aktivieren von GitHub Pages: **Settings → Pages → Source: GitHub Actions**. Der Workflow kann die Quelle nicht selbst umstellen.
+- **Registrierung des Namensraums bei w3id.org.** Pull Request gegen `perma-id/w3id.org` mit dem Verzeichnis `prima-materia/` und einer `.htaccess`, die den ganzen Teilbaum nach `https://pajew.ski/prima-materia/` umleitet. Bis dieser PR gemergt ist, sind die geprägten IRIs Bezeichner ohne Auflösung; die Daten liegen unverändert am Auslieferungsort. Ein Agent kann das nicht tun: Fremdrepos sind über `gh_*` nur lesbar.
 - Setzen des `DIST_REPO_TOKEN`-Secrets im Source-Repo (Personal Access Token mit Write-Access auf `prima-materia-dist`)
 - Anlage des `prima-materia-dist`-Repos in GitHub
 - jsDelivr-Cache-Purge bei Bedarf
