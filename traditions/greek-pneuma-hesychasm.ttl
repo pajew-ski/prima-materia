@@ -1,0 +1,41 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Stoic physics and Byzantine hesychasm
+#
+# Two Greek strands that are often read as testimony to a bodily energy and
+# are here entered at the strength the sources actually carry. Stoic pneuma
+# is a cosmological principle of cohesion, not a faculty to be exercised.
+# The hesychast claim is that an uncreated light shines through soul and body
+# alike, which is close to the notion of an emanation and far from the notion
+# of one the practitioner colours at will.
+#
+
+pmt:StoicPhysics a pm:Tradition ;
+    rdfs:label "Stoic physics"@en, "Stoische Physik"@de ;
+    skos:definition "The Stoic doctrine of a fiery breath that pervades matter and holds it together."@en ;
+    dcterms:source "Chrysippus, in Galen, De placitis Hippocratis et Platonis V.3.8" .
+
+pmc:Pneuma a pm:Conceptualizing ;
+    rdfs:label "Pneuma"@en, "Pneuma"@de ;
+    skos:definition "A mixture of air and fire that pervades bodies and, by its tension, holds them in cohesion; a principle of the world rather than a capacity of a practitioner."@en ;
+    skos:note "The associated doctrines are that of tension and that of total mixture, by which two bodies occupy the same place throughout."@en ;
+    pm:withinTradition pmt:StoicPhysics ;
+    dcterms:source "Chrysippus, in Galen, De placitis Hippocratis et Platonis V.3.8" .
+
+pmt:Hesychasm a pm:Tradition ;
+    rdfs:label "Hesychasm"@en, "Hesychasmus"@de ;
+    skos:definition "The Byzantine tradition of the prayer of the heart and of the vision of the uncreated light, defended in the fourteenth century against the objection that such a light must be created."@en ;
+    dcterms:source "Gregory Palamas, Triads in Defence of the Holy Hesychasts" .
+
+pmc:UncreatedLight a pm:Conceptualizing ;
+    rdfs:label "Uncreated light"@en, "Ungeschaffenes Licht"@de ;
+    skos:definition "A light held to be uncreated, and held to shine through the whole person, body as well as soul; the defence is explicitly that the body participates and is not merely the site of an event in the soul."@en ;
+    skos:note "This is a claim about what shines through the practitioner, not about an emanation the practitioner produces or directs."@en ;
+    pm:withinTradition pmt:Hesychasm ;
+    dcterms:source "Gregory Palamas, Triads in Defence of the Holy Hesychasts (trans. Gendle 1983)" .
