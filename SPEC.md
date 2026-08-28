@@ -222,7 +222,7 @@ Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte sp
 
 **Akzeptanzkriterien Phase 1:**
 
-- [ ] Drei Tradition-TTL-Dateien existieren und validieren gegen SHACL-Shapes
+- [ ] Die Tradition-TTL-Dateien existieren und validieren gegen SHACL-Shapes
 - [ ] Keine Verwendung verbotener statischer Substanzklassen (siehe Abschnitt 3, Parameter 1)
 - [ ] Alle Konzepte tragen `dcterms:source` mit Primärquellen-Referenz
 - [ ] Distribution-Repository wird auto-gebaut und gepusht
