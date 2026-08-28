@@ -147,11 +147,17 @@ pm:independentAttestation a owl:ObjectProperty ;
 # Properties of practice and caution
 #
 
+pm:byPractice a owl:ObjectProperty ;
+    rdfs:label "by practice"@en, "durch Praxis"@de ;
+    rdfs:domain pm:Yielding ;
+    rdfs:range pm:Practicing ;
+    skos:definition "The practice a yielding claim proceeds from."@en .
+
 pm:yieldsCapacity a owl:ObjectProperty ;
     rdfs:label "yields capacity"@en, "bringt Vermögen hervor"@de ;
-    rdfs:domain pm:Practicing ;
+    rdfs:domain pm:Yielding ;
     rdfs:range pm:Conceptualizing ;
-    skos:definition "The capacity a practice is said to produce. That the tradition says so is the claim; that it produces it is not asserted."@en .
+    skos:definition "The capacity a yielding claim arrives at. That the tradition says so is the claim; that the practice produces it is not asserted."@en .
 
 pm:cautionsAbout a owl:ObjectProperty ;
     rdfs:label "cautions about"@en, "warnt vor"@de ;
