@@ -50,9 +50,9 @@ def test_substance_class_is_rejected() -> None:
 
 def test_concept_instance_without_source_is_rejected() -> None:
     offending = """
-    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
-    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
-    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
+    @prefix pm:  <https://w3id.org/prima-materia/ontology#> .
+    @prefix pmc: <https://w3id.org/prima-materia/concepts/> .
+    @prefix pmt: <https://w3id.org/prima-materia/traditions/> .
 
     pmc:OrphanConcept a pm:Conceptualizing ;
         pm:withinTradition pmt:Placeholder .
