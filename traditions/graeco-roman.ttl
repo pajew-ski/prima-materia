@@ -1,0 +1,58 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Graeco-Roman testimony
+#
+# Two claim types that the Indian and Buddhist files do not contain, and that
+# the attestation modes exist to keep apart. The soul-journey reports are
+# transmitted at second hand, by historians reporting what was said of men
+# long dead. The healing report is transmitted by historians who appeal to
+# living eyewitnesses. Neither is a practice manual, and neither is entered
+# here as one.
+#
+
+pmt:GraecoRoman a pm:Tradition ;
+    rdfs:label "Graeco-Roman testimony"@en, "Griechisch-römisches Zeugnis"@de ;
+    skos:definition "The transmission of Greek and Latin historiographical and doxographical reports of extraordinary capacities."@en ;
+    dcterms:source "Herodotus, Histories IV.13-16" .
+
+pmc:SoulJourney a pm:Conceptualizing ;
+    rdfs:label "Journey of the soul apart from the body"@en, "Seelenreise ohne den Körper"@de ;
+    skos:definition "The claim that the soul leaves the body and returns to it, reported of Aristeas of Proconnesus and of Hermotimus of Clazomenae."@en ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Herodotus, Histories IV.13-16", "Pliny, Naturalis Historia VII.174" .
+
+pmc:AristeasJourney a pm:Attributing ;
+    rdfs:label "The soul-journey ascribed to Aristeas"@en, "Die Seelenreise, Aristeas zugeschrieben"@de ;
+    skos:definition "A capacity ascribed to a figure who is not available to report it, in a historian's account of what was told of him."@en ;
+    pm:ascribedCapacity pmc:SoulJourney ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Herodotus, Histories IV.13-16", "Pliny, Naturalis Historia VII.174" .
+
+pmc:HealingByTouch a pm:Conceptualizing ;
+    rdfs:label "Healing by touch"@en, "Heilung durch Berührung"@de ;
+    skos:definition "The restoration of a withered hand and of sight, ascribed to the touch of a ruler in Alexandria."@en ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Tacitus, Historiae IV.81", "Suetonius, Divus Vespasianus 7" .
+
+pmc:VespasianHealing a pm:Attributing ;
+    rdfs:label "Healing by touch ascribed to Vespasian"@en, "Heilung durch Berührung, Vespasian zugeschrieben"@de ;
+    skos:definition "A capacity ascribed to a named ruler, in an account whose author remarks that those who were present still tell it although there is now no reward for the lie."@en ;
+    skos:note "The remark about eyewitnesses is part of the ascription, not an endorsement of it. It records how the historian wanted the claim received."@en ;
+    pm:ascribedTo pmc:Vespasian ;
+    pm:ascribedCapacity pmc:HealingByTouch ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Tacitus, Historiae IV.81", "Suetonius, Divus Vespasianus 7" .
+
+pmc:Vespasian a pm:Conceptualizing ;
+    rdfs:label "Vespasian"@en, "Vespasian"@de ;
+    skos:definition "The Roman emperor to whom the Alexandrian healings are ascribed by two independent historians."@en ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Tacitus, Historiae IV.81" .
