@@ -109,20 +109,52 @@ pm:ConvergenceShape a sh:NodeShape ;
     sh:message "A convergence states either a documented transmission path or an attestation without one." .
 
 #
-# A protocol that names no falsifying condition, or no date on which its count
-# was last carried forward, claims a scrutiny it does not document.
+# A protocol that names no author, or no date on which its count was last
+# carried forward, claims a scrutiny it does not document.
 #
 pm:TestingShape a sh:NodeShape ;
     sh:targetClass pm:Testing ;
     sh:property [
-        sh:path pm:falsifiedBy ;
+        sh:path pm:examinationState ;
         sh:minCount 1 ;
-        sh:message "A test without a stated falsifying condition is not a test."
+        sh:message "Every protocol must state how far the examination has been carried."
+    ] ;
+    sh:property [
+        sh:path pm:examinedBy ;
+        sh:minCount 1 ;
+        sh:message "Every protocol must name who devised or carried it."
     ] ;
     sh:property [
         sh:path pm:protocolUpdated ;
         sh:minCount 1 ;
         sh:message "A protocol must state the date its count was last carried forward."
+    ] .
+
+#
+# The falsifying condition may be absent in exactly one case: where the state
+# says outright that no procedure has been devised. Everywhere else its
+# absence would let a claim drift silently from unexamined to examined and
+# unsupported, which are not the same finding and must never read alike.
+#
+pm:FalsifierRequiredShape a sh:NodeShape ;
+    sh:targetClass pm:Testing ;
+    sh:or (
+        [ sh:property [ sh:path pm:falsifiedBy ; sh:minCount 1 ] ]
+        [ sh:property [ sh:path pm:examinationState ; sh:hasValue pm:noProcedureDevised ] ]
+    ) ;
+    sh:message "A protocol needs a stated falsifying condition unless its state is pm:noProcedureDevised." .
+
+#
+# Evidence is literature too. A modern study enters the record by the same
+# rule as a received work: as something a reader can obtain, not as a place.
+#
+pm:EvidenceIsLiteratureShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:evidenceFrom ;
+    sh:property [
+        sh:path pm:evidenceFrom ;
+        sh:nodeKind sh:Literal ;
+        sh:not [ sh:pattern "^https?://" ] ;
+        sh:message "pm:evidenceFrom carries a bibliographic reference or a work identifier, never a URL."
     ] .
 
 #

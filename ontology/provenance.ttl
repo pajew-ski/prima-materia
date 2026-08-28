@@ -63,6 +63,28 @@ pm:Cautioning a owl:Class ;
     skos:definition "The act, within a tradition, of warning against a capacity, a practice, or the pursuit of either."@en ;
     skos:note "Held as a node rather than as commentary, because what a tradition warns against is part of what it teaches. A record that carries only the capacities and not the cautions misreports the tradition it claims to hold."@en .
 
+pm:ExaminationState a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Examination State"@en, "Prüfstand"@de ;
+    skos:definition "The standing of a protocol: how far the attempt to fail a claim has actually been carried."@en ;
+    skos:note "The first two states and the third must never collapse into one another. A claim nobody has devised a way to examine is not a claim that has been examined and found wanting. A record that reports both as unsupported would not be reporting on the claims but on the reach of its own instruments."@en .
+
+pm:noProcedureDevised a pm:ExaminationState ;
+    rdfs:label "No procedure devised"@en, "Kein Verfahren ersonnen"@de ;
+    skos:definition "Nobody has stated a condition under which the claim would count as refuted. This is a statement about the means of examination, not about the claim."@en .
+
+pm:procedureWithoutCases a pm:ExaminationState ;
+    rdfs:label "Procedure without cases"@en, "Verfahren ohne Fälle"@de ;
+    skos:definition "A falsifying condition is stated and no case has yet been recorded against it."@en .
+
+pm:casesWithoutDeviation a pm:ExaminationState ;
+    rdfs:label "Cases without deviation"@en, "Fälle ohne Abweichung"@de ;
+    skos:definition "Cases have been recorded and show no deviation from the stated base rate."@en .
+
+pm:casesWithDeviation a pm:ExaminationState ;
+    rdfs:label "Cases with deviation"@en, "Fälle mit Abweichung"@de ;
+    skos:definition "Cases have been recorded and show a deviation from the stated base rate. What deviates is what the protocol measured, which is rarely the whole of what the claim asserts."@en .
+
 #
 # Modes of attestation
 #
@@ -167,6 +189,23 @@ pm:cautionsAbout a owl:ObjectProperty ;
 #
 # Properties of testing
 #
+
+pm:examinationState a owl:ObjectProperty ;
+    rdfs:label "examination state"@en, "Prüfstand"@de ;
+    rdfs:domain pm:Testing ;
+    rdfs:range pm:ExaminationState ;
+    skos:definition "How far the attempt to fail the claim has been carried."@en .
+
+pm:examinedBy a owl:DatatypeProperty ;
+    rdfs:label "examined by"@en, "geprüft von"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "Who devised or carried the protocol. A protocol without a named author is unaccountable, and an unaccountable protocol is not evidence of anything."@en .
+
+pm:evidenceFrom a owl:DatatypeProperty ;
+    rdfs:label "evidence from"@en, "Evidenz aus"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "A modern work bearing on the claim under examination, given as a bibliographic reference or a work identifier."@en ;
+    skos:note "Deliberately not dcterms:source. A modern study is never a witness to a tradition and must never appear as the source of one of its claims; it bears on a claim only as evidence inside an examination. Keeping the two predicates apart is what allows research to enter the record at all without loosening the rule that sources are received works."@en .
 
 pm:tests a owl:ObjectProperty ;
     rdfs:label "tests"@en, "prüft"@de ;

@@ -20,6 +20,7 @@ DEFAULT_DATA_DIRS = (
     REPO_ROOT / "ontology",
     REPO_ROOT / "traditions",
     REPO_ROOT / "convergences",
+    REPO_ROOT / "examinations",
 )
 
 

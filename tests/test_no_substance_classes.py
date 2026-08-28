@@ -7,7 +7,12 @@ from pathlib import Path
 import pytest
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-SCAN_DIRS = (REPO_ROOT / "ontology", REPO_ROOT / "traditions", REPO_ROOT / "convergences")
+SCAN_DIRS = (
+    REPO_ROOT / "ontology",
+    REPO_ROOT / "traditions",
+    REPO_ROOT / "convergences",
+    REPO_ROOT / "examinations",
+)
 
 FORBIDDEN_LOCAL_NAMES = ("Symbol", "Concept", "Entity", "Object")
 FORBIDDEN_FULL_IRI = "https://pajew.ski/prima-materia/ontology#"

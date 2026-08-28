@@ -18,6 +18,7 @@ DEFAULT_INPUTS = (
     REPO_ROOT / "ontology",
     REPO_ROOT / "traditions",
     REPO_ROOT / "convergences",
+    REPO_ROOT / "examinations",
 )
 DEFAULT_OUTPUT = REPO_ROOT / "build" / "prima-materia.ttl"
 

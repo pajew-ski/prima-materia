@@ -1,0 +1,36 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — examinations
+#
+# An examination belongs to no tradition, which is why it lives here and not
+# in traditions/. It points at a single yielding claim and states what would
+# have to happen for that claim to count as refuted.
+#
+# Two rules govern this directory.
+#
+# A node is created only when someone actually takes the examination up. A
+# stub for every claim in the collection would double the graph and say
+# nothing that the absence of a node does not already say.
+#
+# Modern research enters through pm:evidenceFrom and never through
+# dcterms:source. A study is not a witness to a tradition. It bears on a
+# claim from outside, which is a different role and gets a different edge.
+#
+
+pmc:TummoHeatExamination a pm:Testing ;
+    rdfs:label "Examination of the tummo heat claim"@en, "Prüfung der Tummo-Hitze-Behauptung"@de ;
+    skos:definition "An examination of the claim that the tummo practice produces inner heat, taken up because this is the one pairing in the collection whose capacity has an outward side that instruments reach."@en ;
+    skos:note "What the measurements bear on is the somatic claim and nothing beyond it. Reported temperature rises are consistent with the practice producing heat; they say nothing about the cosmology the practice is embedded in, and the node must not be read as though they did. The reported effect also depends on the forceful-breath component together with the visualisation, which means the claim that is actually supported is narrower than the one the tradition makes."@en ;
+    pm:tests pmc:TummoYieldsInnerHeat ;
+    pm:falsifiedBy "Practitioners of the forceful-breath tummo method show no rise in measured body temperature beyond that produced by the breathing alone in matched non-practitioners." ;
+    pm:baseRate "Temperature change under comparable breathing effort without the practice, in matched participants." ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:examinedBy "H. Benson and colleagues; M. Kozhevnikov and colleagues" ;
+    pm:evidenceFrom "H. Benson et al., Body temperature changes during the practice of g-tummo yoga, Nature 295 (1982), 234-236" ;
+    pm:evidenceFrom "M. Kozhevnikov et al., Neurocognitive and somatic components of temperature increases during g-tummo meditation, PLoS ONE 8(3) (2013), e58244, doi:10.1371/journal.pone.0058244" ;
+    pm:protocolUpdated "2026-08-28" ;
+    pm:attestedBy pm:protocolledPractice .
