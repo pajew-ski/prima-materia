@@ -1,0 +1,50 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Tibetan tantric tradition
+#
+# The transmission is documented rather than inferred: the six yogas reach
+# Tibet from the Indian mahāsiddha Nāropa through Marpa the translator. Any
+# correspondence between this file and the Indian ones is therefore reception
+# along a known route, not independent attestation, and must not be counted
+# as convergence.
+#
+
+pmt:TibetanTantric a pm:Tradition ;
+    rdfs:label "Tibetan tantric tradition"@en, "Tibetisch-tantrische Überlieferung"@de ;
+    skos:definition "The transmission of the Indian tantric completion-stage practices in Tibet, of which the six yogas of Nāropa are the best documented cycle."@en ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+pmc:InnerHeat a pm:Conceptualizing ;
+    rdfs:label "Inner heat"@en, "Innere Hitze"@de ;
+    skos:definition "Heat held to be generated within the body by deliberate practice rather than received from outside it."@en ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+pmc:Rtsa a pm:Conceptualizing ;
+    rdfs:label "Channels"@en, "Kanäle"@de ;
+    skos:definition "The channels of the subtle body through which the winds are held to move; Tsongkhapa's presentation counts one hundred and twenty principal ones."@en ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+pmp:Tummo a pm:Practicing ;
+    rdfs:label "Tummo"@en, "Tummo"@de ;
+    skos:definition "The generation of inner heat, presented in three components: the channels, the syllables, and the heat meditation itself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TibetanTantric ;
+    pm:yieldsCapacity pmc:InnerHeat ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+pmp:ChannelPurification a pm:Practicing ;
+    rdfs:label "Purification of the channels"@en, "Reinigung der Kanäle"@de ;
+    skos:definition "A preliminary in which the channels are cleared by visualisation before the heat practice proper; the tradition's own form of the notion that a blockage is a place the energy does not reach."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TibetanTantric ;
+    pm:yieldsCapacity pmc:Rtsa ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
