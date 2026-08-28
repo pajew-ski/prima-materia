@@ -126,6 +126,39 @@ pm:TestingShape a sh:NodeShape ;
     ] .
 
 #
+# A practice is a claim about what a tradition does, and carries the same
+# burden as a claim about what it holds.
+#
+pm:PracticeShape a sh:NodeShape ;
+    sh:targetClass pm:Practicing ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every practice requires at least one dcterms:source."
+    ] ;
+    sh:property [
+        sh:path pm:withinTradition ;
+        sh:minCount 1 ;
+        sh:message "Every practice must be situated within at least one tradition."
+    ] .
+
+#
+# A warning without its object is a mood, not a claim.
+#
+pm:CautioningShape a sh:NodeShape ;
+    sh:targetClass pm:Cautioning ;
+    sh:property [
+        sh:path pm:cautionsAbout ;
+        sh:minCount 1 ;
+        sh:message "Every caution must name what it warns against."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every caution requires at least one dcterms:source."
+    ] .
+
+#
 # Sources are literature, not links. A URL names a location that changes and
 # that only its author can vouch for; a work names something a reader can
 # obtain independently of this graph. The rule is machine-checked here rather
