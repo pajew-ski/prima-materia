@@ -430,12 +430,18 @@ Pytest-Tests in `tests/`:
 
 **Code & Ontologie:** CC0 1.0 Universal (Public Domain Dedication). Datei `LICENSE` enthält den vollständigen CC0-Text.
 
-**Quellenführung:** Jede Konzept-Instanz **muss** mindestens ein `dcterms:source` mit einer der folgenden Formen tragen:
+**Quellenführung.** Der Graph enthält keine Wahrheiten, sondern Behauptungen mit Herkunft. Die Herkunft zu prüfen ist die Kernaufgabe jedes Agenten an diesem Repo; der Mensch ist die letzte Instanz vor dem Merge, nicht die einzige.
 
-- Bibliographische Referenz als Plain-String: `"Irenaeus, Adversus Haereses I.1 (c. 180 CE)"`
-- DOI als URI: `<https://doi.org/...>`
-- ISBN-URN: `<urn:isbn:978-...>`
-- URL einer Open-Access-Edition
+Jede Behauptung **muss** mindestens ein `dcterms:source` tragen, und zwar als bibliographische Referenz auf ein überliefertes Werk mit der Stelle, die sie trägt: `"1 Henoch 8:1"`, `"Irenaeus, Adversus Haereses I.1"`, `"Patañjali, Yogasūtra III.16-49"`.
+
+Ausgeschlossen sind:
+
+- **URLs jeder Art**, DOI und Open-Access-Editionen eingeschlossen. Ein Link benennt einen Ort, der sich ändert und für den nur sein Betreiber einsteht; ein Werk benennt etwas, das ein Leser unabhängig von diesem Graphen beschaffen kann. `pm:SourceIsLiteratureShape` weist `dcterms:source`-Werte mit `http`-Präfix maschinell ab.
+- **Videos, Blogs, Wikipedia, Foren.** Rechercheeinstieg, nie Beleg. Zurückverfolgen bis zum Werk, dann zählt das Werk.
+- **Unveröffentlichte eigene Texte, Arbeitsfassungen, Methodenentwürfe**, auch die des Betreibers.
+- **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen.
+
+**Richtungssinn.** prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden, nicht umgekehrt. Ein Methodenentwurf ist keine Quelle, sondern eine Menge von Behauptungen, die einzeln gegen überliefertes Schrifttum zu grounden sind. Was sich nicht grounden lässt, bleibt Entwurf und kommt nicht in den Graphen.
 
 **Verboten:** Reproduktion urheberrechtlich geschützter Primärtexte. Konzept-Definitionen sind eigene Paraphrasen, niemals Direktzitate aus modernen Übersetzungen.
 
