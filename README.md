@@ -20,7 +20,7 @@ Bhartṛhari's Sphoṭa principle.
 ## Website
 
 The ontology is published as a browsable page at
-<https://pajew-ski.github.io/prima-materia/>: every class, property, and
+<https://pajew.ski/prima-materia/>: every class, property, and
 instance drawn as the graph it is, with definitions, sources, and bilingual
 labels. Selecting a term gives it a URL, so a definition can be cited rather
 than described.
