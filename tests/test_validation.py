@@ -111,8 +111,8 @@ def test_url_source_is_rejected() -> None:
 
 def test_attribution_without_attestation_is_rejected() -> None:
     offending = """
-    @prefix pm:      <https://w3id.org/prima-materia/ontology#> .
-    @prefix pmc:     <https://w3id.org/prima-materia/concepts/> .
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
     @prefix dcterms: <http://purl.org/dc/terms/> .
 
     pmc:UnattestedAscription a pm:Attributing ;
