@@ -112,6 +112,8 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 - Bei mehrdeutiger Spezifikation: **fragen, nicht raten**
 - Bei Scope-Erweiterung über Phase 0/1 hinaus: **vorher mit User abklären**
 
+**Löst eine Validierung aus, wird sie gemeldet, nicht umformuliert.** Das gilt für SHACL, für die Tests und für jeden vorgeschalteten Wächter im Schreibweg. Hat ein Wächter falsch ausgelöst, ist das ein Befund über den Wächter und gehört berichtet, damit er repariert wird. Eine Umgehung, die nicht auffällt, repariert nichts und kostet das Vertrauen in genau die Vorrichtung, die den Menschen am Merge entlasten soll. Ob der Alarm berechtigt war, entscheidet nicht, wer schreiben will.
+
 ## Repositories
 
 - **Source (dieses Repo):** `pajew-ski/prima-materia` — manuell editieren
