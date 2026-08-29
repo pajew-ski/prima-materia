@@ -255,12 +255,12 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 - [ ] `pytest tests/` läuft grün
 - [ ] GitHub Action `validate.yml` läuft grün auf Push to main
 
-### Phase 1 — Seed Corpus
+### Phase 1 — Seed Corpus (geliefert)
 
 **Deliverables:**
 
-1. `traditions/valentinian.ttl` — Valentinianische Gnosis als Prozess-Ontologie. Migration der bestehenden Neo4j-Ontologie (Aeonen, Syzygies, Pleroma, Sophia-Fall, etc.) in die `pm:`-Klassenstruktur. Konkret: bestehende `Aeon`-Knoten werden zu `pm:Conceptualizing`-Instanzen mit `pm:withinTradition pmt:ValentinianGnosis`.
-2. `traditions/greek-cosmological.ttl` — 13-Prinzipien-System (Kairos durch Hen) inklusive der hierarchischen Struktur und der existierenden SVG-Sigil-Referenzen via `pm:hasSymbolicForm`.
+1. Der Seed-Korpus steht. Er besteht aus den Traditionsdateien in `traditions/`, den traditionsübergreifenden Knoten in `convergences/` und dem ersten Prüfprotokoll in `examinations/`. Die früher an dieser Stelle genannten Dateien `traditions/valentinian.ttl` und `traditions/greek-cosmological.ttl` gehören nicht dazu und wurden nie angelegt. Die Planung ist hier hinter dem Bestand zurückgeblieben; maßgeblich ist der Dateibaum, nicht diese Liste. Wer sie noch anlegt, arbeitet gegen einen Plan statt gegen das Repo.
+2. Von hier an wächst der Korpus nicht mehr nach Plan, sondern nach den zwei Eingängen in Abschnitt 14: dem Bedarf aus offenen Behauptungs-Issues und dem Engpass der unabhängigen Bezeugung.
 3. ~~`traditions/opus-purum-axioms.ttl`~~ — **gestrichen.** Der Richtungssinn in Abschnitt 10 schließt das aus: prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden. Die Axiome sind unveröffentlichtes eigenes Material und tragen keine Quelle im Sinne dieser Spezifikation. Ihre Bestandteile können einzeln eingehen, sobald sie gegen überliefertes Schrifttum gegroundet sind, dann aber unter der Tradition, aus der der Beleg stammt, nicht unter dem Namen des Entwurfs.
 4. `prima-materia-dist`-Repository deployen — automatischer Build & Push via Action `distribute.yml`.
 5. jsDelivr-CDN-Verifikation — Distribution-URLs sind via `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.jsonld` abrufbar.
