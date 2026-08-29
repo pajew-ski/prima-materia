@@ -28,6 +28,39 @@ pmc:Qi a pm:Conceptualizing ;
     pm:withinTradition pmt:Daoist ;
     dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" .
 
+pmc:EmptyingOfTheHeart a pm:Conceptualizing ;
+    rdfs:label "Fasting of the heart"@en, "Fasten des Herzens"@de ;
+    skos:definition "A graded emptying in which listening passes from the ears to the heart-mind and from the heart-mind to the qi, until only emptiness remains for the way to gather in."@en ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Zhuangzi 4" .
+
+pmc:QiListeningPresupposesEmptying a pm:Presupposing ;
+    rdfs:label "Attending with the qi presupposes the emptying of the heart"@en, "Das Hören mit dem Qi setzt das Leeren des Herzens voraus"@de ;
+    pm:dependentStep pmc:Qi ;
+    pm:priorStep pmc:EmptyingOfTheHeart ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "In the dialogue the disciple is told outright that he is not yet ready, and is sent back to empty the heart before anything further; the hearing that stops at the ears and the heart-mind does not reach the qi at all." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Zhuangzi 4" .
+
+pmc:NeidanThreeStages a pm:Conceptualizing ;
+    rdfs:label "The three stages of the inner elixir"@en, "Die drei Stufen des inneren Elixiers"@de ;
+    skos:definition "Refining essence into breath, breath into spirit, and spirit back into emptiness."@en ;
+    skos:note "A dating warning belongs on this node. The sequence is routinely attributed to the Cantong qi or to the Wuzhen pian, but neither carries it as a fixed numbered progression; the Wuzhen pian sets only a precedence of vital force before inner nature, and of doing before non-doing. The earliest ordered witness located for the full triad is the Yuan-period Jindan dayao."@en ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" .
+
+pmc:SpiritPresupposesBreath a pm:Presupposing ;
+    rdfs:label "Refining spirit presupposes refining breath"@en, "Die Verfeinerung des Geistes setzt die des Atems voraus"@de ;
+    pm:dependentStep pmc:NeidanThreeStages ;
+    pm:priorStep pmc:Qi ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    skos:note "Recorded from the Yuan-period witness, not from the Han or Song works to which the sequence is commonly credited."@en ;
+    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" .
+
 pmp:Xingqi a pm:Practicing ;
     rdfs:label "Circulating the qi"@en, "Zirkulation des Qi"@de ;
     skos:definition "A breath practice inscribed in forty-five characters on a twelve-sided jade block, setting out the deliberate movement of qi through the body."@en ;
