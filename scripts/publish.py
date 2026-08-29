@@ -44,6 +44,15 @@ DCTERMS = Namespace("http://purl.org/dc/terms/")
 SITE_BASE = "https://pajew.ski/prima-materia/"
 SOURCE_REPO = "https://github.com/pajew-ski/prima-materia"
 
+# Selective loading. The graph has three layers, and the namespaces already
+# mark them: pm: is vocabulary, pmt:/pmc:/pmp: is content. A cut by tradition
+# alone would not be a partition — the nodes that belong to no tradition are
+# the convergences, disputes, orderings and examinations, which is the yield of
+# the project and not a remainder. So the cut is vocabulary, one part per
+# tradition, and one part for everything that belongs to none.
+PARTS_DIR = "parts"
+VOCABULARY_BASE = "https://pajew.ski/prima-materia/ontology"
+
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
 # a pmt:/pmc: term by accident.
 PREFIXES: tuple[tuple[str, str], ...] = (
