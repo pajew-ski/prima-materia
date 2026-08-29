@@ -561,7 +561,7 @@ Labels sind kein Zustandsduplikat — den Zustand trägt offen oder geschlossen.
 |---|---|
 | `behauptung` | markiert das Issue als Behauptung, nicht als Repo-Arbeit. Ohne dieses Label ist der Tracker nach fünfzig Einträgen unlesbar |
 | `korpus:<name>` | ein Korpus, der für diese Behauptung geprüft wurde oder zu prüfen ist |
-| `strittig` | es gibt Gegenbezeugung; Ziel ist ein `pm:Disputing`-Knoten, nicht eine Verwerfung |
+| `strittig` | **zwei Quellen** widersprechen einander; Ziel ist ein `pm:Disputing`-Knoten. Nicht für den Fall, dass eine Quelle einem Methodenentwurf widerspricht: ein Entwurf ist keine Seite, und `pm:Disputing` verlangt zwei Quellen. Dieser Fall ist eine Behauptung ohne Zeugen, deren Gegenteil bezeugt ist |
 | `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
 | `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar, etwa eine Dosierungsangabe |
 | `entwurf:<name>` | Herkunft der Behauptung, wo sie aus einem Methodenentwurf stammt |
