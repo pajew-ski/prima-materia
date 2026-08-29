@@ -197,8 +197,13 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 - Setzen des `DIST_REPO_TOKEN`-Secrets im Source-Repo (Personal Access Token mit Write-Access auf `prima-materia-dist`)
 - Anlage des `prima-materia-dist`-Repos in GitHub
 - jsDelivr-Cache-Purge bei Bedarf
+- **Änderungen an `.github/workflows/*`.** Das Agenten-Token trägt keinen `workflows`-Scope; jeder Schreibversuch endet mit `403`. Offen und für den nächsten Anlauf vorgemerkt: `validate.yml` hört auf `push: [main]` und `pull_request: [main]`, also läuft auf einem `claude/**`-Branch nie etwas, und `prima_repo_check` meldet dort strukturell `kein_lauf`. Der Ablauf lautet deshalb bis auf Weiteres: PR öffnen, **dann** prüfen, bei rot nachbessern statt mergen. Behoben wäre es mit `push: branches: [main, 'claude/**']`.
 
 Bei diesen Schritten den User explizit auffordern und warten.
+
+## Bekannte Fehlalarme der Werkzeuge
+
+- Der Substanzklassen-Wächter im Schreibweg prüft **jede** TTL-Schreibung auf die vier verbotenen Namen, auch in `shapes/`. Dort müssen sie vorkommen, weil `pm:NoSubstanceClassesShape` sie verbietet, indem sie sie benennt; der zugehörige Test scannt `shapes/` folgerichtig nicht. Der Wächter ist an dieser Stelle strenger als die Regel, die er durchsetzt. **Melden, nicht umgehen** — siehe Workflow-Hygiene.
 
 ## Lizenz
 
