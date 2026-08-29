@@ -1,0 +1,68 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — orientation of a path
+#
+# Order of the file: the two scales with their values, then the two properties
+# that attach them. Nothing here is a claim about any tradition; the file adds
+# vocabulary only, and every statement about the subject matter sits on a node
+# rather than in this header. Why the file exists at all is stated on the two
+# scale classes, where it survives compilation.
+#
+
+pm:MethodOrientation a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Method Orientation"@en, "Ausrichtung der Methode"@de ;
+    skos:definition "How a path stands to the norm of the order it is transmitted in: whether its operative means keep that norm, deliberately break it, or decline the distinction. An instance of this class is a value on that axis and never a path."@en ;
+    skos:note "Held apart from pm:TelicOrientation deliberately, and that separation is the whole reason both classes exist. The two vary independently: a path can take the forbidden as its vehicle and still aim at dissolution into what exceeds the self. A scheme with one axis cannot state that case, and the terms that carry one axis — right-hand path, left-hand path — therefore report a transgressive means as though it were a separative goal. See prima-materia#52."@en ;
+    skos:note "Absence of pm:methodOrientation on a node means the axis was not determined for it. It does not mean the middle value, and it does not mean pm:normDistinctionDeclined, which is a positive claim about a source and carries the same burden as any other."@en .
+
+pm:conformingMethod a pm:MethodOrientation ;
+    rdfs:label "Conforming method"@en, "Ordnungstreue Methode"@de ;
+    skos:definition "The operative means keep the norm of the order the path is transmitted in: what is prohibited there stays prohibited here."@en .
+
+pm:transgressiveMethod a pm:MethodOrientation ;
+    rdfs:label "Transgressive method"@en, "Übertretende Methode"@de ;
+    skos:definition "The operative means take what the surrounding order prohibits and use the force of the prohibition itself as the vehicle. The transgression is prescribed, not incidental, and it is bounded by the rite that prescribes it."@en ;
+    skos:note "Not the same as licence. A path is transgressive on this axis only where a source sets the breach as a means; a practice that merely fails to observe a norm is not oriented by it at all."@en .
+
+pm:normDistinctionDeclined a pm:MethodOrientation ;
+    rdfs:label "Norm distinction declined"@en, "Abgelehnte Normunterscheidung"@de ;
+    skos:definition "The source holds that the distinction does not apply to its path: nothing is kept and nothing is broken, because it denies that anything needs to be renounced, purified or transformed."@en ;
+    skos:note "The value exists because a path that declines the axis is not the same as one whose position on it is unknown, and a scale without it would force the first to be recorded as the second. It is asserted only where a source says so."@en .
+
+pm:TelicOrientation a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Telic Orientation"@en, "Ausrichtung des Zieles"@de ;
+    skos:definition "What a path says becomes of the bounded self at its end: whether the self is to be dissolved into what exceeds it, strengthened and preserved as its own absolute, or whether the path declines the question. An instance of this class is a value on that axis and never a path."@en ;
+    skos:note "This is the axis the Western terms were built to carry, and the axis they carry badly, because they carry the other one at the same time. A record that wants to state where a path claims to end has to be able to state that without also stating how it proceeds. See prima-materia#52."@en ;
+    skos:note "The values name what a source claims, not what happens. Nothing on this axis is examined by holding it; where somebody takes up the examination, that is a pm:Testing node pointing at the claim, and the examination states of the two values are not symmetric."@en .
+
+pm:unitiveTelos a pm:TelicOrientation ;
+    rdfs:label "Unitive telos"@en, "Vereinigendes Ziel"@de ;
+    skos:definition "The path claims that the bounded self is dissolved into, or united with, something that exceeds it, and treats the persistence of the separate self as what is to be given up."@en .
+
+pm:separativeTelos a pm:TelicOrientation ;
+    rdfs:label "Separative telos"@en, "Absonderndes Ziel"@de ;
+    skos:definition "The path claims that the bounded self is to be strengthened and kept as its own absolute, and treats its dissolution as what is to be avoided."@en ;
+    skos:note "Distinct from self-assertion, ambition or the pursuit of power, none of which say anything about an end state. What places a path here is a claim about where it ends, not about how its practitioners behave."@en .
+
+pm:selfBoundaryDeclined a pm:TelicOrientation ;
+    rdfs:label "Self boundary declined"@en, "Abgelehnte Selbstgrenze"@de ;
+    skos:definition "The source holds that the question is malformed for its path: there is no bounded self that could either be dissolved or preserved, so neither end state is what it aims at."@en ;
+    skos:note "As with pm:normDistinctionDeclined, this is a positive claim about a source and not a place to put an undetermined case."@en .
+
+pm:methodOrientation a owl:ObjectProperty ;
+    rdfs:label "method orientation"@en, "Ausrichtung der Methode"@de ;
+    rdfs:range pm:MethodOrientation ;
+    skos:definition "Places a tradition, a practice or a claim on the axis of method. Asserting it is a claim about a source and carries the same burden as any other: a passage, an edition, and the counter-search."@en ;
+    skos:note "No domain is declared, deliberately. The axis is stated of whatever a source states it of — a transmission as a whole, a single practice, a stage within one — and a declared domain would force the level before the material has settled it."@en .
+
+pm:telicOrientation a owl:ObjectProperty ;
+    rdfs:label "telic orientation"@en, "Ausrichtung des Zieles"@de ;
+    rdfs:range pm:TelicOrientation ;
+    skos:definition "Places a tradition, a practice or a claim on the axis of the end state. Asserting it is a claim about a source and carries the same burden as any other."@en ;
+    skos:note "Where a source claims one end state for a stage and another for the whole, both are stated on their own nodes rather than averaged. An averaged orientation reports a path no source teaches, in the same way an averaged reading reports a text no witness gives."@en .
