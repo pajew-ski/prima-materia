@@ -4,7 +4,21 @@
 
 ## 0. Mission & Kontext
 
-**prima-materia** ist eine Open-Data-Ontologie für magisches und esoterisches Wissen, gestaltet als maschinenlesbares semantisches Substrat für LLM-Agenten und Knowledge-Graph-Systeme. Das Projekt ist Teil einer übergeordneten Architektur — es bildet die *undifferenzierte Ursubstanz*, auf der das **Opus Purum** (separates Projekt) operiert.
+**prima-materia** ist eine Open-Data-Ontologie für magisches und esoterisches Wissen, eine **Prüfstelle, keine Sammlung**. Sie nimmt eine Behauptung über ein magisches oder kontemplatives Vermögen auf, trennt sie von ihrer Beglaubigung und hält beide getrennt, damit sichtbar bleibt, worauf sie steht: auf einem überlieferten Text, auf einem modernen Bearbeiter, oder auf nichts. Aus dem geprüften Bestand entsteht das eigentliche Werk, eine Karte, die durch Überlagerung der alten Traditionen zeigt, wo sie sich decken, wo sie sich widersprechen und was tatsächlich Wirkung erzielt, die sich messen lässt.
+
+**Das Ziel dahinter.** Magie in ihren Konzepten verstehen und lehren können. Auf dem Weg dorthin die eigenen menschlichen und übermenschlichen Vermögen aktivieren oder zurückgewinnen. Und die Ergebnisse frei teilen, damit andere zu ihrem vollen Potenzial finden.
+
+**Warum CC0 keine Lizenzentscheidung ist.** Magisches und kontemplatives Wissen war dreitausend Jahre lang durch Initiation, Linie, Geheimhaltung und Zahlung verschlossen. Dieser Verschluss wirkt wie Armut: er entscheidet über Entfaltung nach Zugehörigkeit statt nach Vermögen. Die Freigabe ins Gemeingut ist deshalb nicht die Vertriebsform des Projekts, sondern seine Maßnahme.
+
+**Daraus das Kriterium, das jede Recherche, jede Fragestellung und jeden Eintrag trägt:**
+
+> **Wertvoll ist, was ein Tor beseitigt.**
+
+Die Unterscheidung von bezeugt und erschlossen beseitigt das Tor der Autorität: niemand braucht einen Lehrer, um zu wissen, worauf eine Behauptung steht. Die Voraussetzungsketten beseitigen das Tor der Reihenfolge, die Traditionen zurückgehalten haben. Die Prüfung beseitigt das Tor der unwiderlegbaren Behauptung. Die Konvergenz beseitigt das Tor der Linienzugehörigkeit, weil niemand in einer Tradition stehen muss, um zu sehen, was mehrere sagen.
+
+Praktische Folge für die Priorisierung: der wertvollste Knoten ist nicht der, den der Betreiber gerade braucht, sondern der, der anderswo am zuverlässigsten falsch berichtet wird.
+
+Das Projekt ist Teil einer übergeordneten Architektur — es ist die Basis, aus der die Methoden des **Opus Purum** (separates Projekt) extrahiert werden. Die Richtung läuft vom Entwurf über die Zerlegung und das Grounding zu dem, was übrig bleibt, und erst von dort zur Methode. Der Graph ist deshalb nicht die *undifferenzierte Ursubstanz*, als die frühere Fassungen dieses Dokuments ihn beschrieben haben. Die Ursubstanz ist der ungeprüfte Entwurf; dies hier ist die Probe auf seinen Gehalt.
 
 Die ontologische Besonderheit: prima-materia folgt einem **bewusstsein-ersten** Designprinzip (Consciousness-First Ontology). Die Klassen modellieren Prozesse statt Substanzen, die Triples werden in `AwarenessContext`-named-graphs eingebettet, und semantische Bedeutung emergiert aus Subgraph-Clustern (Sphoṭa-Prinzip), nicht aus isolierten Knoten.
 
