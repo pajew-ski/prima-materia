@@ -176,6 +176,14 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 - Bei mehrdeutiger Spezifikation: **fragen, nicht raten**
 - Bei Scope-Erweiterung über Phase 0/1 hinaus: **vorher mit User abklären**
 
+**Ein neuer Datenordner muss an vier Stellen nachgezogen werden**, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`. Nichts schlägt fehl, wenn eine davon vergessen wird; die Dateien erscheinen einfach nicht.
+
+**Jedes neue Shape braucht einen Fixture, der zeigt, dass es feuert.** Ein Wächter, von dem nie gezeigt wurde, dass er auslöst, ist nicht als funktionierend bekannt. Hat das Shape eine Ausnahme, braucht es zusätzlich einen positiven Fixture für die Ausnahme, sonst ist unbekannt, ob die Ausnahme greift.
+
+**Kein Vokabular auf Vorrat.** Eine Klasse oder Property entsteht, wenn Material sie erzwingt, und mit ihrem ersten belegten Knoten im selben PR. Unbelegtes Vokabular ist derselbe Fehler wie ein unbelegter Knoten, eine Ebene höher.
+
+**Kein Prüfknoten-Stub pro Behauptung.** `pm:Testing` entsteht, wenn jemand die Prüfung aufnimmt. Das Fehlen eines Knotens sagt bereits, was ein Knoten mit Stand „ungeprüft" sagen würde, und kostet nichts.
+
 **Löst eine Validierung aus, wird sie gemeldet, nicht umformuliert.** Das gilt für SHACL, für die Tests und für jeden vorgeschalteten Wächter im Schreibweg. Hat ein Wächter falsch ausgelöst, ist das ein Befund über den Wächter und gehört berichtet, damit er repariert wird. Eine Umgehung, die nicht auffällt, repariert nichts und kostet das Vertrauen in genau die Vorrichtung, die den Menschen am Merge entlasten soll. Ob der Alarm berechtigt war, entscheidet nicht, wer schreiben will.
 
 ## Repositories
