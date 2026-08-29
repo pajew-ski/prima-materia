@@ -25,6 +25,20 @@ instance drawn as the graph it is, with definitions, sources, and bilingual
 labels. Selecting a term gives it a URL, so a definition can be cited rather
 than described.
 
+The page can be asked questions and can be redrawn. Search forgives the
+spelling of a transliteration, follows the words a term keeps company with —
+so *rapture* reaches Pīti and *Verzückung* reaches both — carries a match to
+its neighbours over the graph, and says of every result why it is one.
+Filters narrow the field and audit it: `type:Disputing` for where the
+witnesses disagree, `tradition:Daoist`, `source:Visuddhimagga`,
+`-has:source` for what asserts without saying on what. Seven arrangements
+answer seven different questions — the vocabulary's strata, what stands under
+which class, which tradition carries what, how far each kind of claim has got,
+what the graph hangs on, what clusters unbidden, and a cross-tabulation of
+traditions against claim forms whose empty cells are the finding. The
+arrangement, the query and the term are all in the URL, so a particular
+reading of the corpus can be sent rather than described.
+
 The site is built from the same sources as the distribution artefacts and
 deployed by the `Pages` workflow on every push to `main`. It also serves
 `prima-materia.ttl`, `prima-materia.jsonld`, and `context.jsonld`, so the

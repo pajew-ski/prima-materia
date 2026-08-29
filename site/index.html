@@ -29,8 +29,25 @@
 
     <section id="graph">
       <h2>The ontology</h2>
+      <p>Ask the corpus a question, or change what the drawing is drawing. Spelling is forgiven, words that keep company in the same term are followed, and <code>kind:</code>, <code>type:</code>, <code>tradition:</code>, <code>source:</code> and <code>has:</code> narrow the field — <code>-has:source</code> for what asserts without saying on what.</p>
+
+      <div class="toolbar">
+        <div class="search">
+          <label class="visually-hidden" for="query">Search the ontology</label>
+          <input id="query" type="search" autocomplete="off" spellcheck="false"
+                 placeholder="Search terms, definitions, sources… (press /)">
+          <span class="search-status" id="search-status" aria-live="polite"></span>
+          <button type="button" id="search-clear" class="search-clear" title="Clear the search" hidden>×</button>
+        </div>
+        <div class="views" id="views" role="group" aria-label="Arrangement"></div>
+      </div>
+      <p class="view-note" id="view-note"></p>
+
       <div class="layout">
-        <div id="canvas" role="img" aria-label="Interactive visualization of the prima-materia ontology"></div>
+        <div class="stage">
+          <div id="canvas" role="img" aria-label="Interactive visualization of the prima-materia ontology"></div>
+          <div id="matrix" class="matrix-box" hidden></div>
+        </div>
         <aside class="panel" id="panel" aria-live="polite">
           <p class="panel-empty">Loading the ontology.</p>
         </aside>

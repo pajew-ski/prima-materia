@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from rdflib import Graph, Namespace
+from rdflib import Graph, Literal, Namespace
 
 import compile as compile_script
 import publish as publish_script
@@ -19,12 +19,26 @@ PM = Namespace("https://pajew.ski/prima-materia/ontology#")
 
 # Assets the page loads by name; a rename that misses one breaks the site
 # silently, because a missing module logs to the console and nowhere else.
-REQUIRED_ASSETS = ("index.html", "style.css", "ontology.js", "theme.js", "ontology/index.html")
+REQUIRED_ASSETS = (
+    "index.html",
+    "style.css",
+    "ontology.js",
+    "theme.js",
+    "search.js",
+    "layouts.js",
+    "matrix.js",
+    "ontology/index.html",
+)
 
 
 def _data() -> dict:
     graph = compile_script.compile_graph([ONTOLOGY_DIR, TRADITIONS_DIR])
     return publish_script.build_data(graph)
+
+
+def _full_data() -> dict:
+    """Every source directory the site is built from, not just the first two."""
+    return publish_script.build_data(compile_script.compile_graph(publish_script.DEFAULT_INPUTS))
 
 
 def _by_id(data: dict) -> dict[str, dict]:
@@ -68,6 +82,59 @@ def test_labels_and_definitions_survive_the_build() -> None:
 def test_sources_survive_the_build() -> None:
     node = _by_id(_data())["pm:WakingState"]
     assert node["sources"] == ["Māṇḍūkya Upaniṣad, verse 3"]
+
+
+def test_every_literal_reaches_the_site() -> None:
+    # The page is fed entirely from the graph, which has to mean every literal
+    # and not just the six the record names. A property added to the ontology
+    # must appear without an edit here; the ones below are only the witnesses.
+    graph = compile_script.compile_graph(publish_script.DEFAULT_INPUTS)
+    data = publish_script.build_data(graph)
+    nodes = _by_id(data)
+
+    carried = {
+        (node["id"], statement["property"], value)
+        for node in data["nodes"]
+        for statement in node["statements"]
+        for value in statement["values"]
+    }
+    named = publish_script.NAMED_LITERALS
+    for subject, predicate, obj in graph:
+        if predicate in named or not isinstance(obj, Literal):
+            continue
+        term = publish_script.curie(subject)
+        if term not in nodes:
+            continue  # the ontology header describes the file, not a term
+        assert (term, publish_script.curie(predicate), str(obj)) in carried, (
+            f"{term} {publish_script.curie(predicate)} is stated in the graph and dropped by the site"
+        )
+
+
+def test_statements_are_named_by_the_property_that_makes_them() -> None:
+    nodes = _by_id(_full_data())
+    statements = {s["property"]: s for s in nodes["pmc:HawkinsConsciousnessScale"]["statements"]}
+    # The circulating ascription is the finding, not an addendum to it.
+    assert statements["pm:circulatesAs"]["label"] == "circulates as"
+    assert statements["pm:circulatesAs"]["values"][0].startswith("A perennial map")
+    assert statements["pm:originatedBy"]["values"] == ["David R. Hawkins"]
+    # A property with no label of its own is still named, from its own name.
+    assert statements["dcterms:date"]["label"] == "date"
+
+
+def test_evidence_is_never_folded_into_sources() -> None:
+    # pm:evidenceFrom is a modern report contributing to a claim from outside;
+    # dcterms:source is a witness of a tradition. Merging them on the page
+    # would undo the separation the ontology draws to keep research admissible.
+    node = _by_id(_full_data())["pmc:TummoHeatExamination"]
+    evidence = [s for s in node["statements"] if s["property"] == "pm:evidenceFrom"]
+    assert evidence and evidence[0]["values"]
+    assert not any(value in node["sources"] for value in evidence[0]["values"])
+
+
+def test_alternate_spellings_stay_with_the_labels() -> None:
+    node = _by_id(_data())["pmc:Baraqel"]
+    assert node["altLabels"] == ["Baraqijal"]
+    assert not any(s["property"] == "skos:altLabel" for s in node["statements"])
 
 
 def test_structural_edges_are_derived() -> None:
