@@ -68,3 +68,173 @@ pmc:HathaChapterOrder a pm:Presupposing ;
     pm:withinTradition pmt:Hathayoga ;
     skos:note "Recorded at the weakest strength on purpose. The four chapters run posture, breath, seal, absorption, and that arrangement is often cited as though it were itself a rule. The rule is in II.1; the chapter order is only an arrangement."@en ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā I-IV" .
+
+#
+# Recension and edition
+#
+
+pmc:HathapradipikaRecensionDispute a pm:Disputing ;
+    rdfs:label "The text and the verse numbering of the manual are edition-dependent"@en, "Textbestand und Verszählung des Handbuchs hängen von der Ausgabe ab"@de ;
+    skos:definition "A disagreement among editors about what belongs to the manual and how its verses are numbered. The widely circulated editions descend from single manuscripts and differ in the count and extent of their chapters; a critical edition drawn from more than two hundred manuscripts, with the oldest dated 1496, settles neither question in favour of the numbering that most citations use."@en ;
+    skos:note "Held as a node because every citation in this file carries a verse number, and a number is only as stable as the recension it comes from. The numbering used throughout this file follows the widely circulated vulgate text; a reader working from the critical edition may find the same passage under a different number. Naming the manual without naming the edition conceals that anything is at issue."@en ;
+    pm:disputedClaim pmt:Hathayoga ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā, ed. and tr. P. Sinh (1915)", "Svātmārāma, Haṭhapradīpikā, critical edition, Kaivalyadhama S.M.Y.M. Samiti, Lonavla", "Svātmārāma, Haṭhapradīpikā, critical edition, ed. J. Mallinson, J. Birch, J. Hanneder, M. Demoto and N.-J. Liersch (2024)" .
+
+#
+# Which opening the breath takes
+#
+
+pmp:Ujjayi a pm:Practicing ;
+    rdfs:label "Ujjāyī"@en, "Ujjāyī"@de ;
+    skos:definition "A retention in which the mouth is held closed and the breath is drawn through both nostrils so that it grazes the throat and sounds as it passes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.51-53" .
+
+pmp:Sitkari a pm:Practicing ;
+    rdfs:label "Sītkārī"@en, "Sītkārī"@de ;
+    skos:definition "A retention in which the breath is drawn in through the mouth with the tongue between the lips, producing a hissing sound, and is not let out the same way."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.54-56" .
+
+pmp:Sitali a pm:Practicing ;
+    rdfs:label "Śītalī"@en, "Śītalī"@de ;
+    skos:definition "A retention in which the breath is drawn in over the tongue, protruded past the lips, and released through the nostrils."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.57-58" .
+
+pmc:CoolingAndQuenching a pm:Conceptualizing ;
+    rdfs:label "Cooling and the quenching of hunger and thirst"@en, "Kühlung und das Stillen von Hunger und Durst"@de ;
+    skos:definition "The state ascribed to the cooling retention: fever, bile, hunger, thirst and the effect of poisons are said to be put down."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.58" .
+
+pmc:SitaliYieldsCooling a pm:Yielding ;
+    rdfs:label "Inhalation over the tongue yields cooling"@en, "Die Einatmung über die Zunge bringt Kühlung hervor"@de ;
+    pm:byPractice pmp:Sitali ;
+    pm:yieldsCapacity pmc:CoolingAndQuenching ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "Recorded because the opening through which the breath is taken is not incidental here but is what the practice consists in. Two of the eight retentions the manual lists take the breath in through the mouth and give it out through the nose; two others require the mouth held shut. The manual therefore assigns the opening per practice and does not set nasal breathing as a general rule, still less mark mouth inhalation as an error. See prima-materia#26."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.57-58" .
+
+pmc:ForcedBreathCaution a pm:Cautioning ;
+    rdfs:label "Breath forced rather than tamed by degrees kills the practitioner"@en, "Ein erzwungener statt allmählich gezähmter Atem tötet den Übenden"@de ;
+    skos:definition "A warning that the breath is to be mastered by degrees as a lion, an elephant or a tiger is mastered, and that it destroys the one who proceeds otherwise; performed wrongly, the practice is said to generate the very ailments it removes when performed rightly."@en ;
+    pm:cautionsAbout pmp:HathaPranayama ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "The named consequences are hiccough, laboured breathing, cough, and pain in head, ears and eyes. This is the strongest thing the manual says about the manner of breathing, and it concerns pace and force, not the opening the breath passes through. See prima-materia#26."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.15", "Svātmārāma, Haṭhayogapradīpikā II.16-17" .
+
+#
+# What carries the practice: the pause, not the direction
+#
+
+pmc:KevalaKumbhaka a pm:Conceptualizing ;
+    rdfs:label "Retention alone"@en, "Alleiniges Anhalten"@de ;
+    skos:definition "Retention held at will without the filling and the emptying that ordinarily frame it. The manual calls it the accomplished form of the practice and says nothing in the three worlds is beyond one who holds it."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.71-74" .
+
+pmc:KevalaPresupposesSahita a pm:Presupposing ;
+    rdfs:label "Retention alone presupposes retention with filling and emptying"@en, "Das alleinige Anhalten setzt das Anhalten mit Füllen und Leeren voraus"@de ;
+    pm:dependentStep pmc:KevalaKumbhaka ;
+    pm:priorStep pmp:HathaPranayama ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "The instruction is to keep practising the accompanied form until the unaccompanied one succeeds. Recorded at prescribed order because the verse sets a sequence without saying what befalls one who skips it. The direction of the breath drops out at the top of this sequence, which is what makes the claim that inhalation draws and exhalation expels a claim about the lower rungs only. See prima-materia#27."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.72" .
+
+pmc:OpposedDirectionsOfPranaAndApana a pm:Conceptualizing ;
+    rdfs:label "The two winds are driven in opposite directions at once"@en, "Die beiden Winde werden zugleich in entgegengesetzte Richtungen getrieben"@de ;
+    skos:definition "The apāna is raised from below while the prāṇa is pressed down from the throat, and the two are brought together in the region of the navel."@en ;
+    skos:note "The manual assigns direction to the two winds, not to the two phases of breathing. Both directions run in the same operation and against each other, so a scheme that reads inhalation as upward and exhalation as downward, or the reverse, has no purchase here. See prima-materia#27 and prima-materia#28."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.47", "Svātmārāma, Haṭhayogapradīpikā I.50" .
+
+#
+# Where the seat is upright and where it is not
+#
+
+pmc:ErectTrunkInSwastikasana a pm:Conceptualizing ;
+    rdfs:label "The straight trunk as the mark of a seat"@en, "Der gerade Rumpf als Merkmal einer Sitzhaltung"@de ;
+    skos:definition "A seat defined by sitting evenly with the body straight; the straightness is part of what the posture is, not a separate instruction."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.21" .
+
+pmc:ChinToChestInTheChiefSeats a pm:Conceptualizing ;
+    rdfs:label "The chin pressed to the chest in the two seats the manual prefers"@en, "Das an die Brust gedrückte Kinn in den beiden bevorzugten Sitzhaltungen"@de ;
+    skos:definition "In the two seats the manual singles out as chief, the chin is set firmly against the chest and the gaze is fixed between the brows or at the tip of the nose."@en ;
+    skos:note "This is the counterweight to any claim that the manual requires an erect spine throughout. The seats it recommends most warmly close the neck rather than extend it, and the same posture chapter has the tongue set against the roots of the upper teeth while the wind is drawn upward. Uprightness of the trunk is attested; uprightness carried through the neck and head is contradicted in the same work. See prima-materia#29."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.37", "Svātmārāma, Haṭhayogapradīpikā I.46", "Svātmārāma, Haṭhayogapradīpikā I.48" .
+
+pmc:BhastrikaPresupposesLevelNeckAndTrunk a pm:Presupposing ;
+    rdfs:label "The bellows breath presupposes neck and trunk held level"@en, "Der Blasebalgatem setzt einen gerade gehaltenen Hals und Rumpf voraus"@de ;
+    pm:dependentStep pmp:HathaPranayama ;
+    pm:priorStep pmc:ErectTrunkInSwastikasana ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "The verse binds the lotus seat, a level neck and trunk, and a carefully closed mouth into the one instruction that opens the bellows breath. It is the only place in the breath chapter where the alignment of the spine is stated as a condition of a breath practice, and it is stated for one practice, not for the chapter. See prima-materia#29."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.60" .
+
+#
+# The seals that set direction
+#
+
+pmp:Mulabandha a pm:Practicing ;
+    rdfs:label "The root seal"@en, "Das Wurzelsiegel"@de ;
+    skos:definition "A seal made by pressing the perineum with the heel and contracting the anus, by which the downward wind is drawn upward."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.61-63" .
+
+pmc:ApanaForcedAgainstItsCourse a pm:Conceptualizing ;
+    rdfs:label "The downward wind driven upward by force"@en, "Der abwärts gerichtete Wind wird mit Gewalt aufwärts getrieben"@de ;
+    skos:definition "The wind whose course is downward is said to be made to go upward by force; the manual states the natural course and the reversal in the same verse."@en ;
+    skos:note "This is the direct reversal of any scheme that assigns downward carriage to an operation in the lower abdomen. The manual has the abdominal operation carry upward, and has the operation at the throat press the other wind down. Both assignments are the opposite of the one the modern draft makes. See prima-materia#28."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.62" .
+
+pmc:KindledInnerFire a pm:Conceptualizing ;
+    rdfs:label "The kindled inner fire"@en, "Das entfachte innere Feuer"@de ;
+    skos:definition "A heat said to arise when the raised wind reaches the region of fire, lengthening its flame, until the sleeping power is warmed through and straightens."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.66-68" .
+
+pmc:MulabandhaYieldsInnerFire a pm:Yielding ;
+    rdfs:label "The root seal yields the kindled inner fire"@en, "Das Wurzelsiegel bringt das entfachte innere Feuer hervor"@de ;
+    pm:byPractice pmp:Mulabandha ;
+    pm:yieldsCapacity pmc:KindledInnerFire ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "The pairing is set at the fire and not at the reversal on purpose. The manual defines the root seal as the drawing upward of the downward wind, so a claim that the seal produces that upward movement would assert only that the practice is what it is. The heat, the lengthened flame and the waking of the power are consequences the verses state beyond the definition, and they are what a protocol could address."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.66-68" .
+
+pmp:Khecari a pm:Practicing ;
+    rdfs:label "Khecarī"@en, "Khecarī"@de ;
+    skos:definition "A seal in which the tongue is turned back and set above the palate while the gaze rests between the brows; the manual describes a months-long preparation of the tongue before the position can be held."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.32-33", "Svātmārāma, Haṭhayogapradīpikā III.37" .
+
+pmc:RetentionOfTheDescendingNectar a pm:Conceptualizing ;
+    rdfs:label "The retention of the descending nectar"@en, "Das Zurückhalten des herabfließenden Nektars"@de ;
+    skos:definition "The stopping of a fluid held to fall from above and to be consumed below, whose loss the manual makes responsible for ageing and death."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.51-52", "Svātmārāma, Haṭhayogapradīpikā III.77" .
+
+pmc:KhecariYieldsRetention a pm:Yielding ;
+    rdfs:label "The tongue set above the palate yields the retention of the nectar"@en, "Die über den Gaumen gelegte Zunge bringt das Zurückhalten des Nektars hervor"@de ;
+    pm:byPractice pmp:Khecari ;
+    pm:yieldsCapacity pmc:RetentionOfTheDescendingNectar ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "The contact at the palate is attested, and what it is said to do is stop a descent. It is not bound to a phase of breathing anywhere in the chapter, and it is not said to carry anything upward. The same holds for the seal at the throat, which is described as closing off a downward flow. A scheme that pairs the palate with inhalation and with upward carriage takes a stopping and reports it as a conveyance. See prima-materia#28."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.42", "Svātmārāma, Haṭhayogapradīpikā III.51-52" .
