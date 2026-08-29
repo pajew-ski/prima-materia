@@ -22,11 +22,15 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 ├── ontology/
 │   ├── core.ttl                 # Meta-Ontologie (pm:Process, pm:AwarenessContext, etc.)
 │   ├── consciousness.ttl        # Bewusstseinszustände (Jāgrat/Svapna/Suṣupti/Turīya)
+│   ├── provenance.ttl           # Behauptungs- und Prüfklassen (siehe Abschnitt 3.5)
 │   └── alignments.ttl           # Mappings zu SKOS, DCTerms, schema.org
-├── traditions/
-│   ├── valentinian.ttl          # Valentinianische Gnosis
-│   ├── greek-cosmological.ttl   # 13-Prinzipien-System (Kairos → Hen)
-│   └── opus-purum-axioms.ttl    # Opus Purum als formale Klassen
+├── traditions/                  # eine Datei je Tradition
+│   └── *.ttl                    # enochic, patanjala-yoga, theravada, daoist, ...
+├── convergences/                # Übereinstimmungen über Traditionen hinweg
+│   └── *.ttl                    # gehören keiner Tradition, deshalb eigener Ordner
+├── examinations/                # Prüfprotokolle zu einzelnen Behauptungen
+│   └── *.ttl                    # nur angelegt, wo eine Prüfung aufgenommen wurde
+├── site/                        # handgeschriebene Assets der GitHub-Pages-Seite
 ├── shapes/
 │   └── prima-materia.shapes.ttl # SHACL-Validierungsregeln
 ├── context/
