@@ -598,6 +598,18 @@ Ein vorhandener Knoten groundet nichts. Eine Analogie in einer benachbarten Trad
 
 **Unbelegt ist die teure Aussage.** Sie behauptet, dass es die Stelle nirgends gibt, und das trägt nur eine erschöpfende Suche. Ein Issue schließt deshalb nicht als `unbelegt`, weil ein Durchgang nichts fand, sondern erst, wenn die plausiblen Korpora dokumentiert abgesucht sind. Die `korpus:`-Labels sind dieser Nachweis.
 
+### Die zweite Stufe ist nicht abwählbar
+
+Die Recherche hat zwei Stufen: die Landschaft, die findet, wo die Stellen liegen, und die Stelle selbst, die aufgeschlagen und gelesen wird. Nur die zweite trägt einen Knoten. **Daraus folgt nicht, dass sie entfallen darf.**
+
+Die Trennung von bezeugt und erschlossen ist eine Schranke vor dem Graphen und keine Weiche im Ablauf. Wer aus „nur Gelesenes wird Knoten" schließt, es genüge, nichts zu lesen und alles als Issue abzulegen, hat aus einer Schranke eine Erlaubnis gemacht. Der Bestand wächst dann nie, und die erste Stufe ist verbraucht, ohne etwas zu tragen: sie erzeugt keine Befunde, sondern Adressen.
+
+**Jede Behauptung, deren Werk erreichbar ist, wird im selben Lauf am Wortlaut geprüft.** Erreichbar ist ein Werk, das digitalisiert vorliegt und gelesen werden kann. Umfang und Aufwand ändern daran nichts; ein Volltextarchiv ist der Normalfall und nicht der Glücksfall, und ein tausendseitiger Band, der sich herunterladen und durchsuchen lässt, ist erreichbar. Die Schätzung, eine Prüfung brauche einen eigenen Lauf, ist kein Grund: sie wird vor dem Aufschlagen gemacht und ist deshalb keine Kenntnis, sondern eine Vermutung über die eigene Bequemlichkeit.
+
+**Bleibt eine Prüfung aus, steht der Grund im Issue, und er ist eine Eigenschaft des Werkes** — nicht digitalisiert, urheberrechtlich gesperrt, nur intern verfügbar, nur als Druckausgabe vorhanden, Sprache nicht beherrscht. Fehlt er, ist die Prüfung unterlassen und der Lauf unvollständig, gleich wie sauber die Issues sind.
+
+Dieser Abschnitt steht hier und nicht nur in `AGENTS.md`, weil die Fehllesung eine Regel dieser Spezifikation betraf und weil eine Korrektur, die nur in der Agentendatei steht, bei deren nächster Umarbeitung verschwindet.
+
 ### Tiefe
 
 **Eine Recherche ist kein paar Suchanfragen nebenbei.** Der Mindestumfang für eine Behauptung, die in den Graphen soll:
