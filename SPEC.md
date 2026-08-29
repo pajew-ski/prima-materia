@@ -371,9 +371,18 @@ name: Validate
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'claude/**']
   pull_request:
     branches: [main]
+
+# Ein Arbeitsbranch bekommt mehrere Commits hintereinander, und nur der letzte
+# Stand ist zu prüfen. Ohne diese Gruppe laufen alle parallel, der Branch wartet
+# auf Läufe, deren Ergebnis schon überholt ist, und der Agent liest den falschen
+# Zustand. Der PR-Lauf bekommt eine eigene Gruppe, damit ein Push auf den Branch
+# ihn nicht abbricht.
+concurrency:
+  group: validate-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
@@ -383,10 +392,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
       - run: pip install -r requirements.txt
       - run: python scripts/validate.py
       - run: pytest tests/
 ```
+
+Der Trigger auf `claude/**` ist die Bedingung dafür, dass die in `AGENTS.md`
+vorgeschriebene Reihenfolge überhaupt erfüllbar ist: prüfen, dann den PR
+öffnen. Die `concurrency`-Gruppe hat als gewollte Nebenwirkung, dass ein Branch
+mit mehreren Commits `cancelled`-Läufe für die überholten Zwischenstände
+sammelt. Ein abgebrochener Lauf hat nichts festgestellt und ist kein
+Fehlschlag; `prima_repo_check` wertet deshalb nur den Lauf des aktuellen
+Kopf-SHA. Siehe #32 und #44.
 
 ### `.github/workflows/distribute.yml`
 
