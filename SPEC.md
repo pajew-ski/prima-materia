@@ -438,9 +438,7 @@ Das Distribution-Repository enthält eine `llms.txt`, die LLM-Agenten Discovery 
 
 ## Traditions
 
-- [Valentinian Gnosis (JSON-LD)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/traditions/valentinian.jsonld)
-- [Greek Cosmological 13-Principles (JSON-LD)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/traditions/greek-cosmological.jsonld)
-- [Opus Purum Axioms (JSON-LD)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/traditions/opus-purum-axioms.jsonld)
+Ein Eintrag je Datei in `traditions/`, beim Bau aus dem Verzeichnis abgeleitet und nicht von Hand gepflegt. Eine fest verdrahtete Liste läuft dem Bestand hinterher und nennt irgendwann Dateien, die es nicht gibt.
 
 ## Optional
 
