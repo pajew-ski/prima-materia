@@ -44,6 +44,8 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 │   └── *.ttl                    # gehören keiner Tradition, deshalb eigener Ordner
 ├── examinations/                # Prüfprotokolle zu einzelnen Behauptungen
 │   └── *.ttl                    # nur angelegt, wo eine Prüfung aufgenommen wurde
+├── originations/                # moderne Behauptungen, die als alte zirkulieren
+│   └── *.ttl                    # pm:Originating: ordnen keine Tradition und bezeugen keine
 ├── site/                        # handgeschriebene Assets der GitHub-Pages-Seite
 ├── shapes/
 │   └── prima-materia.shapes.ttl # SHACL-Validierungsregeln
