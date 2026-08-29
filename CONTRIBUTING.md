@@ -85,6 +85,8 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
 `korpus:sefer-yetzirah`, `korpus:platonisch`, `korpus:graeco-roman`,
 `korpus:eleusis`, `korpus:stoisch`, `korpus:hesychasmus`,
 `korpus:wuestenvaeter`, `korpus:unterscheidung`, `korpus:sufismus`,
+`korpus:neuplatonisch`, `korpus:kabbalistisch`, `korpus:islamisch`,
+`korpus:inkubation`,
 `korpus:modern` (für Behauptungen, deren Ort `pm:evidenceFrom` an einem
 `pm:Testing`-Knoten ist).
 
