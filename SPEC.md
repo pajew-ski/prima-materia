@@ -389,30 +389,17 @@ Der Spiegel ist ausdrücklich sekundär. Der Namensraum-Host liefert dieselben D
 
 **Hinweis für den Agent:** Das `DIST_REPO_TOKEN`-Secret muss vom User manuell in den Repo-Settings gesetzt werden (Personal Access Token mit Write-Access auf prima-materia-dist). Das ist nicht vom Agent automatisierbar.
 
-## 8. llms.txt Integration
+## 8. llms.txt
 
-Das Distribution-Repository enthält eine `llms.txt`, die LLM-Agenten Discovery erlaubt:
+**Die `llms.txt` steht auf dem Namensraum-Host**, wird von `scripts/publish.py` erzeugt und mit der Seite ausgeliefert. Frühere Fassungen dieses Abschnitts setzten sie ins Distributionsrepo und verlinkten von dort auf jsDelivr; das macht den Spiegel zur Adresse. Nach Abschnitt 2 fallen Bezeichner und Auslieferungsort zusammen, und die Datei, die einem Agenten sagt, wo die Ontologie liegt, ist die letzte, die woandershin zeigen darf.
 
-```
-# prima-materia
+Inhalt: eine Kurzbeschreibung des Projekts, die drei Serialisierungen unter `https://pajew.ski/prima-materia/`, ein Abschnitt über das Lesen einer Behauptung, die Liste der Traditionen, und die Verweise auf Quellrepo, Spezifikation und Issue-Tracker.
 
-> Open-Data ontology of magical and esoteric knowledge, structured under a consciousness-first design principle. Released under CC0 1.0.
+Zwei Festlegungen dazu.
 
-## Ontology Files
+**Der Abschnitt „How to read a claim" ist kein Beiwerk.** Ein Client, der den Graphen ohne ihn lädt, liest Behauptungen als Aussagen: er sieht nicht, dass `pm:compilerInference` einen Ordnungsakt bezeugt und nie die geordnete Behauptung, dass eine Konvergenz mit `pm:transmissionPath` Rezeption ist und nichts belegt, und dass ein fehlender `pm:Testing`-Knoten „niemand hat die Prüfung aufgenommen" heißt und nicht „geprüft und nicht gestützt". Die Trennung von Behauptung und Beglaubigung ist der Zweck dieses Projekts; eine Discovery-Datei, die sie nicht mitliefert, gibt den Graphen als Sammlung heraus.
 
-- [Full ontology (JSON-LD)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.jsonld): Complete compiled ontology with embedded JSON-LD context
-- [Full ontology (Turtle)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.ttl): Turtle serialization
-- [JSON-LD Context](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/context.jsonld): Standalone context for embedding in client systems
-
-## Traditions
-
-Ein Eintrag je Datei in `traditions/`, beim Bau aus dem Verzeichnis abgeleitet und nicht von Hand gepflegt. Eine fest verdrahtete Liste läuft dem Bestand hinterher und nennt irgendwann Dateien, die es nicht gibt.
-
-## Optional
-
-- [Source repository](https://github.com/pajew-ski/prima-materia)
-- [Specification](https://github.com/pajew-ski/prima-materia/blob/main/SPEC.md)
-```
+**Die Traditionsliste wird aus dem Graphen abgeleitet, nicht aus dem Verzeichnis.** Die frühere Fassung sagte „ein Eintrag je Datei in `traditions/`". Das ist falsch aus demselben Grund, aus dem Abschnitt 10 die Datei-Ebene im Graphen ablehnt: die Datei ist eine Einheit des Repos und keine der Sache. `traditions/greek-pneuma-hesychasm.ttl` trägt zwei Traditionen, und ein Client will wissen, welche Überlieferungen der Graph führt, nicht wie sie auf Dateien verteilt sind. Abgeleitet wird deshalb über die `pm:Tradition`-Instanzen, mit Label, Definition und einem Anker auf die Seite. Von Hand gepflegt wird nichts: eine fest verdrahtete Liste läuft dem Bestand hinterher.
 
 ## 9. Test-Strategie
 
