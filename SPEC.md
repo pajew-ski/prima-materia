@@ -365,47 +365,21 @@ pm:NoSubstanceClassesShape a sh:NodeShape ;
 
 ## 7. GitHub Actions
 
-### `.github/workflows/validate.yml`
+**Dieser Abschnitt beschreibt, was die Workflows leisten müssen, und nicht ihren Wortlaut.** Der Wortlaut steht in `.github/workflows/`. Ein wörtliches Listing hier war zweimal falsch, bevor es jemandem auffiel, und es nützt dem Agenten nichts: sein Token trägt keinen `workflows`-Scope, er kann die Dateien ohnehin nicht schreiben. Wer eine Änderung an einem Workflow braucht, beschreibt sie und lässt sie von Hand einspielen.
 
-```yaml
-name: Validate
+### `validate.yml`
 
-on:
-  push:
-    branches: [main, 'claude/**']
-  pull_request:
-    branches: [main]
+Läuft auf `push` nach `main` und nach `claude/**` sowie auf `pull_request` gegen `main`, installiert die Abhängigkeiten und führt `scripts/validate.py` und `pytest tests/` aus.
 
-# Ein Arbeitsbranch bekommt mehrere Commits hintereinander, und nur der letzte
-# Stand ist zu prüfen. Ohne diese Gruppe laufen alle parallel, der Branch wartet
-# auf Läufe, deren Ergebnis schon überholt ist, und der Agent liest den falschen
-# Zustand. Der PR-Lauf bekommt eine eigene Gruppe, damit ein Push auf den Branch
-# ihn nicht abbricht.
-concurrency:
-  group: validate-${{ github.event_name }}-${{ github.ref }}
-  cancel-in-progress: true
+Der Trigger auf `claude/**` ist die Bedingung dafür, dass die in `AGENTS.md` vorgeschriebene Reihenfolge überhaupt erfüllbar ist: auf dem Arbeitsbranch prüfen, dann den PR öffnen. Ohne ihn entsteht der erste Lauf mit dem PR, und ein Fehler in einer TTL-Datei fällt erst an der offenen Änderung auf.
 
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          cache: pip
-      - run: pip install -r requirements.txt
-      - run: python scripts/validate.py
-      - run: pytest tests/
-```
+Eine `concurrency`-Gruppe je Ereignistyp und Ref mit `cancel-in-progress: true` bricht die Läufe überholter Zwischenstände ab. Gewollte Nebenwirkung: ein Branch mit mehreren Commits sammelt `cancelled`-Läufe. Ein abgebrochener Lauf hat nichts festgestellt und ist kein Fehlschlag; `prima_repo_check` wertet deshalb ausschließlich den Lauf des aktuellen Kopf-SHA. Siehe #32 und #44.
 
-Der Trigger auf `claude/**` ist die Bedingung dafür, dass die in `AGENTS.md`
-vorgeschriebene Reihenfolge überhaupt erfüllbar ist: prüfen, dann den PR
-öffnen. Die `concurrency`-Gruppe hat als gewollte Nebenwirkung, dass ein Branch
-mit mehreren Commits `cancelled`-Läufe für die überholten Zwischenstände
-sammelt. Ein abgebrochener Lauf hat nichts festgestellt und ist kein
-Fehlschlag; `prima_repo_check` wertet deshalb nur den Lauf des aktuellen
-Kopf-SHA. Siehe #32 und #44.
+### `pages.yml`
+
+Läuft auf `push` nach `main`, baut die Seite mit `scripts/publish.py` und deployt sie auf den Namensraum-Host. Braucht `pages: write` und `id-token: write`; nichts daran schreibt ins Repository zurück.
+
+Die `concurrency`-Gruppe hier trägt ausdrücklich `cancel-in-progress: false`, anders als bei `validate.yml`. Ein abgebrochener Prüflauf kostet nichts; ein abgebrochenes Deployment kann ein halb hochgeladenes Artefakt zur Live-Seite machen, und die Live-Seite ist der Ort, an dem die Terme geprägt sind.
 
 ### `.github/workflows/distribute.yml`
 
