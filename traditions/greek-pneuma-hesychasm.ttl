@@ -33,6 +33,28 @@ pmt:Hesychasm a pm:Tradition ;
     skos:definition "The Byzantine tradition of the prayer of the heart and of the vision of the uncreated light, defended in the fourteenth century against the objection that such a light must be created."@en ;
     dcterms:source "Gregory Palamas, Triads in Defence of the Holy Hesychasts" .
 
+pmc:Watchfulness a pm:Conceptualizing ;
+    rdfs:label "Watchfulness"@en, "Wachsamkeit"@de ;
+    skos:definition "The guarding of the heart and the attention to what arises in it, treated as the groundwork on which the prayer of the heart is built."@en ;
+    pm:withinTradition pmt:Hesychasm ;
+    dcterms:source "Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness", "Philokalia I, Diadochus of Photice, Gnostic Chapters" .
+
+pmc:PrayerOfTheHeart a pm:Conceptualizing ;
+    rdfs:label "The prayer of the heart"@en, "Das Herzensgebet"@de ;
+    skos:definition "The continuous inward prayer that gives the tradition its practice."@en ;
+    pm:withinTradition pmt:Hesychasm ;
+    dcterms:source "Philokalia IV, Gregory of Sinai, On Stillness and the Two Ways of Prayer", "Philokalia IV, Nikephoros the Monk, On Watchfulness and the Guarding of the Heart" .
+
+pmc:PrayerPresupposesWatchfulness a pm:Presupposing ;
+    rdfs:label "The prayer of the heart presupposes watchfulness and guidance"@en, "Das Herzensgebet setzt Wachsamkeit und Führung voraus"@de ;
+    pm:dependentStep pmc:PrayerOfTheHeart ;
+    pm:priorStep pmc:Watchfulness ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hesychasm ;
+    skos:note "The writers of this corpus set watchfulness and the direction of a spiritual father before the prayer, and describe the way as passing from purification through illumination to perfection. The chapter divisions vary between the editions of the individual texts; the works and their titles are given so that the passages can be found in whichever edition is at hand."@en ;
+    dcterms:source "Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness", "Philokalia IV, Gregory of Sinai, On Stillness and the Two Ways of Prayer", "Philokalia IV, Nikephoros the Monk, On Watchfulness and the Guarding of the Heart" .
+
 pmc:UncreatedLight a pm:Conceptualizing ;
     rdfs:label "Uncreated light"@en, "Ungeschaffenes Licht"@de ;
     skos:definition "A light held to be uncreated, and held to shine through the whole person, body as well as soul; the defence is explicitly that the body participates and is not merely the site of an event in the soul."@en ;
