@@ -290,6 +290,33 @@ pm:CautioningShape a sh:NodeShape ;
     ] .
 
 #
+# A claim read through an intermediary must name the intermediary. Without
+# this the mode would be a label that costs nothing: a node could declare
+# itself second-hand and leave unsaid whose hand it passed through, which is
+# the only part a later reader can actually check.
+#
+pm:MediatedAttestationShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:attestedBy ;
+    sh:or (
+        [ sh:property [ sh:path pm:readVia ; sh:minCount 1 ] ]
+        [ sh:not [ sh:property [ sh:path pm:attestedBy ; sh:hasValue pm:mediatedAttestation ] ] ]
+    ) ;
+    sh:message "A claim attested by pm:mediatedAttestation must name the work it was read in with pm:readVia." .
+
+#
+# The intermediary is literature too, by the same rule as the source and the
+# evidence: something a reader can obtain, not a place that may move.
+#
+pm:ReadViaIsLiteratureShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:readVia ;
+    sh:property [
+        sh:path pm:readVia ;
+        sh:nodeKind sh:Literal ;
+        sh:not [ sh:pattern "^https?://" ] ;
+        sh:message "pm:readVia carries a bibliographic reference to the work the passage was read in, never a URL."
+    ] .
+
+#
 # Sources are literature, not links. A URL names a location that changes and
 # that only its author can vouch for; a work names something a reader can
 # obtain independently of this graph. The rule is machine-checked here rather
