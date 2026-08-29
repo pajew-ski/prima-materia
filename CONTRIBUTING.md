@@ -100,8 +100,25 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
 `korpus:wuestenvaeter`, `korpus:unterscheidung`, `korpus:sufismus`,
 `korpus:neuplatonisch`, `korpus:kabbalistisch`, `korpus:islamisch`,
 `korpus:inkubation`,
+`korpus:orientalistik` (H. H. Wilson, Sellon, Barth, Monier-Williams und
+die übrige britische Indienwissenschaft des 19. Jh.),
+`korpus:theosophisch` (Blavatsky und die theosophische Publizistik),
+`korpus:lhp-milieu` (Temple of Set, Dragon Rouge, LaVey, Flowers und die
+Selbstdarstellungen dieses Milieus),
+`korpus:thelema` (Crowley und die thelemische Literatur),
+`korpus:ra-material` (das gechannelte Law-of-One-Korpus, 1981–1984),
+`korpus:madhyamaka` (Nāgārjuna und die Madhyamaka-Kommentatoren),
+`korpus:jung` (C. G. Jung, insbesondere Septem Sermones und Liber Novus),
+`korpus:gurdjieff` (Gurdjieff und Ouspensky),
+`korpus:gnostisch` (Nag Hammadi, Irenäus als Referent, valentinianische
+und sethianische Systeme),
 `korpus:modern` (für Behauptungen, deren Ort `pm:evidenceFrom` an einem
 `pm:Testing`-Knoten ist).
+
+Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
+existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
+bereits die Nachfragemeldung, und ein zweites Verzeichnis dafür wird
+nicht geführt.
 
 Ein neuer `korpus:`-Wert wird hier eingetragen, bevor er vergeben wird.
 Er benennt den Korpus, den man aufschlägt, nicht die Datei, in der er
