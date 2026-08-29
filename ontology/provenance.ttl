@@ -158,6 +158,12 @@ pm:attestedBy a owl:ObjectProperty ;
     rdfs:range pm:Attesting ;
     skos:definition "Declares by which route a claim entered the record. Mandatory on every attribution, so that non-evidence cannot be forgotten."@en .
 
+pm:readVia a owl:DatatypeProperty ;
+    rdfs:label "read via"@en, "gelesen über"@de ;
+    skos:definition "The work in which the passage was actually read, given as a bibliographic reference, where that work is not the one carrying the claim."@en ;
+    skos:note "Deliberately separate from dcterms:source, for the same reason pm:evidenceFrom is. dcterms:source names what a reader must obtain to check the claim; this names what the writer of the node had in front of him. A record that fused them would report second-hand reading as first-hand and would lose the one distinction that makes an unreachable source admissible at all."@en ;
+    skos:note "Required wherever pm:attestedBy is pm:mediatedAttestation. Carries a bibliographic reference and never a URL, enforced by pm:ReadViaIsLiteratureShape."@en .
+
 pm:ascribedCapacity a owl:ObjectProperty ;
     rdfs:label "ascribed capacity"@en, "zugeschriebenes Vermögen"@de ;
     rdfs:domain pm:Attributing ;
