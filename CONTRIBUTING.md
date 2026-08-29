@@ -25,8 +25,12 @@ likewise dedicated to the public domain.
   `rdfs:label` with language tags (`@en`, `@de`, ...) for multilingual
   presentation.
 - **Sources are mandatory.** Every concept instance needs at least one
-  `dcterms:source` (bibliographic string, DOI URI, ISBN URN, or
-  open-access URL).
+  `dcterms:source`, and it must name a work and the place in it that
+  carries the claim (`"Patañjali, Yogasūtra III.38"`). **No URLs of any
+  kind**, DOI and open-access editions included — `pm:SourceIsLiteratureShape`
+  rejects any value with an `http` prefix. Modern research never enters
+  as `dcterms:source`; it belongs at `pm:evidenceFrom` on a `pm:Testing`
+  node, where a DOI is admissible as a work identifier. See `SPEC.md §10`.
 - **Tradition membership is mandatory.** Every concept instance needs
   `pm:withinTradition`.
 - **Labels and definitions.** Every class needs `rdfs:label` and
