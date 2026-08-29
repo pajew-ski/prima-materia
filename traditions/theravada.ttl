@@ -96,6 +96,89 @@ pmc:Cetopariyanana a pm:Conceptualizing ;
     dcterms:source "Buddhaghosa, Visuddhimagga XIII (trans. Ñāṇamoli 1956)" .
 
 #
+# Steps a prerequisite claim points at
+#
+
+pmc:Sila a pm:Conceptualizing ;
+    rdfs:label "Virtue"@en, "Sittlichkeit"@de ;
+    skos:definition "The first of the three trainings, on which the handbook is built as a commentary on the verse about the tangle."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga I.1-I.8 (trans. Ñāṇamoli 1956)" .
+
+pmc:Samadhi a pm:Conceptualizing ;
+    rdfs:label "Concentration"@en, "Sammlung"@de ;
+    skos:definition "The second of the three trainings, named in the handbook as the condition for the six direct knowledges."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga I.7-I.11 (trans. Ñāṇamoli 1956)" .
+
+pmc:FourthJhana a pm:Conceptualizing ;
+    rdfs:label "The fourth absorption"@en, "Die vierte Vertiefung"@de ;
+    skos:definition "The absorption from which the handbook has the supernormal powers proceed, and which it calls their natural plane."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XII.1 (trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga XII.49 (trans. Ñāṇamoli 1956)" .
+
+pmc:Iddhividha a pm:Conceptualizing ;
+    rdfs:label "The kinds of supernormal power"@en, "Die Arten übernatürlicher Kraft"@de ;
+    skos:definition "Transformation by supernormal power, the first of the direct knowledges treated in the handbook."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XII (trans. Ñāṇamoli 1956)" .
+
+pmp:FourteenfoldMastery a pm:Practicing ;
+    rdfs:label "Control of the mind in fourteen ways"@en, "Beherrschung des Geistes in vierzehn Weisen"@de ;
+    skos:definition "A numbered course of mastery over the meditation objects, among them the order of the kasiṇa and its reverse, skipping the absorption, skipping the object, and the definition of the object."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XII.2 (trans. Ñāṇamoli 1956)" .
+
+#
+# Prerequisite claims
+#
+# The strongest passage in the whole collection stands here. The handbook
+# does not merely order the training; it says outright that the attempt
+# cannot even be begun without what precedes it.
+#
+
+pmc:IddhiPresupposesFourteenfoldMastery a pm:Presupposing ;
+    rdfs:label "Supernormal power presupposes the fourteenfold mastery"@en, "Übernatürliche Kraft setzt die vierzehnfache Beherrschung voraus"@de ;
+    pm:dependentStep pmc:Iddhividha ;
+    pm:priorStep pmp:FourteenfoldMastery ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The handbook states that it is not possible for a meditator even to begin to accomplish transformation by supernormal power without having first completed the development of control of the mind in those fourteen ways." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XII.8 (trans. Ñāṇamoli 1956)" .
+
+pmc:IddhiPresupposesFourthJhana a pm:Presupposing ;
+    rdfs:label "Supernormal power presupposes the fourth absorption"@en, "Übernatürliche Kraft setzt die vierte Vertiefung voraus"@de ;
+    pm:dependentStep pmc:Iddhividha ;
+    pm:priorStep pmc:FourthJhana ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    skos:note "The handbook assigns the task to a meditator who has reached the fourth absorption and calls that absorption the natural plane for obtaining the power. It does not, at these places, say what happens to one who attempts it from elsewhere."@en ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XII.1 (trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga XII.12-13 (trans. Ñāṇamoli 1956)" .
+
+pmc:DirectKnowledgesPresupposeConcentration a pm:Presupposing ;
+    rdfs:label "The direct knowledges presuppose concentration"@en, "Die höheren Kenntnisse setzen die Sammlung voraus"@de ;
+    pm:dependentStep pmc:Dibbacakkhu, pmc:Dibbasota, pmc:Cetopariyanana, pmc:Iddhividha ;
+    pm:priorStep pmc:Samadhi ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The handbook states that the six kinds of direct knowledge are arrived at with the support of perfected concentration and by nothing besides that." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga I.11 (trans. Ñāṇamoli 1956)" .
+
+pmc:ConcentrationPresupposesVirtue a pm:Presupposing ;
+    rdfs:label "Concentration presupposes virtue"@en, "Sammlung setzt Sittlichkeit voraus"@de ;
+    pm:dependentStep pmc:Samadhi ;
+    pm:priorStep pmc:Sila ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    skos:note "The handbook is built as a commentary on a canonical verse in which the one established in virtue develops mind and understanding, and it glosses the order accordingly."@en ;
+    dcterms:source "Buddhaghosa, Visuddhimagga I.1 (trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga I.7-I.8 (trans. Ñāṇamoli 1956)" .
+
+#
 # Cautions
 #
 # Both are load-bearing for any project that collects capacity claims: one
