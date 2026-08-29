@@ -134,6 +134,36 @@ pmc:SamyamaIsInnerToThePrecedingLimbs a pm:Presupposing ;
     skos:note "The base text ranks the last three limbs as inner with respect to the preceding five, and then ranks even those three as outer with respect to the seedless absorption. It sets a relation of inner and outer, not a rule that one cannot be attempted before the other, and it says nothing about what follows from disregarding the ranking."@en ;
     dcterms:source "Patañjali, Yogasūtra III.7", "Patañjali, Yogasūtra III.8" .
 
+pmc:LightOfKnowledge a pm:Conceptualizing ;
+    rdfs:label "The light of knowledge"@en, "Das Leuchten der Erkenntnis"@de ;
+    skos:definition "What is said to arise, on the wearing away of impurity, and to continue up to discriminative discernment."@en ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra II.28" .
+
+pmp:PracticeOfTheLimbs a pm:Practicing ;
+    rdfs:label "Practice of the limbs"@en, "Übung der Glieder"@de ;
+    skos:definition "The performance of the eight limbs, taken together as one course of practice."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra II.28" .
+
+pmc:LimbPracticeYieldsLightOfKnowledge a pm:Yielding ;
+    rdfs:label "Practice of the limbs yields the light of knowledge"@en, "Die Übung der Glieder bringt das Leuchten der Erkenntnis hervor"@de ;
+    pm:byPractice pmp:PracticeOfTheLimbs ;
+    pm:yieldsCapacity pmc:LightOfKnowledge ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    skos:note "The sūtra makes the arising conditional on the wearing away of impurity, which is itself said to come from the practice. The condition is part of the claim and is not to be dropped when the claim is quoted."@en ;
+    dcterms:source "Patañjali, Yogasūtra II.28" .
+
+pmc:LimbOrderDispute a pm:Disputing ;
+    rdfs:label "Whether the limbs must be traversed in order"@en, "Ob die Glieder der Reihe nach zu durchlaufen sind"@de ;
+    skos:definition "A disagreement about whether the eight limbs form a sequence that must be climbed. The sūtra that names them enumerates and says nothing about order; the commentarial layer introduces the categories of outer and inner limb, and later teaching hardens these into a rule of practice."@en ;
+    skos:note "The disagreement is not between two traditions but between a base text and its readers, which is the commonest shape a dispute takes in this collection and the easiest to lose, because the readers usually win by default."@en ;
+    pm:disputedClaim pmc:AstangaLimbs ;
+    pm:attestedBy pm:textualAttestation ;
+    dcterms:source "Patañjali, Yogasūtra II.29", "Vyāsa, Yogabhāṣya on Yogasūtra II.29" .
+
 pmc:SerialReadingOfTheEightLimbs a pm:Systematizing ;
     rdfs:label "The serial reading of the eight limbs"@en, "Die serielle Lesart der acht Glieder"@de ;
     skos:definition "The reading of the eight limbs as a ladder that must be climbed in order, each limb a precondition of the next."@en ;
