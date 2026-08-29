@@ -90,7 +90,49 @@ pmc:SevenCentreQualityMapping a pm:Systematizing ;
     skos:definition "The assignment of a fixed set of seven centres to spectral colours and to psychological qualities such as will, expression and security. An ordering imposed in the twentieth century on material that did not carry it."@en ;
     skos:note "Colour scheme in Leadbeater 1927, rainbow spectrum in Hills 1977, on the textual basis made available by Avalon's 1919 translation of the Ṣaṭcakranirūpaṇa. Recorded here so that the mapping is available in the graph as what it is, and cannot be mistaken for the tantric material it was built on."@en ;
     pm:ordersClaim pmc:Cakra ;
-    pm:compiledBy "C. W. Leadbeater, extended by Christopher Hills" ;
+    pm:compiledBy "C. W. Leadbeater, extended by Christopher Hills and Ken Dychtwald" ;
     pm:attestedBy pm:compilerInference ;
     dcterms:date "1927" ;
-    dcterms:source "C. W. Leadbeater, The Chakras (1927)", "Christopher Hills, Nuclear Evolution (1977)", "A. Avalon, The Serpent Power (1919)" .
+    dcterms:source "C. W. Leadbeater, The Chakras (1927)", "Christopher Hills, Nuclear Evolution (1977)", "Ken Dychtwald, Bodymind (1977)", "A. Avalon, The Serpent Power (1919)" .
+
+#
+# The traversal the sources actually prescribe
+#
+# These four nodes exist because a modern draft claims the opposite of each of
+# them, and because the difference is small enough to disappear in paraphrase.
+# The sources have the practitioner pass through the centres in one movement;
+# the draft has one centre per session. The sources measure in twelves and in
+# fists; the draft measures in arm's lengths. The sources prescribe an order
+# without stating what befalls one who breaks it; the draft forbids breaking it.
+#
+
+pmc:Dvadasanta a pm:Conceptualizing ;
+    rdfs:label "The end of the twelve"@en, "Das Ende der Zwölf"@de ;
+    skos:definition "A limit named as the end of twelve, at which the mind or the risen power comes to rest. The verses give the number and leave the unit unstated."@en ;
+    skos:note "Two things this node deliberately does not say. It does not fix the unit: the base text says end-of-twelve, and the reading that makes this twelve finger-breadths from the tip of the nose belongs to the commentarial layer, not to the verse. And it does not fix the place: the exegesis of Lakṣmaṇjoo counts several such limits in the body, at the crown, the brows, the throat, the base of the heart and the navel, and the verse that follows says outright that it may be reached in any manner and in any place. Nothing here yields a fixed radius. See prima-materia#38."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Vijñānabhairava 50", "Vijñānabhairava 51", "Vijñānabhairava 28" .
+
+pmc:AscentThroughEachCentre a pm:Conceptualizing ;
+    rdfs:label "The ascent that passes through every centre in one movement"@en, "Der Aufstieg, der in einer Bewegung jedes Zentrum durchläuft"@de ;
+    skos:definition "The power is imagined rising in the form of lightning, at each centre in turn and step by step, upward as far as three fists, and at the end of that ascent stands the great awakening."@en ;
+    skos:note "The two phrases that carry this are praticakram, at each centre, and kramāt kramam, step by step. Recorded because it settles two questions at once. It gives a body measure in the base text, three fists for the upward reach, where a modern draft gives an arm's length; and it makes the passage through several centres a single exercise, where the same draft allows one centre per session and calls a change of centre a break. See prima-materia#38 and prima-materia#40."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Vijñānabhairava 29", "Vijñānabhairava 28" .
+
+pmc:WorldPathTraversal a pm:Conceptualizing ;
+    rdfs:label "The traversal of the path of worlds"@en, "Die Durchquerung des Weltenpfads"@de ;
+    skos:definition "The whole is contemplated in the form of the path of worlds and the other paths, in sequence, in its coarse, subtle and supreme condition, until the mind dissolves; and the same method carried to the limits of the universe is said to bring the great awakening."@en ;
+    skos:note "This is the old form of the claim that attention placed in a centre opens an assigned layer. The layers here are worlds, bhuvana, and they belong to a cosmology written into the body, not to a list of psychological qualities. The distance between the two is the whole point of the mapping node above. See prima-materia#39."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Vijñānabhairava 56", "Vijñānabhairava 57" .
+
+pmc:TraversalPresupposesSequence a pm:Presupposing ;
+    rdfs:label "The traversal presupposes that its stations are taken in order"@en, "Die Durchquerung setzt voraus, dass ihre Stationen der Reihe nach genommen werden"@de ;
+    pm:dependentStep pmc:WorldPathTraversal ;
+    pm:priorStep pmc:AscentThroughEachCentre ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SaivaSakta ;
+    skos:note "Recorded at prescribed order and not at stated necessity, on purpose and against the reading a modern draft makes. The sources say kramaśaḥ and kramāt kramam, in sequence and step by step, and they say it more than once. What no source consulted says is what happens to one who skips a station. A prohibition needs a consequence somebody can quote, and this one has none; without it the claim is an instruction that a later reader hardened into a rule. See prima-materia#36."@en ;
+    dcterms:source "Vijñānabhairava 56", "Vijñānabhairava 29" .
