@@ -137,7 +137,22 @@ Nicht zulässig, weder als Quelle noch als Ersatz:
 - ❌ **URLs jeder Art**, auch DOI und Open-Access-Editionen. Ein Link benennt einen Ort, der sich ändert; ein Werk benennt etwas, das ein Leser unabhängig von diesem Graphen beschaffen kann. `pm:SourceIsLiteratureShape` weist jeden `dcterms:source`-Wert mit `http`-Präfix ab.
 - ❌ **YouTube-Videos, Blogs, Wikipedia, Forenbeiträge.** Als Rechercheeinstieg brauchbar, als Beleg nie. Was dort steht, ist bis zum Werk zurückzuverfolgen, und dann zählt das Werk.
 - ❌ **Unveröffentlichte eigene Texte, Arbeitsfassungen, Methodenentwürfe.** Auch die des Betreibers nicht.
-- ❌ **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen.
+- ❌ **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen — außer im Fall direkt unten.
+
+### Unerreichbares Werk: die Stelle aus zweiter Hand, aber sichtbar
+
+Das Original hat Vorrang und behält ihn. Ist das Werk nicht zu beschaffen — nicht digitalisiert, vergriffen, ordensintern, Sprache nicht beherrscht —, darf die Stelle über ein Werk zitiert werden, das sie wiedergibt, **wenn die Vermittlung im Graphen steht**:
+
+```turtle
+pmc:SomeClaim a pm:Attributing ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "Editor, Study (Jahr), wo die Stelle zitiert wird" ;
+    dcterms:source "Das Werk, das die Behauptung trägt, mit der Stelle" .
+```
+
+`dcterms:source` nennt weiterhin das Werk, das ein Leser beschaffen muss; `pm:readVia` nennt, was der Schreibende vor sich hatte. Die beiden nicht zusammenziehen — der Unterschied ist der ganze Punkt, weil eine Stelle aus zweiter Hand die Auswahl, die Übersetzung und das Schweigen des Vermittlers mitträgt. `pm:MediatedAttestationShape` weist ab, wer den Modus setzt und den Vermittler verschweigt; `pm:ReadViaIsLiteratureShape` weist URLs ab.
+
+**Der Modus hängt an der Unerreichbarkeit, nicht am Aufwand.** Was sich herunterladen und durchsuchen lässt, wird aufgeschlagen (siehe oben, zweite Recherchestufe). Ein vermittelter Knoten ist ein offener Posten: sobald das Exemplar vorliegt, wird nachgeprüft und der Modus auf `pm:textualAttestation` gehoben; das Issue bleibt bis dahin offen und nennt, welches Exemplar fehlt.
 
 Es geht um uraltes magisches Wissen, nicht um aktuelle Meinungen. Ein Beleg aus dem Jahr 2024 belegt, was 2024 jemand behauptet hat, und das ist selten das, was der Knoten aussagt.
 
