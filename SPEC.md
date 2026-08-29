@@ -54,14 +54,13 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 ├── scripts/
 │   ├── validate.py              # SHACL-Validierung
 │   ├── compile.py               # TTL-Fragmente → kohärentes Modell
-│   └── transmute.py             # TTL → JSON-LD Konvertierung
-├── tests/
-│   ├── test_validation.py
-│   ├── test_compilation.py
-│   └── test_transmutation.py
+│   ├── transmute.py             # TTL → JSON-LD Konvertierung
+│   └── publish.py               # Namensraum-Seite, Serialisierungen, llms.txt
+├── tests/                       # eine Datei je Skript, plus die Wächtertests
 └── .github/
     └── workflows/
-        ├── validate.yml         # CI auf jedem Push
+        ├── validate.yml         # SHACL und pytest auf main und claude/**
+        ├── pages.yml            # baut und deployt den Namensraum-Host
         └── distribute.yml       # Auto-Build & Push zu prima-materia-dist
 
 prima-materia-dist/              # Distribution Repository (auto-generiert, nie manuell editieren)
