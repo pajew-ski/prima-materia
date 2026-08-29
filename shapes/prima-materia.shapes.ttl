@@ -145,6 +145,54 @@ pm:FalsifierRequiredShape a sh:NodeShape ;
     sh:message "A protocol needs a stated falsifying condition unless its state is pm:noProcedureDevised." .
 
 #
+# A prerequisite claim must say which step, which prior step, and on what
+# strength. Without the strength the claim is unusable: an order and a
+# necessity would read alike, and the graph would lend ancient warrant to
+# sequences no source ever made binding.
+#
+pm:PresupposingShape a sh:NodeShape ;
+    sh:targetClass pm:Presupposing ;
+    sh:property [
+        sh:path pm:dependentStep ;
+        sh:minCount 1 ;
+        sh:message "Every prerequisite claim must name the step that depends."
+    ] ;
+    sh:property [
+        sh:path pm:priorStep ;
+        sh:minCount 1 ;
+        sh:message "Every prerequisite claim must name the step required first."
+    ] ;
+    sh:property [
+        sh:path pm:prerequisiteStrength ;
+        sh:minCount 1 ;
+        sh:message "Every prerequisite claim must state how firmly the source sets it."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every prerequisite claim must declare how it entered the record."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every prerequisite claim requires at least one dcterms:source."
+    ] .
+
+#
+# Claiming that a source sets a necessity obliges the claimant to say what
+# the source says goes wrong without it. A necessity for which no consequence
+# can be quoted is an order that somebody read as a necessity, and belongs
+# under pm:prescribedOrder instead.
+#
+pm:StatedNecessityShape a sh:NodeShape ;
+    sh:targetClass pm:Presupposing ;
+    sh:or (
+        [ sh:property [ sh:path pm:consequenceOfSkipping ; sh:minCount 1 ] ]
+        [ sh:not [ sh:property [ sh:path pm:prerequisiteStrength ; sh:hasValue pm:statedNecessity ] ] ]
+    ) ;
+    sh:message "A prerequisite of strength pm:statedNecessity must state the consequence of skipping." .
+
+#
 # Evidence is literature too. A modern study enters the record by the same
 # rule as a received work: as something a reader can obtain, not as a place.
 #

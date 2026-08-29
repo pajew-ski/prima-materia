@@ -199,3 +199,58 @@ def test_url_evidence_is_rejected() -> None:
     conforms, report = _validate(offending)
     assert not conforms, "pm:evidenceFrom holding a URL must fail SHACL."
     assert "never a URL" in report
+
+
+def test_prerequisite_without_strength_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:VagueOrdering a pm:Presupposing ;
+        pm:dependentStep pmc:Later ;
+        pm:priorStep pmc:Earlier ;
+        pm:attestedBy pm:textualAttestation ;
+        dcterms:source "Some work, some passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A prerequisite claim without pm:prerequisiteStrength must fail."
+    assert "how firmly the source sets it" in report
+
+
+def test_stated_necessity_without_consequence_is_rejected() -> None:
+    # Claiming that a source sets a necessity obliges the claimant to say what
+    # the source says goes wrong without it. Otherwise an order read as a
+    # necessity would enter the record wearing the stronger label.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:UnsupportedNecessity a pm:Presupposing ;
+        pm:dependentStep pmc:Later ;
+        pm:priorStep pmc:Earlier ;
+        pm:prerequisiteStrength pm:statedNecessity ;
+        pm:attestedBy pm:textualAttestation ;
+        dcterms:source "Some work, some passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:statedNecessity without pm:consequenceOfSkipping must fail."
+    assert "consequence of skipping" in report
+
+
+def test_prescribed_order_may_omit_the_consequence() -> None:
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:PlainOrdering a pm:Presupposing ;
+        pm:dependentStep pmc:Later ;
+        pm:priorStep pmc:Earlier ;
+        pm:prerequisiteStrength pm:prescribedOrder ;
+        pm:attestedBy pm:textualAttestation ;
+        dcterms:source "Some work, some passage" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"An order that states no consequence must conform.\n{report}"

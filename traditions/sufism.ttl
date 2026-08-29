@@ -1,0 +1,57 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Sufism
+#
+# The one tradition in the collection that draws the boundary of prerequisite
+# logic itself. The stations are worked for and ordered; the states are given
+# and cannot be ordered at all. A record that flattened the two would report
+# a path where the tradition reports a path and a gift.
+#
+
+pmt:Sufism a pm:Tradition ;
+    rdfs:label "Sufism"@en, "Sufismus"@de ;
+    skos:definition "The transmission of the Islamic mystical path, systematised in the handbooks of the tenth and eleventh centuries."@en ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya" .
+
+pmc:Maqamat a pm:Conceptualizing ;
+    rdfs:label "Stations"@en, "Stationen"@de ;
+    skos:definition "Stages of the path attained by effort and held by the one who reaches them, enumerated in the handbooks in a set order."@en ;
+    pm:withinTradition pmt:Sufism ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya, chapter on the stations", "al-Sarrāj, Kitāb al-Lumaʿ" .
+
+pmc:Ahwal a pm:Conceptualizing ;
+    rdfs:label "States"@en, "Zustände"@de ;
+    skos:definition "Conditions that descend on the wayfarer as a gift and pass, distinguished in the handbooks from the stations precisely by not being attainable through effort."@en ;
+    skos:note "No prerequisite claim is entered for these. The tradition holds that they cannot be worked for, which is a claim about the limits of any ordering and not an omission in this record."@en ;
+    pm:withinTradition pmt:Sufism ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya", "al-Sarrāj, Kitāb al-Lumaʿ" .
+
+pmc:Tawba a pm:Conceptualizing ;
+    rdfs:label "Turning back"@en, "Umkehr"@de ;
+    skos:definition "Repentance, placed first among the stations in the handbook enumeration."@en ;
+    pm:withinTradition pmt:Sufism ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya, chapter on the stations" .
+
+pmc:StationsPresupposeTheOneBelow a pm:Presupposing ;
+    rdfs:label "A station presupposes the station below it"@en, "Eine Station setzt die darunterliegende voraus"@de ;
+    pm:dependentStep pmc:Maqamat ;
+    pm:priorStep pmc:Tawba ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Sufism ;
+    skos:note "The handbooks set turning back as the first station and hold that the one below must be kept before the one above is reached. The enumeration and the count of the stations differ between the handbooks; the precedence of turning back does not."@en ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya, chapter on the stations", "al-Sarrāj, Kitāb al-Lumaʿ" .
+
+pmc:StatesAreNotOrdered a pm:Cautioning ;
+    rdfs:label "The states are not attained in order"@en, "Die Zustände werden nicht der Reihe nach erlangt"@de ;
+    skos:definition "A warning against treating the given states as a further ladder: they descend and pass, and no course of effort produces them."@en ;
+    pm:cautionsAbout pmc:Ahwal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Sufism ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya", "al-Sarrāj, Kitāb al-Lumaʿ" .

@@ -1,0 +1,42 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Platonic ascent
+#
+# Held apart from the Graeco-Roman file, which collects second-hand reports of
+# extraordinary capacities. This is not a report about anyone; it is an
+# ordered ascent set out in the base text, with the word for the rungs in it.
+#
+
+pmt:Platonic a pm:Tradition ;
+    rdfs:label "Platonic tradition"@en, "Platonische Überlieferung"@de ;
+    skos:definition "The transmission of the Platonic dialogues and the ascent they describe from particular to intelligible beauty."@en ;
+    dcterms:source "Plato, Symposium 210a-212a" .
+
+pmc:BeautyOfOneBody a pm:Conceptualizing ;
+    rdfs:label "The beauty of one body"@en, "Die Schönheit eines Körpers"@de ;
+    skos:definition "The first object of the ascent, from which the climb begins."@en ;
+    pm:withinTradition pmt:Platonic ;
+    dcterms:source "Plato, Symposium 210a-211c" .
+
+pmc:BeautyItself a pm:Conceptualizing ;
+    rdfs:label "Beauty itself"@en, "Die Schönheit selbst"@de ;
+    skos:definition "The final object of the ascent, seen only by one who has climbed by way of the intervening rungs."@en ;
+    pm:withinTradition pmt:Platonic ;
+    dcterms:source "Plato, Symposium 211c-212a" .
+
+pmc:AscentPresupposesTheRungs a pm:Presupposing ;
+    rdfs:label "The vision of beauty itself presupposes the ascent by rungs"@en, "Die Schau der Schönheit selbst setzt den Aufstieg über die Stufen voraus"@de ;
+    pm:dependentStep pmc:BeautyItself ;
+    pm:priorStep pmc:BeautyOfOneBody ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The ascent is described as rightly conducted only when it proceeds as by rungs of a ladder, from one body to two, from bodies to pursuits, from pursuits to studies, and thence to beauty itself; the one who does not go this way does not arrive at the final vision." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Platonic ;
+    skos:note "The word rendered as rungs stands in the base text at 211c, which is why this counts as a stated ordering and not as a modern reading of a sequence of paragraphs."@en ;
+    dcterms:source "Plato, Symposium 211c" .

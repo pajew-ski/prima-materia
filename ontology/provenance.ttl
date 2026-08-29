@@ -63,6 +63,30 @@ pm:Cautioning a owl:Class ;
     skos:definition "The act, within a tradition, of warning against a capacity, a practice, or the pursuit of either."@en ;
     skos:note "Held as a node rather than as commentary, because what a tradition warns against is part of what it teaches. A record that carries only the capacities and not the cautions misreports the tradition it claims to hold."@en .
 
+pm:Presupposing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Presupposing"@en, "Voraussetzen"@de ;
+    skos:definition "The claim, made within a tradition, that one step of a path presupposes another: that a practice, state or capacity is not reached except by way of something else."@en ;
+    skos:note "A node and not an edge, for the same reason as pm:Attributing and pm:Yielding. A prerequisite claim differs enormously in what carries it, and the difference is not visible on an edge. It matters whether a text sets an order or a reader inferred one from the order of the chapters."@en .
+
+pm:PrerequisiteStrength a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Prerequisite Strength"@en, "Stärke der Voraussetzung"@de ;
+    skos:definition "How firmly a source sets a prerequisite: as a necessity, as an instruction, or merely by the order in which it presents its material."@en ;
+    skos:note "The three must not collapse. A list of eight limbs in the order given is not the same claim as a sentence saying that the eighth is unreachable without the seventh, and reading the first as the second is the commonest way a modern system acquires an ancient warrant it never had."@en .
+
+pm:statedNecessity a pm:PrerequisiteStrength ;
+    rdfs:label "Stated necessity"@en, "Ausdrücklich gesetzte Notwendigkeit"@de ;
+    skos:definition "The source says what fails to happen without the prior step: that the later step is not possible, or does not arise, or turns harmful."@en .
+
+pm:prescribedOrder a pm:PrerequisiteStrength ;
+    rdfs:label "Prescribed order"@en, "Angeordnete Reihenfolge"@de ;
+    skos:definition "The source instructs that one comes before the other, without saying what follows from disregarding it."@en .
+
+pm:presentationOrder a pm:PrerequisiteStrength ;
+    rdfs:label "Presentation order"@en, "Darstellungsreihenfolge"@de ;
+    skos:definition "The source only presents the material in a sequence. Any necessity is the reader's, and belongs to whoever read it that way."@en .
+
 pm:ExaminationState a owl:Class ;
     rdfs:subClassOf pm:Process ;
     rdfs:label "Examination State"@en, "Prüfstand"@de ;
@@ -189,6 +213,28 @@ pm:cautionsAbout a owl:ObjectProperty ;
 #
 # Properties of testing
 #
+
+pm:dependentStep a owl:ObjectProperty ;
+    rdfs:label "dependent step"@en, "abhängiger Schritt"@de ;
+    rdfs:domain pm:Presupposing ;
+    skos:definition "The later step: the practice, state or capacity said not to be reached without the prior one."@en .
+
+pm:priorStep a owl:ObjectProperty ;
+    rdfs:label "prior step"@en, "vorausgesetzter Schritt"@de ;
+    rdfs:domain pm:Presupposing ;
+    skos:definition "The earlier step the later one is said to require."@en .
+
+pm:prerequisiteStrength a owl:ObjectProperty ;
+    rdfs:label "prerequisite strength"@en, "Stärke der Voraussetzung"@de ;
+    rdfs:domain pm:Presupposing ;
+    rdfs:range pm:PrerequisiteStrength ;
+    skos:definition "How firmly the source sets the prerequisite."@en .
+
+pm:consequenceOfSkipping a owl:DatatypeProperty ;
+    rdfs:label "consequence of skipping"@en, "Folge des Überspringens"@de ;
+    rdfs:domain pm:Presupposing ;
+    skos:definition "What the source says happens if the prior step is passed over."@en ;
+    skos:note "Required wherever the strength is pm:statedNecessity. Claiming that a text sets a necessity obliges the claimant to say what the text says goes wrong without it; a necessity nobody can quote a consequence for is an order read as a necessity."@en .
 
 pm:examinationState a owl:ObjectProperty ;
     rdfs:label "examination state"@en, "Prüfstand"@de ;
