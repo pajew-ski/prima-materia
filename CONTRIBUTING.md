@@ -85,8 +85,15 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
 `korpus:sefer-yetzirah`, `korpus:platonisch`, `korpus:graeco-roman`,
 `korpus:eleusis`, `korpus:stoisch`, `korpus:hesychasmus`,
 `korpus:wuestenvaeter`, `korpus:unterscheidung`, `korpus:sufismus`,
+`korpus:kabbalistisch`, `korpus:islamisch`, `korpus:inkubation`,
 `korpus:modern` (für Behauptungen, deren Ort `pm:evidenceFrom` an einem
 `pm:Testing`-Knoten ist).
+
+Die drei letztgenannten vor `korpus:modern` sind am 29.08.2026 an Issues
+vergeben worden, bevor sie hier standen, und werden hier nachgetragen. Das
+ist die Reihenfolge, die diese Regel gerade verhindern soll; sie steht
+festgehalten, damit der Nachtrag nicht als Beleg dafür gilt, dass die
+Reihenfolge beliebig wäre.
 
 Ein neuer `korpus:`-Wert wird hier eingetragen, bevor er vergeben wird.
 Er benennt den Korpus, den man aufschlägt, nicht die Datei, in der er
