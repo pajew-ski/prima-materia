@@ -2,6 +2,28 @@
 
 Permanent-Context für Claude Code. Enthält operative Constraints und Konventionen. Vollständige Spezifikation in `SPEC.md` — bei Konflikten gilt `SPEC.md`.
 
+## Wozu
+
+Lies das vor allem anderen. Es entscheidet, was aufzunehmen sich lohnt, und ohne diesen Abschnitt arbeitet ein Agent korrekt an der falschen Sache.
+
+**prima-materia ist eine Prüfstelle, keine Sammlung.** Eine Behauptung über ein magisches oder kontemplatives Vermögen wird aufgenommen, von ihrer Beglaubigung getrennt, und beide werden getrennt gehalten, damit sichtbar bleibt, worauf sie steht: auf einem überlieferten Text, auf einem modernen Bearbeiter, oder auf nichts. Aus dem geprüften Bestand entsteht das eigentliche Werk: eine Karte, die durch Überlagerung der alten Traditionen zeigt, wo sie sich decken, wo sie sich widersprechen und was tatsächlich Wirkung erzielt, die sich messen lässt.
+
+**Das Ziel dahinter.** Magie in ihren Konzepten verstehen und lehren können. Auf dem Weg dorthin die eigenen menschlichen und übermenschlichen Vermögen aktivieren oder zurückgewinnen. Und die Ergebnisse frei teilen, damit andere zu ihrem vollen Potenzial finden. CC0 ist deshalb keine Lizenzwahl, sondern die Maßnahme: magisches Wissen war dreitausend Jahre durch Initiation, Linie, Geheimhaltung und Zahlung verschlossen, und dieser Verschluss entscheidet über Entfaltung nach Zugehörigkeit statt nach Vermögen.
+
+**Das Kriterium für jede Recherche, jede Fragestellung, jeden Eintrag:**
+
+> **Wertvoll ist, was ein Tor beseitigt.**
+
+Bezeugt gegen erschlossen beseitigt das Tor der Autorität. Die Voraussetzungsketten beseitigen das Tor der zurückgehaltenen Reihenfolge. Die Prüfung beseitigt das Tor der unwiderlegbaren Behauptung. Die Konvergenz beseitigt das Tor der Linienzugehörigkeit.
+
+Drei operative Folgen, die laufend Entscheidungen tragen:
+
+**Der wertvollste Knoten ist nicht der gebrauchte, sondern der anderswo am zuverlässigsten falsch berichtete.** Unter CC0 und mit Auslieferung an Sprachmodelle propagieren nicht die Inhalte, sondern die Unterscheidungen. Ein Knoten, der eine moderne Konstruktion als moderne kenntlich macht, ist mehr wert als zehn korrekt abgeschriebene Stellen.
+
+**`pm:Converging`, `pm:Disputing` und `pm:Testing` tragen das Ziel; alles andere ist Substrat für sie.** Überdeckung, Widerspruch, Wirkung sind wörtlich die drei Fragen. Wo diese drei Schichten dünner sind als die Traditionsdateien, arbeitet der Bestand an seinem Unterbau statt an seinem Zweck.
+
+**Eine Recherche fragt nicht nur, was eine Tradition sagt.** Sie fragt, wo zwei dasselbe sagen ohne belegten Kontaktweg, wo sie einander widersprechen, und wo sich etwas messen lässt.
+
 ## Projekt
 
 **prima-materia** — Open-Data-Ontologie für magisches/esoterisches Wissen, gestaltet nach einem **bewusstsein-ersten** Designprinzip. Source-Repo (manuell) → GitHub Actions (validate/compile/transmute) → Distribution-Repo (auto-generiert) → jsDelivr CDN.
