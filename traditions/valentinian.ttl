@@ -1,0 +1,31 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Valentinian gnosis
+#
+# Order of the file: the tradition, then what is held about the end. The file
+# is thin on purpose and grows in passages, not in headings. Everything that
+# is a statement about the subject sits on a node below.
+#
+
+pmt:ValentinianGnosis a pm:Tradition ;
+    rdfs:label "Valentinian gnosis"@en, "Valentinianische Gnosis"@de ;
+    skos:definition "The transmission of the Valentinian school of the second century, known in this file through the account of an opponent and not yet through its own writings."@en ;
+    skos:note "A caution governs everything read out of this file at present. What is held here comes from a refutation: the heresiologist reports the doctrine in order to defeat it, selects what serves that end, and is under no obligation to state it as its holders would. Every node therefore carries pm:thirdPartyAscription and not textual attestation, and none of them may be read as a Valentinian self-statement until the same claim is found in a text of the school itself."@en ;
+    skos:note "The three decisions that precede a tradition file, stated rather than left implicit. Route of contact: none is documented towards the Indian or Chinese material, so a correspondence with either would count as a finding rather than as reception — but no such correspondence is asserted here yet. Edition: the account is read in the Keble translation of 1872, named on each node; the Nag Hammadi witnesses are not yet read and their translation is not yet chosen. Number of citable passages: one. That is thin, and deliberately so, on the model of traditions/daoist.ttl — a file grows in passages, and a heading without passages under it would be a claim about the corpus that the corpus does not carry."@en ;
+    dcterms:source "Irenaeus, Adversus Haereses I (trans. J. Keble, Oxford 1872)" .
+
+pmc:ValentinianConsummation a pm:Conceptualizing ;
+    rdfs:label "The consummation as a marriage rather than a merging"@en, "Die Vollendung als Hochzeit, nicht als Verschmelzung"@de ;
+    skos:definition "The account of a final state in which the mother returns within the fullness and receives the saviour as her spouse; those who call themselves spiritual are stripped of their souls, made purely intellectual spirits, and become brides of spiritual angels; the creator, being merely animal, moves into the mother's place; and the souls of the righteous rest in an intermediate place."@en ;
+    skos:note "Recorded because it does not fit either end of the axis it is regularly assigned to. The spiritual ones are not dissolved: they are stripped and transformed, but a bridal state presupposes two, so what is transformed persists as a party to it. Nor are they made into absolutes of their own: they are married, not set apart. The end is a union that keeps what it unites, and that is a third case, distinct from the one in pmc:DistinctivenessAgainstDissolution, where the creature stays with itself against dissolution rather than entering a twoness. See prima-materia#70 and prima-materia#52."@en ;
+    skos:note "Two further things in the same passage that a summary loses. The demiurge is not destroyed but relocated, which makes the account less anticosmic than its modern reception; and the souls of the righteous, who are not of the spiritual class, are neither saved into the fullness nor lost, but given a place between. A scheme with two outcomes cannot hold either detail."@en ;
+    skos:note "The passage is a report by an opponent and is attested as such. What can be said on this source is that the doctrine was ascribed in this form in the second century, not that its holders stated it so. See the caution on pmt:ValentinianGnosis."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:ValentinianGnosis ;
+    dcterms:source "Irenaeus, Adversus Haereses I, in the account of the Valentinian consummation, at the passage on the mother's return, the brides of the angels and the removal of the creator (trans. J. Keble, Oxford 1872)" .
