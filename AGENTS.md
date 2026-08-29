@@ -59,7 +59,9 @@ Keine Rückfragen zu Schritten, die `SPEC.md` und dieses Dokument bereits vorsch
 
 **Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Vollständigkeit geht vor Eleganz: lieber fünfzig knappe Issues als fünf ausformulierte und der Rest im Fließtext.
 
-**Was in dieser Reihenfolge nicht funktioniert.** `validate.yml` läuft nicht auf Arbeitsbranches, der Lauf entsteht erst mit dem PR. Bis das geändert ist, wird der PR geöffnet und dann geprüft; bei rot wird nachgebessert, nicht gemerged. Siehe das Issue dazu.
+**Die Prüfung liegt vor dem PR, nicht danach.** `validate.yml` hört seit #32 auch auf `push` nach `claude/**`. Auf einem Arbeitsbranch entsteht damit ein echter Lauf, bevor ein PR offen ist: schreiben, `prima_repo_check` auf denselben Branch, und erst bei `gruen` den PR öffnen. Der frühere Vermerk an dieser Stelle — der Lauf entstehe erst mit dem PR, also PR zuerst — ist überholt und war der Grund, warum Fehler in TTL-Dateien vorher erst am offenen PR auffielen.
+
+Zwei Dinge, die dabei aussehen wie ein Fehler und keiner sind. Eine `concurrency`-Gruppe mit `cancel-in-progress` bricht die Läufe überholter Zwischenstände ab, ein Branch mit vielen Commits sammelt also planmäßig `cancelled`-Läufe. Und `prima_repo_check` wertet seit #44 ausschließlich den Lauf des aktuellen Kopf-SHA; abgebrochene Läufe zählen in keinem Fall als Fehlschlag, ältere Läufe erscheinen nur noch als Zahl. Wer stattdessen die Lauf-Liste im Actions-Reiter überfliegt, sieht rote Kreuze, die nichts bedeuten.
 
 **5. Beifang wird geerntet, aber nicht auf demselben Weg.**
 

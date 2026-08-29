@@ -38,6 +38,21 @@ DEFAULT_OUTPUT = REPO_ROOT / "build" / "site"
 PM = Namespace("https://pajew.ski/prima-materia/ontology#")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
 
+# The namespace host is where the ontology is both named and served, so the
+# discovery file points there and not at a mirror. A mirror can move; the
+# namespace cannot.
+SITE_BASE = "https://pajew.ski/prima-materia/"
+SOURCE_REPO = "https://github.com/pajew-ski/prima-materia"
+
+# Selective loading. The graph has three layers, and the namespaces already
+# mark them: pm: is vocabulary, pmt:/pmc:/pmp: is content. A cut by tradition
+# alone would not be a partition — the nodes that belong to no tradition are
+# the convergences, disputes, orderings and examinations, which is the yield of
+# the project and not a remainder. So the cut is vocabulary, one part per
+# tradition, and one part for everything that belongs to none.
+PARTS_DIR = "parts"
+VOCABULARY_BASE = "https://pajew.ski/prima-materia/ontology"
+
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
 # a pmt:/pmc: term by accident.
 PREFIXES: tuple[tuple[str, str], ...] = (
@@ -243,6 +258,179 @@ def build_data(graph: Graph) -> dict:
     }
 
 
+def _slug(subject: URIRef) -> str:
+    """pmt:SaivaSakta -> saiva-sakta."""
+    local = curie(subject).split(":", 1)[-1]
+    return re.sub(r"(?<!^)(?=[A-Z])", "-", local).lower()
+
+
+def _is_vocabulary(subject: Node) -> bool:
+    return str(subject).startswith(VOCABULARY_BASE)
+
+
+def _is_content(subject: Node) -> bool:
+    """A term of this project that is not vocabulary: a tradition, a concept, a practice.
+
+    Terms of owl:, rdfs: and skos: are neither. They are not carried by any
+    part and need no stub, because a client that reads RDF at all already has
+    them.
+    """
+    return str(subject).startswith(SITE_BASE) and not _is_vocabulary(subject)
+
+
+def _stub(graph: Graph, subject: URIRef) -> list[tuple]:
+    """Just enough of a foreign node that a reference does not dangle.
+
+    A part carries whole nodes for what it is about and a name for what it
+    points at. Without this a convergence in one part names six concepts that
+    are nowhere in the file, and a client reading that part alone sees edges
+    into nothing.
+    """
+    out = []
+    for predicate in (RDF.type, RDFS.label, PM.withinTradition):
+        for obj in graph.objects(subject, predicate):
+            out.append((subject, predicate, obj))
+    return out
+
+
+def split_graph(graph: Graph) -> dict[str, Graph]:
+    """Cut the graph into independently loadable parts.
+
+    Returns {name: graph}: "vocabulary", "findings", and one entry per
+    tradition under its slug. Every part is a subset of the whole graph, so a
+    client that loads several never sees a triple the full serialisation does
+    not have.
+    """
+    members: dict[str, set[URIRef]] = {"vocabulary": set(), "findings": set()}
+    slugs: dict[URIRef, str] = {}
+
+    for subject in graph.subjects(RDF.type, PM.Tradition):
+        if isinstance(subject, URIRef):
+            slug = _slug(subject)
+            slugs[subject] = slug
+            members[slug] = {subject}
+
+    for subject in {s for s in graph.subjects() if isinstance(s, URIRef)}:
+        if _is_vocabulary(subject):
+            members["vocabulary"].add(subject)
+            continue
+        if subject in slugs:
+            continue
+        traditions = [
+            o for o in graph.objects(subject, PM.withinTradition) if o in slugs
+        ]
+        if traditions:
+            for tradition in traditions:
+                members[slugs[tradition]].add(subject)
+        else:
+            members["findings"].add(subject)
+
+    parts: dict[str, Graph] = {}
+    for name, subjects in members.items():
+        part = Graph()
+        for prefix, base in PREFIXES:
+            part.bind(prefix, Namespace(base))
+        for subject in subjects:
+            for predicate, obj in graph.predicate_objects(subject):
+                part.add((subject, predicate, obj))
+        # A stub names its own tradition, and that tradition then needs a name
+        # too. Two rounds settle it, but the loop is written to a fixed point
+        # rather than to the number two, because the next property that points
+        # from one content node to another would silently break a count.
+        named = set(subjects)
+        while True:
+            foreign = {
+                o
+                for o in part.objects()
+                if isinstance(o, URIRef) and _is_content(o) and o not in named
+            }
+            if not foreign:
+                break
+            for subject in foreign:
+                for triple in _stub(graph, subject):
+                    part.add(triple)
+            named |= foreign
+        parts[name] = part
+    return parts
+
+
+def build_llms_txt(graph: Graph) -> str:
+    """The discovery file an agent reads before it fetches anything.
+
+    The list of traditions is derived from the graph and not from the
+    directory: a file is a unit of the repository and not of the subject, two
+    traditions can sit in one file, and a hand-kept list names files that stop
+    existing. What a client wants to know is which transmissions the graph
+    carries, and that question is answered by the pm:Tradition instances.
+    """
+    traditions = sorted(
+        (subject for subject in graph.subjects(RDF.type, PM.Tradition) if isinstance(subject, URIRef)),
+        key=lambda subject: str(subject),
+    )
+
+    lines = [
+        "# prima-materia",
+        "",
+        "> Open-data ontology of magical and esoteric knowledge, built under a",
+        "> consciousness-first design principle. It is an assay office and not a",
+        "> collection: it holds no truths, only claims with an origin, and keeps a",
+        "> claim separate from what attests it. Released under CC0 1.0.",
+        "",
+        "## Ontology Files",
+        "",
+        f"- [Full ontology (Turtle)]({SITE_BASE}prima-materia.ttl): the compiled graph",
+        f"- [Full ontology (JSON-LD)]({SITE_BASE}prima-materia.jsonld): the same graph, JSON-LD serialisation",
+        f"- [JSON-LD Context]({SITE_BASE}context.jsonld): standalone context for embedding in client systems",
+        "",
+        "## How to read a claim",
+        "",
+        "- Every claim carries at least one `dcterms:source` naming a received work,",
+        "  the passage that bears it, and the edition it was read from. Never a URL.",
+        "- `pm:attestedBy` says by which route the claim entered the record.",
+        "  `pm:compilerInference` attests an ordering act, never the claim being ordered.",
+        "- `pm:Converging` is a reading made by a compiler. Where `pm:transmissionPath`",
+        "  is present the agreement is reception and carries no evidential weight;",
+        "  only `pm:independentAttestation` makes it a finding.",
+        "- The absence of a `pm:Testing` node means nobody has taken the examination up.",
+        "  It does not mean the claim was examined and found wanting.",
+        "",
+        "## Loading less than the whole graph",
+        "",
+        "The graph is cut into parts that can be loaded on their own. Each part is",
+        "a subset of the full serialisation, and each carries a name and a type for",
+        "the nodes it points at but does not contain, so no reference dangles.",
+        "",
+        f"- [Vocabulary]({SITE_BASE}{PARTS_DIR}/vocabulary.ttl): the classes, properties and scales. Load this with any other part; without it the rest is not interpretable.",
+        f"- [Findings]({SITE_BASE}{PARTS_DIR}/findings.ttl): every node that belongs to no single tradition — the convergences, the disputes, the examinations, and the orderings held as modern. This is what the project is for, and a cut by tradition alone would drop all of it.",
+        "- One part per tradition, linked in the list below.",
+        "",
+        "Turtle is listed; the same parts exist as `.jsonld` beside them.",
+        "",
+        "## Traditions",
+        "",
+    ]
+
+    for subject in traditions:
+        labels = _langs(graph, subject, RDFS.label)
+        label = labels.get("en") or labels.get("") or curie(subject).split(":", 1)[-1]
+        definitions = _langs(graph, subject, SKOS.definition)
+        definition = definitions.get("en") or definitions.get("")
+        entry = f"- [{label}]({SITE_BASE}#{curie(subject)})"
+        part = f" [[part]({SITE_BASE}{PARTS_DIR}/{_slug(subject)}.ttl)]"
+        lines.append((f"{entry}: {definition}" if definition else entry) + part)
+
+    lines += [
+        "",
+        "## Optional",
+        "",
+        f"- [Source repository]({SOURCE_REPO})",
+        f"- [Specification]({SOURCE_REPO}/blob/main/SPEC.md)",
+        f"- [Claims not yet answered by the graph]({SOURCE_REPO}/issues)",
+        "",
+    ]
+    return "\n".join(lines)
+
+
 def publish(
     assets: Path,
     inputs: Iterable[Path],
@@ -267,6 +455,15 @@ def publish(
     graph.serialize(destination=turtle, format="turtle")
     transmute_script.transmute(turtle, context, output / "prima-materia.jsonld")
     shutil.copy(context, output / "context.jsonld")
+
+    parts = output / PARTS_DIR
+    parts.mkdir(parents=True, exist_ok=True)
+    for name, part in split_graph(graph).items():
+        part_turtle = parts / f"{name}.ttl"
+        part.serialize(destination=part_turtle, format="turtle")
+        transmute_script.transmute(part_turtle, context, parts / f"{name}.jsonld")
+
+    (output / "llms.txt").write_text(build_llms_txt(graph), encoding="utf-8")
 
     # GitHub Pages serves through Jekyll unless told otherwise; the marker keeps
     # it from filtering files and directories whose names start with an

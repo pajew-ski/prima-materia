@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from rdflib import Graph, Literal, Namespace
+from rdflib import RDF, Graph, Literal, Namespace, URIRef
 
 import compile as compile_script
 import publish as publish_script
@@ -198,3 +198,94 @@ def test_publish_is_idempotent(tmp_path: Path) -> None:
     for _ in range(2):
         publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
     assert (output / "index.html").is_file()
+
+
+def test_llms_txt_lists_every_tradition_in_the_graph() -> None:
+    """The discovery file is derived, not kept by hand.
+
+    A hand-kept list runs behind the corpus and eventually names transmissions
+    that are not in the graph, or misses ones that are. It is derived from the
+    pm:Tradition instances and not from the files in traditions/, because a
+    file is a unit of the repository and not of the subject:
+    greek-pneuma-hesychasm.ttl alone carries two traditions.
+    """
+    graph = compile_script.compile_graph(publish_script.DEFAULT_INPUTS)
+    text = publish_script.build_llms_txt(graph)
+
+    traditions = {
+        publish_script.curie(subject)
+        for subject in graph.subjects(RDF.type, publish_script.PM.Tradition)
+        if isinstance(subject, URIRef)
+    }
+    assert traditions, "the fixture graph carries no tradition at all"
+    for term in traditions:
+        assert f"#{term}" in text, f"{term} is in the graph and missing from llms.txt"
+
+    # The namespace host answers for the ontology it names. A discovery file
+    # that sends a client to a mirror instead makes the mirror the address.
+    assert "cdn.jsdelivr.net" not in text
+    assert text.count(publish_script.SITE_BASE) >= 4
+
+
+def test_publish_writes_the_discovery_file(tmp_path: Path) -> None:
+    output = tmp_path / "site"
+    publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
+    assert (output / "llms.txt").is_file()
+
+
+def test_parts_partition_the_content_and_dangle_nothing() -> None:
+    """The cut has to hold two things at once.
+
+    Every content node lands in some part, so nothing is silently dropped —
+    and in particular the nodes that belong to no tradition, which are the
+    convergences, disputes, orderings and examinations this project exists to
+    produce. A cut by tradition alone would leave exactly those behind.
+
+    And no part points at a node it does not name. A part carries whole nodes
+    for what it is about and a stub for what it references, because a client
+    reading one part alone must not meet an edge into nothing.
+    """
+    graph = compile_script.compile_graph(publish_script.DEFAULT_INPUTS)
+    parts = publish_script.split_graph(graph)
+
+    assert "vocabulary" in parts and "findings" in parts
+    for triple in (t for part in parts.values() for t in part):
+        assert triple in graph, "a part carries a triple the whole graph does not"
+
+    content = {
+        s
+        for s in graph.subjects()
+        if isinstance(s, URIRef) and publish_script._is_content(s)
+    }
+    covered = {
+        s
+        for name, part in parts.items()
+        if name != "vocabulary"
+        for s in part.subjects()
+        if isinstance(s, URIRef) and publish_script._is_content(s)
+    }
+    assert content <= covered, sorted(publish_script.curie(s) for s in content - covered)
+
+    # The tradition-less nodes are the point of the findings part.
+    tradition_less = {
+        s
+        for s in content
+        if not any(graph.objects(s, publish_script.PM.withinTradition))
+        and (s, RDF.type, publish_script.PM.Tradition) not in graph
+    }
+    assert tradition_less <= set(parts["findings"].subjects())
+
+    for name, part in parts.items():
+        named = set(part.subjects())
+        for obj in part.objects():
+            if isinstance(obj, URIRef) and publish_script._is_content(obj):
+                assert obj in named, f"{name} points at {publish_script.curie(obj)} without naming it"
+
+
+def test_publish_writes_the_parts(tmp_path: Path) -> None:
+    output = tmp_path / "site"
+    publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
+    parts = output / publish_script.PARTS_DIR
+    assert (parts / "vocabulary.ttl").is_file()
+    assert (parts / "findings.ttl").is_file()
+    assert (parts / "vocabulary.jsonld").is_file()

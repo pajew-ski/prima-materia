@@ -54,14 +54,13 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 ├── scripts/
 │   ├── validate.py              # SHACL-Validierung
 │   ├── compile.py               # TTL-Fragmente → kohärentes Modell
-│   └── transmute.py             # TTL → JSON-LD Konvertierung
-├── tests/
-│   ├── test_validation.py
-│   ├── test_compilation.py
-│   └── test_transmutation.py
+│   ├── transmute.py             # TTL → JSON-LD Konvertierung
+│   └── publish.py               # Namensraum-Seite, Serialisierungen, llms.txt
+├── tests/                       # eine Datei je Skript, plus die Wächtertests
 └── .github/
     └── workflows/
-        ├── validate.yml         # CI auf jedem Push
+        ├── validate.yml         # SHACL und pytest auf main und claude/**
+        ├── pages.yml            # baut und deployt den Namensraum-Host
         └── distribute.yml       # Auto-Build & Push zu prima-materia-dist
 
 prima-materia-dist/              # Distribution Repository (auto-generiert, nie manuell editieren)
@@ -70,13 +69,48 @@ prima-materia-dist/              # Distribution Repository (auto-generiert, nie 
 ├── prima-materia.jsonld         # Vollständige kompilierte Ontologie als JSON-LD
 ├── prima-materia.ttl            # Vollständige kompilierte Ontologie als Turtle
 ├── context.jsonld               # JSON-LD Context (Kopie aus source/context/)
-├── llms.txt                     # LLM-Discovery-File (siehe Abschnitt 8)
-├── version.json                 # { "version": "...", "git_sha": "...", "built_at": "..." }
-└── traditions/                  # Pro-Tradition-Splits für selektives Laden
-    ├── valentinian.jsonld
-    ├── greek-cosmological.jsonld
-    └── opus-purum-axioms.jsonld
+└── version.json                 # { "version": "...", "git_sha": "...", "built_at": "..." }
 ```
+
+Die `llms.txt` und die Teilgraphen stehen auf dem Namensraum-Host und nicht im
+Spiegel (Abschnitt 8). Das Distributionsrepo führt die vollständigen
+Serialisierungen und sonst nichts.
+
+### Selektives Laden
+
+Der Bestand wächst mit jedem Lauf, und ein Client mit einer Frage an eine
+einzelne Überlieferung soll dafür nicht den ganzen Graphen parsen müssen. Er
+wird deshalb in Teile zerlegt, die einzeln geladen werden können; sie liegen
+unter `parts/` neben der Seite.
+
+Die frühere Fassung sah dafür „Pro-Tradition-Splits" vor, und das ist der
+falsche Schnitt: eine Aufteilung nach Tradition ist keine Partition. Die
+Inhaltsknoten ohne `pm:withinTradition` sind die Konvergenzen, die Streitfälle,
+die Prüfungen und die als modern ausgewiesenen Ordnungen — der Ertrag des
+Projekts und kein Rest. Wer nur nach Traditionen schneidet, liefert die
+Sammlung aus und lässt die Prüfstelle liegen.
+
+Der Schnitt folgt deshalb den drei Schichten, die die Namensräume ohnehin
+markieren:
+
+| Teil | Inhalt |
+|---|---|
+| `vocabulary` | alles im `pm:`-Namensraum: Klassen, Properties, Skalen, Bezeugungsmodi |
+| `<tradition>` | die `pmt:`-Instanz und alles, was mit `pm:withinTradition` auf sie zeigt |
+| `findings` | jeder Inhaltsknoten, der zu keiner Tradition gehört |
+
+Zwei Bedingungen, die jeder Teil erfüllt und die die Tests sichern:
+
+1. **Jeder Teil ist eine Teilmenge des ganzen Graphen.** Wer mehrere lädt, sieht
+   nie ein Tripel, das die vollständige Serialisierung nicht hat.
+2. **Kein Teil zeigt auf einen Knoten, den er nicht benennt.** Für Begriffe, die
+   ein Teil referenziert und nicht enthält, trägt er einen Stub aus Typ, Label
+   und Tradition. Sonst liest ein Client, der einen Teil allein lädt, Kanten ins
+   Leere, und gerade die Konvergenzknoten zeigen quer über die Traditionen.
+
+`vocabulary` ist ohne die übrigen Teile sinnvoll; die übrigen sind ohne
+`vocabulary` nicht interpretierbar, weil dort steht, was `pm:attestedBy` und die
+Skalen bedeuten. Die `llms.txt` sagt das dem Client.
 
 ## 2. Namespace & URI-Strategie
 
@@ -364,103 +398,41 @@ pm:NoSubstanceClassesShape a sh:NodeShape ;
 
 ## 7. GitHub Actions
 
-### `.github/workflows/validate.yml`
+**Dieser Abschnitt beschreibt, was die Workflows leisten müssen, und nicht ihren Wortlaut.** Der Wortlaut steht in `.github/workflows/`. Ein wörtliches Listing hier war zweimal falsch, bevor es jemandem auffiel, und es nützt dem Agenten nichts: sein Token trägt keinen `workflows`-Scope, er kann die Dateien ohnehin nicht schreiben. Wer eine Änderung an einem Workflow braucht, beschreibt sie und lässt sie von Hand einspielen.
 
-```yaml
-name: Validate
+### `validate.yml`
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+Läuft auf `push` nach `main` und nach `claude/**` sowie auf `pull_request` gegen `main`, installiert die Abhängigkeiten und führt `scripts/validate.py` und `pytest tests/` aus.
 
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install -r requirements.txt
-      - run: python scripts/validate.py
-      - run: pytest tests/
-```
+Der Trigger auf `claude/**` ist die Bedingung dafür, dass die in `AGENTS.md` vorgeschriebene Reihenfolge überhaupt erfüllbar ist: auf dem Arbeitsbranch prüfen, dann den PR öffnen. Ohne ihn entsteht der erste Lauf mit dem PR, und ein Fehler in einer TTL-Datei fällt erst an der offenen Änderung auf.
 
-### `.github/workflows/distribute.yml`
+Eine `concurrency`-Gruppe je Ereignistyp und Ref mit `cancel-in-progress: true` bricht die Läufe überholter Zwischenstände ab. Gewollte Nebenwirkung: ein Branch mit mehreren Commits sammelt `cancelled`-Läufe. Ein abgebrochener Lauf hat nichts festgestellt und ist kein Fehlschlag; `prima_repo_check` wertet deshalb ausschließlich den Lauf des aktuellen Kopf-SHA. Siehe #32 und #44.
 
-```yaml
-name: Distribute
+### `pages.yml`
 
-on:
-  push:
-    branches: [main]
+Läuft auf `push` nach `main`, baut die Seite mit `scripts/publish.py` und deployt sie auf den Namensraum-Host. Braucht `pages: write` und `id-token: write`; nichts daran schreibt ins Repository zurück.
 
-jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-        with:
-          path: source
-      - name: Checkout dist
-        uses: actions/checkout@v4
-        with:
-          repository: pajew-ski/prima-materia-dist
-          path: dist
-          token: ${{ secrets.DIST_REPO_TOKEN }}
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - working-directory: source
-        run: |
-          pip install -r requirements.txt
-          python scripts/validate.py
-          python scripts/compile.py --output build/prima-materia.ttl
-          python scripts/transmute.py --input build/prima-materia.ttl --context context/prima-materia-context.jsonld --output build/prima-materia.jsonld
-      - name: Sync to dist
-        run: |
-          cp source/build/prima-materia.ttl dist/
-          cp source/build/prima-materia.jsonld dist/
-          cp source/context/prima-materia-context.jsonld dist/context.jsonld
-          # version.json mit git_sha und timestamp generieren
-          cd dist && git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to publish"
-          else
-            git -c user.name="prima-materia bot" -c user.email="bot@pajewski.net" commit -m "Auto-build from source@${{ github.sha }}"
-            git push
-          fi
-```
+Die `concurrency`-Gruppe hier trägt ausdrücklich `cancel-in-progress: false`, anders als bei `validate.yml`. Ein abgebrochener Prüflauf kostet nichts; ein abgebrochenes Deployment kann ein halb hochgeladenes Artefakt zur Live-Seite machen, und die Live-Seite ist der Ort, an dem die Terme geprägt sind.
 
-**Hinweis für den Agent:** Das `DIST_REPO_TOKEN`-Secret muss vom User manuell in den Repo-Settings gesetzt werden (Personal Access Token mit Write-Access auf prima-materia-dist). Das ist nicht vom Agent automatisierbar — vermerke das in der README und im Setup-Schritt.
+### `distribute.yml`
 
-## 8. llms.txt Integration
+Läuft auf `push` nach `main` und auf `workflow_dispatch`, validiert, kompiliert, transmutiert und schiebt die Serialisierungen samt `version.json` nach `pajew-ski/prima-materia-dist`, wenn sich etwas geändert hat.
 
-Das Distribution-Repository enthält eine `llms.txt`, die LLM-Agenten Discovery erlaubt:
+Der Spiegel ist ausdrücklich sekundär. Der Namensraum-Host liefert dieselben Dateien und ist der Ort, den die Bezeichner nennen; `distribute.yml` existiert für Abnehmer, die über jsDelivr laden wollen.
 
-```
-# prima-materia
+**Hinweis für den Agent:** Das `DIST_REPO_TOKEN`-Secret muss vom User manuell in den Repo-Settings gesetzt werden (Personal Access Token mit Write-Access auf prima-materia-dist). Das ist nicht vom Agent automatisierbar.
 
-> Open-Data ontology of magical and esoteric knowledge, structured under a consciousness-first design principle. Released under CC0 1.0.
+## 8. llms.txt
 
-## Ontology Files
+**Die `llms.txt` steht auf dem Namensraum-Host**, wird von `scripts/publish.py` erzeugt und mit der Seite ausgeliefert. Frühere Fassungen dieses Abschnitts setzten sie ins Distributionsrepo und verlinkten von dort auf jsDelivr; das macht den Spiegel zur Adresse. Nach Abschnitt 2 fallen Bezeichner und Auslieferungsort zusammen, und die Datei, die einem Agenten sagt, wo die Ontologie liegt, ist die letzte, die woandershin zeigen darf.
 
-- [Full ontology (JSON-LD)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.jsonld): Complete compiled ontology with embedded JSON-LD context
-- [Full ontology (Turtle)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.ttl): Turtle serialization
-- [JSON-LD Context](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/context.jsonld): Standalone context for embedding in client systems
+Inhalt: eine Kurzbeschreibung des Projekts, die drei Serialisierungen unter `https://pajew.ski/prima-materia/`, ein Abschnitt über das Lesen einer Behauptung, die Liste der Traditionen, und die Verweise auf Quellrepo, Spezifikation und Issue-Tracker.
 
-## Traditions
+Zwei Festlegungen dazu.
 
-Ein Eintrag je Datei in `traditions/`, beim Bau aus dem Verzeichnis abgeleitet und nicht von Hand gepflegt. Eine fest verdrahtete Liste läuft dem Bestand hinterher und nennt irgendwann Dateien, die es nicht gibt.
+**Der Abschnitt „How to read a claim" ist kein Beiwerk.** Ein Client, der den Graphen ohne ihn lädt, liest Behauptungen als Aussagen: er sieht nicht, dass `pm:compilerInference` einen Ordnungsakt bezeugt und nie die geordnete Behauptung, dass eine Konvergenz mit `pm:transmissionPath` Rezeption ist und nichts belegt, und dass ein fehlender `pm:Testing`-Knoten „niemand hat die Prüfung aufgenommen" heißt und nicht „geprüft und nicht gestützt". Die Trennung von Behauptung und Beglaubigung ist der Zweck dieses Projekts; eine Discovery-Datei, die sie nicht mitliefert, gibt den Graphen als Sammlung heraus.
 
-## Optional
-
-- [Source repository](https://github.com/pajew-ski/prima-materia)
-- [Specification](https://github.com/pajew-ski/prima-materia/blob/main/SPEC.md)
-```
+**Die Traditionsliste wird aus dem Graphen abgeleitet, nicht aus dem Verzeichnis.** Die frühere Fassung sagte „ein Eintrag je Datei in `traditions/`". Das ist falsch aus demselben Grund, aus dem Abschnitt 10 die Datei-Ebene im Graphen ablehnt: die Datei ist eine Einheit des Repos und keine der Sache. `traditions/greek-pneuma-hesychasm.ttl` trägt zwei Traditionen, und ein Client will wissen, welche Überlieferungen der Graph führt, nicht wie sie auf Dateien verteilt sind. Abgeleitet wird deshalb über die `pm:Tradition`-Instanzen, mit Label, Definition und einem Anker auf die Seite. Von Hand gepflegt wird nichts: eine fest verdrahtete Liste läuft dem Bestand hinterher.
 
 ## 9. Test-Strategie
 
