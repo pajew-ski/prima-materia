@@ -45,6 +45,32 @@ pmc:ExcessiveAsceticismCaution a pm:Cautioning ;
     dcterms:source "John Cassian, Collationes II (De discretione)" .
 
 #
+# Prerequisite claim
+#
+
+pmc:FirstWeek a pm:Conceptualizing ;
+    rdfs:label "The first week"@en, "Die erste Woche"@de ;
+    skos:definition "The purgative part of the exercises, given over to the consideration of sin."@en ;
+    pm:withinTradition pmt:ChristianAsceticDiscernment ;
+    dcterms:source "Ignatius of Loyola, Spiritual Exercises 4" .
+
+pmc:SecondWeek a pm:Conceptualizing ;
+    rdfs:label "The second week"@en, "Die zweite Woche"@de ;
+    skos:definition "The part given over to the life of Christ up to Palm Sunday, and to the following of it."@en ;
+    pm:withinTradition pmt:ChristianAsceticDiscernment ;
+    dcterms:source "Ignatius of Loyola, Spiritual Exercises 4" .
+
+pmc:SecondWeekPresupposesFirst a pm:Presupposing ;
+    rdfs:label "The second week presupposes the first"@en, "Die zweite Woche setzt die erste voraus"@de ;
+    pm:dependentStep pmc:SecondWeek ;
+    pm:priorStep pmc:FirstWeek ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChristianAsceticDiscernment ;
+    skos:note "The same annotation that sets the order removes any fixed duration from it: the weeks need not have seven or eight days, and one who needs longer in the first is to be given longer. The order is set, the schedule is not."@en ;
+    dcterms:source "Ignatius of Loyola, Spiritual Exercises 4" .
+
+#
 # The test protocol
 #
 
