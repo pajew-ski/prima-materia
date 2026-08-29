@@ -111,7 +111,7 @@ Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Auff
 
 1. Bestand lesen: Dateibaum, offene Issues, Labels, letzte PRs.
 2. Nächstes Bündel wählen. Vorrang hat der unabhängigkeitsgetriebene Eingang (SPEC §14) vor dem Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
-3. Tiefe Recherche nach SPEC §15, mit Gegensuche.
+3. Tiefe Recherche nach SPEC §15, **beide Stufen**, mit Gegensuche. Der Schritt ist erst beendet, wenn jede Behauptung mit erreichbarem Werk am Wortlaut geprüft ist.
 4. Sofort integrieren: Knoten für vollgeprüfte Funde, Issues für alles andere.
 5. Issue-Kommentar mit der Abdeckung, `korpus:`-Labels kumulieren, Schließen nur bei Erschöpfung.
 6. PR öffnen, Validierung grün, dann liegen lassen. Der Mensch merged.
