@@ -76,3 +76,49 @@ pmp:Xingqi a pm:Practicing ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
     dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125", "Xingqi yupei ming, in J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" .
+
+#
+# The graded sequence of the inscription
+#
+
+pmc:XingqiDepth a pm:Conceptualizing ;
+    rdfs:label "Depth as the first stage"@en, "Die Tiefe als erste Stufe"@de ;
+    skos:definition "The opening stage of the inscription: the breath is taken deeply, whereupon it gathers."@en ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" .
+
+pmc:XingqiDescent a pm:Conceptualizing ;
+    rdfs:label "Descent as a stage of the sequence"@en, "Der Abstieg als Stufe der Folge"@de ;
+    skos:definition "The stage at which the gathered and extended breath goes downward, after which it settles and becomes firm; the sequence then turns and rises."@en ;
+    skos:note "The inscription assigns direction to a place in a sequence, not to a phase of breathing. Descent follows gathering and extension; ascent follows sprouting and growing. The closing lines set the two directions against the two powers, the dynamism of heaven showing in what rises and that of earth in what descends. Nothing here binds a direction to inhaling or to exhaling. See prima-materia#27 and prima-materia#28."@en ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" .
+
+pmc:DescentPresupposesDepth a pm:Presupposing ;
+    rdfs:label "The descent presupposes the depth that gathers the breath"@en, "Der Abstieg setzt die Tiefe voraus, die den Atem sammelt"@de ;
+    pm:dependentStep pmc:XingqiDescent ;
+    pm:priorStep pmc:XingqiDepth ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The inscription closes by setting the two outcomes against each other: to go with the sequence is to live, to go against it is to die. The consequence is stated for the order as a whole, and every stage is joined to the one before it by the same conditional form." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    skos:note "Recorded at stated necessity because a consequence is quotable, which is unusual: most sequences in this collection state an order and leave the consequence unsaid. The strength rests on the closing line, not on the chain of conditionals, which on its own would carry only a prescribed order."@en ;
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" .
+
+#
+# Which opening the breath takes, and how slowly
+#
+
+pmp:Biqi a pm:Practicing ;
+    rdfs:label "Closing off the breath"@en, "Das Verschließen des Atems"@de ;
+    skos:definition "A retention counted in heartbeats: the breath is drawn in through the nose and held, then released in the smallest quantities through the mouth, the count being raised only by degrees."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 8" .
+
+pmc:InaudibleAndUnevenBreath a pm:Conceptualizing ;
+    rdfs:label "The breath inaudible to its own bearer and shorter out than in"@en, "Der für den Übenden selbst unhörbare Atem, kürzer aus als ein"@de ;
+    skos:definition "Two marks set on the practice: one is not to hear the sound of one's own breathing, and a feather held before nose and mouth is not to stir; and one is always to give out less than one has taken in."@en ;
+    skos:note "The intake is at the nose and the release at the mouth. The distribution is the reverse of the one a modern draft assigns, which treats mouth breathing as a fault on the intake and says nothing of the release. The passage also fixes the pace by an external test rather than by a count of seconds, which is what makes it examinable at all. See prima-materia#26."@en ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 8" .
