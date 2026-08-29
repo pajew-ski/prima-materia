@@ -1,0 +1,30 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Madhyamaka
+#
+# Order of the file: the tradition, then the one claim read so far. Kept apart
+# from traditions/theravada.ttl and traditions/tibetan-tantric.ttl: the first
+# holds a different canon, the second a later transmission that reads this one.
+#
+
+pmt:Madhyamaka a pm:Tradition ;
+    rdfs:label "Madhyamaka"@en, "Madhyamaka"@de ;
+    skos:definition "The middle-way school of Buddhist philosophy founded on the verses of Nāgārjuna and its commentarial literature."@en ;
+    skos:note "The three decisions preceding this file. Route of contact: to the Śaiva and Śākta material a route exists and is not in dispute, so a correspondence with it would be reception and not a finding; towards the Greek or the Western esoteric material none is documented. Edition: the verses are read in Stcherbatsky's translation of 1927, named on the node, which carries the commentary of Candrakīrti alongside them; the Sanskrit has not been consulted. Number of citable passages: one."@en ;
+    dcterms:source "Nāgārjuna, Mūlamadhyamakakārikā (trans. Th. Stcherbatsky, The Conception of Buddhist Nirvāṇa, Leningrad 1927)" .
+
+pmc:FourfoldNegationOfTheEndState a pm:Conceptualizing ;
+    rdfs:label "The fourfold negation of the end state"@en, "Die vierfache Verneinung des Endzustands"@de ;
+    skos:definition "The treatment of the state after release under four theories that are all refused: that the released one exists after death, that he does not exist, that he both exists and does not, and that he neither exists nor does not; with the parallel refusal of the corresponding four theories about the limits of the world."@en ;
+    skos:note "The point of holding this is that it is not a third answer. The four alternatives are laid out in order to be declined together, and declining the fourth is what keeps the move from collapsing into the third: a position that said only neither would be the fourth alternative rather than the refusal of it."@en ;
+    skos:note "The same source guards against the reading that is nearest to hand. Reality is said to be neither existent nor non-existent, and the dialectic is described as negating not only every affirmation about it but every negation as well; it is expressly not the claim that the absolute is a non-entity, only that it is inaccessible to thought. A record that files this as nihilism reports the objection and not the position."@en ;
+    skos:note "For the telic axis in prima-materia#52 this is the plain form of pm:selfBoundaryDeclined, and it is worth keeping distinct from the case in traditions/advaita-vedanta.ttl, where the question is not refused but assigned to a level that is itself superseded. The two look alike from a distance and are not the same move. No orientation is asserted on this node yet; the placement needs the verses on the self read as well. See prima-materia#63."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Madhyamaka ;
+    dcterms:source "Nāgārjuna, Mūlamadhyamakakārikā XXV, at the four theories concerning the state after release and the four concerning the limits of the world (trans. Th. Stcherbatsky, The Conception of Buddhist Nirvāṇa, Leningrad 1927)" .
