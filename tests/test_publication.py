@@ -231,3 +231,61 @@ def test_publish_writes_the_discovery_file(tmp_path: Path) -> None:
     output = tmp_path / "site"
     publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
     assert (output / "llms.txt").is_file()
+
+
+def test_parts_partition_the_content_and_dangle_nothing() -> None:
+    """The cut has to hold two things at once.
+
+    Every content node lands in some part, so nothing is silently dropped —
+    and in particular the nodes that belong to no tradition, which are the
+    convergences, disputes, orderings and examinations this project exists to
+    produce. A cut by tradition alone would leave exactly those behind.
+
+    And no part points at a node it does not name. A part carries whole nodes
+    for what it is about and a stub for what it references, because a client
+    reading one part alone must not meet an edge into nothing.
+    """
+    graph = compile_script.compile_graph(publish_script.DEFAULT_INPUTS)
+    parts = publish_script.split_graph(graph)
+
+    assert "vocabulary" in parts and "findings" in parts
+    for triple in (t for part in parts.values() for t in part):
+        assert triple in graph, "a part carries a triple the whole graph does not"
+
+    content = {
+        s
+        for s in graph.subjects()
+        if isinstance(s, URIRef) and publish_script._is_content(s)
+    }
+    covered = {
+        s
+        for name, part in parts.items()
+        if name != "vocabulary"
+        for s in part.subjects()
+        if isinstance(s, URIRef) and publish_script._is_content(s)
+    }
+    assert content <= covered, sorted(publish_script.curie(s) for s in content - covered)
+
+    # The tradition-less nodes are the point of the findings part.
+    tradition_less = {
+        s
+        for s in content
+        if not any(graph.objects(s, publish_script.PM.withinTradition))
+        and (s, RDF.type, publish_script.PM.Tradition) not in graph
+    }
+    assert tradition_less <= set(parts["findings"].subjects())
+
+    for name, part in parts.items():
+        named = set(part.subjects())
+        for obj in part.objects():
+            if isinstance(obj, URIRef) and publish_script._is_content(obj):
+                assert obj in named, f"{name} points at {publish_script.curie(obj)} without naming it"
+
+
+def test_publish_writes_the_parts(tmp_path: Path) -> None:
+    output = tmp_path / "site"
+    publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
+    parts = output / publish_script.PARTS_DIR
+    assert (parts / "vocabulary.ttl").is_file()
+    assert (parts / "findings.ttl").is_file()
+    assert (parts / "vocabulary.jsonld").is_file()
