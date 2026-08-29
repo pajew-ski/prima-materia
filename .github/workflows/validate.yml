@@ -2,9 +2,18 @@ name: Validate
 
 on:
   push:
-    branches: [main]
+    branches: [main, 'claude/**']
   pull_request:
     branches: [main]
+
+# Ein Arbeitsbranch bekommt mehrere Commits hintereinander, und nur der letzte
+# Stand ist zu prüfen. Ohne diese Gruppe laufen alle parallel, der Branch wartet
+# auf Läufe, deren Ergebnis schon überholt ist, und der Agent liest den falschen
+# Zustand. Der PR-Lauf bekommt eine eigene Gruppe, damit ein Push auf den Branch
+# ihn nicht abbricht.
+concurrency:
+  group: validate-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
