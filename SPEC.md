@@ -620,6 +620,19 @@ Die Trennung von bezeugt und erschlossen ist eine Schranke vor dem Graphen und k
 
 **Bleibt eine Prüfung aus, steht der Grund im Issue, und er ist eine Eigenschaft des Werkes** — nicht digitalisiert, urheberrechtlich gesperrt, nur intern verfügbar, nur als Druckausgabe vorhanden, Sprache nicht beherrscht. Fehlt er, ist die Prüfung unterlassen und der Lauf unvollständig, gleich wie sauber die Issues sind.
 
+**Im ersten Anlauf nicht gefunden ist kein Grund.** Es ist eine Aussage über den Anlauf und keine über das Werk. Unerreichbarkeit wird festgestellt, nicht vermutet, und sie wird erst festgestellt, nachdem die Wege erschöpft sind, die es tatsächlich gibt:
+
+- eine andere Kennung desselben Werkes im selben Archiv, denn dieselbe Ausgabe liegt dort oft mehrfach, einmal als Leihexemplar ohne Volltext und einmal mit
+- eine andere Ausgabe oder Übersetzung desselben Werkes, auch eine ältere, gemeinfreie
+- eine andere Umschrift des Titels oder des Autornamens, was bei nicht-lateinischen Schriften der häufigste Fehlschlag ist
+- das Werk innerhalb einer Sammlung, einer Reihe oder eines Kommentars, der es vollständig abdruckt
+- ein anderes Digitalisierungsvorhaben, eine Textsammlung des Fachs, eine Bibliothek mit eigenem Volltextzugang
+- eine Sperre, die am Zugangsweg hängt und nicht am Werk, etwa eine Abwehr gegen automatisierte Abrufe: sie verlangt einen anderen Weg, keinen Verzicht
+
+Nach welcher dieser Möglichkeiten gesucht wurde, gehört ins Issue. Erst wenn sie dort stehen und leer ausgegangen sind, trägt der Satz, das Werk sei nicht zu beschaffen.
+
+Der Grund für diese Schärfe ist ein gezählter Fall und keine Vorsichtsregel: in einem einzigen Lauf wurden vier Werke als unerreichbar geführt, und alle vier lagen bei genauerem Suchen als Volltext vor. Die Fehlerquote der Vermutung lag damit bei vier von vier. Siehe prima-materia#76.
+
 Dieser Abschnitt steht hier und nicht nur in `AGENTS.md`, weil die Fehllesung eine Regel dieser Spezifikation betraf und weil eine Korrektur, die nur in der Agentendatei steht, bei deren nächster Umarbeitung verschwindet.
 
 ### Tiefe

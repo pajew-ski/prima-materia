@@ -20,7 +20,18 @@ Vollständig in `SPEC.md` Abschnitt 15. Vier Sätze, deren Verletzung Etiketten 
 
 **Jede Behauptung, deren Werk erreichbar ist, wird im selben Lauf am Wortlaut geprüft.** Erreichbar heißt digitalisiert und lesbar, nicht bequem: ein gemeinfreies Werk in einem Volltextarchiv ist erreichbar, auch mit tausend Seiten — herunterladen und durchsuchen ist der Normalweg, nicht der Ausnahmeweg. Umfang, Aufwand und die Schätzung „das braucht einen eigenen Lauf" sind keine Gründe, sondern die Arbeit; die Schätzung entsteht vor dem Aufschlagen und ist deshalb keine Kenntnis.
 
-**Bleibt eine Prüfung aus, steht der Grund im Issue, und er ist eine Eigenschaft des Werkes:** nicht digitalisiert, urheberrechtlich gesperrt, nur intern verfügbar, nur als Druckausgabe vorhanden, Sprache nicht beherrscht. Fehlt er, gilt die Prüfung als unterlassen. Ein dokumentierter Fall steht in `prima-materia#76`; vollständig in `SPEC.md` Abschnitt 15 und in `AGENTS.md`.
+**Bleibt eine Prüfung aus, steht der Grund im Issue, und er ist eine Eigenschaft des Werkes:** nicht digitalisiert, urheberrechtlich gesperrt, nur intern verfügbar, nur als Druckausgabe vorhanden, Sprache nicht beherrscht. Fehlt er, gilt die Prüfung als unterlassen.
+
+**„Im ersten Anlauf nicht gefunden" ist kein Grund, sondern der Beginn der Suche.** Vor jeder Feststellung von Unerreichbarkeit abzuarbeiten:
+
+- andere Kennung desselben Werkes im selben Archiv — dieselbe Ausgabe liegt oft mehrfach, einmal ohne und einmal mit Volltext
+- andere oder ältere Ausgabe, andere Übersetzung, gemeinfreie Vorgängerfassung
+- andere Umschrift von Titel und Autornamen; bei nicht-lateinischen Schriften der häufigste Fehlschlag
+- das Werk innerhalb einer Sammlung, Reihe oder eines Kommentars, der es abdruckt
+- anderes Digitalisierungsvorhaben, Fachtextsammlung, Bibliothek mit eigenem Volltextzugang
+- Sperren am Zugangsweg (Bot-Abwehr, Anmeldezwang) hängen nicht am Werk: anderer Weg, kein Verzicht
+
+Was versucht wurde, steht im Issue. Der Anlass ist gezählt und keine Vorsicht: in einem Lauf galten vier Werke als unerreichbar, und alle vier lagen bei genauerem Suchen im Volltext vor — Fehlerquote der Vermutung vier von vier. Fall in `prima-materia#76`, vollständig in `SPEC.md` Abschnitt 15 und in `AGENTS.md`.
 
 **Gegroundet** heißt: eine Stelle trägt die Behauptung, und die Gegensuche ist gelaufen. **Unbelegt** ist die teure Aussage und trägt nur eine erschöpfende, dokumentierte Suche; ein Durchgang ohne Fund reicht nicht.
 
