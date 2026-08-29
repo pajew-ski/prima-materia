@@ -504,6 +504,10 @@ Wo die Kenntnis aus mehreren Ausgaben zusammengesetzt ist, wird das gesagt statt
 
 **Ein Turtle-Kommentar ist kein Ort für einen Befund.** Kommentare fallen beim Kompilieren weg; der ausgelieferte Graph weiß von einer Prüfung nichts, die nur im Dateikopf steht. Was eine Prüfung ergeben hat, gehört in einen Knoten, in eine `skos:note` oder in ein Issue.
 
+Daraus die Regel für den Dateikopf: **er darf nur enthalten, was beim Verlust nichts kostet.** Aufbau der Datei, Hinweis für den nächsten Bearbeiter, Begründung der Ablage. Jede Aussage über die Sache gehört an einen Knoten — die Begründung einer Traditionsdatei als `skos:note` an ihre `pmt:`-Instanz, die es ohnehin gibt.
+
+Eine Datei-Ebene im Graphen, die den Kopf als Aussage trüge, wird **nicht** eingeführt. Die Datei ist eine Einheit des Repos und keine der Sache: zwei Traditionen können in einer Datei stehen, und die `korpus:`-Label benennen ausdrücklich den Korpus und nicht die Datei. Ein Graph, der Dateien als Entitäten führt, bindet sich an eine Aufteilung, die sich beim nächsten Umsortieren ändert.
+
 **Richtungssinn.** prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden, nicht umgekehrt. Ein Methodenentwurf ist keine Quelle, sondern eine Menge von Behauptungen, die einzeln gegen überliefertes Schrifttum zu grounden sind. Was sich nicht grounden lässt, bleibt Entwurf und kommt nicht in den Graphen.
 
 **Verboten:** Reproduktion urheberrechtlich geschützter Primärtexte. Konzept-Definitionen sind eigene Paraphrasen, niemals Direktzitate aus modernen Übersetzungen.
