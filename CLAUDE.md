@@ -95,6 +95,30 @@ Es geht um uraltes magisches Wissen, nicht um aktuelle Meinungen. Ein Beleg aus 
 
 **Vor jedem inhaltlichen PR:** für jede eingetragene Behauptung die Stelle im Werk benannt, die sie trägt, und `pm:attestedBy` gesetzt. Bei Unsicherheit über eine Zuschreibung nicht eintragen. Ein gemergter Fehler ist über `prima-materia-dist` und jsDelivr nicht privat und nicht zurückholbar.
 
+### Der Maßstab ist Auffindbarkeit, nicht Nummerierung
+
+Eine Quellenangabe muss so genau sein, dass ein Leser die Stelle **im benannten Werk findet**. Sie muss keine Nummer tragen, wenn das Werk keine hat oder wenn die Zählung zwischen Ausgaben schwankt.
+
+- ✅ `"Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness"`
+- ✅ `"John Climacus, The Ladder of Divine Ascent, steps 1-30"`
+- ✅ `"Athenian decree concerning Eleusis, IG I³ 6, face C"`
+
+Zitiergenauigkeit mit Zitierbarkeit zu verwechseln kostet mehr, als es schützt. Ein Befund, der wegen einer fehlenden Kapitelnummer draußen bleibt, obwohl das Werk und der Traktat benannt sind, ist unnötig verloren. **Wo die Zählung zwischen Ausgaben schwankt, gehört das in eine `skos:note`, nicht in eine Weglassung.**
+
+### Die Rezension gehört in die Angabe
+
+Wo Textzeugen inhaltlich auseinandergehen, nennt `dcterms:source` die Rezension und die Ausgabe, und die abweichenden Fassungen stehen als getrennte Knoten. Eine Angabe wie `"1 Henoch 8:3"` behauptet einen einheitlichen Text, den es nicht gibt.
+
+- ✅ `"1 Enoch 8:3 (Ethiopic; Charles 1912)"` neben `"1 Enoch 8:3 (Aramaic/Greek reconstruction; Nickelsburg 2001)"`
+
+Ein gemittelter Knoten meldet einen Text, den kein Zeuge gibt. Wo die Ausgaben nur in Datierung oder Lesung streiten, ohne dass zwei Fassungen entstehen, gehört das in einen `pm:Disputing`-Knoten.
+
+### Evidenz ist nicht Quelle
+
+Ein moderner Forschungsartikel ist **nie** Zeuge einer Tradition und erscheint **nie** als `dcterms:source` an einem Traditionsknoten. Er trägt zu einer Behauptung von außen bei und gehört an `pm:evidenceFrom` eines `pm:Testing`-Knotens. Genau diese Trennung erlaubt es, Forschung überhaupt aufzunehmen, ohne die Quellenregel aufzuweichen.
+
+Dort ist auch der DOI wieder zulässig, weil `doi:10.1371/...` eine Werkkennung ist und keine Ortsangabe. `pm:EvidenceIsLiteratureShape` weist auch hier `http`-Präfixe ab.
+
 ## Designprinzipien (kurz)
 
 1. **Prozess statt Substanz** — Klassen als Gerundien
