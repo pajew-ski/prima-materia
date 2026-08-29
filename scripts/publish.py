@@ -249,6 +249,70 @@ def build_data(graph: Graph) -> dict:
     }
 
 
+def build_llms_txt(graph: Graph) -> str:
+    """The discovery file an agent reads before it fetches anything.
+
+    The list of traditions is derived from the graph and not from the
+    directory: a file is a unit of the repository and not of the subject, two
+    traditions can sit in one file, and a hand-kept list names files that stop
+    existing. What a client wants to know is which transmissions the graph
+    carries, and that question is answered by the pm:Tradition instances.
+    """
+    traditions = sorted(
+        (subject for subject in graph.subjects(RDF.type, PM.Tradition) if isinstance(subject, URIRef)),
+        key=lambda subject: str(subject),
+    )
+
+    lines = [
+        "# prima-materia",
+        "",
+        "> Open-data ontology of magical and esoteric knowledge, built under a",
+        "> consciousness-first design principle. It is an assay office and not a",
+        "> collection: it holds no truths, only claims with an origin, and keeps a",
+        "> claim separate from what attests it. Released under CC0 1.0.",
+        "",
+        "## Ontology Files",
+        "",
+        f"- [Full ontology (Turtle)]({SITE_BASE}prima-materia.ttl): the compiled graph",
+        f"- [Full ontology (JSON-LD)]({SITE_BASE}prima-materia.jsonld): the same graph, JSON-LD serialisation",
+        f"- [JSON-LD Context]({SITE_BASE}context.jsonld): standalone context for embedding in client systems",
+        "",
+        "## How to read a claim",
+        "",
+        "- Every claim carries at least one `dcterms:source` naming a received work,",
+        "  the passage that bears it, and the edition it was read from. Never a URL.",
+        "- `pm:attestedBy` says by which route the claim entered the record.",
+        "  `pm:compilerInference` attests an ordering act, never the claim being ordered.",
+        "- `pm:Converging` is a reading made by a compiler. Where `pm:transmissionPath`",
+        "  is present the agreement is reception and carries no evidential weight;",
+        "  only `pm:independentAttestation` makes it a finding.",
+        "- The absence of a `pm:Testing` node means nobody has taken the examination up.",
+        "  It does not mean the claim was examined and found wanting.",
+        "",
+        "## Traditions",
+        "",
+    ]
+
+    for subject in traditions:
+        labels = _langs(graph, subject, RDFS.label)
+        label = labels.get("en") or labels.get("") or curie(subject).split(":", 1)[-1]
+        definitions = _langs(graph, subject, SKOS.definition)
+        definition = definitions.get("en") or definitions.get("")
+        entry = f"- [{label}]({SITE_BASE}#{curie(subject)})"
+        lines.append(f"{entry}: {definition}" if definition else entry)
+
+    lines += [
+        "",
+        "## Optional",
+        "",
+        f"- [Source repository]({SOURCE_REPO})",
+        f"- [Specification]({SOURCE_REPO}/blob/main/SPEC.md)",
+        f"- [Claims not yet answered by the graph]({SOURCE_REPO}/issues)",
+        "",
+    ]
+    return "\n".join(lines)
+
+
 def publish(
     assets: Path,
     inputs: Iterable[Path],
