@@ -462,7 +462,19 @@ Ausgeschlossen sind:
 - **URLs jeder Art**, DOI und Open-Access-Editionen eingeschlossen. Ein Link benennt einen Ort, der sich ändert und für den nur sein Betreiber einsteht; ein Werk benennt etwas, das ein Leser unabhängig von diesem Graphen beschaffen kann. `pm:SourceIsLiteratureShape` weist `dcterms:source`-Werte mit `http`-Präfix maschinell ab.
 - **Videos, Blogs, Wikipedia, Foren.** Rechercheeinstieg, nie Beleg. Zurückverfolgen bis zum Werk, dann zählt das Werk.
 - **Unveröffentlichte eigene Texte, Arbeitsfassungen, Methodenentwürfe**, auch die des Betreibers.
-- **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen.
+- **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen — mit der einen Ausnahme, die der folgende Abschnitt regelt.
+
+### Wenn das Werk nicht zu beschaffen ist
+
+Das Grounding im Original hat Vorrang und behält ihn. Es gibt aber Werke, die nicht erreichbar sind: nicht digitalisiert, vergriffen, ordensintern, in einer Sprache, die der Bearbeiter nicht liest. Sie ganz draußen zu lassen kostet mehr, als es schützt — der Bestand berichtet dann nicht über die Überlieferung, sondern über die Beschaffungslage.
+
+**Deshalb ist die Stelle in zweiter Hand zulässig, wenn die Vermittlung im Graphen steht.** Der Knoten trägt dann `pm:attestedBy pm:mediatedAttestation` und nennt mit `pm:readVia` das Werk, in dem der Bearbeiter die Stelle tatsächlich gelesen hat. `dcterms:source` nennt weiterhin das Werk, das die Behauptung trägt, denn das ist es, was ein späterer Leser beschaffen muss; `pm:readVia` nennt, was der Schreibende vor sich hatte. `pm:MediatedAttestationShape` weist einen Knoten ab, der den Modus setzt und den Vermittler verschweigt.
+
+**Der Unterschied zwischen den beiden Angaben ist der ganze Punkt.** Eine Stelle in zweiter Hand trägt die Auswahl des Vermittlers, seine Übersetzung und sein Schweigen. Wer nicht sehen kann, dass sie aus zweiter Hand kommt, kann nichts davon abwägen — und genau diese Blindstelle entsteht, wenn man die Vermittlung in eine `skos:note` schreibt statt in ein Prädikat, nach dem sich abfragen lässt.
+
+**Der Modus ist an die Unerreichbarkeit gebunden, nicht an den Aufwand.** Er existiert, damit unerreichbares Material in seiner wahren Stärke eingehen kann, nicht damit erreichbares billig eingeht. Ein Werk, das sich herunterladen und durchsuchen lässt, ist erreichbar (SPEC §15); wer es über ein Referat zitiert, verletzt die Regel, auch wenn er den Vermittler nennt. Der Grund für die Vermittlung gehört ins Issue und ist eine Eigenschaft des Werkes.
+
+**Ein vermittelter Knoten bleibt ein offener Posten.** Er ist kein Abschluss, sondern der beste erreichbare Zwischenstand: sobald das Werk zugänglich wird, wird die Stelle nachgeprüft und der Modus auf `pm:textualAttestation` gehoben. Das zugehörige Issue bleibt offen und trägt, welches Exemplar fehlt.
 
 **Der Maßstab ist Auffindbarkeit, nicht Nummerierung.** Die Angabe muss so genau sein, dass ein Leser die Stelle im benannten Werk findet. Eine Nummer ist keine Bedingung, wo das Werk keine hat oder wo die Zählung zwischen Ausgaben schwankt: `"Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness"` und `"John Climacus, The Ladder of Divine Ascent, steps 1-30"` sind zulässig. Schwankende Zählungen gehören in eine `skos:note`, nicht in eine Weglassung. Zitiergenauigkeit ist nicht Zitierbarkeit, und ein Befund, der an einer fehlenden Kapitelnummer scheitert, obwohl Werk und Traktat benannt sind, ist unnötig verloren.
 

@@ -142,6 +142,13 @@ pm:compilerInference a pm:Attesting ;
     skos:definition "A conclusion drawn by an editor or compiler that the source does not state."@en ;
     skos:note "Admissible as attestation of an ordering act, never of the claim being ordered. Enforced by pm:AttributionShape."@en .
 
+pm:mediatedAttestation a pm:Attesting ;
+    rdfs:label "Mediated attestation"@en, "Vermitteltes Zeugnis"@de ;
+    skos:definition "The claim stands in a received work at a passage that can be named, but the passage was read in a second work that quotes or reports it, because the first could not be obtained."@en ;
+    skos:note "Weaker than pm:textualAttestation and stronger than nothing, and the record has to be able to say which of the two it has. A claim read through an intermediary carries that intermediary's selection, its translation and its silence; a reader who cannot see that the passage came second-hand cannot weigh any of it."@en ;
+    skos:note "Admissible only where the work itself is out of reach — not digitised, out of print, held internally, in a language not commanded. Effort is not a reason: the mode exists so that unreachable material can enter at its true strength, not so that reachable material can enter cheaply. See SPEC §10 and SPEC §15."@en ;
+    skos:note "Every claim carrying this mode must name the intermediary with pm:readVia, enforced by pm:MediatedAttestationShape. dcterms:source keeps naming the work that carries the claim, because that is what a later reader must obtain; pm:readVia names what the writer of the node actually had in front of him. Collapsing the two would hide exactly the fact this mode exists to record."@en .
+
 #
 # Properties of attribution
 #
@@ -150,6 +157,12 @@ pm:attestedBy a owl:ObjectProperty ;
     rdfs:label "attested by"@en, "bezeugt durch"@de ;
     rdfs:range pm:Attesting ;
     skos:definition "Declares by which route a claim entered the record. Mandatory on every attribution, so that non-evidence cannot be forgotten."@en .
+
+pm:readVia a owl:DatatypeProperty ;
+    rdfs:label "read via"@en, "gelesen über"@de ;
+    skos:definition "The work in which the passage was actually read, given as a bibliographic reference, where that work is not the one carrying the claim."@en ;
+    skos:note "Deliberately separate from dcterms:source, for the same reason pm:evidenceFrom is. dcterms:source names what a reader must obtain to check the claim; this names what the writer of the node had in front of him. A record that fused them would report second-hand reading as first-hand and would lose the one distinction that makes an unreachable source admissible at all."@en ;
+    skos:note "Required wherever pm:attestedBy is pm:mediatedAttestation. Carries a bibliographic reference and never a URL, enforced by pm:ReadViaIsLiteratureShape."@en .
 
 pm:ascribedCapacity a owl:ObjectProperty ;
     rdfs:label "ascribed capacity"@en, "zugeschriebenes Vermögen"@de ;

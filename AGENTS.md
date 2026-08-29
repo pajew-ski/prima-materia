@@ -101,7 +101,11 @@ Vokabular der Labels in `CONTRIBUTING.md`, von dort übernehmen: GitHub legt ein
 
 Jede Behauptung braucht mindestens ein `dcterms:source` als Referenz auf ein Werk mit der Stelle, die sie trägt (`"Patañjali, Yogasūtra III.38"`).
 
-Nicht zulässig: URLs jeder Art, DOI und Open-Access-Editionen eingeschlossen (`pm:SourceIsLiteratureShape` weist sie ab); Videos, Blogs, Wikipedia, Foren als Beleg (als Einstieg brauchbar, dann bis zum Werk zurückverfolgen); unveröffentlichte eigene Texte und Methodenentwürfe; sekundäre Zusammenfassungen anstelle der Stelle.
+Nicht zulässig: URLs jeder Art, DOI und Open-Access-Editionen eingeschlossen (`pm:SourceIsLiteratureShape` weist sie ab); Videos, Blogs, Wikipedia, Foren als Beleg (als Einstieg brauchbar, dann bis zum Werk zurückverfolgen); unveröffentlichte eigene Texte und Methodenentwürfe; sekundäre Zusammenfassungen anstelle der Stelle, außer im Fall des nächsten Absatzes.
+
+**Wenn das Werk nicht zu beschaffen ist, darf die Stelle aus zweiter Hand kommen — sichtbar.** Der Knoten trägt `pm:attestedBy pm:mediatedAttestation` und nennt mit `pm:readVia` das Werk, in dem gelesen wurde; `dcterms:source` nennt weiter das Werk, das die Behauptung trägt. `pm:MediatedAttestationShape` weist ab, wer den Modus setzt und den Vermittler verschweigt.
+
+Der Modus hängt an der Unerreichbarkeit und nicht am Aufwand. Nicht digitalisiert, vergriffen, ordensintern, Sprache nicht beherrscht: ja. Umfangreich, unbequem, „wäre ein eigener Lauf": nein — was sich herunterladen und durchsuchen lässt, wird aufgeschlagen. Ein vermittelter Knoten ist ein offener Posten: sobald das Exemplar da ist, wird die Stelle nachgeprüft und der Modus gehoben, und das Issue bleibt bis dahin offen. Vollständig in `SPEC.md` §10.
 
 Moderne Forschung betritt den Bestand ausschließlich über `pm:evidenceFrom` an einem `pm:Testing`-Knoten, nie als `dcterms:source` einer Tradition. Ein Aufsatz ist kein Zeuge einer Überlieferung.
 

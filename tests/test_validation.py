@@ -185,6 +185,59 @@ def test_unexamined_claim_may_omit_the_falsifier() -> None:
     assert conforms, f"A protocol declared as having no devised procedure must conform.\n{report}"
 
 
+def test_mediated_attestation_without_intermediary_is_rejected() -> None:
+    # Declaring a claim second-hand costs nothing unless the second hand is
+    # named. The mode exists so that an unreachable source can enter at its
+    # true strength, not so that a node can wear a weaker label and stay vague
+    # about whose reading it rests on.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:UnnamedIntermediary a pm:Attributing ;
+        pm:attestedBy pm:mediatedAttestation ;
+        dcterms:source "Some unreachable work, some passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:mediatedAttestation without pm:readVia must fail SHACL."
+    assert "read in with pm:readVia" in report
+
+
+def test_url_intermediary_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:LinkedIntermediary a pm:Attributing ;
+        pm:attestedBy pm:mediatedAttestation ;
+        pm:readVia "https://example.org/some-quotation" ;
+        dcterms:source "Some unreachable work, some passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:readVia holding a URL must fail SHACL."
+    assert "never a URL" in report
+
+
+def test_mediated_attestation_with_named_intermediary_conforms() -> None:
+    # The permitted shape: the work that carries the claim stays in
+    # dcterms:source, because that is what a later reader must obtain; the
+    # work actually read stands beside it and says so.
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:HonestlyMediated a pm:Attributing ;
+        pm:attestedBy pm:mediatedAttestation ;
+        pm:readVia "Some Editor, Some Study (1970), where the passage is quoted" ;
+        dcterms:source "Some unreachable work, some passage" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A mediated claim naming its intermediary must conform.\n{report}"
+
+
 def test_url_evidence_is_rejected() -> None:
     offending = """
     @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
