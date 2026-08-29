@@ -1,0 +1,32 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Advaita Vedānta
+#
+# Order of the file: the tradition, then the one claim read so far. Held apart
+# from traditions/upanisadic.ttl on purpose: the commentary is a later reading
+# of that corpus and argues for positions the base texts do not put in these
+# terms.
+#
+
+pmt:AdvaitaVedanta a pm:Tradition ;
+    rdfs:label "Advaita Vedānta"@en, "Advaita Vedānta"@de ;
+    skos:definition "The non-dual commentarial tradition on the Vedānta corpus, represented here by the commentary on the Brahmasūtra."@en ;
+    skos:note "Kept separate from the Upaniṣadic file although it comments on that corpus. A commentary is a later act of reading and states things its base text does not: what is held here is the commentator's argument, and a record that filed it under the older heading would date a ninth-century position to the age of the verses it expounds."@en ;
+    skos:note "The three decisions preceding this file. Route of contact: none is documented towards the Greek or Chinese material; a correspondence with either would count as a finding, and none is asserted yet. Edition: the Thibaut translation of 1890 in the Sacred Books of the East, named on the node. Number of citable passages: one, read in the introductory section on superimposition."@en ;
+    dcterms:source "Śaṅkara, Brahmasūtrabhāṣya, introduction (trans. G. Thibaut, Sacred Books of the East 34, Oxford 1890)" .
+
+pmc:SuperimpositionUnderliesEveryPath a pm:Conceptualizing ;
+    rdfs:label "Superimposition underlies every path, including the texts on release"@en, "Die Überlagerung trägt jeden Weg, auch die Texte über die Befreiung"@de ;
+    skos:definition "The claim that self and non-self are mutually superimposed, that this superimposition is what learned men call nescience, and that it is the presupposition of every practical distinction — those of ordinary life and those laid down in scripture alike — between means of knowledge, objects of knowledge and knowing persons, in texts of injunction and prohibition and in texts concerned with final release."@en ;
+    skos:note "The clause that decides the matter is the last one. Not only the ordinary distinctions but the texts on release itself are said to rest on the superimposition. A path, a choice between paths and the scripture that recommends one are therefore all inside what the argument calls nescience — not false, but valid only where the superimposition holds."@en ;
+    skos:note "The same section removes the one who would choose. Without the superimposition the self does not become a knowing agent at all, and where there is no knowing agent the means of knowledge do not operate. The agent that a choice between paths presupposes is thus itself among the things superimposed."@en ;
+    skos:note "For the axes in prima-materia#52 this is neither a value nor a third position but a denial of the question's standing. It does not say that the bounded self is dissolved or kept; it says that the level at which either could be said is the level of nescience. Recorded so that a scheme which files it as a unitive telos can be checked against the argument. See prima-materia#66."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AdvaitaVedanta ;
+    dcterms:source "Śaṅkara, Brahmasūtrabhāṣya, introduction, at the definition of superimposition as nescience and the statement that all practical distinctions including the texts on final release presuppose it (trans. G. Thibaut, Sacred Books of the East 34, Oxford 1890)" .
