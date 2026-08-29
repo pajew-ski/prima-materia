@@ -453,6 +453,12 @@ Pytest-Tests in `tests/`:
 - `test_validation.py` — verifiziert, dass die Seed-Ontologie SHACL-konform ist; verifiziert, dass ein deliberat ungültiges Test-TTL-Fragment fehlschlägt
 - `test_compilation.py` — verifiziert, dass alle TTL-Fragmente parsen und mergen
 - `test_transmutation.py` — verifiziert, dass JSON-LD-Output zurück nach TTL roundtripping ist (via rdflib)
+**Fixture-Pflicht.** Jedes neue Shape braucht einen Negativfixture, der zeigt, dass es feuert. Ein Wächter, von dem nie gezeigt wurde, dass er auslöst, ist nicht als funktionierend bekannt. Hat das Shape eine Ausnahme, braucht es zusätzlich einen positiven Fixture für die Ausnahme.
+
+**Ordnerregel.** Ein neuer Datenordner muss an vier Stellen nachgezogen werden, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`. Nichts schlägt fehl, wenn eine davon vergessen wird.
+
+Ein Test, der gegen einen hartkodierten Namensraum vergleicht, hört bei einer Migration still auf zu prüfen und bleibt dabei grün. Solche Vergleiche gehören bei jeder Namensraumänderung mitgezogen.
+
 - `test_no_substance_classes.py` — explizit: scannt alle TTL-Dateien auf Vorkommen verbotener Klassennamen (`pm:Symbol`, `pm:Concept`, `pm:Entity`, `pm:Object`) und fail wenn gefunden
 
 ## 10. Lizenzierung & Quellenführung
