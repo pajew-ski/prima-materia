@@ -59,6 +59,10 @@ Der Auftrag an diese Stufe enthält: jede Behauptung einzeln und entscheidbar fo
 
 Der Anlass ist gezählt: in einem Lauf wurden vier Werke als unerreichbar geführt, und alle vier lagen bei genauerem Suchen als Volltext vor. Vollständig in `SPEC.md` §15, Fall in prima-materia#76.
 
+**Ist das Werk offen, wird geerntet, bevor es geschlossen wird.** Nicht nur die Behauptung, für die geöffnet wurde. Ausdrückliche Ausnahme von der Issue-Bindung: die Ernte braucht kein eigenes Issue vorher und gilt nicht als Scope-Erweiterung. Geschuldet sind vier Arten — **Vermögen** (hier Vollständigkeit im strengen Sinn), **Voraussetzungsketten**, **Warnungen** samt Selbstwarnungen eines Textes gegen das, was er vorschreibt, und **Prüfbares**, aus dem sich ein `pm:falsifiedBy` formen lässt. Erzählung und Polemik nur, soweit sie eines der vier tragen.
+
+Vollständig heißt vollständig für das Geöffnete: die Erntenotiz im auslösenden Issue nennt, was aufgenommen wurde, welche Teile ungelesen blieben, und was gesehen und bewusst nicht aufgenommen wurde. Jede geerntete Behauptung braucht ihre eigene Stelle; neue Traditionen und neues Vokabular bleiben Entscheidungen nach §11 und §14. Verfahren in `SPEC.md` §15.
+
 Drei Fehler, alle gleich aussehend. Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Wer sie führt und dann aufhört, wirft sie weg: die erste Stufe erzeugt keine Befunde, sondern Adressen, und eine Adresse, an die niemand geht, ist nichts. Alle drei fallen erst auf, wenn jemand die Stelle aufschlägt. Ein dokumentierter Fall des dritten steht in prima-materia#76, mit drei Befunden, die beim Nachholen entstanden und von denen zwei den Issues widersprachen, die statt ihrer angelegt worden waren.
 
 ## Der stehende Auftrag
