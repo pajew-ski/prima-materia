@@ -119,6 +119,46 @@ Ein moderner Forschungsartikel ist **nie** Zeuge einer Tradition und erscheint *
 
 Dort ist auch der DOI wieder zulässig, weil `doi:10.1371/...` eine Werkkennung ist und keine Ortsangabe. `pm:EvidenceIsLiteratureShape` weist auch hier `http`-Präfixe ab.
 
+## Behauptungsklassen: welche wofür
+
+Material aus einer Tradition kommt in sehr verschiedenen Formen. Die falsche Klasse zu wählen verzerrt die Behauptung, noch bevor sie geprüft werden kann.
+
+| Form der Aussage | Klasse | Pflichtangaben |
+|---|---|---|
+| „X lehrte Y" — ein Vermögen wird einer Figur zugeschrieben | `pm:Attributing` | `pm:ascribedCapacity`, `pm:attestedBy`, Quelle |
+| „Praxis P bringt Vermögen C hervor" | `pm:Yielding` | `pm:byPractice`, `pm:yieldsCapacity`, `pm:attestedBy`, Quelle |
+| „B ist ohne A nicht zu erreichen" | `pm:Presupposing` | `pm:dependentStep`, `pm:priorStep`, `pm:prerequisiteStrength`, `pm:attestedBy`, Quelle |
+| „Hütet euch vor C" | `pm:Cautioning` | `pm:cautionsAbout`, Quelle |
+| Jemand hat geordnet, was das Material nicht ordnete | `pm:Systematizing` | `pm:compiledBy`, `dcterms:date` |
+| Zwei Seiten streiten über eine Behauptung | `pm:Disputing` | `pm:disputedClaim`, **zwei** Quellen, `pm:attestedBy` |
+| Eine Übereinstimmung über Traditionen hinweg | `pm:Converging` | Übertragungsweg **oder** unabhängige Bezeugung |
+| Ein Prüfprotokoll zu einer Behauptung | `pm:Testing` | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
+
+**Behauptungen sind Knoten, keine Kanten.** Sobald eine Aussage eine eigene Quelle, einen eigenen Bezeugungsmodus, eine eigene Stärke oder ein eigenes Prüfprotokoll tragen muss, ist sie zu reifizieren. Auf einer Kante sehen ein zitierfähiger Notwendigkeitssatz und eine Kapitelreihenfolge gleich aus. Kommt ein neuer Behauptungstyp hinzu, gilt dieselbe Regel, bevor der erste Knoten geschrieben wird.
+
+Beim Reifizieren fallen zirkuläre Aussagen auf, die als Kante durchgehen: eine Praxis bringt nicht hervor, was sie ist. Die Zirkulation des Qi bringt kein Qi hervor, die Kanalreinigung keine Kanäle.
+
+## Die Skalen benutzen, statt zu schweigen
+
+Zwei kontrollierte Vokabulare tragen die schwachen Fälle. Sie existieren, damit schwaches Material eingetragen werden kann, nicht damit es draußen bleibt.
+
+`pm:PrerequisiteStrength`: `pm:statedNecessity` nur, wenn sich zitieren lässt, was der Text als Folge des Überspringens nennt — sonst weist `pm:StatedNecessityShape` ab. `pm:prescribedOrder` für eine Anweisung ohne Folgenangabe. `pm:presentationOrder` für „der Text ordnet sein Material so an, mehr sagt er nicht".
+
+`pm:ExaminationState`: `pm:noProcedureDevised` ist die häufigste Lage und keine Schwäche der Behauptung, sondern eine Aussage über die Reichweite der Prüfmittel.
+
+**Ein Befund gehört auf die Stufe, die er verdient, nicht in den Papierkorb.** Etwas unter `pm:presentationOrder` einzutragen behauptet keine Notwendigkeit; es hält fest, dass die Anordnung existiert, und genau das braucht ein späterer Leser, um zu sehen, wo ein modernes System eine Notwendigkeit hineingelesen hat. Wer solche Befunde weglässt, verliert nicht Vorsicht, sondern den Vergleichsmaßstab.
+
+## Negative Befunde gehören in den Bestand
+
+Ein Rechercheergebnis der Form „das steht so nicht im Grundtext" ist wertvoller als ein weiterer positiver Knoten und geht am leichtesten verloren.
+
+- Eine Ordnung, die erst der Kommentar oder die Moderne hergestellt hat → `pm:Systematizing` mit `pm:compilerInference` und benanntem Kompilator.
+- Ein Streit zwischen Grundtext und Lesern → `pm:Disputing`.
+- Eine Warnung der Tradition gegen ihre eigenen Vermögen → `pm:Cautioning`.
+- Eine Behauptung, die sich nicht bis zu einer Stelle zurückverfolgen ließ → **Issue in diesem Repo**, mit der geprüften Kandidatenstelle und dem Grund des Scheiterns. Sonst prüft der nächste Agent dieselbe Behauptung und scheitert genauso.
+
+Datierungswarnungen gehören an den Knoten, nicht in eine Fußnote: wo eine Stufenfolge jünger ist als die Werke, denen sie zugeschrieben wird, sagt das die `skos:note` des Knotens.
+
 ## Designprinzipien (kurz)
 
 1. **Prozess statt Substanz** — Klassen als Gerundien
