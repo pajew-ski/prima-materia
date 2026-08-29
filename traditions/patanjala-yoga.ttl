@@ -107,6 +107,44 @@ pmc:ParakayaPravesa a pm:Conceptualizing ;
     dcterms:source "Patañjali, Yogasūtra III.38" .
 
 #
+# Prerequisite claims, and one ordering act
+#
+# The interesting finding here is negative. The often repeated claim that the
+# eight limbs must be traversed in order is not in the sūtra that lists them:
+# II.29 is a bare enumeration. What the base text does set is a ranking, and
+# a ranking is not a necessity. The difference is recorded rather than
+# smoothed, because the smoothing is how a modern pedagogy acquired an
+# ancient warrant it was never given.
+#
+
+pmc:AstangaLimbs a pm:Conceptualizing ;
+    rdfs:label "The eight limbs"@en, "Die acht Glieder"@de ;
+    skos:definition "Restraint, observance, posture, breath regulation, withdrawal of the senses, concentration, meditation and absorption, listed together in a single sūtra."@en ;
+    skos:note "The sūtra names them and says nothing about traversing them in order."@en ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    dcterms:source "Patañjali, Yogasūtra II.29" .
+
+pmc:SamyamaIsInnerToThePrecedingLimbs a pm:Presupposing ;
+    rdfs:label "The three inner limbs are inner to the preceding five"@en, "Die drei inneren Glieder sind innerlicher als die vorhergehenden fünf"@de ;
+    pm:dependentStep pmp:Samyama ;
+    pm:priorStep pmc:AstangaLimbs ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PatanjalaYoga ;
+    skos:note "The base text ranks the last three limbs as inner with respect to the preceding five, and then ranks even those three as outer with respect to the seedless absorption. It sets a relation of inner and outer, not a rule that one cannot be attempted before the other, and it says nothing about what follows from disregarding the ranking."@en ;
+    dcterms:source "Patañjali, Yogasūtra III.7", "Patañjali, Yogasūtra III.8" .
+
+pmc:SerialReadingOfTheEightLimbs a pm:Systematizing ;
+    rdfs:label "The serial reading of the eight limbs"@en, "Die serielle Lesart der acht Glieder"@de ;
+    skos:definition "The reading of the eight limbs as a ladder that must be climbed in order, each limb a precondition of the next."@en ;
+    skos:note "The inner and outer categories come from the commentarial layer, and the hardening of the ranking into a rule of practice belongs to twentieth-century yoga pedagogy. Recorded here so that the reading is available as what it is. The base text at II.29 enumerates and does not order."@en ;
+    pm:ordersClaim pmc:AstangaLimbs ;
+    pm:compiledBy "The commentarial tradition, sharpened in twentieth-century yoga pedagogy" ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:date "20th century" ;
+    dcterms:source "Patañjali, Yogasūtra II.29" .
+
+#
 # Caution
 #
 
