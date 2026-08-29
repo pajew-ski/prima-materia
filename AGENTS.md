@@ -55,6 +55,10 @@ Der Auftrag an diese Stufe enthält: jede Behauptung einzeln und entscheidbar fo
 
 **Bleibt eine Prüfung aus, steht der Grund im Issue, und er ist eine Eigenschaft des Werkes:** nicht digitalisiert, urheberrechtlich gesperrt, ordensintern, nur als Druckausgabe vorhanden, Sprache nicht beherrscht. Fehlt der Grund, gilt die Prüfung als unterlassen und der Lauf als unvollständig.
 
+**Im ersten Anlauf nicht gefunden ist kein solcher Grund**, sondern eine Aussage über den Anlauf. Vor der Feststellung der Unerreichbarkeit werden die Wege abgearbeitet, die es gibt: eine andere Kennung desselben Werkes im selben Archiv, eine andere oder ältere Ausgabe, eine andere Umschrift von Titel und Autor, das Werk innerhalb einer Sammlung oder eines es abdruckenden Kommentars, ein anderes Digitalisierungsvorhaben. Eine Sperre am Zugangsweg — etwa eine Abwehr gegen automatisierte Abrufe — hängt nicht am Werk und verlangt einen anderen Weg, keinen Verzicht. Was davon versucht wurde, steht im Issue.
+
+Der Anlass ist gezählt: in einem Lauf wurden vier Werke als unerreichbar geführt, und alle vier lagen bei genauerem Suchen als Volltext vor. Vollständig in `SPEC.md` §15, Fall in prima-materia#76.
+
 Drei Fehler, alle gleich aussehend. Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Wer sie führt und dann aufhört, wirft sie weg: die erste Stufe erzeugt keine Befunde, sondern Adressen, und eine Adresse, an die niemand geht, ist nichts. Alle drei fallen erst auf, wenn jemand die Stelle aufschlägt. Ein dokumentierter Fall des dritten steht in prima-materia#76, mit drei Befunden, die beim Nachholen entstanden und von denen zwei den Issues widersprachen, die statt ihrer angelegt worden waren.
 
 ## Der stehende Auftrag
