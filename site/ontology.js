@@ -409,6 +409,29 @@ function bullets(title, items) {
   return [element("h4", null, title), list];
 }
 
+/**
+ * Everything else the graph states about the term, each under the name of the
+ * property that states it.
+ *
+ * This is where a claim's case lives: what a text says follows from skipping a
+ * step, the contact route behind a convergence, the research an examination
+ * rests on, who compiled an ordering, what a modern claim is commonly taken
+ * for. The list is built from whatever the property is called in the ontology,
+ * so a property added tomorrow appears tomorrow — the panel is not a list of
+ * the properties that existed when it was written.
+ */
+function statementList(statements) {
+  if (statements.length === 0) return [];
+  const list = element("dl", "statements");
+  for (const statement of statements) {
+    const term = element("dt", null, statement.label);
+    term.title = statement.property;
+    list.append(term);
+    for (const value of statement.values) list.append(element("dd", null, value));
+  }
+  return [list];
+}
+
 function showNode(id) {
   const node = nodesById.get(id);
   const parts = [];
@@ -429,11 +452,15 @@ function showNode(id) {
 
   parts.push(paragraph(node.kind, "panel-type"), element("h3", null, node.label), paragraph(node.id, "panel-id"));
 
-  // Labels in every language but the one already in the heading. The ontology
-  // is bilingual by design; the panel should not quietly hide half of it.
-  const others = Object.entries(node.labels)
-    .filter(([lang, text]) => text !== node.label && lang)
-    .map(([lang, text]) => `${lang} · ${text}`);
+  // Labels in every language but the one already in the heading, and the
+  // spellings the term is also met under. The ontology is bilingual by design
+  // and its names are transliterated; the panel should not quietly hide either.
+  const others = [
+    ...Object.entries(node.labels)
+      .filter(([lang, text]) => text !== node.label && lang)
+      .map(([lang, text]) => `${lang} · ${text}`),
+    ...(node.altLabels ?? []).map((text) => `also · ${text}`),
+  ];
   if (others.length) parts.push(paragraph(others.join(" · "), "panel-aside"));
 
   // A property's signature, including targets outside this graph. An absent
@@ -452,6 +479,7 @@ function showNode(id) {
   if (note) parts.push(paragraph(note, "panel-note"));
 
   parts.push(
+    ...statementList(node.statements ?? []),
     ...bullets("sources", node.sources),
     ...edgeList("relations out", data.edges.filter((e) => e.source === id), "out"),
     ...edgeList("relations in", data.edges.filter((e) => e.target === id), "in"),

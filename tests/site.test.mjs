@@ -31,6 +31,7 @@ const FIXTURE = {
     node("pm:Conceptualizing", "class", ["owl:Class"], "Conceptualizing"),
     node("pm:Practicing", "class", ["owl:Class"], "Practicing"),
     node("pm:Yielding", "class", ["owl:Class"], "Yielding"),
+    node("pm:Originating", "class", ["owl:Class"], "Originating"),
     node("pm:Tradition", "class", ["owl:Class"], "Tradition"),
     node("pm:withinTradition", "property", ["owl:ObjectProperty"], "within tradition"),
     node("pmt:Theravada", "tradition", ["pm:Tradition"], "Theravāda"),
@@ -52,11 +53,31 @@ const FIXTURE = {
       sources: ["Majjhima Nikāya 118"],
     },
     node("pmc:Qi", "instance", ["pm:Conceptualizing"], "Qi"),
+    // A claim that begins with a named modern author and is afterwards
+    // reported as ancient. What it is taken for is stated by a property, not
+    // by the definition, and that statement is the finding.
+    {
+      ...node("pmc:ModernScale", "instance", ["pm:Originating"], "A modern ranking of the emotions"),
+      statements: [
+        { property: "pm:originatedBy", label: "originated by", values: ["A Named Author"] },
+        {
+          property: "pm:circulatesAs",
+          label: "circulates as",
+          values: ["A perennial map, reported as the agreement of the mystical traditions."],
+        },
+        { property: "dcterms:date", label: "date", values: ["1995"] },
+      ],
+    },
+    // An angel of the Watchers, met elsewhere under another spelling.
+    { ...node("pmc:Baraqel", "instance", ["pm:Conceptualizing"], "Baraqel"), altLabels: ["Baraqijal"] },
   ],
   edges: [
     edge("pm:Conceptualizing", "subClassOf", "pm:Process"),
     edge("pm:Practicing", "subClassOf", "pm:Process"),
     edge("pm:Yielding", "subClassOf", "pm:Process"),
+    edge("pm:Originating", "subClassOf", "pm:Process"),
+    edge("pmc:ModernScale", "instanceOf", "pm:Originating"),
+    edge("pmc:Baraqel", "instanceOf", "pm:Conceptualizing"),
     edge("pmt:Theravada", "instanceOf", "pm:Tradition"),
     edge("pmt:Daoist", "instanceOf", "pm:Tradition"),
     edge("pmc:Piti", "instanceOf", "pm:Conceptualizing"),
@@ -77,7 +98,8 @@ function node(id, kind, types, label) {
     id, kind, types, label,
     iri: `https://example.invalid/${id}`,
     labels: { en: label },
-    definition: {}, note: {}, comment: {}, sources: [],
+    altLabels: [],
+    definition: {}, note: {}, comment: {}, sources: [], statements: [],
   };
 }
 
@@ -185,7 +207,7 @@ test("filters match whole words, so type:Testing is not Attesting", () => {
 
 test("has: audits the corpus, and its negation is the interesting half", () => {
   const without = ids(search(fixtureIndex, "kind:instance -has:source"));
-  assert.deepEqual(without, ["pmc:Qi"]);
+  assert.deepEqual(without.sort(), ["pmc:Baraqel", "pmc:ModernScale", "pmc:Qi"]);
   assert.ok(ids(search(fixtureIndex, "kind:instance has:source")).includes("pmc:Piti"));
   // A language tag falls through to the labels, so a gap in translation shows.
   assert.deepEqual(ids(search(fixtureIndex, "has:de")), ["pmc:Piti"]);
@@ -194,6 +216,23 @@ test("has: audits the corpus, and its negation is the interesting half", () => {
 test("a negated word removes a term that would otherwise rank", () => {
   assert.ok(ids(search(fixtureIndex, "rapture")).includes("pmc:Piti"));
   assert.ok(!ids(search(fixtureIndex, "rapture -piti")).includes("pmc:Piti"));
+});
+
+test("a negated word stays negated after the graph has had its say", () => {
+  // Pīti is one edge from the pairing that yields it, so spreading activation
+  // reaches it from any neighbour that matches. Excluding it has to survive
+  // that, or the exclusion is only a suggestion.
+  const result = search(fixtureIndex, "anapanasati -piti");
+  assert.ok(result.total > 0);
+  assert.ok(!ids(result).includes("pmc:Piti"));
+  assert.ok(result.results.every((entry) => entry.id !== "pmc:AnapanasatiYieldsPiti"));
+});
+
+test("a negation on its own narrows a listing rather than being ignored", () => {
+  const all = search(fixtureIndex, "kind:instance");
+  const fewer = search(fixtureIndex, "kind:instance -qi");
+  assert.ok(fewer.total < all.total);
+  assert.ok(!ids(fewer).includes("pmc:Qi"));
 });
 
 test("a filter with no words is a listing, ordered by how connected each term is", () => {
@@ -262,6 +301,39 @@ test("a query the corpus cannot answer comes back empty rather than padded", () 
   assert.equal(result.total, 0);
 });
 
+test("what a claim is taken for is searchable, not just its definition", () => {
+  // pm:circulatesAs is where an origination says what it is commonly reported
+  // as, and the ontology calls that the finding. A page that indexed only
+  // labels, definitions and notes would drop exactly it.
+  const found = ids(search(fixtureIndex, "perennial map"));
+  assert.ok(found.includes("pmc:ModernScale"));
+  assert.ok(ids(search(fixtureIndex, "A Named Author")).includes("pmc:ModernScale"));
+  // The property's own name is a way in as well.
+  assert.ok(ids(search(fixtureIndex, "circulates as")).includes("pmc:ModernScale"));
+});
+
+test("a statement can be the passage a result shows", () => {
+  const result = search(fixtureIndex, "perennial");
+  const entry = result.results.find((candidate) => candidate.id === "pmc:ModernScale");
+  assert.equal(entry.snippet.field, "statement");
+  assert.ok(entry.snippet.ranges.length > 0);
+});
+
+test("an alternate spelling finds the term at a label's weight", () => {
+  assert.equal(ids(search(fixtureIndex, "Baraqijal"))[0], "pmc:Baraqel");
+});
+
+test("a node that states nothing extra still indexes", () => {
+  // Older builds of ontology-data.json carry no statements or altLabels at
+  // all; the page has to survive one rather than throw on the first node.
+  const bare = {
+    ...FIXTURE,
+    nodes: FIXTURE.nodes.map(({ statements, altLabels, ...rest }) => rest),
+  };
+  const index = buildIndex(bare);
+  assert.ok(search(index, "rapture").total > 0);
+});
+
 test("snippets mark the words that were matched", () => {
   const doc = fixtureIndex.docs[fixtureIndex.byId.get("pmc:Piti")];
   const snippet = snippetFor(doc, new Set(["rapture"]));
@@ -324,7 +396,11 @@ test("every arrangement states the question it answers", () => {
 
 test("the cross-tabulation counts every claim once and no vocabulary", () => {
   const matrix = crosstab(FIXTURE, context(FIXTURE));
-  assert.equal(matrix.total, 4); // Piti, Anapanasati, the pairing, Qi
+  // Piti, Anapanasati, the pairing, Qi, the modern scale, Baraqel.
+  assert.equal(matrix.total, 6);
+  // The origination belongs to no tradition, so it lands in the row for
+  // claims made across them rather than being dropped.
+  assert.equal(matrix.count(ACROSS, "pm:Originating"), 1);
   assert.equal(
     matrix.rows.reduce((sum, row) => sum + row.total, 0),
     matrix.total,

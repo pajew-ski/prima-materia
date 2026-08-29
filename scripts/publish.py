@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import shutil
 from datetime import datetime, timezone
 from pathlib import Path
@@ -84,6 +85,51 @@ def _plain(graph: Graph, subject: Node, predicate: URIRef) -> list[str]:
     return sorted(str(obj) for obj in graph.objects(subject, predicate))
 
 
+# The literal-valued predicates the node record already carries under a name of
+# its own. Every other literal on a subject is carried as a statement, so a
+# property added to the ontology is on the page the same day rather than on the
+# day someone remembers to name it here.
+NAMED_LITERALS = frozenset(
+    {RDFS.label, SKOS.altLabel, SKOS.definition, SKOS.note, RDFS.comment, DCTERMS.source}
+)
+
+
+def _property_label(graph: Graph, predicate: URIRef) -> str:
+    """What to call a predicate in the panel: its own label, or its name read out."""
+    labels = _langs(graph, predicate, RDFS.label)
+    named = labels.get("en") or labels.get("")
+    if named:
+        return named
+    local = curie(predicate).split(":", 1)[-1]
+    return re.sub(r"(?<!^)(?=[A-Z])", " ", local).lower()
+
+
+def _statements(graph: Graph, subject: URIRef) -> list[dict]:
+    """Everything else the graph says about a subject in literals.
+
+    These carry the evidential weight of a claim and were the part the site
+    dropped: what a text says follows from skipping a step, the contact route
+    behind a convergence, the research an examination rests on, who compiled an
+    ordering, and what a modern claim is commonly taken for. A definition
+    without them reads as a report; with them it reads as a claim with a case.
+    """
+    predicates = {p for p in graph.predicates(subject, None) if isinstance(p, URIRef)}
+    out: list[dict] = []
+    for predicate in sorted(predicates - NAMED_LITERALS, key=str):
+        values = sorted(
+            str(obj) for obj in graph.objects(subject, predicate) if isinstance(obj, Literal)
+        )
+        if values:
+            out.append(
+                {
+                    "property": curie(predicate),
+                    "label": _property_label(graph, predicate),
+                    "values": values,
+                }
+            )
+    return out
+
+
 def _kind(graph: Graph, subject: URIRef) -> str | None:
     """Classify a subject into one of the shapes the visualization draws."""
     types = set(graph.objects(subject, RDF.type))
@@ -111,10 +157,15 @@ def _node(graph: Graph, subject: URIRef, kind: str) -> dict:
         ),
         "label": labels.get("en") or labels.get("") or curie(subject).split(":", 1)[-1],
         "labels": labels,
+        # An alternate spelling is what a reader who met the name elsewhere will
+        # type. Kept beside the labels rather than among the statements below,
+        # because for search it is a name and not a remark.
+        "altLabels": _plain(graph, subject, SKOS.altLabel),
         "definition": _langs(graph, subject, SKOS.definition),
         "note": _langs(graph, subject, SKOS.note),
         "comment": _langs(graph, subject, RDFS.comment),
         "sources": _plain(graph, subject, DCTERMS.source),
+        "statements": _statements(graph, subject),
     }
 
     # A property's signature is shown even where it points outside this

@@ -70,6 +70,8 @@ pytest tests/
 `site/` enthält die handgeschriebenen Assets der GitHub-Pages-Seite (`index.html`, `style.css`, `ontology.js`, `theme.js`, `search.js`, `layouts.js`, `matrix.js`, `ontology/index.html`). `scripts/publish.py` kopiert sie nach `build/site/` und legt die aus dem Graphen abgeleiteten Daten (`ontology-data.json`) sowie die Serialisierungen daneben. Der `Pages`-Workflow deployt das bei jedem Push auf `main`.
 
 - Die Seite wird **komplett aus dem kompilierten Graphen** gespeist. Neue Klassen, Properties und Instanzen erscheinen ohne Code-Änderung; Zähler, Legende, Panel, Suchindex, Anordnungen und Matrix leiten sich aus den Daten ab.
+- **Jedes Literal erreicht die Seite, nicht nur die benannten sechs.** `_statements()` in `scripts/publish.py` trägt jedes literalwertige Prädikat außer Label, altLabel, Definition, Note, Comment und Source unter dem Namen der Property, die es aussagt. Eine neue Datatype-Property steht damit am selben Tag im Panel und im Suchindex, an dem sie in `ontology/` steht. Wer hier eine feste Liste einführt, verliert genau die Angaben, die eine Behauptung tragen: `pm:consequenceOfSkipping`, `pm:transmissionPath`, `pm:evidenceFrom`, `pm:compiledBy`, `pm:circulatesAs`. `test_every_literal_reaches_the_site` schlägt dann fehl.
+- `pm:evidenceFrom` wird **nie** mit `dcterms:source` zusammengelegt — die Trennung, die Forschung überhaupt aufnehmbar macht, muss auch in der Darstellung halten.
 - Design-Vorbild ist `pajew-ski/temet-nosce`: achromatische oklch-Tokens, φ-basierte Spacing- und Typo-Leiter, Canvas/Panel im Verhältnis φ:1, Cytoscape über jsDelivr.
 - Neue Node-Art im Graphen → `KINDS` in `site/ontology.js` erweitern (Shape, Legenden-Name, Plural) und in `_kind()` in `scripts/publish.py` klassifizieren. Soll ihr Label auch in dichten Anordnungen lesbar bleiben, zusätzlich `LANDMARKS` in `site/layouts.js`.
 - **Aufteilung.** `search.js` (Suche), `layouts.js` (Anordnungen), `matrix.js` (Kreuztabelle) sind DOM-frei und rein; `ontology.js` verdrahtet sie mit Cytoscape und dem Panel. Das ist der Grund, warum sie testbar sind — beim Ändern nicht aufweichen.
@@ -253,7 +255,7 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 - Setzen des `DIST_REPO_TOKEN`-Secrets im Source-Repo (Personal Access Token mit Write-Access auf `prima-materia-dist`)
 - Anlage des `prima-materia-dist`-Repos in GitHub
 - jsDelivr-Cache-Purge bei Bedarf
-- **Änderungen an `.github/workflows/*`.** Das Agenten-Token trägt keinen `workflows`-Scope; jeder Schreibversuch endet mit `403`. Offen und für den nächsten Anlauf vorgemerkt: `validate.yml` hört auf `push: [main]` und `pull_request: [main]`, also läuft auf einem `claude/**`-Branch nie etwas, und `prima_repo_check` meldet dort strukturell `kein_lauf`. Der Ablauf lautet deshalb bis auf Weiteres: PR öffnen, **dann** prüfen, bei rot nachbessern statt mergen. Behoben wäre es mit `push: branches: [main, 'claude/**']`.
+- **Änderungen an `.github/workflows/*`.** Das Agenten-Token trägt keinen `workflows`-Scope; jeder Schreibversuch endet mit `403`. Der früher hier vermerkte Engpass ist erledigt: `validate.yml` hört inzwischen auf `push: branches: [main, 'claude/**']` mit `cancel-in-progress`, also läuft auf einem Arbeitsbranch geprüft, bevor ein PR offen ist, und `prima_repo_check` liefert dort einen echten Stand statt `kein_lauf`.
 
 Bei diesen Schritten den User explizit auffordern und warten.
 

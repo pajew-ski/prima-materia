@@ -208,6 +208,24 @@ main section > p {
   font-size: var(--text-sm);
 }
 
+/* What the graph states about a term beyond defining it, each value under the
+   name of the property stating it. The property name is set like the panel's
+   own headings so the value reads as the content it is. */
+.statements {
+  margin: var(--space-3) 0 0;
+}
+
+.statements dt {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  cursor: help;
+}
+
+.statements dd {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+}
+
 /* The CURIE is the term's real name; the label is the reading of it. Setting
    the identifier in monospace keeps the two apart at a glance. */
 .panel-id {

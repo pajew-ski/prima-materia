@@ -83,6 +83,11 @@ export const FIELDS = {
   type: 3,
   tradition: 3,
   definition: 3,
+  // What the graph says about a claim beyond defining it: the consequence a
+  // text names for skipping a step, the contact route behind a convergence,
+  // the research an examination rests on, what a modern claim is taken for.
+  // Weighted with the definition, because that is where the case is made.
+  statement: 3,
   note: 2,
 };
 const FIELD_NAMES = Object.keys(FIELDS);
@@ -132,12 +137,20 @@ export function buildIndex(data) {
     if (node.kind === "tradition") traditions.push(node.id);
     const types = node.types.filter((type) => type.startsWith("pm:"));
     const text = {
-      label: values(node.labels).join(" · ") || node.label,
+      // An alternate spelling is a name, not a remark: whoever met Baraqel as
+      // Baraqijal should reach it at a label's weight.
+      label: [...values(node.labels), ...(node.altLabels ?? [])].join(" · ") || node.label,
       name: `${local(node.id)} ${splitCamel(local(node.id))}`,
       source: node.sources.join(" · "),
       type: types.map((type) => `${local(type)} ${labelOf(type)}`).join(" · "),
       tradition: traditions.map(labelOf).join(" · "),
       definition: values(node.definition).join(" ").trim(),
+      // The property's own name is indexed with its value, so "circulates as"
+      // and "transmission path" are things the corpus can be asked about.
+      statement: (node.statements ?? [])
+        .map((statement) => `${statement.label} ${statement.values.join(" ")}`)
+        .join(" · ")
+        .trim(),
       note: [...values(node.note), ...values(node.comment)].join(" ").trim(),
     };
     const tokens = {};
@@ -498,6 +511,22 @@ export function search(index, input, options = {}) {
     );
   }
 
+  // A negated word or phrase takes the term out of the search before anything
+  // is scored. Zeroing its score afterwards is not the same thing: spreading
+  // activation would hand it a score back from its neighbours, and someone who
+  // typed -piti would find Pīti in the results regardless. Negation is also
+  // literal — it excludes what was written, not what a typo might have meant,
+  // because a reader ruling something out is being precise on purpose.
+  const allowed = new Set(candidates);
+  for (const word of query.negatedTerms) {
+    for (const posting of index.postings.get(word) ?? []) allowed.delete(posting.doc);
+  }
+  for (const position of [...allowed]) {
+    if (query.negatedPhrases.some((phrase) => hasPhrase(index.docs[position], phrase))) {
+      allowed.delete(position);
+    }
+  }
+
   const explanations = new Map();
   const reasonFor = (position) => {
     if (!explanations.has(position)) {
@@ -517,7 +546,7 @@ export function search(index, input, options = {}) {
   // A query of filters alone is a listing, not a search: order it by how
   // connected each term is, so the spine of the filtered set comes first.
   if (!query.terms.length && !query.phrases.length) {
-    const listed = candidates
+    const listed = [...allowed]
       .map((position) => index.docs[position])
       .sort((a, b) => b.degree - a.degree || a.node.label.localeCompare(b.node.label))
       .map((doc) => ({
@@ -530,7 +559,6 @@ export function search(index, input, options = {}) {
     return { query, total: listed.length, results: listed.slice(0, limit), listing: true };
   }
 
-  const allowed = new Set(candidates);
   const scores = new Map();
   const add = (position, amount) => scores.set(position, (scores.get(position) ?? 0) + amount);
 
@@ -574,11 +602,6 @@ export function search(index, input, options = {}) {
         factor *= 0.12;
       }
     }
-    for (const phrase of query.negatedPhrases) if (hasPhrase(doc, phrase)) factor = 0;
-    for (const word of query.negatedTerms) {
-      if ((index.postings.get(word) ?? []).some((posting) => posting.doc === position)) factor = 0;
-    }
-
     // Someone typing a term's own name means that term.
     const typed = query.terms.join("");
     if (doc.folded.label === typed || doc.folded.name === typed) factor *= 3;
@@ -659,7 +682,7 @@ export function search(index, input, options = {}) {
 // Snippets
 // ---------------------------------------------------------------------------
 
-const SNIPPET_FIELDS = ["definition", "note", "source", "label"];
+const SNIPPET_FIELDS = ["definition", "statement", "note", "source", "label"];
 const SNIPPET_WIDTH = 190;
 
 /**
