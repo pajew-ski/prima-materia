@@ -72,12 +72,45 @@ prima-materia-dist/              # Distribution Repository (auto-generiert, nie 
 └── version.json                 # { "version": "...", "git_sha": "...", "built_at": "..." }
 ```
 
-Zwei Dinge, die frühere Fassungen hier führten, gibt es nicht und sollen es
-nicht geben. Die `llms.txt` steht auf dem Namensraum-Host und nicht im
-Spiegel (Abschnitt 8). Pro-Tradition-Splits sind gestrichen: der ganze Graph
-liegt im niedrigen sechsstelligen Byte-Bereich, ein selektives Laden spart
-daran nichts, und eine Aufteilung nach Dateien widerspricht Abschnitt 10 —
-die Datei ist eine Einheit des Repos und keine der Sache.
+Die `llms.txt` und die Teilgraphen stehen auf dem Namensraum-Host und nicht im
+Spiegel (Abschnitt 8). Das Distributionsrepo führt die vollständigen
+Serialisierungen und sonst nichts.
+
+### Selektives Laden
+
+Der Bestand wächst mit jedem Lauf, und ein Client mit einer Frage an eine
+einzelne Überlieferung soll dafür nicht den ganzen Graphen parsen müssen. Er
+wird deshalb in Teile zerlegt, die einzeln geladen werden können; sie liegen
+unter `parts/` neben der Seite.
+
+Die frühere Fassung sah dafür „Pro-Tradition-Splits" vor, und das ist der
+falsche Schnitt: eine Aufteilung nach Tradition ist keine Partition. Die
+Inhaltsknoten ohne `pm:withinTradition` sind die Konvergenzen, die Streitfälle,
+die Prüfungen und die als modern ausgewiesenen Ordnungen — der Ertrag des
+Projekts und kein Rest. Wer nur nach Traditionen schneidet, liefert die
+Sammlung aus und lässt die Prüfstelle liegen.
+
+Der Schnitt folgt deshalb den drei Schichten, die die Namensräume ohnehin
+markieren:
+
+| Teil | Inhalt |
+|---|---|
+| `vocabulary` | alles im `pm:`-Namensraum: Klassen, Properties, Skalen, Bezeugungsmodi |
+| `<tradition>` | die `pmt:`-Instanz und alles, was mit `pm:withinTradition` auf sie zeigt |
+| `findings` | jeder Inhaltsknoten, der zu keiner Tradition gehört |
+
+Zwei Bedingungen, die jeder Teil erfüllt und die die Tests sichern:
+
+1. **Jeder Teil ist eine Teilmenge des ganzen Graphen.** Wer mehrere lädt, sieht
+   nie ein Tripel, das die vollständige Serialisierung nicht hat.
+2. **Kein Teil zeigt auf einen Knoten, den er nicht benennt.** Für Begriffe, die
+   ein Teil referenziert und nicht enthält, trägt er einen Stub aus Typ, Label
+   und Tradition. Sonst liest ein Client, der einen Teil allein lädt, Kanten ins
+   Leere, und gerade die Konvergenzknoten zeigen quer über die Traditionen.
+
+`vocabulary` ist ohne die übrigen Teile sinnvoll; die übrigen sind ohne
+`vocabulary` nicht interpretierbar, weil dort steht, was `pm:attestedBy` und die
+Skalen bedeuten. Die `llms.txt` sagt das dem Client.
 
 ## 2. Namespace & URI-Strategie
 
