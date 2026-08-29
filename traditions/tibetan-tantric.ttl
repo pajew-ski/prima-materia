@@ -49,6 +49,45 @@ pmc:TummoYieldsInnerHeat a pm:Yielding ;
     pm:withinTradition pmt:TibetanTantric ;
     dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
 
+pmc:GenerationStage a pm:Conceptualizing ;
+    rdfs:label "Generation stage"@en, "Erzeugungsstufe"@de ;
+    skos:definition "The first of the two stages of the highest tantra, treated before the completion stage in the training."@en ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+pmc:CompletionStage a pm:Conceptualizing ;
+    rdfs:label "Completion stage"@en, "Vollendungsstufe"@de ;
+    skos:definition "The second of the two stages, to which the six yogas belong."@en ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+pmp:Preliminaries a pm:Practicing ;
+    rdfs:label "The preliminaries"@en, "Die Vorbereitungen"@de ;
+    skos:definition "The general and the tantra-specific preliminaries, placed before the training in either stage."@en ;
+    skos:note "A dating warning belongs here. The preliminaries are set before the training in the fifteenth-century treatise, but the sharpest codification of them as an obligatory course is nineteenth-century, in Patrul Rinpoche's manual. Their presence in the older text does not license reading the later regime back into it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)", "Patrul Rinpoche, Kun bzang bla ma'i zhal lung (19th century)" .
+
+pmc:CompletionPresupposesGeneration a pm:Presupposing ;
+    rdfs:label "The completion stage presupposes the generation stage"@en, "Die Vollendungsstufe setzt die Erzeugungsstufe voraus"@de ;
+    pm:dependentStep pmc:CompletionStage ;
+    pm:priorStep pmc:GenerationStage ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TibetanTantric ;
+    skos:note "The order is set by the arrangement of the treatise, which takes the generation-stage meditations before the completion-stage yogas. That the six yogas belong to the completion stage places tummo after the generation stage as well."@en ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+pmc:TrainingPresupposesPreliminaries a pm:Presupposing ;
+    rdfs:label "The training presupposes the preliminaries"@en, "Das Training setzt die Vorbereitungen voraus"@de ;
+    pm:dependentStep pmc:GenerationStage ;
+    pm:priorStep pmp:Preliminaries ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
 pmp:ChannelPurification a pm:Practicing ;
     rdfs:label "Purification of the channels"@en, "Reinigung der Kanäle"@de ;
     skos:definition "A preliminary in which the channels are cleared by visualisation before the heat practice proper; the tradition's own form of the notion that a blockage is a place the energy does not reach."@en ;
