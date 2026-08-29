@@ -626,6 +626,16 @@ Ein vorhandener Knoten groundet nichts. Eine Analogie in einer benachbarten Trad
 
 **Was zurückkommt, gehört ins Issue, nicht in den Kopf des Agenten:** geprüfte Korpora, verwendete Suchbegriffe samt Transliterationen, gefundene und geprüfte Stellen, das Datum. Eine Recherche, deren Abdeckung nicht nachvollziehbar ist, muss beim nächsten Zweifel vollständig wiederholt werden und war damit umsonst.
 
+### Beifang
+
+Eine Recherche findet mehr, als die Frage verlangt. Dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst, und er ist ausdrücklich zu ernten — aber nicht auf demselben Weg wie der Zielbefund.
+
+**Ein nebenbei gefundener Befund wird nur dann Knoten, wenn er selbst die volle Prüfung durchlaufen hat: Stelle plus Gegensuche.** Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen, damit die nächste Runde dort ansetzt, wo diese aufgehört hat.
+
+Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund ist nicht geprüft, sondern begegnet. Läuft er als Knoten ein, ist der Bestand wieder eine Sammlung, und die Trennung von Behauptung und Beglaubigung ist an der billigsten Stelle durchbrochen. Die Regel greift besonders dort, wo ein Rechercheergebnis seine eigenen Vorbehalte mitbringt: Seitenzahlen aus Sekundärliteratur, gemeinfreie Altübersetzungen statt kritischer Ausgaben, in der Forschung bestrittene Zuschreibungen. Solche Funde sind wertvoll und gehören festgehalten, aber als Issue.
+
+**Der Beifang trägt die Konvergenzen.** Ein Befund, der zur gestellten Frage nichts beiträgt, kann für `pm:Converging` oder `pm:Disputing` entscheidend sein, weil beide erst entstehen, wenn mehrere Überlieferungen zu derselben Sache befragt wurden. Wer nur die eigene Frage protokolliert, wirft genau das Material weg, aus dem das eigentliche Werk besteht.
+
 ---
 
 **Document version:** 1.0
