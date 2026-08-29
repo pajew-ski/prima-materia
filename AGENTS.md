@@ -32,7 +32,7 @@ Wer nur nach Bestätigung sucht, findet sie. Gesucht wird auch dort, wo das Gege
 
 Mindestumfang: der Fachterm in Originalsprache und gebräuchlichen Transliterationen; der Primärtext, mindestens zwei Übersetzungen und die Sekundärliteratur zur Stelle; die Datierung des frühesten Zeugen und die Frage, ob die Zuschreibung bestritten ist; die Gegensuche; mindestens eine Überlieferung außerhalb der erwarteten Sphäre.
 
-## Die Recherche hat zwei Stufen, und nur die zweite schreibt
+## Die Recherche hat zwei Stufen, und beide sind zu führen
 
 Diese Trennung ist keine Verfeinerung der vier Sätze oben, sondern die Bedingung, unter der sie überhaupt einzuhalten sind.
 
