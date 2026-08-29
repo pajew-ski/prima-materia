@@ -188,6 +188,33 @@ pm:universalAwareness  a pm:AwarenessSpace .   # alle Bewusstsein
 
 Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte spezifizieren ihre Awareness-Space-Reichweite).
 
+### Parameter 5: Behauptungen sind Knoten, keine Kanten
+
+Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihren Bezeugungsmodus, ihre Stärke oder ein Prüfprotokoll tragen muss, kann keine Kante sein: auf einer Kante sähen ein zitierfähiger Notwendigkeitssatz und eine bloße Kapitelreihenfolge gleich aus. Alle Behauptungsformen werden deshalb reifiziert. Diese Regel gilt auch für jeden künftigen Behauptungstyp, und zwar bevor der erste Knoten geschrieben wird.
+
+`ontology/provenance.ttl` enthält die Klassen:
+
+| Klasse | Aussageform | Pflichtangaben zusätzlich zu `dcterms:source` |
+|---|---|---|
+| `pm:Attributing` | „X lehrte Y" | `pm:ascribedCapacity`, `pm:attestedBy` (nie `pm:compilerInference`) |
+| `pm:Yielding` | „Praxis P bringt Vermögen C hervor" | `pm:byPractice`, `pm:yieldsCapacity`, `pm:attestedBy` |
+| `pm:Presupposing` | „B ist ohne A nicht zu erreichen" | `pm:dependentStep`, `pm:priorStep`, `pm:prerequisiteStrength`, `pm:attestedBy` |
+| `pm:Cautioning` | „Hütet euch vor C" | `pm:cautionsAbout` |
+| `pm:Systematizing` | eine nachträglich hergestellte Ordnung | `pm:compiledBy`, `dcterms:date` |
+| `pm:Disputing` | zwei Seiten streiten über eine Behauptung | `pm:disputedClaim`, **mindestens zwei** Quellen, `pm:attestedBy` |
+| `pm:Converging` | Übereinstimmung über Traditionen hinweg | `pm:transmissionPath` **oder** `pm:independentAttestation` |
+| `pm:Testing` | ein Prüfprotokoll | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
+
+**Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`. Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
+
+**Zwei kontrollierte Skalen tragen die schwachen Fälle.** Sie existieren, damit schwaches Material eingetragen werden kann, nicht damit es draußen bleibt. Ein Befund gehört auf die Stufe, die er verdient.
+
+`pm:PrerequisiteStrength`: `pm:statedNecessity` nur mit zitierbarer `pm:consequenceOfSkipping`, sonst weist `pm:StatedNecessityShape` ab; `pm:prescribedOrder` für eine Anweisung ohne Folgenangabe; `pm:presentationOrder` für eine bloße Darstellungsreihenfolge.
+
+`pm:ExaminationState`: `pm:noProcedureDevised`, `pm:procedureWithoutCases`, `pm:casesWithoutDeviation`, `pm:casesWithDeviation`. Der erste Stand darf nie mit dem dritten zusammenfallen. Eine Behauptung, für die niemand ein Prüfverfahren ersonnen hat, ist keine Behauptung, die geprüft und nicht gestützt wurde; wer beides gleich meldet, berichtet nicht über die Behauptungen, sondern über die Reichweite der eigenen Instrumente.
+
+**Moderne Forschung** betritt den Bestand ausschließlich über `pm:evidenceFrom` an einem `pm:Testing`-Knoten, nie als `dcterms:source` einer Tradition. Ein Aufsatz ist kein Zeuge einer Überlieferung.
+
 ## 4. Phasen-Implementierungsplan
 
 ### Phase 0 — Infrastruktur (Agent-Ziel: vollständig in einer Session lieferbar)
