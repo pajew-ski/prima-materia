@@ -19,7 +19,16 @@ PM = Namespace("https://pajew.ski/prima-materia/ontology#")
 
 # Assets the page loads by name; a rename that misses one breaks the site
 # silently, because a missing module logs to the console and nowhere else.
-REQUIRED_ASSETS = ("index.html", "style.css", "ontology.js", "theme.js", "ontology/index.html")
+REQUIRED_ASSETS = (
+    "index.html",
+    "style.css",
+    "ontology.js",
+    "theme.js",
+    "search.js",
+    "layouts.js",
+    "matrix.js",
+    "ontology/index.html",
+)
 
 
 def _data() -> dict:

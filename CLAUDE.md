@@ -67,11 +67,15 @@ pytest tests/
 
 ## Website
 
-`site/` enthält die handgeschriebenen Assets der GitHub-Pages-Seite (`index.html`, `style.css`, `ontology.js`, `theme.js`, `ontology/index.html`). `scripts/publish.py` kopiert sie nach `build/site/` und legt die aus dem Graphen abgeleiteten Daten (`ontology-data.json`) sowie die Serialisierungen daneben. Der `Pages`-Workflow deployt das bei jedem Push auf `main`.
+`site/` enthält die handgeschriebenen Assets der GitHub-Pages-Seite (`index.html`, `style.css`, `ontology.js`, `theme.js`, `search.js`, `layouts.js`, `matrix.js`, `ontology/index.html`). `scripts/publish.py` kopiert sie nach `build/site/` und legt die aus dem Graphen abgeleiteten Daten (`ontology-data.json`) sowie die Serialisierungen daneben. Der `Pages`-Workflow deployt das bei jedem Push auf `main`.
 
-- Die Seite wird **komplett aus dem kompilierten Graphen** gespeist. Neue Klassen, Properties und Instanzen erscheinen ohne Code-Änderung; Zähler, Legende und Panel leiten sich aus den Daten ab.
+- Die Seite wird **komplett aus dem kompilierten Graphen** gespeist. Neue Klassen, Properties und Instanzen erscheinen ohne Code-Änderung; Zähler, Legende, Panel, Suchindex, Anordnungen und Matrix leiten sich aus den Daten ab.
 - Design-Vorbild ist `pajew-ski/temet-nosce`: achromatische oklch-Tokens, φ-basierte Spacing- und Typo-Leiter, Canvas/Panel im Verhältnis φ:1, Cytoscape über jsDelivr.
-- Neue Node-Art im Graphen → `KINDS` in `site/ontology.js` erweitern (Shape, Legenden-Name, Plural) und in `_kind()` in `scripts/publish.py` klassifizieren.
+- Neue Node-Art im Graphen → `KINDS` in `site/ontology.js` erweitern (Shape, Legenden-Name, Plural) und in `_kind()` in `scripts/publish.py` klassifizieren. Soll ihr Label auch in dichten Anordnungen lesbar bleiben, zusätzlich `LANDMARKS` in `site/layouts.js`.
+- **Aufteilung.** `search.js` (Suche), `layouts.js` (Anordnungen), `matrix.js` (Kreuztabelle) sind DOM-frei und rein; `ontology.js` verdrahtet sie mit Cytoscape und dem Panel. Das ist der Grund, warum sie testbar sind — beim Ändern nicht aufweichen.
+- Neue Anordnung → Eintrag in `VIEWS` in `site/layouts.js` mit `question`: dem Satz, der sagt, welche Frage dieses Bild beantwortet. Eine Anordnung ohne beantwortete Frage ist Dekoration und gehört nicht in die Liste.
+- **Getestet wird JavaScript mit JavaScript.** `tests/site.test.mjs` läuft über `tests/test_site_modules.py` in `pytest tests/` mit, gegen einen Mini-Korpus und gegen den echten kompilierten Graphen. Ohne `node` wird übersprungen, nicht stillschweigend weggelassen.
+- **Cytoscape ist optional, alles andere nicht.** Ein fehlgeschlagener CDN-Load kostet die Zeichnung, nicht die Suche, das Panel oder die Matrix. Wer `ontology.js` erweitert, hält `cy === null` am Leben.
 
 ## Namespaces (in jeder neuen TTL-Datei)
 
