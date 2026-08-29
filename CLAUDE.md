@@ -33,6 +33,25 @@ Vollständig in `SPEC.md` Abschnitt 15. Vier Sätze, deren Verletzung Etiketten 
 
 Was versucht wurde, steht im Issue. Der Anlass ist gezählt und keine Vorsicht: in einem Lauf galten vier Werke als unerreichbar, und alle vier lagen bei genauerem Suchen im Volltext vor — Fehlerquote der Vermutung vier von vier. Fall in `prima-materia#76`, vollständig in `SPEC.md` Abschnitt 15 und in `AGENTS.md`.
 
+### Ist das Werk offen, wird geerntet
+
+Ein Werk, das für eine Behauptung geöffnet wurde, wird nicht für diese eine wieder geschlossen. Das Öffnen ist der teure Schritt; eine weitere Stelle im offenen Text kostet fast nichts.
+
+**Das ist eine ausdrückliche Ausnahme von der Issue-Bindung.** Die Ernte braucht kein eigenes Issue vorher und gilt nicht als eigenmächtige Scope-Erweiterung. Ohne diese Ausnahme wirft ein regeltreuer Bearbeiter gesehenes Wissen weg.
+
+Geschuldet, nicht wahlfrei:
+
+- **Vermögen** — was als durch Übung erlangbar behauptet wird. Vollständigkeit hier im strengen Sinn: ein übergangenes Vermögen ist etwas zu Lernendes, das niemandem mehr auffällt.
+- **Voraussetzungsketten** — was vorher da sein muss, damit etwas eintreten kann. Der Teil, den Zusammenfassungen zuerst verlieren.
+- **Warnungen und Kautelen** — besonders solche, die ihre eigene Verkennung mitnennen, und Selbstwarnungen eines Textes gegen das, was er vorschreibt.
+- **Prüfbares** — Anzeichen, Kriterien, Fristen, Misslingensbedingungen, aus denen später ein `pm:falsifiedBy` wird.
+
+Erzählung, Lebenslauf und Polemik nach Ermessen, nur soweit sie eines der vier tragen.
+
+**Vollständig heißt vollständig für das Geöffnete.** Fünf gelesene Passagen sind nicht das Werk. Die Erntenotiz im auslösenden Issue nennt: was aufgenommen wurde, welche Teile ungelesen blieben, und was gesehen und bewusst nicht aufgenommen wurde, mit Grund — gesehen und stillschweigend fallengelassen ist von nie gesehen nicht zu unterscheiden.
+
+**Kein Maßstab sinkt.** Jede geerntete Behauptung braucht ihre eigene Stelle in derselben Ausgabe; gesehen, aber nicht lokalisiert gehört ins Issue. Neue Traditionen und neues Vokabular bleiben Entscheidungen nach `SPEC.md` §11 und §14. Und wächst der Bestand an Behauptungen über mehrere Läufe, ohne dass `pm:Testing` und `pm:Disputing` mitwachsen, ist aus der Prüfontologie eine Zitatsammlung geworden — das ist ein Befund und keine Nebensache.
+
 **Gegroundet** heißt: eine Stelle trägt die Behauptung, und die Gegensuche ist gelaufen. **Unbelegt** ist die teure Aussage und trägt nur eine erschöpfende, dokumentierte Suche; ein Durchgang ohne Fund reicht nicht.
 
 ## Wozu
