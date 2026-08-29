@@ -394,6 +394,18 @@ def build_llms_txt(graph: Graph) -> str:
         "- The absence of a `pm:Testing` node means nobody has taken the examination up.",
         "  It does not mean the claim was examined and found wanting.",
         "",
+        "## Loading less than the whole graph",
+        "",
+        "The graph is cut into parts that can be loaded on their own. Each part is",
+        "a subset of the full serialisation, and each carries a name and a type for",
+        "the nodes it points at but does not contain, so no reference dangles.",
+        "",
+        f"- [Vocabulary]({SITE_BASE}{PARTS_DIR}/vocabulary.ttl): the classes, properties and scales. Load this with any other part; without it the rest is not interpretable.",
+        f"- [Findings]({SITE_BASE}{PARTS_DIR}/findings.ttl): every node that belongs to no single tradition — the convergences, the disputes, the examinations, and the orderings held as modern. This is what the project is for, and a cut by tradition alone would drop all of it.",
+        "- One part per tradition, linked in the list below.",
+        "",
+        "Turtle is listed; the same parts exist as `.jsonld` beside them.",
+        "",
         "## Traditions",
         "",
     ]
@@ -404,7 +416,8 @@ def build_llms_txt(graph: Graph) -> str:
         definitions = _langs(graph, subject, SKOS.definition)
         definition = definitions.get("en") or definitions.get("")
         entry = f"- [{label}]({SITE_BASE}#{curie(subject)})"
-        lines.append(f"{entry}: {definition}" if definition else entry)
+        part = f" [[part]({SITE_BASE}{PARTS_DIR}/{_slug(subject)}.ttl)]"
+        lines.append((f"{entry}: {definition}" if definition else entry) + part)
 
     lines += [
         "",
