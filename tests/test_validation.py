@@ -273,3 +273,121 @@ def test_dispute_with_one_source_is_rejected() -> None:
     conforms, report = _validate(offending)
     assert not conforms, "A dispute citing a single source must fail SHACL."
     assert "one for each side" in report
+
+
+def test_origination_without_circulating_ascription_is_rejected() -> None:
+    # The ascription a claim circulates under is what makes the node a finding.
+    # Without it the record holds a bibliography entry and calls it a discovery.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:BareOrigination a pm:Originating ;
+        pm:originatedBy "Some Author" ;
+        dcterms:date "1995" ;
+        dcterms:source "Some Author, Some Book (1995)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "An origination without pm:circulatesAs must fail SHACL."
+    assert "ascription the claim circulates under" in report
+
+
+def test_origination_without_author_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:AnonymousOrigination a pm:Originating ;
+        pm:circulatesAs "Ancient wisdom." ;
+        dcterms:date "1995" ;
+        dcterms:source "Some Book (1995)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "An origination without pm:originatedBy must fail SHACL."
+    assert "author with whom the claim begins" in report
+
+
+def test_positing_with_a_source_is_rejected() -> None:
+    # A posited claim witnesses nothing. Letting it carry a source would make
+    # an examined claim indistinguishable from a transmitted one at the point
+    # where somebody reads the graph.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:SourcedPosit a pm:Positing ;
+        pm:positedIn "prima-materia#13" ;
+        dcterms:source "Some work, some passage" .
+
+    pmp:SomeProtocol a pm:Testing ;
+        pm:tests pmc:SourcedPosit ;
+        pm:examinationState pm:noProcedureDevised ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-08-29" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A pm:Positing carrying dcterms:source must fail SHACL."
+    assert "claims no source" in report
+
+
+def test_positing_with_a_tradition_is_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmc:TraditionedPosit a pm:Positing ;
+        pm:positedIn "prima-materia#13" ;
+        pm:withinTradition pmt:Placeholder .
+
+    pmp:AnotherProtocol a pm:Testing ;
+        pm:tests pmc:TraditionedPosit ;
+        pm:examinationState pm:noProcedureDevised ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-08-29" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A pm:Positing assigned to a tradition must fail SHACL."
+    assert "belongs to no tradition" in report
+
+
+def test_positing_without_an_examination_is_rejected() -> None:
+    # The lock that keeps the class from becoming the channel through which an
+    # unpublished draft enters the record. No object of examination without an
+    # examination pointing at it.
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+
+    pmc:UnexaminedPosit a pm:Positing ;
+        pm:positedIn "prima-materia#13" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A pm:Positing with no pm:Testing pointing at it must fail SHACL."
+    assert "no business in the graph" in report
+
+
+def test_examined_posit_conforms() -> None:
+    # The permitted shape, and the only one: a claim with no source and no
+    # tradition, held solely because a protocol addresses it.
+    permitted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmc:ExaminedPosit a pm:Positing ;
+        pm:positedIn "prima-materia#13" .
+
+    pmp:ItsProtocol a pm:Testing ;
+        pm:tests pmc:ExaminedPosit ;
+        pm:examinationState pm:noProcedureDevised ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-08-29" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A posited claim with an examination pointing at it must conform.\n{report}"
