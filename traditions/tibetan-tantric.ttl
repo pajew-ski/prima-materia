@@ -94,3 +94,45 @@ pmp:ChannelPurification a pm:Practicing ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:TibetanTantric ;
     dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+#
+# The sleep and dream material
+#
+# Entered because this is the one tradition in the collection that makes the
+# passage into sleep an object of practice rather than an interruption of it.
+# The reception warning at the head of this file applies with full force: the
+# transmission runs Tilopa to Nāropa to Marpa, so nothing here counts as an
+# independent witness alongside the Indian material.
+#
+
+pmc:ClearLightOfSleep a pm:Conceptualizing ;
+    rdfs:label "The clear light of sleep"@en, "Das klare Licht des Schlafs"@de ;
+    skos:definition "A luminosity held to arise at the passage into sleep, which the practitioner is trained to recognise and hold rather than to pass through unconscious."@en ;
+    skos:note "Tibetan 'od gsal, Sanskrit prabhāsvara. The state is not that of a body whose motor system has shut down while the mind stays awake; it is a luminosity placed at the moment of falling asleep, and its purpose in the sources is the recognition of emptiness and the preparation for dying, not the acquisition of a faculty."@en ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005), the yoga of the clear light of sleep" .
+
+pmp:DreamYoga a pm:Practicing ;
+    rdfs:label "Dream yoga"@en, "Traumyoga"@de ;
+    skos:definition "The training of awareness within the dream, set out in the treatise as a course of exercises in apprehending, multiplying and transforming what appears."@en ;
+    skos:note "Tibetan rmi lam, transliterated milam. Older witnesses stand behind the fifteenth-century treatise: the dream-yoga manuals in the collected works of Gampopa (1079-1153) and the root verses ascribed to Tilopa. That ascription is traditional and only partly secured philologically. Note also that the list of the six is unstable between witnesses, and that the name six yogas is a western coinage for what the tradition calls six dharmas."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005), the yoga of the dream state" .
+
+pmc:DreamYogaPresupposesClearLight a pm:Presupposing ;
+    rdfs:label "Dream yoga presupposes holding the clear light of sleep"@en, "Traumyoga setzt das Halten des klaren Lichts voraus"@de ;
+    pm:dependentStep pmp:DreamYoga ;
+    pm:priorStep pmc:ClearLightOfSleep ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TibetanTantric ;
+    skos:note "The treatise takes the recognition of the clear light before the training in the dream. It does not state at that place what befalls one who begins elsewhere, which is why the strength is order and not necessity."@en ;
+    dcterms:source "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005)" .
+
+pmc:AppearancesAreSelfArising a pm:Conceptualizing ;
+    rdfs:label "The appearances are self-arising"@en, "Die Erscheinungen sind Selbst-Erscheinung"@de ;
+    skos:definition "The teaching that the figures met in the intermediate state are appearances of the one who meets them and not independently existing beings, and that recognising them as such is what frees."@en ;
+    skos:note "Tibetan rang snang, self-appearance. A dating warning belongs on this node: the work is traditionally ascribed to Padmasambhava in the eighth century but is a treasure text of the fourteenth, revealed by Karma Lingpa; the older ascription is not held in the scholarship. Note also the scope. The doctrine holds of all appearance in this tradition, waking included, and is therefore not a statement about the threshold state in particular."@en ;
+    pm:withinTradition pmt:TibetanTantric ;
+    dcterms:source "Bar do thos grol (Karma Lingpa recension, 14th century; trans. Gyurme Dorje 2006), the intermediate state of reality" .

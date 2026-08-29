@@ -1,0 +1,78 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Neoplatonic theurgy
+#
+# Aufgenommen wegen einer Stelle, die im bisherigen Bestand keine
+# Entsprechung hat: Iamblich beschreibt den Zustand zwischen Schlafen und
+# Wachen samt seiner Phaenomenologie und macht ihn zum Kennzeichen des
+# gottgesandten Traums.
+#
+# Die drei Entscheidungen nach SPEC 14 vor dem Anlegen:
+#
+# Kontaktweg. Fuer einen Kontakt der neuplatonischen Theurgie mit indischem
+# Material ist kein Weg belegt; ein solcher ist fuer die aeltere griechische
+# Ueberlieferung vorgeschlagen, aber nicht gezeigt worden, wie schon in
+# graeco-roman.ttl vermerkt. Innerhalb des Mittelmeerraums liegt die Sache
+# umgekehrt: diese Schicht liegt der spaeteren juedischen und islamischen
+# Traumtheorie zugrunde, weshalb eine Uebereinstimmung dieser drei nicht als
+# unabhaengige Bezeugung zaehlen darf.
+#
+# Rezension und Ausgabe. Iamblich nach der Ausgabe von des Places (1966),
+# englisch Clarke, Dillon und Hershbell (2003). Die gemeinfreie Uebersetzung
+# von Wilder (1895) zaehlt anders und ist nicht die Grundlage.
+#
+# Zahl der zitierbaren Stellen. Zwei Werke, beide mit Stelle. Duenn und
+# ausdruecklich so belassen.
+#
+
+pmt:NeoplatonicTheurgy a pm:Tradition ;
+    rdfs:label "Neoplatonic theurgy"@en, "Neuplatonische Theurgie"@de ;
+    skos:definition "The late antique Platonic transmission concerned with the ascent of the soul and with the criteria by which a divine communication is told from a human one."@en ;
+    dcterms:source "Iamblichus, De mysteriis III (ed. des Places 1966)" .
+
+pmc:Theopemptos a pm:Conceptualizing ;
+    rdfs:label "The god-sent dream"@en, "Der gottgesandte Traum"@de ;
+    skos:definition "A dream held to come from a god rather than from the sleeper, and distinguished from the ordinary dream not by its content but by the state in which it arrives."@en ;
+    skos:note "The state is described as the one in which sleep is departing and waking beginning, or as a condition between the two, accompanied by a voice, by a light, and by an inability to move the eyes. This is the closest description in the collection to what modern accounts call the hypnopompic state, and the immobility is named as part of the sign rather than as an obstacle. What arrives in it is a communication received, not a faculty exercised."@en ;
+    pm:withinTradition pmt:NeoplatonicTheurgy ;
+    dcterms:source "Iamblichus, De mysteriis III.2-3 (ed. des Places 1966)" .
+
+pmc:DivineDreamIsNotOrdinarySleep a pm:Cautioning ;
+    rdfs:label "The divine dream is not ordinary sleep"@en, "Der göttliche Traum ist nicht der gewöhnliche Schlaf"@de ;
+    skos:definition "The warning that the mass of dreams occurring in full sleep carries no divination, and that only the state at the edge of sleep is treated as a sign of divine presence."@en ;
+    skos:note "Load-bearing against any claim that sleep as such is an access. The source that comes closest in the whole collection to naming the threshold state is also the one that refuses the wider claim."@en ;
+    pm:cautionsAbout pmc:Theopemptos ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NeoplatonicTheurgy ;
+    dcterms:source "Iamblichus, De mysteriis III.2-3 (ed. des Places 1966)" .
+
+pmc:PneumaticVehicle a pm:Conceptualizing ;
+    rdfs:label "The pneumatic vehicle of the soul"@en, "Das pneumatische Seelenfahrzeug"@de ;
+    skos:definition "A subtle vehicle carried by the soul, whose purity is held to decide whether what appears in a dream is clear and true or clouded."@en ;
+    pm:withinTradition pmt:NeoplatonicTheurgy ;
+    dcterms:source "Synesius of Cyrene, De insomniis" .
+
+pmp:DreamDivination a pm:Practicing ;
+    rdfs:label "Dream divination"@en, "Traumdivination"@de ;
+    skos:definition "The deliberate use of dreams as a source of knowledge, treated in this literature as available to anyone and requiring no instrument beyond the sleeper."@en ;
+    skos:note "The absence of an instrument and of an office is the point at which this tradition differs from the incubation cult: no temple, no priest, no fee."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NeoplatonicTheurgy ;
+    dcterms:source "Synesius of Cyrene, De insomniis" .
+
+pmc:DreamDivinationPresupposesPurityOfTheVehicle a pm:Presupposing ;
+    rdfs:label "Dream divination presupposes purity of the vehicle"@en, "Traumdivination setzt die Reinheit des Fahrzeugs voraus"@de ;
+    pm:dependentStep pmp:DreamDivination ;
+    pm:priorStep pmc:PneumaticVehicle ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NeoplatonicTheurgy ;
+    skos:note "The condition is on the state of the seer, not on a technique of sleeping. Recorded as order rather than necessity because the treatise makes the clarity of the dream depend on the vehicle without stating at that place what befalls one who proceeds with an unpurified one. Chapter divisions vary between editions; the work and its subject are given so that the passage can be found in whichever edition is at hand."@en ;
+    dcterms:source "Synesius of Cyrene, De insomniis" .

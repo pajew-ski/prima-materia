@@ -32,6 +32,14 @@ Wer nur nach Bestätigung sucht, findet sie. Gesucht wird auch dort, wo das Gege
 
 Mindestumfang: der Fachterm in Originalsprache und gebräuchlichen Transliterationen; der Primärtext, mindestens zwei Übersetzungen und die Sekundärliteratur zur Stelle; die Datierung des frühesten Zeugen und die Frage, ob die Zuschreibung bestritten ist; die Gegensuche; mindestens eine Überlieferung außerhalb der erwarteten Sphäre.
 
+**5. Beifang wird geerntet, aber nicht auf demselben Weg.**
+
+Eine Recherche findet mehr, als die Frage verlangt, und dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst. Er darf den Maßstab aber nicht senken. Deshalb: ein nebenbei gefundener Befund wird nur dann Knoten, wenn er **selbst** die volle Prüfung durchlaufen hat — Stelle plus Gegensuche. Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen.
+
+Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund ist nicht geprüft, sondern begegnet. Läuft er als Knoten ein, ist der Bestand wieder eine Sammlung, und die Trennung von Behauptung und Beglaubigung, die dieses Repo ausmacht, ist an der billigsten Stelle durchbrochen.
+
+Der Ertrag der Regel liegt beim Beifang, der schon im Bericht mit Vorbehalt kommt: Seitenzahlen aus Sekundärliteratur, gemeinfreie Altübersetzungen statt kritischer Ausgaben, bestrittene Zuschreibungen. Genau das wird Issue und nicht Knoten.
+
 ## Was „gegroundet" heißt und was nicht
 
 | | |
@@ -59,6 +67,24 @@ Jede Behauptung braucht mindestens ein `dcterms:source` als Referenz auf ein Wer
 Nicht zulässig: URLs jeder Art, DOI und Open-Access-Editionen eingeschlossen (`pm:SourceIsLiteratureShape` weist sie ab); Videos, Blogs, Wikipedia, Foren als Beleg (als Einstieg brauchbar, dann bis zum Werk zurückverfolgen); unveröffentlichte eigene Texte und Methodenentwürfe; sekundäre Zusammenfassungen anstelle der Stelle.
 
 Moderne Forschung betritt den Bestand ausschließlich über `pm:evidenceFrom` an einem `pm:Testing`-Knoten, nie als `dcterms:source` einer Tradition. Ein Aufsatz ist kein Zeuge einer Überlieferung.
+
+## Der stehende Auftrag
+
+Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Aufforderung, ist der vollständige Durchlauf gemeint. **Keine Rückfragen zu Schritten, die diese Datei und `SPEC.md` bereits vorschreiben.** Der Mensch prüft am Merge, nicht am Ablauf.
+
+1. Bestand lesen: Dateibaum, offene Issues, Labels, letzte PRs.
+2. Nächstes Bündel wählen. Vorrang hat der unabhängigkeitsgetriebene Eingang (SPEC §14) vor dem Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
+3. Tiefe Recherche nach SPEC §15, mit Gegensuche.
+4. Sofort integrieren: Knoten für vollgeprüfte Funde, Issues für alles andere.
+5. Issue-Kommentar mit der Abdeckung, `korpus:`-Labels kumulieren, Schließen nur bei Erschöpfung.
+6. PR öffnen, Validierung grün, dann liegen lassen. Der Mensch merged.
+7. Ohne Unterbrechung zum nächsten Bündel.
+
+**Jede im Lauf entstandene Hypothese wird noch im selben Lauf ein Issue.** Das gilt für den Zielbefund, für den Beifang, für jede Vermutung, die im Denken auftaucht, und für jeden Befund über das Repo oder die Werkzeuge. Eine Hypothese, die nur im Gesprächsverlauf steht, ist verloren, sobald die Sitzung endet — und der Gesprächsverlauf ist kein Speicher, sondern ein Fenster.
+
+**Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Wer ihn schreibt, hat den Aufwand des Anlegens schon aufgewendet und das Ergebnis weggeworfen.
+
+**Vollständigkeit vor Eleganz.** Lieber fünfzig knappe Issues mit Behauptung, geprüften Stellen und Labels als fünf ausformulierte und der Rest im Fließtext.
 
 ## Vor dem ersten Schreibzugriff
 
