@@ -178,6 +178,60 @@ pmc:ConcentrationPresupposesVirtue a pm:Presupposing ;
     skos:note "The handbook is built as a commentary on a canonical verse in which the one established in virtue develops mind and understanding, and it glosses the order accordingly."@en ;
     dcterms:source "Buddhaghosa, Visuddhimagga I.1 (trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga I.7-I.8 (trans. Ñāṇamoli 1956)" .
 
+pmc:FiveHindrances a pm:Conceptualizing ;
+    rdfs:label "The five hindrances"@en, "Die fünf Hemmnisse"@de ;
+    skos:definition "Sensual desire, ill will, dullness and drowsiness, restlessness and remorse, and doubt, whose abandoning the discourse describes immediately before entry into the first absorption."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Dīgha Nikāya 2 (Sāmaññaphala Sutta)" .
+
+pmc:FourAbsorptions a pm:Conceptualizing ;
+    rdfs:label "The four absorptions"@en, "Die vier Vertiefungen"@de ;
+    skos:definition "A graded series in which each stage is reached by letting go of a factor still present in the one before it."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Dīgha Nikāya 2 (Sāmaññaphala Sutta)", "Buddhaghosa, Visuddhimagga IV (trans. Ñāṇamoli 1956)" .
+
+pmc:JhanaPresupposesAbandoningTheHindrances a pm:Presupposing ;
+    rdfs:label "Absorption presupposes the abandoning of the hindrances"@en, "Die Vertiefung setzt das Aufgeben der Hemmnisse voraus"@de ;
+    pm:dependentStep pmc:FourAbsorptions ;
+    pm:priorStep pmc:FiveHindrances ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    skos:note "The discourse places the abandoning of the five immediately before entry into the first absorption in a fixed formula, without stating at that place what befalls one who enters otherwise."@en ;
+    dcterms:source "Dīgha Nikāya 2 (Sāmaññaphala Sutta)" .
+
+pmc:AbsorptionsAreGraded a pm:Presupposing ;
+    rdfs:label "Each absorption presupposes the one before it"@en, "Jede Vertiefung setzt die vorhergehende voraus"@de ;
+    pm:dependentStep pmc:FourthJhana ;
+    pm:priorStep pmc:FourAbsorptions ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    skos:note "The series is strictly graded in both canon and handbook, each stage defined by what it has let go of. No passage was found that forbids skipping in so many words, which is why this is recorded as an order and not as a necessity."@en ;
+    dcterms:source "Dīgha Nikāya 2 (Sāmaññaphala Sutta)", "Buddhaghosa, Visuddhimagga IV (trans. Ñāṇamoli 1956)" .
+
+pmc:SixteenStepsOfBreathing a pm:Presupposing ;
+    rdfs:label "The sixteen steps of mindfulness of breathing"@en, "Die sechzehn Schritte der Atemachtsamkeit"@de ;
+    pm:dependentStep pmp:Anapanasati ;
+    pm:priorStep pmp:Anapanasati ;
+    pm:prerequisiteStrength pm:presentationOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    skos:note "Recorded at the weakest strength on purpose. The discourse sets out four tetrads of four steps and assigns them to the four foundations of mindfulness. It presents a progression; it does not say that a step is unreachable without the one before it, and the question whether the order is binding or expository is contested among practitioners to this day."@en ;
+    dcterms:source "Majjhima Nikāya 118" .
+
+#
+# A dispute
+#
+
+pmc:AbsorptionThresholdDispute a pm:Disputing ;
+    rdfs:label "How high the threshold of absorption stands"@en, "Wie hoch die Schwelle der Vertiefung liegt"@de ;
+    skos:definition "A disagreement about what is required for absorption. The discourses describe it as reached in the ordinary course of the training; the handbook sets a far higher bar, remarking that only one in a hundred or a thousand accomplishes it."@en ;
+    skos:note "The disagreement bears directly on every prerequisite in this file that runs through the fourth absorption. If the handbook's threshold is the right one, the capacities it makes conditional on that absorption are conditional on something very few reach; if the discourses' is, they are not."@en ;
+    pm:disputedClaim pmc:FourAbsorptions ;
+    pm:attestedBy pm:textualAttestation ;
+    dcterms:source "Dīgha Nikāya 2 (Sāmaññaphala Sutta)", "Buddhaghosa, Visuddhimagga XII (trans. Ñāṇamoli 1956)" .
+
 #
 # Cautions
 #

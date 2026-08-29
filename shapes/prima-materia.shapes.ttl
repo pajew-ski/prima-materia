@@ -145,6 +145,29 @@ pm:FalsifierRequiredShape a sh:NodeShape ;
     sh:message "A protocol needs a stated falsifying condition unless its state is pm:noProcedureDevised." .
 
 #
+# A dispute cites every side it reports. One source is not a disagreement,
+# it is a position; recording it as a dispute would let the record decide
+# the matter by which side it happened to read.
+#
+pm:DisputingShape a sh:NodeShape ;
+    sh:targetClass pm:Disputing ;
+    sh:property [
+        sh:path pm:disputedClaim ;
+        sh:minCount 1 ;
+        sh:message "Every dispute must name what is at issue."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every dispute must declare how it entered the record."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 2 ;
+        sh:message "Every dispute must cite at least two sources, one for each side it reports."
+    ] .
+
+#
 # A prerequisite claim must say which step, which prior step, and on what
 # strength. Without the strength the claim is unusable: an order and a
 # necessity would read alike, and the graph would lend ancient warrant to

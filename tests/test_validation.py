@@ -254,3 +254,22 @@ def test_prescribed_order_may_omit_the_consequence() -> None:
     """
     conforms, report = _validate(permitted)
     assert conforms, f"An order that states no consequence must conform.\n{report}"
+
+
+def test_dispute_with_one_source_is_rejected() -> None:
+    # A disagreement reported from one side only is a position. Admitting it
+    # as a dispute would let the record settle the matter by which side it
+    # happened to have read.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:OneSidedDispute a pm:Disputing ;
+        pm:disputedClaim pmc:SomeClaim ;
+        pm:attestedBy pm:textualAttestation ;
+        dcterms:source "Only one work, one passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A dispute citing a single source must fail SHACL."
+    assert "one for each side" in report

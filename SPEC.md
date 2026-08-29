@@ -22,11 +22,15 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 ├── ontology/
 │   ├── core.ttl                 # Meta-Ontologie (pm:Process, pm:AwarenessContext, etc.)
 │   ├── consciousness.ttl        # Bewusstseinszustände (Jāgrat/Svapna/Suṣupti/Turīya)
+│   ├── provenance.ttl           # Behauptungs- und Prüfklassen (siehe Abschnitt 3.5)
 │   └── alignments.ttl           # Mappings zu SKOS, DCTerms, schema.org
-├── traditions/
-│   ├── valentinian.ttl          # Valentinianische Gnosis
-│   ├── greek-cosmological.ttl   # 13-Prinzipien-System (Kairos → Hen)
-│   └── opus-purum-axioms.ttl    # Opus Purum als formale Klassen
+├── traditions/                  # eine Datei je Tradition
+│   └── *.ttl                    # enochic, patanjala-yoga, theravada, daoist, ...
+├── convergences/                # Übereinstimmungen über Traditionen hinweg
+│   └── *.ttl                    # gehören keiner Tradition, deshalb eigener Ordner
+├── examinations/                # Prüfprotokolle zu einzelnen Behauptungen
+│   └── *.ttl                    # nur angelegt, wo eine Prüfung aufgenommen wurde
+├── site/                        # handgeschriebene Assets der GitHub-Pages-Seite
 ├── shapes/
 │   └── prima-materia.shapes.ttl # SHACL-Validierungsregeln
 ├── context/
@@ -183,6 +187,33 @@ pm:universalAwareness  a pm:AwarenessSpace .   # alle Bewusstsein
 ```
 
 Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte spezifizieren ihre Awareness-Space-Reichweite).
+
+### Parameter 5: Behauptungen sind Knoten, keine Kanten
+
+Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihren Bezeugungsmodus, ihre Stärke oder ein Prüfprotokoll tragen muss, kann keine Kante sein: auf einer Kante sähen ein zitierfähiger Notwendigkeitssatz und eine bloße Kapitelreihenfolge gleich aus. Alle Behauptungsformen werden deshalb reifiziert. Diese Regel gilt auch für jeden künftigen Behauptungstyp, und zwar bevor der erste Knoten geschrieben wird.
+
+`ontology/provenance.ttl` enthält die Klassen:
+
+| Klasse | Aussageform | Pflichtangaben zusätzlich zu `dcterms:source` |
+|---|---|---|
+| `pm:Attributing` | „X lehrte Y" | `pm:ascribedCapacity`, `pm:attestedBy` (nie `pm:compilerInference`) |
+| `pm:Yielding` | „Praxis P bringt Vermögen C hervor" | `pm:byPractice`, `pm:yieldsCapacity`, `pm:attestedBy` |
+| `pm:Presupposing` | „B ist ohne A nicht zu erreichen" | `pm:dependentStep`, `pm:priorStep`, `pm:prerequisiteStrength`, `pm:attestedBy` |
+| `pm:Cautioning` | „Hütet euch vor C" | `pm:cautionsAbout` |
+| `pm:Systematizing` | eine nachträglich hergestellte Ordnung | `pm:compiledBy`, `dcterms:date` |
+| `pm:Disputing` | zwei Seiten streiten über eine Behauptung | `pm:disputedClaim`, **mindestens zwei** Quellen, `pm:attestedBy` |
+| `pm:Converging` | Übereinstimmung über Traditionen hinweg | `pm:transmissionPath` **oder** `pm:independentAttestation` |
+| `pm:Testing` | ein Prüfprotokoll | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
+
+**Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`. Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
+
+**Zwei kontrollierte Skalen tragen die schwachen Fälle.** Sie existieren, damit schwaches Material eingetragen werden kann, nicht damit es draußen bleibt. Ein Befund gehört auf die Stufe, die er verdient.
+
+`pm:PrerequisiteStrength`: `pm:statedNecessity` nur mit zitierbarer `pm:consequenceOfSkipping`, sonst weist `pm:StatedNecessityShape` ab; `pm:prescribedOrder` für eine Anweisung ohne Folgenangabe; `pm:presentationOrder` für eine bloße Darstellungsreihenfolge.
+
+`pm:ExaminationState`: `pm:noProcedureDevised`, `pm:procedureWithoutCases`, `pm:casesWithoutDeviation`, `pm:casesWithDeviation`. Der erste Stand darf nie mit dem dritten zusammenfallen. Eine Behauptung, für die niemand ein Prüfverfahren ersonnen hat, ist keine Behauptung, die geprüft und nicht gestützt wurde; wer beides gleich meldet, berichtet nicht über die Behauptungen, sondern über die Reichweite der eigenen Instrumente.
+
+**Moderne Forschung** betritt den Bestand ausschließlich über `pm:evidenceFrom` an einem `pm:Testing`-Knoten, nie als `dcterms:source` einer Tradition. Ein Aufsatz ist kein Zeuge einer Überlieferung.
 
 ## 4. Phasen-Implementierungsplan
 
@@ -407,9 +438,7 @@ Das Distribution-Repository enthält eine `llms.txt`, die LLM-Agenten Discovery 
 
 ## Traditions
 
-- [Valentinian Gnosis (JSON-LD)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/traditions/valentinian.jsonld)
-- [Greek Cosmological 13-Principles (JSON-LD)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/traditions/greek-cosmological.jsonld)
-- [Opus Purum Axioms (JSON-LD)](https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/traditions/opus-purum-axioms.jsonld)
+Ein Eintrag je Datei in `traditions/`, beim Bau aus dem Verzeichnis abgeleitet und nicht von Hand gepflegt. Eine fest verdrahtete Liste läuft dem Bestand hinterher und nennt irgendwann Dateien, die es nicht gibt.
 
 ## Optional
 
@@ -424,6 +453,12 @@ Pytest-Tests in `tests/`:
 - `test_validation.py` — verifiziert, dass die Seed-Ontologie SHACL-konform ist; verifiziert, dass ein deliberat ungültiges Test-TTL-Fragment fehlschlägt
 - `test_compilation.py` — verifiziert, dass alle TTL-Fragmente parsen und mergen
 - `test_transmutation.py` — verifiziert, dass JSON-LD-Output zurück nach TTL roundtripping ist (via rdflib)
+**Fixture-Pflicht.** Jedes neue Shape braucht einen Negativfixture, der zeigt, dass es feuert. Ein Wächter, von dem nie gezeigt wurde, dass er auslöst, ist nicht als funktionierend bekannt. Hat das Shape eine Ausnahme, braucht es zusätzlich einen positiven Fixture für die Ausnahme.
+
+**Ordnerregel.** Ein neuer Datenordner muss an vier Stellen nachgezogen werden, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`. Nichts schlägt fehl, wenn eine davon vergessen wird.
+
+Ein Test, der gegen einen hartkodierten Namensraum vergleicht, hört bei einer Migration still auf zu prüfen und bleibt dabei grün. Solche Vergleiche gehören bei jeder Namensraumänderung mitgezogen.
+
 - `test_no_substance_classes.py` — explizit: scannt alle TTL-Dateien auf Vorkommen verbotener Klassennamen (`pm:Symbol`, `pm:Concept`, `pm:Entity`, `pm:Object`) und fail wenn gefunden
 
 ## 10. Lizenzierung & Quellenführung
@@ -441,6 +476,12 @@ Ausgeschlossen sind:
 - **Unveröffentlichte eigene Texte, Arbeitsfassungen, Methodenentwürfe**, auch die des Betreibers.
 - **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen.
 
+**Der Maßstab ist Auffindbarkeit, nicht Nummerierung.** Die Angabe muss so genau sein, dass ein Leser die Stelle im benannten Werk findet. Eine Nummer ist keine Bedingung, wo das Werk keine hat oder wo die Zählung zwischen Ausgaben schwankt: `"Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness"` und `"John Climacus, The Ladder of Divine Ascent, steps 1-30"` sind zulässig. Schwankende Zählungen gehören in eine `skos:note`, nicht in eine Weglassung. Zitiergenauigkeit ist nicht Zitierbarkeit, und ein Befund, der an einer fehlenden Kapitelnummer scheitert, obwohl Werk und Traktat benannt sind, ist unnötig verloren.
+
+**Die Rezension gehört in die Angabe.** Wo Textzeugen inhaltlich auseinandergehen, nennt `dcterms:source` Rezension und Ausgabe, und die abweichenden Fassungen stehen als getrennte Knoten: `"1 Enoch 8:3 (Ethiopic; Charles 1912)"` neben `"1 Enoch 8:3 (Aramaic/Greek reconstruction; Nickelsburg 2001)"`. Ein gemittelter Knoten meldet einen Text, den kein Zeuge gibt. Streiten die Ausgaben nur über Datierung oder Lesung, ohne dass zwei Fassungen entstehen, gehört das in einen `pm:Disputing`-Knoten.
+
+**Negative Befunde gehören in den Bestand.** Eine Ordnung, die erst Kommentar oder Moderne hergestellt hat, wird ein `pm:Systematizing`-Knoten mit benanntem Kompilator; ein Streit zwischen Grundtext und Lesern ein `pm:Disputing`-Knoten; eine Behauptung, die sich nicht bis zu einer Stelle zurückverfolgen ließ, ein Issue in diesem Repo mit der geprüften Kandidatenstelle und dem Grund des Scheiterns. Sonst prüft der nächste Agent dieselbe Behauptung und scheitert genauso.
+
 **Richtungssinn.** prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden, nicht umgekehrt. Ein Methodenentwurf ist keine Quelle, sondern eine Menge von Behauptungen, die einzeln gegen überliefertes Schrifttum zu grounden sind. Was sich nicht grounden lässt, bleibt Entwurf und kommt nicht in den Graphen.
 
 **Verboten:** Reproduktion urheberrechtlich geschützter Primärtexte. Konzept-Definitionen sind eigene Paraphrasen, niemals Direktzitate aus modernen Übersetzungen.
@@ -454,6 +495,12 @@ Ausgeschlossen sind:
 - Kein automatisiertes Setzen von Repository-Secrets — den User explizit auffordern
 - Keine Verwendung von `owl:NamedIndividual` ohne explizite Klassenzuweisung
 - Keine deutschen Identifier in URIs/Klassennamen — englische Identifier mit deutschen `rdfs:label`-Tags
+- **Keine ausgelöste Validierung umformulieren.** Löst SHACL, ein Test oder ein vorgeschalteter Wächter aus, wird das gemeldet. Ein Fehlalarm ist ein Befund über den Wächter und gehört berichtet, damit er repariert wird. Ob der Alarm berechtigt war, entscheidet nicht, wer schreiben will.
+- **Keine Verwechslung von Vokabular mit Behauptung.** Eine Klasse behauptet nichts und braucht keine Quelle, sondern eine `skos:definition`, die sagt, was als Instanz gälte. Das Vokabular darf der Sache vorauslaufen; Knoten dürfen es nie.
+- **Kein Prüfknoten-Stub pro Behauptung.** `pm:Testing` entsteht, wenn jemand die Prüfung aufnimmt; das Fehlen sagt bereits, was ein Knoten mit Stand „ungeprüft" sagen würde.
+- **Keinen Befund weglassen, weil sich nur eine schwache Stärke setzen lässt.** Die Skalen tragen die schwachen Fälle; `pm:presentationOrder` behauptet keine Notwendigkeit, sondern hält fest, dass eine Anordnung existiert, und genau daran erkennt ein späterer Leser, wo ein modernes System eine Notwendigkeit hineingelesen hat.
+- **Keine zirkuläre Wirkbehauptung.** Eine Praxis bringt nicht hervor, was sie ist; die Zirkulation des Qi bringt kein Qi hervor. Beim Reifizieren fällt das auf, auf einer Kante nicht.
+- **Keine Umbenennung geprägter Bezeichner ohne zwingenden Grund.** Der Namensraum steht endgültig unter `https://pajew.ski/prima-materia/`. Eine Migration ist nur vollständig oder gar nicht auszuführen: RDF-Identität folgt keiner Umleitung, und ein halb migrierter Bestand ist ein still gespaltener Graph.
 
 ## 12. Erste Aufgabe für den Agent
 

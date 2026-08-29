@@ -49,6 +49,39 @@ pmp:SaktipataTransmission a pm:Practicing ;
     dcterms:source "Abhinavagupta, Tantrāloka XIII", "Abhinavagupta, Tantrasāra XI" .
 
 #
+# Prerequisite claims
+#
+# The direction of the second one settles a question that is easy to get
+# backwards. In this tradition the descent of power is what qualifies a
+# person for the path; it is not the reward at the end of it.
+#
+
+pmc:Diksa a pm:Conceptualizing ;
+    rdfs:label "Initiation"@en, "Initiation"@de ;
+    skos:definition "The rite by which a person is admitted to the practice, set out in the tantra and reproduced with commentary in the Kashmirian exegesis."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Mālinīvijayottaratantra VIII", "Abhinavagupta, Tantrāloka XV" .
+
+pmc:PracticePresupposesInitiation a pm:Presupposing ;
+    rdfs:label "The practice presupposes initiation"@en, "Die Praxis setzt die Initiation voraus"@de ;
+    pm:dependentStep pmp:SaktipataTransmission ;
+    pm:priorStep pmc:Diksa ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Mālinīvijayottaratantra VIII", "Abhinavagupta, Tantrāloka XV" .
+
+pmc:InitiationPresupposesSaktipata a pm:Presupposing ;
+    rdfs:label "Initiation presupposes the descent of power"@en, "Die Initiation setzt die Herabkunft der Kraft voraus"@de ;
+    pm:dependentStep pmc:Diksa ;
+    pm:priorStep pmc:Saktipata ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SaivaSakta ;
+    skos:note "The exegesis asks who is qualified for initiation and answers by taking up the descent of power, which places the descent before the rite and before the path. Later and other traditions have read the descent as the fruit of practice instead; the direction recorded here is the one Abhinavagupta sets."@en ;
+    dcterms:source "Abhinavagupta, Tantrāloka XIII", "Abhinavagupta, Tantrasāra XI" .
+
+#
 # The modern ordering, held as such
 #
 

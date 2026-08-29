@@ -1,0 +1,43 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Eleusinian mysteries
+#
+# The one prerequisite in the collection that is not a claim about an inner
+# path at all. It is an institutional rule, recorded on stone, about who is
+# admitted to what. It is entered because that difference is worth having in
+# the record: a rite can require a prior rite without anyone saying that the
+# second would fail without the first.
+#
+
+pmt:EleusinianMysteries a pm:Tradition ;
+    rdfs:label "Eleusinian mysteries"@en, "Eleusinische Mysterien"@de ;
+    skos:definition "The Attic mystery cult of Demeter and Kore, with a lesser rite at Agrai in the spring and the greater rite at Eleusis in the autumn."@en ;
+    dcterms:source "Athenian decree concerning Eleusis, IG I³ 6" .
+
+pmc:LesserMysteries a pm:Conceptualizing ;
+    rdfs:label "The lesser mysteries"@en, "Die kleinen Mysterien"@de ;
+    skos:definition "The preparatory rite at Agrai, held in the month Anthesterion."@en ;
+    pm:withinTradition pmt:EleusinianMysteries ;
+    dcterms:source "Athenian decree concerning Eleusis, IG I³ 6, face C" .
+
+pmc:GreaterMysteries a pm:Conceptualizing ;
+    rdfs:label "The greater mysteries"@en, "Die großen Mysterien"@de ;
+    skos:definition "The rite at Eleusis, held in the month Boedromion."@en ;
+    pm:withinTradition pmt:EleusinianMysteries ;
+    dcterms:source "Athenian decree concerning Eleusis, IG I³ 6, face C" .
+
+pmc:GreaterPresupposeLesser a pm:Presupposing ;
+    rdfs:label "The greater mysteries presuppose the lesser"@en, "Die großen Mysterien setzen die kleinen voraus"@de ;
+    pm:dependentStep pmc:GreaterMysteries ;
+    pm:priorStep pmc:LesserMysteries ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EleusinianMysteries ;
+    skos:note "The requirement is institutional and concerns admission, not efficacy. The inscription regulates participation in both rites; nothing in it says that the greater rite would fail for one who had skipped the lesser, only that such a one is not admitted."@en ;
+    dcterms:source "Athenian decree concerning Eleusis, IG I³ 6, face C" .
