@@ -44,6 +44,8 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 │   └── *.ttl                    # gehören keiner Tradition, deshalb eigener Ordner
 ├── examinations/                # Prüfprotokolle zu einzelnen Behauptungen
 │   └── *.ttl                    # nur angelegt, wo eine Prüfung aufgenommen wurde
+├── originations/                # moderne Behauptungen, die als alte zirkulieren
+│   └── *.ttl                    # pm:Originating: ordnen keine Tradition und bezeugen keine
 ├── site/                        # handgeschriebene Assets der GitHub-Pages-Seite
 ├── shapes/
 │   └── prima-materia.shapes.ttl # SHACL-Validierungsregeln
@@ -492,11 +494,21 @@ Ausgeschlossen sind:
 
 **Der Maßstab ist Auffindbarkeit, nicht Nummerierung.** Die Angabe muss so genau sein, dass ein Leser die Stelle im benannten Werk findet. Eine Nummer ist keine Bedingung, wo das Werk keine hat oder wo die Zählung zwischen Ausgaben schwankt: `"Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness"` und `"John Climacus, The Ladder of Divine Ascent, steps 1-30"` sind zulässig. Schwankende Zählungen gehören in eine `skos:note`, nicht in eine Weglassung. Zitiergenauigkeit ist nicht Zitierbarkeit, und ein Befund, der an einer fehlenden Kapitelnummer scheitert, obwohl Werk und Traktat benannt sind, ist unnötig verloren.
 
-**Die Rezension gehört in die Angabe.** Wo Textzeugen inhaltlich auseinandergehen, nennt `dcterms:source` Rezension und Ausgabe, und die abweichenden Fassungen stehen als getrennte Knoten: `"1 Enoch 8:3 (Ethiopic; Charles 1912)"` neben `"1 Enoch 8:3 (Aramaic/Greek reconstruction; Nickelsburg 2001)"`. Ein gemittelter Knoten meldet einen Text, den kein Zeuge gibt. Streiten die Ausgaben nur über Datierung oder Lesung, ohne dass zwei Fassungen entstehen, gehört das in einen `pm:Disputing`-Knoten.
+**Die Ausgabe gehört in jede Angabe, und zwar die, aus der gelesen wurde.** Die frühere Fassung dieser Regel verlangte die Ausgabe dort, „wo Textzeugen inhaltlich auseinandergehen". Das ist nicht anwendbar: ob sie auseinandergehen, weiß man erst nach dem Vergleich, und wer ihn nicht geführt hat, entscheidet die Frage durch Weglassen. Die Regel lautet deshalb umgekehrt und ist eine Aussage über die eigene Arbeit, die immer bekannt ist: `dcterms:source` nennt Werk, Stelle und die Ausgabe oder Übersetzung, aus der der Bearbeiter sie gelesen hat.
+
+Das ist keine Formalie, sondern die Anwendung von Abschnitt 15 auf die Quellenangabe. Ein Befund ist auf die Suche relativiert, nicht auf den Bestand — und die Ausgabe *ist* diese Relativierung. Ohne sie behauptet ein Knoten eine Textkenntnis, die er nicht hat: er sagt „Haṭhayogapradīpikā III.73", wo er sagen müsste, dass er die Vulgata gelesen hat und nicht weiß, ob die kritische Edition dort ebenso zählt.
+
+Wo die Kenntnis aus mehreren Ausgaben zusammengesetzt ist, wird das gesagt statt geglättet. Wo die Schwankung selbst der Befund ist, kommt zusätzlich ein `pm:Disputing`-Knoten; er ersetzt die Angabe nicht.
+
+**Abweichende Fassungen stehen als getrennte Knoten:** `"1 Enoch 8:3 (Ethiopic; Charles 1912)"` neben `"1 Enoch 8:3 (Aramaic/Greek reconstruction; Nickelsburg 2001)"`. Ein gemittelter Knoten meldet einen Text, den kein Zeuge gibt. Streiten die Ausgaben nur über Datierung oder Lesung, ohne dass zwei Fassungen entstehen, gehört das in einen `pm:Disputing`-Knoten.
 
 **Negative Befunde gehören in den Bestand.** Eine Ordnung, die erst Kommentar oder Moderne hergestellt hat, wird ein `pm:Systematizing`-Knoten mit benanntem Kompilator; ein Streit zwischen Grundtext und Lesern ein `pm:Disputing`-Knoten; eine Behauptung, die der Korpus noch nicht beantwortet, ein Issue nach Abschnitt 13, mit den geprüften Kandidatenstellen und dem Grund des Scheiterns. Sonst prüft der nächste Agent dieselbe Behauptung und scheitert genauso.
 
 **Ein Turtle-Kommentar ist kein Ort für einen Befund.** Kommentare fallen beim Kompilieren weg; der ausgelieferte Graph weiß von einer Prüfung nichts, die nur im Dateikopf steht. Was eine Prüfung ergeben hat, gehört in einen Knoten, in eine `skos:note` oder in ein Issue.
+
+Daraus die Regel für den Dateikopf: **er darf nur enthalten, was beim Verlust nichts kostet.** Aufbau der Datei, Hinweis für den nächsten Bearbeiter, Begründung der Ablage. Jede Aussage über die Sache gehört an einen Knoten — die Begründung einer Traditionsdatei als `skos:note` an ihre `pmt:`-Instanz, die es ohnehin gibt.
+
+Eine Datei-Ebene im Graphen, die den Kopf als Aussage trüge, wird **nicht** eingeführt. Die Datei ist eine Einheit des Repos und keine der Sache: zwei Traditionen können in einer Datei stehen, und die `korpus:`-Label benennen ausdrücklich den Korpus und nicht die Datei. Ein Graph, der Dateien als Entitäten führt, bindet sich an eine Aufteilung, die sich beim nächsten Umsortieren ändert.
 
 **Richtungssinn.** prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden, nicht umgekehrt. Ein Methodenentwurf ist keine Quelle, sondern eine Menge von Behauptungen, die einzeln gegen überliefertes Schrifttum zu grounden sind. Was sich nicht grounden lässt, bleibt Entwurf und kommt nicht in den Graphen.
 

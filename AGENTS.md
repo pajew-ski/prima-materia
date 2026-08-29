@@ -32,6 +32,35 @@ Wer nur nach Bestätigung sucht, findet sie. Gesucht wird auch dort, wo das Gege
 
 Mindestumfang: der Fachterm in Originalsprache und gebräuchlichen Transliterationen; der Primärtext, mindestens zwei Übersetzungen und die Sekundärliteratur zur Stelle; die Datierung des frühesten Zeugen und die Frage, ob die Zuschreibung bestritten ist; die Gegensuche; mindestens eine Überlieferung außerhalb der erwarteten Sphäre.
 
+## Die Recherche hat zwei Stufen, und nur die zweite schreibt
+
+Diese Trennung ist keine Verfeinerung der vier Sätze oben, sondern die Bedingung, unter der sie überhaupt einzuhalten sind.
+
+**Erste Stufe: die Landschaft.** Ein breiter Rechercheauftrag über den gesamten erreichbaren Suchraum, geführt mit dem Werkzeug, das viele Suchen parallel fährt. Er beantwortet die erste Frage aus Satz 2 — wo gibt es Quellen, die der Bestand nicht kennt —, findet die Sekundärliteratur für die Gegensuche, liefert Datierungen und Zuschreibungsstreit, und nennt Korpora, auf die man von selbst nicht käme. Ohne diese Stufe recherchiert der Agent dort, wo er ohnehin schon hinsah, und bestätigt die bisherige Sammelrichtung.
+
+Der Auftrag an diese Stufe enthält: jede Behauptung einzeln und entscheidbar formuliert; die Pflicht zur Gegensuche je Behauptung; die Fachtermini in Originalsprache und Transliteration; die Frage nach Datierung und bestrittener Zuschreibung; die Pflicht, mindestens für einen Teil der Behauptungen eine Überlieferung außerhalb der erwarteten Sphäre zu befragen und für jede Übereinstimmung den Kontaktweg zu prüfen; und die Regel, dass Belege Werke mit Stellenangabe sind und niemals Links.
+
+**Zweite Stufe: die Stelle.** Was die erste Stufe nennt, wird selbst aufgeschlagen, im Original, bevor daraus ein Knoten wird. Ein Bericht über eine Stelle ist keine Stelle. Ein Rechercheergebnis, das eine Stelle referiert, fällt unter dieselbe Regel wie jede andere sekundäre Zusammenfassung: es weist den Weg zum Werk und zählt nicht als Beleg.
+
+**Daraus folgt die Aufteilung, und sie ist nicht verhandelbar:**
+
+| | |
+|---|---|
+| **In den Graphen** | nur, was die zweite Stufe überstanden hat: Stellen, deren Wortlaut gelesen wurde |
+| **Ins Issue** | alles andere, ausdrücklich als nicht am Wortlaut geprüft gekennzeichnet, mit Werk und vermuteter Stelle, damit die nächste Runde dort ansetzt |
+
+Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Beide Fehler sehen im fertigen Knoten gleich aus, und beide fallen erst auf, wenn jemand die Stelle aufschlägt.
+
+## Der stehende Auftrag
+
+Eine Sitzung, die mit „prima materia weiter" oder Gleichwertigem beginnt, ist vollständig und autonom zu durchlaufen: Bestand lesen, Bündel nach `korpus:`-Label wählen, beide Recherchestufen führen, das Ergebnis sofort eintragen, alle dabei entstandenen Hypothesen und Nebenfunde noch im selben Lauf als Issues anlegen, PR öffnen, ohne Unterbrechung zum nächsten Bündel.
+
+Keine Rückfragen zu Schritten, die `SPEC.md` und dieses Dokument bereits vorschreiben. Geprüft wird am Merge, nicht am Ablauf.
+
+**Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Vollständigkeit geht vor Eleganz: lieber fünfzig knappe Issues als fünf ausformulierte und der Rest im Fließtext.
+
+**Was in dieser Reihenfolge nicht funktioniert.** `validate.yml` läuft nicht auf Arbeitsbranches, der Lauf entsteht erst mit dem PR. Bis das geändert ist, wird der PR geöffnet und dann geprüft; bei rot wird nachgebessert, nicht gemerged. Siehe das Issue dazu.
+
 **5. Beifang wird geerntet, aber nicht auf demselben Weg.**
 
 Eine Recherche findet mehr, als die Frage verlangt, und dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst. Er darf den Maßstab aber nicht senken. Deshalb: ein nebenbei gefundener Befund wird nur dann Knoten, wenn er **selbst** die volle Prüfung durchlaufen hat — Stelle plus Gegensuche. Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen.

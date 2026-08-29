@@ -24,9 +24,22 @@ likewise dedicated to the public domain.
 - **English identifiers.** URIs and class names stay in English; use
   `rdfs:label` with language tags (`@en`, `@de`, ...) for multilingual
   presentation.
+- **Name the edition you read from.** Every source reference gives work,
+  place and the edition or translation the writer actually used
+  (`"Patañjali, Yogasūtra III.38 (trans. Bryant 2009)"`). Not because
+  the witnesses are known to differ — that is known only after comparing
+  them — but because a finding is relative to the search that produced
+  it, and the edition is that relation. Where the reading is assembled
+  from several editions, say so rather than smooth it over. See
+  `SPEC.md §10`.
+- **A file header may hold only what costs nothing when lost.** Turtle
+  comments do not survive compilation. Structure of the file, a note for
+  the next editor, the reason for the filing: fine. Any statement about
+  the subject matter belongs on a node — as a `skos:note` on the
+  tradition's `pmt:` instance if it concerns the file as a whole.
 - **Sources are mandatory.** Every concept instance needs at least one
   `dcterms:source`, and it must name a work and the place in it that
-  carries the claim (`"Patañjali, Yogasūtra III.38"`). **No URLs of any
+  carries the claim. **No URLs of any
   kind**, DOI and open-access editions included — `pm:SourceIsLiteratureShape`
   rejects any value with an `http` prefix. Modern research never enters
   as `dcterms:source`; it belongs at `pm:evidenceFrom` on a `pm:Testing`

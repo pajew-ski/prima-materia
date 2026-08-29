@@ -29,6 +29,7 @@ DEFAULT_INPUTS = (
     REPO_ROOT / "traditions",
     REPO_ROOT / "convergences",
     REPO_ROOT / "examinations",
+    REPO_ROOT / "originations",
 )
 DEFAULT_CONTEXT = REPO_ROOT / "context" / "prima-materia-context.jsonld"
 DEFAULT_OUTPUT = REPO_ROOT / "build" / "site"
