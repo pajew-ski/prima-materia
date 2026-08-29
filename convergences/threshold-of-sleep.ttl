@@ -1,0 +1,34 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — convergences at the threshold of sleep
+#
+# Ein Ordnungsakt des Kompilators, keine Bezeugung: keine Quelle sagt, dass
+# diese Ueberlieferungen dasselbe meinen. Die Lesart steht hier, damit man
+# ihr widersprechen kann.
+#
+# Der Knoten haelt vor allem einen negativen Befund fest, und der ist der
+# eigentliche Ertrag der Recherche zum Schwellenzustand.
+#
+
+pmc:ThresholdReceptionCorrespondence a pm:Converging ;
+    rdfs:label "The threshold as a place of reception"@en, "Die Schwelle als Ort des Empfangs"@de ;
+    skos:definition "The observation that several traditions mark the passage between sleeping and waking as the place where a communication is received, while none of them makes it the place where a faculty is exercised."@en ;
+    skos:note "Two axes have to be held apart, and the modern draft that prompted this examination runs them together. On the reception axis the threshold is well attested: a voice, a light and an immobility of the eyes in the Neoplatonic account, the nightly ascent of the soul in the Kabbalistic one, the true dream in the Islamic one. On the execution axis, where sight, hearing and the mind-made body are actively exercised, the sources bind the capacities to waking absorption instead. No source found so far puts an actively exercised faculty in the threshold state."@en ;
+    pm:convergingConcept pmc:Theopemptos, pmc:ClearLightOfSleep ;
+    pm:transmissionPath "The correspondence must not be counted as independent attestation. The Tibetan material reaches Tibet from the Indian mahāsiddha Nāropa through Marpa and is reception, as the file that holds it records. The Mediterranean witnesses are worse still for this purpose: the later Jewish and Islamic dream theory rests on a Neoplatonic substrate, so an agreement between the Greek, the Jewish and the Islamic account is a shared inheritance and not three independent observations. What would count as a finding is a tradition outside both blocks, and none has been located." ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "Iamblichus, De mysteriis III.2-3 (ed. des Places 1966)", "Tsongkhapa, A Book of Three Inspirations (trans. Mullin 2005), the yoga of the clear light of sleep" .
+
+pmc:ThresholdIsNotTheExecutionState a pm:Disputing ;
+    rdfs:label "Whether the threshold state carries the faculties"@en, "Ob der Schwellenzustand die Vermögen trägt"@de ;
+    skos:definition "A disagreement about where the higher perceptual capacities are exercised. The handbooks of absorption place them in a waking, fully concentrated state and say so with a stated necessity; the ascetic literature marks the light half-sleep as the place of counterfeit consolation; the theurgic account, by contrast, treats the edge of sleep as the mark of a genuine divine communication."@en ;
+    skos:note "Recorded as a dispute between sources and not as a verdict on the modern draft. A draft is not a side: it carries no attestation, so a claim it makes has no standing here. What the sources actually disagree about is narrower and more interesting than the draft's question, namely whether the threshold is evidential at all, and both sides of that are attested."@en ;
+    pm:disputedClaim pmc:Theopemptos ;
+    pm:attestedBy pm:textualAttestation ;
+    dcterms:source "Iamblichus, De mysteriis III.2-3 (ed. des Places 1966)", "Diadochus of Photice, Gnostic Chapters 40", "Buddhaghosa, Visuddhimagga I.11 (trans. Ñāṇamoli 1956)" .
