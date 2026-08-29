@@ -6,19 +6,13 @@
 #
 # prima-materia — examinations
 #
-# An examination belongs to no tradition, which is why it lives here and not
-# in traditions/. It points at a single yielding claim and states what would
-# have to happen for that claim to count as refuted.
-#
-# Two rules govern this directory.
-#
-# A node is created only when someone actually takes the examination up. A
-# stub for every claim in the collection would double the graph and say
-# nothing that the absence of a node does not already say.
-#
-# Modern research enters through pm:evidenceFrom and never through
-# dcterms:source. A study is not a witness to a tradition. It bears on a
-# claim from outside, which is a different role and gets a different edge.
+# An examination belongs to no tradition, which is why this file lives here
+# and not in traditions/. That is the only thing this header says. The two
+# rules that used to stand here now stand where they survive compilation:
+# that a node exists only where somebody took the examination up, on
+# pm:Testing; that modern research enters through pm:evidenceFrom and never
+# through dcterms:source, on pm:evidenceFrom. Both in
+# ontology/provenance.ttl. See prima-materia#24.
 #
 
 pmc:TummoHeatExamination a pm:Testing ;
