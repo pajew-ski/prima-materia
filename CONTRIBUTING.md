@@ -103,5 +103,7 @@ by the `distribute.yml` GitHub Action on each push to `main`.
 
 ## Scope
 
-If a change expands the scope beyond the Phase 0 / Phase 1 deliverables in
-`SPEC.md §4`, raise an issue first. Ask rather than guess.
+Phase 0 and Phase 1 are delivered. New traditions are not added by plan
+any more: `SPEC.md §14` sets out the two entrances and the three
+decisions that precede a new file. If a change goes beyond that, raise an
+issue first. Ask rather than guess.
