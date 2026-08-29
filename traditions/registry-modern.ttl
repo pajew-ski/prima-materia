@@ -1,0 +1,152 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — registered transmissions: young traditions
+#
+# A tradition is an ongoing act of transmission, and age is not part of the
+# definition. What is registered here transmits: it has texts, lineages,
+# initiations and successors. It is therefore held as tradition and not as
+# footnote.
+#
+# Two things follow and neither may be dropped.
+#
+# First, a young tradition that claims descent from an old one makes two
+# claims and the graph must keep them apart: that it transmits something, and
+# that what it transmits came from where it says. The second claim is an
+# ordering act or an origination and is recorded as such, at the node, not by
+# withholding registration. Registration is not endorsement of a pedigree.
+#
+# Second, the boundary against science is drawn by function and not by
+# self-description. A tradition offers testimony: a passage in which somebody
+# says what is so. An investigation offers evidence: a procedure with an
+# outcome that could have come out otherwise. Evidence enters the graph
+# through pm:evidenceFrom on an examination node and never as the source of a
+# tradition, because a graph that admitted both through the same predicate
+# could no longer tell what it was testing from what it was testing with.
+# Where one corpus supplies both, it enters twice under different predicates.
+# Mesmer's own memoir is testimony and stands below; the commission that
+# examined him in 1784 is evidence and belongs in examinations.
+#
+
+pmt:Mesmerism a pm:Tradition ;
+    rdfs:label "Mesmerism"@en, "Mesmerismus"@de ;
+    skos:definition "The transmission of an animal magnetism held to pass between bodies and to be directed by passes of the hand, together with the induced states its practitioners described."@en ;
+    skos:note "Registered as a tradition because it transmits by testimony and lineage. Its examination by the royal commission is evidence and belongs at an examination node, not here. The pair is the cleanest illustration the project has of the two predicates."@en ;
+    pm:principalCorpus "Mesmer, Mémoire sur la découverte du magnétisme animal; Puységur, Mémoires pour servir à l'histoire du magnétisme animal" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:Theosophy a pm:Tradition ;
+    rdfs:label "Theosophy"@en, "Theosophie"@de ;
+    skos:definition "The modern transmission of root races, planes and masters, presented as the recovery of a single ancient doctrine underlying all religions."@en ;
+    skos:note "The pedigree claim is the tradition's own central assertion and is contested; it belongs in the graph as a claim about origin and not as a fact about transmission. Much of what circulates today as the doctrine of older traditions entered general circulation here."@en ;
+    pm:principalCorpus "Blavatsky, Isis Unveiled; Blavatsky, The Secret Doctrine; Leadbeater, The Chakras" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:GoldenDawn a pm:Tradition ;
+    rdfs:label "Hermetic Order of the Golden Dawn"@en, "Hermetic Order of the Golden Dawn"@de ;
+    skos:definition "The late Victorian transmission that welded kabbalistic, grimoire and Egyptian material into a graded initiatory curriculum with examinations."@en ;
+    skos:note "The syncretism is documented in its own papers, which makes it the best available record of how a modern system is assembled from older parts and then presented as one."@en ;
+    pm:principalCorpus "The cipher manuscripts and knowledge lectures; Regardie, The Golden Dawn" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:Thelema a pm:Tradition ;
+    rdfs:label "Thelema"@en, "Thelema"@de ;
+    skos:definition "Crowley's transmission of a received book, of the discovery of one's own will as the central task, and of a practice curriculum with a demand for recorded results."@en ;
+    skos:note "The insistence on keeping a magical diary and treating claims sceptically is a methodological demand made from inside a tradition, and belongs in the graph as such."@en ;
+    pm:principalCorpus "Crowley, Liber AL vel Legis; Crowley, Magick in Theory and Practice; Crowley, The Vision and the Voice" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:ChaosMagic a pm:Tradition ;
+    rdfs:label "Chaos magic"@en, "Chaosmagie"@de ;
+    skos:definition "The late twentieth century transmission treating belief as a tool to be adopted and discarded, and holding that the symbolic system employed is arbitrary if the technique is sound."@en ;
+    skos:note "The claim that content is interchangeable and only technique carries effect is directly examinable, and if it held it would reorganise every convergence question the project asks."@en ;
+    pm:principalCorpus "Spare, The Book of Pleasure; Carroll, Liber Null and Psychonaut" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:Anthroposophy a pm:Tradition ;
+    rdfs:label "Anthroposophy"@en, "Anthroposophie"@de ;
+    skos:definition "Steiner's transmission of a schooling of perception said to open supersensible cognition, presented as a discipline with stated stages and moral prerequisites."@en ;
+    skos:note "The prerequisites are stated as conditions without which the exercises are held to be harmful, which makes them a prerequisite chain of the strong kind rather than an exhortation."@en ;
+    pm:principalCorpus "Steiner, Wie erlangt man Erkenntnisse der höheren Welten; Steiner, Die Geheimwissenschaft im Umriss" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:FourthWay a pm:Tradition ;
+    rdfs:label "The Fourth Way"@en, "Der Vierte Weg"@de ;
+    skos:definition "The transmission of Gurdjieff's teaching: a claim that ordinary waking is a form of sleep, and a work on attention conducted in the middle of ordinary life."@en ;
+    skos:note "The graph already holds the Fourth Way anthropology as an origination, because material from it circulates under ancient ascription. Registering the transmission does not touch that finding: the tradition transmits, and the pedigree remains unsupported."@en ;
+    pm:principalCorpus "Ouspensky, In Search of the Miraculous; Gurdjieff, Beelzebub's Tales to His Grandson" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:AnalyticalPsychology a pm:Tradition ;
+    rdfs:label "Analytical psychology"@en, "Analytische Psychologie"@de ;
+    skos:definition "Jung's transmission of an objective psyche and of active imagination as a procedure for engaging figures encountered in it, with a record kept of the engagement."@en ;
+    skos:note "Registered as a tradition and not as science on the rule stated at the head of this file: its central claims rest on testimony, including the author's own record of his experiment, and not on procedures that could have come out otherwise. Where it does produce evidence, that evidence enters at an examination node like any other."@en ;
+    pm:principalCorpus "Jung, Liber Novus; Jung, Septem Sermones ad Mortuos; Jung, Mysterium Coniunctionis" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:NewThought a pm:Tradition ;
+    rdfs:label "New Thought"@en, "New Thought"@de ;
+    skos:definition "The American transmission holding that mental states determine bodily and material conditions, and that the determination can be exercised deliberately."@en ;
+    skos:note "The claim is stated in a form that invites counting, and it is the ancestor of most of what circulates today as manifestation."@en ;
+    pm:principalCorpus "Quimby, The Quimby Manuscripts; Emma Curtis Hopkins, Scientific Christian Mental Practice; Troward, The Edinburgh Lectures on Mental Science" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:ModernWicca a pm:Tradition ;
+    rdfs:label "Modern Wicca"@en, "Moderne Wicca"@de ;
+    skos:definition "The mid twentieth century transmission of an initiatory craft with a coven structure, a seasonal calendar and an inherited book copied by hand."@en ;
+    skos:note "Presented at its founding as the survival of an old religion. The construction is documented in detail, so the tradition and the refutation of its pedigree can be held together without either being lost."@en ;
+    pm:principalCorpus "Gardner, Witchcraft Today; the Book of Shadows in the published recensions" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:Neoshamanism a pm:Tradition ;
+    rdfs:label "Neoshamanism"@en, "Neoschamanismus"@de ;
+    skos:definition "The modern transmission of a journey undertaken to a drumbeat and taught in workshops, presented as a technique abstracted from many indigenous traditions at once."@en ;
+    skos:note "The abstraction claim is the point of interest: it asserts that a core method survives the removal of every particular tradition. The graph can hold that assertion beside the traditions it claims to abstract from, which is exactly what it was built to do."@en ;
+    pm:principalCorpus "Harner, The Way of the Shaman" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:ModernVipassana a pm:Tradition ;
+    rdfs:label "Modern vipassanā movement"@en, "Moderne Vipassanā-Bewegung"@de ;
+    skos:definition "The twentieth century Burmese reform transmission of insight practice as a lay technique detachable from monastic life, taught in fixed courses."@en ;
+    skos:note "Registered separately from the canon and the commentaries because it is a distinct transmission with its own founders and manuals, and because its relation to the older material, in particular its treatment of absorption, is contested inside the tradition itself."@en ;
+    pm:principalCorpus "Mahāsi Sayādaw, Manual of Insight; Ledi Sayādaw, the Manuals of Buddhism" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:Reiki a pm:Tradition ;
+    rdfs:label "Reiki"@en, "Reiki"@de ;
+    skos:definition "The Japanese transmission of a healing energy conveyed by the hands, transmitted through an attunement conferred by a teacher in a stated lineage."@en ;
+    skos:note "Attunement is a transmission claim in the strict sense: the capacity is said to pass from person to person by a discrete act. That is unusually well suited to examination, because the tradition itself distinguishes those who have received it from those who have not."@en ;
+    pm:principalCorpus "The Usui Reiki Ryōhō Hikkei; Hayashi, Reiki Ryōhō Shishin" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:Huna a pm:Tradition ;
+    rdfs:label "Huna"@en, "Huna"@de ;
+    skos:definition "An early twentieth century system of three selves and directed vital force, presented as the secret teaching of Hawaiian priests."@en ;
+    skos:note "Constructed by an outsider from theosophical and New Thought material and rejected by Hawaiian scholars as a representation of anything Hawaiian. Registered as the transmission it actually is, so that the ascription can be entered as false without the material vanishing from the record."@en ;
+    pm:principalCorpus "Long, The Secret Science Behind Miracles" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:CastanedaToltec a pm:Tradition ;
+    rdfs:label "Castaneda's Toltec transmission"@en, "Castanedas toltekische Überlieferung"@de ;
+    skos:definition "The transmission of a body of practice concerning attention, dreaming and the assemblage point, presented as the teaching of a Yaqui man of knowledge."@en ;
+    skos:note "The fieldwork is not credible and the informant is not attestable, and the practices are nonetheless transmitted today by people who follow them. Both facts belong in the graph, which is why the tradition is registered rather than dismissed."@en ;
+    pm:principalCorpus "Castaneda, The Teachings of Don Juan; Castaneda, The Art of Dreaming" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
