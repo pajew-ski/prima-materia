@@ -177,9 +177,25 @@ Ein Rechercheergebnis der Form „das steht so nicht im Grundtext" ist wertvolle
 - Eine Ordnung, die erst der Kommentar oder die Moderne hergestellt hat → `pm:Systematizing` mit `pm:compilerInference` und benanntem Kompilator.
 - Ein Streit zwischen Grundtext und Lesern → `pm:Disputing`.
 - Eine Warnung der Tradition gegen ihre eigenen Vermögen → `pm:Cautioning`.
-- Eine Behauptung, die sich nicht bis zu einer Stelle zurückverfolgen ließ → **Issue in diesem Repo**, mit der geprüften Kandidatenstelle und dem Grund des Scheiterns. Sonst prüft der nächste Agent dieselbe Behauptung und scheitert genauso.
+- Eine Behauptung, die der Korpus noch nicht beantwortet → **Issue in diesem Repo**, mit den geprüften Kandidatenstellen und dem Grund des Scheiterns. Sonst prüft der nächste Agent dieselbe Behauptung und scheitert genauso.
 
 Datierungswarnungen gehören an den Knoten, nicht in eine Fußnote: wo eine Stufenfolge jünger ist als die Werke, denen sie zugeschrieben wird, sagt das die `skos:note` des Knotens.
+
+**Ein Turtle-Kommentar ist kein Ort für einen Befund.** Kommentare fallen beim Kompilieren weg; der ausgelieferte Graph weiß von einer Prüfung nichts, die nur im Dateikopf steht. Was eine Prüfung ergeben hat, gehört in einen Knoten, in eine `skos:note` oder in ein Issue.
+
+## Behauptungen, Issues, Labels
+
+Vollständig in `SPEC.md` Abschnitt 13 und 14. Operativ:
+
+**Der Issue-Tracker hält jede Behauptung, die der Bestand noch nicht beantwortet** — nicht nur die gescheiterten. Jeder darf einreichen, ohne Recherche und ohne in einer Linie zu stehen; das beseitigt dasselbe Tor wie CC0. Ein Issue lebt genau so lange, wie kein Knoten die Behauptung trägt. Schließen als `completed` mit Nennung des Knotens, oder als `not_planned` mit `unbelegt` beziehungsweise `nicht-graphfaehig`. Wiedereröffnung bei neuem Fund ist der Normalfall.
+
+**Die Issue-Nummer ist die Identität der Behauptung.** Kein zweites Nummernschema. Rückverweis vom Knoten in einer `skos:note` als `prima-materia#42`, nie in `dcterms:source`.
+
+**Recherchiert wird nach `korpus:`-Label gebündelt**, nicht nach Herkunftsabschnitt: die Arbeit folgt dem Text, den man aufschlägt. Die Labels kumulieren und sind damit das Protokoll der Suchabdeckung — „in diesem Korpus nicht gefunden" ist etwas anderes als „unbelegbar". Vokabular in `CONTRIBUTING.md`, von dort übernehmen: ein unbekannter Labelname wird stillschweigend als neues Label angelegt.
+
+**Jeder Befund ist auf Korpus und Datum relativiert.** Gegroundet übersteht einen Gegenfund und wird zu `pm:Disputing`; wegen Gegenbezeugung verworfen kippt beim ersten stützenden Zeugen zurück in strittig. Eine Verwerfung, die auf einer einzigen Tradition beruht, ist ein einseitiger Streitfall und hat zu nennen, worauf sie beruht.
+
+**Der Korpus wächst über zwei Eingänge, und der zweite hat Vorrang.** Bedarf aus offenen Issues ist der eine. Der andere ist der Engpass: die Beweiskraft hängt an `pm:independentAttestation`, und eine weitere indische Datei erhöht die Dateizahl, nicht die Zeugenzahl. Vor jeder neuen Datei stehen Kontaktweg, Rezension und die Zahl der zitierbaren Stellen fest. `traditions/daoist.ttl` ist mit Absicht dünn und ist das Modell.
 
 ## Designprinzipien (kurz)
 
