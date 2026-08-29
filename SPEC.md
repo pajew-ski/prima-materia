@@ -472,6 +472,12 @@ Ausgeschlossen sind:
 - **Unveröffentlichte eigene Texte, Arbeitsfassungen, Methodenentwürfe**, auch die des Betreibers.
 - **Sekundäre Zusammenfassungen** anstelle der Stelle, die sie zusammenfassen.
 
+**Der Maßstab ist Auffindbarkeit, nicht Nummerierung.** Die Angabe muss so genau sein, dass ein Leser die Stelle im benannten Werk findet. Eine Nummer ist keine Bedingung, wo das Werk keine hat oder wo die Zählung zwischen Ausgaben schwankt: `"Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness"` und `"John Climacus, The Ladder of Divine Ascent, steps 1-30"` sind zulässig. Schwankende Zählungen gehören in eine `skos:note`, nicht in eine Weglassung. Zitiergenauigkeit ist nicht Zitierbarkeit, und ein Befund, der an einer fehlenden Kapitelnummer scheitert, obwohl Werk und Traktat benannt sind, ist unnötig verloren.
+
+**Die Rezension gehört in die Angabe.** Wo Textzeugen inhaltlich auseinandergehen, nennt `dcterms:source` Rezension und Ausgabe, und die abweichenden Fassungen stehen als getrennte Knoten: `"1 Enoch 8:3 (Ethiopic; Charles 1912)"` neben `"1 Enoch 8:3 (Aramaic/Greek reconstruction; Nickelsburg 2001)"`. Ein gemittelter Knoten meldet einen Text, den kein Zeuge gibt. Streiten die Ausgaben nur über Datierung oder Lesung, ohne dass zwei Fassungen entstehen, gehört das in einen `pm:Disputing`-Knoten.
+
+**Negative Befunde gehören in den Bestand.** Eine Ordnung, die erst Kommentar oder Moderne hergestellt hat, wird ein `pm:Systematizing`-Knoten mit benanntem Kompilator; ein Streit zwischen Grundtext und Lesern ein `pm:Disputing`-Knoten; eine Behauptung, die sich nicht bis zu einer Stelle zurückverfolgen ließ, ein Issue in diesem Repo mit der geprüften Kandidatenstelle und dem Grund des Scheiterns. Sonst prüft der nächste Agent dieselbe Behauptung und scheitert genauso.
+
 **Richtungssinn.** prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden, nicht umgekehrt. Ein Methodenentwurf ist keine Quelle, sondern eine Menge von Behauptungen, die einzeln gegen überliefertes Schrifttum zu grounden sind. Was sich nicht grounden lässt, bleibt Entwurf und kommt nicht in den Graphen.
 
 **Verboten:** Reproduktion urheberrechtlich geschützter Primärtexte. Konzept-Definitionen sind eigene Paraphrasen, niemals Direktzitate aus modernen Übersetzungen.
