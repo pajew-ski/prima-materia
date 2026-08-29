@@ -71,7 +71,7 @@ niemandem auffällt.
 | Label | Bedeutung |
 |---|---|
 | `behauptung` | Behauptung, keine Repo-Arbeit. Jedes Behauptungs-Issue trägt es |
-| `strittig` | Gegenbezeugung vorhanden; Ziel ist ein `pm:Disputing`-Knoten |
+| `strittig` | zwei **Quellen** widersprechen einander; Ziel ist ein `pm:Disputing`-Knoten. Nicht, wenn eine Quelle einem Methodenentwurf widerspricht — ein Entwurf ist keine Seite |
 | `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
 | `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar |
 | `entwurf:strom` | Herkunft: Methodenentwurf „Der Strom" |
