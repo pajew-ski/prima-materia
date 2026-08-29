@@ -590,6 +590,42 @@ Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei exist
 
 **Abgelehnte Aufnahmen bleiben sichtbar.** Was breit berichtet wird, sich aber auf keine Stelle zurückführen ließ, wird ein Issue mit demselben `korpus:`-Label und dem Schließgrund `unbelegt`. Nicht ein Kommentar im Dateikopf: der überlebt das Kompilieren nicht, und der nächste Bearbeiter führt dieselbe Prüfung noch einmal.
 
+## 15. Recherche
+
+### Der Suchraum ist alles Erreichbare
+
+**Der Suchraum jeder Recherche ist das gesamte über das Internet erreichbare Wissen, nicht der Bestand.** Der Bestand ist der Ausgangspunkt der Frage und nie ihre Grenze. Er ist spärlich, er wird immer spärlich sein, und er ist rückwärts aus einem einzigen Entwurf gewachsen; ihn als Prüfmaßstab zu nehmen misst nicht die Behauptung, sondern die bisherige Sammelrichtung.
+
+**Die erste Frage vor jeder Recherche lautet deshalb nicht „was sagt der Bestand dazu", sondern „wo gibt es Quellen zu dieser Behauptung, die noch nicht im Bestand sind".** Wer mit der zweiten Frage beginnt, hat den Ausgang der ersten schon vorweggenommen.
+
+Einstiege in die Quellensuche, die außerhalb des Bestands liegen und regelmäßig gebraucht werden: digitalisierte Primärtextkorpora und ihre Suchmasken, kritische Editionen und ihre Apparate, Übersetzungen in mehrere Sprachen desselben Werks, Fachlexika und Handbücher der jeweiligen Philologie, Dissertationen und Aufsätze, die genau diese Frage behandeln, sowie die Fachliteratur, die der Behauptung widerspricht. Ein solcher Einstieg ist ein Weg zum Werk und wird nie selbst zum Beleg (Abschnitt 10).
+
+### Jede Recherche sucht auch die Negation
+
+Wer nur nach Bestätigung sucht, findet sie. Zu jeder Behauptung wird deshalb zweimal gesucht: nach der Stelle, die sie trägt, und nach der Stelle, die ihr widerspricht. Ohne die zweite Suche ist unbekannt, ob die Behauptung bestritten ist, und genau daran hängt, ob ein `pm:Disputing`-Knoten fehlt, den niemand vermisst.
+
+Dasselbe gilt über die Traditionen hinweg: gesucht wird nicht nur dort, wo die Behauptung vermutlich steht, sondern auch dort, wo ihr Gegenteil stehen könnte. Der Wert des Bestands liegt in `pm:Converging` und `pm:Disputing`, und beide entstehen nur, wenn mehrere Überlieferungen zu derselben Frage befragt wurden.
+
+### Was „gegroundet" heißt
+
+Ein vorhandener Knoten groundet nichts. Eine Analogie in einer benachbarten Tradition groundet nichts. Beides ist ein Hinweis darauf, wo zu suchen wäre.
+
+**Gegroundet ist eine Behauptung, wenn eine Stelle in einem Werk sie trägt und die Gegensuche gelaufen ist.** Die Stelle entscheidet den positiven Befund, sobald sie steht; die Erschöpfung des Suchraums ist dafür nicht Bedingung.
+
+**Unbelegt ist die teure Aussage.** Sie behauptet, dass es die Stelle nirgends gibt, und das trägt nur eine erschöpfende Suche. Ein Issue schließt deshalb nicht als `unbelegt`, weil ein Durchgang nichts fand, sondern erst, wenn die plausiblen Korpora dokumentiert abgesucht sind. Die `korpus:`-Labels sind dieser Nachweis.
+
+### Tiefe
+
+**Eine Recherche ist kein paar Suchanfragen nebenbei.** Der Mindestumfang für eine Behauptung, die in den Graphen soll:
+
+1. Der Fachterm in seiner Originalsprache und in den gebräuchlichen Transliterationen, nicht nur in der deutschen oder englischen Umschreibung.
+2. Der Primärtext, mindestens zwei Übersetzungen, und die Sekundärliteratur, die die Stelle behandelt.
+3. Die Datierung des frühesten Zeugen, und die Frage, ob die Zuschreibung an dieses Werk in der Fachliteratur bestritten ist.
+4. Die Gegensuche nach 15.2.
+5. Mindestens eine Überlieferung außerhalb der Sphäre, in der die Behauptung vermutet wird — sonst entsteht nie eine unabhängige Bezeugung.
+
+**Was zurückkommt, gehört ins Issue, nicht in den Kopf des Agenten:** geprüfte Korpora, verwendete Suchbegriffe samt Transliterationen, gefundene und geprüfte Stellen, das Datum. Eine Recherche, deren Abdeckung nicht nachvollziehbar ist, muss beim nächsten Zweifel vollständig wiederholt werden und war damit umsonst.
+
 ---
 
 **Document version:** 1.0
