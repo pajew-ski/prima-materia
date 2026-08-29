@@ -255,12 +255,12 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 - [ ] `pytest tests/` läuft grün
 - [ ] GitHub Action `validate.yml` läuft grün auf Push to main
 
-### Phase 1 — Seed Corpus
+### Phase 1 — Seed Corpus (geliefert)
 
 **Deliverables:**
 
-1. `traditions/valentinian.ttl` — Valentinianische Gnosis als Prozess-Ontologie. Migration der bestehenden Neo4j-Ontologie (Aeonen, Syzygies, Pleroma, Sophia-Fall, etc.) in die `pm:`-Klassenstruktur. Konkret: bestehende `Aeon`-Knoten werden zu `pm:Conceptualizing`-Instanzen mit `pm:withinTradition pmt:ValentinianGnosis`.
-2. `traditions/greek-cosmological.ttl` — 13-Prinzipien-System (Kairos durch Hen) inklusive der hierarchischen Struktur und der existierenden SVG-Sigil-Referenzen via `pm:hasSymbolicForm`.
+1. Der Seed-Korpus steht. Er besteht aus den Traditionsdateien in `traditions/`, den traditionsübergreifenden Knoten in `convergences/` und dem ersten Prüfprotokoll in `examinations/`. Die früher an dieser Stelle genannten Dateien `traditions/valentinian.ttl` und `traditions/greek-cosmological.ttl` gehören nicht dazu und wurden nie angelegt. Die Planung ist hier hinter dem Bestand zurückgeblieben; maßgeblich ist der Dateibaum, nicht diese Liste. Wer sie noch anlegt, arbeitet gegen einen Plan statt gegen das Repo.
+2. Von hier an wächst der Korpus nicht mehr nach Plan, sondern nach den zwei Eingängen in Abschnitt 14: dem Bedarf aus offenen Behauptungs-Issues und dem Engpass der unabhängigen Bezeugung.
 3. ~~`traditions/opus-purum-axioms.ttl`~~ — **gestrichen.** Der Richtungssinn in Abschnitt 10 schließt das aus: prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden. Die Axiome sind unveröffentlichtes eigenes Material und tragen keine Quelle im Sinne dieser Spezifikation. Ihre Bestandteile können einzeln eingehen, sobald sie gegen überliefertes Schrifttum gegroundet sind, dann aber unter der Tradition, aus der der Beleg stammt, nicht unter dem Namen des Entwurfs.
 4. `prima-materia-dist`-Repository deployen — automatischer Build & Push via Action `distribute.yml`.
 5. jsDelivr-CDN-Verifikation — Distribution-URLs sind via `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.jsonld` abrufbar.
@@ -494,7 +494,9 @@ Ausgeschlossen sind:
 
 **Die Rezension gehört in die Angabe.** Wo Textzeugen inhaltlich auseinandergehen, nennt `dcterms:source` Rezension und Ausgabe, und die abweichenden Fassungen stehen als getrennte Knoten: `"1 Enoch 8:3 (Ethiopic; Charles 1912)"` neben `"1 Enoch 8:3 (Aramaic/Greek reconstruction; Nickelsburg 2001)"`. Ein gemittelter Knoten meldet einen Text, den kein Zeuge gibt. Streiten die Ausgaben nur über Datierung oder Lesung, ohne dass zwei Fassungen entstehen, gehört das in einen `pm:Disputing`-Knoten.
 
-**Negative Befunde gehören in den Bestand.** Eine Ordnung, die erst Kommentar oder Moderne hergestellt hat, wird ein `pm:Systematizing`-Knoten mit benanntem Kompilator; ein Streit zwischen Grundtext und Lesern ein `pm:Disputing`-Knoten; eine Behauptung, die sich nicht bis zu einer Stelle zurückverfolgen ließ, ein Issue in diesem Repo mit der geprüften Kandidatenstelle und dem Grund des Scheiterns. Sonst prüft der nächste Agent dieselbe Behauptung und scheitert genauso.
+**Negative Befunde gehören in den Bestand.** Eine Ordnung, die erst Kommentar oder Moderne hergestellt hat, wird ein `pm:Systematizing`-Knoten mit benanntem Kompilator; ein Streit zwischen Grundtext und Lesern ein `pm:Disputing`-Knoten; eine Behauptung, die der Korpus noch nicht beantwortet, ein Issue nach Abschnitt 13, mit den geprüften Kandidatenstellen und dem Grund des Scheiterns. Sonst prüft der nächste Agent dieselbe Behauptung und scheitert genauso.
+
+**Ein Turtle-Kommentar ist kein Ort für einen Befund.** Kommentare fallen beim Kompilieren weg; der ausgelieferte Graph weiß von einer Prüfung nichts, die nur im Dateikopf steht. Was eine Prüfung ergeben hat, gehört in einen Knoten, in eine `skos:note` oder in ein Issue.
 
 **Richtungssinn.** prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden, nicht umgekehrt. Ein Methodenentwurf ist keine Quelle, sondern eine Menge von Behauptungen, die einzeln gegen überliefertes Schrifttum zu grounden sind. Was sich nicht grounden lässt, bleibt Entwurf und kommt nicht in den Graphen.
 
@@ -515,12 +517,114 @@ Ausgeschlossen sind:
 - **Keinen Befund weglassen, weil sich nur eine schwache Stärke setzen lässt.** Die Skalen tragen die schwachen Fälle; `pm:presentationOrder` behauptet keine Notwendigkeit, sondern hält fest, dass eine Anordnung existiert, und genau daran erkennt ein späterer Leser, wo ein modernes System eine Notwendigkeit hineingelesen hat.
 - **Keine zirkuläre Wirkbehauptung.** Eine Praxis bringt nicht hervor, was sie ist; die Zirkulation des Qi bringt kein Qi hervor. Beim Reifizieren fällt das auf, auf einer Kante nicht.
 - **Keine Umbenennung geprägter Bezeichner ohne zwingenden Grund.** Der Namensraum steht endgültig unter `https://pajew.ski/prima-materia/`. Eine Migration ist nur vollständig oder gar nicht auszuführen: RDF-Identität folgt keiner Umleitung, und ein halb migrierter Bestand ist ein still gespaltener Graph.
+- **Keine zweite ID-Ebene für Behauptungen.** Issue-Nummern sind stabil, werden nicht wiederverwendet und sind aus Commits, PRs und `skos:note` referenzierbar. Ein zusätzliches Nummernschema aus einem Arbeitsdokument driftet gegen sie und ist nach dem ersten Umsortieren falsch.
+- **Keinen Befund in einen Turtle-Kommentar schreiben.** Kommentare überstehen das Kompilieren nicht. Siehe Abschnitt 10.
 
-## 12. Erste Aufgabe für den Agent
+## 12. Einstieg für den Agent
 
-Beginne mit Phase 0. Lies dieses Dokument vollständig. Erstelle einen Implementierungsplan mit Todo-Liste. Stelle Klärungsfragen, falls eine Spezifikation mehrdeutig ist. Implementiere Schritt für Schritt mit Commits pro Deliverable. Führe nach jedem Skript-Update die Tests aus.
+Phase 0 und Phase 1 sind geliefert. Ein frisch geklontes Repository läuft nach `pip install -r requirements.txt && python scripts/validate.py && pytest tests/` durch; wenn nicht, ist das ein Befund und die erste Aufgabe.
 
-Erfolgskriterium für Phase 0: Ein frisch geklontes Repository soll nach `pip install -r requirements.txt && python scripts/validate.py && pytest tests/` fehlerfrei durchlaufen.
+Die Arbeit beginnt nicht mehr an einem Plan, sondern am Issue-Tracker. Dort stehen die Behauptungen, die der Korpus noch nicht beantwortet. Der Ablauf:
+
+1. Dieses Dokument vollständig lesen. Bei mehrdeutiger Spezifikation fragen, nicht raten.
+2. Offene Issues mit `behauptung` ansehen und nach `korpus:`-Label bündeln. Recherchiert wird ein Bündel, nicht ein einzelnes Issue: die Arbeit folgt dem Text, den man aufschlägt, nicht dem Abschnitt, aus dem die Behauptung stammt.
+3. Ergebnis eintragen — als Knoten, wenn eine Stelle trägt; als weiteres `korpus:`-Label am Issue, wenn dieser Korpus nichts hergibt.
+4. Validierung und Tests grün, dann PR. Der Mensch merged.
+
+## 13. Behauptungen als Issues
+
+**Der Issue-Tracker ist der Ort jeder Behauptung, die der Bestand noch nicht beantwortet.** Das erweitert die frühere Regel, die Issues nur für gescheitertes Grounding vorsah. Die Erweiterung folgt dem Torkriterium aus Abschnitt 0: eine Behauptung einreichen zu können, ohne in einer Linie zu stehen und ohne die Recherche selbst zu führen, beseitigt dasselbe Tor wie CC0. Wer eine Behauptung hat, formuliert sie dort; sie wird mitrecherchiert, sobald ihr Korpus an der Reihe ist.
+
+**Ein Issue existiert genau so lange, wie kein Knoten die Behauptung repräsentiert.** Daraus folgt sein Lebenslauf:
+
+- **Offen**, solange die Behauptung ungeprüft oder in Prüfung ist.
+- **Geschlossen als `completed`**, sobald ein Knoten sie trägt, mit Nennung des Knotens im Schließkommentar.
+- **Geschlossen als `not_planned`** mit `unbelegt`, wenn die plausiblen Korpora erschöpft sind, oder mit `nicht-graphfaehig`, wenn die Behauptung gegen keine Überlieferung entscheidbar ist und es auch nach jeder Recherche nicht wäre. Beides bleibt über `reason:not-planned` auffindbar.
+- **Wiedereröffnet**, sobald ein neuer Fund die Lage ändert. Das ist der Normalfall, kein Fehler.
+
+**Die Identität der Behauptung ist die Issue-Nummer.** Kein zweites Nummernschema. Der Rückverweis von einem Knoten auf sein Issue steht in einer `skos:note` in der Form `prima-materia#42`, niemals in `dcterms:source`: ein Issue ist kein Werk, und `pm:SourceIsLiteratureShape` weist die URL ohnehin ab.
+
+### Befunde sind auf die Suche relativiert, nicht auf den Bestand
+
+Ein Befund lautet nie „gegroundet", sondern „gegroundet gegen diese Suche an diesem Tag". **Der Bestand ist dabei kein Maßstab.** Er ist selbst nur eine Menge früher eingetragener Behauptungen mit Herkunft; ein Knoten belegt nichts, er verweist auf eine Stelle. Eine Behauptung gegen den Bestand zu prüfen und das Ergebnis „gegroundet" zu nennen, ist ein Zirkelschluss mit Etikett. Was prüft, ist die Suche nach der Stelle, und ihr Raum ist Abschnitt 15.
+
+Die beiden Ausgänge verhalten sich dabei unsymmetrisch:
+
+- Ein **gegroundeter** Knoten übersteht einen späteren Gegenfund unbeschädigt. Er bekommt eine zweite Seite und wird zu einem `pm:Disputing`-Knoten.
+- Ein wegen **Gegenbezeugung verworfener** Befund kippt beim ersten stützenden Zeugen zurück in strittig. Eine Verwerfung, die auf der Gegenbezeugung einer einzigen Tradition beruht, ist streng genommen keine Widerlegung, sondern ein einseitiger Streitfall, der auf seine zweite Seite wartet.
+
+Deshalb trägt jede Verwerfung, worauf sie beruht: welche Stelle widerspricht, aus welcher Tradition, und ob außer ihr etwas geprüft wurde. Ohne das kann ein späterer Leser nicht entscheiden, ob sein Fund den Befund umstößt.
+
+### Labels
+
+Labels sind kein Zustandsduplikat — den Zustand trägt offen oder geschlossen. Sie tragen zwei Dinge: den Bündelungsschlüssel für die Recherche und das Protokoll der Suchabdeckung.
+
+| Label | Bedeutung |
+|---|---|
+| `behauptung` | markiert das Issue als Behauptung, nicht als Repo-Arbeit. Ohne dieses Label ist der Tracker nach fünfzig Einträgen unlesbar |
+| `korpus:<name>` | ein Korpus, der für diese Behauptung geprüft wurde oder zu prüfen ist |
+| `strittig` | **zwei Quellen** widersprechen einander; Ziel ist ein `pm:Disputing`-Knoten. Nicht für den Fall, dass eine Quelle einem Methodenentwurf widerspricht: ein Entwurf ist keine Seite, und `pm:Disputing` verlangt zwei Quellen. Dieser Fall ist eine Behauptung ohne Zeugen, deren Gegenteil bezeugt ist |
+| `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
+| `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar, etwa eine Dosierungsangabe |
+| `entwurf:<name>` | Herkunft der Behauptung, wo sie aus einem Methodenentwurf stammt |
+
+**Das `korpus:`-Label kumuliert.** Eine Behauptung, die in der Atemliteratur nicht gefunden wurde, ist nicht unbelegbar, sondern in diesem Korpus nicht gefunden. Sie behält das Label, bekommt beim nächsten Durchgang das nächste dazu, und wird erst geschlossen, wenn die plausiblen Korpora erschöpft sind. Damit ist die Labelmenge zugleich die Suchabdeckung, und ein späterer Fund lässt sich daran messen, ob er einen nie geprüften Korpus betrifft.
+
+Die Labelnamen benennen den Korpus, den man aufschlägt, nicht die Datei, in der er später landet. Zwei Traditionen können in einer Datei stehen und zwei Dateien denselben Autor führen.
+
+**Warnung zum Werkzeug:** Ein unbekannter Labelname wird von GitHub stillschweigend als neues Label angelegt, statt den Aufruf abzuweisen. Ein Tippfehler erzeugt also ein zweites Bündel, das niemandem auffällt. Das gültige Vokabular steht in `CONTRIBUTING.md` und wird von dort übernommen, nicht aus dem Gedächtnis geschrieben.
+
+## 14. Erweiterung des Korpus
+
+Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei existiert, weil sie etwas beantwortet, was ein moderner Text behauptet. Das macht das Grounding in dem Maß zirkulär, in dem der Bestand nur dort nachschlägt, wo er ohnehin schon hinsah. Wer ihn allein entlang offener Behauptungen erweitert, vertieft diese Prägung. Deshalb zwei Eingänge, und der zweite hat Vorrang, wenn beide anstehen.
+
+**Bedarfsgetrieben.** Ein `korpus:`-Label auf einer Behauptung, für die es noch keine Datei gibt, ist bereits die Nachfragemeldung. Offene Issues je fehlendem Label ergeben die geordnete Warteschlange; ein zweites Verzeichnis dafür wird nicht geführt.
+
+**Unabhängigkeitsgetrieben.** Die Beweiskraft des ganzen Bestands hängt an `pm:independentAttestation`, und die steht dünn. Eine weitere indische oder buddhistische Datei erhöht die Dateizahl, nicht die Zeugenzahl: wo ein Kontaktweg belegt oder plausibel ist, zählt die Übereinstimmung als Rezeption und nicht als Befund. Gesucht sind Überlieferungen ohne plausible Kontaktroute zu den bereits vertretenen. Dort liegt der Zuwachs.
+
+**Drei Entscheidungen vor dem Anlegen einer Datei, nicht danach:**
+
+1. **Der Kontaktweg.** Sonst stellt sich hinterher heraus, dass der neue Zeuge Rezeption ist, und die Datei zählt für keine Konvergenz.
+2. **Rezension und Ausgabe.** Abschnitt 10 verlangt sie in der Angabe; ein nachträglicher Wechsel fasst jeden Knoten der Datei an.
+3. **Die Zahl der tatsächlich zitierbaren Stellen.** `traditions/daoist.ttl` ist mit Absicht dünn und ist das ehrliche Modell: gewachsen wird in Stellen, nicht in Traditionsnamen.
+
+**Abgelehnte Aufnahmen bleiben sichtbar.** Was breit berichtet wird, sich aber auf keine Stelle zurückführen ließ, wird ein Issue mit demselben `korpus:`-Label und dem Schließgrund `unbelegt`. Nicht ein Kommentar im Dateikopf: der überlebt das Kompilieren nicht, und der nächste Bearbeiter führt dieselbe Prüfung noch einmal.
+
+## 15. Recherche
+
+### Der Suchraum ist alles Erreichbare
+
+**Der Suchraum jeder Recherche ist das gesamte über das Internet erreichbare Wissen, nicht der Bestand.** Der Bestand ist der Ausgangspunkt der Frage und nie ihre Grenze. Er ist spärlich, er wird immer spärlich sein, und er ist rückwärts aus einem einzigen Entwurf gewachsen; ihn als Prüfmaßstab zu nehmen misst nicht die Behauptung, sondern die bisherige Sammelrichtung.
+
+**Die erste Frage vor jeder Recherche lautet deshalb nicht „was sagt der Bestand dazu", sondern „wo gibt es Quellen zu dieser Behauptung, die noch nicht im Bestand sind".** Wer mit der zweiten Frage beginnt, hat den Ausgang der ersten schon vorweggenommen.
+
+Einstiege in die Quellensuche, die außerhalb des Bestands liegen und regelmäßig gebraucht werden: digitalisierte Primärtextkorpora und ihre Suchmasken, kritische Editionen und ihre Apparate, Übersetzungen in mehrere Sprachen desselben Werks, Fachlexika und Handbücher der jeweiligen Philologie, Dissertationen und Aufsätze, die genau diese Frage behandeln, sowie die Fachliteratur, die der Behauptung widerspricht. Ein solcher Einstieg ist ein Weg zum Werk und wird nie selbst zum Beleg (Abschnitt 10).
+
+### Jede Recherche sucht auch die Negation
+
+Wer nur nach Bestätigung sucht, findet sie. Zu jeder Behauptung wird deshalb zweimal gesucht: nach der Stelle, die sie trägt, und nach der Stelle, die ihr widerspricht. Ohne die zweite Suche ist unbekannt, ob die Behauptung bestritten ist, und genau daran hängt, ob ein `pm:Disputing`-Knoten fehlt, den niemand vermisst.
+
+Dasselbe gilt über die Traditionen hinweg: gesucht wird nicht nur dort, wo die Behauptung vermutlich steht, sondern auch dort, wo ihr Gegenteil stehen könnte. Der Wert des Bestands liegt in `pm:Converging` und `pm:Disputing`, und beide entstehen nur, wenn mehrere Überlieferungen zu derselben Frage befragt wurden.
+
+### Was „gegroundet" heißt
+
+Ein vorhandener Knoten groundet nichts. Eine Analogie in einer benachbarten Tradition groundet nichts. Beides ist ein Hinweis darauf, wo zu suchen wäre.
+
+**Gegroundet ist eine Behauptung, wenn eine Stelle in einem Werk sie trägt und die Gegensuche gelaufen ist.** Die Stelle entscheidet den positiven Befund, sobald sie steht; die Erschöpfung des Suchraums ist dafür nicht Bedingung.
+
+**Unbelegt ist die teure Aussage.** Sie behauptet, dass es die Stelle nirgends gibt, und das trägt nur eine erschöpfende Suche. Ein Issue schließt deshalb nicht als `unbelegt`, weil ein Durchgang nichts fand, sondern erst, wenn die plausiblen Korpora dokumentiert abgesucht sind. Die `korpus:`-Labels sind dieser Nachweis.
+
+### Tiefe
+
+**Eine Recherche ist kein paar Suchanfragen nebenbei.** Der Mindestumfang für eine Behauptung, die in den Graphen soll:
+
+1. Der Fachterm in seiner Originalsprache und in den gebräuchlichen Transliterationen, nicht nur in der deutschen oder englischen Umschreibung.
+2. Der Primärtext, mindestens zwei Übersetzungen, und die Sekundärliteratur, die die Stelle behandelt.
+3. Die Datierung des frühesten Zeugen, und die Frage, ob die Zuschreibung an dieses Werk in der Fachliteratur bestritten ist.
+4. Die Gegensuche nach 15.2.
+5. Mindestens eine Überlieferung außerhalb der Sphäre, in der die Behauptung vermutet wird — sonst entsteht nie eine unabhängige Bezeugung.
+
+**Was zurückkommt, gehört ins Issue, nicht in den Kopf des Agenten:** geprüfte Korpora, verwendete Suchbegriffe samt Transliterationen, gefundene und geprüfte Stellen, das Datum. Eine Recherche, deren Abdeckung nicht nachvollziehbar ist, muss beim nächsten Zweifel vollständig wiederholt werden und war damit umsonst.
 
 ---
 
