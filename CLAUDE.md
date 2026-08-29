@@ -180,7 +180,7 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 
 **Jedes neue Shape braucht einen Fixture, der zeigt, dass es feuert.** Ein Wächter, von dem nie gezeigt wurde, dass er auslöst, ist nicht als funktionierend bekannt. Hat das Shape eine Ausnahme, braucht es zusätzlich einen positiven Fixture für die Ausnahme, sonst ist unbekannt, ob die Ausnahme greift.
 
-**Kein Vokabular auf Vorrat.** Eine Klasse oder Property entsteht, wenn Material sie erzwingt, und mit ihrem ersten belegten Knoten im selben PR. Unbelegtes Vokabular ist derselbe Fehler wie ein unbelegter Knoten, eine Ebene höher.
+**Vollständiges Vokabular, belegte Knoten.** Eine Klasse behauptet nichts über die Welt, sie stellt eine Unterscheidung bereit; eine Quelle zu verlangen, wo nichts behauptet wird, wäre ein Kategorienfehler. Das Vokabular darf und soll der Sache vorauslaufen: es ist billiger, eine Unterscheidung vorzuhalten, die niemand braucht, als eine zu spät einzuführen und jeden Knoten umschreiben zu müssen, der inzwischen in der falschen Klasse gelandet ist. Was eine neue Klasse schuldet, ist keine Quelle, sondern eine `skos:definition`, die sagt, was als Instanz gelten würde. Ohne die ist sie kein Vorrat, sondern eine leere Stelle.
 
 **Kein Prüfknoten-Stub pro Behauptung.** `pm:Testing` entsteht, wenn jemand die Prüfung aufnimmt. Das Fehlen eines Knotens sagt bereits, was ein Knoten mit Stand „ungeprüft" sagen würde, und kostet nichts.
 
