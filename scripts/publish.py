@@ -456,6 +456,13 @@ def publish(
     transmute_script.transmute(turtle, context, output / "prima-materia.jsonld")
     shutil.copy(context, output / "context.jsonld")
 
+    parts = output / PARTS_DIR
+    parts.mkdir(parents=True, exist_ok=True)
+    for name, part in split_graph(graph).items():
+        part_turtle = parts / f"{name}.ttl"
+        part.serialize(destination=part_turtle, format="turtle")
+        transmute_script.transmute(part_turtle, context, parts / f"{name}.jsonld")
+
     (output / "llms.txt").write_text(build_llms_txt(graph), encoding="utf-8")
 
     # GitHub Pages serves through Jekyll unless told otherwise; the marker keeps
