@@ -517,6 +517,8 @@ Ausgeschlossen sind:
 - **Keinen Befund weglassen, weil sich nur eine schwache Stärke setzen lässt.** Die Skalen tragen die schwachen Fälle; `pm:presentationOrder` behauptet keine Notwendigkeit, sondern hält fest, dass eine Anordnung existiert, und genau daran erkennt ein späterer Leser, wo ein modernes System eine Notwendigkeit hineingelesen hat.
 - **Keine zirkuläre Wirkbehauptung.** Eine Praxis bringt nicht hervor, was sie ist; die Zirkulation des Qi bringt kein Qi hervor. Beim Reifizieren fällt das auf, auf einer Kante nicht.
 - **Keine Umbenennung geprägter Bezeichner ohne zwingenden Grund.** Der Namensraum steht endgültig unter `https://pajew.ski/prima-materia/`. Eine Migration ist nur vollständig oder gar nicht auszuführen: RDF-Identität folgt keiner Umleitung, und ein halb migrierter Bestand ist ein still gespaltener Graph.
+- **Keine zweite ID-Ebene für Behauptungen.** Issue-Nummern sind stabil, werden nicht wiederverwendet und sind aus Commits, PRs und `skos:note` referenzierbar. Ein zusätzliches Nummernschema aus einem Arbeitsdokument driftet gegen sie und ist nach dem ersten Umsortieren falsch.
+- **Keinen Befund in einen Turtle-Kommentar schreiben.** Kommentare überstehen das Kompilieren nicht. Siehe Abschnitt 10.
 
 ## 12. Erste Aufgabe für den Agent
 
