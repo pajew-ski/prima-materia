@@ -338,6 +338,8 @@ def publish(
     transmute_script.transmute(turtle, context, output / "prima-materia.jsonld")
     shutil.copy(context, output / "context.jsonld")
 
+    (output / "llms.txt").write_text(build_llms_txt(graph), encoding="utf-8")
+
     # GitHub Pages serves through Jekyll unless told otherwise; the marker keeps
     # it from filtering files and directories whose names start with an
     # underscore, and skips a build step the site does not need.
