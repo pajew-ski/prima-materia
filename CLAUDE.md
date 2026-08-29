@@ -1,6 +1,20 @@
 # CLAUDE.md
 
-Permanent-Context für Claude Code. Enthält operative Constraints und Konventionen. Vollständige Spezifikation in `SPEC.md` — bei Konflikten gilt `SPEC.md`.
+Permanent-Context für Claude Code. Enthält operative Constraints und Konventionen. Vollständige Spezifikation in `SPEC.md` — bei Konflikten gilt `SPEC.md`. `AGENTS.md` enthält dieselben Regeln anbieterneutral und kürzer; wer nur eine Datei liest, liest die.
+
+## Recherche — vor allem anderen
+
+Vollständig in `SPEC.md` Abschnitt 15. Vier Sätze, deren Verletzung Etiketten statt Befunde erzeugt:
+
+**Der Suchraum ist alles über das Internet erreichbare Wissen, nicht der Bestand.** Der Bestand ist spärlich, bleibt es, und ist rückwärts aus einem einzigen Methodenentwurf gewachsen. Ein vorhandener Knoten belegt nichts; er ist selbst nur eine früher eingetragene Behauptung mit Herkunft. Eine Behauptung gegen den Bestand zu prüfen und das Ergebnis „gegroundet" zu nennen, ist ein Zirkelschluss mit Etikett.
+
+**Die erste Frage lautet: wo gibt es Quellen zu dieser Behauptung, die noch nicht im Bestand sind?** Nicht: was sagt der Bestand dazu.
+
+**Jede Recherche sucht die Behauptung und ihre Negation**, und sie sucht in mindestens einer Überlieferung außerhalb der Sphäre, in der die Behauptung vermutet wird. Wer nur nach Bestätigung sucht, findet sie.
+
+**Eine Recherche ist kein paar Suchanfragen nebenbei.** Fachterm in Originalsprache und Transliterationen, Primärtext plus zwei Übersetzungen plus Sekundärliteratur, Datierung des frühesten Zeugen, Gegensuche. Was zurückkommt, steht im Issue: geprüfte Korpora, Suchbegriffe, Stellen, Datum.
+
+**Gegroundet** heißt: eine Stelle trägt die Behauptung, und die Gegensuche ist gelaufen. **Unbelegt** ist die teure Aussage und trägt nur eine erschöpfende, dokumentierte Suche; ein Durchgang ohne Fund reicht nicht.
 
 ## Wozu
 
