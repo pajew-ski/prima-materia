@@ -1,0 +1,70 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Haṭhayoga
+#
+# Held separately from the Śaiva and Śākta material it draws on, because the
+# Haṭhayogapradīpikā is a fifteenth-century manual with its own ordering and
+# is the clearest case in the collection of a text that states its
+# prerequisites in the base layer rather than leaving them to commentary.
+#
+
+pmt:Hathayoga a pm:Tradition ;
+    rdfs:label "Haṭhayoga"@en, "Haṭhayoga"@de ;
+    skos:definition "The transmission of the Haṭhayogapradīpikā of Svātmārāma and the manuals around it."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā" .
+
+pmc:Asana a pm:Conceptualizing ;
+    rdfs:label "Posture"@en, "Sitzhaltung"@de ;
+    skos:definition "The seat, treated in the first chapter as the first limb of the practice."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I" .
+
+pmc:NadiPurification a pm:Conceptualizing ;
+    rdfs:label "Purification of the channels"@en, "Reinigung der Kanäle"@de ;
+    skos:definition "The clearing of impurity from the channels, at which the breath practice is said to aim, and whose accomplishment the text says shows outwardly in the body."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.6", "Svātmārāma, Haṭhayogapradīpikā II.19-20" .
+
+pmp:HathaPranayama a pm:Practicing ;
+    rdfs:label "Breath regulation in Haṭhayoga"@en, "Atemregulierung im Haṭhayoga"@de ;
+    skos:definition "The breath practice of the second chapter, directed at the clearing of the central channel."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II" .
+
+pmc:PranayamaPresupposesAsana a pm:Presupposing ;
+    rdfs:label "Breath regulation presupposes firmness in posture"@en, "Atemregulierung setzt Festigkeit in der Haltung voraus"@de ;
+    pm:dependentStep pmp:HathaPranayama ;
+    pm:priorStep pmc:Asana ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "The verse opens the breath chapter by requiring that the practitioner first be established in posture and in a measured diet, and that the breath practice then follow the instruction of a teacher. The condition is in the base text, not in a commentary."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.1" .
+
+pmc:SuccessPresupposesNadiPurification a pm:Presupposing ;
+    rdfs:label "Success in the practice presupposes purification of the channels"@en, "Erfolg der Praxis setzt die Reinigung der Kanäle voraus"@de ;
+    pm:dependentStep pmp:HathaPranayama ;
+    pm:priorStep pmc:NadiPurification ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "The text directs the breath practice at clearing the impurity of the central channel and gives the outward signs by which accomplished purification is known. It makes success depend on the purification without stating in these verses what befalls one who proceeds without it, which is why the strength here is order and not necessity."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.6", "Svātmārāma, Haṭhayogapradīpikā II.19-20" .
+
+pmc:HathaChapterOrder a pm:Presupposing ;
+    rdfs:label "The manual orders posture, breath, seal and absorption"@en, "Das Handbuch ordnet Haltung, Atem, Siegel und Versenkung"@de ;
+    pm:dependentStep pmc:NadiPurification ;
+    pm:priorStep pmc:Asana ;
+    pm:prerequisiteStrength pm:presentationOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "Recorded at the weakest strength on purpose. The four chapters run posture, breath, seal, absorption, and that arrangement is often cited as though it were itself a rule. The rule is in II.1; the chapter order is only an arrangement."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I-IV" .
