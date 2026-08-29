@@ -68,6 +68,24 @@ Nicht zulässig: URLs jeder Art, DOI und Open-Access-Editionen eingeschlossen (`
 
 Moderne Forschung betritt den Bestand ausschließlich über `pm:evidenceFrom` an einem `pm:Testing`-Knoten, nie als `dcterms:source` einer Tradition. Ein Aufsatz ist kein Zeuge einer Überlieferung.
 
+## Der stehende Auftrag
+
+Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Aufforderung, ist der vollständige Durchlauf gemeint. **Keine Rückfragen zu Schritten, die diese Datei und `SPEC.md` bereits vorschreiben.** Der Mensch prüft am Merge, nicht am Ablauf.
+
+1. Bestand lesen: Dateibaum, offene Issues, Labels, letzte PRs.
+2. Nächstes Bündel wählen. Vorrang hat der unabhängigkeitsgetriebene Eingang (SPEC §14) vor dem Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
+3. Tiefe Recherche nach SPEC §15, mit Gegensuche.
+4. Sofort integrieren: Knoten für vollgeprüfte Funde, Issues für alles andere.
+5. Issue-Kommentar mit der Abdeckung, `korpus:`-Labels kumulieren, Schließen nur bei Erschöpfung.
+6. PR öffnen, Validierung grün, dann liegen lassen. Der Mensch merged.
+7. Ohne Unterbrechung zum nächsten Bündel.
+
+**Jede im Lauf entstandene Hypothese wird noch im selben Lauf ein Issue.** Das gilt für den Zielbefund, für den Beifang, für jede Vermutung, die im Denken auftaucht, und für jeden Befund über das Repo oder die Werkzeuge. Eine Hypothese, die nur im Gesprächsverlauf steht, ist verloren, sobald die Sitzung endet — und der Gesprächsverlauf ist kein Speicher, sondern ein Fenster.
+
+**Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Wer ihn schreibt, hat den Aufwand des Anlegens schon aufgewendet und das Ergebnis weggeworfen.
+
+**Vollständigkeit vor Eleganz.** Lieber fünfzig knappe Issues mit Behauptung, geprüften Stellen und Labels als fünf ausformulierte und der Rest im Fließtext.
+
 ## Vor dem ersten Schreibzugriff
 
 1. `SPEC.md` vollständig lesen. Bei mehrdeutiger Spezifikation fragen, nicht raten.
