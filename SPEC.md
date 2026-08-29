@@ -69,13 +69,15 @@ prima-materia-dist/              # Distribution Repository (auto-generiert, nie 
 ├── prima-materia.jsonld         # Vollständige kompilierte Ontologie als JSON-LD
 ├── prima-materia.ttl            # Vollständige kompilierte Ontologie als Turtle
 ├── context.jsonld               # JSON-LD Context (Kopie aus source/context/)
-├── llms.txt                     # LLM-Discovery-File (siehe Abschnitt 8)
-├── version.json                 # { "version": "...", "git_sha": "...", "built_at": "..." }
-└── traditions/                  # Pro-Tradition-Splits für selektives Laden
-    ├── valentinian.jsonld
-    ├── greek-cosmological.jsonld
-    └── opus-purum-axioms.jsonld
+└── version.json                 # { "version": "...", "git_sha": "...", "built_at": "..." }
 ```
+
+Zwei Dinge, die frühere Fassungen hier führten, gibt es nicht und sollen es
+nicht geben. Die `llms.txt` steht auf dem Namensraum-Host und nicht im
+Spiegel (Abschnitt 8). Pro-Tradition-Splits sind gestrichen: der ganze Graph
+liegt im niedrigen sechsstelligen Byte-Bereich, ein selektives Laden spart
+daran nichts, und eine Aufteilung nach Dateien widerspricht Abschnitt 10 —
+die Datei ist eine Einheit des Repos und keine der Sache.
 
 ## 2. Namespace & URI-Strategie
 
