@@ -1,0 +1,133 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — registered transmissions: channelled and revealed corpora
+#
+# These transmit, so they are traditions. They have texts, transmitters,
+# organisations, successors and readers who practise what they say. Age is no
+# part of the definition of pm:Tradition, and a corpus received in 1981 is not
+# less transmitted than one received in 1181.
+#
+# Three things about this block that the older material does not have, and
+# that make it more tractable rather than less.
+#
+# The provenance is better than almost anything else in the graph. Session
+# number, date, who asked, who spoke, who wrote it down, and in what state the
+# speaker was. For most of the ancient corpora none of that is recoverable. A
+# dated transcript is a stronger textual witness than a treatise of contested
+# authorship, whatever one thinks of what it says.
+#
+# The authorship claim is a separate claim and never enters as the source.
+# dcterms:source names a work a reader can obtain: editors, title, session.
+# Who or what is held to have spoken there is a claim about the work and gets
+# its own node. Citing "Ra, session 41" would settle the contested question by
+# the form of the reference, unnoticed, because it would look like any other
+# citation. The project has no attestation mode for this yet:
+# pm:firstPersonReport covers what a person reports of themselves, and here a
+# person reports speech ascribed to another. See prima-materia#95.
+#
+# The contact routes are documented throughout, and that is load-bearing.
+# Every later corpus was received by people demonstrably acquainted with the
+# earlier ones, and the vocabulary runs continuously from theosophy forward:
+# rays, planes, densities, hierarchies, confederations, harvest. Agreement
+# inside this block is reception and not convergence, unless a transmitter can
+# be shown not to have known the earlier literature. That showing is expensive
+# and rare, and where it succeeded it would be worth a great deal.
+#
+# What a corpus claims about its own antiquity is a different matter from what
+# it transmits. Where it ascribes its teaching to Egypt, to Atlantis, to a
+# priesthood or to a lost lineage, that ascription is a pm:Originating node
+# with a modern author and a modern date, by the same rule that governs Huna
+# and the Fourth Way. Registration endorses no pedigree.
+#
+
+pmt:SpiritualistAutomaticWriting a pm:Tradition ;
+    rdfs:label "Spiritualist automatic writing"@en, "Spiritistisches automatisches Schreiben"@de ;
+    skos:definition "The nineteenth century transmission of extended texts produced by a writer who reports not composing them, and issued as scripture rather than as message."@en ;
+    skos:note "The earliest layer of the block and the template for all of it: a named person, a dated production, a printed volume, and the claim that the author is elsewhere."@en ;
+    pm:principalCorpus "Newbrough, Oahspe; Davis, The Principles of Nature, Her Divine Revelations, and a Voice to Mankind" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:CayceReadings a pm:Tradition ;
+    rdfs:label "The Cayce readings"@en, "Die Cayce-Readings"@de ;
+    skos:definition "The transmission of several thousand readings given in a sleep-like state, most of them addressed to a named person about a stated condition, and taken down stenographically."@en ;
+    skos:note "The one corpus in this block built for examination without intending to be: individual readings, individual recipients, dated, indexed, and with outcomes that were sometimes followed up. Whatever it yields, it yields countably."@en ;
+    pm:principalCorpus "The indexed Cayce readings held by the Association for Research and Enlightenment; Sugrue, There Is a River" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:UrantiaBook a pm:Tradition ;
+    rdfs:label "The Urantia Book"@en, "Das Urantia-Buch"@de ;
+    skos:definition "A single large revealed cosmology published in 1955, presenting itself as a series of papers by named celestial authors and describing a graded administration of the universe."@en ;
+    skos:note "The human circumstances of its production were withheld on purpose by the group that published it, which leaves its provenance the weakest in a block whose provenance is otherwise its strength."@en ;
+    pm:principalCorpus "The Urantia Book" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:ContacteeTransmission a pm:Tradition ;
+    rdfs:label "Contactee transmission"@en, "Contactee-Überlieferung"@de ;
+    skos:definition "The mid twentieth century transmission of teachings ascribed to visitors from other worlds, reported first as bodily meetings and later as messages received without one."@en ;
+    skos:note "The shift from a claimed physical encounter to a claimed interior reception happens inside this literature and is datable. It is the hinge between the older revealed corpora and the later channelled ones."@en ;
+    pm:principalCorpus "Adamski, Inside the Space Ships; Menger, From Outer Space to You; van Tassel, I Rode a Flying Saucer" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:AshtarTransmission a pm:Tradition ;
+    rdfs:label "Ashtar transmission"@en, "Ashtar-Überlieferung"@de ;
+    skos:definition "The transmission of messages ascribed to a command or council of non-terrestrial beings charged with the oversight of the earth, received after the first by many transmitters who do not share a lineage."@en ;
+    skos:note "The motif of a federation or confederation of worlds enters general circulation here and is afterwards found in corpora that never name Ashtar. That spread is a reception history and belongs in the graph as one, before anybody reads it as agreement between independent witnesses."@en ;
+    pm:principalCorpus "Van Tassel, the Ministry of Universal Wisdom publications; the published Ashtar message collections" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:SethMaterial a pm:Tradition ;
+    rdfs:label "The Seth material"@en, "Das Seth-Material"@de ;
+    skos:definition "The transmission received by Jane Roberts from 1963, teaching that reality is constructed by belief and that the constructing can be observed and altered by the one who does it."@en ;
+    skos:note "States its central claim in a form that asks for a procedure: beliefs are to be examined and changed, and the change is said to show. The sessions were numbered and dated from the start."@en ;
+    pm:principalCorpus "Roberts, Seth Speaks; Roberts, The Nature of Personal Reality; The Early Sessions" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:CourseInMiracles a pm:Tradition ;
+    rdfs:label "A Course in Miracles"@en, "Ein Kurs in Wundern"@de ;
+    skos:definition "A scribed corpus in three parts, teaching that the perceived world is a projection of guilt, and carrying a workbook of three hundred and sixty-five daily exercises in fixed order."@en ;
+    skos:note "The workbook is a stated curriculum with an order and a duration, which is rare in this block and puts the corpus closer to the manual traditions than to the revealed cosmologies."@en ;
+    pm:principalCorpus "A Course in Miracles: Text, Workbook for Students, Manual for Teachers" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:RaMaterial a pm:Tradition ;
+    rdfs:label "The Ra material"@en, "Das Ra-Material"@de ;
+    skos:definition "The transmission of one hundred and six sessions received between 1981 and 1984 by a group of three working in fixed roles, teaching a cosmology of densities, a choice between service to others and service to self, and a harvest at the close of a cycle."@en ;
+    skos:note "The best documented reception in the block. Questioner, instrument and scribe are named, the sessions are numbered and dated, the working conditions are described including the instrument's physical decline, and the transmission continued under a different contact after this one ended. The cosmological claims are largely undecidable; the claims about the conditions of contact and about what the work cost the instrument are not, and that is where an examination would begin."@en ;
+    pm:principalCorpus "Elkins, Rueckert and McCarty, The Law of One, Books I to V; the L/L Research session transcripts" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:BasharTransmission a pm:Tradition ;
+    rdfs:label "Bashar transmission"@en, "Bashar-Überlieferung"@de ;
+    skos:definition "The transmission received by Darryl Anka since 1984, teaching that acting on the strongest available excitement is the means by which one comes to occupy a different reality."@en ;
+    skos:note "Unusually operative for a channelled corpus: the teaching is given as steps with stated conditions of failure, in front of audiences, on record."@en ;
+    pm:principalCorpus "Anka, Bashar: Blueprint for Change; the recorded session transcripts" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:Raelism a pm:Tradition ;
+    rdfs:label "Raëlism"@en, "Raëlismus"@de ;
+    skos:definition "The transmission founded on Claude Vorilhon's reported meeting of 1973, holding that humanity was made by a non-terrestrial people and reading scripture as the record of that making."@en ;
+    skos:note "Registered because it performs the characteristic move of the block in its clearest form: it rereads received texts as accounts of contact. That reinterpretation is a claim about the older corpora and belongs in the graph beside them."@en ;
+    pm:principalCorpus "Vorilhon, Le livre qui dit la vérité; Vorilhon, Les extra-terrestres m'ont emmené sur leur planète" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmt:KeylonticScience a pm:Tradition ;
+    rdfs:label "Keylontic Science and the MCEO teachings"@en, "Keylontic Science und die MCEO-Lehren"@de ;
+    skos:definition "The transmission of a detailed geometry of subtle anatomy together with a claimed ancient lineage of guardianship, delivered through a living transmitter and taught in graded courses with their own technical vocabulary."@en ;
+    skos:note "Two claims to keep apart. That it transmits is a fact: texts, a transmitter, courses, students, successors, and it is registered on that ground alone. That it descends from an ancient priesthood is an ascription with a modern author and a modern date, attested nowhere outside the corpus, and it enters as a pm:Originating node when it enters. The material is under active copyright, so nothing is reproduced; the definitions here are the compiler's own paraphrase, as everywhere in this graph."@en ;
+    pm:principalCorpus "Ashayana Deane, Voyagers I and Voyagers II; the published MCEO Freedom Teachings course materials" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
