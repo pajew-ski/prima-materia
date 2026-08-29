@@ -544,9 +544,11 @@ Die Arbeit beginnt nicht mehr an einem Plan, sondern am Issue-Tracker. Dort steh
 
 **Die Identität der Behauptung ist die Issue-Nummer.** Kein zweites Nummernschema. Der Rückverweis von einem Knoten auf sein Issue steht in einer `skos:note` in der Form `prima-materia#42`, niemals in `dcterms:source`: ein Issue ist kein Werk, und `pm:SourceIsLiteratureShape` weist die URL ohnehin ab.
 
-### Befunde sind auf Korpus und Datum relativiert
+### Befunde sind auf die Suche relativiert, nicht auf den Bestand
 
-Ein Befund lautet nie „gegroundet", sondern „gegroundet gegen diesen Korpus an diesem Tag". Der Korpus ist ein Ausschnitt und kein Kanon, und die beiden Ausgänge verhalten sich dabei unsymmetrisch:
+Ein Befund lautet nie „gegroundet", sondern „gegroundet gegen diese Suche an diesem Tag". **Der Bestand ist dabei kein Maßstab.** Er ist selbst nur eine Menge früher eingetragener Behauptungen mit Herkunft; ein Knoten belegt nichts, er verweist auf eine Stelle. Eine Behauptung gegen den Bestand zu prüfen und das Ergebnis „gegroundet" zu nennen, ist ein Zirkelschluss mit Etikett. Was prüft, ist die Suche nach der Stelle, und ihr Raum ist Abschnitt 15.
+
+Die beiden Ausgänge verhalten sich dabei unsymmetrisch:
 
 - Ein **gegroundeter** Knoten übersteht einen späteren Gegenfund unbeschädigt. Er bekommt eine zweite Seite und wird zu einem `pm:Disputing`-Knoten.
 - Ein wegen **Gegenbezeugung verworfener** Befund kippt beim ersten stützenden Zeugen zurück in strittig. Eine Verwerfung, die auf der Gegenbezeugung einer einzigen Tradition beruht, ist streng genommen keine Widerlegung, sondern ein einseitiger Streitfall, der auf seine zweite Seite wartet.
