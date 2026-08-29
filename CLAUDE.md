@@ -14,6 +14,14 @@ Vollständig in `SPEC.md` Abschnitt 15. Vier Sätze, deren Verletzung Etiketten 
 
 **Eine Recherche ist kein paar Suchanfragen nebenbei.** Fachterm in Originalsprache und Transliterationen, Primärtext plus zwei Übersetzungen plus Sekundärliteratur, Datierung des frühesten Zeugen, Gegensuche. Was zurückkommt, steht im Issue: geprüfte Korpora, Suchbegriffe, Stellen, Datum.
 
+**Die Recherche hat zwei Stufen, und beide sind zu führen.** Die erste ist die Landschaft: ein breiter Auftrag über den erreichbaren Suchraum, der findet, **wo** die Stellen liegen, welche Sekundärliteratur widerspricht, wie datiert wird und welche Korpora man von selbst nicht bedacht hätte. Die zweite ist die Stelle: das Werk wird aufgeschlagen und im Wortlaut gelesen.
+
+**Nur die zweite trägt einen Knoten — daraus folgt nicht, dass sie entfallen darf.** Die Regel „in den Graphen nur, was gelesen wurde" ist eine Schranke vor dem Graphen, keine Weiche im Ablauf. Wer daraus schließt, es genüge, nichts aufzuschlagen und alles als Issue abzulegen, hat den Auftrag nicht erfüllt, auch wenn am Ende saubere Issues stehen. Die erste Stufe erzeugt keine Befunde, sondern Adressen; eine Adresse, an die niemand geht, ist nichts, und die teuerste Hälfte der Arbeit ist dann verbraucht.
+
+**Jede Behauptung, deren Werk erreichbar ist, wird im selben Lauf am Wortlaut geprüft.** Erreichbar heißt digitalisiert und lesbar, nicht bequem: ein gemeinfreies Werk in einem Volltextarchiv ist erreichbar, auch mit tausend Seiten — herunterladen und durchsuchen ist der Normalweg, nicht der Ausnahmeweg. Umfang, Aufwand und die Schätzung „das braucht einen eigenen Lauf" sind keine Gründe, sondern die Arbeit; die Schätzung entsteht vor dem Aufschlagen und ist deshalb keine Kenntnis.
+
+**Bleibt eine Prüfung aus, steht der Grund im Issue, und er ist eine Eigenschaft des Werkes:** nicht digitalisiert, urheberrechtlich gesperrt, nur intern verfügbar, nur als Druckausgabe vorhanden, Sprache nicht beherrscht. Fehlt er, gilt die Prüfung als unterlassen. Ein dokumentierter Fall steht in `prima-materia#76`; vollständig in `SPEC.md` Abschnitt 15 und in `AGENTS.md`.
+
 **Gegroundet** heißt: eine Stelle trägt die Behauptung, und die Gegensuche ist gelaufen. **Unbelegt** ist die teure Aussage und trägt nur eine erschöpfende, dokumentierte Suche; ein Durchgang ohne Fund reicht nicht.
 
 ## Wozu

@@ -32,7 +32,7 @@ Wer nur nach Bestätigung sucht, findet sie. Gesucht wird auch dort, wo das Gege
 
 Mindestumfang: der Fachterm in Originalsprache und gebräuchlichen Transliterationen; der Primärtext, mindestens zwei Übersetzungen und die Sekundärliteratur zur Stelle; die Datierung des frühesten Zeugen und die Frage, ob die Zuschreibung bestritten ist; die Gegensuche; mindestens eine Überlieferung außerhalb der erwarteten Sphäre.
 
-## Die Recherche hat zwei Stufen, und nur die zweite schreibt
+## Die Recherche hat zwei Stufen, und beide sind zu führen
 
 Diese Trennung ist keine Verfeinerung der vier Sätze oben, sondern die Bedingung, unter der sie überhaupt einzuhalten sind.
 
@@ -42,14 +42,20 @@ Der Auftrag an diese Stufe enthält: jede Behauptung einzeln und entscheidbar fo
 
 **Zweite Stufe: die Stelle.** Was die erste Stufe nennt, wird selbst aufgeschlagen, im Original, bevor daraus ein Knoten wird. Ein Bericht über eine Stelle ist keine Stelle. Ein Rechercheergebnis, das eine Stelle referiert, fällt unter dieselbe Regel wie jede andere sekundäre Zusammenfassung: es weist den Weg zum Werk und zählt nicht als Beleg.
 
-**Daraus folgt die Aufteilung, und sie ist nicht verhandelbar:**
+**Die Aufteilung sagt, wohin ein Ergebnis gehört. Sie sagt nicht, ob die zweite Stufe geführt wird:**
 
 | | |
 |---|---|
 | **In den Graphen** | nur, was die zweite Stufe überstanden hat: Stellen, deren Wortlaut gelesen wurde |
-| **Ins Issue** | alles andere, ausdrücklich als nicht am Wortlaut geprüft gekennzeichnet, mit Werk und vermuteter Stelle, damit die nächste Runde dort ansetzt |
+| **Ins Issue** | was die zweite Stufe **nicht überstanden hat**, ausdrücklich als nicht am Wortlaut geprüft gekennzeichnet, mit Werk und vermuteter Stelle, damit die nächste Runde dort ansetzt |
 
-Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Beide Fehler sehen im fertigen Knoten gleich aus, und beide fallen erst auf, wenn jemand die Stelle aufschlägt.
+**Die zweite Stufe ist Pflicht und steht nicht zur Wahl.** Sie wird für jede Behauptung geführt, deren Werk erreichbar ist, und zwar in demselben Lauf. Ein Lauf, der die erste Stufe führt und die zweite auslässt, hat den Auftrag nicht erfüllt — auch dann nicht, wenn am Ende saubere Issues stehen. Die Zeile „ins Issue" ist der Ort für **gescheiterte** Prüfungen, nie für **unterlassene**. Wer sie für unterlassene benutzt, hat aus einer Schranke eine Erlaubnis gemacht.
+
+**Erreichbar heißt erreichbar, nicht bequem.** Ein gemeinfreies Werk in einem Volltextarchiv ist erreichbar. Ein Band, dessen Volltext sich herunterladen und durchsuchen lässt, ist erreichbar, auch wenn er tausend Seiten hat. Umfang, Aufwand und die Schätzung, das brauche einen eigenen Lauf, sind keine Gründe — sie sind die Arbeit. Eine solche Schätzung ist außerdem fast immer falsch, weil sie vor dem Aufschlagen gemacht wird.
+
+**Bleibt eine Prüfung aus, steht der Grund im Issue, und er ist eine Eigenschaft des Werkes:** nicht digitalisiert, urheberrechtlich gesperrt, ordensintern, nur als Druckausgabe vorhanden, Sprache nicht beherrscht. Fehlt der Grund, gilt die Prüfung als unterlassen und der Lauf als unvollständig.
+
+Drei Fehler, alle gleich aussehend. Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Wer sie führt und dann aufhört, wirft sie weg: die erste Stufe erzeugt keine Befunde, sondern Adressen, und eine Adresse, an die niemand geht, ist nichts. Alle drei fallen erst auf, wenn jemand die Stelle aufschlägt. Ein dokumentierter Fall des dritten steht in prima-materia#76, mit drei Befunden, die beim Nachholen entstanden und von denen zwei den Issues widersprachen, die statt ihrer angelegt worden waren.
 
 ## Der stehende Auftrag
 
@@ -105,7 +111,7 @@ Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Auff
 
 1. Bestand lesen: Dateibaum, offene Issues, Labels, letzte PRs.
 2. Nächstes Bündel wählen. Vorrang hat der unabhängigkeitsgetriebene Eingang (SPEC §14) vor dem Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
-3. Tiefe Recherche nach SPEC §15, mit Gegensuche.
+3. Tiefe Recherche nach SPEC §15, **beide Stufen**, mit Gegensuche. Der Schritt ist erst beendet, wenn jede Behauptung mit erreichbarem Werk am Wortlaut geprüft ist.
 4. Sofort integrieren: Knoten für vollgeprüfte Funde, Issues für alles andere.
 5. Issue-Kommentar mit der Abdeckung, `korpus:`-Labels kumulieren, Schließen nur bei Erschöpfung.
 6. PR öffnen, Validierung grün, dann liegen lassen. Der Mensch merged.
