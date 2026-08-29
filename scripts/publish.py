@@ -38,6 +38,12 @@ DEFAULT_OUTPUT = REPO_ROOT / "build" / "site"
 PM = Namespace("https://pajew.ski/prima-materia/ontology#")
 DCTERMS = Namespace("http://purl.org/dc/terms/")
 
+# The namespace host is where the ontology is both named and served, so the
+# discovery file points there and not at a mirror. A mirror can move; the
+# namespace cannot.
+SITE_BASE = "https://pajew.ski/prima-materia/"
+SOURCE_REPO = "https://github.com/pajew-ski/prima-materia"
+
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
 # a pmt:/pmc: term by accident.
 PREFIXES: tuple[tuple[str, str], ...] = (
