@@ -633,6 +633,29 @@ Nach welcher dieser Möglichkeiten gesucht wurde, gehört ins Issue. Erst wenn s
 
 Der Grund für diese Schärfe ist ein gezählter Fall und keine Vorsichtsregel: in einem einzigen Lauf wurden vier Werke als unerreichbar geführt, und alle vier lagen bei genauerem Suchen als Volltext vor. Die Fehlerquote der Vermutung lag damit bei vier von vier. Siehe prima-materia#76.
 
+### Die Ernte am geöffneten Werk
+
+Ein Werk, das für eine Behauptung geöffnet wurde, wird nicht für diese eine Behauptung wieder geschlossen. Der teure Schritt ist das Öffnen — Beschaffung, Wahl der Ausgabe, Prüfung des Textzustands, Lokalisierung der Stelle. Das Aufnehmen einer weiteren Stelle im schon offenen Text kostet fast nichts. Wer je Behauptung öffnet und schließt, zahlt den teuren Teil einmal je Behauptung statt einmal je Werk, und der Unterschied ist der Grund dieser Regel, nicht Gründlichkeit.
+
+**Die Ernte ist keine Scope-Erweiterung, und sie braucht kein eigenes Issue vorher.** Das ist eine ausdrückliche Ausnahme von der Issue-Bindung des Laufs. Ohne sie ist ein Bearbeiter, der sich an die Regeln hält, gezwungen, gesehenes Wissen wegzuwerfen.
+
+**Aufzunehmen ist, was der Graph tragen kann.** Vier Arten sind dabei nicht wahlfrei, sondern geschuldet:
+
+- **Vermögen** — was an Zuständen, Fähigkeiten und Erreichungen als durch Übung erlangbar behauptet wird. Hier gilt Vollständigkeit im strengen Sinn: ein übergangenes Vermögen ist etwas, das zu lernen wäre und niemandem mehr auffällt.
+- **Voraussetzungsketten** — was vor etwas anderem da sein muss, damit es überhaupt eintreten kann. Sie sind der Teil, den Zusammenfassungen zuerst verlieren, und der Teil, an dem eine Praxis scheitert.
+- **Warnungen und Kautelen** — besonders die, die ihre eigene Verkennung mitnennen, und die Selbstwarnungen eines Textes gegen das, was er vorschreibt.
+- **Prüfbares** — genannte Anzeichen, Kriterien, Fristen, Misslingensbedingungen; alles, woraus sich später ein `pm:falsifiedBy` formen lässt.
+
+Erzählung, Lebenslauf, Polemik und kosmologisches Gerüst sind nicht geschuldet, sondern nach Ermessen, und nur soweit sie eines der vier tragen.
+
+**Vollständigkeit heißt vollständig für das Geöffnete.** Wer fünf Passagen eines Werkes von vierhundert Seiten gelesen hat, hat nicht das Werk geerntet. Die Erntenotiz nennt daher beides: was aufgenommen wurde und welche Teile ungelesen blieben. Ein Anspruch auf Erschöpfung, der nicht stattgefunden hat, ist derselbe Fehler wie eine vermutete Unerreichbarkeit, nur an der anderen Achse.
+
+**Die Erntenotiz steht im Issue, das den Lauf ausgelöst hat**, und sie nennt auch, was gesehen und bewusst nicht aufgenommen wurde, mit Grund. Das ist der wichtigere Teil: gesehen und stillschweigend fallengelassen ist von nie gesehen nicht zu unterscheiden, und ein späterer Bearbeiter kann einer Auslassung nur widersprechen, die dasteht.
+
+**Die Ernte senkt keinen Maßstab.** Jede geerntete Behauptung braucht ihre eigene Stelle in derselben Ausgabe; eine gesehene, aber nicht lokalisierte Behauptung gehört ins Issue und nicht in den Graphen. Neue Traditionen und neues Vokabular bleiben Entscheidungen nach den Abschnitten 11 und 14 — die Ausnahme gilt für Knoten in bestehenden Ordnern, nicht für neue Überschriften.
+
+**Und sie darf die Prüfschicht nicht abhängen.** Behauptungen sind billig geworden, Protokolle nicht. Wächst der Bestand an Behauptungen über mehrere Läufe, ohne dass `pm:Testing` und `pm:Disputing` mitwachsen, ist aus der Prüfontologie eine Zitatsammlung geworden, und das ist ein Befund für den nächsten Lauf und keine Nebensache.
+
 Dieser Abschnitt steht hier und nicht nur in `AGENTS.md`, weil die Fehllesung eine Regel dieser Spezifikation betraf und weil eine Korrektur, die nur in der Agentendatei steht, bei deren nächster Umarbeitung verschwindet.
 
 ### Tiefe
