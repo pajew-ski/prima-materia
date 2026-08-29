@@ -1,0 +1,79 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — coverage and contact vocabulary
+#
+# Why this exists. Until now a tradition was either in the graph, and then it
+# carried nodes, or absent, and then nothing said so. Both readings of an
+# absence were available at once: the corpus is thin, or nobody has opened it.
+# That is the same confusion pm:ExaminationState was built to prevent on the
+# examination axis, and it is prevented here the same way, by a controlled
+# scale that a reader can see.
+#
+# A registered tradition is therefore not a thin file. It is a named corpus
+# with a stated coverage state, and the state says outright that no passage
+# has been read. What it buys is a denominator: over- and under-representation
+# become countable, because the graph now holds what is missing as well as
+# what is present.
+#
+
+pm:CoverageState a owl:Class ;
+    rdfs:label "Coverage state"@en, "Erschließungsstand"@de ;
+    skos:definition "How far the corpus of a tradition has been carried into the graph. The scale exists so that a transmission nobody has opened and a transmission whose corpus is genuinely thin never read alike."@en .
+
+pm:corpusNamed a pm:CoverageState ;
+    rdfs:label "Corpus named"@en, "Korpus benannt"@de ;
+    skos:definition "The transmission is registered and its principal corpus is named. No passage has been read, no edition has been settled, and no node stands under it. A tradition in this state witnesses nothing and may not be counted as a party to a convergence."@en .
+
+pm:workOpened a pm:CoverageState ;
+    rdfs:label "Work opened"@en, "Werk geöffnet"@de ;
+    skos:definition "A work of the corpus has been obtained and read and its edition is settled, but no passage has yet been entered as a node."@en .
+
+pm:placesEntered a pm:CoverageState ;
+    rdfs:label "Places entered"@en, "Stellen eingetragen"@de ;
+    skos:definition "At least one passage has been read in a named edition and entered as a node. This is the state in which a tradition begins to witness."@en .
+
+pm:corpusHarvested a pm:CoverageState ;
+    rdfs:label "Corpus harvested"@en, "Korpus geerntet"@de ;
+    skos:definition "The harvest has been carried out for the works actually opened, and what was left unread is recorded. The state claims completeness for what was opened, never for the corpus."@en .
+
+pm:ContactRoute a owl:Class ;
+    rdfs:label "Contact route"@en, "Kontaktweg"@de ;
+    skos:definition "Whether a route of transmission is known between a tradition and those the graph already holds. It decides whether an agreement may be read as independent attestation or only as reception, and it is therefore a property of the tradition and not of the individual correspondence."@en .
+
+pm:contactRouteDocumented a pm:ContactRoute ;
+    rdfs:label "Contact route documented"@en, "Kontaktweg belegt"@de ;
+    skos:definition "A route of transmission to traditions already held is documented. Agreement with them counts as reception."@en .
+
+pm:contactRouteDisputed a pm:ContactRoute ;
+    rdfs:label "Contact route disputed"@en, "Kontaktweg strittig"@de ;
+    skos:definition "A route has been proposed and is contested in the scholarship. Agreement counts as neither reception nor independent attestation until the dispute is entered as its own node."@en .
+
+pm:contactRouteAbsent a pm:ContactRoute ;
+    rdfs:label "Contact route absent"@en, "Kein Kontaktweg"@de ;
+    skos:definition "No route is available for the period in which the corpus was fixed. Agreement with traditions already held is a candidate for independent attestation."@en .
+
+pm:contactRouteUndecided a pm:ContactRoute ;
+    rdfs:label "Contact route undecided"@en, "Kontaktweg unentschieden"@de ;
+    skos:definition "The question has not been carried out. Registered explicitly rather than left absent, because an unstated contact route and a route shown to be absent are the difference between a witness and a candidate."@en .
+
+pm:coverageState a owl:ObjectProperty ;
+    rdfs:label "coverage state"@en ;
+    rdfs:domain pm:Tradition ;
+    rdfs:range pm:CoverageState ;
+    skos:definition "How far the corpus of this tradition has been carried into the graph."@en .
+
+pm:contactRoute a owl:ObjectProperty ;
+    rdfs:label "contact route"@en ;
+    rdfs:domain pm:Tradition ;
+    rdfs:range pm:ContactRoute ;
+    skos:definition "The state of the contact question between this tradition and those the graph already holds."@en .
+
+pm:principalCorpus a owl:DatatypeProperty ;
+    rdfs:label "principal corpus"@en ;
+    rdfs:domain pm:Tradition ;
+    skos:definition "The works in which this transmission is chiefly carried, named so that a later reader can find them."@en ;
+    skos:note "Deliberately not dcterms:source. A source carries a passage that was read, with its place and its edition; this names a corpus that was not read. Using dcterms:source here would let a registration claim a textual knowledge it does not have. The literature rule applies all the same: a work, never a URL."@en .

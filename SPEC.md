@@ -578,11 +578,27 @@ Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei exist
 
 **Unabhängigkeitsgetrieben.** Die Beweiskraft des ganzen Bestands hängt an `pm:independentAttestation`, und die steht dünn. Eine weitere indische oder buddhistische Datei erhöht die Dateizahl, nicht die Zeugenzahl: wo ein Kontaktweg belegt oder plausibel ist, zählt die Übereinstimmung als Rezeption und nicht als Befund. Gesucht sind Überlieferungen ohne plausible Kontaktroute zu den bereits vertretenen. Dort liegt der Zuwachs.
 
-**Drei Entscheidungen vor dem Anlegen einer Datei, nicht danach:**
+**Drei Entscheidungen vor dem ersten Knoten einer Tradition, nicht danach:**
 
 1. **Der Kontaktweg.** Sonst stellt sich hinterher heraus, dass der neue Zeuge Rezeption ist, und die Datei zählt für keine Konvergenz.
 2. **Rezension und Ausgabe.** Abschnitt 10 verlangt sie in der Angabe; ein nachträglicher Wechsel fasst jeden Knoten der Datei an.
 3. **Die Zahl der tatsächlich zitierbaren Stellen.** `traditions/daoist.ttl` ist mit Absicht dünn und ist das ehrliche Modell: gewachsen wird in Stellen, nicht in Traditionsnamen.
+
+### Registrierung und Bearbeitung sind zwei Akte
+
+Die frühere Fassung band diese drei Entscheidungen an das Anlegen der Datei. Das war zu früh gesetzt und hatte eine Nebenwirkung, die niemand wollte: eine Überlieferung, für die der Kontaktweg noch nicht geklärt war, konnte im Graphen überhaupt nicht vorkommen. Der Bestand berichtete damit nicht über die Traditionen, sondern über die Reihenfolge, in der jemand Zeit für sie hatte, und eine Unterrepräsentation war von einer Nichtexistenz nicht zu unterscheiden.
+
+**Eine Tradition wird deshalb registriert, bevor sie bearbeitet wird.** Eine Registrierung behauptet zweierlei und sonst nichts: dass diese Überlieferung besteht, und in welchen Werken sie im Wesentlichen liegt. Sie trägt `pm:principalCorpus` und steht auf `pm:coverageState pm:corpusNamed`. Sie trägt **kein** `dcterms:source`: eine Quelle nennt eine gelesene Stelle mit Ausgabe, und hier wurde nichts gelesen. `pm:principalCorpus` unterliegt derselben Literaturregel wie `dcterms:source`, benennt aber einen Korpus und keine Stelle.
+
+**Was eine registrierte Tradition nicht darf.** Sie zählt für keine Konvergenz, sie ist keine unabhängige Bezeugung, und sie belegt nichts. Auf `pm:corpusNamed` bezeugt sie ausdrücklich nichts. Der Kontaktweg wird bei der Registrierung mit `pm:contactRoute` festgehalten, und `pm:contactRouteUndecided` ist dort der ehrliche Normalfall: die Entscheidung ist damit nicht gefallen, sondern sichtbar offen.
+
+**Was sie einbringt.** Einen Nenner. Über- und Unterrepräsentation im Bestand werden zählbar, weil der Graph jetzt auch hält, was fehlt. Die Warteschlange dieses Abschnitts wird lesbar, ohne dass ein zweites Verzeichnis geführt wird: die geordnete Liste ist der Bestand selbst, gefiltert auf `pm:corpusNamed` und sortiert nach `pm:contactRoute`.
+
+**Die Regel gegen dünne Dateien bleibt unverändert in Kraft.** Sie gilt jetzt an der Stelle, an die sie gehört: für die Bearbeitung. Eine Tradition, die vom Stand `pm:corpusNamed` heruntergeholt wird, wird an Stellen erschlossen und nicht an Namen, und die drei Entscheidungen oben fallen, bevor ihr erster Knoten geschrieben wird. Der Unterschied ist, dass sie bis dahin im Graphen steht und ihre eigene Leere ausweist, statt zu fehlen.
+
+**Junge Traditionen sind Traditionen.** `pm:Tradition` ist ein fortlaufender Übertragungsakt, und das Alter gehört nicht zur Definition. Was Texte, Linien, Einweihungen und Nachfolger hat, wird als Tradition geführt. Behauptet eine junge Tradition Abstammung von einer alten, sind das zwei Behauptungen, und der Graph hält sie getrennt: die Übertragung wird registriert, die Abstammung wird ein `pm:Originating`- oder `pm:Disputing`-Knoten. Die Registrierung beglaubigt keinen Stammbaum.
+
+**Die Grenze zur Wissenschaft verläuft nach Funktion, nicht nach Selbstbeschreibung.** Eine Tradition liefert Zeugnis: eine Stelle, an der jemand sagt, was der Fall ist. Eine Untersuchung liefert Evidenz: ein Verfahren mit einem Ausgang, der auch anders hätte ausfallen können. Evidenz betritt den Graphen ausschließlich über `pm:evidenceFrom` an einem `pm:Testing`-Knoten und nie als Quelle einer Tradition, weil ein Graph, der beides durch dasselbe Prädikat aufnimmt, das Geprüfte nicht mehr vom Prüfmittel unterscheiden kann. Ein Korpus, der beides liefert, geht zweimal ein, unter verschiedenen Prädikaten. Umgekehrt gilt dieselbe Regel: was sich Wissenschaft nennt und seine Ansprüche auf Zeugnis stützt statt auf ein Verfahren, ist eine Tradition und wird als solche geführt.
 
 **Abgelehnte Aufnahmen bleiben sichtbar.** Was breit berichtet wird, sich aber auf keine Stelle zurückführen ließ, wird ein Issue mit demselben `korpus:`-Label und dem Schließgrund `unbelegt`. Nicht ein Kommentar im Dateikopf: der überlebt das Kompilieren nicht, und der nächste Bearbeiter führt dieselbe Prüfung noch einmal.
 
