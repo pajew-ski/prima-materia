@@ -495,6 +495,12 @@ Ausgeschlossen sind:
 - Kein automatisiertes Setzen von Repository-Secrets — den User explizit auffordern
 - Keine Verwendung von `owl:NamedIndividual` ohne explizite Klassenzuweisung
 - Keine deutschen Identifier in URIs/Klassennamen — englische Identifier mit deutschen `rdfs:label`-Tags
+- **Keine ausgelöste Validierung umformulieren.** Löst SHACL, ein Test oder ein vorgeschalteter Wächter aus, wird das gemeldet. Ein Fehlalarm ist ein Befund über den Wächter und gehört berichtet, damit er repariert wird. Ob der Alarm berechtigt war, entscheidet nicht, wer schreiben will.
+- **Kein Vokabular auf Vorrat.** Eine Klasse oder Property entsteht, wenn Material sie erzwingt, und mit ihrem ersten belegten Knoten im selben PR.
+- **Kein Prüfknoten-Stub pro Behauptung.** `pm:Testing` entsteht, wenn jemand die Prüfung aufnimmt; das Fehlen sagt bereits, was ein Knoten mit Stand „ungeprüft" sagen würde.
+- **Keinen Befund weglassen, weil sich nur eine schwache Stärke setzen lässt.** Die Skalen tragen die schwachen Fälle; `pm:presentationOrder` behauptet keine Notwendigkeit, sondern hält fest, dass eine Anordnung existiert, und genau daran erkennt ein späterer Leser, wo ein modernes System eine Notwendigkeit hineingelesen hat.
+- **Keine zirkuläre Wirkbehauptung.** Eine Praxis bringt nicht hervor, was sie ist; die Zirkulation des Qi bringt kein Qi hervor. Beim Reifizieren fällt das auf, auf einer Kante nicht.
+- **Keine Umbenennung geprägter Bezeichner ohne zwingenden Grund.** Der Namensraum steht endgültig unter `https://pajew.ski/prima-materia/`. Eine Migration ist nur vollständig oder gar nicht auszuführen: RDF-Identität folgt keiner Umleitung, und ein halb migrierter Bestand ist ein still gespaltener Graph.
 
 ## 12. Erste Aufgabe für den Agent
 
