@@ -381,54 +381,13 @@ Läuft auf `push` nach `main`, baut die Seite mit `scripts/publish.py` und deplo
 
 Die `concurrency`-Gruppe hier trägt ausdrücklich `cancel-in-progress: false`, anders als bei `validate.yml`. Ein abgebrochener Prüflauf kostet nichts; ein abgebrochenes Deployment kann ein halb hochgeladenes Artefakt zur Live-Seite machen, und die Live-Seite ist der Ort, an dem die Terme geprägt sind.
 
-### `.github/workflows/distribute.yml`
+### `distribute.yml`
 
-```yaml
-name: Distribute
+Läuft auf `push` nach `main` und auf `workflow_dispatch`, validiert, kompiliert, transmutiert und schiebt die Serialisierungen samt `version.json` nach `pajew-ski/prima-materia-dist`, wenn sich etwas geändert hat.
 
-on:
-  push:
-    branches: [main]
+Der Spiegel ist ausdrücklich sekundär. Der Namensraum-Host liefert dieselben Dateien und ist der Ort, den die Bezeichner nennen; `distribute.yml` existiert für Abnehmer, die über jsDelivr laden wollen.
 
-jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
-        with:
-          path: source
-      - name: Checkout dist
-        uses: actions/checkout@v4
-        with:
-          repository: pajew-ski/prima-materia-dist
-          path: dist
-          token: ${{ secrets.DIST_REPO_TOKEN }}
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - working-directory: source
-        run: |
-          pip install -r requirements.txt
-          python scripts/validate.py
-          python scripts/compile.py --output build/prima-materia.ttl
-          python scripts/transmute.py --input build/prima-materia.ttl --context context/prima-materia-context.jsonld --output build/prima-materia.jsonld
-      - name: Sync to dist
-        run: |
-          cp source/build/prima-materia.ttl dist/
-          cp source/build/prima-materia.jsonld dist/
-          cp source/context/prima-materia-context.jsonld dist/context.jsonld
-          # version.json mit git_sha und timestamp generieren
-          cd dist && git add -A
-          if git diff --cached --quiet; then
-            echo "No changes to publish"
-          else
-            git -c user.name="prima-materia bot" -c user.email="bot@pajewski.net" commit -m "Auto-build from source@${{ github.sha }}"
-            git push
-          fi
-```
-
-**Hinweis für den Agent:** Das `DIST_REPO_TOKEN`-Secret muss vom User manuell in den Repo-Settings gesetzt werden (Personal Access Token mit Write-Access auf prima-materia-dist). Das ist nicht vom Agent automatisierbar — vermerke das in der README und im Setup-Schritt.
+**Hinweis für den Agent:** Das `DIST_REPO_TOKEN`-Secret muss vom User manuell in den Repo-Settings gesetzt werden (Personal Access Token mit Write-Access auf prima-materia-dist). Das ist nicht vom Agent automatisierbar.
 
 ## 8. llms.txt Integration
 
