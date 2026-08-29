@@ -198,3 +198,36 @@ def test_publish_is_idempotent(tmp_path: Path) -> None:
     for _ in range(2):
         publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
     assert (output / "index.html").is_file()
+
+
+def test_llms_txt_lists_every_tradition_in_the_graph() -> None:
+    """The discovery file is derived, not kept by hand.
+
+    A hand-kept list runs behind the corpus and eventually names transmissions
+    that are not in the graph, or misses ones that are. It is derived from the
+    pm:Tradition instances and not from the files in traditions/, because a
+    file is a unit of the repository and not of the subject:
+    greek-pneuma-hesychasm.ttl alone carries two traditions.
+    """
+    graph = compile_script.compile_graph(publish_script.DEFAULT_INPUTS)
+    text = publish_script.build_llms_txt(graph)
+
+    traditions = {
+        publish_script.curie(subject)
+        for subject in graph.subjects(RDF.type, publish_script.PM.Tradition)
+        if isinstance(subject, URIRef)
+    }
+    assert traditions, "the fixture graph carries no tradition at all"
+    for term in traditions:
+        assert f"#{term}" in text, f"{term} is in the graph and missing from llms.txt"
+
+    # The namespace host answers for the ontology it names. A discovery file
+    # that sends a client to a mirror instead makes the mirror the address.
+    assert "cdn.jsdelivr.net" not in text
+    assert text.count(publish_script.SITE_BASE) >= 4
+
+
+def test_publish_writes_the_discovery_file(tmp_path: Path) -> None:
+    output = tmp_path / "site"
+    publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
+    assert (output / "llms.txt").is_file()
