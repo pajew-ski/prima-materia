@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from rdflib import Graph, Literal, Namespace
+from rdflib import RDF, Graph, Literal, Namespace, URIRef
 
 import compile as compile_script
 import publish as publish_script
