@@ -18,7 +18,7 @@ Die Unterscheidung von bezeugt und erschlossen beseitigt das Tor der Autorität:
 
 Praktische Folge für die Priorisierung: der wertvollste Knoten ist nicht der, den der Betreiber gerade braucht, sondern der, der anderswo am zuverlässigsten falsch berichtet wird.
 
-Das Projekt ist Teil einer übergeordneten Architektur — es bildet die *undifferenzierte Ursubstanz*, auf der das **Opus Purum** (separates Projekt) operiert.
+Das Projekt ist Teil einer übergeordneten Architektur — es ist die Basis, aus der die Methoden des **Opus Purum** (separates Projekt) extrahiert werden. Die Richtung läuft vom Entwurf über die Zerlegung und das Grounding zu dem, was übrig bleibt, und erst von dort zur Methode. Der Graph ist deshalb nicht die *undifferenzierte Ursubstanz*, als die frühere Fassungen dieses Dokuments ihn beschrieben haben. Die Ursubstanz ist der ungeprüfte Entwurf; dies hier ist die Probe auf seinen Gehalt.
 
 Die ontologische Besonderheit: prima-materia folgt einem **bewusstsein-ersten** Designprinzip (Consciousness-First Ontology). Die Klassen modellieren Prozesse statt Substanzen, die Triples werden in `AwarenessContext`-named-graphs eingebettet, und semantische Bedeutung emergiert aus Subgraph-Clustern (Sphoṭa-Prinzip), nicht aus isolierten Knoten.
 
