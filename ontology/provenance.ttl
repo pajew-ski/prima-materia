@@ -214,6 +214,28 @@ pm:cautionsAbout a owl:ObjectProperty ;
 # Properties of testing
 #
 
+pm:dependentStep a owl:ObjectProperty ;
+    rdfs:label "dependent step"@en, "abhängiger Schritt"@de ;
+    rdfs:domain pm:Presupposing ;
+    skos:definition "The later step: the practice, state or capacity said not to be reached without the prior one."@en .
+
+pm:priorStep a owl:ObjectProperty ;
+    rdfs:label "prior step"@en, "vorausgesetzter Schritt"@de ;
+    rdfs:domain pm:Presupposing ;
+    skos:definition "The earlier step the later one is said to require."@en .
+
+pm:prerequisiteStrength a owl:ObjectProperty ;
+    rdfs:label "prerequisite strength"@en, "Stärke der Voraussetzung"@de ;
+    rdfs:domain pm:Presupposing ;
+    rdfs:range pm:PrerequisiteStrength ;
+    skos:definition "How firmly the source sets the prerequisite."@en .
+
+pm:consequenceOfSkipping a owl:DatatypeProperty ;
+    rdfs:label "consequence of skipping"@en, "Folge des Überspringens"@de ;
+    rdfs:domain pm:Presupposing ;
+    skos:definition "What the source says happens if the prior step is passed over."@en ;
+    skos:note "Required wherever the strength is pm:statedNecessity. Claiming that a text sets a necessity obliges the claimant to say what the text says goes wrong without it; a necessity nobody can quote a consequence for is an order read as a necessity."@en .
+
 pm:examinationState a owl:ObjectProperty ;
     rdfs:label "examination state"@en, "Prüfstand"@de ;
     rdfs:domain pm:Testing ;
