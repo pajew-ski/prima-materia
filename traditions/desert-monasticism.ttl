@@ -1,0 +1,102 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — desert monasticism
+#
+# Held apart from the discernment file, which collects the same authors for a
+# different question. Here the subject is the ascent itself: what the desert
+# literature says must be in place before what.
+#
+# Evagrius is the one author in the collection who states the chain as
+# generation rather than sequence. Each term is called the offspring or the
+# flower of the one before it, which is a stronger claim than an order and
+# carries its own consequence: what has no parent does not appear.
+#
+
+pmt:DesertMonasticism a pm:Tradition ;
+    rdfs:label "Desert monasticism"@en, "Wüstenmönchtum"@de ;
+    skos:definition "The transmission of the ascetic literature of the Egyptian desert and its Byzantine continuation, in which the path is set out as an ordered ascent."@en ;
+    dcterms:source "Evagrius Ponticus, Praktikos" .
+
+#
+# Steps
+#
+
+pmc:Praktike a pm:Conceptualizing ;
+    rdfs:label "Ascetic practice"@en, "Praktikē"@de ;
+    skos:definition "The first of the three parts of the way, consisting in the keeping of the commandments and the labour against the passions."@en ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    dcterms:source "Evagrius Ponticus, Praktikos 1" .
+
+pmc:Physike a pm:Conceptualizing ;
+    rdfs:label "Contemplation of nature"@en, "Physikē"@de ;
+    skos:definition "The second of the three parts, the contemplation of created things."@en ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    dcterms:source "Evagrius Ponticus, Praktikos 1" .
+
+pmc:Theologike a pm:Conceptualizing ;
+    rdfs:label "Knowledge of God"@en, "Theologikē"@de ;
+    skos:definition "The third of the three parts, the knowledge of God."@en ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    dcterms:source "Evagrius Ponticus, Praktikos 1" .
+
+pmc:Apatheia a pm:Conceptualizing ;
+    rdfs:label "Apatheia"@en, "Apatheia"@de ;
+    skos:definition "Freedom from the disturbance of the passions, called the flower of ascetic labour."@en ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    dcterms:source "Evagrius Ponticus, Praktikos 81" .
+
+pmc:Agape a pm:Conceptualizing ;
+    rdfs:label "Love"@en, "Liebe"@de ;
+    skos:definition "Called the offspring of apatheia and the keeper of the door to the contemplation of created things."@en ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    dcterms:source "Evagrius Ponticus, Praktikos 81", "Evagrius Ponticus, Praktikos 84" .
+
+#
+# Prerequisite claims
+#
+
+pmc:ThreefoldAscentOrder a pm:Presupposing ;
+    rdfs:label "Contemplation of nature presupposes ascetic practice"@en, "Naturschau setzt asketische Praxis voraus"@de ;
+    pm:dependentStep pmc:Physike ;
+    pm:priorStep pmc:Praktike ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    dcterms:source "Evagrius Ponticus, Praktikos 1" .
+
+pmc:KnowledgePresupposesContemplation a pm:Presupposing ;
+    rdfs:label "Knowledge of God presupposes contemplation of nature"@en, "Gotteserkenntnis setzt Naturschau voraus"@de ;
+    pm:dependentStep pmc:Theologike ;
+    pm:priorStep pmc:Physike ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    dcterms:source "Evagrius Ponticus, Praktikos 1" .
+
+pmc:ApatheiaPresupposesAscesis a pm:Presupposing ;
+    rdfs:label "Apatheia presupposes ascetic labour"@en, "Apatheia setzt asketische Arbeit voraus"@de ;
+    pm:dependentStep pmc:Apatheia ;
+    pm:priorStep pmc:Praktike ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Apatheia is called the flower of ascetic labour and ascetic labour is defined as the keeping of the commandments, so that where the labour is absent the freedom from the passions does not appear at all rather than appearing in a lesser degree." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    dcterms:source "Evagrius Ponticus, Praktikos 81" .
+
+pmc:LovePresupposesApatheia a pm:Presupposing ;
+    rdfs:label "Love presupposes apatheia, and knowledge presupposes love"@en, "Liebe setzt Apatheia voraus, Erkenntnis die Liebe"@de ;
+    pm:dependentStep pmc:Agape, pmc:Physike ;
+    pm:priorStep pmc:Apatheia, pmc:Agape ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Love is called the offspring of apatheia and is said to keep the door to the contemplation of created things, so that without it the door is not passed." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:DesertMonasticism ;
+    skos:note "The chain is stated as generation and not as sequence: each term is the child or the flower of the one before it. That is why the strength here is necessity, and why a consequence can be quoted at all."@en ;
+    dcterms:source "Evagrius Ponticus, Praktikos 81", "Evagrius Ponticus, Praktikos 84" .
