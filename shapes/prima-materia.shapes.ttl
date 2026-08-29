@@ -305,6 +305,71 @@ pm:SourceIsLiteratureShape a sh:NodeShape ;
     ] .
 
 #
+# An origination that names only its author and its work is a bibliography.
+# What makes it a finding is the ascription the claim circulates under and
+# does not have, so that is required too.
+#
+pm:OriginationShape a sh:NodeShape ;
+    sh:targetClass pm:Originating ;
+    sh:property [
+        sh:path pm:originatedBy ;
+        sh:minCount 1 ;
+        sh:message "Every origination names the author with whom the claim begins."
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:minCount 1 ;
+        sh:message "Every origination carries the date of the work it begins in."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every origination names the work in which the claim first stands."
+    ] ;
+    sh:property [
+        sh:path pm:circulatesAs ;
+        sh:minCount 1 ;
+        sh:message "Every origination states the ascription the claim circulates under. Without it the node is a bibliography and not a finding."
+    ] .
+
+#
+# A posited claim is in the graph on sufferance. It witnesses nothing, so it
+# must not look as though it did: no source, no tradition. The two prohibitions
+# are the whole safeguard, because a node that carried either would be
+# indistinguishable from a witness at the point where somebody reads it.
+#
+pm:PositingIsNotAWitnessShape a sh:NodeShape ;
+    sh:targetClass pm:Positing ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:maxCount 0 ;
+        sh:message "A posited claim claims no source. What it rests on is stated with pm:positedIn, which names an identifier and not a work."
+    ] ;
+    sh:property [
+        sh:path pm:withinTradition ;
+        sh:maxCount 0 ;
+        sh:message "A posited claim belongs to no tradition. Assigning one would make an examined claim look like a transmitted one."
+    ] ;
+    sh:property [
+        sh:path pm:positedIn ;
+        sh:minCount 1 ;
+        sh:message "A posited claim states where it was put forward."
+    ] .
+
+#
+# No object of examination without an examination. Without this the class
+# becomes the channel through which an unpublished draft enters the record
+# after all, and the direction the project runs in is reversed.
+#
+pm:PositingRequiresExaminationShape a sh:NodeShape ;
+    sh:targetClass pm:Positing ;
+    sh:property [
+        sh:path [ sh:inversePath pm:tests ] ;
+        sh:minCount 1 ;
+        sh:message "A posited claim may exist only where a pm:Testing node points at it. A claim nobody is examining has no business in the graph."
+    ] .
+
+#
 # Static-substance classes are forbidden. The shape targets the four
 # blacklisted URIs directly; if any of them is ever asserted as owl:Class,
 # validation fails.

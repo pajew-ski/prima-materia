@@ -290,3 +290,54 @@ pm:protocolUpdated a owl:DatatypeProperty ;
     rdfs:domain pm:Testing ;
     rdfs:range xsd:date ;
     skos:definition "The date on which the count was last carried forward. A protocol without this date claims a scrutiny it does not document."@en .
+
+#
+# Claims with no substrate under them
+#
+# Two classes for the case the rest of this file cannot hold. pm:Systematizing
+# orders material that was already there and points at it; pm:Testing tries to
+# fail a claim and points at it. Both presuppose that the thing pointed at is in
+# the graph. The most valuable cases are exactly the ones where it is not.
+#
+# A modern scale that ranks emotions by reach orders no tradition, because no
+# tradition ranks them. A draft nobody published makes claims that a protocol
+# could address, but the draft itself cannot enter as a source. Left as they
+# were, both would either stay out of the record or be forced into a class
+# whose meaning breaks under them.
+#
+
+pm:Originating a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Originating"@en, "Urheben"@de ;
+    skos:definition "The act of first putting forward a claim that no transmission carries, in a work that can be named and dated, where the claim afterwards circulates as though it were old."@en ;
+    skos:note "Distinct from pm:Systematizing, which arranges material that was already there and names what it arranges. An origination arranges nothing: the claim begins with it. Holding the two apart is what keeps the record from reporting an invention as an ordering of something ancient, which is the commonest way a modern construction acquires a warrant."@en ;
+    skos:note "The circulating ascription is the point of the class, not an addendum to it. A node that names only the author and the work is a bibliography; a node that also names what the claim is taken for is the finding, and it is the kind of finding this project exists to make."@en .
+
+pm:Positing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Positing"@en, "Setzen"@de ;
+    skos:definition "A claim held in the graph solely so that a protocol has something to address. It witnesses no transmission, claims no source, and belongs to no tradition."@en ;
+    skos:note "The class exists because a protocol needs an object and because the claims most worth examining are often the ones no received work carries. It is deliberately narrow: an instance may exist only where a pm:Testing points at it, enforced by pm:PositingRequiresExaminationShape. Without that restriction the class would become the channel through which an unpublished draft enters the record after all, and the direction the project runs in would be reversed."@en .
+
+#
+# Properties of origination
+#
+
+pm:originatedBy a owl:DatatypeProperty ;
+    rdfs:label "originated by"@en, "aufgestellt von"@de ;
+    rdfs:domain pm:Originating ;
+    skos:definition "The named author with whom the claim begins."@en .
+
+pm:circulatesAs a owl:DatatypeProperty ;
+    rdfs:label "circulates as"@en, "zirkuliert als"@de ;
+    rdfs:domain pm:Originating ;
+    skos:definition "The ascription under which the claim is commonly reported: the tradition, the age or the authority it is credited to and does not have."@en .
+
+#
+# Properties of positing
+#
+
+pm:positedIn a owl:DatatypeProperty ;
+    rdfs:label "posited in"@en, "gesetzt in"@de ;
+    rdfs:domain pm:Positing ;
+    skos:definition "Where the claim was put forward, given as an identifier rather than as a bibliographic reference: an issue number, a draft designation. Deliberately not dcterms:source, because what is named here is not a work a reader can obtain and must never be counted as one."@en .

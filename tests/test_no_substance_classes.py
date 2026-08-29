@@ -12,6 +12,7 @@ SCAN_DIRS = (
     REPO_ROOT / "traditions",
     REPO_ROOT / "convergences",
     REPO_ROOT / "examinations",
+    REPO_ROOT / "originations",
 )
 
 FORBIDDEN_LOCAL_NAMES = ("Symbol", "Concept", "Entity", "Object")
