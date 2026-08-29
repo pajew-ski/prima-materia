@@ -39,7 +39,58 @@ likewise dedicated to the public domain.
 ## Quellenführung (Source Discipline)
 
 Do not reproduce copyrighted primary texts verbatim. Paraphrase and cite.
-Prefer primary-source references or open-access editions.
+Cite the work and the place in it, never a link. Videos, blogs, wikis and
+forum posts are a way into a search, never a citation: trace them back to
+the work, then cite the work.
+
+## Behauptungen einreichen
+
+Du musst keine Recherche mitliefern und in keiner Tradition stehen, um
+eine Behauptung beizutragen. **Öffne ein Issue.** Eine Behauptung, die
+der vorhandene Korpus noch nicht beantwortet, wird mitrecherchiert,
+sobald ihr Korpus an der Reihe ist.
+
+Ein brauchbares Behauptungs-Issue enthält:
+
+1. Die Behauptung in einem entscheidbaren Satz. „Der Atem trägt die
+   Energie" ist entscheidbar, „Atem ist wichtig" nicht.
+2. Woher sie stammt, falls bekannt — ein Buch, eine Schule, ein
+   Methodenentwurf, eine eigene Beobachtung.
+3. Falls schon gesucht wurde: wo, und mit welchem Ergebnis.
+
+Das Issue bleibt offen, bis ein Knoten die Behauptung trägt. Der
+vollständige Lebenslauf steht in `SPEC.md §13`.
+
+### Label-Vokabular
+
+Aus dieser Liste übernehmen, nicht aus dem Gedächtnis schreiben: GitHub
+legt einen unbekannten Labelnamen stillschweigend als neues Label an,
+statt den Aufruf abzuweisen, und erzeugt so ein zweites Bündel, das
+niemandem auffällt.
+
+| Label | Bedeutung |
+|---|---|
+| `behauptung` | Behauptung, keine Repo-Arbeit. Jedes Behauptungs-Issue trägt es |
+| `strittig` | Gegenbezeugung vorhanden; Ziel ist ein `pm:Disputing`-Knoten |
+| `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
+| `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar |
+| `entwurf:strom` | Herkunft: Methodenentwurf „Der Strom" |
+
+Dazu je ein `korpus:`-Label pro geprüftem oder zu prüfendem Korpus. Sie
+kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
+
+`korpus:daoistisch`, `korpus:upanisadisch`, `korpus:patanjala`,
+`korpus:hathayoga`, `korpus:saiva-sakta`, `korpus:tibetisch`,
+`korpus:theravada`, `korpus:dramaturgie`, `korpus:henochisch`,
+`korpus:sefer-yetzirah`, `korpus:platonisch`, `korpus:graeco-roman`,
+`korpus:eleusis`, `korpus:stoisch`, `korpus:hesychasmus`,
+`korpus:wuestenvaeter`, `korpus:unterscheidung`, `korpus:sufismus`,
+`korpus:modern` (für Behauptungen, deren Ort `pm:evidenceFrom` an einem
+`pm:Testing`-Knoten ist).
+
+Ein neuer `korpus:`-Wert wird hier eingetragen, bevor er vergeben wird.
+Er benennt den Korpus, den man aufschlägt, nicht die Datei, in der er
+später landet.
 
 ## Offline Reproducibility
 
