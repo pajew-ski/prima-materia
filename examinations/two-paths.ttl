@@ -1,0 +1,37 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — two protocols on the two paths
+#
+# The first states a condition under which a claim would fail and reports that
+# no case answering it has been found. The second states that no condition has
+# been devised at all, which is a different finding and must not read like the
+# first.
+#
+
+pmp:BinaryPredatesItsReportersExamination a pm:Testing ;
+    rdfs:label "Whether the two-way division is older than the reports of it"@en, "Ob die Zweiteilung älter ist als ihre Berichterstatter"@de ;
+    skos:definition "A protocol on the claim that the naming of two Śākta branches as a right-hand and a left-hand ritual reports a division the Indian material carries, rather than imposing one it does not."@en ;
+    pm:tests pmc:RightAndLeftHandNomenclature ;
+    pm:falsifiedBy "A pre-colonial Indian source that presents dakṣiṇa and vāma as a clean two-way division with a moral polarity, using union with the divine against self-deification as the criterion that separates them. One such passage refutes the claim that the division was imposed rather than found." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passages recorded in traditions/saiva-sakta.ttl" ;
+    pm:protocolUpdated "2026-08-29" ;
+    skos:note "No case answering the condition has been found so far, and two passages read for other purposes tell against it. The Kulārṇava gives a ladder of seven steps, not a pair, and ranks the left above the right; the Mahānirvāṇa divides practitioners into three dispositions rather than two paths. Neither was sought as a counterexample, which is what makes them worth recording here — they came out of a search for something else."@en ;
+    skos:note "What this protocol does not establish. It has not searched the Indian corpus exhaustively, and absence of a case in two texts is not absence in the corpus. The state is procedure-without-cases and not cases-without-deviation, and the difference matters: the first says the search has begun, the second would say it has been carried."@en ;
+    skos:note "The modern scholarship that argues the same point — the construction of the category by nineteenth-century orientalism — has not been read and is therefore not cited at pm:evidenceFrom. Naming it unread would make this protocol look better supported than it is. See prima-materia#71."@en .
+
+pmp:SeparativeEndStateExamination a pm:Testing ;
+    rdfs:label "Whether the separative end state has been examined at all"@en, "Ob der absondernde Endzustand überhaupt geprüft wurde"@de ;
+    skos:definition "A protocol on the claim that a self brought forth and made to endure is the attainment of the path, held here to record that no procedure for failing it has been devised."@en ;
+    pm:tests pmc:XeperAsSelfGeneration ;
+    pm:examinationState pm:noProcedureDevised ;
+    pm:examinedBy "prima-materia" ;
+    pm:protocolUpdated "2026-08-29" ;
+    skos:note "This node exists to prevent a confusion, not to report a result. Nobody has stated a condition under which the claim would count as refuted, and that is a statement about the means of examination and not about the claim. A record that left the protocol out entirely would say the same thing by silence; a record that reported the claim as unsupported would say something else and something false."@en ;
+    skos:note "The asymmetry is worth naming because it is easy to mistake for evidence. States of dissolution have measurable correlates and a literature; the end state claimed on the other side has neither instrument nor operationalisation. That is a fact about the instruments. Whoever infers from it that one path is better attested than the other has read the reach of the measuring apparatus as a finding about the paths. See prima-materia#73."@en ;
+    skos:note "No pm:falsifiedBy is given, and the omission is the permitted one: the state says outright that no procedure has been devised. Everywhere else its absence would let a claim drift from unexamined to examined-and-unsupported."@en .
