@@ -18,8 +18,10 @@ import {
   buildIndex, editDistance, expandTerm, fold, fuzzyBudget, hints, parseQuery,
   search, snippetFor, splitCamel, tokenize,
 } from "../site/search.js";
-import { VIEWS, context, positionsFor, viewById } from "../site/layouts.js";
-import { ACROSS, crosstab, queryFor } from "../site/matrix.js";
+import {
+  CONTACT_SCALE, COVERAGE_SCALE, VIEWS, context, positionsFor, viewById,
+} from "../site/layouts.js";
+import { ACROSS, UNSTATED, crosstab, queryFor, registerQueryFor, registerTab } from "../site/matrix.js";
 
 // A miniature corpus with the shape of the real one: two traditions, a claim
 // that pairs a practice with a capacity, a transliterated term glossed in
@@ -33,9 +35,18 @@ const FIXTURE = {
     node("pm:Yielding", "class", ["owl:Class"], "Yielding"),
     node("pm:Originating", "class", ["owl:Class"], "Originating"),
     node("pm:Tradition", "class", ["owl:Class"], "Tradition"),
+    node("pm:CoverageState", "class", ["owl:Class"], "Coverage state"),
+    node("pm:ContactRoute", "class", ["owl:Class"], "Contact route"),
+    node("pm:corpusNamed", "instance", ["pm:CoverageState"], "Corpus named"),
+    node("pm:workOpened", "instance", ["pm:CoverageState"], "Work opened"),
+    node("pm:placesEntered", "instance", ["pm:CoverageState"], "Places entered"),
+    node("pm:contactRouteDocumented", "instance", ["pm:ContactRoute"], "Contact route documented"),
+    node("pm:contactRouteAbsent", "instance", ["pm:ContactRoute"], "Contact route absent"),
     node("pm:withinTradition", "property", ["owl:ObjectProperty"], "within tradition"),
     node("pmt:Theravada", "tradition", ["pm:Tradition"], "Theravāda"),
     node("pmt:Daoist", "tradition", ["pm:Tradition"], "Daoist tradition"),
+    // Registered and unopened: named corpus, no passage read, nothing under it.
+    node("pmt:Registered", "tradition", ["pm:Tradition"], "A registered transmission"),
     {
       ...node("pmc:Piti", "instance", ["pm:Conceptualizing"], "Pīti"),
       labels: { en: "Pīti", de: "Verzückung" },
@@ -80,6 +91,13 @@ const FIXTURE = {
     edge("pmc:Baraqel", "instanceOf", "pm:Conceptualizing"),
     edge("pmt:Theravada", "instanceOf", "pm:Tradition"),
     edge("pmt:Daoist", "instanceOf", "pm:Tradition"),
+    edge("pmt:Registered", "instanceOf", "pm:Tradition"),
+    edge("pmt:Theravada", "coverageState", "pm:placesEntered"),
+    edge("pmt:Theravada", "contactRoute", "pm:contactRouteDocumented"),
+    edge("pmt:Daoist", "coverageState", "pm:placesEntered"),
+    edge("pmt:Daoist", "contactRoute", "pm:contactRouteAbsent"),
+    edge("pmt:Registered", "coverageState", "pm:corpusNamed"),
+    edge("pmt:Registered", "contactRoute", "pm:contactRouteAbsent"),
     edge("pmc:Piti", "instanceOf", "pm:Conceptualizing"),
     edge("pmp:Anapanasati", "instanceOf", "pm:Practicing"),
     edge("pmc:AnapanasatiYieldsPiti", "instanceOf", "pm:Yielding"),
@@ -197,7 +215,9 @@ test("a prefix that names no filter is part of what was typed", () => {
 
 test("filters match whole words, so type:Testing is not Attesting", () => {
   assert.deepEqual(ids(search(fixtureIndex, "type:Yielding")), ["pmc:AnapanasatiYieldsPiti"]);
-  assert.deepEqual(ids(search(fixtureIndex, "kind:tradition")).sort(), ["pmt:Daoist", "pmt:Theravada"]);
+  assert.deepEqual(ids(search(fixtureIndex, "kind:tradition")).sort(), [
+    "pmt:Daoist", "pmt:Registered", "pmt:Theravada",
+  ]);
   assert.deepEqual(ids(search(fixtureIndex, "tradition:daoist")).sort(), ["pmc:Qi", "pmt:Daoist"]);
   assert.deepEqual(ids(search(fixtureIndex, "source:nikaya")).sort(), [
     "pmc:AnapanasatiYieldsPiti",
@@ -207,7 +227,8 @@ test("filters match whole words, so type:Testing is not Attesting", () => {
 
 test("has: audits the corpus, and its negation is the interesting half", () => {
   const without = ids(search(fixtureIndex, "kind:instance -has:source"));
-  assert.deepEqual(without.sort(), ["pmc:Baraqel", "pmc:ModernScale", "pmc:Qi"]);
+  assert.ok(["pmc:Baraqel", "pmc:ModernScale", "pmc:Qi"].every((id) => without.includes(id)));
+  assert.ok(!without.includes("pmc:Piti"), "Piti cites a passage and is not a gap");
   assert.ok(ids(search(fixtureIndex, "kind:instance has:source")).includes("pmc:Piti"));
   // A language tag falls through to the labels, so a gap in translation shows.
   assert.deepEqual(ids(search(fixtureIndex, "has:de")), ["pmc:Piti"]);
@@ -413,15 +434,90 @@ test("the cross-tabulation counts every claim once and no vocabulary", () => {
   assert.ok(!matrix.columns.some((column) => column.id === "pm:Tradition"));
 });
 
-test("a tradition that has contributed nothing still gets a row", () => {
-  const barren = {
+test("the claim table holds the traditions that witness, and counts the rest", () => {
+  // A registered transmission carries nothing by definition, so a row for it
+  // would repeat pm:corpusNamed once per claim form rather than report
+  // anything. What is worth keeping is the number, which the caption states
+  // and which is carried here.
+  const matrix = crosstab(FIXTURE, context(FIXTURE));
+  assert.ok(!matrix.rows.some((row) => row.id === "pmt:Registered"));
+  assert.equal(matrix.registered, 1);
+  assert.ok(matrix.rows.every((row) => row.id === ACROSS || row.total > 0));
+});
+
+test("the register table counts every tradition exactly once", () => {
+  const matrix = registerTab(FIXTURE, context(FIXTURE), {
+    coverageScale: COVERAGE_SCALE,
+    contactScale: CONTACT_SCALE,
+  });
+  const traditions = FIXTURE.nodes.filter((entry) => entry.kind === "tradition").length;
+  assert.equal(matrix.total, traditions);
+  assert.equal(matrix.rows.reduce((sum, row) => sum + row.total, 0), traditions);
+  assert.equal(matrix.columns.reduce((sum, column) => sum + column.total, 0), traditions);
+  assert.equal(matrix.count("pm:corpusNamed", "pm:contactRouteAbsent"), 1);
+  assert.equal(matrix.count("pm:placesEntered", "pm:contactRouteDocumented"), 1);
+});
+
+test("a step of the scale nobody has reached keeps its row", () => {
+  const matrix = registerTab(FIXTURE, context(FIXTURE), {
+    coverageScale: COVERAGE_SCALE,
+    contactScale: CONTACT_SCALE,
+  });
+  const opened = matrix.rows.find((row) => row.id === "pm:workOpened");
+  assert.ok(opened, "an absent row would read as an absent stage of the work");
+  assert.equal(opened.total, 0);
+  // The scale is read in its own order, not sorted by how full each step is.
+  const scale = matrix.rows.map((row) => row.id).filter((id) => COVERAGE_SCALE.includes(id));
+  assert.deepEqual(scale, COVERAGE_SCALE.filter((id) => scale.includes(id)));
+});
+
+test("a tradition neither scale was applied to is counted, not rounded away", () => {
+  const partial = {
     ...FIXTURE,
-    nodes: [...FIXTURE.nodes, node("pmt:Empty", "tradition", ["pm:Tradition"], "Empty tradition")],
+    nodes: [...FIXTURE.nodes, node("pmt:Unstated", "tradition", ["pm:Tradition"], "Unstated")],
   };
-  const matrix = crosstab(barren, context(barren));
-  const row = matrix.rows.find((entry) => entry.id === "pmt:Empty");
-  assert.ok(row, "an absent row would read as an absent tradition");
-  assert.equal(row.total, 0);
+  const ctx = context(partial);
+  const matrix = registerTab(partial, ctx, {
+    coverageScale: COVERAGE_SCALE,
+    contactScale: CONTACT_SCALE,
+  });
+  assert.equal(matrix.count(UNSTATED, UNSTATED), 1);
+  assert.equal(matrix.rows.reduce((sum, row) => sum + row.total, 0), matrix.total);
+  assert.deepEqual(
+    ids(search(buildIndex(partial), registerQueryFor(UNSTATED, UNSTATED))),
+    ["pmt:Unstated"],
+  );
+});
+
+test("both scales are askable by every spelling a reader might use", () => {
+  for (const query of ["coverage:corpusNamed", 'coverage:"corpus named"', "coverage:corpusnamed"]) {
+    assert.deepEqual(ids(search(fixtureIndex, query)), ["pmt:Registered"], query);
+  }
+  assert.deepEqual(ids(search(fixtureIndex, "contact:documented")), ["pmt:Theravada"]);
+  assert.deepEqual(
+    ids(search(fixtureIndex, "kind:tradition contact:absent")).sort(),
+    ["pmt:Daoist", "pmt:Registered"],
+  );
+});
+
+test("a registered transmission names nothing in the drawing", () => {
+  // Landmarks carry a label the drawing keeps legible at fitted zoom. Deciding
+  // that by kind put a large label on every registered transmission and
+  // crowded out the terms that do name a region.
+  const ctx = context(FIXTURE);
+  assert.equal(ctx.isLandmark("pmt:Theravada"), true);
+  assert.equal(ctx.isLandmark("pmt:Registered"), false);
+  assert.equal(ctx.isLandmark("pm:Conceptualizing"), true);
+  assert.equal(ctx.isLandmark("pmc:Piti"), false);
+});
+
+test("the register earns no sector in a view that sizes sectors by contribution", () => {
+  const ctx = context(FIXTURE);
+  const positions = positionsFor("traditions", FIXTURE, ctx);
+  // It is still drawn — on the rim, outside what the graph is carried by —
+  // so nothing is hidden; it simply claims no share of the circle.
+  const radius = (id) => Math.hypot(positions[id].x, positions[id].y);
+  assert.ok(radius("pmt:Registered") > radius("pmt:Theravada"));
 });
 
 test("a cell knows the query that would list what it counted", () => {
@@ -475,6 +571,25 @@ test("the whole corpus indexes, searches and arranges", onlyWithCorpus, () => {
     matrix.rows.reduce((sum, row) => sum + row.total, 0),
     matrix.total,
   );
+
+  // The register table has to account for every registered transmission, and
+  // every cell of both tables has to return its own count when opened.
+  const register = registerTab(corpus, ctx, {
+    coverageScale: COVERAGE_SCALE,
+    contactScale: CONTACT_SCALE,
+  });
+  const traditions = corpus.nodes.filter((entry) => entry.kind === "tradition").length;
+  assert.equal(register.total, traditions);
+  assert.equal(register.rows.reduce((sum, row) => sum + row.total, 0), traditions);
+  for (const row of register.rows) {
+    for (const column of register.columns) {
+      assert.equal(
+        search(index, registerQueryFor(row.id, column.id)).total,
+        register.count(row.id, column.id),
+        `${row.label} × ${column.label} promises a count the query does not return`,
+      );
+    }
+  }
   for (const row of matrix.rows) {
     for (const column of matrix.columns) {
       assert.equal(

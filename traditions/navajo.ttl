@@ -1,0 +1,65 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Navajo ceremonial transmission
+#
+# Opened for one question, like traditions/zuni.ttl: whether the exactness of a
+# recitation is set as the condition of its efficacy outside the sphere in
+# which the claim was first met. What the introduction of the witness carries
+# on that question is entered here, including the part the other two witnesses
+# do not have, namely a named public detector of the error. The tradition
+# instance was registered in traditions/registry-outside-contact.ttl and is
+# moved here now that passages have been read.
+#
+
+pmt:NavajoCeremonial a pm:Tradition ;
+    rdfs:label "Navajo ceremonial transmission"@en, "Navajo-Zeremonialüberlieferung"@de ;
+    skos:definition "The Diné transmission of chantways: long ordered ceremonials for restoring a condition named as order, with the sequence fixed and its errors held to be consequential."@en ;
+    skos:note "Read for the first time in the introduction to the legends, sections 41 and 42 on the sacred songs, printed pages 24 and 25. The legends themselves and the ceremonial texts were not read, and the fuller ceremonial account of the night chant published in nineteen hundred and two was not opened in this run."@en ;
+    pm:principalCorpus "Wyman, Blessingway, with the recorded Navajo texts; Matthews, The Night Chant" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteAbsent ;
+    dcterms:source "Washington Matthews, Navaho Legends, Memoirs of the American Folk-Lore Society V (Boston and New York: Houghton, Mifflin, 1897), pp. 24-25" .
+
+pmp:NavajoSacredSong a pm:Practicing ;
+    rdfs:label "Navajo sacred song"@en, "Navajo-Kultgesang"@de ;
+    skos:definition "The songs belonging to a rite, held by the priest of the rite and his assistants, containing expressions that are obsolete or without current meaning and that have therefore to be carried by memory rather than by sense."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NavajoCeremonial ;
+    dcterms:source "Washington Matthews, Navaho Legends, Memoirs of the American Folk-Lore Society V (Boston and New York: Houghton, Mifflin, 1897), section 41, p. 24" .
+
+pmc:NavajoSongExactness a pm:Conceptualizing ;
+    rdfs:label "Exactness of the sung words"@en, "Genauigkeit der gesungenen Worte"@de ;
+    skos:definition "The requirement that the songs be known in a most exact manner, down to the syllable, no important mistake being tolerated."@en ;
+    pm:withinTradition pmt:NavajoCeremonial ;
+    dcterms:source "Washington Matthews, Navaho Legends, Memoirs of the American Folk-Lore Society V (Boston and New York: Houghton, Mifflin, 1897), section 41, p. 24" .
+
+pmc:NavajoCeremonyEfficacy a pm:Conceptualizing ;
+    rdfs:label "The efficacy of the ceremony"@en, "Die Wirksamkeit der Zeremonie"@de ;
+    skos:definition "The effect a chantway is held to obtain, which the witness says an error in a song may destroy."@en ;
+    pm:withinTradition pmt:NavajoCeremonial ;
+    dcterms:source "Washington Matthews, Navaho Legends, Memoirs of the American Folk-Lore Society V (Boston and New York: Houghton, Mifflin, 1897), section 41, p. 24" .
+
+pmc:NavajoEfficacyPresupposesExactness a pm:Presupposing ;
+    rdfs:label "The efficacy of the ceremony presupposes exactness in the songs"@en, "Die Wirksamkeit der Zeremonie setzt die Genauigkeit der Gesänge voraus"@de ;
+    pm:dependentStep pmc:NavajoCeremonyEfficacy ;
+    pm:priorStep pmc:NavajoSongExactness ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The witness says an error made in singing a song may be fatal to the efficacy of a ceremony, and that in some cases the error of a single syllable works an irreparable injury." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NavajoCeremonial ;
+    skos:note "The consequence is graded rather than absolute: an error may be fatal, and only in some cases does a single syllable do irreparable harm. That grading is worth keeping, because the parallel claims elsewhere are usually reported without it."@en ;
+    dcterms:source "Washington Matthews, Navaho Legends, Memoirs of the American Folk-Lore Society V (Boston and New York: Houghton, Mifflin, 1897), section 41, p. 24" .
+
+pmc:NavajoPublicErrorDetection a pm:Conceptualizing ;
+    rdfs:label "The audience as the detector of the error"@en, "Die Zuhörerschaft als Fehlerinstanz"@de ;
+    skos:definition "The practice, at the public night ceremony, that many of those present know the songs well enough to catch a deviation, whereupon the ceremony is broken off as fruitless and the gathering disperses."@en ;
+    skos:note "The part of the claim that makes it examinable rather than merely asserted. The tradition does not only say that an error destroys the effect; it names who notices, when, and what visibly follows. Neither of the two parallel witnesses in this bundle carries that."@en ;
+    pm:withinTradition pmt:NavajoCeremonial ;
+    dcterms:source "Washington Matthews, Navaho Legends, Memoirs of the American Folk-Lore Society V (Boston and New York: Houghton, Mifflin, 1897), section 42, pp. 24-25" .

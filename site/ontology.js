@@ -1,7 +1,10 @@
 import { onThemeChange } from "./theme.js";
 import { buildIndex, search, hints } from "./search.js";
-import { VIEWS, DEFAULT_VIEW, viewById, context, positionsFor } from "./layouts.js";
-import { crosstab, renderMatrix } from "./matrix.js";
+import {
+  VIEWS, DEFAULT_VIEW, viewById, context, positionsFor, landmarksFor,
+  COVERAGE_SCALE, CONTACT_SCALE,
+} from "./layouts.js";
+import { crosstab, registerTab, renderMatrix, queryFor, registerQueryFor } from "./matrix.js";
 
 // One shape per kind of term. The distinction the ontology cares about most —
 // process classes against the instances asserted under them — is the one the
@@ -61,21 +64,16 @@ function graphStyle() {
       selector: 'node[kind = "root"]',
       style: { width: 34, height: 34, "background-color": text, "border-color": text },
     },
-    // Landmarks: the root process, the classes and the traditions. They are
-    // forty terms out of three hundred, and they are the ones that name a
-    // region of the drawing — a sector in the tradition view, a block in the
-    // claim-form view. Their labels are set large enough to clear the zoom
-    // floor at fitted zoom, so the arrangements stay readable as arrangements
-    // instead of as three hundred anonymous squares.
+    // Landmarks: the terms that name a region of the drawing — a sector in the
+    // tradition view, a block in the claim-form view. Their labels are set
+    // large enough to clear the zoom floor at fitted zoom, so the arrangements
+    // stay readable as arrangements instead of as five hundred anonymous
+    // squares. Which terms those are is decided from the data, not from the
+    // kind: a registered transmission nobody has opened names nothing, because
+    // there is nothing beside it to name.
     {
-      selector: 'node[kind = "root"], node[kind = "class"], node[kind = "tradition"]',
+      selector: "node.landmark",
       style: { "font-size": 15, "text-max-width": 130, color: text },
-    },
-    // A search result names itself for the same reason: the point of dimming
-    // the rest is to be able to read what survived.
-    {
-      selector: "node.match",
-      style: { "font-size": 13, "text-max-width": 110 },
     },
     {
       selector: "node:selected",
@@ -89,10 +87,19 @@ function graphStyle() {
     },
     // A search result, marked in the graph itself. Reading a result list tells
     // you what matched; seeing the same matches land in one sector or scatter
-    // across all of them tells you something the list cannot.
+    // across all of them tells you something the list cannot. It names itself
+    // for the same reason the landmarks do: the point of dimming the rest is to
+    // be able to read what survived.
     {
       selector: "node.match",
-      style: { "border-color": text, "border-width": 2, color: text, "background-color": bg },
+      style: {
+        "border-color": text,
+        "border-width": 2,
+        color: text,
+        "background-color": bg,
+        "font-size": 13,
+        "text-max-width": 110,
+      },
     },
     {
       selector: ".dimmed",
@@ -190,7 +197,10 @@ const cy =
     ? cytoscape({
         container: canvas,
         elements: [
-          ...data.nodes.map((n) => ({ data: { id: n.id, kind: n.kind, label: n.label } })),
+          ...data.nodes.map((n) => ({
+            data: { id: n.id, kind: n.kind, label: n.label },
+            classes: graphContext.isLandmark(n.id) ? "landmark" : "",
+          })),
           ...data.edges.map((e) => ({
             data: { id: `${e.source}~${e.rel}~${e.target}`, source: e.source, target: e.target, rel: e.rel },
           })),
@@ -252,14 +262,47 @@ function setView(id, { rememberUrl = true } = {}) {
   // making.
   legend.hidden = Boolean(view.matrix);
   if (view.matrix) {
-    renderMatrix(matrixBox, crosstab(data, graphContext), {
-      onSelect: (query) => {
-        input.value = query;
-        runSearch();
-        input.focus();
-      },
+    const onSelect = (query) => {
+      input.value = query;
+      runSearch();
+      input.focus();
+    };
+    const claims = crosstab(data, graphContext);
+    const register = registerTab(data, graphContext, {
+      coverageScale: COVERAGE_SCALE,
+      contactScale: CONTACT_SCALE,
     });
+    renderMatrix(
+      matrixBox,
+      [
+        {
+          matrix: claims,
+          queryFor,
+          caption:
+            `${claims.total} claims across the ${claims.rows.length - 1} traditions that witness and ` +
+            `${claims.columns.length} claim forms; ` +
+            `${claims.filled} of ${claims.rows.length * claims.columns.length} pairings carry anything at all. ` +
+            `${claims.registered} further transmissions are registered and carry nothing yet; ` +
+            `where they stand is the table below.`,
+          },
+        {
+          matrix: register,
+          queryFor: registerQueryFor,
+          caption:
+            `${register.total} transmissions registered, by how far the corpus has been carried in ` +
+            `and whether a route of contact is known. A route decides what an agreement could ever be: ` +
+            `documented makes it reception, absent makes it a candidate for independent attestation.`,
+        },
+      ],
+      { onSelect },
+    );
   } else if (cy) {
+    // Which terms this arrangement names is the arrangement's own decision, so
+    // the class is set per view rather than once at load.
+    const landmarks = landmarksFor(view.id, data, graphContext);
+    cy.batch(() => {
+      for (const node of cy.nodes()) node.toggleClass("landmark", landmarks.has(node.id()));
+    });
     const positions = positionsFor(view.id, data, graphContext);
     // The force layout is seeded from the ring positions rather than started at
     // random, so the same corpus settles the same way twice and a cluster a
