@@ -114,6 +114,13 @@ export function buildIndex(data) {
   // them as text on the node, so "theravada rapture" is one query rather than
   // two lookups and an intersection.
   const traditionOf = new Map();
+  // Coverage state and contact route are object properties, so they reach the
+  // page as edges rather than as text on the node. Without lifting them here
+  // the register would be a hundred and more terms nobody can address: the
+  // scales exist to make what is missing countable, and a scale you cannot ask
+  // about counts nothing.
+  const coverageOf = new Map();
+  const contactOf = new Map();
   const degree = new Map(data.nodes.map((node) => [node.id, 0]));
   const adjacency = new Map(data.nodes.map((node) => [node.id, new Set()]));
   for (const edge of data.edges) {
@@ -126,6 +133,8 @@ export function buildIndex(data) {
       if (!traditionOf.has(edge.source)) traditionOf.set(edge.source, []);
       traditionOf.get(edge.source).push(edge.target);
     }
+    if (edge.rel === "coverageState") coverageOf.set(edge.source, edge.target);
+    if (edge.rel === "contactRoute") contactOf.set(edge.source, edge.target);
   }
 
   const labelOf = (id) => byId.get(id)?.label ?? local(id);
@@ -136,6 +145,8 @@ export function buildIndex(data) {
     // of tradition:theravada, which is the one term that filter is about.
     if (node.kind === "tradition") traditions.push(node.id);
     const types = node.types.filter((type) => type.startsWith("pm:"));
+    const coverage = coverageOf.get(node.id) ?? null;
+    const contact = contactOf.get(node.id) ?? null;
     const text = {
       // An alternate spelling is a name, not a remark: whoever met Baraqel as
       // Baraqijal should reach it at a label's weight.
@@ -147,8 +158,14 @@ export function buildIndex(data) {
       definition: values(node.definition).join(" ").trim(),
       // The property's own name is indexed with its value, so "circulates as"
       // and "transmission path" are things the corpus can be asked about.
-      statement: (node.statements ?? [])
-        .map((statement) => `${statement.label} ${statement.values.join(" ")}`)
+      statement: [
+        ...(node.statements ?? []).map(
+          (statement) => `${statement.label} ${statement.values.join(" ")}`,
+        ),
+        // Where a tradition stands is something the graph states about it, so
+        // it is read here with the rest of what the graph states.
+        ...[coverage, contact].filter(Boolean).map(labelOf),
+      ]
         .join(" · ")
         .trim(),
       note: [...values(node.note), ...values(node.comment)].join(" ").trim(),
@@ -162,6 +179,8 @@ export function buildIndex(data) {
       tokens,
       traditions,
       types,
+      coverage,
+      contact,
       degree: degree.get(node.id) ?? 0,
       folded: { label: fold(node.label), name: fold(local(node.id)) },
     };
@@ -285,7 +304,9 @@ function buildAssociations(index) {
 // Query language
 // ---------------------------------------------------------------------------
 
-export const FILTER_FIELDS = new Set(["kind", "tradition", "type", "class", "source", "has", "lang"]);
+export const FILTER_FIELDS = new Set([
+  "kind", "tradition", "type", "class", "source", "has", "lang", "coverage", "contact",
+]);
 
 /**
  * Split a query into free terms, quoted phrases, negations and filters.
@@ -352,20 +373,25 @@ function fieldMatches(text, value) {
 function matchesFilter(doc, filter, index) {
   const contains = (text) => fieldMatches(text, filter.value);
   const labelOfId = (id) => index.docs[index.byId.get(id)]?.node.label;
+  // Three spellings of the same term, all of which a reader will type: the
+  // local name as it stands in the CURIE (corpusNamed), the same name read as
+  // the compound it is (corpus Named), and the label (Corpus named). The
+  // tables build their queries from the first and a person types the third.
+  const names = (id) =>
+    id != null &&
+    (contains(local(id)) || contains(splitCamel(local(id))) || contains(labelOfId(id)));
   switch (filter.field) {
     case "kind":
       return fold(doc.node.kind).startsWith(filter.value);
     case "tradition":
-      // Three spellings of the same tradition: the local name as it stands in
-      // the CURIE (PatanjalaYoga), the same name read as the compound it is
-      // (Patanjala Yoga), and the label (Pātañjala Yoga). All three are things
-      // a reader will type, and the matrix builds its queries from the first.
-      return doc.traditions.some(
-        (id) => contains(local(id)) || contains(splitCamel(local(id))) || contains(labelOfId(id)),
-      );
+      return doc.traditions.some(names);
     case "type":
     case "class":
       return contains(doc.text.type);
+    case "coverage":
+      return names(doc.coverage);
+    case "contact":
+      return names(doc.contact);
     case "source":
       return doc.node.sources.some((source) => contains(source));
     case "lang":
@@ -377,6 +403,10 @@ function matchesFilter(doc, filter, index) {
         case "note":
           return Object.keys(doc.node.note).length > 0 || Object.keys(doc.node.comment).length > 0;
         case "tradition": return doc.traditions.length > 0;
+        // -has:coverage finds the transmissions the scale was never applied
+        // to, which is a different silence from being at its first step.
+        case "coverage": return doc.coverage !== null;
+        case "contact": return doc.contact !== null;
         case "relation": return (index.adjacency.get(doc.id)?.size ?? 0) > 0;
         // Anything else reads as a language tag: has:de finds what has been
         // translated, -has:de what has not.
@@ -742,6 +772,8 @@ export function hints(index) {
     { query: "type:Cautioning", label: "warnings a tradition gives about itself" },
     { query: "type:Testing", label: "claims someone has tried to examine" },
     { query: "kind:instance -has:source", label: "assertions standing on nothing" },
+    { query: "coverage:corpusNamed", label: "corpora named and not yet opened" },
+    { query: "kind:tradition contact:absent", label: "traditions that could attest independently" },
     tradition
       ? { query: `tradition:${local(tradition.id)}`, label: `everything under ${tradition.node.label}` }
       : null,
