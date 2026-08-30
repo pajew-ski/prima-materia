@@ -29,12 +29,18 @@ export function context(data) {
   const byId = new Map(data.nodes.map((node) => [node.id, node]));
   const neighbours = new Map(data.nodes.map((node) => [node.id, []]));
   const traditionOf = new Map();
+  const coverageOf = new Map();
+  const contactOf = new Map();
+  const carries = new Map(); // tradition -> how many nodes stand under it
   for (const edge of data.edges) {
     neighbours.get(edge.source)?.push(edge.target);
     neighbours.get(edge.target)?.push(edge.source);
     if (edge.rel === "withinTradition" && !traditionOf.has(edge.source)) {
       traditionOf.set(edge.source, edge.target);
+      carries.set(edge.target, (carries.get(edge.target) ?? 0) + 1);
     }
+    if (edge.rel === "coverageState") coverageOf.set(edge.source, edge.target);
+    if (edge.rel === "contactRoute") contactOf.set(edge.source, edge.target);
   }
   // The class an instance instantiates. A node may declare several types; the
   // first pm: one is the claim form it was written as, which is the one every
@@ -49,8 +55,27 @@ export function context(data) {
     byId,
     neighbours,
     traditionOf,
+    coverageOf,
+    contactOf,
+    carries,
     classOf,
     degree: new Map(data.nodes.map((node) => [node.id, neighbours.get(node.id).length])),
+    /**
+     * Does this term name a region of the drawing?
+     *
+     * The root process and the classes always do. A tradition does only if
+     * something stands under it: a registered transmission nobody has opened
+     * yet labels nothing, because there is nothing beside it to label. Deciding
+     * this by kind rather than by the data was fine while every tradition in
+     * the graph witnessed; once the register brought in a hundred and more that
+     * do not, it put a large label on every one of them and pushed the spacing
+     * of the terms that do name something down to where they collide.
+     */
+    isLandmark: (id) => {
+      const kind = byId.get(id)?.kind;
+      if (kind === "root" || kind === "class") return true;
+      return kind === "tradition" && (carries.get(id) ?? 0) > 0;
+    },
   };
 }
 
@@ -138,11 +163,11 @@ function fillSector(ids, { from, to, inner, place, gap = ITEM_GAP, ring = RING_G
   return radius;
 }
 
-// The kinds whose labels the drawing keeps legible at fitted zoom. Wherever
-// they are packed together they need the room that label takes, not the room a
-// dot takes, or their names overlap at every zoom — position and type scale
-// together, so no amount of zooming pulls them apart.
-const LANDMARKS = new Set(["root", "class", "tradition"]);
+// Landmarks are the terms whose labels the drawing keeps legible at fitted
+// zoom (ctx.isLandmark decides which). Wherever they are packed together they
+// need the room that label takes, not the room a dot takes, or their names
+// overlap at every zoom — position and type scale together, so no amount of
+// zooming pulls them apart.
 const LANDMARK_GAP = 118;
 const LANDMARK_RING = 76;
 
@@ -155,12 +180,32 @@ const LANDMARK_RING = 76;
 function sectors(groups, { floor = 4, gap = 0.03 } = {}) {
   const total = groups.reduce((sum, group) => sum + group.ids.length + floor, 0);
   let angle = -Math.PI / 2;
-  return groups.map((group) => {
+  return interleave(groups).map((group) => {
     const width = (TAU * (group.ids.length + floor)) / total;
     const sector = { ...group, from: angle + gap / 2, to: angle + width - gap / 2 };
     angle += width;
     return sector;
   });
+}
+
+/**
+ * Deal a list ordered by size into large, small, large, small around the
+ * circle. Handed a list sorted by size, the sectors would come out with every
+ * sliver against every other sliver, and a heading over a sliver has only its
+ * neighbour's sliver to sit beside. Alternating gives each narrow sector a wide
+ * one on either side, which is where the room for its heading comes from — the
+ * sector widths themselves are untouched, so the view still reports the sizes
+ * it is read for.
+ */
+function interleave(groups) {
+  const out = [];
+  let head = 0;
+  let tail = groups.length - 1;
+  while (head <= tail) {
+    out.push(groups[head++]);
+    if (head <= tail) out.push(groups[tail--]);
+  }
+  return out;
 }
 
 /** Group ids by a key function, dropping empties, ordered by the given order. */
@@ -310,8 +355,16 @@ function traditionPositions(data, ctx) {
     data.nodes.map((node) => node.id),
     (id) => ctx.traditionOf.get(id) ?? null,
   );
+  // A sector is a share of the drawing, and this view says it is sized by what
+  // a tradition contributes. A registered transmission nobody has opened
+  // contributes nothing and so earns no sector; giving it the floor share the
+  // thin ones get would hand most of the circle to the register and make the
+  // view report the opposite of what it claims. It is not dropped either — it
+  // goes to the rim below, where the register is what is being shown.
+  const witnessing = traditions.filter((node) => (ctx.carries.get(node.id) ?? 0) > 0);
+  const registered = traditions.filter((node) => (ctx.carries.get(node.id) ?? 0) === 0);
   const groups = sectors(
-    traditions
+    witnessing
       .map((node) => ({ id: node.id, ids: (members.get(node.id) ?? []).slice().sort() }))
       .sort((a, b) => b.ids.length - a.ids.length || a.id.localeCompare(b.id)),
     { floor: 3 },
@@ -342,12 +395,27 @@ function traditionPositions(data, ctx) {
     ring: LANDMARK_RING,
   });
 
+  let reach = centre + RING_GAP * 3;
   groups.forEach((group, position) => {
     // Staggered for the same reason as in the taxonomy: a tradition
     // contributing three terms earns a sliver, and two slivers side by side
     // would collide at the same radius.
     place(group.id, centre + RING_GAP + (position % 2 ? 0 : 46), (group.from + group.to) / 2);
-    fillSector(group.ids, { from: group.from, to: group.to, inner: centre + RING_GAP * 3, place });
+    reach = Math.max(
+      reach,
+      fillSector(group.ids, { from: group.from, to: group.to, inner: centre + RING_GAP * 3, place }),
+    );
+  });
+
+  // The register on the rim, outside everything the graph is carried by. Each
+  // one is a corpus that has been named and not opened, and the width of this
+  // band against the sectors inside it is the ratio the coverage vocabulary was
+  // introduced to make countable.
+  fillSector(registered.map((node) => node.id).sort(), {
+    from: -Math.PI / 2,
+    to: -Math.PI / 2 + TAU,
+    inner: reach + RING_GAP * 1.6,
+    place,
   });
   return positions;
 }
@@ -385,7 +453,7 @@ function hubPositions(data, ctx) {
     // because nothing out there is being read at fitted zoom anyway.
     const look = Math.max(3, Math.floor((TAU * radius) / ITEM_GAP));
     const sample = ranked.slice(index, index + look);
-    const crowded = sample.filter((node) => LANDMARKS.has(node.kind)).length > sample.length / 2;
+    const crowded = sample.filter((node) => ctx.isLandmark(node.id)).length > sample.length / 2;
     const capacity = Math.max(3, Math.floor((TAU * radius) / (crowded ? LANDMARK_GAP : ITEM_GAP)));
     const ring = ranked.slice(index, index + capacity).map((node) => node.id);
     placeRing(ring, radius, anchorOf, place);
@@ -429,7 +497,7 @@ function claimPositions(data, ctx) {
     // A block of them therefore gets fewer, wider columns; packed at the same
     // pitch as the rest their names would overlap at every zoom, since both
     // the type and the spacing scale together.
-    const landmark = body.length > 0 && body.every((id) => LANDMARKS.has(ctx.byId.get(id).kind));
+    const landmark = body.length > 0 && body.every((id) => ctx.isLandmark(id));
     const width = landmark ? 3 : BLOCK_WIDTH;
     return {
       header,
@@ -481,6 +549,133 @@ function claimPositions(data, ctx) {
 }
 
 // ---------------------------------------------------------------------------
+// Coverage — how far the opening of the register has got
+// ---------------------------------------------------------------------------
+
+// The order of the two controlled scales. The graph states what each term
+// means and no sequence between them, and the sequence is the whole reading of
+// a view or a table built on them, so it is named here. A term the ontology
+// gains later still appears — appended after the ones named below rather than
+// dropped — which is the one failure these lists are allowed to have.
+//
+// Coverage runs from registered-and-unread to harvested. Contact runs from the
+// route that makes agreement mere reception to the absence that makes it a
+// candidate for independent attestation, which is the direction that decides
+// whether a convergence can ever carry evidential weight.
+export const COVERAGE_SCALE = [
+  "pm:corpusNamed",
+  "pm:workOpened",
+  "pm:placesEntered",
+  "pm:corpusHarvested",
+];
+export const CONTACT_SCALE = [
+  "pm:contactRouteDocumented",
+  "pm:contactRouteDisputed",
+  "pm:contactRouteUndecided",
+  "pm:contactRouteAbsent",
+];
+const UNSTATED = "coverage:unstated";
+const UNBOUND = "coverage:none";
+
+function coveragePositions(data, ctx) {
+  const positions = {};
+
+  // Everything the graph holds, sorted by the coverage state of the tradition
+  // that carries it. A claim inherits its tradition's state, so a block is not
+  // a count of registrations but of how much of the graph each stage of the
+  // opening actually accounts for. That ratio is what the coverage vocabulary
+  // was introduced to make countable, and it is what this picture is.
+  const stateOf = (id) => {
+    const node = ctx.byId.get(id);
+    if (node?.kind === "tradition") return ctx.coverageOf.get(id) ?? UNSTATED;
+    const tradition = ctx.traditionOf.get(id);
+    if (!tradition) return UNBOUND;
+    return ctx.coverageOf.get(tradition) ?? UNSTATED;
+  };
+
+  // The states are read off the graph; only their order comes from the list.
+  const declared = data.nodes
+    .filter((node) => node.types.includes("pm:CoverageState"))
+    .map((node) => node.id);
+  const ordered = [
+    ...COVERAGE_SCALE.filter((state) => declared.includes(state)),
+    ...declared.filter((state) => !COVERAGE_SCALE.includes(state)).sort(),
+    UNSTATED,
+    UNBOUND,
+  ];
+
+  const members = groupBy(data.nodes.map((node) => node.id), stateOf);
+  // A state node heads its own block instead of being counted inside another.
+  const headers = new Set(declared);
+
+  const blocks = ordered
+    .map((state) => ({
+      header: headers.has(state) ? state : null,
+      body: (members.get(state) ?? []).filter((id) => !headers.has(id)).sort(),
+    }))
+    // A state nobody is in keeps its column: an absent column would read as an
+    // absent stage, and "no corpus has been opened and not yet entered" is a
+    // statement about the work, not a gap in the drawing.
+    .filter((block) => block.header || block.body.length)
+    .map((block) => {
+      const landmark = block.body.length > 0 && block.body.every((id) => ctx.isLandmark(id));
+      // Roughly square rather than a fixed width: at a hundred and more the
+      // column would be a thin strip twenty rows tall, and what this view is
+      // read for is the ratio between the blocks, which area carries and
+      // height alone does not.
+      const width = Math.max(1, Math.round(Math.sqrt(block.body.length * 1.6)) || 1);
+      return {
+        ...block,
+        landmark,
+        width,
+        spread: landmark ? 3 : 1,
+        lift: landmark ? 1.7 : 1,
+        columns: Math.max(1, Math.min(width, block.body.length)),
+        rows: Math.ceil(block.body.length / width),
+      };
+    });
+
+  // Shelved rather than laid out in one line: six blocks of these sizes make a
+  // strip seven times wider than it is tall, which fits the canvas at a zoom
+  // that leaves nothing readable. Wrapping keeps a reading order — the scale
+  // runs left to right and then down, the way a line of text does.
+  const rowHeight = ITEM_GAP * 0.62;
+  const spanOf = (block) => block.columns * block.spread + 2.2;
+  const heightOf = (block) => block.rows * block.lift;
+  const area = blocks.reduce((sum, block) => sum + spanOf(block) * (heightOf(block) + 3.4), 0);
+  const shelfWidth = Math.max(6, Math.sqrt(area * 1.5));
+
+  let x = 0;
+  let y = 0;
+  let shelf = 0;
+  for (const block of blocks) {
+    if (x > 0 && x + spanOf(block) > shelfWidth) {
+      x = 0;
+      y += (shelf + 4.6) * rowHeight;
+      shelf = 0;
+    }
+    const left = x * ITEM_GAP;
+    const pitchX = ITEM_GAP * block.spread;
+    const pitchY = rowHeight * block.lift;
+    if (block.header) {
+      positions[block.header] = {
+        x: left + ((block.columns - 1) * pitchX) / 2,
+        y: y - rowHeight * 2.7,
+      };
+    }
+    block.body.forEach((id, position) => {
+      positions[id] = {
+        x: left + (position % block.width) * pitchX,
+        y: y + Math.floor(position / block.width) * pitchY,
+      };
+    });
+    x += spanOf(block);
+    shelf = Math.max(shelf, heightOf(block));
+  }
+  return positions;
+}
+
+// ---------------------------------------------------------------------------
 // The registry
 // ---------------------------------------------------------------------------
 
@@ -508,6 +703,16 @@ export const VIEWS = [
     name: "Claim forms",
     question: "How far has each kind of claim got? One block per claim form, a fixed five terms wide, so the height of a block is how much of the corpus has reached it.",
     positions: claimPositions,
+  },
+  {
+    id: "coverage",
+    name: "Coverage",
+    question: "How far has the opening got? One block per state of the coverage scale, holding everything the graph carries under a tradition in that state. The register is the denominator: what is named and unopened, set against what has been entered.",
+    positions: coveragePositions,
+    // The steps of the scale head the blocks here, so they are what this
+    // drawing has to name.
+    landmarks: (data) =>
+      data.nodes.filter((node) => node.types.includes("pm:CoverageState")).map((node) => node.id),
   },
   {
     id: "hubs",
@@ -540,7 +745,7 @@ export const VIEWS = [
   {
     id: "matrix",
     name: "Matrix",
-    question: "Where is the corpus thin? Traditions down the side, claim forms across the top, one cell per pairing. The empty cells are the finding: a node-link drawing can only show what is there.",
+    question: "Where is the corpus thin, and where has the opening got to? Two tables: the traditions that witness against the claim forms, and then the whole register by how far its corpora have been carried in and whether a route of contact is known. The empty cells are the finding — a node-link drawing can only show what is there.",
     matrix: true,
   },
 ];
@@ -555,4 +760,19 @@ export function viewById(id) {
 export function positionsFor(id, data, ctx = context(data)) {
   const view = viewById(id);
   return view.positions ? view.positions(data, ctx) : {};
+}
+
+/**
+ * The terms this arrangement labels at fitted zoom.
+ *
+ * Naming a region is a property of the drawing, not of the term: the classes
+ * head the blocks of the claim-form view and the traditions head the sectors,
+ * but in the coverage view the regions are named by the steps of the scale,
+ * which are ordinary instances everywhere else. A view that adds headings of
+ * its own says so here, and the rest inherit the base rule.
+ */
+export function landmarksFor(id, data, ctx = context(data)) {
+  const marked = new Set(data.nodes.filter((node) => ctx.isLandmark(node.id)).map((node) => node.id));
+  for (const extra of viewById(id).landmarks?.(data, ctx) ?? []) marked.add(extra);
+  return marked;
 }

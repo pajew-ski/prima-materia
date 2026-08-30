@@ -12,6 +12,9 @@ const local = (curie) => curie.split(":").pop();
 // The row for claims that belong to no single tradition.
 export const ACROSS = "across";
 
+// The row and column for a tradition neither scale was applied to.
+export const UNSTATED = "unstated";
+
 /**
  * Cross-tabulate traditions against claim forms.
  *
@@ -50,9 +53,17 @@ export function crosstab(data, ctx) {
   const columns = [...columnTotals.keys()].sort(
     (a, b) => columnTotals.get(b) - columnTotals.get(a) || label(a).localeCompare(label(b)),
   );
-  // Every tradition gets a row, including one that has contributed no claim at
-  // all: an absent row would read as an absent tradition.
-  const rows = order(data.nodes.filter((node) => node.kind === "tradition").map((node) => node.id));
+
+  // Rows are the traditions that witness. A registered transmission whose
+  // corpus has only been named carries nothing by definition — pm:corpusNamed
+  // says so outright — so an empty row for it would not be the finding the
+  // empty cells of this table are. It would be the same statement repeated a
+  // hundred and more times, and it would bury the cells that do mean
+  // something: a tradition that has been read and still has nothing under a
+  // claim form. Where the register stands is the register table's question,
+  // and the count is carried in `registered` so the caption can say it.
+  const traditions = data.nodes.filter((node) => node.kind === "tradition").map((node) => node.id);
+  const rows = order(traditions.filter((id) => (rowTotals.get(id) ?? 0) > 0));
   if (rowTotals.has(ACROSS)) rows.push(ACROSS);
 
   return {
@@ -62,10 +73,72 @@ export function crosstab(data, ctx) {
     filled: cells.size,
     total: claims.length,
     peak: Math.max(1, ...cells.values()),
+    registered: traditions.length - rows.filter((id) => id !== ACROSS).length,
   };
 }
 
-/** The query that would list exactly the terms counted in one cell. */
+/**
+ * The register, cross-tabulated: coverage state against contact route.
+ *
+ * The claim-form table above says what the opened traditions carry. This one
+ * says where the opening itself stands, and it is the table the coverage
+ * vocabulary was introduced to make possible: a corpus named and unread and a
+ * corpus read and genuinely thin no longer read alike, so the register becomes
+ * a denominator instead of a silence.
+ *
+ * Contact route is the second axis rather than a footnote because it decides
+ * what an agreement with these traditions could ever be worth. A registered
+ * corpus with a documented route can only ever yield reception; one with no
+ * route for the period its corpus was fixed is a candidate for independent
+ * attestation, which is the scarcest thing the project can hold.
+ */
+export function registerTab(data, ctx, { coverageScale, contactScale }) {
+  const traditions = data.nodes.filter((node) => node.kind === "tradition").map((node) => node.id);
+  const label = (id) =>
+    id === UNSTATED ? "Not stated" : ctx.byId.get(id)?.label ?? local(id);
+
+  // The terms are read off the graph; only their order comes from the scales,
+  // and a scale keeps a term nobody is in — an absent row would read as an
+  // absent stage rather than as a stage nothing has reached.
+  const axis = (type, scale) => {
+    const present = data.nodes.filter((node) => node.types.includes(type)).map((node) => node.id);
+    return [
+      ...scale.filter((id) => present.includes(id)),
+      ...present.filter((id) => !scale.includes(id)).sort(),
+    ];
+  };
+  const rows = axis("pm:CoverageState", coverageScale);
+  const columns = axis("pm:ContactRoute", contactScale);
+
+  const cells = new Map();
+  const rowTotals = new Map();
+  const columnTotals = new Map();
+  const key = (row, column) => `${row} ${column}`;
+  for (const id of traditions) {
+    const row = ctx.coverageOf.get(id) ?? UNSTATED;
+    const column = ctx.contactOf.get(id) ?? UNSTATED;
+    cells.set(key(row, column), (cells.get(key(row, column)) ?? 0) + 1);
+    rowTotals.set(row, (rowTotals.get(row) ?? 0) + 1);
+    columnTotals.set(column, (columnTotals.get(column) ?? 0) + 1);
+  }
+  // A tradition the scales were never applied to is neither a stage nor a
+  // route; it is an omission, and it gets its own row and column so that it is
+  // counted rather than rounded away.
+  if (rowTotals.has(UNSTATED)) rows.push(UNSTATED);
+  if (columnTotals.has(UNSTATED)) columns.push(UNSTATED);
+
+  return {
+    rows: rows.map((id) => ({ id, label: label(id), total: rowTotals.get(id) ?? 0 })),
+    columns: columns.map((id) => ({ id, label: label(id), total: columnTotals.get(id) ?? 0 })),
+    count: (row, column) => cells.get(key(row, column)) ?? 0,
+    filled: cells.size,
+    total: traditions.length,
+    peak: Math.max(1, ...cells.values()),
+  };
+}
+
+
+/** The query that would list exactly the terms counted in one claim-form cell. */
 export function queryFor(rowId, columnId) {
   const type = columnId ? `type:${local(columnId)}` : "";
   if (rowId === ACROSS) return `${type} -has:tradition`.trim();
@@ -73,19 +146,35 @@ export function queryFor(rowId, columnId) {
   return `${tradition} ${type}`.trim();
 }
 
+/** The query that would list the traditions counted in one register cell. */
+export function registerQueryFor(rowId, columnId) {
+  const coverage = rowId === UNSTATED ? "-has:coverage" : rowId ? `coverage:${local(rowId)}` : "";
+  const contact = columnId === UNSTATED ? "-has:contact" : columnId ? `contact:${local(columnId)}` : "";
+  return `kind:tradition ${coverage} ${contact}`.replace(/\s+/g, " ").trim();
+}
+
 /**
- * Draw the cross-tabulation into a container as a real table, so it is read by
- * a screen reader as the table it is and inherits the page's own colours
+ * Draw both cross-tabulations into a container: what the opened traditions
+ * carry, and where the opening itself stands. Real tables, so a screen reader
+ * reads them as the tables they are and they inherit the page's own colours
  * rather than being painted on a canvas.
  */
-export function renderMatrix(container, matrix, { onSelect } = {}) {
+export function renderMatrix(container, tables, { onSelect } = {}) {
+  const parts = [];
+  for (const { matrix, caption, queryFor: query } of tables) {
+    if (!matrix.rows.length || !matrix.columns.length) continue;
+    parts.push(renderTable(matrix, caption, query, onSelect));
+  }
+  container.replaceChildren(...parts);
+  return parts;
+}
+
+function renderTable(matrix, captionText, queryFor, onSelect) {
   const table = document.createElement("table");
   table.className = "matrix";
 
   const caption = document.createElement("caption");
-  caption.textContent =
-    `${matrix.total} claims across ${matrix.rows.length} traditions and ${matrix.columns.length} claim forms; ` +
-    `${matrix.filled} of ${matrix.rows.length * matrix.columns.length} pairings carry anything at all.`;
+  caption.textContent = captionText;
   table.append(caption);
 
   const head = document.createElement("thead");
@@ -94,7 +183,7 @@ export function renderMatrix(container, matrix, { onSelect } = {}) {
   for (const column of matrix.columns) {
     const th = cell("th", column.label, { scope: "col" });
     th.append(countBadge(column.total));
-    th.append(button(`Every ${column.label} claim`, () => onSelect?.(queryFor(null, column.id))));
+    th.append(button(`All of ${column.label}`, () => onSelect?.(queryFor(null, column.id))));
     headRow.append(th);
   }
   headRow.append(cell("th", "all", { scope: "col", className: "matrix-total" }));
@@ -105,7 +194,7 @@ export function renderMatrix(container, matrix, { onSelect } = {}) {
   for (const row of matrix.rows) {
     const tr = document.createElement("tr");
     const th = cell("th", row.label, { scope: "row" });
-    th.append(button(`Everything under ${row.label}`, () => onSelect?.(queryFor(row.id, null))));
+    th.append(button(`All of ${row.label}`, () => onSelect?.(queryFor(row.id, null))));
     tr.append(th);
     for (const column of matrix.columns) {
       const count = matrix.count(row.id, column.id);
@@ -125,8 +214,8 @@ export function renderMatrix(container, matrix, { onSelect } = {}) {
       td.append(
         button(
           count
-            ? `${count} in ${row.label} as ${column.label}`
-            : `Nothing in ${row.label} as ${column.label}`,
+            ? `${count}: ${row.label} · ${column.label}`
+            : `Nothing: ${row.label} · ${column.label}`,
           () => onSelect?.(queryFor(row.id, column.id)),
         ),
       );
@@ -136,7 +225,6 @@ export function renderMatrix(container, matrix, { onSelect } = {}) {
     body.append(tr);
   }
   table.append(body);
-  container.replaceChildren(table);
   return table;
 }
 
