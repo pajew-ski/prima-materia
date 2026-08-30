@@ -113,7 +113,9 @@ Selbstdarstellungen dieses Milieus),
 `korpus:gnostisch` (Nag Hammadi, Irenäus als Referent, valentinianische
 und sethianische Systeme),
 `korpus:modern` (für Behauptungen, deren Ort `pm:evidenceFrom` an einem
-`pm:Testing`-Knoten ist).
+`pm:Testing`-Knoten ist),
+`korpus:midewiwin` (Hoffman, Dewdney, Angel und die Birkenrindenrollen der
+Anishinaabe-Medizingesellschaft).
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
