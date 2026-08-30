@@ -1,0 +1,39 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — exactness of recitation as the condition of efficacy
+#
+# One correspondence and the protocol that goes with it. The correspondence is
+# held here rather than in any of the three tradition files because it belongs
+# to none of them, and it is entered at all because the three witnesses stand
+# on different sides of the contact question the collection is short of.
+#
+
+pmc:ExactnessAsConditionOfEfficacy a pm:Converging ;
+    rdfs:label "The exactness of the recitation is set as the condition of its efficacy"@en, "Die Genauigkeit der Rezitation ist als Bedingung ihrer Wirksamkeit gesetzt"@de ;
+    skos:definition "Three transmissions make the same claim about spoken ritual language: the effect is not obtained unless the words are rendered as they stand. Two of them also say what a lapse does. One holds that an error, and equally a hesitation, is fatal to the efficacy of the address. Another holds that an error in a song may be fatal to the ceremony and that in some cases a single syllable does irreparable harm. The third requires the publicly chanted parts to be letter perfect and, in the passages read, states no consequence."@en ;
+    pm:convergingConcept pmc:MaoriExactRecitation, pmc:NavajoSongExactness, pmc:ZuniPrayerExactness ;
+    pm:independentAttestation pmt:NavajoCeremonial, pmt:ZuniRitual ;
+    skos:note "What the node claims and what it does not. Independent attestation is asserted for the two North American transmissions with respect to the Polynesian one and with respect to everything else this collection holds; no route of contact between the Pacific and the American Southwest is available for the periods in which any of these corpora were fixed. It is not asserted between those two: they are neighbours in one region, and a route between Pueblo and Athabaskan ceremonialism is neither absent nor established here. The Māori witness is therefore the third leg and not a third independent one, because its own contact route is entered as disputed."@en ;
+    skos:note "A defect in the vocabulary shows at this node and is recorded rather than worked around. pm:contactRoute is a property of a single tradition, but contact is a relation between two. The value pm:contactRouteAbsent as the registry uses it means that no route runs to what the graph already held at the time of registration; it cannot answer whether a route runs between two registered traditions that are later brought together in one correspondence, which is exactly the question a convergence asks. See prima-materia#25 and the issue opened with this file."@en ;
+    skos:note "The counter-search did not produce a tradition that denies the claim. What it produced is of a different kind and belongs here: the recorded versions of the same Māori address differ from one another across the eighteen-forties to the early nineteen-hundreds, and which rendering was valid was disputed among Māori at the time. A doctrine of one correct wording and a transmission that visibly carries several are not a contradiction, but they are the point at which the claim becomes examinable instead of edifying."@en ;
+    skos:note "Three witnesses agreeing on the form of a rule is a weaker finding than it looks unless the alternative is stated. The alternative exists and is common: traditions in which the sense of a prayer carries it and the wording may be varied, and traditions in which improvisation is the mark of the competent practitioner. That the three named here all fall on the fixed side is what the correspondence asserts."@en ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 11", "Washington Matthews, Navaho Legends, Memoirs of the American Folk-Lore Society V (Boston and New York: Houghton, Mifflin, 1897), sections 41-42, pp. 24-25", "Ruth L. Bunzel, Zuni Ritual Poetry, in Forty-Seventh Annual Report of the Bureau of American Ethnology 1929-1930 (Washington: Government Printing Office, 1932), pp. 615-616" .
+
+pmc:RecitationExactnessExamination a pm:Testing ;
+    rdfs:label "Protocol on the exactness rule"@en, "Prüfprotokoll zur Genauigkeitsregel"@de ;
+    skos:definition "An attempt to fail the claim that a misrecited ritual utterance does not obtain its effect. The claim is unusually well placed for this, because two of the three traditions name an outward event that follows a lapse, and one of them names who notices it and when."@en ;
+    skos:note "The Navajo witness supplies the sharpest form of the test and it needs no laboratory: at the public ceremony many present know the songs, an error is caught, and the ceremony is broken off as fruitless. The condition can therefore be failed by the tradition's own reporting rather than by an outside measurement, which is what the falsifier below states."@en ;
+    skos:note "The examination is entered at procedure without cases and not at no procedure devised, and the difference is the whole point of the scale. A condition has been stated here; nobody has yet collected the cases against it."@en ;
+    pm:tests pmc:ExactnessAsConditionOfEfficacy ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "A recorded case, from within one of these transmissions, of a ritual utterance known to have been misrecited and nonetheless reported by that transmission as having obtained its effect; or, on the Navajo side, a recorded public ceremony in which a detected error did not break off the proceeding." ;
+    pm:examinedBy "prima-materia, protocol drawn from the wording of the three witnesses; no cases collected" ;
+    pm:protocolUpdated "2026-08-30"^^xsd:date ;
+    dcterms:source "Washington Matthews, Navaho Legends, Memoirs of the American Folk-Lore Society V (Boston and New York: Houghton, Mifflin, 1897), section 42, pp. 24-25" .
