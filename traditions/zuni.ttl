@@ -1,0 +1,66 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Zuni ritual transmission
+#
+# Opened for one question: whether the exactness of a recitation is set as the
+# condition of its efficacy outside the sphere in which that claim was first
+# met. The file is thin on purpose and holds what the introduction of the
+# witness carries: the prayer as property, the way it is taught, and the
+# requirement of letter-perfect delivery in the parts recited in public. The
+# tradition instance was registered in traditions/registry-outside-contact.ttl
+# and is moved here now that passages have been read.
+#
+
+pmt:ZuniRitual a pm:Tradition ;
+    rdfs:label "Zuni ritual transmission"@en, "Zuni-Ritualüberlieferung"@de ;
+    skos:definition "The Zuni transmission of fixed prayer, memorised verbatim and held to be ineffective if altered."@en ;
+    skos:note "A tradition that states its own falsifying condition: the words must be exact. Whether exactness is in fact required is examinable."@en ;
+    skos:note "Read for the first time in the introduction to the ritual poetry, pages 611 to 620 of the printed report. The body of the collection, the prayers themselves, was not read. The corpus stands in the language of its speakers with a facing translation, which is what makes it admissible here at all; the recorder is an outsider and the question of ethnographic first fixation raised at prima-materia#91 is not settled by this file."@en ;
+    pm:principalCorpus "Bunzel, Zuni Ritual Poetry, with the Zuni texts" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteAbsent ;
+    dcterms:source "Ruth L. Bunzel, Zuni Ritual Poetry, in Forty-Seventh Annual Report of the Bureau of American Ethnology 1929-1930 (Washington: Government Printing Office, 1932), pp. 611-835" .
+
+pmp:ZuniPrayer a pm:Practicing ;
+    rdfs:label "Zuni fixed prayer"@en, "Zuni-Festgebet"@de ;
+    skos:definition "A prayer of stereotyped phrasing, held by an appointed keeper for each kiva and taught over four nights after each planting of prayer sticks, the instructor intoning while the pupils join in by degrees and afterwards reciting it back to him."@en ;
+    skos:note "The teaching method is itself a check: the pupil returns the prayer to the keeper, so that a divergence is caught before it is carried into the ceremony. Because the phrasing is stereotyped the witness names the sequence, and not the wording, as the hard part of learning a long prayer."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ZuniRitual ;
+    dcterms:source "Ruth L. Bunzel, Zuni Ritual Poetry, in Forty-Seventh Annual Report of the Bureau of American Ethnology 1929-1930 (Washington: Government Printing Office, 1932), p. 616" .
+
+pmc:ZuniPrayerPossession a pm:Conceptualizing ;
+    rdfs:label "The prayer as a possession"@en, "Das Gebet als Besitz"@de ;
+    skos:definition "Prayers held to carry power in themselves, so that having them is a source of power and losing or impairing them is a great danger."@en ;
+    skos:note "The nearest thing the passages read give to a stated consequence of getting a prayer wrong, and deliberately not entered as one: the sentence speaks of loss and impairment of the prayer as a possession, not of the effect of a misrecited performance."@en ;
+    pm:withinTradition pmt:ZuniRitual ;
+    dcterms:source "Ruth L. Bunzel, Zuni Ritual Poetry, in Forty-Seventh Annual Report of the Bureau of American Ethnology 1929-1930 (Washington: Government Printing Office, 1932), p. 615" .
+
+pmc:ZuniPrayerExactness a pm:Conceptualizing ;
+    rdfs:label "Letter-perfect delivery"@en, "Buchstabengetreue Wiedergabe"@de ;
+    skos:definition "The requirement, set on the parts of the ceremony chanted aloud and in unison, that the words be rendered letter perfect."@en ;
+    pm:withinTradition pmt:ZuniRitual ;
+    dcterms:source "Ruth L. Bunzel, Zuni Ritual Poetry, in Forty-Seventh Annual Report of the Bureau of American Ethnology 1929-1930 (Washington: Government Printing Office, 1932), p. 616" .
+
+pmc:ZuniPrayerEfficacy a pm:Conceptualizing ;
+    rdfs:label "The efficacy of the Zuni prayer"@en, "Die Wirksamkeit des Zuni-Gebets"@de ;
+    skos:definition "The effect the fixed prayer is held to obtain when it is delivered as required."@en ;
+    pm:withinTradition pmt:ZuniRitual ;
+    dcterms:source "Ruth L. Bunzel, Zuni Ritual Poetry, in Forty-Seventh Annual Report of the Bureau of American Ethnology 1929-1930 (Washington: Government Printing Office, 1932), p. 615" .
+
+pmc:ZuniEfficacyPresupposesExactness a pm:Presupposing ;
+    rdfs:label "The public prayer presupposes letter-perfect delivery"@en, "Das öffentlich gesprochene Gebet setzt buchstabengetreue Wiedergabe voraus"@de ;
+    pm:dependentStep pmc:ZuniPrayerEfficacy ;
+    pm:priorStep pmc:ZuniPrayerExactness ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ZuniRitual ;
+    skos:note "Entered one step below the Māori and Navajo parallels and for a reason that is a property of the passage and not of the tradition: the requirement is stated, the consequence of failing it is not. Raising this to stated necessity would need a place in the corpus that says what a misrecited prayer does, and the body of the collection was not read. See the convergence node and prima-materia#112."@en ;
+    dcterms:source "Ruth L. Bunzel, Zuni Ritual Poetry, in Forty-Seventh Annual Report of the Bureau of American Ethnology 1929-1930 (Washington: Government Printing Office, 1932), p. 616" .
