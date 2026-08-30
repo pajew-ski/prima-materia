@@ -113,7 +113,11 @@ Selbstdarstellungen dieses Milieus),
 `korpus:gnostisch` (Nag Hammadi, Irenäus als Referent, valentinianische
 und sethianische Systeme),
 `korpus:modern` (für Behauptungen, deren Ort `pm:evidenceFrom` an einem
-`pm:Testing`-Knoten ist).
+`pm:Testing`-Knoten ist),
+`korpus:maori` (Shortland, Grey/Te Rangikāheke, White, Best, Ngā Mōteatea und
+die übrige verschriftlichte Māori-Überlieferung),
+`korpus:zuni` (Bunzel und die Zuni-Texte der Bureau-of-American-Ethnology-Berichte),
+`korpus:navajo` (Matthews, Wyman und die aufgezeichneten Diné-Zeremonialtexte).
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
