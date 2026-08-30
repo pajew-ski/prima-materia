@@ -117,7 +117,9 @@ und sethianische Systeme),
 `korpus:maori` (Shortland, Grey/Te Rangikāheke, White, Best, Ngā Mōteatea und
 die übrige verschriftlichte Māori-Überlieferung),
 `korpus:zuni` (Bunzel und die Zuni-Texte der Bureau-of-American-Ethnology-Berichte),
-`korpus:navajo` (Matthews, Wyman und die aufgezeichneten Diné-Zeremonialtexte).
+`korpus:navajo` (Matthews, Wyman und die aufgezeichneten Diné-Zeremonialtexte),
+`korpus:midewiwin` (Hoffman, Dewdney, Angel und die Birkenrindenrollen der
+Anishinaabe-Medizingesellschaft).
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
