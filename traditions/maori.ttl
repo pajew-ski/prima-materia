@@ -1,0 +1,172 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — the Maori transmission
+#
+# Order of the file: the tradition, then the invocation and the condition its
+# efficacy is said to stand under, then sacredness and its removal, then the
+# harmful use and its counter, then the term the tradition is best known for
+# outside itself, then the gift passage and the textual dispute over it.
+# The tradition instance was registered in traditions/registry-outside-contact.ttl
+# and is moved here now that passages have been read. Why it stands at a
+# disputed contact route stands on the instance below, where it survives
+# compilation. See prima-materia#25 and the issues named on the nodes.
+#
+
+pmt:Maori a pm:Tradition ;
+    rdfs:label "Māori transmission"@en, "Māori-Überlieferung"@de ;
+    skos:definition "The Māori transmission of mana as an efficacy that attaches to persons and things, of tapu as its restriction, and of karakia as the form of address."@en ;
+    skos:note "The word from which every western theory of an impersonal magical force was built. The graph uses the notion throughout and has never held the tradition it came from."@en ;
+    skos:note "Registered at corpus named until this file was written, and moved here on the first passages actually read. What was read is Shortland 1882, chapters II to V and the appendix, in the 1882 London edition. Chapters VI and VII, on claiming and naming land, were not read; nothing else of the principal corpus was opened."@en ;
+    skos:note "The contact route is entered as disputed and no longer as absent, and the reason is a rule of this project rather than a judgement about Polynesia. pm:contactRouteAbsent asks whether a route was available for the period in which the corpus was fixed. This corpus was fixed in writing from the eighteen-forties onward, a generation after the first mission stations, by Māori writers and by European recorders working with mission orthography. Shortland himself reports a rite of removing tapu that was carried out with a Christian morning service inside it and adds that the teacher had done wisely in keeping so much of the old ceremonial; that is not a suspicion about the material but an observation printed in the witness. The transmission is older than the contact; the corpus this graph can cite is not. See prima-materia#25."@en ;
+    pm:principalCorpus "Ngā Mōteatea; Best, The Maori; Best, Tuhoe" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882)" .
+
+#
+# The invocation and the condition its efficacy is said to stand under
+#
+
+pmp:Karakia a pm:Practicing ;
+    rdfs:label "Karakia"@en, "Karakia"@de ;
+    skos:definition "An address to the spirits of dead ancestors, invoked in genealogical order and closing in a petition that the invoked power give the address its effect. The witness insists that the ordinary rendering as charm is wrong and that invocation comes nearer."@en ;
+    skos:note "The genealogies are said to be preserved because they form the ground-work of the invocation, so that the descent recited and the efficacy claimed are the same fact for this tradition rather than two."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), pp. 10-11, and the vocabulary entry karakia, p. 108" .
+
+pmc:MaoriExactRecitation a pm:Conceptualizing ;
+    rdfs:label "Repetition without error or hesitation"@en, "Wiederholung ohne Fehler und ohne Zögern"@de ;
+    skos:definition "The rendering of an invocation in which neither a mistake nor a pause occurs. The tradition sets the two on the same footing: hesitating is treated as failing, not as taking care."@en ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 11" .
+
+pmc:MaoriKarakiaEfficacy a pm:Conceptualizing ;
+    rdfs:label "The efficacy of the karakia"@en, "Die Wirksamkeit der Karakia"@de ;
+    skos:definition "The effect an invocation is held to obtain, which the closing petition asks the invoked ancestor to grant."@en ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), pp. 11-12" .
+
+pmc:MaoriEfficacyPresupposesExactRecitation a pm:Presupposing ;
+    rdfs:label "The efficacy of a karakia presupposes its repetition without error"@en, "Die Wirksamkeit einer Karakia setzt die fehlerfreie Wiederholung voraus"@de ;
+    pm:dependentStep pmc:MaoriKarakiaEfficacy ;
+    pm:priorStep pmc:MaoriExactRecitation ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The witness says that to make an error, or even to hesitate, in repeating a karakia was held fatal to its efficacy. The consequence is stated for the whole address and not for a part of it, and hesitation is named alongside error." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Maori ;
+    skos:note "Entered at stated necessity because the consequence is quotable. The same sentence is the tradition's own falsifying condition and is what makes the claim examinable at all; the protocol stands at pmc:RecitationExactnessExamination in convergences/recitation-exactness.ttl."@en ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 11" .
+
+#
+# Sacredness, its transmission by contact, and its removal
+#
+
+pmc:Tapu a pm:Conceptualizing ;
+    rdfs:label "Tapu"@en, "Tapu"@de ;
+    skos:definition "The state of being sacred and thereby prohibited, held to be communicated from an atua or a sacred person to whatever they touch, and from that object onward to whatever it touches in turn."@en ;
+    skos:note "The re-transmission by contact is the part later theory generalised. A record that carries only the prohibition and not the transmissibility loses exactly what the nineteenth-century comparativists picked up and turned into an impersonal magical fluid. See prima-materia#25 for the origination that is not yet entered."@en ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), pp. 25-26" .
+
+pmc:Noa a pm:Conceptualizing ;
+    rdfs:label "Noa"@en, "Noa"@de ;
+    skos:definition "The state of being free or common, that is, not under the restriction of tapu. The witness states that persons and things under tapu can be brought into this state by ceremonies, so that the two are not fixed conditions but ends of an operation."@en ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 26" .
+
+pmp:Whakanoa a pm:Practicing ;
+    rdfs:label "Making noa"@en, "Das Aufheben des Tapu"@de ;
+    skos:definition "The rite by which a person or place under tapu is made common again, in the case witnessed by the eating of food cooked in an oven opened for the purpose and distributed to everyone present."@en ;
+    skos:note "The rite the recorder describes as an eyewitness was already carried out with a Christian morning service inside it, and he remarks that the teacher had done wisely in keeping so much of the old ceremonial. The passage is the clearest single reason the contact route of this tradition is entered as disputed rather than absent."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 27" .
+
+pmc:TapuBreachSign a pm:Testing ;
+    rdfs:label "The cut scalp as the sign that the fast was broken"@en, "Die verletzte Kopfhaut als Anzeichen des gebrochenen Fastens"@de ;
+    skos:definition "A protocol the tradition states for itself. During the hair-cutting of a child under tapu nobody attending may eat; the witness says that a breach is discovered at once, because the skin of the child's head is cut while the hair is being cut, and calls this a sure sign."@en ;
+    skos:note "Entered because the tradition names an outward, observable event as the detector of a hidden breach and calls it certain. That is a falsifying condition offered by the material itself, which is rare enough in this collection to be worth holding as a protocol rather than as a remark."@en ;
+    pm:tests pmc:Tapu ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "A recorded case in which the fast was kept and the scalp was cut all the same, or in which the fast was broken and the scalp was not cut. The tradition claims the sign is sure, so a single clean counter-case on either side falls due against it." ;
+    pm:examinedBy "prima-materia, protocol stated from the witness; no case series has been collected" ;
+    pm:protocolUpdated "2026-08-30"^^xsd:date ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 42" .
+
+#
+# The harmful use and its counter
+#
+
+pmp:Makutu a pm:Practicing ;
+    rdfs:label "Makutu"@en, "Makutu"@de ;
+    skos:definition "The art of bringing the resentment of another person's own family atua down upon them, worked upon something that has been part of them or has touched them: a portion of spittle, or what is left of their food."@en ;
+    skos:note "The operation runs through the same transmissibility by contact that tapu runs through, which is why the two belong in one file and not in two."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 31" .
+
+pmc:MakutuCaution a pm:Cautioning ;
+    rdfs:label "Not to spit in the presence of one skilled in the art"@en, "Nicht spucken in Gegenwart eines Kundigen"@de ;
+    skos:definition "The witness reports that a person would not dare to spit in the presence of anyone he feared might be disposed to injure him, if that person had a reputation for skill in this art."@en ;
+    skos:note "A caution that names its own detection problem: the material the art needs is produced involuntarily, so the guard is against being present rather than against acting."@en ;
+    pm:cautionsAbout pmp:Makutu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 31" .
+
+pmp:Whakahokitu a pm:Practicing ;
+    rdfs:label "Whakahokitu"@en, "Whakahokitu"@de ;
+    skos:definition "The forms of makutu employed to turn back the working of another tohunga, that is, a counter-operation of the same kind rather than a protection of a different kind."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), p. 35" .
+
+#
+# The term the tradition is best known for outside itself
+#
+
+pmc:Mana a pm:Conceptualizing ;
+    rdfs:label "Mana"@en, "Mana"@de ;
+    skos:definition "An efficacy that belongs to someone. In the passages read it is always somebody's: a father's, which may inspire the son so that he becomes the living representative of that mana and of the karakia with it; or an opponent's, which is asked for by name in an invocation before a stroke is made."@en ;
+    skos:note "What the witness does not show is the thing the term is famous for elsewhere. In these passages mana is never a quantity of impersonal force at large in the world; it is held, inherited, represented, and asked for from a named holder. The reading that made it an impersonal power belongs to a later literature and to a different archipelago, and it is not entered here because that literature has not yet been opened at the wording. See prima-materia#25."@en ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Edward Shortland, Maori Religion and Mythology (London: Longmans, Green, 1882), pp. 54 and 62" .
+
+#
+# The gift passage and the dispute over its wording
+#
+
+pmc:HauOfTheGift a pm:Conceptualizing ;
+    rdfs:label "The hau of the gift"@en, "Der Hau der Gabe"@de ;
+    skos:definition "The account, given by a named Māori authority in a letter, that what comes back from a third party for a valuable passed on is the hau of the valuable first received, and that keeping it back for oneself would be fatal to the keeper."@en ;
+    skos:note "Held at mediated attestation because the letter is an archival manuscript and was read in the study that prints and collates it, not in the archive. The published version of 1909 could not be opened in this run either; the paths tried are recorded in the issue. This node is therefore an open post and is to be raised to textual attestation when either the manuscript or the 1909 printing is read."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "Manuka Hēnare, \"Ko te hau tēnā o tō taonga…\": The words of Ranapiri on the spirit of gift exchange and economy, Journal of the Polynesian Society 127/4 (2018), pp. 455-457" ;
+    pm:withinTradition pmt:Maori ;
+    dcterms:source "Tamati Ranapiri, letter to Elsdon Best, 23 November 1907, Polynesian Society Papers, Alexander Turnbull Library, MS-Papers-1187, folder 271" .
+
+pmc:HauOfTheGiftWordingDispute a pm:Disputing ;
+    rdfs:label "Whose hau: the wording of the Ranapiri letter"@en, "Wessen Hau: der Wortlaut des Ranapiri-Briefes"@de ;
+    skos:definition "A disagreement about what the source text says, not about how to interpret it. The manuscript reads the possessive of the second person, which makes the hau that of the giver and keeps the giver attached to the thing after it has changed hands. The printed version of 1909 has the definite article in both key sentences, which makes the hau that of the object. Every later reading of the passage rests on one of the two."@en ;
+    skos:note "Entered as a dispute over the text rather than over its meaning, because that is the part a later reader can check and because the substitution was made silently. Both sides were read in the same study that reports the substitution, so the collation itself has not been verified against the manuscript or against the 1909 printing in this run."@en ;
+    pm:disputedClaim pmc:HauOfTheGift ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "Tamati Ranapiri, letter to Elsdon Best, 23 November 1907, Polynesian Society Papers, Alexander Turnbull Library, MS-Papers-1187, folder 271, as collated in Hēnare, Journal of the Polynesian Society 127/4 (2018), pp. 455-457", "Elsdon Best, Maori Forest Lore, part III, Transactions and Proceedings of the New Zealand Institute 42 (1909), p. 439" .
+
+pmc:HauAsSpiritOfTheThing a pm:Originating ;
+    rdfs:label "The gift carries a spirit that compels its return"@en, "Die Gabe trägt einen Geist, der ihre Erwiderung erzwingt"@de ;
+    skos:definition "The claim that a thing given holds a spiritual power belonging to its giver, that this power seeks to return to its place of origin, and that the obligation to make a return gift follows from it. The claim is put forward in a work of nineteen twenty-five, on the strength of the single Māori passage above."@en ;
+    skos:note "Entered as an origination and not as a Māori claim because the generalisation is the author's. The letter speaks of one kind of valuable and of a forest rite; the obligation of the return gift as a universal law of archaic exchange begins here. That the reading of the passage was itself contested from nineteen twenty-nine onward is recorded in the issue, because those sides were not read at the wording in this run."@en ;
+    pm:originatedBy "Marcel Mauss" ;
+    pm:circulatesAs "the Māori doctrine of the spirit of the gift, and beyond it a universal principle of archaic exchange" ;
+    dcterms:date "1925" ;
+    dcterms:source "Marcel Mauss, The Gift, translated by Ian Cunnison (London: Cohen and West, 1966), pp. 8-10" .
