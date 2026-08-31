@@ -1,0 +1,178 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Inuit angakkuq transmission
+#
+# The tradition instance was registered in
+# traditions/registry-outside-contact.ttl and is moved here now that passages
+# have been read. Only the opening of the volume was reachable in the run that
+# wrote this file; what was read and what stayed unread stands on the
+# tradition instance, and the reason for the limit stands in the issues named
+# there. The nodes below follow the order of the printed pages rather than any
+# order of importance.
+#
+
+pmt:InuitAngakkuq a pm:Tradition ;
+    rdfs:label "Inuit angakkuq transmission"@en, "Inuitische Angakkuq-Überlieferung"@de ;
+    skos:definition "The Inuit transmission of an office whose holder is said to perceive what is hidden, to call up helping spirits and to act through them, acquired through solitude and privation and exercised for a household rather than for an institution."@en ;
+    skos:note "Read in the opening of the volume: the account of the working method, the first meeting near Repulse Bay, the old singer Ivaluardjuk, and the autobiography of Takornâq, printed pages ten to thirty-two. The chapters on the shamans, on the spirits and on the taboo system, which carry the terms this tradition is usually reported by, were not reached in this run. The limit is one of the access path and not of the work: the volume is digitised and public, and the portion delivered by the tool in use broke off at printed page thirty-two. See prima-materia#99 and prima-materia#100."@en ;
+    skos:note "The material read is testimony of an unusual kind for this graph. It is not a doctrinal corpus but a life story told in the first person by a woman who is herself said to have practised, recorded by an ethnographer who spoke a related language and worked without an interpreter. What that buys is a speaker attached to each claim; what it costs is that almost every capacity is ascribed by the narrator to somebody else, which is why the nodes below stand on third-party ascription and not on first-person report."@en ;
+    skos:note "Contact route, stated rather than assumed. No route is proposed by anyone between the Iglulik Inuit and the literate transmissions this graph already holds, and none is available for the doctrinal content. The corpus was nevertheless fixed in nineteen twenty-one and twenty-two, well after contact: the narrative itself names whalers, and the region was under mission influence at the time of the recording. The value here is therefore contact-route-disputed and not contact-route-absent, following the correction made for the Māori entry, and the tradition may not be counted as a party to a convergence until the dispute stands as its own node. See prima-materia#101 and prima-materia#102."@en ;
+    pm:principalCorpus "Rasmussen, Intellectual Culture of the Iglulik Eskimos; Rasmussen, Intellectual Culture of the Caribou Eskimos" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), pp. 19-32" .
+
+#
+# What the people said about enquiry into hidden things
+#
+
+pmc:InuitHiddenThings a pm:Conceptualizing ;
+    rdfs:label "Hidden things"@en, "Die verborgenen Dinge"@de ;
+    skos:definition "What is not open to ordinary sight: the state of the sick, the whereabouts of what is lost, the presence of the dead among the living. The tradition treats this as a domain that some persons perceive and that others are ill advised to form opinions about."@en ;
+    skos:note "Relevant to prima-materia#127, which asks whether a perception of the distant, hidden or concealed is attested outside the spheres already held. The passage here attests the domain and one case of its perception; it does not attest a procedure for acquiring it, and that part is not in the portion read."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), pp. 19, 24" .
+
+pmc:CautionAgainstOpinionAboutHiddenThings a pm:Cautioning ;
+    rdfs:label "The caution against forming opinions about hidden things"@en, "Die Warnung davor, sich über die verborgenen Dinge eine Meinung zu bilden"@de ;
+    skos:definition "The reported attitude that these are great and difficult questions best left alone, that men know so little beyond food and sleep and rest that it might easily seem presumptuous to form any opinion about hidden things, and that people who are content should not trouble themselves with thinking."@en ;
+    skos:note "A tradition warning against the very enquiry the rest of it makes possible. It is entered because a record that carries only the capacities and not the cautions misreports what it holds, and because this caution is directed at the enquirer and not at the practitioner: it does not say the hidden things are unreal, it says that opinion about them is presumption."@en ;
+    skos:note "The passage also gives a second and worldlier ground for the same reticence, which the ethnographer reports of himself and not of the tradition: that his hosts feared their séances and their taboo observances would be laughed at. Both grounds are in the same pages, and separating them is the reader's work."@en ;
+    pm:cautionsAbout pmc:InuitHiddenThings ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), pp. 19-20" .
+
+#
+# The helping spirits and what is done through them
+#
+
+pmc:InuitHelpingSpirits a pm:Conceptualizing ;
+    rdfs:label "Helping spirits"@en, "Hilfsgeister"@de ;
+    skos:definition "Spirits belonging to a particular shaman, called up by him and reported to act in the world on his behalf: to guard a child, to raise a barrier against the dead, to find what has been lost."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), pp. 24, 28" .
+
+pmp:InuitSpiritCalling a pm:Practicing ;
+    rdfs:label "Spirit calling"@en, "Geisterrufen"@de ;
+    skos:definition "The session in which a shaman calls up his helping spirits and puts a question to them, held in the household on the occasion that requires it rather than at a fixed time."@en ;
+    skos:note "The portion read gives the occasions and the outcomes and not the procedure. Nothing was found here about the posture, the words, the darkness or the binding that the later chapters of this volume are known to describe, and none of that is asserted by this node."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), pp. 24, 28" .
+
+pmc:InuitRecoveryOfLostThings a pm:Conceptualizing ;
+    rdfs:label "The recovery of lost things"@en, "Das Wiederfinden verlorener Dinge"@de ;
+    skos:definition "The capacity to bring back an object that has been lost, named in the narrative for iron and steel knives, which were rare at the time and often lost."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 28" .
+
+pmc:SpiritCallingYieldsRecoveryOfLostThings a pm:Yielding ;
+    rdfs:label "Spirit calling is said to recover what has been lost"@en, "Das Geisterrufen soll Verlorenes wiederbringen"@de ;
+    skos:definition "The claim, made by the narrator about her second husband, that when a knife was lost he would hold a spirit calling and in that way recover it."@en ;
+    skos:note "The most examinable claim in the portion read, and the reason it is entered separately from the capacity it names. It states a repeatable occasion, a named class of object, and an outcome that either occurred or did not; it is not a claim about a state of the practitioner. What it does not state is any case in which the calling was held and the knife stayed lost."@en ;
+    pm:byPractice pmp:InuitSpiritCalling ;
+    pm:yieldsCapacity pmc:InuitRecoveryOfLostThings ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 28" .
+
+pmc:FatherPerceivesHiddenThings a pm:Attributing ;
+    rdfs:label "The narrator's father is said to have understood hidden things"@en, "Dem Vater der Erzählerin wird zugeschrieben, die verborgenen Dinge verstanden zu haben"@de ;
+    skos:definition "The narrator relates that her father, called a great shaman, understood hidden things and perceived that the children she wanted to run out and play with were the souls of her dead brothers and sisters, whereupon his helping spirits set a barrier between her and them."@en ;
+    skos:note "The case is worth the node because of its shape rather than its content. The perception is not reported as a vision or a journey but as a correction of an ordinary judgement: the child saw children, the shaman saw who they were. A claim in that form is answerable in a way that a claim about an inner state is not."@en ;
+    pm:ascribedCapacity pmc:InuitHiddenThings ;
+    pm:ascribedTo "The narrator Takornâq's father, named in the narrative as a great shaman" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), pp. 23-24" .
+
+#
+# A divination with a stated sign
+#
+
+pmp:InuitMeatForkDivination a pm:Practicing ;
+    rdfs:label "Divination with the meat fork"@en, "Wahrsagung mit der Fleischgabel"@de ;
+    skos:definition "A procedure used to decide whether a sick person will live: the meat fork is set up in the cooking pot, and the way it comes to rest is read as the answer."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 24" .
+
+pmc:InuitForkSignOfSurvival a pm:Conceptualizing ;
+    rdfs:label "The sign read from the fork"@en, "Das an der Gabel gelesene Zeichen"@de ;
+    skos:definition "The stated reading of the divination: if the fork falls the sick person will die, if it stays upright she will live. In the case related the fork settled upright and the sick child lived."@en ;
+    skos:note "Entered because the sign is stated in advance and in both directions, which is rare in the material this graph holds. A divination that names its own failure condition before the outcome is known is examinable; one that is interpreted afterwards is not. The single case related is of course selected by the narrator's survival."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 24" .
+
+#
+# Foreknowledge
+#
+
+pmc:InuitSecondSight a pm:Conceptualizing ;
+    rdfs:label "Second sight"@en, "Zweites Gesicht"@de ;
+    skos:definition "The capacity to know in advance that something remarkable is about to happen, reported in the narrative as a standing property of a person rather than as the outcome of an exercise."@en ;
+    skos:note "The English term is the translator's. What the node carries is the claim reported under it and not the term's own history in Scottish and Scandinavian usage; whether the Inuktitut word behind it has that range is not decidable from the portion read."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 29" .
+
+pmc:HusbandHasSecondSight a pm:Attributing ;
+    rdfs:label "The narrator's husband is said to have the gift of second sight"@en, "Dem Mann der Erzählerin wird das zweite Gesicht zugeschrieben"@de ;
+    skos:definition "The narrator states of her husband Padloq, whom she calls by a name she glosses as the one who keeps her alive, that he has the gift of second sight and always knows when anything remarkable is going to happen. The case she gives is a dream, on a journey from Iglulik to Tununeq, that a friend of his had been eaten by his nearest kin; on that journey they met the woman who had eaten her own family."@en ;
+    skos:note "The claim is universal in form, which is what makes it examinable: he always knows. One confirming case is related and no failing case is; the case is retrospective and was told after the meeting it is said to have foretold. The protocol stands at examinations/inuit-second-sight.ttl."@en ;
+    pm:ascribedCapacity pmc:InuitSecondSight ;
+    pm:ascribedTo "Padloq, the narrator Takornâq's husband" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 29" .
+
+#
+# The return of the dead, and the prohibition that stopped it
+#
+
+pmc:InuitReturnAfterDeath a pm:Conceptualizing ;
+    rdfs:label "Coming to life again after death"@en, "Das Wiederaufleben nach dem Tod"@de ;
+    skos:definition "The capacity ascribed to certain persons of coming to life again after death and returning to their place among people, held to belong to those over whom particular words were spoken at their birth."@en ;
+    skos:note "The narrative gives the being a name in a phonetic transcription that the digitised text renders unreliably; the spelling is therefore not carried into this node, and the term is to be taken from a clean copy of the page before it is asserted anywhere. The claim itself does not depend on the spelling."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 28" .
+
+pmp:InuitWordsSpokenAtBirth a pm:Practicing ;
+    rdfs:label "The words spoken at a birth"@en, "Die bei der Geburt gesprochenen Worte"@de ;
+    skos:definition "The uttering of efficacious words over a person at birth, said to determine that the person will be able to come to life again after dying."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 28" .
+
+pmc:WordsAtBirthYieldReturnAfterDeath a pm:Yielding ;
+    rdfs:label "Words spoken at birth are said to make the return after death possible"@en, "Die bei der Geburt gesprochenen Worte sollen das Wiederaufleben ermöglichen"@de ;
+    skos:definition "The claim that those at whose birth such words were uttered can, if they die, come to life again and return among people."@en ;
+    skos:note "The interval between the act and its effect is a whole life, which puts the claim beyond any protocol that could be run on it and is worth recording as a property of the claim rather than as a defect of the record."@en ;
+    pm:byPractice pmp:InuitWordsSpokenAtBirth ;
+    pm:yieldsCapacity pmc:InuitReturnAfterDeath ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), p. 28" .
+
+pmc:InuitSewingProhibitionOnOqshoriaq a pm:Conceptualizing ;
+    rdfs:label "The prohibition on sewing new caribou skin on Oqshoriaq"@en, "Das Verbot, auf Oqshoriaq neues Karibufell zu nähen"@de ;
+    skos:definition "A prohibition attached to a named place: garments of new caribou skin may not be sewn on the island of Oqshoriaq."@en ;
+    skos:note "The prohibition is local and specific, which distinguishes it from the general taboo system the later chapters of the volume set out. Whether it is a case of that system or a rule of its own cannot be decided from the portion read."@en ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), pp. 28-29" .
+
+pmc:ReturnPresupposesTheSewingProhibition a pm:Presupposing ;
+    rdfs:label "The return after death presupposes that the prohibition was kept"@en, "Das Wiederaufleben setzt die Einhaltung des Nähverbots voraus"@de ;
+    skos:definition "The claim that the attempt to bring back a dead man failed because a prohibition had been broken, and not because the shamans were unable."@en ;
+    pm:dependentStep pmc:InuitReturnAfterDeath ;
+    pm:priorStep pmc:InuitSewingProhibitionOnOqshoriaq ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The narrator relates that the moon would not let the man come to life again, because his mother had sewn garments of new caribou skin on the island of Oqshoriaq, which is not allowed there; the two shamans who tried to catch the returning corpse did not succeed." ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:InuitAngakkuq ;
+    skos:note "The structure of this passage matters more than its content, and it is the reason the node is here. A failure of the practice is reported, and the account assigns the failure to a third party's breach of a prohibition rather than to the practitioners or to the claim. That move makes the underlying claim unfailable from inside the tradition: any outcome confirms it, since success shows the power and failure shows the breach. Recording the immunisation is not an objection to the passage; it is the part a later protocol has to work against."@en ;
+    dcterms:source "Knud Rasmussen, Intellectual Culture of the Iglulik Eskimos, Report of the Fifth Thule Expedition 1921-24, VII.1, trans. W. Worster (Copenhagen: Gyldendalske Boghandel, Nordisk Forlag, 1929), pp. 28-29" .
