@@ -1,0 +1,55 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — examinations of the Dogon Sirius account
+#
+# Three protocols. The first addresses the origination: whether the knowledge
+# ascribed to the transmission is found in the transmission. It has cases and
+# they deviate. The other two address the parts of the account that leave
+# something countable behind, and have no cases at all — which is worth
+# saying, because the two states must never read alike.
+#
+# The evidence in the first is modern research and enters at pm:evidenceFrom.
+# It is never a source of the tradition: a field re-study is a procedure with
+# an outcome that could have gone otherwise, and that is what separates it
+# from a witness. See SPEC §14.
+#
+
+pmc:DogonSiriusExamination a pm:Testing ;
+    rdfs:label "Is the knowledge of the companion found in the transmission?"@en, "Steht die Kenntnis des Begleiters in der Überlieferung?"@de ;
+    skos:definition "A protocol addressing the claim that Dogon transmission carries knowledge of an invisible companion of Sirius. It asks whether the star names and the doctrine can be found among Dogon outside the circle of the original informants, and whether any account of them leads anywhere but back to the recording work."@en ;
+    skos:note "The re-study reports the ethnographic facts as straightforward. Dogon know Sirius as a star and call it the hunter's star; knowledge of the stars matters neither in daily life nor in ritual, the sun and the phases of the moon being what reckoning runs on. No Dogon outside the circle of the original informants had heard the star names the account turns on, and no one, not even inside that circle, had heard or understood that Sirius was double. The scheduling of the ceremony is done in several ways in the village the account draws on, none of them astronomical."@en ;
+    skos:note "The one trace that remains is itself the finding. Informants in that village say that in former times people knew of a star appearing in the year of the ceremony, and further enquiry leads back to the recorder. What looks like independent survival is feedback from the published account into the field it describes, and any later confirmation must be tested against that path before it counts."@en ;
+    skos:note "The re-study's explanation of how the account arose is not adopted here as a finding, only recorded: that an informant spoke of stars of different generations, meaning two adjacent visible stars held as father and son to Sirius as grandfather, and that the recorder, who had read astronomy in Paris, made a double and triple system of it. That is a reconstruction of an intention and cannot be examined; the absence of the doctrine in the field can."@en ;
+    skos:note "The counter-testimony has not been read at the wording in this run. A reply appeared in the same journal in the following volume, and a further exchange in the two years after; the deviation recorded here therefore rests on one side of a controversy that has two. See prima-materia#252. Under SPEC §13 this state is a one-sided dispute waiting for its second side, not a refutation, and the state below is set on the cases and not on the conclusion."@en ;
+    pm:tests pmc:DogonKnowledgeOfSiriusCompanion ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:falsifiedBy "A report of the star names or of the doctrine of an invisible companion from Dogon speakers outside the original circle of informants, where the chain of the report can be shown not to run back through the published account; or a fixation of the doctrine in any text or record datable before nineteen thirty-one. Either would return the claim to contested and undo the deviation recorded here." ;
+    pm:examinedBy "Walter E. A. van Beek, field re-study among the Dogon of Sanga and Yugo Doguru, reported 1991" ;
+    pm:evidenceFrom "Walter E. A. van Beek, Dogon Restudied: A Field Evaluation of the Work of Marcel Griaule, Current Anthropology 32/2 (1991), pp. 149-150 with its footnote 10, and pp. 156-157" ;
+    pm:protocolUpdated "2026-09-01"^^xsd:date .
+
+pmc:SiguiSeriesExamination a pm:Testing ;
+    rdfs:label "The mask and ferment-holder series as a datable record of the ceremony"@en, "Masken- und Fermentträgerserien als datierbarer Nachweis der Zeremonie"@de ;
+    skos:definition "A protocol on the one part of the account that leaves objects a later worker can count and date without asking anybody: the great masks carved for each sixtieth-year ceremony and kept in rock shelters beside their predecessors, and the baobab-fibre ferment-holders woven for each and hung in the hogon's house. The account infers from series of nine, of eight and of fourteen that ceremonies were held back to the fifteenth and, on one reading, the twelfth century."@en ;
+    skos:note "Entered because it is the falsifiable half of the account and the half nobody examined. The astronomical claims cannot be tested against anything but memory; wood and fibre can be dated. The protocol asks whether the intervals between the objects of a single shelter are compatible with sixty years, and whether the oldest are as old as the inference requires."@en ;
+    skos:note "No case series has been collected here and none is known to this graph. The state is therefore procedure without cases and not cases without deviation: nobody has carried the examination, which is a different report from having carried it and found nothing. See prima-materia#253 for the radiocarbon and dendrochronological work on Bandiagara material that would have to be searched before this protocol can be advanced."@en ;
+    pm:tests pmc:Sigui ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "A dated series from one shelter whose intervals depart from sixty years beyond what the dating method's error admits, or whose oldest object is materially younger than the count of objects requires. A single shelter dated cleanly against the count would equally carry the claim." ;
+    pm:examinedBy "prima-materia, protocol stated from the account; no case series has been collected" ;
+    pm:protocolUpdated "2026-09-01"^^xsd:date .
+
+pmc:SiguiDatePrediction a pm:Testing ;
+    rdfs:label "The article's own prediction of the next ceremony"@en, "Die Vorhersage der nächsten Zeremonie im Artikel selbst"@de ;
+    skos:definition "A protocol on a dated prediction the account makes about itself. A footnote states that the next ceremony would probably fall in nineteen sixty-one or nineteen sixty-three if the reckoning holds, and adds that it was publicly known at the end of nineteen fifty that it would not be celebrated for another ten years or so."@en ;
+    skos:note "A rare thing in this collection: a claim that fixes its own due date, published before the date fell. Whether the ceremony fell in those years is a matter of record, and the record was not read at the wording in this run. The date is therefore not entered and the state stands at procedure without cases. See prima-materia#254."@en ;
+    pm:tests pmc:Sigui ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "A dated report of the ceremony beginning in a year other than nineteen sixty-one or nineteen sixty-three refutes the reckoning as the account states it, and with it the claim that the interval is governed by a fifty-year period doubled." ;
+    pm:examinedBy "prima-materia, protocol stated from the account's own footnote; the date of the ceremony has not been established from a work" ;
+    pm:protocolUpdated "2026-09-01"^^xsd:date .

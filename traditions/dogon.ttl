@@ -1,0 +1,177 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — the Dogon transmission
+#
+# Order of the file: the tradition, then the sixtieth-year ceremony and the
+# ways of counting to it, then the star the counting is said to rest on and
+# what is claimed of it, then the graded revelation and the warning the
+# recorders print about their own material, then the ordering act by which
+# four informants became one account, then the contradiction the article
+# itself refuses to resolve.
+#
+# The instance was registered in traditions/registry-outside-contact.ttl and
+# is moved here now that passages have been read. What the reading found is
+# not what the registration expected, and the reason stands on the nodes:
+# the article makes no claim about a companion of Sirius that a reader could
+# take for a Dogon claim without also reading the footnote in which the
+# recorders themselves point at a French astronomical periodical of 1931.
+# The examination stands in examinations/dogon-sirius.ttl, the origination in
+# originations/dogon-sirius.ttl. See prima-materia#25 and the issues named on
+# the nodes.
+#
+
+pmt:Dogon a pm:Tradition ;
+    rdfs:label "Dogon transmission"@en, "Dogon-Überlieferung"@de ;
+    skos:definition "The Dogon transmission of a renewal of the world celebrated once in sixty years, of the ways by which the interval is counted, and of a seed-star said to be the smallest and the heaviest of things."@en ;
+    skos:note "The tradition most widely reported outside itself, and reported wrongly. Registered in this graph from the start as the standing warning of the whole registry, because a body of teaching that circulated for decades as ancient African astronomy could not be found by later workers among the people it was ascribed to."@en ;
+    skos:note "Registered at corpus named until this file was written, and moved here on the first passages actually read. What was read is Griaule and Dieterlen 1950 in full, pp. 273-294 of the first printing, in the digitised page images of the journal. Nothing else of the principal corpus was opened: neither Dieu d'eau, nor Masques dogons, nor Le renard pâle, nor Les âmes des Dogon. The Sirius article was chosen first because it is the single text the outside reception rests on."@en ;
+    skos:note "The contact route is entered as disputed and no longer as absent. The reason is in the article and not in a later judgement about it: on p. 282 the recorders attach to the fifty-year orbit a footnote observing that this period lies very close to that of the companion of Sirius, and they cite a French astronomical periodical of 1931 for it. Whatever the informants said, the account that reached print was written by readers of European astronomy, and the central enquiry ran from 1946 to 1950 in a region under French administration with a mission station in it. A route to the material this graph already holds therefore exists at the point where the corpus was fixed, and it runs through the recorders. See prima-materia#102 for the same question across the rest of the registry."@en ;
+    skos:note "The registration named van Beek's re-study as part of the principal corpus. That was wrong under SPEC §14: a field re-study is a procedure with an outcome that could have gone otherwise, which makes it evidence and not testimony. It has been removed from the corpus here and stands at pm:evidenceFrom on the examination node instead."@en ;
+    pm:principalCorpus "Griaule, Masques dogons; Griaule, Dieu d'eau; Griaule and Dieterlen, Le renard pâle; Dieterlen, Les âmes des Dogon; Griaule and Dieterlen, Un système soudanais de Sirius" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 273-294" .
+
+#
+# The sixtieth-year ceremony and the ways of counting to it
+#
+
+pmc:Sigui a pm:Conceptualizing ;
+    rdfs:label "Sigui"@en, "Sigui"@de ;
+    skos:definition "A ceremony celebrated once in sixty years whose stated purpose is the renewal of the world. The star that governs its reckoning is named after it: sigi tolo, star of the Sigui."@en ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 274 and 280" .
+
+pmp:SiguiReckoning a pm:Practicing ;
+    rdfs:label "Reckoning the interval between two Sigui"@en, "Das Auszählen des Sigui-Abstands"@de ;
+    skos:definition "The counting of the sixty-year interval by means that are stated to be mnemonic rather than astronomical: thirty biennial millet-beer drinkings, each marked with a cowry laid down by the eldest; a millet-porridge figure above the sanctuary door in which a point is added each year; and a painted line of chevrons called sigi lugu, count of the Sigui, each tooth standing for twenty years."@en ;
+    skos:note "The recorders report that the rule is theoretical and that the practice departed from it: between the Sigui of the beginning of the century and 1931 only one drinking was held, and the cowries for the missing thirty years were laid down together in a single heap afterwards. The reckoning that is described as regular is thus reconstructed in arrears, and the article says so."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 275-277" .
+
+pmp:SiguiMaterialRecord a pm:Practicing ;
+    rdfs:label "Keeping the Sigui in wood and fibre"@en, "Die Bewahrung des Sigui in Holz und Faser"@de ;
+    skos:definition "The keeping of the great mask carved for each Sigui in a rock shelter beside those of the preceding ceremonies, and of the baobab-fibre ferment-holders woven for each Sigui in the hogon's house. Both accumulate as series, and the article treats the series as the firmer evidence that a ceremony took place at all."@en ;
+    skos:note "This is the one part of the account that leaves an object a later worker could count and date independently of any informant. The article reports nine masts at Ibi in 1931 with traces of three more, and eight or fourteen ferment-holders at Sanga and Arou. Held as a practice here and as a protocol at pmc:SiguiSeriesExamination in examinations/dogon-sirius.ttl."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 277-279" .
+
+#
+# The star the reckoning is said to rest on
+#
+
+pmc:PoTolo a pm:Conceptualizing ;
+    rdfs:label "Pô tolo, the Digitaria star"@en, "Pô tolo, der Digitaria-Stern"@de ;
+    skos:definition "A star named after the fonio grain, said to be white where Sirius is seen red, to be the first thing created, to be the egg of the world out of which everything visible and invisible developed, and to consist of a metal called sagala. It is called at once the smallest of all things and the heaviest, weighed in the account at four hundred and eighty donkey loads, so that all earthly beings together could not lift it."@en ;
+    skos:note "The number four hundred and eighty is glossed in the article itself as the product of the base eighty and the count of tens in the older base sixty, and is said to be used as the symbol of the greatest of numbers. A reader who takes it for a measured mass is reading against the note printed beneath it."@en ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 284 and 287" .
+
+pmc:PoToloOrbit a pm:Conceptualizing ;
+    rdfs:label "The course of pô tolo around Sirius"@en, "Die Bahn des Pô tolo um Sirius"@de ;
+    skos:definition "The course the seed-star is said to run around Sirius: perpendicular to the horizon, of a period of some fifty years counted double to a hundred because Sigui are paired as twins, with the star turning on itself once a year. Sirius is said to brighten when the seed-star is nearest and the seed-star to scintillate so that an observer believes he sees several stars when it is farthest."@en ;
+    skos:note "The article calls the same course the figure of circumcision and excision: the near and far points of the orbit are the foreskin and the knife. The astronomical reading and the ritual reading are the same drawing, and the account gives no priority to either."@en ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 281-283" .
+
+pmc:PoToloAsAxis a pm:Conceptualizing ;
+    rdfs:label "The seed-star as the axis of the world"@en, "Der Same-Stern als Achse der Welt"@de ;
+    skos:definition "The claim that the orbit of the seed-star lies at the centre of the world, that without its movement no heavenly body could hold its place, and that it orders the position of Sirius in particular, which is called the most disordered of the stars."@en ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), p. 287" .
+
+pmc:EmmeYaTolo a pm:Conceptualizing ;
+    rdfs:label "Emme ya tolo, the Female Sorghum star"@en, "Emme ya tolo, der Weibliche-Hirse-Stern"@de ;
+    skos:definition "A second companion said to run a wider course in the same direction and the same time as the seed-star, four times lighter and larger than it, called the sun of the women, and named as the seat of the female souls of all beings living or to come. It is said to have a satellite of its own, the star of the Women."@en ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 287-288" .
+
+pmc:YuruguPursuit a pm:Conceptualizing ;
+    rdfs:label "Yourougou in pursuit of Yasigui"@en, "Yourougou in Verfolgung Yasiguis"@de ;
+    skos:definition "The account in which one twin tore away a piece of the placenta that became the earth, was turned into the pale fox for it, and communicated his own impurity to the earth so that it became dry and barren; his fate is to pursue his twin, who is also his female soul, until the end of time. On the mythical plane the seed-star is this fox, held in space and turning tirelessly around Sirius, that is around the pursued twin, without ever reaching her."@en ;
+    skos:note "The pursuit that never arrives is the same figure as the orbit that never closes on its centre. Whether the star is the image of the myth or the myth the reading of the star is exactly the question the article declines to raise."@en ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), p. 292" .
+
+#
+# The graded revelation, and the warning the recorders print about it
+#
+
+pmc:LightKnowledge a pm:Conceptualizing ;
+    rdfs:label "Light knowledge"@en, "Leichte Kenntnis"@de ;
+    skos:definition "The first stage of a secret knowledge, named with a Bambara expression. The account states that the rules of the Sirius system revealed to initiates at this stage are simplified in some parts and complicated in others, in order to turn attention away from calculations that remain more secret still."@en ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), p. 274" .
+
+pmc:LightKnowledgeCaution a pm:Cautioning ;
+    rdfs:label "The published system is a stage of revelation, not the system"@en, "Das veröffentlichte System ist eine Enthüllungsstufe, nicht das System"@de ;
+    skos:definition "The recorders state once and for all that what they print represents one stage of the revelations granted to initiates of high standing who were not themselves responsible for the calculations concerning this part of the sky, and that the stage is deliberately distorted in both directions."@en ;
+    skos:note "A caution that cuts against the account carrying it, which is why it is held as a node. It makes the text unfalsifiable in the direction its later readers wanted: any discrepancy can be assigned to the withheld stage. It also means the article cannot be cited as the Dogon system without citing this sentence, and the reception has cited it without."@en ;
+    pm:cautionsAbout pmc:LightKnowledge ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), p. 274" .
+
+pmc:KnowledgeOfSeedStarCharacteristics a pm:Conceptualizing ;
+    rdfs:label "Knowledge of the characteristics of the seed-star"@en, "Kenntnis der Merkmale des Same-Sterns"@de ;
+    skos:definition "The knowledge of what the seed-star is made of, how heavy it is and how it moves, said in the account to have been unavailable to men while the star's existence was known but its characteristics unrevealed."@en ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 282 and 284" .
+
+pmc:EighthHogonTeaching a pm:Attributing ;
+    rdfs:label "The eighth chief taught men the characteristics of the star"@en, "Der achte Häuptling lehrte die Menschen die Merkmale des Sterns"@de ;
+    skos:definition "The account that the eighth supreme chief, having discovered the star, escaped the sacrifice his seven predecessors had undergone by feigning death, returned claiming to have been inside the star and to know its secrets, and then taught men its characteristics and reordered the reckoning of time."@en ;
+    skos:note "An ascription inside a myth of origin, and the article gives it as such: it is offered expressly as an indication of the changes and combinations of reckoning that appear in the course of what the recorders put in quotation marks as the history of the Blacks."@en ;
+    pm:ascribedCapacity pmc:KnowledgeOfSeedStarCharacteristics ;
+    pm:ascribedTo "the eighth supreme chief, in the Dogon account of the origin of the sixty-year reckoning" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Dogon ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 282-284" .
+
+pmc:SixtyYearReckoningPresupposesTheDiscovery a pm:Presupposing ;
+    rdfs:label "The sixty-year reckoning presupposes the discovery of the seed-star"@en, "Der Sechzigjahres-Comput setzt die Entdeckung des Same-Sterns voraus"@de ;
+    pm:dependentStep pmc:Sigui ;
+    pm:priorStep pmc:KnowledgeOfSeedStarCharacteristics ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The account states what held before the discovery: the year was not yet fixed as a unit, the only reckoning known was by seven harvests, and at the end of the seventh the supreme chief was sacrificed. The consequence of the prior step being absent is therefore named twice over, as a defect of the calendar and as a death." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Dogon ;
+    skos:note "Entered at stated necessity because the consequence is quotable, and not because the sequence is historical. What the passage establishes is that the tradition itself makes the calendar depend on the star, which is the claim the outside reception took over and the claim the examination addresses."@en ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 282-283" .
+
+#
+# The ordering act that produced the account
+#
+
+pmc:FusionOfTheFourInformants a pm:Systematizing ;
+    rdfs:label "Four informants fused into one account"@en, "Vier Gewährsleute zu einer Darstellung verschmolzen"@de ;
+    skos:definition "The recorders state that the material was put in order in the sense that the sayings of the four principal informants were fused into one and the same exposition. What the printed system presents as a single doctrine is therefore a composite, and no sentence in it can be assigned to a named speaker."@en ;
+    skos:note "Held as an ordering act because the recorders describe it as one in the same breath in which they claim to give the raw documents. The two claims are in tension on the same page: material that has been fused across four speakers is no longer raw, and the fusion is the step at which a disagreement between informants would have become invisible."@en ;
+    skos:note "One informant is described as having supplied the system in its entirety and the others only its essential parts, and one of them obtained a supplement between the visits of the enquirers, from people elsewhere. The account is thus composite in a second sense: part of it was gathered by an informant on the enquirers' behalf between their stays."@en ;
+    pm:compiledBy "Marcel Griaule and Germaine Dieterlen" ;
+    pm:ordersClaim pmc:PoTolo, pmc:PoToloOrbit, pmc:EmmeYaTolo, pmc:PoToloAsAxis ;
+    dcterms:date "1950" ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), pp. 273-274" .
+
+#
+# The contradiction the article states and does not resolve
+#
+
+pmc:FiftyAgainstSixty a pm:Disputing ;
+    rdfs:label "Fifty years against sixty: the period of the orbit and the interval of the ceremony"@en, "Fünfzig gegen sechzig: Bahnperiode und Zeremonienabstand"@de ;
+    skos:definition "The account gives the period of the seed-star's orbit as some fifty years and the interval between two Sigui as sixty, and states in a footnote that there is here a contradiction which has not yet been resolved. It then offers, as a question and not as a finding, that the last ceremony may have been brought forward and that the profane may be kept in the belief that the official period is sixty years."@en ;
+    skos:note "Entered as a dispute although both sides stand in the same work, because the work states the disagreement itself rather than smoothing it. The dispute is decisive for everything the outside reception built on the passage: fifty years is the figure that matches the companion of Sirius, sixty is the figure the ceremony actually runs on, and only the second is attested by anything a later worker could count."@en ;
+    skos:note "The same footnote that reports the fifty-year period cites a French astronomical periodical of 1931 for the closeness of that period to the companion of Sirius. Whether the fifty came from the informants or from the reading is the question this graph cannot decide from the article alone; see prima-materia#250."@en ;
+    pm:disputedClaim pmc:PoToloOrbit ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), p. 282 with its first footnote", "Marcel Griaule and Germaine Dieterlen, Un système soudanais de Sirius, Journal de la Société des Africanistes 20/2 (Paris: Société des Africanistes, 1950), p. 283 with its fifth footnote" .
