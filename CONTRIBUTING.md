@@ -127,7 +127,9 @@ VIII, und die übrigen aufgezeichneten Inuit-Zeugnisse),
 Maupoil für das Fon-Fa),
 `korpus:geomantie` (ʿilm al-raml und die von ihm abhängige oder mit ihm
 strittig verwandte Literatur: die arabische Sandkunst, die europäische
-Geomantie, das madagassische sikidy).
+Geomantie, das madagassische sikidy),
+`korpus:nahua` (Sahagún, Ruiz de Alarcón, Jacinto de la Serna, Ponce, die
+Codices und die übrige aufgezeichnete zentralmexikanische Überlieferung).
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
