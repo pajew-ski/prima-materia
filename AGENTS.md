@@ -122,7 +122,7 @@ Moderne Forschung betritt den Bestand ausschließlich über `pm:evidenceFrom` an
 Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Aufforderung, ist der vollständige Durchlauf gemeint. **Keine Rückfragen zu Schritten, die diese Datei und `SPEC.md` bereits vorschreiben.** Der Mensch prüft am Merge, nicht am Ablauf.
 
 1. Bestand lesen: Dateibaum, offene Issues, Labels, letzte PRs.
-2. Nächstes Bündel wählen. Vorrang hat der unabhängigkeitsgetriebene Eingang (SPEC §14) vor dem Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
+2. Nächstes Bündel wählen. Vorrang hat der prüfbarkeitsgetriebene Eingang (SPEC §14) — die Überlieferungen, die Anzeichen, Fristen, Kautelen und Misslingensbedingungen nennen —, dann der unabhängigkeitsgetriebene, dann der Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
 3. Tiefe Recherche nach SPEC §15, **beide Stufen**, mit Gegensuche. Der Schritt ist erst beendet, wenn jede Behauptung mit erreichbarem Werk am Wortlaut geprüft ist.
 4. Sofort integrieren: Knoten für vollgeprüfte Funde, Issues für alles andere.
 5. Issue-Kommentar mit der Abdeckung, `korpus:`-Labels kumulieren, Schließen nur bei Erschöpfung.
