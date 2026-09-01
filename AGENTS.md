@@ -28,6 +28,8 @@ Nicht: was sagt der Bestand dazu. Wer mit der zweiten Frage beginnt, hat den Aus
 
 Wer nur nach Bestätigung sucht, findet sie. Gesucht wird auch dort, wo das Gegenteil stehen könnte, und in Überlieferungen außerhalb der Sphäre, in der die Behauptung vermutet wird. `pm:Converging` und `pm:Disputing` entstehen nur so.
 
+**Rezeption ist dabei kein Ausschlussgrund.** Ein belegter Übertragungsweg wertet eine Übereinstimmung nicht ab, er verbietet nur, dieselbe Aussage zweimal als Zeugen zu zählen. Wie viele Überlieferungen etwas tragen und wie tief die Wege verzweigen, sind zwei Zahlen, und beide gehören in den Bestand. Zu suchen ist deshalb auch, was eine spätere Station der übernommenen Behauptung *hinzugefügt* hat — eine Frist, eine Kautel, ein Anzeichen, eine Misslingensbedingung. Das ist der Unterschied zwischen einer Kopierkette und einer Versuchsreihe, es trägt `pm:Reworking`, und es ist das Material, aus dem ein `pm:falsifiedBy` entsteht. Wer `pm:independentAttestation` setzt, schuldet `pm:independenceGround`: wann die tragende Bezeugung fixiert oder erhoben wurde und gegen welche Publikation oder Route dieses Datum steht.
+
 **4. Eine Recherche ist kein paar Suchanfragen nebenbei.**
 
 Mindestumfang: der Fachterm in Originalsprache und gebräuchlichen Transliterationen; der Primärtext, mindestens zwei Übersetzungen und die Sekundärliteratur zur Stelle; die Datierung des frühesten Zeugen und die Frage, ob die Zuschreibung bestritten ist; die Gegensuche; mindestens eine Überlieferung außerhalb der erwarteten Sphäre.
