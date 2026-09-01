@@ -87,10 +87,11 @@ export function crosstab(data, ctx) {
  * a denominator instead of a silence.
  *
  * Contact route is the second axis rather than a footnote because it decides
- * what an agreement with these traditions could ever be worth. A registered
- * corpus with a documented route can only ever yield reception; one with no
- * route for the period its corpus was fixed is a candidate for independent
- * attestation, which is the scarcest thing the project can hold.
+ * how an agreement with these traditions may be counted. It does not decide
+ * what the agreement is worth: a documented route says how a claim travelled
+ * and bars counting the same statement twice, and a transmission carried that
+ * way is still a finding about what was carried. A corpus with no route for
+ * the period it was fixed is a candidate for independent attestation.
  */
 export function registerTab(data, ctx, { coverageScale, contactScale }) {
   const traditions = data.nodes.filter((node) => node.kind === "tradition").map((node) => node.id);
