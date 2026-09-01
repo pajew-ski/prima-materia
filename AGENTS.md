@@ -28,6 +28,8 @@ Nicht: was sagt der Bestand dazu. Wer mit der zweiten Frage beginnt, hat den Aus
 
 Wer nur nach Bestätigung sucht, findet sie. Gesucht wird auch dort, wo das Gegenteil stehen könnte, und in Überlieferungen außerhalb der Sphäre, in der die Behauptung vermutet wird. `pm:Converging` und `pm:Disputing` entstehen nur so.
 
+**Rezeption ist dabei kein Ausschlussgrund.** Ein belegter Übertragungsweg wertet eine Übereinstimmung nicht ab, er verbietet nur, dieselbe Aussage zweimal als Zeugen zu zählen. Wie viele Überlieferungen etwas tragen und wie tief die Wege verzweigen, sind zwei Zahlen, und beide gehören in den Bestand. Zu suchen ist deshalb auch, was eine spätere Station der übernommenen Behauptung *hinzugefügt* hat — eine Frist, eine Kautel, ein Anzeichen, eine Misslingensbedingung. Das ist der Unterschied zwischen einer Kopierkette und einer Versuchsreihe, es trägt `pm:Reworking`, und es ist das Material, aus dem ein `pm:falsifiedBy` entsteht. Wer `pm:independentAttestation` setzt, schuldet `pm:independenceGround`: wann die tragende Bezeugung fixiert oder erhoben wurde und gegen welche Publikation oder Route dieses Datum steht.
+
 **4. Eine Recherche ist kein paar Suchanfragen nebenbei.**
 
 Mindestumfang: der Fachterm in Originalsprache und gebräuchlichen Transliterationen; der Primärtext, mindestens zwei Übersetzungen und die Sekundärliteratur zur Stelle; die Datierung des frühesten Zeugen und die Frage, ob die Zuschreibung bestritten ist; die Gegensuche; mindestens eine Überlieferung außerhalb der erwarteten Sphäre.
@@ -122,7 +124,7 @@ Moderne Forschung betritt den Bestand ausschließlich über `pm:evidenceFrom` an
 Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Aufforderung, ist der vollständige Durchlauf gemeint. **Keine Rückfragen zu Schritten, die diese Datei und `SPEC.md` bereits vorschreiben.** Der Mensch prüft am Merge, nicht am Ablauf.
 
 1. Bestand lesen: Dateibaum, offene Issues, Labels, letzte PRs.
-2. Nächstes Bündel wählen. Vorrang hat der unabhängigkeitsgetriebene Eingang (SPEC §14) vor dem Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
+2. Nächstes Bündel wählen. Vorrang hat der prüfbarkeitsgetriebene Eingang (SPEC §14) — die Überlieferungen, die Anzeichen, Fristen, Kautelen und Misslingensbedingungen nennen —, dann der unabhängigkeitsgetriebene, dann der Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
 3. Tiefe Recherche nach SPEC §15, **beide Stufen**, mit Gegensuche. Der Schritt ist erst beendet, wenn jede Behauptung mit erreichbarem Werk am Wortlaut geprüft ist.
 4. Sofort integrieren: Knoten für vollgeprüfte Funde, Issues für alles andere.
 5. Issue-Kommentar mit der Abdeckung, `korpus:`-Labels kumulieren, Schließen nur bei Erschöpfung.

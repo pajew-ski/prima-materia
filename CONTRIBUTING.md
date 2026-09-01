@@ -48,6 +48,19 @@ likewise dedicated to the public domain.
   `pm:withinTradition`.
 - **Labels and definitions.** Every class needs `rdfs:label` and
   `skos:definition`.
+- **Independence must be grounded.** A `pm:Converging` node that asserts
+  `pm:independentAttestation` needs `pm:independenceGround`: when the
+  testimony it relies on was fixed or gathered, and against which
+  publication or route that date stands. Where the corpus comes from
+  fieldwork, the ground also states the gathering situation, because
+  feedback inside a single enquiry precedes any publication and no date
+  catches it. See `SPEC.md §14`.
+- **Reception is not a demotion.** A documented `pm:transmissionPath`
+  does not devalue a correspondence; it only forbids counting the same
+  statement twice. What is worth looking for in a chain is what a later
+  station *added* — a term, a consequence, a caution, a sign, a condition
+  of failure. That is `pm:Reworking`, and `pm:addedElement` must point at
+  the node carrying the addition.
 
 ## Quellenführung (Source Discipline)
 

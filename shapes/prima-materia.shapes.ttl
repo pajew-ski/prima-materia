@@ -109,6 +109,61 @@ pm:ConvergenceShape a sh:NodeShape ;
     sh:message "A convergence states either a documented transmission path or an attestation without one." .
 
 #
+# A claim of independent attestation must carry the fact that makes it
+# checkable. The burden is reversed on purpose: feedback from a published
+# account back into the field it describes can almost never be demonstrated,
+# so a predicate marking only the demonstrated cases would let the ordinary
+# case pass in silence. Nothing here devalues reception — the ground exists
+# so that the same statement is not counted twice.
+#
+pm:IndependenceGroundShape a sh:NodeShape ;
+    sh:targetClass pm:Converging ;
+    sh:or (
+        [ sh:property [ sh:path pm:independenceGround ; sh:minCount 1 ] ]
+        [ sh:not [ sh:property [ sh:path pm:independentAttestation ; sh:minCount 1 ] ] ]
+    ) ;
+    sh:message "A convergence asserting pm:independentAttestation must state its pm:independenceGround: when the testimony relied on was fixed or gathered, and against which publication or route that date stands." .
+
+#
+# A reworking claims that a station added something. It must point at what.
+# An addition that cannot be pointed at is an assertion about a chain and not
+# a link in it, and the whole value of the class is that its instances are
+# countable.
+#
+pm:ReworkingShape a sh:NodeShape ;
+    sh:targetClass pm:Reworking ;
+    sh:property [
+        sh:path pm:reworkedClaim ;
+        sh:minCount 1 ;
+        sh:message "Every reworking must name the claim that was taken over."
+    ] ;
+    sh:property [
+        sh:path pm:receivedFrom ;
+        sh:minCount 1 ;
+        sh:message "Every reworking must name the transmission the claim was taken over from."
+    ] ;
+    sh:property [
+        sh:path pm:addedElement ;
+        sh:minCount 1 ;
+        sh:message "Every reworking must point at the node carrying what it added."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every reworking must declare how it entered the record."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every reworking requires at least one dcterms:source."
+    ] ;
+    sh:property [
+        sh:path pm:withinTradition ;
+        sh:minCount 1 ;
+        sh:message "Every reworking must name the tradition that performed it."
+    ] .
+
+#
 # A protocol that names no author, or no date on which its count was last
 # carried forward, claims a scrutiny it does not document.
 #

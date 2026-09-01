@@ -444,3 +444,74 @@ def test_examined_posit_conforms() -> None:
     """
     conforms, report = _validate(permitted)
     assert conforms, f"A posited claim with an examination pointing at it must conform.\n{report}"
+
+
+def test_convergence_claiming_independence_without_ground_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:UngroundedConvergence a pm:Converging ;
+        pm:independentAttestation pmt:Placeholder ;
+        pm:attestedBy pm:compilerInference ;
+        dcterms:source "Test source (fixture)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A convergence asserting independence without a ground must fail."
+    assert "independenceGround" in report
+
+
+def test_convergence_on_a_transmission_path_alone_is_accepted() -> None:
+    """The exception the shape allows: reception is a finding and needs no ground."""
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:ReceptionOnlyConvergence a pm:Converging ;
+        pm:transmissionPath "A documented route (fixture)" ;
+        pm:attestedBy pm:compilerInference ;
+        dcterms:source "Test source (fixture)" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A convergence resting on a transmission path alone must pass.\n{report}"
+
+
+def test_reworking_without_added_element_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:EmptyReworking a pm:Reworking ;
+        pm:reworkedClaim pmc:PlaceholderClaim ;
+        pm:receivedFrom pmt:PlaceholderSource ;
+        pm:attestedBy pm:textualAttestation ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Test source (fixture)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A reworking that points at no addition must fail."
+    assert "added" in report.lower()
+
+
+def test_complete_reworking_is_accepted() -> None:
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:CompleteReworking a pm:Reworking ;
+        pm:reworkedClaim pmc:PlaceholderClaim ;
+        pm:receivedFrom pmt:PlaceholderSource ;
+        pm:addedElement pmc:PlaceholderAddition ;
+        pm:attestedBy pm:textualAttestation ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Test source (fixture)" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A complete reworking must pass.\n{report}"

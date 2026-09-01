@@ -252,7 +252,8 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 | `pm:Cautioning` | „Hütet euch vor C" | `pm:cautionsAbout` |
 | `pm:Systematizing` | eine nachträglich hergestellte Ordnung | `pm:compiledBy`, `dcterms:date` |
 | `pm:Disputing` | zwei Seiten streiten über eine Behauptung | `pm:disputedClaim`, **mindestens zwei** Quellen, `pm:attestedBy` |
-| `pm:Converging` | Übereinstimmung über Traditionen hinweg | `pm:transmissionPath` **oder** `pm:independentAttestation` |
+| `pm:Converging` | Übereinstimmung über Traditionen hinweg | `pm:transmissionPath` **oder** `pm:independentAttestation`; bei letzterem zusätzlich `pm:independenceGround` |
+| `pm:Reworking` | eine Tradition übernimmt eine Behauptung und fügt etwas hinzu | `pm:reworkedClaim`, `pm:receivedFrom`, `pm:addedElement`, `pm:attestedBy` |
 | `pm:Testing` | ein Prüfprotokoll | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
 
 **Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`. Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
@@ -576,7 +577,23 @@ Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei exist
 
 **Bedarfsgetrieben.** Ein `korpus:`-Label auf einer Behauptung, für die es noch keine Datei gibt, ist bereits die Nachfragemeldung. Offene Issues je fehlendem Label ergeben die geordnete Warteschlange; ein zweites Verzeichnis dafür wird nicht geführt.
 
-**Unabhängigkeitsgetrieben.** Die Beweiskraft des ganzen Bestands hängt an `pm:independentAttestation`, und die steht dünn. Eine weitere indische oder buddhistische Datei erhöht die Dateizahl, nicht die Zeugenzahl: wo ein Kontaktweg belegt oder plausibel ist, zählt die Übereinstimmung als Rezeption und nicht als Befund. Gesucht sind Überlieferungen ohne plausible Kontaktroute zu den bereits vertretenen. Dort liegt der Zuwachs.
+**Prüfbarkeitsgetrieben.** Knapp ist nicht die unabhängige Bezeugung, sondern die prüfbare Behauptung. Gesucht sind die Überlieferungen, die Anzeichen, Fristen, Kautelen und Misslingensbedingungen nennen — alles, woraus sich ein `pm:falsifiedBy` formen lässt. Eine Überlieferung, die sagt, woran ihr eigenes Scheitern zu erkennen wäre, bringt den Bestand weiter als eine, die nur geographisch weit weg liegt. Dieser Eingang hat Vorrang.
+
+**Unabhängigkeitsgetrieben.** Weiter ein Eingang, aber nicht mehr der erste, und mit korrigierter Begründung. Eine weitere indische oder buddhistische Datei erhöht die Dateizahl, nicht die Zeugenzahl. Was ein belegter Kontaktweg verbietet, ist eine bestimmte Zählung — dieselbe Aussage zweimal zu zählen — und nicht die Aufnahme. Gesucht sind Überlieferungen ohne plausible Kontaktroute zu den bereits vertretenen, weil dort der Zuwachs an zählbaren Zeugen liegt.
+
+### Rezeption ist ein Befund, keine Abwertung
+
+Eine frühere Fassung dieses Dokuments ließ `pm:transmissionPath` die Übereinstimmung von Konvergenz auf Rezeption *herabstufen*. Das war eine Wertung in Definitionsgestalt und ist zurückgenommen. Ein Weg sagt, wie eine Behauptung gereist ist, nicht ob an ihr etwas dran war. Weitergabe über Jahrhunderte ist Selektion, denn die meisten Behauptungen überstehen sie nicht, und ein Bestand, der Überlieferung als Rauschen behandelt, wirft die einzige Evidenz weg, die er darüber hat, was immer wieder abzuschreiben sich lohnte. Stellt sich heraus, dass seit Jahrtausenden alle voneinander abgeschrieben haben, ist das ein Ergebnis und kein Scheitern: es zeigt, worüber sich alle aus irgendeinem Grund einig waren.
+
+**Zwei Zahlen nebeneinander, und keine annulliert die andere.** Wie viele Überlieferungen eine Behauptung überhaupt tragen, und wie tief die Wege zwischen ihnen verzweigen. Viele Zeugen an einem Kabel ist eine andere Karte als viele Zeugen an drei, und beide sind lesbarer als der frühere Zustand, in dem der erste Fall gar nicht ausgewiesen wurde.
+
+**Die Grenze, die bleibt:** Der Graph muss sagen können, welche der beiden Karten er zeigt. Dichte Überlieferung und starke Wirkung dürfen nicht gleich aussehen, sonst kehrt das Tor der Autorität in statistischer Verkleidung zurück. Deshalb bleibt `pm:independentAttestation` als eigene Angabe bestehen und wird durch `pm:independenceGround` begründungspflichtig.
+
+**Unabhängigkeit ist außerdem ein schwächeres Instrument, als der Bestand lange tat.** Sie schützt gegen keine der drei häufigsten Quellen von Einigkeit: eine gemeinsame Physiologie, die dasselbe Erlebnis erzeugt, wo mit einem Körper dasselbe getan wird; eine strukturelle Notwendigkeit der Sache, an der jede brauchbare Fassung konvergiert; und die Form gestufter Institutionen, die einander ähneln, weil Institutionen mit Stufen einander ähneln. Was am Ende entscheidet, ist Reproduzierbarkeit; Unabhängigkeit sortiert dafür Kandidaten vor und spricht kein Urteil.
+
+**Rezeption ist zweierlei, und der Unterschied ist zu modellieren.** Textliche Weitergabe heißt, dass jemand einen Satz abgeschrieben hat; das zeigt Überlieferung und sonst nichts. Operative Wiederaufnahme heißt, dass jemand die Anweisung genommen, ausgeführt und danach etwas geschrieben hat, das in der Vorlage nicht stand: eine Frist, eine Kautel, eine Korrektur, ein Anzeichen, eine Klage über eine Stelle, an der es nicht ging. Nur das Zweite unterscheidet eine Kopierkette von einer Versuchsreihe, und nur das Zweite ist gegen Rückkopplung immun. Der Dogon-Fall ist nicht schwach, weil er rezipiert ist, sondern weil an der zweiten Station nichts hinzukam, was nicht schon in der Frage steckte.
+
+Die zu zählende Größe ist deshalb die Zahl der Stationen mit Bearbeitung, und dafür gibt es `pm:Reworking`. Die Klasse ist mit Absicht teuer: `pm:addedElement` zeigt auf einen Knoten, der Zusatz muss also eingetragen sein, bevor die Bearbeitung behauptet werden kann. Wie bei `pm:Testing` ist die Abwesenheit aussagekräftig und wird nicht durch Stubs gefüllt.
 
 **Drei Entscheidungen vor dem ersten Knoten einer Tradition, nicht danach:**
 

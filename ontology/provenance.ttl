@@ -45,7 +45,18 @@ pm:Converging a owl:Class ;
     rdfs:label "Converging"@en, "Konvergieren"@de ;
     skos:definition "A structural correspondence observed across traditions, held as a node so that it can carry its routes of transmission and its counterexamples instead of asserting universality."@en ;
     skos:note "Most apparent universality in the Western esoteric record is diffusion from few sources. A graph that counts a citation chain as independent confirmation measures reception history and reports it as structure."@en ;
+    skos:note "That is a warning against one way of counting and not against reception itself. Reception history is a finding of its own: how many transmissions carry a claim at all, and how deeply the paths between them branch, are two separate numbers and neither cancels the other. Many witnesses on one cable is a different map from many witnesses on three, and both are more informative than the earlier arrangement, in which the first case was simply not shown. The one thing the graph must be able to do is say which of the two maps a reader is looking at: dense transmission and strong effect must never look alike, or the gate of authority returns in statistical dress."@en ;
+    skos:note "Independence is also a weaker instrument than it looks, and this is the reason breadth is held beside it rather than under it. It guards against none of the three commonest sources of agreement: a shared physiology that produces the same experience wherever the same thing is done to a body, a structural necessity of the subject matter that makes any competent version converge, and the form of graded institutions, which resemble one another because institutions with grades do. What decides in the end is what can be reproduced, and independence is a way of sorting candidates for that, not a verdict."@en ;
     skos:note "Every instance is an ordering made by a compiler and carries pm:compilerInference, never textual attestation. No source says that the concepts correspond; the correspondence is the reading, and it is held as a node so that it can be argued with. Its sources are the sources of the concepts it brings together, and they attest those concepts and not their correspondence."@en .
+
+pm:Reworking a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Reworking"@en, "Bearbeiten"@de ;
+    skos:definition "The act, within one tradition, of taking over a claim from another and adding to it something the source it came from does not contain: a term, a consequence, a caution, a sign, a condition of failure."@en ;
+    skos:note "The class exists because reception is two things and the record could not tell them apart. Textual transmission is somebody copying a sentence, and it shows that the sentence was handed on. Operative uptake is somebody taking the instruction, carrying it out, and afterwards writing what was not in the exemplar. Only the second turns a chain of copies into a series of attempts, and only the second is proof against feedback: what makes the Dogon Sirius case weak is not that it is received but that nothing was added at the second station which was not already in the question."@en ;
+    skos:note "This is therefore the quantity worth counting, and it is not the number of independent witnesses. A tradition that takes over a claim about an effect and attaches a condition of failure to it has delivered more than three that pass it on word for word — and the addition is the material a pm:falsifiedBy is made from, so the examining layer comes out of the reception history rather than against it."@en ;
+    skos:note "Deliberately expensive: pm:addedElement points at a node, so the addition has to be entered before the reworking can be claimed. A station that added something and cannot say what added nothing that this graph can use. As with pm:Testing, absence is informative and is not to be stubbed: no instance means nobody has shown an addition, not that none was made."@en ;
+    skos:note "Distinct from pm:Systematizing, which is an ordering act performed by an editor in the present and named as his. A reworking is an act inside a transmission, attested in a work like any other claim, and it belongs to the tradition that performed it."@en .
 
 pm:Testing a owl:Class ;
     rdfs:subClassOf pm:Process ;
@@ -202,13 +213,43 @@ pm:convergingConcept a owl:ObjectProperty ;
 pm:transmissionPath a owl:DatatypeProperty ;
     rdfs:label "transmission path"@en, "Übertragungsweg"@de ;
     rdfs:domain pm:Converging ;
-    skos:definition "A documented route of historical contact between the traditions in which the correspondence appears. Its presence downgrades the correspondence from convergence to reception."@en .
+    skos:definition "A documented route of historical contact between the traditions in which the correspondence appears."@en ;
+    skos:note "The earlier definition here said that the presence of a route downgrades the correspondence from convergence to reception. That was a judgement wearing the clothes of a definition, and it is withdrawn. A route says how a claim travelled, not whether anything was in it. Survival through many hands is selection, because most claims do not survive it, and a record that treats transmission as noise throws away the only evidence it has about what kept being worth copying."@en ;
+    skos:note "What the route does decide is narrower and stays in force: an agreement reached along it may not be counted as independent attestation, because the same statement would be counted twice. Both may stand on one node, and on several they already do. The route bars a particular way of counting; it does not devalue the correspondence."@en .
 
 pm:independentAttestation a owl:ObjectProperty ;
     rdfs:label "independent attestation"@en, "unabhängige Bezeugung"@de ;
     rdfs:domain pm:Converging ;
     rdfs:range pm:Tradition ;
-    skos:definition "A tradition attesting the correspondence for which no route of contact is documented. This is the only kind of attestation that makes a correspondence a finding rather than a citation chain."@en .
+    skos:definition "A tradition attesting the correspondence for which no route of contact is documented, so that its testimony is not the same statement counted a second time."@en ;
+    skos:note "The earlier definition called this the only kind of attestation that makes a correspondence a finding. It is not: it is the kind that makes the count honest. A correspondence carried by reception is still a finding about what was carried; what it may not be is a tally of independent witnesses."@en .
+
+pm:independenceGround a owl:DatatypeProperty ;
+    rdfs:label "ground of independence"@en, "Grund der Unabhängigkeit"@de ;
+    rdfs:domain pm:Converging ;
+    skos:definition "The statement that carries a claim of independent attestation: when the testimony relied on was fixed or gathered, and against which publication or route that date stands."@en ;
+    skos:note "Required wherever pm:independentAttestation is set, enforced by pm:IndependenceGroundShape. The burden is reversed on purpose. Feedback from a published account back into the field it describes can almost never be demonstrated, so a predicate that marked only the demonstrated cases would let the ordinary case pass in silence — the failure pm:CoverageState and pm:ExaminationState exist to prevent. A claim of independence must instead carry the fact that makes it checkable."@en ;
+    skos:note "The date alone does not settle it, and the sentence must say more where more is at stake. Feedback within a single enquiry — few informants, several years, the same team returning, material gathered by an informant between visits — precedes any publication and no date catches it. Where the corpus was fixed that way, the ground states the gathering situation as well. Whether it does so honestly is settled at the merge and not by a shape; naming that limit is better than a guard that pretends to check it."@en .
+
+#
+# Properties of reworking
+#
+
+pm:reworkedClaim a owl:ObjectProperty ;
+    rdfs:label "reworked claim"@en, "bearbeitete Behauptung"@de ;
+    rdfs:domain pm:Reworking ;
+    skos:definition "The claim that was taken over, as it stands in the tradition performing the reworking."@en .
+
+pm:receivedFrom a owl:ObjectProperty ;
+    rdfs:label "received from"@en, "übernommen von"@de ;
+    rdfs:domain pm:Reworking ;
+    rdfs:range pm:Tradition ;
+    skos:definition "The transmission the claim was taken over from. The work and the place stay in dcterms:source; this names the transmission, so that the depth of a chain can be counted."@en .
+
+pm:addedElement a owl:ObjectProperty ;
+    rdfs:label "added element"@en, "hinzugefügtes Element"@de ;
+    rdfs:domain pm:Reworking ;
+    skos:definition "The node carrying what this station added and the exemplar does not have. Required: an addition that cannot be pointed at is an assertion about a chain and not a link in it."@en .
 
 #
 # Properties of practice and caution
