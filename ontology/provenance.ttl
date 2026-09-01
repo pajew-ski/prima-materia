@@ -232,6 +232,26 @@ pm:independenceGround a owl:DatatypeProperty ;
     skos:note "The date alone does not settle it, and the sentence must say more where more is at stake. Feedback within a single enquiry — few informants, several years, the same team returning, material gathered by an informant between visits — precedes any publication and no date catches it. Where the corpus was fixed that way, the ground states the gathering situation as well. Whether it does so honestly is settled at the merge and not by a shape; naming that limit is better than a guard that pretends to check it."@en .
 
 #
+# Properties of reworking
+#
+
+pm:reworkedClaim a owl:ObjectProperty ;
+    rdfs:label "reworked claim"@en, "bearbeitete Behauptung"@de ;
+    rdfs:domain pm:Reworking ;
+    skos:definition "The claim that was taken over, as it stands in the tradition performing the reworking."@en .
+
+pm:receivedFrom a owl:ObjectProperty ;
+    rdfs:label "received from"@en, "übernommen von"@de ;
+    rdfs:domain pm:Reworking ;
+    rdfs:range pm:Tradition ;
+    skos:definition "The transmission the claim was taken over from. The work and the place stay in dcterms:source; this names the transmission, so that the depth of a chain can be counted."@en .
+
+pm:addedElement a owl:ObjectProperty ;
+    rdfs:label "added element"@en, "hinzugefügtes Element"@de ;
+    rdfs:domain pm:Reworking ;
+    skos:definition "The node carrying what this station added and the exemplar does not have. Required: an addition that cannot be pointed at is an assertion about a chain and not a link in it."@en .
+
+#
 # Properties of practice and caution
 #
 
