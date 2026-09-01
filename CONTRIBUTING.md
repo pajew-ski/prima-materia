@@ -119,7 +119,13 @@ die übrige verschriftlichte Māori-Überlieferung),
 `korpus:zuni` (Bunzel und die Zuni-Texte der Bureau-of-American-Ethnology-Berichte),
 `korpus:navajo` (Matthews, Wyman und die aufgezeichneten Diné-Zeremonialtexte),
 `korpus:midewiwin` (Hoffman, Dewdney, Angel und die Birkenrindenrollen der
-Anishinaabe-Medizingesellschaft).
+Anishinaabe-Medizingesellschaft),
+`korpus:ifa` (das Odù-Korpus und die Literatur zur Yoruba-Divination: Ellis
+1894, Johnson und Cole in Dennetts Anhang von 1906, Bascom, Abimbola,
+Maupoil für das Fon-Fa),
+`korpus:geomantie` (ʿilm al-raml und die von ihm abhängige oder mit ihm
+strittig verwandte Literatur: die arabische Sandkunst, die europäische
+Geomantie, das madagassische sikidy).
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
