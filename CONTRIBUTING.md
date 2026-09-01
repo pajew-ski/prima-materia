@@ -154,6 +154,15 @@ Ein neuer `korpus:`-Wert wird hier eingetragen, bevor er vergeben wird.
 Er benennt den Korpus, den man aufschlägt, nicht die Datei, in der er
 später landet.
 
+Er kommt als **neue Zeile ans Ende der Liste**, und keine bestehende Zeile
+wird dabei angefasst. Deshalb trägt auch kein Eintrag ein abschließendes
+Satzzeichen: solange die Liste in einem fortlaufenden Satz stand, musste
+jeder Lauf den Punkt des letzten Eintrags in ein Komma verwandeln, und damit
+schrieben zwei gleichzeitig laufende Traditionsläufe zwangsläufig auf
+dieselbe Zeile. Der zweite Merge konfliktierte dann jedes Mal, obwohl sich
+die neuen Werte inhaltlich nie ausschlossen. Ein reines Anhängen an
+verschiedene Zeilen führt git dagegen ohne Handzusammenführung zusammen.
+
 ## Offline Reproducibility
 
 Scripts in `scripts/` must remain offline-reproducible. No network calls.
