@@ -121,7 +121,13 @@ die übrige verschriftlichte Māori-Überlieferung),
 `korpus:midewiwin` (Hoffman, Dewdney, Angel und die Birkenrindenrollen der
 Anishinaabe-Medizingesellschaft),
 `korpus:inuit` (Rasmussen, Report of the Fifth Thule Expedition, Bände VII und
-VIII, und die übrigen aufgezeichneten Inuit-Zeugnisse).
+VIII, und die übrigen aufgezeichneten Inuit-Zeugnisse),
+`korpus:ifa` (das Odù-Korpus und die Literatur zur Yoruba-Divination: Ellis
+1894, Johnson und Cole in Dennetts Anhang von 1906, Bascom, Abimbola,
+Maupoil für das Fon-Fa),
+`korpus:geomantie` (ʿilm al-raml und die von ihm abhängige oder mit ihm
+strittig verwandte Literatur: die arabische Sandkunst, die europäische
+Geomantie, das madagassische sikidy).
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label

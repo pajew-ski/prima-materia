@@ -1,0 +1,160 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Ifá
+#
+# Order of the file: the tradition and the contact question it was registered
+# under wrongly, then the operation of the oracle, then the enumerated corpus
+# and the memorisation it demands, then the training that precedes the office,
+# then the closure of the rule of interpretation, then the dispute over what
+# the sixteen figures are. The tradition instance was registered in
+# traditions/registry-outside-contact.ttl and is moved here now that passages
+# have been read.
+#
+# The claim form follows traditions/midewiwin.ttl: a named procedure is said
+# to yield a named capacity, so the node is pm:Yielding and not
+# pm:Attributing.
+#
+
+pmt:Ifa a pm:Tradition ;
+    rdfs:label "Ifá"@en, "Ifá"@de ;
+    skos:definition "The Yoruba divinatory transmission: an enumerated set of signs obtained by casting, each sign carrying narratives that a diviner is expected to hold by memory and to recite on the sign falling."@en ;
+    skos:note "The closest thing to a written corpus that was never written. It is fixed, enumerated, internally ordered and transmitted through a pupilage of stated length, which is what made it the entry point chosen from the registry."@en ;
+    skos:note "Read in this run: the section on Ifa in chapter II of the account of eighteen ninety-four, and its chapter IV for what that author says about the origin of the god; and the appendix of the volume of nineteen hundred and six, which reprints an extract on Ifa by a Yoruba bishop and a second extract by a Sierra Leonean author on geomancy. Left unread: the remaining chapters of both volumes, and the twentieth-century monographs named in the principal corpus, which are in copyright and available only as lending copies. The text of eighteen ninety-four was read in an electronic reproduction that carries no printed pagination, so the places are given by chapter and section and not by page."@en ;
+    skos:note "The contact route is entered as disputed and no longer as absent, and the correction is the main finding of the run that opened this file. The registry had recorded no route because none was looked for. One of the two extracts read here identifies the sixteen figures of the oracle with the apparatus of geomancy — twelve houses of the heavens, two witnesses, a judge and a further judge — which is the apparatus of the Arabic sand science and, through it, of material this graph already holds on its Mediterranean side. Until that identification is settled, an agreement between this tradition and anything already in the graph counts as neither reception nor independent attestation. The dispute stands as its own node below, which is what pm:contactRouteDisputed requires before an agreement may be weighed at all."@en ;
+    skos:note "Two of the works cited in this file were read at second hand, in the appendix that reprints them. Neither extract carries an imprint there, so neither citation gives place or year. A separately published copy of the bishop's pamphlet was searched for and not found: under both the author's name and the confusable name of the Yoruba historian, in the large text archives and in a library catalogue aggregator, and in a bibliography of early Yorùbá books. The nodes resting on those extracts therefore carry pm:mediatedAttestation and name the appendix with pm:readVia, and they remain open posts."@en ;
+    pm:principalCorpus "The Odù corpus as published in Bascom, Ifa Divination, and Abimbola, Ifá: An Exposition of Ifá Literary Corpus" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "A. B. Ellis, The Yoruba-Speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1894), chapter II, the section on Ifa" .
+
+#
+# The operation of the oracle
+#
+
+pmp:IfaCasting a pm:Practicing ;
+    rdfs:label "Casting the sixteen palm nuts"@en, "Der Wurf der sechzehn Palmnüsse"@de ;
+    skos:definition "The operation by which a figure is obtained: sixteen palm nuts are held loosely in one hand and thrown through the half-closed fingers into the other. One nut left behind is marked with a double stroke and two nuts left behind with a single stroke, and the throw is repeated until two columns of four marks stand on the whitened board."@en ;
+    skos:note "The mark is set by what remains in the hand and not by what the diviner judges, so the figure is not chosen. The source describes the mechanism and does not draw that consequence itself; the observation is recorded here and not asserted as the source's."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "A. B. Ellis, The Yoruba-Speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1894), chapter II, the section on Ifa" .
+
+pmc:IfaSixteenMothers a pm:Conceptualizing ;
+    rdfs:label "The sixteen figures called mothers"@en, "Die sechzehn Figuren, Mütter genannt"@de ;
+    skos:definition "The sixteen figures the casting can produce, named mothers in the account of eighteen ninety-four. A figure formed by taking one column from one mother and one column from another is named a child."@en ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "A. B. Ellis, The Yoruba-Speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1894), chapter II, the section on Ifa" .
+
+#
+# The enumerated corpus and the memorisation it demands
+#
+
+pmc:IfaOduEnumeration a pm:Conceptualizing ;
+    rdfs:label "The enumeration of the signs"@en, "Die Zählung der Zeichen"@de ;
+    skos:definition "The count of the signs as the bishop's extract gives it: behind each of the sixteen representative palm nuts stand sixteen subordinate powers, and each of the whole number is itself called an Odu, which is to say a head; this gives two hundred and fifty-six. A further sixteen are counted behind each of those, which gives four thousand and ninety-six."@en ;
+    skos:note "The two accounts read in this run do not generate the count the same way. The account of eighteen ninety-four compounds the further figures from the columns of two of the sixteen; the extract used here subordinates sixteen to each of the sixteen. Both arrive at a system built on sixteen, and neither states the other's derivation. The difference is recorded rather than smoothed, because which derivation a source gives is one of the things that would distinguish a locally grown scheme from a borrowed one."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), appendix, extract from Yoruba Heathenism" ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "James Johnson, Yoruba Heathenism, the account of the Odu and their number" .
+
+pmc:EjiOgbeFirstOfTheSigns a pm:Conceptualizing ;
+    rdfs:label "Eji Ogbe as the first of the signs"@en, "Eji Ogbe als erstes der Zeichen"@de ;
+    skos:definition "The sign held to be the principal one, called the leader, the commander and the king. Its appearance on the divining bowl is taken to mean that the message delivered is of very great weight."@en ;
+    skos:note "A stated order of rank among the signs, and therefore a place where a later reader can check whether a modern list has kept the tradition's own order or imposed another."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), appendix, extract from Yoruba Heathenism" ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "James Johnson, Yoruba Heathenism, the account of the Odu and their number" .
+
+pmc:IfaVerseCorpus a pm:Conceptualizing ;
+    rdfs:label "The narratives attached to the signs"@en, "Die den Zeichen anhängenden Erzählungen"@de ;
+    skos:definition "The body of narratives through which a sign delivers its answer, given in parables. One thousand six hundred and eighty are counted to each Odu, and everyone aspiring to the office of babalawo is expected to commit them, together with those of the other signs, to memory."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), appendix, extract from Yoruba Heathenism" ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "James Johnson, Yoruba Heathenism, the account of the stories attached to the Odu" .
+
+pmc:IfaMemorisationStandardUnmet a pm:Conceptualizing ;
+    rdfs:label "The memorisation standard reported as unattained"@en, "Der als unerreicht berichtete Gedächtnismaßstab"@de ;
+    skos:definition "The same extract that states the standard states that it is not reached: scarcely anyone has been found who has learnt the whole of the narratives and can recite them."@en ;
+    skos:note "The node exists because the shortfall stands in the same breath as the demand. A record that carried the demand alone would report a feat of memory that the tradition does not claim is performed, and this is one of the few places where a transmission states the distance between its own rule and its practitioners."@en ;
+    skos:note "This is the point at which the tradition touches the exactness material already in the graph, and it touches it from the other side: there the rule is enforced, here the rule is conceded to be unfulfilled. No convergence node is written for it. The contact route of this tradition stands at disputed, so an agreement counts as neither reception nor independent attestation."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), appendix, extract from Yoruba Heathenism" ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "James Johnson, Yoruba Heathenism, the account of the stories attached to the Odu" .
+
+#
+# The training that precedes the office
+#
+
+pmp:BabalawoPupilage a pm:Practicing ;
+    rdfs:label "The pupilage of a candidate for the office of babalawo"@en, "Die Lehrzeit des Anwärters auf das Amt des Babalawo"@de ;
+    skos:definition "A candidate for the office is expected to be the pupil of a babalawo known for wide knowledge of the religion and for skill in divining, for at least three years, and the course is divided into three parts covering those years. In the first the candidate learns the names of all the signs and the marks that stand for them and shows his command of them in practice; in the second he learns the traditions attached to them."@en ;
+    skos:note "What the third year requires was not recovered from the portion of the extract delivered in this run. The gap is a property of the retrieval and not of the work, and it is recorded so that the next reader opens the appendix at that place rather than repeating the whole."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), appendix, extract from Yoruba Heathenism" ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "James Johnson, Yoruba Heathenism, the account of the training of a candidate for the office of Babalawo" .
+
+pmc:DiviningPresupposesPupilage a pm:Presupposing ;
+    rdfs:label "Divining presupposes the pupilage"@en, "Das Befragen setzt die Lehrzeit voraus"@de ;
+    skos:note "Entered at prescribed order and not at stated necessity, and the reason is a property of the passage rather than of the tradition. The source sets the pupilage, its minimum length and the division of its course, and says nothing about what befalls a man who divines without it. A stated consequence would raise this to a necessity; none stands in what was read."@en ;
+    pm:dependentStep pmp:IfaCasting ;
+    pm:priorStep pmp:BabalawoPupilage ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), appendix, extract from Yoruba Heathenism" ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "James Johnson, Yoruba Heathenism, the account of the training of a candidate for the office of Babalawo" .
+
+#
+# What the oracle is consulted for
+#
+
+pmc:IfaForeknowledge a pm:Conceptualizing ;
+    rdfs:label "Foreknowledge of how a matter will fall out"@en, "Vorauswissen über den Ausgang einer Sache"@de ;
+    skos:definition "The capacity the oracle is consulted for: to learn beforehand how a matter stands and will fall out. The answer is delivered through the channel of parables, and the account of eighteen ninety-four reports that nothing of importance is undertaken without the consultation."@en ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "A. B. Ellis, The Yoruba-Speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1894), chapter II, the section on Ifa" .
+
+pmc:CastingYieldsForeknowledge a pm:Yielding ;
+    rdfs:label "The casting yields foreknowledge"@en, "Der Wurf bringt das Vorauswissen hervor"@de ;
+    pm:byPractice pmp:IfaCasting ;
+    pm:yieldsCapacity pmc:IfaForeknowledge ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "A. B. Ellis, The Yoruba-Speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1894), chapter II, the section on Ifa" .
+
+#
+# The closure of the rule of interpretation
+#
+
+pmc:IfaRuleOfInterpretationClosed a pm:Conceptualizing ;
+    rdfs:label "The rule of interpretation is fixed and closed"@en, "Die Deutungsregel ist fest und verschlossen"@de ;
+    skos:definition "The reading of a figure is reported to follow an established rule, and the rule is reported to be known only to those initiated into it. The fee paid to a priest for being taught the art is reported as very heavy."@en ;
+    skos:note "Two gates named in one sentence, and they are of different kinds. That the rule is fixed is a claim about the system and is checkable against any later account of it; that it is known only to the initiated is a claim about access, and the fee gives its price. The account is an outsider's and reports what he was not told, which is a weaker witness for the content of the rule than for the fact of its closure."@en ;
+    pm:withinTradition pmt:Ifa ;
+    dcterms:source "A. B. Ellis, The Yoruba-Speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1894), chapter II, the section on Ifa" .
+
+#
+# What the sixteen figures are
+#
+
+pmc:IfaGeomanticIdentificationDispute a pm:Disputing ;
+    rdfs:label "Whether the sixteen figures are the apparatus of geomancy"@en, "Ob die sechzehn Figuren der Apparat der Geomantie sind"@de ;
+    skos:definition "A disagreement about what the sixteen figures of the oracle are. One account has them as the base figures of the system itself, called mothers, from whose columns every further figure is compounded, and gives the practice no derivation from outside Yorubaland. The other, written by a Sierra Leonean author and reprinted in the same appendix as the bishop's extract, counts the sixteen as twelve houses of the heavens, two witnesses, one judge and a further judge got by combining the judge with the figure of the first house, and calls the operations of the diviners geomantic throughout."@en ;
+    skos:note "The second account is the reason pm:contactRoute on this tradition stands at disputed. Twelve houses, two witnesses and a judge are the working parts of the Arabic sand science and of the European geomancy descended from it, and a system that has them is not without a route to the Mediterranean and Islamic material this graph already holds. The first account describes the same casting and the same sixteen without any of those parts."@en ;
+    skos:note "Neither side of this was read in a modern study at the wording in this run. What the twentieth-century literature makes of the question — whether the figures were taken over and grafted on an older practice, whether the sand science itself has North African roots, and how either is dated — is untouched here and is the first thing the next run on this tradition should open."@en ;
+    skos:note "The second account was read at second hand, in the appendix that reprints it, and carries no imprint there. It is entered as a side of a dispute and not as a finding about the history of the system."@en ;
+    pm:disputedClaim pmc:IfaSixteenMothers ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "A. B. Ellis, The Yoruba-Speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1894), chapter II, the section on Ifa", "J. A. Abayomi Cole, Astrological Geomancy in Africa, the account of the sixteen palm nuts, read in R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), appendix" .
