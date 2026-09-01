@@ -144,6 +144,10 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Geomantie, das madagassische sikidy)
 - `korpus:nahua` (Sahagún, Ruiz de Alarcón, Jacinto de la Serna, Ponce, die
   Codices und die übrige aufgezeichnete zentralmexikanische Überlieferung)
+- `korpus:dogon` (Griaule, Masques dogons und Dieu d'eau; Griaule und
+  Dieterlen, Un système soudanais de Sirius und Le renard pâle; Dieterlen,
+  Les âmes des Dogon — die Feldwiederholungen gehören nicht dazu und gehen
+  als `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
