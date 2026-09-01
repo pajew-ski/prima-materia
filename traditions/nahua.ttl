@@ -1,0 +1,124 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Nahua ritual transmission
+#
+# Order of the file: the tradition and the contact question, then the animal
+# companion and how it is assigned, then the shared body that is the testable
+# part of that claim, then the seed that is drunk and consulted, then what the
+# recorder says about his own evidence. The tradition instance was registered
+# in traditions/registry-outside-contact.ttl and is moved here now that
+# passages have been read.
+#
+# One thing about this file is unlike the others in traditions/. Its source is
+# a manual written to suppress what it records, by a priest holding an office
+# that could punish the people he questioned. That is not a reason to keep the
+# material out — it is the reason the words survive at all — but it is a
+# property of every node here, and the last node in the file is the recorder's
+# own statement about it.
+#
+
+pmt:NahuaRitual a pm:Tradition ;
+    rdfs:label "Nahua ritual transmission"@en, "Nahua-Ritualüberlieferung"@de ;
+    skos:definition "The central Mexican transmission of address to the powers in things, of the day count, of an animal companion given at birth, and of a seed drunk in order to be questioned."@en ;
+    skos:note "The incantations were taken down in Nahuatl in order to be suppressed, so the words survive in the language they were spoken in inside a hostile frame. Both facts belong in the record."@en ;
+    skos:note "Read in this run: the first treatise of the manual of sixteen twenty-nine, chapters one to seven, in the running text. The remaining eight treatises, which carry the incantations themselves and the calling back of the tonal, were not reached: the reproduction used delivers its running text only to that point. That is a property of the access path and not of the work, and the next run resumes there rather than at the beginning. See prima-materia#228."@en ;
+    skos:note "The edition is not fully stated, and that is a defect this file carries openly. The reproduction used gives the Spanish in an old orthography and does not name the edition it reproduces. Every source line below says so. Settling it is the first thing to do before more nodes are written on this tradition, because a later change of edition would touch all of them."@en ;
+    skos:note "The contact route is entered as undecided and no longer as absent, and the change is a correction rather than a finding. The registry recorded absent, which asserts that no route exists for the period in which the corpus was fixed. But this corpus was fixed a century after the conquest, by a Spanish priest holding an ecclesiastical office, among people who had been under mission for three generations, and the recorded material carries Christian elements in places. Whether what he wrote down transmits the pre-conquest practice, and in what proportion, is a question nobody in this graph has carried out. Undecided says that; absent said something stronger that was never earned."@en ;
+    pm:principalCorpus "Sahagún, Florentine Codex, especially books VI and XI; Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas (1629); Codex Borgia" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteUndecided ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulo I, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+#
+# The animal companion and how it is assigned
+#
+
+pmc:Nahualli a pm:Conceptualizing ;
+    rdfs:label "Nahualli"@en, "Nahualli"@de ;
+    skos:definition "The word as the recorder of sixteen twenty-nine glosses it: one veiled or disguised under the appearance of an animal. He connects the name with calendars he had found among such people, which distribute the names of animals across the days."@en ;
+    skos:note "The gloss is the recorder's and is given in Spanish; the Nahuatl word is his lemma. That he offers an etymology at all is worth noting, because it shows he had the word from the people and not from a predecessor's book."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulo I, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+pmc:NahualliGivenAtBirth a pm:Conceptualizing ;
+    rdfs:label "The animal is assigned when the child is born"@en, "Das Tier wird bei der Geburt zugeteilt"@de ;
+    skos:definition "The assignment is made at birth and not chosen later: the child is dedicated or subjected to the animal at the time it is born, on the strength of an agreement the recorder attributes to the parents."@en ;
+    skos:note "The recorder frames the agreement as a pact with the devil, which is his own theology and not the tradition's account of itself. What is left when that frame is subtracted is the timing — at birth — and the fact that someone else contracts it for the child. Both are entered; the frame is not."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulo I, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+pmp:FireAndWaterRite a pm:Practicing ;
+    rdfs:label "The rite of fire and water at a birth"@en, "Der Ritus mit Feuer und Wasser bei einer Geburt"@de ;
+    skos:definition "The whole work of fire and water at a birth is committed to the specialist who holds it as his office, and who among these people ordinarily bears the name and the office of physician."@en ;
+    skos:note "The sentence is a statement about an institution: the office exists, it has a name, and the rite is not performed by the family. That is the part a later reader can check, and it is why the passage is entered as a practice rather than as an item of belief."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulo I, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+#
+# The shared body, which is the testable part
+#
+
+pmc:WoundsSharedWithTheAnimal a pm:Conceptualizing ;
+    rdfs:label "The man is found with the wounds the animal took"@en, "Der Mensch trägt die Wunden, die das Tier davontrug"@de ;
+    skos:definition "The claim that the man and his animal are one body for the purpose of injury: after a threatened person had a fight in the river with a caiman or in the open with some other animal, the man who had uttered the threat was afterwards found bearing the same wounds the animal had taken from the fight, although he had been elsewhere while it happened."@en ;
+    skos:note "This is the most examinable claim in what was read, and it is examinable in the ordinary way: it asserts a coincidence of injuries between two bodies at a distance, with a stated time relation. Nothing about it requires an opinion on whether the transformation occurs. No protocol stands on it yet; see prima-materia#231."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulo I, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+#
+# The seed that is drunk and questioned
+#
+
+pmp:OloliuhquiConsultation a pm:Practicing ;
+    rdfs:label "Drinking the ololiuhqui in order to question it"@en, "Das Trinken des Ololiuhqui, um es zu befragen"@de ;
+    skos:definition "A seed resembling a lentil is drunk; the recorder says the draught takes away the judgement, being very vehement. Those who drink it consult it as an oracle for everything they wish to know. Some hold the drinking of the seed for such consultations as their office, and such a specialist bears his own name."@en ;
+    skos:note "Three things stand in the passage and are kept apart here: that the substance is drunk, that the drinker is questioned as an oracle, and that there is an office for it. Only the third makes this a transmission rather than a usage."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulos II and VI, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+pmc:OloliuhquiAnswer a pm:Conceptualizing ;
+    rdfs:label "What the oracle is asked for"@en, "Wonach das Orakel befragt wird"@de ;
+    skos:definition "The capacity the consultation is undertaken for: to be told whatever the questioners wish to know, with no restriction of subject stated in the passage."@en ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulo VI, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+pmc:OloliuhquiYieldsAnswer a pm:Yielding ;
+    rdfs:label "The drinking yields the answer"@en, "Das Trinken bringt die Antwort hervor"@de ;
+    pm:byPractice pmp:OloliuhquiConsultation ;
+    pm:yieldsCapacity pmc:OloliuhquiAnswer ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulo VI, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+pmc:TheSpecialistIsPaid a pm:Conceptualizing ;
+    rdfs:label "The specialist is paid, and paid well"@en, "Der Fachmann wird bezahlt, und gut bezahlt"@de ;
+    skos:definition "The recorder states that the practitioner is paid very well for the consultation and is additionally courted with food and drink after their own fashion."@en ;
+    skos:note "Entered because payment is one of the gates this project counts, and because it stands beside the other one: the same chapter says the practice is hidden from outsiders. A transmission can be closed by price and by secrecy at once, and the two are not the same gate."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulo VI, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
+
+#
+# What the recorder says about his own evidence
+#
+
+pmc:ConcealmentFromTheRecorder a pm:Conceptualizing ;
+    rdfs:label "The practice is concealed from the questioner"@en, "Die Praxis wird dem Fragenden verborgen"@de ;
+    skos:definition "The recorder states that the people of this land, like those of Peru, hide the matter with the greatest diligence; that they deny it stubbornly even when accused and convicted, until they die impenitent; and that neither the fear of God nor an oath nor anything else avails to make them confess."@en ;
+    skos:note "This is the most valuable sentence in what was read, and it cuts two ways. It records a gate: the transmission was held closed against an outsider who had the power to punish, which is a fact about the tradition. And it records the limit of the whole manual as a witness, in the words of the man who wrote it: what he has is what could not be hidden from him. Every other node in this file is to be read against it."@en ;
+    skos:note "The comparison with Peru is the recorder's and is not evidence of any connection between the two. It is entered because it shows he was generalising across two colonial situations, which is one of the ways a report acquires content its informants never supplied."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NahuaRitual ;
+    dcterms:source "Hernando Ruiz de Alarcón, Tratado de las supersticiones y costumbres gentílicas que hoy viven entre los indios naturales de esta Nueva España (1629), tratado primero, capítulos I and VI, read in a digital reproduction of the Spanish text in its old orthography which does not name the edition it reproduces" .
