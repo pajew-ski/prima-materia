@@ -1,0 +1,35 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — two protocols on the Iglulik material
+#
+# The first has a falsifying condition because the claim states one itself.
+# The second has none, and says so: what it records is that the claim was
+# built so that no outcome can fail it.
+#
+
+pmp:InuitSecondSightExamination a pm:Testing ;
+    rdfs:label "Whether the foreknowledge claim survives its own universal form"@en, "Ob die Vorherwissens-Behauptung ihre eigene Allgemeinform übersteht"@de ;
+    skos:definition "A protocol on the claim that a named person always knows in advance when anything remarkable is going to happen. The claim is examinable because it is universal and because the tradition itself counts the announcement, not the interpretation, as the thing that happens."@en ;
+    pm:tests pmc:HusbandHasSecondSight ;
+    pm:falsifiedBy "One recorded remarkable event in the bearer's presence that he did not announce beforehand. The claim says always, so a single unannounced case refutes it as stated. A weaker form, that such announcements occur more often than chance would give, would require announcements collected before the events they name, with the failures kept alongside the hits." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passage recorded in traditions/inuit-angakkuq.ttl" ;
+    pm:protocolUpdated "2026-08-31" ;
+    skos:note "One confirming case is related in the same passage and no failing case is. The case does not count against the condition and does not count for it either: it was told after the event it is said to have foretold, by the wife of the man it is told about, and a dream of a friend eaten by his kin is a description that the encounter afterwards fitted rather than a prior announcement of that encounter."@en ;
+    skos:note "The remainder of the volume was not read in the run that opened this protocol, and it is precisely there that a failing case would be found if one is recorded at all. The state is therefore procedure-without-cases and not cases-without-deviation: the search has begun and has not been carried."@en .
+
+pmp:InuitReturnFailureExamination a pm:Testing ;
+    rdfs:label "Whether the return of the dead can fail at all as the tradition reports it"@en, "Ob das Wiederaufleben in der berichteten Fassung überhaupt scheitern kann"@de ;
+    skos:definition "A protocol on the claim that a dead man over whom the words were spoken can come back among the living, held here to record that the one reported failure was assigned to a broken prohibition and that no condition for failing the claim itself is available."@en ;
+    pm:tests pmc:WordsAtBirthYieldReturnAfterDeath ;
+    pm:examinationState pm:noProcedureDevised ;
+    pm:examinedBy "prima-materia" ;
+    pm:protocolUpdated "2026-08-31" ;
+    skos:note "The passage is unusual in reporting a failure at all. What it does with the failure is the finding: the attempt is said to have miscarried because a third person had sewn new caribou skin where that is forbidden, so the practitioners and the claim are both left untouched. Success shows the power, failure shows the breach, and no outcome is left over that could count against the claim."@en ;
+    skos:note "No falsifying condition is given, and this is the permitted omission: the state says outright that none has been devised. Stating one here would misreport the situation, because the obstacle is not that nobody has looked but that the claim as transmitted has no failing case by construction. Whether a condition can be recovered by fixing the interval and the announcement in advance is an open question and belongs to whoever takes it up."@en ;
+    skos:note "The asymmetry with the protocol above is worth naming. Both claims come from the same narrator on adjacent pages; one is universal and therefore refutable by a single case, the other is hedged by a clause that absorbs every case. The difference is in the form of the claim and not in the strength of the testimony behind it."@en .
