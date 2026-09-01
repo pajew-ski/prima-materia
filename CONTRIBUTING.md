@@ -92,44 +92,58 @@ niemandem auffällt.
 Dazu je ein `korpus:`-Label pro geprüftem oder zu prüfendem Korpus. Sie
 kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
 
-`korpus:daoistisch`, `korpus:upanisadisch`, `korpus:patanjala`,
-`korpus:hathayoga`, `korpus:saiva-sakta`, `korpus:tibetisch`,
-`korpus:theravada`, `korpus:dramaturgie`, `korpus:henochisch`,
-`korpus:sefer-yetzirah`, `korpus:platonisch`, `korpus:graeco-roman`,
-`korpus:eleusis`, `korpus:stoisch`, `korpus:hesychasmus`,
-`korpus:wuestenvaeter`, `korpus:unterscheidung`, `korpus:sufismus`,
-`korpus:neuplatonisch`, `korpus:kabbalistisch`, `korpus:islamisch`,
-`korpus:inkubation`,
-`korpus:orientalistik` (H. H. Wilson, Sellon, Barth, Monier-Williams und
-die übrige britische Indienwissenschaft des 19. Jh.),
-`korpus:theosophisch` (Blavatsky und die theosophische Publizistik),
-`korpus:lhp-milieu` (Temple of Set, Dragon Rouge, LaVey, Flowers und die
-Selbstdarstellungen dieses Milieus),
-`korpus:thelema` (Crowley und die thelemische Literatur),
-`korpus:ra-material` (das gechannelte Law-of-One-Korpus, 1981–1984),
-`korpus:madhyamaka` (Nāgārjuna und die Madhyamaka-Kommentatoren),
-`korpus:jung` (C. G. Jung, insbesondere Septem Sermones und Liber Novus),
-`korpus:gurdjieff` (Gurdjieff und Ouspensky),
-`korpus:gnostisch` (Nag Hammadi, Irenäus als Referent, valentinianische
-und sethianische Systeme),
-`korpus:modern` (für Behauptungen, deren Ort `pm:evidenceFrom` an einem
-`pm:Testing`-Knoten ist),
-`korpus:maori` (Shortland, Grey/Te Rangikāheke, White, Best, Ngā Mōteatea und
-die übrige verschriftlichte Māori-Überlieferung),
-`korpus:zuni` (Bunzel und die Zuni-Texte der Bureau-of-American-Ethnology-Berichte),
-`korpus:navajo` (Matthews, Wyman und die aufgezeichneten Diné-Zeremonialtexte),
-`korpus:midewiwin` (Hoffman, Dewdney, Angel und die Birkenrindenrollen der
-Anishinaabe-Medizingesellschaft),
-`korpus:inuit` (Rasmussen, Report of the Fifth Thule Expedition, Bände VII und
-VIII, und die übrigen aufgezeichneten Inuit-Zeugnisse),
-`korpus:ifa` (das Odù-Korpus und die Literatur zur Yoruba-Divination: Ellis
-1894, Johnson und Cole in Dennetts Anhang von 1906, Bascom, Abimbola,
-Maupoil für das Fon-Fa),
-`korpus:geomantie` (ʿilm al-raml und die von ihm abhängige oder mit ihm
-strittig verwandte Literatur: die arabische Sandkunst, die europäische
-Geomantie, das madagassische sikidy),
-`korpus:nahua` (Sahagún, Ruiz de Alarcón, Jacinto de la Serna, Ponce, die
-Codices und die übrige aufgezeichnete zentralmexikanische Überlieferung).
+- `korpus:daoistisch`
+- `korpus:upanisadisch`
+- `korpus:patanjala`
+- `korpus:hathayoga`
+- `korpus:saiva-sakta`
+- `korpus:tibetisch`
+- `korpus:theravada`
+- `korpus:dramaturgie`
+- `korpus:henochisch`
+- `korpus:sefer-yetzirah`
+- `korpus:platonisch`
+- `korpus:graeco-roman`
+- `korpus:eleusis`
+- `korpus:stoisch`
+- `korpus:hesychasmus`
+- `korpus:wuestenvaeter`
+- `korpus:unterscheidung`
+- `korpus:sufismus`
+- `korpus:neuplatonisch`
+- `korpus:kabbalistisch`
+- `korpus:islamisch`
+- `korpus:inkubation`
+- `korpus:orientalistik` (H. H. Wilson, Sellon, Barth, Monier-Williams und
+  die übrige britische Indienwissenschaft des 19. Jh.)
+- `korpus:theosophisch` (Blavatsky und die theosophische Publizistik)
+- `korpus:lhp-milieu` (Temple of Set, Dragon Rouge, LaVey, Flowers und die
+  Selbstdarstellungen dieses Milieus)
+- `korpus:thelema` (Crowley und die thelemische Literatur)
+- `korpus:ra-material` (das gechannelte Law-of-One-Korpus, 1981–1984)
+- `korpus:madhyamaka` (Nāgārjuna und die Madhyamaka-Kommentatoren)
+- `korpus:jung` (C. G. Jung, insbesondere Septem Sermones und Liber Novus)
+- `korpus:gurdjieff` (Gurdjieff und Ouspensky)
+- `korpus:gnostisch` (Nag Hammadi, Irenäus als Referent, valentinianische
+  und sethianische Systeme)
+- `korpus:modern` (für Behauptungen, deren Ort `pm:evidenceFrom` an einem
+  `pm:Testing`-Knoten ist)
+- `korpus:maori` (Shortland, Grey/Te Rangikāheke, White, Best, Ngā Mōteatea und
+  die übrige verschriftlichte Māori-Überlieferung)
+- `korpus:zuni` (Bunzel und die Zuni-Texte der Bureau-of-American-Ethnology-Berichte)
+- `korpus:navajo` (Matthews, Wyman und die aufgezeichneten Diné-Zeremonialtexte)
+- `korpus:midewiwin` (Hoffman, Dewdney, Angel und die Birkenrindenrollen der
+  Anishinaabe-Medizingesellschaft)
+- `korpus:inuit` (Rasmussen, Report of the Fifth Thule Expedition, Bände VII und
+  VIII, und die übrigen aufgezeichneten Inuit-Zeugnisse)
+- `korpus:ifa` (das Odù-Korpus und die Literatur zur Yoruba-Divination: Ellis
+  1894, Johnson und Cole in Dennetts Anhang von 1906, Bascom, Abimbola,
+  Maupoil für das Fon-Fa)
+- `korpus:geomantie` (ʿilm al-raml und die von ihm abhängige oder mit ihm
+  strittig verwandte Literatur: die arabische Sandkunst, die europäische
+  Geomantie, das madagassische sikidy)
+- `korpus:nahua` (Sahagún, Ruiz de Alarcón, Jacinto de la Serna, Ponce, die
+  Codices und die übrige aufgezeichnete zentralmexikanische Überlieferung)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
