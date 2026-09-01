@@ -559,9 +559,10 @@ function claimPositions(data, ctx) {
 // dropped — which is the one failure these lists are allowed to have.
 //
 // Coverage runs from registered-and-unread to harvested. Contact runs from the
-// route that makes agreement mere reception to the absence that makes it a
-// candidate for independent attestation, which is the direction that decides
-// whether a convergence can ever carry evidential weight.
+// documented route, along which an agreement may not be counted twice, to the
+// absence that makes a transmission a candidate for independent attestation.
+// The direction orders how agreements may be counted and not what they are
+// worth: reception is a finding about what was carried.
 export const COVERAGE_SCALE = [
   "pm:corpusNamed",
   "pm:workOpened",

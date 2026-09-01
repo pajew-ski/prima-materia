@@ -290,8 +290,9 @@ function setView(id, { rememberUrl = true } = {}) {
           queryFor: registerQueryFor,
           caption:
             `${register.total} transmissions registered, by how far the corpus has been carried in ` +
-            `and whether a route of contact is known. A route decides what an agreement could ever be: ` +
-            `documented makes it reception, absent makes it a candidate for independent attestation.`,
+            `and whether a route of contact is known. A route decides how an agreement may be counted ` +
+            `and not what it is worth: documented bars counting the same statement twice, absent makes ` +
+            `the transmission a candidate for independent attestation.`,
         },
       ],
       { onSelect },
