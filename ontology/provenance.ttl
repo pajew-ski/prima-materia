@@ -212,7 +212,15 @@ pm:independentAttestation a owl:ObjectProperty ;
     rdfs:label "independent attestation"@en, "unabhängige Bezeugung"@de ;
     rdfs:domain pm:Converging ;
     rdfs:range pm:Tradition ;
-    skos:definition "A tradition attesting the correspondence for which no route of contact is documented. This is the only kind of attestation that makes a correspondence a finding rather than a citation chain."@en .
+    skos:definition "A tradition attesting the correspondence for which no route of contact is documented, so that its testimony is not the same statement counted a second time."@en ;
+    skos:note "The earlier definition called this the only kind of attestation that makes a correspondence a finding. It is not: it is the kind that makes the count honest. A correspondence carried by reception is still a finding about what was carried; what it may not be is a tally of independent witnesses."@en .
+
+pm:independenceGround a owl:DatatypeProperty ;
+    rdfs:label "ground of independence"@en, "Grund der Unabhängigkeit"@de ;
+    rdfs:domain pm:Converging ;
+    skos:definition "The statement that carries a claim of independent attestation: when the testimony relied on was fixed or gathered, and against which publication or route that date stands."@en ;
+    skos:note "Required wherever pm:independentAttestation is set, enforced by pm:IndependenceGroundShape. The burden is reversed on purpose. Feedback from a published account back into the field it describes can almost never be demonstrated, so a predicate that marked only the demonstrated cases would let the ordinary case pass in silence — the failure pm:CoverageState and pm:ExaminationState exist to prevent. A claim of independence must instead carry the fact that makes it checkable."@en ;
+    skos:note "The date alone does not settle it, and the sentence must say more where more is at stake. Feedback within a single enquiry — few informants, several years, the same team returning, material gathered by an informant between visits — precedes any publication and no date catches it. Where the corpus was fixed that way, the ground states the gathering situation as well. Whether it does so honestly is settled at the merge and not by a shape; naming that limit is better than a guard that pretends to check it."@en .
 
 #
 # Properties of practice and caution
