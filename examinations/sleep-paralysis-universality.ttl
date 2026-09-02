@@ -1,0 +1,45 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — examination: the universality of the paralysis at the sleep
+# threshold
+#
+# The first pm:Positing in the holdings. The class was built for prima-materia#23
+# and has stood since then with shapes, fixtures and no instance at all; a class
+# proved only against fixtures is not known to carry. This is the case it was
+# built for, and it is entered here rather than in a tradition file because it
+# witnesses no transmission and belongs to none.
+#
+# What is posited comes from a method draft, which SPEC §10 forbids as a source.
+# It therefore carries no dcterms:source and no pm:withinTradition, only the
+# issue number under which it was put forward, and it exists only for as long as
+# the protocol below points at it.
+#
+# The order of the file is the order of the argument: the claim, then the
+# protocol, then what the protocol does and does not settle.
+#
+
+pmc:ParalysisPrecedesItsNotice a pm:Positing ;
+    rdfs:label "The paralysis is present in everyone and only its noticing is rare"@en, "Die Lähmung liegt bei jedem vor, selten ist nur ihr Bemerken"@de ;
+    skos:definition "The claim that the motor paralysis at the threshold of sleep is a regular feature of every sleeper rather than a disorder of some, and that it becomes noticeable only where waking awareness outlasts the body's entry into it."@en ;
+    skos:note "Split deliberately from the weaker claim that sleep paralysis is the regular shutdown of motor control at the sleep transition, which is prima-materia#137 and stands on its own. This one adds the two things that make it testable: a universality and an explanation of why a universal thing is rarely reported."@en ;
+    pm:positedIn "prima-materia#138" .
+
+pmc:ParalysisUniversalityProtocol a pm:Testing ;
+    rdfs:label "Whether the paralysis is universal and its noticing rare"@en, "Ob die Lähmung allgemein ist und ihr Bemerken selten"@de ;
+    skos:definition "An examination of the posited claim in two parts: whether the motor paralysis of the sleep threshold is a feature of every sleeper, and whether the rate at which it is noticed is low enough that a universal mechanism could go unreported."@en ;
+    skos:note "The claim has two halves and they are carried by two different bodies of evidence, which is the reason this protocol is worth entering at all. The universality is a matter of mechanism: the atonia of the relevant sleep stage is produced by an identified transmitter and receptor pathway and is a regular feature of that stage rather than a fault in it. The rarity of noticing is a matter of prevalence: a systematic review over thirty-five studies and more than thirty-six thousand participants finds that some seven and a half per cent of the general population report at least one episode in a lifetime, with markedly higher figures among students and psychiatric samples."@en ;
+    skos:note "The two halves fit, and that is the finding. A mechanism present in every sleeper and an experience reported by roughly one in thirteen are not in contradiction: they are exactly what the claim asserts, namely that what is rare is not the paralysis but the waking awareness that coincides with it. The state is therefore cases without deviation."@en ;
+    skos:note "What this does not settle, and the limits are sharper than the fit. The prevalence figure counts self-reported episodes and not measured ones, so it is a floor for noticing and not a ceiling for occurrence. The mechanism evidence establishes the atonia of the sleep stage and not that every reported episode coincides with it; the two are joined here by the ordinary explanation and not by a study that measured both in the same subjects. And a claim confirmed in this shape says nothing about what any transmission builds on the state, which is the part this graph actually cares about."@en ;
+    skos:note "A word on why the claim is posited and not sourced. It comes from an unpublished method draft, which SPEC §10 excludes as a witness, and the exclusion is not a formality: a draft that entered as a source could be confirmed by the very research it was written from. Holding it as a posit keeps the direction right, and the direction is that the draft is examined and never grounded."@en ;
+    pm:tests pmc:ParalysisPrecedesItsNotice ;
+    pm:examinationState pm:casesWithoutDeviation ;
+    pm:falsifiedBy "A population of ordinary sleepers is found in whom the atonia of the sleep stage is absent; or reported episodes are measured and found not to coincide with it."@en ;
+    pm:examinedBy "Not devised here. The protocol assembles two existing bodies of evidence, one on the mechanism and one on the prevalence, and states the joint they leave open" ;
+    pm:baseRate "7.6 per cent of the general population report at least one lifetime episode, aggregated over 35 studies and 36,533 participants; 28.3 per cent among students and 31.9 per cent among psychiatric patients" ;
+    pm:evidenceFrom "B. A. Sharpless and J. P. Barber, Lifetime prevalence rates of sleep paralysis: a systematic review, Sleep Medicine Reviews 15 (2011), no. 5, pp. 311-315, doi:10.1016/j.smrv.2011.01.007" , "P. L. Brooks and J. H. Peever, Identification of the transmitter and receptor mechanisms responsible for REM sleep paralysis, Journal of Neuroscience 32 (2012), pp. 9785-9795, doi:10.1523/JNEUROSCI.0482-12.2012" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
