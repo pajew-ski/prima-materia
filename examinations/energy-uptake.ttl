@@ -1,0 +1,85 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — examinations: taking energy in from an outside source
+#
+# Three claims of one section of the method draft, entered together because
+# they stand or fall on the same seam. The transmissions the draft draws on
+# know an uptake from breath and from food; cold as a source, wind as a source,
+# and a transfer from another person through one named hand are the draft's own
+# additions, and prima-materia#377 established that the additions are where a
+# draft is testable at all.
+#
+# The three do not come out alike, and the file is arranged so that the
+# differences stay visible: one is turned around by the evidence, one has no
+# procedure, and one has a procedure nobody has run.
+#
+
+#
+# Cold
+#
+
+pmc:EnergyTakenFromCold a pm:Positing ;
+    rdfs:label "Energy can be taken in from cold"@en, "Energie lässt sich aus Kälte aufnehmen"@de ;
+    skos:definition "The claim that exposure to cold is a source from which the practitioner draws, rather than a condition he works against."@en ;
+    skos:note "The narrowest of the draft's uptake claims and the only one that names a measurable boundary condition, which is why it is entered first."@en ;
+    pm:positedIn "prima-materia#133" .
+
+pmc:ColdAsSourceProtocol a pm:Testing ;
+    rdfs:label "Whether cold is a source or a resistance"@en, "Ob Kälte Quelle oder Widerstand ist"@de ;
+    skos:definition "An examination of whether exposure to cold supplies the practitioner with something, in the physical sense the word energy carries, or draws on him."@en ;
+    skos:note "The claim has two readings and they come out in opposite directions, so the protocol keeps them apart as prima-materia#341 requires. Read physically, it is turned around: cold exposure raises energy expenditure rather than supplying it. The heat produced in the brown adipose tissue that the cold recruits comes from oxidising the body's own substrate, and the deposit is depleted by the work, not filled by it. Cold costs; it does not deliver."@en ;
+    skos:note "Read as a report of experience, the claim describes something that occurs. Deliberate cold exposure raises circulating catecholamines sharply and is followed by a state the practitioner calls charged. The experience is real and the description of it is inverted: what is felt as taking in is a release of the body's own reserves. That is a finding about the wording and not a dismissal of the practice."@en ;
+    skos:note "The source transmission stands on the other side, and the issue that opened this said so before any evidence was consulted. The tibetan inner-heat literature sets cold as the resistance against which the heat is raised, never as what the heat is raised from. Where the draft and its transmission disagree, the measurements agree with the transmission. That is the reverse of the expected result and is the reason this node is worth having."@en ;
+    pm:tests pmc:EnergyTakenFromCold ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:falsifiedBy "Practitioners exposed to cold are found to expend less energy, or to end the exposure with greater substrate reserves, than matched participants at thermoneutrality."@en ;
+    pm:baseRate "Energy expenditure and substrate use at thermoneutrality in the same participants."@en ;
+    pm:examinedBy "Not devised here. The deviation is read off the thermogenesis literature; the second reading off the intervention study cited below" ;
+    pm:evidenceFrom "A. M. Cypess and others, Identification and importance of brown adipose tissue in adult humans, New England Journal of Medicine 360 (2009), pp. 1509-1517, doi:10.1056/NEJMoa0808718" , "M. Kox and others, Voluntary activation of the sympathetic nervous system and attenuation of the innate immune response in humans, Proceedings of the National Academy of Sciences 111 (2014), no. 20, pp. 7379-7384, doi:10.1073/pnas.1322174111" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
+
+#
+# Wind
+#
+
+pmc:EnergyTakenFromWind a pm:Positing ;
+    rdfs:label "Energy can be taken in from wind"@en, "Energie lässt sich aus Wind aufnehmen"@de ;
+    skos:definition "The claim that moving air is a source from which the practitioner draws, beyond what breathing it supplies."@en ;
+    pm:positedIn "prima-materia#134" .
+
+pmc:WindAsSourceProtocol a pm:Testing ;
+    rdfs:label "Whether wind is a source"@en, "Ob Wind eine Quelle ist"@de ;
+    skos:definition "An examination of the claim that moving air supplies the practitioner with something over and above respiration."@en ;
+    skos:note "Entered on no procedure devised, and the reason is worth stating rather than passing over. The neighbouring claim about cold names a boundary condition that instruments already measure, so it could be turned around within an afternoon. This one names no quantity that distinguishes it from breathing in still air, and until it does, there is nothing to fail."@en ;
+    skos:note "What would make it examinable is a difference the claim itself must state: the same breathing, in moving and in still air, with the two conditions expected to come apart in some named respect. That is a small addition to the claim and it is the whole difference between this node and its neighbour."@en ;
+    pm:tests pmc:EnergyTakenFromWind ;
+    pm:examinationState pm:noProcedureDevised ;
+    pm:examinedBy "Nobody. The state records that no falsifying condition has been stated, which is a fact about the means of examination and not about the claim" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
+
+#
+# Transfer from another person
+#
+
+pmc:EnergyTakenFromAPersonThroughTheLeftHand a pm:Positing ;
+    rdfs:label "Energy can be taken from a person through the left hand"@en, "Energie lässt sich aus einer Person über die linke Hand aufnehmen"@de ;
+    skos:definition "The claim that something passes from one person to another during contact, and that it enters through one named hand rather than the other."@en ;
+    skos:note "Two claims in one sentence, and they are not equally reachable. That something passes is the general transfer claim of the section; that it enters through the left hand and not the right is a statement about sides, and a statement about sides is the kind that can be checked."@en ;
+    pm:positedIn "prima-materia#328" .
+
+pmc:HandSideTransferProtocol a pm:Testing ;
+    rdfs:label "Whether the side of the hand makes a difference"@en, "Ob die Seite der Hand einen Unterschied macht"@de ;
+    skos:definition "An examination of the narrow half of the claim: whether contact through the left hand differs in its reported or measured effect from contact through the right."@en ;
+    skos:note "Only the lateral half is examined here. Whether anything passes at all is the section's broad claim and is not addressed by this protocol; a result on the sides would say nothing about it either way, and the two must not be allowed to borrow from one another."@en ;
+    skos:note "The state is procedure without cases, which is rare in this holding and is the point. The falsifying condition below needs no instrument the field lacks and no access to a tradition: blinded practitioners, both hands, and a comparison. Nobody has run it. That is a gap in the record and not a verdict, and the distinction is the one SPEC §13 exists to keep."@en ;
+    skos:note "A caution about what a positive result would mean. Handedness, the side a practitioner was taught on, and the expectation carried into the contact would all have to be controlled before a difference between the sides could be read as a property of the sides. A protocol that found one without controlling them would have measured the teaching."@en ;
+    pm:tests pmc:EnergyTakenFromAPersonThroughTheLeftHand ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "Practitioners blinded to which hand is in contact report or show no difference between left-hand and right-hand contact beyond chance."@en ;
+    pm:examinedBy "Not devised here. The falsifying condition is the ordinary two-sided comparison, stated because the claim names a side and thereby invites it" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
