@@ -61,6 +61,26 @@ pmc:SunCourseRule a pm:Conceptualizing ;
     pm:withinTradition pmt:SamiNoaidi ;
     dcterms:source "Johannes Schefferus, The History of Lapland (Oxford: at the Theater, 1674), chap. XI, p. 57", "Knud Leem, An Account of the Laplanders of Finmark, in John Pinkerton (ed.), A General Collection of the Best and Most Interesting Voyages and Travels, vol. I (London: Longman, Hurst, Rees and Orme, 1808), chap. XXI, pp. 474 and 477" .
 
+pmc:DrumWoodTurningWithTheSun a pm:Conceptualizing ;
+    rdfs:label "Wood that turns with the sun's course"@en, "Holz, das sich mit dem Sonnenlauf dreht"@de ;
+    skos:definition "The qualifying material of the drum. It must be a pine, fir or birch grown in a particular place and turning directly according to the sun's course, which the recorder defines: the grain of the wood, running from the bottom of the tree to the top, winds itself from the right hand to the left. A tree so grown is held acceptable to the sun."@en ;
+    skos:note "A second condition on the same material stands in the same passage: the piece must be taken from the root, cleft asunder and hollowed on one side, and the skin is stretched over the hollow. It is entered here rather than as a node of its own because it names no criterion by which a piece could fail, only a manner of working."@en ;
+    skos:note "The direction is stated twice in this file in frames that do not obviously agree. Here the sun's course is the grain winding from the right hand to the left as it rises; at pmc:SunCourseRule it is the ring travelling round towards the right hand. Whether a spiral seen along a rising trunk and a ring seen on a flat skin describe one direction or two is not decidable from the passages, and is left standing rather than harmonised."@en ;
+    skos:note "The recorder gives the sun-acceptability as his own conjecture — 'from this perhaps they believe' — not as something told to him. The requirement is reported; its reason is his."@en ;
+    pm:withinTradition pmt:SamiNoaidi ;
+    dcterms:source "Johannes Schefferus, The History of Lapland (Oxford: at the Theater, 1674), chap. XI, Of the magicall Ceremonies of the Laplanders, pp. 47-48" .
+
+pmc:ConsultationPresupposesQualifyingWood a pm:Presupposing ;
+    rdfs:label "Consulting the drum presupposes wood that turns with the sun"@en, "Die Befragung setzt sonnenläufiges Holz voraus"@de ;
+    skos:note "Entered at prescribed order and not at stated necessity: the source says the drum must be of such wood, and does not say what follows from using a drum that is not. The strength is the strength the text gives, not the strength the requirement sounds like."@en ;
+    skos:note "This is the condition the graph nearly lost. It was read at the wording in the same run as the rest of this file but reached only a local working copy, not the branch, and was recovered only because an uncommitted file was noticed. Recorded as a process finding in prima-materia#351."@en ;
+    pm:dependentStep pmp:RunicDrumConsultation ;
+    pm:priorStep pmc:DrumWoodTurningWithTheSun ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SamiNoaidi ;
+    dcterms:source "Johannes Schefferus, The History of Lapland (Oxford: at the Theater, 1674), chap. XI, Of the magicall Ceremonies of the Laplanders, pp. 47-48" .
+
 pmc:DrumMustBeInherited a pm:Presupposing ;
     rdfs:label "The drum must be inherited"@en, "Die Trommel muss ererbt sein"@de ;
     skos:note "Entered at prescribed order and not at stated necessity: the source says the drums were not thought sufficiently fit for their uses unless got by inheritance, and does not say what follows from using one that was not. The rule sits oddly beside the same recorder's report of a practitioner explaining how his own drum was made, and the oddity is left standing rather than resolved."@en ;
