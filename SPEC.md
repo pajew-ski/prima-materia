@@ -717,7 +717,10 @@ Ein Werk, das für eine Behauptung geöffnet wurde, wird nicht für diese eine B
 - **Vermögen** — was an Zuständen, Fähigkeiten und Erreichungen als durch Übung erlangbar behauptet wird. Hier gilt Vollständigkeit im strengen Sinn: ein übergangenes Vermögen ist etwas, das zu lernen wäre und niemandem mehr auffällt.
 - **Voraussetzungsketten** — was vor etwas anderem da sein muss, damit es überhaupt eintreten kann. Sie sind der Teil, den Zusammenfassungen zuerst verlieren, und der Teil, an dem eine Praxis scheitert.
 - **Warnungen und Kautelen** — besonders die, die ihre eigene Verkennung mitnennen, und die Selbstwarnungen eines Textes gegen das, was er vorschreibt.
-- **Prüfbares** — genannte Anzeichen, Kriterien, Fristen, Misslingensbedingungen; alles, woraus sich später ein `pm:falsifiedBy` formen lässt.
+- **Misslingensbedingungen** — was der Text als Anzeichen dafür nennt, dass es *nicht* gewirkt hat, und woran das liegt: eine Frist, nach der nichts mehr kommt, ein Fehlschlag beim dritten Versuch, eine unvollständige Reinigung. Nur daraus wird ein `pm:falsifiedBy`, weil nur das einen Ausgang ausschließt.
+- **Gelingenszeichen** — was der Text als Anzeichen des Gelingens nennt: ein Licht, eine Wärme, eine Erscheinung. Ebenfalls geschuldet, aber **getrennt zu führen und getrennt zu zählen.** Ein Gelingenszeichen wird dem Übenden vorher angesagt, also berichtet er es, und die Basisrate ist unbekannt, weil niemand dasselbe Zeichen ohne die Ansage misst. Als Prüfmaterial gelesen erzeugt es lauter Bestätigungen — genau die Lage, die `pm:claimDoesNotDiscriminate` nachträglich meldet und die hier billiger zu verhindern ist.
+
+Die Trennung ist nicht Ordnungsliebe. Eine Überlieferung, die viele Zeichen und keine einzige Misslingensbedingung nennt, ist damit als solche erkennbar, und das ist selbst ein Befund über die Überlieferung. Die Erntenotiz nennt deshalb beide Zahlen und nicht ihre Summe.
 
 Erzählung, Lebenslauf, Polemik und kosmologisches Gerüst sind nicht geschuldet, sondern nach Ermessen, und nur soweit sie eines der vier tragen.
 
