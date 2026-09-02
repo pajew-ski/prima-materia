@@ -166,6 +166,11 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Lagae, Les Azande ou Niam-Niam; Schweinfurth, The Heart of Africa, Bd. II,
   als frühester Zeuge — die Rationalitätsdebatte um Winch, Horton und Gluckman
   gehört nicht dazu und geht als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:andin` (Arriaga, Extirpación de la idolatría del Pirú; Molina,
+  Relación de las fábulas y ritos de los incas; Guaman Poma de Ayala, Nueva
+  corónica y buen gobierno; das Huarochirí-Manuskript und seine Übersetzungen;
+  Polo de Ondegardo; Cobo, Historia del Nuevo Mundo, Buch XIII — die moderne
+  Andinistik geht als `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
