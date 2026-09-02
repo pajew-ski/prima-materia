@@ -128,6 +128,13 @@ pm:casesWithDeviation a pm:ExaminationState ;
     rdfs:label "Cases with deviation"@en, "Fälle mit Abweichung"@de ;
     skos:definition "Cases have been recorded and show a deviation from the stated base rate. What deviates is what the protocol measured, which is rarely the whole of what the claim asserts."@en .
 
+pm:claimDoesNotDiscriminate a pm:ExaminationState ;
+    rdfs:label "Claim does not discriminate"@en, "Behauptung unterscheidet nicht"@de ;
+    skos:definition "Cases have been recorded, they show no deviation, and the claim is nonetheless uninformative: it is worded so that outcomes which differ from one another all satisfy it equally."@en ;
+    skos:note "The fifth state and the least obvious. It is not a milder pm:casesWithoutDeviation. There the claim said something and the cases bore it out; here the cases bear it out because the claim did not say enough to be borne out against anything. Recording such a protocol as cases without deviation would enter a success where an examination in fact found the claim empty, and a reader counting confirmations would count this one."@en ;
+    skos:note "The distinction that decides which of the two applies is not how strong the evidence is but whether an outcome exists that the claim would have ruled out. If the claim covers a result and its opposite alike, it discriminates nothing and belongs here, however well the cases fit."@en ;
+    skos:note "This state exists because a case forced it. A claim that coupling an intended state to a strong affect shifts the threshold for risk is confirmed by the evidence and useless to whoever acts on it, because fear and anger are both strong and move that threshold in opposite directions. See prima-materia#141."@en .
+
 #
 # Modes of attestation
 #
@@ -308,6 +315,12 @@ pm:examinationState a owl:ObjectProperty ;
     rdfs:domain pm:Testing ;
     rdfs:range pm:ExaminationState ;
     skos:definition "How far the attempt to fail the claim has been carried."@en .
+
+pm:undividedOutcomes a owl:DatatypeProperty ;
+    rdfs:label "undivided outcomes"@en, "nicht geschiedene Ausgänge"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "The differing outcomes that the claim treats alike, named so that the charge of saying nothing is itself checkable."@en ;
+    skos:note "Required wherever the state is pm:claimDoesNotDiscriminate, enforced by pm:UndividedOutcomesRequiredShape. The burden falls on the examiner for the same reason it does at pm:independenceGround: a verdict that a claim says nothing is easy to reach and hard to contest, and one that names no pair of outcomes it fails to separate is an opinion about the claim rather than a finding about it."@en .
 
 pm:examinedBy a owl:DatatypeProperty ;
     rdfs:label "examined by"@en, "geprüft von"@de ;

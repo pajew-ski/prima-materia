@@ -200,6 +200,23 @@ pm:FalsifierRequiredShape a sh:NodeShape ;
     sh:message "A protocol needs a stated falsifying condition unless its state is pm:noProcedureDevised." .
 
 #
+# A verdict that a claim says nothing must name what it fails to say. Without
+# that, pm:claimDoesNotDiscriminate becomes the comfortable place to file every
+# claim the examiner found unsatisfying, and the record would report on the
+# examiner's patience instead of on the claims.
+#
+pm:UndividedOutcomesRequiredShape a sh:NodeShape ;
+    sh:targetClass pm:Testing ;
+    sh:or (
+        [ sh:not [ sh:property [
+            sh:path pm:examinationState ;
+            sh:hasValue pm:claimDoesNotDiscriminate ;
+            sh:minCount 1 ] ] ]
+        [ sh:property [ sh:path pm:undividedOutcomes ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "A protocol whose state is pm:claimDoesNotDiscriminate must name the outcomes the claim treats alike." .
+
+#
 # A dispute cites every side it reports. One source is not a disagreement,
 # it is a position; recording it as a dispute would let the record decide
 # the matter by which side it happened to read.
