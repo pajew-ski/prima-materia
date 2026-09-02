@@ -83,14 +83,6 @@ Die Regel dagegen ist keine Prüfung, sondern ein Schritt: **der Branch ist die 
 
 Ein ungültiger Zwischenstand auf einem `claude/`-Branch ist dabei kein Schaden — dafür ist der Branch da, und die `concurrency`-Gruppe fängt die überholten Läufe ab. Ein unbemerkter Verlust ist einer.
 
-**5. Beifang wird geerntet, aber nicht auf demselben Weg.**
-
-Eine Recherche findet mehr, als die Frage verlangt, und dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst. Er darf den Maßstab aber nicht senken. Deshalb: ein nebenbei gefundener Befund wird nur dann Knoten, wenn er **selbst** die volle Prüfung durchlaufen hat — Stelle plus Gegensuche. Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen.
-
-Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund ist nicht geprüft, sondern begegnet. Läuft er als Knoten ein, ist der Bestand wieder eine Sammlung, und die Trennung von Behauptung und Beglaubigung, die dieses Repo ausmacht, ist an der billigsten Stelle durchbrochen.
-
-Der Ertrag der Regel liegt beim Beifang, der schon im Bericht mit Vorbehalt kommt: Seitenzahlen aus Sekundärliteratur, gemeinfreie Altübersetzungen statt kritischer Ausgaben, bestrittene Zuschreibungen. Genau das wird Issue und nicht Knoten.
-
 ## Was „gegroundet" heißt und was nicht
 
 | | |
