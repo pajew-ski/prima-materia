@@ -423,6 +423,8 @@ Läuft auf `push` nach `main` und auf `workflow_dispatch`, validiert, kompiliert
 
 Der Spiegel ist ausdrücklich sekundär. Der Namensraum-Host liefert dieselben Dateien und ist der Ort, den die Bezeichner nennen; `distribute.yml` existiert für Abnehmer, die über jsDelivr laden wollen.
 
+**Eine `concurrency`-Gruppe `distribute` mit `cancel-in-progress: false` serialisiert die Läufe.** Der Schreibschritt endet auf einem nackten `git push` ins Dist-Repo, ohne Retry. Zwei kurz hintereinander gemergte PR — der Normalfall bei einem gestapelten Lauf — starten sonst zwei Läufe, die dasselbe Dist-Repo zum selben Zeitpunkt ausgecheckt haben; der zweite scheitert non-fast-forward. Der Fehler ist still an der Stelle, an der er zählt: `main` ist grün, `version.json` im Spiegel zeigt einen älteren `git_sha`, und erst der nächste Push nach `main` repariert es zufällig mit. Abgebrochen werden darf hier nicht, aus demselben Grund wie bei `pages.yml`: ein abgebrochener Prüflauf kostet nichts, ein abgebrochener Publikationslauf lässt den Spiegel zurückstehen. Fall in prima-materia#353.
+
 **Hinweis für den Agent:** Das `DIST_REPO_TOKEN`-Secret muss vom User manuell in den Repo-Settings gesetzt werden (Personal Access Token mit Write-Access auf prima-materia-dist). Das ist nicht vom Agent automatisierbar.
 
 ## 8. llms.txt
