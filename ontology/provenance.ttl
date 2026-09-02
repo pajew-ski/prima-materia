@@ -316,6 +316,12 @@ pm:examinationState a owl:ObjectProperty ;
     rdfs:range pm:ExaminationState ;
     skos:definition "How far the attempt to fail the claim has been carried."@en .
 
+pm:undividedOutcomes a owl:DatatypeProperty ;
+    rdfs:label "undivided outcomes"@en, "nicht geschiedene Ausgänge"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "The differing outcomes that the claim treats alike, named so that the charge of saying nothing is itself checkable."@en ;
+    skos:note "Required wherever the state is pm:claimDoesNotDiscriminate, enforced by pm:UndividedOutcomesRequiredShape. The burden falls on the examiner for the same reason it does at pm:independenceGround: a verdict that a claim says nothing is easy to reach and hard to contest, and one that names no pair of outcomes it fails to separate is an opinion about the claim rather than a finding about it."@en .
+
 pm:examinedBy a owl:DatatypeProperty ;
     rdfs:label "examined by"@en, "geprüft von"@de ;
     rdfs:domain pm:Testing ;
