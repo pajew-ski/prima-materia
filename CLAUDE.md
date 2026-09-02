@@ -289,8 +289,14 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 - Neuer Code → Tests dafür schreiben (TDD bevorzugt)
 - TTL-Änderungen → SHACL-Validierung lokal laufen lassen
 - Commits klein und atomar, Messages im Imperativ
-- Bei mehrdeutiger Spezifikation: **fragen, nicht raten**
+- Bei mehrdeutiger Spezifikation: **fragen, nicht raten** — und die Frage trägt eine Empfehlung, siehe unten
 - Bei Scope-Erweiterung über Phase 0/1 hinaus: **vorher mit User abklären**
+
+**Ein Branch und ein PR je unabhängigem Strang.** Was nicht dieselbe Datei anfasst, wartet nicht aufeinander: jeder Strang zweigt von `main` ab und wird einzeln vorgelegt. Gestapelt wird nur bei echter Dateiüberschneidung, und der PR sagt das im ersten Absatz. Drei kleine PR sind einzeln annehmbar und einzeln zurückweisbar; ein großer ist es nicht.
+
+**Bis zum PR wird nicht innegehalten.** Keine Zwischenberichte, keine Bestätigungsfragen, keine Freigabe vor dem Schreiben. Geprüft wird am Merge.
+
+**Jede Frage kommt mit einer Empfehlung.** Optionen, ihre Kosten, und welche empfohlen wird, mit Grund. Eine Frage ohne Empfehlung schiebt Arbeit weiter, die schon getan ist, und zwingt den Leser, sich denselben Fall ein zweites Mal zu erarbeiten. Das gilt auch, wo die Entscheidung ausdrücklich beim Menschen liegt: die Zuständigkeit für die Entscheidung ist nicht die Zuständigkeit für ihre Vorbereitung.
 
 **Ein neuer Datenordner muss an vier Stellen nachgezogen werden**, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`. Nichts schlägt fehl, wenn eine davon vergessen wird; die Dateien erscheinen einfach nicht.
 

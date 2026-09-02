@@ -137,6 +137,16 @@ Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Auff
 6. PR öffnen, Validierung grün, dann liegen lassen. Der Mensch merged.
 7. Ohne Unterbrechung zum nächsten Bündel.
 
+**Im Batch, nicht nacheinander.** Was in einem Lauf unabhängig voneinander bearbeitet werden kann, wird unabhängig voneinander bearbeitet: je Strang ein eigener Branch von `main`, ein eigener PR, eine eigene Begründung. Nicht gestapelt, wo nichts stapeln muss — gestapelt wird nur, wenn zwei Stränge dieselbe Datei anfassen, und dann sagt der PR es im ersten Absatz.
+
+Der Grund ist nicht Geschwindigkeit, sondern Prüfbarkeit. Ein PR, der einen Wächter, eine Registrierung und einen Traditionsknoten zusammenfasst, ist als Ganzes anzunehmen oder abzulehnen; drei PR sind einzeln zu beurteilen und einzeln zurückzuweisen. Und ein Strang, der auf einen anderen wartet, obwohl er nicht muss, verlängert nur die Zeit, in der Arbeit im Gesprächsverlauf statt im Repo liegt.
+
+**Bis zum PR wird nicht innegehalten.** Keine Zwischenberichte, keine Bestätigungsfragen, keine Freigabe vor dem Schreiben. Der Mensch prüft am Merge; alles davor ist der Auftrag, nicht die Verhandlung darüber.
+
+**Jede Frage an den Menschen kommt mit einer Empfehlung.** Eine Entscheidung, die diese Datei und `SPEC.md` nicht abdecken, wird vorgelegt — aber nie als offene Frage allein. Vorzulegen sind: die Optionen, was jede kostet, und welche empfohlen wird, mit Grund. Wer die Alternativen kennt und die Empfehlung weglässt, schiebt die Arbeit weiter, die er schon getan hat; und eine Frage ohne Empfehlung zwingt den Menschen, sich den Fall ein zweites Mal zu erarbeiten, den der Agent gerade vor sich hatte.
+
+Das gilt auch dort, wo die Entscheidung ausdrücklich beim Menschen liegt — bei Ontologieänderungen, beim Zuschnitt einer Klasse, bei allem nach §11 und §14. Die Zuständigkeit für die Entscheidung ist nicht die Zuständigkeit für ihre Vorbereitung.
+
 **Jede im Lauf entstandene Hypothese wird noch im selben Lauf ein Issue.** Das gilt für den Zielbefund, für den Beifang, für jede Vermutung, die im Denken auftaucht, und für jeden Befund über das Repo oder die Werkzeuge. Eine Hypothese, die nur im Gesprächsverlauf steht, ist verloren, sobald die Sitzung endet — und der Gesprächsverlauf ist kein Speicher, sondern ein Fenster.
 
 **Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Wer ihn schreibt, hat den Aufwand des Anlegens schon aufgewendet und das Ergebnis weggeworfen.
