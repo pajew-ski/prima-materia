@@ -461,7 +461,7 @@ Pytest-Tests in `tests/`:
 - `test_transmutation.py` — verifiziert, dass JSON-LD-Output zurück nach TTL roundtripping ist (via rdflib)
 **Fixture-Pflicht.** Jedes neue Shape braucht einen Negativfixture, der zeigt, dass es feuert. Ein Wächter, von dem nie gezeigt wurde, dass er auslöst, ist nicht als funktionierend bekannt. Hat das Shape eine Ausnahme, braucht es zusätzlich einen positiven Fixture für die Ausnahme.
 
-**Ordnerregel.** Ein neuer Datenordner muss an vier Stellen nachgezogen werden, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`. Nichts schlägt fehl, wenn eine davon vergessen wird.
+**Ordnerregel.** Ein neuer Datenordner muss an fünf Stellen nachgezogen werden, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`, `SCAN_DIRS` in `tests/test_identifier_uniqueness.py`. Nichts schlägt fehl, wenn eine davon vergessen wird. Die fünfte ist die teuerste: ohne sie prüft der Kollisionswächter den neuen Ordner nicht, zwei Knoten mit demselben Bezeichner verschmelzen beim Kompilieren zu einem, und jede SHACL-Bedingung ist danach doppelt erfüllt.
 
 Ein Test, der gegen einen hartkodierten Namensraum vergleicht, hört bei einer Migration still auf zu prüfen und bleibt dabei grün. Solche Vergleiche gehören bei jeder Namensraumänderung mitgezogen.
 
@@ -493,6 +493,10 @@ Das Grounding im Original hat Vorrang und behält ihn. Es gibt aber Werke, die n
 **Der Modus ist an die Unerreichbarkeit gebunden, nicht an den Aufwand.** Er existiert, damit unerreichbares Material in seiner wahren Stärke eingehen kann, nicht damit erreichbares billig eingeht. Ein Werk, das sich herunterladen und durchsuchen lässt, ist erreichbar (SPEC §15); wer es über ein Referat zitiert, verletzt die Regel, auch wenn er den Vermittler nennt. Der Grund für die Vermittlung gehört ins Issue und ist eine Eigenschaft des Werkes.
 
 **Ein vermittelter Knoten bleibt ein offener Posten.** Er ist kein Abschluss, sondern der beste erreichbare Zwischenstand: sobald das Werk zugänglich wird, wird die Stelle nachgeprüft und der Modus auf `pm:textualAttestation` gehoben. Das zugehörige Issue bleibt offen und trägt, welches Exemplar fehlt.
+
+**Bezeichner folgen dem Gegenstand, nicht der Formulierung.** Ein Bezeichner wird gebildet aus der Tradition und dem normalisierten Terminus in der Originalsprache; bei einem benannten Wesen aus der Namensform in der Leitumschrift der benutzten Ausgabe. Ausdrücklich nicht aus der deutschen oder englischen Übersetzung.
+
+Das ist die Bedingung, unter der parallel gearbeitet werden kann. `tests/test_identifier_uniqueness.py` meldet, wenn ein Bezeichner in zwei Dateien getypt wird — bei gleichen Bezeichnern also sofort. Bei zwei verschiedenen Bezeichnern für denselben Gegenstand meldet er nichts, und der Bestand führt still zwei Knoten für eine Sache, jeder für sich SHACL-konform. Ein Lease über Issues verhindert nur, dass zwei Agenten gleichzeitig dasselbe Werk öffnen; gegen die spätere Dopplung, gegen den abgestürzten Lauf und gegen den zweiten Bearbeiter in drei Monaten hilft allein, dass zwei unabhängige Läufe denselben Bezeichner erzeugen. Eine Übersetzung tut das nicht, ein Terminus in der Quellsprache schon.
 
 **Der Maßstab ist Auffindbarkeit, nicht Nummerierung.** Die Angabe muss so genau sein, dass ein Leser die Stelle im benannten Werk findet. Eine Nummer ist keine Bedingung, wo das Werk keine hat oder wo die Zählung zwischen Ausgaben schwankt: `"Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness"` und `"John Climacus, The Ladder of Divine Ascent, steps 1-30"` sind zulässig. Schwankende Zählungen gehören in eine `skos:note`, nicht in eine Weglassung. Zitiergenauigkeit ist nicht Zitierbarkeit, und ein Befund, der an einer fehlenden Kapitelnummer scheitert, obwohl Werk und Traktat benannt sind, ist unnötig verloren.
 
@@ -717,7 +721,10 @@ Ein Werk, das für eine Behauptung geöffnet wurde, wird nicht für diese eine B
 - **Vermögen** — was an Zuständen, Fähigkeiten und Erreichungen als durch Übung erlangbar behauptet wird. Hier gilt Vollständigkeit im strengen Sinn: ein übergangenes Vermögen ist etwas, das zu lernen wäre und niemandem mehr auffällt.
 - **Voraussetzungsketten** — was vor etwas anderem da sein muss, damit es überhaupt eintreten kann. Sie sind der Teil, den Zusammenfassungen zuerst verlieren, und der Teil, an dem eine Praxis scheitert.
 - **Warnungen und Kautelen** — besonders die, die ihre eigene Verkennung mitnennen, und die Selbstwarnungen eines Textes gegen das, was er vorschreibt.
-- **Prüfbares** — genannte Anzeichen, Kriterien, Fristen, Misslingensbedingungen; alles, woraus sich später ein `pm:falsifiedBy` formen lässt.
+- **Misslingensbedingungen** — was der Text als Anzeichen dafür nennt, dass es *nicht* gewirkt hat, und woran das liegt: eine Frist, nach der nichts mehr kommt, ein Fehlschlag beim dritten Versuch, eine unvollständige Reinigung. Nur daraus wird ein `pm:falsifiedBy`, weil nur das einen Ausgang ausschließt.
+- **Gelingenszeichen** — was der Text als Anzeichen des Gelingens nennt: ein Licht, eine Wärme, eine Erscheinung. Ebenfalls geschuldet, aber **getrennt zu führen und getrennt zu zählen.** Ein Gelingenszeichen wird dem Übenden vorher angesagt, also berichtet er es, und die Basisrate ist unbekannt, weil niemand dasselbe Zeichen ohne die Ansage misst. Als Prüfmaterial gelesen erzeugt es lauter Bestätigungen — genau die Lage, die `pm:claimDoesNotDiscriminate` nachträglich meldet und die hier billiger zu verhindern ist.
+
+Die Trennung ist nicht Ordnungsliebe. Eine Überlieferung, die viele Zeichen und keine einzige Misslingensbedingung nennt, ist damit als solche erkennbar, und das ist selbst ein Befund über die Überlieferung. Die Erntenotiz nennt deshalb beide Zahlen und nicht ihre Summe.
 
 Erzählung, Lebenslauf, Polemik und kosmologisches Gerüst sind nicht geschuldet, sondern nach Ermessen, und nur soweit sie eines der vier tragen.
 
