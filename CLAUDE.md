@@ -231,6 +231,7 @@ Material aus einer Tradition kommt in sehr verschiedenen Formen. Die falsche Kla
 | Zwei Seiten streiten über eine Behauptung | `pm:Disputing` | `pm:disputedClaim`, **zwei** Quellen, `pm:attestedBy` |
 | Eine Übereinstimmung über Traditionen hinweg | `pm:Converging` | Übertragungsweg **oder** unabhängige Bezeugung |
 | Ein Prüfprotokoll zu einer Behauptung | `pm:Testing` | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
+| „Praktiken dieser Art bringen diese Wirkung hervor" — aus mehreren bezeugten Behauptungen gebildet, von keiner Quelle gesagt | `pm:Generalizing` | `pm:generalizedStatement`, **zwei** `pm:generalizedFrom`, `pm:attestedBy pm:compilerInference`; **kein** `dcterms:source`, **keine** `pm:withinTradition` |
 
 **Behauptungen sind Knoten, keine Kanten.** Sobald eine Aussage eine eigene Quelle, einen eigenen Bezeugungsmodus, eine eigene Stärke oder ein eigenes Prüfprotokoll tragen muss, ist sie zu reifizieren. Auf einer Kante sehen ein zitierfähiger Notwendigkeitssatz und eine Kapitelreihenfolge gleich aus. Kommt ein neuer Behauptungstyp hinzu, gilt dieselbe Regel, bevor der erste Knoten geschrieben wird.
 
