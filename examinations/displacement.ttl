@@ -1,0 +1,85 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — examinations: how the displacement is said to work
+#
+# Three claims of one section of the method draft, and the section differs from
+# the two examined before it. There the draft added an organ or a source where
+# the transmissions named none. Here it says how the thing works, and one of
+# its three statements is contradicted by a transmission the holding already
+# carries.
+#
+# That contradiction cannot be entered as pm:Disputing, and the reason is
+# structural rather than a shortcoming of this file: a dispute requires two
+# attested sides, and a posit is by construction unattested. Where a draft
+# contradicts a transmission, the vocabulary can hold the transmission's side
+# as a claim and the draft's side as a posit, and the disagreement between them
+# only as a note. See prima-materia#381.
+#
+
+#
+# The expectation of stillness
+#
+
+pmc:ExpectationOfStillnessIsTheOperator a pm:Positing ;
+    rdfs:label "The expectation that nothing moves physically is the operator"@en, "Die Erwartung, dass sich physisch nichts bewegt, ist der eigentliche Operator"@de ;
+    skos:definition "The claim that what brings the state about is not the technique but the practitioner's settled expectation that his body will stay where it is."@en ;
+    skos:note "Unusual among the draft's claims because it is about a mechanism rather than a capacity, and unusual in its direction: it places the working part in the practitioner's expectation, which is where a sceptical account would also place it. A draft that says this about its own method is saying something against interest, and that is worth recording whatever else follows."@en ;
+    pm:positedIn "prima-materia#304" .
+
+pmc:StillnessExpectationProtocol a pm:Testing ;
+    rdfs:label "Whether the expectation is what does the work"@en, "Ob die Erwartung das Wirkende ist"@de ;
+    skos:definition "An examination of whether the state depends on the practitioner holding the expectation of physical stillness, or arises without it."@en ;
+    skos:note "No procedure devised, and the obstacle is worth naming exactly because the condition itself is easy to write. It would read: practitioners who do not hold the expectation reach the state as often as those who do. Every term in that sentence can be arranged except the last. There is no way to establish that the state has been reached other than the practitioner's report, and his report is made by the same person whose expectation is the variable. The design collapses at its measuring end, not at its manipulating end."@en ;
+    skos:note "What would open it is an outward mark of the state that does not depend on the report — the kind of mark that made the inner-heat claim reachable, where a thermometer settled what testimony could not. Whether such a mark exists for this state is itself unexamined."@en ;
+    pm:tests pmc:ExpectationOfStillnessIsTheOperator ;
+    pm:examinationState pm:noProcedureDevised ;
+    pm:examinedBy "Nobody. The state records that no falsifying condition has been devised that could be run, which is a fact about the means and not about the claim" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
+
+#
+# Movement by willing the place
+#
+
+pmc:IntentionReplacesMusculature a pm:Positing ;
+    rdfs:label "Intention replaces the musculature and the change of place happens by willing it"@en, "Die Absicht ersetzt die Muskulatur, der Ortswechsel geschieht durch Wollen des Ortes"@de ;
+    skos:definition "The claim that in the state, movement is accomplished by willing the destination, with no counterpart to the effort and the duration that bodily movement requires."@en ;
+    skos:note "The claim carries an implication it does not state: if willing the place is what moves, the movement has no duration that depends on the distance. That implication is what makes it comparable to what the transmissions report."@en ;
+    pm:positedIn "prima-materia#305" .
+
+pmc:WilledDisplacementProtocol a pm:Testing ;
+    rdfs:label "Whether the displacement is instantaneous in the way the claim requires"@en, "Ob der Ortswechsel so unmittelbar ist, wie die Behauptung verlangt"@de ;
+    skos:definition "An examination of the claim against what the transmissions that report the journey say about its duration."@en ;
+    skos:note "A transmission in this holding says the opposite, and it says it in the one form that can be compared. pmc:DurationTracksDistance records that the time the practitioner lies still is stated to depend on how near or far the place is, an hour or two for a near one, with an upper bound of a day however great the distance. A journey whose duration follows the distance is not a displacement by willing; it is a movement with a speed."@en ;
+    skos:note "How much weight this bears, stated plainly. It is a seventeenth-century report of what practitioners said, not a measurement, and it is one transmission among several. It does not refute the posit. What it does is show that the draft's account is not the one its sources give, at a point where the sources happen to be specific — and specificity of that kind is rare enough in this field that it should not pass unremarked."@en ;
+    skos:note "No procedure devised, for the same reason as at the neighbouring node: the duration of the journey is only reachable through the traveller's report, and the claim is about what that report describes. The falsifying condition would require an independent fix on when the traveller arrived, which is the whole question."@en ;
+    pm:tests pmc:IntentionReplacesMusculature ;
+    pm:examinationState pm:noProcedureDevised ;
+    pm:examinedBy "Nobody. The comparison with the transmission is recorded in the notes and is not an examination; no protocol has been devised that could be run" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
+
+#
+# The return
+#
+
+pmc:ReturnIsImmediate a pm:Positing ;
+    rdfs:label "The return is immediate, by thinking of the body"@en, "Die Rückkehr erfolgt unmittelbar durch Denken an den Körper"@de ;
+    skos:definition "The claim that the practitioner comes back at once by turning his attention to his body, without the passage the outward journey required."@en ;
+    skos:note "Entered separately from the movement claim because it asserts something the movement claim does not: an asymmetry between going and returning. If the outward journey also happened by willing, there would be nothing to say about the return that was not already said."@en ;
+    pm:positedIn "prima-materia#306" .
+
+pmc:ImmediateReturnProtocol a pm:Testing ;
+    rdfs:label "Whether the return differs from the outward journey"@en, "Ob die Rückkehr sich von der Hinreise unterscheidet"@de ;
+    skos:definition "An examination of the asymmetry the claim asserts between the journey out and the journey back."@en ;
+    skos:note "The asymmetry is where this claim is reachable, and it is reachable in principle without settling anything about the journey itself. Whatever the outward passage is, the claim says the return is not like it, and a report that describes both would show whether the practitioner experiences them as different."@en ;
+    skos:note "Against the claim stands the same passage as at the neighbouring node, in a weaker way. If the time lying still follows the distance and ends at a day, the account being given is of an absence with a duration, not of an absence with a slow half and an instant half. The transmission says nothing about the return specifically; it is the shape of the whole report that sits awkwardly with a claim of asymmetry."@en ;
+    skos:note "Procedure without cases rather than no procedure, and this is the one of the three where that holds. A comparison of reported durations for the outward and the return passage, gathered from practitioners not told which half the question is about, needs nothing that does not exist. It has not been done."@en ;
+    pm:tests pmc:ReturnIsImmediate ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "Practitioners asked about both passages, without being told that the asymmetry is at issue, report durations for the return that match those for the outward journey."@en ;
+    pm:examinedBy "Not devised here. The falsifying condition follows from the claim asserting a difference between two things the practitioner can be asked about separately" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
