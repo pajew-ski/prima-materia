@@ -34,6 +34,14 @@ Wer nur nach Bestätigung sucht, findet sie. Gesucht wird auch dort, wo das Gege
 
 Mindestumfang: der Fachterm in Originalsprache und gebräuchlichen Transliterationen; der Primärtext, mindestens zwei Übersetzungen und die Sekundärliteratur zur Stelle; die Datierung des frühesten Zeugen und die Frage, ob die Zuschreibung bestritten ist; die Gegensuche; mindestens eine Überlieferung außerhalb der erwarteten Sphäre.
 
+**5. Beifang wird geerntet, aber nicht auf demselben Weg.**
+
+Eine Recherche findet mehr, als die Frage verlangt, und dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst. Er darf den Maßstab aber nicht senken. Deshalb: ein nebenbei gefundener Befund wird nur dann Knoten, wenn er **selbst** die volle Prüfung durchlaufen hat — Stelle plus Gegensuche. Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen.
+
+Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund ist nicht geprüft, sondern begegnet. Läuft er als Knoten ein, ist der Bestand wieder eine Sammlung, und die Trennung von Behauptung und Beglaubigung, die dieses Repo ausmacht, ist an der billigsten Stelle durchbrochen.
+
+Der Ertrag der Regel liegt beim Beifang, der schon im Bericht mit Vorbehalt kommt: Seitenzahlen aus Sekundärliteratur, gemeinfreie Altübersetzungen statt kritischer Ausgaben, bestrittene Zuschreibungen. Genau das wird Issue und nicht Knoten.
+
 ## Die Recherche hat zwei Stufen, und beide sind zu führen
 
 Diese Trennung ist keine Verfeinerung der vier Sätze oben, sondern die Bedingung, unter der sie überhaupt einzuhalten sind.
@@ -67,33 +75,21 @@ Vollständig heißt vollständig für das Geöffnete: die Erntenotiz im auslöse
 
 Drei Fehler, alle gleich aussehend. Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Wer sie führt und dann aufhört, wirft sie weg: die erste Stufe erzeugt keine Befunde, sondern Adressen, und eine Adresse, an die niemand geht, ist nichts. Alle drei fallen erst auf, wenn jemand die Stelle aufschlägt. Ein dokumentierter Fall des dritten steht in prima-materia#76, mit drei Befunden, die beim Nachholen entstanden und von denen zwei den Issues widersprachen, die statt ihrer angelegt worden waren.
 
-## Der stehende Auftrag
+## Prüfung, Läufe und der Abgleich vor dem PR
 
-Eine Sitzung, die mit „prima materia weiter" oder Gleichwertigem beginnt, ist vollständig und autonom zu durchlaufen: Bestand lesen, Bündel nach `korpus:`-Label wählen, beide Recherchestufen führen, das Ergebnis sofort eintragen, alle dabei entstandenen Hypothesen und Nebenfunde noch im selben Lauf als Issues anlegen, PR öffnen, ohne Unterbrechung zum nächsten Bündel.
-
-Keine Rückfragen zu Schritten, die `SPEC.md` und dieses Dokument bereits vorschreiben. Geprüft wird am Merge, nicht am Ablauf.
-
-**Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Vollständigkeit geht vor Eleganz: lieber fünfzig knappe Issues als fünf ausformulierte und der Rest im Fließtext.
+Der stehende Auftrag selbst steht weiter unten, in einem eigenen Abschnitt. Hier steht, was zwischen dem letzten Schreibvorgang eines Bündels und dem PR zu geschehen hat.
 
 **Die Prüfung liegt vor dem PR, nicht danach.** `validate.yml` hört seit #32 auch auf `push` nach `claude/**`. Auf einem Arbeitsbranch entsteht damit ein echter Lauf, bevor ein PR offen ist: schreiben, `prima_repo_check` auf denselben Branch, und erst bei `gruen` den PR öffnen. Der frühere Vermerk an dieser Stelle — der Lauf entstehe erst mit dem PR, also PR zuerst — ist überholt und war der Grund, warum Fehler in TTL-Dateien vorher erst am offenen PR auffielen.
 
 Drei Dinge, die dabei aussehen wie ein Fehler und keiner sind. Eine `concurrency`-Gruppe mit `cancel-in-progress` bricht die Läufe überholter Zwischenstände ab, ein Branch mit vielen Commits sammelt also planmäßig `cancelled`-Läufe. Und `prima_repo_check` wertet seit #44 ausschließlich den Lauf des aktuellen Kopf-SHA; abgebrochene Läufe zählen in keinem Fall als Fehlschlag, ältere Läufe erscheinen nur noch als Zahl. Wer stattdessen die Lauf-Liste im Actions-Reiter überfliegt, sieht rote Kreuze, die nichts bedeuten.
 
-Das dritte ist neu und steht nicht im Actions-Reiter, sondern am PR: **bei gestapelten Branches trägt ein grüner PR ein rotes Kreuz, weil vom nächsten Branch abgezweigt wurde.** Das Anlegen eines Refs ist ein Push und startet einen Lauf auf dem geerbten Kopf-SHA; der erste echte Commit auf dem neuen Branch bricht ihn ab, und GitHub rollt alle Check-Runs eines SHA am PR zusammen, gleich von welchem Ref sie stammen. Das Kreuz markiert also nicht den defekten PR, sondern den, auf dem der nächste aufsitzt. `prima_repo_check` meldet in diesem Fall grün und hat recht. Der Patch für `validate.yml` liegt in prima-materia#352 und muss von Hand eingespielt werden.
+Das dritte ist neu und steht nicht im Actions-Reiter, sondern am PR: **bei gestapelten Branches trägt ein grüner PR ein rotes Kreuz, weil vom nächsten Branch abgezweigt wurde.** Das Anlegen eines Refs ist ein Push und startet einen Lauf auf dem geerbten Kopf-SHA; der erste echte Commit auf dem neuen Branch bricht ihn ab, und GitHub rollt alle Check-Runs eines SHA am PR zusammen, gleich von welchem Ref sie stammen. Das Kreuz markiert also nicht den defekten PR, sondern den, auf dem der nächste aufsitzt. `prima_repo_check` meldet in diesem Fall grün und hat recht. Behoben durch prima-materia#352: `validate.yml` läuft nicht mehr, wenn der Push den Ref erst erzeugt. Der Absatz bleibt stehen, weil das Muster in älteren PR sichtbar bleibt und weil ein `cancelled`-Lauf aus anderem Anlass dieselbe Anzeige erzeugt.
 
 **Ein Bündel ist nicht fertig, solange der Klon und der Branch auseinandergehen.** Der Arbeitsweg hat zwei Schreibziele: der lokale Klon dient dazu, `python scripts/validate.py` und `pytest tests/` vor dem Schreiben laufen zu lassen, geschrieben wird aber über `prima_repo_write` auf den Branch. Zwischen beiden gibt es keinen automatischen Abgleich, und eine Änderung, die nach dem letzten Übertragen noch lokal entsteht, fällt lautlos heraus. SHACL, Tests und `prima_repo_check` bemerken das nicht: alle drei prüfen, was auf dem Branch steht, und dort steht sie ja gerade nicht. Das ist die schlimmste Fehlerklasse dieses Repos, weil ein fehlender Knoten von einer nie gelaufenen Recherche nicht zu unterscheiden ist, und sie ist eingetreten (prima-materia#351).
 
 Die Regel dagegen ist keine Prüfung, sondern ein Schritt: **der Branch ist die Quelle, der Klon das Abbild.** Am Ende jedes Bündels, vor dem PR, `git fetch` und dann jede Datei, die im Arbeitsbaum vom Branch abweicht, per `prima_repo_write` schreiben. Damit ist die Übertragung der Diff und kein Urteil mehr, und ein Vergessen hat keinen Ort. Die Abschlussbedingung ist prüfbar: `git status --porcelain` und `git diff origin/<branch>` müssen beide leer sein. Sind sie es nicht, ist das Bündel offen, unabhängig davon, was der Prüflauf sagt.
 
 Ein ungültiger Zwischenstand auf einem `claude/`-Branch ist dabei kein Schaden — dafür ist der Branch da, und die `concurrency`-Gruppe fängt die überholten Läufe ab. Ein unbemerkter Verlust ist einer.
-
-**5. Beifang wird geerntet, aber nicht auf demselben Weg.**
-
-Eine Recherche findet mehr, als die Frage verlangt, und dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst. Er darf den Maßstab aber nicht senken. Deshalb: ein nebenbei gefundener Befund wird nur dann Knoten, wenn er **selbst** die volle Prüfung durchlaufen hat — Stelle plus Gegensuche. Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen.
-
-Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund ist nicht geprüft, sondern begegnet. Läuft er als Knoten ein, ist der Bestand wieder eine Sammlung, und die Trennung von Behauptung und Beglaubigung, die dieses Repo ausmacht, ist an der billigsten Stelle durchbrochen.
-
-Der Ertrag der Regel liegt beim Beifang, der schon im Bericht mit Vorbehalt kommt: Seitenzahlen aus Sekundärliteratur, gemeinfreie Altübersetzungen statt kritischer Ausgaben, bestrittene Zuschreibungen. Genau das wird Issue und nicht Knoten.
 
 ## Was „gegroundet" heißt und was nicht
 
