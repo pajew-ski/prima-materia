@@ -185,6 +185,58 @@ def test_unexamined_claim_may_omit_the_falsifier() -> None:
     assert conforms, f"A protocol declared as having no devised procedure must conform.\n{report}"
 
 
+def test_undiscriminating_verdict_without_named_outcomes_is_rejected() -> None:
+    # The verdict that a claim says nothing is cheap to reach and hard to
+    # contest. Requiring the pair of outcomes it fails to separate is what
+    # keeps the state a finding rather than an opinion.
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:VagueVerdict a pm:Testing ;
+        pm:examinationState pm:claimDoesNotDiscriminate ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-02" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:claimDoesNotDiscriminate without pm:undividedOutcomes must fail."
+    assert "treats alike" in report
+
+
+def test_undiscriminating_verdict_with_named_outcomes_conforms() -> None:
+    permitted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:NamedVerdict a pm:Testing ;
+        pm:examinationState pm:claimDoesNotDiscriminate ;
+        pm:undividedOutcomes "The threshold rising and the threshold falling." ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-02" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A named pair of undivided outcomes must conform.\n{report}"
+
+
+def test_other_states_need_no_undivided_outcomes() -> None:
+    # The guard must not spread to the four older states, whose protocols
+    # have no such pair to name.
+    permitted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:OrdinaryProtocol a pm:Testing ;
+        pm:examinationState pm:casesWithoutDeviation ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-02" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"An ordinary protocol must not be caught by the new guard.\n{report}"
+
+
 def test_mediated_attestation_without_intermediary_is_rejected() -> None:
     # Declaring a claim second-hand costs nothing unless the second hand is
     # named. The mode exists so that an unreachable source can enter at its
