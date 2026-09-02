@@ -399,7 +399,9 @@ pm:NoSubstanceClassesShape a sh:NodeShape ;
 
 ## 7. GitHub Actions
 
-**Dieser Abschnitt beschreibt, was die Workflows leisten müssen, und nicht ihren Wortlaut.** Der Wortlaut steht in `.github/workflows/`. Ein wörtliches Listing hier war zweimal falsch, bevor es jemandem auffiel, und es nützt dem Agenten nichts: sein Token trägt keinen `workflows`-Scope, er kann die Dateien ohnehin nicht schreiben. Wer eine Änderung an einem Workflow braucht, beschreibt sie und lässt sie von Hand einspielen.
+**Dieser Abschnitt beschreibt, was die Workflows leisten müssen, und nicht ihren Wortlaut.** Der Wortlaut steht in `.github/workflows/`. Ein wörtliches Listing hier war zweimal falsch, bevor es jemandem auffiel. Es ist auch dann überflüssig, wenn der Agent die Dateien schreiben kann: was zu gelten hat, steht hier, was gilt, steht dort, und zwei Fassungen desselben Wortlauts laufen auseinander.
+
+**Der Scope-Vermerk an dieser Stelle ist überholt.** Bis zum 2026-09-02 trug das Agenten-Token keinen `workflows`-Scope, und Workflow-Änderungen waren zu beschreiben und von Hand einzuspielen. Der Versuch am 2026-09-02 ging durch; die beiden Änderungen aus prima-materia#352 und prima-materia#353 sind vom Agenten selbst geschrieben. Wer hier eine Änderung braucht, schreibt sie und begründet sie im PR wie jede andere. Das Recht, den eigenen Prüflauf zu ändern, verlangt dabei mehr Vorsicht als jede Datenänderung: eine Lockerung an `validate.yml` fällt niemandem auf, weil danach alles grün ist.
 
 ### `validate.yml`
 
@@ -408,6 +410,8 @@ Läuft auf `push` nach `main` und nach `claude/**` sowie auf `pull_request` gege
 Der Trigger auf `claude/**` ist die Bedingung dafür, dass die in `AGENTS.md` vorgeschriebene Reihenfolge überhaupt erfüllbar ist: auf dem Arbeitsbranch prüfen, dann den PR öffnen. Ohne ihn entsteht der erste Lauf mit dem PR, und ein Fehler in einer TTL-Datei fällt erst an der offenen Änderung auf.
 
 Eine `concurrency`-Gruppe je Ereignistyp und Ref mit `cancel-in-progress: true` bricht die Läufe überholter Zwischenstände ab. Gewollte Nebenwirkung: ein Branch mit mehreren Commits sammelt `cancelled`-Läufe. Ein abgebrochener Lauf hat nichts festgestellt und ist kein Fehlschlag; `prima_repo_check` wertet deshalb ausschließlich den Lauf des aktuellen Kopf-SHA. Siehe #32 und #44.
+
+**Kein Lauf beim bloßen Anlegen eines Branches.** Ein Push, der einen Ref erst erzeugt, prüft einen Commit, der auf seinem Ursprungsbranch bereits geprüft ist; der Lauf hat nie Aussagewert. Er hat aber eine Nebenwirkung, und sie ist teuer: bei gestapelten Branches trägt der neue Ref anfangs den Kopf-SHA des darunterliegenden PR. Der erste echte Commit auf dem neuen Branch bricht diesen Lauf ab, der abgebrochene Lauf bleibt an jenem SHA hängen, und GitHub rollt für einen PR alle Check-Runs am Kopf-SHA zusammen, gleich von welchem Ref sie stammen. Ergebnis: ein rotes Kreuz an einem grünen PR, und zwar ausgerechnet an dem, von dem abgezweigt wurde. Der Job trägt deshalb `if: ${{ !(github.event_name == 'push' && github.event.created) }}`; `github.event.created` ist genau dann wahr, wenn der Ref mit diesem Push entstanden ist, und ist bei `pull_request` null. Fall und Lauf-Nummern in prima-materia#352.
 
 ### `pages.yml`
 
@@ -420,6 +424,8 @@ Die `concurrency`-Gruppe hier trägt ausdrücklich `cancel-in-progress: false`, 
 Läuft auf `push` nach `main` und auf `workflow_dispatch`, validiert, kompiliert, transmutiert und schiebt die Serialisierungen samt `version.json` nach `pajew-ski/prima-materia-dist`, wenn sich etwas geändert hat.
 
 Der Spiegel ist ausdrücklich sekundär. Der Namensraum-Host liefert dieselben Dateien und ist der Ort, den die Bezeichner nennen; `distribute.yml` existiert für Abnehmer, die über jsDelivr laden wollen.
+
+**Eine `concurrency`-Gruppe `distribute` mit `cancel-in-progress: false` serialisiert die Läufe.** Der Schreibschritt endet auf einem nackten `git push` ins Dist-Repo, ohne Retry. Zwei kurz hintereinander gemergte PR — der Normalfall bei einem gestapelten Lauf — starten sonst zwei Läufe, die dasselbe Dist-Repo zum selben Zeitpunkt ausgecheckt haben; der zweite scheitert non-fast-forward. Der Fehler ist still an der Stelle, an der er zählt: `main` ist grün, `version.json` im Spiegel zeigt einen älteren `git_sha`, und erst der nächste Push nach `main` repariert es zufällig mit. Abgebrochen werden darf hier nicht, aus demselben Grund wie bei `pages.yml`: ein abgebrochener Prüflauf kostet nichts, ein abgebrochener Publikationslauf lässt den Spiegel zurückstehen. Fall in prima-materia#353.
 
 **Hinweis für den Agent:** Das `DIST_REPO_TOKEN`-Secret muss vom User manuell in den Repo-Settings gesetzt werden (Personal Access Token mit Write-Access auf prima-materia-dist). Das ist nicht vom Agent automatisierbar.
 
@@ -564,6 +570,21 @@ Labels sind kein Zustandsduplikat — den Zustand trägt offen oder geschlossen.
 | `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
 | `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar, etwa eine Dosierungsangabe |
 | `entwurf:<name>` | Herkunft der Behauptung, wo sie aus einem Methodenentwurf stammt |
+| `befund` | markiert das Issue als Repo-Arbeit, nicht als Behauptung. Das Komplement zu `behauptung` und das Dachlabel der vier folgenden |
+| `befund:werkzeug` | Zugangsweg, Werkzeuggrenze, Umweg. Erledigt, wenn der Weg dokumentiert oder das Werkzeug geändert ist |
+| `befund:ontologie` | Vokabular, Shape, fehlendes Prädikat. Erledigt, wenn die Ontologie geändert ist |
+| `befund:bestand` | falsche, doppelte oder fehlende Daten im Graphen. Erledigt, wenn die Daten korrigiert sind |
+| `befund:verfahren` | Regel in dieser Spezifikation, in `AGENTS.md`, in `CONTRIBUTING.md` oder in einem Workflow. Erledigt, wenn die Regel geändert ist |
+
+**Jedes Issue trägt entweder `behauptung` oder `befund`.** Die Aufteilung stand von Anfang an in der Definition von `behauptung` — „nicht als Repo-Arbeit" —, aber die andere Hälfte hatte keinen Namen, und was keinen Namen hat, ist nicht als Menge abfragbar. Die Folge war messbar: bei der Einführung dieses Labels trugen 61 von 287 offenen Issues gar kein Label, und es waren fast genau die Repo-, Werkzeug-, Ontologie- und Verfahrensbefunde. Sie hatten stattdessen ein Ersatzvokabular in den Titeln gebildet — Werkzeugbefund, Werkzeuglücke, Werkzeugfalle, Werkzeugmechanik, Bestandsbefund, Ontologielücke —, also vier Namen für eine Klasse und keinen davon abfragbar.
+
+Daraus folgt eine stehende Prüfung: **`is:issue is:open no:label` muss leer sein.** Ein Issue ohne Label ist kein neutraler Zustand, sondern eines, das in keiner Menge vorkommt.
+
+Das Dachlabel neben den vier Verfeinerungen ist eine Eigenschaft des Werkzeugs und keine Redundanz: `label:` kennt keine Wildcards, `label:befund:*` gibt es nicht. Ohne `befund` an jedem einzelnen Issue macht jede neue Verfeinerung jede bestehende Oder-Abfrage still unvollständig — derselbe Fehler, den Abschnitt 13 für das zweite Nummernschema verbietet.
+
+Die vier schneiden nicht nach Thema, sondern nach dem Zeitpunkt, zu dem sie gelesen werden: `befund:werkzeug` vor einem Lauf, weil dort steht, welche Zugangswege tragen; `befund:ontologie` blockiert Konvergenzknoten; `befund:bestand` sind Schulden gegen bereits gemergte Daten; `befund:verfahren` ändert Anweisungen. Sie kumulieren.
+
+**Ein `befund` trägt kein `korpus:`-Label.** Der `korpus:`-Wert ist das Protokoll der Suchabdeckung einer Behauptung; an einem Werkzeugbefund zählt er eine Abdeckung mit, die nie stattgefunden hat.
 
 **Das `korpus:`-Label kumuliert.** Eine Behauptung, die in der Atemliteratur nicht gefunden wurde, ist nicht unbelegbar, sondern in diesem Korpus nicht gefunden. Sie behält das Label, bekommt beim nächsten Durchgang das nächste dazu, und wird erst geschlossen, wenn die plausiblen Korpora erschöpft sind. Damit ist die Labelmenge zugleich die Suchabdeckung, und ein späterer Fund lässt sich daran messen, ob er einen nie geprüften Korpus betrifft.
 
@@ -684,6 +705,8 @@ Erzählung, Lebenslauf, Polemik und kosmologisches Gerüst sind nicht geschuldet
 **Vollständigkeit heißt vollständig für das Geöffnete.** Wer fünf Passagen eines Werkes von vierhundert Seiten gelesen hat, hat nicht das Werk geerntet. Die Erntenotiz nennt daher beides: was aufgenommen wurde und welche Teile ungelesen blieben. Ein Anspruch auf Erschöpfung, der nicht stattgefunden hat, ist derselbe Fehler wie eine vermutete Unerreichbarkeit, nur an der anderen Achse.
 
 **Die Erntenotiz steht im Issue, das den Lauf ausgelöst hat**, und sie nennt auch, was gesehen und bewusst nicht aufgenommen wurde, mit Grund. Das ist der wichtigere Teil: gesehen und stillschweigend fallengelassen ist von nie gesehen nicht zu unterscheiden, und ein späterer Bearbeiter kann einer Auslassung nur widersprechen, die dasteht.
+
+**Die aufgenommene Seite wird namentlich geführt, nicht in Prosa.** Die Notiz listet die geschriebenen Knoten mit ihren Bezeichnern, und sie wird aus der Lektüre geschrieben, nicht aus der fertigen Datei. Der Grund ist die Umkehrung des Satzes darüber: solange die Notiz nur erzählt, was aufgenommen wurde, ist ein Knoten, der den Weg in den Bestand nicht gefunden hat, von einem nie gesehenen weiterhin nicht zu unterscheiden — die Notiz und die Datei sagen dann beide dasselbe Nichts. Steht die Liste da, ist die Auslassung die Differenz zwischen Notiz und Branch, also zählbar und von jedem prüfbar, der beides nebeneinanderlegt. Wird sie dagegen aus der fertigen Datei abgeschrieben, prüft sie nichts, weil sie dann per Konstruktion stimmt. Der dokumentierte Fall, in dem ein am Wortlaut geprüfter Fund nur die lokale Arbeitskopie erreichte, bei grünem PR und abgeschlossenem Lauf, steht in prima-materia#351.
 
 **Die Ernte senkt keinen Maßstab.** Jede geerntete Behauptung braucht ihre eigene Stelle in derselben Ausgabe; eine gesehene, aber nicht lokalisierte Behauptung gehört ins Issue und nicht in den Graphen. Neue Traditionen und neues Vokabular bleiben Entscheidungen nach den Abschnitten 11 und 14 — die Ausnahme gilt für Knoten in bestehenden Ordnern, nicht für neue Überschriften.
 

@@ -269,6 +269,8 @@ Vollständig in `SPEC.md` Abschnitt 13 und 14. Operativ:
 
 **Recherchiert wird nach `korpus:`-Label gebündelt**, nicht nach Herkunftsabschnitt: die Arbeit folgt dem Text, den man aufschlägt. Die Labels kumulieren und sind damit das Protokoll der Suchabdeckung — „in diesem Korpus nicht gefunden" ist etwas anderes als „unbelegbar". Vokabular in `CONTRIBUTING.md`, von dort übernehmen: ein unbekannter Labelname wird stillschweigend als neues Label angelegt.
 
+**Jedes Issue trägt entweder `behauptung` oder `befund`.** `befund` ist das Komplement und zugleich das Dachlabel für `befund:werkzeug`, `befund:ontologie`, `befund:bestand` und `befund:verfahren`, die kumulieren. Ein Befund trägt kein `korpus:`-Label — der `korpus:`-Wert zählt Suchabdeckung, und an einem Werkzeugbefund zählt er eine, die nie stattgefunden hat. `is:issue is:open no:label` muss leer bleiben; als das Label eingeführt wurde, standen dort 61 von 287 offenen Issues.
+
 **Jeder Befund ist auf Korpus und Datum relativiert.** Gegroundet übersteht einen Gegenfund und wird zu `pm:Disputing`; wegen Gegenbezeugung verworfen kippt beim ersten stützenden Zeugen zurück in strittig. Eine Verwerfung, die auf einer einzigen Tradition beruht, ist ein einseitiger Streitfall und hat zu nennen, worauf sie beruht.
 
 **Der Korpus wächst über zwei Eingänge, und der zweite hat Vorrang.** Bedarf aus offenen Issues ist der eine. Der andere ist der Engpass: die Beweiskraft hängt an `pm:independentAttestation`, und eine weitere indische Datei erhöht die Dateizahl, nicht die Zeugenzahl. Vor jeder neuen Datei stehen Kontaktweg, Rezension und die Zahl der zitierbaren Stellen fest. `traditions/daoist.ttl` ist mit Absicht dünn und ist das Modell.
@@ -311,13 +313,16 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 - Setzen des `DIST_REPO_TOKEN`-Secrets im Source-Repo (Personal Access Token mit Write-Access auf `prima-materia-dist`)
 - Anlage des `prima-materia-dist`-Repos in GitHub
 - jsDelivr-Cache-Purge bei Bedarf
-- **Änderungen an `.github/workflows/*`.** Das Agenten-Token trägt keinen `workflows`-Scope; jeder Schreibversuch endet mit `403`. Der früher hier vermerkte Engpass ist erledigt: `validate.yml` hört inzwischen auf `push: branches: [main, 'claude/**']` mit `cancel-in-progress`, also läuft auf einem Arbeitsbranch geprüft, bevor ein PR offen ist, und `prima_repo_check` liefert dort einen echten Stand statt `kein_lauf`.
+
+Nicht mehr auf dieser Liste: **Änderungen an `.github/workflows/*`.** Der Vermerk, das Agenten-Token trage keinen `workflows`-Scope und jeder Schreibversuch ende mit `403`, galt bis zum 2026-09-02 und ist überholt. Die beiden Änderungen aus prima-materia#352 (`validate.yml` läuft nicht mehr beim bloßen Anlegen eines Branches) und prima-materia#353 (`distribute.yml` bekommt eine serialisierende `concurrency`-Gruppe) sind vom Agenten geschrieben. Das Soll steht weiter in `SPEC.md` §7, und eine Änderung am eigenen Prüflauf gehört ausdrücklich in die PR-Begründung: eine Lockerung an `validate.yml` fällt niemandem auf, weil danach alles grün ist.
 
 Bei diesen Schritten den User explizit auffordern und warten.
 
 ## Bekannte Fehlalarme der Werkzeuge
 
 - Der Substanzklassen-Wächter im Schreibweg prüft **jede** TTL-Schreibung auf die vier verbotenen Namen, auch in `shapes/`. Dort müssen sie vorkommen, weil `pm:NoSubstanceClassesShape` sie verbietet, indem sie sie benennt; der zugehörige Test scannt `shapes/` folgerichtig nicht. Der Wächter ist an dieser Stelle strenger als die Regel, die er durchsetzt. **Melden, nicht umgehen** — siehe Workflow-Hygiene.
+
+- **Ein grüner PR trägt ein rotes Kreuz, wenn von seinem Kopf abgezweigt wurde.** Beim gestapelten Arbeiten erbt der neue Branch anfangs den Kopf-SHA des PR darunter; das Anlegen des Refs startet einen `validate`-Lauf, der erste echte Commit bricht ihn ab, und GitHub rollt alle Check-Runs eines SHA am PR zusammen, gleich von welchem Ref sie stammen. Das Kreuz markiert nicht den defekten PR, sondern den, auf dem der nächste aufsitzt. `prima_repo_check` meldet in diesem Fall grün und hat recht; die Checks-Seite des PR zeigt den abgebrochenen Lauf mit dem fremden Branchnamen. Fall und Patch in prima-materia#352.
 
 ## Lizenz
 

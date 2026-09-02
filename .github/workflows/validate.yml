@@ -17,6 +17,11 @@ concurrency:
 
 jobs:
   validate:
+    # Ein Push, der einen Ref erst erzeugt, prueft einen Commit, der auf seinem
+    # Ursprungsbranch bereits geprueft ist. Der Lauf hat nie Aussagewert, haengt
+    # aber am geerbten Kopf-SHA und erscheint deshalb als abgebrochener Check am
+    # PR darunter. Siehe #352.
+    if: ${{ !(github.event_name == 'push' && github.event.created) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

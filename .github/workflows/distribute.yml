@@ -5,6 +5,17 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Der Schreibschritt endet auf einem nackten git push ins Dist-Repo, ohne Retry.
+# Zwei kurz hintereinander gemergte PR starten sonst zwei Laeufe, die dasselbe
+# Dist-Repo zum selben Zeitpunkt ausgecheckt haben; der zweite scheitert
+# non-fast-forward, und der Spiegel bleibt still auf dem aelteren Stand stehen.
+# Abgebrochen wird hier nicht, aus demselben Grund wie in pages.yml: ein
+# abgebrochener Pruefungslauf kostet nichts, ein abgebrochener Publikationslauf
+# laesst den Spiegel zurueck. Siehe #353.
+concurrency:
+  group: distribute
+  cancel-in-progress: false
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest

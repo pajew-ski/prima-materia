@@ -63,7 +63,7 @@ Der Anlass ist gezählt: in einem Lauf wurden vier Werke als unerreichbar gefüh
 
 **Ist das Werk offen, wird geerntet, bevor es geschlossen wird.** Nicht nur die Behauptung, für die geöffnet wurde. Ausdrückliche Ausnahme von der Issue-Bindung: die Ernte braucht kein eigenes Issue vorher und gilt nicht als Scope-Erweiterung. Geschuldet sind vier Arten — **Vermögen** (hier Vollständigkeit im strengen Sinn), **Voraussetzungsketten**, **Warnungen** samt Selbstwarnungen eines Textes gegen das, was er vorschreibt, und **Prüfbares**, aus dem sich ein `pm:falsifiedBy` formen lässt. Erzählung und Polemik nur, soweit sie eines der vier tragen.
 
-Vollständig heißt vollständig für das Geöffnete: die Erntenotiz im auslösenden Issue nennt, was aufgenommen wurde, welche Teile ungelesen blieben, und was gesehen und bewusst nicht aufgenommen wurde. Jede geerntete Behauptung braucht ihre eigene Stelle; neue Traditionen und neues Vokabular bleiben Entscheidungen nach §11 und §14. Verfahren in `SPEC.md` §15.
+Vollständig heißt vollständig für das Geöffnete: die Erntenotiz im auslösenden Issue nennt, was aufgenommen wurde, welche Teile ungelesen blieben, und was gesehen und bewusst nicht aufgenommen wurde. Die aufgenommene Seite steht dabei namentlich, mit den Bezeichnern der geschriebenen Knoten, und wird aus der Lektüre geschrieben statt aus der fertigen Datei abgeschrieben — sonst stimmt sie per Konstruktion und prüft nichts. So ist eine Auslassung die Differenz zwischen Notiz und Branch und damit zählbar. Jede geerntete Behauptung braucht ihre eigene Stelle; neue Traditionen und neues Vokabular bleiben Entscheidungen nach §11 und §14. Verfahren in `SPEC.md` §15.
 
 Drei Fehler, alle gleich aussehend. Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Wer sie führt und dann aufhört, wirft sie weg: die erste Stufe erzeugt keine Befunde, sondern Adressen, und eine Adresse, an die niemand geht, ist nichts. Alle drei fallen erst auf, wenn jemand die Stelle aufschlägt. Ein dokumentierter Fall des dritten steht in prima-materia#76, mit drei Befunden, die beim Nachholen entstanden und von denen zwei den Issues widersprachen, die statt ihrer angelegt worden waren.
 
@@ -77,7 +77,15 @@ Keine Rückfragen zu Schritten, die `SPEC.md` und dieses Dokument bereits vorsch
 
 **Die Prüfung liegt vor dem PR, nicht danach.** `validate.yml` hört seit #32 auch auf `push` nach `claude/**`. Auf einem Arbeitsbranch entsteht damit ein echter Lauf, bevor ein PR offen ist: schreiben, `prima_repo_check` auf denselben Branch, und erst bei `gruen` den PR öffnen. Der frühere Vermerk an dieser Stelle — der Lauf entstehe erst mit dem PR, also PR zuerst — ist überholt und war der Grund, warum Fehler in TTL-Dateien vorher erst am offenen PR auffielen.
 
-Zwei Dinge, die dabei aussehen wie ein Fehler und keiner sind. Eine `concurrency`-Gruppe mit `cancel-in-progress` bricht die Läufe überholter Zwischenstände ab, ein Branch mit vielen Commits sammelt also planmäßig `cancelled`-Läufe. Und `prima_repo_check` wertet seit #44 ausschließlich den Lauf des aktuellen Kopf-SHA; abgebrochene Läufe zählen in keinem Fall als Fehlschlag, ältere Läufe erscheinen nur noch als Zahl. Wer stattdessen die Lauf-Liste im Actions-Reiter überfliegt, sieht rote Kreuze, die nichts bedeuten.
+Drei Dinge, die dabei aussehen wie ein Fehler und keiner sind. Eine `concurrency`-Gruppe mit `cancel-in-progress` bricht die Läufe überholter Zwischenstände ab, ein Branch mit vielen Commits sammelt also planmäßig `cancelled`-Läufe. Und `prima_repo_check` wertet seit #44 ausschließlich den Lauf des aktuellen Kopf-SHA; abgebrochene Läufe zählen in keinem Fall als Fehlschlag, ältere Läufe erscheinen nur noch als Zahl. Wer stattdessen die Lauf-Liste im Actions-Reiter überfliegt, sieht rote Kreuze, die nichts bedeuten.
+
+Das dritte ist neu und steht nicht im Actions-Reiter, sondern am PR: **bei gestapelten Branches trägt ein grüner PR ein rotes Kreuz, weil vom nächsten Branch abgezweigt wurde.** Das Anlegen eines Refs ist ein Push und startet einen Lauf auf dem geerbten Kopf-SHA; der erste echte Commit auf dem neuen Branch bricht ihn ab, und GitHub rollt alle Check-Runs eines SHA am PR zusammen, gleich von welchem Ref sie stammen. Das Kreuz markiert also nicht den defekten PR, sondern den, auf dem der nächste aufsitzt. `prima_repo_check` meldet in diesem Fall grün und hat recht. Der Patch für `validate.yml` liegt in prima-materia#352 und muss von Hand eingespielt werden.
+
+**Ein Bündel ist nicht fertig, solange der Klon und der Branch auseinandergehen.** Der Arbeitsweg hat zwei Schreibziele: der lokale Klon dient dazu, `python scripts/validate.py` und `pytest tests/` vor dem Schreiben laufen zu lassen, geschrieben wird aber über `prima_repo_write` auf den Branch. Zwischen beiden gibt es keinen automatischen Abgleich, und eine Änderung, die nach dem letzten Übertragen noch lokal entsteht, fällt lautlos heraus. SHACL, Tests und `prima_repo_check` bemerken das nicht: alle drei prüfen, was auf dem Branch steht, und dort steht sie ja gerade nicht. Das ist die schlimmste Fehlerklasse dieses Repos, weil ein fehlender Knoten von einer nie gelaufenen Recherche nicht zu unterscheiden ist, und sie ist eingetreten (prima-materia#351).
+
+Die Regel dagegen ist keine Prüfung, sondern ein Schritt: **der Branch ist die Quelle, der Klon das Abbild.** Am Ende jedes Bündels, vor dem PR, `git fetch` und dann jede Datei, die im Arbeitsbaum vom Branch abweicht, per `prima_repo_write` schreiben. Damit ist die Übertragung der Diff und kein Urteil mehr, und ein Vergessen hat keinen Ort. Die Abschlussbedingung ist prüfbar: `git status --porcelain` und `git diff origin/<branch>` müssen beide leer sein. Sind sie es nicht, ist das Bündel offen, unabhängig davon, was der Prüflauf sagt.
+
+Ein ungültiger Zwischenstand auf einem `claude/`-Branch ist dabei kein Schaden — dafür ist der Branch da, und die `concurrency`-Gruppe fängt die überholten Läufe ab. Ein unbemerkter Verlust ist einer.
 
 **5. Beifang wird geerntet, aber nicht auf demselben Weg.**
 
@@ -106,6 +114,8 @@ Der Issue-Tracker hält jede Behauptung, die noch nicht durch einen Knoten repr�
 - Was eine Recherche ergeben hat, steht im Issue: geprüfte Korpora, verwendete Suchbegriffe samt Transliterationen, gefundene Stellen, Datum.
 
 Vokabular der Labels in `CONTRIBUTING.md`, von dort übernehmen: GitHub legt einen unbekannten Labelnamen stillschweigend als neues an.
+
+**Jedes Issue trägt entweder `behauptung` oder `befund`.** Ein Befund über das Repo, die Ontologie, ein Werkzeug oder ein Verfahren ist keine Behauptung und bekommt kein `korpus:`-Label; er bekommt `befund` und dazu die zutreffenden Verfeinerungen `befund:werkzeug`, `befund:ontologie`, `befund:bestand`, `befund:verfahren`, die kumulieren. `is:issue is:open no:label` muss leer bleiben.
 
 ## Quellen
 
