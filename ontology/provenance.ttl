@@ -442,3 +442,45 @@ pm:positedIn a owl:DatatypeProperty ;
     rdfs:label "posited in"@en, "gesetzt in"@de ;
     rdfs:domain pm:Positing ;
     skos:definition "Where the claim was put forward, given as an identifier rather than as a bibliographic reference: an issue number, a draft designation. Deliberately not dcterms:source, because what is named here is not a work a reader can obtain and must never be counted as one."@en .
+
+#
+# The derived claim
+#
+# The layer between what the traditions say and what a protocol can address.
+# A tradition says that this practice yields this capacity, and that claim
+# carries a work and a passage. The statement worth examining says that
+# practices of a kind yield an effect of a kind, and no source says it: it is
+# formed from several attested claims and belongs to none of them.
+#
+# Without a class for it the layer had two bad homes. As pm:Converging it
+# would be a correspondence between concepts, which asserts nothing about the
+# world and cannot be failed. As pm:Positing it could exist only where a
+# pm:Testing already pointed at it, so the set of claims awaiting examination
+# could never be written down — the queue would presuppose the work it exists
+# to order.
+#
+
+pm:Generalizing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Generalizing"@en, "Verallgemeinern"@de ;
+    skos:definition "The act of forming, from several attested claims, one statement that no source makes: a claim about a kind of practice or a kind of effect, worded so that an outcome could contradict it."@en ;
+    skos:note "It carries a derivation instead of an origin, and the derivation is checkable in the same way a source is. pm:generalizedFrom points at the attested nodes it was formed from, so a reader can go back to the passages and disagree with the step rather than with the conclusion alone."@en ;
+    skos:note "That is also the whole safeguard against the direction the project must not run in. An unpublished draft has no attested predecessors: a sentence from a method draft cannot be generalized into the graph, because there is nothing for pm:generalizedFrom to point at. The class is therefore open where pm:Positing had to be locked, and locked where pm:Positing is open."@en ;
+    skos:note "No instance may carry dcterms:source or pm:withinTradition. A generalization that named a work would report as transmitted what no transmission says, and that is the one confusion this layer exists to prevent."@en ;
+    skos:note "The absence of a pm:Testing pointing at a generalization is not a defect and is deliberately not enforced. It is the queue: the generalizations nobody has taken up are exactly the ones a run should reach for, and a shape that required a protocol would make the queue unwritable, as it does for pm:Positing."@en .
+
+#
+# Properties of generalization
+#
+
+pm:generalizedStatement a owl:DatatypeProperty ;
+    rdfs:label "generalized statement"@en, "verallgemeinerte Aussage"@de ;
+    rdfs:domain pm:Generalizing ;
+    skos:definition "The claim itself, stated in the abstract and worded so that a result could contradict it."@en ;
+    skos:note "A wording that covers an outcome and its opposite alike is the failure pm:claimDoesNotDiscriminate records after the fact. Here the cost is lower: it can be caught while the sentence is being written."@en .
+
+pm:generalizedFrom a owl:ObjectProperty ;
+    rdfs:label "generalized from"@en, "verallgemeinert aus"@de ;
+    rdfs:domain pm:Generalizing ;
+    skos:definition "An attested claim the generalization was formed from. At least two are required, and each must itself name a work."@en ;
+    skos:note "Two is a floor and not a target. How many attested claims a generalization rests on, and how far apart their traditions stand, are the numbers that make one worth examining before another — the same distinction pm:Converging draws between many witnesses on one cable and many on three."@en .
