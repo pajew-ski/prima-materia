@@ -321,6 +321,8 @@ Bei diesen Schritten den User explizit auffordern und warten.
 
 - Der Substanzklassen-Wächter im Schreibweg prüft **jede** TTL-Schreibung auf die vier verbotenen Namen, auch in `shapes/`. Dort müssen sie vorkommen, weil `pm:NoSubstanceClassesShape` sie verbietet, indem sie sie benennt; der zugehörige Test scannt `shapes/` folgerichtig nicht. Der Wächter ist an dieser Stelle strenger als die Regel, die er durchsetzt. **Melden, nicht umgehen** — siehe Workflow-Hygiene.
 
+- **Ein grüner PR trägt ein rotes Kreuz, wenn von seinem Kopf abgezweigt wurde.** Beim gestapelten Arbeiten erbt der neue Branch anfangs den Kopf-SHA des PR darunter; das Anlegen des Refs startet einen `validate`-Lauf, der erste echte Commit bricht ihn ab, und GitHub rollt alle Check-Runs eines SHA am PR zusammen, gleich von welchem Ref sie stammen. Das Kreuz markiert nicht den defekten PR, sondern den, auf dem der nächste aufsitzt. `prima_repo_check` meldet in diesem Fall grün und hat recht; die Checks-Seite des PR zeigt den abgebrochenen Lauf mit dem fremden Branchnamen. Fall und Patch in prima-materia#352.
+
 ## Lizenz
 
 CC0 1.0 — Code, Ontologie und Spezifikation. Public-Domain-Dedication für maximale maschinelle Nachnutzbarkeit.
