@@ -1,0 +1,53 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — naming
+#
+# The bearer had no class. pm:Attributing has held ascribed capacities from
+# the beginning and pm:ascribedTo names who they are ascribed to, but there
+# was nothing for that property to point at when the bearer is a named being:
+# a watcher, an angel, a demon, a god, a spirit. The result was that the most
+# systematic material in the record — 1 Enoch 6-8 is a list of names paired
+# with taught arts — could be entered only as loose text, and no question
+# about it could be asked of the graph.
+#
+# Why a name is worth its own class, and not merely tidier: a name is a harder
+# identity than a concept. SPEC §14 names three reasons traditions without
+# contact say the same thing — a shared physiology, a structural necessity of
+# the subject, the form of graded institutions. None of the three produces the
+# same sequence of sounds. So a name shared across two transmissions is either
+# a documented route or a coincidence of a kind that concepts do not offer,
+# and it is therefore the one datum on which pm:independentAttestation and
+# pm:transmissionPath can both be argued sharply rather than by resemblance.
+#
+
+pm:Naming a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Naming"@en, "Benennen"@de ;
+    skos:definition "The act, within a tradition, of naming an addressable being: the name as a received work gives it, together with what that work takes the bearer to be."@en ;
+    skos:note "Not a substance class in disguise. What is held is the act of naming and what a transmission says under that name, not a being asserted to exist. The graph reports that a work names Asael and calls him a watcher; it asserts no watcher."@en ;
+    skos:note "Three things must not collapse into one, and this class holds only the first two. The bearer and the name form belong here. The operative claim — that invoking under this name does something — stays a pm:Yielding whose practice is the invocation, because that claim needs its own falsifying condition and its own protocol."@en ;
+    skos:note "pm:ascribedTo deliberately keeps no rdfs:range. Where the bearer is a named being it points at an instance of this class; where it is humanity before a stated event, or a class of beings the source does not name, it points elsewhere, and a range would have forced those cases out of the record or into a name nobody gave them."@en ;
+    skos:note "Variants between recensions are not smoothed into a lead form. Where two editions give different names for what a reader takes to be one bearer, that is a pm:Disputing node, by the same rule SPEC §10 sets for diverging text: an averaged node reports a witness nobody gives."@en .
+
+#
+# Properties of naming
+#
+
+pm:nameForm a owl:DatatypeProperty ;
+    rdfs:label "name form"@en, "Namensform"@de ;
+    rdfs:domain pm:Naming ;
+    skos:definition "The name as it stands in the edition named by dcterms:source, in that edition's transliteration."@en ;
+    skos:note "The edition is not decoration here. A name is carried by its letters, and transliteration conventions differ enough that Šemiḥazah and Semjaza are the same bearer under two scholarly hands. Recording the form without the edition it comes from would make a later comparison unfalsifiable."@en ;
+    skos:note "Further forms of the same bearer go in skos:altLabel, so that a reader who met the name elsewhere finds the node. The form that decides identity is the one here."@en .
+
+pm:nameRole a owl:DatatypeProperty ;
+    rdfs:label "name role"@en, "Rolle des Benannten"@de ;
+    rdfs:domain pm:Naming ;
+    skos:definition "What the naming tradition takes the bearer to be, in that tradition's own term: watcher, angel, demon, daimon, god, spirit, ancestor."@en ;
+    skos:note "Deliberately a literal and not a controlled scale. A fixed vocabulary would have to decide whether a Greek daimon is an angel or a demon, and that decision belongs to no tradition in the record: it is the harmonisation this project exists to avoid. Where two traditions call a shared name differently, the difference is the finding, and a scale would have deleted it."@en .
