@@ -231,10 +231,23 @@ Material aus einer Tradition kommt in sehr verschiedenen Formen. Die falsche Kla
 | Zwei Seiten streiten über eine Behauptung | `pm:Disputing` | `pm:disputedClaim`, **zwei** Quellen, `pm:attestedBy` |
 | Eine Übereinstimmung über Traditionen hinweg | `pm:Converging` | Übertragungsweg **oder** unabhängige Bezeugung |
 | Ein Prüfprotokoll zu einer Behauptung | `pm:Testing` | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
+| „Praktiken dieser Art bringen diese Wirkung hervor" — aus mehreren bezeugten Behauptungen gebildet, von keiner Quelle gesagt | `pm:Generalizing` | `pm:generalizedStatement`, **zwei** `pm:generalizedFrom`, `pm:attestedBy pm:compilerInference`; **kein** `dcterms:source`, **keine** `pm:withinTradition` |
 
 **Behauptungen sind Knoten, keine Kanten.** Sobald eine Aussage eine eigene Quelle, einen eigenen Bezeugungsmodus, eine eigene Stärke oder ein eigenes Prüfprotokoll tragen muss, ist sie zu reifizieren. Auf einer Kante sehen ein zitierfähiger Notwendigkeitssatz und eine Kapitelreihenfolge gleich aus. Kommt ein neuer Behauptungstyp hinzu, gilt dieselbe Regel, bevor der erste Knoten geschrieben wird.
 
 Beim Reifizieren fallen zirkuläre Aussagen auf, die als Kante durchgehen: eine Praxis bringt nicht hervor, was sie ist. Die Zirkulation des Qi bringt kein Qi hervor, die Kanalreinigung keine Kanäle.
+
+## Die Kette, auf die alles hinausläuft
+
+Vollständig in `SPEC.md` §16. Vier Sätze, die im Ablauf entscheiden.
+
+**Eine Behauptung ist, was eine Überlieferung sagt**, mit Werk und Stelle. Wo eine Anweisung „Hypothese" sagt, meint sie einen Issue und keine Klasse: eine Vermutung ohne gelesene Stelle gehört in den Tracker und nie in den Graphen.
+
+**Eine Überschneidung wird nicht gefunden, sie wird behauptet.** `pm:Converging` trägt immer `pm:compilerInference`, und sie entsteht aus dem Beifang der Einzelrecherche — also während der ersten Stufe und nicht in einem späteren Durchgang, auf den zu warten wäre. Sie ist außerdem noch keine prüfbare Aussage: dass zwei Begriffe einander entsprechen, kann an keinem Ergebnis scheitern.
+
+**Prüfbar wird es erst als Verallgemeinerung.** `pm:Generalizing` hält den Satz, den keine Quelle sagt, gebildet aus mindestens zwei bezeugten Behauptungen, auf die `pm:generalizedFrom` zeigt. Er trägt Herleitung statt Herkunft. Ein Satz aus einem Methodenentwurf hat keine bezeugten Vorgänger und kommt so nicht hinein; der Richtungssinn bleibt unangetastet.
+
+**Die Warteschlange für die Prüfung ist damit abfragbar:** die Verallgemeinerungen, auf die kein `pm:Testing` zeigt, geordnet nach der Zahl ihrer Vorgänger und der Streuung von deren Traditionen. Bewusst kein Shape — ein Wächter, der zu jeder Verallgemeinerung ein Protokoll verlangte, machte die Warteschlange unschreibbar, und genau daran scheitert `pm:Positing` für diesen Zweck. Ein Lauf, der keine Prüfung aufnimmt, kann sich aber nicht mehr darauf berufen, dass keine anstand.
 
 ## Die Skalen benutzen, statt zu schweigen
 
@@ -273,7 +286,21 @@ Vollständig in `SPEC.md` Abschnitt 13 und 14. Operativ:
 
 **Jeder Befund ist auf Korpus und Datum relativiert.** Gegroundet übersteht einen Gegenfund und wird zu `pm:Disputing`; wegen Gegenbezeugung verworfen kippt beim ersten stützenden Zeugen zurück in strittig. Eine Verwerfung, die auf einer einzigen Tradition beruht, ist ein einseitiger Streitfall und hat zu nennen, worauf sie beruht.
 
-**Der Korpus wächst über zwei Eingänge, und der zweite hat Vorrang.** Bedarf aus offenen Issues ist der eine. Der andere ist der Engpass: die Beweiskraft hängt an `pm:independentAttestation`, und eine weitere indische Datei erhöht die Dateizahl, nicht die Zeugenzahl. Vor jeder neuen Datei stehen Kontaktweg, Rezension und die Zahl der zitierbaren Stellen fest. `traditions/daoist.ttl` ist mit Absicht dünn und ist das Modell.
+**Der Korpus wächst über vier Eingänge.** Drei setzen eine bereits gestellte Frage voraus und ordnen nur, welche zuerst drankommt: Prüfbarkeit — die Überlieferungen, die Anzeichen, Fristen, Kautelen und Misslingensbedingungen nennen — hat Vorrang, dann Unabhängigkeit, dann Bedarf aus offenen Issues. Zur Unabhängigkeit: eine weitere indische Datei erhöht die Dateizahl, nicht die Zeugenzahl. Vor jeder neuen Datei stehen Kontaktweg, Rezension und die Zahl der zitierbaren Stellen fest. `traditions/daoist.ttl` ist mit Absicht dünn und ist das Modell.
+
+**Der vierte kommt ohne Frage aus, und nur er bricht die Prägung.** Ein Werk wird geöffnet, weil es zu einer registrierten Tradition mit dünnem Bestand gehört, nicht weil eine Behauptung darauf zeigt. Die Warteschlange ist der Registrierungsstand selbst — `pm:coverageState pm:corpusNamed`, sortiert nach der Zahl der bisher getragenen Knoten —, und ein zweites Verzeichnis wird auch hier nicht geführt. Der Ertrag sind Behauptungen, nach denen niemand gefragt hat, und nur die liefern eine Kategorie, die der Bearbeiter vorher nicht hatte. Was mit einer Frage gesucht wird, findet Übereinstimmungen, deren Begriff schon im Suchbegriff steckte, und eine solche Übereinstimmung bestätigt die Frage, bevor sie etwas über die Überlieferung sagt.
+
+Beide Richtungen laufen im Batch nebeneinander, in eigenen Branches, und keine ersetzt die andere: der strukturelle Strang liefert Masse ohne Prioritätsordnung, die offenen Behauptungen liefern die Ordnung ohne Masse.
+
+### Ernteläufe koordinieren
+
+Sobald mehrere Agenten parallel ernten, gilt:
+
+- **Die Arbeitseinheit ist ein Werk, kein Anspruch.** Teuer ist das Öffnen; eine weitere Stelle im offenen Text kostet fast nichts.
+- **Der Lease ist ein Issue.** Je Werk ein Issue `Ernte: <Werk>` mit `ernte`; wer es nimmt, setzt `in-arbeit` und trägt sich als Assignee ein. Ein Zustand im Graphen wäre erst nach dem Merge sichtbar und als Reservierung zu langsam. Bricht ein Lauf ab, fällt das Label weg.
+- **Der Branchname trägt den Werkslug**, `claude/ernte-<werk-slug>`. Damit zeigt `gh_branches` die laufenden Ernten, bevor ein Label gesetzt ist, und ein abgestürzter Lauf hinterlässt eine sichtbare Spur statt eines stillen Lochs.
+- **Ein PR je Werk**, mit der Erntenotiz im Body und den Bezeichnern der geschriebenen Knoten namentlich. Kein Sammel-PR über mehrere Werke.
+- **Der Lease verhindert nur gleichzeitige Doppelarbeit.** Gegen spätere hilft allein, dass derselbe Sachverhalt bei zwei unabhängigen Läufen denselben Bezeichner ergibt: `tests/test_identifier_uniqueness.py` meldet gleiche Bezeichner in zwei Dateien sofort und verschiedene Bezeichner für dieselbe Sache nie. Bezeichner werden deshalb aus dem Gegenstand gebildet — Tradition plus normalisierter Terminus in der Originalsprache —, nie aus der deutschen oder englischen Übersetzung, weil zwei Bearbeiter dort verschieden übersetzen und derselbe Gegenstand auseinanderfällt.
 
 ## Designprinzipien (kurz)
 
@@ -302,7 +329,7 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 
 Die dritte ist die, die reißt. Ob ein Issue erledigt ist, steht im Bestand und nicht im Issue, also hilft nur Nachsehen. Ein erledigtes und offenes Issue ist teurer als ein fehlendes: es bindet Aufmerksamkeit an eine getilgte Schuld, und die abhängigen Issues führen sich weiter als blockiert.
 
-**Ein neuer Datenordner muss an vier Stellen nachgezogen werden**, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`. Nichts schlägt fehl, wenn eine davon vergessen wird; die Dateien erscheinen einfach nicht.
+**Ein neuer Datenordner muss an fünf Stellen nachgezogen werden**, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py` und `SCAN_DIRS` in `tests/test_identifier_uniqueness.py`. Nichts schlägt fehl, wenn eine davon vergessen wird; die Dateien erscheinen einfach nicht. Die fünfte ist die teuerste: fällt sie aus, verschmelzen zwei Knoten mit demselben Bezeichner beim Kompilieren zu einem, und jede SHACL-Bedingung ist danach doppelt erfüllt, ohne dass etwas auffällt.
 
 **Jedes neue Shape braucht einen Fixture, der zeigt, dass es feuert.** Ein Wächter, von dem nie gezeigt wurde, dass er auslöst, ist nicht als funktionierend bekannt. Hat das Shape eine Ausnahme, braucht es zusätzlich einen positiven Fixture für die Ausnahme, sonst ist unbekannt, ob die Ausnahme greift.
 

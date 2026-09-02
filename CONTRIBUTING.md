@@ -106,6 +106,8 @@ niemandem auffällt.
 | `befund:ontologie` | Vokabular, Shapes, fehlende Prädikate. Erledigt, wenn die Ontologie geändert ist |
 | `befund:bestand` | falsche, doppelte oder fehlende Daten im Graphen. Erledigt, wenn die Daten korrigiert sind |
 | `befund:verfahren` | Regeln in `SPEC.md`, `AGENTS.md`, `CONTRIBUTING.md`, Workflows. Erledigt, wenn die Regel geändert ist |
+| `ernte` | Erntelauf über ein Werk. Ein Issue je Werk, Titel `Ernte: <Werk>`. Trägt weder `behauptung` noch `korpus:` — es ist kein Anspruch, sondern eine Arbeitseinheit |
+| `in-arbeit` | Der Lease. Wer einen Erntelauf übernimmt, setzt das Label und trägt sich als Assignee ein; bricht der Lauf ab, fällt das Label weg. Nur zusammen mit `ernte` |
 
 **Jedes Issue trägt entweder `behauptung` oder `befund`.** Damit ist
 `is:issue is:open no:label` eine stehende Prüfung, die leer sein muss;
@@ -240,6 +242,9 @@ by the `distribute.yml` GitHub Action on each push to `main`.
 ## Scope
 
 Phase 0 and Phase 1 are delivered. New traditions are not added by plan
-any more: `SPEC.md §14` sets out the two entrances and the three
-decisions that precede a new file. If a change goes beyond that, raise an
-issue first. Ask rather than guess.
+any more: `SPEC.md §14` sets out the four entrances and the three
+decisions that precede a new file. Three of the four presuppose a
+question already asked; the fourth opens a work because a registered
+tradition is thin, and it is the only one that yields claims nobody
+asked for. If a change goes beyond that, raise an issue first. Ask
+rather than guess.
