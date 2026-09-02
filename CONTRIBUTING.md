@@ -161,6 +161,11 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Dieterlen, Un système soudanais de Sirius und Le renard pâle; Dieterlen,
   Les âmes des Dogon — die Feldwiederholungen gehören nicht dazu und gehen
   als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:azande` (Evans-Pritchard, Witchcraft, Oracles and Magic among the
+  Azande; de Calonne-Beaufaict, Azande; Larken, An account of the Zande;
+  Lagae, Les Azande ou Niam-Niam; Schweinfurth, The Heart of Africa, Bd. II,
+  als frühester Zeuge — die Rationalitätsdebatte um Winch, Horton und Gluckman
+  gehört nicht dazu und geht als `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
