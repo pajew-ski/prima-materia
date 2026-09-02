@@ -75,6 +75,22 @@ Vollständig heißt vollständig für das Geöffnete: die Erntenotiz im auslöse
 
 Drei Fehler, alle gleich aussehend. Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Wer sie führt und dann aufhört, wirft sie weg: die erste Stufe erzeugt keine Befunde, sondern Adressen, und eine Adresse, an die niemand geht, ist nichts. Alle drei fallen erst auf, wenn jemand die Stelle aufschlägt. Ein dokumentierter Fall des dritten steht in prima-materia#76, mit drei Befunden, die beim Nachholen entstanden und von denen zwei den Issues widersprachen, die statt ihrer angelegt worden waren.
 
+## Ernteläufe koordinieren
+
+Gilt, sobald mehrere Agenten parallel gemeinfreie Werke ernten.
+
+**Die Arbeitseinheit ist ein Werk, kein Anspruch.** Folgt aus §15: teuer ist das Öffnen, billig die weitere Stelle im offenen Text. Ein Lauf nimmt ein Werk und erntet es, statt eine Behauptung zu nehmen und das Werk danach wieder zu schließen.
+
+**Der Lease ist ein Issue, kein Graphknoten.** Je Werk ein Issue `Ernte: <Werk>` mit Label `ernte`; wer es übernimmt, setzt `in-arbeit` und trägt sich als Assignee ein. Ein Zustand im Graphen wäre erst nach dem Merge sichtbar und als Reservierung zu langsam. Bricht ein Lauf ab, fällt das Label weg und das Werk ist wieder frei. Labelnamen aus `CONTRIBUTING.md` übernehmen, nicht aus dem Gedächtnis.
+
+**Der Branchname trägt den Werkslug**, `claude/ernte-<werk-slug>`. `gh_branches` zeigt damit die laufenden Ernten, bevor ein Label gesetzt ist, und ein abgestürzter Lauf hinterlässt eine sichtbare Spur statt eines stillen Lochs.
+
+**Ein PR je Werk**, mit der Erntenotiz im Body und den Bezeichnern der geschriebenen Knoten namentlich. Kein Sammel-PR über mehrere Werke: der Mensch merged, und ein PR über drei Werke ist nur als Ganzes anzunehmen oder abzulehnen.
+
+**Der Lease verhindert nur gleichzeitige Doppelarbeit, und das ist die kleinere Hälfte.** Er verhindert nicht, dass dasselbe Werk in drei Monaten erneut geöffnet wird, dass ein abgestürzter Lauf halb eingetragene Knoten hinterlässt, oder dass ein zweiter Agent denselben Sachverhalt anders benennt. Dagegen hilft nur, dass **derselbe Sachverhalt bei zwei unabhängigen Läufen denselben Bezeichner ergibt.** `tests/test_identifier_uniqueness.py` meldet gleiche Bezeichner in zwei Dateien sofort; verschiedene Bezeichner für dieselbe Sache meldet er nie, und der Bestand hat dann still zwei Knoten für einen Gegenstand.
+
+**Bezeichner werden deshalb aus dem Gegenstand gebildet, nicht aus der Formulierung:** Tradition plus normalisierter Terminus in der Originalsprache, bei einem Namen die Namensform in der Leitumschrift der benutzten Ausgabe. Ausdrücklich nicht aus der deutschen oder englischen Übersetzung — dort übersetzen zwei Bearbeiter verschieden, und derselbe Gegenstand fällt auseinander, ohne dass ein Wächter etwas sagt.
+
 ## Prüfung, Läufe und der Abgleich vor dem PR
 
 Der stehende Auftrag selbst steht weiter unten, in einem eigenen Abschnitt. Hier steht, was zwischen dem letzten Schreibvorgang eines Bündels und dem PR zu geschehen hat.
