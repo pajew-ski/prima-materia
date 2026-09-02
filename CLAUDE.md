@@ -237,6 +237,18 @@ Material aus einer Tradition kommt in sehr verschiedenen Formen. Die falsche Kla
 
 Beim Reifizieren fallen zirkuläre Aussagen auf, die als Kante durchgehen: eine Praxis bringt nicht hervor, was sie ist. Die Zirkulation des Qi bringt kein Qi hervor, die Kanalreinigung keine Kanäle.
 
+## Die Kette, auf die alles hinausläuft
+
+Vollständig in `SPEC.md` §16. Vier Sätze, die im Ablauf entscheiden.
+
+**Eine Behauptung ist, was eine Überlieferung sagt**, mit Werk und Stelle. Wo eine Anweisung „Hypothese" sagt, meint sie einen Issue und keine Klasse: eine Vermutung ohne gelesene Stelle gehört in den Tracker und nie in den Graphen.
+
+**Eine Überschneidung wird nicht gefunden, sie wird behauptet.** `pm:Converging` trägt immer `pm:compilerInference`, und sie entsteht aus dem Beifang der Einzelrecherche — also während der ersten Stufe und nicht in einem späteren Durchgang, auf den zu warten wäre. Sie ist außerdem noch keine prüfbare Aussage: dass zwei Begriffe einander entsprechen, kann an keinem Ergebnis scheitern.
+
+**Prüfbar wird es erst als Verallgemeinerung.** `pm:Generalizing` hält den Satz, den keine Quelle sagt, gebildet aus mindestens zwei bezeugten Behauptungen, auf die `pm:generalizedFrom` zeigt. Er trägt Herleitung statt Herkunft. Ein Satz aus einem Methodenentwurf hat keine bezeugten Vorgänger und kommt so nicht hinein; der Richtungssinn bleibt unangetastet.
+
+**Die Warteschlange für die Prüfung ist damit abfragbar:** die Verallgemeinerungen, auf die kein `pm:Testing` zeigt, geordnet nach der Zahl ihrer Vorgänger und der Streuung von deren Traditionen. Bewusst kein Shape — ein Wächter, der zu jeder Verallgemeinerung ein Protokoll verlangte, machte die Warteschlange unschreibbar, und genau daran scheitert `pm:Positing` für diesen Zweck. Ein Lauf, der keine Prüfung aufnimmt, kann sich aber nicht mehr darauf berufen, dass keine anstand.
+
 ## Die Skalen benutzen, statt zu schweigen
 
 Zwei kontrollierte Vokabulare tragen die schwachen Fälle. Sie existieren, damit schwaches Material eingetragen werden kann, nicht damit es draußen bleibt.
