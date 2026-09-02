@@ -409,6 +409,8 @@ Der Trigger auf `claude/**` ist die Bedingung dafür, dass die in `AGENTS.md` vo
 
 Eine `concurrency`-Gruppe je Ereignistyp und Ref mit `cancel-in-progress: true` bricht die Läufe überholter Zwischenstände ab. Gewollte Nebenwirkung: ein Branch mit mehreren Commits sammelt `cancelled`-Läufe. Ein abgebrochener Lauf hat nichts festgestellt und ist kein Fehlschlag; `prima_repo_check` wertet deshalb ausschließlich den Lauf des aktuellen Kopf-SHA. Siehe #32 und #44.
 
+**Kein Lauf beim bloßen Anlegen eines Branches.** Ein Push, der einen Ref erst erzeugt, prüft einen Commit, der auf seinem Ursprungsbranch bereits geprüft ist; der Lauf hat nie Aussagewert. Er hat aber eine Nebenwirkung, und sie ist teuer: bei gestapelten Branches trägt der neue Ref anfangs den Kopf-SHA des darunterliegenden PR. Der erste echte Commit auf dem neuen Branch bricht diesen Lauf ab, der abgebrochene Lauf bleibt an jenem SHA hängen, und GitHub rollt für einen PR alle Check-Runs am Kopf-SHA zusammen, gleich von welchem Ref sie stammen. Ergebnis: ein rotes Kreuz an einem grünen PR, und zwar ausgerechnet an dem, von dem abgezweigt wurde. Der Job trägt deshalb `if: ${{ !(github.event_name == 'push' && github.event.created) }}`; `github.event.created` ist genau dann wahr, wenn der Ref mit diesem Push entstanden ist, und ist bei `pull_request` null. Fall und Lauf-Nummern in prima-materia#352.
+
 ### `pages.yml`
 
 Läuft auf `push` nach `main`, baut die Seite mit `scripts/publish.py` und deployt sie auf den Namensraum-Host. Braucht `pages: write` und `id-token: write`; nichts daran schreibt ins Repository zurück.
