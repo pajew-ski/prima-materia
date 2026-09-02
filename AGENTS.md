@@ -67,13 +67,9 @@ Vollständig heißt vollständig für das Geöffnete: die Erntenotiz im auslöse
 
 Drei Fehler, alle gleich aussehend. Wer die erste Stufe für die ganze Recherche hält, trägt Referate als Belege ein. Wer sie überspringt, findet nur, was er schon kannte. Wer sie führt und dann aufhört, wirft sie weg: die erste Stufe erzeugt keine Befunde, sondern Adressen, und eine Adresse, an die niemand geht, ist nichts. Alle drei fallen erst auf, wenn jemand die Stelle aufschlägt. Ein dokumentierter Fall des dritten steht in prima-materia#76, mit drei Befunden, die beim Nachholen entstanden und von denen zwei den Issues widersprachen, die statt ihrer angelegt worden waren.
 
-## Der stehende Auftrag
+## Prüfung, Läufe und der Abgleich vor dem PR
 
-Eine Sitzung, die mit „prima materia weiter" oder Gleichwertigem beginnt, ist vollständig und autonom zu durchlaufen: Bestand lesen, Bündel nach `korpus:`-Label wählen, beide Recherchestufen führen, das Ergebnis sofort eintragen, alle dabei entstandenen Hypothesen und Nebenfunde noch im selben Lauf als Issues anlegen, PR öffnen, ohne Unterbrechung zum nächsten Bündel.
-
-Keine Rückfragen zu Schritten, die `SPEC.md` und dieses Dokument bereits vorschreiben. Geprüft wird am Merge, nicht am Ablauf.
-
-**Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Vollständigkeit geht vor Eleganz: lieber fünfzig knappe Issues als fünf ausformulierte und der Rest im Fließtext.
+Der stehende Auftrag selbst steht weiter unten, in einem eigenen Abschnitt. Hier steht, was zwischen dem letzten Schreibvorgang eines Bündels und dem PR zu geschehen hat.
 
 **Die Prüfung liegt vor dem PR, nicht danach.** `validate.yml` hört seit #32 auch auf `push` nach `claude/**`. Auf einem Arbeitsbranch entsteht damit ein echter Lauf, bevor ein PR offen ist: schreiben, `prima_repo_check` auf denselben Branch, und erst bei `gruen` den PR öffnen. Der frühere Vermerk an dieser Stelle — der Lauf entstehe erst mit dem PR, also PR zuerst — ist überholt und war der Grund, warum Fehler in TTL-Dateien vorher erst am offenen PR auffielen.
 
