@@ -1,0 +1,57 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Gauḍīya Vaiṣṇava aesthetics of devotion
+#
+# Opened for one question, and it is a question the graph had already answered
+# wrongly. prima-materia#12 recorded that no transmission ranks affects on a
+# single ordered scale, and gave as its ground a search across the files of
+# this graph. That is a statement about what had been entered here, not about
+# what the transmissions say, and SPEC §13 forbids treating it as the latter.
+# The search that had not been carried out finds this transmission at once.
+#
+# Order of the file: the tradition, then the ranking itself, then the graded
+# series inside a single relation which is the nearest thing the text gives to
+# a criterion for the ranking, then what the text does not say.
+#
+# The tradition was not in the registry either. That is itself a finding and
+# stands in prima-materia#358.
+#
+
+pmt:GaudiyaVaisnava a pm:Tradition ;
+    rdfs:label "Gauḍīya Vaiṣṇava transmission"@en, "Gauḍīya-vaiṣṇavische Überlieferung"@de ;
+    skos:definition "The Bengali Vaiṣṇava transmission descending from Caitanya, which takes over the aesthetic vocabulary of Sanskrit dramaturgy and applies it to devotion, treating the relations in which a devotee stands to the deity as rasa and ranking them."@en ;
+    skos:note "Read in this run: the fifth wave of the Southern Quadrant and the third wave of the Western Quadrant of the Bhaktirasāmṛtasindhu, at the wording, in the bilingual edition of two thousand and three, whose Sanskrit stands on the left page and the translation on the right. Left unread: the Eastern and Northern Quadrants entirely, and the remaining waves of the two quadrants opened. The Ujjvalanīlamaṇi and the Prīti-sandarbha were not opened; both are named in the notes of the edition read and would carry the fuller series of the expansions of love."@en ;
+    skos:note "The contact route is documented and not undecided, and it runs to a transmission this graph already holds. The rasa vocabulary of this corpus is taken over from the dramaturgical treatise: the same terms, the same distinction of foundational and transitory states, the same eight secondary rasa. An agreement between this file and traditions/sanskrit-dramaturgy.ttl therefore counts as reception and never as independent attestation. What is worth looking for is what this later station added, and it added the ranking: the dramaturgical treatise arranges its rasa by derivation, deity and colour and does not rank them."@en ;
+    pm:principalCorpus "Rūpa Gosvāmin, Bhaktirasāmṛtasindhu; Rūpa Gosvāmin, Ujjvalanīlamaṇi; Jīva Gosvāmin, Prīti-sandarbha" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Rūpa Gosvāmin, Bhaktirasāmṛtasindhu 2.5.113-115 (trans. Haberman 2003)" .
+
+#
+# The ranking, and the reason this file exists.
+#
+pmc:FivefoldPrimaryRasaRanking a pm:Conceptualizing ;
+    rdfs:label "The five primary devotional relations, ranked"@en, "Die fünf primären Hingabeverhältnisse, nach Rang"@de ;
+    skos:definition "The claim that the five primary forms of devotional love stand in a single ascending order: peacefulness, respectful service, companionship, parental affection, amorous love, with the first counted lowest and the last highest."@en ;
+    skos:note "The ranking is asserted in the verse itself and not by a commentator. The operative words are yathā-pūrvam anuttamāḥ, rendered in the bilingual edition of two thousand and three as a hierarchical manner in which the first is considered the lowest, and in the independent translation published by a different lineage as an order of excellence running from first to last. Two translations from different hands and different schools agree on the direction, which is worth recording because the compound admits a second parsing that would reverse it."@en ;
+    skos:note "What the verse does not do is give the criterion. It states the order and moves on. Any statement of the form that the ranking follows increasing intensity, density or nearness of affection is drawn from elsewhere in the corpus and must be cited from there, not from this verse. The nearest thing the text supplies is the graded series inside a single relation, held separately below."@en ;
+    pm:withinTradition pmt:GaudiyaVaisnava ;
+    dcterms:source "Rūpa Gosvāmin, Bhaktirasāmṛtasindhu 2.5.115 (trans. Haberman 2003)" .
+
+#
+# The graded series inside one relation. This is a scale of one affect by
+# intensity, which is a different claim from the ranking above, and the two are
+# held apart deliberately: a text may grade one love without ranking several.
+#
+pmc:SakhyaRatiIntensification a pm:Conceptualizing ;
+    rdfs:label "The five rising stages of love as friendship"@en, "Die fünf aufsteigenden Stufen der Freundesliebe"@de ;
+    skos:definition "The claim that love in the mode of friendship passes through five increasingly higher stages: friendship itself, attachment, supreme love, tenderness, and passion."@en ;
+    skos:note "Given in the text as increasingly higher, so the ordering is asserted and the direction is stated. The series is named for one relation only; the edition read notes that a longer series of the expansions of love stands in the Ujjvalanīlamaṇi, which was not opened here."@en ;
+    pm:withinTradition pmt:GaudiyaVaisnava ;
+    dcterms:source "Rūpa Gosvāmin, Bhaktirasāmṛtasindhu 3.3.106 (trans. Haberman 2003)" .

@@ -205,6 +205,10 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   religione paganorum Fennorum et Lapponum; die Missionsmanuskripte von Skanke
   und Randulf — die moderne Schamanismusforschung geht als `pm:evidenceFrom`
   ein, nie als Quelle)
+- `korpus:gaudiya` (Rūpa Gosvāmin, Bhaktirasāmṛtasindhu und Ujjvalanīlamaṇi;
+  Jīva Gosvāmin, Prīti-sandarbha; Kṛṣṇadāsa Kavirāja, Caitanya-caritāmṛta —
+  die moderne Indologie zur Bhakti geht als `pm:evidenceFrom` ein, nie als
+  Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
