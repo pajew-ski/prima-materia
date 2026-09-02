@@ -605,9 +605,17 @@ Die Labelnamen benennen den Korpus, den man aufschlägt, nicht die Datei, in der
 
 ## 14. Erweiterung des Korpus
 
-Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei existiert, weil sie etwas beantwortet, was ein moderner Text behauptet. Das macht das Grounding in dem Maß zirkulär, in dem der Bestand nur dort nachschlägt, wo er ohnehin schon hinsah. Wer ihn allein entlang offener Behauptungen erweitert, vertieft diese Prägung. Deshalb zwei Eingänge, und der zweite hat Vorrang, wenn beide anstehen.
+Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei existiert, weil sie etwas beantwortet, was ein moderner Text behauptet. Das macht das Grounding in dem Maß zirkulär, in dem der Bestand nur dort nachschlägt, wo er ohnehin schon hinsah. Wer ihn allein entlang offener Behauptungen erweitert, vertieft diese Prägung.
+
+**Deshalb vier Eingänge.** Drei von ihnen setzen eine bereits gestellte Frage voraus und ordnen nur, welche zuerst drankommt; der vierte kommt ohne Frage aus und ist das einzige Gegenmittel gegen die Prägung. Der prüfbarkeitsgetriebene hat Vorrang unter denen, die eine Frage haben.
 
 **Bedarfsgetrieben.** Ein `korpus:`-Label auf einer Behauptung, für die es noch keine Datei gibt, ist bereits die Nachfragemeldung. Offene Issues je fehlendem Label ergeben die geordnete Warteschlange; ein zweites Verzeichnis dafür wird nicht geführt.
+
+**Strukturgetrieben.** Ein Werk wird geöffnet, weil es zu einer registrierten Tradition gehört, deren Bestand dünn ist, und nicht, weil eine Behauptung darauf zeigt. Die Warteschlange ist der Registrierungsstand selbst: `pm:coverageState pm:corpusNamed`, sortiert nach der Zahl der Knoten, die die Tradition bisher trägt. Ein zweites Verzeichnis entsteht auch hier nicht.
+
+Der Ertrag ist nicht Menge, sondern eine Art von Befund, die die anderen Eingänge nicht erzeugen können: **Behauptungen, nach denen niemand gefragt hat.** Wer mit einer Frage sucht, findet Übereinstimmungen, deren Begriff schon im Suchbegriff steckte, und eine solche Übereinstimmung bestätigt die Frage, bevor sie irgendetwas über die Überlieferung sagt. Eine Kategorie, die der Bearbeiter vorher nicht hatte, kann dagegen kein Suchartefakt sein. Aus diesem Eingang kommen deshalb die Konvergenzen, die als Befund tragen, und aus ihm kommt das Material für die Verallgemeinerungen nach §16.
+
+Die beiden Richtungen schließen einander nicht aus, sie brauchen einander. Der strukturelle Lauf liefert Masse ohne Prioritätsordnung; die offenen Behauptungen liefern die Ordnung ohne Masse. Sie laufen im Batch nebeneinander, in getrennten Strängen mit je eigenem Branch, und kein Lauf ersetzt den anderen.
 
 **Prüfbarkeitsgetrieben.** Knapp ist nicht die unabhängige Bezeugung, sondern die prüfbare Behauptung. Gesucht sind die Überlieferungen, die Anzeichen, Fristen, Kautelen und Misslingensbedingungen nennen — alles, woraus sich ein `pm:falsifiedBy` formen lässt. Eine Überlieferung, die sagt, woran ihr eigenes Scheitern zu erkennen wäre, bringt den Bestand weiter als eine, die nur geographisch weit weg liegt. Dieser Eingang hat Vorrang.
 
