@@ -573,6 +573,41 @@ pm:GeneralizationRestsOnAttestedNodesShape a sh:NodeShape ;
     ] .
 
 #
+# A naming carries the full burden of a claim, because it is one: a work says
+# that this being is called this and is of this kind. The two properties
+# beyond the usual four are what make the node comparable at all — a form
+# without its edition cannot be set beside another form, and a bearer without
+# the term its own tradition uses has been harmonised by whoever left it out.
+#
+pm:NamingShape a sh:NodeShape ;
+    sh:targetClass pm:Naming ;
+    sh:property [
+        sh:path pm:nameForm ;
+        sh:minCount 1 ;
+        sh:message "Every naming must give the name as the cited edition spells it."
+    ] ;
+    sh:property [
+        sh:path pm:nameRole ;
+        sh:minCount 1 ;
+        sh:message "Every naming must say what the naming tradition takes the bearer to be, in that tradition's own term."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every naming must declare how it entered the record."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every naming requires at least one dcterms:source."
+    ] ;
+    sh:property [
+        sh:path pm:withinTradition ;
+        sh:minCount 1 ;
+        sh:message "Every naming must name the tradition that names the bearer. A name belongs to whoever gave it."
+    ] .
+
+#
 # Static-substance classes are forbidden. The shape targets the four
 # blacklisted URIs directly; if any of them is ever asserted as owl:Class,
 # validation fails.
