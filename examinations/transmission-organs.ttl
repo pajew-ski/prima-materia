@@ -1,0 +1,89 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — examinations: the organs and the failure mode of sending
+#
+# Three claims of one section of the method draft, at the same seam as
+# examinations/energy-uptake.ttl. The transmissions the draft draws on know a
+# transfer from one person to another — the descent of power at initiation in
+# the śaiva material, touching at a distance in the midewiwin reports — but
+# they name no organ through which it passes. The draft names two: the palms,
+# and the point between the brows.
+#
+# Naming a place is what makes a transfer claim reachable, in the same way that
+# naming a side made pmc:HandSideTransferProtocol reachable. A claim that
+# something passes is not testable; a claim that it passes through this rather
+# than that is.
+#
+# The third claim is of a different kind and comes out differently, which is
+# why it is here rather than in a file of its own.
+#
+
+#
+# The palms
+#
+
+pmc:PalmsAreTheSendingOrgan a pm:Positing ;
+    rdfs:label "The palms are the organ of sending"@en, "Die Handflächen sind das Sendeorgan"@de ;
+    skos:definition "The claim that what passes from one person to another passes through the palms, and not through some other part indifferently."@en ;
+    skos:note "The force of the claim is in the exclusion. That the hands are used in transmission is reported widely and is not at issue; that they are the organ, so that another part would not serve, is the draft's addition and the part that can fail."@en ;
+    pm:positedIn "prima-materia#314" .
+
+pmc:SendingOrganProtocol a pm:Testing ;
+    rdfs:label "Whether the part in contact makes a difference"@en, "Ob der berührende Körperteil einen Unterschied macht"@de ;
+    skos:definition "An examination of whether contact through the palms differs in its reported or measured effect from contact through another part."@en ;
+    skos:note "Procedure without cases, and for the same reason as at pmc:HandSideTransferProtocol: the comparison needs no instrument the field lacks, and nobody has made it. What is absent is the case, not the means."@en ;
+    skos:note "The controls that would have to hold before a difference could be read as a property of the part: which part the practitioner was taught to use, which part the recipient expects, and the difference in ordinary touch between a palm and a forearm. A protocol without them would have measured the training and the expectation."@en ;
+    pm:tests pmc:PalmsAreTheSendingOrgan ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "Recipients blinded to the part in contact report or show no difference between contact through the palm and contact through another part beyond chance."@en ;
+    pm:examinedBy "Not devised here. The falsifying condition is the ordinary comparison the claim invites by naming one part and excluding the rest" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
+
+#
+# The point between the brows
+#
+
+pmc:BrowContactOpensTheBrow a pm:Positing ;
+    rdfs:label "The brow of another is opened by contact between the brows"@en, "Die Brauenöffnung eines anderen erfolgt durch Kontakt zwischen dessen Brauen"@de ;
+    skos:definition "The claim that the opening of the brow centre in another person is brought about by contact applied at that point."@en ;
+    skos:note "This is the sharpest of the three, and the reason is what the transmission does not say. The śaiva material holds pmc:Saktipata, the descent of power from teacher to disciple, and it makes that descent the condition of everything that follows — but it names no place on the body where it enters. The draft supplies one. The addition is entirely the draft's, and it is the addition that can be checked."@en ;
+    pm:positedIn "prima-materia#315" .
+
+pmc:BrowContactProtocol a pm:Testing ;
+    rdfs:label "Whether the place of contact makes a difference"@en, "Ob der Ort der Berührung einen Unterschied macht"@de ;
+    skos:definition "An examination of whether contact at the brow differs from contact elsewhere on the head in what the recipient reports."@en ;
+    skos:note "Procedure without cases. The design is the same as for the palms and inherits the same controls, with one addition that matters more here: the brow is the place the recipient has most often been told about, so an effect found without blinding him to the site would be an effect of the telling."@en ;
+    skos:note "What a negative result would and would not settle. It would touch the draft's addition and leave pmc:Saktipata untouched: a descent of power that names no place cannot be refuted by showing that a named place does nothing. Keeping the two apart is why this node tests the posit and not the transmission."@en ;
+    pm:tests pmc:BrowContactOpensTheBrow ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "Recipients blinded to the site of contact report no difference between contact at the brow and contact at another site on the head beyond chance."@en ;
+    pm:examinedBy "Not devised here. The falsifying condition follows from the claim naming a site" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
+
+#
+# Sending without a chosen signature
+#
+
+pmc:UnchosenSendingCarriesTheActualState a pm:Positing ;
+    rdfs:label "Sending without a chosen signature carries the sender's actual state"@en, "Senden ohne gewählte Signatur überträgt den eigenen Ist-Zustand"@de ;
+    skos:definition "The claim that where no state is deliberately chosen for transmission, the one the sender is in transmits instead."@en ;
+    skos:note "A claim about a failure mode rather than about a capacity, and that is what makes it the most tractable of the three. It says what happens when the practice is done wrong, and a claim about going wrong names an outcome that can be looked for."@en ;
+    pm:positedIn "prima-materia#316" .
+
+pmc:UnchosenSendingProtocol a pm:Testing ;
+    rdfs:label "Whether the unchosen state transmits"@en, "Ob der ungewählte Zustand übergeht"@de ;
+    skos:definition "An examination of whether a sender's own affective state passes to a recipient in the absence of a deliberately chosen one."@en ;
+    skos:note "Read as a claim about ordinary channels, it holds and is among the better established findings in its field. Affective states pass between people who are merely in one another's presence, carried by expression, posture, voice and the automatic mimicry of them, and they pass without either party choosing it or noticing. The states a person is not presenting are the ones that leak most reliably."@en ;
+    skos:note "The consequence for the draft, and it is not a refutation. What the claim describes occurs; it occurs through a channel that requires nothing the section posits. A practitioner who finds his own state arriving in the other person has not thereby found evidence for the transfer the section is about — he has found the effect that would be there anyway. The claim is confirmed and its confirmation supports nothing beyond itself."@en ;
+    skos:note "The narrower claim that would carry the section is not examined here and is not touched by this node: that the unchosen state passes where the ordinary channels are closed, out of sight and out of earshot. That is a different protocol, it has no cases, and it must not borrow the confirmation recorded above."@en ;
+    pm:tests pmc:UnchosenSendingCarriesTheActualState ;
+    pm:examinationState pm:casesWithoutDeviation ;
+    pm:falsifiedBy "Recipients in the presence of a sender in an unchosen state show no shift toward that state against a neutral condition."@en ;
+    pm:examinedBy "Not devised here. The protocol reads the finding off the contagion literature and the work on involuntary nonverbal disclosure" ;
+    pm:evidenceFrom "E. Hatfield, J. T. Cacioppo and R. L. Rapson, Emotional Contagion (Cambridge: Cambridge University Press, 1994)" , "P. Ekman and W. V. Friesen, Nonverbal leakage and clues to deception, Psychiatry 32 (1969), pp. 88-106" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
