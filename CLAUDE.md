@@ -329,7 +329,7 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 
 Die dritte ist die, die reißt. Ob ein Issue erledigt ist, steht im Bestand und nicht im Issue, also hilft nur Nachsehen. Ein erledigtes und offenes Issue ist teurer als ein fehlendes: es bindet Aufmerksamkeit an eine getilgte Schuld, und die abhängigen Issues führen sich weiter als blockiert.
 
-**Ein neuer Datenordner muss an vier Stellen nachgezogen werden**, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`. Nichts schlägt fehl, wenn eine davon vergessen wird; die Dateien erscheinen einfach nicht.
+**Ein neuer Datenordner muss an fünf Stellen nachgezogen werden**, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py` und `SCAN_DIRS` in `tests/test_identifier_uniqueness.py`. Nichts schlägt fehl, wenn eine davon vergessen wird; die Dateien erscheinen einfach nicht. Die fünfte ist die teuerste: fällt sie aus, verschmelzen zwei Knoten mit demselben Bezeichner beim Kompilieren zu einem, und jede SHACL-Bedingung ist danach doppelt erfüllt, ohne dass etwas auffällt.
 
 **Jedes neue Shape braucht einen Fixture, der zeigt, dass es feuert.** Ein Wächter, von dem nie gezeigt wurde, dass er auslöst, ist nicht als funktionierend bekannt. Hat das Shape eine Ausnahme, braucht es zusätzlich einen positiven Fixture für die Ausnahme, sonst ist unbekannt, ob die Ausnahme greift.
 
