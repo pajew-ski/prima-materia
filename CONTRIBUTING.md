@@ -171,6 +171,11 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   corónica y buen gobierno; das Huarochirí-Manuskript und seine Übersetzungen;
   Polo de Ondegardo; Cobo, Historia del Nuevo Mundo, Buch XIII — die moderne
   Andinistik geht als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:samisch` (Schefferus, Lapponia bzw. The History of Lapland; Leem,
+  Beskrivelse over Finmarkens Lapper und ihre Übersetzungen; Jessen, De
+  religione paganorum Fennorum et Lapponum; die Missionsmanuskripte von Skanke
+  und Randulf — die moderne Schamanismusforschung geht als `pm:evidenceFrom`
+  ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
