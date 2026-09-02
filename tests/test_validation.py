@@ -212,6 +212,8 @@ def test_undiscriminating_verdict_with_named_outcomes_conforms() -> None:
     pmp:NamedVerdict a pm:Testing ;
         pm:examinationState pm:claimDoesNotDiscriminate ;
         pm:undividedOutcomes "The threshold rising and the threshold falling." ;
+        pm:counterSearch pm:counterSearchFoundNothing ;
+        pm:counterSearchNote "Searched; nothing found." ;
         pm:falsifiedBy "Some stated condition." ;
         pm:examinedBy "Someone" ;
         pm:protocolUpdated "2026-09-02" .
