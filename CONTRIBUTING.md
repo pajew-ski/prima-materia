@@ -101,6 +101,35 @@ niemandem auffällt.
 | `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
 | `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar |
 | `entwurf:strom` | Herkunft: Methodenentwurf „Der Strom" |
+| `befund` | Repo-Arbeit, keine Behauptung. Das Komplement zu `behauptung`, und das Dachlabel der vier folgenden |
+| `befund:werkzeug` | Zugangswege, Werkzeuggrenzen, Umwege. Erledigt, wenn der Weg dokumentiert oder das Werkzeug geändert ist; im Bestand ändert sich nichts |
+| `befund:ontologie` | Vokabular, Shapes, fehlende Prädikate. Erledigt, wenn die Ontologie geändert ist |
+| `befund:bestand` | falsche, doppelte oder fehlende Daten im Graphen. Erledigt, wenn die Daten korrigiert sind |
+| `befund:verfahren` | Regeln in `SPEC.md`, `AGENTS.md`, `CONTRIBUTING.md`, Workflows. Erledigt, wenn die Regel geändert ist |
+
+**Jedes Issue trägt entweder `behauptung` oder `befund`.** Damit ist
+`is:issue is:open no:label` eine stehende Prüfung, die leer sein muss;
+ein Issue ohne Label ist kein neutraler Zustand, sondern ein Issue, das
+in keiner Menge vorkommt und deshalb nie wieder gelesen wird.
+
+Das Dachlabel `befund` ist kein Luxus neben den vier Verfeinerungen,
+sondern eine Eigenschaft von GitHub: `label:` kennt keine Wildcards, es
+gibt kein `label:befund:*`. Ohne `befund` an jedem einzelnen Issue wäre
+die Klasse nur als Oder-Verkettung abfragbar, und jede neue Verfeinerung
+würde jede bestehende Abfrage still unvollständig machen.
+
+Die vier Verfeinerungen kumulieren wie die `korpus:`-Werte; ein Befund
+über eine Kollision im Bestand, gegen die ein Shape fehlt, trägt
+`befund:bestand` und `befund:ontologie`. Sie schneiden nicht nach Thema,
+sondern nach dem Zeitpunkt, zu dem man sie liest: `befund:werkzeug` **vor**
+einem Lauf, weil dort steht, welche Zugangswege tragen; `befund:ontologie`
+blockiert Konvergenzknoten; `befund:bestand` sind Schulden gegen bereits
+gemergte Daten; `befund:verfahren` ändert Anweisungen.
+
+**Kein `korpus:`-Label an einem `befund`.** Die `korpus:`-Werte sind das
+Protokoll der Suchabdeckung einer Behauptung. Ein Werkzeug- oder
+Repo-Befund wird in keinem Korpus gesucht, und ein `korpus:`-Wert an ihm
+zählt eine Abdeckung mit, die nie stattgefunden hat.
 
 Dazu je ein `korpus:`-Label pro geprüftem oder zu prüfendem Korpus. Sie
 kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
