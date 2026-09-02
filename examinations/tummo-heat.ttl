@@ -15,6 +15,26 @@
 # ontology/provenance.ttl. See prima-materia#24.
 #
 
+pmc:HeatWithoutForcefulBreath a pm:Positing ;
+    rdfs:label "The heat arises without the forceful breath"@en, "Die Hitze entsteht ohne den kraftvollen Atem"@de ;
+    skos:definition "The claim that the gentler form of the practice, without the forceful breathing, produces the same effect as the form the tradition prescribes."@en ;
+    skos:note "Entered because it is the point where the method draft parts company with the transmission it draws on. The transmission prescribes the forceful breath; the draft says it can be left out. That is a claim about the draft's own variant and belongs to nobody else, which is why it is posited and not sourced."@en ;
+    pm:positedIn "prima-materia#318" .
+
+pmc:HeatWithoutBreathProtocol a pm:Testing ;
+    rdfs:label "Whether the gentler form produces the same heat"@en, "Ob die sanftere Form dieselbe Hitze erzeugt"@de ;
+    skos:definition "An examination of whether the effect measured in the practice survives the removal of its forceful-breath component."@en ;
+    skos:note "No new evidence was gathered for this protocol and none was needed. The measurements already held at pmc:TummoHeatExamination separate the two components and report the temperature rise as depending on the forceful breath together with the visualisation, with the visualisation alone yielding the lesser effect. The claim that the breath may be dropped is therefore addressed by evidence that has stood in this file since the twenty-eighth of August."@en ;
+    skos:note "The finding matters more than its size. Where a draft and its source transmission differ on a component, and the difference is exactly the component the measurements isolate, the draft is testable at that seam and almost nowhere else. Removing a prescribed element and claiming the effect survives is the one kind of modification that instruments can settle."@en ;
+    skos:note "What is not settled. That the gentler form yields less heat is not that it yields none, and the studies were not designed to find the floor. The deviation recorded here is from the claim of sameness and not from the claim that the gentler form does anything at all."@en ;
+    pm:tests pmc:HeatWithoutForcefulBreath ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:falsifiedBy "Practitioners of the gentler form show the same rise in measured body temperature as practitioners of the form with the forceful breath."@en ;
+    pm:baseRate "Temperature change under the visualisation alone, against the change under visualisation together with the forceful breath, in the same participants."@en ;
+    pm:examinedBy "Not devised here. The separation of the two components is the design of the second study already cited in this file" ;
+    pm:evidenceFrom "M. Kozhevnikov et al., Neurocognitive and somatic components of temperature increases during g-tummo meditation, PLoS ONE 8(3) (2013), e58244, doi:10.1371/journal.pone.0058244" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
+
 pmc:TummoHeatExamination a pm:Testing ;
     rdfs:label "Examination of the tummo heat claim"@en, "Prüfung der Tummo-Hitze-Behauptung"@de ;
     skos:definition "An examination of the claim that the tummo practice produces inner heat, taken up because this is the one pairing in the collection whose capacity has an outward side that instruments reach."@en ;
