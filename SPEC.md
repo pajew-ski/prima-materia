@@ -564,6 +564,21 @@ Labels sind kein Zustandsduplikat — den Zustand trägt offen oder geschlossen.
 | `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
 | `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar, etwa eine Dosierungsangabe |
 | `entwurf:<name>` | Herkunft der Behauptung, wo sie aus einem Methodenentwurf stammt |
+| `befund` | markiert das Issue als Repo-Arbeit, nicht als Behauptung. Das Komplement zu `behauptung` und das Dachlabel der vier folgenden |
+| `befund:werkzeug` | Zugangsweg, Werkzeuggrenze, Umweg. Erledigt, wenn der Weg dokumentiert oder das Werkzeug geändert ist |
+| `befund:ontologie` | Vokabular, Shape, fehlendes Prädikat. Erledigt, wenn die Ontologie geändert ist |
+| `befund:bestand` | falsche, doppelte oder fehlende Daten im Graphen. Erledigt, wenn die Daten korrigiert sind |
+| `befund:verfahren` | Regel in dieser Spezifikation, in `AGENTS.md`, in `CONTRIBUTING.md` oder in einem Workflow. Erledigt, wenn die Regel geändert ist |
+
+**Jedes Issue trägt entweder `behauptung` oder `befund`.** Die Aufteilung stand von Anfang an in der Definition von `behauptung` — „nicht als Repo-Arbeit" —, aber die andere Hälfte hatte keinen Namen, und was keinen Namen hat, ist nicht als Menge abfragbar. Die Folge war messbar: bei der Einführung dieses Labels trugen 61 von 287 offenen Issues gar kein Label, und es waren fast genau die Repo-, Werkzeug-, Ontologie- und Verfahrensbefunde. Sie hatten stattdessen ein Ersatzvokabular in den Titeln gebildet — Werkzeugbefund, Werkzeuglücke, Werkzeugfalle, Werkzeugmechanik, Bestandsbefund, Ontologielücke —, also vier Namen für eine Klasse und keinen davon abfragbar.
+
+Daraus folgt eine stehende Prüfung: **`is:issue is:open no:label` muss leer sein.** Ein Issue ohne Label ist kein neutraler Zustand, sondern eines, das in keiner Menge vorkommt.
+
+Das Dachlabel neben den vier Verfeinerungen ist eine Eigenschaft des Werkzeugs und keine Redundanz: `label:` kennt keine Wildcards, `label:befund:*` gibt es nicht. Ohne `befund` an jedem einzelnen Issue macht jede neue Verfeinerung jede bestehende Oder-Abfrage still unvollständig — derselbe Fehler, den Abschnitt 13 für das zweite Nummernschema verbietet.
+
+Die vier schneiden nicht nach Thema, sondern nach dem Zeitpunkt, zu dem sie gelesen werden: `befund:werkzeug` vor einem Lauf, weil dort steht, welche Zugangswege tragen; `befund:ontologie` blockiert Konvergenzknoten; `befund:bestand` sind Schulden gegen bereits gemergte Daten; `befund:verfahren` ändert Anweisungen. Sie kumulieren.
+
+**Ein `befund` trägt kein `korpus:`-Label.** Der `korpus:`-Wert ist das Protokoll der Suchabdeckung einer Behauptung; an einem Werkzeugbefund zählt er eine Abdeckung mit, die nie stattgefunden hat.
 
 **Das `korpus:`-Label kumuliert.** Eine Behauptung, die in der Atemliteratur nicht gefunden wurde, ist nicht unbelegbar, sondern in diesem Korpus nicht gefunden. Sie behält das Label, bekommt beim nächsten Durchgang das nächste dazu, und wird erst geschlossen, wenn die plausiblen Korpora erschöpft sind. Damit ist die Labelmenge zugleich die Suchabdeckung, und ein späterer Fund lässt sich daran messen, ob er einen nie geprüften Korpus betrifft.
 
