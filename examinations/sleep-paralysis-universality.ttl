@@ -29,6 +29,26 @@ pmc:ParalysisPrecedesItsNotice a pm:Positing ;
     skos:note "Split deliberately from the weaker claim that sleep paralysis is the regular shutdown of motor control at the sleep transition, which is prima-materia#137 and stands on its own. This one adds the two things that make it testable: a universality and an explanation of why a universal thing is rarely reported."@en ;
     pm:positedIn "prima-materia#138" .
 
+pmc:ParalysisIsTheRegularShutdown a pm:Positing ;
+    rdfs:label "The paralysis is the regular shutdown of movement at the threshold of sleep"@en, "Die Lähmung ist die reguläre Abschaltung der Motorik am Schlafübergang"@de ;
+    skos:definition "The claim that what is called sleep paralysis is the ordinary switching off of motor control that happens as sleep is entered, and therefore a regular part of the architecture of sleep rather than a disorder."@en ;
+    skos:note "The weaker of the two claims in this file and separated from the other on purpose. This one places the event and calls it regular; pmc:ParalysisPrecedesItsNotice adds that it is universal and that only its noticing is rare. The two are examined apart because they fail apart, and one of them does."@en ;
+    pm:positedIn "prima-materia#137" .
+
+pmc:ThresholdShutdownProtocol a pm:Testing ;
+    rdfs:label "Whether the paralysis is a shutdown and whether it happens at the threshold"@en, "Ob die Lähmung eine Abschaltung ist und ob sie am Übergang geschieht"@de ;
+    skos:definition "An examination of the posited claim in its two parts: whether the event is located at the transition into or out of sleep, and whether the mechanism is the switching off of motor control there."@en ;
+    skos:note "The location holds. Reported episodes occur on falling asleep or on waking and not in the middle of consolidated sleep, and the systematic review classes them accordingly."@en ;
+    skos:note "The mechanism does not hold as stated, and the correction is not a quibble. Motor control is not switched off at the transition: it is already off throughout the sleep stage in question, produced there by an identified transmitter and receptor pathway, and the experience arises when that shutdown persists past the transition instead of ending with it. The claim has the direction backwards. What happens at the threshold is the failure to switch motor control back on, not the switching of it off."@en ;
+    skos:note "The word regular carries a second and separate deviation. The mechanism is regular, but the recurring form of the experience is classified as a parasomnia in the standard nosology, which is to say as a disorder. Both can be true at once and the claim does not distinguish them: a normal mechanism appearing at an abnormal moment. Whoever repairs the claim must say which of the two the word regular is doing."@en ;
+    skos:note "This is why the two posits in this file were kept apart. The universality claim survives its protocol; this one does not, on the same evidence, and a single node carrying both would have had to be entered as confirmed or as deviating and would have been wrong either way."@en ;
+    pm:tests pmc:ParalysisIsTheRegularShutdown ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:falsifiedBy "The atonia is shown to begin at the transition rather than to persist across it; or reported episodes are found in consolidated sleep away from either threshold."@en ;
+    pm:examinedBy "Not devised here. The deviation is read off the same two bodies of evidence that carry the neighbouring protocol, plus the standard nosological classification" ;
+    pm:evidenceFrom "P. L. Brooks and J. H. Peever, Identification of the transmitter and receptor mechanisms responsible for REM sleep paralysis, Journal of Neuroscience 32 (2012), pp. 9785-9795, doi:10.1523/JNEUROSCI.0482-12.2012" , "B. A. Sharpless and J. P. Barber, Lifetime prevalence rates of sleep paralysis: a systematic review, Sleep Medicine Reviews 15 (2011), no. 5, pp. 311-315, doi:10.1016/j.smrv.2011.01.007" , "American Academy of Sleep Medicine, International Classification of Sleep Disorders, 3rd edition (Darien, Illinois, 2014), recurrent isolated sleep paralysis among the parasomnias of the relevant sleep stage" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
+
 pmc:ParalysisUniversalityProtocol a pm:Testing ;
     rdfs:label "Whether the paralysis is universal and its noticing rare"@en, "Ob die Lähmung allgemein ist und ihr Bemerken selten"@de ;
     skos:definition "An examination of the posited claim in two parts: whether the motor paralysis of the sleep threshold is a feature of every sleeper, and whether the rate at which it is noticed is low enough that a universal mechanism could go unreported."@en ;
