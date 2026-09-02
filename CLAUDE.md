@@ -269,6 +269,8 @@ Vollständig in `SPEC.md` Abschnitt 13 und 14. Operativ:
 
 **Recherchiert wird nach `korpus:`-Label gebündelt**, nicht nach Herkunftsabschnitt: die Arbeit folgt dem Text, den man aufschlägt. Die Labels kumulieren und sind damit das Protokoll der Suchabdeckung — „in diesem Korpus nicht gefunden" ist etwas anderes als „unbelegbar". Vokabular in `CONTRIBUTING.md`, von dort übernehmen: ein unbekannter Labelname wird stillschweigend als neues Label angelegt.
 
+**Jedes Issue trägt entweder `behauptung` oder `befund`.** `befund` ist das Komplement und zugleich das Dachlabel für `befund:werkzeug`, `befund:ontologie`, `befund:bestand` und `befund:verfahren`, die kumulieren. Ein Befund trägt kein `korpus:`-Label — der `korpus:`-Wert zählt Suchabdeckung, und an einem Werkzeugbefund zählt er eine, die nie stattgefunden hat. `is:issue is:open no:label` muss leer bleiben; als das Label eingeführt wurde, standen dort 61 von 287 offenen Issues.
+
 **Jeder Befund ist auf Korpus und Datum relativiert.** Gegroundet übersteht einen Gegenfund und wird zu `pm:Disputing`; wegen Gegenbezeugung verworfen kippt beim ersten stützenden Zeugen zurück in strittig. Eine Verwerfung, die auf einer einzigen Tradition beruht, ist ein einseitiger Streitfall und hat zu nennen, worauf sie beruht.
 
 **Der Korpus wächst über zwei Eingänge, und der zweite hat Vorrang.** Bedarf aus offenen Issues ist der eine. Der andere ist der Engpass: die Beweiskraft hängt an `pm:independentAttestation`, und eine weitere indische Datei erhöht die Dateizahl, nicht die Zeugenzahl. Vor jeder neuen Datei stehen Kontaktweg, Rezension und die Zahl der zitierbaren Stellen fest. `traditions/daoist.ttl` ist mit Absicht dünn und ist das Modell.
