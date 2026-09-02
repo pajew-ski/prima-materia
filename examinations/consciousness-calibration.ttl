@@ -1,0 +1,39 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — examination: the calibration of consciousness levels by
+# muscle test
+#
+# Opened for prima-materia#362, and unusual for the opposite reason to the
+# Zande protocol. There the transmission stated its own failure condition and
+# nothing had to be constructed but the counting. Here the claim names its own
+# procedure, the procedure is trivially blindable, and it has been blinded
+# repeatedly — but never on the claim itself. What has been tested is the
+# assumption the claim rests on, and the distinction is the whole content of
+# this node.
+#
+# The state is therefore procedure without cases and not cases with deviation.
+# Entering the latter would count the substance-testing literature as a test of
+# the scale, which it is not, and would give the record a refutation it has not
+# earned. A claim that is unexamined and a claim that is examined and
+# unsupported are not the same finding and must never read alike.
+#
+
+pmc:ConsciousnessCalibrationProtocol a pm:Testing ;
+    rdfs:label "Whether a level of consciousness can be read off a muscle test"@en, "Ob sich eine Bewusstseinsstufe am Muskeltest ablesen lässt"@de ;
+    skos:definition "An examination of the claim that the position of a mental or emotional state on a numbered scale can be established by testing the strength of a subject's muscle, as the scale's author reports having done over some quarter of a million times."@en ;
+    skos:note "Why this claim and not another. Almost every claim in this graph is about an inner state for which no procedure exists, and pm:noProcedureDevised is accordingly the commonest state in the holding. This one names its own procedure, the procedure requires no instrument, and blinding it is cheap. Among the claims the graph carries it is the most nearly testable, and that is the reason it was opened."@en ;
+    skos:note "What the available evidence covers. Three controlled studies bear on the muscle test as a diagnostic instrument, all with blinding, and none of them supports it. A test-retest study on wasp-venom allergy with four examiners, seven patients and twenty bottles each reports an overall kappa of 0.03 with sensitivity around forty per cent and specificity around sixty; a dental double-blind study on materials testing reports the test unreliable; a double-blind randomised study on therapy localisation reports the same. The first states plainly that as a diagnostic tool the method is no more useful than guessing."@en ;
+    skos:note "What the available evidence does not cover, and this is the point. Every one of those studies asks whether the muscle test can identify a substance or a bodily site. None asks whether it can place a mental state on a numbered scale. The evidence therefore strikes the presupposition, that the test yields answers better than chance, and not the claim itself. No blinded replication of the calibrations is known, and the claim is unexamined in the strict sense even though its foundation is not."@en ;
+    skos:note "A second reason for caution about the direction of the finding. The source itself names conditions under which its procedure is said to fail: synthetic clothing on the subject, metal jewellery, the voice of the tester. A procedure whose stated interferences are all channels through which an expectation could travel is one whose null result would be expected on ordinary grounds, and whose positive result would need to exclude them. That observation belongs in the protocol and not in a verdict."@en ;
+    skos:note "The counter-search is owed and has not been carried out. Work claiming reliability for manual muscle testing exists, some of it from within the field, and a rejection that has read only one side is by SPEC §13 a one-sided dispute and not a refutation. Until it is read, the state of this protocol stays where it is."@en ;
+    pm:tests pmc:HawkinsConsciousnessScale ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "Blinded testers, given the same states without knowing which, do not agree on their placement above chance; or the same tester, blinded to his earlier results, does not reproduce his own placements."@en ;
+    pm:examinedBy "Not devised here. The procedure is the one the source prescribes; the falsifying condition is the ordinary requirement of inter-rater and test-retest agreement, and nobody has yet applied it to the calibrations themselves" ;
+    pm:evidenceFrom "R. Lüdtke, B. Kunz, N. Seeber and J. Ring, Test-retest-reliability and validity of the Kinesiology muscle test, Complementary Therapies in Medicine 9 (2001), pp. 141-145" , "H.-J. Staehle, M. J. Koch and T. Pioch, Double-blind Study on Materials Testing with Applied Kinesiology, Journal of Dental Research 84 (2005), no. 11, doi:10.1177/154405910508401119" , "S. A. Schwartz and others, A Double-Blind, Randomized Study to Assess the Validity of Applied Kinesiology as a Diagnostic Tool and as a Nonlocal Proximity Effect, Explore 10 (2014), no. 2" ;
+    pm:protocolUpdated "2026-09-02"^^xsd:date .
