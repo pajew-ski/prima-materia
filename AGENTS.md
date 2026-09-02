@@ -99,6 +99,18 @@ Ein ungültiger Zwischenstand auf einem `claude/`-Branch ist dabei kein Schaden 
 | **Unbelegt** | Die teure Aussage: es gibt die Stelle nirgends. Trägt nur eine erschöpfende, dokumentierte Suche. Ein Durchgang ohne Fund reicht nicht. |
 | **Nicht gegroundet** | Ein Knoten im Bestand. Eine Analogie in einer benachbarten Tradition. Eine Erinnerung des Modells an eine Stelle, die nicht aufgeschlagen wurde. |
 
+## Die Kette, auf die alles hinausläuft
+
+Vollständig in `SPEC.md` §16. Vier Sätze, die im Ablauf zählen.
+
+**Eine Behauptung ist, was eine Überlieferung sagt.** Sie trägt Werk und Stelle. Wo diese Datei „Hypothese" sagt, meint sie einen Issue und keine Klasse: eine Vermutung ohne gelesene Stelle gehört in den Tracker.
+
+**Eine Überschneidung wird nicht gefunden, sie wird behauptet.** `pm:Converging` trägt immer `pm:compilerInference`, und sie entsteht aus dem Beifang der Einzelrecherche, also während Stufe eins läuft und nicht in einem späteren Durchgang. Sie ist außerdem noch keine prüfbare Aussage: dass zwei Begriffe einander entsprechen, kann an keinem Ergebnis scheitern.
+
+**Prüfbar wird es erst als Verallgemeinerung.** `pm:Generalizing` hält den Satz, den keine Quelle sagt — Praktiken dieser Art bringen diese Wirkung hervor —, gebildet aus mindestens zwei bezeugten Behauptungen, auf die `pm:generalizedFrom` zeigt. Er trägt Herleitung statt Herkunft: kein `dcterms:source`, keine `pm:withinTradition`, `pm:attestedBy pm:compilerInference`. Ein Satz aus einem Methodenentwurf hat keine bezeugten Vorgänger und kommt so nicht hinein; der Richtungssinn aus §10 bleibt unangetastet.
+
+**Die Warteschlange für die Prüfung ist damit abfragbar:** die Verallgemeinerungen, auf die kein `pm:Testing` zeigt, geordnet nach der Zahl ihrer Vorgänger und der Streuung von deren Traditionen. Das ist bewusst kein Shape — ein Wächter, der zu jeder Verallgemeinerung ein Protokoll verlangte, machte die Warteschlange unschreibbar. Ein Lauf, der keine Prüfung aufnimmt, kann sich aber nicht mehr darauf berufen, dass keine anstand.
+
 ## Behauptungen liegen in Issues
 
 Der Issue-Tracker hält jede Behauptung, die noch nicht durch einen Knoten repräsentiert ist. Jeder darf einreichen, ohne Recherche und ohne in einer Tradition zu stehen; das beseitigt dasselbe Tor wie CC0.
