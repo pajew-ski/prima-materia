@@ -286,7 +286,21 @@ Vollständig in `SPEC.md` Abschnitt 13 und 14. Operativ:
 
 **Jeder Befund ist auf Korpus und Datum relativiert.** Gegroundet übersteht einen Gegenfund und wird zu `pm:Disputing`; wegen Gegenbezeugung verworfen kippt beim ersten stützenden Zeugen zurück in strittig. Eine Verwerfung, die auf einer einzigen Tradition beruht, ist ein einseitiger Streitfall und hat zu nennen, worauf sie beruht.
 
-**Der Korpus wächst über zwei Eingänge, und der zweite hat Vorrang.** Bedarf aus offenen Issues ist der eine. Der andere ist der Engpass: die Beweiskraft hängt an `pm:independentAttestation`, und eine weitere indische Datei erhöht die Dateizahl, nicht die Zeugenzahl. Vor jeder neuen Datei stehen Kontaktweg, Rezension und die Zahl der zitierbaren Stellen fest. `traditions/daoist.ttl` ist mit Absicht dünn und ist das Modell.
+**Der Korpus wächst über vier Eingänge.** Drei setzen eine bereits gestellte Frage voraus und ordnen nur, welche zuerst drankommt: Prüfbarkeit — die Überlieferungen, die Anzeichen, Fristen, Kautelen und Misslingensbedingungen nennen — hat Vorrang, dann Unabhängigkeit, dann Bedarf aus offenen Issues. Zur Unabhängigkeit: eine weitere indische Datei erhöht die Dateizahl, nicht die Zeugenzahl. Vor jeder neuen Datei stehen Kontaktweg, Rezension und die Zahl der zitierbaren Stellen fest. `traditions/daoist.ttl` ist mit Absicht dünn und ist das Modell.
+
+**Der vierte kommt ohne Frage aus, und nur er bricht die Prägung.** Ein Werk wird geöffnet, weil es zu einer registrierten Tradition mit dünnem Bestand gehört, nicht weil eine Behauptung darauf zeigt. Die Warteschlange ist der Registrierungsstand selbst — `pm:coverageState pm:corpusNamed`, sortiert nach der Zahl der bisher getragenen Knoten —, und ein zweites Verzeichnis wird auch hier nicht geführt. Der Ertrag sind Behauptungen, nach denen niemand gefragt hat, und nur die liefern eine Kategorie, die der Bearbeiter vorher nicht hatte. Was mit einer Frage gesucht wird, findet Übereinstimmungen, deren Begriff schon im Suchbegriff steckte, und eine solche Übereinstimmung bestätigt die Frage, bevor sie etwas über die Überlieferung sagt.
+
+Beide Richtungen laufen im Batch nebeneinander, in eigenen Branches, und keine ersetzt die andere: der strukturelle Strang liefert Masse ohne Prioritätsordnung, die offenen Behauptungen liefern die Ordnung ohne Masse.
+
+### Ernteläufe koordinieren
+
+Sobald mehrere Agenten parallel ernten, gilt:
+
+- **Die Arbeitseinheit ist ein Werk, kein Anspruch.** Teuer ist das Öffnen; eine weitere Stelle im offenen Text kostet fast nichts.
+- **Der Lease ist ein Issue.** Je Werk ein Issue `Ernte: <Werk>` mit `ernte`; wer es nimmt, setzt `in-arbeit` und trägt sich als Assignee ein. Ein Zustand im Graphen wäre erst nach dem Merge sichtbar und als Reservierung zu langsam. Bricht ein Lauf ab, fällt das Label weg.
+- **Der Branchname trägt den Werkslug**, `claude/ernte-<werk-slug>`. Damit zeigt `gh_branches` die laufenden Ernten, bevor ein Label gesetzt ist, und ein abgestürzter Lauf hinterlässt eine sichtbare Spur statt eines stillen Lochs.
+- **Ein PR je Werk**, mit der Erntenotiz im Body und den Bezeichnern der geschriebenen Knoten namentlich. Kein Sammel-PR über mehrere Werke.
+- **Der Lease verhindert nur gleichzeitige Doppelarbeit.** Gegen spätere hilft allein, dass derselbe Sachverhalt bei zwei unabhängigen Läufen denselben Bezeichner ergibt: `tests/test_identifier_uniqueness.py` meldet gleiche Bezeichner in zwei Dateien sofort und verschiedene Bezeichner für dieselbe Sache nie. Bezeichner werden deshalb aus dem Gegenstand gebildet — Tradition plus normalisierter Terminus in der Originalsprache —, nie aus der deutschen oder englischen Übersetzung, weil zwei Bearbeiter dort verschieden übersetzen und derselbe Gegenstand auseinanderfällt.
 
 ## Designprinzipien (kurz)
 
