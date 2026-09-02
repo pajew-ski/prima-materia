@@ -137,6 +137,12 @@ Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Auff
 6. PR öffnen, Validierung grün, dann liegen lassen. Der Mensch merged.
 7. Ohne Unterbrechung zum nächsten Bündel.
 
+**`pm:evidenceFrom` wird gelesen wie `dcterms:source`.** Beide sind Werkangaben, und die Regel aus §10 — keine Behauptung ohne Wortlaut — gilt für die moderne Arbeit genauso wie für den Traditionstext. Eine Studie, die nicht geöffnet wurde, ist keine Evidenz, sondern eine Erinnerung an eine Evidenz.
+
+Daraus folgt der Prüfstand. `pm:casesWithoutDeviation` und `pm:casesWithDeviation` behaupten beide, **dass Fälle vorliegen und was sie zeigen**. Wer die Arbeit nicht gelesen hat, weiß das nicht; er weiß, was er über das Feld zu wissen glaubt. Ein Prüfstand jenseits von `pm:noProcedureDevised` und `pm:procedureWithoutCases` setzt die Lektüre voraus, und ohne sie ist der Knoten auf einen der beiden zurückzusetzen und die Adresse in ein Issue zu geben.
+
+Drei Prüfungen, jede einzeln: **trägt die Werkangabe** — Band, Heft, Seiten, Kennung, und zwar am Nachweis und nicht aus dem Gedächtnis; **stützt die Arbeit die Aussage, für die sie steht**, oder eine benachbarte; **an welcher Population** wurde gemessen. Am 2026-09-02 sind an einem einzigen Knoten alle drei gerissen: eine DOI gehörte dem Nachbarartikel derselben Ausgabe, eine Interventionsstudie wurde für eine Wirkung der Kälte zitiert, die sie der Atemtechnik zuschreibt, und ein Rezeptorbefund aus dem Tiermodell stand ohne diesen Vermerk.
+
 **Im Batch, nicht nacheinander.** Was in einem Lauf unabhängig voneinander bearbeitet werden kann, wird unabhängig voneinander bearbeitet: je Strang ein eigener Branch von `main`, ein eigener PR, eine eigene Begründung. Nicht gestapelt, wo nichts stapeln muss — gestapelt wird nur, wenn zwei Stränge dieselbe Datei anfassen, und dann sagt der PR es im ersten Absatz.
 
 Der Grund ist nicht Geschwindigkeit, sondern Prüfbarkeit. Ein PR, der einen Wächter, eine Registrierung und einen Traditionsknoten zusammenfasst, ist als Ganzes anzunehmen oder abzulehnen; drei PR sind einzeln zu beurteilen und einzeln zurückzuweisen. Und ein Strang, der auf einen anderen wartet, obwohl er nicht muss, verlängert nur die Zeit, in der Arbeit im Gesprächsverlauf statt im Repo liegt.
