@@ -827,3 +827,80 @@ def test_generalization_without_an_examination_conforms() -> None:
         "A generalization with no pm:Testing pointing at it must conform; "
         f"it is the queue for stage three.\n{report}"
     )
+
+
+def test_naming_without_a_form_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:FormlessNaming a pm:Naming ;
+        pm:nameRole "watcher" ;
+        pm:attestedBy pm:textualAttestation ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A naming without pm:nameForm must fail SHACL."
+    assert "as the cited edition spells it" in report
+
+
+def test_naming_without_a_role_is_rejected() -> None:
+    # A bearer without the term its own tradition uses has already been
+    # harmonised by whoever left it out.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:RolelessNaming a pm:Naming ;
+        pm:nameForm "Some Name" ;
+        pm:attestedBy pm:textualAttestation ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A naming without pm:nameRole must fail SHACL."
+    assert "takes the bearer to be" in report
+
+
+def test_naming_without_a_tradition_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:UnhousedNaming a pm:Naming ;
+        pm:nameForm "Some Name" ;
+        pm:nameRole "spirit" ;
+        pm:attestedBy pm:textualAttestation ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A naming without pm:withinTradition must fail SHACL."
+    assert "belongs to whoever gave it" in report
+
+
+def test_complete_naming_conforms() -> None:
+    # The shape a watcher node takes: the form as the cited edition spells
+    # it, the term that edition's tradition uses, and the passage.
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:SomeNaming a pm:Naming ;
+        pm:nameForm "Some Name" ;
+        skos:altLabel "Another Transliteration" ;
+        pm:nameRole "watcher" ;
+        pm:attestedBy pm:textualAttestation ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A complete naming must conform.\n{report}"
