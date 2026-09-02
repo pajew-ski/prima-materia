@@ -22,6 +22,7 @@ DEFAULT_DATA_DIRS = (
     REPO_ROOT / "convergences",
     REPO_ROOT / "examinations",
     REPO_ROOT / "originations",
+    REPO_ROOT / "generalizations",
 )
 
 

@@ -661,3 +661,169 @@ def test_complete_reworking_is_accepted() -> None:
     """
     conforms, report = _validate(permitted)
     assert conforms, f"A complete reworking must pass.\n{report}"
+
+
+def test_generalization_without_statement_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:SilentGeneralization a pm:Generalizing ;
+        pm:attestedBy pm:compilerInference ;
+        pm:generalizedFrom pmc:AttestedOne, pmc:AttestedTwo .
+
+    pmc:AttestedOne dcterms:source "Some work, some passage" .
+    pmc:AttestedTwo dcterms:source "Another work, another passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A generalization without pm:generalizedStatement must fail."
+    assert "state the claim it makes" in report
+
+
+def test_generalization_from_a_single_claim_is_rejected() -> None:
+    # One claim generalized is one claim restated, and it would enter the
+    # record without the source the original carried.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:ThinGeneralization a pm:Generalizing ;
+        pm:generalizedStatement "Practices of a kind produce an effect of a kind." ;
+        pm:attestedBy pm:compilerInference ;
+        pm:generalizedFrom pmc:AttestedOne .
+
+    pmc:AttestedOne dcterms:source "Some work, some passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A generalization resting on one claim must fail."
+    assert "one claim restated" in report.lower()
+
+
+def test_generalization_claiming_textual_attestation_is_rejected() -> None:
+    # The inversion of pm:CompilerInferenceScopeShape: here the compiler's
+    # step is the only admissible attestation, because no source says it.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:OverclaimedGeneralization a pm:Generalizing ;
+        pm:generalizedStatement "Practices of a kind produce an effect of a kind." ;
+        pm:attestedBy pm:textualAttestation ;
+        pm:generalizedFrom pmc:AttestedOne, pmc:AttestedTwo .
+
+    pmc:AttestedOne dcterms:source "Some work, some passage" .
+    pmc:AttestedTwo dcterms:source "Another work, another passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A generalization attested as textual must fail."
+    assert "by nothing else" in report
+
+
+def test_generalization_with_a_source_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:SourcedGeneralization a pm:Generalizing ;
+        pm:generalizedStatement "Practices of a kind produce an effect of a kind." ;
+        pm:attestedBy pm:compilerInference ;
+        pm:generalizedFrom pmc:AttestedOne, pmc:AttestedTwo ;
+        dcterms:source "Some work, some passage" .
+
+    pmc:AttestedOne dcterms:source "Some work, some passage" .
+    pmc:AttestedTwo dcterms:source "Another work, another passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A generalization carrying dcterms:source must fail."
+    assert "claims no source" in report
+
+
+def test_generalization_with_a_tradition_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:TraditionedGeneralization a pm:Generalizing ;
+        pm:generalizedStatement "Practices of a kind produce an effect of a kind." ;
+        pm:attestedBy pm:compilerInference ;
+        pm:generalizedFrom pmc:AttestedOne, pmc:AttestedTwo ;
+        pm:withinTradition pmt:Placeholder .
+
+    pmc:AttestedOne dcterms:source "Some work, some passage" .
+    pmc:AttestedTwo dcterms:source "Another work, another passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A generalization assigned to a tradition must fail."
+    assert "belongs to no tradition" in report
+
+
+def test_generalization_from_unattested_claims_is_rejected() -> None:
+    # The lock. Without it the class would be the route by which an
+    # unpublished method draft enters the record after all: a derivation whose
+    # terms name no work is an assertion with a chain drawn around it.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:GroundlessGeneralization a pm:Generalizing ;
+        pm:generalizedStatement "Practices of a kind produce an effect of a kind." ;
+        pm:attestedBy pm:compilerInference ;
+        pm:generalizedFrom pmc:AttestedOne, pmc:DraftSentence .
+
+    pmc:AttestedOne dcterms:source "Some work, some passage" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A generalization resting on an unattested node must fail."
+    assert "must itself name a work" in report
+
+
+def test_complete_generalization_conforms() -> None:
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:CompleteGeneralization a pm:Generalizing ;
+        pm:generalizedStatement "Practices of a kind produce an effect of a kind." ;
+        pm:attestedBy pm:compilerInference ;
+        pm:generalizedFrom pmc:AttestedOne, pmc:AttestedTwo .
+
+    pmc:AttestedOne dcterms:source "Some work, some passage" .
+    pmc:AttestedTwo dcterms:source "Another work, another passage" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A generalization carrying its derivation must conform.\n{report}"
+
+
+def test_generalization_without_an_examination_conforms() -> None:
+    # The deliberate asymmetry against pm:Positing, and the reason this class
+    # exists. A posited claim may live only where a protocol already points at
+    # it; a generalization must be writable before anyone has taken the
+    # examination up, because the set of generalizations without a pm:Testing
+    # *is* the queue. A shape requiring the protocol here would make the queue
+    # presuppose the work it exists to order.
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:UnexaminedGeneralization a pm:Generalizing ;
+        pm:generalizedStatement "Practices of a kind produce an effect of a kind." ;
+        pm:attestedBy pm:compilerInference ;
+        pm:generalizedFrom pmc:AttestedOne, pmc:AttestedTwo .
+
+    pmc:AttestedOne dcterms:source "Some work, some passage" .
+    pmc:AttestedTwo dcterms:source "Another work, another passage" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, (
+        "A generalization with no pm:Testing pointing at it must conform; "
+        f"it is the queue for stage three.\n{report}"
+    )

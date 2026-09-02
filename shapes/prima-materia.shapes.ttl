@@ -508,6 +508,71 @@ pm:PositingRequiresExaminationShape a sh:NodeShape ;
     ] .
 
 #
+# A generalization exhibits what it is: the statement it makes, the attested
+# claims it was formed from, and the fact that the step is the compiler's.
+# Compiler inference is required here rather than forbidden — the opposite of
+# what pm:Attributing demands — because nobody transmitted this sentence, and
+# a node claiming otherwise would report a witness that does not exist.
+#
+pm:GeneralizationShape a sh:NodeShape ;
+    sh:targetClass pm:Generalizing ;
+    sh:property [
+        sh:path pm:generalizedStatement ;
+        sh:minCount 1 ;
+        sh:message "Every generalization must state the claim it makes."
+    ] ;
+    sh:property [
+        sh:path pm:generalizedFrom ;
+        sh:minCount 2 ;
+        sh:message "Every generalization must point at least two attested claims it was formed from. One claim generalized is one claim restated."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:hasValue pm:compilerInference ;
+        sh:message "A generalization is attested by pm:compilerInference and by nothing else. No source states it."
+    ] .
+
+#
+# The prohibition that keeps the layers apart. A generalization naming a work
+# or a tradition would read as transmitted at the point where somebody loads
+# the graph, and the difference between what a tradition says and what was
+# concluded from several traditions is the one this class exists to hold.
+#
+pm:GeneralizationIsNotAWitnessShape a sh:NodeShape ;
+    sh:targetClass pm:Generalizing ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:maxCount 0 ;
+        sh:message "A generalization claims no source. What it rests on is stated with pm:generalizedFrom, which points at claims that carry their own."
+    ] ;
+    sh:property [
+        sh:path pm:withinTradition ;
+        sh:maxCount 0 ;
+        sh:message "A generalization belongs to no tradition. It was formed from several, and assigning it to one would credit a transmission with a step it never took."
+    ] .
+
+#
+# The lock. Every claim a generalization is formed from must itself name a
+# work, so the derivation terminates in passages a reader can obtain. This is
+# what keeps the class from becoming the route by which an unpublished method
+# draft enters the record after all: a sentence nobody attested has nothing
+# for pm:generalizedFrom to point at.
+#
+pm:GeneralizationRestsOnAttestedNodesShape a sh:NodeShape ;
+    sh:targetClass pm:Generalizing ;
+    sh:property [
+        sh:path pm:generalizedFrom ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path dcterms:source ;
+                sh:minCount 1
+            ]
+        ] ;
+        sh:message "Every claim a generalization is formed from must itself name a work. A derivation that terminates in something unattested is an assertion wearing a chain."
+    ] .
+
+#
 # Static-substance classes are forbidden. The shape targets the four
 # blacklisted URIs directly; if any of them is ever asserted as owl:Class,
 # validation fails.
