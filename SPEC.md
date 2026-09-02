@@ -257,6 +257,7 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 | `pm:Converging` | Übereinstimmung über Traditionen hinweg | `pm:transmissionPath` **oder** `pm:independentAttestation`; bei letzterem zusätzlich `pm:independenceGround` |
 | `pm:Reworking` | eine Tradition übernimmt eine Behauptung und fügt etwas hinzu | `pm:reworkedClaim`, `pm:receivedFrom`, `pm:addedElement`, `pm:attestedBy` |
 | `pm:Testing` | ein Prüfprotokoll | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
+| `pm:Generalizing` | „Praktiken dieser Art bringen diese Wirkung hervor" | `pm:generalizedStatement`, **mindestens zwei** `pm:generalizedFrom`, `pm:attestedBy pm:compilerInference`; **kein** `dcterms:source`, **keine** `pm:withinTradition` |
 
 **Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`. Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
 
