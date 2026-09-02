@@ -242,6 +242,9 @@ by the `distribute.yml` GitHub Action on each push to `main`.
 ## Scope
 
 Phase 0 and Phase 1 are delivered. New traditions are not added by plan
-any more: `SPEC.md §14` sets out the two entrances and the three
-decisions that precede a new file. If a change goes beyond that, raise an
-issue first. Ask rather than guess.
+any more: `SPEC.md §14` sets out the four entrances and the three
+decisions that precede a new file. Three of the four presuppose a
+question already asked; the fourth opens a work because a registered
+tradition is thin, and it is the only one that yields claims nobody
+asked for. If a change goes beyond that, raise an issue first. Ask
+rather than guess.
