@@ -217,6 +217,45 @@ pm:UndividedOutcomesRequiredShape a sh:NodeShape ;
     sh:message "A protocol whose state is pm:claimDoesNotDiscriminate must name the outcomes the claim treats alike." .
 
 #
+# Evidence admitted without a search for opposition is one report taken for
+# the world. These three shapes make the omission impossible rather than
+# merely forbidden: the prose rule was written and broken in the same day.
+#
+pm:CounterSearchRequiredShape a sh:NodeShape ;
+    sh:targetClass pm:Testing ;
+    sh:or (
+        [ sh:not [ sh:property [ sh:path pm:evidenceFrom ; sh:minCount 1 ] ] ]
+        [ sh:property [ sh:path pm:counterSearch ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "A protocol citing evidence must state how far the search for opposing work has been carried." .
+
+pm:CounterSearchNoteRequiredShape a sh:NodeShape ;
+    sh:targetClass pm:Testing ;
+    sh:or (
+        [ sh:not [ sh:property [ sh:path pm:counterSearch ; sh:minCount 1 ] ] ]
+        [ sh:property [ sh:path pm:counterSearchNote ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "A counter-search state must be accompanied by a note saying what was searched and what came back." .
+
+#
+# The state that carries the weight. A protocol may report cases only if
+# somebody looked for the work that would unsettle them.
+#
+pm:CasesRequireCounterSearchShape a sh:NodeShape ;
+    sh:targetClass pm:Testing ;
+    sh:or (
+        [ sh:not [ sh:property [
+            sh:path pm:examinationState ;
+            sh:in ( pm:casesWithoutDeviation pm:casesWithDeviation pm:claimDoesNotDiscriminate ) ;
+            sh:minCount 1 ] ] ]
+        [ sh:property [
+            sh:path pm:counterSearch ;
+            sh:not [ sh:hasValue pm:counterSearchNotCarried ] ;
+            sh:minCount 1 ] ]
+    ) ;
+    sh:message "A protocol reporting cases must have carried the counter-search; set procedureWithoutCases until it has." .
+
+#
 # A dispute cites every side it reports. One source is not a disagreement,
 # it is a position; recording it as a dispute would let the record decide
 # the matter by which side it happened to read.
