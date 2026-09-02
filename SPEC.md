@@ -399,7 +399,9 @@ pm:NoSubstanceClassesShape a sh:NodeShape ;
 
 ## 7. GitHub Actions
 
-**Dieser Abschnitt beschreibt, was die Workflows leisten müssen, und nicht ihren Wortlaut.** Der Wortlaut steht in `.github/workflows/`. Ein wörtliches Listing hier war zweimal falsch, bevor es jemandem auffiel, und es nützt dem Agenten nichts: sein Token trägt keinen `workflows`-Scope, er kann die Dateien ohnehin nicht schreiben. Wer eine Änderung an einem Workflow braucht, beschreibt sie und lässt sie von Hand einspielen.
+**Dieser Abschnitt beschreibt, was die Workflows leisten müssen, und nicht ihren Wortlaut.** Der Wortlaut steht in `.github/workflows/`. Ein wörtliches Listing hier war zweimal falsch, bevor es jemandem auffiel. Es ist auch dann überflüssig, wenn der Agent die Dateien schreiben kann: was zu gelten hat, steht hier, was gilt, steht dort, und zwei Fassungen desselben Wortlauts laufen auseinander.
+
+**Der Scope-Vermerk an dieser Stelle ist überholt.** Bis zum 2026-09-02 trug das Agenten-Token keinen `workflows`-Scope, und Workflow-Änderungen waren zu beschreiben und von Hand einzuspielen. Der Versuch am 2026-09-02 ging durch; die beiden Änderungen aus prima-materia#352 und prima-materia#353 sind vom Agenten selbst geschrieben. Wer hier eine Änderung braucht, schreibt sie und begründet sie im PR wie jede andere. Das Recht, den eigenen Prüflauf zu ändern, verlangt dabei mehr Vorsicht als jede Datenänderung: eine Lockerung an `validate.yml` fällt niemandem auf, weil danach alles grün ist.
 
 ### `validate.yml`
 
