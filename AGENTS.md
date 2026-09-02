@@ -115,6 +115,8 @@ Der Issue-Tracker hält jede Behauptung, die noch nicht durch einen Knoten repr�
 
 Vokabular der Labels in `CONTRIBUTING.md`, von dort übernehmen: GitHub legt einen unbekannten Labelnamen stillschweigend als neues an.
 
+**Jedes Issue trägt entweder `behauptung` oder `befund`.** Ein Befund über das Repo, die Ontologie, ein Werkzeug oder ein Verfahren ist keine Behauptung und bekommt kein `korpus:`-Label; er bekommt `befund` und dazu die zutreffenden Verfeinerungen `befund:werkzeug`, `befund:ontologie`, `befund:bestand`, `befund:verfahren`, die kumulieren. `is:issue is:open no:label` muss leer bleiben.
+
 ## Quellen
 
 Jede Behauptung braucht mindestens ein `dcterms:source` als Referenz auf ein Werk mit der Stelle, die sie trägt (`"Patañjali, Yogasūtra III.38"`).
