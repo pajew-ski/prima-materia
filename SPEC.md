@@ -46,6 +46,8 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 │   └── *.ttl                    # nur angelegt, wo eine Prüfung aufgenommen wurde
 ├── originations/                # moderne Behauptungen, die als alte zirkulieren
 │   └── *.ttl                    # pm:Originating: ordnen keine Tradition und bezeugen keine
+├── generalizations/             # aus mehreren bezeugten Behauptungen gebildete Sätze
+│   └── *.ttl                    # pm:Generalizing: tragen Herleitung statt Herkunft
 ├── site/                        # handgeschriebene Assets der GitHub-Pages-Seite
 ├── shapes/
 │   └── prima-materia.shapes.ttl # SHACL-Validierungsregeln
@@ -255,6 +257,7 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 | `pm:Converging` | Übereinstimmung über Traditionen hinweg | `pm:transmissionPath` **oder** `pm:independentAttestation`; bei letzterem zusätzlich `pm:independenceGround` |
 | `pm:Reworking` | eine Tradition übernimmt eine Behauptung und fügt etwas hinzu | `pm:reworkedClaim`, `pm:receivedFrom`, `pm:addedElement`, `pm:attestedBy` |
 | `pm:Testing` | ein Prüfprotokoll | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
+| `pm:Generalizing` | „Praktiken dieser Art bringen diese Wirkung hervor" | `pm:generalizedStatement`, **mindestens zwei** `pm:generalizedFrom`, `pm:attestedBy pm:compilerInference`; **kein** `dcterms:source`, **keine** `pm:withinTradition` |
 
 **Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`. Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
 
@@ -602,9 +605,17 @@ Die Labelnamen benennen den Korpus, den man aufschlägt, nicht die Datei, in der
 
 ## 14. Erweiterung des Korpus
 
-Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei existiert, weil sie etwas beantwortet, was ein moderner Text behauptet. Das macht das Grounding in dem Maß zirkulär, in dem der Bestand nur dort nachschlägt, wo er ohnehin schon hinsah. Wer ihn allein entlang offener Behauptungen erweitert, vertieft diese Prägung. Deshalb zwei Eingänge, und der zweite hat Vorrang, wenn beide anstehen.
+Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei existiert, weil sie etwas beantwortet, was ein moderner Text behauptet. Das macht das Grounding in dem Maß zirkulär, in dem der Bestand nur dort nachschlägt, wo er ohnehin schon hinsah. Wer ihn allein entlang offener Behauptungen erweitert, vertieft diese Prägung.
+
+**Deshalb vier Eingänge.** Drei von ihnen setzen eine bereits gestellte Frage voraus und ordnen nur, welche zuerst drankommt; der vierte kommt ohne Frage aus und ist das einzige Gegenmittel gegen die Prägung. Der prüfbarkeitsgetriebene hat Vorrang unter denen, die eine Frage haben.
 
 **Bedarfsgetrieben.** Ein `korpus:`-Label auf einer Behauptung, für die es noch keine Datei gibt, ist bereits die Nachfragemeldung. Offene Issues je fehlendem Label ergeben die geordnete Warteschlange; ein zweites Verzeichnis dafür wird nicht geführt.
+
+**Strukturgetrieben.** Ein Werk wird geöffnet, weil es zu einer registrierten Tradition gehört, deren Bestand dünn ist, und nicht, weil eine Behauptung darauf zeigt. Die Warteschlange ist der Registrierungsstand selbst: `pm:coverageState pm:corpusNamed`, sortiert nach der Zahl der Knoten, die die Tradition bisher trägt. Ein zweites Verzeichnis entsteht auch hier nicht.
+
+Der Ertrag ist nicht Menge, sondern eine Art von Befund, die die anderen Eingänge nicht erzeugen können: **Behauptungen, nach denen niemand gefragt hat.** Wer mit einer Frage sucht, findet Übereinstimmungen, deren Begriff schon im Suchbegriff steckte, und eine solche Übereinstimmung bestätigt die Frage, bevor sie irgendetwas über die Überlieferung sagt. Eine Kategorie, die der Bearbeiter vorher nicht hatte, kann dagegen kein Suchartefakt sein. Aus diesem Eingang kommen deshalb die Konvergenzen, die als Befund tragen, und aus ihm kommt das Material für die Verallgemeinerungen nach §16.
+
+Die beiden Richtungen schließen einander nicht aus, sie brauchen einander. Der strukturelle Lauf liefert Masse ohne Prioritätsordnung; die offenen Behauptungen liefern die Ordnung ohne Masse. Sie laufen im Batch nebeneinander, in getrennten Strängen mit je eigenem Branch, und kein Lauf ersetzt den anderen.
 
 **Prüfbarkeitsgetrieben.** Knapp ist nicht die unabhängige Bezeugung, sondern die prüfbare Behauptung. Gesucht sind die Überlieferungen, die Anzeichen, Fristen, Kautelen und Misslingensbedingungen nennen — alles, woraus sich ein `pm:falsifiedBy` formen lässt. Eine Überlieferung, die sagt, woran ihr eigenes Scheitern zu erkennen wäre, bringt den Bestand weiter als eine, die nur geographisch weit weg liegt. Dieser Eingang hat Vorrang.
 
@@ -722,6 +733,20 @@ Erzählung, Lebenslauf, Polemik und kosmologisches Gerüst sind nicht geschuldet
 
 Dieser Abschnitt steht hier und nicht nur in `AGENTS.md`, weil die Fehllesung eine Regel dieser Spezifikation betraf und weil eine Korrektur, die nur in der Agentendatei steht, bei deren nächster Umarbeitung verschwindet.
 
+### Die Ernte im Maßstab
+
+Die Ernteregel oben ist auf ein Werk und einen Lauf geschrieben. Sie lässt sich maschinell fahren: ein Modell liest eine ganze Ausgabe und trägt aus, was unter die vier geschuldeten Arten fällt. Das ist keine neue Erlaubnis, sondern dieselbe Regel bei größerem Durchsatz, und sie ist der Weg, auf dem der strukturgetriebene Eingang aus §14 überhaupt zu bedienen ist. Vier Bedingungen, ohne die sie die Prüfschicht unterläuft.
+
+**Der Ertrag sind Issues, keine Knoten.** Ein Massenlauf ist Beifang von der ersten bis zur letzten Zeile, und für Beifang gilt die Regel oben unverändert: Knoten nur nach Stelle plus Gegensuche, alles andere ein Issue mit `korpus:`-Label. Das ist keine Einschränkung des Verfahrens, sondern seine richtige Ablage. Vollständigkeit ist eine Eigenschaft des Trackers; der Graph bleibt an derselben Schranke, und das Nadelöhr wandert von „welche Behauptung fällt jemandem ein" zu „welche Behauptung wird geprüft". Genau dorthin gehört es.
+
+**Die Erntenotiz braucht eine Ersatzgarantie.** Sie prüft, weil sie aus der Lektüre geschrieben wird und nicht aus der fertigen Datei: die Auslassung ist die Differenz zwischen Notiz und Branch. Bei einem Modelllauf entstehen Notiz und Ausgabe im selben Durchgang, die Differenz ist damit per Konstruktion null, und die Notiz prüft nichts mehr. An ihre Stelle tritt eine der beiden Garantien, und der Lauf nennt, welche: zwei unabhängige Durchgänge über denselben Text mit Abgleich der Ergebnisse, oder eine menschliche Stichprobe über einen benannten Abschnitt mit gemessener Auslassungsrate. Ein Vollständigkeitsanspruch ohne eine davon ist unbelegt und wird nicht erhoben.
+
+**Die Stelle ist der Lokus, nicht der Abschnitt.** Extrahiert wird über einen Text, der nach dem kanonischen Zitierschema seiner Ausgabe zerlegt ist. Ohne das ist die Stellenangabe die Grenze eines Textblocks, und §10 ist verletzt, bevor das erste Issue steht.
+
+**Häufigkeit ist erst gegen den Nenner lesbar.** Wie oft eine Behauptung über die Traditionen hinweg auftaucht, misst zunächst die Werkauswahl des Laufs. Aussagekräftig wird die Zahl gegen die registrierten Traditionen und ihren `pm:coverageState`: ohne diesen Bezug meldet ein Lauf seine eigene Abdeckung als Struktur. Das ist derselbe Fehler wie eine Konvergenz aus Ähnlichkeitssuche, nur eine Ebene höher.
+
+**Nebenertrag, der in den Bestand gehört.** Ein durchgeerntetes Werk macht `unbelegt` billiger. Der Schließgrund verlangt sonst eine erschöpfende Suche; innerhalb eines vollständig durchgegangenen Werkes ist Abwesenheit belegbar statt behauptet, und das `korpus:`-Label trägt diesen Unterschied.
+
 ### Tiefe
 
 **Eine Recherche ist kein paar Suchanfragen nebenbei.** Der Mindestumfang für eine Behauptung, die in den Graphen soll:
@@ -743,6 +768,40 @@ Eine Recherche findet mehr, als die Frage verlangt. Dieser Beifang ist der Weg, 
 Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund ist nicht geprüft, sondern begegnet. Läuft er als Knoten ein, ist der Bestand wieder eine Sammlung, und die Trennung von Behauptung und Beglaubigung ist an der billigsten Stelle durchbrochen. Die Regel greift besonders dort, wo ein Rechercheergebnis seine eigenen Vorbehalte mitbringt: Seitenzahlen aus Sekundärliteratur, gemeinfreie Altübersetzungen statt kritischer Ausgaben, in der Forschung bestrittene Zuschreibungen. Solche Funde sind wertvoll und gehören festgehalten, aber als Issue.
 
 **Der Beifang trägt die Konvergenzen.** Ein Befund, der zur gestellten Frage nichts beiträgt, kann für `pm:Converging` oder `pm:Disputing` entscheidend sein, weil beide erst entstehen, wenn mehrere Überlieferungen zu derselben Sache befragt wurden. Wer nur die eigene Frage protokolliert, wirft genau das Material weg, aus dem das eigentliche Werk besteht.
+
+## 16. Die drei Stufen
+
+Das Projekt läuft auf eine Kette hinaus: Behauptungen aufstellen, Überschneidungen finden, evidenzbasiert prüfen. Die Bausteine dafür stehen in §3.5, die Übergänge standen nirgends, und an zwei Stellen war die Kette so, wie sie gesprochen wird, nicht das, was das Repo tut.
+
+### Stufe 1: die Behauptung
+
+**Ort: der Issue-Tracker und die Traditionsdateien, nie beides für dasselbe.** Was eine Überlieferung sagt, wird ein Knoten mit Quelle, sobald die Stelle gelesen ist; was noch keine gelesene Stelle hat, bleibt ein Issue. Gespeist wird diese Stufe aus den vier Eingängen in §14, und die Masse kommt aus dem strukturgetriebenen.
+
+**Das Wort „Hypothese" wird hier nicht verwendet.** Es hat in diesem Repo keine Klasse und braucht keine: eine Vermutung, die noch keine Stelle hat, ist ein Issue, und eine Vermutung, die eine hat, ist eine Behauptung mit Herkunft. Wo `AGENTS.md` „Hypothese" sagt, meint sie den Issue.
+
+### Stufe 2: die Überschneidung
+
+**Sie wird nicht gefunden, sie wird behauptet.** Ein `pm:Converging`-Knoten trägt immer `pm:compilerInference`: keine Quelle sagt, dass die Begriffe einander entsprechen, die Entsprechung ist die Lesart. Das ist keine Schwäche der Klasse, sondern ihre Ehrlichkeit, und es hat eine Folge für den Ablauf.
+
+**Sie liegt nicht nach Stufe 1, sondern in ihr.** Eine Überschneidung entsteht aus dem Beifang der Einzelrecherche (§15), also während die Behauptungen eingetragen werden, nicht in einem eigenen späteren Durchgang. Die lineare Dreiteilung ist eine Beschreibung der Abhängigkeiten, keine der Reihenfolge, und wer sie als Reihenfolge liest, wartet auf einen Durchgang, den es nicht gibt.
+
+**Eine Überschneidung ist noch keine prüfbare Aussage.** Sie sagt, dass zwei Begriffe einander entsprechen. Sie sagt nicht, dass irgendetwas der Fall ist, und es gibt kein Ergebnis, das ihr widerspräche. Deshalb reicht Stufe 2 nicht an Stufe 3 heran, und deshalb fehlte dazwischen etwas.
+
+### Stufe 2b: die Verallgemeinerung
+
+**Die Schicht, die die Kette schließt.** Die Tradition sagt, dass diese Praxis dieses Vermögen hervorbringt — das ist ein `pm:Yielding` mit Werk und Stelle. Die prüfbare Fassung sagt, dass Praktiken dieser Art diese Wirkung hervorbringen, und das sagt keine Quelle: sie ist aus mehreren bezeugten Behauptungen gebildet und gehört zu keiner von ihnen. Dafür steht `pm:Generalizing`.
+
+**Sie trägt Herleitung statt Herkunft.** `pm:generalizedFrom` zeigt auf die bezeugten Knoten, aus denen sie gebildet wurde, mindestens zwei, und jeder von ihnen nennt selbst ein Werk. Damit ist der Schritt anfechtbar wie eine Quelle: ein Leser geht zu den Stellen zurück und bestreitet die Ableitung, statt nur das Ergebnis. `dcterms:source` und `pm:withinTradition` sind verboten, denn ein Knoten, der ein Werk nennte, meldete als überliefert, was keine Überlieferung sagt.
+
+**Das ist zugleich die Sperre gegen den Entwurf.** Der Richtungssinn aus §10 bleibt unangetastet: ein Satz aus einem Methodenentwurf hat keine bezeugten Vorgänger, es gibt also nichts, worauf `pm:generalizedFrom` zeigen könnte. Die Klasse ist offen, wo `pm:Positing` verriegelt sein muss, und verriegelt, wo `pm:Positing` offen ist.
+
+### Stufe 3: die Prüfung
+
+**Die Auswahlregel, die bisher fehlte.** `pm:Testing` entsteht, wenn jemand die Prüfung aufnimmt, und sein Fehlen ist absichtlich aussagekräftig. Daraus folgte bis jetzt, dass es keine Warteschlange gab: der Bestand konnte regelkonform unbegrenzt in Behauptungen und Konvergenzen wachsen, ohne je ein Protokoll hervorzubringen, und §15 konnte diesen Zustand nur nachträglich als Befund melden.
+
+**Die Warteschlange ist jetzt ableitbar: die Verallgemeinerungen, auf die kein `pm:Testing` zeigt.** Geordnet nach der Zahl der bezeugten Behauptungen, aus denen sie gebildet sind, und nach der Streuung ihrer Traditionen. Das ist eine Abfrage und ausdrücklich kein Shape: ein Wächter, der zu jeder Verallgemeinerung ein Protokoll verlangte, machte die Warteschlange unschreibbar — derselbe Zirkel, an dem `pm:Positing` für diesen Zweck scheitert.
+
+**Was die Kette nicht ist.** Sie ist keine Einbahnstraße. Ein als `unbelegt` geschlossenes Issue kippt beim ersten stützenden Zeugen zurück (§13); eine Verallgemeinerung, deren Prüfung Abweichung zeigt, erzeugt neue Behauptungen für Stufe 1; und ein Prüfstand `pm:claimDoesNotDiscriminate` schickt die Aussage zurück an die Formulierung, nicht in den Papierkorb. Die Stufen sind eine Ordnung der Abhängigkeit, kein Fahrplan.
 
 ---
 
