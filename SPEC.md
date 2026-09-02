@@ -733,6 +733,20 @@ Erzählung, Lebenslauf, Polemik und kosmologisches Gerüst sind nicht geschuldet
 
 Dieser Abschnitt steht hier und nicht nur in `AGENTS.md`, weil die Fehllesung eine Regel dieser Spezifikation betraf und weil eine Korrektur, die nur in der Agentendatei steht, bei deren nächster Umarbeitung verschwindet.
 
+### Die Ernte im Maßstab
+
+Die Ernteregel oben ist auf ein Werk und einen Lauf geschrieben. Sie lässt sich maschinell fahren: ein Modell liest eine ganze Ausgabe und trägt aus, was unter die vier geschuldeten Arten fällt. Das ist keine neue Erlaubnis, sondern dieselbe Regel bei größerem Durchsatz, und sie ist der Weg, auf dem der strukturgetriebene Eingang aus §14 überhaupt zu bedienen ist. Vier Bedingungen, ohne die sie die Prüfschicht unterläuft.
+
+**Der Ertrag sind Issues, keine Knoten.** Ein Massenlauf ist Beifang von der ersten bis zur letzten Zeile, und für Beifang gilt die Regel oben unverändert: Knoten nur nach Stelle plus Gegensuche, alles andere ein Issue mit `korpus:`-Label. Das ist keine Einschränkung des Verfahrens, sondern seine richtige Ablage. Vollständigkeit ist eine Eigenschaft des Trackers; der Graph bleibt an derselben Schranke, und das Nadelöhr wandert von „welche Behauptung fällt jemandem ein" zu „welche Behauptung wird geprüft". Genau dorthin gehört es.
+
+**Die Erntenotiz braucht eine Ersatzgarantie.** Sie prüft, weil sie aus der Lektüre geschrieben wird und nicht aus der fertigen Datei: die Auslassung ist die Differenz zwischen Notiz und Branch. Bei einem Modelllauf entstehen Notiz und Ausgabe im selben Durchgang, die Differenz ist damit per Konstruktion null, und die Notiz prüft nichts mehr. An ihre Stelle tritt eine der beiden Garantien, und der Lauf nennt, welche: zwei unabhängige Durchgänge über denselben Text mit Abgleich der Ergebnisse, oder eine menschliche Stichprobe über einen benannten Abschnitt mit gemessener Auslassungsrate. Ein Vollständigkeitsanspruch ohne eine davon ist unbelegt und wird nicht erhoben.
+
+**Die Stelle ist der Lokus, nicht der Abschnitt.** Extrahiert wird über einen Text, der nach dem kanonischen Zitierschema seiner Ausgabe zerlegt ist. Ohne das ist die Stellenangabe die Grenze eines Textblocks, und §10 ist verletzt, bevor das erste Issue steht.
+
+**Häufigkeit ist erst gegen den Nenner lesbar.** Wie oft eine Behauptung über die Traditionen hinweg auftaucht, misst zunächst die Werkauswahl des Laufs. Aussagekräftig wird die Zahl gegen die registrierten Traditionen und ihren `pm:coverageState`: ohne diesen Bezug meldet ein Lauf seine eigene Abdeckung als Struktur. Das ist derselbe Fehler wie eine Konvergenz aus Ähnlichkeitssuche, nur eine Ebene höher.
+
+**Nebenertrag, der in den Bestand gehört.** Ein durchgeerntetes Werk macht `unbelegt` billiger. Der Schließgrund verlangt sonst eine erschöpfende Suche; innerhalb eines vollständig durchgegangenen Werkes ist Abwesenheit belegbar statt behauptet, und das `korpus:`-Label trägt diesen Unterschied.
+
 ### Tiefe
 
 **Eine Recherche ist kein paar Suchanfragen nebenbei.** Der Mindestumfang für eine Behauptung, die in den Graphen soll:
