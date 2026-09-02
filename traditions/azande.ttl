@@ -1,0 +1,302 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Azande
+#
+# Order of the file: the tradition and the contact question, then the poison
+# oracle and the double test it prescribes, then the taboos that condition it,
+# then the standing of the four oracles against one another, then witchcraft
+# as an inherited substance and the post-mortem that tests for it, then the
+# witch-doctors and what they are said to gain by eating medicines, then the
+# places where the transmission states the conditions under which its own
+# procedures fail, and last the dispute between the two recorders about what
+# belongs to the Zande set of oracles at all.
+#
+# The tradition instance was registered in
+# traditions/registry-outside-contact.ttl and is moved here now that passages
+# have been read.
+#
+# This file was opened from the testability entrance of SPEC §14 and not from
+# an open claim issue. The reason is on the tradition instance below.
+#
+
+pmt:AzandeOracle a pm:Tradition ;
+    rdfs:label "Azande oracular transmission"@en, "Azande-Orakelüberlieferung"@de ;
+    skos:definition "The Zande transmission of witchcraft as an inherited substance in the body, of a graded set of oracles by which it is located, and of a corroborative second question by which an oracular verdict is held valid or void."@en ;
+    skos:note "Chosen from the registry on the testability entrance rather than on demand. The transmission states a condition under which its own principal oracle delivers no verdict at all, names eight causes to which a failure is attributed, and prints two consultations at length so that a reader may count the outcomes for himself. Very little else in this graph names a failure condition its own practitioners apply."@en ;
+    skos:note "Read in this run: the abridged edition of nineteen seventy-six in full for chapters I, III, V, VI, VIII, IX and X and for the appendix of terms and the appendix on dreams. Left unread in that edition: chapters IV, VII, XI, XII and XIII, on whether witches are conscious agents, on the place of witch-doctors in the society, on magic and medicines, on the association for communal magic, and on the situation of death; and the third appendix. The unabridged edition of nineteen thirty-seven was not opened: it is in copyright and stands in the large archives only as a lending copy or as a search-only index, which is a property of the work and not of the search. Every place below is therefore given from the abridged edition, and the abridgement is named in each reference because an abridgement is a selection and a later reader must be able to see that he is looking at one."@en ;
+    skos:note "Two further witnesses were opened for the counter-search and are cited where they carry something: the travel account of eighteen seventy-three, which is the earliest European description of these oracles and predates the anthropological literature by two generations, and the Belgian ethnography of nineteen twenty-one, which describes the same transmission from the other side of the colonial border and sixteen years earlier than the monograph. Both were read at the wording in full-text reproductions of the printed editions named in the references."@en ;
+    skos:note "The contact route is entered as undecided and no longer as absent, and the correction is not a finding but the removal of one: the registry had recorded no route because none had been looked for. What a search finds is on both sides. Against a route: the poison oracle stands already in the earliest account, taken down at the first sustained European contact, so it cannot have entered with that contact. For a route: the same monograph places the belief in a witchcraft substance in the body among many peoples of Central and West Africa and calls Zandeland the north-eastern limit of its distribution, which is an areal connection to the West African sphere in which this graph already holds a transmission; and the corridor from the Islamic north was open from the eighteen-sixties, since the earliest witness travelled in with an ivory company out of Khartoum. Neither has been carried out for the oracular material in particular. Until it is, an agreement between this tradition and anything already in the graph counts as neither reception nor independent attestation."@en ;
+    pm:principalCorpus "Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande; de Calonne-Beaufaict, Azande; Larken, An account of the Zande, in Sudan Notes and Records; Lagae, Les Azande ou Niam-Niam" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteUndecided ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), appendix I, the list of Zande terms, pp. 226-228" .
+
+#
+# The poison oracle and the test that makes a verdict valid
+#
+
+pmp:BengeConsultation a pm:Practicing ;
+    rdfs:label "Consulting the poison oracle"@en, "Die Befragung des Giftorakels"@de ;
+    skos:definition "A questioner addresses the oracle while a second man, the operator, administers a measured number of doses of the poison benge to a fowl. The address alternates: sentences framing the matter so that an affirmative answer is asked for and ending with the command that the oracle kill the fowl, then sentences framing it so that a negative answer is asked for and ending with the command that it spare the fowl. Whether the death of the fowl means yes or no is therefore decided by the form of the question and not by the death."@en ;
+    skos:note "The operators are generally boys between twelve and sixteen, old enough to keep the food taboos and young enough to keep the sexual one. The consultation is held in public, and the bystanders may interrupt the questioner to have a point put that he has left out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 136-138 and p. 153" .
+
+pmp:BengeCorroborativeTest a pm:Practicing ;
+    rdfs:label "The corroborative second test at the poison oracle"@en, "Der bestätigende zweite Test am Giftorakel"@de ;
+    skos:definition "A second question, put with a second fowl, in which the oracle is told what its first answer was and asked to confirm it by the opposite outcome. The first test is called bambata sima and the second gingo. If the first fowl died the second must survive, and if the first survived the second must die."@en ;
+    skos:note "The two tests may be made at one seance where the poison suffices, and are often separated by weeks or months. The transmission names six situations in which a single test is accepted instead, among them the case where the answer came decisively and the case where a lesser oracle had already been asked; but two tests are said to be indispensable in any question concerning the relations between two persons, and especially where a legal issue is involved."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 138-140" .
+
+pmc:BengeValidVerdictRule a pm:Conceptualizing ;
+    rdfs:label "One fowl must die and the other live"@en, "Ein Huhn muss sterben und das andere leben"@de ;
+    skos:definition "The rule by which an oracular verdict stands or falls: across the two tests one fowl must die and the other must live. If both die or both live the verdict is contradictory and therefore void, and the matter must be put to the oracle again on another occasion."@en ;
+    skos:note "This is a falsifying condition stated by the transmission itself, applied by its own practitioners, and printed with four worked cases. It is the reason this tradition was opened before others in the registry. What the transmission does with the condition when it is met is a separate matter and stands on its own node below."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 138-139, the four cases lettered A to D" .
+
+pmc:ValidVerdictPresupposesCorroboration a pm:Presupposing ;
+    rdfs:label "A valid verdict presupposes the second test"@en, "Ein gültiger Spruch setzt den zweiten Test voraus"@de ;
+    skos:note "Entered at stated necessity because the source names what fails to happen without the second test and not merely the order of the two. The qualification that a single test is often accepted stands on the practice node and does not weaken this: where the transmission requires the corroboration, it also says what the want of it costs."@en ;
+    pm:dependentStep pmc:BengeValidVerdictRule ;
+    pm:priorStep pmp:BengeCorroborativeTest ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Without the second test no judgement is accepted as valid; where both tests fall alike the verdict is contradictory and void and the matter must be put again on another occasion."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 138-139" .
+
+pmc:BengeFailureCauses a pm:Conceptualizing ;
+    rdfs:label "The eight causes to which a failure of the oracle is attributed"@en, "Die acht Ursachen, denen ein Versagen des Orakels zugeschrieben wird"@de ;
+    skos:definition "Where the oracle contradicts itself the failure is attributed to one of eight causes: the wrong variety of the creeper having been gathered, the breach of a taboo, witchcraft, the anger of the owners of the forest in which the creeper grows, the age of the poison, the anger of the ghosts, sorcery, and use. Two varieties of the creeper are distinguished by name, and poison that kills without discrimination is set aside for some months to cool and is thrown away if it does not."@en ;
+    skos:note "The list is the reason the falsifying condition on the neighbouring node does not function as one inside the transmission. Every occurrence of the condition is assigned to a cause that leaves the oracle itself untouched, and the recorder reports that the errors as well as the sound judgements are taken as proof of its accuracy. That sentence is the recorder's summary of an attitude and not a quoted Zande statement, and it is entered as such."@en ;
+    skos:note "This is also the passage on which the whole later argument about whether Zande thought is closed against refutation rests. None of that argument was read at the wording in this run; it stands as an issue with the works named."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 155 and pp. 155-157" .
+
+#
+# The taboos that condition the oracle
+#
+
+pmp:BengeTaboos a pm:Practicing ;
+    rdfs:label "The taboos kept before touching the oracle poison"@en, "Die Tabus vor der Berührung des Orakelgifts"@de ;
+    skos:definition "Whoever comes into contact with the poison abstains from sexual relations, from the flesh of the elephant, from fish, from two glutinous vegetables named in the source, and from smoking hemp. Sexual abstinence is set at five or six days and abstinence from the forbidden foods at three or four, though the source records that the period is not fixed and that men give different estimates."@en ;
+    skos:note "A man asked to operate who has not kept the sexual taboo says that he has eaten the first of the two vegetables, and everyone understands the euphemism. The source adds that he may use the same words when he simply does not want the work, which makes the phrase a refusal as well as a confession."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 132-133" .
+
+pmc:ConsultationPresupposesTaboos a pm:Presupposing ;
+    rdfs:label "The consultation presupposes the taboos"@en, "Die Befragung setzt die Tabus voraus"@de ;
+    skos:note "Entered at stated necessity: the source does not merely prescribe the abstinence but says what its want does to the instrument. An unclean man may still address the oracle from a distance, which is a graded rather than an absolute exclusion and is recorded here rather than smoothed away."@en ;
+    pm:dependentStep pmp:BengeConsultation ;
+    pm:priorStep pmp:BengeTaboos ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Contact of an unclean person with the oracle is certain to destroy its potency, and even the close proximity of an unclean person may have that result."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 132" .
+
+#
+# The standing of the oracles against one another
+#
+
+pmc:OracleRankOrder a pm:Conceptualizing ;
+    rdfs:label "The graded order of the oracles"@en, "Die Rangordnung der Orakel"@de ;
+    skos:definition "Where more than one oracle is consulted the lesser is always consulted before the greater, in the order rubbing-board, termites, poison. A verdict of the termites is not put to the rubbing-board for confirmation, and a verdict of the poison oracle is not put to the termites. On all important matters the decision of the termites must be corroborated by the poison oracle."@en ;
+    skos:note "The order is a rule about the direction in which confirmation may run and not merely a ranking by esteem. It is what makes the cheaper oracles usable at all: a man narrows the field with the termites and spends poison only on the final decision."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 164" .
+
+pmc:LegalActionPresupposesPoisonOracle a pm:Presupposing ;
+    rdfs:label "Legal action presupposes the poison oracle"@en, "Die Rechtsverfolgung setzt das Giftorakel voraus"@de ;
+    skos:note "Entered at stated necessity because the consequence is stated flatly and is not a matter of degree: the action cannot be brought. The passage dates from the period of the monograph, in which the declarations of the oracle had already ceased to be recognized as evidence in the courts the administration had set up, so the necessity is the transmission's own and not the colonial law's."@en ;
+    pm:dependentStep pmc:BengeValidVerdictRule ;
+    pm:priorStep pmp:BengeConsultation ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Legal action cannot be taken without a decision of the poison oracle."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 164" .
+
+pmp:RubbingBoardConsultation a pm:Practicing ;
+    rdfs:label "Consulting the rubbing-board oracle"@en, "Die Befragung des Reibbrettorakels"@de ;
+    skos:definition "Two pieces of wood, the upper rubbed across the moistened surface of the lower. Sticking gives one answer and smooth running the other, and a lid that runs from side to side or alternately sticks and runs is taken as a refusal to answer. The instrument is the cheapest and most frequently used of the oracles and the one least trusted."@en ;
+    skos:note "The earliest witness describes the same instrument two generations before the monograph, under the name borru, made from the wood of a tree he names, and reports that it was consulted before any undertaking of importance and hidden from the Muslim traders. The two descriptions of the mechanism agree; the names do not, and the divergence stands on the dispute node at the end of this file."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 170-171", "Georg Schweinfurth, The Heart of Africa, trans. Ellen E. Frewer (London: Sampson Low, Marston, Low and Searle, 1873), vol. II, chapter XIII, the account of the Niam-niam praying-machine and auguries" .
+
+pmc:RubbingBoardSecondTestSeldomMade a pm:Conceptualizing ;
+    rdfs:label "The second test at the rubbing-board is seldom made"@en, "Der zweite Test am Reibbrett wird selten gemacht"@de ;
+    skos:definition "Strictly the rubbing-board requires the same corroborative second test as the poison and termites oracles, with the opposite outcome for the verdict to be valid. In fact the second test is very seldom made, and important questions are taken to the poison oracle instead."@en ;
+    skos:note "The passage is a self-warning of the transmission against a rule it lays down, and it is the sharpest one this file carries: the control procedure exists for the instrument that is used most often and is precisely the one it is not applied to. The recorder adds the inference that the Azande must be aware that the second test always confirms the first. That is his conclusion and not a reported Zande statement, and it is not entered as a claim of the transmission."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 171" .
+
+pmc:CautionAgainstTheRubbingBoard a pm:Cautioning ;
+    rdfs:label "The rubbing-board can be worked by the operator"@en, "Das Reibbrett lässt sich vom Betreiber führen"@de ;
+    skos:definition "The transmission holds the rubbing-board inferior to the other oracles because the man who works it can cheat with it, and only he may work it. The charge is raised in practice when the oracle has spoken against the questioner or when he dislikes the operator. Of the poison oracle, by contrast, the source records that a manipulation is never even suggested."@en ;
+    skos:note "The warning names the failure mode of an oracle whose outcome one party controls, and names it from inside the transmission rather than from the recorder's side. It is the counterpart of the passage on the second test that is not made."@en ;
+    pm:cautionsAbout pmp:RubbingBoardConsultation ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 173 and p. 153" .
+
+#
+# Witchcraft as a substance, and the post-mortem that tests for it
+#
+
+pmc:ManguSubstance a pm:Conceptualizing ;
+    rdfs:label "Witchcraft as a substance in the body"@en, "Hexerei als Substanz im Leib"@de ;
+    skos:definition "Mangu, described as an oval blackish swelling attached to the edge of the liver and lying beneath the xiphoid cartilage, in which small objects are sometimes said to be found. A witch performs no rite, utters no spell and possesses no medicines: the act is held to proceed from the substance itself. The location is known because the substance was formerly extracted by autopsy."@en ;
+    skos:note "The recorder adds that he believes the organ in question to be the small intestine in certain digestive periods. That is his identification and not the transmission's, and it is recorded here as his."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 1-2" .
+
+pmc:ManguSexLinkedInheritance a pm:Conceptualizing ;
+    rdfs:label "Witchcraft passes to the children of the same sex"@en, "Die Hexerei geht auf die Kinder desselben Geschlechts über"@de ;
+    skos:definition "The substance is held to be transmitted by unilinear descent from parent to child of the same sex: all the sons of a male witch are witches and none of his daughters, all the daughters of a female witch are witches and none of her sons."@en ;
+    skos:note "The claim is checkable in a way few in this graph are, because the transmission itself draws consequences from it in practice and then declines the widest of them: in theory every clansman of a proven witch would be one, and in practice only close paternal kinsmen are so regarded."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 2-3" .
+
+pmp:PostMortemForWitchcraftSubstance a pm:Practicing ;
+    rdfs:label "The post-mortem for witchcraft substance"@en, "Die Leichenschau auf die Hexereisubstanz"@de ;
+    skos:definition "The belly of a dead man is opened and the substance looked for. A post-mortem in which none is found clears his paternal kin of the suspicion, and cases so decided are quoted afterwards by that kin in their defence."@en ;
+    skos:note "A procedure inside the transmission with an outcome that could have fallen otherwise, applied to a claim about a class of persons, and reported as having been used to settle actual accusations. It is the second reason this tradition was opened."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 3-4" .
+
+pmc:ManguMayRemainInoperative a pm:Conceptualizing ;
+    rdfs:label "The substance may remain cool"@en, "Die Substanz kann kühl bleiben"@de ;
+    skos:definition "The doctrine holds that a man may carry the substance and never use it: it may remain inoperative, cool, throughout his life, and a man whose witchcraft never functions is hardly counted a witch. In practice the question asked of the oracles is never whether a man is a witch but whether at this moment he is bewitching the questioner."@en ;
+    skos:note "The clause is what keeps the post-mortem from telling against the inheritance rule, and it belongs in the record beside that rule for exactly that reason. A finding of the substance where no injury was ever ascribed costs the doctrine nothing, and the absence of the substance is the only outcome that decides anything."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 4" .
+
+#
+# The witch-doctors and what eating medicines is said to give them
+#
+
+pmp:WitchDoctorMedicineEating a pm:Practicing ;
+    rdfs:label "Eating the medicines of the witch-doctors"@en, "Das Essen der Medizinen der Hexendoktoren"@de ;
+    skos:definition "Before a seance the performers eat some of their medicines. The medicine goes into the stomach and is shaken through the body by the dancing, where it is held to become an active agent. The whole apprenticeship consists in the slow transfer of the knowledge of which plants the medicines are made from, paid for in a long string of fees, and a plant is known by stalk and leaf and not by root, which is why laymen may sit at the communal meal without learning anything."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 88-89 and pp. 96-97" .
+
+pmc:SeeingWitchcraft a pm:Conceptualizing ;
+    rdfs:label "Seeing witchcraft and prophesying"@en, "Das Sehen der Hexerei und das Weissagen"@de ;
+    skos:definition "The capacity ascribed to the witch-doctors: to see what is unseen, to tell who the witches are, to see the emanations of witchcraft floating about as small lights invisible to the uninitiated, and to resist a fatigue that the source says could not otherwise be borne."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 88-89" .
+
+pmc:MedicineEatingYieldsSeeing a pm:Yielding ;
+    rdfs:label "Eating the medicines yields the seeing"@en, "Das Essen der Medizinen bringt das Sehen hervor"@de ;
+    skos:note "The claim is not circular in the sense SPEC §11 forbids: the medicines are vegetable preparations named by their plants and the capacity is a perception ascribed to the eater, so the practice is not the capacity under another name."@en ;
+    pm:byPractice pmp:WitchDoctorMedicineEating ;
+    pm:yieldsCapacity pmc:SeeingWitchcraft ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 88-89" .
+
+pmc:ProphesyingPresupposesMedicineEating a pm:Presupposing ;
+    rdfs:label "Prophesying presupposes the eating of medicines"@en, "Das Weissagen setzt das Essen der Medizinen voraus"@de ;
+    skos:note "Entered at stated necessity: the source states a disqualification and not only an order. A novice who has eaten only a few times dances at the seance but does not divine, and the quantity eaten is what the source names as the reason."@en ;
+    pm:dependentStep pmc:SeeingWitchcraft ;
+    pm:priorStep pmp:WitchDoctorMedicineEating ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "A man who has eaten the medicines only a few times is not qualified to take a prominent part in a seance or to prophesy at it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 96" .
+
+pmc:FraudKnownAndBeliefHeld a pm:Conceptualizing ;
+    rdfs:label "The fraud is known and the belief is held"@en, "Der Betrug ist bekannt und der Glaube bleibt"@de ;
+    skos:definition "The transmission holds both at once: that the objects the witch-doctors draw from the bodies of their patients are produced by sleight of hand, with the manner of the deception described in detail by laymen, and that some of them nevertheless work real cures. Scepticism is directed at particular practitioners and turned into an explanation of their failures, so that it supports the standing of the rest."@en ;
+    skos:note "A layman's account taken down by the recorder explains not only how the trick is done but how a cured man comes to believe he was cured by it. The doubt is stated in the terms of the transmission itself: a witch-doctor is a cheat because his medicines are poor and a liar because he has no witchcraft in him."@en ;
+    skos:note "This is the passage this graph most needs from the tradition, and it cuts against the usual report of it. What is described is not credulity but a transmission that has a settled place for its own failures, states its scepticism openly, and is not thereby weakened. Whether that makes it closed against refutation is the whole later argument, and none of that argument was read here."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 105-107" .
+
+#
+# Where the transmission states the conditions under which it fails
+#
+
+pmc:VengeanceSystemVeiledBySilence a pm:Conceptualizing ;
+    rdfs:label "The vengeance system holds only while the victims are unnamed"@en, "Das Racheverfahren trägt nur, solange die Opfer ungenannt bleiben"@de ;
+    skos:definition "Every death is held to be caused by witchcraft and to be avenged by lethal magic, and the death of the witch so struck is in turn avenged by his own kin. The transmission keeps the names of those killed by avenging magic secret between the kin and the prince, and the source states that were the names known the whole procedure would stand exposed as futile. Some Azande are reported as doubting the honesty of the princes who hold the oracles, and a few as having seen that the system is fallacious."@en ;
+    skos:note "The strongest self-warning in this file, and one reported as spoken rather than inferred. It names the exact condition under which the transmission's own central procedure collapses, and names the arrangement by which that condition is kept from arising."@en ;
+    skos:note "The defence offered when the recorder put the objection is recorded with it: a prince whose oracle has declared that one man died of another's vengeance-magic will refuse to put the second death to his oracle at all, so that the chain is cut by the authority that holds the instrument."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 6" .
+
+pmc:FabricationRatherThanMisreport a pm:Conceptualizing ;
+    rdfs:label "The lie is a fabricated consultation, never a misreported one"@en, "Die Lüge ist eine erfundene Befragung, nie eine falsch berichtete"@de ;
+    skos:definition "The source states that no Zande would report the declaration of an oracle otherwise than it was given, and that a man who wishes to lie fabricates a declaration without consulting the oracle at all. Against the fabrication the transmission sets three things: the elder who makes an official test takes two or three witnesses with him, the counterparty consults his own oracles to check the first man's, and a man who believes he was not fairly tested may appeal to the king."@en ;
+    skos:note "The sanction is stated and is not merely moral: the king sends for the elder, tells him he is a cheat and a liar, and bars him from ever again conducting official consultations."@en ;
+    skos:note "The cross-check by the counterparty is the part worth noticing. It is a control against the questioner rather than against the instrument, and it is the only one in this file that does not depend on the instrument being honest."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 37 and p. 154" .
+
+pmc:WitchcraftDreamIsExperienceNotSymbol a pm:Conceptualizing ;
+    rdfs:label "A bad dream is an experience of witchcraft, not a sign of it"@en, "Ein böser Traum ist eine Erfahrung der Hexerei, kein Zeichen für sie"@de ;
+    skos:definition "The transmission divides dreams into witchcraft-dreams and oracular dreams, a nightmare being of the first kind and a pleasant dream of the second. A bad dream is held to be not a symbol of witchcraft but an actual undergoing of it: in waking life a man learns that he was bewitched only from a subsequent misfortune or from an oracle, but in a dream he sees the witches themselves and may speak with them. The soul is held to leave the body in sleep, and the witch to send the soul of his witchcraft to eat the soul of his victim while both sleep."@en ;
+    skos:note "Entered because it stands squarely against a claim this graph holds open elsewhere, that the figures met at the threshold of sleep are the signature of the sleeper's own state and not visitors. Here the transmission asserts the opposite in as many words. It is one side and not a refutation; the other side is not in this file, so no dispute node is written."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), appendix II, pp. 230-231" .
+
+#
+# The capacity the poison oracle is consulted for
+#
+
+pmc:IdentificationOfTheWitch a pm:Conceptualizing ;
+    rdfs:label "Naming the one who is bewitching at this moment"@en, "Die Benennung dessen, der gerade behext"@de ;
+    skos:definition "What the poison oracle is chiefly consulted for: to learn whether witchcraft threatens an undertaking or a person's health, and if so which neighbour is at this moment exercising it, so that he may be approached and asked to withdraw it. The question is never whether a man is a witch but whether he is now bewitching the questioner."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), p. 4 and pp. 35-36" .
+
+pmc:BengeYieldsIdentificationOfTheWitch a pm:Yielding ;
+    rdfs:label "The poison oracle yields the naming of the witch"@en, "Das Giftorakel bringt die Benennung des Hexers hervor"@de ;
+    pm:byPractice pmp:BengeConsultation ;
+    pm:yieldsCapacity pmc:IdentificationOfTheWitch ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), pp. 35-36 and pp. 141-143" .
+
+#
+# What belongs to the Zande set of oracles
+#
+
+pmc:ZandeOracleSetDispute a pm:Disputing ;
+    rdfs:label "Which oracles the transmission counts as its own"@en, "Welche Orakel die Überlieferung als die ihren zählt"@de ;
+    skos:definition "A disagreement between the two recorders about the extent and the naming of the Zande set of oracles. The monograph gives the generic term as soroka and names four principal oracles: the poison, the rubbing-board, the termites and a three-stick oracle called mapingo. The earlier Belgian ethnography gives the generic term as lora, lists eight procedures, and assigns the pile-of-sticks oracle to the Abarambo, Mangbetu and Bakango and to Azande of those origins rather than to the transmission at large. It also describes the termites procedure differently, as a plaited grass braid laid in a small pit and read from whether the termites cut it through or gnaw only its underside."@en ;
+    skos:note "The disagreement matters beyond terminology. Which procedures belong to the transmission and which were taken over from neighbours is exactly the question a contact route turns on, and the two recorders answer it differently for the same set. Neither was read against the other in a modern study in this run."@en ;
+    skos:note "The two accounts also differ on who receives the poison. The Belgian ethnography, written sixteen years earlier and on the other side of the border, gives the ordeal as administered to a suspected person or to a fowl, in the present tense and without qualification. The monograph gives administration to human beings as a thing of the past and very rare even then. Whether that is a change over sixteen years, a difference between the two administrations, or a difference of observation is not decidable from the two passages."@en ;
+    pm:disputedClaim pmc:OracleRankOrder ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "E. E. Evans-Pritchard, Witchcraft, Oracles and Magic among the Azande, abridged by Eva Gillies (Oxford: Clarendon Press, 1976), appendix I, p. 228, and p. 164", "A. de Calonne-Beaufaict, Azande: introduction à une ethnographie générale des bassins de l'Ubangi-Uele et de l'Aruwimi (Bruxelles: Maurice Lamertin, 1921), chapter V, Procédés divinatoires (mantique), pp. 183-184" .
+
+#
+# The earliest witness
+#
+
+pmc:BengeAtFirstContact a pm:Conceptualizing ;
+    rdfs:label "The poison ordeal at the first sustained contact"@en, "Die Giftprobe beim ersten dauerhaften Kontakt"@de ;
+    skos:definition "The earliest European account, from travels of eighteen sixty-eight to eighteen seventy-one, already describes the whole apparatus: an oily preparation from a red wood, given to a hen, whose death or survival decides the question; the rubbing-board consulted before any undertaking of consequence; and the use of both to establish the guilt or innocence of the accused, with suspected witches tried by the same ordeal. It records a case in which a hostile chief called off an attack because his fowl had died."@en ;
+    skos:note "The passage is the reason the contact route on this tradition is not simply documented. The oracles stand in the record at the first sustained contact with the Islamic north and cannot have come in with it."@en ;
+    skos:note "The corroborative second test is not in this account. That is an argument about the account and not about the transmission: the writer was a botanist passing through with an ivory company, not an observer of consultations, and he reports the outcome of single fowls because that is what he saw. What the silence does establish is that the double test is not attested before the monograph in anything read here, and the question of when it can first be shown is left open as an issue."@en ;
+    pm:withinTradition pmt:AzandeOracle ;
+    dcterms:source "Georg Schweinfurth, The Heart of Africa, trans. Ellen E. Frewer (London: Sampson Low, Marston, Low and Searle, 1873), vol. II, chapter XIII, the account of the Niam-niam praying-machine and auguries" .
