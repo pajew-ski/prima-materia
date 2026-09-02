@@ -54,21 +54,65 @@ jobs:
 
       - name: Sync artefacts to dist
         run: |
-          mkdir -p dist/traditions
           cp source/build/prima-materia.ttl dist/prima-materia.ttl
           cp source/build/prima-materia.jsonld dist/prima-materia.jsonld
           cp source/context/prima-materia-context.jsonld dist/context.jsonld
           python - <<'PY'
-          import json, os, subprocess, datetime
+          import datetime, json, os, textwrap
           sha = os.environ["GITHUB_SHA"]
+          # datetime.utcnow() ist seit Python 3.12 deprecated und liefert ein
+          # naives Objekt, das faelschlich als lokale Zeit gelesen wird. Das
+          # ausgegebene Format bleibt unveraendert.
+          now = datetime.datetime.now(datetime.timezone.utc)
           version = {
-              "version": datetime.datetime.utcnow().strftime("%Y.%m.%d"),
+              "version": now.strftime("%Y.%m.%d"),
               "git_sha": sha,
-              "built_at": datetime.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+              "built_at": now.replace(tzinfo=None).isoformat(timespec="seconds") + "Z",
           }
           with open("dist/version.json", "w", encoding="utf-8") as fh:
               json.dump(version, fh, indent=2, sort_keys=True)
               fh.write("\n")
+
+          # Der Spiegel darf nicht als Adresse gelesen werden: die Bezeichner
+          # loesen auf den Namensraum-Host auf, und ein Repo ohne README sagt
+          # das niemandem. Auto-generiert, damit hier niemand von Hand schreibt.
+          readme = textwrap.dedent(f"""\
+              # prima-materia-dist
+
+              Auto-generated mirror. **Do not edit anything here by hand.** Every file is
+              overwritten on each push to `main` of the source repository, and a manual
+              change is lost without a trace.
+
+              ## This is not the address
+
+              The identifiers in this ontology resolve to <https://pajew.ski/prima-materia/>.
+              That host carries the same serialisations, plus `llms.txt` and the
+              independently loadable parts under `parts/`. This mirror exists for consumers
+              that prefer to load from jsDelivr; it carries the complete serialisations and
+              nothing else.
+
+              ## Contents
+
+              | File | What it is |
+              |---|---|
+              | `prima-materia.ttl` | the compiled ontology, Turtle |
+              | `prima-materia.jsonld` | the same graph, JSON-LD |
+              | `context.jsonld` | the JSON-LD context |
+              | `version.json` | build date, source commit, build timestamp |
+
+              ## Source, specification, issues
+
+              <https://github.com/pajew-ski/prima-materia>
+
+              Claims and findings are filed as issues there. Anyone may submit a claim
+              without doing the research and without standing in a tradition.
+
+              ## Licence
+
+              CC0 1.0. Built from source commit `{sha}`.
+              """)
+          with open("dist/README.md", "w", encoding="utf-8") as fh:
+              fh.write(readme)
           PY
 
       - name: Commit and push to dist
