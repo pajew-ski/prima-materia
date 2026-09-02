@@ -298,6 +298,10 @@ Vollständige Begründung in `SPEC.md` Abschnitt 3.
 
 **Jede Frage kommt mit einer Empfehlung.** Optionen, ihre Kosten, und welche empfohlen wird, mit Grund. Eine Frage ohne Empfehlung schiebt Arbeit weiter, die schon getan ist, und zwingt den Leser, sich denselben Fall ein zweites Mal zu erarbeiten. Das gilt auch, wo die Entscheidung ausdrücklich beim Menschen liegt: die Zuständigkeit für die Entscheidung ist nicht die Zuständigkeit für ihre Vorbereitung.
 
+**Die Sitzung trägt sich selbst.** Sie darf offen lassen, was sie nicht schafft, aber nichts davon darf nur in ihr stehen: der nächste Lauf beginnt am Repo und sieht den Verlauf nicht. Fünf Bedingungen, geprüft und nicht erinnert — `no:label` leer; jeder PR nennt sein Issue; jedes Issue, dessen Gegenstand im Bestand steht, ist geschlossen; jede Recherche hat ihre Erntenotiz; jede offene Entscheidung liegt als Frage mit Empfehlung vor. Vollständig in `AGENTS.md`.
+
+Die dritte ist die, die reißt. Ob ein Issue erledigt ist, steht im Bestand und nicht im Issue, also hilft nur Nachsehen. Ein erledigtes und offenes Issue ist teurer als ein fehlendes: es bindet Aufmerksamkeit an eine getilgte Schuld, und die abhängigen Issues führen sich weiter als blockiert.
+
 **Ein neuer Datenordner muss an vier Stellen nachgezogen werden**, sonst wird er still nicht kompiliert und nicht validiert: `DEFAULT_INPUTS` in `scripts/compile.py`, `DEFAULT_INPUTS` in `scripts/publish.py`, `DEFAULT_DATA_DIRS` in `scripts/validate.py`, `SCAN_DIRS` in `tests/test_no_substance_classes.py`. Nichts schlägt fehl, wenn eine davon vergessen wird; die Dateien erscheinen einfach nicht.
 
 **Jedes neue Shape braucht einen Fixture, der zeigt, dass es feuert.** Ein Wächter, von dem nie gezeigt wurde, dass er auslöst, ist nicht als funktionierend bekannt. Hat das Shape eine Ausnahme, braucht es zusätzlich einen positiven Fixture für die Ausnahme, sonst ist unbekannt, ob die Ausnahme greift.

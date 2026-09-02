@@ -147,6 +147,22 @@ Der Grund ist nicht Geschwindigkeit, sondern Prüfbarkeit. Ein PR, der einen Wä
 
 Das gilt auch dort, wo die Entscheidung ausdrücklich beim Menschen liegt — bei Ontologieänderungen, beim Zuschnitt einer Klasse, bei allem nach §11 und §14. Die Zuständigkeit für die Entscheidung ist nicht die Zuständigkeit für ihre Vorbereitung.
 
+## Die Sitzung trägt sich selbst
+
+**Eine Sitzung ist in sich geschlossen.** Sie darf offen lassen, was sie nicht schafft — aber nichts davon darf nur in ihr stehen. Was am Ende offen ist, steht in einem Issue, das es trägt; was erledigt ist, ist geschlossen; was gesehen und nicht aufgenommen wurde, steht in einer Erntenotiz. Der Gesprächsverlauf ist kein Speicher, und das gilt nicht nur für Hypothesen, sondern für den Zustand der Arbeit selbst.
+
+Der Grund ist derselbe wie bei prima-materia#351, eine Ebene höher: **ein Faden, der nur im Verlauf hängt, ist von einem nie aufgenommenen nicht zu unterscheiden.** Der nächste Lauf beginnt am Repo und sieht den Verlauf nicht. Was dort nicht steht, existiert für ihn nicht, unabhängig davon, wie klar es am Ende der Sitzung schien.
+
+**Die Abschlussbedingung ist prüfbar und wird geprüft, nicht erinnert:**
+
+1. `is:issue is:open no:label` ist leer.
+2. Jeder in dieser Sitzung geöffnete PR nennt sein Issue, und jedes durch ihn erledigte Issue ist geschlossen oder trägt einen Kommentar, der sagt, was noch fehlt.
+3. Jedes Issue, dessen Gegenstand im Bestand steht, ist als `completed` geschlossen — auch wenn die Arbeit in einem früheren Lauf geschah. Ein erledigtes und offenes Issue ist teurer als ein fehlendes: es bindet Aufmerksamkeit an eine Schuld, die getilgt ist, und die abhängigen Issues führen sich weiter als blockiert.
+4. Jede Recherche des Laufs hat ihre Erntenotiz, mit den nicht aufgenommenen Funden und ihrem Grund.
+5. Jede offene Entscheidung liegt als Frage mit Empfehlung vor, nicht als offene Frage.
+
+Die dritte Bedingung ist die, die am häufigsten verletzt wird, und sie ist nicht durch Sorgfalt zu erfüllen, sondern nur durch Nachsehen: ob ein Issue erledigt ist, steht im Bestand und nicht im Issue. Am 2026-09-02 waren #23, #32 und #33 seit Tagen erledigt und offen, und drei weitere Issues führten sich deswegen als blockiert.
+
 **Jede im Lauf entstandene Hypothese wird noch im selben Lauf ein Issue.** Das gilt für den Zielbefund, für den Beifang, für jede Vermutung, die im Denken auftaucht, und für jeden Befund über das Repo oder die Werkzeuge. Eine Hypothese, die nur im Gesprächsverlauf steht, ist verloren, sobald die Sitzung endet — und der Gesprächsverlauf ist kein Speicher, sondern ein Fenster.
 
 **Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Wer ihn schreibt, hat den Aufwand des Anlegens schon aufgewendet und das Ergebnis weggeworfen.
