@@ -231,6 +231,8 @@ def test_other_states_need_no_undivided_outcomes() -> None:
 
     pmp:OrdinaryProtocol a pm:Testing ;
         pm:examinationState pm:casesWithoutDeviation ;
+        pm:counterSearch pm:counterSearchFoundNothing ;
+        pm:counterSearchNote "Searched; nothing found." ;
         pm:falsifiedBy "Some stated condition." ;
         pm:examinedBy "Someone" ;
         pm:protocolUpdated "2026-09-02" .
