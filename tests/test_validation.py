@@ -212,6 +212,8 @@ def test_undiscriminating_verdict_with_named_outcomes_conforms() -> None:
     pmp:NamedVerdict a pm:Testing ;
         pm:examinationState pm:claimDoesNotDiscriminate ;
         pm:undividedOutcomes "The threshold rising and the threshold falling." ;
+        pm:counterSearch pm:counterSearchFoundNothing ;
+        pm:counterSearchNote "Searched; nothing found." ;
         pm:falsifiedBy "Some stated condition." ;
         pm:examinedBy "Someone" ;
         pm:protocolUpdated "2026-09-02" .
@@ -229,12 +231,104 @@ def test_other_states_need_no_undivided_outcomes() -> None:
 
     pmp:OrdinaryProtocol a pm:Testing ;
         pm:examinationState pm:casesWithoutDeviation ;
+        pm:counterSearch pm:counterSearchFoundNothing ;
+        pm:counterSearchNote "Searched; nothing found." ;
         pm:falsifiedBy "Some stated condition." ;
         pm:examinedBy "Someone" ;
         pm:protocolUpdated "2026-09-02" .
     """
     conforms, report = _validate(permitted)
     assert conforms, f"An ordinary protocol must not be caught by the new guard.\n{report}"
+
+
+def test_evidence_without_counter_search_is_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:UnopposedEvidence a pm:Testing ;
+        pm:examinationState pm:procedureWithoutCases ;
+        pm:evidenceFrom "Some study, in some journal, 2020" ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-02" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:evidenceFrom without pm:counterSearch must fail."
+    assert "opposing work" in report
+
+
+def test_counter_search_without_note_is_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:BareState a pm:Testing ;
+        pm:examinationState pm:procedureWithoutCases ;
+        pm:evidenceFrom "Some study, in some journal, 2020" ;
+        pm:counterSearch pm:counterSearchFoundNothing ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-02" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:counterSearch without pm:counterSearchNote must fail."
+    assert "what was searched" in report
+
+
+def test_cases_without_carried_counter_search_are_rejected() -> None:
+    # The shape that carries the weight: a protocol may report cases only if
+    # somebody looked for the work that would unsettle them.
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:UncheckedCases a pm:Testing ;
+        pm:examinationState pm:casesWithoutDeviation ;
+        pm:evidenceFrom "Some study, in some journal, 2020" ;
+        pm:counterSearch pm:counterSearchNotCarried ;
+        pm:counterSearchNote "Nobody looked." ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-02" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "Cases reported without a carried counter-search must fail."
+    assert "must have carried the counter-search" in report
+
+
+def test_cases_with_carried_counter_search_conform() -> None:
+    permitted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:CheckedCases a pm:Testing ;
+        pm:examinationState pm:casesWithoutDeviation ;
+        pm:evidenceFrom "Some study, in some journal, 2020" ;
+        pm:counterSearch pm:counterSearchFoundNothing ;
+        pm:counterSearchNote "Searched for replications and for critiques; none found." ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-02" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A carried counter-search must permit a case-bearing state.\n{report}"
+
+
+def test_protocol_without_evidence_needs_no_counter_search() -> None:
+    # The guard must not spread to protocols that cite nothing.
+    permitted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:NoEvidence a pm:Testing ;
+        pm:examinationState pm:procedureWithoutCases ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-02" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A protocol citing no evidence must not be caught.\n{report}"
 
 
 def test_mediated_attestation_without_intermediary_is_rejected() -> None:

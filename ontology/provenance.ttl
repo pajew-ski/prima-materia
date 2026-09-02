@@ -316,6 +316,38 @@ pm:examinationState a owl:ObjectProperty ;
     rdfs:range pm:ExaminationState ;
     skos:definition "How far the attempt to fail the claim has been carried."@en .
 
+pm:CounterSearchState a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Counter-Search State"@en, "Stand der Gegensuche"@de ;
+    skos:definition "How far the attempt to find work opposing the evidence has been carried."@en ;
+    skos:note "A study cited under pm:evidenceFrom is a party and not an instance. It carries its own claim, its own method and its own critics, and a protocol that admits it without looking for opposition has not examined the claim against the world but against one report of the world. That is the same error as testing a transmission against this holding instead of against its source, which SPEC §13 forbids, and it is easier to commit because a study looks like a verdict."@en ;
+    skos:note "The state exists because the prose rule did not hold. It was written into AGENTS.md on 2026-09-02 after evidence was entered unread, and within the same session evidence was entered again without any search for opposition. A rule that has to be remembered at the moment of writing is a rule that fails at the moment of haste."@en .
+
+pm:counterSearchNotCarried a pm:CounterSearchState ;
+    rdfs:label "Counter-search not carried"@en, "Gegensuche nicht geführt"@de ;
+    skos:definition "No attempt has been made to find work that contradicts, fails to replicate, or supersedes the evidence cited."@en .
+
+pm:counterSearchFoundNothing a pm:CounterSearchState ;
+    rdfs:label "Counter-search found nothing"@en, "Gegensuche ohne Fund"@de ;
+    skos:definition "A search for opposing or non-replicating work was carried and returned nothing. This is a statement about the search, and the note must say what was searched."@en .
+
+pm:counterSearchFoundOpposition a pm:CounterSearchState ;
+    rdfs:label "Counter-search found opposition"@en, "Gegensuche mit Fund"@de ;
+    skos:definition "A search returned work that contradicts the evidence, fails to replicate it, or narrows its reach. What was found belongs in the note and, where it bears on the finding, in the protocol's own notes."@en .
+
+pm:counterSearch a owl:ObjectProperty ;
+    rdfs:label "counter-search"@en, "Gegensuche"@de ;
+    rdfs:domain pm:Testing ;
+    rdfs:range pm:CounterSearchState ;
+    skos:definition "How far the search for work opposing the cited evidence has been carried."@en ;
+    skos:note "Required wherever pm:evidenceFrom is set, enforced by pm:CounterSearchRequiredShape. A protocol that records no state here is not neutral about the question; it has not asked it."@en .
+
+pm:counterSearchNote a owl:DatatypeProperty ;
+    rdfs:label "counter-search note"@en, "Notiz zur Gegensuche"@de ;
+    rdfs:domain pm:Testing ;
+    skos:definition "What was searched for and what came back, stated so that the search itself can be judged."@en ;
+    skos:note "Required wherever pm:counterSearch is set, enforced by pm:CounterSearchNoteRequiredShape. Without it, pm:counterSearchFoundNothing is indistinguishable from a search nobody ran, and it is the state a hasty protocol would reach for."@en .
+
 pm:undividedOutcomes a owl:DatatypeProperty ;
     rdfs:label "undivided outcomes"@en, "nicht geschiedene Ausgänge"@de ;
     rdfs:domain pm:Testing ;
