@@ -769,6 +769,40 @@ Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund 
 
 **Der Beifang trägt die Konvergenzen.** Ein Befund, der zur gestellten Frage nichts beiträgt, kann für `pm:Converging` oder `pm:Disputing` entscheidend sein, weil beide erst entstehen, wenn mehrere Überlieferungen zu derselben Sache befragt wurden. Wer nur die eigene Frage protokolliert, wirft genau das Material weg, aus dem das eigentliche Werk besteht.
 
+## 16. Die drei Stufen
+
+Das Projekt läuft auf eine Kette hinaus: Behauptungen aufstellen, Überschneidungen finden, evidenzbasiert prüfen. Die Bausteine dafür stehen in §3.5, die Übergänge standen nirgends, und an zwei Stellen war die Kette so, wie sie gesprochen wird, nicht das, was das Repo tut.
+
+### Stufe 1: die Behauptung
+
+**Ort: der Issue-Tracker und die Traditionsdateien, nie beides für dasselbe.** Was eine Überlieferung sagt, wird ein Knoten mit Quelle, sobald die Stelle gelesen ist; was noch keine gelesene Stelle hat, bleibt ein Issue. Gespeist wird diese Stufe aus den vier Eingängen in §14, und die Masse kommt aus dem strukturgetriebenen.
+
+**Das Wort „Hypothese" wird hier nicht verwendet.** Es hat in diesem Repo keine Klasse und braucht keine: eine Vermutung, die noch keine Stelle hat, ist ein Issue, und eine Vermutung, die eine hat, ist eine Behauptung mit Herkunft. Wo `AGENTS.md` „Hypothese" sagt, meint sie den Issue.
+
+### Stufe 2: die Überschneidung
+
+**Sie wird nicht gefunden, sie wird behauptet.** Ein `pm:Converging`-Knoten trägt immer `pm:compilerInference`: keine Quelle sagt, dass die Begriffe einander entsprechen, die Entsprechung ist die Lesart. Das ist keine Schwäche der Klasse, sondern ihre Ehrlichkeit, und es hat eine Folge für den Ablauf.
+
+**Sie liegt nicht nach Stufe 1, sondern in ihr.** Eine Überschneidung entsteht aus dem Beifang der Einzelrecherche (§15), also während die Behauptungen eingetragen werden, nicht in einem eigenen späteren Durchgang. Die lineare Dreiteilung ist eine Beschreibung der Abhängigkeiten, keine der Reihenfolge, und wer sie als Reihenfolge liest, wartet auf einen Durchgang, den es nicht gibt.
+
+**Eine Überschneidung ist noch keine prüfbare Aussage.** Sie sagt, dass zwei Begriffe einander entsprechen. Sie sagt nicht, dass irgendetwas der Fall ist, und es gibt kein Ergebnis, das ihr widerspräche. Deshalb reicht Stufe 2 nicht an Stufe 3 heran, und deshalb fehlte dazwischen etwas.
+
+### Stufe 2b: die Verallgemeinerung
+
+**Die Schicht, die die Kette schließt.** Die Tradition sagt, dass diese Praxis dieses Vermögen hervorbringt — das ist ein `pm:Yielding` mit Werk und Stelle. Die prüfbare Fassung sagt, dass Praktiken dieser Art diese Wirkung hervorbringen, und das sagt keine Quelle: sie ist aus mehreren bezeugten Behauptungen gebildet und gehört zu keiner von ihnen. Dafür steht `pm:Generalizing`.
+
+**Sie trägt Herleitung statt Herkunft.** `pm:generalizedFrom` zeigt auf die bezeugten Knoten, aus denen sie gebildet wurde, mindestens zwei, und jeder von ihnen nennt selbst ein Werk. Damit ist der Schritt anfechtbar wie eine Quelle: ein Leser geht zu den Stellen zurück und bestreitet die Ableitung, statt nur das Ergebnis. `dcterms:source` und `pm:withinTradition` sind verboten, denn ein Knoten, der ein Werk nennte, meldete als überliefert, was keine Überlieferung sagt.
+
+**Das ist zugleich die Sperre gegen den Entwurf.** Der Richtungssinn aus §10 bleibt unangetastet: ein Satz aus einem Methodenentwurf hat keine bezeugten Vorgänger, es gibt also nichts, worauf `pm:generalizedFrom` zeigen könnte. Die Klasse ist offen, wo `pm:Positing` verriegelt sein muss, und verriegelt, wo `pm:Positing` offen ist.
+
+### Stufe 3: die Prüfung
+
+**Die Auswahlregel, die bisher fehlte.** `pm:Testing` entsteht, wenn jemand die Prüfung aufnimmt, und sein Fehlen ist absichtlich aussagekräftig. Daraus folgte bis jetzt, dass es keine Warteschlange gab: der Bestand konnte regelkonform unbegrenzt in Behauptungen und Konvergenzen wachsen, ohne je ein Protokoll hervorzubringen, und §15 konnte diesen Zustand nur nachträglich als Befund melden.
+
+**Die Warteschlange ist jetzt ableitbar: die Verallgemeinerungen, auf die kein `pm:Testing` zeigt.** Geordnet nach der Zahl der bezeugten Behauptungen, aus denen sie gebildet sind, und nach der Streuung ihrer Traditionen. Das ist eine Abfrage und ausdrücklich kein Shape: ein Wächter, der zu jeder Verallgemeinerung ein Protokoll verlangte, machte die Warteschlange unschreibbar — derselbe Zirkel, an dem `pm:Positing` für diesen Zweck scheitert.
+
+**Was die Kette nicht ist.** Sie ist keine Einbahnstraße. Ein als `unbelegt` geschlossenes Issue kippt beim ersten stützenden Zeugen zurück (§13); eine Verallgemeinerung, deren Prüfung Abweichung zeigt, erzeugt neue Behauptungen für Stufe 1; und ein Prüfstand `pm:claimDoesNotDiscriminate` schickt die Aussage zurück an die Formulierung, nicht in den Papierkorb. Die Stufen sind eine Ordnung der Abhängigkeit, kein Fahrplan.
+
 ---
 
 **Document version:** 1.0
