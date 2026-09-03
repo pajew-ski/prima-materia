@@ -155,7 +155,7 @@ def test_alternate_spellings_stay_with_the_labels() -> None:
 def test_structural_edges_are_derived() -> None:
     edges = {(e["source"], e["rel"], e["target"]) for e in _data()["edges"]}
     assert ("pm:Symbolizing", "subClassOf", "pm:Process") in edges
-    assert ("pm:WakingState", "instanceOf", "pm:AwarenessContext") in edges
+    assert ("pm:withdrawnAbsorption", "instanceOf", "pm:SensoryAnchoring") in edges
     assert ("pm:withinTradition", "range", "pm:Tradition") in edges
 
 
