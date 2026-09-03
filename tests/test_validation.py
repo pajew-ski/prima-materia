@@ -1033,6 +1033,71 @@ def test_orientation_axis_still_rejects_an_undeclared_value() -> None:
     assert "declared method orientation" in report
 
 
+def test_the_split_persistence_axes_accept_their_values() -> None:
+    # The axis these two replace held acquisition and duration between its two
+    # ends, and fitted the Sufi material only because that material answers
+    # both questions the same way. A capacity that is neither worked for nor
+    # passing had no place on it at all.
+    accepted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+
+    pmc:NotWorkedFor a pm:Situating ;
+        pm:situatedNode pmc:Something ;
+        pm:axisValue pm:notByEffort ;
+        pm:situationGround "Reported as a standing property and expressly not as the outcome of an exercise."@en ;
+        pm:attestedBy pm:compilerInference .
+
+    pmc:AndYetItLasts a pm:Situating ;
+        pm:situatedNode pmc:Something ;
+        pm:axisValue pm:abidingState ;
+        pm:situationGround "A standing property of a person is not an episode."@en ;
+        pm:attestedBy pm:compilerInference .
+    """
+    conforms, report = _validate(accepted)
+    assert conforms, report
+
+
+def test_the_retired_persistence_values_are_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+
+    pmc:OldCoordinate a pm:Situating ;
+        pm:situatedNode pmc:Something ;
+        pm:axisValue pm:occasionedState ;
+        pm:situationGround "A coordinate that no longer exists."@en ;
+        pm:attestedBy pm:compilerInference .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, (
+        "The values of the split axis must not survive as writable coordinates; "
+        "a placement on a retired value would sit in the graph unread."
+    )
+
+
+def test_unbound_is_accepted_and_only_on_the_anchoring_axis() -> None:
+    accepted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+
+    pmc:PrayedThroughout a pm:Situating ;
+        pm:situatedNode pmc:Something ;
+        pm:axisValue pm:anchoringUnbound ;
+        pm:situationGround "Prescribed as continuous, through work and sleep alike."@en ;
+        pm:attestedBy pm:compilerInference .
+    """
+    conforms, report = _validate(accepted)
+    assert conforms, report
+
+    offending = accepted.replace("pm:anchoringUnbound", "pm:locusUnbound")
+    conforms, report = _validate(offending)
+    assert not conforms, (
+        "The unbound value exists only where a case in the holdings calls for "
+        "it; an axis that has no such case has no such value."
+    )
+
+
 def test_complete_naming_conforms() -> None:
     # The shape a watcher node takes: the form as the cited edition spells
     # it, the term that edition's tradition uses, and the passage.

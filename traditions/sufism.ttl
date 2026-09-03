@@ -64,18 +64,34 @@ pmc:StatesAreNotOrdered a pm:Cautioning ;
 # tradition's terms are its own.
 #
 
-pmc:AhwalAreOccasioned a pm:Situating ;
-    rdfs:label "The states are occasioned"@en, "Die Zustände fallen zu"@de ;
+pmc:AhwalAreNotByEffort a pm:Situating ;
+    rdfs:label "The states are not attained by effort"@en, "Die Zustände werden nicht durch Anstrengung erlangt"@de ;
     pm:situatedNode pmc:Ahwal ;
-    pm:axisValue pm:occasionedState ;
-    pm:situationGround "The handbooks describe these as descending on the wayfarer as a gift and passing, and distinguish them from the stations precisely by their not being attainable through effort. That is the criterion this coordinate names, stated by the source itself."@en ;
+    pm:axisValue pm:notByEffort ;
+    pm:situationGround "The handbooks describe these as descending on the wayfarer as a gift and distinguish them from the stations precisely by their not being attainable through effort. That is the criterion this coordinate names, stated by the source itself."@en ;
     pm:attestedBy pm:compilerInference ;
     dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya" .
 
-pmc:MaqamatAreEstablished a pm:Situating ;
-    rdfs:label "The stations are established"@en, "Die Stationen sind erworben"@de ;
+pmc:AhwalAreTransient a pm:Situating ;
+    rdfs:label "The states pass"@en, "Die Zustände vergehen"@de ;
+    pm:situatedNode pmc:Ahwal ;
+    pm:axisValue pm:transientState ;
+    pm:situationGround "The same passage has them pass as well as descend, and the two are separate claims: a gift may be kept. The Sufi material answers both questions the same way, which is why one axis sufficed until a tradition answered them differently."@en ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya" .
+
+pmc:MaqamatAreByEffort a pm:Situating ;
+    rdfs:label "The stations are attained by effort"@en, "Die Stationen werden durch Anstrengung erlangt"@de ;
     pm:situatedNode pmc:Maqamat ;
-    pm:axisValue pm:establishedStation ;
-    pm:situationGround "The handbooks describe these as attained by effort, held by the one who reaches them, and enumerated in a set order. The order is why prerequisite claims are found here and not on the other end of the axis."@en ;
+    pm:axisValue pm:byEffort ;
+    pm:situationGround "The handbooks describe these as attained by effort and enumerated in a set order. The order is why prerequisite claims are found here and not at the other end of the axis."@en ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya, chapter on the stations" .
+
+pmc:MaqamatAreAbiding a pm:Situating ;
+    rdfs:label "The stations abide"@en, "Die Stationen bleiben"@de ;
+    pm:situatedNode pmc:Maqamat ;
+    pm:axisValue pm:abidingState ;
+    pm:situationGround "The handbooks have the station held by the one who reaches it, which is what makes the enumeration an ascent rather than a list of episodes."@en ;
     pm:attestedBy pm:compilerInference ;
     dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya, chapter on the stations" .

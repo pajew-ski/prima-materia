@@ -91,6 +91,12 @@ pm:anchoringNotStated a pm:SensoryAnchoring, pm:AwarenessValue ;
     skos:definition "The source was read for this question and does not answer it."@en ;
     skos:note "Not the same as an untagged node, and the difference is what makes a query of the form 'only in this state' readable at all. No placement means nobody asked; this value means somebody asked and the source is silent."@en .
 
+pm:anchoringUnbound a pm:SensoryAnchoring, pm:AwarenessValue ;
+    rdfs:label "Not bound to an anchoring"@en, "An keine Sinnesbindung gebunden"@de ;
+    skos:definition "The source prescribes the practice across the states this axis distinguishes: not in a set-apart session but through work, speech and sleep alike."@en ;
+    skos:note "Distinct from pm:anchoringDeclined, and the difference is which claim the tradition makes. A tradition that declines the axis denies that the distinction applies to it at all; a tradition that prescribes unbroken prayer grants the distinction and says the practice spans it. The hesychast literature is the clear case: it knows perfectly well that a man sleeps and wakes, and requires the prayer through both. See prima-materia#440."@en ;
+    skos:note "Deliberately not added to the other three axes. There is no case in the holdings for an awareness that is unbound as to its locus or its agency, and a value written for a case nobody has met is vocabulary running past the matter rather than ahead of it."@en .
+
 #
 # Axis 2 — locus of awareness
 #
@@ -143,34 +149,62 @@ pm:agencyNotStated a pm:AgencyHolding, pm:AwarenessValue ;
     skos:definition "The source was read for this question and does not answer it."@en .
 
 #
-# Axis 4 — persistence
+# Axis 4 — acquisition, and Axis 5 — duration
 #
-# The one axis the sources themselves theorise. The Sufi handbooks divide what
-# descends and passes from what is attained and held, and make the division
-# load-bearing: what cannot be worked for takes no prerequisite. The axis is
-# entered here because that division is not peculiar to Sufism, and because a
-# capacity said to come and go on its own is a different object of examination
-# from one said to be acquired.
+# These two stood as one axis until the first rollout of placements, under the
+# name pm:StatePersistence, with occasioned at one end and established at the
+# other. The Sufi handbooks fit it, because they happen to answer both
+# questions the same way: the aḥwāl are neither worked for nor kept, the
+# maqāmāt are both. The Inuit material broke it. Second sight is reported as a
+# standing property of a person and expressly not as the outcome of an
+# exercise — not attained, and not passing either. One axis had no place for
+# it, and the two ends were carrying two questions between them.
+#
+# That is the same fault as the flat state list this file replaced, one level
+# down, and it is corrected the same way. Whether a condition is worked for
+# and whether it lasts are independent, and a source can answer one and not
+# the other. See prima-materia#439.
 #
 
-pm:StatePersistence a owl:Class ;
-    rdfs:label "State Persistence"@en, "Beständigkeit des Zustands"@de ;
-    skos:definition "The axis on which a source's account of how a condition is held is placed: as something that descends and passes, or as something attained and retained."@en .
+pm:StateAcquisition a owl:Class ;
+    rdfs:label "State Acquisition"@en, "Erwerb des Zustands"@de ;
+    skos:definition "The axis on which a source's account of how a condition comes to someone is placed: through effort directed at it, or not."@en .
 
-pm:occasionedState a pm:StatePersistence, pm:AwarenessValue ;
-    rdfs:label "Occasioned"@en, "Zugefallen"@de ;
-    skos:definition "A condition the source describes as arriving unbidden and passing, not to be produced at will."@en ;
-    skos:note "The Sufi handbooks call these aḥwāl and say outright that they cannot be worked for. Where a source says this, a missing prerequisite claim is a doctrine and not an omission."@en .
+pm:byEffort a pm:StateAcquisition, pm:AwarenessValue ;
+    rdfs:label "By effort"@en, "Durch Anstrengung"@de ;
+    skos:definition "The source has the condition attained by practice directed at attaining it."@en ;
+    skos:note "This is the end of the axis where prerequisite chains are to be expected, and where their absence is worth a question. The Sufi handbooks call these maqāmāt and enumerate them in a set order."@en .
 
-pm:establishedStation a pm:StatePersistence, pm:AwarenessValue ;
-    rdfs:label "Established"@en, "Erworben"@de ;
-    skos:definition "A condition the source describes as attained by effort and held by the one who reaches it, commonly placed in an order."@en ;
-    skos:note "The Sufi handbooks call these maqāmāt. Values on this end of the axis are where prerequisite chains are to be expected, and their absence is worth a question."@en .
+pm:notByEffort a pm:StateAcquisition, pm:AwarenessValue ;
+    rdfs:label "Not by effort"@en, "Nicht durch Anstrengung"@de ;
+    skos:definition "The source has the condition arrive without being worked for: given, inherited, conferred at birth, or descending on the wayfarer as a gift."@en ;
+    skos:note "Where a source says this, a missing prerequisite claim is a doctrine and not an omission. The Sufi handbooks say it outright of the aḥwāl; the Inuit narrative says it of second sight in another way, by reporting the capacity as something a person has."@en .
 
-pm:persistenceDeclined a pm:StatePersistence, pm:AwarenessValue ;
-    rdfs:label "Persistence distinction declined"@en, "Beständigkeitsunterscheidung abgelehnt"@de ;
-    skos:definition "The tradition holds that the distinction between a condition that is given and one that is attained does not apply to what it teaches."@en .
+pm:acquisitionDeclined a pm:StateAcquisition, pm:AwarenessValue ;
+    rdfs:label "Acquisition distinction declined"@en, "Erwerbsunterscheidung abgelehnt"@de ;
+    skos:definition "The tradition holds that the distinction between what is worked for and what is given does not apply to what it teaches."@en .
 
-pm:persistenceNotStated a pm:StatePersistence, pm:AwarenessValue ;
-    rdfs:label "Persistence not stated"@en, "Beständigkeit nicht angegeben"@de ;
+pm:acquisitionNotStated a pm:StateAcquisition, pm:AwarenessValue ;
+    rdfs:label "Acquisition not stated"@en, "Erwerb nicht angegeben"@de ;
+    skos:definition "The source was read for this question and does not answer it."@en .
+
+pm:StateDuration a owl:Class ;
+    rdfs:label "State Duration"@en, "Dauer des Zustands"@de ;
+    skos:definition "The axis on which a source's account of how long a condition holds is placed: passing of itself, or abiding once it is there."@en .
+
+pm:transientState a pm:StateDuration, pm:AwarenessValue ;
+    rdfs:label "Transient"@en, "Vergehend"@de ;
+    skos:definition "The source has the condition pass of itself, so that it must be entered again rather than merely kept."@en ;
+    skos:note "A capacity said to come and go is a different object of examination from one said to last: it is tested against frequency and occasion, not against a course of training."@en .
+
+pm:abidingState a pm:StateDuration, pm:AwarenessValue ;
+    rdfs:label "Abiding"@en, "Bleibend"@de ;
+    skos:definition "The source has the condition remain with the one who has it, whether it was worked for or not."@en .
+
+pm:durationDeclined a pm:StateDuration, pm:AwarenessValue ;
+    rdfs:label "Duration distinction declined"@en, "Dauerunterscheidung abgelehnt"@de ;
+    skos:definition "The tradition holds that the distinction between a passing and an abiding condition does not apply to what it teaches."@en .
+
+pm:durationNotStated a pm:StateDuration, pm:AwarenessValue ;
+    rdfs:label "Duration not stated"@en, "Dauer nicht angegeben"@de ;
     skos:definition "The source was read for this question and does not answer it."@en .
