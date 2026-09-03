@@ -884,6 +884,126 @@ def test_naming_without_a_tradition_is_rejected() -> None:
     assert "belongs to whoever gave it" in report
 
 
+#
+# Negative fixtures for the scale guards, required by SPEC §9. Until these
+# shapes existed, rdfs:range was the only statement of closure and constrained
+# nothing: a misspelt or invented value passed every constraint in silence.
+#
+
+
+def test_invented_attestation_mode_is_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:LooseAttribution a pm:Attributing ;
+        pm:ascribedCapacity pmc:Something ;
+        pm:attestedBy pm:textualAttestaton ;
+        pm:withinTradition pmt:Somewhere ;
+        dcterms:source "A work, a place" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A mode of attestation that no scale declares must fail SHACL."
+    assert "declared mode of attestation" in report
+
+
+def test_declared_attestation_mode_is_accepted() -> None:
+    accepted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:SoundAttribution a pm:Attributing ;
+        pm:ascribedCapacity pmc:Something ;
+        pm:attestedBy pm:textualAttestation ;
+        pm:withinTradition pmt:Somewhere ;
+        dcterms:source "A work, a place" .
+    """
+    conforms, report = _validate(accepted)
+    assert conforms, report
+
+
+def test_scale_without_a_family_is_rejected() -> None:
+    offending = """
+    @prefix pm: <https://pajew.ski/prima-materia/ontology#> .
+
+    pm:SomeNewScale a pm:Scale .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A scale that does not declare its family must fail SHACL."
+    assert "which family it belongs to" in report
+
+
+#
+# Negative fixtures for the placement guards. A placement is the compiler's
+# identification of a described condition with a coordinate, and the two
+# things it must never be able to omit are the coordinate's declaration and
+# the ground on which the identification rests.
+#
+
+_SITUATING_PREFIXES = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc: <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+"""
+
+
+def test_situating_without_a_ground_is_rejected() -> None:
+    offending = _SITUATING_PREFIXES + """
+    pmc:BarePlacement a pm:Situating ;
+        pm:situatedNode pmc:Something ;
+        pm:axisValue pm:withdrawnAbsorption ;
+        pm:attestedBy pm:compilerInference .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A placement without a ground must fail SHACL."
+    assert "what in the source carries it" in report
+
+
+def test_situating_with_an_undeclared_value_is_rejected() -> None:
+    offending = _SITUATING_PREFIXES + """
+    pmc:InventedCoordinate a pm:Situating ;
+        pm:situatedNode pmc:Something ;
+        pm:axisValue pm:trance ;
+        pm:situationGround "The source says the practitioner is entranced."@en ;
+        pm:attestedBy pm:compilerInference .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A coordinate no axis declares must fail SHACL."
+    assert "declared axis value" in report
+
+
+def test_situating_on_two_axes_at_once_is_rejected() -> None:
+    offending = _SITUATING_PREFIXES + """
+    pmc:TwoCoordinatesInOne a pm:Situating ;
+        pm:situatedNode pmc:Something ;
+        pm:axisValue pm:withdrawnAbsorption, pm:embodiedLocus ;
+        pm:situationGround "Two answers to two questions in one node."@en ;
+        pm:attestedBy pm:compilerInference .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, (
+        "Two axis values in one placement must fail: two axes are two placements, "
+        "and a node holding both cannot be disputed on one of them."
+    )
+
+
+def test_complete_situating_conforms() -> None:
+    accepted = _SITUATING_PREFIXES + """
+    pmc:GoodPlacement a pm:Situating ;
+        pm:situatedNode pmc:Something ;
+        pm:axisValue pm:sleepThreshold ;
+        pm:situationGround "The passage describes sleep departing and waking beginning, with the eyes immobile."@en ;
+        pm:attestedBy pm:compilerInference ;
+        dcterms:source "A work, a place" .
+    """
+    conforms, report = _validate(accepted)
+    assert conforms, report
+
+
 def test_complete_naming_conforms() -> None:
     # The shape a watcher node takes: the form as the cited edition spells
     # it, the term that edition's tradition uses, and the passage.

@@ -52,8 +52,8 @@ def test_assets_are_present() -> None:
 
 def test_every_declared_term_becomes_a_node() -> None:
     nodes = _by_id(_data())
-    for term in ("pm:Process", "pm:Symbolizing", "pm:AwarenessContext", "pm:withinTradition",
-                 "pm:WakingState", "pm:individualAwareness"):
+    for term in ("pm:Process", "pm:Symbolizing", "pm:SensoryAnchoring", "pm:withinTradition",
+                 "pm:withdrawnAbsorption", "pm:individualAwareness"):
         assert term in nodes, f"{term} is missing from the site data"
 
 
@@ -62,7 +62,7 @@ def test_kinds_are_classified() -> None:
     assert nodes["pm:Process"]["kind"] == "root"
     assert nodes["pm:Symbolizing"]["kind"] == "class"
     assert nodes["pm:withinTradition"]["kind"] == "property"
-    assert nodes["pm:WakingState"]["kind"] == "instance"
+    assert nodes["pm:withdrawnAbsorption"]["kind"] == "instance"
 
 
 def test_ontology_header_is_not_a_node() -> None:
@@ -79,9 +79,24 @@ def test_labels_and_definitions_survive_the_build() -> None:
     assert node["definition"]["en"].startswith("The act of one form standing for another")
 
 
-def test_sources_survive_the_build() -> None:
-    node = _by_id(_data())["pm:WakingState"]
-    assert node["sources"] == ["Māṇḍūkya Upaniṣad, verse 3"]
+def test_no_vocabulary_term_carries_a_source() -> None:
+    # This test used to read a source off pm:WakingState, which is exactly the
+    # confusion SPEC §11 forbids and which nothing enforced: a class or a scale
+    # value asserts nothing and needs no work behind it, only a definition
+    # saying what would count as an instance. The awareness axes carried
+    # Māṇḍūkya verses on their values, which put one tradition's doctrine in
+    # the position of the coordinate system every other tradition is measured
+    # against. The guard is cheap and the failure was silent for as long as the
+    # file existed.
+    offenders = {
+        node["id"]: node["sources"]
+        for node in _data()["nodes"]
+        if node["sources"] and node["id"].startswith("pm:")
+    }
+    assert not offenders, (
+        "Vocabulary terms must not carry dcterms:source; a term that needs a "
+        "passage behind it is a claim and belongs in a data file: " + repr(offenders)
+    )
 
 
 def test_every_literal_reaches_the_site() -> None:
@@ -140,16 +155,18 @@ def test_alternate_spellings_stay_with_the_labels() -> None:
 def test_structural_edges_are_derived() -> None:
     edges = {(e["source"], e["rel"], e["target"]) for e in _data()["edges"]}
     assert ("pm:Symbolizing", "subClassOf", "pm:Process") in edges
-    assert ("pm:WakingState", "instanceOf", "pm:AwarenessContext") in edges
+    assert ("pm:withdrawnAbsorption", "instanceOf", "pm:SensoryAnchoring") in edges
     assert ("pm:withinTradition", "range", "pm:Tradition") in edges
 
 
 def test_property_signature_keeps_targets_outside_the_graph() -> None:
-    # rdf:Statement is vocabulary, not a node the graph draws; the panel still
-    # has to be able to state the domain of pm:assertedIn.
-    node = _by_id(_data())["pm:assertedIn"]
-    assert node["domain"] == ["rdf:Statement"]
-    assert node["range"] == ["pm:AwarenessContext"]
+    # xsd:date is vocabulary, not a node the graph draws; the panel still has
+    # to be able to state the range of pm:protocolUpdated. The witness used to
+    # be pm:assertedIn with rdf:Statement as its domain, which went with the
+    # class it pointed at.
+    node = _by_id(_data())["pm:protocolUpdated"]
+    assert node["domain"] == ["pm:Testing"]
+    assert node["range"] == ["http://www.w3.org/2001/XMLSchema#date"]
 
 
 def test_edges_only_connect_nodes_that_exist() -> None:

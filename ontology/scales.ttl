@@ -1,0 +1,103 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the scales
+#
+# A scale is a class whose instances are its permitted values. The ontology
+# had nine of them, declared in five files, with nothing that said they were
+# the same kind of thing and nothing that kept a property to its own set. This
+# file is the map: it names the families, assigns every scale to one, and is
+# the single place from which the inventory can be read.
+#
+# The file adds statements to classes declared elsewhere. That arrangement is
+# deliberate and is the one documented in tests/test_identifier_uniqueness.py:
+# the class assignment stays at home, the family assignment is gathered here,
+# because a map scattered over five files is not a map.
+#
+
+pm:Scale a owl:Class ;
+    rdfs:label "Scale"@en, "Skala"@de ;
+    skos:definition "A class whose instances form a closed set of permitted values. A property whose range is a scale takes one of that scale's declared instances and nothing else."@en ;
+    skos:note "Closure is the point. rdfs:range states an intention and constrains nothing; until pm:ScaleValueShape was written, a misspelt or invented value passed validation in silence and was indistinguishable from a declared one."@en .
+
+pm:ScaleFamily a owl:Class ;
+    rdfs:label "Scale Family"@en, "Skalenfamilie"@de ;
+    skos:definition "The kind of question a scale answers. Three families are distinguished because a statement about the state of the record, a statement about the firmness of a source and a statement about the subject matter must never be read alike."@en .
+
+#
+# The three families
+#
+
+pm:recordScale a pm:ScaleFamily ;
+    rdfs:label "Record scale"@en, "Aufzeichnungsskala"@de ;
+    skos:definition "A scale that reports how far the work of recording, searching and examining has been carried. Its values describe what has been done to the subject matter, never the subject matter itself."@en ;
+    skos:note "The cardinal error this family exists to prevent is the collapse of a state that reports absent work into one that reports a finding: a claim for which no procedure was devised and a claim examined and unsupported are different findings and must never read alike."@en .
+
+pm:sourceModalityScale a pm:ScaleFamily ;
+    rdfs:label "Source modality scale"@en, "Quellenmodalitätsskala"@de ;
+    skos:definition "A scale that reports how firmly a source sets what it says. Its values are read off the wording of the source: they are neither a judgement about the subject matter nor a judgement about the source's reliability."@en .
+
+pm:subjectAxis a pm:ScaleFamily ;
+    rdfs:label "Subject axis"@en, "Sachachse"@de ;
+    skos:definition "A coordinate on which a tradition, a practice, a capacity or a claim is placed. The axis belongs to no tradition; sources describe a condition and do not name a coordinate, so every placement is an act of the compiler and carries pm:compilerInference."@en ;
+    skos:note "Two values are owed on every subject axis beyond the substantive ones. A declining value, for a tradition that rejects the distinction the axis draws: without it a rejection is recorded as an omission, which turns a doctrine into a gap. And a not-stated value, for a source that was read for the question and does not answer it: without it a node nobody tagged cannot be told from a source that was asked and stayed silent, and every query of the form 'only in X' reports the state of the tagging instead of the state of the traditions."@en .
+
+pm:scaleFamily a owl:ObjectProperty ;
+    rdfs:label "scale family"@en ;
+    rdfs:domain pm:Scale ;
+    rdfs:range pm:ScaleFamily ;
+    skos:definition "The family a scale belongs to."@en .
+
+#
+# The inventory. Every scale in the ontology is declared here and nowhere
+# else; a scale that is missing from this file is caught by
+# pm:ScaleDeclarationShape.
+#
+
+# --- record scales: the state of our work ---
+
+pm:Attesting a pm:Scale ;
+    pm:scaleFamily pm:recordScale .
+
+pm:ExaminationState a pm:Scale ;
+    pm:scaleFamily pm:recordScale .
+
+pm:CounterSearchState a pm:Scale ;
+    pm:scaleFamily pm:recordScale .
+
+pm:CoverageState a pm:Scale ;
+    pm:scaleFamily pm:recordScale .
+
+pm:ContactRoute a pm:Scale ;
+    pm:scaleFamily pm:recordScale .
+
+# --- source modality: how firmly the source sets it ---
+
+pm:PrerequisiteStrength a pm:Scale ;
+    pm:scaleFamily pm:sourceModalityScale .
+
+# --- subject axes: coordinates the compiler places things on ---
+
+pm:MethodOrientation a pm:Scale ;
+    pm:scaleFamily pm:subjectAxis .
+
+pm:TelicOrientation a pm:Scale ;
+    pm:scaleFamily pm:subjectAxis .
+
+pm:AwarenessSpace a pm:Scale ;
+    pm:scaleFamily pm:subjectAxis .
+
+pm:SensoryAnchoring a pm:Scale ;
+    pm:scaleFamily pm:subjectAxis .
+
+pm:AwarenessLocus a pm:Scale ;
+    pm:scaleFamily pm:subjectAxis .
+
+pm:AgencyHolding a pm:Scale ;
+    pm:scaleFamily pm:subjectAxis .
+
+pm:StatePersistence a pm:Scale ;
+    pm:scaleFamily pm:subjectAxis .
