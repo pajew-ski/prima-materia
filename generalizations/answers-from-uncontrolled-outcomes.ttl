@@ -1,0 +1,19 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — generalization: answers fixed to an outcome nobody controls
+#
+
+pmc:AnswersFromAnUncontrolledOutcome a pm:Generalizing ;
+    rdfs:label "Answers fixed to an outcome the operator does not control"@en, "Antworten am Ausgang, den der Betreiber nicht beherrscht"@de ;
+    pm:generalizedStatement "Procedures that fix an answer to the outcome of a physical process the operator cannot control name the state of affairs later established more often than an answer drawn at random from the same set of admissible answers."@en ;
+    pm:generalizedFrom pmc:BengeYieldsIdentificationOfTheWitch ,
+                       pmc:CastingYieldsForeknowledge ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Two attested claims from two transmissions with no route between them that this holding has established: the Zande poison oracle and the casting of the Ifá figures. The mechanism is the same in both and is the reason they are taken together — the answer is not read off the operator's judgement but off an outcome he does not steer."@en ;
+    skos:note "The comparison class is the whole of the claim and is the part to attack. An oracle that answers yes or no is measured against one half; a system of two hundred and fifty-six figures against one two-hundred-and-fifty-sixth. A protocol that does not fix the admissible set before the consultation measures nothing, because the set can always be narrowed afterwards to whatever came true."@en ;
+    skos:note "The Zande transmission has a feature that makes this generalization examinable rather than merely stateable: it prescribes a control, the second consultation that must reverse the first. It also names eight causes to which a failure of that control is attributed, so the condition never falls against the oracle itself. Both stand in traditions/azande.ttl, and both belong in any protocol devised against this node."@en ;
+    skos:note "A third case was considered and not used. The Sámi drum answers by the travel of a ring that the operator does not steer, and the reading rule is attested twice ninety years apart (pmc:SunCourseRule). It is not entered here because that node states a rule of reading and not a claim that the reading comes true, and pm:generalizedFrom must point at claims and not at descriptions. Seen and left out, with the reason."@en .
