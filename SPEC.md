@@ -812,6 +812,32 @@ Das Projekt läuft auf eine Kette hinaus: Behauptungen aufstellen, Überschneidu
 
 ---
 
+## 17. Die Skalen
+
+Der Bestand führte neun kontrollierte Wertemengen, verteilt über fünf Dateien, ohne dass irgendwo stand, dass sie dieselbe Art von Ding sind. Zwei Folgen davon waren teuer.
+
+**Erstens war keine einzige geschlossen.** `rdfs:range` benennt eine Absicht und erzwingt nichts, und SHACL prüfte nur, dass die Angabe vorhanden ist. Ein Tippfehler im Wert war damit von einem gültigen Wert nicht zu unterscheiden: der Knoten passierte jede Bedingung, der Graph kompilierte, und der Fehler fiel allenfalls später als ein Wert auf, der in keiner Abfrage vorkommt. Zehn Prädikate lagen offen. Die Wertwächter je Prädikat schließen die Mengen jetzt über `sh:in`.
+
+**Zweitens ließen sich die Werte nicht auseinanderhalten.** Ein Wert über den Stand unserer Arbeit, ein Wert über die Festigkeit einer Quelle und ein Wert über die Sache sind drei verschiedene Aussagen, und wer sie gleich liest, liest den Bestand falsch. Jede Skala trägt deshalb `pm:scaleFamily`, und `ontology/scales.ttl` ist die Karte, aus der der Bestand an Skalen abzulesen ist.
+
+| Familie | Was ein Wert aussagt | Skalen |
+|---|---|---|
+| `pm:recordScale` | wie weit unsere Arbeit getragen hat | `pm:Attesting`, `pm:ExaminationState`, `pm:CounterSearchState`, `pm:CoverageState`, `pm:ContactRoute` |
+| `pm:sourceModalityScale` | wie fest die Quelle setzt, was sie sagt | `pm:PrerequisiteStrength` |
+| `pm:subjectAxis` | wo die Sache auf einer Koordinate liegt | `pm:MethodOrientation`, `pm:TelicOrientation`, `pm:AwarenessSpace`, `pm:SensoryAnchoring`, `pm:AwarenessLocus`, `pm:AgencyHolding`, `pm:StatePersistence` |
+
+**Für die Sachachsen gelten drei Regeln, die für die anderen beiden Familien nicht gelten.**
+
+Eine Verortung auf einer Sachachse ist ein Ordnungsakt des Kompilators und trägt `pm:compilerInference`: keine Quelle nennt eine Koordinate, sie beschreibt einen Zustand oder eine Haltung. Das ist derselbe Status, den `pm:Converging` hat, und es hat dieselbe Folge — die Zuordnung ist bestreitbar, ohne dass die zugeordnete Behauptung angetastet wird.
+
+Jede Sachachse braucht einen ablehnenden Wert für die Tradition, die die Unterscheidung selbst zurückweist. Ohne ihn wird eine Lehre als Lücke verbucht. `pm:normDistinctionDeclined` und `pm:selfBoundaryDeclined` waren der Präzedenzfall; die vier Bewusstseinsachsen führen ihn fort.
+
+Und jede braucht einen nicht-angegeben-Wert für die Quelle, die auf die Frage hin gelesen wurde und schweigt. Ohne ihn ist ein Knoten, den niemand verortet hat, von einer befragten und stummen Quelle nicht zu unterscheiden, und jede Abfrage der Form „nur auf diesem Wert" meldet die eigene Verschlagwortung. `pm:MethodOrientation`, `pm:TelicOrientation` und `pm:AwarenessSpace` haben diesen Wert noch nicht; das ist ein offener Befund und keine Ausnahme.
+
+**Wer eine Skala hinzufügt**, deklariert sie in `ontology/scales.ttl` mit ihrer Familie, schließt ihre Werte mit einem `sh:in`-Wächter am zugehörigen Prädikat und legt den Negativfixture dazu. Alle drei Schritte fehlen sonst still: die Skala erscheint in keiner Übersicht, das Prädikat nimmt jeden Wert an, und der Wächter ist nicht als funktionierend bekannt.
+
+---
+
 **Document version:** 1.0
 **Maintained by:** Michael Pajewski
 **License:** CC0 1.0 (this specification document inclusive)
