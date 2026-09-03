@@ -196,7 +196,8 @@ Die Ontologie ist bewusstseinszentriert, und das ist erst eingelöst, wenn die Z
 | `pm:SensoryAnchoring` | Verhältnis der Aufmerksamkeit zum gewöhnlichen Sinneskanal | `outwardWaking`, `withdrawnAbsorption`, `sleepThreshold`, `dreamingWithin`, `objectlessDepth` |
 | `pm:AwarenessLocus` | wo die Überlieferung das Bewusstsein während des Akts verortet | `embodiedLocus`, `displacedLocus` |
 | `pm:AgencyHolding` | wer nach der Darstellung der Quelle handelt | `ownAgency`, `cededAgency` |
-| `pm:StatePersistence` | ob der Zustand zufällt oder erworben wird | `occasionedState`, `establishedStation` |
+| `pm:StateAcquisition` | ob die Quelle den Zustand als erarbeitet oder als gegeben darstellt | `byEffort`, `notByEffort` |
+| `pm:StateDuration` | ob er vergeht oder bleibt | `transientState`, `abidingState` |
 
 `pm:withdrawnAbsorption` ist der Wert, den die vierteilige Liste nicht hatte und an dem die meisten Vermögen des Bestands hängen. Turīya ist kein weiterer Wert auf einer dieser Achsen, sondern die Behauptung, dass den drei anderen Zuständen ein einziges Bewusstsein zugrunde liegt; das ist eine Lehre, sie ist zwischen Traditionen strittig, und sie gehört als Knoten mit Stelle in die upaniṣadische Datei.
 
