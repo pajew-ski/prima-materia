@@ -198,6 +198,13 @@ Der Grund ist derselbe wie bei prima-materia#351, eine Ebene höher: **ein Faden
 3. Jedes Issue, dessen Gegenstand im Bestand steht, ist als `completed` geschlossen — auch wenn die Arbeit in einem früheren Lauf geschah. Ein erledigtes und offenes Issue ist teurer als ein fehlendes: es bindet Aufmerksamkeit an eine Schuld, die getilgt ist, und die abhängigen Issues führen sich weiter als blockiert.
 4. Jede Recherche des Laufs hat ihre Erntenotiz, mit den nicht aufgenommenen Funden und ihrem Grund.
 5. Jede offene Entscheidung liegt als Frage mit Empfehlung vor, nicht als offene Frage.
+6. Der Lauf hat sich selbst geprüft: gegen die Regeln dieser Datei, gegen `SPEC.md`, und gegen den Kurs, den die Arbeit verfolgt.
+
+**Die sechste Bedingung ist die einzige, die keinen Wächter hat.** Die anderen fünf lassen sich abfragen; ob ein Lauf die zweite Rechercheestufe geführt hat, ob er im Batch gearbeitet hat, ob das Verhältnis von Gerüst zu Bestand noch stimmt, steht nirgends. Deshalb wird am Schluss jedes Laufs ausdrücklich danach gesehen, und zwar so, dass ein ehrliches Nein möglich ist: nicht „habe ich sauber gearbeitet\", sondern „welche Regel habe ich hier verletzt, und woran wäre das zu sehen\".
+
+Drei Fragen tragen den größten Teil. **Welche Stufe habe ich übersprungen** — die erste wird übersprungen, weil die Stelle verlockend nah liegt, und der Lauf sieht danach vollständig aus. **Was habe ich nacheinander getan, was nebeneinander gehört hätte** — Warten auf einen Merge, den niemand verlangt hat, ist die häufigste Form. **Wie steht das Gerüst zum Bestand** — Vokabular und Wächter sind angenehmer zu bauen als Knoten, und beide sehen nach Fortschritt aus.
+
+Was der Check findet, wird nicht im Bericht erwähnt, sondern behandelt: eine überschrittene Regel wird korrigiert oder als Befund abgelegt, eine zu scharf formulierte Aussage im Knoten selbst entschärft, ein übersprungener Schritt nachgeholt. Ein Selbstcheck, dessen Ergebnis nur im Gesprächsverlauf steht, fällt unter denselben Satz wie alles andere in diesem Abschnitt: der Verlauf ist kein Speicher. Der Anlass ist gezählt — für prima-materia#442 wurde die erste Rechercheestufe übersprungen, was erst ein Review am Ende des Laufs sichtbar machte; der Befund steht in prima-materia#443, die zu scharfe Aussage wurde im Knoten selbst zurückgenommen.
 
 Die dritte Bedingung ist die, die am häufigsten verletzt wird, und sie ist nicht durch Sorgfalt zu erfüllen, sondern nur durch Nachsehen: ob ein Issue erledigt ist, steht im Bestand und nicht im Issue. Am 2026-09-02 waren #23, #32 und #33 seit Tagen erledigt und offen, und drei weitere Issues führten sich deswegen als blockiert.
 
