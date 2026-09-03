@@ -1,0 +1,32 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — generalization: perception of what is out of range
+#
+# The first file in this folder. What it is for stands in SPEC §16: the
+# tradition says that this practice yields this capacity, and that claim
+# carries a work and a passage; the statement worth examining says that
+# practices of a kind yield an effect of a kind, and no source says it.
+#
+# The file carries one node and nothing else, because a generalization is
+# only as good as the derivation under it and a reader has to be able to see
+# the whole derivation at once.
+#
+
+pmc:DistantPerceptionFromAVoluntaryState a pm:Generalizing ;
+    rdfs:label "Perception of what is out of range, from a state entered at will"@en, "Wahrnehmung des Unerreichbaren aus einem willentlich betretenen Zustand"@de ;
+    pm:generalizedStatement "Where a practitioner enters a stated inner state at will and then reports on a person, place or object outside the range of ordinary perception, the reports agree with independently established facts more often than reports produced, from the same prior information, by people who have not entered such a state."@en ;
+    pm:generalizedFrom pmc:JourneyYieldsDistantSight ,
+                       pmc:SamyamaYieldsParacittaJnana ,
+                       pmc:SamyamaYieldsDivyaSrotra ,
+                       pmc:SecondDegreeYieldsDistantHearing ,
+                       pmc:FourthDegreeYieldsThoughtReading ,
+                       pmc:SpiritCallingYieldsRecoveryOfLostThings ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Six attested claims from four transmissions: the Sámi journey made while the body lies still, two applications of saṃyama in the Yogasūtra, two of the graded degrees of the Midewiwin, and the Iglulik spirit calling. Each names its own work and passage; this node names none, because none of them says what it says."@en ;
+    skos:note "Why the wording is as heavy as it is. The traditions say that the capacity is reached; a statement that repeated that could not fail at anything. What can fail is a comparison, so the statement is written as one, with the comparison group named — people working from the same prior information without the state. Whoever thinks the sentence overreaches should attack that clause, because it is the clause that carries the whole claim."@en ;
+    skos:note "The derivation is contestable at two points and both are left visible. First, whether the four transmissions describe one kind of practice at all: the Sámi journey, saṃyama, the Midewiwin degrees and the Iglulik calling agree in that the state is entered deliberately and differ in almost everything else. Second, whether reporting on a distant place and reading another mind are one effect or two — the sources treat them as neighbouring and this node treats them as one, which is a decision and not a finding."@en ;
+    skos:note "No pm:Testing points at this node, and that is its function rather than a defect. SPEC §16 makes the untested generalizations the queue for the examining layer; this one heads it, because it rests on more attested claims and more widely separated transmissions than anything else the holding can currently form."@en .
