@@ -484,3 +484,45 @@ pm:generalizedFrom a owl:ObjectProperty ;
     rdfs:domain pm:Generalizing ;
     skos:definition "An attested claim the generalization was formed from. At least two are required, and each must itself name a work."@en ;
     skos:note "Two is a floor and not a target. How many attested claims a generalization rests on, and how far apart their traditions stand, are the numbers that make one worth examining before another — the same distinction pm:Converging draws between many witnesses on one cable and many on three."@en .
+
+#
+# Placement on an awareness axis
+#
+# A source describes a condition; it does not name a coordinate. Reading
+# "from the fourth absorption" as withdrawn absorption is an identification,
+# and by Parameter 5 an identification that carries an attestation mode cannot
+# ride on an edge. It is therefore a node, like every other claim form here,
+# and for the same reason: on an edge a compiler's reading and a source's own
+# words would look alike.
+#
+# Two consequences worth stating, because they are what the class is for.
+# The reading can be disputed without touching the claim it situates, exactly
+# as pm:Converging can be disputed without touching what it joins. And the
+# absence of a placement means nobody asked, while a placement on a
+# not-stated value means somebody asked and the source is silent — the same
+# asymmetry pm:Testing keeps between no procedure devised and a procedure
+# that found nothing.
+#
+
+pm:Situating a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Situating"@en, "Verorten"@de ;
+    skos:definition "The placement of a claim, a practice or a capacity at a value on an awareness axis. The node records the compiler's identification of a described condition with a coordinate, not the description itself."@en ;
+    skos:note "Normally attested by pm:compilerInference. Textual attestation is available only where the source itself draws the distinction the axis draws — the Sufi division of what descends from what is attained is the clear case — and even then the wording that carries it belongs in pm:situationGround."@en .
+
+pm:situatedNode a owl:ObjectProperty ;
+    rdfs:label "situated node"@en, "verorteter Knoten"@de ;
+    rdfs:domain pm:Situating ;
+    skos:definition "The node being placed: a practice, a capacity claim, a concept or a prerequisite claim."@en .
+
+pm:axisValue a owl:ObjectProperty ;
+    rdfs:label "axis value"@en, "Achsenwert"@de ;
+    rdfs:domain pm:Situating ;
+    rdfs:range pm:AwarenessValue ;
+    skos:definition "The coordinate the node is placed at. One value per node; a claim placed on two axes is two placements, and a claim placed at two values on one axis is either two claims or a dispute."@en .
+
+pm:situationGround a owl:DatatypeProperty ;
+    rdfs:label "situation ground"@en, "Verortungsgrund"@de ;
+    rdfs:domain pm:Situating ;
+    skos:definition "What in the source carries the placement, in the compiler's words: the condition the passage describes, and why it is read as this coordinate."@en ;
+    skos:note "Required. Without it a placement is a bare assignment, and a later reader can neither check it nor contradict it — the same reason pm:counterSearchNote is required as soon as a counter-search state is set."@en .
