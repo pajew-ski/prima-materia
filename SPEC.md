@@ -580,19 +580,7 @@ Deshalb trägt jede Verwerfung, worauf sie beruht: welche Stelle widerspricht, a
 
 Labels sind kein Zustandsduplikat — den Zustand trägt offen oder geschlossen. Sie tragen zwei Dinge: den Bündelungsschlüssel für die Recherche und das Protokoll der Suchabdeckung.
 
-| Label | Bedeutung |
-|---|---|
-| `behauptung` | markiert das Issue als Behauptung, nicht als Repo-Arbeit. Ohne dieses Label ist der Tracker nach fünfzig Einträgen unlesbar |
-| `korpus:<name>` | ein Korpus, der für diese Behauptung geprüft wurde oder zu prüfen ist |
-| `strittig` | **zwei Quellen** widersprechen einander; Ziel ist ein `pm:Disputing`-Knoten. Nicht für den Fall, dass eine Quelle einem Methodenentwurf widerspricht: ein Entwurf ist keine Seite, und `pm:Disputing` verlangt zwei Quellen. Dieser Fall ist eine Behauptung ohne Zeugen, deren Gegenteil bezeugt ist |
-| `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
-| `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar, etwa eine Dosierungsangabe |
-| `entwurf:<name>` | Herkunft der Behauptung, wo sie aus einem Methodenentwurf stammt |
-| `befund` | markiert das Issue als Repo-Arbeit, nicht als Behauptung. Das Komplement zu `behauptung` und das Dachlabel der vier folgenden |
-| `befund:werkzeug` | Zugangsweg, Werkzeuggrenze, Umweg. Erledigt, wenn der Weg dokumentiert oder das Werkzeug geändert ist |
-| `befund:ontologie` | Vokabular, Shape, fehlendes Prädikat. Erledigt, wenn die Ontologie geändert ist |
-| `befund:bestand` | falsche, doppelte oder fehlende Daten im Graphen. Erledigt, wenn die Daten korrigiert sind |
-| `befund:verfahren` | Regel in dieser Spezifikation, in `AGENTS.md`, in `CONTRIBUTING.md` oder in einem Workflow. Erledigt, wenn die Regel geändert ist |
+**Das Vokabular steht kanonisch in `CONTRIBUTING.md` „Label-Vokabular", nicht hier.** Dort wird es beim Labeln gelesen, dort steht die vollständige Liste der `korpus:`-Werte, und dort standen bereits `ernte` und `in-arbeit`, die diese Tabelle nie geführt hat — zwei Fassungen desselben Vokabulars sind auseinandergelaufen, wie beim doppelt geführten Workflow-Listing in Abschnitt 7. Was hier bleibt, ist die Begründung: wofür die Labels da sind und welche Prüfungen an ihnen hängen.
 
 **Jedes Issue trägt entweder `behauptung` oder `befund`.** Die Aufteilung stand von Anfang an in der Definition von `behauptung` — „nicht als Repo-Arbeit" —, aber die andere Hälfte hatte keinen Namen, und was keinen Namen hat, ist nicht als Menge abfragbar. Die Folge war messbar: bei der Einführung dieses Labels trugen 61 von 287 offenen Issues gar kein Label, und es waren fast genau die Repo-, Werkzeug-, Ontologie- und Verfahrensbefunde. Sie hatten stattdessen ein Ersatzvokabular in den Titeln gebildet — Werkzeugbefund, Werkzeuglücke, Werkzeugfalle, Werkzeugmechanik, Bestandsbefund, Ontologielücke —, also vier Namen für eine Klasse und keinen davon abfragbar.
 
