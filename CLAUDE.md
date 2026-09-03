@@ -102,20 +102,6 @@ pytest tests/
 - **Konzept-Instanzen:** `pmc:`-namespace, `PascalCase`: `pmc:Pleroma`
 - **Identifier sind englisch.** Mehrsprachige Labels via `rdfs:label "..."@en, "..."@de`
 
-## Verboten (führt zu SHACL-Fail)
-
-- ❌ Statische Substanz-Klassen: `pm:Symbol`, `pm:Concept`, `pm:Entity`, `pm:Object`
-  - ✅ Stattdessen: `pm:Symbolizing`, `pm:Conceptualizing`, etc. (Prozess-Form)
-- ❌ Konzept-Instanzen ohne `dcterms:source`
-- ❌ Konzept-Instanzen ohne `pm:withinTradition`
-- ❌ Klassen ohne `rdfs:label` und `skos:definition`
-- ❌ Direktzitate aus modernen Übersetzungen urheberrechtlich geschützter Texte
-- ❌ Deutsche Identifier in URIs/Klassennamen
-- ❌ Network-Calls in `scripts/` — alles muss offline reproduzierbar sein
-- ❌ Direkte Edits am Distribution-Repo (`prima-materia-dist`) — wird auto-generiert
-- ❌ Direkte Edits an `build/site/` — wird bei jedem `publish.py`-Lauf neu erzeugt; Quelle ist `site/`
-- ❌ Fakten über die Ontologie in `site/index.html` hart kodieren (Anzahl Terme, Klassenlisten) — aus `ontology-data.json` ableiten
-
 ## Quellenführung (verpflichtend)
 
 **Der Graph enthält keine Wahrheiten, sondern Behauptungen mit Herkunft.** Diese Herkunft zu prüfen ist die Kernaufgabe jedes Agenten an diesem Repo, nicht eine Sorgfaltspflicht am Rand. Der Mensch ist die letzte Instanz vor dem Merge, nicht die erste und nicht die einzige.
