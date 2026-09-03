@@ -64,6 +64,8 @@ pytest tests/
 
 **Pre-Commit-Pflicht:** `python scripts/validate.py && pytest tests/` muss grün sein. Niemals committen wenn rot.
 
+Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im Imperativ.
+
 ## Website
 
 `site/` enthält die handgeschriebenen Assets der GitHub-Pages-Seite (`index.html`, `style.css`, `ontology.js`, `theme.js`, `search.js`, `layouts.js`, `matrix.js`, `ontology/index.html`). `scripts/publish.py` kopiert sie nach `build/site/` und legt die aus dem Graphen abgeleiteten Daten (`ontology-data.json`) sowie die Serialisierungen daneben. Der `Pages`-Workflow deployt das bei jedem Push auf `main`.
