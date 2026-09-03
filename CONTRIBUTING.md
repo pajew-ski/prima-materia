@@ -101,6 +101,7 @@ niemandem auffällt.
 | `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
 | `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar |
 | `entwurf:strom` | Herkunft: Methodenentwurf „Der Strom" |
+| `entwurf:<name>` | Herkunft der Behauptung, wo sie aus einem Methodenentwurf stammt. Ein Wert je Entwurf |
 | `befund` | Repo-Arbeit, keine Behauptung. Das Komplement zu `behauptung`, und das Dachlabel der vier folgenden |
 | `befund:werkzeug` | Zugangswege, Werkzeuggrenzen, Umwege. Erledigt, wenn der Weg dokumentiert oder das Werkzeug geändert ist; im Bestand ändert sich nichts |
 | `befund:ontologie` | Vokabular, Shapes, fehlende Prädikate. Erledigt, wenn die Ontologie geändert ist |
