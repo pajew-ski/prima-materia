@@ -176,39 +176,34 @@ pm:Symbolizing a owl:Class ;
 | `pm:Conceptualizing` | Begriffsbildung |
 | `pm:Relating` | Beziehungs-Akt zwischen Konzepten |
 
-### Parameter 2: AwarenessContext als First-Class-Entität
+### Parameter 2: Die Bewusstseinsachsen
 
-Jeder Triple wird in einem benannten Graph (Named Graph) eingebettet, der den Bewusstseinszustand der Aussage trägt. Das ist keine Metadaten-Spielerei — es ist epistemische Sauberkeit.
+Die Ontologie ist bewusstseinszentriert, und das ist erst eingelöst, wenn die Zustände nicht bloß im Vokabular stehen, sondern an den Behauptungen aller Traditionen hängen. Das Ziel ist die Abfrage: welche Methoden werden nur an der Schlafschwelle ausgeführt, welche Vermögen nur in abgezogener Vertiefung ausgeübt, welche Zustände fallen zu und welche werden erworben.
 
-**Implementierung über `pm:AwarenessContext`:**
+**Was hier vorher stand, war eine einzige flache Liste und im Bestand tot.** `pm:AwarenessContext` führte sechs Werte: vier Zustände aus der Māṇḍūkya Upaniṣad und zwei Aussagemodi, die `pm:attestedBy` bereits vollständig trägt. Kein Inhaltsknoten hat je darauf gezeigt. Drei Gründe, und alle drei sind behoben statt aufgeschoben:
 
-```turtle
-pm:AwarenessContext a owl:Class .
+1. **Die Angabe hing an der falschen Stelle.** `pm:assertedIn` hatte `rdf:Statement` als Domain, also hätte jedes Tripel reifiziert werden müssen; der Phase-1-Ersatz, ein Default je Datei im Kopfkommentar, war nach Abschnitt 10 ohnehin unzulässig und hätte eine Traditionsdatei, die gelehrte Aussage und Erfahrungsbericht mischt, mit einem einzigen Wert etikettiert.
+2. **Zwei Fragen standen in einer Klasse.** Wie eine Aussage in den Bestand kam, ist die Bezeugungsachse. In welchem Zustand ein Mensch ist, ist eine Aussage über die Sache. Solange beide dieselbe Klasse teilten, konnte die Angabe nichts Eindeutiges bedeuten.
+3. **Ein Slot für vier Antworten.** Eine Praxis wird mit abgezogenen Sinnen ausgeführt, während das Bewusstsein im Körper bleibt und die Handlung beim Übenden liegt. Das sind drei Antworten; die flache Liste hatte eine Stelle.
 
-pm:WakingState        a pm:AwarenessContext ;
-    rdfs:label "Waking state (Jāgrat)"@en .
-pm:DreamingState      a pm:AwarenessContext ;
-    rdfs:label "Dreaming state (Svapna)"@en .
-pm:DeepSleepState     a pm:AwarenessContext ;
-    rdfs:label "Deep sleep state (Suṣupti)"@en .
-pm:TranscendentState  a pm:AwarenessContext ;
-    rdfs:label "Transcendent state (Turīya)"@en .
-pm:GnosticState       a pm:AwarenessContext ;
-    rdfs:label "Gnostic state (operative consciousness)"@en .
-pm:ScholarlyState     a pm:AwarenessContext ;
-    rdfs:label "Scholarly state (philological/historical assertion)"@en .
-```
+**Vier Achsen statt einer Liste.** Sie stehen in `ontology/consciousness.ttl`, sind Skalen der Familie `pm:subjectAxis` (Abschnitt 17) und tragen je einen ablehnenden und einen nicht-angegeben-Wert:
 
-**Property zur Triple-Kontextualisierung:**
+| Achse | Entscheidungskriterium | Werte |
+|---|---|---|
+| `pm:SensoryAnchoring` | Verhältnis der Aufmerksamkeit zum gewöhnlichen Sinneskanal | `outwardWaking`, `withdrawnAbsorption`, `sleepThreshold`, `dreamingWithin`, `objectlessDepth` |
+| `pm:AwarenessLocus` | wo die Überlieferung das Bewusstsein während des Akts verortet | `embodiedLocus`, `displacedLocus` |
+| `pm:AgencyHolding` | wer nach der Darstellung der Quelle handelt | `ownAgency`, `cededAgency` |
+| `pm:StatePersistence` | ob der Zustand zufällt oder erworben wird | `occasionedState`, `establishedStation` |
 
-```turtle
-pm:assertedIn a owl:ObjectProperty ;
-    rdfs:domain rdf:Statement ;
-    rdfs:range pm:AwarenessContext ;
-    skos:definition "The awareness context in which a statement is asserted."@en .
-```
+`pm:withdrawnAbsorption` ist der Wert, den die vierteilige Liste nicht hatte und an dem die meisten Vermögen des Bestands hängen. Turīya ist kein weiterer Wert auf einer dieser Achsen, sondern die Behauptung, dass den drei anderen Zuständen ein einziges Bewusstsein zugrunde liegt; das ist eine Lehre, sie ist zwischen Traditionen strittig, und sie gehört als Knoten mit Stelle in die upaniṣadische Datei.
 
-Für Phase 1 ist es ausreichend, wenn jede Tradition-Datei einen Default-Context per Datei-Header deklariert (typisch `pm:ScholarlyState`). Vollständige named-graph-Implementierung kommt in Phase 2.
+**Die Achse gehört keiner Tradition.** Dass die Māṇḍūkya die Zustände zuerst geordnet hat, macht sie nicht zu ihrem Eigentum: die Zustände sind jedem Menschen zugänglich, und ein Koordinatensystem, das eine Quellenangabe trüge, wäre kein Koordinatensystem, sondern die Lehre einer Tradition in der Rolle des Maßstabs für alle anderen. Die Achsenwerte tragen deshalb kein `dcterms:source`; die Termini, mit denen eine Überlieferung ihre Zustände benennt, sind deren Behauptung und stehen mit Stelle und Ausgabe in deren Datei.
+
+**Die Zuordnung ist ein Knoten, keine Kante.** Die Quelle beschreibt einen Zustand, sie nennt keine Koordinate; „aus der vierten Vertiefung" als abgezogene Vertiefung zu lesen ist eine Identifikation und trägt einen Bezeugungsmodus, fällt also unter Parameter 5. Dafür steht `pm:Situating` mit `pm:situatedNode`, genau einem `pm:axisValue`, dem `pm:situationGround` und `pm:attestedBy`, im Regelfall `pm:compilerInference`. Zwei Achsen sind zwei Verortungen.
+
+**Abwesenheit und Schweigen sind zu unterscheiden.** Keine Verortung heißt: niemand hat gefragt. Eine Verortung auf einem `...NotStated`-Wert heißt: es wurde gefragt und die Quelle sagt nichts. Ohne diesen Unterschied meldet jede Abfrage der Form „nur in Zustand X" den Stand der Verschlagwortung als Struktur der Überlieferung — derselbe Fehler, den `pm:noProcedureDevised` gegenüber `pm:casesWithoutDeviation` verhindert.
+
+Die vollständige named-graph-Implementierung aus Phase 2 ist **gestrichen** und nicht weiter aufgeschoben. Ein Vorhaben, das seit Phase 1 unberührt lag, während die Klasse, für die es gebraucht wurde, im Bestand tot war, ist keine Planung.
 
 ### Parameter 3: Sphoṭa — Bedeutung in Subgraph-Clustern
 
