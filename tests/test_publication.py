@@ -52,8 +52,8 @@ def test_assets_are_present() -> None:
 
 def test_every_declared_term_becomes_a_node() -> None:
     nodes = _by_id(_data())
-    for term in ("pm:Process", "pm:Symbolizing", "pm:AwarenessContext", "pm:withinTradition",
-                 "pm:WakingState", "pm:individualAwareness"):
+    for term in ("pm:Process", "pm:Symbolizing", "pm:SensoryAnchoring", "pm:withinTradition",
+                 "pm:withdrawnAbsorption", "pm:individualAwareness"):
         assert term in nodes, f"{term} is missing from the site data"
 
 
@@ -62,7 +62,7 @@ def test_kinds_are_classified() -> None:
     assert nodes["pm:Process"]["kind"] == "root"
     assert nodes["pm:Symbolizing"]["kind"] == "class"
     assert nodes["pm:withinTradition"]["kind"] == "property"
-    assert nodes["pm:WakingState"]["kind"] == "instance"
+    assert nodes["pm:withdrawnAbsorption"]["kind"] == "instance"
 
 
 def test_ontology_header_is_not_a_node() -> None:
