@@ -79,9 +79,24 @@ def test_labels_and_definitions_survive_the_build() -> None:
     assert node["definition"]["en"].startswith("The act of one form standing for another")
 
 
-def test_sources_survive_the_build() -> None:
-    node = _by_id(_data())["pm:WakingState"]
-    assert node["sources"] == ["Māṇḍūkya Upaniṣad, verse 3"]
+def test_no_vocabulary_term_carries_a_source() -> None:
+    # This test used to read a source off pm:WakingState, which is exactly the
+    # confusion SPEC §11 forbids and which nothing enforced: a class or a scale
+    # value asserts nothing and needs no work behind it, only a definition
+    # saying what would count as an instance. The awareness axes carried
+    # Māṇḍūkya verses on their values, which put one tradition's doctrine in
+    # the position of the coordinate system every other tradition is measured
+    # against. The guard is cheap and the failure was silent for as long as the
+    # file existed.
+    offenders = {
+        node["id"]: node["sources"]
+        for node in _data()["nodes"]
+        if node["sources"] and node["id"].startswith("pm:")
+    }
+    assert not offenders, (
+        "Vocabulary terms must not carry dcterms:source; a term that needs a "
+        "passage behind it is a claim and belongs in a data file: " + repr(offenders)
+    )
 
 
 def test_every_literal_reaches_the_site() -> None:
