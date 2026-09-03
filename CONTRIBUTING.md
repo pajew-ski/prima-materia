@@ -211,6 +211,10 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Jīva Gosvāmin, Prīti-sandarbha; Kṛṣṇadāsa Kavirāja, Caitanya-caritāmṛta —
   die moderne Indologie zur Bhakti geht als `pm:evidenceFrom` ein, nie als
   Quelle)
+- `korpus:tungusisch` (Shirokogoroff, Psychomental Complex of the Tungus und
+  Social Organization of the Northern Tungus; Lopatin, Goldi; Simkevič; die
+  Olonkho-Epen und Anisimovs Feldaufzeichnungen — die moderne
+  Schamanismusforschung geht als `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
