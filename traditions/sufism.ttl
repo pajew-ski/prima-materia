@@ -56,3 +56,26 @@ pmc:StatesAreNotOrdered a pm:Cautioning ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Sufism ;
     dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya", "al-Sarrāj, Kitāb al-Lumaʿ" .
+
+#
+# Placement on the persistence axis. The handbooks draw this distinction
+# themselves, which is unusual and is the reason the axis exists at all; the
+# placement is still a compiler act, because the coordinate is ours and the
+# tradition's terms are its own.
+#
+
+pmc:AhwalAreOccasioned a pm:Situating ;
+    rdfs:label "The states are occasioned"@en, "Die Zustände fallen zu"@de ;
+    pm:situatedNode pmc:Ahwal ;
+    pm:axisValue pm:occasionedState ;
+    pm:situationGround "The handbooks describe these as descending on the wayfarer as a gift and passing, and distinguish them from the stations precisely by their not being attainable through effort. That is the criterion this coordinate names, stated by the source itself."@en ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya" .
+
+pmc:MaqamatAreEstablished a pm:Situating ;
+    rdfs:label "The stations are established"@en, "Die Stationen sind erworben"@de ;
+    pm:situatedNode pmc:Maqamat ;
+    pm:axisValue pm:establishedStation ;
+    pm:situationGround "The handbooks describe these as attained by effort, held by the one who reaches them, and enumerated in a set order. The order is why prerequisite claims are found here and not on the other end of the axis."@en ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "al-Qushayrī, al-Risāla al-Qushayriyya, chapter on the stations" .
