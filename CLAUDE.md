@@ -1,6 +1,41 @@
 # CLAUDE.md
 
-Permanent-Context für Claude Code. Enthält operative Constraints und Konventionen. Vollständige Spezifikation in `SPEC.md` — bei Konflikten gilt `SPEC.md`. `AGENTS.md` enthält dieselben Regeln anbieterneutral und kürzer; wer nur eine Datei liest, liest die.
+Werkzeug- und Konventionsdetails für Claude Code an diesem Repository.
+
+**Zuerst `AGENTS.md` lesen, vor allem anderen.** Dort stehen die Regeln der Arbeit: Recherche, Ernte, Quellen, Prüfung, der stehende Auftrag, die Abschlussbedingung der Sitzung. Diese Datei setzt sie voraus und wiederholt sie nicht. Vollständige Spezifikation in `SPEC.md`; bei Konflikten gilt `SPEC.md`.
+
+Die Wiederholung ist entfernt, weil sie eine Kostenstelle war und weil sie driftete. Der Bootstrap las vier Dateien vollständig, 177244 Zeichen, bevor die erste Recherche begann; am 2026-09-03 sind drei Läufe in dieser Vorlast an Kapazitätsfehlern abgebrochen, bevor irgendetwas im Repo stand. Und die Kopie war bereits falsch: die Behauptungsklassentabelle in dieser Datei führte `pm:Reworking` und `pm:Situating` nicht, die in `SPEC.md` §3 Parameter 5 seit Tagen stehen. Fall in prima-materia#446, dieselbe Begründung wie für das entfernte Workflow-Listing in `SPEC.md` §7.
+
+## Wo welche Regel steht
+
+Kein Eintrag dieser Tabelle ist hier ausgeführt. Wer die Regel braucht, liest sie dort.
+
+| Regel | Kanonische Stelle |
+|---|---|
+| Wozu das Repo da ist, Torkriterium | `SPEC.md` §0, `AGENTS.md` „Was dieses Repo ist" |
+| Die vier Sätze der Recherche | `AGENTS.md` „Die Recherche-Regel", vollständig `SPEC.md` §15 |
+| Die zwei Rechercheestufen, Erreichbarkeit, Unerreichbarkeitsgründe | `AGENTS.md` „Die Recherche hat zwei Stufen, und beide sind zu führen" |
+| Ernte am geöffneten Werk, die vier geschuldeten Arten, Erntenotiz | `AGENTS.md` ebenda, vollständig `SPEC.md` §15 |
+| Ernteläufe koordinieren, Lease, Branchname, Bezeichnerbildung | `AGENTS.md` „Ernteläufe koordinieren" |
+| Was „gegroundet" heißt | `AGENTS.md` „Was „gegroundet" heißt und was nicht" |
+| Quellenführung, Auffindbarkeit, Rezension, Vermittlungsmodus | `SPEC.md` §10, kurz `AGENTS.md` „Quellen" |
+| Evidenz ist nicht Quelle, Gegensuchpflicht | `SPEC.md` §3 Parameter 5 |
+| Behauptungsklassen, welche wofür, Bezeugungsmodi, die zwei Skalen | `SPEC.md` §3 Parameter 5 |
+| Die Kette Behauptung, Überschneidung, Verallgemeinerung, Prüfung | `SPEC.md` §16, kurz `AGENTS.md` „Die Kette, auf die alles hinausläuft" |
+| Die Bewusstseinsachsen und die Skalenfamilien | `SPEC.md` §17 |
+| Negative Befunde, Befund auf die Suche relativiert | `SPEC.md` §13 „Befunde sind auf die Suche relativiert, nicht auf den Bestand" |
+| Issues, Lebenslauf, Schließgründe, Issue-Nummer als Identität | `SPEC.md` §13, kurz `AGENTS.md` „Behauptungen liegen in Issues" |
+| Label-Vokabular | `CONTRIBUTING.md` „Label-Vokabular" |
+| Die vier Eingänge, mit denen der Korpus wächst | `SPEC.md` §14 |
+| Designprinzipien, Prozess statt Substanz, Sphoṭa, Pronomenspektrum | `SPEC.md` §3 |
+| Was der Agent nicht tun soll, verbotene Klassen, Turtle-Kommentar | `SPEC.md` §11 |
+| Fixture-Pflicht je Shape, Ordnerregel für neue Datenordner | `SPEC.md` §9 |
+| Batch statt nacheinander, ein Branch je Strang, Frage mit Empfehlung | `AGENTS.md` „Der stehende Auftrag" |
+| Prüfung vor dem PR, Abgleich Klon gegen Branch | `AGENTS.md` „Prüfung, Läufe und der Abgleich vor dem PR" |
+| Die Sitzung trägt sich selbst, die sechs Abschlussbedingungen | `AGENTS.md` „Die Sitzung trägt sich selbst" |
+| Ausgelöste Validierung melden, nicht umformulieren | `SPEC.md` §11, `AGENTS.md` „Vor dem ersten Schreibzugriff" |
+
+Was hier steht, steht nirgends sonst: Kommandos, die Konventionen von `site/`, die Kopiervorlagen, die Werkzeug-Fehlalarme.
 
 ## Recherche — vor allem anderen
 
