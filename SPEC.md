@@ -199,6 +199,8 @@ Die Ontologie ist bewusstseinszentriert, und das ist erst eingelöst, wenn die Z
 | `pm:StateAcquisition` | ob die Quelle den Zustand als erarbeitet oder als gegeben darstellt | `byEffort`, `notByEffort` |
 | `pm:StateDuration` | ob er vergeht oder bleibt | `transientState`, `abidingState` |
 
+Die vierte und die fünfte Achse standen zunächst als eine, `pm:StatePersistence`, mit zugefallen an einem und erworben am anderen Ende. Das erste Ausrollen von Verortungen hat sie zerlegt: das inuitische zweite Gesicht wird als stehende Eigenschaft einer Person berichtet und ausdrücklich nicht als Ergebnis einer Übung, ist also weder erworben noch vergehend, und die beiden Enden einer Achse trugen zwei Fragen zwischen sich. Derselbe Fehler wie die flache Zustandsliste, eine Ebene tiefer, und ebenso behoben. Siehe prima-materia#439.
+
 `pm:withdrawnAbsorption` ist der Wert, den die vierteilige Liste nicht hatte und an dem die meisten Vermögen des Bestands hängen. Turīya ist kein weiterer Wert auf einer dieser Achsen, sondern die Behauptung, dass den drei anderen Zuständen ein einziges Bewusstsein zugrunde liegt; das ist eine Lehre, sie ist zwischen Traditionen strittig, und sie gehört als Knoten mit Stelle in die upaniṣadische Datei.
 
 **Die Achse gehört keiner Tradition.** Dass die Māṇḍūkya die Zustände zuerst geordnet hat, macht sie nicht zu ihrem Eigentum: die Zustände sind jedem Menschen zugänglich, und ein Koordinatensystem, das eine Quellenangabe trüge, wäre kein Koordinatensystem, sondern die Lehre einer Tradition in der Rolle des Maßstabs für alle anderen. Die Achsenwerte tragen deshalb kein `dcterms:source`; die Termini, mit denen eine Überlieferung ihre Zustände benennt, sind deren Behauptung und stehen mit Stelle und Ausgabe in deren Datei.
