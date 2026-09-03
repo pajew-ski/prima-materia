@@ -97,10 +97,11 @@ niemandem auffällt.
 | Label | Bedeutung |
 |---|---|
 | `behauptung` | Behauptung, keine Repo-Arbeit. Jedes Behauptungs-Issue trägt es |
-| `strittig` | zwei **Quellen** widersprechen einander; Ziel ist ein `pm:Disputing`-Knoten. Nicht, wenn eine Quelle einem Methodenentwurf widerspricht — ein Entwurf ist keine Seite |
+| `strittig` | zwei **Quellen** widersprechen einander; Ziel ist ein `pm:Disputing`-Knoten. Nicht, wenn eine Quelle einem Methodenentwurf widerspricht — ein Entwurf ist keine Seite, und dieser Fall ist eine Behauptung ohne Zeugen, deren Gegenteil bezeugt ist |
 | `unbelegt` | Schließgrund: plausible Korpora erschöpft, keine Stelle gefunden |
 | `nicht-graphfaehig` | Schließgrund: gegen keine Überlieferung entscheidbar |
 | `entwurf:strom` | Herkunft: Methodenentwurf „Der Strom" |
+| `entwurf:<name>` | Herkunft der Behauptung, wo sie aus einem Methodenentwurf stammt. Ein Wert je Entwurf |
 | `befund` | Repo-Arbeit, keine Behauptung. Das Komplement zu `behauptung`, und das Dachlabel der vier folgenden |
 | `befund:werkzeug` | Zugangswege, Werkzeuggrenzen, Umwege. Erledigt, wenn der Weg dokumentiert oder das Werkzeug geändert ist; im Bestand ändert sich nichts |
 | `befund:ontologie` | Vokabular, Shapes, fehlende Prädikate. Erledigt, wenn die Ontologie geändert ist |
