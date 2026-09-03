@@ -608,6 +608,132 @@ pm:NamingShape a sh:NodeShape ;
     ] .
 
 #
+# Scales — declaration and closure
+#
+# rdfs:range states an intention and constrains nothing. Until these shapes
+# existed, pm:attestedBy pm:textualAttestaton validated cleanly, and so did an
+# invented value that no scale declares: the node passed every minCount, the
+# graph compiled, and the mistake showed up only as a value that never
+# appeared in a query. Ten properties were exposed to that.
+#
+
+pm:ScaleDeclarationShape a sh:NodeShape ;
+    sh:targetClass pm:Scale ;
+    sh:property [
+        sh:path pm:scaleFamily ;
+        sh:minCount 1 ;
+        sh:message "Every scale must declare which family it belongs to. A value about the state of the record, a value about the firmness of a source and a value about the subject matter are read differently, and a scale that does not say which it is invites all three readings."
+    ] .
+
+pm:AttestationValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:attestedBy ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:in ( pm:textualAttestation pm:firstPersonReport pm:protocolledPractice pm:thirdPartyAscription pm:compilerInference pm:mediatedAttestation ) ;
+        sh:message "pm:attestedBy takes a declared mode of attestation from pm:Attesting and nothing else."
+    ] .
+
+pm:ExaminationStateValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:examinationState ;
+    sh:property [
+        sh:path pm:examinationState ;
+        sh:in ( pm:noProcedureDevised pm:procedureWithoutCases pm:casesWithoutDeviation pm:casesWithDeviation pm:claimDoesNotDiscriminate ) ;
+        sh:message "pm:examinationState takes a declared examination state from pm:ExaminationState and nothing else."
+    ] .
+
+pm:CounterSearchValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:counterSearch ;
+    sh:property [
+        sh:path pm:counterSearch ;
+        sh:in ( pm:counterSearchNotCarried pm:counterSearchFoundNothing pm:counterSearchFoundOpposition ) ;
+        sh:message "pm:counterSearch takes a declared counter-search state from pm:CounterSearchState and nothing else."
+    ] .
+
+pm:CoverageStateValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:coverageState ;
+    sh:property [
+        sh:path pm:coverageState ;
+        sh:in ( pm:corpusNamed pm:workOpened pm:placesEntered pm:corpusHarvested ) ;
+        sh:message "pm:coverageState takes a declared coverage state from pm:CoverageState and nothing else."
+    ] .
+
+pm:ContactRouteValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:contactRoute ;
+    sh:property [
+        sh:path pm:contactRoute ;
+        sh:in ( pm:contactRouteUndecided pm:contactRouteDocumented pm:contactRouteDisputed pm:contactRouteAbsent ) ;
+        sh:message "pm:contactRoute takes a declared contact route from pm:ContactRoute and nothing else."
+    ] .
+
+pm:PrerequisiteStrengthValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:prerequisiteStrength ;
+    sh:property [
+        sh:path pm:prerequisiteStrength ;
+        sh:in ( pm:statedNecessity pm:prescribedOrder pm:presentationOrder ) ;
+        sh:message "pm:prerequisiteStrength takes a declared prerequisite strength from pm:PrerequisiteStrength and nothing else."
+    ] .
+
+pm:MethodOrientationValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:methodOrientation ;
+    sh:property [
+        sh:path pm:methodOrientation ;
+        sh:in ( pm:conformingMethod pm:transgressiveMethod pm:normDistinctionDeclined ) ;
+        sh:message "pm:methodOrientation takes a declared method orientation from pm:MethodOrientation and nothing else."
+    ] .
+
+pm:TelicOrientationValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:telicOrientation ;
+    sh:property [
+        sh:path pm:telicOrientation ;
+        sh:in ( pm:unitiveTelos pm:separativeTelos pm:individuatingTelos pm:conjugalTelos pm:selfBoundaryDeclined ) ;
+        sh:message "pm:telicOrientation takes a declared telic orientation from pm:TelicOrientation and nothing else."
+    ] .
+
+pm:AwarenessSpaceValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:hasAwarenessSpace ;
+    sh:property [
+        sh:path pm:hasAwarenessSpace ;
+        sh:in ( pm:individualAwareness pm:dyadicAwareness pm:collectiveAwareness pm:universalAwareness ) ;
+        sh:message "pm:hasAwarenessSpace takes a declared awareness space from pm:AwarenessSpace and nothing else."
+    ] .
+
+#
+# Placement on an awareness axis
+#
+# The ground is required for the same reason the counter-search note is: a
+# placement nobody can check is a placement nobody can contradict, and the
+# axes exist so that a compiler's reading stays visible as one.
+#
+
+pm:SituatingShape a sh:NodeShape ;
+    sh:targetClass pm:Situating ;
+    sh:property [
+        sh:path pm:situatedNode ;
+        sh:minCount 1 ;
+        sh:message "Every placement must name the node it places."
+    ] ;
+    sh:property [
+        sh:path pm:axisValue ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in ( pm:outwardWaking pm:withdrawnAbsorption pm:sleepThreshold pm:dreamingWithin pm:objectlessDepth pm:anchoringDeclined pm:anchoringNotStated
+                 pm:embodiedLocus pm:displacedLocus pm:locusDeclined pm:locusNotStated
+                 pm:ownAgency pm:cededAgency pm:agencyDeclined pm:agencyNotStated
+                 pm:occasionedState pm:establishedStation pm:persistenceDeclined pm:persistenceNotStated ) ;
+        sh:message "Every placement carries exactly one declared axis value. Two axes are two placements."
+    ] ;
+    sh:property [
+        sh:path pm:situationGround ;
+        sh:minCount 1 ;
+        sh:message "Every placement must state what in the source carries it."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every placement must declare how it entered the record. Normally pm:compilerInference: the source describes a condition, the coordinate is the compiler's."
+    ] .
+
+#
 # Static-substance classes are forbidden. The shape targets the four
 # blacklisted URIs directly; if any of them is ever asserted as owl:Class,
 # validation fails.
