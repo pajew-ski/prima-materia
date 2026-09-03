@@ -34,10 +34,13 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 ├── SPEC.md                      # Dieses Dokument
 ├── CLAUDE.md                    # Agent-Instruktionen (Kurzform von SPEC.md)
 ├── ontology/
-│   ├── core.ttl                 # Meta-Ontologie (pm:Process, pm:AwarenessContext, etc.)
-│   ├── consciousness.ttl        # Bewusstseinszustände (Jāgrat/Svapna/Suṣupti/Turīya)
+│   ├── core.ttl                 # Meta-Ontologie (pm:Process, pm:MeaningCluster, etc.)
+│   ├── consciousness.ttl        # die vier Bewusstseinsachsen (siehe Abschnitt 3, Parameter 2)
 │   ├── provenance.ttl           # Behauptungs- und Prüfklassen (siehe Abschnitt 3.5)
-│   └── alignments.ttl           # Mappings zu SKOS, DCTerms, schema.org
+│   ├── coverage.ttl             # Abdeckungs- und Kontaktweg-Skalen
+│   ├── orientation.ttl          # Methoden- und Telos-Achse
+│   ├── naming.ttl               # Namensklasse und ihre Prädikate
+│   └── scales.ttl               # die Karte aller Skalen (siehe Abschnitt 17)
 ├── traditions/                  # eine Datei je Tradition
 │   └── *.ttl                    # enochic, patanjala-yoga, theravada, daoist, ...
 ├── convergences/                # Übereinstimmungen über Traditionen hinweg
