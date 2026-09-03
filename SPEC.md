@@ -257,6 +257,7 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 | `pm:Testing` | ein Prüfprotokoll | `pm:examinationState`, `pm:examinedBy`, `pm:protocolUpdated` |
 | `pm:Generalizing` | „Praktiken dieser Art bringen diese Wirkung hervor" | `pm:generalizedStatement`, **mindestens zwei** `pm:generalizedFrom`, `pm:attestedBy pm:compilerInference`; **kein** `dcterms:source`, **keine** `pm:withinTradition` |
 | `pm:Naming` | „Diese Überlieferung nennt ein Wesen so und hält es für dies" | `pm:nameForm`, `pm:nameRole`, `pm:attestedBy`, `pm:withinTradition`, `dcterms:source` |
+| `pm:Situating` | „Dieser Knoten liegt auf dieser Bewusstseinsachse an dieser Stelle" | `pm:situatedNode`, genau ein `pm:axisValue`, `pm:situationGround`, `pm:attestedBy`; **kein** `dcterms:source` erforderlich |
 
 **Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`. Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
 
