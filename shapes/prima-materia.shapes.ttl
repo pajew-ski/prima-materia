@@ -677,7 +677,7 @@ pm:MethodOrientationValueShape a sh:NodeShape ;
     sh:targetSubjectsOf pm:methodOrientation ;
     sh:property [
         sh:path pm:methodOrientation ;
-        sh:in ( pm:conformingMethod pm:transgressiveMethod pm:normDistinctionDeclined ) ;
+        sh:in ( pm:conformingMethod pm:transgressiveMethod pm:normDistinctionDeclined pm:methodNotStated ) ;
         sh:message "pm:methodOrientation takes a declared method orientation from pm:MethodOrientation and nothing else."
     ] .
 
@@ -685,7 +685,7 @@ pm:TelicOrientationValueShape a sh:NodeShape ;
     sh:targetSubjectsOf pm:telicOrientation ;
     sh:property [
         sh:path pm:telicOrientation ;
-        sh:in ( pm:unitiveTelos pm:separativeTelos pm:individuatingTelos pm:conjugalTelos pm:selfBoundaryDeclined ) ;
+        sh:in ( pm:unitiveTelos pm:separativeTelos pm:individuatingTelos pm:conjugalTelos pm:selfBoundaryDeclined pm:telosNotStated ) ;
         sh:message "pm:telicOrientation takes a declared telic orientation from pm:TelicOrientation and nothing else."
     ] .
 

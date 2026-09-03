@@ -18,7 +18,7 @@ pm:MethodOrientation a owl:Class ;
     rdfs:label "Method Orientation"@en, "Ausrichtung der Methode"@de ;
     skos:definition "How a path stands to the norm of the order it is transmitted in: whether its operative means keep that norm, deliberately break it, or decline the distinction. An instance of this class is a value on that axis and never a path."@en ;
     skos:note "Held apart from pm:TelicOrientation deliberately, and that separation is the whole reason both classes exist. The two vary independently: a path can take the forbidden as its vehicle and still aim at dissolution into what exceeds the self. A scheme with one axis cannot state that case, and the terms that carry one axis — right-hand path, left-hand path — therefore report a transgressive means as though it were a separative goal. See prima-materia#52."@en ;
-    skos:note "Absence of pm:methodOrientation on a node means the axis was not determined for it. It does not mean the middle value, and it does not mean pm:normDistinctionDeclined, which is a positive claim about a source and carries the same burden as any other."@en .
+    skos:note "Three cases, and they must not read alike. Absence of pm:methodOrientation on a node means nobody has put the question to the source. pm:methodNotStated means somebody has, and the source does not answer it. pm:normDistinctionDeclined means the source answers by rejecting the distinction, which is a positive claim and carries the same burden as any other. None of the three is the middle value; there is no middle value."@en .
 
 pm:conformingMethod a pm:MethodOrientation ;
     rdfs:label "Conforming method"@en, "Ordnungstreue Methode"@de ;
@@ -33,6 +33,11 @@ pm:normDistinctionDeclined a pm:MethodOrientation ;
     rdfs:label "Norm distinction declined"@en, "Abgelehnte Normunterscheidung"@de ;
     skos:definition "The source holds that the distinction does not apply to its path: nothing is kept and nothing is broken, because it denies that anything needs to be renounced, purified or transformed."@en ;
     skos:note "The value exists because a path that declines the axis is not the same as one whose position on it is unknown, and a scale without it would force the first to be recorded as the second. It is asserted only where a source says so."@en .
+
+pm:methodNotStated a pm:MethodOrientation ;
+    rdfs:label "Method orientation not stated"@en, "Ausrichtung der Methode nicht angegeben"@de ;
+    skos:definition "The source was read for this question and does not answer it: it prescribes its means without placing them for or against the norm of the order it stands in."@en ;
+    skos:note "The counterpart of pm:normDistinctionDeclined from the other side, and required on every subject axis by SPEC §17. Without it a source that was asked and stayed silent is indistinguishable from a node nobody has reached, and any query of the form 'only conforming methods' reports the state of our reading instead of the state of the traditions. Silence is common here and is worth recording: a great many operative texts simply do not raise the question."@en .
 
 pm:TelicOrientation a owl:Class ;
     rdfs:subClassOf pm:Process ;
@@ -55,6 +60,11 @@ pm:selfBoundaryDeclined a pm:TelicOrientation ;
     skos:definition "The source holds that the question is malformed for its path: there is no bounded self that could either be dissolved or preserved, so neither end state is what it aims at."@en ;
     skos:note "As with pm:normDistinctionDeclined, this is a positive claim about a source and not a place to put an undetermined case."@en ;
     skos:note "The value was first written as the single place for everything that is neither dissolution nor separation, and the material has since shown that too coarse: a marriage is not a non-position, and a non-position is not a claim about which level the question belongs to. The two clearest of those have their own values below. What remains here is the plain form — the source denies that there is a bounded self to be dealt with either way — and the case where a source instead declares the whole level of the question superseded, which is a further distinction still to be made when a second instance of it appears."@en .
+
+pm:telosNotStated a pm:TelicOrientation ;
+    rdfs:label "Telic orientation not stated"@en, "Ziel nicht angegeben"@de ;
+    skos:definition "The source was read for this question and does not answer it: it sets out a practice and its results without saying what becomes of the bounded self at the end."@en ;
+    skos:note "Required on every subject axis by SPEC §17, and the case it covers is the ordinary one. A handbook of technique may name a dozen capacities and never state an end state at all; recording that as absence would put it in the same bucket as every text nobody has opened yet."@en .
 
 pm:conjugalTelos a pm:TelicOrientation ;
     rdfs:label "Conjugal telos"@en, "Bräutliches Ziel"@de ;

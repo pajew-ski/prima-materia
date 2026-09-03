@@ -1004,6 +1004,35 @@ def test_complete_situating_conforms() -> None:
     assert conforms, report
 
 
+def test_orientation_axes_accept_the_not_stated_value() -> None:
+    # Positive fixture for the value added on the two older subject axes. The
+    # case it records is the ordinary one: a handbook of technique that names
+    # capacities and never places itself for or against the norm, or never
+    # says what becomes of the self. Before the value existed, that source and
+    # a source nobody had opened were entered identically.
+    accepted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
+
+    pmt:Somewhere pm:methodOrientation pm:methodNotStated ;
+        pm:telicOrientation pm:telosNotStated .
+    """
+    conforms, report = _validate(accepted)
+    assert conforms, report
+
+
+def test_orientation_axis_still_rejects_an_undeclared_value() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
+
+    pmt:Somewhere pm:methodOrientation pm:methodUnknown .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "An orientation value no scale declares must fail SHACL."
+    assert "declared method orientation" in report
+
+
 def test_complete_naming_conforms() -> None:
     # The shape a watcher node takes: the form as the cited edition spells
     # it, the term that edition's tradition uses, and the passage.
