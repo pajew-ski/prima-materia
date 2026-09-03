@@ -160,11 +160,13 @@ def test_structural_edges_are_derived() -> None:
 
 
 def test_property_signature_keeps_targets_outside_the_graph() -> None:
-    # rdf:Statement is vocabulary, not a node the graph draws; the panel still
-    # has to be able to state the domain of pm:assertedIn.
-    node = _by_id(_data())["pm:assertedIn"]
-    assert node["domain"] == ["rdf:Statement"]
-    assert node["range"] == ["pm:AwarenessContext"]
+    # xsd:date is vocabulary, not a node the graph draws; the panel still has
+    # to be able to state the range of pm:protocolUpdated. The witness used to
+    # be pm:assertedIn with rdf:Statement as its domain, which went with the
+    # class it pointed at.
+    node = _by_id(_data())["pm:protocolUpdated"]
+    assert node["domain"] == ["pm:Testing"]
+    assert node["range"] == ["http://www.w3.org/2001/XMLSchema#date"]
 
 
 def test_edges_only_connect_nodes_that_exist() -> None:
