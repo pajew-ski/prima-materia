@@ -33,4 +33,36 @@ pmt:Hekhalot a pm:Tradition ;
     pm:contactRoute pm:contactRouteDocumented ;
     dcterms:source "Hekhalot Rabbati, chapters 26, 30 and 31, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr, against the Hebrew of the Wertheimer recension" .
 
+#
+# The descent and the gate at which fitness is decided
+#
+
+pmp:YeridatMerkavah a pm:Practicing ;
+    rdfs:label "The descent to the Merkavah"@en, "Der Abstieg zur Merkava"@de ;
+    skos:definition "The passage through the palaces, called a descent although the traveller goes up. The transmission does not explain the word anywhere in the passages read."@en ;
+    skos:altLabel "yored merkavah"@en, "yordei merkavah"@en ;
+    skos:note "The term is kept in the tradition's own form and not translated as ascent, because a rendering that corrected the direction would remove the only trace of whatever the word once meant. That it is nowhere explained is itself worth recording: a technical term that its own literature never glosses has usually come from somewhere else."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "Hekhalot Rabbati, chapter 26, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
+
+pmc:HekhalotFitness a pm:Conceptualizing ;
+    rdfs:label "Fitness to descend to the Merkavah"@en, "Die Eignung zum Abstieg zur Merkava"@de ;
+    skos:definition "The property the transmission holds to be decidable and to be decided at a particular place. The hashmal is said to divide, among those who descend, between those who were fit to descend and those who were not."@en ;
+    skos:altLabel "hashmal"@en ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "Hekhalot Rabbati, chapter 26, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
+
+pmc:SixthPalaceWaterTest a pm:Testing ;
+    rdfs:label "The water that is not there, at the gate of the sixth palace"@en, "Das Wasser, das keines ist, am Tor des sechsten Palastes"@de ;
+    skos:definition "A protocol the transmission states for itself, complete in every part. The doorkeepers of the sixth palace place upon the descender a thousand thousands of waves of water, and there is not in that place even a single drop. The test is what he does next: the fault is not a wrong answer but the question. If he says what is the nature of this water, they run after him and stone him, saying that he is of the seed of them that kissed the calf and is unfit to see the King and his throne in his beauty; a voice goes out from the seventh heaven confirming the sentence; and he does not move from the spot before they place on him a thousand thousands of pieces of iron."@en ;
+    skos:note "Silence is the pass and the question is the failure, which inverts the shape every other examination in this graph has. It also makes the test unusually cheap to administer and impossible to prepare for by learning an answer, since there is none."@en ;
+    skos:note "What the protocol cannot survive is the same thing that undid the Maya examination in traditions/maya.ttl: the text that transmits the test also transmits the correct behaviour. From the moment this chapter is written down, the trial separates those who have read it from those who have not."@en ;
+    pm:tests pmc:HekhalotFitness ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "A recorded case in which a descender held to be fit asked about the water, or in which one held unfit kept silent and passed. The transmission claims the gate decides fitness, so a single clean case on either side falls due against it." ;
+    pm:examinedBy "prima-materia, protocol stated from the witness; no case series has been collected" ;
+    pm:protocolUpdated "2026-09-04"^^xsd:date ;
+    dcterms:source "Hekhalot Rabbati, chapter 26, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
+
 # --- ENDE ---
