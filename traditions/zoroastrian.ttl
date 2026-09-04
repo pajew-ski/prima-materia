@@ -126,4 +126,23 @@ pmp:Barasnum a pm:Practicing ;
     pm:withinTradition pmt:Zoroastrian ;
     dcterms:source "Vendidad, fargard 9.7-14, 9.31-38, trans. James Darmesteter, Sacred Books of the East 4, 2nd ed. (Oxford: Clarendon, 1895)" .
 
-# --- ENDE ---
+pmc:BarasnumCaution a pm:Cautioning ;
+    rdfs:label "Against undertaking the purification without knowing the rites"@en, "Gegen die Reinigung durch einen Unkundigen"@de ;
+    skos:definition "The transmission's warning against the man who takes on the purification without the knowledge for it. The penalty stated for him is death: they shall cut the head off his neck and give over his corpse to the vultures. The reason given is not that the rite is wasted but that it works the wrong way: through such cleansing the sickness and the death that were in the world become stronger than they were before."@en ;
+    skos:note "This is the strongest thing of its kind the graph holds. Most transmissions say that a botched procedure fails; this one says that it makes the harm greater than if nothing had been done, and it stakes a man's life on the rule. A claim that a wrong performance actively worsens the world is decidable in a way that a claim of mere failure is not, because the two predict opposite directions of the same measurable thing."@en ;
+    pm:cautionsAbout pmp:Barasnum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "Vendidad, fargard 9.47-49, trans. James Darmesteter, Sacred Books of the East 4, 2nd ed. (Oxford: Clarendon, 1895)" .
+
+pmc:BarasnumExamination a pm:Testing ;
+    rdfs:label "The purification that makes it worse"@en, "Die Reinigung, die es schlimmer macht"@de ;
+    skos:definition "A protocol taken from the transmission's own reasoning. The claim is not that an unqualified purification is ineffective but that it increases sickness and death in the world beyond what they were. That is a directional claim about an outcome outside the practitioner, and it separates two states of affairs that a later observer could tell apart."@en ;
+    skos:note "The transmission supplies the falsifying condition without meaning to. It could have said that the wrong rite simply does not cleanse, which nothing would contradict; instead it named an effect in the opposite direction from the one intended, and thereby excluded an outcome. Where a claim of failure predicts nothing, this one predicts an increase."@en ;
+    skos:note "Entered at procedure without cases. No series has been collected, and none is available from within the transmission: the man who would provide the case is executed before the outcome could be recorded, which is itself a feature of the protocol worth stating rather than passing over."@en ;
+    pm:tests pmc:BarasnumCaution ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "A recorded series of purifications carried out by persons known to be unqualified, after which sickness and death in the affected place did not rise above the rate where the rite was performed correctly or not at all. The transmission asserts an increase, so a flat or falling rate falls due against it." ;
+    pm:examinedBy "prima-materia, protocol stated from the witness; no case series has been collected" ;
+    pm:protocolUpdated "2026-09-04"^^xsd:date ;
+    dcterms:source "Vendidad, fargard 9.47-49, trans. James Darmesteter, Sacred Books of the East 4, 2nd ed. (Oxford: Clarendon, 1895)" .
