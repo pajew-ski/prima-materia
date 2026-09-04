@@ -211,35 +211,21 @@ Die vierte und die fünfte Achse standen zunächst als eine, `pm:StatePersistenc
 
 Die vollständige named-graph-Implementierung aus Phase 2 ist **gestrichen** und nicht weiter aufgeschoben. Ein Vorhaben, das seit Phase 1 unberührt lag, während die Klasse, für die es gebraucht wurde, im Bestand tot war, ist keine Planung.
 
-### Parameter 3: Sphoṭa — Bedeutung in Subgraph-Clustern
+### Parameter 3: Sphoṭa und die Bedeutungseinheit
 
-Einzelne Triples tragen keine vollständige Bedeutung. Erst der **Subgraph-Cluster** ist die Bedeutungs-Einheit. Dafür brauchen wir eine Klasse, die Subgraphen als Einheiten markiert:
+**Die Umsetzung ist gestrichen; die Lesart bleibt.** `pm:MeaningCluster` und `pm:hasClusterMember` standen hier von Phase 0 an, und bis zu ihrer Entfernung war kein Knoten des Bestands Mitglied eines Clusters. Der Zweck war die Einbettung als Vektor; solange es keine Einbettung gibt, hielt die Klasse nichts und erklärte eine Absicht.
 
-```turtle
-pm:MeaningCluster a owl:Class ;
-    rdfs:label "Meaning Cluster (Sphoṭa-Unit)"@en ;
-    skos:definition "A bounded subgraph that carries emergent meaning irreducible to its individual triples. Designed for vector embedding as a unit."@en .
+Der Satz, dass ein einzelnes Tripel keine vollständige Bedeutung trägt, ist damit nicht zurückgenommen. Zurückgenommen ist die Behauptung, dieser Graph löse ihn ein. Wird ein erster Cluster tatsächlich gebildet, kommen Klasse und Prädikat mit ihm zurück und nicht vorher; die Kandidaten, die dieses Dokument selbst nennt, sind das Aeonensystem und die Vertiefungsreihe. Siehe prima-materia#436.
 
-pm:hasClusterMember a owl:ObjectProperty ;
-    rdfs:domain pm:MeaningCluster .
-```
+Was von dem Prinzip im Bestand tatsächlich arbeitet, steht in Parameter 5: eine Behauptung wird als Knoten gehalten und nicht als Kante, weil erst der Knoten mit seinen Angaben die Einheit ist, an der sich etwas bestreiten lässt.
 
-Beispiel-Anwendung: Das gesamte Aeon-System des Pleroma ist *ein* `pm:MeaningCluster` — embedded als Vektor in Qdrant, nicht als Summe seiner Aeonen-Triples.
+### Parameter 4: Die Reichweite eines Bewusstseinsakts
 
-### Parameter 4: Inklusiv-/Exklusiv-Pronominalstruktur
+**Gestrichen.** `pm:AwarenessSpace` mit seinen vier Werten und `pm:hasAwarenessSpace` stammten aus derselben Gründungsphase und teilten deren Schicksal: kein Knoten hat je darauf gezeigt.
 
-Statt isolierter `Self`/`Other`-Knoten verwenden wir ein Spektrum:
+Die Unterscheidung selbst ist gut. Eine allein ausgeführte Praxis, eine, die zwei Personen verbindet, und eine kollektive Zeremonie sind verschieden, und der Bestand führt alle drei Arten. Falsch war die Granularität, und zwar mit demselben Fehler, an dem `pm:AwarenessContext` gescheitert ist: `pm:hasAwarenessSpace` war eine Kante, auf der die Lesart des Bearbeiters und der Wortlaut der Quelle gleich aussehen, und die Zuordnung war damit weder zu begründen noch zu bestreiten. Dazu fehlten der Achse der ablehnende und der nicht-angegeben-Wert, die Abschnitt 17 für jede Sachachse verlangt (prima-materia#433).
 
-```turtle
-pm:AwarenessSpace a owl:Class .
-
-pm:individualAwareness a pm:AwarenessSpace .
-pm:dyadicAwareness     a pm:AwarenessSpace .   # ich + du, exklusiv
-pm:collectiveAwareness a pm:AwarenessSpace .   # gruppenbasiert
-pm:universalAwareness  a pm:AwarenessSpace .   # alle Bewusstsein
-```
-
-Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte spezifizieren ihre Awareness-Space-Reichweite).
+Wird die Reichweite gebraucht, kommt sie als Achse unter `pm:Situating` zurück, mit Verortungsgrund und beiden geschuldeten Werten, wie die fünf Achsen, die arbeiten. Einer unbenutzten Kante zwei Werte hinzuzufügen wäre Vokabular für einen Bestand gewesen, den es nicht gibt.
 
 ### Parameter 5: Behauptungen sind Knoten, keine Kanten
 
