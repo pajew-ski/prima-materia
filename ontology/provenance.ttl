@@ -459,6 +459,53 @@ pm:positedIn a owl:DatatypeProperty ;
     skos:definition "Where the claim was put forward, given as an identifier rather than as a bibliographic reference: an issue number, a draft designation. Deliberately not dcterms:source, because what is named here is not a work a reader can obtain and must never be counted as one."@en .
 
 #
+# The claim of a speaker other than the writer
+#
+# A body of material in which a person reports speech he does not ascribe to
+# himself puts a claim into the record that none of the existing modes
+# carries. pm:firstPersonReport attests what somebody reports of himself;
+# pm:thirdPartyAscription ascribes a capacity to another. Here both hold at
+# once and neither alone: the report is first-hand, the claimed speaker is
+# somebody else, and that somebody cannot be questioned.
+#
+# The consequence of leaving it unmodelled is not a gap but a silent verdict.
+# The ascription migrates into dcterms:source, and a reference of the form
+# "Ra, session 41" settles the contested question by the shape of a citation,
+# unnoticed, because it looks like every other reference to a work. The
+# source must name what a reader can obtain: editor, title, session. Who
+# spoke in that session is a claim about the work and gets a node.
+#
+# The claim is therefore held here and not as a mode of attestation. The
+# sentences in the work are attested textually, because they stand there; what
+# is asserted beyond that is the authorship, and it is asserted by the work
+# about itself. The node attests the receiving and never the content of what
+# was received — the same boundary pm:compilerInference is held to, and for
+# the same reason. See prima-materia#95.
+#
+
+pm:Receiving a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Receiving"@en, "Empfangen"@de ;
+    skos:definition "The claim, made in or about a work, that its wording was received from a speaker other than the person who wrote or spoke it down."@en ;
+    skos:note "Distinct from pm:Originating, which names the author with whom a claim begins and the ascription it circulates under. A receiving makes no finding about who really composed the material; it records that the work claims a speaker, so that the claim is addressable, countable and disputable instead of riding invisibly in a citation."@en ;
+    skos:note "Whether an agreement between two such corpora can ever be more than reception is a separate question and a hard one. The route is documented across the whole block: the vocabulary runs on from Theosophy. A convergence there needs the demonstration that a receiver did not know the earlier literature, and that demonstration is expensive and rare."@en .
+
+pm:receivedBy a owl:DatatypeProperty ;
+    rdfs:label "received by"@en, "empfangen durch"@de ;
+    rdfs:domain pm:Receiving ;
+    skos:definition "The person through whom the wording was received, named as the work names them."@en .
+
+pm:claimedSpeaker a owl:DatatypeProperty ;
+    rdfs:label "claimed speaker"@en, "behaupteter Sprecher"@de ;
+    rdfs:domain pm:Receiving ;
+    skos:definition "The speaker the work claims for the wording, given as the work gives it. A literal and not a link to a named being: what is recorded is the claim, and typing it as a bearer would grant the claim the thing it is asserting."@en .
+
+pm:receptionCircumstance a owl:DatatypeProperty ;
+    rdfs:label "reception circumstance"@en, "Umstand des Empfangs"@de ;
+    skos:definition "The circumstances of the receiving: the state the receiver is said to have been in, who put the questions, who took the wording down, and whether a record of the proceeding itself exists beyond the edited text."@en ;
+    skos:note "Required on every receiving, enforced by pm:ReceivingShape. Without it the node says only that a speaker is claimed, which a reader could have guessed from the title; with it the claim can be weighed against the ones this literature makes about itself."@en .
+
+#
 # The derived claim
 #
 # The layer between what the traditions say and what a protocol can address.
