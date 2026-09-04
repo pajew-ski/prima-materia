@@ -741,6 +741,118 @@ def test_examined_posit_conforms() -> None:
     assert conforms, f"A posited claim with an examination pointing at it must conform.\n{report}"
 
 
+def test_url_principal_corpus_is_rejected() -> None:
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
+
+    pmt:Linked a pm:Tradition ;
+        pm:principalCorpus "https://example.org/some-corpus" ;
+        pm:coverageState pm:corpusNamed .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:principalCorpus holding a URL must fail SHACL."
+    assert "never a URL" in report
+
+
+def test_registration_with_a_source_is_rejected() -> None:
+    # At corpus named nothing has been read, so there is no passage and no
+    # edition to name. A registration carrying a source would be
+    # indistinguishable from a worked tradition, and the denominator the state
+    # exists to provide would be unreadable again.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmt:PrematurelySourced a pm:Tradition ;
+        pm:principalCorpus "Some corpus, named as literature" ;
+        pm:coverageState pm:corpusNamed ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A registration carrying dcterms:source must fail SHACL."
+    assert "claims no dcterms:source" in report
+
+
+def test_registration_without_a_source_conforms() -> None:
+    permitted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmt: <https://pajew.ski/prima-materia/traditions/> .
+
+    pmt:HonestRegistration a pm:Tradition ;
+        pm:principalCorpus "Some corpus, named as literature" ;
+        pm:coverageState pm:corpusNamed ;
+        pm:contactRoute pm:contactRouteUndecided .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A registration that names a corpus and no passage must conform.\n{report}"
+
+
+def test_worked_tradition_may_carry_a_source() -> None:
+    # The guard must not spread past the state it belongs to.
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmt:Worked a pm:Tradition ;
+        pm:principalCorpus "Some corpus, named as literature" ;
+        pm:coverageState pm:placesEntered ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A tradition with passages read must be allowed its sources.\n{report}"
+
+
+def test_registered_tradition_as_independent_attestation_is_rejected() -> None:
+    # The most expensive mistake available in this holding, because it does
+    # not look like one: pm:independentAttestation is the predicate that turns
+    # an agreement into a countable witness, and a registration witnesses
+    # nothing. The rule stood in ontology/coverage.ttl as a definition and was
+    # enforced by nobody.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmt:MerelyRegistered a pm:Tradition ;
+        pm:principalCorpus "Some corpus, named as literature" ;
+        pm:coverageState pm:corpusNamed .
+
+    pmc:PrematureConvergence a pm:Converging ;
+        pm:independentAttestation pmt:MerelyRegistered ;
+        pm:independenceGround "Some ground (fixture)" ;
+        pm:attestedBy pm:compilerInference ;
+        dcterms:source "Test source (fixture)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A convergence resting on a registered tradition must fail SHACL."
+    assert "witnesses nothing" in report
+
+
+def test_worked_tradition_as_independent_attestation_conforms() -> None:
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmt:Entered a pm:Tradition ;
+        pm:principalCorpus "Some corpus, named as literature" ;
+        pm:coverageState pm:placesEntered .
+
+    pmc:AdmissibleConvergence a pm:Converging ;
+        pm:independentAttestation pmt:Entered ;
+        pm:independenceGround "Some ground (fixture)" ;
+        pm:attestedBy pm:compilerInference ;
+        dcterms:source "Test source (fixture)" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A convergence on a worked tradition must conform.\n{report}"
+
+
 def test_convergence_claiming_independence_without_ground_is_rejected() -> None:
     offending = """
     @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
