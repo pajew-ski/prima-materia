@@ -191,6 +191,12 @@ pm:readVia a owl:DatatypeProperty ;
     skos:note "Deliberately separate from dcterms:source, for the same reason pm:evidenceFrom is. dcterms:source names what a reader must obtain to check the claim; this names what the writer of the node had in front of him. A record that fused them would report second-hand reading as first-hand and would lose the one distinction that makes an unreachable source admissible at all."@en ;
     skos:note "Required wherever pm:attestedBy is pm:mediatedAttestation. Carries a bibliographic reference and never a URL, enforced by pm:ReadViaIsLiteratureShape."@en .
 
+pm:fieldRecord a owl:DatatypeProperty ;
+    rdfs:label "field record"@en, "Aufnahmelage"@de ;
+    skos:definition "How the cited passage was taken down: who spoke, or that the speaker is expressly withheld; who recorded; when and where; in which language; and whether the wording in the language of the telling is carried in the work or only a translation."@en ;
+    skos:note "Required wherever pm:attestedBy is pm:fieldAttestation, enforced by pm:FieldAttestationShape. Prose and not a scale, for the reason pm:independenceGround is prose: there is no threshold at which a gathering becomes sound, and a scale would counterfeit a check. What the sentence is worth is decided by whoever reads it."@en ;
+    skos:note "It names the gathering of this passage, not the standing of the corpus. The situation of a whole ethnographic tradition — span of the fieldwork against the year of publication, how many informants, whether the same people were revisited, whether material was delivered between visits, whether the recorder stood in a milieu already expecting what he found — belongs as a skos:note on the pm:Tradition instance. See prima-materia#260. The two are needed together: one says how far this sentence stands from its speaker, the other how far the corpus stands from the transmission."@en .
+
 pm:ascribedCapacity a owl:ObjectProperty ;
     rdfs:label "ascribed capacity"@en, "zugeschriebenes Vermögen"@de ;
     rdfs:domain pm:Attributing ;
