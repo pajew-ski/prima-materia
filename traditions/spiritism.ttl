@@ -61,4 +61,33 @@ pmp:CritiqueRigoureuse a pm:Practicing ;
     pm:withinTradition pmt:Spiritism ;
     dcterms:source "Allan Kardec, Le Livre des Médiums, seconde partie, chapitre XXIV, sections 266-267" .
 
+#
+# The control the founder puts in place
+#
+
+pmc:ControleUniversel a pm:Conceptualizing ;
+    rdfs:label "The universal control of the teaching of the spirits"@en, "Die allgemeine Kontrolle der Geisterlehre"@de ;
+    skos:definition "The rule of verification the transmission sets for itself: concordance in the teaching of the spirits is the best control. It is stated with its conditions and with its limits. The revelations must come spontaneously, through a large number of mediums unknown to one another, and from different places. A single medium questioning many spirits is expressly not a sufficient guarantee, because one obsessing spirit could present the same content under different names; and mediums of a single centre are not sufficient either, because they may stand under a common influence. The criterion is restricted to what attaches to the principles of the doctrine and does not extend to communications on secondary matters."@en ;
+    skos:altLabel "contrôle universel de l'enseignement des Esprits"@fr ;
+    skos:note "Both exclusions are the founder's own and both are exactly the ones an outside critic would raise. That is worth marking, because it makes the rule better than the practice that followed it: the same author describes elsewhere how the scattered material was gathered and weighed at a single centre, and that centre was himself."@en ;
+    pm:withinTradition pmt:Spiritism ;
+    dcterms:source "Allan Kardec, L'Évangile selon le spiritisme, introduction, section II, sub-heading Contrôle universel de l'enseignement des Esprits" .
+
+pmc:PrincipeDeLaDoctrine a pm:Conceptualizing ;
+    rdfs:label "A principle's standing as part of the doctrine"@en, "Die Zugehörigkeit eines Grundsatzes zur Lehre"@de ;
+    skos:definition "What the control decides. The transmission holds that the teaching had to be collective and not individual, that the spirits divided the work by scattering the subjects of study across many places, and that a centre formed of itself to compare what came in and to distinguish an individual opinion from the general teaching."@en ;
+    pm:withinTradition pmt:Spiritism ;
+    dcterms:source "Allan Kardec, La Genèse, les miracles et les prédictions selon le spiritisme, chapitre I, articles 51-54" .
+
+pmc:SpiritismPrinciplePresupposesControl a pm:Presupposing ;
+    rdfs:label "A principle enters the doctrine only after the control of generality"@en, "Ein Grundsatz gehört zur Lehre erst nach der allgemeinen Kontrolle"@de ;
+    pm:dependentStep pmc:PrincipeDeLaDoctrine ;
+    pm:priorStep pmc:ControleUniversel ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The consequence is stated as a disqualification and is quotable: any principle that has not received the consecration of the control of generality cannot be considered an integral part of the doctrine. The same article adds the other half, that if new discoveries showed spiritism to be in error on a point, it would modify itself on that point." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Spiritism ;
+    skos:note "This is the passage on which the registration's judgement rested, and it holds: a transmission that writes down the condition under which it would change is doing something almost nothing else in this collection does. What the next section of this file records is what the same author did with that opening elsewhere."@en ;
+    dcterms:source "Allan Kardec, La Genèse, les miracles et les prédictions selon le spiritisme, chapitre I, article 55" .
+
 # --- ENDE ---
