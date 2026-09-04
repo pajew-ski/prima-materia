@@ -230,6 +230,18 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Ṛgveda, Atharvaveda, Taittirīya-Saṃhitā, Śatapatha-Brāhmaṇa und die
   Śikṣā-Texte — von `korpus:upanisadisch` getrennt geführt, weil dort die
   Upaniṣaden stehen und die Ritualtexte eigene Fragen tragen)
+- `korpus:spiritismus` (Kardec, Le Livre des Esprits, Le Livre des Médiums,
+  L'Évangile selon le spiritisme, La Genèse; die Revue Spirite 1858–1869 — die
+  Prüfberichte des 19. Jh. von Faraday bis zur Seybert-Kommission gehören nicht
+  dazu und gehen als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:zoroastrisch` (Avesta in den Übersetzungen von Darmesteter und Mills;
+  Hādōxt Nask; Ardā Wīrāz Nāmag; die Pahlavi-Bücher Bundahišn, Dēnkard, Mēnōg ī
+  Xrad, Dādestān ī Dēnīg, Šāyest nē Šāyest — die Iranistik geht als
+  `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:hekhalot` (Hekhalot Rabbati und Zutarti, das Sar-ha-Torah-Material,
+  Maʿaseh Merkava, Šiʿur Qomah, 3 Henoch, Ḥarba de-Moshe, Sefer ha-Razim — von
+  `korpus:kabbalistisch` getrennt geführt, weil dort die sefirotische Literatur
+  steht und diese hier älter und operativ ist)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
