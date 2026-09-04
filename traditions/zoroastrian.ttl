@@ -1,0 +1,148 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia - the Zoroastrian transmission
+#
+# Order of the file: the tradition, then the sending of a soul under mang and
+# what the transmission demands around it, then what the traveller is said to
+# meet, then the two purifications and the caution that hangs on one of them.
+# The instance was registered in traditions/registry-west-asia.ttl and is
+# moved here now that passages have been read.
+#
+# The file is opened for the reason SPEC section 14 gives priority to: this
+# transmission states procedures with numbers, deadlines and, in one case, a
+# consequence of doing it wrong that is stated for the world and not only for
+# the practitioner.
+#
+
+pmt:Zoroastrian a pm:Tradition ;
+    rdfs:label "Zoroastrian transmission"@en, "Zoroastrische Überlieferung"@de ;
+    skos:definition "The Iranian transmission of a dualist cosmology, of a soul journey undertaken under a named preparation and reported on return, of an accounting at a bridge whose width answers to the traveller, and of purifications stated in numbers of holes, washings and nights."@en ;
+    skos:note "Registered at corpus named until this file was written, and moved here on the first passages actually read. What was read at the wording: Arda Wiraz Namag, chapters 1 to 5, in the Haug and West translation; Hadhoxt Nask, fragments 2 and 3, in Darmesteter's translation; Vendidad, fargards 8 and 9, in Darmesteter's translation. Not opened: Yasht 19 on the glory, Menog i Xrad, Dadestan i Denig, the Denkard, and the Kirdir inscriptions. The reasons stand in the issues named in the harvest note of prima-materia#489."@en ;
+    skos:note "The contact route stays at disputed and is not moved, but the reason is now sharper than at registration. The earliest dated Iranian witness of an otherworld journey is not literary but epigraphic, in the inscriptions of the mage Kirdir under Wahram the Second, that is 274 to 293; the Book of the Watchers is third or second century before the era. Every Pahlavi book read here reached its surviving shape in the ninth century or later. Whoever wants to read the Iranian material as the source of the Jewish and Christian ascent literature must argue from the Avestan passages and not from these books. See prima-materia#490."@en ;
+    skos:note "Two editions stand behind the wording used here and they are of different weight. Haug and West of 1872 rests on a single, partly Pazand-contaminated witness; Gignoux 1984 and Vahman 1986 are the critical editions and were not reachable in full. Where a number in this file matters, it was read in the Haug and West text and the note on the node says so."@en ;
+    pm:principalCorpus "Avesta (Gathas, Yasna, Vendidad, Yashts); Hadhoxt Nask; Arda Wiraz Namag; Bundahisn; Denkard; Menog i Xrad; Dadestan i Denig" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "The Book of Arda Viraf, ed. and trans. Martin Haug, E. W. West and Hoshang Jamaspji Asa (Bombay and London: Trübner, 1872), chapters 1-5" .
+
+#
+# The sending of a soul, and what the transmission demands around it
+#
+
+pmp:MangIWistaspan a pm:Practicing ;
+    rdfs:label "The drinking of wine and the mang of Wishtasp"@en, "Der Trunk aus Wein und dem Mang des Wischtasp"@de ;
+    skos:definition "A procedure for sending a soul out of a living body and getting a report back. The transmission states it as a sequence with numbers. From the whole assembly seven men without doubt are set apart, from the seven three, from the three one; the lot is cast three times, under the names good thought, good word and good deed, and all three fall to the same man. He prays for the departed, eats, makes his testament, washes head and body, puts on new clothes, perfumes himself, has a clean carpet spread on a prepared couch, consecrates the dron and remembers the souls, and eats again. Then three golden cups of wine and the mang of Wishtasp are given him, one spoken over with each of the three names."@en ;
+    skos:altLabel "mang i Wishtaspan"@en, "mang"@en, "bang"@en ;
+    skos:note "The order in which the preparation is given differs slightly between the verses as numbered and the sequence a reader reconstructs; the testament stands close to the prayer, and the second meal after the consecration. What is fixed and not reconstructed is the count: seven, three, one, three lots, three cups."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "The Book of Arda Viraf, ed. and trans. Martin Haug, E. W. West and Hoshang Jamaspji Asa (Bombay and London: Trübner, 1872), 1.28-43 and 2.18-31" .
+
+pmp:WirazWatch a pm:Practicing ;
+    rdfs:label "The seven days' watch over the body"@en, "Die siebentägige Wache über dem Körper"@de ;
+    skos:definition "What is done while the traveller is gone. The dasturs give the seven sisters an undertaking in a number: they will deliver him back safe and sound in seven days. The body remains on the carpet; the dasturs, the priests and the seven sisters keep watch around it for seven days and nights, with fire and fumigation, reciting the Avesta and the Zand, going through the Nasks and chanting the Gathas, and they keep watch in the dark."@en ;
+    skos:note "This is the part of the procedure that an outside observer could check, and it is stated in a form that could fail: a named man, a named place, a stated number of days, and a promise made to named women that he will be given back alive."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "The Book of Arda Viraf, ed. and trans. Martin Haug, E. W. West and Hoshang Jamaspji Asa (Bombay and London: Trübner, 1872), 2.18 and 2.31-33" .
+
+pmc:WirazReturn a pm:Conceptualizing ;
+    rdfs:label "The return of the traveller on the seventh day"@en, "Die Rückkehr des Reisenden am siebten Tag"@de ;
+    skos:definition "The outcome the undertaking names. On the seventh day the traveller rises, and the transmission compares it to rising from a pleasant sleep. He asks first for food and drink, and after that for a writer who is wise and learned."@en ;
+    skos:note "The order of the two requests is worth keeping: the body first, the record second. The writing down is fixed at the moment of return and not at the end of the vision, which makes the report a part of the procedure rather than a later literary act."@en ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "The Book of Arda Viraf, ed. and trans. Martin Haug, E. W. West and Hoshang Jamaspji Asa (Bombay and London: Trübner, 1872), 3.2-3 and 3.15-26" .
+
+pmc:ZoroastrianReturnPresupposesWatch a pm:Presupposing ;
+    rdfs:label "The return presupposes the unbroken watch over the body"@en, "Die Rückkehr setzt die ununterbrochene Wache über dem Körper voraus"@de ;
+    pm:dependentStep pmc:WirazReturn ;
+    pm:priorStep pmp:WirazWatch ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Zoroastrian ;
+    skos:note "Entered at prescribed order and not at stated necessity, and the difference is the finding rather than a formality. The transmission prescribes the watch in full detail and never says what would follow if it lapsed. There is no sentence anywhere in the chapters read about what happens if the traveller does not return, none about a condition under which the journey fails, and none about a body left unwatched. The risk is conceded in practice, by the testament made before drinking and by the undertaking given to the sisters, and it is not conceded in doctrine. A procedure this exact about what to do, and this silent about what goes wrong, is the shape a claim takes when nobody has been in a position to report a failure."@en ;
+    dcterms:source "The Book of Arda Viraf, ed. and trans. Martin Haug, E. W. West and Hoshang Jamaspji Asa (Bombay and London: Trübner, 1872), 2.18-33 and 3.2" .
+
+pmc:MangIWistaspanLocus a pm:Situating ;
+    rdfs:label "The journey places the awareness away from the body"@en, "Die Reise verortet das Bewusstsein außerhalb des Körpers"@de ;
+    pm:situatedNode pmp:MangIWistaspan ;
+    pm:axisValue pm:displacedLocus ;
+    pm:situationGround "The body stays on the carpet and is watched for seven days by named persons, while what travels sees, is addressed and is guided elsewhere, and returns to that body on the seventh day. The transmission does not treat the two as one place at any point of the account." ;
+    pm:attestedBy pm:compilerInference .
+
+#
+# What the traveller is said to meet
+#
+
+pmc:Daena a pm:Conceptualizing ;
+    rdfs:label "Daena"@en, "Daēnā"@de ;
+    skos:definition "What meets the soul at the end of the third night after death, in the shape of a woman. The oldest witness read here fixes three things a later reader can hold the transmission to: the moment, the end of the third night, after a wind that comes sweet-scented from the south; the appearance, of the size of a maid in her fifteenth year, fair, bright, white-armed, strong, tall-formed, high-standing, thick-breasted, beautiful of body, noble, of a glorious seed; and the answer she gives when asked who she is, that she is the soul's own conscience."@en ;
+    skos:altLabel "daena"@en, "den"@en ;
+    skos:note "The account of the journey under mang describes the same encounter and gives the figure no age at all. The fifteenth year stands in the older Avestan fragment and not in the Pahlavi book, and the two are kept apart here rather than merged, because a reader who takes the age from one and the setting from the other is reading a text no witness gives."@en ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "Hadhoxt Nask, fragment 2.7-11, trans. James Darmesteter, Sacred Books of the East 23 (Oxford: Clarendon, 1883)" .
+
+pmc:DaenaCounterpart a pm:Conceptualizing ;
+    rdfs:label "The counterpart met by the soul of the wicked"@en, "Das Gegenstück, das die Seele des Bösen trifft"@de ;
+    skos:definition "The same structure with every term reversed: at the end of the third night a foul-scented wind from the north, and four steps that lead to the hell of evil thought, of evil word, of evil deed, and to endless darkness, against the four that lead to the paradise of good thought, good word, good deed, and endless lights."@en ;
+    skos:note "Entered because the symmetry is the point. A transmission that gives both outcomes in the same form, with the same number of steps and the same sequence, is making a claim with two branches rather than a promise; the passages read state the second as fully as the first."@en ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "Hadhoxt Nask, fragments 2.15 and 3.25-33, trans. James Darmesteter, Sacred Books of the East 23 (Oxford: Clarendon, 1883)" .
+
+pmc:CinwadPuhl a pm:Conceptualizing ;
+    rdfs:label "The Chinvat bridge"@en, "Die Činwad-Brücke"@de ;
+    skos:definition "The bridge at which the accounting falls due. In the account of the journey under mang it is called very wide and strong, and its width for the traveller who has passed becomes nine javelin-lengths."@en ;
+    skos:altLabel "Cinvat"@en, "Chinvat"@en, "Cinwad puhl"@en ;
+    skos:note "The measure is stated in a unit and is therefore comparable, which most of what the transmissions in this graph say about such passages is not. What the chapters read do not give is the counter-measure, the width for the one who fails; that stands in another book and was not opened here."@en ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "The Book of Arda Viraf, ed. and trans. Martin Haug, E. W. West and Hoshang Jamaspji Asa (Bombay and London: Trübner, 1872), 4.7 and 5.1" .
+
+#
+# The two purifications, and the caution that hangs on one of them
+#
+
+pmp:Sagdid a pm:Practicing ;
+    rdfs:label "Sagdid, the gaze of the dog"@en, "Sagdīd, der Blick des Hundes"@de ;
+    skos:definition "The driving out of the corpse-demon by having a dog look at the body. The dog is specified: a yellow dog with four eyes, or a white dog with yellow ears. The way is to be traversed three times; if the dog will not go, six times; and if it still will not, nine times. The transmission states what follows: the demon flies away to the regions of the north in the shape of a raging fly, with knees and tail sticking out."@en ;
+    skos:altLabel "sagdid"@en, "sag-did"@en ;
+    skos:note "A rare case of a procedure whose success is defined by an event nobody can observe and whose failure is defined by one that anybody can: the demon's flight is unobservable, but the dog's refusal to walk the way is not, and the refusal is what multiplies the requirement from three to six to nine. The transmission has built its escalation on the one part of the operation that is public."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "Vendidad, fargard 8.16-18, trans. James Darmesteter, Sacred Books of the East 4, 2nd ed. (Oxford: Clarendon, 1895)" .
+
+pmp:Barasnum a pm:Practicing ;
+    rdfs:label "The Barashnum of the nine nights"@en, "Das Barašnūm der neun Nächte"@de ;
+    skos:definition "The great purification, stated throughout in numbers. Six holes are dug for the bull's urine and three more for the water, a pace apart; twelve furrows are drawn around them; the liquid is poured with a spoon of iron or of lead, so that the purifier does not touch. At the first water hole there is one washing, at the second two, at the third three. The whole runs nine nights, in three periods of three, with a washing of body and clothes after each. The fee is graded by station: for a priest a blessing of the just, for a lord of a province a camel of high value, for a master of a house a cow of three years."@en ;
+    skos:altLabel "barasnum"@en, "baresnum"@en, "Barasnum i no shab"@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "Vendidad, fargard 9.7-14, 9.31-38, trans. James Darmesteter, Sacred Books of the East 4, 2nd ed. (Oxford: Clarendon, 1895)" .
+
+pmc:BarasnumCaution a pm:Cautioning ;
+    rdfs:label "Against undertaking the purification without knowing the rites"@en, "Gegen die Reinigung durch einen Unkundigen"@de ;
+    skos:definition "The transmission's warning against the man who takes on the purification without the knowledge for it. The penalty stated for him is death: they shall cut the head off his neck and give over his corpse to the vultures. The reason given is not that the rite is wasted but that it works the wrong way: through such cleansing the sickness and the death that were in the world become stronger than they were before."@en ;
+    skos:note "This is the strongest thing of its kind the graph holds. Most transmissions say that a botched procedure fails; this one says that it makes the harm greater than if nothing had been done, and it stakes a man's life on the rule. A claim that a wrong performance actively worsens the world is decidable in a way that a claim of mere failure is not, because the two predict opposite directions of the same measurable thing."@en ;
+    pm:cautionsAbout pmp:Barasnum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Zoroastrian ;
+    dcterms:source "Vendidad, fargard 9.47-49, trans. James Darmesteter, Sacred Books of the East 4, 2nd ed. (Oxford: Clarendon, 1895)" .
+
+pmc:BarasnumExamination a pm:Testing ;
+    rdfs:label "The purification that makes it worse"@en, "Die Reinigung, die es schlimmer macht"@de ;
+    skos:definition "A protocol taken from the transmission's own reasoning. The claim is not that an unqualified purification is ineffective but that it increases sickness and death in the world beyond what they were. That is a directional claim about an outcome outside the practitioner, and it separates two states of affairs that a later observer could tell apart."@en ;
+    skos:note "The transmission supplies the falsifying condition without meaning to. It could have said that the wrong rite simply does not cleanse, which nothing would contradict; instead it named an effect in the opposite direction from the one intended, and thereby excluded an outcome. Where a claim of failure predicts nothing, this one predicts an increase."@en ;
+    skos:note "Entered at procedure without cases. No series has been collected, and none is available from within the transmission: the man who would provide the case is executed before the outcome could be recorded, which is itself a feature of the protocol worth stating rather than passing over."@en ;
+    pm:tests pmc:BarasnumCaution ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "A recorded series of purifications carried out by persons known to be unqualified, after which sickness and death in the affected place did not rise above the rate where the rite was performed correctly or not at all. The transmission asserts an increase, so a flat or falling rate falls due against it." ;
+    pm:examinedBy "prima-materia, protocol stated from the witness; no case series has been collected" ;
+    pm:protocolUpdated "2026-09-04"^^xsd:date ;
+    dcterms:source "Vendidad, fargard 9.47-49, trans. James Darmesteter, Sacred Books of the East 4, 2nd ed. (Oxford: Clarendon, 1895)" .
