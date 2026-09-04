@@ -264,7 +264,7 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 
 Zu `pm:Naming` drei Dinge, die im Ablauf entscheiden. **Der Träger ist adressierbar:** wo `pm:ascribedTo` an einem `pm:Attributing` ein benanntes Wesen meint, zeigt es auf eine `pm:Naming`-Instanz. Die Property behält bewusst keine `rdfs:range`, weil sie auch auf die Menschheit vor einem Ereignis oder auf eine unbenannte Gattung zeigen muss. **Die operative Behauptung bleibt getrennt:** dass eine Anrufung unter diesem Namen etwas bewirkt, ist ein `pm:Yielding` mit der Anrufung als Praxis, nicht ein Feld am Namen — sie braucht ihre eigene Misslingensbedingung. **`pm:nameRole` ist ein Literal und keine Skala:** ein festes Vokabular müsste entscheiden, ob ein griechischer Daimon ein Engel oder ein Dämon ist, und diese Entscheidung gehört keiner Tradition im Bestand.
 
-**Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`. Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
+**Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`, `pm:mediatedAttestation` (Abschnitt 10), `pm:fieldAttestation` (Abschnitt 10). Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
 
 **Zwei kontrollierte Skalen tragen die schwachen Fälle.** Sie existieren, damit schwaches Material eingetragen werden kann, nicht damit es draußen bleibt. Ein Befund gehört auf die Stufe, die er verdient.
 
