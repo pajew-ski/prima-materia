@@ -53,7 +53,7 @@ def test_assets_are_present() -> None:
 def test_every_declared_term_becomes_a_node() -> None:
     nodes = _by_id(_data())
     for term in ("pm:Process", "pm:Symbolizing", "pm:SensoryAnchoring", "pm:withinTradition",
-                 "pm:withdrawnAbsorption", "pm:individualAwareness"):
+                 "pm:withdrawnAbsorption", "pm:abidingState"):
         assert term in nodes, f"{term} is missing from the site data"
 
 

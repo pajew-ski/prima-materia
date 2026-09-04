@@ -69,13 +69,18 @@ pm:Relating a owl:Class ;
     skos:definition "The act of placing one concept in relation to another."@en .
 
 #
-# Sphoṭa — bounded subgraph as meaning unit
+# pm:MeaningCluster and pm:hasClusterMember stood here and are struck. From
+# Phase 0 to the day they were removed, no node in the holdings was a member of
+# a cluster. Their purpose was embedding as a vector, and while there is no
+# embedding the class asserted an intention rather than holding anything: a
+# construction that points at nothing for that long is no longer foresight.
 #
-
-pm:MeaningCluster a owl:Class ;
-    rdfs:label "Meaning Cluster"@en, "Bedeutungs-Cluster"@de ;
-    skos:definition "A bounded subgraph that carries emergent meaning irreducible to its individual triples. Designed for vector embedding as a unit."@en ;
-    skos:note "Implements the Sphoṭa principle (Bhartṛhari): meaning resides in the whole utterance, not in isolated phonemes. The subgraph is the phoneme-analog; the cluster is the sphoṭa."@en .
+# The Sphoṭa principle they were meant to carry is not withdrawn as a reading;
+# what is withdrawn is the claim that this graph implements it. Should a first
+# cluster ever actually be formed — the aeon system and the series of
+# absorptions were the candidates SPEC itself named — the class comes back with
+# its member, and not before. See prima-materia#436.
+#
 
 #
 # The awareness axes live in ontology/consciousness.ttl. The single class
@@ -87,28 +92,24 @@ pm:MeaningCluster a owl:Class ;
 #
 
 #
-# AwarenessSpace — inclusive/exclusive pronominal spectrum
+# pm:AwarenessSpace with its four values, and pm:hasAwarenessSpace, stood here
+# and are struck. Like the two constructions above they date from Phase 0 and
+# no node ever pointed at them.
 #
-
-pm:AwarenessSpace a owl:Class ;
-    rdfs:label "Awareness Space"@en, "Bewusstseinsraum"@de ;
-    skos:definition "The pronominal reach of an awareness act, ranging from individual through dyadic and collective to universal."@en .
-
-pm:individualAwareness a pm:AwarenessSpace ;
-    rdfs:label "Individual awareness"@en, "Individuelles Bewusstsein"@de ;
-    skos:definition "First-person singular awareness bounded to a single subject."@en .
-
-pm:dyadicAwareness a pm:AwarenessSpace ;
-    rdfs:label "Dyadic awareness"@en, "Dyadisches Bewusstsein"@de ;
-    skos:definition "First-person exclusive awareness shared between two subjects (I and you)."@en .
-
-pm:collectiveAwareness a pm:AwarenessSpace ;
-    rdfs:label "Collective awareness"@en, "Kollektives Bewusstsein"@de ;
-    skos:definition "First-person inclusive awareness bounded to an identified group."@en .
-
-pm:universalAwareness a pm:AwarenessSpace ;
-    rdfs:label "Universal awareness"@en, "Universelles Bewusstsein"@de ;
-    skos:definition "Awareness whose reach is unbounded across all possible subjects."@en .
+# The distinction they drew is real: a practice performed alone, one binding
+# two people, and a collective ceremony differ, and the holdings carry all
+# three kinds. What was wrong was the granularity, and it is the same defect
+# that killed pm:AwarenessContext. pm:hasAwarenessSpace is an edge, so a
+# compiler's reading and a source's own words would look alike on it, and the
+# assignment could be neither grounded nor disputed. The axis also had neither
+# a declining value nor a not-stated value (prima-materia#433), so an
+# unassigned node and a source read and silent were indistinguishable.
+#
+# Should the reach of a practice be wanted, it comes back as an axis under
+# pm:Situating, with a ground, a declining value and a not-stated value, like
+# the five that work. Adding those values to an edge nobody uses would have
+# been vocabulary for holdings that do not exist. See prima-materia#436.
+#
 
 #
 # Core properties
@@ -130,12 +131,5 @@ pm:hasSymbolicForm a owl:ObjectProperty ;
     rdfs:range pm:Symbolizing ;
     skos:definition "Associates a concept with one or more symbolic representations (sigils, diagrams, glyphs)."@en .
 
-pm:hasClusterMember a owl:ObjectProperty ;
-    rdfs:label "has cluster member"@en ;
-    rdfs:domain pm:MeaningCluster ;
-    skos:definition "Associates a MeaningCluster with the individual nodes that constitute it as a bounded subgraph."@en .
-
-pm:hasAwarenessSpace a owl:ObjectProperty ;
-    rdfs:label "has awareness space"@en ;
-    rdfs:range pm:AwarenessSpace ;
-    skos:definition "Associates a process instance with the pronominal reach of its awareness."@en .
+# pm:hasClusterMember and pm:hasAwarenessSpace stood here and are struck with
+# the classes they served. See the two notes above.

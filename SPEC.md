@@ -213,33 +213,19 @@ Die vollständige named-graph-Implementierung aus Phase 2 ist **gestrichen** und
 
 ### Parameter 3: Sphoṭa — Bedeutung in Subgraph-Clustern
 
-Einzelne Triples tragen keine vollständige Bedeutung. Erst der **Subgraph-Cluster** ist die Bedeutungs-Einheit. Dafür brauchen wir eine Klasse, die Subgraphen als Einheiten markiert:
+**Die Umsetzung ist gestrichen; die Lesart bleibt.** `pm:MeaningCluster` und `pm:hasClusterMember` standen hier von Phase 0 an, und bis zu ihrer Entfernung war kein Knoten des Bestands Mitglied eines Clusters. Der Zweck war die Einbettung als Vektor; solange es keine Einbettung gibt, hielt die Klasse nichts und erklärte eine Absicht.
 
-```turtle
-pm:MeaningCluster a owl:Class ;
-    rdfs:label "Meaning Cluster (Sphoṭa-Unit)"@en ;
-    skos:definition "A bounded subgraph that carries emergent meaning irreducible to its individual triples. Designed for vector embedding as a unit."@en .
+Der Satz, dass ein einzelnes Tripel keine vollständige Bedeutung trägt, ist damit nicht zurückgenommen. Zurückgenommen ist die Behauptung, dieser Graph löse ihn ein. Wird ein erster Cluster tatsächlich gebildet, kommen Klasse und Prädikat mit ihm zurück und nicht vorher; die Kandidaten, die dieses Dokument selbst nennt, sind das Aeonensystem und die Vertiefungsreihe. Siehe prima-materia#436.
 
-pm:hasClusterMember a owl:ObjectProperty ;
-    rdfs:domain pm:MeaningCluster .
-```
-
-Beispiel-Anwendung: Das gesamte Aeon-System des Pleroma ist *ein* `pm:MeaningCluster` — embedded als Vektor in Qdrant, nicht als Summe seiner Aeonen-Triples.
+Was von dem Prinzip im Bestand tatsächlich arbeitet, steht in Parameter 5: eine Behauptung wird als Knoten gehalten und nicht als Kante, weil erst der Knoten mit seinen Angaben die Einheit ist, an der sich etwas bestreiten lässt.
 
 ### Parameter 4: Inklusiv-/Exklusiv-Pronominalstruktur
 
-Statt isolierter `Self`/`Other`-Knoten verwenden wir ein Spektrum:
+**Gestrichen.** `pm:AwarenessSpace` mit seinen vier Werten und `pm:hasAwarenessSpace` stammten aus derselben Gründungsphase und teilten deren Schicksal: kein Knoten hat je darauf gezeigt.
 
-```turtle
-pm:AwarenessSpace a owl:Class .
+Die Unterscheidung selbst ist gut. Eine allein ausgeführte Praxis, eine, die zwei Personen verbindet, und eine kollektive Zeremonie sind verschieden, und der Bestand führt alle drei Arten. Falsch war die Granularität, und zwar mit demselben Fehler, an dem `pm:AwarenessContext` gescheitert ist: `pm:hasAwarenessSpace` war eine Kante, auf der die Lesart des Bearbeiters und der Wortlaut der Quelle gleich aussehen, und die Zuordnung war damit weder zu begründen noch zu bestreiten. Dazu fehlten der Achse der ablehnende und der nicht-angegeben-Wert, die Abschnitt 17 für jede Sachachse verlangt (prima-materia#433).
 
-pm:individualAwareness a pm:AwarenessSpace .
-pm:dyadicAwareness     a pm:AwarenessSpace .   # ich + du, exklusiv
-pm:collectiveAwareness a pm:AwarenessSpace .   # gruppenbasiert
-pm:universalAwareness  a pm:AwarenessSpace .   # alle Bewusstsein
-```
-
-Diese Klasse wird in Phase 2 für Praxis-Modellierung relevant (rituelle Akte spezifizieren ihre Awareness-Space-Reichweite).
+Wird die Reichweite gebraucht, kommt sie als Achse unter `pm:Situating` zurück, mit Verortungsgrund und beiden geschuldeten Werten, wie die fünf Achsen, die arbeiten. Einer unbenutzten Kante zwei Werte hinzuzufügen wäre Vokabular für einen Bestand gewesen, den es nicht gibt.
 
 ### Parameter 5: Behauptungen sind Knoten, keine Kanten
 
@@ -842,7 +828,9 @@ Der Bestand führte neun kontrollierte Wertemengen, verteilt über fünf Dateien
 |---|---|---|
 | `pm:recordScale` | wie weit unsere Arbeit getragen hat | `pm:Attesting`, `pm:ExaminationState`, `pm:CounterSearchState`, `pm:CoverageState`, `pm:ContactRoute` |
 | `pm:sourceModalityScale` | wie fest die Quelle setzt, was sie sagt | `pm:PrerequisiteStrength` |
-| `pm:subjectAxis` | wo die Sache auf einer Koordinate liegt | `pm:MethodOrientation`, `pm:TelicOrientation`, `pm:AwarenessSpace`, `pm:SensoryAnchoring`, `pm:AwarenessLocus`, `pm:AgencyHolding`, `pm:StatePersistence` |
+| `pm:subjectAxis` | wo die Sache auf einer Koordinate liegt | `pm:MethodOrientation`, `pm:TelicOrientation`, `pm:SensoryAnchoring`, `pm:AwarenessLocus`, `pm:AgencyHolding`, `pm:StateAcquisition`, `pm:StateDuration` |
+
+Die Tabelle führte bis zum 2026-09-04 zwei Einträge, die der Bestand nicht mehr oder nie hatte: `pm:AwarenessSpace`, gestrichen nach prima-materia#436, und `pm:StatePersistence`, das der Text darüber längst in `pm:StateAcquisition` und `pm:StateDuration` zerlegt hatte (prima-materia#439). Der zweite Fall ist der Beleg, den prima-materia#446 für den Drift dieser Spezifikation anführt: eine Tabelle, die niemand gegen den Bestand prüft, läuft ihm hinterher und wird dabei gelesen, als sagte sie, was gilt.
 
 **Für die Sachachsen gelten drei Regeln, die für die anderen beiden Familien nicht gelten.**
 
@@ -852,7 +840,7 @@ Ein dritter Wert ist nicht geschuldet, sondern wird geschrieben, wenn ein Fall i
 
 Jede Sachachse braucht einen ablehnenden Wert für die Tradition, die die Unterscheidung selbst zurückweist. Ohne ihn wird eine Lehre als Lücke verbucht. `pm:normDistinctionDeclined` und `pm:selfBoundaryDeclined` waren der Präzedenzfall; die vier Bewusstseinsachsen führen ihn fort.
 
-Und jede braucht einen nicht-angegeben-Wert für die Quelle, die auf die Frage hin gelesen wurde und schweigt. Ohne ihn ist ein Knoten, den niemand verortet hat, von einer befragten und stummen Quelle nicht zu unterscheiden, und jede Abfrage der Form „nur auf diesem Wert" meldet die eigene Verschlagwortung. Drei Fälle, die nicht gleich aussehen dürfen: keine Angabe heißt, niemand hat gefragt; der nicht-angegeben-Wert heißt, es wurde gefragt und die Quelle schweigt; der ablehnende Wert heißt, die Quelle antwortet mit der Zurückweisung der Unterscheidung. Ein Mittelwert ist keiner der drei, und es gibt keinen. `pm:AwarenessSpace` führt bislang weder den einen noch den anderen Wert; die Achse ist im Bestand ohnehin unbenutzt, und ob sie bleibt, entscheidet prima-materia#436.
+Und jede braucht einen nicht-angegeben-Wert für die Quelle, die auf die Frage hin gelesen wurde und schweigt. Ohne ihn ist ein Knoten, den niemand verortet hat, von einer befragten und stummen Quelle nicht zu unterscheiden, und jede Abfrage der Form „nur auf diesem Wert" meldet die eigene Verschlagwortung. Drei Fälle, die nicht gleich aussehen dürfen: keine Angabe heißt, niemand hat gefragt; der nicht-angegeben-Wert heißt, es wurde gefragt und die Quelle schweigt; der ablehnende Wert heißt, die Quelle antwortet mit der Zurückweisung der Unterscheidung. Ein Mittelwert ist keiner der drei, und es gibt keinen. Die Ausnahme, die hier stand, ist entfallen: `pm:AwarenessSpace` führte keinen der beiden Werte und ist mit prima-materia#436 gestrichen. Seither gilt die Regel ohne Ausnahme, und `pm:MethodOrientation` und `pm:TelicOrientation` tragen ihren nicht-angegeben-Wert bereits (prima-materia#433).
 
 **Wer eine Skala hinzufügt**, deklariert sie in `ontology/scales.ttl` mit ihrer Familie, schließt ihre Werte mit einem `sh:in`-Wächter am zugehörigen Prädikat und legt den Negativfixture dazu. Alle drei Schritte fehlen sonst still: die Skala erscheint in keiner Übersicht, das Prädikat nimmt jeden Wert an, und der Wächter ist nicht als funktionierend bekannt.
 
