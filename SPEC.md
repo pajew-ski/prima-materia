@@ -261,10 +261,11 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 | `pm:Generalizing` | „Praktiken dieser Art bringen diese Wirkung hervor" | `pm:generalizedStatement`, **mindestens zwei** `pm:generalizedFrom`, `pm:attestedBy pm:compilerInference`; **kein** `dcterms:source`, **keine** `pm:withinTradition` |
 | `pm:Naming` | „Diese Überlieferung nennt ein Wesen so und hält es für dies" | `pm:nameForm`, `pm:nameRole`, `pm:attestedBy`, `pm:withinTradition`, `dcterms:source` |
 | `pm:Situating` | „Dieser Knoten liegt auf dieser Bewusstseinsachse an dieser Stelle" | `pm:situatedNode`, genau ein `pm:axisValue`, `pm:situationGround`, `pm:attestedBy`; **kein** `dcterms:source` erforderlich |
+| `pm:Receiving` | „Dieses Werk behauptet, sein Wortlaut stamme von einem anderen Sprecher" | `pm:receivedBy`, `pm:claimedSpeaker` (Literal), `pm:receptionCircumstance`, `pm:attestedBy` |
 
 Zu `pm:Naming` drei Dinge, die im Ablauf entscheiden. **Der Träger ist adressierbar:** wo `pm:ascribedTo` an einem `pm:Attributing` ein benanntes Wesen meint, zeigt es auf eine `pm:Naming`-Instanz. Die Property behält bewusst keine `rdfs:range`, weil sie auch auf die Menschheit vor einem Ereignis oder auf eine unbenannte Gattung zeigen muss. **Die operative Behauptung bleibt getrennt:** dass eine Anrufung unter diesem Namen etwas bewirkt, ist ein `pm:Yielding` mit der Anrufung als Praxis, nicht ein Feld am Namen — sie braucht ihre eigene Misslingensbedingung. **`pm:nameRole` ist ein Literal und keine Skala:** ein festes Vokabular müsste entscheiden, ob ein griechischer Daimon ein Engel oder ein Dämon ist, und diese Entscheidung gehört keiner Tradition im Bestand.
 
-**Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`. Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
+**Bezeugungsmodi** (`pm:Attesting`): `pm:textualAttestation`, `pm:firstPersonReport`, `pm:protocolledPractice`, `pm:thirdPartyAscription`, `pm:compilerInference`, `pm:mediatedAttestation` (Abschnitt 10), `pm:fieldAttestation` (Abschnitt 10). Der letzte bezeugt einen Ordnungsakt, nie die geordnete Behauptung; `pm:CompilerInferenceScopeShape` erzwingt das.
 
 **Zwei kontrollierte Skalen tragen die schwachen Fälle.** Sie existieren, damit schwaches Material eingetragen werden kann, nicht damit es draußen bleibt. Ein Befund gehört auf die Stufe, die er verdient.
 
@@ -498,6 +499,30 @@ Das Grounding im Original hat Vorrang und behält ihn. Es gibt aber Werke, die n
 **Der Modus ist an die Unerreichbarkeit gebunden, nicht an den Aufwand.** Er existiert, damit unerreichbares Material in seiner wahren Stärke eingehen kann, nicht damit erreichbares billig eingeht. Ein Werk, das sich herunterladen und durchsuchen lässt, ist erreichbar (SPEC §15); wer es über ein Referat zitiert, verletzt die Regel, auch wenn er den Vermittler nennt. Der Grund für die Vermittlung gehört ins Issue und ist eine Eigenschaft des Werkes.
 
 **Ein vermittelter Knoten bleibt ein offener Posten.** Er ist kein Abschluss, sondern der beste erreichbare Zwischenstand: sobald das Werk zugänglich wird, wird die Stelle nachgeprüft und der Modus auf `pm:textualAttestation` gehoben. Das zugehörige Issue bleibt offen und trägt, welches Exemplar fehlt.
+
+### Wenn es kein Werk gibt
+
+Eine Überlieferung, die nichts aufschreibt, hat kein überliefertes Werk, und die Regel oben schließt sie damit aus. Der Ausschluss hat eine Richtung, und sie ist die schlechteste, die er haben könnte: es sind genau die Überlieferungen ohne belegten Kontaktweg zum vorhandenen Bestand, also die einzigen, die je `pm:independentAttestation` tragen können. Bleibt es dabei, berichtet der Graph dauerhaft, dass nur Schriftkulturen dieses Wissen übertragen haben, und jede Konvergenzaussage des Projekts ist eine Aussage über Eurasien.
+
+**Deshalb der Modus `pm:fieldAttestation`.** Er gilt, wo die Aufzeichnung durch einen Dritten die erste Fixierung überhaupt ist. Das ist nicht der Fall aus dem vorigen Abschnitt: dort existiert das Werk und war nicht zu beschaffen, und `pm:readVia` nennt, wessen Lektüre dazwischensteht. Hier gibt es kein früheres Werk, und der Bericht ist kein Vermittler, sondern der erste Zeuge. Die beiden zusammenzulegen hieße, jede mündliche Überlieferung als Material aus zweiter Hand über einen Text zu führen, den niemand benennen kann.
+
+Der Knoten nennt dazu mit `pm:fieldRecord` die Erhebung der zitierten Stelle: wer gesprochen hat oder dass der Sprecher ausdrücklich zurückgehalten wird, wer aufgezeichnet hat, wann und wo, in welcher Sprache, und ob der Wortlaut der Erzählsprache im Werk mitgeführt ist oder nur eine Übersetzung. `pm:FieldAttestationShape` weist einen Knoten ab, der den Modus setzt und die Erhebung verschweigt. Prosa und keine Skala, aus demselben Grund wie bei `pm:independenceGround`: es gibt keine Schwelle, ab der eine Erhebung sauber ist, und eine Skala würde eine Prüfung vortäuschen.
+
+**Die Abgrenzung nach unten ist dieselbe wie in Abschnitt 14 und verläuft nach Funktion.** Eine Ethnographie geht hier ein, soweit sie Zeugnis aufnimmt; wo sie ein Verfahren mit einem Ausgang führt, der auch anders hätte ausfallen können, ist sie Evidenz und geht über `pm:evidenceFrom` an einem `pm:Testing`-Knoten ein. Ein Korpus, der beides liefert, geht zweimal ein, unter verschiedenen Prädikaten.
+
+**Die Lage des Korpus gehört daneben und nicht hierher.** Erhebungszeitraum gegen Publikationsjahr, Zahl und Art der Gewährsleute, Wiederbefragung, Zulieferung zwischen den Besuchen, ein Aufzeichner in einem Milieu, das die aufzuzeichnende Sache bereits erwartete: das steht als `skos:note` an der `pmt:`-Instanz. Beide werden gebraucht, das eine sagt, wie weit dieser Satz von seinem Sprecher steht, das andere, wie weit der Korpus von der Überlieferung.
+
+**Zurückgehaltenes Wissen ist eine eigene Frage und wird hiervon nicht entschieden.** Wo eine Überlieferung Material als Eigentum zurückhält und nicht als Autoritätsschranke, greift das Torkriterium aus Abschnitt 0 nicht unverändert, und eine CC0-Freigabe wäre eine Aneignung. Der Ausgang kann sein, dass eine solche Überlieferung dauerhaft auf `pm:corpusNamed` bleibt; das ist dann ein Befund und kein Versäumnis.
+
+### Wenn das Werk einen anderen Sprecher behauptet
+
+Ein Korpus, in dem ein Mensch Rede berichtet, die er nicht sich selbst zuschreibt, stellt eine Behauptung in den Bestand, die keiner der Modi trägt: der Bericht ist erster Hand, der behauptete Sprecher ist ein anderer, und dieser andere ist nicht befragbar.
+
+Ohne eigene Form wandert die Zuschreibung in `dcterms:source`. Eine Angabe der Form „Ra, Sitzung 41" entscheidet die strittige Frage durch die Form der Referenz, und zwar unbemerkt, weil sie aussieht wie jede andere Werkangabe. Die Quelle muss das Werk nennen, das ein Leser beschaffen kann, also Herausgeber, Titel und Sitzung; wer in dieser Sitzung gesprochen hat, ist eine Behauptung über das Werk und bekommt einen Knoten.
+
+**Dafür steht `pm:Receiving`**, mit `pm:receivedBy`, `pm:claimedSpeaker` und `pm:receptionCircumstance`, dazu `pm:attestedBy` und `dcterms:source`. Die Sätze im Werk bleiben textlich bezeugt, weil sie dort stehen; der Knoten bezeugt den Empfangsvorgang und nie den Inhalt des Empfangenen, dieselbe Schranke wie bei `pm:compilerInference` und aus demselben Grund. `pm:claimedSpeaker` ist ausdrücklich ein Literal: ein Verweis auf ein benanntes Wesen gäbe der Behauptung genau das, was sie behauptet.
+
+Kein neuer Bezeugungsmodus, weil keiner gebraucht wird. Was eine Konvergenz zwischen zwei solchen Korpora angeht, bleibt die Lage streng: der Kontaktweg ist im ganzen Block belegt, das Vokabular läuft von der Theosophie an durch, und eine Konvergenz dort verlangt den Nachweis, dass ein Empfänger die frühere Literatur nicht kannte.
 
 **Bezeichner folgen dem Gegenstand, nicht der Formulierung.** Ein Bezeichner wird gebildet aus der Tradition und dem normalisierten Terminus in der Originalsprache; bei einem benannten Wesen aus der Namensform in der Leitumschrift der benutzten Ausgabe. Ausdrücklich nicht aus der deutschen oder englischen Übersetzung.
 

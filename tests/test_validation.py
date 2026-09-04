@@ -432,6 +432,107 @@ def test_mediated_attestation_with_named_intermediary_conforms() -> None:
     assert conforms, f"A mediated claim naming its intermediary must conform.\n{report}"
 
 
+def test_field_attestation_without_a_record_is_rejected() -> None:
+    # Where no earlier text exists, the gathering is all a later reader has.
+    # A field claim that does not say who spoke, who wrote it down, when,
+    # where and in which language cites a book and hides the distance between
+    # that book and the speaker.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:BareFieldClaim a pm:Attributing ;
+        pm:attestedBy pm:fieldAttestation ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Some Recorder, Some Field Report (1929), some page" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:fieldAttestation without pm:fieldRecord must fail SHACL."
+    assert "pm:fieldRecord" in report
+
+
+def test_field_attestation_with_a_record_conforms() -> None:
+    # The permitted shape, and the reason the mode exists: a transmission that
+    # commits nothing to writing can now enter at its own strength instead of
+    # staying at corpus named for want of a text behind the report.
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:HonestFieldClaim a pm:Attributing ;
+        pm:attestedBy pm:fieldAttestation ;
+        pm:fieldRecord "Told by a named speaker to the recorder at a named place in the winter of 1922, in the speaker's own language; the work carries the original wording beside the translation." ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Some Recorder, Some Field Report (1929), some page" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A field claim stating its gathering must conform.\n{report}"
+
+
+def test_receiving_without_circumstances_is_rejected() -> None:
+    # A node naming only receiver and claimed speaker repeats the title page.
+    # What can be weighed is the proceeding.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:BareReceiving a pm:Receiving ;
+        pm:receivedBy "Some Medium" ;
+        pm:claimedSpeaker "Some Claimed Speaker" ;
+        pm:attestedBy pm:textualAttestation ;
+        dcterms:source "Some Editor, Some Collection (1981), session 41" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A pm:Receiving without pm:receptionCircumstance must fail SHACL."
+    assert "circumstances of the receiving" in report
+
+
+def test_claimed_speaker_as_a_reference_is_rejected() -> None:
+    # The claim must not be able to make itself true by the form of its own
+    # entry. Pointing the claimed speaker at a named being would put into the
+    # graph as a bearer what the node exists to record as a claim.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:SpeakerAsBeing a pm:Receiving ;
+        pm:receivedBy "Some Medium" ;
+        pm:claimedSpeaker pmc:SomeNamedBeing ;
+        pm:receptionCircumstance "Received in a state the work calls trance, questions put by a named questioner, taken down by a third party; tape recordings of the sittings are said to exist." ;
+        pm:attestedBy pm:textualAttestation ;
+        dcterms:source "Some Editor, Some Collection (1981), session 41" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:claimedSpeaker pointing at a resource must fail SHACL."
+    assert "as a literal" in report
+
+
+def test_complete_receiving_conforms() -> None:
+    # The permitted shape. The source names the work a reader can obtain; who
+    # spoke in it is the claim, and it stands here where it can be disputed
+    # instead of riding inside a citation.
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:CompleteReceiving a pm:Receiving ;
+        pm:receivedBy "Some Medium" ;
+        pm:claimedSpeaker "Some Claimed Speaker, as the work gives the name" ;
+        pm:receptionCircumstance "Received in a state the work calls trance, questions put by a named questioner, taken down by a third party; tape recordings of the sittings are said to exist." ;
+        pm:attestedBy pm:textualAttestation ;
+        dcterms:source "Some Editor, Some Collection (1981), session 41" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A complete receiving must conform.\n{report}"
+
+
 def test_url_evidence_is_rejected() -> None:
     offending = """
     @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .

@@ -426,6 +426,67 @@ pm:MediatedAttestationShape a sh:NodeShape ;
     sh:message "A claim attested by pm:mediatedAttestation must name the work it was read in with pm:readVia." .
 
 #
+# A field claim must state the gathering it rests on. Without it the mode
+# would be the cheap way past the source rule: a node could call itself field
+# attestation and leave unsaid who spoke, who wrote it down, when, where and
+# in which language, which is the whole of what a later reader has to go on
+# where no earlier text exists.
+#
+pm:FieldAttestationShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:attestedBy ;
+    sh:or (
+        [ sh:property [ sh:path pm:fieldRecord ; sh:minCount 1 ] ]
+        [ sh:not [ sh:property [ sh:path pm:attestedBy ; sh:hasValue pm:fieldAttestation ] ] ]
+    ) ;
+    sh:message "A claim attested by pm:fieldAttestation must state the gathering with pm:fieldRecord: who spoke or that the speaker is withheld, who recorded, when, where, in which language, and whether the original wording is carried." .
+
+#
+# A receiving states who received, whom the work claims spoke, and under what
+# circumstances. The last is the one that can be weighed; a node carrying only
+# the first two repeats the title page.
+#
+pm:ReceivingShape a sh:NodeShape ;
+    sh:targetClass pm:Receiving ;
+    sh:property [
+        sh:path pm:receivedBy ;
+        sh:minCount 1 ;
+        sh:message "Every receiving must name the person through whom the wording was received."
+    ] ;
+    sh:property [
+        sh:path pm:claimedSpeaker ;
+        sh:minCount 1 ;
+        sh:message "Every receiving must name the speaker the work claims, as the work gives it."
+    ] ;
+    sh:property [
+        sh:path pm:receptionCircumstance ;
+        sh:minCount 1 ;
+        sh:message "Every receiving must state the circumstances of the receiving: the state claimed, who questioned, who took it down, and whether a record of the proceeding survives."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every receiving must declare how it entered the record."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every receiving requires at least one dcterms:source, naming the work a reader can obtain and not the speaker it claims."
+    ] .
+
+#
+# The claimed speaker is a literal on purpose. Pointing it at a named being
+# would let the graph hold as a bearer what the node exists to record as a
+# claim, and the assertion would then be true by the shape of its own entry.
+#
+pm:ClaimedSpeakerIsALiteralShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:claimedSpeaker ;
+    sh:property [
+        sh:path pm:claimedSpeaker ;
+        sh:nodeKind sh:Literal ;
+        sh:message "pm:claimedSpeaker carries the speaker as the work gives it, as a literal. A reference to a named being would grant the claim the very thing it asserts."
+    ] .
+
+#
 # The intermediary is literature too, by the same rule as the source and the
 # evidence: something a reader can obtain, not a place that may move.
 #
@@ -640,7 +701,7 @@ pm:AttestationValueShape a sh:NodeShape ;
     sh:targetSubjectsOf pm:attestedBy ;
     sh:property [
         sh:path pm:attestedBy ;
-        sh:in ( pm:textualAttestation pm:firstPersonReport pm:protocolledPractice pm:thirdPartyAscription pm:compilerInference pm:mediatedAttestation ) ;
+        sh:in ( pm:textualAttestation pm:firstPersonReport pm:protocolledPractice pm:thirdPartyAscription pm:compilerInference pm:mediatedAttestation pm:fieldAttestation ) ;
         sh:message "pm:attestedBy takes a declared mode of attestation from pm:Attesting and nothing else."
     ] .
 
