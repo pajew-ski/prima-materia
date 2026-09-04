@@ -221,6 +221,15 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   of the Bacabs; der Dresden-Codex; Landa, Relación de las cosas de Yucatán,
   als Bericht eines Außenstehenden — die Mesoamerikanistik geht als
   `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:hawaiisch` (das Kumulipo im hawaiischen Text und in den Ausgaben von
+  Liliʻuokalani und Beckwith; Malo, Moʻolelo Hawaiʻi; Emerson, Unwritten
+  Literature of Hawaii; die Fornander Collection; Kamakaus Serien in Ke Au Okoa
+  — die moderne Hawaiʻi-Forschung geht als `pm:evidenceFrom` ein, nie als
+  Quelle)
+- `korpus:vedisch` (Saṃhitās, Brāhmaṇas und die Vedāṅga-Literatur, darunter
+  Ṛgveda, Atharvaveda, Taittirīya-Saṃhitā, Śatapatha-Brāhmaṇa und die
+  Śikṣā-Texte — von `korpus:upanisadisch` getrennt geführt, weil dort die
+  Upaniṣaden stehen und die Ritualtexte eigene Fragen tragen)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
