@@ -216,6 +216,11 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Social Organization of the Northern Tungus; Lopatin, Goldi; Simkevič; die
   Olonkho-Epen und Anisimovs Feldaufzeichnungen — die moderne
   Schamanismusforschung geht als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:maya` (Popol Vuh im Ximénez-Manuskript und seinen Übersetzungen; die
+  Bücher des Chilam Balam, voran Chumayel, Tizimín, Maní und Kaua; das Ritual
+  of the Bacabs; der Dresden-Codex; Landa, Relación de las cosas de Yucatán,
+  als Bericht eines Außenstehenden — die Mesoamerikanistik geht als
+  `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
