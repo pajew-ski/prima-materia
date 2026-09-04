@@ -31,4 +31,33 @@ pmt:HawaiianCosmogony a pm:Tradition ;
     pm:contactRoute pm:contactRouteDocumented ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, pp. 35-36" .
 
+#
+# The chant, the condition its efficacy stands under, and the guard the
+# transmission itself puts against that condition
+#
+
+pmc:HawaiianChantExactness a pm:Conceptualizing ;
+    rdfs:label "The chant rendered without breath, mistake or hesitation"@en, "Der Gesang ohne Atemzug, Fehler und Zögern"@de ;
+    skos:definition "The delivery a master of song is held to owe: no breath taken before the close of a phrase, no mistake, and no hesitation in pronouncing a word. The three are named together and on the same footing, so that pausing counts as failing rather than as taking care. The manner reported beside it is a tone almost on one note with every word enunciated distinctly."@en ;
+    skos:note "Beckwith gives the rule in her own voice and names her authorities for it: Kamakau for the manner of delivery, and Pukui's article of 1949 for the practice. Neither was opened in this run; the article is behind a paywall and the newspaper series was not reachable. The node therefore stands on Beckwith and says so."@en ;
+    pm:withinTradition pmt:HawaiianCosmogony ;
+    dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, pp. 35-36" .
+
+pmc:HawaiianChantWelfare a pm:Conceptualizing ;
+    rdfs:label "The good fortune of the person or family the chant honours"@en, "Das Wohlergehen der besungenen Person oder Familie"@de ;
+    skos:definition "What the correct rendering is held to secure. The transmission places the outcome not with the reciter but with the party the chant is made for, which is the unusual part of this witness."@en ;
+    pm:withinTradition pmt:HawaiianCosmogony ;
+    dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, p. 35" .
+
+pmc:HawaiianWelfarePresupposesExactChanting a pm:Presupposing ;
+    rdfs:label "The good fortune of the honoured family presupposes a chant without fault"@en, "Das Wohlergehen der besungenen Familie setzt den fehlerlosen Gesang voraus"@de ;
+    pm:dependentStep pmc:HawaiianChantWelfare ;
+    pm:priorStep pmc:HawaiianChantExactness ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "A breath taken before the close of a phrase, a mistake, or even hesitation in pronouncing a word was a sign of ill-luck to the person or family thus honoured. The harm is named, it is transferred, and it falls on the party who did not commit the fault." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HawaiianCosmogony ;
+    skos:note "The transfer of the harm is what distinguishes this witness from the others the graph holds on the same rule. Where the Maori address is simply said to lose its efficacy and the Navajo ceremony is broken off, here the reciter is not the one who suffers. That makes the rule harder to test from inside the tradition, because the person who could report the fault and the person who bears the consequence are different people."@en ;
+    dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, p. 35" .
+
 # --- ENDE ---
