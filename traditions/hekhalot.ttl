@@ -115,4 +115,42 @@ pmc:SarTorahExamination a pm:Testing ;
     pm:protocolUpdated "2026-09-04"^^xsd:date ;
     dcterms:source "Hekhalot Rabbati, chapters 30 and 31, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
 
-# --- ENDE ---
+#
+# The operative handbook, with its numbers and its penalty
+#
+
+pmp:HarbaDeMoshe a pm:Practicing ;
+    rdfs:label "The Sword of Moses"@en, "Das Schwert des Mose"@de ;
+    skos:definition "An operative handbook whose opening instructions state the preparation in numbers. The user must free himself three days beforehand from accidental pollution and from everything unclean; eat and drink once every evening; take his bread from a pure man or wash his hands first; drink only water; bathe once on the first day and no more; pray three times daily; and in the first three hours of the morning mention the hundred sacred names and the mighty ones, whose sum is given as three hundred and four. He is not to approach a woman during the preparation."@en ;
+    skos:altLabel "Harba de-Moshe"@en, "Sword of Moses"@en ;
+    skos:note "Three days, once a day, water only, one bath, three prayers, a hundred names summing to three hundred and four. A preparation given entirely in counts is checkable in a way a preparation given in dispositions is not, and this one has no clause about the state of mind of the user at all."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the opening instructions" .
+
+pmc:HarbaDeMosheSecrecy a pm:Conceptualizing ;
+    rdfs:label "The secrecy the Sword requires"@en, "Die Verschwiegenheit, die das Schwert verlangt"@de ;
+    skos:definition "A condition of a different kind from the counts. No one is to know that the user intends to use the Sword, and it is not to be communicated except to the chaste and the pure, because in it are the mysteries of the universe and they are practised only in secret."@en ;
+    skos:note "The secrecy clause is the gate this project exists to remove, stated by the transmission in its own words, and it is worth holding as a node rather than as background: it names the criterion of admission, and the criterion is moral rather than lineal."@en ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the opening instructions" .
+
+pmc:HarbaDeMosheCaution a pm:Cautioning ;
+    rdfs:label "What comes to the man who does not act accordingly"@en, "Was den trifft, der sich nicht daran hält"@de ;
+    skos:definition "The penalty the handbook states for a user who does not keep the preparation. If he will not act accordingly, the angels of wrath, ire, fury and rage will come near him to minister to him, and they will lord over him, and strangle him, and plague him all over. Four leaders are named for the four."@en ;
+    skos:note "The harm named is bodily and immediate and falls on the practitioner himself, which distinguishes this caution from the Hawaiian case in traditions/hawaiian.ttl, where the ill-luck of a fault falls on the party the chant honours. Where the sufferer is the one who could report the fault, the tradition can in principle be contradicted from inside."@en ;
+    pm:cautionsAbout pmp:HarbaDeMoshe ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the opening instructions" .
+
+pmc:HarbaDeMosheUsePresupposesPreparation a pm:Presupposing ;
+    rdfs:label "Using the Sword presupposes the three days' preparation"@en, "Der Gebrauch des Schwertes setzt die dreitägige Vorbereitung voraus"@de ;
+    pm:dependentStep pmp:HarbaDeMoshe ;
+    pm:priorStep pmc:HarbaDeMosheSecrecy ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "If he will not act accordingly the angels of wrath, ire, fury and rage come near him to minister to him, and they lord over him, and strangle him, and plague him all over. The consequence is stated for the whole of the preparation and not for a single part of it." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    skos:note "The prior step named here is the secrecy and purity condition rather than one of the counts, because the handbook binds them together in a single sentence and attaches the penalty to the whole. Which of the counts, taken alone, the penalty would follow is not stated and is not inferred."@en ;
+    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the opening instructions" .
