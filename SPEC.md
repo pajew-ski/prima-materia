@@ -219,7 +219,7 @@ Der Satz, dass ein einzelnes Tripel keine vollständige Bedeutung trägt, ist da
 
 Was von dem Prinzip im Bestand tatsächlich arbeitet, steht in Parameter 5: eine Behauptung wird als Knoten gehalten und nicht als Kante, weil erst der Knoten mit seinen Angaben die Einheit ist, an der sich etwas bestreiten lässt.
 
-### Parameter 4: Die Reichweite eines Bewusstseinsakts
+### Parameter 4: Inklusiv-/Exklusiv-Pronominalstruktur
 
 **Gestrichen.** `pm:AwarenessSpace` mit seinen vier Werten und `pm:hasAwarenessSpace` stammten aus derselben Gründungsphase und teilten deren Schicksal: kein Knoten hat je darauf gezeigt.
 
