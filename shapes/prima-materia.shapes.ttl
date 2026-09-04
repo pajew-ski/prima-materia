@@ -500,6 +500,72 @@ pm:ReadViaIsLiteratureShape a sh:NodeShape ;
     ] .
 
 #
+# The principal corpus is literature by the same rule as everything else that
+# names a work. pm:SourceIsLiteratureShape reaches only dcterms:source, so the
+# predicate that carries a registration's whole content stood unguarded.
+#
+pm:PrincipalCorpusIsLiteratureShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:principalCorpus ;
+    sh:property [
+        sh:path pm:principalCorpus ;
+        sh:nodeKind sh:Literal ;
+        sh:not [ sh:pattern "^https?://" ] ;
+        sh:message "pm:principalCorpus names the works a transmission lies in, as literature, never a URL."
+    ] .
+
+#
+# A registration is not a witness, and the prohibition that keeps it one is
+# that it may name no source. A source names a passage that was read, with the
+# edition it was read in; at pm:corpusNamed nothing has been read. A registered
+# node carrying a source would be indistinguishable from a worked tradition,
+# and the denominator the registration exists for would be unreadable again —
+# under-representation and non-existence would look alike, which is the exact
+# condition SPEC §14 introduced the state to end. The pattern is taken from
+# pm:PositingIsNotAWitnessShape, which guards the same confusion one layer
+# down.
+#
+pm:RegistrationIsNotAWitnessShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:coverageState ;
+    sh:or (
+        [ sh:not [ sh:property [ sh:path pm:coverageState ; sh:hasValue pm:corpusNamed ] ] ]
+        [ sh:property [ sh:path dcterms:source ; sh:maxCount 0 ] ]
+    ) ;
+    sh:message "A tradition at pm:corpusNamed claims no dcterms:source: nothing has been read there. It names its works with pm:principalCorpus instead." .
+
+#
+# The rule that costs the most if it is only a definition. ontology/coverage.ttl
+# says of pm:corpusNamed that a tradition in that state witnesses nothing and
+# may not be counted as a party to a convergence — and until now nothing
+# enforced it. A convergence asserting independent attestation on a registered
+# tradition validated cleanly, which is the most expensive mistake available in
+# this holding, because it does not look like a mistake: pm:independentAttestation
+# is the one predicate that turns an agreement into a countable witness.
+#
+# It was already close. In convergences/recitation-exactness.ttl, Zuni and
+# Navajo had to be lifted off pm:corpusNamed by hand before the convergence was
+# admissible, and nothing said so except the definition somebody happened to
+# have read.
+#
+pm:RegisteredTraditionIsNoWitnessShape a sh:NodeShape ;
+    sh:targetClass pm:Converging ;
+    sh:property [
+        sh:path pm:independentAttestation ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:not [ sh:property [ sh:path pm:coverageState ; sh:hasValue pm:corpusNamed ] ]
+        ] ;
+        sh:message "A tradition at pm:corpusNamed witnesses nothing and may not be named as independent attestation. Work it to a read passage first."
+    ] ;
+    sh:property [
+        sh:path ( pm:convergingConcept pm:withinTradition ) ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:not [ sh:property [ sh:path pm:coverageState ; sh:hasValue pm:corpusNamed ] ]
+        ] ;
+        sh:message "A concept in a convergence may not belong to a tradition still at pm:corpusNamed. The registration names a corpus; it does not attest a passage."
+    ] .
+
+#
 # Sources are literature, not links. A URL names a location that changes and
 # that only its author can vouch for; a work names something a reader can
 # obtain independently of this graph. The rule is machine-checked here rather
