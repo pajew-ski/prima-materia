@@ -828,7 +828,9 @@ Der Bestand führte neun kontrollierte Wertemengen, verteilt über fünf Dateien
 |---|---|---|
 | `pm:recordScale` | wie weit unsere Arbeit getragen hat | `pm:Attesting`, `pm:ExaminationState`, `pm:CounterSearchState`, `pm:CoverageState`, `pm:ContactRoute` |
 | `pm:sourceModalityScale` | wie fest die Quelle setzt, was sie sagt | `pm:PrerequisiteStrength` |
-| `pm:subjectAxis` | wo die Sache auf einer Koordinate liegt | `pm:MethodOrientation`, `pm:TelicOrientation`, `pm:AwarenessSpace`, `pm:SensoryAnchoring`, `pm:AwarenessLocus`, `pm:AgencyHolding`, `pm:StatePersistence` |
+| `pm:subjectAxis` | wo die Sache auf einer Koordinate liegt | `pm:MethodOrientation`, `pm:TelicOrientation`, `pm:SensoryAnchoring`, `pm:AwarenessLocus`, `pm:AgencyHolding`, `pm:StateAcquisition`, `pm:StateDuration` |
+
+Die Tabelle führte bis zum 2026-09-04 zwei Einträge, die der Bestand nicht mehr oder nie hatte: `pm:AwarenessSpace`, gestrichen nach prima-materia#436, und `pm:StatePersistence`, das der Text darüber längst in `pm:StateAcquisition` und `pm:StateDuration` zerlegt hatte (prima-materia#439). Der zweite Fall ist der Beleg, den prima-materia#446 für den Drift dieser Spezifikation anführt: eine Tabelle, die niemand gegen den Bestand prüft, läuft ihm hinterher und wird dabei gelesen, als sagte sie, was gilt.
 
 **Für die Sachachsen gelten drei Regeln, die für die anderen beiden Familien nicht gelten.**
 
