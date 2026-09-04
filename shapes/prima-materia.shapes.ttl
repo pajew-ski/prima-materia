@@ -827,13 +827,9 @@ pm:TelicOrientationValueShape a sh:NodeShape ;
         sh:message "pm:telicOrientation takes a declared telic orientation from pm:TelicOrientation and nothing else."
     ] .
 
-pm:AwarenessSpaceValueShape a sh:NodeShape ;
-    sh:targetSubjectsOf pm:hasAwarenessSpace ;
-    sh:property [
-        sh:path pm:hasAwarenessSpace ;
-        sh:in ( pm:individualAwareness pm:dyadicAwareness pm:collectiveAwareness pm:universalAwareness ) ;
-        sh:message "pm:hasAwarenessSpace takes a declared awareness space from pm:AwarenessSpace and nothing else."
-    ] .
+# pm:AwarenessSpaceValueShape stood here and is struck with the axis it
+# guarded. It was the one value guard in this block that had never had a value
+# to guard. See prima-materia#436.
 
 #
 # Placement on an awareness axis
