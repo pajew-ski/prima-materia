@@ -101,6 +101,20 @@ Drei Dinge, die dabei aussehen wie ein Fehler und keiner sind. Eine `concurrency
 
 Das dritte ist neu und steht nicht im Actions-Reiter, sondern am PR: **bei gestapelten Branches trägt ein grüner PR ein rotes Kreuz, weil vom nächsten Branch abgezweigt wurde.** Das Anlegen eines Refs ist ein Push und startet einen Lauf auf dem geerbten Kopf-SHA; der erste echte Commit auf dem neuen Branch bricht ihn ab, und GitHub rollt alle Check-Runs eines SHA am PR zusammen, gleich von welchem Ref sie stammen. Das Kreuz markiert also nicht den defekten PR, sondern den, auf dem der nächste aufsitzt. `prima_repo_check` meldet in diesem Fall grün und hat recht. Behoben durch prima-materia#352: `validate.yml` läuft nicht mehr, wenn der Push den Ref erst erzeugt. Der Absatz bleibt stehen, weil das Muster in älteren PR sichtbar bleibt und weil ein `cancelled`-Lauf aus anderem Anlass dieselbe Anzeige erzeugt.
 
+**Ein roter Lauf sagt, dass etwas kaputt ist, und nicht was.** Die Logs hinter der Lauf-URL sind über die Werkzeuge dieses Aufbaus nicht lesbar: der Actions-Log-Endpunkt verlangt Authentifizierung, und die Weboberfläche lädt die Ausgabe per JavaScript nach. `prima_repo_check` meldet `rot` und nennt eine URL, die niemand öffnen kann. Wer von dort aus über den Diff nachdenkt, rät, und Raten kostet je Runde einen Lauf: der erste Verdacht war zweimal in Folge plausibel und falsch, während die tatsächliche Ursache ein Stichprobenterm in einem Seitentest war, den derselbe PR gestrichen hatte.
+
+Also **bei rot lokal reproduzieren statt raten**, mit demselben Klon, den der nächste Absatz ohnehin verlangt, nur auf dem betroffenen Branch:
+
+```
+git clone --depth 1 --branch <branch> https://github.com/pajew-ski/prima-materia.git
+pip install -r requirements.txt --break-system-packages
+python scripts/validate.py && python -m pytest tests/ -q
+```
+
+Der Lauf ist eine gewöhnliche Testsuite ohne Netzzugriff und läuft in gut einer Minute mit Datei, Zeile und Assertion durch. Die Sandbox ersetzt dabei nicht den Lauf auf dem Kopf-SHA: was gemergt wird, entscheidet weiterhin `prima_repo_check`. Sie ist der einzige Weg, überhaupt zu erfahren, woran es liegt.
+
+Das gilt auch in die andere Richtung: ein neuer Wächter lässt sich lokal wirklich feuern sehen, statt nur im Fixture. Bei prima-materia#426 hat ein testweise angelegter Ordner mit einer `.ttl`-Datei alle fünf parametrisierten Fälle rot gemacht, mit dem Ordnernamen in der Meldung. Das ist der stärkere Nachweis, dass eine Prüfung greift, und er kostet zwei Befehle.
+
 **Ein Bündel ist nicht fertig, solange der Klon und der Branch auseinandergehen.** Der Arbeitsweg hat zwei Schreibziele: der lokale Klon dient dazu, `python scripts/validate.py` und `pytest tests/` vor dem Schreiben laufen zu lassen, geschrieben wird aber über `prima_repo_write` auf den Branch. Zwischen beiden gibt es keinen automatischen Abgleich, und eine Änderung, die nach dem letzten Übertragen noch lokal entsteht, fällt lautlos heraus. SHACL, Tests und `prima_repo_check` bemerken das nicht: alle drei prüfen, was auf dem Branch steht, und dort steht sie ja gerade nicht. Das ist die schlimmste Fehlerklasse dieses Repos, weil ein fehlender Knoten von einer nie gelaufenen Recherche nicht zu unterscheiden ist, und sie ist eingetreten (prima-materia#351).
 
 Die Regel dagegen ist keine Prüfung, sondern ein Schritt: **der Branch ist die Quelle, der Klon das Abbild.** Am Ende jedes Bündels, vor dem PR, `git fetch` und dann jede Datei, die im Arbeitsbaum vom Branch abweicht, per `prima_repo_write` schreiben. Damit ist die Übertragung der Diff und kein Urteil mehr, und ein Vergessen hat keinen Ort. Die Abschlussbedingung ist prüfbar: `git status --porcelain` und `git diff origin/<branch>` müssen beide leer sein. Sind sie es nicht, ist das Bündel offen, unabhängig davon, was der Prüflauf sagt.
