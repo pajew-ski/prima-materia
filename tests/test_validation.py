@@ -222,6 +222,54 @@ def test_undiscriminating_verdict_with_named_outcomes_conforms() -> None:
     assert conforms, f"A named pair of undivided outcomes must conform.\n{report}"
 
 
+def test_undiscriminating_verdict_needs_no_counter_search() -> None:
+    # The exception pm:CasesRequireCounterSearchShape now makes. The state
+    # reports no cases: it says the wording of the claim excludes no outcome,
+    # which is read off the claim and not off evidence, so there is nothing
+    # for a counter-search to search. While the state was coupled to that
+    # duty, a verdict actually reached had to be entered as
+    # pm:procedureWithoutCases, and the record understated its own work. See
+    # prima-materia#499.
+    permitted = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:VerdictOnTheWording a pm:Testing ;
+        pm:examinationState pm:claimDoesNotDiscriminate ;
+        pm:undividedOutcomes "The spirit answering and the spirit withdrawing." ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-04" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, (
+        "A verdict on the wording of a claim must be writable without a "
+        f"counter-search; there is no evidence for one to search.\n{report}"
+    )
+
+
+def test_undiscriminating_verdict_citing_evidence_still_needs_a_counter_search() -> None:
+    # The decoupling reaches only as far as its reason. A protocol that cites
+    # evidence is held to the counter-search by pm:CounterSearchRequiredShape
+    # whatever its state, because there a report about the world has been
+    # taken up and the search for the work that would unsettle it is owed.
+    offending = """
+    @prefix pm:  <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp: <https://pajew.ski/prima-materia/practices/> .
+
+    pmp:EvidenceWithoutSearch a pm:Testing ;
+        pm:examinationState pm:claimDoesNotDiscriminate ;
+        pm:undividedOutcomes "The threshold rising and the threshold falling." ;
+        pm:evidenceFrom "Some study, in some journal, 2020" ;
+        pm:falsifiedBy "Some stated condition." ;
+        pm:examinedBy "Someone" ;
+        pm:protocolUpdated "2026-09-04" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "Evidence cited without any counter-search state must still fail."
+    assert "opposing work" in report
+
+
 def test_other_states_need_no_undivided_outcomes() -> None:
     # The guard must not spread to the four older states, whose protocols
     # have no such pair to name.
