@@ -211,7 +211,7 @@ Die vierte und die fünfte Achse standen zunächst als eine, `pm:StatePersistenc
 
 Die vollständige named-graph-Implementierung aus Phase 2 ist **gestrichen** und nicht weiter aufgeschoben. Ein Vorhaben, das seit Phase 1 unberührt lag, während die Klasse, für die es gebraucht wurde, im Bestand tot war, ist keine Planung.
 
-### Parameter 3: Sphoṭa und die Bedeutungseinheit
+### Parameter 3: Sphoṭa — Bedeutung in Subgraph-Clustern
 
 **Die Umsetzung ist gestrichen; die Lesart bleibt.** `pm:MeaningCluster` und `pm:hasClusterMember` standen hier von Phase 0 an, und bis zu ihrer Entfernung war kein Knoten des Bestands Mitglied eines Clusters. Der Zweck war die Einbettung als Vektor; solange es keine Einbettung gibt, hielt die Klasse nichts und erklärte eine Absicht.
 
