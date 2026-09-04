@@ -241,12 +241,23 @@ pm:CounterSearchNoteRequiredShape a sh:NodeShape ;
 # The state that carries the weight. A protocol may report cases only if
 # somebody looked for the work that would unsettle them.
 #
+# pm:claimDoesNotDiscriminate is deliberately not in this list. It reports no
+# cases: it says that the wording of the claim excludes no outcome, which is
+# read off the claim and not off evidence, so there is nothing for a
+# counter-search to search. Requiring one here forced the weaker
+# pm:procedureWithoutCases onto verdicts that had actually been reached, and
+# the record then understated its own work. The burden of that state is
+# carried by pm:UndividedOutcomesRequiredShape, which demands the outcomes the
+# claim treats alike; and a protocol that cites evidence is held to the
+# counter-search by pm:CounterSearchRequiredShape whatever its state. See
+# prima-materia#499.
+#
 pm:CasesRequireCounterSearchShape a sh:NodeShape ;
     sh:targetClass pm:Testing ;
     sh:or (
         [ sh:not [ sh:property [
             sh:path pm:examinationState ;
-            sh:in ( pm:casesWithoutDeviation pm:casesWithDeviation pm:claimDoesNotDiscriminate ) ;
+            sh:in ( pm:casesWithoutDeviation pm:casesWithDeviation ) ;
             sh:minCount 1 ] ] ]
         [ sh:property [
             sh:path pm:counterSearch ;
