@@ -107,4 +107,33 @@ pmc:TziteExamination a pm:Testing ;
     pm:protocolUpdated "2026-09-04"^^xsd:date ;
     dcterms:source "Popol Vuh: The Sacred Book of the Ancient Quiché Maya, English version by Delia Goetz and Sylvanus G. Morley from the Spanish translation of Adrián Recinos (Norman: University of Oklahoma Press, 1950), part I, chapters 2 and 3" .
 
+#
+# The ordeal with a stated condition, and the sign left behind
+#
+
+pmp:QuequmaHa a pm:Practicing ;
+    rdfs:label "The ordeal of the Dark House"@en, "Die Probe im Finsteren Haus"@de ;
+    skos:definition "The first of the ordeals of Xibalba. A lighted torch of pine and cigars are handed to those under trial at nightfall; they must be returned at dawn and returned whole, that is, not burned down. The houses named in the chapter beside it are the House of Cold, the House of Jaguars, the House of Bats and the House of Knives."@en ;
+    skos:note "The condition is unusual in this collection because it is arithmetical rather than moral: what is required is that a thing that burns be given back unconsumed after a stated interval. The failure is measurable by anyone holding the object, and the interval is named."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MayaRitual ;
+    dcterms:source "Popol Vuh: The Sacred Book of the Ancient Quiché Maya, English version by Delia Goetz and Sylvanus G. Morley from the Spanish translation of Adrián Recinos (Norman: University of Oklahoma Press, 1950), part II, chapter 9" .
+
+pmc:XibalbaSurvival a pm:Conceptualizing ;
+    rdfs:label "Coming out of the houses of Xibalba alive"@en, "Das lebende Verlassen der Häuser von Xibalbá"@de ;
+    skos:definition "The outcome the ordeals decide. The transmission treats it as the thing at stake in each house and reports both outcomes for named persons rather than only the successful one."@en ;
+    pm:withinTradition pmt:MayaRitual ;
+    dcterms:source "Popol Vuh: The Sacred Book of the Ancient Quiché Maya, English version by Delia Goetz and Sylvanus G. Morley from the Spanish translation of Adrián Recinos (Norman: University of Oklahoma Press, 1950), part II, chapter 9" .
+
+pmc:MayaXibalbaSurvivalPresupposesUnconsumedTorch a pm:Presupposing ;
+    rdfs:label "Coming out alive presupposes returning the torch unconsumed"@en, "Das lebende Verlassen setzt die unverbrauchte Rückgabe der Fackel voraus"@de ;
+    pm:dependentStep pmc:XibalbaSurvival ;
+    pm:priorStep pmp:QuequmaHa ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The transmission names the case and its outcome. Hun-Hunahpú and Vucub-Hunahpú burned the torch and the cigars through, and were sacrificed at once and buried at Pucbal-Chah. The consequence is not stated as a rule but exhibited as a precedent, and the later pair act on it." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MayaRitual ;
+    skos:note "Entered at stated necessity because the consequence is reported for a named case with the condition quotable beside it, not because a rule is pronounced. Where a transmission gives the precedent instead of the rule, the precedent is what a later reader can check."@en ;
+    dcterms:source "Popol Vuh: The Sacred Book of the Ancient Quiché Maya, English version by Delia Goetz and Sylvanus G. Morley from the Spanish translation of Adrián Recinos (Norman: University of Oklahoma Press, 1950), part II, chapter 9" .
+
 # --- ENDE ---
