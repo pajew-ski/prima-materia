@@ -155,4 +155,33 @@ pmc:MayaAjSignExamination a pm:Testing ;
     pm:protocolUpdated "2026-09-04"^^xsd:date ;
     dcterms:source "Popol Vuh: The Sacred Book of the Ancient Quiché Maya, English version by Delia Goetz and Sylvanus G. Morley from the Spanish translation of Adrián Recinos (Norman: University of Oklahoma Press, 1950), part II, chapter 7" .
 
+#
+# The fasts, the caution of the carvers, and the remedy for a foretold year
+#
+
+pmp:MayaNewYearFast a pm:Practicing ;
+    rdfs:label "The fast before the new year"@en, "Das Fasten vor dem Neujahr"@de ;
+    skos:definition "A fast kept by the chiefs, the priests and the devout before the festival of the first month. The witness gives a floor and not an average: none for less than thirteen days. Some began three months before, some two, others as they chose. To continence was added the giving up of salt and of chili in the food, which the witness says was counted a grave penitential act."@en ;
+    skos:note "The same section of the same work records a second and separate fast, kept on receiving duties for the festivals and on undertaking duties of state, which it says at times lasted as long as three years. That is a different practice with a different occasion and is not entered here; it stands in prima-materia#458."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MayaRitual ;
+    dcterms:source "Diego de Landa, Yucatan Before and After the Conquest, translated by William Gates (Baltimore: The Maya Society, publication 20, 1937), section XL, p. 70" .
+
+pmc:MayaHouseholdUnharmed a pm:Conceptualizing ;
+    rdfs:label "Remaining unharmed in person and household"@en, "Unversehrtheit an Person und Haus"@de ;
+    skos:definition "The state the faster is held to keep by carrying a fast through, and to lose by breaking one he has begun. The witness reports the belief without endorsing it and without naming what the harm would be."@en ;
+    pm:withinTradition pmt:MayaRitual ;
+    dcterms:source "Diego de Landa, Yucatan Before and After the Conquest, translated by William Gates (Baltimore: The Maya Society, publication 20, 1937), section XL, p. 70" .
+
+pmc:MayaSafetyPresupposesUnbrokenFast a pm:Presupposing ;
+    rdfs:label "Remaining unharmed presupposes not breaking a fast once begun"@en, "Die Unversehrtheit setzt voraus, ein begonnenes Fasten nicht zu brechen"@de ;
+    pm:dependentStep pmc:MayaHouseholdUnharmed ;
+    pm:priorStep pmp:MayaNewYearFast ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The witness states it as the reason the fasts were not broken: those who began these fasts did not dare to break them, for they believed it would bring evil upon them or upon their houses. The consequence attaches to the breaking of a fast begun and not to the omission of the fast." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MayaRitual ;
+    skos:note "The evil is not specified, which is why this prerequisite is examinable only as far as its own wording reaches: a rule whose penalty has no described shape cannot be found to have failed. That is a property of the passage and is worth having on the record beside the passages that do name a shape."@en ;
+    dcterms:source "Diego de Landa, Yucatan Before and After the Conquest, translated by William Gates (Baltimore: The Maya Society, publication 20, 1937), section XL, p. 70" .
+
 # --- ENDE ---
