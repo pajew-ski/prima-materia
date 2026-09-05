@@ -38,3 +38,55 @@ pmc:EuropeanFolkMagicUnbeschrauen a pm:Conceptualizing ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
     dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 14, 27, 28, 29, 53, 83" ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 17, 18, 32" .
+
+pmc:EuropeanFolkMagicMondfenster a pm:Conceptualizing ;
+    rdfs:label "The window of weekday and moon"@en, "Das Fenster aus Wochentag und Mond"@de ;
+    skos:definition "The condition that an act fall on a named weekday, before sunrise, and in a named quarter of the moon: Friday before sunrise in the waning moon for the knotting of twigs, the first Friday in the new light for the written slip against the falling sickness, the last Friday in the old light for the letter against rheumatism, Thursday morning before sunrise and in the open air for the binding of a thief."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 27, 29, 53" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 17, 18, 32, 41" .
+
+pmp:EuropeanFolkMagicGichterKnoten a pm:Practicing ;
+    rdfs:label "The knotting of three twigs against the fits"@en, "Das Knüpfen dreier Schüsse gegen die Gichter"@de ;
+    skos:definition "Going onto another man's land, saying that one goes before another court and knots one's seventy-seven kinds of fits, cutting three shoots there and making a knot in each, on a Friday before sunrise in the waning moon and unbeschrauen, then making the crosses over the body at the place where the fits are felt."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicGichterHeilung a pm:Conceptualizing ;
+    rdfs:label "The ceasing of the fits"@en, "Das Weichen der Gichter"@de ;
+    skos:definition "The effect the knotting is performed for: that the fits, counted by the charm as seventy-sevenfold, leave the body at the place the crosses are made."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicGichterYieldsHeilung a pm:Yielding ;
+    rdfs:label "The knotting drives out the fits"@en, "Das Knüpfen vertreibt die Gichter"@de ;
+    pm:byPractice pmp:EuropeanFolkMagicGichterKnoten ;
+    pm:yieldsCapacity pmc:EuropeanFolkMagicGichterHeilung ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicGichterPresupposesUnbeschrauen a pm:Presupposing ;
+    rdfs:label "The knotting presupposes that it is done unbeschrauen"@en, "Das Knüpfen setzt voraus, dass es unbeschrauen geschieht"@de ;
+    pm:dependentStep pmc:EuropeanFolkMagicGichterHeilung ;
+    pm:priorStep pmc:EuropeanFolkMagicUnbeschrauen ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "Prescribed order and not stated necessity, because the passage gives the condition as part of the instruction and says nothing about what follows if it is broken. The book has consequences elsewhere and none here, and the difference is kept rather than filled in."@en ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicGichterPresupposesMondfenster a pm:Presupposing ;
+    rdfs:label "The knotting presupposes the window of weekday and moon"@en, "Das Knüpfen setzt das Fenster aus Wochentag und Mond voraus"@de ;
+    pm:dependentStep pmc:EuropeanFolkMagicGichterHeilung ;
+    pm:priorStep pmc:EuropeanFolkMagicMondfenster ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
