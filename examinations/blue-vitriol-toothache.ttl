@@ -1,0 +1,27 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — a protocol on the counted toothache remedy
+#
+# Taken up because of the count, not because of the remedy. A transmission
+# that reports more than sixty applications and one failure has already done
+# the thing this graph asks of a claim: it has kept an outcome that tells
+# against it. What it has not done is name a comparison, and that is the whole
+# of the work left over.
+#
+
+pmp:BlueVitriolToothacheExamination a pm:Testing ;
+    rdfs:label "Whether the counted toothache remedy beats remission"@en, "Ob das gezählte Zahnschmerzmittel die Spontanbesserung übertrifft"@de ;
+    skos:definition "A protocol on the claim that a piece of blue vitriol placed in a hollow tooth drives out the severest toothache, held against the fact that toothache remits of itself. The count the source gives is the tradition's own and is treated here as the claim, not as the examination."@en ;
+    pm:tests pmc:EuropeanFolkMagicVitriolYieldsStillung ;
+    pm:falsifiedBy "A series of applications on hollow teeth in which the pain is recorded before the application and at a fixed interval after it, with the failures kept alongside, showing no larger fall than in teeth left untreated over the same interval. The source's own ratio of one failure in more than sixty is the figure to beat and is not itself such a series, because it carries no untreated arm and no interval." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passage recorded in traditions/european-folk-magic.ttl" ;
+    pm:protocolUpdated "2026-09-05" ;
+    skos:note "No modern work has been opened for this protocol, and none is cited. The state is therefore procedure-without-cases: naming a state that reports cases would claim a reading that has not been done, and the dental and toxicological literature on copper sulphate is the obvious place to begin and belongs to whoever takes it up."@en ;
+    skos:note "The population the count runs over is unsettled between the two printings and is entered as a dispute beside the claim. Until that is decided the ratio cannot be compared with anything, because a man counting his own toothaches and a healer counting other people's are not measuring the same thing."@en ;
+    skos:note "The author states that he does not know whether the remedy works on teeth that are not hollow. That limit is part of the claim and narrows the protocol rather than weakening it: a series run on sound teeth would test something the source never asserted."@en .
