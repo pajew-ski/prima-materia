@@ -1,0 +1,27 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — a protocol on the protection ascribed to the carried booklet
+#
+# Taken up because the claim is one of the few in this graph that names
+# outcomes it excludes. Most protective claims in the same corpus say that the
+# bearer is guarded and leave what would count as a breach unsaid; this one
+# says drowning, burning, dying without the sacrament and an unjust sentence,
+# and each of those is a public event with a record.
+#
+
+pmp:CarriedBookletProtectionExamination a pm:Testing ;
+    rdfs:label "Whether the protection of the carried booklet excludes anything"@en, "Ob der Schutz des getragenen Büchleins etwas ausschließt"@de ;
+    skos:definition "A protocol on the claim that the bearer of the booklet cannot drown, cannot burn, cannot die without the whole corpus Christi and cannot have an unjust sentence spoken over him. It is examinable because the claim is stated as an impossibility over named outcomes and not as an increase in safety."@en ;
+    pm:tests pmc:EuropeanFolkMagicBuechleinSchutz ;
+    pm:falsifiedBy "One bearer, carrying the booklet at the time, who drowned or burned to death, or who died without the sacrament, or over whom a sentence later held to be unjust was pronounced. The wording admits no degree, so a single such case refutes the claim as it stands. A weaker form, that bearers meet these ends less often than others, would require the bearers to be counted before the outcomes are known." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passages recorded in traditions/european-folk-magic.ttl" ;
+    pm:protocolUpdated "2026-09-05" ;
+    skos:note "No case has been collected in either direction, and the obstacle is stated rather than left to be inferred: the bearers of a cheap handbook are not a recorded set, and the claim is therefore refutable in principle and unattended in fact. That is a property of the record and not of the claim, which is why the state is procedure-without-cases and not no-procedure-devised."@en ;
+    skos:note "The escape the wording does not take is worth naming, because the same corpus takes it elsewhere. Nothing here says the protection fails if the bearer sins, doubts or acquires the booklet wrongly. Where such a clause is present, as it is in the passages that assign a failure to a broken prohibition, every outcome is absorbed and no protocol is possible. Here the sentence stands bare."@en ;
+    skos:note "The claim carries over unchanged from the booklet of seventeen eighty-eight into the Reading printing of eighteen twenty, and in both it refers to the booklet in the reader's hand. A protocol therefore has to name which booklet a bearer carried, and both answers are covered by the same wording."@en .
