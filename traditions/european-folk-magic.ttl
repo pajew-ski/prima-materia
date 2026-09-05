@@ -1,0 +1,40 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the European folk-magic transmission
+#
+# Opened from the register because of what its handbooks carry and almost
+# nothing else in this graph does: the conditions under which a procedure is
+# said to be spoiled, stated as time, silence and material, and in one place a
+# count of applications with the failures kept in it. The tradition instance
+# was registered in traditions/registry-western-esoteric.ttl and is moved here
+# now that passages have been read.
+#
+# What the file does not do is settle the reading of any charm. It holds the
+# conditions, because the conditions are the part that can fail.
+#
+
+pmt:EuropeanFolkMagic a pm:Tradition ;
+    rdfs:label "European folk magic"@en, "Europäische Volksmagie"@de ;
+    skos:definition "The transmission of household charms, blessings and remedies in printed handbooks passed from hand to hand, in which the words are given together with the conditions of time, silence and material under which they are to be used."@en ;
+    skos:note "Read for the first time in two printings of one handbook and in the booklet that stands behind it: Hohman's Der lange verborgene Freund in the Reading printing of eighteen twenty, its Harrisburg translation of eighteen fifty, and the Romanus-Büchlein first dated to Glatz seventeen eighty-eight. The reading was directed by term through the full text of both Hohman printings and not carried page by page; the pharmacological recipes, which state no condition and claim no capacity, were passed over. The remaining works named in the principal corpus were not opened."@en ;
+    skos:note "The two Hohman printings are held apart deliberately. They differ at two places where the difference falls on the examinable part of a claim, and both differences stand in this file as their own nodes rather than being smoothed into one reading."@en ;
+    pm:principalCorpus "The Merseburg charms; Lacnunga; Bald's Leechbook; Romanusbüchlein; Sechstes und Siebtes Buch Mosis; Hohman, Der lange verborgene Freund" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa.: gedruckt für den Verfasser, 1820)" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), the literal English translation of the preceding" .
+
+pmc:EuropeanFolkMagicUnbeschrauen a pm:Conceptualizing ;
+    rdfs:label "Unbeschrauen"@en, "Unbeschrauen"@de ;
+    skos:definition "The condition, attached to a procedure and not to a formula, that the act be carried out without being called at and without the doing being spoken of. It is set on cutting a sod, on knotting twigs, on hanging a written letter around the neck, on passing water into a vessel and on going to a wagon, that is on acts of every kind, and never on the words themselves."@en ;
+    skos:note "The eighteen fifty translation renders the term as unbeshrewedly, a coinage with no currency in English, which is why the identifier keeps the German word of the printing that carries it."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 14, 27, 28, 29, 53, 83" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 17, 18, 32" .
