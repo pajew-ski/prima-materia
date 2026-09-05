@@ -1,0 +1,27 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — a protocol on the one-month term of the Notory Art
+#
+# Taken up because of the term and not because of the promise. A claim that
+# says a month says when it is to be judged, and that is the property this
+# graph is short of: most of what it holds promises an attainment and leaves
+# the date open, so that no moment ever arrives at which the promise has
+# failed.
+#
+
+pmp:NotoryArtOneMonthExamination a pm:Testing ;
+    rdfs:label "Whether the sciences arrive within the month the art names"@en, "Ob die Wissenschaften binnen des genannten Monats eintreffen"@de ;
+    skos:definition "A protocol on the claim that whoever pronounces the orations at the appointed times, setting all other occasions aside, profits in all the sciences within one month. It is examinable because the claim names a regimen, a term and an outcome that a third party can measure."@en ;
+    pm:tests pmc:ArsNotoriaOratioYieldsFacundia ;
+    pm:falsifiedBy "One person who keeps the full regimen for a lunation — the orations on the fourth, eighth, twelfth, sixteenth, twenty-fourth, twenty-eighth and thirtieth day of the moon, at the four hours, alone and in the prescribed manner — and who at the end of the month scores no higher on a test of a liberal art set before the month began than a person matched for prior knowledge who did not keep it. The claim is universal in form and admits no degree, so a single such case refutes it as stated." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passages recorded in traditions/ars-notoria.ttl" ;
+    pm:protocolUpdated "2026-09-05" ;
+    skos:note "No case has been collected. The obstacle is named rather than left to be inferred, and it is not the difficulty of the regimen: the witness in print omits the notae, so nobody working from it can keep the procedure the text prescribes. A negative result obtained from this witness alone would therefore not tell against the art, only against half of it. That is a property of the transmission and belongs in the protocol, because it is exactly the kind of gap a later reader would otherwise supply on his own."@en ;
+    skos:note "The clause that would absorb every outcome is present in the corpus but not in this claim. Elsewhere the text bars the man impeded by crime from saying the orations at all; here nothing says that a failure shows the speaker was unworthy. Whether a fuller recension closes that gap is unread, and it would change the state of this protocol rather than its subject."@en ;
+    skos:note "The measurement is the weak point and is stated so: profiting in all the sciences is not a quantity, and any protocol has to choose one art and one instrument before the month begins. Choosing them afterwards would let the outcome pick its own measure, which is the failure mode pm:claimDoesNotDiscriminate records after the fact and which is cheaper to prevent here."@en .

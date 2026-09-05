@@ -1,0 +1,118 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Ars Notoria
+#
+# Opened from the register for one reason: the text sets a timetable and an
+# interval. It names the days of the moon on which its orations may be said,
+# the hours of the day, the number of repetitions, and the term within which
+# the effect is to appear. Almost nothing else in this graph carries an
+# interval, and an interval is what turns a promise into something that can
+# be missed. The tradition instance was registered in
+# traditions/registry-western-esoteric.ttl and is moved here now that
+# passages have been read.
+#
+
+pmt:ArsNotoria a pm:Tradition ;
+    rdfs:label "Ars Notoria"@en, "Ars Notoria"@de ;
+    skos:definition "The transmission of a set of orations, said on prescribed days of the moon and at prescribed hours, held to confer the liberal arts, eloquence, memory and understanding within a stated term, and bound to conditions of solitude, silence, fasting and freedom from crime."@en ;
+    skos:note "Read for the first time in Robert Turner's English translation, London 1657, in the digital edition of Joseph H. Peterson, which carries the printed pagination and the Latin of the Agrippa text beside it; the wording of every passage cited here was additionally checked against the optical text of the 1657 printing itself. Liber Juratus Honorii was not opened, and neither was the critical Latin edition of Véronèse."@en ;
+    skos:note "The version read is incomplete in a way that bears on every claim in this file. Both Turner's translation and the Latin of the Agrippa printing omit the notae, the figures which the text itself calls the centre of the art; the orations are given and the drawings they accompany are not. What was read is therefore the verbal half of a procedure whose other half is missing, and no claim entered here can be carried out from this witness alone."@en ;
+    pm:principalCorpus "Ars Notoria in the medieval recensions; Liber Juratus Honorii" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Ars Notoria: The Notory Art of Solomon, trans. Robert Turner (London: J. Cottrel, 1657), in the digital edition of Joseph H. Peterson" .
+
+pmc:ArsNotoriaLunationes a pm:Conceptualizing ;
+    rdfs:label "The days of the moon on which the orations are said"@en, "Die Mondtage, an denen die Orationen gesprochen werden"@de ;
+    skos:definition "The seven days of the lunation on which the orations are to be put in operation: the fourth, the eighth, the twelfth, the sixteenth, the twenty-fourth, the twenty-eighth and the thirtieth day of the moon."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 15, p. 12, ed. Peterson" .
+
+pmc:ArsNotoriaHorae a pm:Conceptualizing ;
+    rdfs:label "The hours of the day and the count of repetitions"@en, "Die Tagesstunden und die Zahl der Wiederholungen"@de ;
+    skos:definition "The division of the day the orations follow: once in the morning, once about the third hour, once about the ninth hour and once at evening; where a great work presses, twice in the morning and twice about the ninth hour."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), pp. 13-14, ed. Peterson" .
+
+pmc:ArsNotoriaSolitudo a pm:Conceptualizing ;
+    rdfs:label "Alone, and scarcely audible to himself"@en, "Allein, und kaum sich selbst hörbar"@de ;
+    skos:definition "The condition that the oration be spoken secretly, that the speaker be alone, and that he pronounce it with so low a voice that he scarcely hears himself; with fasting on the first day of the rehearsal and a chaste and devout life."@en ;
+    skos:note "The condition is on the manner of speaking and not on the words. It is the counterpart of the exactness demands the graph holds elsewhere: there the wording carries the effect, here it is the inaudibility that is prescribed, and the two are not the same requirement."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), p. 14, ed. Peterson" .
+
+pmp:ArsNotoriaOratio a pm:Practicing ;
+    rdfs:label "The saying of the orations"@en, "Das Sprechen der Orationen"@de ;
+    skos:definition "Pronouncing the orations of the art on the prescribed days of the moon, at the prescribed hours and with the prescribed number of repetitions, alone, secretly and in a voice barely audible to the speaker, having fasted on the first day and living chastely."@en ;
+    skos:note "The procedure the text prescribes is larger than this node: the orations accompany the notae, and the witness read carries none of them. What is entered is the part the witness gives."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), §§ 14-15 and pp. 13-14, ed. Peterson" .
+
+pmc:ArsNotoriaFacundia a pm:Conceptualizing ;
+    rdfs:label "Profiting in all the sciences"@en, "Das Zunehmen in allen Wissenschaften"@de ;
+    skos:definition "The capacity claimed for the art: to profit in all the sciences and to attain them in an extraordinary manner, with memory, understanding and eloquence increased and established in the speaker."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 14, p. 12, ed. Peterson" .
+
+pmc:ArsNotoriaOratioYieldsFacundia a pm:Yielding ;
+    rdfs:label "The orations confer the sciences within one month"@en, "Die Orationen bringen die Wissenschaften binnen eines Monats"@de ;
+    pm:byPractice pmp:ArsNotoriaOratio ;
+    pm:yieldsCapacity pmc:ArsNotoriaFacundia ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    skos:note "The term is the part that matters. Whoever pronounces the words at the determinate appointed time, setting all other occasions aside, shall profit in all the sciences in one month. A promise with a stated interval can be missed; the same promise without one cannot, and the corpus this graph holds gives intervals very rarely."@en ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 14, p. 12, ed. Peterson" .
+
+pmc:ArsNotoriaPresupposesLunationes a pm:Presupposing ;
+    rdfs:label "The effect presupposes the appointed day"@en, "Die Wirkung setzt den bestimmten Tag voraus"@de ;
+    pm:dependentStep pmc:ArsNotoriaFacundia ;
+    pm:priorStep pmc:ArsNotoriaLunationes ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    skos:note "Prescribed order and not stated necessity. The text says the orations are to be pronounced at certain determinate times of the moon and are not to be undertaken without consideration of the end; it does not say what follows if the day is missed. The strength is set to what the passage carries and no higher."@en ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 14, p. 12, ed. Peterson" .
+
+pmc:ArsNotoriaPresupposesSolitudo a pm:Presupposing ;
+    rdfs:label "The effect presupposes solitude and the lowered voice"@en, "Die Wirkung setzt Alleinsein und die gesenkte Stimme voraus"@de ;
+    pm:dependentStep pmc:ArsNotoriaFacundia ;
+    pm:priorStep pmc:ArsNotoriaSolitudo ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), p. 14, ed. Peterson" .
+
+pmc:ArsNotoriaCrimenKautel a pm:Cautioning ;
+    rdfs:label "No one impeded by crime may presume to say it"@en, "Wer durch ein Verbrechen behindert ist, darf sie nicht sprechen"@de ;
+    skos:definition "The warning that no man impeded or corrupted with any crime ought to presume to say the oration; on a day on which he is so impeded he may only call it to mind in his heart."@en ;
+    skos:note "The caution is the closest thing in this witness to a condition of failure, and it is worth naming what it does not do: it names who may not say the words, not what happens to one who says them anyway. The distinction decides whether the condition is examinable or absorbing, and the text leaves it on the safer side of that line."@en ;
+    pm:cautionsAbout pmp:ArsNotoriaOratio ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), pp. 46-47, ed. Peterson" .
+
+pmc:ArsNotoriaEbrietasKautel a pm:Cautioning ;
+    rdfs:label "Not after drink or luxury, and not fasting without discretion"@en, "Nicht nach Trunk oder Ausschweifung, und nicht nüchtern ohne Bedacht"@de ;
+    skos:definition "The warning that no man presume to say any of the oration after too much drinking or luxury, nor fasting, without great reverence and discretion, and that it be treated only at certain determinate and appointed times."@en ;
+    skos:note "Fasting appears on both sides of the corpus: it is prescribed for the first day of a rehearsal and warned against here without reverence and discretion. The two passages are held apart rather than reconciled; whether the witness contradicts itself or distinguishes two situations is not decided from what was read."@en ;
+    pm:cautionsAbout pmp:ArsNotoriaOratio ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), p. 44, ed. Peterson" .
+
+pmc:ArsNotoriaSecretumKautel a pm:Cautioning ;
+    rdfs:label "The inexcusable prohibition on passing it on"@en, "Das unentschuldbare Verbot der Weitergabe"@de ;
+    skos:definition "The warning, ascribed in the text to the angel who declared the oration, that the holder presume neither to give it to another nor to expound anything out of it, neither himself, nor any one by him, nor any one after him."@en ;
+    skos:note "This is the gate the project's criterion is directed at, stated by the transmission in its own words and attributed to an angel so that no holder can lift it. It stands here as a claim of the tradition and not as an instruction; the text it guards has been in print since sixteen fifty-seven."@en ;
+    pm:cautionsAbout pmp:ArsNotoriaOratio ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 17, p. 16, ed. Peterson" .
