@@ -1,0 +1,30 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Ars Notoria
+#
+# Opened from the register for one reason: the text sets a timetable and an
+# interval. It names the days of the moon on which its orations may be said,
+# the hours of the day, the number of repetitions, and the term within which
+# the effect is to appear. Almost nothing else in this graph carries an
+# interval, and an interval is what turns a promise into something that can
+# be missed. The tradition instance was registered in
+# traditions/registry-western-esoteric.ttl and is moved here now that
+# passages have been read.
+#
+
+pmt:ArsNotoria a pm:Tradition ;
+    rdfs:label "Ars Notoria"@en, "Ars Notoria"@de ;
+    skos:definition "The transmission of a set of orations, said on prescribed days of the moon and at prescribed hours, held to confer the liberal arts, eloquence, memory and understanding within a stated term, and bound to conditions of solitude, silence, fasting and freedom from crime."@en ;
+    skos:note "Read for the first time in Robert Turner's English translation, London 1657, in the digital edition of Joseph H. Peterson, which carries the printed pagination and the Latin of the Agrippa text beside it; the wording of every passage cited here was additionally checked against the optical text of the 1657 printing itself. Liber Juratus Honorii was not opened, and neither was the critical Latin edition of Véronèse."@en ;
+    skos:note "The version read is incomplete in a way that bears on every claim in this file. Both Turner's translation and the Latin of the Agrippa printing omit the notae, the figures which the text itself calls the centre of the art; the orations are given and the drawings they accompany are not. What was read is therefore the verbal half of a procedure whose other half is missing, and no claim entered here can be carried out from this witness alone."@en ;
+    pm:principalCorpus "Ars Notoria in the medieval recensions; Liber Juratus Honorii" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Ars Notoria: The Notory Art of Solomon, trans. Robert Turner (London: J. Cottrel, 1657), in the digital edition of Joseph H. Peterson" .
