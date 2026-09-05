@@ -90,3 +90,47 @@ pmc:EuropeanFolkMagicGichterPresupposesMondfenster a pm:Presupposing ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
     dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicRheumaBrief a pm:Practicing ;
+    rdfs:label "The sewn letter against rheumatism"@en, "Der eingenähte Brief gegen das Reissen"@de ;
+    skos:definition "A written letter sewn into a piece of cloth and hung around the neck, where cloth, tape and thread must never have been in water, the thread must carry no knot, and cloth and tape must have been spun by a child of not more than seven years; the hanging on is unbeschrauen and falls in a named Friday of the moon, and the Lord's prayer and the articles of faith are said immediately after."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 53" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 32" .
+
+pmc:EuropeanFolkMagicRheumaBriefFrist a pm:Disputing ;
+    rdfs:label "Which Friday of the moon the letter is hung on"@en, "An welchem Freitag des Mondes der Brief angehängt wird"@de ;
+    pm:disputedClaim pmc:EuropeanFolkMagicRheumaBrief ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "The eighteen twenty printing sets the hanging on at the last Friday in the old light, that is at the end of the waning moon. The eighteen fifty translation sets it at the first Friday in the decreasing moon, which is the other end of the same quarter. The two cannot both be followed, and the difference falls on the only part of the prescription that could be missed."@en ;
+    skos:note "Kept as a dispute and not resolved. Resolving it would require the intervening American printings, which were not opened; that the translation is called literal on its own title page is a reason to record the divergence, not to prefer either side."@en ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 53" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 32" .
+
+pmp:EuropeanFolkMagicBlauerVitriol a pm:Practicing ;
+    rdfs:label "Blue vitriol in the hollow tooth"@en, "Blauer Vitriol im hohlen Zahn"@de ;
+    skos:definition "Putting a small piece of blue vitriol into the hollow tooth when the pain begins, not too much, and spitting out the water that collects rather than swallowing it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 46" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
+
+pmc:EuropeanFolkMagicZahnschmerzStillung a pm:Conceptualizing ;
+    rdfs:label "The driving out of the severest toothache"@en, "Das Vertreiben der allerheftigsten Zahnschmerzen"@de ;
+    skos:definition "The effect claimed for the vitriol, stated for hollow teeth and left open by the author for teeth that are not hollow."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 46" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
+
+pmc:EuropeanFolkMagicVitriolYieldsStillung a pm:Yielding ;
+    rdfs:label "The vitriol drives out the toothache"@en, "Der Vitriol vertreibt die Zahnschmerzen"@de ;
+    pm:byPractice pmp:EuropeanFolkMagicBlauerVitriol ;
+    pm:yieldsCapacity pmc:EuropeanFolkMagicZahnschmerzStillung ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "The rare part of this claim is not the remedy but the number attached to it. The author states more than sixty applications and says that on one of them it did not help. A transmission that keeps its own failure in the count is uncommon in this graph, and it is what makes the claim examinable rather than merely asserted; what the number does not carry is a base rate, since toothache remits without treatment."@en ;
+    skos:note "The author also states outright that he does not know whether the remedy works on teeth that are not hollow. The limit is his and is kept here rather than widened."@en ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 46" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
