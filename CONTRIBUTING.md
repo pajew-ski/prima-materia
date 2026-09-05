@@ -242,6 +242,11 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Maʿaseh Merkava, Šiʿur Qomah, 3 Henoch, Ḥarba de-Moshe, Sefer ha-Razim — von
   `korpus:kabbalistisch` getrennt geführt, weil dort die sefirotische Literatur
   steht und diese hier älter und operativ ist)
+- `korpus:volksmagie` (die gedruckten Hausbücher der europäischen Volksmagie:
+  Romanusbüchlein, Sechstes und Siebtes Buch Mosis, Hohman, Der lange
+  verborgene Freund, dazu Merseburger Sprüche, Lacnunga und Bald's Leechbook —
+  die Volkskunde und die Braucherei-Forschung gehen als `pm:evidenceFrom` ein,
+  nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label

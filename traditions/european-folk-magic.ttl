@@ -1,0 +1,193 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the European folk-magic transmission
+#
+# Opened from the register because of what its handbooks carry and almost
+# nothing else in this graph does: the conditions under which a procedure is
+# said to be spoiled, stated as time, silence and material, and in one place a
+# count of applications with the failures kept in it. The tradition instance
+# was registered in traditions/registry-western-esoteric.ttl and is moved here
+# now that passages have been read.
+#
+# What the file does not do is settle the reading of any charm. It holds the
+# conditions, because the conditions are the part that can fail.
+#
+
+pmt:EuropeanFolkMagic a pm:Tradition ;
+    rdfs:label "European folk magic"@en, "Europäische Volksmagie"@de ;
+    skos:definition "The transmission of household charms, blessings and remedies in printed handbooks passed from hand to hand, in which the words are given together with the conditions of time, silence and material under which they are to be used."@en ;
+    skos:note "Read for the first time in two printings of one handbook and in the booklet that stands behind it: Hohman's Der lange verborgene Freund in the Reading printing of eighteen twenty, its Harrisburg translation of eighteen fifty, and the Romanus-Büchlein first dated to Glatz seventeen eighty-eight. The reading was directed by term through the full text of both Hohman printings and not carried page by page; the pharmacological recipes, which state no condition and claim no capacity, were passed over. The remaining works named in the principal corpus were not opened."@en ;
+    skos:note "The two Hohman printings are held apart deliberately. They differ at two places where the difference falls on the examinable part of a claim, and both differences stand in this file as their own nodes rather than being smoothed into one reading."@en ;
+    pm:principalCorpus "The Merseburg charms; Lacnunga; Bald's Leechbook; Romanusbüchlein; Sechstes und Siebtes Buch Mosis; Hohman, Der lange verborgene Freund" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa.: gedruckt für den Verfasser, 1820)" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), the literal English translation of the preceding" .
+
+pmc:EuropeanFolkMagicUnbeschrauen a pm:Conceptualizing ;
+    rdfs:label "Unbeschrauen"@en, "Unbeschrauen"@de ;
+    skos:definition "The condition, attached to a procedure and not to a formula, that the act be carried out without being called at and without the doing being spoken of. It is set on cutting a sod, on knotting twigs, on hanging a written letter around the neck, on passing water into a vessel and on going to a wagon, that is on acts of every kind, and never on the words themselves."@en ;
+    skos:note "The eighteen fifty translation renders the term as unbeshrewedly, a coinage with no currency in English, which is why the identifier keeps the German word of the printing that carries it."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 14, 27, 28, 29, 53, 83" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 17, 18, 32" .
+
+pmc:EuropeanFolkMagicMondfenster a pm:Conceptualizing ;
+    rdfs:label "The window of weekday and moon"@en, "Das Fenster aus Wochentag und Mond"@de ;
+    skos:definition "The condition that an act fall on a named weekday, before sunrise, and in a named quarter of the moon: Friday before sunrise in the waning moon for the knotting of twigs, the first Friday in the new light for the written slip against the falling sickness, the last Friday in the old light for the letter against rheumatism, Thursday morning before sunrise and in the open air for the binding of a thief."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 27, 29, 53" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 17, 18, 32, 41" .
+
+pmp:EuropeanFolkMagicGichterKnoten a pm:Practicing ;
+    rdfs:label "The knotting of three twigs against the fits"@en, "Das Knüpfen dreier Schüsse gegen die Gichter"@de ;
+    skos:definition "Going onto another man's land, saying that one goes before another court and knots one's seventy-seven kinds of fits, cutting three shoots there and making a knot in each, on a Friday before sunrise in the waning moon and unbeschrauen, then making the crosses over the body at the place where the fits are felt."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicGichterHeilung a pm:Conceptualizing ;
+    rdfs:label "The ceasing of the fits"@en, "Das Weichen der Gichter"@de ;
+    skos:definition "The effect the knotting is performed for: that the fits, counted by the charm as seventy-sevenfold, leave the body at the place the crosses are made."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicGichterYieldsHeilung a pm:Yielding ;
+    rdfs:label "The knotting drives out the fits"@en, "Das Knüpfen vertreibt die Gichter"@de ;
+    pm:byPractice pmp:EuropeanFolkMagicGichterKnoten ;
+    pm:yieldsCapacity pmc:EuropeanFolkMagicGichterHeilung ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicGichterPresupposesUnbeschrauen a pm:Presupposing ;
+    rdfs:label "The knotting presupposes that it is done unbeschrauen"@en, "Das Knüpfen setzt voraus, dass es unbeschrauen geschieht"@de ;
+    pm:dependentStep pmc:EuropeanFolkMagicGichterHeilung ;
+    pm:priorStep pmc:EuropeanFolkMagicUnbeschrauen ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "Prescribed order and not stated necessity, because the passage gives the condition as part of the instruction and says nothing about what follows if it is broken. The book has consequences elsewhere and none here, and the difference is kept rather than filled in."@en ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicGichterPresupposesMondfenster a pm:Presupposing ;
+    rdfs:label "The knotting presupposes the window of weekday and moon"@en, "Das Knüpfen setzt das Fenster aus Wochentag und Mond voraus"@de ;
+    pm:dependentStep pmc:EuropeanFolkMagicGichterHeilung ;
+    pm:priorStep pmc:EuropeanFolkMagicMondfenster ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 29" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
+
+pmc:EuropeanFolkMagicRheumaBrief a pm:Practicing ;
+    rdfs:label "The sewn letter against rheumatism"@en, "Der eingenähte Brief gegen das Reissen"@de ;
+    skos:definition "A written letter sewn into a piece of cloth and hung around the neck, where cloth, tape and thread must never have been in water, the thread must carry no knot, and cloth and tape must have been spun by a child of not more than seven years; the hanging on is unbeschrauen and falls in a named Friday of the moon, and the Lord's prayer and the articles of faith are said immediately after."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 53" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 32" .
+
+pmc:EuropeanFolkMagicRheumaBriefFrist a pm:Disputing ;
+    rdfs:label "Which Friday of the moon the letter is hung on"@en, "An welchem Freitag des Mondes der Brief angehängt wird"@de ;
+    pm:disputedClaim pmc:EuropeanFolkMagicRheumaBrief ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "The eighteen twenty printing sets the hanging on at the last Friday in the old light, that is at the end of the waning moon. The eighteen fifty translation sets it at the first Friday in the decreasing moon, which is the other end of the same quarter. The two cannot both be followed, and the difference falls on the only part of the prescription that could be missed."@en ;
+    skos:note "Kept as a dispute and not resolved. Resolving it would require the intervening American printings, which were not opened; that the translation is called literal on its own title page is a reason to record the divergence, not to prefer either side."@en ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 53" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 32" .
+
+pmp:EuropeanFolkMagicBlauerVitriol a pm:Practicing ;
+    rdfs:label "Blue vitriol in the hollow tooth"@en, "Blauer Vitriol im hohlen Zahn"@de ;
+    skos:definition "Putting a small piece of blue vitriol into the hollow tooth when the pain begins, not too much, and spitting out the water that collects rather than swallowing it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 46" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
+
+pmc:EuropeanFolkMagicZahnschmerzStillung a pm:Conceptualizing ;
+    rdfs:label "The driving out of the severest toothache"@en, "Das Vertreiben der allerheftigsten Zahnschmerzen"@de ;
+    skos:definition "The effect claimed for the vitriol, stated for hollow teeth and left open by the author for teeth that are not hollow."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 46" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
+
+pmc:EuropeanFolkMagicVitriolYieldsStillung a pm:Yielding ;
+    rdfs:label "The vitriol drives out the toothache"@en, "Der Vitriol vertreibt die Zahnschmerzen"@de ;
+    pm:byPractice pmp:EuropeanFolkMagicBlauerVitriol ;
+    pm:yieldsCapacity pmc:EuropeanFolkMagicZahnschmerzStillung ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "The rare part of this claim is not the remedy but the number attached to it. The author states more than sixty applications and says that on one of them it did not help. A transmission that keeps its own failure in the count is uncommon in this graph, and it is what makes the claim examinable rather than merely asserted; what the number does not carry is a base rate, since toothache remits without treatment."@en ;
+    skos:note "The author also states outright that he does not know whether the remedy works on teeth that are not hollow. The limit is his and is kept here rather than widened."@en ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 46" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
+
+pmc:EuropeanFolkMagicVitriolZaehlungStrittig a pm:Disputing ;
+    rdfs:label "On whom the sixty applications were made"@en, "An wem die sechzig Anwendungen geschahen"@de ;
+    pm:disputedClaim pmc:EuropeanFolkMagicVitriolYieldsStillung ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "The eighteen twenty printing says the author drove away his own severest toothaches more than sixty times. The eighteen fifty translation says he has cured the severest toothache more than sixty times and names no patient, which reads as a series over other people. The number is the same and the population it runs over is not, and a count whose population is unsettled cannot be compared with anything."@en ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 46" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
+
+pmp:EuropeanFolkMagicRadNabe a pm:Practicing ;
+    rdfs:label "The three chips in the wheel hub"@en, "Die drey Spänlein in der Rad-Nabe"@de ;
+    skos:definition "Cutting three chips at the place the thief went out, going to a wagon unbeschrauen, taking off a wheel, putting the chips into the hub and driving the wheel backwards while the compelling words are spoken."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 83-84" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 52-53" .
+
+pmc:EuropeanFolkMagicRadKautel a pm:Cautioning ;
+    rdfs:label "Do not drive the wheel too hard"@en, "Treib das Rad nicht gar zu stark um"@de ;
+    skos:definition "The warning against turning the wheel too hard, printed inside the spoken charm and addressed to the operator rather than to the thief the surrounding words address."@en ;
+    pm:cautionsAbout pmp:EuropeanFolkMagicRadNabe ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "The place of the sentence is the finding. A caution set inside the words to be spoken cannot be read aloud without being obeyed or noticed, and an operator working from the page meets it at the moment it applies. What it does not say is what turning too hard would do."@en ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 84" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 53" .
+
+pmp:EuropeanFolkMagicWachholderbusch a pm:Practicing ;
+    rdfs:label "The bent juniper bush"@en, "Der gebogene Wachholderbusch"@de ;
+    skos:definition "Going before sunrise to a juniper bush, bending it towards the rising sun with the left hand while telling it that it will be bent and pressed until the thief has carried the stolen goods back, then laying a stone on the bush and the skull of a malefactor beneath stone and bush."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein (Glatz: Franz Pompejus, 1788), Nr. 65, in the edition of Joseph H. Peterson, 2006" ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 90" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 57" .
+
+pmc:EuropeanFolkMagicWachholderKautel a pm:Cautioning ;
+    rdfs:label "Loose the bush again once the goods are back"@en, "Den Busch wieder losmachen, sobald das Gut zurück ist"@de ;
+    skos:definition "The warning to watch for the return of the stolen goods and, when they are back, to carry the stone to the place it lay and to loose the bush again."@en ;
+    pm:cautionsAbout pmp:EuropeanFolkMagicWachholderbusch ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    skos:note "A caution about what the operator owes after the effect has occurred, not about the risk of performing it. Both printings and the older booklet carry it in the same order and with the same clause; no consequence of leaving the bush bent is named in any of them."@en ;
+    dcterms:source "Romanus-Büchlein (Glatz: Franz Pompejus, 1788), Nr. 65, in the edition of Joseph H. Peterson, 2006" ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 90" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 57" .
+
+pmc:EuropeanFolkMagicBuechleinSchutz a pm:Conceptualizing ;
+    rdfs:label "The protection of the carried booklet"@en, "Der Schutz des getragenen Büchleins"@de ;
+    skos:definition "The claim, printed after the charm against powder and ball, that whoever carries this booklet is safe from all his enemies, visible and invisible; that whoever has it with him cannot die without the whole corpus Christi, cannot drown in any water, cannot burn in any fire, and that no unjust sentence can be spoken over him."@en ;
+    skos:note "The claim stands word for word in the Romanus-Büchlein of seventeen eighty-eight and again in the Reading printing of eighteen twenty, and in both it says this booklet. The referent therefore moves with the reprinting: the sentence that guarantees the bearer of one book is carried over unchanged into another and guarantees the bearer of that one. Nothing in either printing marks the transfer."@en ;
+    skos:note "This is the passage the transmission is most reliably misreported on. It is regularly given as a Pennsylvania German claim of eighteen twenty; it was in print in Silesia thirty-two years earlier. The title page of the Reading printing does not in fact claim otherwise: it says the greater part is still little known and appears in print in America for the very first time, which is a claim about America and not about first publication. The English title page of eighteen fifty drops in America from the first half of that sentence and thereby makes the wider claim the German never made."@en ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein (Glatz: Franz Pompejus, 1788), Nr. 66, S. 29, in the edition of Joseph H. Peterson, 2006" ;
+    dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 90" ;
+    dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 57" .
