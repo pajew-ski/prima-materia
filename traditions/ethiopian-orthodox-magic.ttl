@@ -1,0 +1,248 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Ethiopian Orthodox transmission of written protection
+#
+# Taken from the register because of one sentence. The graph already holds a
+# claim that a carried written object protects its bearer against named
+# outcomes, and holds it with a protocol attached, in
+# examinations/carried-booklet-protection.ttl; the note there says that the
+# escape the European wording does not take is worth naming because the same
+# corpus takes it elsewhere. Here a second transmission states the same
+# protection twice in one sentence, once bare and once with the escape, and
+# the difference falls on the only part that could fail.
+#
+# The tradition instance was registered in
+# traditions/registry-outside-contact.ttl and is moved here now that passages
+# have been read.
+#
+
+pmt:EthiopianOrthodoxMagic a pm:Tradition ;
+    rdfs:label "Ethiopian Orthodox magical transmission"@en, "Äthiopisch-orthodoxe Zaubertradition"@de ;
+    skos:definition "The Geez transmission of protective prayers written on strips of parchment and worn on the body, in which lists of divine and angelic names are said to keep off named harms, and in which the name of the person the roll was written for stands in every prayer."@en ;
+    skos:note "Read for the first time in one edited volume: the nine prayers of Lady Meux MS No. 5, written for the woman Aheta Mikael, and the three supplementary rolls printed with them in the same volume. The English translations were read at the wording, page by page, from p. 216 to p. 220 for the Meux roll and from p. LIV to p. LXV for the three supplementary rolls, the third of which is a litany that runs on past the point where the summaries of the other two end. What was not read: the Geez texts printed at the end of the volume, because the reading is of the translation and the edition is named accordingly; and the greater part of the volume, which carries the Miracles of the Blessed Virgin Mary and the Life of Hanna and is a different corpus."@en ;
+    skos:note "The remaining works named in the principal corpus were not opened in this run. The Lefafa Sedeq is the chief absence and it is a large one: Budge printed it separately in 1929 and that volume is in full view on HathiTrust under the identifiers of the Indiana and Michigan copies, so it is reachable in the sense of SPEC 15 and its absence here is a property of this run and not of the work."@en ;
+    skos:note "Contact route kept at documented, and now carried twice over. The registration argued it from the Enochic book, whose fullest witness is the Ethiopic one and which this graph already holds. The reading adds a second and closer route: the story that grounds the seventh prayer, in which Susenyos on horseback kills the child-killer Werzelya and takes an oath from her, is the Ethiopian station of a legend transmitted in Greek, Coptic, Syriac, Armenian and Slavonic. That the parallels exist was established in the landscape stage of this run and not read at the wording; the comparative works are named in an issue rather than asserted here."@en ;
+    pm:principalCorpus "Lefafa Sedeq; the asmat scroll corpus; the Geez canon" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "E. A. Wallis Budge (ed.), The Miracles of the Blessed Virgin Mary, and the Life of Hanna (Saint Anne), and the Magical Prayers of Aheta Mikael (Lady Meux Manuscripts Nos. 2-5; London: W. Griggs, 1900), Lady Meux MS No. 5, pp. 216-220" .
+
+#
+# The names, and what is claimed for them
+#
+
+pmc:EthiopianAsmat a pm:Conceptualizing ;
+    rdfs:label "The names that hold off"@en, "Die abwehrenden Namen"@de ;
+    skos:altLabel "asmat"@en ;
+    skos:definition "The long lists of divine and angelic names that stand at the head of each prayer of the roll and are called the glorious names, the names of their God. They are the operative part: what the prayer asks for is asked by their might, and the roll gives them without explanation, as things to be said or carried rather than understood."@en ;
+    skos:note "The identifier keeps the Geez term of the genre rather than an English rendering, because the volume read gives no single term for the lists and calls the whole class magical prayers, which is the editor's name for it and not the transmission's."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayers I-IX, pp. 216-220" .
+
+pmc:EthiopianOwnerNamedInEveryPrayer a pm:Conceptualizing ;
+    rdfs:label "The roll names the person it was written for"@en, "Die Rolle nennt die Person, für die sie geschrieben wurde"@de ;
+    skos:definition "The condition, visible in every prayer of the roll and never stated as a rule in it, that the protection is asked for a named person: each of the nine prayers of the Meux roll closes by naming the woman Aheta Mikael, and the three supplementary rolls each name their own owner in the same place."@en ;
+    skos:note "Read off the wording and not from a statement about it. The volume nowhere says that a roll must carry its owner's name; it prints four rolls, and all four do it in every section. What follows for any protocol is that a failure is always available for explanation as a wrong or missing name, and that this escape is built into the object rather than argued for."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayers I-IX, pp. 216-220; the supplementary rolls, pp. LV-LXIV" .
+
+pmp:EthiopianAsmatRecitedAtTheDoors a pm:Practicing ;
+    rdfs:label "The names said at the front and at the doors"@en, "Die Namen, gesprochen vorn und an den Türen"@de ;
+    skos:definition "Reciting the list of names at the front and at the doors before entering a house which is old, or in ruins, or unclean."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer I, p. 216" .
+
+pmc:EthiopianKeepingOfTheDevilsInRestraint a pm:Conceptualizing ;
+    rdfs:label "The devils held off and the weapon missing"@en, "Die abgehaltenen Teufel und die fehlgehende Waffe"@de ;
+    skos:definition "The effect claimed for the names at the door: that no devil shall draw nigh, that the man shall be smitten neither by the arrows of his adversary nor by the stone hurled at him nor by the spear, and that the angels shall protect him and keep him in safety under their wings."@en ;
+    skos:note "Two kinds of harm stand in one sentence, and the second is the one that can be looked at. Whether a devil drew nigh is not an event anybody records; whether a man was struck by a stone or a spear is."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer I, p. 216" .
+
+pmc:EthiopianAsmatYieldsRestraintOfDevils a pm:Yielding ;
+    rdfs:label "The names said at the door hold the devils off"@en, "Die an der Tür gesprochenen Namen halten die Teufel ab"@de ;
+    pm:byPractice pmp:EthiopianAsmatRecitedAtTheDoors ;
+    pm:yieldsCapacity pmc:EthiopianKeepingOfTheDevilsInRestraint ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    skos:note "The wording makes the protection follow from knowing the names rather than from saying them at any particular moment: it is to him that knoweth these that no devil draws nigh. The instruction to say them at the door is given first and the guarantee is stated after it without repeating the condition, so the two do not close on each other."@en ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer I, p. 216" .
+
+#
+# The sentence the file was opened for: the same protection twice, once bare
+# and once with an escape
+#
+
+pmp:EthiopianAsmatSpokenAgainstTheSpear a pm:Practicing ;
+    rdfs:label "The names repeated at the thrust of the spear"@en, "Die beim Speerstoß wiederholten Namen"@de ;
+    skos:definition "Repeating the names of the fifth section of the roll at the moment when a man wishes to thrust a spear into the speaker."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers written for Za-Walda Hawaryat (London: W. Griggs, 1900), section 6, p. LVIII" .
+
+pmp:EthiopianAsmatWornUponTheBreast a pm:Practicing ;
+    rdfs:label "The names worn upon the breast"@en, "Die auf der Brust getragenen Namen"@de ;
+    skos:definition "Wearing the written names upon the breast instead of uttering them firmly with the voice. The roll gives this as the second case of one instruction and not as a separate procedure: it is what is done by the man who will not speak them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers written for Za-Walda Hawaryat (London: W. Griggs, 1900), section 6, p. LVIII" .
+
+pmc:EthiopianSpearTurnedBack a pm:Conceptualizing ;
+    rdfs:label "The spear turned back"@en, "Der zurückgewendete Speer"@de ;
+    skos:definition "The outcome claimed for the spoken form: the spear of the man who wishes to thrust it shall be turned back."@en ;
+    skos:note "Stated without condition and without reservation. Nothing is said about the speaker's worthiness, his belief, the state of the roll, or the will of God, and the outcome named is a single public event at a single moment."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers written for Za-Walda Hawaryat (London: W. Griggs, 1900), section 6, p. LVIII" .
+
+pmc:EthiopianDeliveranceByTheWillOfGod a pm:Conceptualizing ;
+    rdfs:label "Deliverance from the enemy by the will of God"@en, "Errettung vom Feind nach dem Willen Gottes"@de ;
+    skos:definition "The outcome claimed for the worn form: the names shall deliver the wearer from his enemy, and he shall escape from him by the will of God."@en ;
+    skos:note "The clause at the end is the whole difference between this node and the one beside it. A man who wore the names and was struck has not shown that they failed; he has shown that it was not willed. The same volume states the same protection three lines earlier without that clause."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers written for Za-Walda Hawaryat (London: W. Griggs, 1900), section 6, p. LVIII" .
+
+pmc:EthiopianSpokenAsmatYieldsTurnedSpear a pm:Yielding ;
+    rdfs:label "The spoken names turn the spear back"@en, "Die gesprochenen Namen wenden den Speer zurück"@de ;
+    pm:byPractice pmp:EthiopianAsmatSpokenAgainstTheSpear ;
+    pm:yieldsCapacity pmc:EthiopianSpearTurnedBack ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    skos:note "The passage is printed twice in immediate succession in the edition read, word for word, which the editor does not remark on. Whether that is a repetition in the parchment or a compositor's doubling is not decidable from the volume, and it changes nothing about the claim."@en ;
+    dcterms:source "Budge (ed.), The Magical Prayers written for Za-Walda Hawaryat (London: W. Griggs, 1900), section 6, p. LVIII" .
+
+pmc:EthiopianWornAsmatYieldsDeliverance a pm:Yielding ;
+    rdfs:label "The worn names deliver from the enemy"@en, "Die getragenen Namen erretten vom Feind"@de ;
+    pm:byPractice pmp:EthiopianAsmatWornUponTheBreast ;
+    pm:yieldsCapacity pmc:EthiopianDeliveranceByTheWillOfGod ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers written for Za-Walda Hawaryat (London: W. Griggs, 1900), section 6, p. LVIII" .
+
+pmc:EthiopianAsmatGuardAgainstMen a pm:Conceptualizing ;
+    rdfs:label "The names guard against men"@en, "Die Namen schützen vor Menschen"@de ;
+    skos:definition "The claim of the fourth section of the same roll: that the names shall enable a man to guard himself against evil men, liars, calumniators, men of wrath, the hand of him that would attack him, and the feet of those who would rush upon him by means of magical powers; and, in the petition that follows, that those who would oppose him in the time of judgment shall not do so."@en ;
+    skos:note "Set beside the outcome of the sixth section because the two are of different kinds. Guarding oneself against liars has no moment at which it can be seen not to have happened; a spear turned back has one."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers written for Za-Walda Hawaryat (London: W. Griggs, 1900), section 4, p. LVII" .
+
+#
+# The seventh prayer: a term of wearing, and an oath as the ground of the effect
+#
+
+pmc:EthiopianWerzelya a pm:Naming ;
+    rdfs:label "Werzelya"@en, "Werzelja"@de ;
+    pm:nameForm "Werzewelya" ;
+    pm:nameRole "the killer of the child at the breast, bound by her own oath" ;
+    skos:altLabel "Ursula"@en ;
+    skos:definition "The being named in the seventh prayer of the Meux roll as the one who came in the matter of the first child and killed him, and who after being pierced swears never again to approach where the Name is met with."@en ;
+    skos:note "The edition read renders the name as Ursula in the introduction and prints Werzewelya in the translation. The identifier keeps the transliterated form of the roll and not the editor's substitution, which is a Latin name for a being the roll does not call by one."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer VII, p. 219" .
+
+pmc:EthiopianSusenyos a pm:Naming ;
+    rdfs:label "Susenyos"@en, "Susenjos"@de ;
+    pm:nameForm "Susenyus" ;
+    pm:nameRole "the saint on horseback whose prayer is written down and worn" ;
+    skos:altLabel "Socinius"@en ;
+    skos:definition "The being named in the seventh prayer as the man whose child was killed, who mounted his horse Cherubim, took a spear in his right hand, was granted power from a voice out of heaven, and slew the killer."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer VII, p. 219" .
+
+pmc:EthiopianBarya a pm:Naming ;
+    rdfs:label "Barya"@en, "Barja"@de ;
+    pm:nameForm "Barya" ;
+    pm:nameRole "the bringer of the evil eye against which the prayers are said" ;
+    skos:altLabel "Borya"@en ;
+    skos:definition "The being named more often than any other in the Meux roll, against whose evil eye the first, second, third, sixth, seventh and eighth prayers ask deliverance, and against whom the diseases enumerated in them are directed."@en ;
+    skos:note "The edition read prints Barya and Borya for what is plainly one name and does not say which spelling stands in the parchment. Held as one naming with the second form as an alternate label rather than split into two, because nothing in the volume supports two bearers."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayers I, II, III, VI, VII, VIII, pp. 216-220" .
+
+pmc:EthiopianOathOfWerzelya a pm:Conceptualizing ;
+    rdfs:label "The oath that grounds the written protection"@en, "Der Eid, auf dem der geschriebene Schutz ruht"@de ;
+    skos:definition "The undertaking sworn by the pierced child-killer, by the seven ranks of the archangels, that she will not contend against the Name, will never journey along the path where it is to be met with, or enter any church wherein it is commemorated, or any house or place whatsoever, and that this prayer shall be placed upon children, young men or the full grown, unto the end of the world."@en ;
+    skos:note "The reason for a node of its own is that the roll states its own mechanism, which is uncommon. The protection is not a power the wearer acquires and not a favour asked each time; it is the enforcement of a promise extracted once from the adversary, and the written object is what puts the wearer inside the scope of that promise. A protocol that wanted to unsettle the claim would have to unsettle the oath, and there is no proceeding for that."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer VII, p. 219" .
+
+pmc:EthiopianWearingUntilChildbearingEnds a pm:Conceptualizing ;
+    rdfs:label "Worn until the years of childbearing are ended"@en, "Getragen, bis die Jahre des Gebärens enden"@de ;
+    skos:definition "The term set on the wearing of the seventh prayer: it must be written down and worn by the woman who has children to suckle and bring up until the years of childbearing are ended."@en ;
+    skos:note "A stated term, which is rarer in this graph than a stated effect. It gives the claim a span rather than a moment, and it says when the wearing may stop without the protection being forfeited."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer VII, p. 218" .
+
+pmp:EthiopianSusenyosPrayerWorn a pm:Practicing ;
+    rdfs:label "The prayer of Susenyos written down and worn"@en, "Das niedergeschriebene und getragene Gebet des Susenyos"@de ;
+    skos:definition "Writing down the seventh prayer and wearing it, by the woman who has children to suckle and bring up, for the removal of disease of every kind from those who suck at their mothers' breasts."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer VII, p. 218" .
+
+pmc:EthiopianProtectionOfTheSuckling a pm:Conceptualizing ;
+    rdfs:label "The preserving of the child at the breast"@en, "Die Bewahrung des Kindes an der Brust"@de ;
+    skos:definition "The effect claimed for the worn prayer: preservation and protection from the disease caused by the evil eye of Barya, from coughs, bronchitis, pleurisy, inflammation of the lungs and bowels, diarrhoea, colic, dysentery, the disease caused by worms, fistula, the cracking of the skin, and the evil eye of the sar, of the sorcerer and enchanter, and of a list of named others."@en ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer VII, p. 218" .
+
+pmc:EthiopianWornPrayerYieldsProtectionOfTheSuckling a pm:Yielding ;
+    rdfs:label "The worn prayer preserves the suckling child"@en, "Das getragene Gebet bewahrt den Säugling"@de ;
+    pm:byPractice pmp:EthiopianSusenyosPrayerWorn ;
+    pm:yieldsCapacity pmc:EthiopianProtectionOfTheSuckling ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    skos:note "The list of harms is long and the wording is a petition rather than a guarantee: it says preserve and protect, and it names the woman it is for. What makes the claim examinable at all is not the list but the term beside it, and what makes it hard is that infant death from any of the named causes can be assigned to a lapse in the wearing."@en ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer VII, p. 218" .
+
+pmc:EthiopianSucklingProtectionPresupposesTheWearing a pm:Presupposing ;
+    rdfs:label "The preserving presupposes the wearing through the term"@en, "Die Bewahrung setzt das Tragen über die Frist voraus"@de ;
+    pm:dependentStep pmc:EthiopianProtectionOfTheSuckling ;
+    pm:priorStep pmc:EthiopianWearingUntilChildbearingEnds ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EthiopianOrthodoxMagic ;
+    skos:note "Prescribed order and not stated necessity. The prayer says the writing down and the wearing must be done and gives the term, and it names no consequence of breaking off, so nothing here carries a citable consequence of skipping."@en ;
+    dcterms:source "Budge (ed.), The Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), Lady Meux MS No. 5, prayer VII, p. 218" .
+
+#
+# What the editor made of it
+#
+
+pmc:BudgeOrderingOfEthiopianAmulets a pm:Systematizing ;
+    rdfs:label "Budge's ordering of the Ethiopian amulets under the power of names"@en, "Budges Ordnung der äthiopischen Amulette unter der Macht der Namen"@de ;
+    skos:definition "The account given in the introduction to the volume, in which the amulets are explained by a single principle: that wherever the name of a good or evil spirit, or of a man, existed, there also was the presence of that spirit or man, so that the presence of a name is equivalent to the presence of the being; and that the Ethiopians, having become Christians outwardly, retained their fear of demons and could resist one only by obtaining the protection of another of greater power."@en ;
+    pm:ordersClaim pmc:EthiopianAsmat ;
+    pm:compiledBy "E. A. Wallis Budge" ;
+    dcterms:date "1900" ;
+    skos:note "Entered as an ordering act and not as a claim of the transmission because none of the rolls printed in the volume says any of it. The formula about the presence of the name is the editor's, it is the sentence most often repeated about this material, and it is regularly given as an Ethiopian doctrine."@en ;
+    skos:note "The same introduction summarises the sixth section of the roll written for Za-Walda Hawaryat as declaring that the man who wears this amulet on his breast shall be delivered from the spear of any who would attack him. The translation printed sixty pages later gives two forms, the spoken one first, and attaches the reservation by the will of God to the worn one only. A reader of the summary gets the guarantee without the reservation and without the alternative, which is the part of the sentence a protocol turns on."@en ;
+    dcterms:source "Budge (ed.), The Miracles of the Blessed Virgin Mary, and the Life of Hanna (Saint Anne), and the Magical Prayers of Aheta Mikael (London: W. Griggs, 1900), introduction, pp. L-LIII" .
+
+#
+# Placements on the consciousness axes
+#
+
+pmc:SituatingEthiopianAsmatAnchoring a pm:Situating ;
+    rdfs:label "The saying of the names is placed in outward waking"@en, "Das Sprechen der Namen wird im nach außen gewandten Wachen verortet"@de ;
+    pm:situatedNode pmp:EthiopianAsmatRecitedAtTheDoors ;
+    pm:axisValue pm:outwardWaking ;
+    pm:situationGround "The roll sets the saying at the front and at the doors of a house that is about to be entered, and the sixth section of the supplementary roll sets it at the moment a man raises a spear. Both are acts done with open eyes in the ordinary channel; nothing in either passage asks for withdrawal, sleep, vision or absorption, and no state is named as a condition." ;
+    pm:attestedBy pm:compilerInference .
+
+pmc:SituatingEthiopianAsmatAgency a pm:Situating ;
+    rdfs:label "The protection of the names is placed at ceded agency"@en, "Der Schutz der Namen wird bei abgetretener Handlung verortet"@de ;
+    pm:situatedNode pmc:EthiopianAsmatYieldsRestraintOfDevils ;
+    pm:axisValue pm:cededAgency ;
+    pm:situationGround "The roll assigns the acting to others throughout: the angels protect and keep in safety, the names are the names of their God, the deliverance of the worn form comes by the will of God, and the seventh prayer rests the whole effect on an oath sworn to Christ by the adversary. What the person does is say or wear; what acts is named as someone else." ;
+    pm:attestedBy pm:compilerInference .
