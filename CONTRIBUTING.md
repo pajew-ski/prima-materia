@@ -253,6 +253,11 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Dakota Grammar, Texts, and Ethnography; Pond, Dakota Superstitions; Brown,
   The Sacred Pipe — die Debatte um Neihardts Bearbeitung und die moderne
   Lakota-Forschung gehen als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:aethiopisch` (die Geʿez-Schutzrollen und die Zaubergebetsliteratur:
+  Budges Ausgabe der Lady-Meux-Handschriften, Lefāfa Ṣedeq, das Asmāt-Korpus,
+  Strelcyns mäftəḥe śəray, dazu die Geʿez-Kanonliteratur, soweit sie
+  operative Gebete führt — die Äthiopistik geht als `pm:evidenceFrom` ein, nie
+  als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
