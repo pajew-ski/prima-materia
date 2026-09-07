@@ -253,12 +253,6 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Dakota Grammar, Texts, and Ethnography; Pond, Dakota Superstitions; Brown,
   The Sacred Pipe — die Debatte um Neihardts Bearbeitung und die moderne
   Lakota-Forschung gehen als `pm:evidenceFrom` ein, nie als Quelle)
-- `korpus:lakota` (Walker, The Sun Dance and Other Ceremonies of the Oglala
-  Division of the Teton Dakota, Anthropological Papers AMNH XVI.2; Densmore,
-  Teton Sioux Music, BAE Bulletin 61; Dorsey, A Study of Siouan Cults; Riggs,
-  Dakota Grammar, Texts, and Ethnography; Pond, Dakota Superstitions; Brown,
-  The Sacred Pipe — die Debatte um Neihardts Bearbeitung und die moderne
-  Lakota-Forschung gehen als `pm:evidenceFrom` ein, nie als Quelle)
 - `korpus:aethiopisch` (die Geʿez-Schutzrollen und die Zaubergebetsliteratur:
   Budges Ausgabe der Lady-Meux-Handschriften, Lefāfa Ṣedeq, das Asmāt-Korpus,
   Strelcyns mäftəḥe śəray, dazu die Geʿez-Kanonliteratur, soweit sie
