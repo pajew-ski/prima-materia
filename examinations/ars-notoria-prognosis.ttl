@@ -1,0 +1,48 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — two protocols on the prognostic orations of the Notory Art
+#
+# The art is known for the promise the graph already holds a protocol on: the
+# sciences within one month. That claim needs a measuring instrument that has
+# first to be chosen, and examinations/notory-art-one-month.ttl says so. The
+# two claims here need none. One of them predicts a death, the other predicts
+# the sex of an unborn child, and both are settled by an event that happens
+# anyway and gets recorded by somebody else.
+#
+# They are entered as separate protocols because they fail differently. The
+# prognosis of death is only examinable in one of the two readings the edition
+# carries; the prediction of sex is examinable in both and has a known base
+# rate, which is the rarer property.
+#
+
+pmp:ArsNotoriaPrognosisExamination a pm:Testing ;
+    rdfs:label "Whether the answer of the sick man decides what the art says it decides"@en, "Ob die Antwort des Kranken entscheidet, was die Kunst sagt"@de ;
+    skos:definition "A protocol on the claim that after the oration of the physical art is said three times, the sick man's answer to the question how he feels tells without doubt whether he will recover or die."@en ;
+    pm:tests pmc:ArsNotoriaOratioYieldsCognitioAegritudinis ;
+    pm:falsifiedBy "One sick person who answers that he is at good ease or begins to mend and then dies of that illness, or who answers that he is grievously ill or worse and worse and then recovers, with the answer and the judgement written down before the outcome. The first two branches each name one outcome and exclude the other, and the text says without doubt and doubtless, so a single such case refutes the rule as stated." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passages recorded in traditions/ars-notoria.ttl" ;
+    pm:protocolUpdated "2026-09-07" ;
+    pm:baseRate "Unknown and not a single number: whether a person who lies languishing recovers depends on the illness, and the rule is stated for illness in general. Any protocol has to fix the population before it starts, because a rule applied to a ward of the nearly recovered and a rule applied to a ward of the dying score differently without either being right." ;
+    skos:note "Which reading is being tested has to be said, and this protocol tests the English. The Latin of the same printing says of the badly answering patient only that he will die shortly; Turner says he will die on the morrow. Shortly has no last day and therefore no outcome that could arrive too late, so the Latin branch is not examinable at all. The divergence stands as pmc:ArsNotoriaTerminusMortisDisputatus and it is the reason this protocol names its witness rather than the tradition."@en ;
+    skos:note "The third branch is excluded from the falsifying condition on purpose. A patient who says he does not know is covered by dying and by getting worse together, and no fate he can meet falls outside that pair. Testing the rule as a whole would let that branch absorb every case the other two got wrong, which is exactly how a claim that says nothing comes to look confirmed."@en ;
+    skos:note "The obstacle to cases is not the difficulty of the procedure but who would keep the record. The judgement has to be written before the outcome and by someone who is not the person nursing the patient; the corpus offers no such series, and none has been looked for outside this graph."@en ;
+    skos:note "One escape the corpus takes elsewhere is absent here. The art bars the man impeded by crime from saying the orations at all, and that condition is recorded as a caution; nothing in this passage says that a wrong prognosis shows the speaker was unworthy. Whether a fuller recension closes that gap is unread and would change the state of this protocol rather than its subject."@en .
+
+pmp:ArsNotoriaSexPredictionExamination a pm:Testing ;
+    rdfs:label "Whether the oration reveals the sex of the unborn child"@en, "Ob die Oration das Geschlecht des ungeborenen Kindes offenbart"@de ;
+    skos:definition "A protocol on the claim that saying the oration while touching the pulse of a pregnant woman reveals whether she will bring forth a male or a female. It is the claim in this corpus that comes closest to being ready for a count: a binary outcome, a known base rate, a public result, and a prediction that can be fixed in writing beforehand."@en ;
+    pm:tests pmc:ArsNotoriaOratioYieldsSexusInfantis ;
+    pm:falsifiedBy "A series of predictions recorded before each birth, by an operator keeping the conditions the text sets, whose proportion correct does not exceed what guessing would give on the same series. The claim is stated without degree and without exception, so a single wrong prediction refutes it as it stands; the weaker form, that the operator does better than chance, is what a series would actually settle, and it is stated here because the strong form is the one the text makes and the weak form is the one worth measuring." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passage recorded in traditions/ars-notoria.ttl" ;
+    pm:protocolUpdated "2026-09-07" ;
+    pm:baseRate "About one half. The sex ratio at birth in human populations runs a little above parity for males, so an operator predicting at random scores close to fifty in a hundred, and a series has to be long enough to distinguish a real excess from that. This is the only claim the run met whose base rate is known in advance rather than having to be estimated from the same data that test the claim." ;
+    skos:note "No case has been collected, and the obstacle here is not the record but the era: the claim is from a work in print since sixteen fifty-seven and nobody appears to have counted. That is a property of the attention the claim has had and not of the claim, which is why the state is procedure-without-cases."@en ;
+    skos:note "What a protocol would have to guard against is not the operator's honesty but the moment of prediction. Touching the pulse puts the operator in front of the woman, and a prediction made late in a pregnancy by someone who can see her is not a prediction from the oration. The prediction has to be sealed and the point in the pregnancy fixed, or the protocol measures ordinary observation."@en ;
+    skos:note "The passage that carries this claim also carries the sentence that would explain a failure away, and it explains it away in the wrong direction: the miracle proceeds not from the operator's nature but from the angels, whose office it is to reveal these things. That locates the acting elsewhere but sets no condition on the operator, so it does not absorb a wrong answer. Nothing in the passage does."@en .

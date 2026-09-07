@@ -258,6 +258,12 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Strelcyns mäftəḥe śəray, dazu die Geʿez-Kanonliteratur, soweit sie
   operative Gebete führt — die Äthiopistik geht als `pm:evidenceFrom` ein, nie
   als Quelle)
+- `korpus:ars-notoria` (die Ars notoria in ihren Rezensionen und Drucken:
+  Turners englische Übersetzung von 1657 nach dem Agrippa zugeschriebenen
+  Beringos-Druck, die mittelalterlichen Fassungen und ihre kritische Edition,
+  der Liber iuratus Honorii und der Liber florum des Johannes von Morigny als
+  Gegenüberlieferung — die Forschung dazu geht als `pm:evidenceFrom` ein, nie
+  als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
