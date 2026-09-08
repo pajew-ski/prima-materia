@@ -1,0 +1,344 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — the Kongo nkisi transmission
+#
+# Order of the file: the tradition and the two decisions that had to be taken
+# before its first node, then the charged object and what renews it, then the
+# prohibitions that are said to destroy it, then the poison ordeal with its
+# verdict rule, its screening step, its reversed rule and its sign, then the
+# places where the transmission says its own instrument has failed and where
+# it says why, then the two movements that made a checkable promise and what
+# happened to each, and last the vocabulary through which the mission entered
+# the category.
+#
+# The tradition instance was registered in
+# traditions/registry-outside-contact.ttl and is moved here now that passages
+# have been read.
+#
+# Opened from the independence entrance of SPEC §14 and not from an open claim
+# issue. What the reading did to that reason stands on the instance below.
+#
+
+pmt:KongoNkisi a pm:Tradition ;
+    rdfs:label "Kongo nkisi transmission"@en, "Kongolesische Nkisi-Überlieferung"@de ;
+    skos:definition "The Lower Congo and Loango transmission of composed objects charged to act, whose power is held to be renewed by sacrifice and destroyed by the breaking of a stated prohibition, and of a poison ordeal by which an accusation of witchcraft is decided at an outcome the operator is not supposed to control."@en ;
+    skos:note "Chosen from the registry on the independence entrance. What the reading found is that the entrance was mistaken for this transmission and the correction is the chief finding of the run: the contact route is entered as documented and no longer as absent, and it is documented from inside the corpus and not from the scholarship. The word the transmission uses for a charged object is the word the old Catholic mission chose for holy, and the mission called its own churches nzo ankisi; the Kongo name for the devil is stated to have stood for four hundred years; the image of the Virgin in the church at San Salvador is addressed for a child like any other charged thing, and the crosses, discs and pictures given out by the priests are called by the same word as an amulet. A transmission whose central term was in liturgical use for four centuries cannot be counted as a witness without a route."@en ;
+    skos:note "Read in this run at the wording: in Weeks 1914 the two chapters on magic and on charms and their prohibitions, printed pages two hundred and sixteen to two hundred and fifty-one, and the chapter on divination and the ordeal, printed pages two hundred and sixty-one to two hundred and sixty-five; in Weeks, Folk-Lore volume twenty, printed pages fifty-one to fifty-eight; in Bentley 1900 volume one, printed pages two hundred and thirty-six to two hundred and thirty-seven and two hundred and seventy-four to two hundred and ninety-three; in Dennett 1906, printed pages twenty-four to twenty-five, seventy-three to seventy-seven, eighty-three, eighty-six to ninety-three and one hundred and forty-seven to one hundred and forty-eight. The rest of each work was searched by term for the owed kinds and was not read continuously; that is a decision and not an exhaustion."@en ;
+    skos:note "One work could not be read where it should have been. The digitised text of Bentley 1900 volume one that was reachable breaks between printed page two hundred and thirty-seven and printed page two hundred and seventy-four, and the chapter on the charged objects themselves lies inside that gap, as does the passage in which a retiring witch-doctor is said to have put a number on her own false denunciations. The gap belongs to the copy and not to the work, so the pages are owed and stand as an issue, not as a property of the work."@en ;
+    skos:note "The corpus is widened at the instance and the coined identifier is kept. The registration named the Laman notebooks in Kikongo and Laman, The Kongo; neither was opened. The four volumes are in any case a derivative rather than a source, since the notebooks were sorted, cut and fused in making them, and what a later run must obtain is the individual notebook with its author and district. What was read instead is four public-domain works of the years eighteen ninety-five to nineteen fourteen, three of them by men resident in the country for decades."@en ;
+    skos:note "The recorder problem is stated here rather than left in the sources. All four works are by outsiders: two Baptist missionaries at San Salvador and in the Ngombe Lutete district, and a trader on the Loango coast. Two consequences run in opposite directions and both are kept. The missionaries report the transmission as an evil to be ended, and every judgement of theirs is to be weighed separately from their observations. But their reports of fraud, of doubt among the people, and of promises that failed are reports against the interest of the thing they were describing and not for it, and they are the part of the corpus this graph can least afford to lose."@en ;
+    skos:note "Two speech communities stand in one file and the file says so rather than smoothing it. Weeks and Bentley record Kikongo-speaking Bakongo of the Lower Congo around San Salvador, Wathen and Ngombe Lutete; Dennett records Vili-speaking Bavili of Loango, whose orthography differs and who write nkici where the others write nkisi or nkixi. Dennett states that the overlord of Maluango was the ruler of Kongo, so the two stand in one documented sphere; whether the Loango transmission is to be registered as its own is a decision that has not been taken and is held as an issue."@en ;
+    pm:principalCorpus "Weeks, Among the Primitive Bakongo; Weeks, Notes on Some Customs of the Lower Congo People, in Folk-Lore, vols. XIX-XX; Bentley, Pioneering on the Congo, and the Appendix to the Dictionary and Grammar of the Kongo Language; Dennett, At the Back of the Black Man's Mind, and Notes on the Folklore of the Fjort; the Laman notebooks in Kikongo, with Laman, The Kongo, as the derivative made from them" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 230-231" .
+
+#
+# The charged object, and what is said to renew it
+#
+
+pmc:Nkisi a pm:Conceptualizing ;
+    rdfs:label "Nkisi, the charged object"@en, "Nkisi, das geladene Ding"@de ;
+    skos:definition "A bundle or a carved figure into which ingredients have been put, held thereby to bring a named spirit under the control of whoever owns it and to perform one named office: to make a thief invisible or to detect him, to give a child or to withhold one, to make a gun shoot straight or another gun shoot crooked. The corpus states that there is no good wish and no evil desire for which one cannot be bought, and that a new complaint brings a new cult with a new charged thing to control the power responsible for it."@en ;
+    skos:note "Entered as a container and not as an object of worship because the corpus says so in as many words: there is held to be no idea of worship in the sacrifice made to one, and no prayers are offered with it. The Vili witness makes the same separation in his own terms, dividing the people who serve the charged figures from the priests of the sacred groves and holding that the old Portuguese took the first for the whole."@en ;
+    skos:note "The name is written nkisi by Weeks, nkixi in Bentley's dictionary of eighteen eighty-seven, and nkici with the plural zinkici by Dennett, who sets out his own orthography and warns that his x stands for a different sound than Bentley's. The identifier follows the form of the Lower Congo works."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 234-235", "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), p. 92" .
+
+pmp:Kimenga a pm:Practicing ;
+    rdfs:label "Kimenga, the sacrifice that renews the charged thing"@en, "Kimenga, das erneuernde Opfer"@de ;
+    skos:definition "A fowl or a goat is killed and its blood poured over the figure or the bundle, or the toe of a fowl or of a frog is cut and the blood allowed to fall on it. The corpus gives the rule as a schedule and a scale: to be kept at full power the sacrifice should be made regularly, at every new moon or on certain market days, and the larger the favour expected the more costly the sacrifice must be, so that a charged thing receiving only the drippings from a frog's toe is not to be expected to confer large favours. The flesh may not be sold but is eaten by the man who offers it and his clan, the offering is made at sunset with the face turned to the sun, and a pig is never offered."@en ;
+    skos:note "Recorded with its scale because the scale is what makes the practice answerable: a transmission that ties the size of the favour to the size of the offering has said something that its own practitioners can find false, and the corpus elsewhere records exactly that complaint in the form of a charged thing that failed."@en ;
+    skos:note "The recorder adds that his informants could not say why the pig is excluded, and he supplies a guess of his own. The guess is his and is not entered."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bakongo of the Lower Congo at San Salvador and in the Ngombe Lutete district, mostly unnamed in this passage; recorded by the Baptist missionary John H. Weeks over some thirty years of residence, the book closed in 1913; given in Kikongo, of which the work prints the terms in the text while the accounts themselves are printed in English only." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 235-236" .
+
+pmc:NkisiYieldsItsOffice a pm:Yielding ;
+    rdfs:label "The charged thing performs the office it was made for"@en, "Das geladene Ding verrichtet sein Amt"@de ;
+    skos:note "Not circular in the sense SPEC §11 forbids: the practice named is the composing and charging of an object by a named practitioner, and the capacity is an effect in the world outside it, on a thief, a gun, a disease or a birth. The transmission also states what is to be concluded when the effect fails to appear, and that stands on the neighbouring node."@en ;
+    pm:byPractice pmp:Kimenga ;
+    pm:yieldsCapacity pmc:Nkisi ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bakongo of the Lower Congo at San Salvador and in the Ngombe Lutete district, mostly unnamed in this passage; recorded by the Baptist missionary John H. Weeks over some thirty years of residence, the book closed in 1913; given in Kikongo, of which the work prints the terms in the text while the accounts themselves are printed in English only." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 235" .
+
+#
+# What the transmission says when the charged thing does not work
+#
+
+pmc:FailureIsSulkinessOrLostPower a pm:Conceptualizing ;
+    rdfs:label "A charged thing that fails is either sulky or weak"@en, "Ein Ding, das versagt, schmollt oder ist erschöpft"@de ;
+    skos:definition "The corpus states the diagnosis as a pair of alternatives with a remedy for each. A charged thing that fails to perform its office must either have a sacrifice offered to it or have its power renewed by the practitioner who first made it, or by a member of the same cult: it is either sulky because it has been neglected, or weak from loss of power. The sacrifice removes the sulkiness and the practitioner restores the power."@en ;
+    skos:note "This is the node the file is built around. It is a complete account of non-occurrence that never reaches the claim: whatever happens, the outcome is assigned to the state of the instrument and not to the question whether the instrument works. It costs a fee in either branch."@en ;
+    skos:note "The same corpus records the second, wider form of the move: when a man is not helped, he as a rule does not blame the practitioner but concludes that the diagnosis was wrong and that his trouble is not under the control of that particular charged thing, and simply changes practitioners, his confidence in the order untouched. The transmission thus has two exits from a failure before any question about the practice arises."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 235 and pp. 230-231 and p. 250" .
+
+pmc:FailureAttributedToABrokenProhibition a pm:Conceptualizing ;
+    rdfs:label "A cure that does not take is charged to a broken prohibition"@en, "Eine ausbleibende Heilung wird einem gebrochenen Verbot angelastet"@de ;
+    skos:definition "Where a treatment does not take, the corpus states that the failure is put at the door of a broken prohibition or a slighted custom, and that the distinction between a trouble coming from a broken prohibition and a trouble coming from witchcraft, difficult as it is to trace, is decided by the practitioner himself. A recorded case of nineteen hundred and nine has a practitioner locked in a house with his charged thing, voices of young and old heard in conversation, and the verdict that the sickness came because the patient's brother had given no palm wine to his wife's family at his marriage."@en ;
+    skos:note "The recorder states his own explanation beside the material, and it is his and not the transmission's: he holds that the practitioners are themselves responsible for the prohibitions, because a prohibition leaves a reasonable excuse for a failure to cure, and the patient is satisfied with the reason and willing to pay the fee to have the matter set right. Entered here as the recorder's reading, not as a claim of the transmission."@en ;
+    skos:note "Held beside pmc:FailureIsSulkinessOrLostPower and not merged with it. The first assigns a failure to the instrument, the second to the patient's conduct, and the second is the more expensive of the two, because the patient cannot show that he kept a prohibition he was never told he had."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 231 and pp. 250-251" .
+
+pmc:NginduLeafNullifiesEveryCharm a pm:Conceptualizing ;
+    rdfs:label "One leaf annuls every charged thing in the house"@en, "Ein Blatt hebt jedes geladene Ding im Haus auf"@de ;
+    skos:definition "A leaf of the ngindu-ngindu tree is held to counteract the influence of all charms and charged things, so that a practitioner who finds one in his house must reinvigorate everything he owns, the presence of the leaf having rendered them useless."@en ;
+    skos:note "Recorded because it is a physical and checkable condition of failure rather than a moral one, and because it is general: it does not annul one charged thing but the whole stock of them. What it shares with the other failure conditions is that it is discovered after the fact."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 241" .
+
+#
+# The town charm and the prohibition that is said to disable it
+#
+
+pmp:NkindaAEvata a pm:Practicing ;
+    rdfs:label "Nkind' a evata, the setting up of a town charm"@en, "Nkind' a evata, das Setzen des Ortszaubers"@de ;
+    skos:definition "The inhabitants of a town club together to fee a practitioner of the luck-giving order. A post of a named wood is cut, a hole made in its top and filled with the charm, a hole dug beside the road the women take to the water, a goat killed and its head laid in the hole under the post, the earth rammed round it and the goat's blood poured over the charm. No sacrifice is then made on a schedule; the charm is refreshed with more blood when a misfortune befalls the town."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bakongo of the Lower Congo at San Salvador and in the Ngombe Lutete district, mostly unnamed in this passage; recorded by the Baptist missionary John H. Weeks over some thirty years of residence, the book closed in 1913; given in Kikongo, of which the work prints the terms in the text while the accounts themselves are printed in English only." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 220-221" .
+
+pmc:NothingTiedMayEnterTheTown a pm:Cautioning ;
+    rdfs:label "Nothing tied in a bundle may enter the town"@en, "Nichts Gebündeltes darf in den Ort"@de ;
+    skos:definition "One prohibition is attached to the town charm and the corpus says it must be scrupulously observed: nothing tied in a bundle may enter the town, or the charm becomes ineffective. Women returning with firewood untie their bundles before they reach the post, men carrying thatching grass unfasten them, carriers loosen their cords or make a wide detour, and people take off their girdles."@en ;
+    skos:note "Recorded because it is the clearest case in the file of a condition that is public, physical, continuously in force, and observable by anyone. It is also the condition most easily satisfied after the fact: any misfortune in the town can be traced to a bundle somebody carried in."@en ;
+    pm:cautionsAbout pmp:NkindaAEvata ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bakongo of the Lower Congo at San Salvador and in the Ngombe Lutete district, mostly unnamed in this passage; recorded by the Baptist missionary John H. Weeks over some thirty years of residence, the book closed in 1913; given in Kikongo, of which the work prints the terms in the text while the accounts themselves are printed in English only." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 220-221" .
+
+pmc:Kandu a pm:Conceptualizing ;
+    rdfs:label "Kandu, the token that announces a curse"@en, "Kandu, das Zeichen, das den Fluch ankündigt"@de ;
+    skos:definition "A hoe handle with cassava cores tied to it, a stick daubed with colours, an old basket hung in a fruit tree: things set where property is to be protected. The corpus states that these are not themselves charms but tokens or warnings, put up to inform a thief that a curse lies on the thing and what complaint he will get if he risks it, and it gives the reason in the form of a rule of fairness, that it is not considered fair to curse the stealing of an article without indicating it in some way."@en ;
+    skos:note "A stated rule of fairness inside an operative system is rare in this graph and is the reason for the node. It also has a consequence for what the transmission can claim: a curse that must be announced in advance is one whose effects the announcement itself could produce, and the corpus records elsewhere the case of a man who could not eat what his inherited prohibition forbade only so long as he feared it."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 239" .
+
+#
+# The two kinds of prohibition, and the sceptic the corpus records against them
+#
+
+pmc:Mpangu a pm:Conceptualizing ;
+    rdfs:label "Mpangu, the inherited prohibition"@en, "Mpangu, das ererbte Verbot"@de ;
+    skos:definition "A prohibition inherited in a family, with a penalty stated in advance and matched in kind to the thing forbidden: hippopotamus flesh and elephantiasis, a fish with opal eyes and diseased eyes, the great bull frog and bulging eyes, spotted animals and a spotted skin disease. A parent who keeps the prohibition is said to bless his children with immunity from that disease and one who breaks it to curse them with liability to it."@en ;
+    skos:note "The corpus records its own counter-witness at the same place, and the node exists as much for that as for the rule. Some people told the recorder there are no such prohibitions in their families; and a well-informed man told him that anyone could eat what his inherited prohibition forbade without evil consequence, provided he ate it fearlessly and did not boast of it afterwards. That is a stated condition of failure for the prohibition itself, and it is stated by a member of the transmission."@en ;
+    skos:note "The same corpus notes that the animals under prohibition are not treated as omens and are not respected: they are killed like any others and only not eaten."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 245-246" .
+
+pmc:Nlongo a pm:Conceptualizing ;
+    rdfs:label "Nlongo, the imposed personal prohibition"@en, "Nlongo, das auferlegte persönliche Verbot"@de ;
+    skos:definition "A prohibition laid on one person by the practitioner who treats him, sometimes for life and sometimes for a stated term. The corpus states that the thing forbidden bears no relation to the complaint and is chosen at the practitioner's discretion, and it gives instances: a woman with fits forbidden to look in a mirror or at her reflection in a stream, men forbidden cassava in any form for the rest of their lives. Eating the forbidden thing is said to break the protective spell and to bring the complaint back. Where the prohibition is for a term, say six months, the practitioner removes it at the end and takes his fee."@en ;
+    skos:note "Held apart from pmc:Mpangu because the two differ in exactly the way that matters here: the inherited prohibition names its penalty in advance and in kind, and the imposed one names no relation at all between the forbidden thing and the disease. The second cannot fail, since any return of the complaint is evidence that something was eaten."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 246-247" .
+
+#
+# The poison ordeal
+#
+
+pmp:BauKiaNkasa a pm:Practicing ;
+    rdfs:label "Bau kia nkasa, the ordeal by the bark"@en, "Bau kia nkasa, das Rindenordal"@de ;
+    skos:definition "The pounded bark of the nkasa tree, given to a person accused of witchcraft. The corpus gives the setting and the dose: the accused is taken to the bare top of a hill, a hut of palm fronds is built with a lath across it, and a stone is pushed towards him bearing twenty-seven small heaps of the ordeal, each ground to powder and fed to him in turn, during which he must hold his hands spread out and touch nothing. A curse is then laid on him, that if he is a witch he will die by the ordeal. A second witness has the accused drink cup after cup of the bark paste mixed with water, in the market place and on market day, standing on a stone or a marked spot he may not leave."@en ;
+    skos:note "The corpus states that it is not the medicinal property of the bark that acts but the spirit in the tree, which reveals the witchcraft or does not. That is the claim the procedure rests on, and it is what makes the case a candidate for the class of answers fixed to an outcome the operator does not control: the operator is expressly said not to be the one who decides."@en ;
+    skos:note "The same second witness reports that the mixture is supposed to be the bark only, and that a practitioner who considers it desirable to kill mixes one or two other poisons with it, which the recorder says he was told by a man who had himself been of the trade. The two statements stand in the file together on purpose: the transmission asserts an outcome nobody steers, and a witness from inside states how it was steered."@en ;
+    skos:note "The Vili witness at Loango has the same substance in the same office, administered at the ruler's court by a practitioner of the ordeal, and adds what happens to the condemned there: the body is burnt and the ashes scattered, and no burial is granted."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bakongo of the Lower Congo, in this passage largely unnamed, and in the second work by a man who had himself administered the ordeal; recorded by the Baptist missionaries John H. Weeks and W. Holman Bentley during their residence at San Salvador, Wathen and in the Ngombe Lutete district from 1879 onwards; given in Kikongo, of which Bentley compiled the dictionary of 1887, and printed in English with the Kikongo terms." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 262-264", "W. Holman Bentley, Pioneering on the Congo (London: Religious Tract Society, 1900), vol. I, pp. 276-277", "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), p. 25 and p. 83" .
+
+pmc:DetectionOfTheNdoki a pm:Conceptualizing ;
+    rdfs:label "The detection of the witch"@en, "Das Aufdecken des ndoki"@de ;
+    skos:definition "The power ascribed to the ordeal of showing whether an accused person is a ndoki, a witch, the corpus stating that the ordeal is firmly held to be the surest means of detecting one, and that the accused is thereafter either honoured or killed according to the effect the poison has had on his stomach."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Notes on Some Customs of the Lower Congo People, in Folk-Lore, vol. XX (London: The Folk-Lore Society, 1909), pp. 51-52" .
+
+pmc:NkasaYieldsDetectionOfTheNdoki a pm:Yielding ;
+    rdfs:label "The ordeal yields the detection of the witch"@en, "Das Ordal bringt das Aufdecken des ndoki hervor"@de ;
+    skos:note "Entered because this is the form of claim the graph already holds from another African transmission, at pmc:BengeYieldsIdentificationOfTheWitch in traditions/azande.ttl, and because the two differ in a way that matters: there the poison is given to fowls and the question is put twice in opposite form, here the accused drinks it himself and no reversal is prescribed. Whether the two may be counted as separate witnesses is not decided here and is held as an issue; the contact route of this transmission is entered as documented on other grounds, and that value governs."@en ;
+    pm:byPractice pmp:BauKiaNkasa ;
+    pm:yieldsCapacity pmc:DetectionOfTheNdoki ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bakongo of the Lower Congo, unnamed in this passage; recorded by the Baptist missionary John H. Weeks in the districts of San Salvador and Ngombe Lutete and published in 1909; given in Kikongo, printed in English with the Kikongo terms." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Notes on Some Customs of the Lower Congo People, in Folk-Lore, vol. XX (London: The Folk-Lore Society, 1909), p. 51" .
+
+pmc:NkasaVerdictRule a pm:Conceptualizing ;
+    rdfs:label "The verdict rule of the ordeal"@en, "Die Urteilsregel des Ordals"@de ;
+    skos:definition "Vomiting acquits and retention condemns, with a confirming step: should the accused vomit three times he is given a fourth dose, and if he vomits that he is held to have proved beyond doubt that he is not a witch. He does not clear himself if he fails to vomit, or if there are signs of blood or of green matter in what he brings up, or if he has bad diarrhoea; in that case he is brought out of the hut and killed and the body left on the hill."@en ;
+    skos:note "The second witness records that the rule is not the same everywhere, and the variants are the finding. In some districts the vomit is examined and guilt inferred from something in it; in others the man who has vomited must run down into the valley and up the next hill, which he is usually in no condition to do, so that the vomiting has proved nothing. The same witness states that in some districts the ordeal-giver loses his fee if the accused vomits and may be punished, and that he is sometimes bribed to prepare a mild dose that will ensure one."@en ;
+    skos:note "A fourth dose after three successful vomits is a repetition of the trial by the transmission itself, and the graph holds only one other case of a prescribed repetition, the second consultation of the Zande poison oracle. The difference is that the Zande control must reverse the first answer and this one must repeat it."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 263", "W. Holman Bentley, Pioneering on the Congo (London: Religious Tract Society, 1900), vol. I, pp. 276-277" .
+
+pmc:ReversedRuleForTheftAndAdultery a pm:Conceptualizing ;
+    rdfs:label "For theft and adultery the rule is reversed"@en, "Bei Diebstahl und Ehebruch gilt die umgekehrte Regel"@de ;
+    skos:definition "The same bark is used in serious accusations of theft and in bad cases of denied adultery, given in small doses in the town by a practitioner of divination, and there the rule runs the other way: if the accused retains the ordeal he is guiltless of the charge and may demand compensation from his accusers, and if he vomits he pays the fines for his crime and the matter ends."@en ;
+    skos:note "The exact inversion of the witchcraft rule with the same substance, in the same transmission, recorded on the following page. It is the strongest single argument in the file against reading the ordeal as a belief about a poison, and the strongest for reading it as a procedure whose reading rule is chosen with the charge. A second witness has the milder dose for theft too and gives the reason in physiological terms, that the retained poison then only causes illness."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 264", "W. Holman Bentley, Pioneering on the Congo (London: Religious Tract Society, 1900), vol. I, p. 279" .
+
+pmp:NkasaTreeCutting a pm:Practicing ;
+    rdfs:label "The cutting of the ordeal tree, with its formula and its sign"@en, "Das Schlagen des Ordalbaums, mit Formel und Zeichen"@de ;
+    skos:definition "The tree is never cut for any other purpose, and only the ordeal-giver may cut it, using a set formula: that if the person for whom he is cutting is really a witch the blade should bend at the stroke, and if he is not, the blade should enter and the wind stop blowing. The corpus adds the reading of the sign in the world: the air is often quite still for two or three hours before a storm, and that stillness is credited to someone, somewhere, cutting the ordeal tree."@en ;
+    skos:note "Two conditions of failure are stated here before the ordeal begins, and the corpus then records what is done with them. The recorder states that although the omens may be in favour of the accused the ordeal-giver proceeds all the same, that the results are not infrequently quite contrary to the omens, and that the belief is unaffected by the discrepancy. A sign that is read, contradicted and kept is a different thing from a sign that is never tested, and the file holds it as the first."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bakongo of the Lower Congo, unnamed in this passage; recorded by the Baptist missionary John H. Weeks over some thirty years of residence, the book closed in 1913; given in Kikongo, of which the work prints the terms while the accounts are printed in English only." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 262" .
+
+pmp:ProxyDosingOfTheAccused a pm:Practicing ;
+    rdfs:label "The dosing of substitutes to choose the accused"@en, "Das Dosieren von Stellvertretern zur Auswahl des Beschuldigten"@de ;
+    skos:definition "Where two or three persons are implicated in one charge, the witch-finder takes as many small boys, one to represent each suspected adult, gives a small quantity of the ordeal to each and watches the result. If the symptoms shown by one or two of the boys warrant it, the adults they represent are accused and must take the ordeal properly; if none of the boys shows the signs, others are suspected and fresh representatives are appointed. Only members of the same family are held able to bewitch one another, and only boys of the family of the deceased are used, and they are paid for it."@en ;
+    skos:note "A screening step before the ordeal proper, and the only case in the file where the transmission runs the procedure on a person who is not the party to the question. It is also where the physiology of the substance is made to do the work of the answer, since what is watched is the effect of a small dose on a child."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bakongo of the Lower Congo, unnamed in this passage; recorded by the Baptist missionary John H. Weeks over some thirty years of residence, the book closed in 1913; given in Kikongo, of which the work prints the terms while the accounts are printed in English only." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 261" .
+
+pmc:FurtherTestsAfterAnAcquittal a pm:Conceptualizing ;
+    rdfs:label "The tests that follow an acquittal nobody wanted"@en, "Die Proben nach einem unerwünschten Freispruch"@de ;
+    skos:definition "Where the acquitted person is obnoxious to the people and they are set on killing him, the corpus states that he is put to several further tests although he vomited properly: twigs of six different trees are thrown at him in quick succession and he must name each tree at once, then he must name the ants running on the ground before him, then the butterflies and the birds as they pass, and should he fail in any single trial he is pronounced a witch and pays with his life. The recorder adds the reason the tests work as they do, that the effect of the ordeal is to daze the person who has taken it and to deaden his wits."@en ;
+    skos:note "Entered because it is the mechanism by which a procedure said to be beyond the operator's control is brought back under it, and because the corpus states the mechanism itself: the tests are set after the verdict is known and are chosen so that a dazed man will fail them."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 263-264" .
+
+pmc:AcquittalDeniedByAscribingEvasion a pm:Conceptualizing ;
+    rdfs:label "An acquittal denied by ascribing evasion"@en, "Ein Freispruch, den man durch behauptete Umgehung entwertet"@de ;
+    skos:definition "A named case from Loango. A man was divined to be the owner of the leopard that had killed another man's wife; he denied it, was told by the ruler that nobody would believe him and that the decision lay with God, went to another town, demanded the ordeal, took it and vomited, and was thereby innocent. His accusers held instead that he had used his knowledge of the black art to escape the proper effect of the bark, and left their own town rather than live beside him."@en ;
+    skos:note "The counterpart within the ordeal to the failure attributions on the charged things: an outcome that clears a man is not accepted as clearing him, and the exit is a capacity ascribed to him which the procedure cannot test. Recorded with the case because the case is named and dated by the recorder and can be argued with."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), pp. 147-148" .
+
+pmc:AccuserPaysOnAnAcquittal a pm:Conceptualizing ;
+    rdfs:label "The acquitted may fine his accuser"@en, "Der Freigesprochene darf den Ankläger büßen"@de ;
+    skos:definition "A man who has passed the ordeal is led back to the town with songs of praise and dressed in fine cloth, and the corpus states that he may then mulct his accuser in a very heavy fine; in the milder form used for theft and adultery, the accused who retains the dose may demand compensation from his accusers."@en ;
+    skos:note "A cost on the accuser is the one feature of the procedure that works against its abuse, and it is worth recording that the transmission has it. The second witness records the cost running the other way at the same point, since in some districts the ordeal-giver loses his fee when the accused vomits, so the two incentives are opposed within one procedure."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 263 and p. 264" .
+
+pmc:TheOrdealGiverMustStandTheOtherOrdeals a pm:Conceptualizing ;
+    rdfs:label "The practitioner must stand the other ordeals himself"@en, "Der Betreiber muss die übrigen Proben selbst bestehen"@de ;
+    skos:definition "Beside the bark the corpus lists seven lesser ordeals with their Kikongo names, by hot knife, by boiling palm oil, by a bracelet in the oil, by knotted grass, by a bean on a twisted string, by a glass bead under the eyelid and by hot water. Of these the corpus states a condition on the practitioner: unless he is prepared to undergo each of them, the bark excepted, before the accused does, he is little respected and would soon lose his practice."@en ;
+    skos:note "A qualification requirement that the practitioner meets in public, and the only one in the file. The corpus states in the same place how it is met: the practitioner rubs baobab juice on the arm of any accused person who pays for it, and on one who will not pay he rubs another decoction which is not protective, and the recorder adds that the practitioners undoubtedly know of juices that help them bear the tests and are willing to sell the knowledge."@en ;
+    skos:note "The bark is excepted, and the exception is the whole of the difference: the ordeal that kills is the one the practitioner does not have to take."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), pp. 264-265" .
+
+pmc:RedCollarOfTheSurvivedOrdeal a pm:Conceptualizing ;
+    rdfs:label "The red collar worn by those who took the bark"@en, "Der rote Kragen derer, die die Rinde genommen haben"@de ;
+    skos:definition "A collar of red list bound with white tape, worn in Loango by a person who has taken the bark and survived it, to show the people that he did so successfully. The figures worked on it are read out by the wearer: signs for the common descent of the parties, for the strife that divided them, for the witnesses called and saluted, for the accusers set aside, and for the place given to the wearer in the town where he took it."@en ;
+    skos:note "A sign of success that is public, durable and worn, and the file holds it apart from the conditions of failure for the reason SPEC §15 gives: signs of success are announced in advance and are reported by the person to whom they were announced. Two cases are recorded by name and date, an elderly woman who visited the recorder wearing one, and Matueka on the fifth of January nineteen hundred, who explained each figure on his."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), p. 73 and pp. 74-75 and p. 77" .
+
+pmc:WhatMayBeDoubtedAndWhatMayNot a pm:Conceptualizing ;
+    rdfs:label "What may be doubted and what may not"@en, "Was bezweifelt werden darf und was nicht"@de ;
+    skos:definition "The corpus sets out a ranking of what the people hold, in the order of its binding force: witchcraft and evil spirits first, the ordeal second, prohibition third, divination fourth, omens fifth, the practitioners sixth, and the charged things last. On the first two it states that doubt is not permitted, since to scout the idea of the power to bewitch or to sneer at the ordeal is held to prove the doubter a witch himself; on the last two it states that doubt costs nothing, that a man may snub a practitioner and talk slightingly of his charms and suffer no inconvenience, and that no one believes in all the charged things but each keeps his own few and regards the rest with contempt."@en ;
+    skos:note "The most valuable node in the file for what the project is for, because the transmission itself distinguishes the propositions that carry the system from the ones that do not. It also states the reason the ordinary man cannot check the charged things against each other: if a thief is not found out his charm was strong, and if he is caught the other man's was stronger."@en ;
+    skos:note "The corpus states one consequence of this ranking as an observation of the recorder: the practitioner of a village is seldom if ever engaged by the people of that village, who know too much about him and see that his charms cannot keep himself, his wife, his children or his animals in health, and who send instead for the practitioner of another village of whom they know little."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Notes on Some Customs of the Lower Congo People, in Folk-Lore, vol. XX (London: The Folk-Lore Society, 1909), pp. 51-54" .
+
+#
+# The claim that names a term, and the felling that carries it
+#
+
+pmp:MuambaFelling a pm:Practicing ;
+    rdfs:label "The felling of the muamba tree for a nail figure"@en, "Das Fällen des Muamba-Baums für eine Nagelfigur"@de ;
+    skos:definition "The making of a nail figure begins in the wood. A council is held first to decide whose life is to preside over the figure, and a boy of great spirit or a great and daring hunter is chosen; the party then goes into the bush and calls his name, the practitioner fells the tree, and blood is said to come from the cut. A fowl is killed and its blood mixed with what comes from the tree."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Bavili at Loango, unnamed in this passage; recorded by the trader R. E. Dennett during his residence on the Loango coast from 1879, the book published in 1906; given in the Vili dialect, whose orthography the recorder sets out himself and whose terms he prints, the accounts themselves in English only." ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), p. 93" .
+
+pmc:TheNamedManDiesWithinTenDays a pm:Conceptualizing ;
+    rdfs:label "The man whose name is called dies within ten days"@en, "Der Gerufene stirbt binnen zehn Tagen"@de ;
+    skos:definition "It is forbidden, at the felling, for anyone to call another by his name, for the man so called will die and his spirit will pass into the tree and preside over the figure. The corpus states the term and the record together: the named one then dies, certainly within ten days, and they say that the named one never fails to die. It states in the same place that they repudiate all idea of his being poisoned or of his death being hurried on in any material way by the practitioner, who they say may be miles away."@en ;
+    skos:note "The most examinable claim in the file, and the reason it is examinable is that the transmission itself supplies the three parts: an outcome, a term of ten days, and an explicit denial of the obvious naturalistic explanation. Nothing else read in this run puts a number of days on anything."@en ;
+    skos:note "The claim of a perfect record is the transmission's own and is entered as such. Whether any case of a named man surviving was ever recorded is not answered by this work; the same work states that the caller who names a man carelessly answers with his life to the dead man's relations, which is a reason why the naming is not done carelessly and also a reason why a failure would be inconvenient to report."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), p. 93" .
+
+pmc:TenDayTermProtocol a pm:Testing ;
+    rdfs:label "Protocol: the ten-day term of the named man"@en, "Protokoll: die Zehntagesfrist des Gerufenen"@de ;
+    skos:definition "A protocol against the claim that a man publicly named at the felling of a muamba tree dies within ten days, and that this never fails."@en ;
+    skos:note "Taken up because the claim states its own falsifying condition, which is rare enough in this holding to be worth a protocol even where no case can yet be entered. The condition is not the death but the term and the completeness: a single named man alive after ten days refutes the claim as the corpus states it, and the corpus states it as exceptionless."@en ;
+    skos:note "No case is entered and none is claimed. The work read supplies no list of namings and no follow-up, and the practice was already being suppressed by the colonial administrations at the time the work was written. What a later run would need is a source that names an occasion and a person rather than the rule, and the candidates are the Laman notebooks and the Mayombe literature, neither of which was opened here."@en ;
+    pm:tests pmc:TheNamedManDiesWithinTenDays ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "A man publicly named at the felling of a muamba tree who is alive on the eleventh day, in a source that names the occasion and the person rather than the rule."@en ;
+    pm:examinedBy "prima-materia compiler, from the wording of Dennett 1906, p. 93" ;
+    pm:protocolUpdated "2026-09-08"^^xsd:date ;
+    dcterms:source "R. E. Dennett, At the Back of the Black Man's Mind (London: Macmillan, 1906), p. 93" .
+
+#
+# Two movements that promised something checkable
+#
+
+pmc:Kiyoka a pm:Conceptualizing ;
+    rdfs:label "Kiyoka, the burning of all the charged things"@en, "Kiyoka, das Verbrennen aller geladenen Dinge"@de ;
+    skos:definition "A movement of about eighteen hundred and seventy-two, brought through the country by men from Luanda, which induced town after town to destroy every charged thing on a stated argument: since sickness and death come by the black art, there would be no more suffering and death if every charm were destroyed and none made again. Houses were searched and hiding places ransacked, and the movement proclaimed a code of law beside the burning."@en ;
+    skos:note "A prediction about the world, made inside the transmission, acted on at the scale of whole districts, and refuted by the event. The corpus states the outcome and the response in one movement: the prevalence of sickness and death as before convinced the people that their hopes were not realised, and they concluded that many had kept their charms in spite of everything, so that the correctness of the theory was unquestioned and the failure was put down to the treachery of those who had hidden them."@en ;
+    skos:note "The account was first printed in the compiler's dictionary appendix of eighteen ninety-five under the entry kiyoka and is repeated in the narrative of nineteen hundred; the second recorder quotes it from the appendix rather than reporting it himself, so there is one witness here and not two."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "W. Holman Bentley, Pioneering on the Congo (London: Religious Tract Society, 1900), vol. I, pp. 290-292" .
+
+pmc:KiyokaProtocol a pm:Testing ;
+    rdfs:label "Protocol: the promise of the general burning"@en, "Protokoll: das Versprechen des allgemeinen Verbrennens"@de ;
+    skos:definition "A protocol against the claim carried by the movement of about eighteen hundred and seventy-two, that the destruction of every charged thing would end sickness and death."@en ;
+    skos:note "The case is the movement itself and is entered as one case and not as a count. What the source records is that the deaths went on as before and that the people themselves drew that conclusion; it gives no number, no period and no comparison, so the deviation is qualitative and rests on the summary of one resident observer."@en ;
+    skos:note "The response to the failure is the part worth keeping. The claim was not withdrawn: the failure was assigned to hidden charms, an unobservable condition that can absorb any outcome, and the theory was left standing. That is the same move the transmission makes at the level of a single charged thing in pmc:FailureIsSulkinessOrLostPower, carried out at the scale of a country."@en ;
+    pm:tests pmc:Kiyoka ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:falsifiedBy "A district in which the general destruction of charged things was carried out and sickness and death did not cease."@en ;
+    pm:caseCount 1 ;
+    pm:counterSearch pm:counterSearchFoundNothing ;
+    pm:counterSearchNote "Searched for a second and independent record of the outcome of the kiyoka movement in the other works opened in this run: the term does not occur in Weeks 1914 or in Dennett 1906; it occurs once in Weeks, Folk-Lore vol. XX, pp. 57-58, but there as a quotation from the same compiler's dictionary appendix of 1895, pp. 848-849, and therefore not as a second witness. Nothing was found that reports the movement as having succeeded, and nothing that gives a count of deaths on either side."@en ;
+    pm:examinedBy "prima-materia compiler, from the wording of Bentley 1900, vol. I, pp. 290-292, with the search stated in the counter-search note" ;
+    pm:protocolUpdated "2026-09-08"^^xsd:date ;
+    dcterms:source "W. Holman Bentley, Pioneering on the Congo (London: Religious Tract Society, 1900), vol. I, pp. 290-292" .
+
+pmc:Kinyambi a pm:Conceptualizing ;
+    rdfs:label "Kinyambi, the water that was to prevent an ordinary death"@en, "Kinyambi, das Wasser gegen den gewöhnlichen Tod"@de ;
+    skos:definition "In eighteen eighty-five men came from Luanda with the story of a fish that begged not to be killed and promised that whoever drank the water from its mouth, or water it had lain in, would never die by fair means or from natural causes, but only by witchcraft. The water was hawked through the country and widely bought, even at San Salvador."@en ;
+    skos:note "The corpus notes that the promise conceded almost nothing, since every death is in any case attributed to witchcraft, and that it was nonetheless a great success. That is a claim that discriminates almost nothing by construction, and the transmission that made it is the one that noticed."@en ;
+    skos:note "The outcome is the reason the node stands beside pmc:Kiyoka: when it was seen that the purchasers died like ordinary mortals, the traffic ceased. The same corpus, thirteen years earlier and in the same districts, had recorded a failure that was explained away instead. The two responses to a failed promise stand two pages apart, and neither is the rule of the transmission."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "W. Holman Bentley, Pioneering on the Congo (London: Religious Tract Society, 1900), vol. I, p. 292" .
+
+pmc:NkisiAKiniambe a pm:Conceptualizing ;
+    rdfs:label "Nkisi a kiniambe, the cult that promised no death"@en, "Nkisi a kiniambe, der Kult, der den Tod aufhob"@de ;
+    skos:definition "A practitioner who appeared with a new charged thing at the towns round San Salvador and held a rite in the form of a communion, with slices of cassava and peanuts in palm wine. The recipient paid first, one string of beads for a child and five for an adult, then confessed every evil desire he had had for the sickness or death of another, then received the cassava, the peanut and a drop of the wine, and with them the promise that he should never die."@en ;
+    skos:note "The name is analysed by the recorder himself: the word for God on the Lower Congo is Nzambi and the form kiniambe is an upper river name for God, so a new charged thing was made under a borrowed divine name."@en ;
+    skos:note "The same recorder gives two different outcomes in two works, and the discrepancy is the finding. In nineteen hundred and nine he writes that when the people died the practitioner said it was because they had not made a full confession, and that he and his accomplices made a large sum out of the fear of death. In nineteen fourteen he writes that when the clients died like others the bubble burst and that cult and its charged thing fell into disfavour and neglect. Immunisation and collapse are the two possible responses to a failed promise, and here one witness reports both about one cult; the file records the discrepancy rather than choosing between them."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "John H. Weeks, Notes on Some Customs of the Lower Congo People, in Folk-Lore, vol. XX (London: The Folk-Lore Society, 1909), p. 57", "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 234" .
+
+#
+# The vocabulary through which the mission entered the category
+#
+
+pmc:TheMissionEnteredTheNkisiCategory a pm:Conceptualizing ;
+    rdfs:label "The mission entered the category of the charged thing"@en, "Die Mission trat in die Kategorie des geladenen Dings ein"@de ;
+    skos:definition "Four statements from inside the corpus, all of them by missionaries reporting their own trade. The word chosen by the old Catholic missionaries for holy was nkisi, and the word they chose for church was nzo ankisi, which is the ordinary word for a grave and means the house of the charged things, so that they spoke of the church of Rome as the Roman grave. The Kongo name for the devil is stated to have stood for four hundred years. The image of the Virgin in the Catholic church at San Salvador is one of the places a couple goes for a child, the church itself being called the house of the charged things. And the crosses, metal discs and small pictures given by the priests to be worn are called by the same word as an ordinary protective amulet."@en ;
+    skos:note "This is the node that carries the contact route of the whole file, and it is entered as a node rather than as a note on the tradition because a note would not survive a query. It shows the route in the direction that matters here: not that the mission borrowed a word, which would be a fact about the mission, but that the objects of the mission were classified by the transmission under its own category, which is a fact about the transmission."@en ;
+    skos:note "It also fixes the date. A term in liturgical use since the end of the fifteenth century cannot be treated as untouched in a corpus written down between eighteen eighty-seven and nineteen fourteen, and any agreement between this transmission and the Christian material this graph holds is reception until somebody shows otherwise."@en ;
+    pm:withinTradition pmt:KongoNkisi ;
+    dcterms:source "W. Holman Bentley, Pioneering on the Congo (London: Religious Tract Society, 1900), vol. I, pp. 236-237 and p. 281", "John H. Weeks, Among the Primitive Bakongo (London: Seeley, Service and Co., 1914), p. 240" .
