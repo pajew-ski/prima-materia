@@ -1,0 +1,192 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — the Fon and Ewe vodun transmission
+#
+# Order of the file: the tradition and the route that had to be decided before
+# its first node, then the Fa oracle with its casting rule and the one point at
+# which a throw is void, then what is prescribed when the oracle answers badly,
+# then the case in which the client says publicly that the oracle lied, then
+# the bound amulet and what the transmission says when it fails, then the two
+# other ways an answer is taken, and last the prohibition whose penalty
+# survives as a form.
+#
+# The tradition instance was registered in
+# traditions/registry-outside-contact.ttl and is moved here now that passages
+# have been read.
+#
+# Opened from the independence entrance of SPEC §14. As with the Kongo file,
+# the reading corrected the entrance rather than confirming it; the reason is
+# on the instance.
+#
+
+pmt:Vodun a pm:Tradition ;
+    rdfs:label "Fon vodun transmission"@en, "Fon-Vodun-Überlieferung"@de ;
+    skos:definition "The Fon and Ewe transmission of powers received into a person and of bound objects that act, together with the Fa oracle, in which sixteen palm nuts are cast until a figure is read off the count that remains in the hand."@en ;
+    skos:note "Chosen from the registry on the independence entrance, and the reading corrected that entrance. The contact route is entered as documented and no longer as absent, and the route runs to a transmission this graph already holds: the eastern Ewe are said to divine after the manner of the Yoruba god of divination, and the Fa practitioner is identified by a second and independent witness with the Egba babalawo. An agreement between the Fa figures and the Ifá figures is therefore reception and may not be counted twice."@en ;
+    skos:note "Read in this run at the wording: Ellis 1890, printed pages fifty-seven to fifty-nine, ninety-one to ninety-eight; Skertchly 1874, printed pages three hundred and seventy-nine to three hundred and eighty and four hundred and seventy-three to four hundred and seventy-six; Burton 1864, volume two, printed pages one hundred and forty-three to one hundred and forty-five. The remainder of each work was searched by term and not read continuously."@en ;
+    skos:note "Two works that carry the centre of this transmission were not reachable in this run and the corpus names them all the same. The chapter in which Burton describes the casting in detail stands in volume one, and neither reachable digitisation of that volume carries it; the volume-two text read here refers to it. The systematic work on the oracle, Maupoil 1943, has no free full text at all, and the Fa chapter of Herskovits 1938 stands in a volume two that is available only on loan. The file therefore rests on two travellers and one missionary-linguist, which is a thinner base than the Kongo file has, and says so."@en ;
+    skos:note "The recorder problem. Two of the three are visitors of weeks or months who wrote for a European public and did not command the language; the third is a colonial officer and linguist who corrects the other two on terminology and who was himself in the country. Where they agree the agreement is worth something, because they did not work from one another on these points; where they differ, as they do on the width of the divining board and on the reading of the marks, the difference is recorded rather than smoothed."@en ;
+    pm:principalCorpus "Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa; Burton, A Mission to Gelele, King of Dahome; Skertchly, Dahomey as it is; Spieth, Die Ewe-Stämme, and Die Religion der Eweer in Süd-Togo; Le Hérissé, L'ancien royaume du Dahomey; Maupoil, La géomancie à l'ancienne Côte des Esclaves; Herskovits, Dahomey: An Ancient West African Kingdom" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), p. 97" .
+
+#
+# The oracle
+#
+
+pmp:Fa a pm:Practicing ;
+    rdfs:label "Fa, the casting of the sixteen palm nuts"@en, "Fa, der Wurf der sechzehn Palmnüsse"@de ;
+    skos:definition "Palm nuts are held in one hand and thrown into the other, one or two being dropped on purpose during the throw; if one nut is left a single mark is made and if two are left a double mark. Sixteen principal figures are called mothers and are set down with their marks and a symbol apiece; further figures called children are formed by taking the right side of one mother and the left side of another. The first and the last of the mothers are held to be the most powerful, and their children the most important."@en ;
+    skos:note "The second witness, who says he was himself taught the craft, gives the same casting with a differently proportioned board and puts the marks the other way round, adding of his own accord that the contrary may be the case. Two travellers who did not work from one another thus agree on the procedure and disagree on the reading rule, and the file keeps both."@en ;
+    skos:note "The figure names are given by both witnesses in nearly the same forms, from the first, called the mother of all, to the sixteenth, called the father of all. They are the names of the Ifá figures, which is one half of the reason the contact route on this tradition is entered as documented."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Fon practitioners at Abomey and Whydah, unnamed in this passage; recorded by the naturalist J. A. Skertchly during his detention in Dahomey in 1871, published 1874; given in Fon, of which the work prints the figure names and a few terms, the account itself in English." ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "J. A. Skertchly, Dahomey as it is (London: Chapman and Hall, 1874), pp. 474-476" .
+
+pmc:FaVoidThrowRule a pm:Conceptualizing ;
+    rdfs:label "A throw that leaves more than two nuts is void"@en, "Ein Wurf, bei dem mehr als zwei Nüsse bleiben, ist ungültig"@de ;
+    skos:definition "The casting rule carries its own condition of nullity: if more than two nuts remain in the hand, the throw does not count and yields no mark."@en ;
+    skos:note "The only stated void condition found in this run in the travellers' literature on the oracle, and the reason this transmission was worth opening before others in the registry. A procedure that can produce a non-answer is not the same as one whose every outcome is an answer, and the difference is exactly what makes a count possible: the admissible answers can be fixed before the consultation."@en ;
+    skos:note "It also has an opposite side that belongs beside it. One or two nuts are dropped on purpose during the throw, so the number remaining is not left wholly to the cast; how much that leaves to the caster is not stated in the source and is not asserted here."@en ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "J. A. Skertchly, Dahomey as it is (London: Chapman and Hall, 1874), p. 475" .
+
+pmc:ForeknowledgeFromFa a pm:Conceptualizing ;
+    rdfs:label "What Fa is said to make known"@en, "Was Fa kundtun soll"@de ;
+    skos:definition "Two things, according to the witnesses. Where a mother is cast, the day denoted by its symbol is the propitious day for the business asked about, and where a child is cast no day is more propitious than another; and the oracle is said to predict evil, in which case a prescribed remedy follows. Simple answers of yes and no are said to be obtainable by anybody, while more stands with the practitioner."@en ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "J. A. Skertchly, Dahomey as it is (London: Chapman and Hall, 1874), pp. 475-476", "Richard F. Burton, A Mission to Gelele, King of Dahome (2nd ed., London: Tinsley Brothers, 1864), vol. II, p. 143" .
+
+pmc:FaYieldsForeknowledge a pm:Yielding ;
+    rdfs:label "Casting the nuts yields the answer"@en, "Der Wurf bringt die Antwort hervor"@de ;
+    skos:note "The same form of claim the graph holds from the Zande poison oracle, the Ifá casting and, since the Kongo file, the bark ordeal: the answer is read off an outcome the operator is said not to steer. Here the route to one of the others is documented and stated on the tradition instance, so this node may not be counted as a further independent witness for it."@en ;
+    pm:byPractice pmp:Fa ;
+    pm:yieldsCapacity pmc:ForeknowledgeFromFa ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Fon practitioners at Abomey and Whydah, unnamed in this passage; recorded by the naturalist J. A. Skertchly during his detention in Dahomey in 1871, published 1874; given in Fon, of which the work prints the figure names and a few terms, the account itself in English." ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "J. A. Skertchly, Dahomey as it is (London: Chapman and Hall, 1874), pp. 475-476" .
+
+pmp:VoSisa a pm:Practicing ;
+    rdfs:label "Vo-sisa, what is done when the oracle answers badly"@en, "Vo-sisa, was bei schlechtem Spruch zu tun ist"@de ;
+    skos:definition "When the oracle predicts evil the enquirer must perform the remedy. Ground is cleared near the house or in the bush, a mat is spread and a short thick peg driven through it, and the enquirer with his practitioner, who taps a small cymbal with an iron rod, pours on the wood first water and then the blood of a fowl. The body of the fowl falls to the practitioner. The witness states that there are many different forms of the remedy."@en ;
+    skos:note "The remedy is what turns a bad prediction into an action, and it is the point at which the oracle stops being falsifiable by the event: a predicted evil that does not occur is then the remedy working, and one that occurs is the prediction. The same witness reports the saying that the practitioner who is most cunning takes to the oracle, because it pays best."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Fon informants and interpreters at Abomey, unnamed in this passage and following an order the recorder says his interpreters dictated; recorded by Richard F. Burton on the mission of 1863 to 1864; given in Fon, of which the work prints the terms, the account itself in English." ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "Richard F. Burton, A Mission to Gelele, King of Dahome (2nd ed., London: Tinsley Brothers, 1864), vol. II, pp. 143-144" .
+
+pmc:TheKingSaysTheDivinersLied a pm:Conceptualizing ;
+    rdfs:label "The king says publicly that the diviners lied to him"@en, "Der König sagt öffentlich, die Wahrsager hätten ihn belogen"@de ;
+    skos:definition "At a named ceremony in 1871, before the assembled army and the priesthood, the king of Dahomey complained that his Muslims with their Arabic inscriptions and charms had deceived him, that his cult people made all sorts of mistakes, and that the diviners who cast lots to learn the will of the gods told him many lies. He set the complaint against what he had paid: he gave them everything in his power and everything they asked for, cowries, cattle, goats, slaves and wives, and still they did not tell him the truth. The instance he named is a war: the diviners told him he would go out and meet an easy victory, and he was beaten back and disgraced."@en ;
+    skos:note "The most valuable single passage found in this run. It is a failure of the oracle reported by the client, in public, with the prediction, the outcome and the fee all named, and it was taken down by a European who was present and had no stake in the complaint."@en ;
+    skos:note "The exit the king takes is the one this graph has now seen in three transmissions: the fault is put on the practitioners and not on the procedure. He says they lied, not that the casting does not answer. The Kongo corpus states the same division as a rule, that doubt of the practitioners costs nothing and doubt of the ordeal costs a life."@en ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "J. A. Skertchly, Dahomey as it is (London: Chapman and Hall, 1874), pp. 379-380" .
+
+pmc:FaForeknowledgeProtocol a pm:Testing ;
+    rdfs:label "Protocol: the announced outcome against the event"@en, "Protokoll: der angesagte Ausgang gegen das Ereignis"@de ;
+    skos:definition "A protocol against the claim that the casting of the nuts makes known the outcome of the business asked about."@en ;
+    skos:note "One case, and it is entered as one case and not as a rate. The king's complaint of 1871 names a prediction of an easy victory and a defeat, which is a deviation; what it does not supply is how many consultations he had, how many were borne out, or what the base rate of victory was for the campaigns of that reign. A single failure reported by an aggrieved client is evidence that the claim can fail and no evidence at all about how often."@en ;
+    skos:note "The counter-search was carried inside the works opened and is recorded below. It found no case of a consultation whose outcome was reported as borne out; what it found instead is the remedy at pmp:VoSisa, which absorbs a bad prediction, and the observation that the oracle is the most lucrative branch of the priesthood. Both belong to the protocol rather than against it: the first says why cases are hard to count, the second says who has an interest in there being no count."@en ;
+    pm:tests pmc:FaYieldsForeknowledge ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:falsifiedBy "A consultation whose stated outcome is contradicted by the event, reported by the person who consulted."@en ;
+    pm:caseCount 1 ;
+    pm:counterSearch pm:counterSearchFoundNothing ;
+    pm:counterSearchNote "Searched in the three works opened in this run for a reported consultation whose prediction was borne out, and for any reply to the king's complaint of 1871: Skertchly 1874 records the complaint and no vindicating case; Burton 1864, vol. II, records the remedy for an evil prediction and the saying that the oracle pays best, but no case; Ellis 1890 does not describe the procedure at all and refers the reader to his Yoruba volume. Nothing was found that reports a Fa prediction as confirmed by the event."@en ;
+    pm:examinedBy "prima-materia compiler, from the wording of Skertchly 1874, pp. 379-380 and 474-476, with the search stated in the counter-search note" ;
+    pm:protocolUpdated "2026-09-08"^^xsd:date ;
+    dcterms:source "J. A. Skertchly, Dahomey as it is (London: Chapman and Hall, 1874), pp. 379-380" .
+
+#
+# The bound object, and what is said when it fails
+#
+
+pmc:VoSesa a pm:Conceptualizing ;
+    rdfs:label "Vo-sesa, the bound amulet"@en, "Vo-sesa, das gebundene Amulett"@de ;
+    skos:definition "An amulet belonging to a god, of which every god has his own kind. Its power is said not to rest on an indwelling spirit but on its consecration: it lets the god recognise and protect his own. Neither prayer nor sacrifice is offered to it. Only the priests of a god know how to make the amulets of that god, and they sell them at a high price. The word is derived from the verb to bind, which is used only of amulets, because the priest binds them on the person or the property of the buyer."@en ;
+    skos:note "The transmission attaches a public and checkable claim to these: crops standing in the bush and goods left for sale beside a frequented path are put under an amulet on a stick, with a few cowries on each article to show the price, and are said to be quite safe from pillage. Whether that held is a question about a distribution in the world, and it is the kind of claim this graph is short of."@en ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), pp. 92-93" .
+
+pmc:AmuletFailureIsAlwaysExcused a pm:Conceptualizing ;
+    rdfs:label "A failed amulet is never at a loss for an excuse"@en, "Für ein versagendes Amulett findet sich immer eine Ausrede"@de ;
+    skos:definition "The witness states the failure case in its sharpest form and reports the response as a rule: if the amulet fails to defend the wearer from the one danger it was made to avert, so that an amulet consecrated to the fire god fails to protect its wearer from a disaster by fire, they are never at a loss for some excuse to account for its inefficacy."@en ;
+    skos:note "The passage names the response and not its content, so the graph can hold the shape of the move and not the move itself. That is worth having, because it is the third transmission in this holding of which the same shape is recorded: the Kongo corpus assigns a failed object to neglect or exhaustion, the Lakota corpus assigns a stone that will not obey to the owner's divided faith, and here the excuse is reported without being specified."@en ;
+    skos:note "It is also the recorder's summary rather than a quoted informant, and it is entered as such. What would settle it is a named excuse in a named case, and none was found in the works opened."@en ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), p. 92" .
+
+#
+# The other two ways an answer is taken
+#
+
+pmp:DivinationByThrownThings a pm:Practicing ;
+    rdfs:label "Divination by things thrown on the ground"@en, "Wahrsagen durch geworfene Dinge"@de ;
+    skos:definition "The commoner form outside the oracle proper: short sticks a few inches long, pieces of knotted cord, or a handful of cowries or nuts are thrown on the ground and the answer is drawn from the position in which they fall. A less common mode is named beside it, in which a fowl or an animal is impaled and the answer drawn from how long it takes to die."@en ;
+    skos:note "The second mode is the reason for the node. An answer read off the time a creature takes to die is fixed to an outcome the operator does not steer, like the poison ordeal and the casting, but it is measured in duration rather than in a binary sign, and this graph holds no other case of that."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Ewe informants of the western and eastern tribes, unnamed; recorded by A. B. Ellis, colonial officer on the West African coast, from his own residence and from earlier printed reports he names as he uses them, published 1890; given in Ewe, of which the work prints the terms with etymologies, the accounts in English." ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), p. 97" .
+
+pmp:OrdealByOdumDecoction a pm:Practicing ;
+    rdfs:label "The ordeal by a decoction of odum wood"@en, "Das Ordal mit dem Sud aus Odum-Holz"@de ;
+    skos:definition "Where human ingenuity fails to establish the truth of a charge, the decision is transferred to the gods. The commonest ordeal among these tribes is stated to be the drinking of a decoction of odum wood."@en ;
+    skos:note "Entered although the source gives no reading rule, because the absence is itself informative: the graph now holds a poison ordeal from the Lower Congo with twenty-seven doses and a stated verdict rule, and here the same institution is named in one sentence by a witness who describes much else in detail. What is missing is the rule, not the practice."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Ewe informants of the western and eastern tribes, unnamed; recorded by A. B. Ellis, colonial officer on the West African coast, from his own residence and from earlier printed reports he names as he uses them, published 1890; given in Ewe, of which the work prints the terms with etymologies, the accounts in English." ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), p. 97" .
+
+pmc:TheOmenDischargedOnTheBird a pm:Conceptualizing ;
+    rdfs:label "The cock is killed so that the omen falls on itself"@en, "Der Hahn wird getötet, damit das Vorzeichen an ihm selbst eintritt"@de ;
+    skos:definition "It is a bad omen for a cock to crow in the middle of the night, and the bird is immediately killed in order that the omen may be fulfilled at its own expense."@en ;
+    skos:note "A procedure for discharging a prediction on a substitute, and thereby the cleanest case in this file of a claim that cannot come out wrong: the bad thing foretold has happened, to the bird. The graph holds nothing else of this shape."@en ;
+    skos:note "The witness draws his own conclusion two pages later, that to these people there is no such thing as an accident. That is his sentence and not the transmission's, and it is recorded here rather than entered as a claim."@en ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), p. 96 and p. 98" .
+
+#
+# A prohibition whose penalty has become a form
+#
+
+pmc:DanhGbi a pm:Conceptualizing ;
+    rdfs:label "Danh-gbi, the python held sacred"@en, "Danh-gbi, die heilige Python"@de ;
+    skos:definition "A python of one particular kind, held to be a god and kept in a temple at Whydah with free exit through holes in the walls, so that the animals move about the town and the bush. They are carried back only when they have entered a profane place, such as the house of a European, and then by a priest who purifies himself by rubbing fresh green leaves between his palms and prostrates himself before the animal before taking it up. Every python of this kind is to be treated with veneration wherever met, and a man of Whydah who meets one in his path prostrates himself, rubs his forehead in the earth and addresses it as master, father and mother."@en ;
+    skos:note "Held apart from the boa said to be the messenger of the rainbow god, of which the same source states that only certain individuals are to be respected. The distinction matters for the prohibition on the neighbouring node: it applies to a kind and not to a single animal."@en ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), pp. 57-58" .
+
+pmc:ThePythonProhibition a pm:Cautioning ;
+    rdfs:label "Killing a python, even by accident"@en, "Das Töten einer Python, auch aus Versehen"@de ;
+    skos:definition "Among the tribes of this worship a native who kills a python of the sacred kind, even by accident, is by custom liable to be burned alive, and a European to be beheaded. A child who touches or is touched by one of the pythons must be kept a whole year in the seminaries of the god at the expense of its parents and taught the songs and dances of the worship; adults, and particularly women, were formerly liable in the same way, and the witness states that the scandals this produced and the decline of priestly power have let the practice fall into disuse."@en ;
+    skos:note "The penalty is the finding, because the source records it in the act of becoming a form. Fifty years before the writing a native was invariably burned to death; at the time of writing the appearance of the sentence is preserved and the culprit escapes with his life. A hut of dried grass is built, the man is thrust inside unbound and the hut is fired, so that he breaks out long before the flames reach him, and the worshippers waiting outside beat him with clubs until he has purified himself by reaching running water."@en ;
+    skos:note "A named case is printed with it, from a French cleric on the coast: a young enslaved woman crushed a python under a door, the priests demanded her, her owner declined to pay the composition, and she and five men were shut in the hut. Four of the men had bribed the escort and were brought through the crowd unharmed with her; the fifth, who had not paid or could not, was beaten until he escaped into a cask in the lagoon. What the transmission prescribes and what it enforces are two different things, and the difference is measured here in bribes."@en ;
+    pm:cautionsAbout pmc:DanhGbi ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Ewe and Fon informants at Whydah, unnamed, with one case taken from the published account of the Abbé Bouche and one from Des Marchais of 1731, both named by the recorder as he uses them; recorded by A. B. Ellis, colonial officer on the West African coast, published 1890; given in Ewe and Fon, of which the work prints the terms, the accounts in English." ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), pp. 57-59" .
+
+#
+# The route
+#
+
+pmc:FaCameFromTheYoruba a pm:Conceptualizing ;
+    rdfs:label "The oracle is said to have come from the Yoruba"@en, "Das Orakel soll von den Yoruba stammen"@de ;
+    skos:definition "Two statements from two witnesses who did not work from one another. The first says that among the eastern Ewe tribes divination is always practised after the manner of Ife, the Yoruba god of divination, and elsewhere that those tribes have their notion of the passage of souls from their Yoruba-speaking neighbours. The second identifies the Fon practitioner of the oracle with the babalawo of the Egba, and reports that the figure names are the same."@en ;
+    skos:note "This is the node that carries the contact route of the file. It has a consequence for counting and not only for history: the graph already holds the Ifá casting in traditions/ifa.ttl, and an agreement between the two is the same statement twice, not two witnesses. Whether the chain runs further back, to the sand divination of the Arabic-speaking world, is asserted by one of the witnesses in a passage that lies in a volume this run could not reach, and is held as an issue."@en ;
+    pm:withinTradition pmt:Vodun ;
+    dcterms:source "A. B. Ellis, The Ewe-speaking Peoples of the Slave Coast of West Africa (London: Chapman and Hall, 1890), p. 97", "Richard F. Burton, A Mission to Gelele, King of Dahome (2nd ed., London: Tinsley Brothers, 1864), vol. II, p. 143" .
