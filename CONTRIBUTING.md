@@ -264,6 +264,14 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   der Liber iuratus Honorii und der Liber florum des Johannes von Morigny als
   Gegenüberlieferung — die Forschung dazu geht als `pm:evidenceFrom` ein, nie
   als Quelle)
+- `korpus:kongo` (die verschriftlichte Unterkongo- und Loango-Überlieferung:
+  Bentley, Dictionary and Grammar of the Kongo Language und Pioneering on the
+  Congo; Weeks, Among the Primitive Bakongo und die Serie Notes on Some
+  Customs of the Lower Congo People in Folk-Lore XIX-XX; Dennett, At the Back
+  of the Black Man's Mind und Notes on the Folklore of the Fjort; die
+  Laman-Hefte in Kikongo, mit Laman, The Kongo, als dem daraus gemachten
+  Derivat — die Kongo-Forschung von Janzen, MacGaffey und Thornton geht als
+  `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
