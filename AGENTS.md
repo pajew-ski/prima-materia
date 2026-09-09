@@ -36,7 +36,9 @@ Mindestumfang: der Fachterm in Originalsprache und gebräuchlichen Transliterati
 
 **5. Beifang wird geerntet, aber nicht auf demselben Weg.**
 
-Eine Recherche findet mehr, als die Frage verlangt, und dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst. Er darf den Maßstab aber nicht senken. Deshalb: ein nebenbei gefundener Befund wird nur dann Knoten, wenn er **selbst** die volle Prüfung durchlaufen hat — Stelle plus Gegensuche. Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen.
+Eine Recherche findet mehr, als die Frage verlangt, und dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst. Er darf den Maßstab aber nicht senken. Deshalb: ein nebenbei gefundener Befund wird nur dann Knoten, wenn **seine eigene Stelle gelesen ist**. Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen.
+
+Die Schranke ist der gelesene Wortlaut und nicht die vollständige Prüfung. Hier stand bis zum 2026-09-09 „Stelle plus Gegensuche", und das hat in einem belegten Fall gelesene Vermögen in den Tracker statt in den Graphen geschickt. Gemeint war und gilt weiter: ein Fund aus einem Werk, das **nicht** geöffnet wurde, ist begegnet und nicht gelesen.
 
 Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund ist nicht geprüft, sondern begegnet. Läuft er als Knoten ein, ist der Bestand wieder eine Sammlung, und die Trennung von Behauptung und Beglaubigung, die dieses Repo ausmacht, ist an der billigsten Stelle durchbrochen.
 
@@ -69,7 +71,9 @@ Der Auftrag an diese Stufe enthält: jede Behauptung einzeln und entscheidbar fo
 
 Der Anlass ist gezählt: in einem Lauf wurden vier Werke als unerreichbar geführt, und alle vier lagen bei genauerem Suchen als Volltext vor. Vollständig in `SPEC.md` §15, Fall in prima-materia#76.
 
-**Ist das Werk offen, wird geerntet, bevor es geschlossen wird.** Nicht nur die Behauptung, für die geöffnet wurde. Ausdrückliche Ausnahme von der Issue-Bindung: die Ernte braucht kein eigenes Issue vorher und gilt nicht als Scope-Erweiterung. Geschuldet sind vier Arten — **Vermögen** (hier Vollständigkeit im strengen Sinn), **Voraussetzungsketten**, **Warnungen** samt Selbstwarnungen eines Textes gegen das, was er vorschreibt, und **Prüfbares**, aus dem sich ein `pm:falsifiedBy` formen lässt. Erzählung und Polemik nur, soweit sie eines der vier tragen.
+**Ist das Werk offen, wird geerntet, bevor es geschlossen wird.** Nicht nur die Behauptung, für die geöffnet wurde. Ausdrückliche Ausnahme von der Issue-Bindung: die Ernte braucht kein eigenes Issue vorher und gilt nicht als Scope-Erweiterung. Geschuldet sind vier Arten — **Vermögen** (hier Vollständigkeit im strengen Sinn), **Voraussetzungsketten**, **Warnungen** samt Selbstwarnungen eines Textes gegen das, was er vorschreibt, und **Prüfbares**, aus dem sich ein `pm:falsifiedBy` formen lässt. Dazu **Gelingenszeichen**, getrennt geführt und getrennt gezählt: sie werden dem Übenden vorher angesagt, also berichtet er sie, und als Prüfmaterial gelesen erzeugen sie lauter Bestätigungen. Erzählung und Polemik nur, soweit sie eines dieser Fünf tragen.
+
+**Aufnahme geht vor Vollständigkeit.** Die Aufnahmebedingung eines Bezeugungsknotens ist die gelesene Stelle mit ihrer Ausgabe, sonst nichts. Wer eine Stelle gelesen hat, trägt sie ein, in demselben Durchgang. Die Gegensuche entscheidet über den Prüfstand und gehört an den `pm:Testing`-Knoten; ein `pm:Yielding` behauptet nicht, dass die Wirkung eintritt, sondern dass diese Quelle sie behauptet, und dafür ist die Stelle der ganze Beleg. **Ein Issue ersetzt keinen Knoten, den die Stelle bereits trägt** — dort abgelegt, ist ein gelesener Fund von einer Vermutung nicht mehr zu unterscheiden, und das Öffnen des Werkes muss jemand ein zweites Mal bezahlen. Belegt am 2026-09-09: ein Lauf am Kālikāpurāṇa trug die Zweiteilung ein, ließ die Vermögen desselben Abschnitts liegen, nannte die Auslassung im Pull Request ausdrücklich als Schuld und ging trotzdem so heraus. Vollständig in `SPEC.md` §15.
 
 Vollständig heißt vollständig für das Geöffnete: die Erntenotiz im auslösenden Issue nennt, was aufgenommen wurde, welche Teile ungelesen blieben, und was gesehen und bewusst nicht aufgenommen wurde. Die aufgenommene Seite steht dabei namentlich, mit den Bezeichnern der geschriebenen Knoten, und wird aus der Lektüre geschrieben statt aus der fertigen Datei abgeschrieben — sonst stimmt sie per Konstruktion und prüft nichts. So ist eine Auslassung die Differenz zwischen Notiz und Branch und damit zählbar. Jede geerntete Behauptung braucht ihre eigene Stelle; neue Traditionen und neues Vokabular bleiben Entscheidungen nach §11 und §14. Verfahren in `SPEC.md` §15.
 
@@ -128,6 +132,7 @@ Ein ungültiger Zwischenstand auf einem `claude/`-Branch ist dabei kein Schaden 
 | **Gegroundet** | Eine Stelle in einem Werk trägt die Behauptung, **und** die Gegensuche ist gelaufen. Die Stelle entscheidet den positiven Befund, sobald sie steht; die Erschöpfung des Suchraums ist dafür nicht Bedingung. |
 | **Unbelegt** | Die teure Aussage: es gibt die Stelle nirgends. Trägt nur eine erschöpfende, dokumentierte Suche. Ein Durchgang ohne Fund reicht nicht. |
 | **Nicht gegroundet** | Ein Knoten im Bestand. Eine Analogie in einer benachbarten Tradition. Eine Erinnerung des Modells an eine Stelle, die nicht aufgeschlagen wurde. |
+| **Aufnahmefähig** | Die gelesene Stelle mit ihrer Ausgabe. Das ist weniger als gegroundet und genug für einen Knoten: die Tabelle sagt, wie stark ein Befund ist, nicht ob er in den Bestand darf. |
 
 ## Die Kette, auf die alles hinausläuft
 
