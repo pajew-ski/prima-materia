@@ -149,12 +149,53 @@ pmc:KaulaAboveTheOtherWays a pm:Conceptualizing ;
 
 pmc:KalikapuranaLeftAndRightMethods a pm:Conceptualizing ;
     rdfs:label "The right and left hand methods as the purāṇa states them"@en, "Die rechts- und linkshändige Methode, wie das Purāṇa sie angibt"@de ;
-    skos:definition "A pair of methods of worship announced by the text as the orthodox and the heterodox, and closed by it as the right and left hand methods of worshipping the goddess. Which one applies is decided by the deity and not by the worshipper: Bhairava, who says he assumed his form for the sake of meat, wine and intercourse at will, is to be worshipped in the left hand method always; the left images of Sūrya and Gaṇeśa likewise; and the text keeps the five great brahmanical sacrifices standing alongside."@en ;
+    skos:definition "A pair of methods of worship announced by the text as the orthodox and the heterodox, and closed by it as the right and left hand methods of worshipping the goddess. The text defines both terms itself. Worship performed strictly by the prescribed rules, with the five sacrifices that repay the debts to sages, gods, ancestors, men and the elements, is called the state of dakṣiṇa, and it is so called because the worshipper becomes humble towards gods and ancestors and the goddess is favourably disposed towards him. Vāmā is the goddess who, when worshipped, takes the share of the sacrifice for herself before all other gods, and one who worships in that method should himself be a vāma, whether or not he performs the five sacrifices. Which method applies is often decided by the deity rather than by the worshipper: Bhairava, who says he assumed his form for the sake of meat, wine and intercourse at will, is to be worshipped in the left hand method always; the left images of Sūrya and Gaṇeśa likewise; and the text keeps the five great brahmanical sacrifices standing alongside."@en ;
     skos:note "This is the passage the project had been unable to produce, and it changes the state of the question rather than settling it. A pre-colonial Indian text does announce a two-way division in these terms, so the sharpest form of the claim that the pair is an entirely Victorian imposition does not hold. What the text does not supply is the thing the Western pair carries: there is no moral polarity between the two, no camp a person joins, and no criterion of union against self-deification. The division sorts deities and rites, not practitioners."@en ;
     skos:note "It stands beside two other divisions already held here and agrees with neither. pmc:AcaraLadder gives seven ascending steps with the left above the right; pmc:BhavaClassification gives three dispositions that decide what a person is competent for. This purāṇa gives two methods assigned by the object of worship. Three texts, three different shapes, and the only element common to all three is that none of them is the pair as the West received it."@en ;
     skos:note "Chapter numbering is not recoverable from the copy read, which is an OCR of a printed translation whose running heads the scan does not carry reliably. Work, translator, part and verse numbers are named, and the passages sit in the chapters on the worship of Tripurā; a later reader working from another edition should expect a different chapter count. Same limitation as at pmc:AcaraLadder. See prima-materia#45."@en ;
     pm:withinTradition pmt:SaivaSakta ;
     dcterms:source "Kālikāpurāṇa, at the announcement of the orthodox and heterodox (right and left hand) methods following the yonimudrā verses (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)", "Kālikāpurāṇa, at the verses on the Bhairava image (204-205a) and on the left images of Sūrya and Gaṇeśa (212-218) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)", "Kālikāpurāṇa, at the closing statement of the Tripurā-kavaca chapter that the left hand and right hand methods of worshipping the goddess have now been stated (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
+
+pmp:VamaWorship a pm:Practicing ;
+    rdfs:label "Worship in the heterodox method"@en, "Verehrung in der heterodoxen Methode"@de ;
+    skos:definition "The rite performed as vāma: the worshipper takes the position of one whose goddess claims the share of the offering before all other gods, and performs the worship in that method whether or not he also performs the five sacrifices."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Kālikāpurāṇa, at the verses defining vāmā and prescribing that the worshipper be a vāma while worshipping in that method (130-131) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
+
+pmc:WorldlyPowersOfTheLeftHandRite a pm:Conceptualizing ;
+    rdfs:label "The worldly powers the heterodox rite is said to confer"@en, "Die weltlichen Vermögen, die der heterodoxe Ritus verleihen soll"@de ;
+    skos:definition "A set of capacities named as the fruit of the rite: happiness and prosperity, standing everywhere, a body resembling Madana, the subduing of kings together with their kingdoms and subjects, the drawing of all women, the subduing of lions, tigers, hyenas, bhūtas, pretas and piśācas, and movement everywhere like the wind."@en ;
+    skos:note "Held as one set and not split into eight nodes, because the source gives them as a single list in one place and attaches no separate condition to any of them. Splitting would make the graph report eight claims where the text makes one."@en ;
+    skos:note "They are worldly and immediate, and that is the contrast the same passage draws. The orthodox side is not said to confer them; it is said to clear the debts and to be rewarded in due course. The difference between the two methods is stated here as a difference of what is obtained and when, not as a difference of moral standing. That is a fourth criterion beside rank, competence and deity, and it comes closer than any of them to what the Western pair was later made to carry — without ever carrying it."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Kālikāpurāṇa, at the verses on the fruits of the rite (135b-138a) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
+
+pmc:VamaWorshipYieldsWorldlyPowers a pm:Yielding ;
+    rdfs:label "The heterodox rite brings about the worldly powers"@en, "Der heterodoxe Ritus bringt die weltlichen Vermögen hervor"@de ;
+    pm:byPractice pmp:VamaWorship ;
+    pm:yieldsCapacity pmc:WorldlyPowersOfTheLeftHandRite ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SaivaSakta ;
+    skos:note "Entered on the strength of the passage alone. Whether anything of the kind occurs is a separate question and would need a pm:Testing node; the claim here is that the source says so, and for that the place is the whole of the evidence."@en ;
+    dcterms:source "Kālikāpurāṇa, at the verses on the fruits of the rite (135b-138a) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
+
+pmc:HeterodoxWorshipNeverClearsTheDebt a pm:Cautioning ;
+    rdfs:label "The heterodox method never clears the debt"@en, "Die heterodoxe Methode tilgt die Schuld nie"@de ;
+    skos:definition "The warning that because the goddess takes for herself the share offered to others, worship performed in the heterodox method never results in clearing the debt to ancestors, sages, gods and the human race; and that one who becomes an expert in the tripurā practice attains liberation only after a very long time and is reborn on this earth again and again, having been visited by the sin arising from the uncleared debt."@en ;
+    skos:note "A failure condition of the kind this project looks for, and an unusually exact one: the source states the price of its own path, names the mechanism, and says what remains unattained. It does not warn against the rite. It says what the rite costs, which is the harder thing for a tradition to write down about itself."@en ;
+    skos:note "It also settles what the two methods are weighed on in this text. Not purity, not moral standing, not the direction of the will: the debt. The orthodox method discharges it and is rewarded in due course; the heterodox method leaves it standing and pays immediately instead. Whoever takes the left hand path here for the faster route has read half of it — it is the faster route to power and the slower one to liberation, and the source says both in the same breath."@en ;
+    pm:cautionsAbout pmp:VamaWorship ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Kālikāpurāṇa, at the verses stating that heterodox worship never clears the debt (132-133a) and that liberation comes only after a very long time with repeated rebirth (133b-135a) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
+
+pmc:BothMethodsReachSiddhiForKamakhya a pm:Conceptualizing ;
+    rdfs:label "For Kāmeśvarī and Kāmākhyā either method attains the power"@en, "Für Kāmeśvarī und Kāmākhyā erreicht jede der beiden Methoden die Kraft"@de ;
+    skos:definition "The claim that the goddesses Kāmeśvarī and Kāmākhyā may be worshipped at will following either the orthodox or the heterodox method, and that the doer attains siddhi doing it either way."@en ;
+    skos:note "The passage that most directly rules out reading the pair as two camps. The choice is left to the worshipper, both methods reach the same attainment, and the text sees no need to rank them. Whatever the division does in this work, it does not sort people into parties and it does not make one method the true one."@en ;
+    pm:withinTradition pmt:SaivaSakta ;
+    dcterms:source "Kālikāpurāṇa, at the verses on worshipping Kāmeśvarī and Kāmākhyā by either method (139b-140a) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
 
 #
 # The traversal the sources actually prescribe
