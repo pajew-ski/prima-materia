@@ -291,6 +291,22 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Jizhou, Zhenjiu dacheng, 1601 — von `korpus:huangdi-neijing` getrennt
   geführt, weil sie die Rezeptionsseite ist und die Stelle trägt, an der eine
   spätere Station der übernommenen Behauptung etwas hinzugefügt hat)
+- `korpus:yijing` (das Zhouyi mit den Zehn Flügeln, voran das Xici mit dem
+  Abzählverfahren der grossen Ausdehnung; Yang Xiong, Taixuanjing, mit dem
+  Kommentar des Fan Wang; die Rezensionen und Kommentare von Wang Bi und Han
+  Kangbo bis zu Zhu Xis Zhouyi benyi und dessen Shiyi — die Sinologie geht als
+  `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:fengshui` (die chinesische Siedlungs- und Grablegungsliteratur: das
+  Zangshu in der Rezension des Wu Cheng und in den längeren Fassungen, das
+  Zhaijing, Qingnang xu, Tianyu jing, Lingcheng jingyi, Cuiguan pian und
+  Fawei lun — von `korpus:yijing` getrennt geführt, weil dort abgezählt und
+  hier ein Ort gewählt wird)
+- `korpus:divinationskritik` (die innerchinesische Gegenüberlieferung zu
+  beiden: Wang Chong, Lunheng, besonders die Kapitel Bushi, Bianchui, Jiri,
+  Sihui, Jieshu und Bozang; die Denkschriften des Lü Cai in Jiu Tangshu 79;
+  Gu Yanwu, Rizhilu — als Zeugnis geführt und nicht als Evidenz, solange sie
+  argumentieren statt zu zählen; wo sie zählen, gehen sie als
+  `pm:evidenceFrom` an einen Prüfknoten)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
