@@ -1187,6 +1187,128 @@ def test_declared_attestation_mode_is_accepted() -> None:
     assert conforms, report
 
 
+def test_search_without_terms_is_rejected() -> None:
+    # A negative finding is worth what the search behind it was worth. Without
+    # the terms it used, "found nothing" is a claim about a corpus made from a
+    # spelling nobody can see.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmp:BareSearch a pm:Searching ;
+        pm:searchedCorpus "Some corpus, named as literature" ;
+        pm:searchedFor "Whether the corpus says something." ;
+        pm:searchOutcome pm:searchFoundNothing ;
+        pm:searchedBy "Someone" ;
+        dcterms:date "2026-09-09" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A search without pm:searchTerms must fail SHACL."
+    assert "statement about that spelling" in report
+
+
+def test_search_with_an_undeclared_outcome_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmp:InventedOutcome a pm:Searching ;
+        pm:searchedCorpus "Some corpus, named as literature" ;
+        pm:searchedFor "Whether the corpus says something." ;
+        pm:searchTerms "Some term, and one transliteration of it" ;
+        pm:searchOutcome pm:searchWasInconclusive ;
+        pm:searchedBy "Someone" ;
+        dcterms:date "2026-09-09" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "An outcome no scale declares must fail SHACL."
+    assert "declared outcome" in report
+
+
+def test_claimed_find_without_a_node_is_rejected() -> None:
+    # The strongest outcome must not be the cheapest to assert. Without this
+    # guard the set of searches carrying no node — the list of gaps the holding
+    # exhibits — would fill with finds nobody entered.
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmp:UnenteredFind a pm:Searching ;
+        pm:searchedCorpus "Some corpus, named as literature" ;
+        pm:searchedFor "Whether the corpus says something." ;
+        pm:searchTerms "Some term, and one transliteration of it" ;
+        pm:searchOutcome pm:searchFoundPlace ;
+        pm:searchedBy "Someone" ;
+        dcterms:date "2026-09-09" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A search claiming a find without naming the node must fail."
+    assert "the node the passage became" in report
+
+
+def test_url_searched_corpus_is_rejected() -> None:
+    offending = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmp:LinkedCorpus a pm:Searching ;
+        pm:searchedCorpus "https://example.org/some-corpus" ;
+        pm:searchedFor "Whether the corpus says something." ;
+        pm:searchTerms "Some term" ;
+        pm:searchOutcome pm:searchFoundNothing ;
+        pm:searchedBy "Someone" ;
+        dcterms:date "2026-09-09" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:searchedCorpus holding a URL must fail SHACL."
+    assert "never a URL" in report
+
+
+def test_search_that_found_nothing_conforms() -> None:
+    # The case the class was built for, and the one that must be writable
+    # without anything to point at: the holding exhibits a gap it knows about,
+    # and anybody with the edition can close it.
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmp:HonestNegative a pm:Searching ;
+        pm:searchedCorpus "Some corpus, named as literature" ;
+        pm:searchedFor "Whether the corpus carries a stated condition of failure." ;
+        pm:searchTerms "The term in the original language, and two transliterations of it" ;
+        pm:searchOutcome pm:searchFoundNothing ;
+        pm:searchedBy "Someone" ;
+        dcterms:date "2026-09-09" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A search that found nothing must be writable.\n{report}"
+
+
+def test_search_with_a_named_find_conforms() -> None:
+    permitted = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmp:EnteredFind a pm:Searching ;
+        pm:searchedCorpus "Some corpus, named as literature" ;
+        pm:searchedFor "Whether the corpus carries the claim." ;
+        pm:searchTerms "The term in the original language" ;
+        pm:searchOutcome pm:searchFoundPlace ;
+        pm:searchYieldedNode pmc:SomeEnteredNode ;
+        pm:searchedBy "Someone" ;
+        dcterms:date "2026-09-09" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, f"A search naming the node it produced must conform.\n{report}"
+
+
 def test_scale_without_a_family_is_rejected() -> None:
     offending = """
     @prefix pm: <https://pajew.ski/prima-materia/ontology#> .
