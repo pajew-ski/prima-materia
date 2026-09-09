@@ -691,6 +691,20 @@ Ein vorhandener Knoten groundet nichts. Eine Analogie in einer benachbarten Trad
 
 **Gegroundet ist eine Behauptung, wenn eine Stelle in einem Werk sie trägt und die Gegensuche gelaufen ist.** Die Stelle entscheidet den positiven Befund, sobald sie steht; die Erschöpfung des Suchraums ist dafür nicht Bedingung.
 
+### Aufnahme geht vor Vollständigkeit
+
+**Die Aufnahmebedingung eines Bezeugungsknotens ist die gelesene Stelle mit ihrer Ausgabe. Sonst nichts.** Wer eine Stelle gelesen hat, trägt sie ein, und zwar in dem Durchgang, in dem er sie gelesen hat.
+
+Der Satz darüber galt bis zum 2026-09-09 als Aufnahmeschranke und ist es nicht. Er beschreibt, wann eine Behauptung als geprüft gilt, und das ist eine andere Frage als die, ob sie in den Bestand darf. **Ein `pm:Yielding` behauptet nicht, dass die Wirkung eintritt, sondern dass diese Quelle sie behauptet** — und dafür ist die Stelle nicht ein Teil des Belegs, sondern der ganze. Die Gegensuche entscheidet über den Prüfstand und gehört an den `pm:Testing`-Knoten, wo `pm:counterSearch` sie ohnehin erzwingt.
+
+**Unvollständigkeit wird ausgewiesen, nicht durch Nichtaufnahme ausgedrückt.** Der Bestand hat dafür seine Instrumente: `pm:coverageState` sagt, wie weit ein Korpus erschlossen ist, das Fehlen eines Prüfknotens sagt, dass niemand die Prüfung aufgenommen hat, `pm:prerequisiteStrength` trägt die schwachen Fälle. Keines davon verlangt, dass ein Knoten wartet, bis er stark ist. **Ein Knoten, der schwach ist und sagt, worin er schwach ist, ist besser als ein Knoten, den es nicht gibt** — der fehlende sagt nichts und ist von nie gesehenem Material nicht zu unterscheiden.
+
+**Ein Issue ersetzt keinen Knoten, den die Stelle bereits trägt.** Der Tracker ist der Ort für Behauptungen ohne gelesene Stelle. Er ist nicht der Ort für gelesene Stellen, für die gerade keine Zeit war: dort abgelegt, ist der Fund von einer Vermutung nicht mehr zu unterscheiden, und der teuerste Schritt, das Öffnen des Werkes, muss von jemandem noch einmal bezahlt werden.
+
+**Belegt am 2026-09-09, und der Fehler wurde im selben Durchgang benannt und trotzdem begangen.** Ein Lauf am Kālikāpurāṇa trug die Zweiteilung ein und ließ die Vermögen desselben Abschnitts liegen, einen Körper wie Kāma, die Unterwerfung von Königen, die Beherrschung von Tieren und Geistern, Bewegung mit Windesgeschwindigkeit, mit dem Vermerk, sie gehörten in eine eigene Ernte, und legte sie als Issue ab. Genau diese Vermögen sind das, wonach das Projekt sucht. Der Pull Request nannte die Auslassung ausdrücklich als Schuld und ging trotzdem so heraus; das ist der Fall, den `CLAUDE.md` als notierten Einwand ohne Folge führt, und er war hier ein Regelverstoß mit Begründung statt einer Prüfung.
+
+**Die Gegenprobe zu dieser Regel, damit sie nicht in ihr Gegenteil kippt:** sie erlaubt keinen Knoten ohne Stelle. Sie senkt die Anforderung an die Quellenangabe nicht, sie hebt keine schwache Bezeugung auf eine starke, und sie macht aus einem Referat keinen Zeugen. Was sie beseitigt, ist ausschließlich die Ausrede, ein gelesener Fund müsse warten, bis um ihn herum alles fertig ist.
+
 **Unbelegt ist die teure Aussage.** Sie behauptet, dass es die Stelle nirgends gibt, und das trägt nur eine erschöpfende Suche. Ein Issue schließt deshalb nicht als `unbelegt`, weil ein Durchgang nichts fand, sondern erst, wenn die plausiblen Korpora dokumentiert abgesucht sind. Die `korpus:`-Labels sind dieser Nachweis.
 
 ### Die zweite Stufe ist nicht abwählbar
@@ -776,7 +790,9 @@ Die Ernteregel oben ist auf ein Werk und einen Lauf geschrieben. Sie lässt sich
 
 Eine Recherche findet mehr, als die Frage verlangt. Dieser Beifang ist der Weg, auf dem der Bestand in die Breite wächst, und er ist ausdrücklich zu ernten — aber nicht auf demselben Weg wie der Zielbefund.
 
-**Ein nebenbei gefundener Befund wird nur dann Knoten, wenn er selbst die volle Prüfung durchlaufen hat: Stelle plus Gegensuche.** Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen, damit die nächste Runde dort ansetzt, wo diese aufgehört hat.
+**Ein nebenbei gefundener Befund wird nur dann Knoten, wenn seine eigene Stelle gelesen ist.** Alles andere wird ein Issue mit `korpus:`-Label und den bereits geprüften Kandidatenstellen, damit die nächste Runde dort ansetzt, wo diese aufgehört hat.
+
+**Die Grenze verläuft am gelesenen Wortlaut und nicht an der Vollständigkeit der Prüfung.** Diese Regel verlangte bis zum 2026-09-09 Stelle plus Gegensuche und stand damit gegen den Abschnitt Aufnahme geht vor Vollständigkeit weiter oben. Zwei Fassungen derselben Schranke, und die schärfere hat in einem belegten Fall dazu geführt, dass gelesene Vermögen im Tracker statt im Graphen landeten. Was hier gemeint war und weiter gilt: ein Fund aus einem Werk, das nicht geöffnet wurde, also eine Seitenzahl aus der Sekundärliteratur, eine Angabe aus einem Referat, eine bestrittene Zuschreibung, von der man nur gehört hat, ist begegnet und nicht gelesen und bleibt ein Issue.
 
 Der Unterschied ist keine Förmlichkeit. Ein im Vorbeigehen aufgesammelter Fund ist nicht geprüft, sondern begegnet. Läuft er als Knoten ein, ist der Bestand wieder eine Sammlung, und die Trennung von Behauptung und Beglaubigung ist an der billigsten Stelle durchbrochen. Die Regel greift besonders dort, wo ein Rechercheergebnis seine eigenen Vorbehalte mitbringt: Seitenzahlen aus Sekundärliteratur, gemeinfreie Altübersetzungen statt kritischer Ausgaben, in der Forschung bestrittene Zuschreibungen. Solche Funde sind wertvoll und gehören festgehalten, aber als Issue.
 
