@@ -1,6 +1,7 @@
 @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -97,3 +98,66 @@ pmc:MithraicSedesAequinoctialis a pm:Conceptualizing ;
     pm:attestedBy pm:thirdPartyAscription ;
     pm:withinTradition pmt:Mithraic ;
     dcterms:source "Porphyry, De antro nympharum, on the seat of Mithras at the equinoctial circle (trans. Thomas Taylor, London 1917, section 11 of that edition's division)" .
+
+#
+# The grades, and the three incompatible accounts of them
+#
+
+pmc:MithraicGradusSeptem a pm:Conceptualizing ;
+    rdfs:label "Seven grades, named from the images a prefect destroyed"@en, "Sieben Grade, benannt nach den Bildern, die ein Präfekt zerschlug"@de ;
+    skos:definition "The list Jerome gives in passing while urging a mother not to despair of her father's conversion: that her kinsman Gracchus, as prefect of the city, overthrew and broke up a cave of Mithras with all the monstrous images by which the initiates are named — raven, a second name, soldier, lion, Persian, sun-runner and father — and sent them ahead of him as hostages to obtain baptism."@en ;
+    skos:note "The most quoted list in the study of this cult, and the second name in it is not transmitted. The manuscripts read nymphius, bridegroom, or gryphus, griffin; the standard edition prints cryphius, hidden one, on the strength of inscriptions and against the manuscripts. That is the same shape of thing as the seven-gated ladder at Contra Celsum VI.22: two of the load-bearing data points of this tradition rest on emendations made because the emended text agrees better with what is known from elsewhere."@en ;
+    skos:note "The translations wobble too. One English rendering of the passage produces eight items by splitting one grade in two, so a reader working from that version counts eight grades. The seven are secure only because the epigraphic and iconographic material has seven; the text alone would not settle the number."@en ;
+    skos:note "What the passage does not do is assign planets. Jerome names the grades and nothing else — no tutelary star, no order of ascent, no doctrine. Every table pairing a grade with a planet is drawing on the mosaics and inscriptions, not on this witness. That matters for prima-materia#595, because it means the two ancient literary sources for anything sevenfold in this cult, VI.22 and this letter, do not overlap: one has planets and no grades, the other grades and no planets."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Mithraic ;
+    dcterms:source "Jerome, Epistula 107.2, to Laeta (trans. A. S. Geden, Select Passages Illustrating Mithraism, London 1925)" .
+
+pmp:MithraicCoronaRecusata a pm:Practicing ;
+    rdfs:label "The crown offered on a sword, refused with a saying"@en, "Der auf dem Schwert dargebotene Kranz, mit einem Satz zurückgewiesen"@de ;
+    skos:definition "The initiation of the soldier grade as Tertullian describes it to shame Christian soldiers: in a cave, a crown is offered to the candidate on the point of a sword and set on his head, whereupon he is required to lift it off with his own hand and move it to his shoulder, saying that Mithras is his crown. From then on he is never crowned; and if he is ever put on trial about his religion, this is the mark by which he is known — he throws the crown away and says that he has his crown in his god."@en ;
+    skos:note "The nearest thing to a passing formula that this graph holds outside the gnostic material, and it is the shape the Passierformeln project is looking for: an assertion of what the speaker has, not a request for anything. Nothing is asked of Mithras and nothing is granted by him. The sentence does not open a door; it identifies the speaker, and it does so under interrogation, where a wrong answer costs something."@en ;
+    skos:note "The witness is hostile and says why he is telling it: he wants Christians shamed by a comparison with a soldier of Mithras. That cuts both ways for reliability. He has no motive to invent a rite that makes his opponents look steadfast, and every motive to sharpen the detail that does. What he reports as an enduring mark — never crowned again — is the kind of claim a contemporary reader could have checked."@en ;
+    skos:note "The same author elsewhere adds, from memory and saying so, that Mithras marks his soldiers on the forehead, celebrates an offering of bread, brings in an image of resurrection, opens the way to the crown with a sword, restricts his high priest to a single marriage, and keeps virgins and continents. Held here rather than as separate nodes because the author hedges the whole list."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Mithraic ;
+    dcterms:source "Tertullian, De corona 15, with De praescriptione haereticorum 40 (trans. A. S. Geden, Select Passages Illustrating Mithraism, London 1925)" .
+
+pmc:MithraicNominaAnimalium a pm:Conceptualizing ;
+    rdfs:label "A different set of grade names, and women among them"@en, "Ein anderer Satz von Gradnamen, und Frauen darunter"@de ;
+    skos:definition "The account Porphyry takes from Eubulus, who wrote a history of Mithraism in many books: that those who take part in the rites are called lions, the women lionesses or hyenas, the servants crows, and the fathers eagles and hawks; that the one invested with the character of the lion takes on the various forms of living creatures; and that the animal names signify the passage of human souls through various bodies, which the mysteries hold in common with the doctrine of the three grades of magi."@en ;
+    skos:note "This list is not Jerome's list. It has four ranks where his has seven, it names the fathers eagles and hawks, and it includes women — which the received account of this cult denies. Either the witness is describing a different stage of the cult, or a local form, or he is wrong; nothing in the text decides, and the graph does not decide either."@en ;
+    skos:note "The reason given for the names is the transmigration of souls, and it is given as the cult's own reason rather than the reporter's. That makes the animal names a doctrine and not a taxonomy of ranks — an entirely different thing from a ladder of degrees, and one more reason not to merge this list with the other."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Mithraic ;
+    dcterms:source "Porphyry, De abstinentia IV.16, reporting Eubulus (trans. A. S. Geden, Select Passages Illustrating Mithraism, London 1925)" .
+
+pmp:MithraicProbationes a pm:Practicing ;
+    rdfs:label "Graded ordeals of fire, cold, hunger and thirst"@en, "Gestufte Proben durch Feuer, Kälte, Hunger und Durst"@de ;
+    skos:definition "The training a late Greek commentator reports: that nobody may share in the rites without first passing through the disciplines in succession, of which eighty are counted, ascending and descending, easier at first and then harder — fasting alone in a desert place, immersion in deep water for many days, throwing oneself into fire, prolonged exertion, and the like. One version gives a schedule: fasting about fifty days, then two days of extreme heat, then twenty days in snow, the severity increased by stages."@en ;
+    skos:note "Eighty grades, not seven. The number is irreconcilable with every other account and the source is late, derivative and hostile, so the graph holds it as what it is: a claim about this cult made centuries after it ended, by someone commenting on an invective. Two lexica repeat it in abbreviated form, which multiplies the copies and not the witnesses."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Mithraic ;
+    dcterms:source "Nonnus the Mythographer, commentary on Gregory Nazianzen, Invectives against Julian (trans. A. S. Geden, Select Passages Illustrating Mithraism, London 1925)" .
+
+pmc:MithraicProbatioLetalis a pm:Cautioning ;
+    rdfs:label "If he survives, the highest initiation; if he succumbs, a burial"@en, "Übersteht er es, die höchste Weihe; erliegt er, ein Begräbnis"@de ;
+    skos:definition "The outcome attached to the ordeals in the same report: after passing through all of them in succession the candidate at last receives the highest initiation if he is still alive, and an honourable burial if he has succumbed."@en ;
+    skos:note "A stated condition of failure, and the scarcest kind in this graph: not a sign to watch for but an outcome that excludes the other. Almost everything else the ascent material holds tells the practitioner what he will see; this tells him what happens if it does not work, and the answer is that he dies. That it comes from a late and hostile commentator is the reason it is held here with the caution and not as an established practice — but a Christian polemicist has no incentive to invent an ordeal his opponents survive."@en ;
+    skos:note "The Augustan History cuts the other way and is worth holding beside it: the rites, it says, normally involved saying or feigning something that would produce an impression of terror, and Commodus defiled them by killing for real. If that is right, the ordeals were mimed and the deaths were not expected — and the eighty-grade report has mistaken the mime for the thing."@en ;
+    pm:cautionsAbout pmp:MithraicProbationes ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Mithraic ;
+    dcterms:source "Nonnus the Mythographer, commentary on Gregory Nazianzen, with Historia Augusta, Life of Commodus 9 (trans. A. S. Geden, Select Passages Illustrating Mithraism, London 1925)" .
+
+pmc:MithraicDisputatioGraduum a pm:Disputing ;
+    rdfs:label "Three witnesses, three incompatible accounts of the grades"@en, "Drei Zeugen, drei unvereinbare Auskünfte über die Grade"@de ;
+    skos:definition "The conflict between the accounts of initiation this graph holds: seven named grades in a Latin letter of about 400, four animal ranks including women in a Greek report drawn from a lost history of the cult, and eighty ascending and descending disciplines in a Greek commentary of the sixth or seventh century."@en ;
+    pm:disputedClaim pmc:MithraicGradusSeptem ;
+    skos:note "None of the three knows of the others, and none is arguing. The conflict is the compiler's observation, and it is recorded because the seven-grade list is quoted everywhere as if it were the account rather than one of three. The others are not obviously worse witnesses: the four-name list comes from someone who had read a multi-volume history of the cult that is now lost, and the seven-name list from a bishop making a rhetorical point about a relative's baptism."@en ;
+    skos:note "What would decide it is not another text. The grades are attested outside the literary channel altogether, on a mosaic floor and in painted inscriptions, and that material is unread here. Until it is, this node is the honest state: the number of grades in the Mithraic mysteries is not established by anything in this graph."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Mithraic ;
+    dcterms:source "Jerome, Epistula 107.2 (trans. A. S. Geden, London 1925)" ;
+    dcterms:source "Porphyry, De abstinentia IV.16 (trans. A. S. Geden, London 1925)" ;
+    dcterms:source "Nonnus the Mythographer, commentary on Gregory Nazianzen (trans. A. S. Geden, London 1925)" .
