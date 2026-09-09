@@ -279,6 +279,12 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   dort die Kultivierungsliteratur steht und dieser Korpus klinisch fragt und
   eigene Verbote, Fristen und Gelingenszeichen trägt; die Sinologie und die
   moderne Akupunkturforschung gehen als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:ayurveda` (die klassische indische Medizin: Suśruta-Saṃhitā, voran
+  Śārīrasthāna 6 zu den marman und Śārīrasthāna 8 zum Aderlass;
+  Caraka-Saṃhitā; Vāgbhaṭa, Aṣṭāṅgahṛdaya — von `korpus:hathayoga` und
+  `korpus:patanjala` getrennt geführt, weil dort die Übungsliteratur steht und
+  dieser Korpus Eingriffe, Kontraindikationen und Verletzungsfristen führt; die
+  Indologie geht als `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
