@@ -1,0 +1,162 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Chinese divinatory and siting transmission
+#
+# Order of the file: the tradition and the route that had to be decided before
+# its first node; then the stalk counting of the Changes with what it is said
+# to do and the one condition the canon attaches to it; then the counting of
+# the Supreme Mystery, which states four conditions the Changes do not; then
+# the siting of graves with its claim, its interval and the six adversities
+# that absorb its failures; and last the two disputes, one against the oracle
+# and one against the siting, both carried by works read at the wording.
+#
+# The tradition instance was registered in traditions/registry-east-asian.ttl
+# and is moved here now that passages have been read.
+#
+# Opened from the testability entrance of SPEC §14. The registration itself
+# said why: claims here attach to datable outcomes. That turned out to be
+# right and to have a second half the registration did not have — the same
+# corpus carries the machinery that keeps the outcomes from ever counting.
+#
+
+pmt:ChineseDivination a pm:Tradition ;
+    rdfs:label "Chinese divinatory and siting transmission"@en, "Chinesische Divinations- und Siedlungslehre"@de ;
+    skos:definition "The Chinese transmission of divination by counting stalks down to a remainder, of a parallel counting on a different modulus, and of the siting of graves on the doctrine that the bones of the parents receive the qi of the ground and that the descendants are shaded by it."@en ;
+    skos:note "Chosen from the registry on the testability entrance, and the reading bore the registration out on both halves. Fristen and stated outcomes are dense here: the burial book says that where the configuration is inauspicious the misfortune does not turn a day, and it names what a given shape of ground brings to the descendants, down to the extinction of the line. What the registration did not say is that the same book carries six adversities under which a favourable site produces nothing, and that the commentary on the sixth enumerates the delays, disputes, poverty and wars through which a burial fails to happen at all. Every non-occurrence has a place to go."@en ;
+    skos:note "The contact route is entered as disputed and no longer as absent, and the dispute is in the literature rather than in the sources. The graph already holds three transmissions that read a figure off an ungoverned remainder — the Ifá casting, the Fa casting and the geomantic tradition — and the counting of the Changes has the same form on a different modulus. One side derives the Arabic sand art from Chinese material through Needham's transmission routes; the other reconstructs it inside Abbasid Mesopotamia and states that the Chinese derivation was tried and dropped. Neither side was read at the wording in this run, and nothing here decides it; what the value records is that the question is contested and open, which is the opposite of what absent asserted."@en ;
+    skos:note "A second reason the old value could not stand. The works read span the first century before the common era to a redaction of the fourteenth: the burial book as read is the recension Wu Cheng made from the eight sections Cai Yuanding had left of twenty, and it is first attested in the Song bibliography. Absent asks whether a route was available at the time the corpus was fixed, and for that end of the corpus the answer is not the same as for the Xici."@en ;
+    skos:note "Read in this run at the wording, in the Chinese: Zhouyi, Xici A, sections on the great expansion and on what the Changes are without; Zhouyi, hexagram 4; Taixuanjing, Xuan shu, the eleventh; Zangshu, the whole of the single juan of the Siku recension, inner, outer and miscellaneous sections with its interlinear commentary; Lunheng 24, the treatise on divining; Jiu Tangshu 79, the memorial on the burial books. The Taixuanjing outside the counting chapter, and the rest of the Lunheng, were searched by term and not read continuously."@en ;
+    skos:note "Edition note. The Changes were read in the digital text of the Kanseki Repository in the Wang Bi and Han Kangbo recension; that text names no printing, and the citations say so rather than inventing one. The Taixuanjing and the Lunheng were read in the Sibu congkan facsimiles, the Zangshu and the Jiu Tangshu in the Wenyuange Siku quanshu text."@en ;
+    pm:principalCorpus "Zhouyi with the Xici commentary; Yang Xiong, Taixuanjing; Zangshu, in the recension of Wu Cheng; Wang Chong, Lunheng; the memorials of Lü Cai in Jiu Tangshu 79" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Zhouyi, Xici A, the section beginning with the number of the great expansion, in the Wang Bi and Han Kangbo recension; read in the digital text of the Kanseki Repository, which names no printing" .
+
+#
+# The counting of the Changes
+#
+
+pmp:Dieshi a pm:Practicing ;
+    rdfs:label "The counting of the yarrow stalks"@en, "Das Abzählen der Schafgarbenstengel"@de ;
+    skos:definition "The number of the great expansion is fifty, and forty-nine of them are used. They are divided into two to image the two; one is hung between the fingers to image the three; they are counted through by fours to image the four seasons; the remainder is returned between the fingers to image the intercalary month, and because five years hold two intercalations there are two such returns before the next hanging. Four operations complete a change, eighteen changes complete a hexagram, and the eight trigrams are a small completion."@en ;
+    skos:note "The chapter as it stands does not say what the remainder means. It gives four operations and eighteen changes and nowhere says that three changes make one line, nor how a remainder is read off as a value; the string for three changes does not occur in the section at all. The rule that makes the procedure executable is later, and stands in the Song commentary rather than in the canon. This file records what the canon gives and leaves the completion to the issue that carries it, because a node that printed the Song rule as canonical would report as ancient a step the classic does not take."@en ;
+    skos:note "Two numbers stand in the same passage and only one of them is the famous one. The stalks of the two parts are eleven thousand five hundred and twenty, matching the number of the things; that is in the text. Four thousand and ninety-six is not, and belongs to a commentary."@en ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zhouyi, Xici A, the section beginning with the number of the great expansion, in the Wang Bi and Han Kangbo recension; read in the digital text of the Kanseki Repository, which names no printing" .
+
+pmc:JishuZhilai a pm:Conceptualizing ;
+    rdfs:label "Exhausting the numbers to know what is coming"@en, "Die Zahlen erschöpfen, um das Kommende zu wissen"@de ;
+    skos:definition "What the Changes are said to do, stated twice in the same treatise. To exhaust the numbers and thereby to know what is coming is called prognostication, and what yin and yang do not sound out is called spirit. And: the Changes are without thought and without doing, still and unmoving; touched, they thereupon penetrate the grounds of everything under heaven. The same section says that whoever is not the most spiritlike thing under heaven could not do this, and that the Changes receive a charge as an echo receives a sound."@en ;
+    skos:note "The formulation is the strongest in this file and the least examinable, and both for the same reason. Without thought and without doing means that nothing about the operator's state is offered as a condition, so no failure can be assigned to him; and knowing what is coming is not tied to any statement that could turn out false. What the corpus does supply against this is the one condition on repetition, below, and the counter-argument from a work of the first century, held as a dispute."@en ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zhouyi, Xici A, the sections on prognostication and on what the Changes are without, in the Wang Bi and Han Kangbo recension; read in the digital text of the Kanseki Repository, which names no printing" .
+
+pmc:DieshiYieldsZhilai a pm:Yielding ;
+    rdfs:label "The counting yields the knowledge of what is coming"@en, "Das Abzählen bringt das Wissen des Kommenden hervor"@de ;
+    pm:byPractice pmp:Dieshi ;
+    pm:yieldsCapacity pmc:JishuZhilai ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zhouyi, Xici A, the section beginning with the number of the great expansion and the section on prognostication, in the Wang Bi and Han Kangbo recension; read in the digital text of the Kanseki Repository, which names no printing" .
+
+pmc:ZaisanDu a pm:Cautioning ;
+    rdfs:label "Asking twice and three times defiles, and defiled it does not tell"@en, "Zwei- und dreimal fragen entweiht, und entweiht antwortet es nicht"@de ;
+    skos:definition "The judgement on the fourth hexagram states the only condition the canon attaches to consulting: at the first consultation it tells; asked twice and three times, that is defilement, and defiled it does not tell. The commentary on the judgement repeats the words and glosses the defilement as defiling the ignorance itself."@en ;
+    skos:note "This is the node that decides how far this transmission can be examined at all, and it is worth having precisely because it is not a procedural rule. Nothing here says that a second casting is void, or wrong, or that the operator has erred. It says that repeating the question is an offence and that the answer is then withheld. The obvious test of any oracle is to put the same question twice and compare; the canon forbids exactly that and attaches no cost to the doctrine when the second answer differs, because by its own rule there should not be a second answer."@en ;
+    skos:note "Held as a caution and not as a prerequisite because nothing is said to be reached or missed. The consequence is stated, unusually for this corpus, and the file records it in the definition for want of a predicate; see prima-materia#621."@en ;
+    pm:cautionsAbout pmp:Dieshi ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zhouyi, hexagram 4, the judgement and the commentary on the judgement, in the Wang Bi and Han Kangbo recension; read in the digital text of the Kanseki Repository, which names no printing" .
+
+#
+# The counting of the Supreme Mystery, which states what the Changes do not
+#
+
+pmp:XuanShu a pm:Practicing ;
+    rdfs:label "The counting of the Supreme Mystery"@en, "Das Abzählen des Höchsten Geheimnisses"@de ;
+    skos:definition "A parallel counting on a different modulus. Thirty-six are looked to for the stalks; heaven divides by three and ends at six completions, hence eighteen, and since heaven does not give and earth does not complete, the number is doubled and earth leaves three empty against heaven's eighteen. One is separated and hung on the little finger of the left hand, the rest is divided in the middle and searched through by threes, and the remainder is set beside the notch. After one notch the remainder is counted: seven counts as one, eight as two, nine as three, and at six reckonings the way of the stalks is exhausted. The four positions so obtained give one of eighty-one heads, and each head carries nine appraisals ranked as thought, fortune and misfortune, each in a lower, middle and upper degree."@en ;
+    skos:note "The interest is the contrast with the Changes, and it is exact: the same act of reading a figure off an ungoverned remainder, on a modulus of three instead of four, over four positions instead of six, into eighty-one figures instead of sixty-four. Two traditions in one language, three centuries apart, differing in the arithmetic and agreeing in the form. That is the strongest internal evidence this file holds that the form is not the content."@en ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Yang Xiong, Taixuanjing, Xuan shu, the eleventh, with the commentary of Fan Wang, juan 8, Sibu congkan facsimile" .
+
+pmc:FanshiYoudao a pm:Cautioning ;
+    rdfs:label "The four conditions under which one does not consult"@en, "Die vier Bedingungen, unter denen nicht befragt wird"@de ;
+    skos:definition "The same chapter states four conditions, and they are the ones the Changes leave unsaid. There is a way in consulting: who is not gathered does not consult; who does not doubt does not consult; who is not within the rule does not consult; and who will not act on the prognostication had better not have consulted. Before the casting a charge is spoken twice over, borrowing the Supreme Mystery and putting the matter in doubt before the spirits."@en ;
+    skos:note "The fourth condition is the one that does work a graph can use. It makes the consultation pointless where the enquirer will not follow the answer, which is a statement about the enquirer and not about the world; and it thereby rules out the cheapest test of a divination, which is to consult and then do the opposite. Together with the prohibition on asking twice in the Changes, this transmission has now been found to close both of the two obvious tests, in two different works, by two different means."@en ;
+    skos:note "The second condition cuts the other way and is worth keeping separate: who does not doubt does not consult. That excludes the control case in which a consultation is made about a question whose answer is already known, and a control case is what an examination of this practice would need first."@en ;
+    pm:cautionsAbout pmp:XuanShu ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Yang Xiong, Taixuanjing, Xuan shu, the eleventh, with the commentary of Fan Wang, juan 8, Sibu congkan facsimile" .
+
+#
+# The siting of graves
+#
+
+pmp:Zang a pm:Practicing ;
+    rdfs:label "Burial that rides the living qi"@en, "Bestattung, die das lebendige Qi reitet"@de ;
+    skos:definition "The book opens with the sentence that burying is riding the living qi. The five qi run within the earth and issue forth to generate the ten thousand things; the qi scatters when it rides the wind and halts where it is bounded by water, and because the ancients gathered it so that it would not scatter and moved it so that it would halt, the thing is called wind and water. The living is a gathering of qi which congeals into bone and remains alone after death, so that burying is the method of returning the qi into the bone in order to shade what it generated."@en ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zangshu, inner section, opening, in the recension of Wu Cheng, one juan, Wenyuange Siku quanshu text" .
+
+pmc:YitiShouyin a pm:Conceptualizing ;
+    rdfs:label "The bones receive the qi and the descendants are shaded"@en, "Die Gebeine empfangen das Qi und die Nachkommen werden beschirmt"@de ;
+    skos:definition "The claim the whole doctrine rests on: a person receives his body from his parents, and when the root bones obtain the qi the body left behind is shaded. The classic is quoted for it — the qi is touched and responds, and the fortune of the dead reaches the living — and the resonance is illustrated by the bronze mountain that collapsed in the west while the numinous bell answered in the east."@en ;
+    skos:note "The claim is transitive across a generation and across death, which is what makes it examinable in principle: it predicts something about descendants from something about a grave. What it does not carry is a way of telling the shading from its absence in any single case, and the commentary printed with the text takes the transitivity further rather than bounding it, extending the shading to adopted children and to the sons of a second mother."@en ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zangshu, inner section, in the recension of Wu Cheng, one juan, Wenyuange Siku quanshu text" .
+
+pmc:ZangYieldsYin a pm:Yielding ;
+    rdfs:label "Burial on the living qi yields the shading of the descendants"@en, "Die Bestattung auf dem lebendigen Qi bringt die Beschirmung der Nachkommen hervor"@de ;
+    pm:byPractice pmp:Zang ;
+    pm:yieldsCapacity pmc:YitiShouyin ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zangshu, inner section, in the recension of Wu Cheng, one juan, Wenyuange Siku quanshu text" .
+
+pmc:HuoBuXuanri a pm:Conceptualizing ;
+    rdfs:label "The misfortune does not turn a day"@en, "Das Unheil dreht keinen Tag"@de ;
+    skos:definition "The one interval the book states. Where the configuration is favourable and the shape unfavourable, one may still hope for a single day of fortune; where the configuration is unfavourable and the shape favourable, the misfortune does not turn a day. The commentary says that this is put so strongly in order to say how fast the answer comes, and elsewhere the book has a burial made at the hollow in the morning and wept for in the evening."@en ;
+    skos:note "This is the most examinable sentence found in the transmission and the reason the corpus was opened from the testability side. A doctrine that placed its effects a generation away could never be caught; this one places one class of them within a day of the burial, and the burial is a public and dated event."@en ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zangshu, outer section, in the recension of Wu Cheng, one juan, Wenyuange Siku quanshu text" .
+
+pmc:SanjiLiuxiong a pm:Cautioning ;
+    rdfs:label "Three felicities and six adversities"@en, "Drei Glücksfälle und sechs Unglücksfälle"@de ;
+    skos:definition "The book closes with three conditions under which a hollow is felicitous and six under which the burial is adverse. The six: a discordance of yin and yang; a going wrong of the year and the season; a small strength that plans a great thing; a reliance on present fortune and standing power; an overreaching above or a falling short below; and a strange appearance among the responses. The classic is quoted for the conclusion that a felicitous hollow with an adverse burial is the same as abandoning the corpse."@en ;
+    skos:note "The sixth adversity is the reason this node stands here and not among the ordinary cautions. The commentary printed with it enumerates what the strange appearances are, and the list is a list of ways in which nothing happens: the site is right and the family delays the burial; a quarrel prevents it; poverty and sickness together make it impossible; the master dies before he can return; the coffin stands for years and a war intervenes; the descendants do not agree; a lawsuit or a prison ends it; the days pass in neglect until the thing is abandoned. Every one of these is a reason a favourable grave produced no fortune, and every one is available after the fact."@en ;
+    skos:note "The second adversity is separately consequential, because it is the one an outside witness attacked with a count. It requires the year and the season of the burial to be right, and the memorial recorded in the dynastic history sets against that a tally of burials in the classical annals on the day the burial books call most inauspicious."@en ;
+    skos:note "What the graph gains here is not a warning but a shape of claim. Beside the interval that does not turn a day, this file now holds the machinery that keeps that interval from ever being read as a refutation, in the same book and a few folios apart."@en ;
+    pm:cautionsAbout pmp:Zang ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zangshu, miscellaneous section, in the recension of Wu Cheng, one juan, Wenyuange Siku quanshu text" .
+
+#
+# The two disputes
+#
+
+pmc:ZhanbuDispute a pm:Disputing ;
+    rdfs:label "Whether the stalks and the shell answer at all"@en, "Ob Stengel und Schale überhaupt antworten"@de ;
+    skos:definition "A treatise of the first century sets itself against the claim that the Changes penetrate the grounds of everything under heaven. Its arguments, in the order it gives them: the names of the stalk and the shell mean the aged and the old, so that consulting them means consulting the aged, and neither is spiritlike; heaven, if it has no ears, is not a body but a vapour, and a vapour cannot tell anybody anything; the dead stalk and the dead shell are asked about the living; and, reading the very passage of the great expansion, the division into two images heaven and earth, the counting by fours images the seasons and the remainder images the intercalation, which is imaging by likeness in order to set up the number of the figures, and says nothing about heaven and earth answering a man. Its own account of the hits is coincidence: what the shell is said to meet and the stalks to encounter is what was met with, not what was brought about, and following the answer does not necessarily bring fortune nor going against it misfortune."@en ;
+    skos:note "Held as a dispute and not as a refutation because that is what it is: two works, one asserting and one denying, both read at the wording in this run, neither carrying a case. The value of having it as a node is that the denying side reads the same passage the asserting side rests on, and reads it as a construction by analogy rather than as a channel."@en ;
+    skos:note "The strongest move in the denying work is not an argument but a condition, and it is held separately as a protocol in examinations/. It is not in this node because a dispute records two positions and a condition is a third kind of thing."@en ;
+    pm:disputedClaim pmc:JishuZhilai ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zhouyi, Xici A, the sections on prognostication and on what the Changes are without, in the Wang Bi and Han Kangbo recension; read in the digital text of the Kanseki Repository, which names no printing", "Wang Chong, Lunheng, the treatise on divining, juan 24, Sibu congkan facsimile" .
+
+pmc:ZangshuDispute a pm:Disputing ;
+    rdfs:label "Whether the choice of grave and day decides the fortune of the descendants"@en, "Ob die Wahl von Grab und Tag das Geschick der Nachkommen entscheidet"@de ;
+    skos:definition "A memorial preserved in the dynastic history sets seven numbered objections against the burial books, on an imperial commission to revise the divinatory literature. The rites fix the interval between death and burial by rank, so the burial has a set time and no year or month is to be chosen; the books call one day of the sexagenary cycle the most inauspicious of all for a burial, and a check of the classical annals turns up more than twenty burials on that day, so the day is not chosen either; the hour is fixed by what each dynasty honoured, so the hour is not chosen; one house kept its succession and another lost its sacrifices without either turning on a burial; the ancients buried north of their capitals in one fixed place, without the surname doctrine, and their descendants were not the poorer for it; a grave once made is never altered while rank rises and falls without rest, so office is not what a burial confers; and the practice makes mourners choose ground in hope of an office and a season in hope of money, so that the books corrupt the customs."@en ;
+    skos:note "The sixth objection is the one worth naming, because it is an argument of a form the graph can reuse: the cause is invariant and the effect fluctuates, therefore the cause is not that cause. The second is of another form again and is treated as evidence rather than as testimony, in the protocol beside this file."@en ;
+    skos:note "The defending side is the book itself and the commentary printed with it, which cites two cases the other way: a reader of graves who saw a general's tomb and said the clan would be wiped out, and it was; and a duke of the annals who moved his capital against a prognostication that it would benefit the people and not the ruler, and died in the fifth month. Both are anecdotes reported by the defence and neither was traced to the works they name."@en ;
+    pm:disputedClaim pmc:YitiShouyin ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChineseDivination ;
+    dcterms:source "Zangshu, inner and miscellaneous sections, in the recension of Wu Cheng, one juan, Wenyuange Siku quanshu text", "Jiu Tangshu 79, the memorial of Lü Cai on the burial books, juan 79, Wenyuange Siku quanshu text" .
