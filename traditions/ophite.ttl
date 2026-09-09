@@ -1,0 +1,252 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Ophite diagram
+#
+# Order of the file: the transmission, then the speeches said at the gates,
+# then the two heptads of names, then what the witness does not carry. The
+# last group is the reason the file exists: this material is reported
+# elsewhere with an order the source does not give it.
+#
+
+pmt:OphiteGnosis a pm:Tradition ;
+    rdfs:label "Ophite gnosis"@en, "Ophitische Gnosis"@de ;
+    skos:definition "The transmission behind a diagram of circles and gates in which the soul, rising after death, says a set speech to the ruler of each gate, naming what it brings and asking to pass."@en ;
+    skos:note "The caution that governs every node in this file. The whole of it is read out of an opponent. Origen is refuting Celsus and holds both of them in contempt; he says he obtained the diagram himself out of a love of learning, and he prints the speeches in order to show that he knows what he rejects. Every node therefore carries pm:thirdPartyAscription, and none of them may be read as a statement the bearers of this transmission made about themselves."@en ;
+    skos:note "The report is nonetheless of an unusual kind, and the difference is worth stating because it is what makes the file worth having. Origen is not summarising a doctrine: he is copying out of a document he possessed, and he says twice that he is doing so where Celsus could not or would not. What is entered here is closer to a transcribed liturgy inside a polemic than to a heresiological paraphrase."@en ;
+    skos:note "Origen states that the bearers are not Christians, that they admit nobody who has not first cursed Jesus, and that they name one Euphrates as the author of their opinions; he also says the sect is very small and that he never met anyone anywhere who believed the diagram. The size claim comes from a hostile witness with a reason to make it and is recorded, not adopted."@en ;
+    skos:note "Read in the Ante-Nicene Fathers translation of Frederick Crombie. Neither the critical Greek of Koetschau nor Chadwick's translation was consulted, and no claim in this file rests on a word whose Greek was checked. The edition is named on every node for that reason."@en ;
+    pm:principalCorpus "Origen, Contra Celsum VI.24-38; Irenaeus, Adversus Haereses I.30" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Origen, Contra Celsum VI.24-38 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+#
+# The passage of the gates
+#
+
+pmp:OphiteTransitusOratio a pm:Practicing ;
+    rdfs:label "The speech said at each gate in passing"@en, "Die an jedem Tor gesprochene Rede"@de ;
+    skos:definition "Saying, after passing what the text calls the fence of wickedness, a set speech to the ruler of each gate in turn: addressing him by name and office, naming what the speaker brings or has been purified by, asking to be let through, and closing with a request for grace."@en ;
+    skos:note "The instruction is given as something the passer is taught beforehand. Origen introduces the speeches as the teaching received after the fence of wickedness, that is as material learned in life for use at the gates, not as words spoken in the moment by whoever happens to arrive."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteTransitusLiber a pm:Conceptualizing ;
+    rdfs:label "Free passage through the realm of a ruler"@en, "Freier Durchgang durch das Reich eines Herrschers"@de ;
+    skos:definition "The outcome the speeches ask for: that the gate be opened and the speaker pass through the realm of its ruler, in the wording of the first of them, again in freedom."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteOratioYieldsTransitus a pm:Yielding ;
+    rdfs:label "The speech at the gate obtains the passage"@en, "Die Rede am Tor erwirkt den Durchgang"@de ;
+    pm:byPractice pmp:OphiteTransitusOratio ;
+    pm:yieldsCapacity pmc:OphiteTransitusLiber ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    skos:note "No condition of failure is stated anywhere in the passage. The witness gives what is to be said and never what happens to one who says it without having what the words claim, nor any sign by which the passer would know he had been refused. The claim is therefore not examinable from this source, and that is a property of the source and not of the claim."@en ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteSymbolumOstensum a pm:Conceptualizing ;
+    rdfs:label "What the speaker brings to the gate"@en, "Was der Sprechende ans Tor mitbringt"@de ;
+    skos:definition "The thing each speech names as already belonging to the speaker: the symbol of life borne in the character of a type at the seventh; his own beard as symbol at the second Iao; a faultless symbol preserved by the stamp of an image, and a body liberated by a pentad, at the fifth; purification with the spirit of a virgin at the third gate; the symbol of the mother at the second; and at the first, a symbol sculptured on the figure of the tree of life and formed in the likeness of innocence."@en ;
+    skos:note "The speeches are not petitions to be granted something. Each of them states a condition the speaker is already in and asks that it be seen: look upon me, seeing thou beholdest, bearing now mine own beard as symbol. Whether the ruler could withhold what is asked is a question the passage never raises."@en ;
+    skos:note "That reading must not be pressed further than the wording bears, and the wording pulls both ways. Every one of the speeches ends with a request: let grace be with me, O father, let it be with me. A description of the speeches as assertion of identity rather than supplication holds for their body and not for their close, and a file that recorded only the first half would be selecting."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+#
+# The named rulers of the gates
+#
+
+pmc:OphiteHebdomasNominata a pm:Conceptualizing ;
+    rdfs:label "The seven names of the hebdomad and their gates"@en, "Die sieben Namen der Hebdomas und ihre Tore"@de ;
+    skos:definition "The set of seven names the diagram gives the rulers of the gates: Ialdabaoth, Iao, Sabaoth, Adonaeus, Astaphaeus, Aloaeus and Horaeus. Origen adds that three of them, Ialdabaoth, Astaphaeus and Horaeus, are taken from magic, and four, Iao, Sabaoth, Adonaeus and Eloaeus, from the Hebrew scriptures, where they are names of one and the same God."@en ;
+    skos:note "The gates are counted from below. Horaeus holds the first, Aloaeus the second, Astaphaeus the third, Sabaoth the fifth realm, and Ialdabaoth is addressed as first and seventh. The fourth and the sixth are never numbered in the passage."@en ;
+    skos:note "Aloaeus and Eloaeus are taken here as one bearer under two spellings of the printed text, since VI.31 addresses Aloaeus and VI.32 lists Eloaeus among the seven while omitting Aloaeus. The identification is the compiler's and is stated so that it can be denied."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31-32 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteIaldabaoth a pm:Naming ;
+    rdfs:label "Ialdabaoth, first and seventh"@en, "Ialdabaoth, erster und siebter"@de ;
+    skos:altLabel "Jaldabaoth"@en, "Ialdabaoth"@de ;
+    pm:nameForm "Ialdabaoth" ;
+    pm:nameRole "ruling spirit of the seventh gate, addressed as first and seventh, rational ruler of a pure mind and a perfect work to son and father, who closed a gate against his own kingdom" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    skos:note "The one place in the passage where a ruler is tied to a star: immediately after this speech Origen reports that the star Phaenon is said to be in sympathy with the lion-like ruler. Phaenon is Saturn, and the lion-like one belongs to the other heptad, so the sentence is at once the sole planetary datum in the text and the sole bridge between its two sets of seven."@en ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteIao a pm:Naming ;
+    rdfs:label "Iao, who shines by night"@en, "Iao, der bei Nacht scheint"@de ;
+    pm:nameForm "Iao" ;
+    pm:nameRole "second, who shines by night, ruler of the secret mysteries of son and father, first prince of death and portion of the innocent" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    skos:note "No gate number is given for him, only the ordinal second. Origen says elsewhere that the name comes from the Hebrew scriptures, where it is Iao or Jah."@en ;
+    dcterms:source "Origen, Contra Celsum VI.31-32 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteSabaoth a pm:Naming ;
+    rdfs:label "Sabaoth, governor of the fifth realm"@en, "Sabaoth, Herrscher des fünften Reiches"@de ;
+    pm:nameForm "Sabaoth" ;
+    pm:nameRole "powerful governor of the fifth realm, defender of the law of his own creatures, who are liberated by his grace through a more powerful pentad" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteAstaphaeus a pm:Naming ;
+    rdfs:label "Astaphaeus, ruler of the third gate"@en, "Astaphaeus, Herrscher des dritten Tores"@de ;
+    skos:altLabel "Astaphanos"@en ;
+    pm:nameForm "Astaphaeus" ;
+    pm:nameRole "ruler of the third gate, overseer of the first principle of water, who sees the essence of the world and before whom the speaker is purified with the spirit of a virgin" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteAloaeus a pm:Naming ;
+    rdfs:label "Aloaeus, governor of the second gate"@en, "Aloaeus, Herrscher des zweiten Tores"@de ;
+    skos:altLabel "Eloaeus"@en, "Ailoaios"@de ;
+    pm:nameForm "Aloaeus" ;
+    pm:nameRole "governor of the second gate, to whom the speaker brings the symbol of his mother, a grace hidden by the powers of the realms" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteHoraeus a pm:Naming ;
+    rdfs:label "Horaeus, who overleapt the rampart of fire"@en, "Horaeus, der über den Feuerwall sprang"@de ;
+    skos:altLabel "Horaios"@de ;
+    pm:nameForm "Horaeus" ;
+    pm:nameRole "ruler of the first gate, who fearlessly overleapt the rampart of fire, and who beholds the symbol sculptured on the figure of the tree of life" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteAdonaeus a pm:Naming ;
+    rdfs:label "Adonaeus, named in the list and absent from the speeches"@en, "Adonaeus, in der Liste genannt und in den Reden abwesend"@de ;
+    skos:altLabel "Adonaios"@de ;
+    pm:nameForm "Adonaeus" ;
+    pm:nameRole "one of the seven names of the hebdomad, taken from the Hebrew scriptures, where the text is Adonai; no office and no gate are given him" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    skos:note "He is the only one of the seven for whom the witness carries no speech. What is known of him here is his name and its derivation, and nothing else; the role recorded above is what the passage gives and is deliberately empty of office."@en ;
+    dcterms:source "Origen, Contra Celsum VI.32 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+#
+# The theriomorphic heptad, which is not the same seven
+#
+
+pmc:OphiteHebdomasTheriomorpha a pm:Conceptualizing ;
+    rdfs:label "The seven ruling demons in animal shape"@en, "Die sieben Herrscher in Tiergestalt"@de ;
+    skos:definition "A second set of seven in the same diagram, each with a name and an animal form: Michael the lion-like, Suriel the bull-like, Raphael the serpent-like, Gabriel the eagle-like, Thauthabaoth the bear-like, Erataoth the dog-like, and Onoel or Thartharaoth, somewhat asinine in appearance."@en ;
+    skos:note "Origen states the division of labour between his source and Celsus outright: Celsus gave the shapes and not the names, and the names come from the diagram Origen had. The first four are the four living creatures of the merkabah under angel names, the last three are formed like the names of the other heptad."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteMichael a pm:Naming ;
+    rdfs:label "Michael the lion-like"@en, "Michael, der Löwengestaltige"@de ;
+    pm:nameForm "Michael" ;
+    pm:nameRole "first of the seven ruling demons of the diagram, lion-like; honoured in scripture as the angel of the Creator" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteSuriel a pm:Naming ;
+    rdfs:label "Suriel the bull-like"@en, "Suriel, der Stiergestaltige"@de ;
+    pm:nameForm "Suriel" ;
+    pm:nameRole "second of the seven ruling demons of the diagram, bull-like" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteRaphael a pm:Naming ;
+    rdfs:label "Raphael the serpent-like"@en, "Raphael, der Schlangengestaltige"@de ;
+    pm:nameForm "Raphael" ;
+    pm:nameRole "third of the seven ruling demons of the diagram, serpent-like; in Celsus amphibious and frightfully hissing" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteGabriel a pm:Naming ;
+    rdfs:label "Gabriel the eagle-like"@en, "Gabriel, der Adlergestaltige"@de ;
+    pm:nameForm "Gabriel" ;
+    pm:nameRole "fourth of the seven ruling demons of the diagram, eagle-like" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteThauthabaoth a pm:Naming ;
+    rdfs:label "Thauthabaoth the bear-like"@en, "Thauthabaoth, der Bärengestaltige"@de ;
+    pm:nameForm "Thauthabaoth" ;
+    pm:nameRole "fifth of the seven ruling demons of the diagram, bear-like" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteErataoth a pm:Naming ;
+    rdfs:label "Erataoth the dog-like"@en, "Erataoth, der Hundegestaltige"@de ;
+    pm:nameForm "Erataoth" ;
+    pm:nameRole "sixth of the seven ruling demons of the diagram, with the face of a dog" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteOnoel a pm:Naming ;
+    rdfs:label "Onoel the ass-like"@en, "Onoel, der Eselsgestaltige"@de ;
+    skos:altLabel "Thartharaoth"@en, "Thaphabaoth"@en ;
+    pm:nameForm "Onoel" ;
+    pm:nameRole "seventh of the seven ruling demons of the diagram, asinine in appearance; Celsus gives the name as Thaphabaoth or Onoel, the diagram Origen read as Onoel or Thartharaoth" ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+#
+# What the witness does not carry
+#
+
+pmc:OphiteDuaeHebdomades a pm:Conceptualizing ;
+    rdfs:label "Two heptads in one diagram, not one"@en, "Zwei Siebenheiten in einem Diagramm, nicht eine"@de ;
+    skos:definition "The finding that the diagram holds two distinct groups of seven, given in two separate chapters and never equated: the ruling demons in animal shape with angelic and barbarous names, and the named rulers of the gates to whom the speeches are addressed. No name occurs in both lists."@en ;
+    skos:note "The single sentence that connects them is the remark that the star Phaenon is in sympathy with the lion-like ruler, placed directly after the speech to Ialdabaoth. It joins one member of each list and leaves the other six pairs unstated. A table that runs the two heptads together into one column of seven is doing what the source does not do."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.30-31 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteNullaOrdinatioPlanetaria a pm:Conceptualizing ;
+    rdfs:label "The witness assigns no planets to the gates"@en, "Der Zeuge ordnet den Toren keine Planeten zu"@de ;
+    skos:definition "The finding that the passage nowhere assigns a planet to a gate or to a named ruler. The rulers are counted by gates and realms; the only celestial body named in the whole of the diagram material is Phaenon, and it is put in sympathy with the lion-like ruler of the other heptad."@en ;
+    skos:note "The planetary ladder does stand in the same book, and it is expressly other material. At VI.22 Celsus reports it from the mysteries of Mithras, with seven gates of metals assigned to Saturn, Venus, Jupiter, Mercury, Mars, the Moon and the Sun, and Origen treats the quotation as an intrusion from a foreign cult. Celsus himself adds that the order is explained by musical reasons rather than by the planets. Reading the ophite gates through that ladder joins two things the text keeps apart, and it changes the order into the bargain: the Mithraic sequence is not the sequence of the gates."@en ;
+    skos:note "This is a statement about one witness and not about the transmission. Whether an assignment stands in Irenaeus, in the Nag Hammadi material or in the scholarship that reconstructed the diagram is not decided here, and it is not decided by this file. See prima-materia#556."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.22 and VI.30-32 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteSeptemOrationes a pm:Conceptualizing ;
+    rdfs:label "Seven speeches, six of them to a named ruler"@en, "Sieben Reden, sechs davon an einen benannten Herrscher"@de ;
+    skos:definition "The count as the witness gives it. Seven speeches stand in the passage: one to a one-formed king, from whom the beginnings of the ogdoad are said to derive, and then in order to Ialdabaoth, Iao, Sabaoth, Astaphaeus, Aloaeus and Horaeus. Six of the seven names of the hebdomad therefore have a speech, and Adonaeus has none."@en ;
+    skos:note "The gap falls where the numbering also breaks. Gates one, two and three are named, the fifth realm is named, Ialdabaoth is first and seventh, and the fourth and sixth are never mentioned. Whether the missing speech is a loss in transmission, a diagram Origen copied incompletely, or a system that never had one is not decidable from this witness."@en ;
+    skos:note "The count is worth entering because it is regularly given otherwise. The secondary literature speaks of eight speeches to seven named archons; the translation read carries seven speeches and six names. Whether the difference lies in the Greek, in the numbering of the chapters, or in the counting is unchecked here, because neither Koetschau nor Chadwick nor the study making that claim was opened. See prima-materia#557."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.31-32 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+#
+# The rest of the diagram, as far as the witness describes it
+#
+
+pmc:OphiteSigillum a pm:Conceptualizing ;
+    rdfs:label "The seal, and the two parties at the deathbed"@en, "Das Siegel und die zwei Parteien am Sterbebett"@de ;
+    skos:definition "The exchange reported around what ecclesiastical writers call the seal: he who impresses it is called father and he who is sealed young man and son, and the sealed one answers that he has been anointed with white ointment from the tree of life. With it a number is given: seven angels attach themselves to either side of the soul of the dying body, the one party called angels of light, the other archontics, whose ruler is termed the accursed god."@en ;
+    skos:note "Origen says of the dialogue that he never heard of such a thing even among the heretics, and he attacks the name given to the ruler at length. Both the rite and his disbelief in it are recorded; the passage is the closest the witness comes to something done in life rather than after death."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.27 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
+
+pmc:OphiteDiagrammaDescriptum a pm:Conceptualizing ;
+    rdfs:label "The circles of the diagram and their inscriptions"@en, "Die Kreise des Diagramms und ihre Inschriften"@de ;
+    skos:definition "What Origen reports of the drawing itself: ten circles, distinct from one another and bound by one circle said to be the soul of all things and called Leviathan, whose name stands twice, at the circumference and at the centre; Behemoth placed beneath the lowest circle; a thick black line called Gehenna or Tartarus; a greater and a lesser circle inscribed Father and Son along their diameter; a barrier in the shape of a hatchet; short circles inscribed Love and Life; a rhomboid figure called the foresight of wisdom, with the nature of wisdom at the point of common section, and Knowledge and Understanding above and below it; and, in what Celsus called the square pattern, a flaming sword drawn as the diameter of a flaming circle, guarding the tree of knowledge and of life."@en ;
+    skos:note "Entered as a description and not as a reconstruction. Origen gives the parts and almost never their positions relative to one another, and every published drawing of the diagram supplies an arrangement that this passage does not contain."@en ;
+    pm:withinTradition pmt:OphiteGnosis ;
+    dcterms:source "Origen, Contra Celsum VI.25, VI.33 and VI.38 (trans. F. Crombie, Ante-Nicene Fathers IV, Edinburgh 1885)" .
