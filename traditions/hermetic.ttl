@@ -1,0 +1,123 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Hermetic transmission
+#
+# Opened from the register for the ascent in the first treatise. The reason is
+# the one the register itself named: this is the sphere the graph occupies most
+# densely, so nothing here adds a witness, and what it adds instead is a
+# distribution. The ophite speeches name what the passer brings and never say
+# what he leaves behind; here the seven zones each receive one named thing.
+# The tradition instance was registered in traditions/registry-mediterranean.ttl
+# and is moved here now that passages have been read.
+#
+
+pmt:Hermetic a pm:Tradition ;
+    rdfs:label "Hermetic transmission"@en, "Hermetische Überlieferung"@de ;
+    skos:definition "The Graeco-Egyptian transmission of an ascent through the spheres in which the ascending one sheds a vice at each, and of a rebirth reported as having happened to the speaker."@en ;
+    skos:note "The Discourse on the Eighth and the Ninth is an initiation with a sequence, a moment of change and a demand that the initiate confirm what he now sees. It has no equivalent in what the graph currently holds."@en ;
+    skos:note "The three decisions that precede a tradition file. Route of contact: documented in every direction that matters here — the corpus is Graeco-Egyptian of the first three centuries, and the traditions it would be compared with in this graph, the ophite diagram and the magical papyri, stand in the same milieu. Nothing entered from this file may be counted as an independent witness against them. Edition: read in the translation of G. R. S. Mead, public domain, named on every node; Nock and Festugière and the translation of Copenhaver were not consulted, and where Mead's wording carries a decision it is flagged. Number of citable passages: the first treatise only, and within it the ascent."@en ;
+    skos:note "Mead's diction is Victorian and interpretive in places where the Greek is disputed; his zone list in particular has been rendered differently by later translators. What is entered here is what one named translation says, which is the standard this project sets, and it is why the edition stands on every node rather than in this header alone."@en ;
+    pm:principalCorpus "Corpus Hermeticum; Asclepius; the Stobaean excerpts including Korē Kosmou; Nag Hammadi VI,6" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Corpus Hermeticum I (Poimandres), in the translation of G. R. S. Mead" .
+
+#
+# The seven rulers and the descent
+#
+
+pmc:HermeticSeptemGubernatores a pm:Conceptualizing ;
+    rdfs:label "The seven rulers whose rule men call Fate"@en, "Die sieben Herrscher, deren Herrschaft die Menschen Schicksal nennen"@de ;
+    skos:definition "The claim that a second Mind, itself brought forth by the Mind that is God, and being of fire and spirit, formed seven rulers who enclose the world the senses perceive, and that what men call Fate is the ruling of these seven."@en ;
+    skos:note "The identification is made by the source and not by a reader: Fate is not likened to the seven, it is said to be their rule. That is the reason this node stands here rather than as a compiler's reading of a cosmology."@en ;
+    pm:withinTradition pmt:Hermetic ;
+    dcterms:source "Corpus Hermeticum I.9 (trans. G. R. S. Mead)" .
+
+pmc:HermeticDescensusPerHarmoniam a pm:Conceptualizing ;
+    rdfs:label "Each ruler gives a share of his own ordering"@en, "Jeder Herrscher gibt einen Anteil seiner eigenen Ordnung"@de ;
+    skos:definition "The account of the descent: Man, changing his state to the formative sphere, gazed on the creatures of his brother, and they loved him and each gave him a share of his own ordering; having learned their essence and become a sharer in their nature, he broke through the boundary of their spheres and showed the fair form of God to downward Nature. He is then said to be above the Harmony and within the Harmony a slave."@en ;
+    skos:note "The descent is not a fall through disobedience and is not punished; it is granted by the Father and driven by love. The vices given back at the ascent are therefore not sins acquired against the order but shares of an ordering that was handed over. That distinction is lost in every summary that calls this a fall."@en ;
+    pm:withinTradition pmt:Hermetic ;
+    dcterms:source "Corpus Hermeticum I.13-15 (trans. G. R. S. Mead)" .
+
+#
+# The ascent: the one passage in the graph that names what is left at each stage
+#
+
+pmc:HermeticRedditioEnergiarum a pm:Conceptualizing ;
+    rdfs:label "What is surrendered at each of the seven zones"@en, "Was an jeder der sieben Zonen zurückgegeben wird"@de ;
+    skos:definition "The list given for the upward journey through the Harmony: to the first zone the energy of growth and waning; to the second, the device of evils, now de-energized; to the third, the guile of the desires, de-energized; to the fourth, domineering arrogance, de-energized; to the fifth, unholy daring and the rashness of audacity, de-energized; to the sixth, the striving for wealth by evil means, deprived of its aggrandizement; and to the seventh, ensnaring falsehood, de-energized."@en ;
+    skos:note "Read against the ophite speeches, this is the complement and not the parallel. There the passer names what he brings and the gate opens; here he names nothing and leaves one thing behind at each stage. One is a liturgy of assertion, the other an inventory of divestment, and the sequence of seven is what they have in common."@en ;
+    skos:note "The repeated de-energized is the load-bearing word and is easy to read past. What is handed over is not the vice but the vice already stripped of its working: the surrender is described as the last step of something that has happened, not as the act that undoes it. Whether the undoing is the dying itself or the life that preceded it, the passage does not say."@en ;
+    skos:note "The zones are not named, numbered to planets, or assigned rulers here, although the same treatise says at I.9 that the seven rulers govern what men call Fate. The pairing of zone with planet is therefore as absent in this witness as the pairing of archon with planet is in the ophite one, and for the same kind of reader it is supplied just as readily."@en ;
+    pm:withinTradition pmt:Hermetic ;
+    dcterms:source "Corpus Hermeticum I.25 (trans. G. R. S. Mead)" .
+
+pmc:HermeticOgdoas a pm:Conceptualizing ;
+    rdfs:label "The eighth nature, and what lies above it"@en, "Die achte Natur, und was über ihr liegt"@de ;
+    skos:definition "The state reported after the seven: stripped of all the energisings of the harmony and clothed in his proper power, the ascending one comes to the nature belonging to the Eighth and there hymns the Father with those that are; they welcome him, he is made like to them, and he further hears the powers above the eighth nature singing to God in a language of their own."@en ;
+    skos:note "Two stages and not one, and the second is only heard. The passage marks a boundary the ascent does not cross by the same means: what lies above the Eighth is audible before it is entered, and entering it is described in the next sentence as a surrender of self rather than a further passage."@en ;
+    pm:withinTradition pmt:Hermetic ;
+    dcterms:source "Corpus Hermeticum I.26 (trans. G. R. S. Mead)" .
+
+pmc:HermeticFinisBonus a pm:Conceptualizing ;
+    rdfs:label "To be made one with God"@en, "Eins werden mit Gott"@de ;
+    skos:definition "The end named for those who have gained gnosis: they go in a band to the Father, of their own selves make surrender of themselves to the powers, and becoming powers are in God."@en ;
+    skos:note "Placed on the telic axis as pm:unitiveTelos would be a reading and is not made here; the wording carries both a becoming-powers and a being-in-God, and which of the two is the end is exactly what a placement would have to decide. Left unsituated deliberately, so that the absence means nobody has decided rather than that the source is silent."@en ;
+    pm:withinTradition pmt:Hermetic ;
+    dcterms:source "Corpus Hermeticum I.26 (trans. G. R. S. Mead)" .
+
+#
+# What the ascent presupposes, and what happens instead
+#
+
+pmp:HermeticVitaPia a pm:Practicing ;
+    rdfs:label "The pious life under the presence of Mind"@en, "Das fromme Leben unter der Gegenwart des Mind"@de ;
+    skos:definition "The conduct the treatise describes for those with whom Mind is present: living piously, pure and merciful, winning the Father's love by pure lives, giving thanks and chanting hymns intent on him with ardent love, and turning from the body's sensations before giving it up to its proper death."@en ;
+    skos:note "Mead's Mind is here an agent and not a faculty: it is said to be present with the good, to become an aid, to close up the entrances as a door-keeper and to cut off the mental actions that base energies induce. What the practitioner does and what is done to him are not separated in the passage."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hermetic ;
+    dcterms:source "Corpus Hermeticum I.22 (trans. G. R. S. Mead)" .
+
+pmc:HermeticVitaPiaYieldsAscensus a pm:Yielding ;
+    rdfs:label "The pious life yields the ascent and the union"@en, "Das fromme Leben bringt den Aufstieg und die Einung hervor"@de ;
+    pm:byPractice pmp:HermeticVitaPia ;
+    pm:yieldsCapacity pmc:HermeticFinisBonus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hermetic ;
+    skos:note "The claim is stated as the good end for those who have gained gnosis, and the treatise names both what precedes it and what happens to those who do not. That is more than the ophite witness gives, and it is still not a falsifying condition: nothing here could be observed to fail, because the whole of it is placed after death."@en ;
+    dcterms:source "Corpus Hermeticum I.22 and I.26 (trans. G. R. S. Mead)" .
+
+pmc:HermeticDaemonUltor a pm:Cautioning ;
+    rdfs:label "The avenging daimon takes the place of Mind"@en, "Der rächende Daimon tritt an die Stelle des Mind"@de ;
+    skos:definition "The warning that to the mindless, the wicked and depraved, the envious and covetous, Mind is far off and yields its place to the avenging daimon, who sharpens the fire and torments him, rushes upon him through his senses, renders him readier for transgressions so that he meets with greater torment, and leaves him never ceasing to desire inordinate appetites, insatiably striving in the dark."@en ;
+    skos:note "The counterpart of the ascent and the nearest this treatise comes to a stated outcome of failure. It is worth keeping apart from the seven zones: the tormented one is not turned back at a gate, he is never described as arriving at one."@en ;
+    skos:note "It also inverts the usual reading of such warnings. The daimon does not punish the transgression; he makes the transgression more likely so that the punishment increases. The mechanism is a spiral and not a sentence, and a summary that calls it hell loses that."@en ;
+    pm:cautionsAbout pmp:HermeticVitaPia ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hermetic ;
+    dcterms:source "Corpus Hermeticum I.23 (trans. G. R. S. Mead)" .
+
+pmc:HermeticDissolutioAnte a pm:Presupposing ;
+    rdfs:label "The ascent presupposes the dissolution of the body"@en, "Der Aufstieg setzt die Auflösung des Körpers voraus"@de ;
+    pm:dependentStep pmc:HermeticRedditioEnergiarum ;
+    pm:priorStep pmc:HermeticDissolutioCorporis ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hermetic ;
+    skos:note "Prescribed order and not stated necessity. The treatise sets the sequence — first the body is surrendered, then the way of life to the daimon, then the senses return to their sources, and thereafter the man speeds upward through the Harmony — and never says what would follow from taking it in another order, because it does not envisage another order."@en ;
+    dcterms:source "Corpus Hermeticum I.24-25 (trans. G. R. S. Mead)" .
+
+pmc:HermeticDissolutioCorporis a pm:Conceptualizing ;
+    rdfs:label "What is given up before the zones"@en, "Was vor den Zonen abgegeben wird"@de ;
+    skos:definition "The three surrenders that precede the ascent: the body is given to the work of change and the form one had vanishes; the way of life, void of its energy, is given to the daimon; and the body's senses pass back into their sources, becoming separate and rising again as energies, while passion and desire withdraw to the nature that is void of reason."@en ;
+    skos:note "The way of life goes to a daimon before the zones are reached, and the treatise does not say which daimon or whether it is the avenging one of I.23. The silence is left standing here rather than filled."@en ;
+    pm:withinTradition pmt:Hermetic ;
+    dcterms:source "Corpus Hermeticum I.24 (trans. G. R. S. Mead)" .
