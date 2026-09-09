@@ -51,12 +51,23 @@ pmt:Neidan a pm:Tradition ;
     pm:coverageState pm:corpusNamed ;
     pm:contactRoute pm:contactRouteDocumented .
 
-pmt:ChineseMedicalCanon a pm:Tradition ;
-    rdfs:label "Chinese medical canon"@en, "Chinesischer medizinischer Kanon"@de ;
-    skos:definition "The canonical Chinese account of qi, the channels and the spirits resident in the organs, framed as a clinical rather than a soteriological doctrine."@en ;
-    pm:principalCorpus "Huangdi neijing (Suwen and Lingshu); Nanjing" ;
-    pm:coverageState pm:corpusNamed ;
-    pm:contactRoute pm:contactRouteAbsent .
+# pmt:ChineseMedicalCanon has left this file: passages have been read and the
+# instance now stands in traditions/chinese-medical-canon.ttl at
+# pm:placesEntered, with its contact route corrected from absent to
+# documented. The correction is the finding of that run and it is documented
+# from inside the text that was read, not from the scholarship: the received
+# recension is constituted by its commentary, and that commentary quotes the
+# Laozi twice in the opening juan, names the Heshanggong commentary on it, and
+# quotes the Zhuangzi in the same juan. Both are corpora the Daoist file in
+# this graph rests on, so an agreement between the two files is not two
+# witnesses at the level of the transmitted text. What that leaves open, the
+# route of the first-century stratum beneath the recension, is stated on the
+# new instance and stands as its own issue.
+#
+# The registration named the Nanjing as part of the principal corpus. It was
+# not opened; the new file says so at the instance rather than letting the
+# coverage state cover it, and widens the corpus to the two witnesses that
+# were opened beside the classics themselves.
 
 pmt:ChineseDivination a pm:Tradition ;
     rdfs:label "Chinese divinatory and siting transmission"@en, "Chinesische Divinations- und Siedlungslehre"@de ;
