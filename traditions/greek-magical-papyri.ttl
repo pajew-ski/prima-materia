@@ -1,0 +1,115 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Greek magical papyri
+#
+# Opened at the one piece the register itself singled out: the ascent ritual at
+# PGM IV.475-829. It is the first text in this graph's ascent material that
+# prescribes what to do with the body, states how often to repeat it, and lists
+# in order what the operator will see if it is working. It is also the first
+# that carries a vowel chain in full rather than as a picture or an ellipsis.
+# The tradition instance was registered in traditions/registry-mediterranean.ttl
+# and is moved here now that passages have been read.
+#
+
+pmt:GreekMagicalPapyri a pm:Tradition ;
+    rdfs:label "Greek and demotic magical papyri"@en, "Griechische und demotische Zauberpapyri"@de ;
+    skos:definition "The working handbooks of late antique Egypt: procedures with materials, hours, purity requirements, spoken formulae and stated signs of success."@en ;
+    skos:note "What was read: the ascent ritual at PGM IV.475-829, in the translation of G. R. S. Mead, A Mithriac Ritual (Echoes from the Gnosis VI, London and Benares 1907), public domain. Nothing else of the corpus is opened, and this is a single piece out of a codex of thirty-six pages."@en ;
+    skos:note "Two properties of the translation used bear on every node here, and Mead states both himself. He removes the barbarous names he judges to be later insertions by an Egyptian magical school and marks the rest with obeli, so most of the names in the ritual are not in the text read; the one long vowel chain that is printed survives because he holds it to belong to the ritual. And he renders one of the two prescribed sounds as puff rather than pop because he takes it to be connected with breath, which is a reading and not a translation. Anything built on the sounds of this text has to go behind Mead."@en ;
+    skos:note "The name is a modern label twice over. Dieterich called the piece a liturgy in 1903; Mead objects that a liturgy has several participants while this is a rite for one person alone, and whether it is Mithraic at all is disputed in the scholarship. Neither question is settled here."@en ;
+    pm:principalCorpus "Papyri Graecae Magicae and Papyri Demoticae Magicae, including the ascent ritual at PGM IV.475-829" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "PGM IV.475-829, in the translation of G. R. S. Mead, A Mithriac Ritual (London 1907)" .
+
+#
+# The procedure, which is the reason the corpus was opened
+#
+
+pmp:PgmIvSpiritusTractus a pm:Practicing ;
+    rdfs:label "Drawing breath from the rays, three times as deeply as one can"@en, "Atem aus den Strahlen ziehen, dreimal so tief wie möglich"@de ;
+    skos:definition "The first instruction of the rite: to take breath from the sun's rays, inhaling three times as deeply as the operator is able. Later stages prescribe the counter-movement — a prolonged bellowing like a horn-note, expelling the whole breath with pressure on the ribs, and a second bellowing with pressure on the belly to set the senses going all at once."@en ;
+    skos:note "The most concrete bodily instruction in the whole of this graph's ascent material. It names the direction of the breath, its depth, its count and, at the exhalation, where the pressure is applied. Nothing in the ophite, hermetic or Jeu material comes near this, and it is the reason the register singled this corpus out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "PGM IV.475-829, first instruction and fifth and eighth utterances (trans. G. R. S. Mead, London 1907)" .
+
+pmc:PgmIvSublatio a pm:Conceptualizing ;
+    rdfs:label "Being raised aloft, hearing and seeing nothing mortal"@en, "Emporgehoben werden, nichts Sterbliches hören und sehen"@de ;
+    skos:definition "The effect announced for the breathing: the operator will see himself raised aloft and soaring towards the height, so that he seems to be in the midst of air; he will hear nothing, neither man nor beast, and will see nothing of the sights upon the earth in that same hour, but everything he sees will be immortal."@en ;
+    skos:note "Stated as what will happen and not as what may. The withdrawal of hearing and of earthly sight is given first and the vision second, which makes the sensory cut the condition rather than a side effect."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "PGM IV.475-829, first instruction (trans. G. R. S. Mead, London 1907)" .
+
+pmc:PgmIvSpiritusYieldsSublatio a pm:Yielding ;
+    rdfs:label "The threefold indrawn breath raises the operator"@en, "Der dreifach eingezogene Atem hebt den Handelnden empor"@de ;
+    pm:byPractice pmp:PgmIvSpiritusTractus ;
+    pm:yieldsCapacity pmc:PgmIvSublatio ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    skos:note "The pairing is as tight as this graph holds anywhere: a named bodily act, a stated count, and an outcome that arrives in the same hour. What it still lacks is the other half — the text nowhere says what the operator sees or fails to see if it does not work."@en ;
+    dcterms:source "PGM IV.475-829, first instruction (trans. G. R. S. Mead, London 1907)" .
+
+pmc:PgmIvVocesSepties a pm:Conceptualizing ;
+    rdfs:label "The vowel chain, uttered through seven times"@en, "Die Vokalkette, siebenmal durchgesprochen"@de ;
+    skos:definition "The one chain of vowels the translation prints in full, invoked as the deathless names innate with life which have not yet descended to mortal nature nor been made articulate by human tongue, with the instruction to utter them all with fire and spirit once to the end and then begin again, until the seven immortal gods of the cosmos are completed."@en ;
+    skos:note "A dose and a stopping rule, which is rare. The chain is not said once but run through until a count of seven is reached, and the count is given by the gods rather than by the operator; the announced consequence is thunder and crashing in the surround, felt in the body at every crash."@en ;
+    skos:note "The claim the words make about themselves is worth separating from their use. They are called names that have not yet come down to mortal nature and have never been made articulate by a human tongue — that is, the text asserts that what it prints cannot be what is meant. Any comparison of these syllables with the chains of the Jeu material or of the Pistis Sophia runs into that before it runs into the transliterations. See prima-materia#607."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "PGM IV.475-829, third utterance (trans. G. R. S. Mead, London 1907)" .
+
+#
+# Two formulae, and what they are addressed to
+#
+
+pmc:PgmIvSilentiumAvertit a pm:Conceptualizing ;
+    rdfs:label "The word of silence turns the gods aside"@en, "Das Schweigenswort wendet die Götter ab"@de ;
+    skos:definition "The exchange at the first threshold: the operator sees the gods gazing intently at him and bearing down upon him, lays his right finger on his lips and says Silence three times, calling silence the symbol of the living god beyond decay and asking it to protect him, then hisses long and puffs; whereupon the gods are said to gaze benignly and to bear down no longer, going about their proper order of doings."@en ;
+    skos:note "A formula with an announced effect on a hostile power, and the effect is not passage but the withdrawal of pressure. The gods are not opened, moved or persuaded: they return to their own business. Beside the ophite gates, where a speech obtains a passage, this is a smaller and more precise claim."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "PGM IV.475-829, first utterance (trans. G. R. S. Mead, London 1907)" .
+
+pmc:PgmIvIdentitasAstri a pm:Conceptualizing ;
+    rdfs:label "I am a star whose course is as your course"@en, "Ich bin ein Stern, dessen Bahn eure Bahn ist"@de ;
+    skos:definition "The second utterance, said after silence and before the disk expands: that the speaker is a star whose course runs with the course of those addressed, shining anew out of the depth."@en ;
+    skos:note "A bare statement of what the speaker is, addressed to powers, with no request attached. It is the same shape as the ophite speeches without their closing petition, and it stands in a corpus with a documented route to that one rather than at a distance from it — so it is a second occurrence and not a second witness."@en ;
+    skos:note "The claim is of kinship in motion and not in rank: the course is the same course. Whether that is what the ophite speaker means when he names the symbol he already bears is exactly the question this file cannot settle, and it is why the two are held apart."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "PGM IV.475-829, second utterance (trans. G. R. S. Mead, London 1907)" .
+
+#
+# What is promised, and for how long
+#
+
+pmc:PgmIvImmortalitasHorae a pm:Conceptualizing ;
+    rdfs:label "Immortality for this same hour"@en, "Unsterblichkeit für eben diese Stunde"@de ;
+    skos:definition "The capacity claimed: that the operator, one out of so many tens of thousands, is transformed to immortality in this same hour; that his human soul-power subsists for a little while in purity and will afterwards be transmitted back to him; and, in the closing salutation, that being born again he passes away in being made great, and having been made great he dies."@en ;
+    skos:note "The promise carries its own term, and the term is short. A rite that says the state lasts an hour and then returns the operator to his necessity is making a smaller claim than the ascents this graph holds elsewhere, and a more checkable one: it says the practitioner will be back."@en ;
+    skos:note "The last sentence is not a flourish. Being made great and dying are put in sequence and the second follows from the first, which places the death inside the attainment rather than after it."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "PGM IV.475-829, fifth and tenth utterances and invocatory logos (trans. G. R. S. Mead, London 1907)" .
+
+pmc:PgmIvSignaSuccessus a pm:Conceptualizing ;
+    rdfs:label "The ordered list of what will be seen"@en, "Die geordnete Liste dessen, was zu sehen sein wird"@de ;
+    skos:definition "The sequence of announced sights, each given before the stage at which it is to occur: the disposition of the gods, some ascending and some descending; the pipe depending from the disk from which the wind comes; the gods bearing down and then desisting; a thunder-clap that startles; the disk expanding; a host of five-pointed stars filling the air; an infinite encircling with doors of fire fast closed; the doors thrown open; a god with locks of flame in a white tunic and scarlet mantle; seven virgins with serpent faces and golden sceptres; seven gods with the faces of black bulls; and a descending god holding the golden shoulder of the calf."@en ;
+    skos:note "Held as one node and kept apart from anything that could be tested, for the reason SPEC §15 gives: these are signs of success, they are told to the operator in advance, and there is no base rate for a sight nobody measures without the telling. A corpus this rich in announced sights and this empty of stated failures is itself the finding."@en ;
+    skos:note "The count of announced signs in this one rite exceeds every condition of failure the whole ascent material of this graph has produced. Five works have now been opened for it — the ophite diagram, Irenaeus, the Corpus Hermeticum, the Books of Jeu, the Pistis Sophia — and between them they carry one near-condition, at Jeu I.4. This one carries none."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "PGM IV.475-829, first through eighth instructions and utterances (trans. G. R. S. Mead, London 1907)" .
+
+pmc:PgmIvTraditioClausa a pm:Cautioning ;
+    rdfs:label "A father may hand it on, and only to a son"@en, "Ein Vater darf es weitergeben, und nur an einen Sohn"@de ;
+    skos:definition "The restriction stated in the opening prayer: that these are mysteries which a father alone may hand on, and that only to a son, an initiate worthy of the craft; the rite is for one person alone, who is to raise himself."@en ;
+    skos:note "The same gate the project's criterion is aimed at, in a third transmission after the Ars Notoria and the ophite requirement of a curse before admission. The restriction here is narrower than either: not an order, not a school, but one person to one person."@en ;
+    skos:note "It sits oddly beside the rite itself, which is expressly solitary and needs no officiant. What is withheld is therefore the text and not the performance, and a text that has been in print since nineteen hundred and seven is no longer withheld by it."@en ;
+    pm:cautionsAbout pmp:PgmIvSpiritusTractus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "PGM IV.475-829, the father's prayer (trans. G. R. S. Mead, London 1907)" .
