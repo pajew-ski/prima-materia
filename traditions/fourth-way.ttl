@@ -1,0 +1,122 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Fourth Way, read at the wording
+#
+# Order of the file: the state ordering, then the exercise, then what it is
+# said to yield, then the three prerequisite claims, then the caution, then
+# the refusal of a division of kinds, then the two placements on the
+# consciousness axes.
+#
+# The tradition instance stays in traditions/registry-modern.ttl, where it was
+# registered; only its coverage state moves. See prima-materia#652.
+#
+
+pmc:FourStatesOfConsciousness a pm:Conceptualizing ;
+    rdfs:label "The four states of consciousness"@en, "Die vier Bewusstseinszustände"@de ;
+    skos:definition "An ordering of four states held to be possible for a person: sleep; the state ordinarily called waking, which the source holds to be a second form of sleep in which people walk the streets, write books and kill one another; self-consciousness, which is self-remembering; and an objective state in which things are seen as they are. The source holds that ordinary people live in the two lowest only, that flashes of the third occur but cannot be produced by wish or decision, and that the fourth is reached solely through the third."@en ;
+    skos:note "The ordering is fourfold and is not the Indian one. It does not count waking, dream and deep sleep with a fourth beyond them; it counts degrees of presence within waking, and it puts the ordinary waking state on the lower half of its own scale. Two of its four terms therefore have no counterpart on pm:SensoryAnchoring, whose values were drawn from the Māṇḍūkya. See prima-materia#653."@en ;
+    skos:note "The source names no antecedent for this ordering, and that silence is itself worth recording. The same book gives the fourfold division of bodies under four sets of names and asserts that comparable tables stand in most systems, which is held at pmc:FourBodiesAcrossTerminologies. For the states it names nobody. Whether a route to the theosophical or Vedantic material can be shown is open; the work does not supply one."@en ;
+    skos:note "The claim carries its own account of why it is resisted: the chief obstacle is said to be that people believe they already possess the third state, together with a permanent I, will and the ability to do. A claim of this shape cannot be tested by asking people whether they have the state, because it predicts the affirmative answer."@en ;
+    pm:withinTradition pmt:FourthWay ;
+    dcterms:source "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapter eight, at the talk on the four states of consciousness (one-volume English text as scanned in the Internet Archive full-text mirror; the scan does not carry its imprint, so the edition is left unstated rather than guessed)" .
+
+pmp:SelfRemembering a pm:Practicing ;
+    rdfs:label "Self-remembering"@en, "Selbsterinnern"@de ;
+    skos:definition "An exercise in dividing attention: attention is directed at the observed thing and at the one observing at the same time, so that the sense of I is held alongside the perception rather than lost in it. It is performed in the middle of ordinary activity, walking a street or entering a shop, and not in withdrawal."@en ;
+    skos:note "The recorder distinguishes it in the same passage from two neighbouring things, and both distinctions are the tradition's own. It is not the stopping of thought described in the yoga literature he had already tried, because there the whole of attention goes to the effort of admitting no thoughts, whereas here attention is split, one part to that effort and one to the feeling of self. And it is not self-analysis or self-feeling."@en ;
+    skos:note "A sign of success is named and is kept apart from the exercise on purpose: a state of inner peace and confidence said to follow great efforts of this kind. It is recorded as a sign and not as evidence. The practitioner is told beforehand what to expect, so his report of it is not independent of the instruction, and there is no base rate for the same state without the instruction."@en ;
+    skos:note "The novelty of the exercise is disputed inside the source itself. A contemporary told the recorder that it is apperception as Wundt defines it and nothing further; the recorder answers that Wundt came close and went elsewhere. Held as a note and not as a pm:Disputing node, because Wundt has not been read here and a dispute node would need both sides at their own wording."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:FourthWay ;
+    dcterms:source "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapter seven, at the account of the first attempts at self-remembering and the division of attention (one-volume English text as scanned in the Internet Archive full-text mirror; edition left unstated)" .
+
+pmc:SelfRememberingYieldsTheThirdState a pm:Yielding ;
+    rdfs:label "Self-remembering brings about the third state"@en, "Selbsterinnern bringt den dritten Zustand hervor"@de ;
+    skos:definition "The claim that the divided attention of self-remembering is the third state of consciousness itself, that it occurs in ordinary life only as rare flashes, and that it can be made more or less lasting by deliberate training."@en ;
+    skos:note "A second capacity is claimed in the same passage and is stated separately here because it is the one that could be counted: that memory retains only those moments in which a person remembered himself, and that the poverty of ordinary recollection follows from that. The recorder tests it against his own earliest memories and reports that they are moments of self-remembering. That is one case, reported by the person who formed the claim."@en ;
+    pm:byPractice pmp:SelfRemembering ;
+    pm:yieldsCapacity pmc:FourStatesOfConsciousness ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:FourthWay ;
+    dcterms:source "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapters seven and eight, at the definition of the third state and at the account of memory and self-remembering (one-volume English text as scanned in the Internet Archive full-text mirror; edition left unstated)" .
+
+pmc:ObjectiveConsciousnessPresupposesSelfConsciousness a pm:Presupposing ;
+    rdfs:label "The objective state presupposes the third"@en, "Der objektive Zustand setzt den dritten voraus"@de ;
+    pm:dependentStep pmc:FourStatesOfConsciousness ;
+    pm:priorStep pmp:SelfRemembering ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "An ordinary person brought into the objective state artificially and returned will remember nothing of it and will believe he lost consciousness for a time; only from within the third state can flashes of the fourth be retained."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:FourthWay ;
+    skos:note "Recorded at stated necessity and not at prescribed order, because the source names what befalls the one who arrives without the prior step rather than merely setting a sequence. The consequence is a loss of the result and not a punishment, which is the form a prerequisite claim takes when it is about capacity."@en ;
+    dcterms:source "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapter eight, at the passage on the only right way to objective consciousness (one-volume English text as scanned in the Internet Archive full-text mirror; edition left unstated)" .
+
+pmc:SelfRememberingPresupposesNonIdentification a pm:Presupposing ;
+    rdfs:label "Self-remembering presupposes not identifying"@en, "Selbsterinnern setzt das Nicht-Identifizieren voraus"@de ;
+    pm:dependentStep pmp:SelfRemembering ;
+    pm:priorStep pmc:IdentifyingTakenForItsOpposite ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "One who identifies with anything is unable to remember himself, and remains the slave of whatever can happen to him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:FourthWay ;
+    skos:note "This is the step that was missing while the graph held only the diagnosis. pmc:IdentifyingTakenForItsOpposite records that the state to be undone is regularly valued under names such as enthusiasm and inspiration; this node records what the same source prescribes against it, and names the exercise the diagnosis exists for."@en ;
+    dcterms:source "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapter eight, at the passage naming identifying the chief obstacle to self-remembering (one-volume English text as scanned in the Internet Archive full-text mirror; edition left unstated)" .
+
+pmc:AwakeningPresupposesAnotherWhoDoesNotSleep a pm:Presupposing ;
+    rdfs:label "Awakening presupposes another who does not sleep"@en, "Das Erwachen setzt einen voraus, der nicht schläft"@de ;
+    pm:dependentStep pmp:SelfRemembering ;
+    pm:priorStep pmc:FourStatesOfConsciousness ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "A person cannot awaken alone; and an agreement among twenty to wake one another is still insufficient, because all twenty may fall asleep at the same time and dream that they are waking. Without someone who does not fall asleep as easily and who is charged with waking them, awakening is held to be impossible."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:FourthWay ;
+    skos:note "The prerequisite is not a rule of etiquette towards teachers but follows from the caution below: the sleeper cannot detect his own lapse, so the detection has to come from outside him. A second and narrower form of the same claim stands in the talks on groups, where the chief fault of a person is said to be findable only by a teacher and never by the person himself, and the source calls that practically a law."@en ;
+    dcterms:source "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapter eight, at the passage on the impossibility of awakening alone (one-volume English text as scanned in the Internet Archive full-text mirror; edition left unstated)", "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapter eleven, at the talk on the chief feature and the teacher (one-volume English text as scanned in the Internet Archive full-text mirror; edition left unstated)" .
+
+pmc:LapseInSelfRememberingGoesUnnoticed a pm:Cautioning ;
+    rdfs:label "The lapse is not noticed while it lasts"@en, "Der Aussetzer wird nicht bemerkt, solange er dauert"@de ;
+    skos:definition "The warning that the exercise fails without the practitioner noticing: the recorder reports holding the divided attention along a street, losing it at a single ordinary thought, and coming to two hours later in another part of the city, having in the meantime left a shop, made a telephone call and written two letters, and only then remembering that he had forgotten to remember himself."@en ;
+    skos:note "This is the shape of failure condition the project looks for, and it is unusually strong: the failure is not merely predicted but predicted to be invisible from inside, and the report performs it. It rules out the obvious procedure. Asking practitioners how long they sustained the exercise measures what they remember of it, and the claim says exactly that this is the faculty which fails."@en ;
+    skos:note "What it does not yield on its own is a duration. The account gives one lapse and no figure for how long the state can be held, so nothing here fixes a threshold a later examination could measure against. See prima-materia#654."@en ;
+    pm:cautionsAbout pmp:SelfRemembering ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:FourthWay ;
+    dcterms:source "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapter seven, at the walk along the Nevsky and the waking two hours later (one-volume English text as scanned in the Internet Archive full-text mirror; edition left unstated)" .
+
+pmc:NoTwoKindsOfDoing a pm:Conceptualizing ;
+    rdfs:label "There are not two kinds of doing"@en, "Es gibt nicht zwei Arten des Tuns"@de ;
+    skos:definition "The claim that there is no red, green or yellow magic: there is mechanics, which is what happens, and there is doing, which is magic, and doing can be of one kind only. What looks like a second kind is an imitation of the outward appearance of doing and yields no objective result."@en ;
+    skos:note "Recorded because it is this tradition's answer to the question the right-hand and left-hand path terms are built to ask, and the answer is that the question has no second term. The refusal is directed at a division of kinds of operation, not at a norm about means and not at an end state, so it is held as a claim in its own right rather than as a value on pm:MethodOrientation or pm:TelicOrientation."@en ;
+    skos:note "It stands beside pmc:FourWaysAtConstantGoal, where the same source varies only the means and holds the goal fixed. Both point the same way: this transmission classifies by completeness and by genuineness of operation, and it declines to classify by direction of the will. See prima-materia#65."@en ;
+    pm:withinTradition pmt:FourthWay ;
+    dcterms:source "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching, chapter eleven, at the answer on black magic and the two kinds of doing (one-volume English text as scanned in the Internet Archive full-text mirror; edition left unstated)" .
+
+#
+# Placements on the consciousness axes
+#
+# Entered because this exercise is the counter-case the axes were short of.
+# The stock sits largely at withdrawn absorption, and a discipline that
+# expressly refuses withdrawal is where it shows whether the axes carry the
+# material or only its contemplative half. See prima-materia#435.
+#
+
+pmc:SelfRememberingAnchoring a pm:Situating ;
+    rdfs:label "Self-remembering is performed in outward waking"@en, "Selbsterinnern wird im äußeren Wachen ausgeführt"@de ;
+    pm:situatedNode pmp:SelfRemembering ;
+    pm:axisValue pm:outwardWaking ;
+    pm:situationGround "The source sets the exercise in the middle of ordinary activity and reports it while walking a street, entering a shop and telephoning; withdrawal is refused rather than unmentioned, since the whole classification of ways in this teaching turns on not leaving life."@en ;
+    pm:attestedBy pm:compilerInference .
+
+pmc:SelfRememberingLocus a pm:Situating ;
+    rdfs:label "Awareness stays in the body during self-remembering"@en, "Das Bewusstsein bleibt beim Selbsterinnern im Körper"@de ;
+    pm:situatedNode pmp:SelfRemembering ;
+    pm:axisValue pm:embodiedLocus ;
+    pm:situationGround "The one arrowhead of attention stays on the observed thing and the second turns on the observer, who is walking and speaking where he stands; nothing in the account has the practitioner perceive from a place other than his body."@en ;
+    pm:attestedBy pm:compilerInference .
