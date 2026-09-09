@@ -16,6 +16,7 @@ Kein Eintrag dieser Tabelle ist hier ausgeführt. Wer die Regel braucht, liest s
 | Die vier Sätze der Recherche | `AGENTS.md` „Die Recherche-Regel", vollständig `SPEC.md` §15 |
 | Die zwei Rechercheestufen, Erreichbarkeit, Unerreichbarkeitsgründe | `AGENTS.md` „Die Recherche hat zwei Stufen, und beide sind zu führen" |
 | Ernte am geöffneten Werk, die vier geschuldeten Arten, Erntenotiz | `AGENTS.md` ebenda, vollständig `SPEC.md` §15 |
+| Die geprüften Zugangswege, gesperrte Quellen, Scanlücken | `AGENTS.md`, Abschnitt Die geprüften Zugangswege |
 | Ernteläufe koordinieren, Lease, Branchname, Bezeichnerbildung | `AGENTS.md` „Ernteläufe koordinieren" |
 | Was „gegroundet" heißt | `AGENTS.md` „Was „gegroundet" heißt und was nicht" |
 | Quellenführung, Auffindbarkeit, Rezension, Vermittlungsmodus | `SPEC.md` §10, kurz `AGENTS.md` „Quellen" |
@@ -35,7 +36,7 @@ Kein Eintrag dieser Tabelle ist hier ausgeführt. Wer die Regel braucht, liest s
 | Die Sitzung trägt sich selbst, die sechs Abschlussbedingungen | `AGENTS.md` „Die Sitzung trägt sich selbst" |
 | Ausgelöste Validierung melden, nicht umformulieren | `SPEC.md` §11, `AGENTS.md` „Vor dem ersten Schreibzugriff" |
 
-Was hier steht, steht nirgends sonst: Kommandos, die Konventionen von `site/`, die Kopiervorlagen, die Werkzeug-Fehlalarme.
+Was hier steht, steht nirgends sonst: Kommandos, die Konventionen von `site/`, die Kopiervorlagen, die Werkzeuge für den Volltextzugriff, die Werkzeug-Fehlalarme.
 
 ## Projekt
 
@@ -119,6 +120,16 @@ Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im I
 Nicht mehr auf dieser Liste: **Änderungen an `.github/workflows/*`.** Der Vermerk, das Agenten-Token trage keinen `workflows`-Scope und jeder Schreibversuch ende mit `403`, galt bis zum 2026-09-02 und ist überholt. Die beiden Änderungen aus prima-materia#352 (`validate.yml` läuft nicht mehr beim bloßen Anlegen eines Branches) und prima-materia#353 (`distribute.yml` bekommt eine serialisierende `concurrency`-Gruppe) sind vom Agenten geschrieben. Das Soll steht weiter in `SPEC.md` §7, und eine Änderung am eigenen Prüflauf gehört ausdrücklich in die PR-Begründung: eine Lockerung an `validate.yml` fällt niemandem auf, weil danach alles grün ist.
 
 Bei diesen Schritten den User explizit auffordern und warten.
+
+## Volltexte holen
+
+Welche Wege tragen, steht in `AGENTS.md` unter Die geprüften Zugangswege. Hier steht, mit welchem Werkzeug sie zu bedienen sind.
+
+**`WebFetch` gibt keinen Wortlaut zurück.** Es liefert die Antwort eines kleinen Modells auf einen Prompt über die Seite. Für die zweite Rechercheestufe ist das nicht nur unbrauchbar, sondern schlechter als nichts: man bekommt eine Paraphrase, die aussieht wie ein Zitat, und kann hinterher nicht mehr unterscheiden, ob eine Formulierung im Werk steht oder im Zwischenmodell entstanden ist. Fall in prima-materia#584.
+
+**Was trägt, ist `supadata_scrape` auf die Volltextdatei, oder `urllib` aus dem Bash-Werkzeug.** Das Sandbox-Netz umgeht die WebFetch-Freigabe vollständig, und archive.org ist darüber vollständig lesbar (prima-materia#515). Beim Scrape überschreitet das Ergebnis regelmäßig die Ausgabegrenze und wird als Datei abgelegt; der Pfad steht in der Fehlermeldung, das Feld `content` trägt den ganzen Text.
+
+**Ein Korpus, der als Git-Repositorium ausgeliefert wird, wird geklont statt abgerufen.** Für das Kanseki Repository ist das der Regelweg: ein Repositorium je Werk, eine Datei je juan, lokal durchsuchbar und gegenüber jedem Einzelabruf billiger. Der Text trägt dort gelegentlich Ersatzzeichen der Form `&KR....;` für Zeichen außerhalb des Standardsatzes.
 
 ## Bekannte Fehlalarme der Werkzeuge
 
