@@ -272,6 +272,13 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Laman-Hefte in Kikongo, mit Laman, The Kongo, als dem daraus gemachten
   Derivat — die Kongo-Forschung von Janzen, MacGaffey und Thornton geht als
   `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:huangdi-neijing` (der chinesische medizinische Kanon: Suwen und
+  Lingshu in der Wang-Bing-Rezension und der Song-Redaktion von 1067, das
+  Nanjing, dazu die älteren Zeugen Zhenjiu jiayi jing des Huangfu Mi und
+  Taisu des Yang Shangshan — von `korpus:daoistisch` getrennt geführt, weil
+  dort die Kultivierungsliteratur steht und dieser Korpus klinisch fragt und
+  eigene Verbote, Fristen und Gelingenszeichen trägt; die Sinologie und die
+  moderne Akupunkturforschung gehen als `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
