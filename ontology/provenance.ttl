@@ -548,6 +548,92 @@ pm:generalizedFrom a owl:ObjectProperty ;
     skos:note "Two is a floor and not a target. How many attested claims a generalization rests on, and how far apart their traditions stand, are the numbers that make one worth examining before another — the same distinction pm:Converging draws between many witnesses on one cable and many on three."@en .
 
 #
+# The search that found nothing
+#
+# The record could say how far a corpus had been opened (pm:CoverageState) and
+# how far a claim had been examined (pm:ExaminationState), and it could not say
+# that somebody had put a question to a transmission and got no answer. That
+# fact lived in issue labels, outside the graph, so a corpus nobody had asked
+# and a corpus asked and silent looked alike — the confusion the two scales
+# above exist to prevent, one layer up and unguarded.
+#
+# The class is built like pm:Testing and for the same reason: it is a protocol
+# about the work, it makes no statement about the subject matter, and it
+# carries pm:compilerInference. What it adds is the shape of an absence. A
+# search that found nothing points at no node, and the set of searches with no
+# node behind them is the list of gaps the holding knows it has — addressable
+# by anyone, including somebody who is not the compiler and happens to own the
+# edition. That is the whole point: an exhibited gap can be filled by a
+# stranger, an unexhibited one cannot.
+#
+# See prima-materia#661.
+#
+
+pm:Searching a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Searching"@en, "Suchen"@de ;
+    skos:definition "A record of a question put to a named corpus and of what came back: a place, a contradiction, silence, or a corpus that could not be reached. It states what was searched and asserts nothing about the subject matter."@en ;
+    skos:note "Like pm:Testing, an instance exists only where somebody carried the search, and its absence stays informative: no node means nobody asked, not that the corpus is silent. Stubbing every unasked question would fill the holding with protocols about nothing and destroy the very distinction the class was built for."@en ;
+    skos:note "Unlike pm:Testing, it needs no object in the graph. What was searched for is a literal, because the point of the commonest case is precisely that the thing sought is not in the holding. A property pointing at a node would make the negative finding unwritable."@en ;
+    skos:note \"Distinct from pm:counterSearch, which is a state on a protocol and asks whether the work opposing a piece of evidence was looked for. This asks whether a transmission was put a question at all, and it stands on its own rather than as a field of something else.\"@en .
+
+pm:SearchOutcome a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Search Outcome"@en, "Ausgang der Suche"@de ;
+    skos:definition "What a carried search returned. Four outcomes, of which three are findings about the corpus and one is a finding about access to it."@en ;
+    skos:note "The fourth value is the reason the scale is not a boolean. A corpus that could not be reached and a corpus that was read and stayed silent are opposite findings, and without a value for the first they would both be entered as the second — which would report as a property of the transmission what is a property of a library."@en .
+
+pm:searchFoundNothing a pm:SearchOutcome ;
+    rdfs:label "Search found nothing"@en, "Suche ohne Fund"@de ;
+    skos:definition "The corpus was read for this question and carries no passage answering it. A statement about a search, and only as strong as the search the note describes."@en .
+
+pm:searchFoundPlace a pm:SearchOutcome ;
+    rdfs:label "Search found a place"@en, "Suche mit Fund"@de ;
+    skos:definition "A passage was found and entered. The node it became is named with pm:searchYieldedNode, so that a claimed find is checkable against the holding."@en .
+
+pm:searchFoundOpposing a pm:SearchOutcome ;
+    rdfs:label "Search found opposing material"@en, "Suche mit Gegenfund"@de ;
+    skos:definition "A passage was found that tells against the question as it was put, rather than answering it. The commonest shape of a productive search and the one an unrecorded search loses entirely."@en .
+
+pm:corpusUnreachable a pm:SearchOutcome ;
+    rdfs:label "Corpus unreachable"@en, "Korpus nicht erreichbar"@de ;
+    skos:definition "The corpus could not be obtained, and the note states which ways were tried. A finding about access and never about the transmission."@en ;
+    skos:note "SPEC §15 requires that unreachability be established rather than assumed, and lists the ways that must be exhausted first. This value is where that finding is recorded; entering it without the note that names the attempts turns a first failed attempt into a verdict about a work."@en .
+
+pm:searchedCorpus a owl:DatatypeProperty ;
+    rdfs:label "searched corpus"@en, "durchsuchter Korpus"@de ;
+    rdfs:domain pm:Searching ;
+    skos:definition "The corpus that was searched, named as literature so that a later reader can repeat the search in the same place."@en .
+
+pm:searchedFor a owl:DatatypeProperty ;
+    rdfs:label "searched for"@en, "gesucht nach"@de ;
+    rdfs:domain pm:Searching ;
+    skos:definition "The question that was put to the corpus, stated so that somebody else could put the same one."@en ;
+    skos:note "A literal and not a reference, deliberately. The typical object of a fruitful search is a claim the holding does not contain, and a property pointing at a node would restrict the class to questions already answered."@en .
+
+pm:searchTerms a owl:DatatypeProperty ;
+    rdfs:label "search terms"@en, "Suchbegriffe"@de ;
+    rdfs:domain pm:Searching ;
+    skos:definition "The terms actually used, in the original language and in the transliterations tried. What decides whether a negative finding is worth anything: a search in one transliteration is a statement about that spelling."@en .
+
+pm:searchOutcome a owl:ObjectProperty ;
+    rdfs:label "search outcome"@en, "Ausgang der Suche"@de ;
+    rdfs:domain pm:Searching ;
+    rdfs:range pm:SearchOutcome ;
+    skos:definition "What the search returned."@en .
+
+pm:searchYieldedNode a owl:ObjectProperty ;
+    rdfs:label "search yielded node"@en, "Suche ergab Knoten"@de ;
+    rdfs:domain pm:Searching ;
+    skos:definition "The node the found passage became. Required wherever the outcome is pm:searchFoundPlace, enforced by pm:SearchFoundPlaceRequiresNodeShape."@en ;
+    skos:note "Its absence is what makes the class useful. The searches carrying no node are the gaps the holding knows about and has not filled, and they are addressable by anyone — which is a gate removed, in the sense of SPEC §0: a stranger can see where the work stopped and take it up."@en .
+
+pm:searchedBy a owl:DatatypeProperty ;
+    rdfs:label "searched by"@en, "gesucht von"@de ;
+    rdfs:domain pm:Searching ;
+    skos:definition "Who carried the search. An unaccountable negative finding is worth nothing, for the same reason an unaccountable protocol is."@en .
+
+#
 # Placement on an awareness axis
 #
 # A source describes a condition; it does not name a coordinate. Reading
