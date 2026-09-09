@@ -1,0 +1,29 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — a protocol on the poisonous hand and the turtle
+#
+# Taken up because the corpus supplies the procedure itself. Almost every
+# claim about a capacity in this graph has to have a test devised for it from
+# outside; here the chapter that makes the claim states in the next sentence
+# how one would decide it, over a fixed term and with two outcomes that are
+# not the same outcome. That is rare enough to be worth a node even though no
+# case stands on either side.
+#
+
+pmp:PoisonousHandTurtleExamination a pm:Testing ;
+    rdfs:label "Whether the pressing of the turtle discriminates the poisonous hand"@en, "Ob die Probe an der Schildkröte die giftige Hand unterscheidet"@de ;
+    skos:definition "A protocol on the claim that a person whose hand is poisonous kills a turtle within fifty days by pressing on the vessel it is held under, while a person whose hand is sweet leaves it living as before. The claim is examinable in the form the source gives it: the term is fixed, the arrangement is described, and the two outcomes are stated as different."@en ;
+    pm:tests pmc:Shoudu ;
+    pm:falsifiedBy "A person named as having the poisonous hand who presses as described and whose turtle is alive and unchanged after fifty days; or a person named as having the sweet hand whose turtle dies within the term. The source states the outcomes as a pair and attaches no clause under which either could still be counted as confirming, so a case on either side falls against the claim." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passage recorded in traditions/chinese-medical-canon.ttl" ;
+    pm:protocolUpdated "2026-09-09" ;
+    skos:note "No case has been collected, and the obstacle is not the scarcity of turtles. It is that the source does not say what it is about the pressing that is supposed to act, so the arrangement it describes has no condition under which the pressing is present and the poison absent. A run of the procedure would establish that a turtle held under a pressed vessel for fifty days dies or does not; whether the hand made the difference needs a second arm the source does not describe, and devising one is the work this state is waiting on."@en ;
+    skos:note "The state is procedure-without-cases and not no-procedure-devised, and the difference is the whole reason this node exists. The tradition devised the procedure; nobody has carried it. Recording that as though nobody had thought of a test would report the reach of this project's instruments as a property of the corpus."@en ;
+    skos:note "What the claim does not do is the thing most claims of this kind do. It does not say that the poisonous hand harms only where the intent is wrong, or only in a person unprepared, or only where the practitioner is not seen. There is no absorbing clause in the sentence, and that absence is what makes the fifty days mean anything."@en ;
+    skos:note "A protocol that ever ran would also have to say what the corpus does not: whether the term begins at the first pressing or at the last, and how often the pressing is repeated within the fifty days. The passage gives neither, and a run that fixed them would be fixing them, not reading them."@en .

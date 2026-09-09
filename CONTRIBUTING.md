@@ -272,6 +272,25 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Laman-Hefte in Kikongo, mit Laman, The Kongo, als dem daraus gemachten
   Derivat — die Kongo-Forschung von Janzen, MacGaffey und Thornton geht als
   `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:huangdi-neijing` (der chinesische medizinische Kanon: Suwen und
+  Lingshu in der Wang-Bing-Rezension und der Song-Redaktion von 1067, das
+  Nanjing, dazu die älteren Zeugen Zhenjiu jiayi jing des Huangfu Mi und
+  Taisu des Yang Shangshan — von `korpus:daoistisch` getrennt geführt, weil
+  dort die Kultivierungsliteratur steht und dieser Korpus klinisch fragt und
+  eigene Verbote, Fristen und Gelingenszeichen trägt; die Sinologie und die
+  moderne Akupunkturforschung gehen als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:ayurveda` (die klassische indische Medizin: Suśruta-Saṃhitā, voran
+  Śārīrasthāna 6 zu den marman und Śārīrasthāna 8 zum Aderlass;
+  Caraka-Saṃhitā; Vāgbhaṭa, Aṣṭāṅgahṛdaya — von `korpus:hathayoga` und
+  `korpus:patanjala` getrennt geführt, weil dort die Übungsliteratur steht und
+  dieser Korpus Eingriffe, Kontraindikationen und Verletzungsfristen führt; die
+  Indologie geht als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:zhenjiu` (die spätere chinesische Akupunkturliteratur, die den Kanon
+  aufnimmt und umarbeitet: Wang Weiyi, Tongren shuxue zhenjiu tujing, 1027;
+  Wang Zhizhong, Zhenjiu zishengjing; Gao Wu, Zhenjiu juying, 1529; Yang
+  Jizhou, Zhenjiu dacheng, 1601 — von `korpus:huangdi-neijing` getrennt
+  geführt, weil sie die Rezeptionsseite ist und die Stelle trägt, an der eine
+  spätere Station der übernommenen Behauptung etwas hinzugefügt hat)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
