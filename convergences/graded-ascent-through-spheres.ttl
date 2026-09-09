@@ -1,0 +1,36 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the graded ascent through seven stations
+#
+# Two accounts from the same milieu, held together and not merged. The file
+# exists because the correspondence is regularly reported as evidence of a
+# shared doctrine, and what the passages actually share is narrower and more
+# interesting than that.
+#
+
+pmc:ConvergingGradedAscent a pm:Converging ;
+    rdfs:label "The soul passes seven stations one at a time, and something is transacted at each"@en, "Die Seele durchläuft sieben Stationen einzeln, und an jeder wird etwas verhandelt"@de ;
+    skos:definition "The correspondence between the ophite gate speeches and the hermetic surrender of energies: in both, the ascent after death is divided into seven stations that are passed singly and in order, and at each one a particular thing is transacted rather than the passage being granted as a whole."@en ;
+    skos:note "The correspondence is asserted by the compiler and by neither source. What is shared is the form — seven, singly, in order, with a transaction at each — and it is worth naming because it is not the trivial part. A doctrine of ascent does not have to be graded: it could be one passage, or a judgement, or a threshold. These two divide it the same way."@en ;
+    skos:note "What is not shared is what is transacted, and the difference runs in opposite directions. The ophite passer brings something and names it: a symbol of life, his own beard, the spirit of a virgin, the symbol of the mother. The hermetic one leaves something and it is named for him: growth and waning, the device of evils, the guile of the desires, arrogance, daring, the striving for wealth, ensnaring falsehood. One ascends by asserting what he has, the other by being emptied of what he was given. Reading the two as one doctrine of shedding garments takes the hermetic half and supplies it to the other."@en ;
+    skos:note "A second difference decides whether either can be examined. The hermetic passage names the seven things; the ophite speeches name the gates and never the passions. Every table that pairs an ophite archon with a vice is therefore doing what this node refuses to do: filling one witness from the other."@en ;
+    pm:convergingConcept pmc:OphiteSymbolumOstensum ;
+    pm:convergingConcept pmc:HermeticRedditioEnergiarum ;
+    pm:convergingConcept pmc:OphiteTransitusLiber ;
+    pm:transmissionPath "Both corpora are Graeco-Egyptian of the second and third centuries and circulate in the same milieu; the hermetic writings and the diagram Origen obtained are separated by neither language, region nor period, and the ophite material carries names Origen himself derives partly from magic and partly from the Hebrew scriptures, which is the same pool the hermetic and papyrological material draws on. No transmission from one text to the other is claimed; what is documented is that no route needs to be found." ;
+    pm:attestedBy pm:compilerInference .
+
+pmc:ConvergingDescentAcquires a pm:Converging ;
+    rdfs:label "What the soul carries was taken on during the descent"@en, "Was die Seele trägt, wurde beim Abstieg aufgenommen"@de ;
+    skos:definition "The correspondence between the hermetic account of the descent, in which each of the seven rulers gives Man a share of his own ordering, and the ophite account in which the ascending soul must give back or show what belongs to each ruler's realm."@en ;
+    skos:note "This is the assumption that makes the seven-station ascent intelligible at all, and only one of the two witnesses states it. The hermetic treatise says outright that the rulers gave shares and that Man became a sharer in their nature; the ophite speeches presuppose that something is owed or shown at each gate and never say where it came from. The correspondence is therefore asymmetrical in evidence, not only in wording."@en ;
+    skos:note "Recorded because the asymmetry is the finding. A reader who meets the ophite speeches alone cannot tell whether the symbols are acquired, innate or conferred by a rite, and the received accounts settle that question with a doctrine borrowed from the other side of this node."@en ;
+    pm:convergingConcept pmc:HermeticDescensusPerHarmoniam ;
+    pm:convergingConcept pmc:OphiteSymbolumOstensum ;
+    pm:transmissionPath "Same milieu as above: Graeco-Egyptian, second to third century. No priority is asserted between the two accounts, and the dating of the Poimandres is itself disputed." ;
+    pm:attestedBy pm:compilerInference .
