@@ -1,0 +1,28 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the generalization refuted from the holding itself
+#
+# The first protocol opened against one of the generalizations of
+# prima-materia#665, and it returned a deviation at once, from material this
+# holding already carried before the generalization was written.
+#
+
+pmp:TestingProhibitionExamination a pm:Testing ;
+    rdfs:label "Whether transmissions obtaining an answer from a procedure forbid the testing question"@en, "Ob Überlieferungen, die eine Auskunft aus einem Verfahren beziehen, die prüfende Frage verbieten"@de ;
+    skos:definition "A protocol on the claim that transmissions obtaining an answer from a procedure state a condition excluding the repeated or testing question, and give the spoiling of the answer as the reason rather than the unworthiness of the questioner."@en ;
+    pm:tests pmc:TestingTheProcedureVoidsItsAnswer ;
+    pm:falsifiedBy "A transmission of the same kind whose earliest witness permits or requires repeated consultation on the same matter, and treats agreement or disagreement between the consultations as a finding about the procedure rather than about the questioner. One such case refutes the claim."@en ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:counterSearch pm:counterSearchFoundOpposition ;
+    pm:counterSearchNote "Searched the holding's own oracular material for a transmission requiring rather than forbidding the second question, by walking every node of the Zande, Ifá, Fon, Chinese divinatory, Nahua, Maya and Kongo registrations. The Zande case answers the falsifying condition on all three counts and stands at pmc:BengeValidVerdictRule and pmp:BengeCorroborationProtocol. Not searched: the wider divinatory literature outside this holding, and no modern study was consulted, so no pm:evidenceFrom is set."@en ;
+    pm:examinedBy "prima-materia, 2026-09-09" ;
+    pm:protocolUpdated "2026-09-09" ;
+    skos:note "The deviation. The Zande poison oracle requires a second, corroborative consultation and makes the validity of the verdict depend on it: across the two tests one fowl must die and the other must live. If both die or both live, the verdict is contradictory and void, and the matter is put to the oracle again on another occasion. That answers every clause of the falsifying condition — repetition required rather than forbidden, the outcome of the pair read as a finding about the verdict, and the response to a voided consultation being to ask again."@en ;
+    skos:note "It is worse for the claim than an ordinary counterexample, because the Zande rule inverts the mechanism the generalization described. There the second asking spoils the answer; here the absence of a second asking leaves the answer without standing. Two transmissions obtaining an answer from an outcome the operator does not control take opposite positions on the same question, so the position is not a property of that kind of procedure at all."@en ;
+    skos:note "What survives and what does not. The two witnesses the generalization was formed from say what they were reported as saying; the Zhouyi and the spiritist manual are untouched, and their nodes stand. What fails is the quantifier over kinds of transmission. A narrower claim about a subset — perhaps those whose answer is delivered by a speaker rather than read off an outcome — might hold, and would have to be formed and examined on its own rather than rescued from this one by adding a clause."@en ;
+    skos:note "The finding about this project's own procedure is the more expensive one and belongs here rather than in a report nobody reads. The counter-search for the four generalizations of prima-materia#665 was not carried before they were written; had it been, this case would have surfaced from the holding at no cost. SPEC §15 requires the search for the negation of every claim, and a generalization is a claim like any other. The three remaining nodes of that file stand under the same suspicion until each has been searched against the holding, and the searches are owed."@en .
