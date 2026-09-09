@@ -71,6 +71,26 @@ Der Auftrag an diese Stufe enthält: jede Behauptung einzeln und entscheidbar fo
 
 Der Anlass ist gezählt: in einem Lauf wurden vier Werke als unerreichbar geführt, und alle vier lagen bei genauerem Suchen als Volltext vor. Vollständig in `SPEC.md` §15, Fall in prima-materia#76.
 
+### Die geprüften Zugangswege
+
+Der Katalog ist die Anwendung des vorigen Absatzes und steht hier, damit kein Lauf ihn ein zweites Mal erarbeitet. Jeder Eintrag hat sein Issue mit `befund:werkzeug`; wer einen Weg prüft, zieht beide nach.
+
+| Weg | Stand |
+|---|---|
+| archive.org, Volltextdatei `https://archive.org/download/<kennung>/<kennung>_djvu.txt` | trägt, der Regelweg (prima-materia#515, prima-materia#584) |
+| Kanseki Repository (漢籍リポジトリ), ein GitHub-Repositorium je Werk, eine Datei je juan, Grundlage im Dateikopf unter `BASEEDITION` | trägt, der Weg für die chinesischen Klassiker (prima-materia#614) |
+| HathiTrust, Bände im Rechtestand `pdus` | ungeprüfter Kandidat für Werke ohne archive.org-Exemplar (prima-materia#556) |
+| ctext.org | `403` nach dem ersten Kapitel (prima-materia#614) |
+| zh.wikisource.org, zysj.com.cn | nicht abrufbar (prima-materia#614) |
+| HAL, alle Spiegel | Proof-of-Work-Abwehr, sechs Adressformen versucht, der Browserweg noch offen (prima-materia#565) |
+| sacred-texts.com | drosselt, HTTP-Rückleitungen unerreichbar, große PDF werden still gekürzt (prima-materia#473) |
+
+**Eine Sperre steht in dieser Tabelle und nie in der Erntenotiz.** Sie hängt am Zugangsweg und nicht am Werk; nach §15 verlangt sie einen anderen Weg statt eines Verzichts. Und ein Weg, der einmal trägt und einmal nicht, ist kein dokumentierter Weg, sondern ein ungeklärter — bei HAL hat ein beauftragter Recherchelauf dieselbe Datei nach eigener Angabe gelesen, die sechs direkten Versuche nicht.
+
+**Zwei Eigenheiten des archive.org-Volltexts entscheiden über die Zitierfähigkeit.** Die Zeilenumbrüche fallen weg, der Text kommt als eine sehr lange Zeile; zeilenweises Lesen scheitert daran, nach Zeichenbereich schneiden trägt. Die gedruckten Seitenzahlen überleben trotzdem, weil die laufenden Kolumnentitel mitgescannt sind — aus ihnen wird die Stellenangabe nach §10 gebildet, und zwar aus dem Kolumnentitel und nicht aus der ersten Zeile der Seite (prima-materia#546).
+
+**Die Scanlücke sieht aus wie ein negativer Befund und ist keiner.** Fehlende Seiten zeigen sich an der Folge der Kolumnentitel; im benutzten Exemplar von Bentley 1900 Bd. I fehlen so rund 36 Seiten (prima-materia#576). Wer einen Suchbegriff nicht findet und die Seitenfolge nicht geprüft hat, weiß etwas über das Exemplar und nichts über das Werk.
+
 **Ist das Werk offen, wird geerntet, bevor es geschlossen wird.** Nicht nur die Behauptung, für die geöffnet wurde. Ausdrückliche Ausnahme von der Issue-Bindung: die Ernte braucht kein eigenes Issue vorher und gilt nicht als Scope-Erweiterung. Geschuldet sind vier Arten — **Vermögen** (hier Vollständigkeit im strengen Sinn), **Voraussetzungsketten**, **Warnungen** samt Selbstwarnungen eines Textes gegen das, was er vorschreibt, und **Prüfbares**, aus dem sich ein `pm:falsifiedBy` formen lässt. Dazu **Gelingenszeichen**, getrennt geführt und getrennt gezählt: sie werden dem Übenden vorher angesagt, also berichtet er sie, und als Prüfmaterial gelesen erzeugen sie lauter Bestätigungen. Erzählung und Polemik nur, soweit sie eines dieser Fünf tragen.
 
 **Aufnahme geht vor Vollständigkeit.** Die Aufnahmebedingung eines Bezeugungsknotens ist die gelesene Stelle mit ihrer Ausgabe, sonst nichts. Wer eine Stelle gelesen hat, trägt sie ein, in demselben Durchgang. Die Gegensuche entscheidet über den Prüfstand und gehört an den `pm:Testing`-Knoten; ein `pm:Yielding` behauptet nicht, dass die Wirkung eintritt, sondern dass diese Quelle sie behauptet, und dafür ist die Stelle der ganze Beleg. **Ein Issue ersetzt keinen Knoten, den die Stelle bereits trägt** — dort abgelegt, ist ein gelesener Fund von einer Vermutung nicht mehr zu unterscheiden, und das Öffnen des Werkes muss jemand ein zweites Mal bezahlen. Belegt am 2026-09-09: ein Lauf am Kālikāpurāṇa trug die Zweiteilung ein, ließ die Vermögen desselben Abschnitts liegen, nannte die Auslassung im Pull Request ausdrücklich als Schuld und ging trotzdem so heraus. Vollständig in `SPEC.md` §15.
@@ -88,6 +108,10 @@ Gilt, sobald mehrere Agenten parallel gemeinfreie Werke ernten.
 **Der Lease ist ein Issue, kein Graphknoten.** Je Werk ein Issue `Ernte: <Werk>` mit Label `ernte`; wer es übernimmt, setzt `in-arbeit` und trägt sich als Assignee ein. Ein Zustand im Graphen wäre erst nach dem Merge sichtbar und als Reservierung zu langsam. Bricht ein Lauf ab, fällt das Label weg und das Werk ist wieder frei. Labelnamen aus `CONTRIBUTING.md` übernehmen, nicht aus dem Gedächtnis.
 
 **Der Branchname trägt den Werkslug**, `claude/ernte-<werk-slug>`. `gh_branches` zeigt damit die laufenden Ernten, bevor ein Label gesetzt ist, und ein abgestürzter Lauf hinterlässt eine sichtbare Spur statt eines stillen Lochs.
+
+**`gh_branches` wird gelesen, bevor ein Branch angelegt wird**, also vor `prima_repo_base_sha`. Der Lease deckt nur Ernteläufe: ein Lauf, der eine registrierte Tradition aus dem Register zieht, statt ein Werk zu ernten, legt kein Issue mit `ernte` und `in-arbeit` an, und sein Branch ist die einzige Reservierung, die er hinterlässt. Belegt am 2026-09-09: `claude/chinese-divination` stand seit dem Vortag leer auf dem alten `main`, und allein der Blick auf die Branchliste hat verhindert, dass derselbe Gegenstand ein zweites Mal aufgesetzt wurde (prima-materia#630). Der Aufruf kostet weniger als ein zweites Lease-Schema für Traditionsläufe, und er fängt zusätzlich die Läufe, die abstürzen, bevor sie ein Lease anlegen konnten.
+
+**Ein Branch ohne eigenen Commit kann von keinem Lauf entfernt werden** — der Werkzeugsatz dieses Aufbaus kennt kein Löschen von Refs (prima-materia#573). Er gehört deshalb namentlich in das Issue des Laufs, der ihn gefunden hat, damit der Mensch ihn wegräumt und der nächste Blick ihn nicht erneut prüft.
 
 **Ein PR je Werk**, mit der Erntenotiz im Body und den Bezeichnern der geschriebenen Knoten namentlich. Kein Sammel-PR über mehrere Werke: der Mensch merged, und ein PR über drei Werke ist nur als Ganzes anzunehmen oder abzulehnen.
 
