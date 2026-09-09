@@ -1,0 +1,57 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — what the cautions say when they are read together
+#
+# Four generalizations, all formed from the pm:Cautioning layer. The holding
+# carried fifty of those nodes and three generalizations; the cautions had
+# been entered one tradition at a time and never read against one another.
+#
+# They are grouped here because the shape they share is the shape of the
+# layer: a caution states a condition under which the practice fails, and a
+# claim about a kind of condition is what a protocol can address. The stage
+# these belong to is the queue of SPEC §16 and not a finished result.
+#
+
+pmc:TestingTheProcedureVoidsItsAnswer a pm:Generalizing ;
+    rdfs:label "The procedure forbids the question that would test it"@en, "Das Verfahren verbietet die Frage, die es prüfen würde"@de ;
+    pm:generalizedStatement "Transmissions that obtain an answer from a procedure state a condition that excludes the repeated or testing question, and give as the reason that the answer is spoiled by it rather than that the questioner is unworthy."@en ;
+    pm:generalizedFrom pmc:ZaisanDu, pmc:EpreuveCaution ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The most consequential of the four for this project, because it names the mechanism that keeps a procedure out of reach of examination. The Zhouyi attaches exactly one condition to consulting: at the first asking it tells; asked twice and three times, that is defilement, and defiled it does not tell. The spiritist manual instructs that questions put from curiosity or from a motive of test are not to be answered, and that the spirits addressed withdraw from them."@en ;
+    skos:note "Read as a claim about the traditions it is unremarkable; read as a claim about examinability it is sharp. A rule of this shape makes the ordinary test — ask again and compare — a violation of the procedure, so that a failure to replicate is always attributable to the asking. It is not evidence that the procedures are empty; it is a statement about why the question has stayed open."@en ;
+    skos:note "Falsified by a transmission of the same kind whose earliest witness permits or requires repeated consultation, and treats disagreement between consultations as a finding about the procedure rather than about the questioner. One such case refutes it, and the divinatory literature is wide enough that it may well exist."@en ;
+    skos:note "The two witnesses are far apart in time and unequal in kind: a canonical judgement fixed in the first millennium BCE and a French manual of 1861. A route between them is not documented and is also not needed for the claim, which asserts a recurring form and not an independent attestation. Whoever wants the second must show the manual's author had no access to the sinological literature of his century."@en .
+
+pmc:TheSignTakenForTheAttainment a pm:Generalizing ;
+    rdfs:label "The appearance is named as what stops the progress it is taken for"@en, "Die Erscheinung wird als das benannt, was den für sie gehaltenen Fortschritt anhält"@de ;
+    pm:generalizedStatement "Transmissions that measure progress by inner appearances name those appearances as the chief obstacle to further progress, on the ground that the practitioner takes them for the attainment; and they place the mark of the counterfeit in the circumstances of the experience rather than in its intensity."@en ;
+    pm:generalizedFrom pmc:AngelOfLightDeception, pmc:ImperfectionsOfInsight ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Two transmissions with no documented route between them say the same thing about the same class of experience. The desert discernment literature warns that luminosity or consolation may be counterfeit and that the counterfeit is recognised by its circumstances and not by its brightness. The Theravāda commentary names ten states arising in practice — luminosity, rapture, tranquillity, pleasure, resolve among them — which are not defilements in themselves and become obstacles precisely when taken as proof of attainment."@en ;
+    skos:note "The second half of the statement is the part that could fail and is therefore the part worth having. Both sources refuse to grade the experience by its own force: what decides is the setting, the sequence, what precedes and follows. A tradition that measured the counterfeit by intensity would break the claim without touching its first half."@en ;
+    skos:note "It stands beside pmc:SelfWarningStandsInsideThePrescription and is not the same claim. That one says the caution is in the prescribing passage; this one says what the caution is about. A transmission could satisfy either without the other."@en ;
+    skos:note "Falsified by a transmission whose practice produces such appearances, whose earliest witness treats them as reliable evidence of attainment, and which names no way of telling a true one from a counterfeit. Candidates are the visionary literatures that grade experiences by degree of light."@en .
+
+pmc:ProceedingTooFastIsSaidToInjure a pm:Generalizing ;
+    rdfs:label "Proceeding faster than the stated degrees is said to injure the body"@en, "Schneller als in den gesetzten Graden vorzugehen soll den Körper schädigen"@de ;
+    pm:generalizedStatement "Transmissions prescribing a bodily technique in graded steps state that proceeding faster than the grades injures the practitioner bodily, and name the injury as the very disorder the technique is said to remove when carried out at the stated pace."@en ;
+    pm:generalizedFrom pmc:ForcedBreathCaution, pmc:EuropeanFolkMagicRadKautel, pmc:ShierjinZhongshi ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Three witnesses of very unequal standing, which is why the statement is worded around what they share. The Haṭhayogapradīpikā has the breath mastered by degrees as a lion or an elephant is mastered, says it destroys whoever proceeds otherwise, and adds that the practice performed wrongly generates the very ailments it removes when performed rightly. A Pennsylvania German charmbook prints inside the spoken formula a warning to the operator not to drive the wheel too hard. The Lingshu gives twelve prohibitions on needling as a two-sided rule, with what is said to follow from breaking them."@en ;
+    skos:note "The third clause is the one that carries the weight and the one that only the first witness states outright: the injury is the disorder the technique treats. Whether the other two say it or only imply it is the first thing an examination should settle, and if they do not, the statement is to be narrowed rather than defended."@en ;
+    skos:note \"The folk charm is the interesting witness precisely because it is the least literary. It is an operator's instruction inside a working text, not a doctrine about the body, and it carries no theory of degrees at all — which makes it the case most likely to break the claim on a closer reading.\"@en ;
+    skos:note "Falsified by a graded bodily technique whose earliest witness attaches no penalty to haste, or attaches one that is social rather than bodily. Also weakened, without being refuted, if the injury named turns out in each case to be unrelated to what the technique treats."@en .
+
+pmc:TheRestrictionOnPassingItOn a pm:Generalizing ;
+    rdfs:label "The transmission restricts its own passing on, inside the operative text"@en, "Die Überlieferung beschränkt ihre eigene Weitergabe, im operativen Text selbst"@de ;
+    pm:generalizedStatement "Transmissions of an operative text state the restriction on passing it on inside the text itself rather than in an external rule, name the class of permitted recipient, and attribute the restriction to the authority the text claims for its own contents."@en ;
+    pm:generalizedFrom pmc:ArsNotoriaSecretumKautel, pmc:PgmIvTraditioClausa ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The Ars Notoria puts the prohibition in the mouth of the angel who declared the oration: the holder is to presume neither to give it to another nor to expound anything out of it, neither himself nor any one by him nor any one after him. The Paris papyrus states in the opening prayer that these are mysteries a father alone may hand on, and that only to a son, an initiate worthy of the craft."@en ;
+    skos:note "This is the gate the project exists to remove, stated by the transmissions in their own words, and that is the reason to hold it as a claim rather than as a remark. A record that releases such material into the public domain is obliged to be exact about what it is overriding: not a later institution's secrecy, but an instruction the operative text carries about itself."@en ;
+    skos:note "It also bears on how such texts should be read. A restriction stated inside the working formula is part of the procedure as the text has it, so a modern reader who ignores it is not merely disobeying an outside rule but performing something the source says is not the practice. Whether that difference makes any difference is a question for a protocol and not for this node."@en ;
+    skos:note "Falsified by an operative text of the same kind whose restriction on transmission stands only in an external rule, a colophon or a later ordinance, with the working text itself silent. The grimoire literature and the Sanskrit ritual manuals are the corpora where such a case would turn up."@en .
