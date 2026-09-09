@@ -1,0 +1,111 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Pistis Sophia
+#
+# Opened for the ascent material and read in Carl Schmidt's German of 1905,
+# chapters 1 to 18. What the run was looking for turned out to sit earlier
+# than the reports place it, and what it found besides is the reason the file
+# is longer than the question was: this witness carries a formula with its own
+# interpretation, a passage through the spheres that works by a name being
+# seen rather than said, and a dated claim that other people's magic stopped
+# working.
+#
+
+pmt:PistisSophia a pm:Tradition ;
+    rdfs:label "Pistis Sophia"@en, "Pistis Sophia"@de ;
+    skos:definition "The transmission of the Askew Codex, in which the risen Jesus puts on a garment of light inscribed with the names of every order below, ascends through firmament, sphere, fate and the twelve aeons, and afterwards explains to his disciples what he did to the rulers on the way."@en ;
+    skos:note "What was read: chapters 1 to 18, in the German translation of Carl Schmidt, Koptisch-gnostische Schriften I (GCS 13, Leipzig 1905), the volume that also carries the Books of Jeu. Everything from chapter 19 onwards, including the repentances of the Sophia and the whole of the fourth book with its rites, is unread."@en ;
+    skos:note "The work names itself otherwise. Schmidt shows that the title Pistis Sophia is a convenience: the manuscript's own subscription reads a part of the books of the Saviour, and the figure of the Pistis Sophia does not appear in the second half at all. The name is kept here because it is the one under which the work is found, and this note is the correction."@en ;
+    skos:note "Route of contact: documented and close. The work cites the two Books of Jeu by name as writings of its own circle, so nothing entered here may be counted as an independent witness beside traditions/books-of-jeu.ttl. Both belong, on Schmidt's account, to the same Egyptian group that the heresiologists split into Ophites, Sethians, Cainites and Archontics — which is the same reason nothing here counts independently beside traditions/ophite.ttl either."@en ;
+    pm:principalCorpus "Pistis Sophia in the Askew Codex, British Museum MS Add. 5114; ed. and trans. Carl Schmidt, Koptisch-gnostische Schriften I, GCS 13 (Leipzig 1905)" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Pistis Sophia 1-18 (trans. C. Schmidt, Koptisch-gnostische Schriften I, GCS 13, Leipzig 1905)" .
+
+#
+# The ascent: a name that is seen, not spoken
+#
+
+pmc:PistisSophiaVestisNominum a pm:Conceptualizing ;
+    rdfs:label "The garment on which the names of all orders are written"@en, "Das Kleid, auf dem die Namen aller Ordnungen stehen"@de ;
+    skos:definition "The light-garment sent from the last mystery and put on before the ascent. It is said to carry the glory of the name of every mystery and every emanation of the orders below: the treasury and its saviours, the seven amens, the seven voices, the five trees, the three amens, the twin saviour, the nine watchers of the three gates, the great invisible and the three thrice-powerful ones, the twelve aeons with their archons, and everything in fate and in the spheres."@en ;
+    skos:note "The garment is an inventory rather than a vesture: what is listed on it is exactly the sequence that will be passed through. Whatever else the ascent is, the thing worn is a list of the names of what stands in the way."@en ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 10 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
+
+pmc:PistisSophiaTransitusVisu a pm:Conceptualizing ;
+    rdfs:label "The rulers see their own name and their bonds fall away"@en, "Die Herrscher sehen ihren eigenen Namen, und ihre Bande lösen sich"@de ;
+    skos:definition "The account repeated at every stage of the ascent: the gates open of themselves, the rulers are shaken by the great light, they look at the light-garment and see on it the mystery that holds their names, they are struck with fear, all their bonds loose, each leaves his own order, and they fall down and worship, saying that the Lord of the All has passed through them without their knowing it."@en ;
+    skos:note "This is the same event as an ophite gate and its opposite in method. There the passer addresses the ruler by name and office and asks to pass; here nothing is said at all. The ascending one is not even seen — the sources say the disciples and the rulers saw only the light — and what releases the bonds is the ruler reading his own name on someone else's clothing."@en ;
+    skos:note "The sequence is stated four times with the same wording, at the firmament, the first sphere, fate and the twelve aeons, with the light increasing forty-ninefold at each step. A repetition that exact is a form, and the form says that passage here is recognition and not negotiation."@en ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 11-14 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
+
+pmc:PistisSophiaFormulaQuinqueVerborum a pm:Conceptualizing ;
+    rdfs:label "The mystery of five words, with the interpretation the text gives it"@en, "Das Mysterium der fünf Worte, mit der Auflösung, die der Text selbst gibt"@de ;
+    skos:definition "The formula found written on the light-garment in five words of those of the height, which the text then resolves at length: an address to the mystery that is outside in the world, for whose sake the All came into being, that is the whole going-out and the whole coming-up, which emanated all emanations and everything in them; it is told that the speakers are its fellow-members, that they and it are one and the same, and that it is the first mystery which existed in the ineffable before it came forth, and whose name they all are."@en ;
+    skos:note "The one formula in this graph's ascent material that arrives with its own interpretation attached. It is not an address to a gatekeeper: the words are found written on the garment, and what they say is that the addressee and the addressers are the same thing under different names. Whatever the syllables are, the text does not treat them as an unintelligible password."@en ;
+    skos:note "The division of the five words is not certain. Schmidt prints them as five and notes in the apparatus that another division is possible, so any count of syllables built on this passage rests on an editor's spacing. See prima-materia#607."@en ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 10 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
+
+#
+# What was done to the rulers, and what the text says follows from it
+#
+
+pmc:PistisSophiaTertiaPars a pm:Conceptualizing ;
+    rdfs:label "A third of the power taken from the rulers"@en, "Ein Drittel der Kraft von den Herrschern genommen"@de ;
+    skos:definition "The claim that when the tyrants of all the aeons made war on the light they were all made powerless and fell down like the dead, and that a third of the power of each was taken, and that fate and the sphere over which they rule were turned, so that they spend six months turned to the left and complete their influences and six months looking to the right and complete theirs."@en ;
+    skos:note "The chapter reference given for this in the received reports is chapter 20. In the edition read it stands at chapters 15 and 16 and is restated by Mary at chapter 18. Anyone citing chapter 20 for it from a summary is citing a place the passage is not."@en ;
+    skos:note "The turning of fate is stated twice with a correction attached: the same passage says that Jeu, the overseer of the light, had originally set the spheres to look left at all times, so what is described is the reversal of an arrangement and not the invention of one."@en ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 15-16 and 18 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
+
+pmc:PistisSophiaMagiaFrustrata a pm:Conceptualizing ;
+    rdfs:label "The stated purpose: that the invocations should stop working"@en, "Der genannte Zweck: dass die Anrufungen nicht mehr wirken"@de ;
+    skos:definition "The reason the text gives for taking the third: so that when the men who are in the world call upon the rulers in their mysteries — those which the angels who transgressed brought down, that is their sorceries — they should no longer be able to complete them; and, as Mary restates it, so that from that hour the casters of nativities and the questioners and those who announce to men what is to happen should no longer be able to announce anything."@en ;
+    skos:note "This is the closest thing to a falsifying condition in the whole of this graph's ascent material, and it is unusual in a second way: it is a claim about somebody else's practice failing. A transmission says here that from a stated hour, invocation and astrology stopped delivering, and it says which practices it means."@en ;
+    skos:note "What keeps it from being examinable is not vagueness but reach. No sign is given by which a practitioner would notice the difference, and the change is dated to an event no observer could time. It is entered as a claim and not as a protocol; what a protocol would need is a rate before and after, and the text offers no before."@en ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 15 and 18 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
+
+pmc:PistisSophiaAngeliTransgressi a pm:Conceptualizing ;
+    rdfs:label "The sorceries were brought down by the angels who transgressed"@en, "Die Zaubereien wurden von den übertretenden Engeln herabgebracht"@de ;
+    skos:definition "The ascription of the invocations used by men to the angels who transgressed, who are said to have brought them down and taught them for the completion of lawless deeds in the mystery of their sorcery."@en ;
+    skos:note "The same derivation the enochic material makes for the taught arts, in a work of another century and another circle, and worth holding apart from it rather than merging: here it is stated in passing, to explain what the taking of the third was aimed at, and the arts are not enumerated."@en ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 15 and 18 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
+
+#
+# The descent, and the two things placed in a body
+#
+
+pmc:PistisSophiaDuaeVires a pm:Conceptualizing ;
+    rdfs:label "A power in place of a soul"@en, "Eine Kraft anstelle einer Seele"@de ;
+    skos:definition "The account of what was put into the bodies of John and of the disciples: into Elizabeth a power taken from the little Jao of the midst, and in place of the soul the soul of the prophet Elijah, brought by the light-virgin and her receivers and cast into her womb; into the disciples the twelve powers of the twelve saviours of the treasury, in place of souls of the rulers, so that they were born without souls of the rulers in them."@en ;
+    skos:note "The claim is that what the disciples have instead of a soul of the archons is a power from the treasury, and that this is why they are not of the world. It is the same reading the Books of Jeu give at their own second chapter — the ruler finds nothing of his own in the one he faces — arrived at from the other end, by construction rather than by knowing."@en ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 7-8 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
+
+pmc:PistisSophiaMixtura a pm:Conceptualizing ;
+    rdfs:label "The portion in the mixture"@en, "Der Anteil in der Mischung"@de ;
+    skos:definition "The claim that the last helper blew a portion of power into the mixture, that this power is mixed with all the invisibles, all the rulers and all the aeons, and that every human being holds a portion of it; the chain is given step by step, from the first commandment through the great light and the five helpers into the mixture, which is called the world of corruption."@en ;
+    skos:note "A doctrine of a portion present in everyone, stated as a transmission through named stages rather than as a general truth. It is the counterpart of the previous node: the disciples are said to have something more, and this says what everyone has."@en ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 8 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
+
+pmc:PistisSophiaLuxIntolerabilis a pm:Cautioning ;
+    rdfs:label "The world could not bear the light as it is"@en, "Die Welt könnte das Licht nicht ertragen, wie es ist"@de ;
+    skos:definition "The statement that the light in the twelve aeons was many times greater than the light that had been on him in the world, and that the world would not be able to bear the light as it is in its truth, since otherwise the world and everything on it would be destroyed together."@en ;
+    skos:note "Entered as a caution and not as cosmology because of what it is used for: it explains why the manifestation was reduced, and it makes the reduction a mercy rather than a limit. A transmission that says its own highest state is unbearable below has stated a condition on its own transmissibility."@en ;
+    pm:cautionsAbout pmc:PistisSophiaVestisNominum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:PistisSophia ;
+    dcterms:source "Pistis Sophia 14 (trans. C. Schmidt, GCS 13, Leipzig 1905)" .
