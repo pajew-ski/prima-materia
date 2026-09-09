@@ -803,6 +803,82 @@ pm:ContactRouteValueShape a sh:NodeShape ;
         sh:message "pm:contactRoute takes a declared contact route from pm:ContactRoute and nothing else."
     ] .
 
+#
+# The search that found nothing
+#
+# A negative finding is worth exactly what the search behind it was worth, so
+# the four things that let a reader judge it are required: which corpus, which
+# question, in which terms, and by whom. A search node without them asserts an
+# absence and exhibits nothing.
+#
+
+pm:SearchingShape a sh:NodeShape ;
+    sh:targetClass pm:Searching ;
+    sh:property [
+        sh:path pm:searchedCorpus ;
+        sh:minCount 1 ;
+        sh:message "Every search must name the corpus it was carried in."
+    ] ;
+    sh:property [
+        sh:path pm:searchedFor ;
+        sh:minCount 1 ;
+        sh:message "Every search must state the question it put."
+    ] ;
+    sh:property [
+        sh:path pm:searchTerms ;
+        sh:minCount 1 ;
+        sh:message "Every search must state the terms it used. A negative finding reached in one spelling is a statement about that spelling."
+    ] ;
+    sh:property [
+        sh:path pm:searchOutcome ;
+        sh:minCount 1 ;
+        sh:message "Every search must state what came back."
+    ] ;
+    sh:property [
+        sh:path pm:searchedBy ;
+        sh:minCount 1 ;
+        sh:message "Every search must name who carried it. An unaccountable negative finding is worth nothing."
+    ] ;
+    sh:property [
+        sh:path dcterms:date ;
+        sh:minCount 1 ;
+        sh:message "Every search carries the date it was carried on. A search without one claims a currency it cannot have."
+    ] .
+
+pm:SearchOutcomeValueShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:searchOutcome ;
+    sh:property [
+        sh:path pm:searchOutcome ;
+        sh:in ( pm:searchFoundNothing pm:searchFoundPlace pm:searchFoundOpposing pm:corpusUnreachable ) ;
+        sh:message "pm:searchOutcome takes a declared outcome from pm:SearchOutcome and nothing else."
+    ] .
+
+#
+# A claimed find must be checkable against the holding. Without this the
+# strongest outcome would be the cheapest to assert, and the set of searches
+# carrying no node — the list of gaps the holding exhibits — would fill with
+# finds nobody entered.
+#
+pm:SearchFoundPlaceRequiresNodeShape a sh:NodeShape ;
+    sh:targetClass pm:Searching ;
+    sh:or (
+        [ sh:not [ sh:property [ sh:path pm:searchOutcome ; sh:hasValue pm:searchFoundPlace ] ] ]
+        [ sh:property [ sh:path pm:searchYieldedNode ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "A search reporting a find must name the node the passage became." .
+
+#
+# The corpus is literature by the same rule as every other named work.
+#
+pm:SearchedCorpusIsLiteratureShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:searchedCorpus ;
+    sh:property [
+        sh:path pm:searchedCorpus ;
+        sh:nodeKind sh:Literal ;
+        sh:not [ sh:pattern "^https?://" ] ;
+        sh:message "pm:searchedCorpus names the corpus that was searched, as literature, never a URL."
+    ] .
+
 pm:PrerequisiteStrengthValueShape a sh:NodeShape ;
     sh:targetSubjectsOf pm:prerequisiteStrength ;
     sh:property [

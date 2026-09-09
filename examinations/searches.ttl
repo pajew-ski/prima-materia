@@ -1,0 +1,42 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — searches carried and what came back
+#
+# The first two instances of pm:Searching, both from the run of 2026-09-09.
+# They are here rather than in a directory of their own because a search is a
+# protocol about the work, like the examinations beside them, and a new data
+# directory would have to be registered in five places for two nodes.
+#
+# The first is the case the class exists for: a question put to a corpus that
+# answered by staying silent. Before there was a class for it, that finding
+# lived in an issue label and never reached anyone loading the graph.
+#
+
+pmp:FourthWayStatesAntecedentSearch a pm:Searching ;
+    rdfs:label "Whether the Fourth Way names an antecedent for its four states"@en, "Ob der Vierte Weg für seine vier Zustände einen Vorgänger nennt"@de ;
+    pm:searchedCorpus "P. D. Ouspensky, In Search of the Miraculous: Fragments of an Unknown Teaching (one-volume English text as scanned in the Internet Archive full-text mirror)" ;
+    pm:searchedFor "Whether the work derives its fourfold ordering of states of consciousness from an earlier source, as it derives its fourfold division of bodies from four named terminologies at pmc:FourBodiesAcrossTerminologies." ;
+    pm:searchTerms "Full-text search of the whole work for: Theosoph (ten occurrences, all concerning bodies, planes or societies); Vedanta, Vedantic; turiya, Turiya; Mandukya; Upanishad." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-09" ;
+    dcterms:date "2026-09-09" ;
+    skos:note "The finding is a silence and not a refutation. The work names no antecedent for the states, while naming four terminologies for the bodies in the same volume; a route to the theosophical or Vedantic material may still exist outside it. What the node records is that this corpus was asked and did not supply one, which is a different thing from nobody having asked. See prima-materia#653."@en ;
+    skos:note "Its weight is the weight of the terms above and no more. A search in Latin transliteration finds nothing about a doctrine the author might have named in Russian, and the scanned text is an OCR whose failures are unknown. Anyone with a better copy can overturn this in an afternoon, which is the point of writing it down."@en .
+
+pmp:MorallyPolarisedBinarySearch a pm:Searching ;
+    rdfs:label "Whether a pre-colonial Indian source polarises the two methods morally"@en, "Ob eine vorkoloniale indische Quelle die beiden Methoden moralisch polt"@de ;
+    pm:searchedCorpus "Kālikāpurāṇa (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" ;
+    pm:searchedFor "A pre-colonial Indian passage presenting dakṣiṇa and vāma as a clean two-way division with a moral polarity, using union with the divine against self-deification as the criterion that separates them — the falsifying condition of pmp:BinaryPredatesItsReportersExamination." ;
+    pm:searchTerms "Full-text search of the translation for: vama, vamacara, vamachara, daksina, daksinacara; left hand, right hand, left-hand, orthodox, heterodox." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:KalikapuranaLeftAndRightMethods ;
+    pm:searchedBy "prima-materia, 2026-09-09" ;
+    dcterms:date "2026-09-09" ;
+    skos:note "The search was for the polarity and found the pair without it. That is the productive outcome and the one an unrecorded search loses entirely: a run that only enters what it set out to find reports its own question back to itself. The passages became pmc:KalikapuranaLeftAndRightMethods and the four nodes around it."@en ;
+    skos:note "One corpus, one translation, one spelling set. The corpora that would carry the polarity if anything does — the Kaula tantras, the Śākta digests of the Bengal schools — were not opened for this question, and this node says so rather than letting the silence of the tracker say it."@en .
