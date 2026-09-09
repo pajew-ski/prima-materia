@@ -578,7 +578,25 @@ Die Arbeit beginnt nicht mehr an einem Plan, sondern am Issue-Tracker. Dort steh
 - **Geschlossen als `not_planned`** mit `unbelegt`, wenn die plausiblen Korpora erschöpft sind, oder mit `nicht-graphfaehig`, wenn die Behauptung gegen keine Überlieferung entscheidbar ist und es auch nach jeder Recherche nicht wäre. Beides bleibt über `reason:not-planned` auffindbar.
 - **Wiedereröffnet**, sobald ein neuer Fund die Lage ändert. Das ist der Normalfall, kein Fehler.
 
-**Die Identität der Behauptung ist die Issue-Nummer.** Kein zweites Nummernschema. Der Rückverweis von einem Knoten auf sein Issue steht in einer `skos:note` in der Form `prima-materia#42`, niemals in `dcterms:source`: ein Issue ist kein Werk, und `pm:SourceIsLiteratureShape` weist die URL ohnehin ab.
+**Die Identität der Behauptung ist die Issue-Nummer.** Kein zweites Nummernschema.
+
+### Kein Issue für eine Frage, die sich aus dem Bestand ableiten lässt
+
+Der Satz oben — der Tracker hält jede Behauptung, die der Bestand noch nicht beantwortet — sagt, was ein Issue trägt. Er sagt nicht, was keins braucht, und das fehlte. Die Folge ist zählbar: der Tracker wächst schneller als der Graph, und ein Teil dessen, was dort steht, ist keine neue Frage, sondern eine Abfrage, die jemand aufgeschrieben hat.
+
+**Eine offene Frage, die aus dem Zustand des Bestands folgt, wird nicht eingetragen. Sie wird abgefragt.** Der Bestand hält dafür bereits die Zustände, und dieses Dokument leitet an zwei Stellen ausdrücklich Warteschlangen aus ihnen ab statt sie zu führen: die dünn erschlossenen Traditionen aus `pm:coverageState pm:corpusNamed` (§14) und die ungeprüften Verallgemeinerungen aus dem Fehlen eines `pm:Testing` (§16). Beide Male steht dort derselbe Satz — ein zweites Verzeichnis entsteht nicht. Er gilt für den Tracker so gut wie für eine Datei.
+
+**Die Prüffrage vor jedem `issue_create` lautet deshalb: folgt diese Frage aus etwas, das im Graphen steht?** Wenn ja, ist das Issue eine Kopie eines Zustands und veraltet gegen ihn, sobald sich der Zustand ändert. Wenn nein, ist die Frage neu und gehört in den Tracker.
+
+Beispiele für den ersten Fall, alle heute als Issue formulierbar und alle überflüssig: dass eine registrierte Tradition noch keinen Knoten trägt; dass eine Verallgemeinerung ungeprüft ist; dass ein Prüfknoten auf `pm:procedureWithoutCases` steht; dass eine Achse an einem Knoten nicht verortet ist. Für jedes davon gibt es eine Abfrage, die immer stimmt, während das Issue nur am Tag seiner Anlage stimmt.
+
+Beispiel für den zweiten Fall: eine Behauptung, für die keine Stelle gelesen ist und die aus keinem Zustand des Bestands folgt, weil sie von außen kommt. Das ist der harte Kern des Trackers, und er ist kleiner, als der Bestand vermuten lässt.
+
+**Daraus folgt die Richtung für den Ausbau, und sie ist die eigentliche Antwort auf einen wachsenden Tracker.** Wer weniger Issues will, baut nicht am Tracker, sondern an den Zuständen, aus denen sich Fragen ableiten lassen. **Der stärkste davon ist `pm:Generalizing`**: eine Verallgemeinerung aus mehreren bezeugten Behauptungen erzeugt eine prüfbare Frage, die im Graphen steht, abfragbar ist und kein Issue braucht. Solange `generalizations/` fast leer ist, während der Tracker in die Hunderte geht, arbeitet das Projekt am falschen Ende — und das ist ein Befund über den Zuschnitt der Läufe, nicht über die Zahl der Fragen.
+
+**Was der Graph dabei nicht wird.** Er nimmt keine Frageknoten auf. Eine Frage hat keine Herkunft, und dieser Graph hält Behauptungen mit Herkunft; ein Knoten „hier wäre zu suchen" stünde neben einem Knoten mit Werk und Stelle und wäre für einen Client, der nur die Serialisierung lädt, von ihm nicht ohne Weiteres zu unterscheiden. Was in den Graphen gehört, ist der **Zustand**, aus dem die Frage folgt, und nicht die Frage.
+
+**Die Grenze dieser Regel gehört mitgesagt: sie hilft nur dort, wo der Zustand überhaupt im Graphen steht.** Die Suchabdeckung tut das heute nicht. Dass eine Überlieferung für eine bestimmte Frage befragt wurde und schwieg, steht ausschließlich in den kumulierenden `korpus:`-Labels, also außerhalb; im Graphen ist ein nie befragtes Werk von einem befragten und stummen nicht zu unterscheiden. Das ist derselbe Unterschied, den `pm:noProcedureDevised` gegenüber `pm:casesWithoutDeviation` sichert und den die Sachachsen mit ihrem nicht-angegeben-Wert sichern, nur eine Ebene höher und dort ungesichert. Solange das so bleibt, ist ein Teil des Trackers nicht durch eine Abfrage zu ersetzen. Der Rückverweis von einem Knoten auf sein Issue steht in einer `skos:note` in der Form `prima-materia#42`, niemals in `dcterms:source`: ein Issue ist kein Werk, und `pm:SourceIsLiteratureShape` weist die URL ohnehin ab.
 
 ### Befunde sind auf die Suche relativiert, nicht auf den Bestand
 

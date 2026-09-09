@@ -227,11 +227,15 @@ Was der Check findet, wird nicht im Bericht erwähnt, sondern behandelt: eine ü
 
 Die dritte Bedingung ist die, die am häufigsten verletzt wird, und sie ist nicht durch Sorgfalt zu erfüllen, sondern nur durch Nachsehen: ob ein Issue erledigt ist, steht im Bestand und nicht im Issue. Am 2026-09-02 waren #23, #32 und #33 seit Tagen erledigt und offen, und drei weitere Issues führten sich deswegen als blockiert.
 
-**Jede im Lauf entstandene Hypothese wird noch im selben Lauf ein Issue.** Das gilt für den Zielbefund, für den Beifang, für jede Vermutung, die im Denken auftaucht, und für jeden Befund über das Repo oder die Werkzeuge. Eine Hypothese, die nur im Gesprächsverlauf steht, ist verloren, sobald die Sitzung endet — und der Gesprächsverlauf ist kein Speicher, sondern ein Fenster.
+**Jede im Lauf entstandene Hypothese wird noch im selben Lauf ein Issue, sofern sie nicht aus dem Bestand ableitbar ist.** Das gilt für den Zielbefund, für den Beifang, für jede Vermutung, die im Denken auftaucht, und für jeden Befund über das Repo oder die Werkzeuge.
+
+**Der Vorbehalt ist keine Aufweichung, sondern der Filter, der den Tracker brauchbar hält.** Vor jedem `issue_create` steht die Frage: folgt das aus einem Zustand, der im Graphen steht? Eine registrierte Tradition ohne Knoten, eine ungeprüfte Verallgemeinerung, ein Prüfknoten ohne Fälle, ein Knoten ohne Achsenverortung — für all das gibt es eine Abfrage, die immer stimmt, während ein Issue nur am Tag seiner Anlage stimmt. Was nicht aus einem Zustand folgt, wird angelegt. Vollständig in `SPEC.md` §13. Eine Hypothese, die nur im Gesprächsverlauf steht, ist verloren, sobald die Sitzung endet — und der Gesprächsverlauf ist kein Speicher, sondern ein Fenster.
 
 **Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Wer ihn schreibt, hat den Aufwand des Anlegens schon aufgewendet und das Ergebnis weggeworfen.
 
-**Vollständigkeit vor Eleganz.** Lieber fünfzig knappe Issues mit Behauptung, geprüften Stellen und Labels als fünf ausformulierte und der Rest im Fließtext.
+**Vollständigkeit vor Eleganz.** Lieber fünfzig knappe Issues mit Behauptung, geprüften Stellen und Labels als fünf ausformulierte und der Rest im Fließtext. Der Satz gilt für das, was tatsächlich in den Tracker gehört; er ist keine Erlaubnis, Abfragen als Issues abzuschreiben.
+
+**Und er ist keine Erlaubnis, ein Issue anzulegen, wo ein Knoten hingehört.** Ein gelesener Fund wird eingetragen, nicht vermerkt; die Aufnahmebedingung ist die Stelle und nicht die vollständige Prüfung. Ein Issue an dieser Stelle macht aus einem gelesenen Fund eine Vermutung. Siehe den Abschnitt zur Ernte weiter oben und `SPEC.md` §15.
 
 ## Vor dem ersten Schreibzugriff
 
