@@ -146,6 +146,12 @@ Vollständig in `SPEC.md` §16. Vier Sätze, die im Ablauf zählen.
 
 **Die Warteschlange für die Prüfung ist damit abfragbar:** die Verallgemeinerungen, auf die kein `pm:Testing` zeigt, geordnet nach der Zahl ihrer Vorgänger und der Streuung von deren Traditionen. Das ist bewusst kein Shape — ein Wächter, der zu jeder Verallgemeinerung ein Protokoll verlangte, machte die Warteschlange unschreibbar. Ein Lauf, der keine Prüfung aufnimmt, kann sich aber nicht mehr darauf berufen, dass keine anstand.
 
+**Die Gegensuche einer Verallgemeinerung läuft zuerst gegen den eigenen Bestand, und zwar bevor sie geschrieben wird.** Eine Verallgemeinerung ist eine Behauptung, also gilt Satz 3 für sie wie für jede andere. Der Unterschied ist der Preis: sie behauptet etwas über eine Art von Überlieferung, und der Bestand hält bereits Dutzende davon in derselben Klasse. Ein Gegenfall liegt deshalb typischerweise schon da und kostet eine Abfrage über den kompilierten Graphen, nicht eine Recherche.
+
+Belegt am 2026-09-09, und der Fall ist eindeutig. Vier Verallgemeinerungen wurden aus der Kautelenschicht gebildet, ohne dass für eine von ihnen im Bestand nach dem Gegenteil gesucht worden wäre. Die erste Prüfung, die anschließend geführt wurde, widerlegte die erste von ihnen sofort: sie sagte, Überlieferungen mit einer Auskunft aus einem Verfahren verböten die prüfende Nachfrage, und das Zande-Giftorakel **verlangt** die zweite Konsultation und macht die Gültigkeit des Spruchs von ihr abhängig. Der Knoten stand seit Wochen im Bestand. Siehe prima-materia#665 und prima-materia#667.
+
+**Die Verwechslung, gegen die das gerichtet ist:** wer aus dem Bestand verallgemeinert, hat das Gefühl, den Bestand gerade gelesen zu haben. Gelesen wurde aber die Klasse, aus der die Belege stammen, und nicht die Klasse, in der der Gegenfall liegt. Die Suche nach Gegenmaterial ist ein anderer Griff und wird durch die Suche nach Belegen nicht miterledigt.
+
 ## Behauptungen liegen in Issues
 
 Der Issue-Tracker hält jede Behauptung, die noch nicht durch einen Knoten repräsentiert ist. Jeder darf einreichen, ohne Recherche und ohne in einer Tradition zu stehen; das beseitigt dasselbe Tor wie CC0.
