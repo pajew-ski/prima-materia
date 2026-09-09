@@ -285,6 +285,12 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   `korpus:patanjala` getrennt geführt, weil dort die Übungsliteratur steht und
   dieser Korpus Eingriffe, Kontraindikationen und Verletzungsfristen führt; die
   Indologie geht als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:zhenjiu` (die spätere chinesische Akupunkturliteratur, die den Kanon
+  aufnimmt und umarbeitet: Wang Weiyi, Tongren shuxue zhenjiu tujing, 1027;
+  Wang Zhizhong, Zhenjiu zishengjing; Gao Wu, Zhenjiu juying, 1529; Yang
+  Jizhou, Zhenjiu dacheng, 1601 — von `korpus:huangdi-neijing` getrennt
+  geführt, weil sie die Rezeptionsseite ist und die Stelle trägt, an der eine
+  spätere Station der übernommenen Behauptung etwas hinzugefügt hat)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
