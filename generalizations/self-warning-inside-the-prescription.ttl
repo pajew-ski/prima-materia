@@ -1,0 +1,27 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the warning inside the prescription
+#
+# One generalization. It was written because two nodes in the holding already
+# said, each in its own note, that the other was a second instance of the same
+# shape — and neither could say so as a claim. A note that observes a pattern
+# and cannot be queried is a pattern nobody will find twice.
+#
+# See prima-materia#662 on why the queue for stage three is built here and not
+# in the tracker.
+#
+
+pmc:SelfWarningStandsInsideThePrescription a pm:Generalizing ;
+    rdfs:label "The warning against a practice stands inside the passage prescribing it"@en, "Die Warnung vor einer Praxis steht in der Stelle, die sie vorschreibt"@de ;
+    pm:generalizedStatement "Where a transmission prescribes a practice that the practitioner is liable to value for the wrong reason, the warning against that valuing stands inside the prescribing passage itself, in the same source, and is not supplied by a later commentator or an outside critic."@en ;
+    pm:generalizedFrom pmc:IdentifyingTakenForItsOpposite, pmc:Panchatattva ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The two claims it is formed from have no route between them and say the same thing about their own practitioners. The Fourth Way holds that in identifying a person is absorbed into what occupies him and becomes a thing, and that those who observe the state in themselves regularly take it for a merit, calling it enthusiasm, zeal, passion or inspiration. The Mahānirvāṇa, in the verses prescribing the five elements of the heroic rite, says in the same breath that the men of this age, being greedy and lustful, will neglect the discipline, drink for the pleasure of it and lose the distinction of right and wrong."@en ;
+    skos:note "What makes it worth stating as a claim rather than as an observation is that it excludes something. It says the caution is not an outside correction: a tradition of this kind does not have to be caught by its critics, it catches itself, and it does so at the point of prescribing. A commentary layer supplying the warning afterwards would be a different history — the practice would then have been transmitted innocent and moralised later, which is what the reception literature usually assumes."@en ;
+    skos:note "It is falsified by a transmission that prescribes such a practice, whose earliest witness carries no warning against the practitioner's own approval, and where the warning is demonstrably first added by a commentator or a later recension. One such case refutes it. The candidates are not hard to name: the tantric material has a heavy commentarial layer, and whether a given caution belongs to the base text or to its readers is exactly the question the editions were read for in prima-materia#45."@en ;
+    skos:note "A finding of the opposite shape already stands in the holding and is not a counterexample to this one, because it concerns a different thing: prima-materia#640 records seven opened works carrying twelve announced signs of success and not one condition of failure. Signs of success and self-directed cautions are counted separately for the reason SPEC §15 gives, and a tradition can be generous with the first while saying nothing under the second. What this generalization claims is narrower and about the caution alone."@en ;
+    skos:note "No pm:Testing points at this node, and that is its position in the queue rather than a defect. Two attested claims is the floor; a third witness with no route to either would raise it out of the range where a shared physiology or a common institutional form could account for the agreement on its own."@en .
