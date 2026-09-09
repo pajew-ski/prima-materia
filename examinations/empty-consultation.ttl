@@ -1,0 +1,41 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — two protocols on the Chinese divinatory transmission
+#
+# Both are here because the condition was devised inside the transmission's own
+# language and not by this project. The first is a control condition stated in
+# the first century; the second is a count carried in the seventh. Neither has
+# been carried to cases in the sense this project needs, and both say why.
+#
+
+pmp:EmptyConsultationExamination a pm:Testing ;
+    rdfs:label "Whether the sign appears when the consultation is not meant"@en, "Ob das Zeichen erscheint, wenn die Befragung nicht ernst gemeint ist"@de ;
+    skos:definition "A protocol on the claim that the counting of the stalks makes known what is coming. The condition is not this project's: a treatise of the first century puts it as the decisive case. Let a diviner bore the shell emptily and count the stalks in vain, making sport of heaven and earth, and he still gets an omen and a number; let a man curse heaven while he bores and strike the earth while he counts, and he still gets an omen and a number. The treatise draws the conclusion that the omen and the number are therefore not an answer, and adds the counterfactual that if they were, the fire should go out, the hand be scorched and the fingers shake so that the count is spoiled."@en ;
+    pm:tests pmc:JishuZhilai ;
+    pm:falsifiedBy "A run of the counting performed emptily, in mockery or under abuse, which yields no figure, or yields figures distinguishable as a class from those of consultations meant in earnest. The claim as the classic states it — without thought, without doing, touched and thereupon penetrating — offers no place for the manner of the consultation to enter, so a difference between the two classes would fall against the treatise and no difference falls against the classic." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "Wang Chong, in the treatise on divining of the Lunheng, first century; recorded here from the passage in traditions/chinese-divination.ttl" ;
+    pm:protocolUpdated "2026-09-09" ;
+    skos:note "The state is procedure-without-cases and the reason is exact. The treatise says that the empty and the abusive consultation still yield a figure; it does not report having made one. The wording is a supposition put to the reader, and a supposition is not a case however confident it sounds. Whoever raises this protocol beyond its present state has to make the runs, not to quote the passage more loudly."@en ;
+    skos:note "The two obvious refinements are both blocked from inside the transmission, and that is the finding this protocol carries. Asking the same question twice and comparing is forbidden by the judgement on the fourth hexagram, which calls repetition defilement and withholds the answer. Consulting where the answer is already known is excluded by the Supreme Mystery, which says that who does not doubt does not consult. A control arm therefore has no sanctioned form in either work, and the treatise's empty consultation is the only one that was ever proposed."@en ;
+    skos:note "What the protocol would not settle even if it ran. That a figure appears under mockery tells against the figure being an answer given by something; it does not tell against the weaker claim that the figures of earnest consultations correspond to what comes. That weaker claim needs outcomes and a count, which is the other protocol beside this one."@en .
+
+pmp:BurialDayExamination a pm:Testing ;
+    rdfs:label "Whether the day and season of a burial decide anything"@en, "Ob Tag und Jahreszeit der Bestattung etwas entscheiden"@de ;
+    skos:definition "A protocol on the second of the six adversities of the burial book, that a going wrong of the year and the season makes the burial adverse however favourable the ground. A memorial of the seventh century, written on an imperial commission to revise the divinatory literature, sets against it a count: the burial books call one day of the sexagenary cycle the most inauspicious of all for a burial, and a check of the classical annals turns up more than twenty burials on that day."@en ;
+    pm:tests pmc:SanjiLiuxiong ;
+    pm:falsifiedBy "A comparison of what followed burials made on the day the books forbid with what followed burials made on days they allow, over a set of burials fixed before the outcomes are known. The doctrine claims a difference; no difference falls against it, and a difference in the wrong direction falls against it twice." ;
+    pm:evidenceFrom "Jiu Tangshu 79, the memorial of Lü Cai on the burial books, juan 79, Wenyuange Siku quanshu text" ;
+    pm:counterSearch pm:counterSearchFoundOpposition ;
+    pm:counterSearchNote "Searched for the defending side within the works opened, and it is there. The burial book itself supplies the sixth adversity, whose commentary lists the delays, quarrels, poverty, wars, lawsuits and neglect through which a burial fails to happen, so that a favourable grave without a fortune is always attributable; and the commentary cites two cases the other way, a reader of graves who foretold the extinction of a general's clan and a duke of the annals who moved against a prognostication and died in the fifth month. Neither was traced to the works it names. Not searched: whether anyone answered the memorial itself in writing, and whether the later burial literature took up its count." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "Lü Cai, in the memorial on the burial books recorded in Jiu Tangshu 79, seventh century; recorded here from the passage in traditions/chinese-divination.ttl" ;
+    pm:protocolUpdated "2026-09-09" ;
+    skos:note "The count is treated as evidence and not as testimony, and the reason is the functional line SPEC §14 draws rather than the date. It is a procedure with an outcome that could have gone otherwise: the annals might have shown no burial on that day, and then the memorial would have had nothing. That it was carried in the seventh century does not make it a witness to a transmission; it makes it an early instance of the only kind of check this doctrine admits."@en ;
+    skos:note "The state stays at procedure-without-cases all the same, and the distinction is the one this protocol exists to hold. What the count establishes is that the classical corpus, which the doctrine claims as its warrant, buried on the forbidden day more than twenty times. That is a case against the antiquity of the rule and not against its effect: the memorial does not say what became of those twenty houses. Setting the state to cases-with-deviation here would report the reach of a philological check as a result about the world."@en ;
+    skos:note "Two things a later run would have to establish before the count could be used at all, and neither was done here. Which day of the cycle the memorial names, and whether the burial books it checked are the recension of the burial book this graph holds — it speaks of a hundred and twenty houses of the art, and the text in the graph is a redaction of the fourteenth century. Until both are settled the evidence points at the doctrine and not yet at this node."@en .
