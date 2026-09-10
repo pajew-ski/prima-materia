@@ -76,3 +76,23 @@ pmp:PalmsAsSendingOrganSearch a pm:Searching ;
     skos:note "The laterality is the part of the find that matters to the issue, and it points away from it as well. Left and right are distinguished by the sex of the patient and not by a function of the two hands, so the passage cannot be cited for a rule about which hand transmits. The node it yielded carries the wording."@en ;
     skos:note "Recorded as an outcome and not as a refutation. The claim may still stand in the corpora the issue names beside this one; what this node says is that this work was asked and answered with something else. See prima-materia#314."@en ;
     skos:note "Added after the seventeenth juan was read at the wording later the same day: the rule stands there a second time, in a different operation. Blowing the qi at a snakebite ten and more li away, the practitioner calls the man's surname and name and invokes over his own left hand for a man and his own right for a woman, exactly as in the eighth. What the search found is therefore not a formula of one chapter but a rule the work sets twice, and the office it assigns to the hand is the same both times."@en .
+
+#
+# A search of 2026-09-10 in the medical canon, carried while the corpus was
+# open for other questions. It is the case in which the outcome that had been
+# reported was a silence and the search itself found a place.
+#
+
+pmp:GeneralRuleAgainstExcessSearch a pm:Searching ;
+    rdfs:label "Whether the medical canon states a general rule against excess of practice"@en, "Ob der medizinische Kanon eine allgemeine Maßregel gegen das Übermaß der Praxis nennt"@de ;
+    pm:searchedCorpus "Huangdi neijing, Suwen in the Chongguang buzhu recension and Lingshu in the Huangdi suwen lingshu jing, both in the Sibu congkan facsimile; searched over both classics in the Chinese, with the chapters carrying a hit read at the wording" ;
+    pm:searchedFor "A general rule, not a single case, that too much of a prescribed practice injures and that a measure is therefore to be kept — the claim of prima-materia#240, which reaches this corpus among five." ;
+    pm:searchTerms "Whole-text search of both classics for: 過度 (six hits, all about excess of exertion or of pleasure and cold and heat, none about a practice); 無過其度 (one hit, Lingshu 61); 五勞所傷 (Suwen 23); 久視傷 (Lingshu 78, the same five clauses); 不妄作勞 (Suwen 1)." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:WulaoSuoshang ;
+    pm:searchedBy "prima-materia, 2026-09-10" ;
+    dcterms:date "2026-09-10" ;
+    skos:note "The result is a general rule and not the general rule the claim asks for, and the difference is worth keeping. The five exhaustions state that a thing done too long injures, name the injury in each case, and stand twice in the corpus; but the five things are looking, lying, sitting, standing and walking, which are postures and not prescribed techniques. The corpus's own rule about its own operation is a single clause with no quantity and no consequence, and it is entered separately."@en ;
+    skos:note "What the search settles for this corpus is therefore narrower than the issue asks and sharper than a silence would have been. The transmission does have the form of claim the question is after, applies it to ordinary conduct, and declines to give it any content where its own technique is concerned. That asymmetry is a finding about the corpus and would not have been visible from either half alone."@en ;
+    skos:note "Written a day after the search, because the node it names could not be reached from any branch on which it would have validated. The guard in tests/test_publication.py refused a part that points at a node it does not name, which is the condition of SPEC §1 and which held. What that shows about this class is worth keeping: a pm:Searching with a find is bound to the node it yields and travels with it, so such a search belongs in the same change as its find and not in a batch of searches."@en ;
+    skos:note "See prima-materia#240. The issue keeps its korpus:huangdi-neijing label and stays open, because four further corpora named there have not been asked."@en .
