@@ -307,6 +307,13 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Gu Yanwu, Rizhilu — als Zeugnis geführt und nicht als Evidenz, solange sie
   argumentieren statt zu zählen; wo sie zählen, gehen sie als
   `pm:evidenceFrom` an einen Prüfknoten)
+- `korpus:shangqing` (die Shangqing-Offenbarung und ihre Überlieferung: Tao
+  Hongjing, Zhen'gao; Huangting neijing jing; Dadong zhenjing; die
+  Registerliteratur des Maoshan — von `korpus:daoistisch` getrennt geführt,
+  weil dort die Kultivierungsliteratur steht und dieser Korpus ein datiertes
+  Offenbarungsprotokoll mit benanntem Empfänger ist und seine eigene
+  Echtheitskritik mitführt; die Sinologie geht als `pm:evidenceFrom` ein, nie
+  als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
