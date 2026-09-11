@@ -314,6 +314,14 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Offenbarungsprotokoll mit benanntem Empfänger ist und seine eigene
   Echtheitskritik mitführt; die Sinologie geht als `pm:evidenceFrom` ein, nie
   als Quelle)
+- `korpus:neidan` (die innere Alchemie: Zhang Boduan, Wuzhen pian, in den
+  Rezensionen mit Kommentar; das Zhong-Lü chuandao ji und das Lingbao bifa;
+  das Zhang Boduan zugeschriebene Jindan sizi mit dem Kommentar des Huang
+  Ziru; Xingming guizhi — von `korpus:daoistisch` und `korpus:shangqing`
+  getrennt geführt, weil dieser Korpus die Feuerphasen als gezählte Grösse
+  führt und eine eigene Misslingens- und Zeichenlehre in zwei
+  aufeinanderfolgenden Kapiteln trägt; die Sinologie geht als
+  `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label

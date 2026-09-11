@@ -1,0 +1,257 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — internal alchemy, read at three works
+#
+# Opened from the registry entrance of SPEC §14 on the testability criterion,
+# and the criterion paid here better than anywhere else in this holding. This
+# transmission states, in one chapter, a closed list of what makes the work
+# fail, and in the next chapter a long ordered list of what shows it
+# succeeding; it names an exact number of moments in which the operation can
+# be spoiled; it states the rule by which a failure is assigned, in so many
+# words and twice; and it contradicts itself on the one question that decides
+# when the operation is to be performed.
+#
+# Order of the file: the tradition and its route, then the practices, then the
+# two chapters that hold the failure side and the sign side, then the rule of
+# assignment, then the claims that carry a number, then the three places where
+# the corpus disagrees with itself.
+#
+# Edition note, and it matters because three works in three recensions are
+# cited below.
+#   The Jindan sizi is read in the Zhengtong Daozang text as reproduced in the
+#   Hanfenlou facsimile (DZ 1081), which prints the preface and the twenty
+#   quatrains together with Huang Ziru's commentary; the commentary's own
+#   postface is dated to the first year of the Chunyou period, a xinchou year,
+#   which is twelve hundred and forty-one. A citation to this work is therefore
+#   a citation to a Southern Song recension of a text ascribed to a man who
+#   died in ten eighty-two, and the file says so rather than letting the
+#   ascription stand unqualified.
+#   The Wuzhen pian is read in the Wuzhen pian zhushi with Weng Baoguang's
+#   commentary (DZ 145), three juan, likewise in the Hanfenlou facsimile. The
+#   poems are numbered differently in different recensions, so the citations
+#   give the folio and not a poem number.
+#   The Zhong-Lü chuandao ji is read in the recension the digitisation carries
+#   as its base, the Chongkan Daozang jiyao text (JY 149), whose folio numbers
+#   the citations use; that recension prints a Ming postface of the second year
+#   of the Tianqi period and a later editor's colophon, both of which were read
+#   with it. The work also stands in the Xiuzhen shishu of the Daozang, and the
+#   two are not identical.
+# No translation was consulted for any node in this file. The shortfall against
+# the minimum of SPEC §15 is the subject of prima-materia#691.
+#
+
+pmt:Neidan a pm:Tradition ;
+    rdfs:label "Neidan internal alchemy"@en, "Neidan, innere Alchemie"@de ;
+    skos:definition "The transmission that relocates the alchemical work into the body, with a staged refinement of essence, breath and spirit and an embryo said to form and depart; carrying with it an unusually explicit doctrine of what makes the work fail, an ordered catalogue of the signs by which it is said to be succeeding, and an internal disagreement about whether its timings are read off the calendar or off the body."@en ;
+    skos:note "The contact route stands as documented and the ground is inside the works that were read, not in the scholarship. Weng Baoguang's commentary states that the author of the Cantong qi read the Changes, understood that the workings of the golden elixir are one with the Changes, and composed his book to set out the images of the Changes so as to make the great elixir plain; and the commentary then carries the whole apparatus over — the tripod and furnace as Qian and Kun, the medicine as Kan and Li, two hexagrams a day for thirty days to make sixty, the four central hexagrams added to make sixty-four, three hundred and eighty-four lines answering to the three hundred and eighty-four grains of a catty. The route to the external alchemy is therefore not an inference from similarity but the transmission's own account of where its instrument came from."@en ;
+    skos:note "What that route does to any convergence built on this file. The Waidan file in this holding rests on the Baopuzi and on the Cantong qi; this one names the Cantong qi as its source. An agreement between the two is reception at the level of the instrument, whatever may hold of the practice. The same caution applies to this file and traditions/shangqing.ttl, which share a vocabulary of body gods and inner vision without a route having been examined here."@en ;
+    skos:note "Read at the wording, in the Chinese, on 2026-09-11: the Jindan sizi entire, preface, twenty quatrains and commentary; the Zhong-Lü chuandao ji, chapters seventeen and eighteen entire, with the chapter headings of the other sixteen and the two postfaces; and of the Wuzhen pian the passages cited below in juan 2 of DZ 145, with juan 1 and 3 gone through by term over the five owed kinds. The remainder of the Zhong-Lü chuandao ji and the greater part of the Wuzhen pian are not harvested."@en ;
+    pm:principalCorpus "Zhang Boduan, Wuzhen pian; Zhong-Lü chuandao ji; Jindan sizi; Xingming guizhi" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, in Wuzhen pian zhushi with Weng Baoguang's commentary (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 5b-6b" .
+
+#
+# The practices
+#
+
+pmp:NeidanHuohou a pm:Practicing ;
+    rdfs:label "The fire phases"@en, "Die Feuerphasen"@de ;
+    skos:definition "The regulation of the work by a schedule of advancing and withdrawing: the yang fire raised from one point of the cycle, the yin tally applied from the opposite point, the whole run through in a set number of intervals. The corpus treats the schedule as the operative part of the operation and as the part that is not written down."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, in Wuzhen pian zhushi (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 30a" .
+
+pmp:NeidanMuyu a pm:Practicing ;
+    rdfs:label "The bathing"@en, "Das Baden"@de ;
+    skos:definition "The pause in the fire, prescribed at two points of the cycle, during which the heat is to be withheld; the corpus states that adding fire at that point overturns the work."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, in Wuzhen pian zhushi (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 31b-32a" .
+
+pmp:NeidanChoutian a pm:Practicing ;
+    rdfs:label "Withdrawing and adding"@en, "Abziehen und Zusetzen"@de ;
+    skos:definition "The adjustment of the two components against each other during the run, the corpus giving it weights and measures and warning that it must be held to carefully."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, verse 17, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 11a" .
+
+pmp:NeidanNeiguan a pm:Practicing ;
+    rdfs:label "Inner observation"@en, "Innenschau"@de ;
+    skos:definition "The stage at which the practitioner observes inwardly to gather the yang spirit, named as the sixteenth of the eighteen discourses and as the condition under which the spirit is sent out through the heavenly gate."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhong-Lü chuandao ji, Lun neiguan 16 and Lun monan 17, in the Chongkan Daozang jiyao recension (JY 149), juan 3, fol. 51a-51b" .
+
+pmp:NeidanZhengyanXingchi a pm:Practicing ;
+    rdfs:label "The graded course of the twelve methods"@en, "Der gestufte Gang der zwölf Verfahren"@de ;
+    skos:definition "The course the corpus sets out as twelve numbered methods in three vehicles, from the matching of yin and yang through the gathering and dispersing of water and fire, the coupling of dragon and tiger, the firing of the medicine, the flying of the metal essence up the spine, the two returns and the two refinings of the form, the refining of breath at the court of the origin, the exchange in inner observation, to the shedding and division of the form."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhong-Lü chuandao ji, Lun zhengyan 18, in the Chongkan Daozang jiyao recension (JY 149), juan 3, fol. 55a" .
+
+#
+# The chapter on what makes the work fail, and the chapter on what shows it
+# working. The corpus itself puts them side by side and in that order, and
+# SPEC §15 requires them to be entered and counted separately for exactly the
+# reason the pairing makes visible.
+#
+
+pmc:NeidanJiunan a pm:Cautioning ;
+    rdfs:label "The nine difficulties"@en, "Die neun Schwierigkeiten"@de ;
+    skos:definition "Nine conditions are named under which the work does not succeed, and every one of them is a circumstance of the practitioner's life rather than a state of his body or a fault in the method: the pressure of food and clothing, since before the great medicine is made he still feels cold and heat and hunger; the obstruction of elders, where duty to parents forbids leaving; the entanglement of affection for wife and children; the binding of name and profit; the intervention of calamity and illness, whether from a weak constitution or from a hidden reckoning; the constraint of a blind master, taken for an immortal on the strength of a ready tongue or an ancient face and found out later to be a man after gain; the discrepancy of doctrines, where blind masters and deluded friends point at side-tracks and small methods contradict one another; the slackening of will, which begins in the morning and is altered by evening; and the squandering of the years, losing the month within the year and the day within the month while the young forget nothing of name and profit and the old think of nothing but grandchildren."@en ;
+    skos:note "The chapter closes the list with a clause that makes it all-or-nothing: only when these nine have been escaped can one serve the Way, and if one or two of the nine still cannot be dealt with, the labour is vain and the work cannot succeed. A list of nine ordinary human circumstances, of which none may remain, covers any course that did not succeed."@en ;
+    skos:note "The list is remarkable for what it does not contain. There is no item about the instructions being wrong, none about the method being unsuited to the person, and none about the outcome not arriving. Every clause is a reason why the practitioner did not get to practise properly."@en ;
+    pm:cautionsAbout pmp:NeidanZhengyanXingchi ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhong-Lü chuandao ji, Lun monan 17, in the Chongkan Daozang jiyao recension (JY 149), juan 3, fol. 52a-53a" .
+
+pmc:NeidanShimo a pm:Cautioning ;
+    rdfs:label "The ten demons, and the rule that they are not to be acknowledged"@en, "Die zehn Dämonen, und die Regel, sie nicht anzuerkennen"@de ;
+    skos:definition "Ten appearances are named, in three classes according to where they are met: present outside the body, in dreams, and in inner observation. The six thieves of the senses; wealth, as towers and painted beams and coral over the floor; rank, as gilt saddles and the tokens of office; the six passions, as mild days and then storm, thunder, music and weeping; affection, as kinsfolk in trouble, children ill, parents dead, brothers scattered, wives parted; calamity, as falling into a cauldron of fire, dropping from a height, poison, meeting brigands, dying under the law; the sages and worthies, as the thearchs and the high gods arriving in state; weapons, as massed cavalry, blades like frost, bows drawn and no escape; the music of women; and the beauty of women. The rule for all ten is one clause: the only right course is not to acknowledge them, for once acknowledged there is attachment, once attached there is grasping, and it is exactly this by which people fail to attain the Way."@en ;
+    skos:note "The seventh is the one to keep. The appearance of the sages and the high gods in full procession is listed among the demons on the same footing as the appearance of wealth or of armed men, so that the arrival of what the practice promises is itself a form of its failure. A transmission that puts its own goal into the list of deceptions has stated something that costs it, and it is entered here for that reason."@en ;
+    skos:note "The chapter tells the practitioner what to do when the appearance comes in inner observation, and the instruction is diagnostic in form: examine whether it is empty or solid, discriminate the true from the false, do not follow the wave and take the thief for your son, and raise the true fire of absorption to burn the body, at which the whole crowd of demons scatters at one sweep. What it does not supply is any mark by which the true would be told from the false, so the discrimination it demands has no criterion."@en ;
+    pm:cautionsAbout pmp:NeidanNeiguan ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhong-Lü chuandao ji, Lun monan 17, in the Chongkan Daozang jiyao recension (JY 149), juan 3, fol. 53a-54a" .
+
+pmc:NeidanChengdi a pm:Conceptualizing ;
+    rdfs:label "What is obtained by those who clear only some of them"@en, "Was denen zufällt, die nur einen Teil davon ablegen"@de ;
+    skos:definition "The chapter grades the outcome of partial failure rather than refusing it. One who leaves the dust of the world and lives hidden with his will set on the gate of mystery, but cannot wholly clear the nine difficulties, or is attached to one or two of the ten demons, is not thereby without the Way: within the Way he obtains the middling or the lesser completion, and among the immortals he becomes a human immortal or an earth immortal. Only one who clears the difficulties and the demons entirely passes through the signs of verification in order, rises step by step, and returns to the three islands."@en ;
+    skos:note "The same construction stands in traditions/shangqing.ttl at pmc:ShangqingShieryanshi, where three failures out of twelve trials cost the higher rank and leave the lesser. Two transmissions, both Chinese, both grading the failure rather than recording it, and in both the effect is that no course of practice ends in a plain failure. The generalization formed from the pair stands in generalizations/graded-failure.ttl."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhong-Lü chuandao ji, Lun monan 17, in the Chongkan Daozang jiyao recension (JY 149), juan 3, fol. 54a-54b" .
+
+pmc:NeidanFeidaofuren a pm:Conceptualizing ;
+    rdfs:label "It is not that the Way has failed the man"@en, "Nicht der Weg hat den Menschen im Stich gelassen"@de ;
+    skos:definition "The chapter on the signs of verification opens by putting the question of the practitioner who has held to the work and seen no result, and answers it twice in the same form. If a man toils with a resolute will and in the end sees no merit, it is not that the Way has failed him: it is that he did not follow an enlightened master, so that what he received was not the Law. If a man practises according to the Law and in the end sees no merit, it is not that the Way has failed him: it is that he did not know the times, and so came to nothing. Where a man has met an enlightened master, obtained the Law, practises the great method and keeps to the times, the chapter asks what cause there could then be for the signs not to appear."@en ;
+    skos:note "This is the rule of assignment stated as a rule, and stated at the one place where it has to be: at the head of the chapter that lists what success looks like, immediately after the practitioner has asked what happens if it does not come. The transmission names the possibility that the Way has failed the man, names it twice, and denies it twice, offering in its place two defects located in the man — his choice of teacher and his knowledge of the times."@en ;
+    skos:note "The second of the two defects binds this node to the dispute below. Not knowing the times is given as a sufficient cause of a null result, and the corpus does not agree with itself about what the times are: the chapter that states this rule reads them off the year, the month and the hundred marks of the day, while the Jindan sizi holds that the fire phases use no hour at all. A practitioner told that his failure lies in the times has been told something the transmission cannot make precise."@en ;
+    skos:note "The nearest thing to it in this holding is pmc:ShangqingGuijiuShenling, where a transmission calls it foolish to blame the spirits for a self-inflicted illness. That one moves the blame from the gods back to the man; this one moves it from the method back to the man, which is the harder and the more consequential move, and it is the only place in this holding where a transmission makes it in so many words."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhong-Lü chuandao ji, Lun zhengyan 18, in the Chongkan Daozang jiyao recension (JY 149), juan 3, fol. 54b-55a" .
+
+pmc:NeidanZhengyan a pm:Conceptualizing ;
+    rdfs:label "The signs of verification, in order"@en, "Die Zeichen der Bewährung, der Reihe nach"@de ;
+    skos:definition "An ordered sequence of signs said to follow the work, each introduced as coming next after the one before. Lewd conduct ceases and the outward observances are kept; the metal essence fills and the mind clears; the fluid of the heart rises and there is a sweet taste in the mouth; yin and yang strike together and a sound of wind and thunder is heard in the belly; the cloud-souls and white-souls are unsettled and dreams are full of alarm; small ailments of the six receptacles and the four limbs heal without treatment; the cinnabar field warms of itself at night and the face is clear by day; in a dark room the eyes show a light of their own; in dreams one is bold, nothing can harm one, and one comes back carrying an infant; the golden bar and jade lock are sealed and there is no more emission in sleep; a single clap of thunder, the joints connect, and one starts awake bathed in sweat; the fluid is decocted to a curd; the numinous liquid becomes a paste and one comes to shun the smell of flesh; the bones lighten, the yang spirit changes, the step outruns a galloping horse; one meets things without desire; the true breath entering a thing can cure another's illness; inner observation is bright and no longer dim; the pupils are like lacquer, the lined face fills out and dark hair grows again; the true breath fills so that one seems always sated, eats little, drinks without measure and is never drunk; the body has a lustre, a strange fragrance stays about the mouth and nose; one sees a fine hair at a hundred paces; old scars and blemishes vanish of themselves, and there is no more spittle, tears or sweat; the embryo is complete and food is left off; the nine worms below and the three corpses above die; there are no more dreams and no difference between night and day; the frame does not feel cold or heat; life and death cannot reach one; the merit is full and the hidden reckoning answers, and coming events can be known beforehand; the embryo-immortal appears as a body outside the body; the breath is pure yang and can dry mercury outside the body by being breathed on it; an auspicious light arises in the sleeping room; music is heard in stillness; ordinary men, however rich, smell rank at close quarters; a golden colour shows through the bones; the spirits come of themselves to pay court and go where they are bidden; purple mist fills the eyes and a golden light covers the body; the body turns into a fire dragon and flies, which is the shedding of the frame; and thereafter coloured clouds, strange flowers falling as rain, a jade maiden descending with a heavenly writ, and the return to Penglai."@en ;
+    skos:note "Entered as signs and counted as signs, kept apart from the failure side above, which is what SPEC §15 requires and which this corpus makes easy by doing it itself: the difficulties and the demons are chapter seventeen, the signs are chapter eighteen, and the practitioner's question at the head of eighteen is what joins them."@en ;
+    skos:note "The sequence is announced to the practitioner in advance and in order, which is precisely the condition under which a sign is reported because it was expected. Two items in it are of another kind and are worth separating out, because a bystander could check them: seeing a fine hair at a hundred paces, and the disappearance of old scars. The protocol built on the first stands in examinations/neidan-signs.ttl."@en ;
+    skos:note "The list also contains its own refutation of the idea that these are private experiences. Drying mercury outside the body by breathing on it, curing another's illness with the breath, spirits coming when bidden, and a golden colour showing through the bones are all public; and the last item but one has the practitioner's body turn into a fire dragon in front of whoever is there."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhong-Lü chuandao ji, Lun zhengyan 18, in the Chongkan Daozang jiyao recension (JY 149), juan 3, fol. 55b-57a" .
+
+#
+# The claims that carry a number
+#
+
+pmc:NeidanSanwanke a pm:Cautioning ;
+    rdfs:label "Thirty thousand marks, and one of them is enough"@en, "Dreißigtausend Marken, und eine genügt"@de ;
+    skos:definition "The preface reckons the work by the water-clock. A year has twelve months, a month thirty days, a day a hundred marks; a month is three thousand marks and ten months thirty thousand. Through the whole of that span the breath is to be held to whether walking, standing, sitting or lying. And then the condition: of those thirty thousand marks every single one must be brought into accord, and if one single mark departs from it the material is consumed and the fire phases fall short, whence the saying that a hair's breadth of difference makes no elixir. The seventeenth quatrain says the same in verse and the commentary repeats the reckoning."@en ;
+    skos:note "The most exactly quantified immunizing clause in this holding. It states a number of opportunities to fail, sets the tolerance at nil, and gives no way of telling from outside which mark went wrong or whether any did. Any run that produced nothing is covered by it, and the practitioner cannot show that it is not, because he cannot account for thirty thousand quarter-hours."@en ;
+    skos:note "The form is the same as the elixir-makers' clause at pmc:JinchengYaocheng, reached by a different route. There the failed batch is refired and always succeeds; here the failed run is referred to a fault too small to have been noticed. In both the outcome that would have told against the recipe has been given somewhere else to be."@en ;
+    pm:cautionsAbout pmp:NeidanHuohou ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, preface, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 3b" ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, verse 17, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 11a" .
+
+pmc:NeidanDuoshu a pm:Yielding ;
+    rdfs:label "Twenty thousand marks against thirty thousand years"@en, "Zwanzigtausend Marken gegen dreißigtausend Jahre"@de ;
+    skos:definition "The preface states an exchange rate between the work and time. Within the twenty thousand marks one may seize the number of thirty thousand years of heaven; the reason given is that the labour of a single mark has in it the seasons of a whole year. It restates the same in two further forms: inwardly one refines in a year the elixir of thirty thousand marks, outwardly one body seizes the number of thirty thousand years; at the larger scale a single day binds an embryo of thirteen thousand five hundred breaths, at the smaller the twelve double-hours carry the breath eighty-four thousand li."@en ;
+    skos:note "Entered because it is a stated quantity and not a figure of speech: the text does the arithmetic twice and corrects its own rounding, giving the year as thirty-six thousand marks against the ten months' thirty thousand. What it asserts is not an experience but a rate, and a rate is the kind of claim that could be wrong."@en ;
+    pm:byPractice pmp:NeidanHuohou ;
+    pm:yieldsCapacity pmc:NeidanShengtaiCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, preface, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 3b-4a" .
+
+pmc:NeidanShengtaiCapacity a pm:Conceptualizing ;
+    rdfs:label "The sage embryo"@en, "Der heilige Embryo"@de ;
+    skos:definition "A body said to form within the practitioner as the work proceeds, described in the preface as flesh and bone growing clear, the skin becoming transparent, substance arising where there was none, and the embryo-breath congealing until the infant shows its form; and in the twentieth quatrain as a child born after one year who rides the crane out through the upper cinnabar field."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, preface and verse 20, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 3b and fol. 11b" .
+
+pmc:NeidanYizaiShengtai a pm:Yielding ;
+    rdfs:label "Ten months carrying and two months bathing make one year"@en, "Zehn Monate Tragen und zwei Monate Baden ergeben ein Jahr"@de ;
+    skos:definition "The last quatrain gives the term: the husband and wife meet, the bridal chamber makes cloud and rain, in one year a child is born and every one of them can ride the crane. The commentary breaks the year down — ten months of carrying the embryo and two months of bathing together make the one year — and says the child comes out through the upper cinnabar field."@en ;
+    skos:note "The only term in this file that is short enough for a person to keep. A year is a span a practitioner could reach and a bystander could ask after, unlike the nine years and three years that stand elsewhere in the literature; and the corpus disputes those, as the node on the disagreement below records."@en ;
+    pm:byPractice pmp:NeidanHuohou ;
+    pm:yieldsCapacity pmc:NeidanShengtaiCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, verse 20, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 11b" .
+
+pmc:NeidanZhuMi a pm:Conceptualizing ;
+    rdfs:label "The elixir weighed out, grain by grain"@en, "Das nach Körnern gewogene Elixier"@de ;
+    skos:definition "The fourteenth quatrain has the two components seized into one place and refined with fire, one grain and then another, from the minute to the manifest. The commentary makes it a schedule by weight: one grain the size of a millet seed is produced each day, so that in thirty days the weight is thirty-eight grains and four hundredths, and in three hundred days three hundred and eighty-four grains, which is a square inch and weighs one catty."@en ;
+    skos:note "The number is the Cantong qi's, and the file says so: three hundred and eighty-four is the count of the lines of the hexagrams, which Weng Baoguang's commentary on the Wuzhen pian gives in the same breath as the three hundred and eighty-four grains of a catty. What is being weighed is therefore a correspondence and not a substance, and the daily increment cannot be checked because nothing is on a scale."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, verse 14, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 9b" .
+
+pmc:NeidanYiqiao a pm:Presupposing ;
+    rdfs:label "The one aperture, which must be had from a mouth"@en, "Die eine Öffnung, die aus einem Mund kommen muss"@de ;
+    skos:definition "The preface makes one thing the condition of everything else. There is in the body an aperture called the mysterious female; it is not the heart, not the kidneys, not the mouth or nose, not the spleen or stomach, not the grain passage, not the bladder, not the cinnabar field and not the upper cinnabar field. Whoever knows this one aperture has in it the winter solstice, the medicine, the fire phases, the bathing and the binding of the embryo. And the condition on the condition: this aperture may not be settled by one's own notion, it must be handed on from mind to mouth, and whoever does otherwise acts at random."@en ;
+    skos:note "Entered as a stated necessity because the consequence of missing it is stated for the whole work at once: without it the run is at random, which is the preface's own word. The construction is worth setting beside the fire-phase node below, since between them they remove both halves of the operation from the written record — the place is not to be found by thinking and the timing is not to be written down."@en ;
+    skos:note "The nine denials are the operative part and are kept in the definition rather than summarised. A list that says where the aperture is not, and gives no positive location, cannot be followed by a reader; that is what makes the oral transmission necessary, and the necessity is stated in the same passage that creates it."@en ;
+    pm:dependentStep pmp:NeidanHuohou ;
+    pm:priorStep pmp:NeidanZhengyanXingchi ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Whoever settles the aperture by his own notion rather than receiving it from mouth to mind is said to be acting at random; and since solstice, medicine, fire phases, bathing and the binding of the embryo are all said to lie in it, the whole operation goes with it." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, preface, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 4a-4b" .
+
+pmc:NeidanLiubuke a pm:Cautioning ;
+    rdfs:label "The six things that may not be done"@en, "Die sechs Dinge, die nicht getan werden dürfen"@de ;
+    skos:definition "Immediately before the passage on the aperture the preface sets six prohibitions in a row, and they cancel one another in pairs: one may not hold fast to non-action, and one may not give it shape in deliberate doing; one may not be mired in visualisation, and one may not cling to holding and guarding; one may not sit withered with a heart of dead ashes, and one may not practise blindly and refine in the dark. The reason given is that one fears not knowing where the material comes from, and fears not knowing the measure of the fire phases."@en ;
+    skos:note "A set of prohibitions in which each pair excludes both a course and its contrary leaves no described course open, and the passage that follows says why: what is left is the aperture, which cannot be reasoned to and must be received orally. The six are therefore not six errors but the argument for the transmission."@en ;
+    pm:cautionsAbout pmp:NeidanHuohou ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, preface, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 4a" .
+
+pmc:NeidanChuanyaoBuchuanhuo a pm:Conceptualizing ;
+    rdfs:label "The sages transmit the medicine and not the fire"@en, "Die Weisen überliefern die Arznei und nicht das Feuer"@de ;
+    skos:definition "The Wuzhen pian states that one may know cinnabar and black lead and still, not knowing the fire phases, be as idle as before; that the whole thing rests on the force of the practice; and that a hair's breadth of difference makes no elixir. Weng Baoguang's comment draws the rule: the making of the golden elixir rests wholly on the metal, a hair's breadth of difference is a thousand li apart, and therefore the sages transmit the medicine and do not transmit the fire. A second poem in the same juan says that the pacts, treatises, scriptures and songs expound the ultimately true and do not set the fire phases down in writing, and that to know where the oral instruction reaches through to the mystery one must discuss it in detail with an immortal; the comment adds that the six hundred chapters of the Record of the Fire are each like the other, that what heaven keeps hidden no sage transmits in writing, and that one must meet a true master and not blunder on alone."@en ;
+    skos:note "This is the structural counterpart of the thirty thousand marks. There the tolerance is nil; here the parameter against which the tolerance would be measured is by doctrine not written down. Together they make a system in which no written instruction can ever be shown to have been followed correctly, and in which a failure therefore always has somewhere to go."@en ;
+    skos:note "The transmission is not concealing this; it is arguing for it, and the argument is about secrecy and not about failure. That the two come to the same thing is an observation of this file and is not in the text."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, in Wuzhen pian zhushi (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 30a" ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, in Wuzhen pian zhushi (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 32a" .
+
+#
+# Where the corpus disagrees with itself about its own timing
+#
+
+pmc:NeidanHuohouBuyongshi a pm:Conceptualizing ;
+    rdfs:label "The fire phases use no hour"@en, "Die Feuerphasen brauchen keine Stunde"@de ;
+    skos:definition "The thirteenth quatrain states it in four lines: the fire phases use no hour, the winter solstice is not at zi, and as for the method of the bathing, the mao and you hours are an empty likeness. The commentary spells it out: in general the fire phases are not the zi hour and the winter solstice, nor the wu hour and the summer solstice; and the bathing is not the mao hour and the spring equinox, nor the you hour and the autumn equinox. Once a man has started the fire on the circuit within his own body, the withdrawing and adding and the bathing are there of themselves, and one may not be bound to the four seasons."@en ;
+    skos:note "The wording of the received text is worth recording because it is contested in the literature. The Hanfenlou facsimile of DZ 1081 reads that the fire phases do not use the hour and that the winter solstice is not at zi; the variant that has them not requiring the hour and asks whether the solstice is at zi at all is not what this recension prints. The reading was checked at the wording for this reason."@en ;
+    skos:note "The doctrine has the preface behind it and is not an isolated aphorism. The preface has already said that whoever knows the one aperture has the winter solstice in it, the medicine in it, the fire phases in it and the bathing in it; the quatrain is the verse form of that sentence. The condition has been moved from the calendar into the body, and with it the answer to the question of when."@en ;
+    skos:note "Its bearing on pmc:AdmissibilityBoundToTheCalendar is stated at that node and not claimed here. This is not a transmission that binds an operation to a calendar and locates the failure in the time; it is a transmission that refuses the binding, in a stream where the binding is otherwise general, and it puts the condition in the practitioner instead."@en ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, verse 13, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 9a" .
+
+pmc:NeidanHuohouDispute a pm:Disputing ;
+    rdfs:label "Whether the fire is set by the calendar"@en, "Ob das Feuer nach dem Kalender gesetzt wird"@de ;
+    skos:definition "Two transmitted works of the same transmission answer the question differently, and a third contradicts itself. The Zhong-Lü chuandao ji takes the timings literally: it makes the times a numbered matter, the year following the rise and fall of yin and yang in heaven and earth, the month following the count of the comings and goings of sun and moon, and the day carrying the four cardinal points, the eight trigrams, the ten stems, the twelve branches, a hundred marks and sixty divisions, all to be divided out according to the Law; and it names not knowing the times as one of the two sufficient causes of a practitioner seeing no result at all. The Jindan sizi denies precisely this: the fire phases use no hour, the winter solstice is not at zi, the bathing hours are an empty likeness, and one may not be bound to the four seasons."@en ;
+    skos:note "The Wuzhen pian is the third party and it holds both positions within one juan of one recension. On one folio it mocks those who take the images literally: the images set in the hexagrams were meant as models, and having got the image one forgets the words; later deluded followers are mired in the images and practise by the hexagram-breaths in the hope of flying up. Weng Baoguang's comment sharpens it — once the fire phases are understood, the hexagram images may all be forgotten and are of no use; today's students instead are lost in them, practise the hexagram-breaths, toil in body and thought, and hope to fly up, which he calls pitiable; one who has the fish forgets the trap, and they hold the trap for the fish and are further from the Way than before. Twenty-five folios later the same commentary sets the fire by the calendar without qualification: from the winter solstice, the first yang, the zi hour, the yang fire is advanced; from the summer solstice, the first yin, the wu hour, the yin tally; and of the second and eighth months it states a consequence — at those two months the fire is to be left off, and adding it will certainly overturn and the returned elixir will run away."@en ;
+    skos:note "The disagreement is not a matter of emphasis, because a consequence hangs on it. The literal side names ignorance of the times as a cause of total failure and names a month in which adding fire destroys the work; the other side says the times are an empty likeness. A practitioner cannot follow both, and the transmission does not say which to follow."@en ;
+    skos:note "A second disagreement of the same kind runs beside it, over the length of the work. The Wuzhen pian commentary, on the poem about the first stirring of the yang, says that the working is to be seized at once and can be completed to term, that it is within a single double-hour, and asks what nine years or three years have to do with it. The staged terms that the later literature made canonical are therefore already being denied inside this corpus, and the one term this file enters, the year of pmc:NeidanYizaiShengtai, comes from the work that denies them."@en ;
+    pm:disputedClaim pmp:NeidanHuohou ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhong-Lü chuandao ji, Lun zhengyan 18, in the Chongkan Daozang jiyao recension (JY 149), juan 3, fol. 55a-55b" ;
+    dcterms:source "Zhang Boduan (ascr.), Jindan sizi, verse 13, with Huang Ziru's commentary (DZ 1081), Zhengtong Daozang, Hanfenlou facsimile, fol. 9a" ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, in Wuzhen pian zhushi (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 5b-6b" ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, in Wuzhen pian zhushi (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 31b-32a" .
+
+pmc:NeidanGuaxiangDispute a pm:Disputing ;
+    rdfs:label "Whether the hexagrams are an instrument or a method"@en, "Ob die Hexagramme ein Werkzeug oder ein Verfahren sind"@de ;
+    skos:definition "The poem holds that the images set in the hexagrams were models, that having the image one forgets the words and the sense is plain of itself, and that later deluded followers are mired in the images and practise by the hexagram-breaths in the hope of flying up. The commentary that stands under it does the opposite of dismissing the apparatus: it lays it out in full, the tripod and furnace as Qian and Kun, the medicine as Kan and Li, those four placed at the centre and exempt from the turning, the remaining sixty distributed through a month at two a day, ending and beginning again like the turning of a wheel, three hundred and sixty-four lines answering to a year with its intercalary remainder and to the three hundred and eighty-four grains of the catty — and only then says that once the fire phases are understood the images may be forgotten."@en ;
+    skos:note "Entered separately from the dispute about the calendar, because it is a different question and the answers do not line up. Here the apparatus is granted and its use is said to be provisional; there the timings are either binding or empty. A transmission can hold the images to be a ladder to be kicked away and still set the fire by the solstice, and this one does."@en ;
+    pm:disputedClaim pmc:NeidanHuohouBuyongshi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Neidan ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, in Wuzhen pian zhushi (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 5b-6a" ;
+    dcterms:source "Zhang Boduan, Wuzhen pian, with Weng Baoguang's commentary (DZ 145), Zhengtong Daozang, Hanfenlou facsimile, juan 2, fol. 6a-6b" .
