@@ -1,0 +1,28 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the trial that has no failing grade
+#
+# Formed from two attested claims, both of which describe a set of ordeals that
+# a candidate must pass and both of which then say what happens to the one who
+# does not pass them all. The answer in each case is the same and is the point
+# of the node: he is graded down, not failed.
+#
+# The counter-search required by SPEC §16 was carried over the holding before
+# this was written and is recorded below, together with the narrowness of the
+# pairing, which is this node's chief weakness.
+#
+
+pmc:TheTrialWithNoFailingGrade a pm:Generalizing ;
+    rdfs:label "The trial with no failing grade"@en, "Die Probe ohne Durchfallen"@de ;
+    pm:generalizedStatement "Where a transmission makes a set of trials or obstacles the condition of its highest attainment, it also states an outcome for the candidate who clears only part of the set, and that outcome is a lesser rank within the same system rather than exclusion from it. The sets are so constructed that a candidate cannot establish in advance which trials he faces or how many he has cleared, so the grading is assigned after the fact and from the outcome."@en ;
+    pm:generalizedFrom pmc:ShangqingShieryanshi, pmc:NeidanChengdi ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The Shangqing material has twelve trials, set at exactly what the candidate's mind does not grasp and his feelings do not reach, with failure to recognise the tester counting as failure; and it reports a man who passed nine and failed three, obtained the elixir and rose, and was made a transcendent only and not a Perfected. The internal alchemy has nine difficulties and ten demons, the demons to be met without acknowledgement and the difficulties covering the whole of a person's circumstances; and it states that one who cannot wholly clear the nine, or is attached to one or two of the ten, is not thereby without the Way but obtains the middling or the lesser completion and becomes a human immortal or an earth immortal."@en ;
+    skos:note "Why the grading matters more than the trials. A pass-or-fail ordeal produces, over a population, a set of people who failed and who could in principle be counted; a graded one produces a set of people who each attained something, and the transmission's own records then contain no failures at all. Both nodes are held in this graph beside narratives in which named men are said to have fallen short and to be still walking in the mountains — which is what the lesser grade looks like from inside."@en ;
+    skos:note "What would refute it: a transmission with a set of trials that states a plain exclusion for partial failure — the candidate obtains nothing, is not of the company, is sent away. The counter-search over the holding found one thing close to that and it is not within scope: the Mithraic material, in a hostile report, has an ordeal in which the candidate who survives receives the highest initiation and the one who succumbs receives a burial. That is pass or fail with no middle, and it would be a counter-case if it were a set of trials; it is a single ordeal, and the statement above is about sets."@en ;
+    skos:note "The weakness is the pairing and it is the same weakness as at pmc:CountedThresholdNeverFallsDue: two Chinese transmissions, one of which names the other's stream as its own antecedent. What the two establish is a property of that stream. The obvious place to widen it is the graded initiations this holding already carries — the Mithraic grades, the Midewiwin degrees, the Ars notoria's conditions on the man impeded by crime — and none of those was examined for this question, because none of them was open."@en ;
+    skos:note "One asymmetry between the two witnesses should not be lost in the generalization. The Shangqing trials are set by persons, the Perfected of the Great Ultimate coming in person to look on, and are therefore in principle reportable by those persons; the neidan difficulties are circumstances of a life and the demons are appearances, so nobody sets them and nobody can report on them. The second is the harder case for anyone wanting to check the grading, and it is the one that comes with an exact catalogue."@en .
