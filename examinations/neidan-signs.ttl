@@ -1,0 +1,34 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — a protocol on one item of the neidan signs
+#
+# The sign list of the Zhong-Lü chuandao ji runs to some thirty-five items in
+# a fixed order, and almost all of them are states the practitioner reports of
+# himself after having been told in advance what to expect. Two are not, and
+# one of those two is measurable with an instrument anyone can build. It is the
+# one taken up here.
+#
+# The protocol is deliberately narrow. It does not test the sequence, which
+# would require agreeing first on what the earlier items mean, and it does not
+# test the claim that the practice produces the sign; it tests whether the
+# stated capacity is present in someone the transmission would place at that
+# stage.
+#
+
+pmp:NeidanHundredPacesExamination a pm:Testing ;
+    rdfs:label "Whether the practitioner sees a fine hair at a hundred paces"@en, "Ob der Übende auf hundert Schritt ein feines Haar sieht"@de ;
+    skos:definition "A protocol on the item in the sign sequence which states that the practitioner comes to see, with the eye, a fine autumn hair at a hundred paces. It is examinable because both terms are given: a distance and a target, and both are of the kind an optometrist measures without needing to know anything about the practice."@en ;
+    pm:tests pmc:NeidanZhengyan ;
+    pm:falsifiedBy "A practitioner whom the transmission places at or beyond this item of the sequence — that is, one for whom the earlier items are affirmed by his own teachers — and whose visual acuity at a hundred paces, measured against a standard target, does not exceed that of matched controls of the same age. The claim names a distance and an object and attaches no condition to the observer, so a group of such practitioners not differing from controls settles it." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the sequence recorded at pmc:NeidanZhengyan" ;
+    pm:protocolUpdated "2026-09-11" ;
+    skos:note "No case has been collected. The obstacle is the staging and not the measurement: the sequence is ordered and the transmission's own criterion for placing a practitioner at a given item is his report of the items before it, several of which are private. Any protocol therefore has to take the placement from the tradition and measure only the last step, which is what the falsifying condition above does."@en ;
+    skos:note "The physiological limit is worth stating before any case is collected, because it bounds what a positive result could mean. A hundred paces is on the order of a hundred and fifty metres; resolving a hair at that distance would be an acuity far outside the range the human eye is built for, so a positive result would not be a strong version of ordinary good sight but a different claim altogether. That is a reason to run the test, not against it."@en ;
+    skos:note "The second checkable item of the same sequence is deliberately not made a protocol here: old scars and blemishes vanishing of themselves is observable, but scars do fade, and a protocol would have to fix in advance what counts as vanishing. It is recorded at the claim node and left there."@en ;
+    skos:note "Why this sequence and not the rest of it. The same chapter states, immediately above the sequence, that a practitioner who holds to the work and sees no result has either taken the wrong master or misjudged the times — see pmc:NeidanFeidaofuren. That clause covers every negative outcome of every item in the list, which is why the protocol is set on the one item where a negative outcome can be established without the practitioner's cooperation."@en .
