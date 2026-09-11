@@ -1,0 +1,30 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the counted threshold that never falls due
+#
+# Formed from three attested claims, all of which name a number at which an
+# operation is to take effect. The number is what makes such a claim unusual:
+# most of what this holding carries promises an attainment and leaves the date
+# open, so no moment ever arrives at which the promise has failed. A counted
+# threshold does name that moment. The generalization is about what the
+# transmissions do with it when it comes.
+#
+# The counter-search required by SPEC §16 was carried over the holding before
+# this was written, and what it turned up is recorded below rather than left
+# out.
+#
+
+pmc:CountedThresholdNeverFallsDue a pm:Generalizing ;
+    rdfs:label "The counted threshold never falls due"@en, "Die gezählte Schwelle wird nie fällig"@de ;
+    pm:generalizedStatement "Where a transmission fixes a number of repetitions at which a prescribed operation is to take effect, and the effect is not establishable apart from the operation itself, the same transmission provides in advance for the number being reached without the effect: either by prescribing that the operation be continued past the number, or by assigning the shortfall to a nameable act of the operator. It does not leave the completed count without effect standing as an outcome that would tell against the claim."@en ;
+    pm:generalizedFrom pmc:ShangqingWanbianYunjia, pmc:JinchengYaocheng, pmc:ShangqingZhoushiSanxiong ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The three claims do the same work by two different devices. The recitation of the five thousand words is to fetch the cloud chariot at ten thousand readings, and the same sentence says that a reader who has completed the ten thousand and not departed is to read it twice a month until it comes. The elixir is finished when the gold forms, and where the gold does not form the batch is to be sealed and fired again for the same count of days, whereupon, the chapter says, there is no case in which it does not form. The third works the other way: three brothers recited the same book, one reached ten thousand and rose, and the other two are reported at nine thousand seven hundred and thirty-three, the shortfall caused by their having set the book down to look at a deer and made irrecoverable by the book's destruction. The exact number is stated so that the failure has a place to attach to."@en ;
+    skos:note "What would refute it, and it is an ordinary thing to look for: a transmission that names a count, and says that a practitioner who completes the count without the effect has established something about the operation — that it does not work, that it is not for him, that the recipe is to be revised — rather than something about himself. The statement is about what the transmission provides, not about what practitioners did, so a single passage of that kind settles it."@en ;
+    skos:note "The counter-search over the holding found two things that come close and neither of which falls inside the scope. The Kongo corpus reports a charm sold as making the purchaser proof against the gun, and records that when it was seen that the purchasers died like ordinary mortals the traffic ceased; that is a failure not explained away, but it is a single trial and no count is named. The Mithraic ascent material, in a hostile report, says what happens if the operation does not work and the answer is that the operator dies; again no count. Both are entered in the holding and neither is a counted threshold, which is why the scope clause of the statement above says what it says."@en ;
+    skos:note "The limit of the derivation, stated because it is the weakness a later reader would otherwise have to find. Two of the three claims come from one transmission and the third from another with which a route is not in dispute, both Chinese and both within a few centuries. What the three establish is therefore a property of that stream. The way to widen it is not to restate it more boldly but to look for counted thresholds elsewhere: the counted repetitions of the Notory Art are in this holding and attach no rule of either kind to a completed count, which is a silence and not a third case."@en ;
+    skos:note "Its relation to pmc:NoFailedRunCountsAgainstTheOperation is containment and not duplication, and one node is shared. That statement is about operations whose success cannot be established apart from them at all; this one is about the narrower class that also names a number, and it says something the broader one cannot: that the device is supplied at the exact point where the claim had made itself checkable."@en .
