@@ -1,0 +1,517 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Shangqing transmission, read at the Zhen'gao
+#
+# Opened from the registry entrance of SPEC §14 and chosen within it on the
+# testability criterion: the registration said of this transmission that its
+# principal work is a dated record of revelations with the recipient named,
+# and a corpus that dates its own sessions is a corpus that can be expected to
+# state intervals, conditions and signs. It does. What it states is set out
+# below, and the largest part of it is the failure side.
+#
+# Order of the file: the tradition and the correction its reading forced, then
+# the receiving the whole corpus rests on and the compiler's own discrimination
+# of what is genuine in it, then the practices, then the claims that carry an
+# interval, then the conditions stated as necessary, then the cautions, then
+# the places where the transmission says what a failure is to be assigned to,
+# then the four disagreements the work carries inside itself.
+#
+# Edition note. Read in the Zhengtong Daozang text as reproduced in the
+# Hanfenlou facsimile (DZ 1016, twenty juan, Taixuan section), whose folio
+# numbering the citations use: juan, folio, recto or verso. The digitisation
+# used carries that reproduction's page breaks, which is why the citations can
+# name a folio at all; the route by which it was reached is a property of the
+# tooling and stands in AGENTS.md, not here. No critical edition and no
+# translation was used for any node below; where the secondary literature was
+# consulted it was for the landscape and it carries nothing in this file.
+#
+# Read at the wording, in the Chinese: juan 5, 6, 7, 8, 9 and 10 complete,
+# juan 19 and 20 complete, and the block on release from the corpse at
+# 4.15a-17a. Juan 1 to 3, the remainder of juan 4, and juan 11 to 18 were
+# searched by term over the five owed kinds and the hits read in their context;
+# what that turned up was, with the exceptions cited below, repetition of
+# instructions already read in juan 9 and 10. The remainder of those juan is
+# therefore not harvested, and this note says so rather than letting the
+# coverage state say it.
+#
+
+pmt:Shangqing a pm:Tradition ;
+    rdfs:label "Shangqing"@en, "Shangqing"@de ;
+    skos:definition "The Daoist transmission of visualised journeys, of deities resident in the body, and of nocturnal encounters recorded as they were received, carrying alongside the instructions a dense layer of stated intervals, prohibitions and conditions under which a practice is said to produce nothing."@en ;
+    skos:note "Chosen from the registry on the testability criterion, and the reading corrected the contact route. The registration entered it as disputed. It is entered here as documented, and the ground is inside the text that was read rather than in the scholarship. At 6.6a-6.10a the work places in the mouths of five named Perfected a sequence of sayings that is recognisable, clause by clause, as the Buddhist Scripture in Forty-Two Sections: practising the Way is bitter and not practising it is bitter; the root of craving plucked like beads from a string; the man under the Way like an ox in deep mud; the question how long a life lasts, answered first in days, then in the time of a meal, then in a breath; the Way tasted like honey, sweet through the whole mouth; the slanderer who spits at heaven and fouls himself; the household held worse than fetters; the log floating to the sea without touching either bank; and the lute string, slack, taut and rightly tuned. At 9.19b-9.20a the work carries the dream of Emperor Ming of Han and the embassy that fetched the scripture in forty-two sections, and at 9.20b-9.21b the Fangzhu islands are set out as an eastern and older home of that same teaching, with monks, stupas and men who do not die. A transmission that reproduces another's text and then claims to be its source has a route to it, whatever the direction of the claim."@en ;
+    skos:note "The compiler says part of this himself, and the two places where he does are the reason the correction rests on the reading and not on an inference from resemblance. At 9.20a-9.20b he notes that the account of the dream agrees in rough outline with the outer books, that is with writings that are not revelations, adds that there was a Buddha in Chang'an long before, objects that the scripture came from India and not from the Yuezhi, and concludes that this passage may not be a genuine receiving at all but Yang Xi copying an old story, while maintaining that the writings of the Perfected do repeatedly treat Buddhist matters. At 6.10a, under the whole block of sayings, he notes that the five Perfected named as speakers descend very seldom, that he suspects the block is those speakers recounting old matter, and that it was not necessarily received by Yang Xi in person."@en ;
+    skos:note "What the correction does not settle. The route is documented at the point at which the material stands in the received text, which is the recension Tao Hongjing assembled around the turn of the sixth century out of autographs, copies and matter he could not place. Whether the sessions of the three hundred and sixties had such a route is a different question and is not decided here; the predicate holds one value and this is the one the reading supports. The received text is besides not the whole of what once stood, and the file says where it can see that."@en ;
+    skos:note "Corpus note. The corpus read is one work of the three the registration named, and it is the one that carries the record. The Huangting neijing jing and the Dadong zhenjing were not opened; the Zhen'gao speaks of both, prescribes the recitation of the first at 9.23b and makes the second the highest of its methods at 5.11b and 5.14b-15a, and those places are entered below as this work's claims about them and not as places in them."@en ;
+    pm:principalCorpus "Tao Hongjing, Zhen'gao; Huangting neijing jing; Dadong zhenjing" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Tao Hongjing, Zhen'gao 6.6a-6.10a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 6" .
+
+#
+# The receiving the corpus rests on, and the compiler's discrimination
+#
+
+pmc:YangxiShouzhen a pm:Receiving ;
+    rdfs:label "Yang Xi writes out what the Perfected dictate"@en, "Yang Xi schreibt nieder, was die Vollkommenen diktieren"@de ;
+    skos:definition "The work states of itself that the upper Clarity scriptures entered the world in the second year of the Xingning period of the Jin, a jiazi year, when the Lady Wei of the Southern Peak descended to the retainer Yang and had him write out in clerical script what was dictated, for transmission to the guard commandant Xu and his third son; and that the surviving autographs amount to some ten scrolls of scripture and forty-odd scrolls of received matter."@en ;
+    skos:note "The interest of the node is not the claim but its bookkeeping. The corpus dates its sessions to the night, names the human hand that wrote, names the two men the writing was for, and the compiler four hundred years later works from the sheets themselves. Very little in this holding is transmitted with that much of its own machinery visible, and the machinery is what makes the dispute nodes below possible at all."@en ;
+    pm:receivedBy "Yang Xi 楊羲, retainer of the Wang ducal establishment, writing in clerical script" ;
+    pm:claimedSpeaker "The Perfected: the Lady Wei of the Southern Peak, the Lady of Purple Tenuity, the Lady Right Blossom of Cloud Forest, the Lord of the Western Citadel, the two younger Mao lords in their offices of Fate and Register, and others named at their several descents" ;
+    pm:receptionCircumstance "Stated as nocturnal descents at which the Perfected spoke and Yang Xi wrote; the writing was then copied out again for the elder Xu, so that a session leaves an original hand and a fair copy. The compiler says the fair copies are the tidy ones and the hurried, blotted and corrected sheets are the ones written while the words were coming. Dates are given for many sessions and the compiler orders the whole by them where he can, saying at 19.4b that beyond one year the dates run out of sequence and that sheets carrying no date at all he leaves where they were." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 19.9b-19.10a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 19" .
+
+pmc:TaoHongjingZhenwei a pm:Systematizing ;
+    rdfs:label "The compiler's rule for telling the genuine sheets from the rest"@en, "Die Regel des Kompilators für die Scheidung der echten Blätter"@de ;
+    skos:definition "The order the work is in was made afterwards and by a stated method, which the compiler sets out. The criterion is the hand: he distinguishes the three men's writing, marks each item with whose hand it is in, and where he cannot recognise a hand he says so and labels the unidentified hands with the cyclical characters so that a reader can keep them apart. He states that later hands have added, cut and altered words, that most of this is the work of the younger Xu and his son, and that much of it is empty. He states that he does not reproduce the hands in facsimile, so that the distinction he makes cannot be checked from his book; that where a character is wrong he leaves it and rings it rather than correcting it; and that where sheets had rotted away he has joined what was left and marked the joins."@en ;
+    skos:note "Entered as an ordering act and not as a testimony, because that is what it is: no Perfected said any of it. Its value is that it is one of the few places in this holding where a transmitter states his criterion of authenticity, states its limits, and concedes in the same breath that his edition does not carry the evidence the criterion runs on."@en ;
+    pm:compiledBy "Tao Hongjing 陶弘景, the recluse of Huayang" ;
+    dcterms:date "499" ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 19.5b-19.7b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 19" .
+
+#
+# The practices
+#
+
+pmp:ShangqingCunsi a pm:Practicing ;
+    rdfs:label "Actualising"@en, "Vergegenwärtigen"@de ;
+    skos:definition "Holding a thing before the inner sight until it is present: the sun in the heart, the moon in the upper cinnabar field, the spirits of the body at their stations, the five planets descending into the chamber. The corpus treats it as an operation with a prescribed posture, a prescribed count of swallowings and grindings of the teeth, and a stated period after which its effect is to appear."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.5a-9.5b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmp:ShangqingAnmo a pm:Practicing ;
+    rdfs:label "The rubbing regimen"@en, "Die Reibeordnung"@de ;
+    skos:definition "A fixed sequence of manipulations of the face and head performed on waking and before sleeping: the palms rubbed hot and drawn over the face, the small hollow behind the eyebrows pressed thrice nine times, the hands drawn up the forehead into the hairline, the ears turned, the eyes pressed at their four corners, the hair combed many times. The corpus gives it as the whole content of a scripture of the Most High and hangs several of its stated intervals on it."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.6b-9.7b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmp:ShangqingFuwu a pm:Practicing ;
+    rdfs:label "Ingesting the mist"@en, "Das Einnehmen des Nebels"@de ;
+    skos:definition "Performed at dawn in the sleeping chamber: the eyes closed and the five depots looked at inwardly, the breath expelled twenty-four times, the five colours of vapour seen gathering on the face and taken in through the mouth fifty times, sixty swallowings, an incantation, then seven grindings of the teeth and seven swallowings. Given as transmitted by the jade consort of the eastern sea to a woman of the Han."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.1b-10.2a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmp:ShangqingFusanqi a pm:Practicing ;
+    rdfs:label "Ingesting the three vapours"@en, "Das Einnehmen der drei Dünste"@de ;
+    skos:definition "Green, white and red vapour seen as threads coming from beneath the sun in the east straight into the mouth, drawn in ninety times until sated, performed every morning with the eyes half closed."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.1a-10.1b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmp:ShangqingShouxuanbai a pm:Practicing ;
+    rdfs:label "Keeping the dark and the white"@en, "Das Bewahren des Dunklen und des Weißen"@de ;
+    skos:definition "Black vapour held in the upper cinnabar field, white in the heart, yellow at the navel, the three grown into a cloud that covers the body, turned to fire and made to circle it until inside and outside are one, followed by a hundred and twenty ingestions of breath."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.2a-10.2b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmp:ShangqingFuriyue a pm:Practicing ;
+    rdfs:label "Ingesting the images of sun and moon"@en, "Das Einnehmen der Bilder von Sonne und Mond"@de ;
+    skos:definition "An image the size of a coin held red in the heart with nine rays rising from it to the teeth and turning back into the stomach, the eyes half closed until heart and stomach are seen clearly, then breath expelled and the fluid swallowed thirty-nine times, three times a day; the moon performed at night in the upper cinnabar field with ten white rays. The corpus gives several versions of this and says at 9.21b that the Perfected who have already obtained the Way go on performing it."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.22a-9.22b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmp:ShangqingSongjing a pm:Practicing ;
+    rdfs:label "Reciting a scripture to a count"@en, "Das Rezitieren einer Schrift bis zur Zahl"@de ;
+    skos:definition "Reading a named text through a stated number of times, the number being the operative quantity: the five thousand words of the Daode jing ten thousand times, the inner scripture of the Yellow Court once each night before sleep, the Great Cavern scripture ten thousand times. The corpus counts the readings rather than the years and converts between the two."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.23b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmp:ShangqingAnshanyuan a pm:Practicing ;
+    rdfs:label "Pressing the mountain source"@en, "Das Drücken der Bergquelle"@de ;
+    skos:definition "The tongue turned back, the fluid swallowed three times, then the second and third fingers of the left hand set in the hollow beneath the nose, inside the septum, and pressed thirty-six times without lifting or losing the count, followed by seven grindings of the teeth, the palm laid over the nose and an incantation. Prescribed on entering a dangerous road or a shrine and wherever the practitioner has a misgiving."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.8b-10.9a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmp:ShangqingFushi a pm:Practicing ;
+    rdfs:label "Ingesting the drugs"@en, "Das Einnehmen der Mittel"@de ;
+    skos:definition "The compounding and taking of prepared substances: atractylodes boiled down with honey and dates, sesame oil rendered with leek, mineral preparations taken by the knife-point measure. The corpus gives quantities, sequences of steps, daily doses and a graded timetable of effects, and it gives beside them the conditions under which the same drug is said to do nothing."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.4a-10.4b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmp:ShangqingXuedao a pm:Practicing ;
+    rdfs:label "The course of study"@en, "Der Gang des Lernens"@de ;
+    skos:definition "The whole undertaking as this corpus conceives it: a course entered under a master, held to over decades, sustained against the trials, and assessed at its end by an office that grades the outcome. The corpus speaks of it as a single thing with its own conditions of failure, distinct from any one of the techniques carried out within it."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.12a-5.12b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+pmp:ShangqingJigong a pm:Practicing ;
+    rdfs:label "Accumulating merit"@en, "Das Ansammeln von Verdienst"@de ;
+    skos:definition "Acts of benefit performed and reckoned up, treated in this corpus as a countable quantity that stands in a fixed relation to what is obtained and that passes to descendants when it falls short."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.16b-5.17a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+#
+# The capacities, each with the interval the corpus attaches to it
+#
+# This is the part the transmission was opened for. Almost nothing here is
+# stated without a term, and several of the terms are attached to an outcome
+# a bystander could check.
+#
+
+pmc:ShangqingYeshu a pm:Yielding ;
+    rdfs:label "Writing by night after a year of the rubbing"@en, "Nach einem Jahr Reiben bei Nacht schreiben"@de ;
+    skos:definition "The rubbing regimen performed daily is said to make the eyes clear of themselves, and the corpus states the term and the test together: in one year one can write in the dark. The same passage adds that it may be done unobtrusively among other people and that one should not say what one is doing."@en ;
+    skos:note "Entered first among the intervals because of its form. The stated outcome is an ordinary act performed in ordinary conditions, it is dated to a term, and a person who has done the thing for a year either can do it or cannot. The corpus supplies no clause here that would cover the negative case, which distinguishes this claim from most of its neighbours."@en ;
+    pm:byPractice pmp:ShangqingAnmo ;
+    pm:yieldsCapacity pmc:ShangqingYeshuCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.6b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingYeshuCapacity a pm:Conceptualizing ;
+    rdfs:label "Seeing to write in the dark"@en, "Das Sehen, um im Dunkeln zu schreiben"@de ;
+    skos:definition "The ability to write without light, given in this corpus as the plain consequence of clear eyes and not as a vision or a state. A saying of the Perfected quoted in the same passage puts it as a maxim: if you would write by night, cultivate the constant abode, the name the corpus gives to the hollow behind the eyebrows."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.6b-9.7a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingCheshi a pm:Yielding ;
+    rdfs:label "Seeing and hearing beyond the range, and the clause that covers the first attempts"@en, "Sehen und Hören über die Reichweite hinaus, und die Klausel für die ersten Versuche"@de ;
+    skos:definition "Lying with the eyes closed, the breath made faint and the body settled so that a person beside one does not notice, the practitioner looks and listens inward to the four quarters and sets eye and ear ten thousand li beyond the body; long practice is said to bring sight of what is ten thousand li away, and concentrated practice sight of what is a million li away, with the ears constantly hearing the sound of metal and jade and of strings and pipes. A second passage gives the term for a related working of the eyes and ears: about a year for them to become acute, longer for sight through a thousand li."@en ;
+    skos:note "The passage states its own null result in advance and disposes of it. It says that when this is first done there is really nothing, not even anything vague, and that with long persistence one enters the marvel of itself. That sentence is the whole of what the transmission offers a practitioner who finds nothing, and it is the reason this claim and the one above it are not of the same kind, although they stand four folios apart in the same section."@en ;
+    pm:byPractice pmp:ShangqingCunsi ;
+    pm:yieldsCapacity pmc:ShangqingCheshiCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.5a-9.5b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.11b-9.12a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingCheshiCapacity a pm:Conceptualizing ;
+    rdfs:label "Penetrating sight and hearing"@en, "Durchdringendes Sehen und Hören"@de ;
+    skos:definition "Seeing what lies beyond the range of the eye and hearing what lies beyond the range of the ear, given in this corpus in stated distances and paired with a standing auditory sign, the constant sound of metal and jade in the ears."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.5a-9.5b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingRizaixin a pm:Yielding ;
+    rdfs:label "One year, five years, eighteen years, and no shadow at noon"@en, "Ein Jahr, fünf Jahre, achtzehn Jahre, und kein Schatten am Mittag"@de ;
+    skos:definition "Of the sun held in the heart the corpus states a graded timetable: performed three times a day, in one year illness is gone, in five years the body has a lustre, in eighteen years the Way is necessarily obtained, one walks in the midst of the sun casting no shadow, and a hundred demons and a thousand baleful influences are kept off."@en ;
+    skos:note "The third term is the most checkable claim in the work. Casting no shadow at noon is a public fact about a body in daylight, the term after which it is to hold is stated exactly, the word used of the outcome is one of necessity, and no condition is attached that would exempt a practitioner of eighteen years' standing who casts one. The protocol built on it stands in examinations/shangqing-intervals.ttl."@en ;
+    skos:note "The first two terms are of another kind and are kept in the same node because the passage states them in one breath. Illness gone in a year and a lustre on the body in five are outcomes with a high base rate and no stated measure, and nothing in the passage says how either is to be established."@en ;
+    pm:byPractice pmp:ShangqingFuriyue ;
+    pm:yieldsCapacity pmc:ShangqingWuyingCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.22a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingWuyingCapacity a pm:Conceptualizing ;
+    rdfs:label "Casting no shadow in the sun"@en, "Keinen Schatten in der Sonne werfen"@de ;
+    skos:definition "Walking in the midst of the sun without a shadow, given in this corpus as the mark of a body that has taken the sun into itself and as one of the things obtained at the end of a stated term."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.22a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingSanqiShinian a pm:Yielding ;
+    rdfs:label "Ten years of the three vapours"@en, "Zehn Jahre der drei Dünste"@de ;
+    skos:definition "Of the three vapours drawn in from beneath the sun the corpus says that after ten years the three colours of vapour are present in the body of themselves and the practitioner thereupon attains transcendence, and it adds a judgement of the method that is unusual in this work: the method is meagre but the thing is much verified."@en ;
+    skos:note "The claim stands twice, once in the section of instructions and once in the topographical section where the man it is told of is placed in his posthumous office, and the second telling repeats the verdict that the thing is much verified. The corpus nowhere says what the verification consisted in or who carried it."@en ;
+    pm:byPractice pmp:ShangqingFusanqi ;
+    pm:yieldsCapacity pmc:ShangqingSanseqiCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.1a-10.1b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 13.7a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 13" .
+
+pmc:ShangqingSanseqiCapacity a pm:Conceptualizing ;
+    rdfs:label "The three colours of vapour present in the body"@en, "Die drei Farben des Dunstes im Körper"@de ;
+    skos:definition "A state in which the green, white and red vapours are said to be in the body of themselves and no longer to require drawing in, given as the condition immediately preceding transcendence."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.1b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmc:ShangqingEmengSannian a pm:Yielding ;
+    rdfs:label "Three years of the dream rite, and dreams that are all foresight"@en, "Drei Jahre des Traumritus, und Träume, die sämtlich Vorschau sind"@de ;
+    skos:definition "Against bad dreams the corpus prescribes, on waking, treading the point beneath the nose twice seven times with the left hand, striking the teeth twice seven times, and an incantation naming the three cloud-souls and the seven white-souls; and it states the term and the outcome: the vapour that makes bad dreams is shut beneath the three passes, and after three years dreams come only when the spirits respond to a summons, every dream being as clear as a sight of what is to come, with no further ill omen or unlucky imagining."@en ;
+    skos:note "Stated with a term, a stated end state and an observable that another person could ask after, which is what puts it in this file. The corpus names the three causes of recurrent bad dreams at the head of the same passage, so the claim has a doctrine behind it and is not a bare promise."@en ;
+    pm:byPractice pmp:ShangqingCunsi ;
+    pm:yieldsCapacity pmc:ShangqingMengjianCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.16a-9.16b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingMengjianCapacity a pm:Conceptualizing ;
+    rdfs:label "Dreams as sight of what is to come"@en, "Träume als Sicht des Kommenden"@de ;
+    skos:definition "A state of dreaming in which, the corpus says, dreams arise only at the prompting of the spirits and each is as distinct as a view of a coming thing; given as the end point of a three-year practice and not as an inborn faculty."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.16b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingWanbianYunjia a pm:Yielding ;
+    rdfs:label "Ten thousand readings, and the rule for when the chariot does not come"@en, "Zehntausend Lesungen, und die Regel für den Fall, dass der Wagen ausbleibt"@de ;
+    skos:definition "Of the five thousand words of the Daode jing the corpus says that at ten thousand readings the cloud chariot comes to fetch the reader; and it states in the same sentence what is to be done if the ten thousand are complete and the reader has not departed, namely to read it twice a month until the chariot arrives and then go."@en ;
+    skos:note "The second half is the reason this node exists. The claim names an exact quantity, which makes it the kind of statement a run could fail, and the same sentence removes the failure by converting the threshold into a standing obligation. What would have been the falsifying outcome, ten thousand readings and no chariot, is provided for as a normal case before anyone has reached it."@en ;
+    skos:note "The corpus gives a second and independent reckoning of the same operation immediately below, and its own compiler checks the arithmetic and finds it wrong. The night-time reading of the inner scripture of the Yellow Court, once a night for twenty-one years, is said to make ten thousand times; the compiler notes that once a night for twenty-one years does not come to ten thousand and proposes either that the figure of twenty-one is corrupt or that the true rate is two or three a night. The same passage stands again at 15.10a with the same note."@en ;
+    pm:byPractice pmp:ShangqingSongjing ;
+    pm:yieldsCapacity pmc:ShangqingYunjiaCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.23b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingYunjiaCapacity a pm:Conceptualizing ;
+    rdfs:label "Being fetched by the cloud chariot"@en, "Vom Wolkenwagen geholt werden"@de ;
+    skos:definition "Departure from the world in a conveyance said to be sent for the practitioner, given in this corpus as the outcome of a counted recitation and distinguished from release through the corpse, which it ranks below."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.23b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingZhoushiSanxiong a pm:Conceptualizing ;
+    rdfs:label "Nine thousand seven hundred and thirty-three"@en, "Neuntausendsiebenhundertdreiunddreißig"@de ;
+    skos:definition "Three brothers of the Zhou are said to have studied in the Chang mountains for ninety-seven years and to have been given seven scrolls of a plain-silk book, which they recited together. A white deer appeared at the mountain's edge; the two younger set the book down to look at it, the elder did not break off. The elder completed ten thousand recitations and flew off as a transcendent; the two younger had reached nine thousand seven hundred and thirty-three, and when they took up the book again the stone chamber burst into flame and burned it, so that they did not obtain transcendence and are still walking in the Chang mountains."@en ;
+    skos:note "Entered because of the number. A transmission that sets a threshold ordinarily leaves the shortfall unspecified; this one names it to the unit and attaches the failure to it, which makes the threshold a real edge rather than an encouragement. The story does a second thing at the same time: the loss of the book is the punishment for the interruption, so the shortfall is at once the cause of the failure and its effect, and no one who stopped short could afterwards make up the difference."@en ;
+    skos:note "The corpus is consistent here. The same section states at 5.14b-15a that the Great Cavern scripture read ten thousand times makes a transcendent and calls this the highest of the methods of transcendence, and at 5.11b that one who has that scripture needs no elixir. The threshold in this story is the same quantity applied to a different book."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.6a-5.6b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+pmc:ShangqingZhongzhu a pm:Yielding ;
+    rdfs:label "Bamboo planted north of the inner chamber"@en, "Bambus nördlich der inneren Kammer gepflanzt"@de ;
+    skos:definition "A Perfected woman, asked about a want of heirs, cites a text for the doctrine that bamboo is the essence of the northern pivot, receives its vapour from a named lodge, and is accordingly hollow within, holds a doubled shade, and sets root and bears seed in great number; and she directs that bamboo be planted outside the north wall of the inner chamber and the finer ones walked among, whereupon heaven will be moved to grant offspring, the pregnancy will be preserved and the child long-lived. The passage calls this the secret rule of the men of the dark and says that those who carry it out much verify it."@en ;
+    skos:note "One of the few claims in the corpus whose antecedent and consequent are both public. Households either plant bamboo north of an inner room or they do not, and they either have children afterwards or they do not, and the passage attaches no condition to the practitioner's state. The protocol built on it stands in examinations/shangqing-intervals.ttl."@en ;
+    skos:note "The reasoning is stated and is worth keeping with the claim, because it is the form of inference the corpus runs on throughout: the plant is fertile and is assigned to the north, the north is the quarter of the pivot, therefore the plant set in the north of a dwelling transfers its fertility to the household. Nothing in the passage rests on an observation of households."@en ;
+    pm:byPractice pmp:ShangqingCunsi ;
+    pm:yieldsCapacity pmc:ShangqingJisiCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 8.9b-8.10a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 8" .
+
+pmc:ShangqingJisiCapacity a pm:Conceptualizing ;
+    rdfs:label "Continuation of the line"@en, "Fortsetzung der Linie"@de ;
+    skos:definition "Offspring obtained where they were wanting, with the pregnancy preserved and the child reaching a long life; given in this corpus as something a household arrangement can procure and not as something the practitioner's own cultivation procures."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 8.10a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 8" .
+
+pmc:ShangqingGongman a pm:Yielding ;
+    rdfs:label "The merit reckoning, and what falls to the son and the grandson"@en, "Die Verdienstrechnung, und was auf Sohn und Enkel fällt"@de ;
+    skos:definition "Merit accumulated to a full thousand obtains transcendence even where there are faults; merit of three hundred, where the faults cannot be offset against it, obtains transcendence for the son; merit of two hundred, for the grandson. One without fault and also without merit obtains it on the strength of forebears' merit, which the corpus calls the surplus left over by those before. One without resolve and with many faults may become rich and honoured but is not to hope for transcendence."@en ;
+    skos:note "Entered as the corpus's own account of what becomes of a run that produced nothing in the practitioner's lifetime. The quantity is exact, the offsetting is explicit, and the outcome is displaced by one or two generations, so that the absence of any result in the person who did the work is provided for inside the doctrine. This is the same office that the trials perform elsewhere in the same section, reached by arithmetic instead of by narrative."@en ;
+    pm:byPractice pmp:ShangqingJigong ;
+    pm:yieldsCapacity pmc:ShangqingYunjiaCapacity ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.16b-5.17a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+#
+# What the corpus states as necessary first
+#
+
+pmc:ShangqingXianzhibing a pm:Presupposing ;
+    rdfs:label "Treating the illness before the practice"@en, "Die Krankheit vor der Praxis behandeln"@de ;
+    skos:definition "The corpus states that one who would nourish life must first treat his illness, so that the body is not left with depleted blood, diminished marrow or fouled fluids, and that without this first step ingesting drugs and circulating the breath are of no benefit to the body."@en ;
+    skos:note "The consequence is not stated abstractly but as a case with a name and a term, and the case is the reason this node is entered as a stated necessity rather than a prescribed order. A practitioner called Wang Zhongfu is said to have drawn in the two luminaries and fed on the aurora for more than forty years and to have felt no benefit at all, while a disciple of his ascended in daylight after eighteen. The Perfected of the Southern Peak then descended and told him the cause: a great illness in his body, his marrow palace diminished and his sinews unfed, so that consorting with the luminaries did his body no good. He treated the illness, practised a further eighteen years, and ascended."@en ;
+    skos:note "The structure is worth stating plainly, because the file turns on it in several places. Forty years of a prescribed practice produced nothing; the prescription was not revised; a defect in the practitioner, not discoverable by him and disclosed only afterwards by an authority, was supplied as the explanation; and the same practice then worked. The passage is at the same time the corpus's one useful clinical rule, which is why it stands here as a prerequisite and not only as a caution."@en ;
+    pm:dependentStep pmp:ShangqingFuriyue ;
+    pm:priorStep pmp:ShangqingFushi ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Ingesting drugs and circulating the breath are said to be of no benefit to the body, and the corpus illustrates this with a practitioner who felt no benefit whatever from more than forty years of the practice because of an illness he did not know he had." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.17b-10.18b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmc:ShangqingErshisishen a pm:Presupposing ;
+    rdfs:label "The four and twenty spirits, and what is refused to those who do not hold them"@en, "Die vierundzwanzig Geister, und was denen versagt bleibt, die sie nicht halten"@de ;
+    skos:definition "Citing two named registers, the corpus states that one who does not actualise the four and twenty spirits and does not know the names of the three times eight luminaries may not become a subject of the Great Peace and may not become a servant of the Later Sage."@en ;
+    skos:note "The consequence is stated as an exclusion from a future dispensation rather than as an injury, which is the weaker of the two forms this corpus uses but is still a stated consequence and not a bare instruction. The passage stands inside a set of answers to questions the elder Xu had put, so the prerequisite is given as a reply to a practitioner and not as a rubric."@en ;
+    pm:dependentStep pmp:ShangqingXuedao ;
+    pm:priorStep pmp:ShangqingCunsi ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "One may not become a subject of the Great Peace and may not become a servant of the Later Sage." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.2b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingFangyaoDijie a pm:Presupposing ;
+    rdfs:label "The ladder of the methods, and what each is worthless without"@en, "Die Leiter der Methoden, und wovon jede ohne das andere nichts taugt"@de ;
+    skos:definition "The corpus sets its methods in a graded order and states the failure at each step. One who eats the drugs of plants and trees without knowing the chamber arts and the circulating of the breath and the guiding and pulling takes the drugs to no benefit. One who knows only the chamber arts, the guiding and pulling and the circulating of the breath, and does not know the method of the divine elixir, likewise does not obtain transcendence. One who obtains the golden liquor and the divine elixir requires no other art and becomes a transcendent at once. One who has the Great Cavern scripture requires not even the elixir: read ten thousand times, it suffices."@en ;
+    skos:note "The chain is the clearest statement in the work of how it ranks what it teaches, and each link carries its own failure clause, which is why it is entered as a prerequisite and not as a classification. The compiler adds a gloss narrowing the first link: what is meant is that one who only takes the drugs and cultivates without engaging in intercourse will not obtain long life, and that one who abstains altogether and merely takes the drugs can obtain transcendence."@en ;
+    skos:note "The compiler's gloss is itself a disagreement with the sentence it glosses and is kept here rather than in a dispute node, because it turns on the reading of one clause and not on two witnesses to a claim."@en ;
+    pm:dependentStep pmp:ShangqingFushi ;
+    pm:priorStep pmp:ShangqingSongjing ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Drugs of plants and trees taken without the other arts are said to be of no benefit; the other arts practised without the divine elixir are said not to obtain transcendence." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.11b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+pmc:ShangqingMengjin a pm:Presupposing ;
+    rdfs:label "Gold laid down before the method is transmitted"@en, "Gold hinterlegt, bevor die Methode weitergegeben wird"@de ;
+    skos:definition "Before the rubbing regimen may be practised the corpus requires an oath sworn on gold, the quantity left to the giver and the sincerity the point, and states that the method is not transmitted to one who is not the right person. A second method in the same section requires blue as well as gold, and a third requires an oath sworn on blue metal, the compiler working out the quantities the pledge should run to."@en ;
+    skos:note "Entered as a prescribed order and not as a stated necessity, because the passage attaches no consequence to practising without the oath. What it states is a rule about who may receive, and the corpus elsewhere says that a scripture obtained without proper transmission fails: at 19.11a a man who copied one without receiving it is said to have had his house burned by the mountain spirit and his recitation stopped by sudden rain that soaked the paper, and the compiler's note assigns both to his having copied it without the transmission."@en ;
+    pm:dependentStep pmp:ShangqingAnmo ;
+    pm:priorStep pmp:ShangqingXuedao ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.7b-9.8a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+#
+# The cautions
+#
+
+pmc:ShangqingFangshiJisi a pm:Cautioning ;
+    rdfs:label "Lying together during the keeping of the dark and the white"@en, "Der Beischlaf während des Bewahrens des Dunklen und des Weißen"@de ;
+    skos:definition "Of the keeping of the dark and the white the corpus states the prohibitions with their weights: the flesh of the six domestic animals and the five pungent flavours are especially forbidden, a separate sleeping place and quiet thought are required, and of lying together it says that it is especially to be avoided and that lying together means death at once."@en ;
+    skos:note "Kept because of the form of the consequence. Most prohibitions in this corpus state a loss of merit, an interval of reckoning or an impediment; this one states immediate death, which is the strongest consequence the work attaches to breaking a rule of practice and is stated without qualification or interval."@en ;
+    pm:cautionsAbout pmp:ShangqingShouxuanbai ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.2b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmc:ShangqingYijieQingyao a pm:Cautioning ;
+    rdfs:label "One act cancels one year of the drug"@en, "Ein Beischlaf löscht ein Jahr der Arznei"@de ;
+    skos:definition "The corpus states the loss in a countable form: for one who is nourishing life, one act of intercourse overturns one year of the drug's force, two acts overturn two years, and beyond three the whole of what has been taken is lost from the body. A second passage in the same juan gives a parallel reckoning from another hand: one act overturns one year of the drug's force, and one who practises the chamber arts while taking nothing at all has thirty years struck from his reckoning. A third states that frequent emission fouls the vapour, destroys the spirit and exhausts the essence, so that even a person entered in the jade registers is not thereby exempt."@en ;
+    skos:note "Entered for its arithmetic. A rule in this form makes any null result recoverable: a practitioner who has taken the drug for years and has nothing to show has only to be asked about his conduct, and the balance can be made to come out at nothing without the drug being questioned. It is the same device as the merit reckoning at pmc:ShangqingGongman, applied to the failure side instead of to the success side."@en ;
+    pm:cautionsAbout pmp:ShangqingFushi ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.18b-10.19a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.23b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmc:ShangqingFuyaoWuDao a pm:Cautioning ;
+    rdfs:label "Speaking of death after taking the drug"@en, "Vom Tod sprechen nach dem Einnehmen"@de ;
+    skos:definition "The corpus prescribes that the drug of the transcendents be taken facing the quarter of one's natal cyclical sign and that after taking it one not speak of death, mourning or ill matters; and it states the consequence in one clause: to do so injures the embryo and harms the spirits, and the drug is then taken in vain and without benefit."@en ;
+    skos:note "The clause is general, unbounded in time and attached to something the practitioner does daily without noticing. Anything that fails after the drug has been taken can be brought under it, and nothing in the passage limits how long after the taking it reaches."@en ;
+    pm:cautionsAbout pmp:ShangqingFushi ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 9.13b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 9" .
+
+pmc:ShangqingXiedao a pm:Cautioning ;
+    rdfs:label "Speaking of the study itself"@en, "Vom Lernen selbst sprechen"@de ;
+    skos:definition "The corpus forbids speaking of studying the Way and states the consequence: where the study is spoken of, the demons of the Way attack the person, the undertaking does not stand, and the speaker falls ill, the reason given being that his body is not yet perfected. The compiler adds that the work says repeatedly that one word or one matter let out cuts the reckoning, not merely brings illness."@en ;
+    skos:note "The prohibition reaches the ordinary conduct of a household. The same section forbids letting a person who is not of the Way see one comb one's hair, eat, or put on shoes, on the ground that the corpse-souls of the ordinary man come in at those moments and assail the spirits of the practitioner."@en ;
+    skos:note "Its bearing on this holding is the same as the clause about speaking of death. A transmission that treats disclosure as a cause of failure has a reason available for every unsuccessful run that does not require the method to be examined, and this one supplies it twice over in adjacent passages."@en ;
+    pm:cautionsAbout pmp:ShangqingXuedao ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.8a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 15.10a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 15" .
+
+pmc:ShangqingJiuhuan a pm:Cautioning ;
+    rdfs:label "The nine afflictions of the student"@en, "Die neun Gebrechen des Lernenden"@de ;
+    skos:definition "The corpus names nine conditions it calls the great sicknesses of a student and says that whoever knows his own affliction is not far from transcendence: to have resolve and no occasion, occasion and no resolve, companions and no resolve, resolve and no enlightened master, a master and no discernment, discernment of the master and no diligence, diligence without keeping to the Way, resolve that is not firm, firmness that does not last. It adds that a man who loves the Way from youth and keeps his mind single needs neither companion nor prompting."@en ;
+    skos:note "A catalogue of failure causes in which every item is a property of the student. The list is exhaustive by construction, since resolve, occasion, master, discernment, diligence, constancy and duration between them cover any course that did not succeed, and no item concerns the method, the instructions or the transmission."@en ;
+    pm:cautionsAbout pmp:ShangqingXuedao ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.12a-5.12b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+pmc:ShangqingShieryanshi a pm:Cautioning ;
+    rdfs:label "The twelve trials, and that they are not to be recognised"@en, "Die zwölf Proben, und dass sie nicht zu erkennen sind"@de ;
+    skos:definition "The corpus states that the great methods are transmitted only to one who has passed twelve trials, that the Perfected of the Great Ultimate come in person to look on, and that the trials are set at precisely what the candidate's mind does not grasp and his feelings do not reach. Failing to recognise the tester counts as failing the trial, and so does taking a demon for a Perfected. The corpus adds that a man who passed nine of the twelve and failed three obtained the elixir and rose, but was made a transcendent only and not a Perfected."@en ;
+    skos:note "The construction is worth setting out because it is the strongest case of its kind in this holding. The test is defined as unrecognisable, so no candidate can prepare for it and none can be shown to have passed it except by the outcome; failure is therefore always available as an explanation after the fact and is never available as a prediction before it. The corpus supplies six worked examples in the same section, each of which assigns a failure to a trial recognised only afterwards."@en ;
+    skos:note "The grading is the one part of it that is not circular, and it should be kept. Three failures out of twelve are said to cost a rank and not the whole attainment, which means the doctrine has a scale and is not a bare pass and fail."@en ;
+    pm:cautionsAbout pmp:ShangqingXuedao ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.5a-5.6a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+pmc:ShangqingJinri a pm:Cautioning ;
+    rdfs:label "The forbidden days, and the harm one does not notice"@en, "Die verbotenen Tage, und der Schaden, den man nicht bemerkt"@de ;
+    skos:definition "The corpus binds several prohibitions to dates. On the jiayin and gengshen days the corpse-demons contend and the spirits are fouled, and one may neither share a mat with wife or husband nor meet face to face. On the five mao days one enters the chamber facing east. A further rule names four dates in the year on which one seeking transcendence must not be in the presence of a woman, gives the reckoning behind it, the woman's palace standing in shen and the man's in yin and the two in mutual punishment, and states that on those days the corpse-souls of each sex call to the other, so that spirit is chipped and vapour departs and death follows from the accumulation."@en ;
+    skos:note "The last clause is the reason the node is here. The passage says that the person does not notice it himself and yet the body has already been damaged. A harm defined as imperceptible to the person who suffers it cannot be reported absent by him, which removes the only witness the rule has."@en ;
+    skos:note "The dates themselves are of the ordinary kind and are the third witness in this holding for a transmission binding an operation to the calendar rather than to a state of either party; see pmc:AdmissibilityBoundToTheCalendar."@en ;
+    pm:cautionsAbout pmp:ShangqingXuedao ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.20a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.25a-10.25b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+#
+# Where the corpus says a failure is to be assigned, and the one place where
+# it says the assignment is a mistake
+#
+
+pmc:ShangqingHeyaoBujing a pm:Conceptualizing ;
+    rdfs:label "Blaming the recipe"@en, "Die Schuld auf das Rezept schieben"@de ;
+    skos:definition "In a passage of instructions on compounding, the corpus states that those who compound the drug without precision do not lay the blame on themselves but instead accuse the recipe of not working, and asks whether such a man can be said to be at fault; the reply is that he may be set to copying recipes rather than compounding them."@en ;
+    skos:note "The transmission states the rule of assignment explicitly and in the first person: imprecision in the operator, not defect in the prescription. It states it, moreover, in the course of correcting the quantities of a particular preparation, so the rule is applied and not merely announced."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.3b-10.4a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmc:ShangqingGuijiuShenling a pm:Conceptualizing ;
+    rdfs:label "The one place where the corpus calls the assignment foolish"@en, "Die eine Stelle, an der der Bestand die Zuweisung töricht nennt"@de ;
+    skos:definition "One of the Perfected states that students of the Way are commonly careless in their affairs, bring a hundred ailments on themselves, and then lay the blame on the spirits; that they brave the wind and lie in the damp and then blame others for the want of a cover; and that all such are fools, to whom nothing of the profound may be told."@en ;
+    skos:note "Entered because it is the counter-instance inside the same transmission, and it was what a search for one turned up; see pmp:ZhengaoMethodBlamedSearch. The corpus assigns failure to the practitioner throughout, and here it names a case in which assigning it elsewhere is the error — but the direction is the same as everywhere else, since what is blamed wrongly are the spirits and what is blamed rightly is again the practitioner. The passage is not a statement that a method might be at fault, and this file does not read it as one."@en ;
+    skos:note "Its value is that it shows the transmission capable of the move at all. A corpus that never distinguishes a self-inflicted failure from a failure of the operation cannot be asked which it means; this one makes the distinction once, on the side that costs it nothing."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 7.13b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 7" .
+
+pmc:ShangqingDanshi a pm:Conceptualizing ;
+    rdfs:label "The two who took the elixir and died, and the two who then refused"@en, "Die zwei, die das Elixier nahmen und starben, und die zwei, die daraufhin ablehnten"@de ;
+    skos:definition "Four men of the later Han are said to have studied in the Wangwu mountains for more than forty years and to have compounded the divine elixir together. The first took it and died; the second took it and died also. The remaining two, seeing this, did not dare to take it, abandoned the mountain and went home. Afterwards they saw the two dead men on the mountain, were astonished, asked them for the Way, were given a preparation of poria, and are said to be still alive after several hundred years, walking in the marchmounts. The corpus adds the verdict: these men knew that the divine elixir obtains the Way and did not perceive that the trial lay within it, and are therefore land-bound transcendents only, with no further hope of ascending to heaven."@en ;
+    skos:note "The one passage in this holding where a transmission reports the observation that would refute it and scores the correct inference from that observation as the failure. Two deaths were seen; the survivors drew the conclusion a bystander would draw; and the drawing of it is what costs them the higher rank. Nothing is said about the deaths themselves except that they were not deaths."@en ;
+    skos:note "It stands among five further cases in the same section and is not an outlier there. One man studied for four hundred years, thrice compounded the elixir, had it spoiled by a malign thing, and has not ascended because he failed too many trials. Another was bitten by a great serpent he had taken for a Perfected and lost his left eye to a demon, and his want of singleness of purpose is given as the cause. Another passed a hundred and forty trials and rose. The set is a doctrine of failure worked out in examples."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.8a-5.8b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+pmc:ShangqingHuangguanzi a pm:Conceptualizing ;
+    rdfs:label "Nine and forty years of the other tradition's practice, and what is said of them"@en, "Neunundvierzig Jahre der Praxis der anderen Überlieferung, und was davon gesagt wird"@de ;
+    skos:definition "A man called Huang Guanzi is said to have loved the Way from youth and to have served the Buddhist Way, bowing and knocking his head every morning and begging for long life, for nine and forty years; then to have taken to ingesting drugs, entered the Jiao mountains, passed the hundred and forty trials set by the Perfected of the Great Ultimate, taken the golden elixir, chanted the Great Cavern scripture and been appointed to a transcendent office. The corpus states the conclusion in five words: this is not what the Buddha is able to bring about."@en ;
+    skos:note "Entered as a stated null result with a term, which is rare anywhere and rarer still about a named rival method. The corpus does not say the other practice is false; it says that nine and forty years of it produced nothing and that what produced the result was the elixir and the scripture. The compiler notes in the same place that this agrees with another passage about a man who served the Buddha."@en ;
+    skos:note "The passage bears on the contact route recorded on the tradition instance and pulls the other way from the borrowing at 6.6a-6.10a. A transmission that reproduces a Buddhist text in the mouths of its own Perfected and in the same juan denies that Buddhist practice achieves anything is doing two things at once, and both are in the file because both were read."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 5.7b-5.8a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 5" .
+
+pmc:ShangqingShijieZhengbian a pm:Conceptualizing ;
+    rdfs:label "The rule for reading a corpse"@en, "Die Regel, einen Leichnam zu lesen"@de ;
+    skos:definition "The corpus gives a rule for telling release through the corpse from ordinary death, and the rule admits each state and its opposite. If the dead man's form is as of a living man, that is release through the corpse. If the feet are not blue and the skin not wrinkled, that too is release through the corpse. If the light of the eyes is undamaged and there is no difference from a living man, that too. If the hair has fallen out entirely and form and bone are lost, those too are all release through the corpse. A related passage lists the ways of going: dying and living again, being beheaded and going out at the side, vanishing before the laying out, the form remaining with no bones in it, clothes left with the form gone, hair shed and the form lost; and grades them by the hour, departure in daylight ranking highest, at midnight lowest, and at dawn or dusk placing one among the administrators of the underworld."@en ;
+    skos:note "This is the node the counter-search was carried for and the one it found; see pmp:ZhengaoShijieCountsSearch. The protocol that names the outcomes the rule treats alike stands in examinations/shangqing-intervals.ttl."@en ;
+    skos:note "A preceding passage supplies the cases the rule is built to cover, and they are the cases that would otherwise be read as poisoning. Named adepts are said to have drunk the essence and had their corpses putrefy; to have swallowed the jade blossom and had worms crawl out of the door; to have swallowed the golden liquor and stunk for a hundred li; to have taken the cloud powder and been found with head and feet in different places; to have taken the stone marrow and gone into fire. The section closes with the remark that the traces of obtaining the Way have no fixed form."@en ;
+    skos:note "The corpus does rank the outcome rather than treating all as equal, which keeps it from being simply a blanket. Release through the corpse is said not to command the flowered canopy, ride the flying dragon, ascend to the Great Ultimate or roam the nine palaces; and daylight departure is said not to be a case of release through the corpse at all."@en ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 4.15b-4.16a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 4" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 4.17a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 4" .
+
+#
+# The places where the work disagrees with itself
+#
+# All of them are the compiler contradicting the text he is transmitting, which
+# is why they are here and not in a file of their own: the second witness in
+# each is his note, standing on the same folio as the claim.
+#
+
+pmc:ShangqingZhonglingJiaojieDispute a pm:Disputing ;
+    rdfs:label "Whether the assembled numinous powers said it"@en, "Ob die versammelten numinosen Mächte es gesagt haben"@de ;
+    skos:definition "The block of sayings at 6.6a-6.10a is ascribed in the text to five named Perfected, three male and two female, each speaking in turn, and is closed with the rubric that these are the teachings and admonitions of the assembled numinous powers. The compiler's note directly beneath it holds that those five are among the most exalted and descend very seldom, that he fears the block is those speakers recounting old matter, and that it was not necessarily received by Yang Xi in person."@en ;
+    skos:note "The reading that makes the disagreement sharp is available to anyone who reads the block: it is, clause for clause, a Buddhist text, with the renunciant of the original replaced by the man of the Way and the sayings distributed among Daoist speakers. The compiler does not say that in this note. He says the equivalent about the neighbouring passage on the emperor's dream at 9.20a-9.20b, where he observes that the account agrees roughly with the outer books and may be Yang Xi copying an old story, and adds that the writings of the Perfected do repeatedly treat Buddhist matters."@en ;
+    pm:disputedClaim pmc:YangxiShouzhen ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 6.6a-6.10a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 6" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 6.10a, compiler's note (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 6" .
+
+pmc:ShangqingFeizhenDispute a pm:Disputing ;
+    rdfs:label "The four items declared not genuine"@en, "Die vier für unecht erklärten Stücke"@de ;
+    skos:definition "At the head of the last four items of juan 8 stands the line that what follows is not a true saying. The compiler's note at the end of them states the ground: they are in a different hand, they were obtained later at Dongyang by Lu Xiujing, they do not agree with the other traces, their wording is base and unlike the sense of the Perfected, and he suspects them of being a later man's work. He supports this from their content, observing that one person named in them is not the man he is made out to be and that a phrase in them belongs to a different reckoning."@en ;
+    skos:note "The strongest instance of the compiler's criterion in operation, and one of the few places in this holding where a transmission prints matter and declares it spurious in the same breath rather than removing it. A neighbouring case stands at 10.17b-10.18a, where he suspects a sheet of tomb-siting rules to be a later fabrication built on a remark made earlier in the same corpus."@en ;
+    pm:disputedClaim pmc:TaoHongjingZhenwei ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 8.12a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 8" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 8.14a, compiler's note (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 8" .
+
+pmc:ShangqingZupuDispute a pm:Disputing ;
+    rdfs:label "The ancestor the revelation names and the register does not"@en, "Der Ahn, den die Offenbarung nennt und das Register nicht"@de ;
+    skos:definition "The revealed text states that the seventh-generation ancestor of the elder Xu bore a given name and courtesy name and had the merit of relieving a famine. The compiler, having the family register before him, states that the seventh-generation ancestor bore a different name and a different courtesy name, that the names do not agree with the revelation, and that the discrepancy is unexplained. He goes on to date the relief from the famine years recorded in the histories and to cite a memorial preserved in a book of Han offices in support of the ancestor's standing, so that the correction is made from documents and not from preference."@en ;
+    skos:note "Entered because of what is being checked against what. A revelation is here measured against a genealogy the compiler can read, found wanting on a matter of fact, and the disagreement is printed rather than harmonised. He does the same thing on the next folio with a date, where the autograph and the register differ by a year and he states the rule he applies, that the man's own record governs."@en ;
+    pm:disputedClaim pmc:YangxiShouzhen ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 20.5a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 20" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 20.5a, compiler's note on the register (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 20" .
+
+pmc:ShangqingZhongsongDispute a pm:Disputing ;
+    rdfs:label "Which quarter of the tomb the affliction comes from"@en, "Aus welcher Ecke des Grabes die Heimsuchung kommt"@de ;
+    skos:definition "A revealed passage makes recurrent dreams of the north-east and north-west of a grave the sign of a suit brought by the tomb, assigns the north-east to a named calamity of the fate and the north-west to what it calls the nine straits, and prescribes an incantation against it. The compiler's note states that the family in question belongs to a different one of the five tone-classes, so that on the system being used the north-east is not that quarter for them at all, and adds that the term the nine straits does not occur in the burial literature."@en ;
+    skos:note "The compiler is not disputing that tombs afflict the living, which he accepts throughout and acts on. He is disputing the correspondence rule, on the ground that it does not come out for the family it was given to and uses a term the technical literature does not have. That is an internal check of a revealed instruction against a body of ordinary craft knowledge, and it fails."@en ;
+    pm:disputedClaim pmc:YangxiShouzhen ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.11b-10.12a (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 10.12a, compiler's note (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 10" .
+
+pmc:ShangqingWeijingDispute a pm:Disputing ;
+    rdfs:label "The fifty scrolls made to order"@en, "Die fünfzig auf Bestellung gemachten Rollen"@de ;
+    skos:definition "The compiler relates that a man of talent, envious of the success of another family's fabricated scriptures, obtained the upper Clarity texts by persistence, judged that the highest matter could not be published as it stood, secretly added to and cut from it, ornamented the style, invented further works under the titles named in the received biographies, raised the pledges required for transmission in order to enhance the standing of his teaching, and produced more than fifty pieces in all; that these spread widely, so that new and old were mixed and could not easily be sorted, and that no one who had not seen the genuine writings could tell them apart. He adds that the holder of the genuine texts, impressed by the ornament and the income, came to despise his own copies and had the fabricator's versions copied for himself, so that the two ran in harness and true and false went side by side."@en ;
+    skos:note "The second source is the compiler's own note on the same folios, which is a separate testimony and not a gloss. It reports an eyewitness at second hand, a man who travelled by boat with the fabricator from the capital and saw him complete two scrolls of upper Clarity scripture before they had passed the first portage. It further states that the corpus was already mixed before this man: a named person found more than twenty sealed scrolls at Hailing in a year given by its cyclical characters, of which several were not genuine, so that not everything is the fabricator's work, only most of it."@en ;
+    skos:note "What this does to every node in this file is stated here and not left to be inferred. The corpus read is the one the compiler assembled after that mixing, by a criterion of handwriting whose evidence his edition does not reproduce. A citation to this work names a passage in the recension he made, and nothing further; where a stronger claim would be needed it is not made."@en ;
+    skos:note "The compiler does not treat the episode as discrediting the transmission. His note supplies the reconciling clause: the rites of the Way were due to be published while the true wonders might not be broadly circulated, and the fabricator was therefore permitted to do what he did. The failure of the record is thus assigned, like every other failure in this corpus, to an intention that cannot be checked."@en ;
+    pm:disputedClaim pmc:YangxiShouzhen ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shangqing ;
+    dcterms:source "Tao Hongjing, Zhen'gao 19.11b-19.12b (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 19" ;
+    dcterms:source "Tao Hongjing, Zhen'gao 19.12a, compiler's note (DZ 1016), Zhengtong Daozang, Hanfenlou facsimile, juan 19" .
