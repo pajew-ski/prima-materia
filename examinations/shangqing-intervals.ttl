@@ -1,0 +1,57 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — three protocols on the Zhen'gao
+#
+# The transmission was opened from the registry on the testability criterion,
+# and these are the three places where what it states can be put to a test
+# without first agreeing on what would count. Two of them name a term and an
+# outcome a bystander can check; the third is the opposite case and is here
+# because the state it earns is the one this holding has the least of.
+#
+# None of them has a case. The protocols exist so that the claims are attached
+# to a stated falsifying condition rather than to nothing, which is the
+# difference SPEC §16 draws between a holding that grows in claims and one
+# that grows in questions.
+#
+
+pmp:ShangqingNoonShadowExamination a pm:Testing ;
+    rdfs:label "Whether eighteen years of the sun in the heart take away the shadow"@en, "Ob achtzehn Jahre der Sonne im Herzen den Schatten nehmen"@de ;
+    skos:definition "A protocol on the claim that the sun held in the heart three times daily brings, at one year the end of illness, at five years a lustre on the body, and at eighteen years the necessary obtaining of the Way, walking in the midst of the sun without casting a shadow. Only the third term is examinable, and it is examinable in the strongest sense available to this holding: the outcome is a public fact about a body in daylight and the claim states the moment at which it is due."@en ;
+    pm:tests pmc:ShangqingRizaixin ;
+    pm:falsifiedBy "One person who has performed the stated actualisation three times daily for eighteen years and who casts a shadow when standing in direct sunlight. The passage states the outcome with a word of necessity and attaches no condition to the practitioner, so a single such case refutes the third term as stated." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passage recorded at pmc:ShangqingRizaixin" ;
+    pm:protocolUpdated "2026-09-11" ;
+    skos:note "No case has been collected, and the reason is the term. Eighteen years of a daily practice is a cohort that would have to be identified at its beginning, and the transmission that would identify it has no living body of practitioners performing this particular actualisation to the stated schedule, so far as this holding knows. The obstacle is the recruitment and not the measurement, which is the rarer and the better position of the two."@en ;
+    skos:note "The first two terms are deliberately not tested. Illness gone in a year and a lustre on the body in five have no stated measure and a high base rate, and a protocol that tested them would be choosing its own instrument after the fact. They are recorded in the claim node and left there."@en ;
+    skos:note "What would not count against the claim is worth stating, because this corpus supplies such clauses generously elsewhere and does not supply one here. Nothing in the passage says that a practitioner who still casts a shadow was impure, was under trial, broke a prohibition or missed a day. That absence is the whole reason this claim is examinable and the neighbouring ones are not."@en .
+
+pmp:ShangqingBambooExamination a pm:Testing ;
+    rdfs:label "Whether bamboo north of the inner chamber brings offspring"@en, "Ob Bambus nördlich der inneren Kammer Nachkommen bringt"@de ;
+    skos:definition "A protocol on the instruction that bamboo be planted outside the north wall of the inner chamber and the finer stems walked among, whereupon heaven is moved to grant offspring, the pregnancy is preserved and the child is long-lived; which the passage calls a secret rule and of which it says that those who carry it out much verify it."@en ;
+    pm:tests pmc:ShangqingZhongzhu ;
+    pm:falsifiedBy "A set of households that carried out the planting and the walking after a period without conception, whose subsequent rate of live births does not exceed that of households matched on the duration of the prior period and on the age of the woman. The claim names an arrangement of a dwelling and an outcome of a household, both of which are observable without the participants' report, and it attaches no condition to either party." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passage recorded at pmc:ShangqingZhongzhu" ;
+    pm:protocolUpdated "2026-09-11" ;
+    skos:note "No case has been collected and none has been searched for. The claim is entered with a protocol rather than without one because of its form and not its plausibility: it is the only instruction in this work whose antecedent and consequent are both facts about a household, so that neither has to be taken on the practitioner's word."@en ;
+    skos:note "The passage's own claim of verification is not evidence and is not treated as any. It says that those who carry it out much verify it, names nobody, counts nothing, and stands in a reply to a patron who wanted heirs. A transmission that claims verification in that form is reporting its own confidence."@en ;
+    skos:note "One asymmetry should be recorded before any case is collected. A household that plants bamboo after years of childlessness is a household selected for a long prior interval, and regression alone would raise its subsequent rate. That is why the falsifying condition names the matching and not the bare rate."@en .
+
+pmp:ShangqingShijieExamination a pm:Testing ;
+    rdfs:label "Whether the rule for reading a corpse excludes any outcome"@en, "Ob die Regel, einen Leichnam zu lesen, irgendeinen Ausgang ausschließt"@de ;
+    skos:definition "A protocol on the rule by which a death is read as release through the corpse. The protocol finds that the rule admits each state of a corpse and its opposite, so that no observation of a dead practitioner is left over which the rule would have to call an ordinary death."@en ;
+    pm:tests pmc:ShangqingShijieZhengbian ;
+    pm:falsifiedBy "A state of a dead practitioner's body which the rule as stated would classify as an ordinary death and not as release through the corpse. The protocol has not found one, and the finding that it has not is what the state below records." ;
+    pm:examinationState pm:claimDoesNotDiscriminate ;
+    pm:undividedOutcomes "A body that looks like a living man, and a body whose form and bones are lost entirely. Feet that are not blue and skin that is not wrinkled, and hair that has fallen out completely. Eyes whose light is undamaged, and a corpse that has putrefied. A body found whole, a body found with head and feet in different places, a body that crawls with worms, a body that stinks at a distance, a body that is not found at all, and clothes left behind with no body in them. The preceding passage supplies named adepts for each of the disfiguring cases and counts every one of them as an attainment." ;
+    pm:examinedBy "prima-materia, working from the passages recorded at pmc:ShangqingShijieZhengbian and from the counter-search at pmp:ZhengaoShijieCountsSearch" ;
+    pm:protocolUpdated "2026-09-11" ;
+    skos:note "The state is set on the reading of the rule and not on a case series, and it is set without evidence from any modern work, so no counter-search over the literature is owed. What was owed and was carried is the search inside the transmission for a passage that would count a practitioner's death against the operation; it found the opposite and is recorded as a search node."@en ;
+    skos:note "The distinction the rule does draw is recorded so that the state is not read as stronger than it is. The corpus ranks the manner of going, placing daylight departure above midnight and dawn or dusk lowest, and says that release through the corpse does not command the flowered canopy or the flying dragon. It discriminates between grades of success. What it does not do is leave any outcome outside the set of successes."@en ;
+    skos:note "The sharpest single case is not part of the rule and is recorded at pmc:ShangqingDanshi: two men took the elixir and died, two who saw it refused, and the refusal is scored as the failure. The rule above is the doctrine of which that narrative is the application."@en .
