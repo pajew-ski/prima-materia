@@ -1,0 +1,145 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Atharvavedic transmission
+#
+# Order of the file: the tradition and the decisions that had to fall before
+# its first node; then the returning of the witchcraft upon its maker, which
+# is the largest thing this corpus holds that the holding did not have; then
+# the capacities of the hymns opened; then the two places where the corpus
+# speaks of a rite that did not work, one from inside and one from outside;
+# then the one sign of success, read through its editor because the manual
+# that carries it exists in no translation.
+#
+# The tradition instance was registered in traditions/registry-indic.ttl and
+# is moved here now that passages have been read.
+#
+# Opened from the registration entrance of SPEC §14 — the strand that follows
+# no question. What it produced is the reason that entrance exists. Nobody in
+# this holding had asked whether an operative transmission names a mechanism by
+# which a correctly performed rite is destroyed from outside; the Atharvaveda
+# supplies one in two hymns, and it supplies it from the attacker's side.
+#
+
+pmt:Atharvavedic a pm:Tradition ;
+    rdfs:label "Atharvavedic transmission"@en, "Atharvavedische Überlieferung"@de ;
+    skos:definition "The operative Vedic corpus: spells for healing, protection, harm, love and kingship, with the ritual manual that tells how each is employed."@en ;
+    skos:note "Edition decision. The hymns were read in the translation of W. D. Whitney, revised and edited by C. R. Lanman, Harvard Oriental Series volumes 7 and 8, Cambridge 1905, which is the critical translation of the Śaunaka vulgate and prints its variants against the Paippalāda recension hymn by hymn. That apparatus is used here: where Whitney records that a verse is absent from the Paippalāda or stands there in another order or another book, the note says so, because a claim carried by one recension is not the same as a claim carried by the transmission."@en ;
+    skos:note "The recension decision follows from the edition and is not free. This file holds the Śaunaka vulgate. The Paippalāda is not a variant reading of it but a second collection, in places closer to the Rigveda and in places more archaic, and its hymns are differently ordered and differently bounded; a node built from both would be a node about neither."@en ;
+    skos:note "The contact route is kept at documented and was not re-decided here. The corpus stands inside the Vedic transmissions this holding already carries, and the question worth asking of it — whether the returning of a spell upon its maker is shared with the Mesopotamian anti-witchcraft literature by contact or by convergence — was not carried at the wording in this run and no node claims it."@en ;
+    skos:note "Dating. The redaction is later than that of the Rigveda and the language of the hymns younger than the tenth book of the Rigveda, while much of the sorcery material may be older than either; the manual is later again and its own tradition names neither time nor place for its composition. This file therefore dates nothing and cites hymns by book and hymn, which is the citation the edition supports."@en ;
+    skos:note "Read in this run at the wording, all in the Whitney translation: 4.20 entire; 5.14 entire; 6.27, 6.28, 6.29 entire; 6.108 verses 1 to 4; 6.114 entire; 6.115 verses 1 and 2; 7.70 entire; 10.1 verses 1 to 10; 18.2 verse 38; 19.67 entire. Kauśikasūtra 19.15 to 19.21 was read in Bloomfield's rendering and not in the Sanskrit, and the node that rests on it says so. Not read: everything else, which is the great bulk of a collection of twenty books. This file claims completeness for the hymns it opened and for nothing beyond them."@en ;
+    pm:principalCorpus "Atharvaveda Saṃhitā (Śaunaka recension); Kauśikasūtra" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Atharvaveda Saṃhitā 5.14, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7, Cambridge, Mass. 1905" .
+
+#
+# The returner
+#
+
+pmp:Krtyapratiharana a pm:Practicing ;
+    rdfs:label "The turning back of the witchcraft upon its maker"@en, "Das Zurückwenden des Zaubers auf seinen Urheber"@de ;
+    skos:definition "A rite performed with a plant, addressed to the hostile spell itself as to a person. The spell is taken by the hand and led away; it is set straight in front of its maker that it may smite him; it is conducted to him like a horse by a halter; it is told to go as a son to a father, to bite like a trampled constrictor, to fly straighter than an arrow, to run back like an easy chariot. The second and longer hymn adds that the spell is bathed off the person it was set upon, that it is to go to the one who put its joints together, and that the person it was sent against is unknown to it."@en ;
+    skos:note "The operation is not a defence. Nothing in either hymn asks that the spell be dissolved, absorbed or made harmless; both ask that it arrive, intact and working, somewhere else. What is transmitted is a redirection, and the thing redirected is assumed throughout to be real, individuated and in motion."@en ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 5.14 and 10.1, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7 and 8, Cambridge, Mass. 1905" .
+
+pmc:KrtyaReditAdAuctorem a pm:Conceptualizing ;
+    rdfs:label "The spell goes back to whoever made it, and to nobody else"@en, "Der Zauber geht zu dem zurück, der ihn gemacht hat, und zu niemandem sonst"@de ;
+    skos:definition "The capacity claimed for the rite and the restriction claimed on it, stated together. Be the witchcrafts for the witchcraft-maker, the curse for him that curses; if woman or if man has made witchcraft in order to evil, it we conduct unto him; whether thou art god-made or made by man, thee we lead back. And, in the same hymn: O practised piercer, pierce him; whoever made it, him do thou smite; we do not sharpen thee up to slay him who has not made it. The second hymn puts the restriction twice more — let evil be to the evil-doer, a curse to the curser; and, him do thou return against, seek not us who are innocent — and names the classes of possible maker without deciding between them: Śūdra-made, king-made, woman-made, made by Brahmans."@en ;
+    skos:note "The restriction is the part worth having and it is stated as a limit on the weapon rather than as a wish. A returned spell is a thing that can be aimed, and the text twice says whom it must not reach. That makes the claim narrower than the general run of counter-sorcery and, in the same movement, unexaminable from outside: a person who falls ill after such a rite was the maker, and a person who does not was not."@en ;
+    skos:note "Whitney records that verses 3 and 5 are wanting in the Paippalāda and that verses 9 and 13 stand there in the second book, so that the verse carrying the restriction is transmitted in both recensions but in different places. The claim is the transmission's and not one recension's."@en ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 5.14 verses 4, 5, 6, 7 and 9, and 10.1 verses 3, 5 and 7, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7 and 8, Cambridge, Mass. 1905" .
+
+pmc:KrtyapratiharanaYieldsRedeuntem a pm:Yielding ;
+    rdfs:label "The rite of the returner brings the spell back upon its maker"@en, "Der Ritus des Zurückwenders bringt hervor, dass der Zauber auf seinen Urheber zurückkommt"@de ;
+    pm:byPractice pmp:Krtyapratiharana ;
+    pm:yieldsCapacity pmc:KrtyaReditAdAuctorem ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 5.14 verses 4 to 13, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7, Cambridge, Mass. 1905" .
+
+#
+# The capacities of the hymns opened
+#
+
+pmp:Sadampuspa a pm:Practicing ;
+    rdfs:label "The binding on of the ever-flowering amulet"@en, "Das Anbinden des immerblühenden Amuletts"@de ;
+    skos:definition "An amulet of the plant called ever-flowering is bound on, and the hymn is spoken to the plant as to a divinity with a thousand eyes and as the eye-pupil of the heavenly eagle."@en ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 4.20, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7, Cambridge, Mass. 1905" .
+
+pmc:OccultaVidere a pm:Conceptualizing ;
+    rdfs:label "Seeing what conceals itself, and seeing everyone"@en, "Sehen, was sich verbirgt, und jeden sehen"@de ;
+    skos:definition "The capacity the hymn asks of the plant, in three widths. All beings: three skies, three earths, and these six directions severally — by thee let me see all beings. Every person: may the thousand-eyed god set it in my right hand; with it do I see every one, both who is Śūdra and Aryan. And the concealed in particular: show me the sorcerers, show the sorceresses, show all the piśācas; with this intent I take hold of thee, O herb. The hymn closes by claiming the act done — I have seized out of his shelter the sorcerer, the kimīdin — and demands that whatever flies through the atmosphere, creeps across the sky, or thinks the earth a refuge be shown forth."@en ;
+    skos:note "Entered because it is the plainest claim of an acquired perception this corpus offered in the hymns opened, and because it is of a kind the holding already carries from elsewhere: a state in which a practitioner reports on what is not available to ordinary sight. It differs from those in the means, which is an object worn and not a state entered, and in having no condition of any kind attached to it."@en ;
+    skos:note "The seeing is its own sign of success and there is no other. The hymn names nothing the wearer should observe to know that the amulet is working, and nothing he should observe to know that it is not; the sorcerers it reveals are by definition those nobody else can see. Counted on the sign side and not on the condition side, per SPEC §15."@en ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 4.20 verses 2, 4, 6, 8 and 9, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7, Cambridge, Mass. 1905" .
+
+pmc:SadampuspaYieldsVisum a pm:Yielding ;
+    rdfs:label "The ever-flowering amulet brings the seeing of the concealed"@en, "Das immerblühende Amulett bringt das Sehen des Verborgenen hervor"@de ;
+    pm:byPractice pmp:Sadampuspa ;
+    pm:yieldsCapacity pmc:OccultaVidere ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 4.20, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7, Cambridge, Mass. 1905" .
+
+pmc:AtharvanMedha a pm:Conceptualizing ;
+    rdfs:label "Wisdom called first, and asked to enter"@en, "Die Weisheit, zuerst gerufen und gebeten einzutreten"@de ;
+    skos:definition "A short hymn for wisdom. Do thou, O wisdom, come first to us, with kine, with horses, thou with the sun's rays; I call first, unto the aid of the gods, wisdom filled with brahman, quickened by brahman, praised by seers, drunk of by Vedic students; the wisdom that the Ṛbhus know, that the Asuras know, the excellent wisdom that the seers know — that do we cause to enter into me; and, with that wisdom do thou make me today, O Agni, possessed of wisdom."@en ;
+    skos:note "Entered as a capacity claimed and not as a claim that a practice produces it, and the distinction is the reason there is no yielding node here. The hymn is a petition throughout: wisdom is called, invited and asked to enter, and the one operative clause names Agni as the agent. What the manual makes of it — its use in the rite for begetting wisdom and at the initiation — was not read in the Sanskrit and is not entered."@en ;
+    skos:note "Whitney records that the Paippalāda has only verses 1, 2 and 5 of this hymn. The verse carrying the three classes who know wisdom is therefore transmitted in one recension of the two."@en ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 6.108 verses 1 to 4, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7, Cambridge, Mass. 1905" .
+
+pmc:CentumAutumni a pm:Conceptualizing ;
+    rdfs:label "The hundred autumns, and the measure that may not be taken again before them"@en, "Die hundert Herbste und das Maß, das vor ihnen nicht wieder genommen werden darf"@de ;
+    skos:definition "The term this corpus sets on a human life, stated twice in the hymns opened and in two different postures. As a petition, in eight one-line verses: may we see a hundred autumns, may we live, may we wake, may we ascend, may we prosper, may we be, may we adorn a hundred autumns, more autumns than a hundred. And as a stipulation at a funeral, where a measure is drawn on the ground: this measure do we measure, so that one may not measure further; in a hundred autumns, not before."@en ;
+    skos:note "The second passage is a term with a lower bound and is the more interesting of the two. It does not ask for a hundred autumns; it fixes a hundred autumns as the interval within which the act may not be repeated, which makes the number a rule about the living rather than a wish for them."@en ;
+    skos:note "Whitney records that the hymn of the hundred autumns is not found in the Paippalāda at all, and that its first two lines are the last two padas of a Rigvedic verse which several later manuals extend differently. The formula is old and the hymn as a hymn is one recension's."@en ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 19.67 and 18.2 verse 38, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 8, Cambridge, Mass. 1905" .
+
+#
+# The two places where the corpus speaks of a rite that did not work
+#
+
+pmc:SacrificiumNonPeractum a pm:Conceptualizing ;
+    rdfs:label "Desirous of accomplishing the sacrifice, we have not accomplished it"@en, "Das Opfer zu vollbringen begehrend, haben wir es nicht vollbracht"@de ;
+    skos:definition "A hymn against disability in sacrifice, which is the one place in the hymns opened where the corpus speaks in its own voice of a rite that did not come off. By right of right, O Ādityas, worshipful ones, release ye us here, in that, O ye carriers of the sacrifice, we, desirous of accomplishing the sacrifice, have not accomplished it. And: sacrificing with what is rich in fat, making oblations of sacrificial butter with the spoon, without desire, to you, O all gods, desirous of accomplishing we have not been able to accomplish. The hymn beside it covers the case where the fault is not known: if knowing, if unknowing, we have committed sins, do ye free us from that."@en ;
+    skos:note "The failure is admitted and it is not explained. The hymn names no cause, no sign by which the shortfall was recognised, and no rule by which a later rite could be told to have worked; what it supplies is a release, and the neighbouring hymn extends the release to faults the performer did not notice. A transmission that provides an expiation for the unnoticed fault has made the unnoticed fault the standing account of a rite that produced nothing."@en ;
+    skos:note "The doctrine that would name the cause — that a defective recitation voids the act — was not found in the hymns opened and belongs to the layer above them. That the search was carried and came back empty is recorded at pmp:AtharvanRecitationFaultSearch rather than asserted here."@en ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 6.114 verses 2 and 3, with 6.115 verses 1 and 2, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7, Cambridge, Mass. 1905" .
+
+pmc:SacrificiumAlienumCorruptum a pm:Conceptualizing ;
+    rdfs:label "Let them smite his truth with untruth, and let not that meet with success"@en, "Sie sollen seine Wahrheit mit Unwahrheit schlagen, und es soll nicht gelingen"@de ;
+    skos:definition "The same failure seen from the other side, and taught as an operation. Whatsoever he yonder offers with mind, and what with voice, with sacrifices, with oblation, with sacred formula, that let perdition, in concord with death, smite, his offering, before it comes true. The sorcerers, perdition, also the demon — let them smite his truth with untruth; let the gods, sent by Indra, disturb his sacrificial butter; let not that meet with success which he yonder offers. And: with the fury of divine Agni, therewith have I smitten thine oblation."@en ;
+    skos:note "This is the finding the run did not go looking for and the reason the registration entrance exists. The corpus states a mechanism by which a rite correctly performed by somebody else is destroyed, names the substance of the attack — untruth put in the place of the truth the rite is made of — and names the moment, before it comes true. Where other transmissions in this holding assign an empty result to the operator, to the time or to the material, this one supplies a third party who was working to produce exactly that result, and it supplies him from the attacker's desk."@en ;
+    skos:note "The consequence for the examination of anything in this corpus is direct. Once a transmission teaches that a rite can be spoiled from outside by an unseen party, every rite in it that produced nothing has an account available which no bystander can check, and the account is the transmission's own and not a later apology. The counterpart hymn, imprecating against enemies who thwart holy work, was not read at the wording in this run."@en ;
+    skos:note "Whitney records that only the first two verses are found in the Paippalāda, and that both stand also in the Taittirīya Brāhmaṇa with variants. The mechanism is therefore attested outside this collection as well as inside it."@en ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Atharvaveda Saṃhitā 7.70 verses 1, 2 and 4, in the translation of W. D. Whitney, revised by C. R. Lanman, Harvard Oriental Series 7, Cambridge, Mass. 1905" .
+
+#
+# The one sign of success, read through its editor
+#
+
+pmc:LacAcidumSignum a pm:Conceptualizing ;
+    rdfs:label "If the milk has turned, the performance is a success"@en, "Ist die Milch sauer geworden, ist die Handlung gelungen"@de ;
+    skos:definition "The manual prescribes a stable rite: the owner drinks the new milk of a cow that has thrown her second calf, mixed with the spittle of the calf; he presents a cow to the Brahman; he pours a vessel of water into the stable; having swept the moistened dung together and laid his left hand upon it, he scatters half with his right; having put lumps of excrement, bdellium and salt into milk from a cow whose calf is of her own colour, he buries the mixture behind the fire; on the fourth morning he eats of it. Then: if the milk has turned, the performance is a success."@en ;
+    skos:note "Owed under the separate count for signs of success and kept apart from the conditions of failure, which this rite has none of. The criterion is announced in advance, it is checked by the performer, and the outcome it asks for is what buried milk does in four days by itself. The editor through whom it was read says so in a footnote of three words: cheap magic, the milk is sure to turn."@en ;
+    skos:note "Read at second hand and the mode says so. There exists no translation of the Kauśikasūtra into any European language; the edition that carries the sūtra prints it in Devanāgarī, and the passage was read in the editor's English rendering inside his commentary on the hymn. The work that carries the claim is named in the source; the work in which it was read is named with pm:readVia. This is an open item under SPEC §10: whoever can read the sūtra text raises the mode."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "Maurice Bloomfield, Hymns of the Atharva-Veda, Sacred Books of the East 42, Oxford: Clarendon Press, 1897, commentary on 2.26, page 303" ;
+    pm:withinTradition pmt:Atharvavedic ;
+    dcterms:source "Kauśikasūtra 19.15-21" .
