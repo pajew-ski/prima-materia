@@ -1,0 +1,40 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — two protocols on the Solomonic grimoire transmission
+#
+# They are opposite cases and belong together for that reason. The first
+# records that the transmission's central claim excludes no outcome, and the
+# book says as much of itself. The second records that the same book, in one
+# chapter, states an outcome outside the session that anybody could check, and
+# that nobody in this holding has checked it.
+#
+
+pmp:ClaviculaVerificationExamination a pm:Testing ;
+    rdfs:label "Whether an unsuccessful operation could count against the Key at all"@en, "Ob eine misslungene Operation überhaupt gegen den Schlüssel zählen könnte"@de ;
+    skos:definition "A protocol on the claim that the operation of the circle brings the spirits to appear and obey. The verdict is read off the wording of the claim and not off cases, and the wording is the book's own: an experiment performed with due observance of days, hours and requisite solemnities which is found unsuccessful must in some manner be false, ill-arranged and defective, and the operator must assuredly have failed in some matter. The same clause stands twice more, in the chapter on invisibility and in the chapter on favour. Beside it the book sets three further assignments for a non-appearance — wind, a rival exorcist elsewhere in the universe, and the difficulty pure spirits have with impure men — and a series of conjurations in which non-appearance is the instruction to proceed to the next stage rather than the end of the run."@en ;
+    pm:tests pmc:ClaviculaOperatioYieldsImperium ;
+    pm:examinationState pm:claimDoesNotDiscriminate ;
+    pm:undividedOutcomes "A session prepared and conducted as the third chapter of the first book prescribes, in which the participants perceive an appearance, and a session prepared and conducted in the same way in which they perceive nothing. The book covers both: the first is the claim coming true, the second is proof that a point was done ill, or that the air was troubled, or that another exorcist was calling them, or that the spirits found the men too impure — and in any case the instruction is to conjure again." ;
+    pm:falsifiedBy "A passage in any witness of this transmission that names an outcome of a correctly prepared operation under which the operation is to be counted as having failed, without assigning that outcome to the operator, to the weather, to a third party or to the nature of the spirits. One such passage would put the claim back among those an outcome can reach, and this verdict would fall." ;
+    pm:examinedBy "prima-materia, 2026-09-12, from the chapters read at the wording in traditions/solomonic-grimoire.ttl" ;
+    pm:protocolUpdated "2026-09-12" ;
+    skos:note "The state is set from the claim and not from evidence, which is what pm:claimDoesNotDiscriminate is for. No study was cited and none was needed: the chapter that carries the clause says outright that the whole Key depends upon it, so the transmission is not being convicted of an implication it would disown."@en ;
+    skos:note "The one place this verdict does not reach is in the same book, and it is the second protocol below. The chapter on theft states that a mark cut with the sword in the water where the thief's face appears shall be really found thereafter upon his own person. That is an outcome outside the session and it discriminates. A transmission can hold an unfalsifiable general claim and a falsifiable particular one at once, and this one does."@en ;
+    skos:note "What a later run should look for before treating this as a property of the transmission rather than of one edition. The clause was read in a text assembled by an editor in 1889 from seven manuscripts; it should be checked against a single manuscript, and against the Colorno and Abognazar branches separately, since the chapters of the first book after the eighth are absent from Lansdowne 1202 altogether."@en .
+
+pmp:ClaviculaThiefMarkExamination a pm:Testing ;
+    rdfs:label "Whether the mark cut in the water appears on the thief"@en, "Ob das im Wasser geschnittene Zeichen am Dieb erscheint"@de ;
+    skos:definition "A protocol on the claim that after the sieve has been spun and the water stilled, the gazer sees the form of the thief, and that a sign cut with the sword of art across the face seen in the water shall be really found thereafter upon the person of that man. The procedure is fully specified by the chapter and the outcome lies outside the session: a named person, not present, is said to bear afterwards a mark he did not bear before."@en ;
+    pm:tests pmc:ClaviculaFurisVisio ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "The person whose face was seen, examined after the operation by someone who did not attend it, bearing no mark where the cut was made; or bearing one where the operator cut nothing. The claim as the chapter states it leaves no room for degree: the sign shall be really found upon his own person." ;
+    pm:examinedBy "prima-materia, 2026-09-12; the condition is the chapter's own, no case is on record here" ;
+    pm:protocolUpdated "2026-09-12" ;
+    skos:note "Entered at procedure-without-cases because that is exactly what it is. The book supplies the procedure and the outcome; this holding supplies no run, no report of a run, and no trial record in which the claim was put. The state says so rather than letting the absence read as a verdict."@en ;
+    skos:note "The chapter offers no way out that the other chapters would have offered. There is no clause here that a wrongly done point voids the sighting, no term within which the mark must be sought, and no statement that an unmarked face means the operator erred. That is unusual for this book and it is the reason the protocol could be written."@en ;
+    skos:note "Provenance of the chapter matters more here than elsewhere. Mathers notes that the remainder of the chapter, which is where this procedure stands, comes from Lansdowne 1203 alone. The claim is therefore one manuscript's, and a run that found nothing would have refuted a branch rather than the transmission."@en .
