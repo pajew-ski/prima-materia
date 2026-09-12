@@ -1,0 +1,190 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Solomonic grimoire transmission
+#
+# Order of the file: the tradition and the three decisions that had to fall
+# before its first node; then the operation of the circle with the term of
+# purification that stands in front of it; then the capacities the book names,
+# which are the reason it was opened; then the escalation that is entered on
+# non-appearance; then the four causes to which non-appearance is assigned,
+# and the clause that assigns it to the operator by definition; then the signs
+# of success, kept separate and counted separately as SPEC §15 requires; and
+# last the dispute, carried by a work of 1584 read at the wording.
+#
+# The tradition instance was registered in traditions/registry-western-esoteric.ttl
+# and is moved here now that passages have been read.
+#
+# Opened from the testability entrance of SPEC §14. The registration said the
+# corpus carries preparation, circle, seal, adjuration and dismissal as a fixed
+# sequence. The reading bore that out and added the half the registration did
+# not have: the same book states three times, in three different chapters, that
+# an operation which produced nothing proves the operator erred. That is the
+# strongest instance of the immunising clause this holding has found in a
+# single work, and it is the reason the examination node beside this file sets
+# pm:claimDoesNotDiscriminate.
+#
+
+pmt:SolomonicGrimoire a pm:Tradition ;
+    rdfs:label "Solomonic grimoire transmission"@en, "Salomonische Grimoire-Tradition"@de ;
+    skos:definition "The transmission of ritual handbooks for the constraint of spirits, carrying preparation, circle, seal, adjuration and dismissal as a fixed sequence."@en ;
+    skos:note "Edition decision, and it is the awkward one. The text read is the English of S. L. MacGregor Mathers, London 1889, and that is not an edition of a work but a text assembled by its editor out of seven manuscripts of the British Museum: Add. 10862 in Latin, Sloane 1307 in Italian, Sloane 3091, Harleian 3981, King's 288, Lansdowne 1202 and 1203 in French. No critical edition of the Latin Clavicula with a stemma exists. The citations here therefore name the book and chapter and say in the same breath whose text it is, and where Mathers records that a passage stands in one manuscript only, the note says which. Anyone who obtains a single manuscript can overturn a node here, and the notes are written so that he can see which one to obtain."@en ;
+    skos:note "What the citations cannot do. Mathers' apparatus is thin and his own datings are disputed: he places Add. 10862 at the end of the sixteenth century and holds it the oldest witness, while the modern description puts it in the seventeenth. Two chapters entered here stand in one manuscript each by his own footnote, and are marked as such at the node. The single-manuscript chapters are not weaker as claims about what a Solomonic book says; they are weaker as claims about what the transmission holds in common."@en ;
+    skos:note "Dating and attribution. The ascription to Solomon is not held by any modern position and is contradicted by the material record: the oldest witnesses of the work are late medieval. This was not read at the wording in this run and is not entered as a node; what the run did read is a work of 1584 that rejects the ascription in terms, and that stands below as one side of the dispute. The question of a Greek antecedent — whether the Hygromanteia is the ancestor of the Latin and Italian text or a parallel branch — was not decided here and no node claims it."@en ;
+    skos:note "Read in this run at the wording, all in the Mathers text: Book I chapters I, III, V, VI, VII, IX, X, XI, XII, XIII, XIV, XV, XVI, XVII; Book II chapters I, III, IV, XIII, XXI. Not read: Book I chapters II, IV, VIII, XVIII, and Book II chapters II, V to XII, XIV to XX, XXII, which carry the tables of hours, the prayers, the pentacles, the instruments and their consecrations. The chapters left unread are the apparatus; the chapters read are the ones that state what the operations do, on what terms, and what follows when they do not."@en ;
+    pm:principalCorpus "Clavicula Salomonis; Lemegeton; Heptameron; the Book of Abramelin" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Clavicula Salomonis, Book II chapter I, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+#
+# The operation and the term that stands in front of it
+#
+
+pmp:ClaviculaOperatioCirculi a pm:Practicing ;
+    rdfs:label "The operation within the circle"@en, "Die Operation im Kreis"@de ;
+    skos:definition "The book divides its experiments in two: those that can be performed without a circle, for which only the chapter of the particular operation is to be observed, and those that cannot be brought to perfection without one. The second kind runs: nine days of continence for master and disciples; after the sixth day frequent prayer and confession; on the seventh the master alone bathes in exorcised water and puts on white linen, then pours the same water over the naked disciples; the last three days a fast; on the last day a washing at running water, the confession, the kiss, the absolution, the distribution of the instruments; then the circle, traced with the consecrated knife, with the letter Tau at the four quarters, four hexagonal pentacles and the divine names between them, two squares circumscribed and four further circles at the outer angles; then the fumigation, the placing of the disciples at the four quarters, and the conjurations."@en ;
+    skos:note "The second kind is what makes the transmission examinable at all: it fixes in advance what counts as having done the thing, down to the number of days, the material of the garment and the position of each participant. A procedure specified to that depth can be departed from in a way a witness could name. What follows below is the account the book gives of what happens when it is not departed from and nothing occurs."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book I chapter III, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+pmc:ClaviculaNovemDies a pm:Presupposing ;
+    rdfs:label "Nine days of continence before the circle, of which the last three are a fast"@en, "Neun Tage Enthaltung vor dem Kreis, davon die letzten drei ein Fasten"@de ;
+    skos:definition "Before commencing, master and disciples must abstain with great and thorough continence for nine days from sensual pleasures and from vain and foolish conversation; the second book repeats the term and adds that during the last three days one eats fasting diet once a day, better bread and water only, and on the last day nothing at all. Within the same nine days every instrument must be made, consecrated and exorcised, so that nothing remains to be prepared when the day and hour of the work arrive."@en ;
+    pm:dependentStep pmp:ClaviculaOperatioCirculi ;
+    pm:priorStep pmp:ClaviculaOperatioCirculi ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "If thou doest ill in one single point, these experiments or these Arts will not be verified (Book II chapter I); and, of the order of hours and days and of the position of the Moon, without the operation of which thou canst effect nothing (Book I chapter I)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "The dependent step and the prior step are the same practice because the book makes the preparation part of the operation rather than a separate act with its own name. What the node holds is the term: nine days, with three inside them, fixed in advance and countable by anyone present. It is entered at stated necessity and not at prescribed order because the consequence is quoted and not inferred — but the consequence is the general clause, not a penalty peculiar to this step, and that is the whole difficulty this file is about."@en ;
+    skos:note "The term is not the same length in every witness of this corpus. Mathers notes that the paragraph carrying the nine days is omitted in Lansdowne 1202. The Heptameron printed in the Turner collection of 1655 sets nine days and three within them in the same shape, which was read at the wording in that book; the routes between these texts are documented, so the agreement is reception and not a second witness."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book I chapter III, with Book II chapters IV and XIII, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+pmc:ClaviculaAdeptiExempti a pm:Conceptualizing ;
+    rdfs:label "The exactness of days and hours is not necessary for adepts"@en, "Die Genauigkeit von Tagen und Stunden ist für Adepten nicht nötig"@de ;
+    skos:definition "So exact a preparation of days and hours is not necessary for those who are adepts in the art, but it is extremely necessary for apprentices and beginners, seeing that those who have been little or not at all instructed do not have as much faith in the experiments as those who are adepts and have practised them. The wise should observe only the precepts of the art which are necessary."@en ;
+    skos:note "The ground the text gives for the exemption is the faith of the operator and not anything about the hours. That makes the astrological term, by the book's own account, a device for producing confidence in beginners rather than a condition of the world — and it is the sharpest statement against its own timing rules that this corpus contains."@en ;
+    skos:note "The exemption is asymmetrical, and the asymmetry was the object of a search carried in this run. It covers days and hours and nothing else. No passage of the chapters read waives the bath, the fast, the continence or the confession for anyone, adept or beginner. The transmission is willing to call its astrology a pedagogy and is not willing to call its purification one. See pmp:ClaviculaPurificationWaiverSearch."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book II chapter I, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+#
+# The capacities. This is the part SPEC §15 makes owed in the strict sense,
+# and the list below is every one named in the fourteen chapters of Book I
+# that were read at the wording.
+#
+
+pmc:ClaviculaImperiumSpirituum a pm:Conceptualizing ;
+    rdfs:label "The spirits come, speak as friend to friend, and give what is asked"@en, "Die Geister kommen, sprechen wie ein Freund zum Freunde und geben, was verlangt wird"@de ;
+    skos:definition "The capacity the whole book is built around. When the conjuration succeeds, they will immediately talk with thee as a friend speaketh unto a friend; ask of them all that thou desirest, with constancy, firmness and assurance, and they will obey thee. At the final stage the master uncovers the pentacles and demands all that he shall wish of the king of the spirits, and dismisses them with a license to depart."@en ;
+    skos:note "Nothing in the chapters read limits what may be asked. The one restriction the text places is on the conditions of asking, never on the content of the request, and that is a difference from the transmissions in this holding that bound a petition to a class of subject matter."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book I chapters VI and VII, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+pmc:ClaviculaOperatioYieldsImperium a pm:Yielding ;
+    rdfs:label "The operation of the circle brings the spirits to appear and obey"@en, "Die Operation im Kreis bringt hervor, dass die Geister erscheinen und gehorchen"@de ;
+    pm:byPractice pmp:ClaviculaOperatioCirculi ;
+    pm:yieldsCapacity pmc:ClaviculaImperiumSpirituum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book I chapters III, VI and VII, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+pmc:ClaviculaFurisVisio a pm:Conceptualizing ;
+    rdfs:label "The thief is seen in the water and the mark cut there is found on his body"@en, "Der Dieb wird im Wasser gesehen, und das dort geschnittene Zeichen findet sich an seinem Leib"@de ;
+    skos:definition "A sieve is hung by a cord with which a man has been hanged, characters written within its rim in blood; a brass basin is filled with spring water; at the words Dies mies yeschet benedoefet Donnima Metemauz the sieve is spun with the left hand and the water stirred the contrary way with a twig of green laurel. When the water is still and the sieve no longer whirls, the gazer sees the form of him who committed the theft; and, that he may be recognised the more easily, the gazer marks him somewhere on the face with the sword of art, for that sign which has been cut in the water shall be really found thereafter upon his own person."@en ;
+    skos:note "This is the most examinable sentence in the book and the only one in the chapters read that states an outcome outside the session. Everything else the transmission promises is established inside the operation by the operator; here a mark made in water is said to appear on the body of a person who was not present, and a bystander could look at the face named and see whether it is there. The examination node beside this file takes it as the falsifying condition for the transmission as a whole, and it is the reason that node could be written at all."@en ;
+    skos:note "The chapter carries a second and weaker procedure with the sieve and shears: at the naming of the guilty person the sieve turns of itself without its being able to stop it. That outcome is inside the session and depends on two people holding the rings on their thumbnails, so it discriminates nothing; it is recorded here and not given its own node."@en ;
+    skos:note "Mathers notes that the remainder of this chapter, which is where both procedures stand, is from Lansdowne 1203 alone."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book I chapter IX, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+pmc:ClaviculaCeteraeVirtutes a pm:Conceptualizing ;
+    rdfs:label "The further capacities named in the first book"@en, "Die weiteren Vermögen des ersten Buches"@de ;
+    skos:definition "Entered together because the first book names them in one run of chapters and states each in a sentence. To become invisible at will, by an image of yellow wax made in January in the day and hour of Saturn, buried in a cavern and carried in the left pocket. To hinder a sportsman from killing any game for the rest of a day, by a stick of green elder laid in his path. To travel far in a few days and without fatigue, by garters of stag-skin filled with mugwort gathered before sunrise on the twenty-fifth of June. To hear distinctly the answer to whatever is asked, by lying prostrate under a carpet of new white wool between midnight and daybreak at full or new moon. To be made partaker in a treasure the earth-spirits hold. To obtain any grace or favour so that it shall not be denied. To deceive the senses of onlookers so that they seem to see what they see not and hear what they hear not."@en ;
+    skos:note "Four of the seven carry a term the operator cannot move: a month, a day and hour of a planet, a date in June, a phase of the moon, a span between midnight and daybreak. Two of the seven carry an outcome another person could check within a day — the sportsman who kills nothing, the journey accomplished — and both were left by the text without any statement of what would follow if the outcome were otherwise."@en ;
+    skos:note "Mathers records chapters XI, XII, XIII and XIV as taken from Lansdowne 1203 alone, and chapter XV from Add. 10862 alone. The run of capacities is therefore not the common stock of the transmission but the sum of what several manuscripts each contribute."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book I chapters X, XI, XII, XIII, XIV, XV and XVI, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+#
+# The escalation, which is entered on non-appearance
+#
+
+pmc:ClaviculaGradusConiurationum a pm:Conceptualizing ;
+    rdfs:label "The graded conjurations, each entered because the last produced nothing"@en, "Die gestuften Beschwörungen, jede betreten, weil die vorige nichts hervorbrachte"@de ;
+    skos:definition "The book sets its conjurations in a series and makes the trigger of each the failure of the one before. If they then immediately appear, it is well; if not, the master uncovers the pentacles. If they do not yet appear, he strikes the air with the knife and repeats a stronger conjuration. This he says facing east, and if they appear not he repeats it to the south, the west and the north, four times in all. If they appear not even then, he signs the foreheads of his companions with Tau and says a further one. If they appear not yet, he is told not to lose courage, for there is nothing in the world stronger to overawe the spirits than constancy; he re-examines and reforms the circle, casts dust to the four quarters, kneels, and conjures again. The last conjuration is declared to be of such efficacy that even spirits bound with chains of iron and fire could not delay to come."@en ;
+    skos:note "The series has no term at which the operator is told to stop. Non-appearance never counts as an outcome of the procedure; it is the instruction to proceed to the next stage, and the stages run out into a curse and a burning of names which, the text says, brings them assuredly and in great haste. A transmission built this way cannot register a failed run, because a run is not over until it has succeeded."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book I chapters V, VI and VII, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+#
+# The four causes of non-appearance, and the clause that makes the operator
+# the cause by definition
+#
+
+pmc:ClaviculaDefectusOperantis a pm:Conceptualizing ;
+    rdfs:label "An unsuccessful experiment proves the operator failed in some matter"@en, "Ein misslungenes Experiment beweist, dass der Operierende in irgendeinem Punkt versagt hat"@de ;
+    skos:definition "If by chance it should happen that having performed an experiment with due observance of days, hours and requisite solemnities, thou shalt find it unsuccessful, it must be in some manner false, ill-arranged and defective, and thou must assuredly have failed in some matter; for if thou doest ill in one single point, these experiments or these arts will not be verified. Upon this chapter, the text adds, depends the whole Key: although every solemnity be rightly observed, no experiment will be verified unless the meaning of this chapter is penetrated."@en ;
+    skos:note "The sentence is a biconditional in the guise of an instruction. It takes the case in which the conditions were met and nothing happened, and rules that case out by assigning it to an unnoticed fault. There is then no state of the world under which the arts could be found not to work, and the chapter says so of itself: the whole Key depends on it."@en ;
+    skos:note "A fifth assignment stands in the introduction and was found by the search rather than by the reading: what is revealed to any must be kept by them to themselves, otherwise the secrets are profaned and no effect can follow. Disclosure thus joins the operator's fault, the wind, the rival and the purity of the spirits, and it is the one of the five that can be alleged of a session by someone who was not at it."@en ;
+    skos:note "It is not a single lapse. The same clause stands twice more in the first book, in the chapters on invisibility and on favour: if thou lettest any of these things escape thee, or if thou despiseth them, never shalt thou be able to arrive at thy proposed end; and, but if thou doest not the experiment carefully and rightly, assuredly thou shalt not succeed in any manner. Three chapters, three manuscript groups, one rule."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book II chapter I, with Book I chapters X and XV, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+pmc:ClaviculaCausaeNonAdventus a pm:Conceptualizing ;
+    rdfs:label "The four causes to which the book assigns a non-appearance"@en, "Die vier Ursachen, denen das Buch ein Ausbleiben zuschreibt"@de ;
+    skos:definition "Besides the fault of the operator the book names three further causes, and no others. The weather: they will not come when the air is troubled or agitated by winds, seeing that spirits have neither flesh nor bones and are created of different substances, and the three last days of preparation should therefore be calm, without wind and without clouds rushing over the sky. A rival: supposing that they were being conjured in some other place or part of the universe by some other exorcist by the same conjuration, the master should add that they at least send messengers to declare where they are, how employed, and the reason why they cannot come. And their nature: even if the angels and spirits appear not at the consecration of the book, be not thou astonished thereat, seeing that they are of a pure nature and have much difficulty in familiarising themselves with men who are inconstant and impure; the ceremonies being correctly carried out with perseverance, they will be constrained to come."@en ;
+    skos:note "The rival clause is the only one of the four that leaves anything behind. It concedes that the spirits may be genuinely unable to come and therefore requires a substitute deliverable — messengers who state where they are and why — so that the session still ends with something the operator must receive. The concession and the repair are in the same sentence."@en ;
+    skos:note "Not one of the four is a property of the procedure. Two lie in the operator, one in the sky, one in a person elsewhere in the world whom nobody present can identify. Between them they cover every way a session can end without a spirit in it."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book II chapters I and XXI, with Book I chapters III and VII, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+pmc:ClaviculaSociorumPericulum a pm:Cautioning ;
+    rdfs:label "The disciple who disobeys suffers, and sometimes dies"@en, "Der Schüler, der nicht gehorcht, leidet und stirbt zuweilen"@de ;
+    skos:definition "The companions are to be bound by oath to do all that the master orders. Those who shall act otherwise shall suffer and endure many pains and labours, and run into many dangers, which the spirits will cause and procure for them, and for this cause sometimes they shall even die. Conversely, wearing the consecrated pentacles at the breast, they shall be exempt and free from all perils and dangers, provided that they obey the commands of the master and do all that he ordains them. Within the circle they are on no cause whatsoever to move from their assigned places."@en ;
+    skos:note "The protection and the penalty share one condition and it is obedience to a person present. That makes the master, not the procedure, the party whose account decides afterwards whether a harm that occurred was a breach or a visitation — and a harm is the only outcome of the two that leaves evidence."@en ;
+    pm:cautionsAbout pmp:ClaviculaOperatioCirculi ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book II chapters III and XIII, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+pmc:ClaviculaThesauriPericulum a pm:Cautioning ;
+    rdfs:label "The earth-spirits warn the treasure-digger, and kill him if he persists"@en, "Die Erdgeister warnen den Schatzgräber und töten ihn, wenn er weitermacht"@de ;
+    skos:definition "Men who undertake a search for hidden treasures are molested and sometimes put to death by the spirits called gnomes. This is not done through avarice, a spirit being incapable of possessing anything; the spirits are enemies of the passions and foresee the evil ends for which the treasure will be used. When they slightly disturb the workers it is a warning to cease from the work, and if the greedy importunity of the workers obliges them to continue notwithstanding the warnings, the spirits, irritated by their despising the same, frequently put the workmen to death."@en ;
+    skos:note "A caution that supplies its own reading of the evidence in both directions. A disturbance during the digging is a warning; a death is the penalty for having ignored one. Nothing that can happen at the site is left over to count against the account, and the men who would have to report the warnings are the men the workers are told not to be disturbed by."@en ;
+    pm:cautionsAbout pmc:ClaviculaCeteraeVirtutes ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book I chapter XIV, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+#
+# The signs of success, kept separate and counted separately
+#
+
+pmc:ClaviculaSignaAdventus a pm:Conceptualizing ;
+    rdfs:label "The signs by which the coming of the spirits is announced"@en, "Die Zeichen, an denen das Kommen der Geister angesagt wird"@de ;
+    skos:definition "The book tells the operator in advance what he will perceive. When the pentacles are shown to each quarter, there shall be noises and rushings. The manner of coming is said to differ by the substance the spirits were created from: those of fire come always with great noise and with the terrible nature of fire; those of water with great rains, thunder, hail, lightning and thunderbolts; those of clouds with great deformity, in a horrible form, to strike fear into the invocator; those of wind with exceeding swift motion; those of air with a kind of gentle breeze; those of solar vapours in a very beautiful and excellent form but filled with pride and vanity. The master is to exhort the companions beforehand that they shall behold kings of kings and emperors of emperors with a great crowd of followers and all sorts of musical instruments, and that nothing should be feared."@en ;
+    skos:note "Entered under the separate count that SPEC §15 requires for signs of success, and this is the case the rule was made for. The signs are announced to the participants by name before the session and include the whole range of weather and noise a night in the open can supply. Read as evidence they can only confirm; the reason they are here is that a transmission which announces its signs in advance is a fact about the transmission."@en ;
+    skos:note "The count for this work: one sign of success against no condition of failure. Against the six kinds of appearance and the promised noises and rushings, the chapters read state not one observation that would show an operation had not worked. Every non-occurrence is assigned by pmc:ClaviculaDefectusOperantis or pmc:ClaviculaCausaeNonAdventus before it can become one."@en ;
+    skos:note "Mathers notes that the chapter carrying the noises and rushings and the speech of the emperor of the spirits is given in Add. 10862 alone."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Clavicula Salomonis, Book II chapters XIII and I, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" .
+
+#
+# The dispute
+#
+
+pmc:ClaviculaScotDisputatio a pm:Disputing ;
+    rdfs:label "Whether the Solomonic conjurations do anything at all"@en, "Ob die salomonischen Beschwörungen überhaupt etwas bewirken"@de ;
+    skos:definition "The book holds that whoever fears God and prepares the order of hours and days and the position of the moon may easily and thoroughly arrive at the effect and end he desires, and that the spirits, being conjured, come and give what is asked. A work printed in London in 1584 denies it and gives a ground that is neither scriptural nor demonological but a count of the practitioners: he that can be persuaded that these things are true may soon be brought to believe that the moon is made of green cheese; of whom yet was never seen any rich man, or at least that gained any thing that way, or any unlearned man that became learned by that means, or any happy man that could with the help of this art either deliver himself or his friends from adversity, or add unto his estate any point of felicity — yet these men, in all worldly happiness, must needs exceed all others, if such things could be accomplished as it is presupposed."@en ;
+    skos:note "The second side is worth having because of the form of its argument and not its verdict. It does not dispute that the spirits exist or that the ceremonies are impious; it takes the capacities the books promise — wealth, learning, deliverance — and observes that the people who work the art do not have them. That is an outcome the transmission's own claims predict and it is checkable from outside the session, which is more than the transmission offers anywhere except at the mark on the thief's face."@en ;
+    skos:note "The same chapter of 1584 elsewhere reproduces a necromancy of the Solomonic shape — first fast and pray three days and abstain from all filthiness — in order to expose it, and glosses the fasting term of another handbook with the remark that so the cozenage may best be handled. The reading of the term as stagecraft is that author's and is not entered as a node."@en ;
+    pm:disputedClaim pmc:ClaviculaOperatioYieldsImperium ;
+    pm:attestedBy pm:textualAttestation ;
+    dcterms:source "Clavicula Salomonis, Book I chapter I, in the English of S. L. MacGregor Mathers, The Key of Solomon the King, London: George Redway, 1889" ;
+    dcterms:source "Reginald Scot, The Discoverie of Witchcraft, Book XV chapter 5, in the reprint of the edition of 1584 edited by Brinsley Nicholson, London: Elliot Stock, 1886, pages 329-330" .
