@@ -79,13 +79,17 @@ Der Katalog ist die Anwendung des vorigen Absatzes und steht hier, damit kein La
 |---|---|
 | archive.org, Volltextdatei `https://archive.org/download/<kennung>/<kennung>_djvu.txt` | trägt, der Regelweg (prima-materia#515, prima-materia#584) |
 | Kanseki Repository (漢籍リポジトリ), ein GitHub-Repositorium je Werk, eine Datei je juan, Grundlage im Dateikopf unter `BASEEDITION` | trägt, der Weg für die chinesischen Klassiker (prima-materia#614) |
-| HathiTrust, Bände im Rechtestand `pdus` | ungeprüfter Kandidat für Werke ohne archive.org-Exemplar (prima-materia#556) |
+| HathiTrust, Bände im Rechtestand `pdus` | geprüft und gesperrt: Katalogsuche und Bib-API antworten durchgehend mit `403` hinter einer Cloudflare-Abfrage, der Rechtestand war nicht zu verifizieren (prima-materia#556, prima-materia#702) |
+| archive.org, Kennung antwortet mit `503` | Sperre am Weg und keine Aussage über das Werk: für einen Band waren drei von vier naheliegenden Kennungen `503` und eine fünfte trug (prima-materia#702) |
+| archive.org, Dateiname über `https://archive.org/metadata/<kennung>` | trägt, wo das Standardschema `<kennung>_djvu.txt` mit `404` oder `503` antwortet: die Textdatei heißt dann anders und der Name ist nur den Metadaten zu entnehmen (prima-materia#700, prima-materia#702) |
 | ctext.org | `403` nach dem ersten Kapitel (prima-materia#614) |
 | zh.wikisource.org, zysj.com.cn | nicht abrufbar (prima-materia#614) |
 | HAL, alle Spiegel | Proof-of-Work-Abwehr, sechs Adressformen versucht, der Browserweg noch offen (prima-materia#565) |
 | sacred-texts.com | drosselt, HTTP-Rückleitungen unerreichbar, große PDF werden still gekürzt (prima-materia#473) |
 
 **Eine Sperre steht in dieser Tabelle und nie in der Erntenotiz.** Sie hängt am Zugangsweg und nicht am Werk; nach §15 verlangt sie einen anderen Weg statt eines Verzichts. Und ein Weg, der einmal trägt und einmal nicht, ist kein dokumentierter Weg, sondern ein ungeklärter — bei HAL hat ein beauftragter Recherchelauf dieselbe Datei nach eigener Angabe gelesen, die sechs direkten Versuche nicht.
+
+**Bei beschädigter OCR ist die Suche nach dem Fachterm kein Nachweis der Abwesenheit.** Ein Scan kann denselben nicht-lateinischen Terminus auf derselben Seite zweimal verschieden zerlesen, so dass keine Schreibung einen Treffer gibt; gesucht wird dann nach der Übersetzung, die der Herausgeber danebenstellt. Zwei Griffe, die dabei tragen: den Text auf reine Buchstaben normalisieren, im normalisierten Text suchen und die Fundstelle über einen Positionsindex in den Rohtext zurückrechnen, was die Wortzerreißungen des Scans fängt; und die Seitenfolge der Kolumnentitel prüfen, bevor ein Nichtfund berichtet wird (prima-materia#702, prima-materia#576).
 
 **Zwei Eigenheiten des archive.org-Volltexts entscheiden über die Zitierfähigkeit.** Die Zeilenumbrüche fallen weg, der Text kommt als eine sehr lange Zeile; zeilenweises Lesen scheitert daran, nach Zeichenbereich schneiden trägt. Die gedruckten Seitenzahlen überleben trotzdem, weil die laufenden Kolumnentitel mitgescannt sind — aus ihnen wird die Stellenangabe nach §10 gebildet, und zwar aus dem Kolumnentitel und nicht aus der ersten Zeile der Seite (prima-materia#546).
 
