@@ -1,0 +1,114 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Old Norse ritual transmission
+#
+# Taken down from the register on 2026-09-13 by the structure-driven entrance
+# of SPEC §14, because of the one thing the registration already said about it:
+# Hávamál names eighteen effects in list form, which is a capacity catalogue in
+# the same shape as the siddhi lists. A catalogue is what the testability-driven
+# entrance asks for and what this holding is thin in.
+#
+# Three works were opened and read at the wording: the Hávamál of the Codex
+# Regius, Eiríks saga rauða chapter four, and Ynglinga saga chapters six and
+# seven, with chapter thirty-six of Haralds saga ins hárfagra beside the last
+# for the counter-search. What the register's note said about the recording
+# hand is borne out and is entered as its own dispute rather than smoothed.
+#
+
+pmt:NorseSeidr a pm:Tradition ;
+    rdfs:label "Old Norse ritual transmission"@en, "Altnordische Ritualüberlieferung"@de ;
+    skos:definition "The Norse transmission of runic and sung operations and of a divinatory practice performed from a raised seat with a stated arrangement of singers and questioners."@en ;
+    skos:note "The eighteen songs of the Ljóðatal are the reason this transmission was opened rather than any other on the register. They are a numbered list of effects, one to a stanza, given without the words of the songs themselves, and the numbering is the poem's own: I know a first, I know a second, and so to the eighteenth. Every one of them is entered below."@en ;
+    skos:note "The texts were read in the normalised Old Norse of Guðni Jónsson for all three works, in its electronic reproduction, and the readings were checked against the diplomatic print of Hauksbók by Finnur Jónsson and against two English translations. The stanza numbering of the Hávamál nodes is Guðni Jónsson's, which is also Finnur Jónsson's and Evans's: Rúnatal at one hundred and thirty-eight to one hundred and forty-five, Ljóðatal at one hundred and forty-six to one hundred and sixty-three. Bellows numbers them one hundred and thirty-nine to one hundred and forty-six and one hundred and forty-seven to one hundred and sixty-five, because he moves the closing stanza forward with Müllenhoff. Both numbers stand in every source line below, so that a reader with either edition finds the place."@en ;
+    skos:note "The recording hand is Christian and says so. Eiríks saga rauða has Guðríðr refuse at first because she is a Christian woman, and calls the proceeding hindrvitni, superstition, in the mouth of her father. The narrator frames the séance and does not delete it, which is what makes it usable: a hostile recorder has no motive to invent the condition that the séance fails without the song."@en ;
+    pm:principalCorpus "Hávamál; Grímnismál; Snorri, Ynglinga saga; Eiríks saga rauða" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Hávamál, in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Scandinavian Classics XXI-XXII" ;
+    dcterms:source "Eiríks saga rauða, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, translated by J. Sephton (Liverpool: D. Marples, 1880)" ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga and Haralds saga ins hárfagra, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+#
+# I. Rúnatal. The acquisition, its conditions, and the one caution the poem
+# attaches to the whole complex of asking and offering.
+#
+
+pmp:NorseHangaAVindgaMeidi a pm:Practicing ;
+    rdfs:label "Hanging on the windy tree"@en, "Das Hängen am windigen Baum"@de ;
+    skos:definition "Hanging nine whole nights on a windy tree, wounded with a spear and given to Óðinn, oneself to oneself, on the tree of which no man knows from what roots it runs; then peering down and taking up the runes, taking them up screaming, and falling back from there."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 138-139 (Guðni Jónsson; 139-140 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 139-140" .
+
+pmc:NorseRunarUppNema a pm:Conceptualizing ;
+    rdfs:label "Taking up the runes"@en, "Das Aufnehmen der Runen"@de ;
+    skos:definition "The acquisition claimed for the hanging: the runes are taken up from below, and with them, in the stanzas that follow, a thriving and a growing wise in which word sought word for him and work sought work."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 139 and 141 (Guðni Jónsson; 140 and 142 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHangaYieldsRunar a pm:Yielding ;
+    rdfs:label "The hanging yields the runes"@en, "Das Hängen bringt die Runen hervor"@de ;
+    pm:byPractice pmp:NorseHangaAVindgaMeidi ;
+    pm:yieldsCapacity pmc:NorseRunarUppNema ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "Attested as a first-person report and not as a textual attestation of a doctrine, because the stanzas are in the first person throughout and the speaker is the god: I know that I hung, I peered down, I took up the runes, I fell back. The poem gives no third-person account of the event anywhere beside it."@en ;
+    skos:note "The stated conditions are all deprivations or injuries and none of them is an action: nine nights, a spear-wound, being given, no bread, no horn, and a tree whose root is unknown. What the practitioner does is peer and take; everything before that is what is done to him or withheld from him. That is unusual in this holding, where a prerequisite is normally something performed."@en ;
+    dcterms:source "Hávamál 138-139 (Guðni Jónsson; 139-140 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 139-140" .
+
+pmc:NorseHangaPresupposesNiuNaetr a pm:Presupposing ;
+    rdfs:label "The taking up presupposes nine nights, the spear and the self-offering"@en, "Das Aufnehmen setzt neun Nächte, den Speer und die Selbstgabe voraus"@de ;
+    pm:dependentStep pmc:NorseRunarUppNema ;
+    pm:priorStep pmp:NorseHangaAVindgaMeidi ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "Prescribed order and not stated necessity, because the poem narrates a single case and names no consequence of a shorter hanging or of a hanging without the wound. It says what was done and what followed, not what would have followed otherwise."@en ;
+    skos:note "The self-offering is doubled in the wording and the doubling is the point: given to Óðinn, oneself to oneself. Giver, receiver and offering are the same, so the exchange the next caution below makes the measure of all offering is here reduced to one party."@en ;
+    dcterms:source "Hávamál 138 (Guðni Jónsson; 139 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHangaPresupposesFasta a pm:Presupposing ;
+    rdfs:label "The taking up presupposes neither bread nor horn"@en, "Das Aufnehmen setzt weder Brot noch Horn voraus"@de ;
+    pm:dependentStep pmc:NorseRunarUppNema ;
+    pm:priorStep pmp:NorseHangaAVindgaMeidi ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "Held apart from the nine nights because it is a different kind of condition and because it is the one the poem states negatively: they cheered me with no loaf nor with any horn. A withholding by others, not an act of the sufferer and not an injury."@en ;
+    dcterms:source "Hávamál 139 (Guðni Jónsson; 140 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseFimbulljodNiu a pm:Conceptualizing ;
+    rdfs:label "The nine mighty songs and the draught of Óðrerir"@en, "Die neun Zauberlieder und der Trunk aus Óðrerir"@de ;
+    skos:definition "Nine mighty songs taken from the famed son of Bǫlþorn, Bestla's father, and a draught of the precious mead poured out of Óðrerir, after which the speaker began to thrive and to be wise, and to grow and to fare well."@en ;
+    skos:note "A second acquisition beside the runes and from a named giver, which the runes were not. Nine again, as the nights were nine, and the number is the only thing the two acquisitions have in common in the wording."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 140-141 (Guðni Jónsson; 141-142 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmp:NorseBidjaOkBlota a pm:Practicing ;
+    rdfs:label "Asking and offering, sending and slaying"@en, "Bitten und Opfern, Senden und Schlachten"@de ;
+    skos:definition "The four operations the poem puts as questions in one stanza, beside carving, reading and colouring the runes: knowest thou how one shall ask, how one shall offer, how one shall send, how one shall slay."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 144 (Guðni Jónsson; 145 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseOfblotit a pm:Cautioning ;
+    rdfs:label "Better unasked than over-offered"@en, "Besser ungebeten als zu viel geopfert"@de ;
+    skos:definition "The caution the poem sets against the four operations: better it is unasked than that it be over-offered, ever does a gift look to its return; better unsent than that it be over-slain."@en ;
+    pm:cautionsAbout pmp:NorseBidjaOkBlota ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The consequence named is not a punishment but a reversal of sign: excess is worse than omission. Between the two halves of the stanza stands the ground, that a gift ever looks to its return, so the measure is the exchange and excess is what destroys it while omission does not."@en ;
+    skos:note "Two paired verbs and not four separate ones. Asking pairs with offering, sending with slaying, and the caution is built twice over the same shape. A transmission that states the failure of a rite as too much rather than too little is uncommon in this holding, where cautions overwhelmingly name a shortfall."@en ;
+    dcterms:source "Hávamál 145 (Guðni Jónsson; 146 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 146" .
