@@ -1,0 +1,43 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the table of unlucky days, and what would refute it
+#
+# The most examinable claim in the European folk-magic file, and examinable
+# without anybody performing anything: it is a statistical assertion over dates
+# of birth, dates of falling ill and dates of marriage, and its data lie in
+# parish registers and civil statistics. It needs no practitioner, no state and
+# no condition, which is what separates it from everything else in that file.
+#
+# The protocol stands at pm:procedureWithoutCases and not lower. A falsifying
+# condition can be stated, and is stated below; no cases have been gathered.
+# See prima-materia#519.
+#
+
+pmp:UnluckyDaysExamination a pm:Testing ;
+    rdfs:label "Examination of the table of unlucky days"@en, "Prüfung der Tafel der unglücklichen Tage"@de ;
+    pm:tests pmc:EuropeanFolkMagicUngluecklicheTage ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "No raised rate of poverty among those born on the listed days, no raised rate of failure to recover among those who fall ill on them, and no raised rate of later destitution among those who become engaged or marry on them, measured against all other days of the same year in the same population."@en ;
+    pm:examinedBy "prima-materia, 2026-09-13" ;
+    pm:protocolUpdated "2026-09-13" ;
+    skos:note "Three separate conditions and not one, because the table attaches three different consequences to the same set of days and any of the three could hold while the others fail. A protocol that folded them together would report a single verdict on three claims."@en ;
+    skos:note "The claim is unusually well protected against the commonest objection to statistical folklore, that the days are too many to be missed. They are about thirty-two out of three hundred and sixty-five, unevenly distributed, with seven in January and one each in June and October. The unevenness is what makes the count informative: a uniform sprinkling would be hard to distinguish from chance in a small sample, and this is not uniform."@en ;
+    skos:note "What the protocol cannot do is decide whether the claim belongs to this transmission at all. The book marks the table as drawn from a hundred-year almanac out of Germany and signs the marking; the almanac is the bearer and the handbook the reprinter. An examination that refuted the table would refute the almanac, and the handbook would be left having quoted it accurately."@en ;
+    skos:note "No cases and therefore no counter-search state. Setting one would claim a search of the opposing literature that has not been carried."@en .
+
+pmp:CalfUnderTheVirginExamination a pm:Testing ;
+    rdfs:label "Examination of the calf born under the Virgin"@en, "Prüfung des im Zeichen der Jungfrau geborenen Kalbes"@de ;
+    pm:tests pmc:EuropeanFolkMagicKalbZeichen ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "Calves whose birth falls in the sun's passage through Virgo surviving their first year at the rate of calves born in any other sign, and calves born under Scorpio surviving at least as long as calves born under Virgo."@en ;
+    pm:examinedBy "prima-materia, 2026-09-13" ;
+    pm:protocolUpdated "2026-09-13" ;
+    skos:note "The cheapest examination available anywhere in this holding. A herd book carries dates of calving and dates of death; the sign follows from the date; the deadline is one year and is stated by the claim itself. Nothing has to be done to an animal and nobody has to believe anything."@en ;
+    skos:note "It has a second condition the first one lacks, and the two are ordered: the claim says not only that the calf of the Virgin does not live a year, but that the calf of the Scorpion dies sooner still. An ordering between two outcomes is harder to satisfy by chance than either outcome alone."@en ;
+    skos:note "Against the claim stands a plain confound that the protocol must carry: in the northern hemisphere the sun stands in Virgo from late August to late September, and in Scorpio from late October to late November, so the two signs pick out autumn calvings. Any difference in first-year survival between autumn and spring calves would produce the stated result without the sign doing anything. A refutation must therefore compare within season and not across it."@en .
