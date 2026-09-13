@@ -1,0 +1,593 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Old Norse ritual transmission
+#
+# Taken down from the register on 2026-09-13 by the structure-driven entrance
+# of SPEC §14, because of the one thing the registration already said about it:
+# Hávamál names eighteen effects in list form, which is a capacity catalogue in
+# the same shape as the siddhi lists. A catalogue is what the testability-driven
+# entrance asks for and what this holding is thin in.
+#
+# Three works were opened and read at the wording: the Hávamál of the Codex
+# Regius, Eiríks saga rauða chapter four, and Ynglinga saga chapters six and
+# seven, with chapter thirty-six of Haralds saga ins hárfagra beside the last
+# for the counter-search. What the register's note said about the recording
+# hand is borne out and is entered as its own dispute rather than smoothed.
+#
+
+pmt:NorseSeidr a pm:Tradition ;
+    rdfs:label "Old Norse ritual transmission"@en, "Altnordische Ritualüberlieferung"@de ;
+    skos:definition "The Norse transmission of runic and sung operations and of a divinatory practice performed from a raised seat with a stated arrangement of singers and questioners."@en ;
+    skos:note "The eighteen songs of the Ljóðatal are the reason this transmission was opened rather than any other on the register. They are a numbered list of effects, one to a stanza, given without the words of the songs themselves, and the numbering is the poem's own: I know a first, I know a second, and so to the eighteenth. Every one of them is entered below."@en ;
+    skos:note "The texts were read in the normalised Old Norse of Guðni Jónsson for all three works, in its electronic reproduction, and the readings were checked against the diplomatic print of Hauksbók by Finnur Jónsson and against two English translations. The stanza numbering of the Hávamál nodes is Guðni Jónsson's, which is also Finnur Jónsson's and Evans's: Rúnatal at one hundred and thirty-eight to one hundred and forty-five, Ljóðatal at one hundred and forty-six to one hundred and sixty-three. Bellows numbers them one hundred and thirty-nine to one hundred and forty-six and one hundred and forty-seven to one hundred and sixty-five, because he moves the closing stanza forward with Müllenhoff. Both numbers stand in every source line below, so that a reader with either edition finds the place."@en ;
+    skos:note "The recording hand is Christian and says so. Eiríks saga rauða has Guðríðr refuse at first because she is a Christian woman, and calls the proceeding hindrvitni, superstition, in the mouth of her father. The narrator frames the séance and does not delete it, which is what makes it usable: a hostile recorder has no motive to invent the condition that the séance fails without the song."@en ;
+    pm:principalCorpus "Hávamál; Grímnismál; Snorri, Ynglinga saga; Eiríks saga rauða" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Hávamál, in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Scandinavian Classics XXI-XXII" ;
+    dcterms:source "Eiríks saga rauða, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, translated by J. Sephton (Liverpool: D. Marples, 1880)" ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga and Haralds saga ins hárfagra, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+#
+# I. Rúnatal. The acquisition, its conditions, and the one caution the poem
+# attaches to the whole complex of asking and offering.
+#
+
+pmp:NorseHangaAVindgaMeidi a pm:Practicing ;
+    rdfs:label "Hanging on the windy tree"@en, "Das Hängen am windigen Baum"@de ;
+    skos:definition "Hanging nine whole nights on a windy tree, wounded with a spear and given to Óðinn, oneself to oneself, on the tree of which no man knows from what roots it runs; then peering down and taking up the runes, taking them up screaming, and falling back from there."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 138-139 (Guðni Jónsson; 139-140 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 139-140" .
+
+pmc:NorseRunarUppNema a pm:Conceptualizing ;
+    rdfs:label "Taking up the runes"@en, "Das Aufnehmen der Runen"@de ;
+    skos:definition "The acquisition claimed for the hanging: the runes are taken up from below, and with them, in the stanzas that follow, a thriving and a growing wise in which word sought word for him and work sought work."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 139 and 141 (Guðni Jónsson; 140 and 142 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHangaYieldsRunar a pm:Yielding ;
+    rdfs:label "The hanging yields the runes"@en, "Das Hängen bringt die Runen hervor"@de ;
+    pm:byPractice pmp:NorseHangaAVindgaMeidi ;
+    pm:yieldsCapacity pmc:NorseRunarUppNema ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "Attested as a first-person report and not as a textual attestation of a doctrine, because the stanzas are in the first person throughout and the speaker is the god: I know that I hung, I peered down, I took up the runes, I fell back. The poem gives no third-person account of the event anywhere beside it."@en ;
+    skos:note "The stated conditions are all deprivations or injuries and none of them is an action: nine nights, a spear-wound, being given, no bread, no horn, and a tree whose root is unknown. What the practitioner does is peer and take; everything before that is what is done to him or withheld from him. That is unusual in this holding, where a prerequisite is normally something performed."@en ;
+    dcterms:source "Hávamál 138-139 (Guðni Jónsson; 139-140 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 139-140" .
+
+pmc:NorseHangaPresupposesNiuNaetr a pm:Presupposing ;
+    rdfs:label "The taking up presupposes nine nights, the spear and the self-offering"@en, "Das Aufnehmen setzt neun Nächte, den Speer und die Selbstgabe voraus"@de ;
+    pm:dependentStep pmc:NorseRunarUppNema ;
+    pm:priorStep pmp:NorseHangaAVindgaMeidi ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "Prescribed order and not stated necessity, because the poem narrates a single case and names no consequence of a shorter hanging or of a hanging without the wound. It says what was done and what followed, not what would have followed otherwise."@en ;
+    skos:note "The self-offering is doubled in the wording and the doubling is the point: given to Óðinn, oneself to oneself. Giver, receiver and offering are the same, so the exchange the next caution below makes the measure of all offering is here reduced to one party."@en ;
+    dcterms:source "Hávamál 138 (Guðni Jónsson; 139 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHangaPresupposesFasta a pm:Presupposing ;
+    rdfs:label "The taking up presupposes neither bread nor horn"@en, "Das Aufnehmen setzt weder Brot noch Horn voraus"@de ;
+    pm:dependentStep pmc:NorseRunarUppNema ;
+    pm:priorStep pmp:NorseHangaAVindgaMeidi ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "Held apart from the nine nights because it is a different kind of condition and because it is the one the poem states negatively: they cheered me with no loaf nor with any horn. A withholding by others, not an act of the sufferer and not an injury."@en ;
+    dcterms:source "Hávamál 139 (Guðni Jónsson; 140 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseFimbulljodNiu a pm:Conceptualizing ;
+    rdfs:label "The nine mighty songs and the draught of Óðrerir"@en, "Die neun Zauberlieder und der Trunk aus Óðrerir"@de ;
+    skos:definition "Nine mighty songs taken from the famed son of Bǫlþorn, Bestla's father, and a draught of the precious mead poured out of Óðrerir, after which the speaker began to thrive and to be wise, and to grow and to fare well."@en ;
+    skos:note "A second acquisition beside the runes and from a named giver, which the runes were not. Nine again, as the nights were nine, and the number is the only thing the two acquisitions have in common in the wording."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 140-141 (Guðni Jónsson; 141-142 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmp:NorseBidjaOkBlota a pm:Practicing ;
+    rdfs:label "Asking and offering, sending and slaying"@en, "Bitten und Opfern, Senden und Schlachten"@de ;
+    skos:definition "The four operations the poem puts as questions in one stanza, beside carving, reading and colouring the runes: knowest thou how one shall ask, how one shall offer, how one shall send, how one shall slay."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 144 (Guðni Jónsson; 145 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseOfblotit a pm:Cautioning ;
+    rdfs:label "Better unasked than over-offered"@en, "Besser ungebeten als zu viel geopfert"@de ;
+    skos:definition "The caution the poem sets against the four operations: better it is unasked than that it be over-offered, ever does a gift look to its return; better unsent than that it be over-slain."@en ;
+    pm:cautionsAbout pmp:NorseBidjaOkBlota ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The consequence named is not a punishment but a reversal of sign: excess is worse than omission. Between the two halves of the stanza stands the ground, that a gift ever looks to its return, so the measure is the exchange and excess is what destroys it while omission does not."@en ;
+    skos:note "Two paired verbs and not four separate ones. Asking pairs with offering, sending with slaying, and the caution is built twice over the same shape. A transmission that states the failure of a rite as too much rather than too little is uncommon in this holding, where cautions overwhelmingly name a shortfall."@en ;
+    dcterms:source "Hávamál 145 (Guðni Jónsson; 146 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 146" .
+
+#
+# II. The Ljóðatal. Eighteen songs, one to a stanza, each with its effect named
+# and none of them with its words given. Completeness is strict here by SPEC
+# §15: all eighteen are entered, including the last, which states no effect at
+# all and states instead the condition under which it is not passed on.
+#
+# One practice node stands for the singing throughout, because the poem gives
+# no procedure beyond knowing the song and, in three of the eighteen, a
+# condition of sight or of carving.
+#
+
+pmp:NorseLjodatal a pm:Practicing ;
+    rdfs:label "Knowing and singing the eighteen songs"@en, "Das Können und Singen der achtzehn Lieder"@de ;
+    skos:definition "The operation the catalogue reports without giving its content: the speaker knows a song and, at need, sings, chants or carves. Three of the eighteen add a condition to the singing — that the flying shaft be seen with the eyes, that the runes be cut for the hanged man, that the young man be sprinkled with water — and the remaining fifteen state the knowing alone."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "That the words are withheld is the transmission's own arrangement and not a loss in the manuscript. The poem says at the end of the catalogue that all is better which one alone knows, and it names an addressee, Loddfáfnir, who is told the effects and not the songs."@en ;
+    dcterms:source "Hávamál 146-163 (Guðni Jónsson; 147-165 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 147-165" .
+
+pmc:NorseHjalp a pm:Conceptualizing ;
+    rdfs:label "Help against suits and sorrows"@en, "Hilfe gegen Klagen und Sorgen"@de ;
+    skos:definition "The first song, called Help, which will help against suits and sorrows and every kind of grief. The stanza adds that the song is known neither to a king's wife nor to any man's son."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 146 (Guðni Jónsson; 147 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseLaeknar a pm:Conceptualizing ;
+    rdfs:label "What those need who would live as leeches"@en, "Was die brauchen, die als Heiler leben wollen"@de ;
+    skos:definition "The second song, which the sons of men need who would live as leeches. The stanza states the need and not the effect, and is the only one of the eighteen that does so."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 147 (Guðni Jónsson; 148 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseEggjarDeyfi a pm:Conceptualizing ;
+    rdfs:label "Blunting the edges of the enemy"@en, "Das Stumpfen der Schneiden des Feindes"@de ;
+    skos:definition "The third song, for when there is great need of a fetter against foemen: the speaker blunts the edges of his adversaries, and neither weapon nor staff bites on them."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 148 (Guðni Jónsson; 149 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseFjoturrSprettr a pm:Conceptualizing ;
+    rdfs:label "The fetter springs from the feet"@en, "Der Fessel springt von den Füßen"@de ;
+    skos:definition "The fourth song, for when men lay bonds on the speaker's limbs: he chants so that he may walk, the fetter springs from his feet and the shackle from his hands."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 149 (Guðni Jónsson; 150 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseFleinnStodvadr a pm:Conceptualizing ;
+    rdfs:label "Staying the shaft in flight"@en, "Das Anhalten des fliegenden Schaftes"@de ;
+    skos:definition "The fifth song: if the speaker sees a shaft shot in malice flying into the host, it does not fly so hard that he cannot stay it, provided he sees it with his eyes."@en ;
+    skos:note "The condition of sight is stated in the stanza itself and is the sharpest failing condition in the catalogue: the song does not work on what is not seen. It is entered as its own prerequisite below."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 150 (Guðni Jónsson; 151 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseMeinAftrSnuit a pm:Conceptualizing ;
+    rdfs:label "The harm eats the sender rather than me"@en, "Das Übel frisst den Absender statt mich"@de ;
+    skos:definition "The sixth song: if a man wounds the speaker with the roots of a raw tree, the harm eats that man who called down hatred on him rather than the speaker."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 151 (Guðni Jónsson; 152 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSalrLogi a pm:Conceptualizing ;
+    rdfs:label "Quenching the hall-fire over the benchmates"@en, "Das Löschen des Hallenbrandes über den Bankgenossen"@de ;
+    skos:definition "The seventh song: if the speaker sees a high flame over the hall of his benchmates, it does not burn so broad that he cannot save them; he knows that charm to chant."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 152 (Guðni Jónsson; 153 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHatrBaett a pm:Conceptualizing ;
+    rdfs:label "Bettering hate among the sons of princes"@en, "Das Beilegen des Hasses unter den Fürstensöhnen"@de ;
+    skos:definition "The eighth song, which the poem says it is useful for all to learn: wherever hate grows among the sons of a prince, the speaker can better it straightway."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 153 (Guðni Jónsson; 154 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseVindKyrring a pm:Conceptualizing ;
+    rdfs:label "Stilling the wind and putting the sea to sleep"@en, "Das Stillen des Windes und Einschläfern der See"@de ;
+    skos:definition "The ninth song: if need presses the speaker to save his ship afloat, he stills the wind on the wave and puts the whole sea to sleep."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 154 (Guðni Jónsson; 155 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseTunridurVillar a pm:Conceptualizing ;
+    rdfs:label "Sending the hedge-riders astray from their own shapes"@en, "Das Irreführen der Zaunreiterinnen aus ihren eigenen Gestalten"@de ;
+    skos:definition "The tenth song: if the speaker sees hedge-riders playing aloft, he so works that they go astray from their own home-shapes and their own home-minds."@en ;
+    skos:note "The one song in the catalogue whose object is another practitioner in flight, and the only place in it where the poem names a state the counterpart must return to: a home-shape and a home-mind. The displacement is assumed and the harm is that the return fails."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 155 (Guðni Jónsson; 156 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHeilirHildar a pm:Conceptualizing ;
+    rdfs:label "Whole to the battle and whole from it"@en, "Heil zur Schlacht und heil von ihr"@de ;
+    skos:definition "The eleventh song: if the speaker must lead old friends into battle, he chants under the shields, and they fare in power whole to the fight and whole from the fight, and come whole from wherever they go."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 156 (Guðni Jónsson; 157 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseVirgilnaMaelir a pm:Conceptualizing ;
+    rdfs:label "The hanged man walks and speaks with me"@en, "Der Gehenkte geht und spricht mit mir"@de ;
+    skos:definition "The twelfth song: if the speaker sees a corpse of the gallows swinging up in a tree, he so cuts and colours in runes that the man walks and speaks with him."@en ;
+    skos:note "The only one of the eighteen that names the operation as well as the effect, and it is carving and colouring rather than singing. It is also the only one whose outcome is a report from a second party, which is what makes it the most examinable of the catalogue in principle and the least reachable in fact."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 157 (Guðni Jónsson; 158 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseVatniVerpa a pm:Conceptualizing ;
+    rdfs:label "The man sprinkled with water does not fall in battle"@en, "Der mit Wasser Besprengte fällt nicht in der Schlacht"@de ;
+    skos:definition "The thirteenth song: if the speaker must sprinkle a young man with water, he shall not fall though he come into the host, and that warrior shall not sink before swords."@en ;
+    skos:note "The one claim in the catalogue with an outcome that a later generation could check, because the man either falls in battle or does not. The sprinkling is done once and the protection is stated without a term."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 158 (Guðni Jónsson; 159 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseAsaOkAlfaSkil a pm:Conceptualizing ;
+    rdfs:label "Knowing the distinctions of all gods and elves"@en, "Das Kennen der Unterschiede aller Asen und Alben"@de ;
+    skos:definition "The fourteenth song: if the speaker must tell over the gods before a company of men, he knows the distinctions of all the Æsir and elves; few unwise men know so."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 159 (Guðni Jónsson; 160 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseThjodrerisLjod a pm:Conceptualizing ;
+    rdfs:label "Might to the Æsir, fame to the elves, thought to Hroptatýr"@en, "Kraft den Asen, Ruhm den Alben, Verstand dem Hroptatýr"@de ;
+    skos:definition "The fifteenth song, which the dwarf Þjóðrerir chanted before the doors of Delling: he chanted might to the Æsir, fame to the elves, and understanding to Hroptatýr."@en ;
+    skos:note "The only one of the eighteen attributed to a named singer other than the speaker, and the only one whose beneficiaries are not men."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 160 (Guðni Jónsson; 161 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseGedOkGaman a pm:Conceptualizing ;
+    rdfs:label "Winning the whole mind and pleasure of a wise woman"@en, "Das Gewinnen des ganzen Sinnes und Vergnügens einer klugen Frau"@de ;
+    skos:definition "The sixteenth song: if the speaker will have the whole mind and pleasure of a wise maid, he turns the thought of the white-armed woman and changes all her feeling."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 161 (Guðni Jónsson; 162 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSeintFirrask a pm:Conceptualizing ;
+    rdfs:label "The young maid will be slow to shun me"@en, "Die junge Maid wird mich nur langsam meiden"@de ;
+    skos:definition "The seventeenth song, that the young maid will be slow to shun him; to which the stanza adds that Loddfáfnir will long be in want of these songs, though they would be good for him if he got them, useful if he took them, needful if he received them."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 162 (Guðni Jónsson; 163 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseAtjandaLjod a pm:Conceptualizing ;
+    rdfs:label "The eighteenth, which I never teach"@en, "Das achtzehnte, das ich niemals lehre"@de ;
+    skos:definition "The eighteenth song, of which the poem states no effect at all and states instead that the speaker teaches it neither to maid nor to any man's wife, save to her alone who holds him in her arms or who is his sister; with the ground that all is better which one alone knows, and the remark that this follows the end of the songs."@en ;
+    skos:note "Entered although it names no effect, because leaving it out would make the catalogue seventeen and the poem counts eighteen. What it carries instead of an effect is a rule of transmission, and that rule is the one testable thing about the whole list: a catalogue whose last member is withheld cannot be complete in any hand but the speaker's."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 163 (Guðni Jónsson; 164-165 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseAtjandaKautel a pm:Cautioning ;
+    rdfs:label "All is better that one alone knows"@en, "Alles ist besser, was einer allein kann"@de ;
+    skos:definition "The caution the catalogue closes on: the eighteenth song is never taught to maid nor to another man's wife, except to the one who lies in the speaker's arms or to his sister, for all is better which one alone knows."@en ;
+    pm:cautionsAbout pmp:NorseLjodatal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "A caution about disclosure and not about performance, and the only one in the transmission that names the persons to whom disclosure is allowed. It is also the exact opposite of this project's own criterion, which is why it is worth having in the holding: here is a transmission stating in its own words that the gate is the point."@en ;
+    dcterms:source "Hávamál 163 (Guðni Jónsson; 164-165 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseLjodYieldsHjalp a pm:Yielding ;
+    rdfs:label "The first song helps against suits and sorrows"@en, "Das erste Lied hilft gegen Klagen und Sorgen"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseHjalp ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 146 (Guðni Jónsson; 147 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 147" .
+
+pmc:NorseLjodYieldsLaeknar a pm:Yielding ;
+    rdfs:label "The second song is what healers need"@en, "Das zweite Lied ist, was Heiler brauchen"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseLaeknar ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 147 (Guðni Jónsson; 148 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 148" .
+
+pmc:NorseLjodYieldsEggjarDeyfi a pm:Yielding ;
+    rdfs:label "The third song blunts the edges of the enemy"@en, "Das dritte Lied stumpft die Schneiden des Feindes"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseEggjarDeyfi ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 148 (Guðni Jónsson; 149 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 149" .
+
+pmc:NorseLjodYieldsFjoturrSprettr a pm:Yielding ;
+    rdfs:label "The fourth song looses the fetter"@en, "Das vierte Lied löst die Fessel"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseFjoturrSprettr ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 149 (Guðni Jónsson; 150 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 150" .
+
+pmc:NorseLjodYieldsFleinnStodvadr a pm:Yielding ;
+    rdfs:label "The fifth song stays the flying shaft"@en, "Das fünfte Lied hält den fliegenden Schaft an"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseFleinnStodvadr ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 150 (Guðni Jónsson; 151 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 151" .
+
+pmc:NorseLjodYieldsMeinAftrSnuit a pm:Yielding ;
+    rdfs:label "The sixth song turns the harm on the sender"@en, "Das sechste Lied kehrt das Übel auf den Absender"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseMeinAftrSnuit ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 151 (Guðni Jónsson; 152 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 152" .
+
+pmc:NorseLjodYieldsSalrLogi a pm:Yielding ;
+    rdfs:label "The seventh song quenches the hall-fire"@en, "Das siebte Lied löscht den Hallenbrand"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseSalrLogi ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 152 (Guðni Jónsson; 153 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 153" .
+
+pmc:NorseLjodYieldsHatrBaett a pm:Yielding ;
+    rdfs:label "The eighth song betters hate among princes' sons"@en, "Das achte Lied legt den Hass unter Fürstensöhnen bei"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseHatrBaett ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 153 (Guðni Jónsson; 154 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 154" .
+
+pmc:NorseLjodYieldsVindKyrring a pm:Yielding ;
+    rdfs:label "The ninth song stills wind and sea"@en, "Das neunte Lied stillt Wind und See"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseVindKyrring ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 154 (Guðni Jónsson; 155 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 155" .
+
+pmc:NorseLjodYieldsTunridurVillar a pm:Yielding ;
+    rdfs:label "The tenth song sends the hedge-riders astray"@en, "Das zehnte Lied führt die Zaunreiterinnen irre"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseTunridurVillar ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 155 (Guðni Jónsson; 156 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 156" .
+
+pmc:NorseLjodYieldsHeilirHildar a pm:Yielding ;
+    rdfs:label "The eleventh song brings friends whole from the battle"@en, "Das elfte Lied bringt die Freunde heil aus der Schlacht"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseHeilirHildar ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 156 (Guðni Jónsson; 157 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 157" .
+
+pmc:NorseLjodYieldsVirgilnaMaelir a pm:Yielding ;
+    rdfs:label "The twelfth carving makes the hanged man speak"@en, "Das zwölfte Ritzen bringt den Gehenkten zum Sprechen"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseVirgilnaMaelir ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 157 (Guðni Jónsson; 158 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 158" .
+
+pmc:NorseLjodYieldsVatniVerpa a pm:Yielding ;
+    rdfs:label "The thirteenth song keeps the sprinkled man from falling"@en, "Das dreizehnte Lied bewahrt den Besprengten vor dem Fall"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseVatniVerpa ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 158 (Guðni Jónsson; 159 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 159" .
+
+pmc:NorseLjodYieldsAsaOkAlfaSkil a pm:Yielding ;
+    rdfs:label "The fourteenth song gives the distinctions of gods and elves"@en, "Das vierzehnte Lied gibt die Unterschiede der Asen und Alben"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseAsaOkAlfaSkil ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 159 (Guðni Jónsson; 160 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 160" .
+
+pmc:NorseLjodYieldsThjodrerisLjod a pm:Yielding ;
+    rdfs:label "The fifteenth song gives might, fame and understanding"@en, "Das fünfzehnte Lied gibt Kraft, Ruhm und Verstand"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseThjodrerisLjod ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 160 (Guðni Jónsson; 161 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 161" .
+
+pmc:NorseLjodYieldsGedOkGaman a pm:Yielding ;
+    rdfs:label "The sixteenth song turns a woman's whole feeling"@en, "Das sechzehnte Lied wendet das ganze Gefühl einer Frau"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseGedOkGaman ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 161 (Guðni Jónsson; 162 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 162" .
+
+pmc:NorseLjodYieldsSeintFirrask a pm:Yielding ;
+    rdfs:label "The seventeenth song makes the young maid slow to shun"@en, "Das siebzehnte Lied lässt die junge Maid nur langsam meiden"@de ;
+    pm:byPractice pmp:NorseLjodatal ;
+    pm:yieldsCapacity pmc:NorseSeintFirrask ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Hávamál 162 (Guðni Jónsson; 163 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Henry Adams Bellows, The Poetic Edda (New York: American-Scandinavian Foundation, 1923), Hovamol 163" .
+
+pmc:NorseFleinnPresupposesSjonum a pm:Presupposing ;
+    rdfs:label "The staying of the shaft presupposes that it is seen with the eyes"@en, "Das Anhalten des Schaftes setzt voraus, dass er mit Augen gesehen wird"@de ;
+    pm:dependentStep pmc:NorseFleinnStodvadr ;
+    pm:priorStep pmp:NorseLjodatal ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The stanza sets the condition as the limit of the claim: it flies not so hard that I do not stay it, if I see it with my eyes. Outside sight the song claims nothing, and the clause stands in the same line as the effect rather than beside it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "One of only two stated necessities this transmission carries, and the only one in the catalogue. Seventeen of the eighteen songs name an effect without a condition; this one names a condition that can be absent at the moment of use and is determinable by the user."@en ;
+    dcterms:source "Hávamál 150 (Guðni Jónsson; 151 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+#
+# III. Eiríks saga rauða, chapter four. The one séance the transmission
+# describes from outside, with its equipment, its meal, its seat and — the
+# reason this chapter was opened before any other prose — a stated condition
+# under which it does not proceed.
+#
+
+pmp:NorseFremjaSeidinn a pm:Practicing ;
+    rdfs:label "Performing the seiðr from the platform"@en, "Das Vollziehen des seiðr vom Gerüst"@de ;
+    skos:definition "The proceeding at Þorkell's farm in Greenland in a year of dearth: the seeress is fetched and seated on a high seat with a cushion stuffed with hen's feathers; she comes in a blue mantle set with stones to the hem, glass beads at her neck, a black lambskin hood lined with white catskin, a staff with a knob mounted in brass and set with stones, a belt of touchwood carrying a great pouch in which she keeps the charms she needs for her knowledge, shaggy calfskin shoes with long thongs and great tin knobs, and catskin gloves white and furred within; she is given porridge of kid's milk and the hearts of every kind of beast on the place; on the following evening the gear she needs is set up for her, the women strike a ring about the platform and she sits upon it, and the song is sung."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The platform is a hjallr in the text of Guðni Jónsson, which follows Hauksbók; the compound seiðhjallr, the word usually quoted for it, is the reading of Skálholtsbók. The Hauksbók line is the one read here and the plain word is what it gives."@en ;
+    skos:note "The belt is a hnjóskulindi, a belt of touchwood with the pouch on it, and not a belt with a tinder-box. Sephton renders it a girdle of soft hair and Vigfusson a girdle of puff-balls; Reeves has touch-wood, which is the word. The divergence is noted because the object is regularly listed in secondary accounts from the weaker translations."@en ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+pmc:NorseVardlokkur a pm:Conceptualizing ;
+    rdfs:label "The song called Varðlokkur"@en, "Das Lied namens Varðlokkur"@de ;
+    skos:definition "The lore needed for the seiðr, called Varðlokkur, which the seeress asks for by name and which no woman on the place knows; Guðríðr has it from her foster-mother Halldís in Iceland and calls herself neither versed in magic nor a woman of knowledge."@en ;
+    skos:note "Hauksbók writes Varðlokkvr with a double k, which is the reading verified here in the diplomatic print of Finnur Jónsson; Skálholtsbók is written varð lokr in two words and is normalised by its editor. The two spellings carry two derivations — from loka, to lock the spirits in, or from lokka, to entice them — and the narrative supports the second, since the spirits are said to have come to it."@en ;
+    skos:note "Hauksbók calls what Halldís taught a kvæði, a poem, and Skálholtsbók calls it fræði, lore. The difference matters for what is required of the second participant: a poem can be recited from memory, lore has to be understood."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Hauksbók, AM 544 4to, in the diplomatic edition of Finnur Jónsson (Copenhagen 1892-1896)" .
+
+pmc:NorseAudsynir a pm:Conceptualizing ;
+    rdfs:label "Things become plain that were hidden"@en, "Was verborgen war, wird offenbar"@de ;
+    skos:definition "The effect the seeress states after the song: many spirits have now come to it and thought it fair to hear, who before wished to part from us and give us no obedience, and many things are now plain to her that were hidden before, and many others besides."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSeidrYieldsAudsyni a pm:Yielding ;
+    rdfs:label "The performance makes the hidden plain"@en, "Der Vollzug macht das Verborgene offenbar"@de ;
+    pm:byPractice pmp:NorseFremjaSeidinn ;
+    pm:yieldsCapacity pmc:NorseAudsynir ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The narrative marks the before and after without comment. When the seeress arrives, the farmer asks her to run her eyes over household, herd and buildings, and she is fámálug um allt, sparing of speech about everything. Nothing is told until the song has been sung."@en ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+pmc:NorseSeidrPresupposesVardlokkur a pm:Presupposing ;
+    rdfs:label "The seiðr presupposes a second person who knows the song"@en, "Der seiðr setzt einen zweiten Kundigen voraus, der das Lied kann"@de ;
+    pm:dependentStep pmc:NorseAudsynir ;
+    pm:priorStep pmc:NorseVardlokkur ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The seeress states the consequence in her own words after the fact: before the song, the spirits wished to part from us and to give us no obedience, and the things now plain to her were hidden. The narrative states it a second time by acting on it, since the séance halts and the whole farm is searched for anyone who knows the song."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The load-bearing node of this file and the reason the work was opened. A practice whose outcome is stated to depend on a second, competent participant is rare, and this one names the failure twice: once as a condition asked for in advance and once as a report of what the spirits did before it was met."@en ;
+    skos:note "The one who supplies the condition is not a practitioner. Guðríðr says outright that she is neither versed in magic nor a woman of knowledge, and she agrees only under pressure from her host and after being told she would be no worse a woman for it. What the condition requires is the song, not the office."@en ;
+    skos:note "The hostile frame strengthens rather than weakens the node. The same chapter has Guðríðr refuse at first because she is a Christian woman and has her father leave the house while such hindrvitni is practised. A recorder who disapproves has no reason to invent a condition that makes the proceeding depend on a Christian woman's help."@en ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+pmc:NorseHallaerisSpa a pm:Conceptualizing ;
+    rdfs:label "The dearth will not last beyond this winter"@en, "Die Teuerung währt nicht länger als diesen Winter"@de ;
+    skos:definition "The prediction given after the song: that this dearth will not hold longer than through the winter and the season will better as spring comes, and that the sickness which has lain on them will also mend sooner than looked for."@en ;
+    skos:note "A prediction with a term in it, which is what separates it from the rest of the chapter. It names a season by which the change must have come and a comparison, sooner than expected, for the second half. Both could have failed within the year, in front of the household that heard them."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+pmc:NorseSeidrYieldsSpa a pm:Yielding ;
+    rdfs:label "The performance yields the prediction with its term"@en, "Der Vollzug bringt die Vorhersage mit ihrer Frist hervor"@de ;
+    pm:byPractice pmp:NorseFremjaSeidinn ;
+    pm:yieldsCapacity pmc:NorseHallaerisSpa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "Held apart from the general making-plain above, because a term is a different kind of claim from a state of knowledge. The saga reports the answer and, in this chapter, not the outcome; whether the spring came as told is not said here."@en ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSpakonuMegin a pm:Conceptualizing ;
+    rdfs:label "Brighter rays than I have strength to see clearly"@en, "Hellere Strahlen, als ich die Kraft habe, sie deutlich zu sehen"@de ;
+    skos:definition "The limit the seeress states on her own sight, in the fate she gives Guðríðr: over your kindreds shine brighter rays than I have strength to see such a thing clearly."@en ;
+    skos:note "A transmission stating where its own instrument ends, in the mouth of the practitioner and at the height of the performance. That is a different thing from a caution: nothing is warned against, and no condition is set. What is given is a ceiling."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+#
+# IV. Ynglinga saga six and seven. What Snorri ascribes to Óðinn, the one
+# caution he attaches to the craft, and the counter-search that the same
+# chapter answers against him.
+#
+
+pmp:NorseHamskipti a pm:Practicing ;
+    rdfs:label "Changing shapes while the body lies as if asleep"@en, "Der Gestaltwechsel, während der Leib wie schlafend daliegt"@de ;
+    skos:definition "The operation Snorri ascribes to Óðinn: he changed shapes, and then the body lay as if asleep or dead, while he himself was a bird or a beast, a fish or a serpent, and went in one moment to far lands on his own errands or those of other men."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "A third-party ascription and not a textual attestation of a practice: Snorri is writing in the thirteenth century about a figure he is euhemerising into a king, and the chapter is a catalogue of what the man is said to have known. What it reports is the tradition's claim about him and not an instruction anyone could follow."@en ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "The Heimskringla, or Chronicle of the Kings of Norway, translated by Samuel Laing (London 1844), Ynglinga saga, chapter 7" .
+
+pmc:NorseFjarlaegLond a pm:Conceptualizing ;
+    rdfs:label "Going in one moment to far lands"@en, "In einem Augenblick in ferne Länder fahren"@de ;
+    skos:definition "The capacity claimed for the shape-changing: to go in a single moment to distant lands, on one's own errands or on another man's, in the form of a bird, a beast, a fish or a serpent."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHamskiptiYieldsFjarlaegLond a pm:Yielding ;
+    rdfs:label "The shape-changing carries him to far lands"@en, "Der Gestaltwechsel trägt ihn in ferne Länder"@de ;
+    pm:byPractice pmp:NorseHamskipti ;
+    pm:yieldsCapacity pmc:NorseFjarlaegLond ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHamskiptiLocus a pm:Situating ;
+    rdfs:label "The shape-changing is placed at a displaced locus"@en, "Der Gestaltwechsel wird am versetzten Ort verortet"@de ;
+    pm:situatedNode pmc:NorseHamskiptiYieldsFjarlaegLond ;
+    pm:axisValue pm:displacedLocus ;
+    pm:situationGround "The source separates the two explicitly and in one sentence: the trunk lay as if asleep or dead, and he himself was then a bird or a beast, a fish or a serpent, and went to far lands. What acts is not where the body is."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The placement is the compiler's and the source names no coordinate. It is unusually well carried here, because the text states the condition of the abandoned body rather than leaving it to be inferred, which is what most sources on this axis do not do."@en .
+
+pmc:NorseHamskiptiAnchoring a pm:Situating ;
+    rdfs:label "The shape-changing is placed at the sleep threshold"@en, "Der Gestaltwechsel wird an der Schlafschwelle verortet"@de ;
+    pm:situatedNode pmc:NorseHamskiptiYieldsFjarlaegLond ;
+    pm:axisValue pm:sleepThreshold ;
+    pm:situationGround "The body is said to lie sem sofinn eða dauðr, as if asleep or dead, for the duration of the operation. The source gives the condition by comparison with sleep and gives no other."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Placed on the sleep threshold rather than in withdrawn absorption because the source's own comparison is sleep and death, not an inward gathering of the senses. A source that had meant absorption had the word for it and did not use it."@en .
+
+pmc:NorseSeidrOrlogOkUordna a pm:Conceptualizing ;
+    rdfs:label "Knowing men's fates and what has not come to pass"@en, "Das Wissen um die Schicksale der Menschen und das noch nicht Geschehene"@de ;
+    skos:definition "What Snorri says the craft called seiðr gave: by it he could know the fates of men and things that had not yet happened, and also bring men death, misfortune or sickness, and take wit or strength from men and give it to others."@en ;
+    skos:note "Four capacities in one sentence and they fall into two kinds: knowing, and transferring. The second kind is the only place in this transmission where a quantity is said to be taken from one person and given to another."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "The Heimskringla, translated by Samuel Laing (London 1844), Ynglinga saga, chapter 7" .
+
+pmp:NorseSeidrIthrott a pm:Practicing ;
+    rdfs:label "The craft called seiðr"@en, "Die Kunst, die seiðr heißt"@de ;
+    skos:definition "The craft Snorri names as the one with which the greatest power went and which Óðinn performed himself, called seiðr, taught by him to the priestesses and, in the same chapter, most of his crafts to the sacrificing priests."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSeidrYieldsOrlog a pm:Yielding ;
+    rdfs:label "The craft yields knowledge of fates and power over men"@en, "Die Kunst bringt Wissen um Schicksale und Macht über Menschen hervor"@de ;
+    pm:byPractice pmp:NorseSeidrIthrott ;
+    pm:yieldsCapacity pmc:NorseSeidrOrlogOkUordna ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSeidrErgi a pm:Cautioning ;
+    rdfs:label "So much ergi goes with the craft that men could not use it without shame"@en, "So viel ergi folgt der Kunst, dass Männer sie nicht ohne Schande ausüben konnten"@de ;
+    skos:definition "The caution Snorri attaches to the craft: with this sorcery, when it is performed, goes so much ergi that it did not seem to men without shame to deal with it, and the craft was taught to the priestesses."@en ;
+    pm:cautionsAbout pmp:NorseSeidrIthrott ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The consequence named is social and not operative: not that the craft fails in a man's hands, but that a man cannot handle it skammlaust, without shame. What follows from it in the text is a redirection of the teaching and not a limit on the effect."@en ;
+    skos:note "Laing renders ergi as weakness, which is too mild to carry the clause: the word denotes unmanliness in the sexually passive and dishonouring sense, which is why the consequence is shame and not incapacity. The German label keeps the Norse word for the same reason the identifier does."@en ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "The Heimskringla, translated by Samuel Laing (London 1844), Ynglinga saga, chapter 7" .
+
+pmc:NorseSeidrErgiStrittig a pm:Disputing ;
+    rdfs:label "Whether men practised the craft"@en, "Ob Männer die Kunst ausübten"@de ;
+    pm:disputedClaim pmc:NorseSeidrErgi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The counter-search was carried against the caution and it came back full, from the same author and in part from the same chapter. Three passages tell against it. The sentence that introduces the craft says that Óðinn performed it himself, ok framdi sjálfr, immediately before the clause about shame. Two sentences after the clause, the same chapter says he taught most of his crafts to the blótgoðar, the sacrificing priests, who are men, and that they were next to him in all lore and sorcery. And Haralds saga ins hárfagra has male practitioners in the open: Rǫgnvaldr réttilbeini, the king's own son, learned sorcery and became a seiðmaðr on Haðaland, and Vitgeirr in Hǫrðaland answered the king's order to stop with a public verse saying it is small harm that we practise it, children of churls and of old women, when Rǫgnvaldr réttilbeini does, Haraldr's own son, on Haðaland."@en ;
+    skos:note "The dispute is not resolved here and the two sides are not of the same kind. What the caution states is a norm; what the narratives show is the norm being broken and enforced, since the same chapter ends with Eiríkr burning his brother indoors together with eighty seiðmenn, and the deed much praised. A norm with a death penalty attached is evidence for the norm and not against it."@en ;
+    skos:note "The part that is genuinely against the caution is Vitgeirr's answer, because he is not ashamed. He replies in verse, publicly, to a king, and his defence is not denial but comparison. That is a man treating the craft as ordinary and saying so where it could be heard."@en ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Snorri Sturluson, Haralds saga ins hárfagra, chapter 36, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "The Heimskringla, translated by Samuel Laing (London 1844), Ynglinga saga chapter 7 and Harald Harfager's saga chapter 36" .

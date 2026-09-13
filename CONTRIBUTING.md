@@ -322,6 +322,12 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   führt und eine eigene Misslingens- und Zeichenlehre in zwei
   aufeinanderfolgenden Kapiteln trägt; die Sinologie geht als
   `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:tschuktschisch` (Bogoras, The Chukchee, Memoir of the American
+  Museum of Natural History Bd. VII, und Bogoras, Chukchee Materials — von
+  `korpus:tungusisch` getrennt geführt, weil dort die Tungusen und Mandschuren
+  stehen und dieser Korpus ein anderer Sprachstamm, ein anderer Aufzeichner und
+  eine eigene Fassung des Vollzugs ist; die moderne Schamanismusforschung geht
+  als `pm:evidenceFrom` ein, nie als Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label

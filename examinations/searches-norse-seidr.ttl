@@ -1,0 +1,43 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Norse run of 2026-09-13
+#
+# These belong with the others in examinations/searches.ttl and are not there
+# for a mechanical reason: a second branch of the same run appends to the end
+# of that file, and two appends at the same end position do not merge without a
+# hand. The register is the class and not the file, so nothing is lost by the
+# split and a later run may fold this back in. The same problem and the same
+# solution are described for the label list in CONTRIBUTING.md.
+#
+
+pmp:MenWithoutShameInSeidrSearch a pm:Searching ;
+    rdfs:label "Whether the Norse corpus has men practising seiðr without shame"@en, "Ob der altnordische Bestand Männer kennt, die seiðr ohne Schande üben"@de ;
+    pm:searchedCorpus "Snorri Sturluson, Heimskringla, in the normalised Old Norse text of Guðni Jónsson: Ynglinga saga read at the wording in chapters six and seven, Haralds saga ins hárfagra searched by term over the whole saga and the hits read at the wording" ;
+    pm:searchedFor "A passage telling against the caution at pmc:NorseSeidrErgi, which states that so much ergi goes with the craft that men could not deal with it without shame and that it was therefore taught to the priestesses: that is, men practising it, and practising it without the shame the clause asserts." ;
+    pm:searchTerms "Term search of both sagas for: seið, seiðr, seiðmaðr, seiðmenn, fjölkyngi, fjölkunnig, ergi, gyðjum, blótgoðum, Vitgeirr, Rögnvaldr; the chapters carrying the hits read in full." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:NorseSeidrErgiStrittig ;
+    pm:searchedBy "prima-materia, 2026-09-13" ;
+    dcterms:date "2026-09-13" ;
+    skos:note "Three passages came back and two of them from the same chapter as the caution. The sentence that introduces the craft says Óðinn performed it himself; two sentences after the clause about shame, the same chapter says he taught most of his crafts to the blótgoðar, who are men. The third is in the later saga: the king's own son learned sorcery and became a seiðmaðr, and Vitgeirr in Hǫrðaland answered the royal order to stop with a public verse pointing at him."@en ;
+    skos:note "The search is recorded because its outcome changed what was written and not only what was known. Without it the caution would have gone into the holding as a rule of the transmission; with it, it goes in as one side of a dispute that the transmission carries within a single chapter. This is the case the class exists for on the productive side."@en ;
+    skos:note "What it does not settle. Vitgeirr's answer shows a man not ashamed; the same chapter ends with the king's other son burning the first indoors together with eighty seiðmenn, and the deed much praised. A norm enforced by killing is evidence for the norm. The dispute node says so and does not resolve it."@en .
+
+pmp:SecondSingerOutsideTheNorthSearch a pm:Searching ;
+    rdfs:label "Whether a transmission outside the north binds a séance to a second person"@en, "Ob eine Überlieferung außerhalb des Nordens eine Sitzung an einen Zweiten bindet"@de ;
+    pm:searchedCorpus "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), searched by term over the whole volume and the section on the shamanistic performance, pp. 433-435, read at the wording" ;
+    pm:searchedFor "A transmission outside the North Atlantic sphere in which a proceeding of this kind is stated to depend on a second, competent participant, as Eiríks saga rauða states of the song called Varðlokkur — the outside-the-sphere search SPEC §15 requires before pmc:NorseSeidrPresupposesVardlokkur may be generalized from." ;
+    pm:searchTerms "Term search of the whole volume, with the text normalised to letters because the digitisation damages the transcription of Chukchee words, for: ocitkolin, ecitkolin, citkolin, answering call, assistant, respond, shamanistic performance, unable to perform, encouraging the zeal. The Chukchee term itself was not findable in any spelling and the passage was reached through the English gloss." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:ChukcheePresupposesAnsweringCalls ;
+    pm:searchedBy "prima-materia, 2026-09-13" ;
+    dcterms:date "2026-09-13" ;
+    skos:note "The find was entered rather than left as an address, which meant registering and opening a transmission this holding did not have. Three pages of one work stand in traditions/chukchee.ttl and the coverage state says work opened and nothing more."@en ;
+    skos:note "The difference between the two cases is in the finding and is kept in the node. Greenland states an outcome: the spirits withheld obedience and the things now plain were hidden before. Bogoras states an incapacity: the practitioner considers himself unable to perform properly. The second is the weaker of the two and the generalization is worded so that it carries both."@en ;
+    skos:note "Not searched, and they are the obvious next places: the Koryak volume of the same expedition, which the same recorder's colleague wrote and which reports a neighbouring practice; the Yukaghir material, where the secondary literature reports the practitioner's wife as his supporting staff; and the Iglulik records, where the drum is named as that by which the spirits are called up. All three were reached in the landscape stage and none was opened."@en .
