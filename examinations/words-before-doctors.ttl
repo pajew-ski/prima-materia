@@ -1,0 +1,28 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the sentence that covers every outcome
+#
+# The second protocol in the holding to stand at pm:claimDoesNotDiscriminate,
+# and the clearest case for the state: the sentence is not weakly supported, it
+# is built so that no result can reach it. See prima-materia#521.
+#
+
+pmp:WordsBeforeDoctorsExamination a pm:Testing ;
+    rdfs:label "Examination of the rejoinder about words and doctors"@en, "Prüfung des Satzes über Worte und Doktoren"@de ;
+    pm:tests pmc:EuropeanFolkMagicDoctorsAusrede ;
+    pm:examinationState pm:claimDoesNotDiscriminate ;
+    pm:undividedOutcomes "The sufferer recovers after the words, which the sentence takes as confirming the words."@en ;
+    pm:undividedOutcomes "The sufferer does not recover after the words and the physician does not help either, which the sentence takes as confirming itself."@en ;
+    pm:undividedOutcomes "The sufferer does not recover after the words and the physician does help, which is the one outcome the sentence would have to exclude; the same paragraph disposes of it in advance by calling the physicians' account of it their excuse."@en ;
+    pm:falsifiedBy "A case in which blessing words were used without effect and a physician then cured the same complaint, admitted as a case rather than reclassified as the physician's excuse."@en ;
+    pm:examinedBy "prima-materia, 2026-09-13" ;
+    pm:protocolUpdated "2026-09-13" ;
+    skos:note "The state is not a verdict on the strength of the evidence. It says that the claim, as the preface words it, treats an outcome and its opposite alike, and that the third outcome, the only one that could tell against it, is answered before it can occur. What decides the state is not how convinced a reader is but whether there is a result the claim would have ruled out."@en ;
+    skos:note "The falsifying condition is written out even so, because SPEC's fifth state sends the claim back to the wording rather than to the bin. The sentence could be restated in a form that does discriminate, and the restatement would be a different claim with the same content: that words help in cases where medicine does not. That version can fail and this one cannot."@en ;
+    skos:note "Where the sentence stands matters for how it is read. It is in the preface, that is at the place where a book says what it defends itself against, and the paragraph around it is a chain of rhetorical questions about what no physician has ever driven out. The immunising move is the transmission's own account of its failures, which is exactly the evidence SPEC §14 wants when it asks whether a transmission is a copying chain or a series of trials."@en .
