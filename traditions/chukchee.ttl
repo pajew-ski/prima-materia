@@ -1,0 +1,76 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Chukchee shamanic transmission
+#
+# This file exists because of a counter-search and not because of a plan. SPEC
+# §15 requires, for every claim that is to enter the graph, at least one
+# transmission outside the sphere in which the claim is expected. The claim was
+# the condition in Eiríks saga rauða that the seiðr does not proceed unless a
+# second, competent person sings; the sphere was the North Atlantic; and the
+# transmission asked was the Chukchee of northeastern Siberia, because the
+# ethnographic literature names a participant there whose office is to answer.
+#
+# The passage was found and read, and so the tradition is entered rather than
+# left as an address in an issue. Only what the search opened stands here:
+# three pages of one work. Everything else the corpus holds is unread and the
+# coverage state says so.
+#
+# There is no written corpus and the recorder's fixation is the first there
+# was, so the mode is pm:fieldAttestation and not pm:mediatedAttestation. The
+# difference matters: no earlier work was out of reach, there was none.
+#
+
+pmt:ChukcheeShamanism a pm:Tradition ;
+    rdfs:label "Chukchee shamanic transmission"@en, "Tschuktschische Schamanenüberlieferung"@de ;
+    skos:definition "The northeastern Siberian transmission of a performance held in a closed and darkened sleeping-room, in which the practitioner drums and sings without words until the spirits appear, and in which a second person present answers him."@en ;
+    skos:note "Registered and worked in the same act, which SPEC §14 allows and which is stated here rather than glossed over: a registration claims only that the transmission exists and where it lies, and this file goes past that for three pages and no further."@en ;
+    skos:note "The contact route is entered as documented and toward one transmission this graph already holds. The recorder states that the use of unmixed tobacco as a stimulant before the performance is copied from the Tungus shamans, and pmt:SiberianShamanism is the Tungus file. That is a route in the material and not a geographical guess; it does not touch the North Atlantic question, for which no route of any kind is known in either direction."@en ;
+    skos:note "The lie of the corpus. One recorder, working in the field of the Jesup North Pacific Expedition around the turn of the twentieth century among the Reindeer and the Maritime Chukchee, publishing in English with the Chukchee terms in his own transcription and with a separate volume of texts in the language. He is the first fixation in writing of what he reports, which is what makes him a witness here and not a secondary summary; what he is not is a chorus, and a second recorder would be worth more than a second reading of him."@en ;
+    pm:principalCorpus "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Jesup North Pacific Expedition vol. 7), Leiden and New York 1904-1909; Bogoras, Chukchee Materials" ;
+    pm:coverageState pm:workOpened ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 433-435" .
+
+pmp:ChukcheeShamanisticPerformance a pm:Practicing ;
+    rdfs:label "The performance in the closed inner room"@en, "Der Vollzug im geschlossenen Innenraum"@de ;
+    skos:definition "The proceeding after the evening meal: the kettles and trays are carried out, everyone who wishes to be present enters the inner room, which is closed for the night; the practitioner sits at the master's place by the back wall with free space left around him, goes over the drum and tightens its head, strips to the waist and often takes off shoes and stockings; the light is put out, and he beats the drum and sings tunes without words, at first low and then filling the room, using the drum to change the place his voice appears to come from, until after a quarter of an hour or more the spirits first appear."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee of northeastern Siberia in the field of the Jesup North Pacific Expedition and published in English between 1904 and 1909; the speakers are not named at this place and the account is the recorder's own from attendance rather than a quoted informant; the Chukchee terms are carried in his transcription beside the English, and a separate volume of texts in the language stands beside the monograph."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    skos:note "The darkness and the closed room are stated as conditions of the proceeding and not as atmosphere: the light is put out before the operating begins, and the recorder describes what the sound does to listeners who can no longer place its source."@en ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 433-434" .
+
+pmc:ChukcheeAnsweringCalls a pm:Conceptualizing ;
+    rdfs:label "The answering calls and the one who gives them"@en, "Die Antwortrufe und der, der sie gibt"@de ;
+    skos:definition "The exclamations a listener throws in from time to time during the performance — an interjection of wonder, of course, certainly — for which the transmission has a word of its own, to give answering calls, and a participle naming the one who gives them."@en ;
+    skos:note "The Chukchee word is given twice on the page and the digitised copy used here damages it in both places, once as oTitkek for the verb and once as ocitkedm for the participle. The secondary literature reads the participle ocitkolin. What the reading here rests on is the English gloss, which is unambiguous, and not on the transcription."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 434" .
+
+pmc:ChukcheePresupposesAnsweringCalls a pm:Presupposing ;
+    rdfs:label "The performance presupposes someone who answers"@en, "Der Vollzug setzt einen voraus, der antwortet"@de ;
+    pm:dependentStep pmp:ChukcheeShamanisticPerformance ;
+    pm:priorStep pmc:ChukcheeAnsweringCalls ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The recorder states it as an incapacity and not as a preference: without one who gives answering calls, a Chukchee shaman considers himself unable to perform his calling in a proper way. The sentence names the office, not the crowd."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee of northeastern Siberia in the field of the Jesup North Pacific Expedition and published in English between 1904 and 1909; the statement is given as what a Chukchee shaman considers, without a named speaker, in the recorder's English with the Chukchee term beside it."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    skos:note "What the passage adds beyond the rule is the behaviour that follows from it: novices learning the practice usually induce a brother or a sister to respond, so as to encourage the zeal of the performer. A rule that people arrange their households around is a rule that was in force, and the arrangement is reported without being asked for."@en ;
+    skos:note "The limit of the claim, and it is the difference from the North Atlantic case. What the recorder says is that the practitioner holds himself unable to perform properly. He does not say that the spirits stay away, and nothing here states an outcome the absence of the answerer would produce. The seeress in Greenland says exactly that, and this transmission does not."@en ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 434" .
+
+pmc:ChukcheeColdWaterEndsInspiration a pm:Conceptualizing ;
+    rdfs:label "Cold water on the head ends the inspiration"@en, "Kaltes Wasser auf den Kopf beendet die Eingebung"@de ;
+    skos:definition "The stated means of breaking off the state: the application of cold water to the head of a practitioner in the very heat of his performance would suddenly bring his inspiration to an end, and at ceremonials his neighbours may sprinkle him for that purpose when he practises too long or seems excited to a dangerous pitch."@en ;
+    skos:note "Entered because it is a failing condition of the rarest kind: one that a bystander can bring about deliberately, in the middle of the act, with a stated and immediate effect. Most conditions in this holding are set before the act and can only be observed afterwards."@en ;
+    skos:note "The recorder marks his own distance at this one place: he was told this, where the surrounding paragraphs report what he saw. The node keeps the difference rather than levelling it into the rest of the account."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 433" .
