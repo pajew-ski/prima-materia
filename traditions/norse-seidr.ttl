@@ -419,3 +419,175 @@ pmc:NorseFleinnPresupposesSjonum a pm:Presupposing ;
     pm:withinTradition pmt:NorseSeidr ;
     skos:note "One of only two stated necessities this transmission carries, and the only one in the catalogue. Seventeen of the eighteen songs name an effect without a condition; this one names a condition that can be absent at the moment of use and is determinable by the user."@en ;
     dcterms:source "Hávamál 150 (Guðni Jónsson; 151 in Bellows), in Eddukvæði. Sæmundar-Edda, the normalised Old Norse text of Guðni Jónsson" .
+
+#
+# III. Eiríks saga rauða, chapter four. The one séance the transmission
+# describes from outside, with its equipment, its meal, its seat and — the
+# reason this chapter was opened before any other prose — a stated condition
+# under which it does not proceed.
+#
+
+pmp:NorseFremjaSeidinn a pm:Practicing ;
+    rdfs:label "Performing the seiðr from the platform"@en, "Das Vollziehen des seiðr vom Gerüst"@de ;
+    skos:definition "The proceeding at Þorkell's farm in Greenland in a year of dearth: the seeress is fetched and seated on a high seat with a cushion stuffed with hen's feathers; she comes in a blue mantle set with stones to the hem, glass beads at her neck, a black lambskin hood lined with white catskin, a staff with a knob mounted in brass and set with stones, a belt of touchwood carrying a great pouch in which she keeps the charms she needs for her knowledge, shaggy calfskin shoes with long thongs and great tin knobs, and catskin gloves white and furred within; she is given porridge of kid's milk and the hearts of every kind of beast on the place; on the following evening the gear she needs is set up for her, the women strike a ring about the platform and she sits upon it, and the song is sung."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The platform is a hjallr in the text of Guðni Jónsson, which follows Hauksbók; the compound seiðhjallr, the word usually quoted for it, is the reading of Skálholtsbók. The Hauksbók line is the one read here and the plain word is what it gives."@en ;
+    skos:note "The belt is a hnjóskulindi, a belt of touchwood with the pouch on it, and not a belt with a tinder-box. Sephton renders it a girdle of soft hair and Vigfusson a girdle of puff-balls; Reeves has touch-wood, which is the word. The divergence is noted because the object is regularly listed in secondary accounts from the weaker translations."@en ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+pmc:NorseVardlokkur a pm:Conceptualizing ;
+    rdfs:label "The song called Varðlokkur"@en, "Das Lied namens Varðlokkur"@de ;
+    skos:definition "The lore needed for the seiðr, called Varðlokkur, which the seeress asks for by name and which no woman on the place knows; Guðríðr has it from her foster-mother Halldís in Iceland and calls herself neither versed in magic nor a woman of knowledge."@en ;
+    skos:note "Hauksbók writes Varðlokkvr with a double k, which is the reading verified here in the diplomatic print of Finnur Jónsson; Skálholtsbók is written varð lokr in two words and is normalised by its editor. The two spellings carry two derivations — from loka, to lock the spirits in, or from lokka, to entice them — and the narrative supports the second, since the spirits are said to have come to it."@en ;
+    skos:note "Hauksbók calls what Halldís taught a kvæði, a poem, and Skálholtsbók calls it fræði, lore. The difference matters for what is required of the second participant: a poem can be recited from memory, lore has to be understood."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Hauksbók, AM 544 4to, in the diplomatic edition of Finnur Jónsson (Copenhagen 1892-1896)" .
+
+pmc:NorseAudsynir a pm:Conceptualizing ;
+    rdfs:label "Things become plain that were hidden"@en, "Was verborgen war, wird offenbar"@de ;
+    skos:definition "The effect the seeress states after the song: many spirits have now come to it and thought it fair to hear, who before wished to part from us and give us no obedience, and many things are now plain to her that were hidden before, and many others besides."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSeidrYieldsAudsyni a pm:Yielding ;
+    rdfs:label "The performance makes the hidden plain"@en, "Der Vollzug macht das Verborgene offenbar"@de ;
+    pm:byPractice pmp:NorseFremjaSeidinn ;
+    pm:yieldsCapacity pmc:NorseAudsynir ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The narrative marks the before and after without comment. When the seeress arrives, the farmer asks her to run her eyes over household, herd and buildings, and she is fámálug um allt, sparing of speech about everything. Nothing is told until the song has been sung."@en ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+pmc:NorseSeidrPresupposesVardlokkur a pm:Presupposing ;
+    rdfs:label "The seiðr presupposes a second person who knows the song"@en, "Der seiðr setzt einen zweiten Kundigen voraus, der das Lied kann"@de ;
+    pm:dependentStep pmc:NorseAudsynir ;
+    pm:priorStep pmc:NorseVardlokkur ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The seeress states the consequence in her own words after the fact: before the song, the spirits wished to part from us and to give us no obedience, and the things now plain to her were hidden. The narrative states it a second time by acting on it, since the séance halts and the whole farm is searched for anyone who knows the song."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The load-bearing node of this file and the reason the work was opened. A practice whose outcome is stated to depend on a second, competent participant is rare, and this one names the failure twice: once as a condition asked for in advance and once as a report of what the spirits did before it was met."@en ;
+    skos:note "The one who supplies the condition is not a practitioner. Guðríðr says outright that she is neither versed in magic nor a woman of knowledge, and she agrees only under pressure from her host and after being told she would be no worse a woman for it. What the condition requires is the song, not the office."@en ;
+    skos:note "The hostile frame strengthens rather than weakens the node. The same chapter has Guðríðr refuse at first because she is a Christian woman and has her father leave the house while such hindrvitni is practised. A recorder who disapproves has no reason to invent a condition that makes the proceeding depend on a Christian woman's help."@en ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+pmc:NorseHallaerisSpa a pm:Conceptualizing ;
+    rdfs:label "The dearth will not last beyond this winter"@en, "Die Teuerung währt nicht länger als diesen Winter"@de ;
+    skos:definition "The prediction given after the song: that this dearth will not hold longer than through the winter and the season will better as spring comes, and that the sickness which has lain on them will also mend sooner than looked for."@en ;
+    skos:note "A prediction with a term in it, which is what separates it from the rest of the chapter. It names a season by which the change must have come and a comparison, sooner than expected, for the second half. Both could have failed within the year, in front of the household that heard them."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+pmc:NorseSeidrYieldsSpa a pm:Yielding ;
+    rdfs:label "The performance yields the prediction with its term"@en, "Der Vollzug bringt die Vorhersage mit ihrer Frist hervor"@de ;
+    pm:byPractice pmp:NorseFremjaSeidinn ;
+    pm:yieldsCapacity pmc:NorseHallaerisSpa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "Held apart from the general making-plain above, because a term is a different kind of claim from a state of knowledge. The saga reports the answer and, in this chapter, not the outcome; whether the spring came as told is not said here."@en ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSpakonuMegin a pm:Conceptualizing ;
+    rdfs:label "Brighter rays than I have strength to see clearly"@en, "Hellere Strahlen, als ich die Kraft habe, sie deutlich zu sehen"@de ;
+    skos:definition "The limit the seeress states on her own sight, in the fate she gives Guðríðr: over your kindreds shine brighter rays than I have strength to see such a thing clearly."@en ;
+    skos:note "A transmission stating where its own instrument ends, in the mouth of the practitioner and at the height of the performance. That is a different thing from a caution: nothing is warned against, and no condition is set. What is given is a ceiling."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Eiríks saga rauða, chapter 4, in Íslendinga sögur, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Eirik the Red's Saga, chapter 4, translated by J. Sephton (Liverpool: D. Marples, 1880)" .
+
+#
+# IV. Ynglinga saga six and seven. What Snorri ascribes to Óðinn, the one
+# caution he attaches to the craft, and the counter-search that the same
+# chapter answers against him.
+#
+
+pmp:NorseHamskipti a pm:Practicing ;
+    rdfs:label "Changing shapes while the body lies as if asleep"@en, "Der Gestaltwechsel, während der Leib wie schlafend daliegt"@de ;
+    skos:definition "The operation Snorri ascribes to Óðinn: he changed shapes, and then the body lay as if asleep or dead, while he himself was a bird or a beast, a fish or a serpent, and went in one moment to far lands on his own errands or those of other men."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "A third-party ascription and not a textual attestation of a practice: Snorri is writing in the thirteenth century about a figure he is euhemerising into a king, and the chapter is a catalogue of what the man is said to have known. What it reports is the tradition's claim about him and not an instruction anyone could follow."@en ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "The Heimskringla, or Chronicle of the Kings of Norway, translated by Samuel Laing (London 1844), Ynglinga saga, chapter 7" .
+
+pmc:NorseFjarlaegLond a pm:Conceptualizing ;
+    rdfs:label "Going in one moment to far lands"@en, "In einem Augenblick in ferne Länder fahren"@de ;
+    skos:definition "The capacity claimed for the shape-changing: to go in a single moment to distant lands, on one's own errands or on another man's, in the form of a bird, a beast, a fish or a serpent."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHamskiptiYieldsFjarlaegLond a pm:Yielding ;
+    rdfs:label "The shape-changing carries him to far lands"@en, "Der Gestaltwechsel trägt ihn in ferne Länder"@de ;
+    pm:byPractice pmp:NorseHamskipti ;
+    pm:yieldsCapacity pmc:NorseFjarlaegLond ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseHamskiptiLocus a pm:Situating ;
+    rdfs:label "The shape-changing is placed at a displaced locus"@en, "Der Gestaltwechsel wird am versetzten Ort verortet"@de ;
+    pm:situatedNode pmc:NorseHamskiptiYieldsFjarlaegLond ;
+    pm:axisValue pm:displacedLocus ;
+    pm:situationGround "The source separates the two explicitly and in one sentence: the trunk lay as if asleep or dead, and he himself was then a bird or a beast, a fish or a serpent, and went to far lands. What acts is not where the body is."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The placement is the compiler's and the source names no coordinate. It is unusually well carried here, because the text states the condition of the abandoned body rather than leaving it to be inferred, which is what most sources on this axis do not do."@en .
+
+pmc:NorseHamskiptiAnchoring a pm:Situating ;
+    rdfs:label "The shape-changing is placed at the sleep threshold"@en, "Der Gestaltwechsel wird an der Schlafschwelle verortet"@de ;
+    pm:situatedNode pmc:NorseHamskiptiYieldsFjarlaegLond ;
+    pm:axisValue pm:sleepThreshold ;
+    pm:situationGround "The body is said to lie sem sofinn eða dauðr, as if asleep or dead, for the duration of the operation. The source gives the condition by comparison with sleep and gives no other."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Placed on the sleep threshold rather than in withdrawn absorption because the source's own comparison is sleep and death, not an inward gathering of the senses. A source that had meant absorption had the word for it and did not use it."@en .
+
+pmc:NorseSeidrOrlogOkUordna a pm:Conceptualizing ;
+    rdfs:label "Knowing men's fates and what has not come to pass"@en, "Das Wissen um die Schicksale der Menschen und das noch nicht Geschehene"@de ;
+    skos:definition "What Snorri says the craft called seiðr gave: by it he could know the fates of men and things that had not yet happened, and also bring men death, misfortune or sickness, and take wit or strength from men and give it to others."@en ;
+    skos:note "Four capacities in one sentence and they fall into two kinds: knowing, and transferring. The second kind is the only place in this transmission where a quantity is said to be taken from one person and given to another."@en ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "The Heimskringla, translated by Samuel Laing (London 1844), Ynglinga saga, chapter 7" .
+
+pmp:NorseSeidrIthrott a pm:Practicing ;
+    rdfs:label "The craft called seiðr"@en, "Die Kunst, die seiðr heißt"@de ;
+    skos:definition "The craft Snorri names as the one with which the greatest power went and which Óðinn performed himself, called seiðr, taught by him to the priestesses and, in the same chapter, most of his crafts to the sacrificing priests."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSeidrYieldsOrlog a pm:Yielding ;
+    rdfs:label "The craft yields knowledge of fates and power over men"@en, "Die Kunst bringt Wissen um Schicksale und Macht über Menschen hervor"@de ;
+    pm:byPractice pmp:NorseSeidrIthrott ;
+    pm:yieldsCapacity pmc:NorseSeidrOrlogOkUordna ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" .
+
+pmc:NorseSeidrErgi a pm:Cautioning ;
+    rdfs:label "So much ergi goes with the craft that men could not use it without shame"@en, "So viel ergi folgt der Kunst, dass Männer sie nicht ohne Schande ausüben konnten"@de ;
+    skos:definition "The caution Snorri attaches to the craft: with this sorcery, when it is performed, goes so much ergi that it did not seem to men without shame to deal with it, and the craft was taught to the priestesses."@en ;
+    pm:cautionsAbout pmp:NorseSeidrIthrott ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The consequence named is social and not operative: not that the craft fails in a man's hands, but that a man cannot handle it skammlaust, without shame. What follows from it in the text is a redirection of the teaching and not a limit on the effect."@en ;
+    skos:note "Laing renders ergi as weakness, which is too mild to carry the clause: the word denotes unmanliness in the sexually passive and dishonouring sense, which is why the consequence is shame and not incapacity. The German label keeps the Norse word for the same reason the identifier does."@en ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "The Heimskringla, translated by Samuel Laing (London 1844), Ynglinga saga, chapter 7" .
+
+pmc:NorseSeidrErgiStrittig a pm:Disputing ;
+    rdfs:label "Whether men practised the craft"@en, "Ob Männer die Kunst ausübten"@de ;
+    pm:disputedClaim pmc:NorseSeidrErgi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:NorseSeidr ;
+    skos:note "The counter-search was carried against the caution and it came back full, from the same author and in part from the same chapter. Three passages tell against it. The sentence that introduces the craft says that Óðinn performed it himself, ok framdi sjálfr, immediately before the clause about shame. Two sentences after the clause, the same chapter says he taught most of his crafts to the blótgoðar, the sacrificing priests, who are men, and that they were next to him in all lore and sorcery. And Haralds saga ins hárfagra has male practitioners in the open: Rǫgnvaldr réttilbeini, the king's own son, learned sorcery and became a seiðmaðr on Haðaland, and Vitgeirr in Hǫrðaland answered the king's order to stop with a public verse saying it is small harm that we practise it, children of churls and of old women, when Rǫgnvaldr réttilbeini does, Haraldr's own son, on Haðaland."@en ;
+    skos:note "The dispute is not resolved here and the two sides are not of the same kind. What the caution states is a norm; what the narratives show is the norm being broken and enforced, since the same chapter ends with Eiríkr burning his brother indoors together with eighty seiðmenn, and the deed much praised. A norm with a death penalty attached is evidence for the norm and not against it."@en ;
+    skos:note "The part that is genuinely against the caution is Vitgeirr's answer, because he is not ashamed. He replies in verse, publicly, to a king, and his defence is not denial but comparison. That is a man treating the craft as ordinary and saying so where it could be heard."@en ;
+    dcterms:source "Snorri Sturluson, Ynglinga saga, chapter 7, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "Snorri Sturluson, Haralds saga ins hárfagra, chapter 36, in Heimskringla, the normalised Old Norse text of Guðni Jónsson" ;
+    dcterms:source "The Heimskringla, translated by Samuel Laing (London 1844), Ynglinga saga chapter 7 and Harald Harfager's saga chapter 36" .
