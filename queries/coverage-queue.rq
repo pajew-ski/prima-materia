@@ -1,0 +1,22 @@
+# SPEC §14, strukturgetriebener Eingang.
+# Registrierte Überlieferungen, die noch nicht erschlossen sind, mit ihrem Kontaktweg
+# und der Zahl der Knoten, die bereits auf sie zeigen.
+#
+# Gemessen am 2026-09-14 gegen 5dba1b6: 97 Traditionen auf pm:corpusNamed, davon 97 mit
+# null Knoten. Die in SPEC genannte Sortierung nach Knotenzahl ordnet hier also nichts;
+# die tragende Ordnung ist der Kontaktweg, weil nur pm:contactRouteAbsent Zeugen liefert,
+# die unabhängig zählen. Siehe prima-materia#<Befund>.
+
+PREFIX pm: <https://pajew.ski/prima-materia/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?tradition ?label ?contactRoute (COUNT(?node) AS ?nodes)
+WHERE {
+  ?tradition a pm:Tradition ;
+             pm:coverageState pm:corpusNamed ;
+             pm:contactRoute ?contactRoute .
+  OPTIONAL { ?tradition rdfs:label ?label . FILTER(lang(?label) = "en") }
+  OPTIONAL { ?node pm:withinTradition ?tradition }
+}
+GROUP BY ?tradition ?label ?contactRoute
+ORDER BY ?contactRoute ?nodes ?tradition
