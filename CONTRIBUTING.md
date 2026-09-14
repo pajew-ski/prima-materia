@@ -328,6 +328,19 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   stehen und dieser Korpus ein anderer Sprachstamm, ein anderer Aufzeichner und
   eine eigene Fassung des Vollzugs ist; die moderne Schamanismusforschung geht
   als `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:magnetismus` (die Literatur des animalischen Magnetismus als
+  Überlieferung: Mesmer, Mémoire sur la découverte du magnétisme animal, mit
+  den Propositions, und die Aphorismes in der Redaktion Caullet de Veaumorels;
+  Puységur, Mémoires und Du magnétisme animal mit dem Catéchisme magnétique;
+  Deleuze, Instruction pratique und Histoire critique; Kluge, Versuch einer
+  Darstellung des animalischen Magnetismus, und Kiesers System des Tellurismus;
+  Teste, Manuel pratique; Faria, De la cause du sommeil lucide; Dupotet und
+  Lafontaine; Elliotson, Esdaile und The Zoist — die Prüfberichte gehören nicht
+  dazu und gehen als `pm:evidenceFrom` ein, nie als Quelle: die Kommission von
+  1784 in beiden Fassungen, Jussieus abweichende Veröffentlichung, die
+  Akademieberichte von 1826 und 1831 bei Foissac, Burdin und Dubois 1841, und
+  Braids Neurypnology samt seiner späteren Kritik. Bertrand steht auf beiden
+  Seiten und geht zweimal ein, unter verschiedenen Prädikaten)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
