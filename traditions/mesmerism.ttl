@@ -1,0 +1,461 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — animal magnetism
+#
+# Order of the file: the tradition and the question of the edition, then the
+# operation with its clock values, then the states it is held to produce, then
+# the capacities claimed in those states, then what the operation is said to
+# bring about, then the conditions the source sets before any of it, then the
+# warnings, then — the part this transmission was opened for — the stopping
+# rules, and beside them the three clauses that keep the stopping rules from
+# ever being reached. The placements on the consciousness axes stand last.
+#
+# The tradition instance was registered in traditions/registry-modern.ttl and
+# is moved here now that passages have been read.
+#
+# Why this transmission and not another from the register: SPEC §14 puts the
+# testability-driven entrance first, and this is the entrance's clearest case
+# in the whole register. The work read states a trial of five days, a rule of
+# three or four sittings, a term of nearly a month, a three-outcome decision
+# test inside a single sitting, and a rate of three quarters of patients. Very
+# little else in this holding states a number at which its own claim would be
+# due. What the reading found is that the same work supplies, in the same
+# chapters, the clauses that make each of those numbers unreachable — and that
+# finding is worth more than the numbers were.
+#
+
+pmt:Mesmerism a pm:Tradition ;
+    rdfs:label "Mesmerism"@en, "Mesmerismus"@de ;
+    skos:definition "The transmission of an animal magnetism held to pass between bodies and to be directed by the will of an operator through passes of the hand, together with the induced states its practitioners described: the crisis, the magnetic sleep, and the somnambulism in which the subject is held to perceive the seat of his own disease."@en ;
+    skos:note "Read in this run at the wording: Deleuze's manual of 1825 in Hartshorn's English of 1843, chapters I, II, III, V, VI and VIII, that is the principles, the processes, the effects and their indications, somnambulism, the choice of an operator, and the dangers. Left unread in that volume: chapter IV on accessory means, chapter VII on the application to particular diseases, chapter IX on developing the faculty in oneself, chapter X on the studies, and the whole of the appendices."@en ;
+    skos:note "A second work of the tradition was opened for one question and is entered accordingly. Of Teste's manual in Spillan's English of 1843, the section on the number and the hour of the sittings was read at the wording; the rest of that volume was not, and pmc:HuitJoursConsecutifs is the only node drawn from it. It is named here rather than left to the node, because a file that carries two works must say how much of each it has seen."@en ;
+    skos:note "The edition question has to be settled before any citation from this work can be read, and it is the reason every source line below carries a chapter and a page. Hartshorn's revised edition of 1843 prints Deleuze to page 216 and then an Appendix and a New Appendix of the translator's own notes and of letters from American correspondents, which are not Deleuze, are forty years later, and are editorialised by Hartshorn inside their own pages. Nothing below is drawn from beyond page 216."@en ;
+    skos:note "The translation is named in each source line for the same reason. Deleuze wrote in French in 1825; what was read is Hartshorn's English. Where the wording of a stopping rule decides a node — the five days, the three or four sittings, the nearly a month — a reader who wants to press it should set the French first edition beside this, and that collation has not been made here."@en ;
+    skos:note "The contact route stands as documented and this is not a formality. It runs in both directions and both are stated inside the corpus. Backwards: the operation is the laying on of hands with a theory attached, the 1784 commission's own historical introduction traces the doctrine to physicians of the preceding age, and Deleuze names Mesmer and Puységur as his predecessors and takes the whole of his doctrine from the latter. Forwards is the heavier one: this is the transmission out of which the nineteenth-century hypnotism literature and, through it, a great part of what now circulates as the ancient doctrine of older traditions came. A parallel between this tradition and a later one is reception until shown otherwise."@en ;
+    skos:note "What this tradition is good for in this holding, and it is unusual: the operator is not the subject. Almost everything else here has a practitioner who does something to himself and reports the result. Here one person acts and another reports, which makes the reports checkable in a way the rest are not — and makes the presence of a third person a question the transmission has to answer. It answers it, at length, and the answer is the material of generalizations/the-unsympathetic-witness.ttl."@en ;
+    pm:principalCorpus "Mesmer, Mémoire sur la découverte du magnétisme animal; Puységur, Mémoires pour servir à l'histoire du magnétisme animal; Deleuze, Instruction pratique sur le magnétisme animal" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. I, pp. 21-27" .
+
+#
+# The operation, with its clock values
+#
+
+pmp:MagnetismeGrandsCourans a pm:Practicing ;
+    rdfs:label "Magnetizing by the long pass"@en, "Magnetisieren mit grossen Strömen"@de ;
+    skos:definition "The operator seats the patient, places himself facing him with the patient's knees between his own, and takes the patient's thumbs between his fingers so that the inner surfaces touch, remaining so from two to five minutes or until he perceives an equal degree of heat between his thumbs and the patient's. He then raises his hands to the head, lays them on both shoulders for about a minute, draws them down the arms to the fingertips, repeats that pass five or six times, holds them a moment on the head, brings them down before the face at a distance of one or two inches to the pit of the stomach, lets them remain there about two minutes, and descends slowly to the knees or the feet. A pass from head to feet takes about half a minute. Passes are magnetic descending and not ascending, which is why the hands are turned obliquely when raised. The sitting is closed by passes prolonged beyond the hands and feet with the fingers shaken at each, transverse passes before the face and breast at three or four inches, and, with the patient standing, seven or eight passes from above the head to the floor with one hand before the body and one behind."@en ;
+    skos:note "Entered at this length because the length is the point. This is the most exactly specified operation in the holding: every element carries either a count or a duration in minutes, the direction of each movement is prescribed, and the reason for the direction is stated. A transmission that specifies to this degree can be performed by a stranger from the page, which is the condition under which any of its claims could be put to a trial at all."@en ;
+    skos:note "The source states in the same chapter that the choice of process is not itself essential, that other operators follow their own, and that the results are nearly the same; and at chapter I it says the will suffices to give the fluid its direction. The exactness above therefore does not belong to the doctrine — it is offered as a method to adopt so as not to be embarrassed. That tension is the transmission's own and is carried here rather than resolved: the same book that prescribes half a minute for a pass says that the passes could be otherwise."@en ;
+    skos:note "The session length and its frequency stand with it: the first sittings about an hour, and once the communication is established half an hour or three quarters, the sittings periodical and equal in duration, at the same hour every day, and above all the agreed hour not changed for many days in succession. Where the operator can give only two or three sittings a week the source has magnetized water supply the direct action."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. II, pp. 28-33, and chap. III, p. 46" .
+
+#
+# The states
+#
+
+pmc:MagnetismeRapport a pm:Conceptualizing ;
+    rdfs:label "Rapport, the established communication"@en, "Rapport, die hergestellte Verbindung"@de ;
+    skos:definition "The induced condition in which the operator exerts an influence upon the patient, there being between them a communication of the vital principle. It is established by taking the thumbs, and strengthened by setting the ten fingers against the patient's so that the balls touch. Once well established it is renewed in each succeeding sitting at the instant of beginning, so that touching is no longer needed; it is sometimes established at once and sometimes only after a long trial; and it is rare not to have it established at the first sitting."@en ;
+    skos:note "The pivot of the whole transmission, and the place where its testability is decided. Rapport is what makes the action selective — the source has the patient understand only those put in communication with him, and later makes the breaking of the communication by a distracted spectator the cause of shocks. Every claim in this file that could be checked from outside runs through it, and so does every excuse for a check that fails."@en ;
+    skos:note "The source states that experienced operators generally perceive in themselves when it takes place. That locates the criterion in the operator and nowhere else, and it is the reason the three-outcome test below matters: it is the one place where the book offers a sign of the state that somebody other than the operator could read."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. I, § 8, p. 22, and chap. II, pp. 31-32" .
+
+pmc:MagnetismeCrise a pm:Conceptualizing ;
+    rdfs:label "The crisis"@en, "Die Krise"@de ;
+    skos:definition "Any state differing from the natural one and resulting from the magnetic influence, manifested by sharp pains in a part of the body, a sense of suffocation, nervous movement, spasms, considerable perspiration, the impossibility of opening the eyes, drowsiness, sleep or somnambulism. The operator is to let it develop, calm the spasm by degrees, concentrate the action on the seat of the pain and then draw it off, and on no account leave the patient or let anyone disturb him until the state has entirely ceased."@en ;
+    skos:note "The source reports and then qualifies Mesmer's rule that there are no cures without crises: read as meaning that recovery requires a change of state it is trivially true, read as meaning that the cure is worked by a sudden change with evident symptoms it is not always true, since many diseases are cured by slow amelioration in which no moment can be marked. That is a transmission correcting its own founder on the point where his claim was strongest, and it is entered as the correction it is."@en ;
+    skos:note "The word is used here in a narrower sense than physicians use it, and the source says so: operators came to call somnambulism the crisis and somnambulists crisiacs. A reader comparing this with the medical literature of the period is comparing two senses of one word."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. III, pp. 47-49" .
+
+pmc:MagnetismeSomnambulisme a pm:Conceptualizing ;
+    rdfs:label "Magnetic somnambulism"@en, "Magnetischer Somnambulismus"@de ;
+    skos:definition "A mode of existence in which the person appears asleep, answers his operator without waking, can execute movements, and on returning to the natural state retains no remembrance of what passed. The eyes are closed; he generally understands only those put in communication with him; the external organs of sense are all or nearly all asleep, and yet he experiences sensations by another means, an internal sense being roused in him which is perhaps the centre of the others. He is subject to the influence of his operator, and that influence may be useful or injurious according to the operator's disposition and conduct."@en ;
+    skos:note "It is stated to occur only in a small number of cases, and the source devotes a chapter to it precisely because it changes the manner of operating. That rarity is worth holding beside the fact that it is the state on which every capacity in this file depends."@en ;
+    skos:note "The dependence on the operator is given a stated limit in the same work: the somnambulist preserves his reason and the use of his will, cannot be made to reveal a secret he has reason to conceal or to do things contrary to the principles he holds awake, and a reprehensible act of volition would make him revolt and throw him into convulsions. The transmission thus asserts obedience and its boundary in the same breath, and the placement on the agency axis below says so rather than picking one half."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 68-69, and chap. VIII, pp. 165-166" .
+
+pmc:MagnetismeDeplacementDeLaDouleur a pm:Conceptualizing ;
+    rdfs:label "The displacement of the pain"@en, "Die Verlagerung des Schmerzes"@de ;
+    skos:definition "One of the most ordinary effects: the operation dislodges the pain and makes it pass down in the direction of the current given to the fluid. Where the dislodged pain does not at first reach the extremities it is to be forced thither in subsequent sittings; where gout seated in the head descends and is arrested at the breast or stomach the action is to be continued until it is conducted to the feet. The displacement is always a proof of the efficacy of the operation."@en ;
+    skos:note "The last sentence is the one to hold. A movement of the reported site of a pain is taken as establishing that the agent acted, and the same chapter has the operator prescribe where the pain is to go next — so the sign is produced by the same hand that reads it. This is the cheapest of the three unfalsifiability clauses in the file and the only one the source states as a rule rather than as a qualification."@en ;
+    skos:note "It is also, in a narrow way, the one claim here a bystander could check in a single sitting: whether a patient who located a pain in the head locates it in the knees twenty minutes later is a report anybody in the room can take down. The examination beside this file does not use it, because the 1784 commission did not test it; the address is recorded here for whoever does."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. III, pp. 44-45" .
+
+#
+# The capacities
+#
+
+pmc:MagnetismeLucidite a pm:Conceptualizing ;
+    rdfs:label "Lucidity, the clairvoyance of the somnambulist"@en, "Lucidité, die Hellsicht des Somnambulen"@de ;
+    skos:definition "A faculty developed in some somnambulists: seeing without the aid of the eyes, hearing without the ears, seeing at a distance, reading the thoughts, appreciating time with rigorous exactitude, and having a presage of the future. It requires the somnambulist to concentrate his faculties upon a single object without distraction and without any foreign influence changing the direction of his mind. It is not always accompanied by a perfect clairvoyance, is often relative to a certain order of ideas, and is variable in its intensity from one moment to another."@en ;
+    skos:note "The source grants the faculty and then removes, one by one, every condition under which it could be demonstrated: it is rare, it is not extended equally to all objects, it varies between moments, it is destroyed by an unsympathetic witness, it is destroyed by the presence of a physician not familiar with the practice, it declines in somnambulists consulted by several operators, and it is not to be put to any proof. What remains is a capacity asserted together with the grounds for dismissing every failed demonstration of it."@en ;
+    skos:note "The source's own judgement of the professional consultants it examined is the most useful sentence in the chapter and is entered as his: among those he observed there is not one he has not known to commit errors, and not one that has not shown him proofs of clairvoyance. He also reports having been for three days the dupe of a feigned somnambulism."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 84-85, and chap. VIII, pp. 177-178 and 185" .
+
+pmc:MagnetismeAutoDiagnostic a pm:Conceptualizing ;
+    rdfs:label "The somnambulist perceives the seat of his own disease"@en, "Der Somnambule erkennt den Sitz seiner eigenen Krankheit"@de ;
+    skos:definition "The capacity on which the practice turns: the somnambulist perceives the seat of his own disorder, sees the lesion in one part, states the nature, cause and consequences of his complaint, names the crises that will bring on the cure, prescribes the remedial means and the hour at which he is to be operated upon, and describes the effects his prescriptions will produce."@en ;
+    skos:note "The boundary of the capacity is stated and it is a real one: it is rare that he sees the situation, form and tissue of his organs, especially of those not affected, so anatomical questions yield vague and perhaps erroneous views. The source draws the line exactly where it is useful — he will not mistake in foretelling a crisis, pointing out a remedy or describing its effects, but could easily give explanations that would be ridiculous in proportion to the interest shown in hearing them."@en ;
+    skos:note "And the failure mode is named with it: where several diseases are present the somnambulist fixes on the one that gives him most uneasiness and may prescribe for it something injurious to another. One worked case is given, of a patient with affected lungs and an impaired stomach who was talked out of her own prescription and thanked the operator a fortnight later. So the transmission holds, of the faculty it rests on, that its bearer is to be overruled."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 74, 81 and 84-85" .
+
+pmc:MagnetismePrevision a pm:Conceptualizing ;
+    rdfs:label "The faculty of prevision and its stated limit"@en, "Das Vermögen der Vorschau und seine ausgesprochene Grenze"@de ;
+    skos:definition "The most inconceivable of the faculties, said never to extend beyond a certain number of objects and to be conditional; and of which the source states that if there are facts enough to prove its existence, there is not a case where the exactitude of its application can be reckoned upon."@en ;
+    skos:note "The sentence is the sharpest self-limitation in the file and it is worth more than the claim it limits. A faculty whose existence is asserted and whose application is declared never reckonable cannot be brought to any trial, and the source says so without appearing to notice that it has said so. Braid would make the same point against the tradition thirty years later as an objection; here it stands inside the manual as a counsel of prudence."@en ;
+    skos:note "The same chapter forbids consulting somnambulists on political affairs, on the dogmas of religion and on metaphysics, and reports men otherwise well informed becoming the dupes of their visions and predictions. The prohibition and the limit are one thought."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. VIII, pp. 185-188" .
+
+pmc:MagnetismePerceptionParLOperateur a pm:Conceptualizing ;
+    rdfs:label "The operator who perceives the seat of the disease"@en, "Der Magnetiseur, der den Sitz der Krankheit wahrnimmt"@de ;
+    skos:definition "A capacity claimed for the operator and not the subject: among those at Paris who devote themselves to the practice the source says he knows some who perceive the seat of the disease and modify their action accordingly, and some who pass into a sort of demi-somnambulism during which they operate with much discernment."@en ;
+    skos:note "Kept as its own node because it is the only capacity in the file whose bearer is the person making the report, and because it removes the one structural advantage the tradition had. Everywhere else the claim is checkable in principle: one person acts, another reports, and the reports can be collected. Here the operator both acts and reports, and the transmission has arrived at the shape of every other tradition in this holding."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. VI, pp. 113-114" .
+
+pmc:MagnetismeConsultationPourAbsent a pm:Conceptualizing ;
+    rdfs:label "Consultation for an absent person by a worn object"@en, "Beratung für einen Abwesenden über einen getragenen Gegenstand"@de ;
+    skos:definition "Some somnambulists consult for persons absent and unknown to them: hair of the patient, or something worn for several days on the stomach next to the skin, suffices to put them in close communication with him, whereupon they describe his physical and moral condition exactly and minutely. The object is to be enveloped in paper and the packet not opened when presented."@en ;
+    skos:note "The one claim in this file that is cleanly testable by a procedure the transmission itself prescribes, and the procedure is already half a blind: the packet is closed, the operator does not open it, and a second packet from a person with a different complaint would complete the design. The source does not take that step and nothing in the work suggests it occurred to him."@en ;
+    skos:note "Before introducing a patient to a somnambulist the operator is to let him touch something the patient has worn, so that he may say whether he feels repugnance to it or sees danger in being put in communication. The same object thus serves as the channel of the diagnosis and as the ground for refusing to make it."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, p. 82, and chap. VIII, p. 178" .
+
+#
+# What the operation is said to bring about
+#
+
+pmc:GrandsCouransYieldRelief a pm:Yielding ;
+    rdfs:label "Magnetizing by the long pass brings relief and cure"@en, "Das Magnetisieren mit grossen Strömen bringt Erleichterung und Heilung hervor"@de ;
+    skos:definition "The claim the practice exists for: the operation develops what physicians call the forces medicatrices, seconds the efforts nature makes to relieve itself, and thereby soothes and cures. It is said to cure much more promptly and better in country people and children than in those who have lived in the world and taken much medicine."@en ;
+    skos:note "The strength of the claim is stated in one number and it is the only rate in the file: at least three fourths of the patients feel the effects. That is carried on its own node because it is the one place where the transmission makes itself due."@en ;
+    skos:note "Four worked cases stand behind it in the chapters read, all of them the source's own and none of them controlled: a paralysed old soldier whose wife made the passes, a caretaker's wife cured in fifteen days, a lady whose catarrh went at the first sitting and left three days of pain in the limbs, and a blind girl restored from eleven months of head pain in five sittings. The first is cited by the source to a published medical account of the same patient, which is the nearest thing to an outside witness anywhere in the work."@en ;
+    pm:byPractice pmp:MagnetismeGrandsCourans ;
+    pm:yieldsCapacity pmc:MagnetismeDeplacementDeLaDouleur ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. I, §§ 21, 27-28, pp. 24-26, and chap. III, pp. 53-54" .
+
+pmc:GrandsCouransYieldSomnambulisme a pm:Yielding ;
+    rdfs:label "Magnetizing brings on somnambulism, and is not to be used for it"@en, "Das Magnetisieren bringt Somnambulismus hervor und soll nicht dazu benutzt werden"@de ;
+    skos:definition "The operation is held to produce the somnambulic state where nature is disposed to that crisis: the fluid is then carried of itself to the brain, and the tendency shows in tranquillity, closed eyes and sleep. The source states that he has produced somnambulism by operating from the foot of the bed, without establishing the communication by touching."@en ;
+    skos:note "A yielding claim whose own source forbids aiming at it. Operators who charge the head obtain a forced slumber, a reflux of blood towards the brain and partial crises which are of no utility, and the method is not without danger. The claim and the prohibition are in the same paragraph."@en ;
+    pm:byPractice pmp:MagnetismeGrandsCourans ;
+    pm:yieldsCapacity pmc:MagnetismeSomnambulisme ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. II, p. 33, and chap. V, pp. 70-71" .
+
+pmc:SomnambulismeYieldsAutoDiagnostic a pm:Yielding ;
+    rdfs:label "Somnambulism brings the perception of one's own disease"@en, "Der Somnambulismus bringt die Wahrnehmung der eigenen Krankheit hervor"@de ;
+    skos:definition "In the somnambulic state the patient is held to perceive the seat of his own disorder and to be able to state its cause, name the crises that will bring the cure, and prescribe the means."@en ;
+    skos:note "This is the yielding on which the practice's medical claim rests, and the source attaches to it the conditions that make it unexaminable: the somnambulist must be occupied with nothing but himself, must not be asked a question of curiosity, must not be shown to a physician unfamiliar with the practice, and must not be put to any proof. The capacity is asserted and its demonstration is prohibited."@en ;
+    pm:byPractice pmp:MagnetismeGrandsCourans ;
+    pm:yieldsCapacity pmc:MagnetismeAutoDiagnostic ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 74-75 and 80-82" .
+
+#
+# The conditions set before any of it
+#
+
+pmc:MagnetiserPresupposesWillConfidenceBenevolence a pm:Presupposing ;
+    rdfs:label "The operation presupposes will, confidence and benevolence together"@en, "Die Operation setzt Wille, Zutrauen und Wohlwollen zusammen voraus"@de ;
+    skos:definition "The first condition of action is to exercise the will; the second is the confidence the operator has in his own powers; the third is benevolence, the desire of doing good. One of these may supply the others to a certain point, but for the action to be at once energetic and salutary the three must be united."@en ;
+    skos:note "Entered at stated necessity because the source states the outcome of the want in the same numbered series: if the desire of doing good be not united to the will to act, there will be some effects, but these effects will be irregular. That is a consequence, and it is also the escape route — irregular effects are what an unsuccessful trial produces anyway, so the condition can absorb every failure without ever being violated in a way a reader could point to."@en ;
+    skos:note "The same series makes confidence unnecessary in the patient: one can act equally on those who believe and those who do not, it sufficing that the patient yields himself passively without resistance. That asymmetry is the transmission's own answer to the charge of imagination and it is the claim the 1784 commission's blindfold design was built against."@en ;
+    pm:dependentStep pmp:MagnetismeGrandsCourans ;
+    pm:priorStep pmc:MagnetismeRapport ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "If the desire of doing good be not united to the will to act, there will be some effects, but these effects will be irregular."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. I, §§ 4, 9, 14, 26, pp. 21-26" .
+
+pmc:MagnetiserPresupposesTheOperatorsHealth a pm:Presupposing ;
+    rdfs:label "The operation presupposes the operator's own health"@en, "Die Operation setzt die Gesundheit des Magnetiseurs voraus"@de ;
+    skos:definition "Because the fluid emanating from the operator exercises a physical influence on the patient, the operator must be in good health; and because the influence acts in time on the patient's moral condition, he must also be worthy of esteem for the uprightness of his mind and the honesty of his character."@en ;
+    skos:note "Entered at stated necessity on a consequence the source states twice and illustrates with a case: rheumatic pains, nervous affections and especially organic diseases are communicated from the operator to the patient in proportion to the thoroughness of the communication, and a person whose lungs are delicate cannot without danger operate on one whose lungs are affected. The case is of an operator with an inflammation of the larynx who sent a magnetized handkerchief each evening; the patient contracted the same disease and was in the greatest danger when he died."@en ;
+    skos:note "The source also reports, of one operator, that she commonly takes the disease of the person she operates on — having the sensation and symptoms of it for several days — and instances gout and an ophthalmia, which he notes are not contagious. He says he cannot account for it. A claim of that shape is checkable by ordinary means and the transmission does not check it."@en ;
+    pm:dependentStep pmp:MagnetismeGrandsCourans ;
+    pm:priorStep pmc:MagnetismeRapport ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Rheumatic pains, nervous affections, and especially organic diseases, are communicated from the magnetizer to the person magnetized, with facility proportioned to the thoroughness of the communication between them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. I, § 15, p. 23, and chap. VIII, pp. 171-172" .
+
+pmc:TreatmentPresupposesItsOwnContinuation a pm:Presupposing ;
+    rdfs:label "The treatment presupposes that it will be continued"@en, "Die Behandlung setzt ihre eigene Fortsetzung voraus"@de ;
+    skos:definition "A real danger of the practice is the interruption of a treatment begun and the failure to sustain a crisis that has been excited and that nature cannot develop and terminate unaided. It is nothing in slight and recent indispositions and very serious in organic and long-standing diseases; one ought not to attempt the action at all except when sure of continuing it as long as necessary."@en ;
+    skos:note "Entered at stated necessity and it is the best-supported necessity in the file, because the source gives two dated cases in which the consequence followed and in the first of them names himself as the cause. A lady relieved of a monthly headache in half an hour was two days later seized with a fever that lasted six weeks; he does not doubt that it came of the humour he had displaced and would not have occurred had he continued for a month. A blind girl operated upon once with energy for an hour by a student who then broke off suffered eleven months of head pain."@en ;
+    skos:note "This is the one claim in the file whose falsifying condition is ordinary and within reach, and it runs against the tradition's interest: it predicts that interrupting a course of these operations is followed by an identifiable harm at a rate above that of never beginning one. No protocol is written on it here. Its address is this node."@en ;
+    pm:dependentStep pmp:MagnetismeGrandsCourans ;
+    pm:priorStep pmc:MagnetismeCrise ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "A person might do much mischief by magnetizing with energy only once to drive off an internal pain caused by a tumor, or by a humor which, for many years, attacks an organ at certain periods; and the accidents which have occurred by the rude interruption of a treatment ought not to be attributed to magnetism, but to the imprudence of the magnetizer."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. VIII, pp. 168-170" .
+
+pmc:LuciditePresupposesUndividedAttention a pm:Presupposing ;
+    rdfs:label "Lucidity presupposes an undivided attention"@en, "Die Lucidité setzt ungeteilte Aufmerksamkeit voraus"@de ;
+    skos:definition "For the proper exercise of clairvoyance the somnambulist must concentrate his faculties upon a single object, without distraction, without trouble, and without the intervention of any foreign influence to change the direction of his mind; the more his attention is distracted by various subjects, the less of it he gives to the essential object."@en ;
+    skos:note "Entered at stated necessity on a consequence the source gives in plain terms: made to talk beyond the seat of his own disorder he will furnish only vague and perhaps erroneous views, and questions of curiosity excite his vanity, after which nothing he says can be depended upon. The greater part of somnambulists, even in good hands, are said to have lost a portion of their faculties because many persons in succession were allowed to see them."@en ;
+    skos:note "This is the prerequisite from which the whole apparatus of exclusions below follows, and it is the load-bearing member of the generalization formed from this file: the condition of the capacity is stated in such a way that any observation of it destroys it."@en ;
+    pm:dependentStep pmc:MagnetismeLucidite ;
+    pm:priorStep pmc:MagnetismeRapport ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "If you make him talk beyond this, you will obtain from him only vague and perhaps erroneous views; and when you have once awakened in him this sentiment of vanity, to which somnambulists are in general very much inclined, you can no more depend upon any thing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 75-76 and 84" .
+
+#
+# The warnings
+#
+
+pmc:CautionAgainstSeekingSomnambulisme a pm:Cautioning ;
+    rdfs:label "Never seek to produce somnambulism"@en, "Den Somnambulismus niemals herbeiführen wollen"@de ;
+    skos:definition "The first advice given: never seek to produce somnambulism, but let it come naturally in order to profit by it when it takes place. Operators who charge the head in order to produce it often succeed in obtaining a forced slumber, a reflux of blood towards the brain, and partial crises which are of no utility; and the method is not without danger."@en ;
+    skos:note "A self-warning of the strongest kind — the transmission's own prohibition of the effect for which it is known, placed at the head of the chapter about that effect. Beside it stands the statement that somnambulism too much prolonged would of itself become a disease."@en ;
+    pm:cautionsAbout pmp:MagnetismeGrandsCourans ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 70-71" .
+
+pmc:CautionAgainstProvingTheLucidity a pm:Cautioning ;
+    rdfs:label "Permit no attempt to prove the somnambulist's lucidity"@en, "Keinen Versuch zulassen, die Hellsicht des Somnambulen zu beweisen"@de ;
+    skos:definition "A general rule from which the operator is never to depart: never, on any account, to permit any question of curiosity, any attempt to prove the lucidity of the somnambulist; to speak to him solely of his disease; to direct all his attention to the means of restoring his health. Every experiment is said to be extremely injurious, and the source states that he never permitted himself to consult a somnambulist to put him to the proof."@en ;
+    skos:note "The most consequential node in this file for the purposes of this holding. A transmission that claims a faculty and prohibits its demonstration has removed itself from examination by its own rule, and has done so in the language of care for the subject rather than of evasion. The prohibition is not incidental: it is derived, in the same chapter, from the stated prerequisite that lucidity requires an undivided attention, so the reason the faculty cannot be tested is the same reason it is said to work."@en ;
+    skos:note "Two further clauses make it complete. Experiments to show that a somnambulist can be made to obey the will are called experiments of curiosity, without moral danger but very imprudent, since they fatigue the patient uselessly and may prevent his restoration. And where an incredulous person consults with the aim of putting the somnambulist to the proof, the source holds that he will, without knowing it, exert an influence furnishing him with new reasons for his incredulity — a prediction that a failed test is evidence for the claim."@en ;
+    skos:note "It is also the sentence against which the whole examination literature of the period is to be read. The 1784 commission's design was exactly the thing forbidden here, and Braid's objection of 1852 — that a faculty this capricious would be worthless even if real, because one could not tell a true enunciation from a false one — is the same observation made from outside. Neither work was opened in this run for this node; the two addresses stand in the examination file beside it and in an issue."@en ;
+    pm:cautionsAbout pmc:MagnetismeLucidite ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 75 and 77, and chap. VIII, pp. 166 and 179" .
+
+pmc:CautionAgainstWitnesses a pm:Cautioning ;
+    rdfs:label "The person present who is not in sympathy makes the operation fail"@en, "Der anwesende Unbeteiligte lässt die Operation misslingen"@de ;
+    skos:definition "Only one witness is to be admitted, always the same person, in communication with the operator and taking an interest in the patient. All useless witnesses are to be banished, all who are excited by curiosity, and especially all the incredulous. Where the stranger is incredulous, suspects the somnambulist's sincerity, or makes a jest of what he sees, the somnambulist is troubled and loses his lucidity. Where many witnesses are present the fluid of each acts on him and, the fluids not being in harmony, he experiences discordant effects; and every time a spectator occupies himself with something else he breaks the communication, producing shocks that disturb the state."@en ;
+    skos:note "The condition of failure is located outside both the operator and the subject, which is rare in this holding and is the reason this node is carried into a generalization. The same chapter extends it to the one witness a reader would most expect to be welcome: nothing is said to be more hurtful than the presence of a physician not familiarised with the practice, because the somnambulist would wish to convince him, would conduct his conversation with address, and would lose the simplicity necessary for his clairvoyance."@en ;
+    skos:note "The source gives a case of his own for it. Being a novice, he invited a pupil of Mesmer to instruct him; the visitor did not touch the subject, and yet the course of the somnambulism was entirely deranged, a young somnambulist who had shown extraordinary clairvoyance for several days ceasing to manifest his faculties. The case is entered because it is the transmission applying the rule to a sympathetic expert witness and not only to a hostile one, which makes the rule wider than a complaint about scepticism."@en ;
+    skos:note "What the rule costs the tradition is not remarked on in the work: taken together with the prohibition on proving the lucidity, it makes the claim unobservable by anyone who does not already hold it, since the only admissible observer is one in communication with the operator and desiring the cure."@en ;
+    pm:cautionsAbout pmc:MagnetismeLucidite ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 76-79" .
+
+pmc:CautionAgainstTrustingThePrescription a pm:Cautioning ;
+    rdfs:label "Do not follow the somnambulist's prescription without examining it"@en, "Der Verordnung des Somnambulen nicht ungeprüft folgen"@de ;
+    skos:definition "Against the blind confidence of enthusiastic operators, who believe their somnambulists infallible, suppose that remedies which did not succeed were not exactly followed, and regard remedies that did mischief as a necessary crisis. Where the prescription appears unsuitable the operator is to object, have the organs examined in succession, ask the reasons for the choice, present the medicine to be touched and tasted, and have the dose shown as a quantity and not only named; if after all that the somnambulist persists, he may be depended upon. Where the prescription would put life in imminent danger the operator is evidently not to conform to it."@en ;
+    skos:note "A caution the transmission addresses to its own adherents, naming the two devices by which they absorb failure — non-compliance and the necessary crisis — and rejecting both. That is a transmission criticising the unfalsifiability of its own practitioners, and it is the reason this file does not read as apologetics."@en ;
+    skos:note "It stops short of the step that would matter. The prescriptions are to be submitted to a candid physician before being taken, and the physician is to preserve his supremacy — but he is not to be put in consultation with the somnambulist, and his judgement is therefore never recorded against the somnambulist's in a form anybody could count."@en ;
+    pm:cautionsAbout pmc:MagnetismeAutoDiagnostic ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 83-86, and chap. VIII, pp. 175-177 and 183-184" .
+
+pmc:CautionAgainstQuestionsOutsideHealth a pm:Cautioning ;
+    rdfs:label "Do not send the somnambulist beyond his own health"@en, "Den Somnambulen nicht über seine eigene Gesundheit hinausschicken"@de ;
+    skos:definition "The somnambulist is to be interdicted absolutely from all religious, metaphysical and political discussion. Where he is required to see the dead or spirits, compelled to go into distant times or places, to discover things lost, to announce the future, to name the numbers that will be fortunate in a lottery, or interrogated about political affairs, much mischief will be done him and he might even be made idiotic."@en ;
+    skos:note "The named consequence is severe, and the list is worth reading as a list: every item on it is a claim that could be checked against an outside record, and the lottery number is the only one for which a plain arithmetic of success exists. The prohibition therefore falls, item by item, on exactly the class of claims that would have been decidable."@en ;
+    skos:note "The source's reason for the prohibition is not that the faculty fails there but that the somnambulist is harmed and led into error, and he grounds it in a disorder of proportion: one faculty is exalted more than the others, harmony no more exists, the prejudices of childhood operate afresh, and imagination can realise the phantoms it has created. That is a psychological account of false report offered by a believer, and it is the most acute thing in the chapter."@en ;
+    pm:cautionsAbout pmc:MagnetismeLucidite ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. VIII, pp. 174 and 185-188" .
+
+pmc:CautionAgainstProlongedSomnambulisme a pm:Cautioning ;
+    rdfs:label "Do not keep the somnambulic faculty after the cure"@en, "Das somnambule Vermögen nach der Heilung nicht erhalten"@de ;
+    skos:definition "Persons long somnambulists retain, even after recovery, a nervous susceptibility so high that the slightest action may return them to an imperfect somnambulism, and some have been seen habitually in the magnetic state. The operator is therefore to operate no longer than the somnambulist says is necessary, never to speak to him after waking of what he said, to discharge the fluid and wake him perfectly at the end of each sitting so that no intermediate point remains, and as soon as the patient is cured to will that the faculties cease."@en ;
+    skos:note "The rule closes the practice's one route to a body of repeatable observations, and the source says as much without drawing the consequence: many operators keep somnambulists after their cure hoping to serve other patients through them, and it is wrong to have confidence in such somnambulists, who are often used for experiments of curiosity. A transmission that dismisses its trained subjects on recovery cannot accumulate cases."@en ;
+    pm:cautionsAbout pmc:MagnetismeSomnambulisme ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. VIII, pp. 173-174" .
+
+pmc:CautionAgainstWakingSuddenly a pm:Cautioning ;
+    rdfs:label "Never wake the patient suddenly"@en, "Den Kranken niemals plötzlich erwecken"@de ;
+    skos:definition "The patient is never to be woken suddenly, nor anyone permitted to trouble him, nor is he to be left while the induced state lasts. Where a person in profound sleep is roused roughly the source has seen it produce convulsions or violent pains, render the return of somnambulism impossible, and so change the patient's condition that he could afterwards not endure the action at all, his restoration being left to time and regimen; persons put into somnambulism for the first time have been known to lose the faculty of entering it again by being rudely roused."@en ;
+    skos:note "Named consequences of a rough waking, and among them one a bystander could establish: that the state cannot afterwards be induced in that person again. That is a prediction about a particular individual on a particular date and it is the kind of thing a register of cases would settle. None is kept."@en ;
+    pm:cautionsAbout pmc:MagnetismeSomnambulisme ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. III, pp. 48-49" .
+
+pmc:CautionAgainstOperatingAfterEating a pm:Cautioning ;
+    rdfs:label "Do not operate after eating heartily"@en, "Nicht nach reichlicher Mahlzeit magnetisieren"@de ;
+    skos:definition "One is not to operate after having eaten heartily, nor during digestion, though it is often useful to take something before the sitting to increase one's strength; whoever undertakes a treatment ought in general to live temperately, avoiding all excesses and guarding against whatever tends to disturb the exercise of his physical and moral powers. Where the patient may have a contagious disease the operator is to remain active throughout so as always to impart and never receive, to avoid immediate contact, and to have himself demagnetized for some minutes after each sitting."@en ;
+    skos:note "The plainest contraindication in the file and the only one addressed to the body of the operator rather than to his character. It is carried because a rule of this shape can be complied with or not by a stranger reading the page, which is more than can be said of will, confidence and benevolence."@en ;
+    pm:cautionsAbout pmp:MagnetismeGrandsCourans ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. III, pp. 46-47" .
+
+pmc:CautionAgainstOperatingAcrossTheSexes a pm:Cautioning ;
+    rdfs:label "Women are to be magnetized by women"@en, "Frauen sind von Frauen zu magnetisieren"@de ;
+    skos:definition "Women ought to be preferred as operators upon women and, outside cases where plain good sense makes it indifferent, they alone ought to be charged with it; in chronic complaints requiring long treatment the practice between persons of different sexes is to be proscribed, the only men who may undertake the treatment of a young woman being her father or her husband. Four reasons are given: the processes wound decency; somnambulism generally imparts to the subject a lively affection for the operator which continues after the treatment ends; there are symptoms and questions about which a woman in that state will not speak to a man; and the crises are such that a man ought not to witness them nor could employ the processes best calculated to soothe them."@en ;
+    skos:note "A caution of the ordinary kind, and it is entered for a reason that has nothing to do with propriety: it prescribes, for the great majority of the cases the practice treated, an operator drawn from the patient's own household and instructed by the patient's own book. The transmission thereby makes its typical operator a person with no independent means of judging the result, which bears on every case report in the literature."@en ;
+    skos:note "The same chapters apply the rule to the hospitals, where the source says young women and girls with nervous diseases were being chosen in preference because they were believed more susceptible and more likely to present curious phenomena. That sentence is a report about how the examinations of the day were in fact staffed, and it is the strongest thing in the file about the composition of the evidence."@en ;
+    pm:cautionsAbout pmp:MagnetismeGrandsCourans ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. VI, pp. 107-108, and chap. VIII, pp. 161-164" .
+
+pmc:CautionAgainstSelfMagnetizing a pm:Cautioning ;
+    rdfs:label "Those who can enter the state alone ought never to do it"@en, "Wer den Zustand allein herbeiführen kann, soll es niemals tun"@de ;
+    skos:definition "Among persons often magnetized there are some who can of their own accord throw themselves into the magnetic state; the source holds it a faculty they ought never to employ, because by exercising it they acquire the habit of concentration, which may fatigue the nervous system and become very injurious. An operator in good health may relieve a local pain of his own by applying the processes to himself, but a person with a general disease, a fever or an organic affection cannot draw the remedy from himself, since the fluid he would use no longer has the necessary qualities."@en ;
+    skos:note "Carried because it closes the last door by which a claim of this tradition could be checked cheaply and often. A subject who can enter the state alone could be examined without an operator present, which would remove the one figure whose disposition every excuse in this file appeals to; the transmission forbids it, on grounds of the subject's health."@en ;
+    pm:cautionsAbout pmc:MagnetismeSomnambulisme ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. VI, pp. 112-113" .
+
+#
+# The stopping rules, and the three clauses that keep them from being reached
+#
+# This is the part the transmission was opened for. Four of the five nodes
+# below name a number or a term at which the claim would be due, which is
+# more than any other file in this holding carries from one work. The three
+# after them are the reason none of the four ever falls due, and they stand in
+# the same chapters as the rules they cancel.
+#
+
+pmc:CinqJoursAvantDePresumer a pm:Conceptualizing ;
+    rdfs:label "Five days before presuming that it does not act"@en, "Fünf Tage, bevor auf Unwirksamkeit geschlossen wird"@de ;
+    skos:definition "Patients on whom the operation does not act exist but are said to be very rare; it is less rare that the communication cannot be established until after several sittings, whence one cannot presume that it does not act until after a trial of five days. To found the presumption even after that lapse of time it is not enough that the patient has felt nothing: it is to be considered whether he has experienced no change in his condition, whether he does not find himself better, and whether his disease is not rendered worse by pursuing the ordinary course."@en ;
+    skos:note "A stopping rule with a number, stated in the chapter on effects and their indications, and the second sentence takes it back in the same paragraph. The number would make the claim due on the sixth day; the qualification replaces the criterion of sensation with a criterion of condition, which the same chapter says may improve without any sensation at all. What is left is a term after which the operator is to consult a sign the transmission has already declared unnecessary."@en ;
+    skos:note "It is nonetheless a real rule and the reason this file exists: it names a term, and a term can be kept. Anyone holding a register of five-day trials with the patients' own reports of change could settle what the passage asserts, and the register is what the transmission never keeps."@en ;
+    pm:falsifiedBy "A recorded series of five-day trials, carried by operators conforming to the conditions this work sets, in which the proportion of patients reporting either sensation or a change in condition does not exceed the proportion among matched patients given the same attendance without the passes. The claim is that the trial establishes something about the agent, so an outcome indistinguishable from attendance alone falls due against it."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. III, p. 42" .
+
+pmc:TroisOuQuatreSeances a pm:Conceptualizing ;
+    rdfs:label "Three or four sittings of irritation, then stop"@en, "Drei oder vier Sitzungen mit Reizung, dann aufhören"@de ;
+    skos:definition "Where the operation produces in a patient a nervous irritation that leaves him uneasy after the sittings, the most soothing action is to be used and the operator is to act from a distance. If after three or four sittings the same effect takes place, one may presume that the operation is not good for this patient, or that the fluid of this operator does not agree with him, and one ought not to persist in it. One might merely try, two or three times, other operators."@en ;
+    skos:note "The cleanest stopping rule in the work: a count, an outcome to look for, and an instruction to desist. It is also the clearest case in this holding of a rule that names a count and assigns the shortfall away from the operation — the presumption offered is that the agent is not good for this patient or that this pairing does not suit, never that the agent does nothing. And the last sentence prescribes continuation with two or three further operators, so the count is reached and the trial goes on."@en ;
+    skos:note "That structure is what generalizations/counted-thresholds.ttl describes from three Chinese claims, arrived at here independently in a French work of 1825, and it widens that generalization beyond the stream it was formed in. The widening is recorded on this node rather than by editing the generalization, because its stated scope is a count at which an effect is to take effect and this is a count after which absence of effect is to be acted on. The two are mirror images and a later reader should decide whether they belong under one statement."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. III, pp. 50-51" .
+
+pmc:TroisIssuesALaPremiereQuestion a pm:Conceptualizing ;
+    rdfs:label "The three outcomes at the first question"@en, "Die drei Ausgänge bei der ersten Frage"@de ;
+    skos:definition "Where the patient is tranquil, has closed his eyes and sleeps, the operator may pass his fingertips five or six times before the eyes and then ask how he is or whether he sleeps well. One of three things will take place: he will wake, he will not answer, or he will answer. If he wakes, somnambulism has not taken place and it is not to be thought of again during that sitting. If he continues to sleep without answering, there is reason to suppose he is entering the state. If he answers without waking and, after his waking, has no recollection of the operator having spoken to him, the somnambulism is real."@en ;
+    skos:note "The one discriminating test the work contains, and the only sign of the state anywhere in it that somebody other than the operator could read. Its criterion is not the answering but the amnesia afterwards, which is a report the patient makes in the ordinary state and which a second person in the room can take down. Everything else in this file is certified either by the operator's own perception or by the subject while in the state whose reality is at issue."@en ;
+    skos:note "Its weakness is that the amnesia is asked for after the operator has spent the sitting telling the patient what to expect, and the same chapter has the operator forbid the somnambulist, while in the state, to meddle after waking with what he has said. A criterion of amnesia administered by the person who instructed the subject to forget is not a criterion. The transmission states both halves and does not connect them."@en ;
+    pm:falsifiedBy "A recorded series in which subjects who answer without waking are, after waking, as able to recall what was said to them as subjects given the same instructions and the same expectation without the passes; or in which the recall differs according to whether the operator had told the subject, during the state, not to occupy himself with it afterwards. The claim is that the absence of recollection establishes the reality of the state, so either outcome falls due against it."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. V, pp. 71-72 and 74-75" .
+
+pmc:PresqueUnMois a pm:Conceptualizing ;
+    rdfs:label "Nearly a month, and then what"@en, "Beinahe ein Monat, und was dann"@de ;
+    skos:definition "Addressed to the patient and not to the operator. If you do not sleep, one of three things will occur: you will feel no effects, you will experience either relief or one of the encouraging effects described, or you will grow worse. In the first case you will try nearly a month; in the second you will continue with patience so long as your operator is not wearied; in the third, which is said to be very rare, you will renounce the practice after some days and make use of ordinary medicine."@en ;
+    skos:note "A term of nearly a month set for the case of no effect at all — and the paragraph immediately following removes the third case, which is the only one of the three that could end the treatment quickly: it requires careful attention before one can say with certainty that the disease is rendered worse, a person might be deceived by appearances and renounce the practice at the moment when it is on the point of doing the most good."@en ;
+    skos:note "The first case is not closed either. The text does not say what is to be done when the month has passed without effect; it says to try nearly a month. A rule that names a term and not an outcome at the term is a rule about how long to persevere and not a rule about when to stop, and this is the transmission's own strongest statement read as such."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. VI, pp. 111-112" .
+
+pmc:TroisQuartsDesMalades a pm:Conceptualizing ;
+    rdfs:label "At least three quarters of the patients feel the effects"@en, "Mindestens drei Viertel der Kranken spüren die Wirkung"@de ;
+    skos:definition "Not all persons are sensible to the action, and the same persons are more or less so according to their temporary disposition; the operation generally exercises no influence on persons in health, and there are diseases in which it is not perceived and others in which it is evident. The source states that it is not yet known enough to determine the cause of these anomalies or to pronounce beforehand whether the action will take place — that only certain probabilities are had — but that this should create no objection, since at least three quarters of the patients feel the effects of it."@en ;
+    skos:note "The one rate in the file, and the only sentence in the six chapters read that makes the transmission numerically due. It is offered as a reply to an objection and not as a finding, and no series behind it is named."@en ;
+    skos:note "The claim that persons in good health are generally not affected is the more interesting half, because it predicts that a trial on healthy volunteers should mostly fail — and that is precisely the population an examiner has. The transmission thus supplies, in advance, the explanation of a negative result in the only experiment that is easy to run."@en ;
+    pm:falsifiedBy "A recorded series of sick patients operated on according to this work in which fewer than three quarters report effects, or in which the proportion reporting effects does not exceed the proportion among patients receiving the same attendance and the same expectation without the passes. A rate is asserted, so a counted series settles it."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. I, §§ 21-22, p. 24" .
+
+pmc:DouleursCritiquesCommePreuve a pm:Conceptualizing ;
+    rdfs:label "The pain the operation causes is counted as proof that it works"@en, "Der von der Operation verursachte Schmerz gilt als Beweis ihres Wirkens"@de ;
+    skos:definition "The operation often excites pain in the part where the disease is located and renews old and slumbering pains; these are produced by the efforts nature makes to triumph over the malady, are but transient, and the patient always finds himself better after having experienced them, which is what distinguishes critical pains from those produced by the progress of the disease. The patient is told that these pains prove the action is powerful, that they are necessary to subdue the disease, that he is to bear them without speaking of them to anyone, and that he is not even to ask the operator to calm them."@en ;
+    skos:note "The first of the three clauses that cancel the stopping rules, and the most direct. Under the rule of nearly a month the patient is to renounce the practice if he grows worse; under this one, growing worse is the sign that it is working. The two instructions are eight pages apart in the same chapter sequence and are addressed to the same person."@en ;
+    skos:note "The distinguishing criterion offered — that critical pains are transient and followed by improvement — is retrospective, so it cannot be applied at the moment when the patient has to decide. A patient in pain on the tenth day cannot tell from the passage whether he is in the case that requires fortitude or the case that requires renunciation, and the transmission does not supply a test that would tell him."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. I, § 31, p. 27, chap. III, pp. 48-49, and chap. VI, p. 111" .
+
+pmc:ActionSansSensation a pm:Conceptualizing ;
+    rdfs:label "The action that produces no sensation at all"@en, "Das Wirken, das keine Empfindung hervorbringt"@de ;
+    skos:definition "It frequently happens that the operation gradually reestablishes the harmony of the system without producing any sensation, its influence being perceived only in the restoration of health. In that case the operator is to continue zealously, without troubling himself about the manner in which it acts and without seeking any apparent effect; by making efforts of attention and of will, or trying processes thought more active, he would fatigue himself uselessly and perhaps disturb the gradual and peaceful course of nature."@en ;
+    skos:note "The second cancelling clause, and the one that empties the five-day rule from inside. That rule says the presumption of no action may not be founded on the patient having felt nothing; this passage says that feeling nothing is a normal course of successful action. Between them, no observation the patient can make within the term counts either way."@en ;
+    skos:note "It is also the clause that forbids the only response an operator might make to a null result — trying harder or trying differently — on the ground that it would disturb the process. A transmission that treats absence of effect as evidence of a quiet effect and forbids intensification has no state left in which it is not working."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. III, p. 42" .
+
+pmc:LeDouteAffaiblitLaPuissance a pm:Conceptualizing ;
+    rdfs:label "Doubt of one's own power enfeebles it"@en, "Der Zweifel an der eigenen Macht schwächt sie"@de ;
+    skos:definition "Where the first patient undertaken is absolutely insensible to the action, the beginner is apt to imagine he has not conducted the process aright, or else he doubts his own power; and in proportion as one doubts it, it really becomes enfeebled. The source states as the happiest thing that can happen to a first attempt that the subject be one who is not insensible and who nevertheless feels only slight and gradual effects."@en ;
+    skos:note "The third cancelling clause, and the one that closes the circle. A failure produces doubt, doubt reduces the power, and reduced power produces further failure — so a sequence of null results is accounted for by the first of them. The transmission states the mechanism plainly and does not notice that it has made a failed series self-explaining."@en ;
+    skos:note "The practical advice that follows is the part worth recording for anyone examining the tradition: the beginner is to choose a first subject who is neither insensible nor strongly affected. Selection of that kind, stated as counsel, bears on every case series the literature produced — and a second work of the tradition, read at the wording for pmc:HuitJoursConsecutifs below, states it as a rule instead of counsel."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "J. P. F. Deleuze, Practical Instruction in Animal Magnetism, trans. Thomas C. Hartshorn, revised ed. (New York: D. Appleton & Co., 1843), chap. III, pp. 42-43" .
+
+pmc:HuitJoursConsecutifs a pm:Conceptualizing ;
+    rdfs:label "Eight consecutive days, and what the judgment may then decide"@en, "Acht aufeinanderfolgende Tage, und was das Urteil dann entscheiden darf"@de ;
+    skos:definition "From a second work of the tradition. It rarely happens that the magnetic sleep is produced at the first sitting, and the first effects are often so little marked that they pass unnoticed, which is no reason to conclude the subject incapable of entering somnambulism. The operator is to begin again the following day, then the day after, then eight days consecutively, and only then will he be able to form a definitive judgment. Each sitting ought to last twenty minutes at least, and the experiments are to be made every day at the same hour."@en ;
+    skos:note "The sharpest stopping rule the tradition produced, and it is sharper than the four in Deleuze because it names both a count and what the count settles. What it settles, however, is stated in the same sentence and is the whole finding: the judgment should involve only one single fact — the degree of the operator's magnetic power, or of his complete want of power relatively to such a person. Eight days of nothing therefore establish something about this operator with this subject, and nothing whatever about the agent."@en ;
+    skos:note "Two clauses in the same pages keep even that from being reached. The operator is warned on every occasion against allowing himself to be discouraged by one or two failures, and especially against betraying any sign of the discouragement, since that would deprive him of the confidence others might have in him. And the beginner is instructed, as emphatically as the author can put it, to attempt his experiments first only on persons who present favourable conditions for succeeding, or he will yield to discouragement and be stopped on his way. A rule that counts to eight, then reads the result as a fact about the operator, and is applied only to subjects selected in advance for their likelihood of success, cannot return a negative that means anything."@en ;
+    skos:note "It stands beside pmc:TroisOuQuatreSeances and pmc:PresqueUnMois as a third witness inside one tradition for the same structure, and it is the strongest of the three because it is the most explicit. Whether the three together can carry a generalization of their own is the open question named in the pull request that entered this file; they are three nodes from two works of one transmission, which is thin for the class, and the second witness a generalization would need is being sought in prima-materia#708."@en ;
+    skos:note "Only this section of the work was read. The volume carries a large catalogue of claimed capacities in its chapter on lucid somnambulism, with named witnesses per sitting, and none of it was opened here."@en ;
+    pm:withinTradition pmt:Mesmerism ;
+    dcterms:source "A. Teste, A Practical Manual of Animal Magnetism, trans. D. Spillan (London: H. Bailliere, 1843), chap. VI, Of the Number and the Hour of the Sittings, pp. 171-172" .
+
+#
+# The placements on the consciousness axes
+#
+# Four placements, all on the induced state and all carrying
+# pm:compilerInference: the work describes a condition and names no
+# coordinate. SPEC §17 has each of these as a separate act, so four axes are
+# four nodes.
+#
+
+pmp:MesmericSomnambulismAnchoringSituating a pm:Situating ;
+    rdfs:label "The magnetic somnambulism placed on the sensory axis"@en, "Der magnetische Somnambulismus auf der Sinnesachse verortet"@de ;
+    pm:situatedNode pmc:MagnetismeSomnambulisme ;
+    pm:axisValue pm:withdrawnAbsorption ;
+    pm:situationGround "The work states that the external organs of sense are all, or nearly all, asleep, that the eyes are closed, and that the subject generally understands only those put in communication with him — and in the same sentence that he nevertheless experiences sensations by another means, an internal sense being roused in him. Withdrawal from the ordinary channel with awareness continuing is what this value holds, and the passage states both halves of it."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The value was preferred to pm:sleepThreshold although the transmission calls the state a sleep and reaches it through drowsiness. The threshold value is for practices carried out at the edge of falling asleep; here the subject is described as asleep and answering, which is not an edge but a withdrawal. The choice is contestable on the transmission's own vocabulary and is recorded as contestable."@en .
+
+pmp:MesmericSomnambulismAcquisitionSituating a pm:Situating ;
+    rdfs:label "The magnetic somnambulism placed on the acquisition axis"@en, "Der magnetische Somnambulismus auf der Erwerbsachse verortet"@de ;
+    pm:situatedNode pmc:MagnetismeSomnambulisme ;
+    pm:axisValue pm:notByEffort ;
+    pm:situationGround "The work forbids seeking the state and has it let come naturally, holds that where nature is disposed to this crisis the fluid will of itself be carried to the brain, and states that a slumber obtained by charging the head is forced, of no utility and not without danger. It also states that the state occurs only in a small number of cases and cannot be pronounced upon beforehand. A condition the source says may not be worked for, and comes where nature is disposed to it, is not presented as earned."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The placement is on the subject's side and not the operator's, which is the only way the axis reads here: the operator does exert effort, and the question the axis asks is whether the source presents the state as won or as given. To the person who enters it, this transmission presents it as given — and it is one of the very few in the holding to forbid working for it."@en .
+
+pmp:MesmericSomnambulismDurationSituating a pm:Situating ;
+    rdfs:label "The magnetic somnambulism placed on the duration axis"@en, "Der magnetische Somnambulismus auf der Dauerachse verortet"@de ;
+    pm:situatedNode pmc:MagnetismeSomnambulisme ;
+    pm:axisValue pm:transientState ;
+    pm:situationGround "The work has the operator end the state within the sitting, wake the subject perfectly so that no intermediate point remains between the ordinary and the somnambulic condition, and will that the faculties cease as soon as the patient is cured; and it states that somnambulism too much prolonged would of itself become a disease. A condition the transmission requires to be terminated, and calls a disease where it persists, is transient by its own account."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The work reports the opposite case and it does not unsettle the placement: persons long in the practice retain a susceptibility that returns them to an imperfect somnambulism at the slightest action, and some have been seen habitually in the magnetic state. That is reported as an inconvenience to be prevented, not as the state's own duration, which is why the value stands as it does and the report stands here."@en .
+
+pmp:MesmericSomnambulismAgencySituating a pm:Situating ;
+    rdfs:label "The magnetic somnambulism placed on the agency axis"@en, "Der magnetische Somnambulismus auf der Handlungsachse verortet"@de ;
+    pm:situatedNode pmc:MagnetismeSomnambulisme ;
+    pm:axisValue pm:cededAgency ;
+    pm:situationGround "The work states that the subject is subject to the influence of his operator, that in a treatment there ought to be only one will active to which all others are subordinate, that the operator is to oppose the subject's caprices by letting him know his will and never suffer him to get the upper hand, and that the operator is for him a just and inflexible providence. The operative will is the operator's throughout and the subject is required to yield himself passively, making no resistance."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The transmission sets a limit to the ceding in as many words, and the limit is not a reason to place the node elsewhere. The subject is said to preserve his reason and the use of his will, to be unable to be made to reveal a secret he has reason to conceal or to act against the principles he holds awake, and to revolt into convulsions at a reprehensible act of volition. That is a boundary on what may be commanded, not a claim that the subject is the one acting; the axis asks who acts, and by this work's account the operator does."@en ;
+    skos:note "Held against the rest of the holding this is the distinguishing feature of the tradition. Almost everything else here has the practitioner act upon himself, so the agency question has one answer and no interest. Here two people are involved and the source assigns the action to the one who is not in the state — which is why the claims of this tradition were, uniquely in this holding, examinable by a commission, and why the file beside this one could be written."@en .
