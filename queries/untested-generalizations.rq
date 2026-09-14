@@ -1,0 +1,23 @@
+# SPEC §16, Stufe 3.
+# Verallgemeinerungen, auf die kein Prüfknoten zeigt, geordnet nach der Zahl der
+# bezeugten Behauptungen, aus denen sie gebildet sind.
+#
+# Ausdrücklich kein Shape: ein Wächter, der zu jeder Verallgemeinerung ein Protokoll
+# verlangte, machte die Warteschlange unschreibbar.
+#
+# Gemessen am 2026-09-14 gegen 5dba1b6: 18 von 19 Verallgemeinerungen ohne Prüfknoten.
+# Von 61 Prüfknoten zeigt genau einer auf ein pm:Generalizing; die übrigen prüfen
+# Einzelbehauptungen (24 Conceptualizing, 14 Yielding, 13 Positing).
+
+PREFIX pm: <https://pajew.ski/prima-materia/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?generalization ?label (COUNT(?source) AS ?derivedFrom)
+WHERE {
+  ?generalization a pm:Generalizing ;
+                  pm:generalizedFrom ?source .
+  OPTIONAL { ?generalization rdfs:label ?label . FILTER(lang(?label) = "en") }
+  FILTER NOT EXISTS { ?test a pm:Testing ; pm:tests ?generalization }
+}
+GROUP BY ?generalization ?label
+ORDER BY DESC(?derivedFrom) ?generalization
