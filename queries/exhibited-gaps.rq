@@ -1,0 +1,26 @@
+# SPEC §13, die ausgestellte Lücke.
+# Suchen, die geführt wurden und keinen Knoten hervorgebracht haben: Korpus, Frage,
+# benutzte Begriffe, Ausgang, Suchender, Datum.
+#
+# Der Ertrag ist nicht Buchführung. Eine ausgestellte Lücke kann ein Fremder schließen,
+# der die Ausgabe besitzt; eine unausgestellte nicht. Ein Korpus ohne Suchknoten ist
+# davon zu unterscheiden: dort hat niemand gefragt.
+#
+# Gemessen am 2026-09-14 gegen 5dba1b6: 9 von 25 Suchen ohne Fund, alle auf
+# pm:searchFoundNothing. Kein Fall von pm:corpusUnreachable oder Gegenmaterial.
+
+PREFIX pm: <https://pajew.ski/prima-materia/ontology#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?search ?corpus ?soughtFor ?outcome ?terms ?by ?date
+WHERE {
+  ?search a pm:Searching ;
+          pm:searchedCorpus ?corpus ;
+          pm:searchedFor ?soughtFor ;
+          pm:searchOutcome ?outcome ;
+          pm:searchTerms ?terms ;
+          pm:searchedBy ?by ;
+          dcterms:date ?date .
+  FILTER NOT EXISTS { ?search pm:searchYieldedNode ?node }
+}
+ORDER BY ?corpus ?date
