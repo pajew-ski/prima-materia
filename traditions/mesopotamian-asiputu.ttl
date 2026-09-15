@@ -1,0 +1,292 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Mesopotamian exorcistic craft, taken off the register
+#
+# Taken from traditions/registry-west-asia.ttl on the testability-driven
+# entrance of SPEC 14, because the register calls this the oldest procedural
+# corpus in writing anywhere and because a craft with a written curriculum is
+# the place where prerequisites, cautions and failure conditions would have to
+# stand if a transmission carries them at all.
+#
+# What the reading found is one half of that expectation and not the other,
+# and the half that is missing is entered as a search rather than passed over.
+# The craft states the order of its own acquisition and the protection of its
+# operator at length. It states no prognosis, no interval and no condition of
+# failure anywhere in the sixteen canonical tablets of its principal
+# incantation series. The two searches stand in examinations/searches.ttl.
+#
+
+pmt:MesopotamianExorcism a pm:Tradition ;
+    rdfs:label "Mesopotamian exorcistic craft"@en, "Mesopotamische Beschwörungskunst"@de ;
+    skos:definition "The scribal craft of the āšipu: a trained office with its own curriculum, treating affliction as an assault to be countered by named procedure."@en ;
+    skos:note "The oldest procedural corpus in writing anywhere, and older than every tradition the graph currently holds. Whatever it shares with the Greek and Jewish material is therefore a question of derivation running one way only."@en ;
+    pm:principalCorpus "Maqlû; Šurpu; the exorcist's manual KAR 44; Ludlul bēl nēmeqi; Enūma Anu Enlil" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    skos:note "Read for the first time in two modern critical editions, both open access and both read at the wording of the English translation printed beside the text. First, the complete edition of the canonical series Udug-hul / Utukku Lemnutu in all sixteen tablets: Chapter One on the ritual content of the incantations, Chapter Three on the exorcist as diagnostician with its edition of KAR 31, and the partitur of Tablets 1, 3 and 12 at the places entered here. Second, the edition of the exorcist's manual KAR 44 in the volume of scholarly text catalogues, read in full from line 1 to the colophons."@en ;
+    skos:note "What was not read, and it is the larger part. Of the principal corpus, Maqlu and Surpu were not opened: the standard editions of both are the ones a reader would have to be given, and neither is open access, while the nineteenth-century editions that are — Tallqvist for Maqlu, Zimmern for Surpu — are superseded and would enter the graph as an edition nobody now cites. The Diagnostic Handbook, which is where a prognosis in this craft would stand, was not opened either and for the same reason; only its second tablet's colophon is entered here, and that one at second hand. Ludlul bel nemeqi and Enuma Anu Enlil were not opened. Of the work that was opened, the partitur of Tablets 2, 4 to 11 and 13 to 16 was read only where a search led and not line by line. The whole of it was searched, which is a different claim and is made as such at the two search nodes."@en ;
+    skos:note "The contact route stays disputed and the reading did not move it. The registration argued the dispute from the age of the corpus alone, which settles the direction of any derivation without settling whether there was one. The position the graph would need in order to decide it is the one that asks of each proposed borrowing whether it is specific, exceptional and co-occurrent with others, and reports that most claimed dependencies of the Greek magical papyri on this material fail those tests; that position was reached in the landscape stage of this run and not read at the wording, so it is named in an issue and not asserted here."@en ;
+    dcterms:source "Udug-hul (canonical Utukku Lemnutu) Tablets 1, 3 and 12, and KAR 31 (VAT 8803), in M. J. Geller, Healing Magic and Evil Demons: Canonical Udug-hul Incantations (Die babylonisch-assyrische Medizin in Texten und Untersuchungen 8, Boston/Berlin: De Gruyter 2016)" .
+
+#
+# The operator, and what the craft says he is
+#
+
+pmc:AsipuKapirigEridu a pm:Conceptualizing ;
+    rdfs:label "The exorcist of Eridu whose mouth is cleansed"@en, "Der Beschwörer von Eridu, dessen Mund gereinigt ist"@de ;
+    skos:altLabel "asipu"@en, "KA.PIRIG"@en ;
+    skos:definition "The office the speaker of the third tablet claims for himself in the first person: the incantation priest who heals the land, the chief exorcist who walks about the city, the exorcist of Eridu whose mouth is cleansed."@en ;
+    skos:note "The cleansed mouth is a qualification and not a metaphor here: the manuscripts vary between the cleansed hand and the cleansed mouth, and the same variation runs through the rubrics of the mouth-washing ritual, which is itself listed in the exorcist's manual as one of the compositions to be learned. What the office is therefore defined by, in its own words, is a completed procedure performed on the operator."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 3: 124-126 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+pmp:AsipuAnaMarsiTehu a pm:Practicing ;
+    rdfs:label "The bedside sequence at the patient"@en, "Die Abfolge am Krankenbett"@de ;
+    skos:definition "The ordered series of acts the exorcist names in the first person as what he does at the patient: he approaches him, studies his flesh, examines his limbs, sprinkles the water of Ea on him, frightens him, slaps his cheek, calls out over him, and casts the Eridu incantation."@en ;
+    skos:note "Eight acts in one uninterrupted conditional chain, each introduced by when. Two of them are examination and not treatment — studying the flesh and examining the limbs — and they stand before every operative act in the list. That is the order the diagnostic tradition of this craft presupposes, stated inside an incantation rather than in a handbook."@en ;
+    skos:note "Two of the acts are done to the patient and not for him: he is frightened and his cheek is slapped. The edition read remarks that it is not clear why the exorcist needed to frighten the patient and suggests it was to alarm the demon. That is the editor's reading and not the text's, and it is recorded here as his and not entered as a claim."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 3: 129-136 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+pmp:AsipuEruKakku a pm:Practicing ;
+    rdfs:label "Holding the e'ru-wood sceptre and the date-palm frond"@en, "Das Halten des e'ru-Szepters und des Dattelpalmwedels"@de ;
+    skos:definition "Holding in the hand, during the recitation, the mighty e'ru-wood sceptre of Anu, together with the plans of Ea and the date-palm frond of the major rituals."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 3: 66 and 152-154 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+pmp:AsipuSuluhSebisu a pm:Practicing ;
+    rdfs:label "Cleansing the patient seven times with river water"@en, "Siebenmaliges Reinigen des Kranken mit Flusswasser"@de ;
+    skos:definition "Purifying and cleansing the patient seven times over with a hand-washing rite of water, namely with water of the Tigris and water of the Euphrates."@en ;
+    skos:note "A counted repetition with a named number and named material, which is the shape a later run can compare against the counted thresholds the holding carries elsewhere. Nothing in the passage says what follows if the count is short."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 1: 39' (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+#
+# The passage the file was opened for: the operator is at risk, and the
+# protection of the operator is a stated prerequisite of the treatment
+#
+
+pmc:AsipuLemnuAnaAsipiTehu a pm:Conceptualizing ;
+    rdfs:label "What afflicts the patient may come upon the exorcist"@en, "Was den Kranken befällt, kann den Beschwörer treffen"@de ;
+    skos:definition "The danger the rubric of the Assur incantation names: that the Sheriff-demon, the Bailiff-demon, epilepsy, the accessory-to-evil demon, the Alu-demon, the falling illness and whatever else of the kind should approach the exorcist himself."@en ;
+    skos:note "The claim is about the practitioner and not about the patient, and it is the reason the craft has a procedure performed on the operator before any procedure is performed on the sick. It is also the only respect in which this transmission makes its own operation hazardous: nothing read here says that a failed treatment harms the patient further."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "KAR 31 (VAT 8803) rev. 29, rubric (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016, p. 40)" .
+
+pmc:AsipuCautionAgainstUnprotectedApproach a pm:Cautioning ;
+    rdfs:label "Do not go to the patient unprotected"@en, "Nicht ungeschützt zum Kranken gehen"@de ;
+    pm:cautionsAbout pmc:AsipuLemnuAnaAsipiTehu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    skos:note "A caution that a transmission addresses to its own operator rather than to the person operated on, and one that names what it protects against by list. The list is the same list of demons the incantations of the series drive away from the patient, which makes the exorcist, for the length of the visit, a second patient."@en ;
+    dcterms:source "KAR 31 (VAT 8803) rev. 29-31 (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016, p. 40)" .
+
+pmp:AsipuRamanaPasasu a pm:Practicing ;
+    rdfs:label "Anointing oneself before approaching the patient"@en, "Sich salben, bevor man an den Kranken herantritt"@de ;
+    skos:definition "The ritual appended to the Assur incantation: grinding up male and female nikiptu-plant, mixing it in honey and ghee, and anointing oneself with it at the moment of approaching the patient."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "KAR 31 (VAT 8803) rev. 30-31 (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016, p. 40)" .
+
+pmc:AsipuMimmaLemnuLaTehi a pm:Conceptualizing ;
+    rdfs:label "Nothing bad approaches the anointed exorcist"@en, "Dem gesalbten Beschwörer naht nichts Böses"@de ;
+    skos:definition "The outcome the ritual states for the anointing: that when he approaches the patient, nothing bad will approach him."@en ;
+    skos:note "Stated without reservation and without a condition on the operator's state, his worthiness or the will of a god. The only condition in the sentence is that the anointing come first."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "KAR 31 (VAT 8803) rev. 31 (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016, p. 40)" .
+
+pmc:AsipuAnointingYieldsProtection a pm:Yielding ;
+    rdfs:label "The anointing keeps harm from the exorcist"@en, "Die Salbung hält Schaden vom Beschwörer ab"@de ;
+    pm:byPractice pmp:AsipuRamanaPasasu ;
+    pm:yieldsCapacity pmc:AsipuMimmaLemnuLaTehi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "KAR 31 (VAT 8803) rev. 30-31 (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016, p. 40)" .
+
+pmc:AsipuSelfProtectionBeforeApproach a pm:Presupposing ;
+    rdfs:label "The anointing comes before the approach"@en, "Die Salbung geht dem Herantreten voraus"@de ;
+    pm:dependentStep pmp:AsipuAnaMarsiTehu ;
+    pm:priorStep pmp:AsipuRamanaPasasu ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The ritual states the anointing as what secures that nothing bad approaches the exorcist when he approaches the patient; what is claimed for the omission is therefore that the demons of the rubric — Sheriff and Bailiff demon, epilepsy, the accessory to evil, the Alu-demon, the falling illness — approach him instead."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    skos:note "The strength is set at stated necessity and the reason for the doubt is recorded rather than hidden. The text gives a purpose clause and not a threat: anoint yourself, so that nothing bad will approach you. The consequence of omission is therefore the contrapositive of what stands written and not a sentence of the transmission, and a later reader who holds that this is one step short of a stated necessity would be arguing about the same words and not about a missing reading. What tips it is the rubric immediately above, which names the harm by list and by name; a purpose clause backed by a named harm says what is at stake if the step is left out."@en ;
+    dcterms:source "KAR 31 (VAT 8803) rev. 29-31 (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016, p. 40)" .
+
+pmp:AsipuSiptaAnaRamaniNadu a pm:Practicing ;
+    rdfs:label "Casting the spell upon oneself"@en, "Die Beschwörung über sich selbst sprechen"@de ;
+    skos:definition "Reciting the incantation over oneself before going in to a patient, given as the standing instruction in the colophon of the second tablet of the diagnostic series: if you are to approach a patient, until you cast the spell on yourself, you should not approach the patient."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "M. J. Geller, Healing Magic and Evil Demons: Canonical Udug-hul Incantations (BAM 8, Boston/Berlin: De Gruyter 2016), p. 40, quoting the colophon in transliteration and translation" ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    skos:note "Second-hand, and the reason is a property of the works and not of this run. The edition that carries the colophon and the monograph that re-edits it are both print-only for this workstation; the passage was read in the quotation given by the edition of the incantation series, which prints it in transliteration and in translation. The node is an open post and the mode is to be raised to textual attestation when either volume is obtained."@en ;
+    dcterms:source "Sakikku (diagnostic series) Tablet 2, colophon (R. Labat, Traite akkadien de diagnostics et pronostics medicaux, Paris and Leiden 1951, pp. 18-19 n. 27; re-edited N. Heessel, Archiv fuer Orientforschung 48/49, 2001-02, p. 37)" .
+
+pmc:AsipuSpellOnSelfBeforeApproach a pm:Presupposing ;
+    rdfs:label "The spell on oneself comes before the approach"@en, "Die Selbstbeschwörung geht dem Herantreten voraus"@de ;
+    pm:dependentStep pmp:AsipuAnaMarsiTehu ;
+    pm:priorStep pmp:AsipuSiptaAnaRamaniNadu ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "M. J. Geller, Healing Magic and Evil Demons: Canonical Udug-hul Incantations (BAM 8, Boston/Berlin: De Gruyter 2016), p. 40" ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    skos:note "Prescribed order and not stated necessity, although the wording is the sharper of the two: it is a prohibition and not a recommendation. What it lacks is the consequence. The colophon says you should not approach, and says nothing about what befalls the one who does; the ritual of the Assur tablet, which is weaker in form, is the one that names the harm. The pair is worth keeping side by side for that reason, because it shows that the firmness of a wording and the presence of a stated consequence vary independently in one and the same craft."@en ;
+    dcterms:source "Sakikku (diagnostic series) Tablet 2, colophon (R. Labat, Traite akkadien de diagnostics et pronostics medicaux, Paris and Leiden 1951, pp. 18-19 n. 27)" .
+
+#
+# The transfer to the substitute, and the one interval the series states
+#
+
+pmp:AsipuMashultuppu a pm:Practicing ;
+    rdfs:label "The scapegoat drawn to the patient's body"@en, "Der an den Leib des Kranken gebrachte Sündenbock"@de ;
+    skos:altLabel "mas-hul-dub-ba"@en ;
+    skos:definition "Making a healthy goat into a scapegoat and sacrificing it as one; reciting an incantation over its hide; drawing the goat to the body of the man in the evening and binding its sash on his head; then carrying the hide off from the man's body and removing it quietly from the square."@en ;
+    skos:note "The one interval anywhere in the tablets read: the preceding operation is to persist for one day, and the goat is drawn to the body in the evening. It is a duration for the act and not a term after which the treatment counts as failed, which is the distinction the two searches at this tradition turn on."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 12: 77-98 and 108-112 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+pmc:AsipuLemnuIntoTheNetherworld a pm:Conceptualizing ;
+    rdfs:label "The evil carried down with the hide"@en, "Das mit dem Fell hinabgetragene Übel"@de ;
+    skos:definition "The outcome claimed for carrying off the hide: that Whatever Evil be removed into the Netherworld, that the enormous be turned into the trivial, and that the evil Alu-demon inflicted on the man be taken into the Netherworld."@en ;
+    skos:note "The transfer is stated as a wish throughout and never as a report. Every clause of the passage is precative, and the goat that is to hold the evil is asked not to be released from the patient's head. A transmission that states its own outcome in the optative has said nothing that a case could contradict, and that observation belongs beside the passage rather than in a protocol, because it is a property of the wording."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 12: 108-112 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+pmc:AsipuMashultuppuYieldsRemoval a pm:Yielding ;
+    rdfs:label "The scapegoat carries the evil away"@en, "Der Sündenbock trägt das Übel fort"@de ;
+    pm:byPractice pmp:AsipuMashultuppu ;
+    pm:yieldsCapacity pmc:AsipuLemnuIntoTheNetherworld ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 12: 77-112 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+#
+# Two properties of the series that bear on whether anything in it could fail
+#
+
+pmc:UdughulPatientNotNamed a pm:Conceptualizing ;
+    rdfs:label "The patient of the series is not a person"@en, "Der Kranke der Serie ist keine Person"@de ;
+    skos:definition "The form in which the series refers to the sick throughout: the man, son of his god, with no place where a name is to be inserted."@en ;
+    skos:note "The contrast is drawn inside the edition read and is a matter of the wording on both sides. The apotropaic rituals of the other kind write So-and-so, son of So-and-so, at the place where the reciter was to say the name of the person in front of him. The sixteen tablets of this series do not, with the exception of an appendix to the first and of the sixteenth, where the sick man is the king. A formula with no slot for a name is a formula that was not addressed to a case, and whether it was ever recited over one is a question the series does not answer about itself."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul, form of address throughout the series, with the exception of the appendix to Tablet 1 and of Tablet 16 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+pmc:UdughulProhibitionsAddressTheDemon a pm:Conceptualizing ;
+    rdfs:label "The prohibitions of the series are addressed to the demon"@en, "Die Verbote der Serie richten sich an den Dämon"@de ;
+    skos:definition "The form every prohibition in the series takes: it is spoken to the demon and not to the operator or the patient. You must not place your head upon his head; you must not touch him with your hand; you must not enter the house with him; you must not lean out of the window to him; you must not look behind you; you must not blow in with the wind and heat towards him."@en ;
+    skos:note "Read off the wording of every occurrence in the series and not from a statement about it. The prohibitions were searched for across all sixteen tablets in the edition read; each one found stands in the second person addressed to a demon, and none is addressed to the person carrying out the rite. What the operator must do and must not do is therefore stated nowhere inside the series and only in the appended ritual of an Assur tablet and in a colophon of the diagnostic series, both entered above."@en ;
+    skos:note "The consequence for examination is worth stating beside the observation, because this is the point at which the two halves of this transmission come apart. A prohibition addressed to a demon cannot be obeyed or broken by anybody whose conduct could be observed, so no case can be assigned to a breach of it. The prohibitions addressed to the exorcist can be, and there are two of them in the whole of what was read."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 4: 179-189', with the duplicates at 5: 69-74 and 6: 181'-187'; 6: 31-33; 9: 56', 94 and 111 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+#
+# The curriculum: what the craft says is to be learned, and in what order
+#
+
+pmc:AsiputuIskaruMasmassuti a pm:Conceptualizing ;
+    rdfs:label "The corpus of exorcism, named in its entirety"@en, "Das Korpus der Beschwörungskunst, vollständig benannt"@de ;
+    skos:definition "What the manual presents itself as: the incipits of the exorcism compositions, established for recensions and for reading, named in their entirety. The list runs from the brick-laying and mouth-washing rituals through the prayer genres, the diagnostic and physiognomic omen series, the incantation series including the evil-demon series and the burning series, the rituals of the bath house and the house of enclosures, the spells for undoing witchcraft and a broken oath, to the treatises on paralysis, palsy and the afflictions named Hand of the god, Hand of the goddess and Hand of a ghost."@en ;
+    skos:note "A transmission that publishes its own syllabus and claims completeness for it. Four centuries and four cities are represented in the manuscripts of this one tablet — Assur in the seventh century, Sippar, Babylon in the fourth, Uruk at the end of the fifth — so the claim was not the property of one library."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "The Exorcist's Manual, KAR 44: 1-35 (M. J. Geller, 'The Exorcist's Manual (KAR 44)', in U. Steinert (ed.), Assyrian and Babylonian Scholarly Text Catalogues, BAM 9, Berlin and Boston: De Gruyter 2018, pp. 296-302)" .
+
+pmp:AsiputuLamadu a pm:Practicing ;
+    rdfs:label "Studying the corpus until it is mastered"@en, "Das Korpus studieren, bis es beherrscht ist"@de ;
+    skos:definition "The first stage of the training the manual prescribes: studying the listed compositions until the student masters the entire corpus of purification and discovers the secrets."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "The Exorcist's Manual, KAR 44: 36 (Geller, in Steinert (ed.), Assyrian and Babylonian Scholarly Text Catalogues, BAM 9, De Gruyter 2018, p. 301)" .
+
+pmp:AsiputuSitulti a pm:Practicing ;
+    rdfs:label "The second stage: the lists, then the conflicting views"@en, "Die zweite Stufe: die Listen, dann die widerstreitenden Ansichten"@de ;
+    skos:definition "What the manual prescribes afterwards: by way of the lexical lists, the translations and the synonym lists, to grasp how to examine Sumerian and Akkadian rituals; and when the tithes, the chills, the anxiety, the celestial omen series and the terrestrial omen series are understood, to think through and consider the conflicting views."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "The Exorcist's Manual, KAR 44: 37-40 (Geller, in Steinert (ed.), Assyrian and Babylonian Scholarly Text Catalogues, BAM 9, De Gruyter 2018, p. 301)" .
+
+pmc:AsiputuMithurtu a pm:Conceptualizing ;
+    rdfs:label "Considering the conflicting views"@en, "Das Erwägen der widerstreitenden Ansichten"@de ;
+    skos:altLabel "mithurtu"@en ;
+    skos:definition "The capacity the manual places at the end of the whole curriculum and after everything else has been understood: to think through and weigh the views that conflict."@en ;
+    skos:note "The last thing the craft asks of its own practitioners is not a power and not a purity but a judgement between disagreeing authorities, and it is placed after mastery rather than before it. The holding has no second transmission that ends its syllabus this way, and that is the reason the node is entered separately from the practice it belongs to rather than folded into its definition."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "The Exorcist's Manual, KAR 44: 40 (Geller, in Steinert (ed.), Assyrian and Babylonian Scholarly Text Catalogues, BAM 9, De Gruyter 2018, p. 301)" .
+
+pmc:AsiputuMasteryBeforeJudgement a pm:Presupposing ;
+    rdfs:label "The corpus is mastered before the views are weighed"@en, "Das Korpus wird beherrscht, bevor die Ansichten gewogen werden"@de ;
+    pm:dependentStep pmp:AsiputuSitulti ;
+    pm:priorStep pmp:AsiputuLamadu ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    skos:note "The order is given by the word afterwards standing at the head of the second stage, and by the clause until you master the entire corpus closing the first. No consequence is stated for taking the second stage first, so the strength stays at prescribed order; what the manual does state, at the end, is the reward for completing both, namely that the protective deity establish the student and that his name be mentioned forever."@en ;
+    dcterms:source "The Exorcist's Manual, KAR 44: 36-37 (Geller, in Steinert (ed.), Assyrian and Babylonian Scholarly Text Catalogues, BAM 9, De Gruyter 2018, p. 301)" .
+
+pmc:AsiputuLamaduYieldsIsipputu a pm:Yielding ;
+    rdfs:label "The study yields mastery of the corpus of purification"@en, "Das Studium bringt die Beherrschung des Reinigungskorpus hervor"@de ;
+    pm:byPractice pmp:AsiputuLamadu ;
+    pm:yieldsCapacity pmc:AsiputuIskaruMasmassuti ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "The Exorcist's Manual, KAR 44: 36 (Geller, in Steinert (ed.), Assyrian and Babylonian Scholarly Text Catalogues, BAM 9, De Gruyter 2018, p. 301)" .
+
+pmc:AsiputuSitultiYieldsMithurtu a pm:Yielding ;
+    rdfs:label "The second stage yields the weighing of conflicting views"@en, "Die zweite Stufe bringt das Wägen widerstreitender Ansichten hervor"@de ;
+    pm:byPractice pmp:AsiputuSitulti ;
+    pm:yieldsCapacity pmc:AsiputuMithurtu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "The Exorcist's Manual, KAR 44: 37-40 (Geller, in Steinert (ed.), Assyrian and Babylonian Scholarly Text Catalogues, BAM 9, De Gruyter 2018, p. 301)" .
+
+#
+# Where the craft says its own competence comes from
+#
+
+pmc:Ea a pm:Naming ;
+    rdfs:label "Ea"@en, "Ea"@de ;
+    pm:nameForm "Ea" ;
+    pm:nameRole "the god who devises the incantations and instructs the exorcist" ;
+    skos:altLabel "Enki"@en ;
+    skos:definition "The god named in the series as the one whose plans the exorcist holds, whose incantation is placed in the exorcist's mouth, and who instructs Marduk in the recurring dialogue that introduces the rituals."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 3: 152 and 8: 25-26, 30-31; KAR 31 (VAT 8803) obv. 1-4 (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+pmc:Marduk a pm:Naming ;
+    rdfs:label "Marduk"@en, "Marduk"@de ;
+    pm:nameForm "Marduk" ;
+    pm:nameRole "the god sent by Ea to carry out the rite, and the one in whose role the exorcist acts" ;
+    skos:altLabel "Asalluhi"@en ;
+    skos:definition "The god who in the recurring dialogue of the series asks Ea what is to be done and is told to go and do it, and whose part the exorcist takes when he performs the instructed rite."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 8: 26; KAR 31 (VAT 8803) obv. 2 and rev. 26 (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
+
+pmc:EaAndMardukInstructTheExorcist a pm:Attributing ;
+    rdfs:label "Ea instructed the exorcist and put the incantation in his mouth"@en, "Ea unterwies den Beschwörer und legte ihm die Beschwörung in den Mund"@de ;
+    pm:ascribedTo pmc:Ea ;
+    pm:ascribedCapacity pmc:AsipuKapirigEridu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    skos:note "Stated by the exorcist about himself, in the first person, inside the text he recites: I am the messenger of the great gods, Ea and Marduk have instructed me comprehensively, I orally render their pure incantation, I carry out the words they say. The eighth tablet has him say it of himself in the same words and then name the transfer exactly: the great lord Ea has sent me and made his incantation acceptable for my mouth."@en ;
+    skos:note "The ascription is to a god and the attesting mode is textual and not third-party, because what was read is the passage in which the claim stands and not a report that somebody made it. Whether the office was in fact instructed by Ea is not a question this graph can put; that the transmission grounds the office there rather than in a lineage of teachers is."@en ;
+    dcterms:source "KAR 31 (VAT 8803) obv. 1-4 and rev. 26; Udug-hul 8: 25-26 and 30-31 (M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016, pp. 38-40)" .
+
+pmc:AsipuLearnsTheRitesByDivineDecision a pm:Conceptualizing ;
+    rdfs:label "The gods decided that he should learn their rituals"@en, "Die Götter beschlossen, dass er ihre Riten lernen solle"@de ;
+    skos:definition "The claim the twelfth tablet puts in the speaker's mouth: they decided about me that I should learn their rituals and their ways."@en ;
+    skos:note "Acquisition and gift stand in one sentence and neither cancels the other: the learning is his and the decision that he should learn is not. That is a shape the holding's axes cannot yet place, because the acquisition axis asks whether the source presents the state as earned or as given and this source presents it as both, at two different levels. The node is entered without an axis placement rather than forced onto one; no placement is a different record from a placement on the not-stated value, and here the source does state something."@en ;
+    pm:withinTradition pmt:MesopotamianExorcism ;
+    dcterms:source "Udug-hul 12: 39 (canonical Utukku Lemnutu; critical edition M. J. Geller, Healing Magic and Evil Demons, BAM 8, De Gruyter 2016)" .
