@@ -341,6 +341,15 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Akademieberichte von 1826 und 1831 bei Foissac, Burdin und Dubois 1841, und
   Braids Neurypnology samt seiner späteren Kritik. Bertrand steht auf beiden
   Seiten und geht zweimal ein, unter verschiedenen Prädikaten)
+- `korpus:akkadisch` (die keilschriftliche Beschwörungs- und Heilliteratur
+  Mesopotamiens: die kanonische Serie Udug-hul / Utukkū Lemnūtu, Maqlû, Šurpu,
+  das Exorzistenhandbuch KAR 44, die Diagnostikserie Sakikkû, Ludlul bēl nēmeqi
+  und Enūma Anu Enlil — maßgeblich sind die modernen kritischen Editionen und
+  nicht die Ausgaben des 19. Jahrhunderts, weil Tallqvist für Maqlû, Zimmern
+  für Šurpu und Thompson für Utukkū Lemnūtu textkritisch überholt sind und ein
+  Knoten nach §10 die Ausgabe nennt, aus der gelesen wurde; die Assyriologie
+  geht als `pm:evidenceFrom` ein, nie als Quelle, ausgenommen die kritischen
+  Editionen selbst, die den Text tragen und nicht über ihn urteilen)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
