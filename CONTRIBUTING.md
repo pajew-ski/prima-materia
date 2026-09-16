@@ -360,6 +360,15 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   in Verboten führt und eine eigene Bußordnung mit Fristen trägt; die
   Indologie und die Jaina-Studien gehen als `pm:evidenceFrom` ein, nie als
   Quelle)
+- `korpus:finnisch` (die finnisch-karelischen Zaubersprüche: Suomen Kansan
+  Vanhat Runot als die Sammlung, die jede Aufzeichnung einzeln mit Ort,
+  Sammler und Datum druckt; Lönnrot, Suomen Kansan Muinaisia Loitsurunoja
+  1880, und Abercrombys englische Übersetzung daraus, The Pre- and
+  Proto-historic Finns Bd. II 1898, als die zugängliche Fassung — mit dem
+  Vorbehalt, dass Lönnrot den Aufzeichnungsort weglässt und Varianten
+  zusammenzieht; Ganander, Mythologia Fennica 1789, als früheste gedruckte
+  Erschließung — der Kalevala gehört nicht dazu und geht als Ordnungsakt ein,
+  nie als Quelle, und die Folkloristik geht als `pm:evidenceFrom` ein)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
