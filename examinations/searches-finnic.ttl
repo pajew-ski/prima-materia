@@ -1,0 +1,53 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Finnic run of 2026-09-16
+#
+# In a file of their own for the mechanical reason given in
+# examinations/searches-norse-seidr.ttl and in prima-materia#703.
+#
+# The third of them is the one that carries something: a transmission whose
+# whole doctrine rests on words that are handed down, and which regulates
+# nowhere what happens when they are handed down wrong.
+#
+
+pmp:FinnicSignOfSuccessSearch a pm:Searching ;
+    rdfs:label "Whether a Finnish charm names a perceptible sign of having worked"@en, "Ob ein finnischer Spruch ein wahrnehmbares Zeichen des Wirkens nennt"@de ;
+    pm:searchedCorpus "John Abercromby, The Pre- and Proto-historic Finns, vol. II: The Magic Songs of the West Finns (London: David Nutt, 1898), searched whole by term and the hits read at the wording" ;
+    pm:searchedFor "A passage telling the operator or the patient what will be perceived when a charm has taken effect, which SPEC §15 requires to be harvested and counted separately from the conditions of failure." ;
+    pm:searchTerms "Term search of the whole volume, on the text normalised to single spaces because the scan breaks lines inside words, for: sign, signal, token, omen, mark, appear, appears, glare, crash, flash, smoke, warmth, light. Every hit read in its place." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:FinnicMerkkiKotona ;
+    pm:searchedBy "prima-materia, 2026-09-16" ;
+    dcterms:date "2026-09-16" ;
+    skos:note "Exactly one passage in the volume demands a sign, and it demands it in the one place where nobody is standing. The evil, sent home to whoever fashioned it, is to give a sign on arrival, a secret signal, a crash like a thunder-clap and a glare like a lightning-flash — at that house, not at the bath-house where the operation was performed. The count for this corpus is therefore one sign of success, and it is not one the operator could report absent."@en ;
+    skos:note "Everything else the search returned was a mark on a body, a heraldic or weather word in a simile, or the editor's own prose. The volume has no equivalent of the ordered sign-sequences this holding carries from the Chinese inner alchemy, and no equivalent of a warmth or a light reported by the practitioner."@en .
+
+pmp:FinnicStatedTermSearch a pm:Searching ;
+    rdfs:label "Whether a Finnish charm sets a term by which it must have worked"@en, "Ob ein finnischer Spruch eine Frist setzt, bis zu der er gewirkt haben muss"@de ;
+    pm:searchedCorpus "John Abercromby, The Pre- and Proto-historic Finns, vol. II: The Magic Songs of the West Finns (London: David Nutt, 1898), searched whole by term and the hits read at the wording" ;
+    pm:searchedFor "A term after which the charm is to have taken effect, which is the form the testability-driven entrance of SPEC §14 looks for and which would make a failure condition constructible." ;
+    pm:searchTerms "Term search of the whole volume, on the normalised text, for: ere the close, ere the setting, sunset, sundown, before the sun, three days, three times, nine days, nine times, within a, by the morrow, by morning, this night. Every hit read in its place." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:FinnicAurinkoonMennessa ;
+    pm:searchedBy "prima-materia, 2026-09-16" ;
+    dcterms:date "2026-09-16" ;
+    skos:note "One term came back and it is set on the wrong event. The evil is to reach its master's seat ere the close of day, ere the setting of the sun; nothing is said about when the sick man is to be better, and nothing about what follows if the sun sets and he is not. The formula's own provision for that case is the conditional two clauses later, which escalates instead of concluding."@en ;
+    skos:note "This is the same finding the Jain run of the same day made in another corpus and it is worth stating as a pattern to be watched rather than a coincidence: terms are common, terms on the result are not. What a transmission times is the journey of the thing expelled, the length of the preparation, the number of the repetitions — and not the interval within which the promised effect is to appear."@en .
+
+pmp:FinnicExactnessSearch a pm:Searching ;
+    rdfs:label "Whether the Finnic corpus makes exact recitation a condition"@en, "Ob der finnische Bestand die genaue Rezitation zur Bedingung macht"@de ;
+    pm:searchedCorpus "John Abercromby, The Pre- and Proto-historic Finns, vol. II: The Magic Songs of the West Finns (London: David Nutt, 1898), searched whole by term and the hits read at the wording; the editor's account of the collection at pp. 1-6 read in full" ;
+    pm:searchedFor "A passage stating that the words must be said exactly, or naming what follows if the operator errs, forgets or does not know them. The holding carries a convergence asserting that exactness is set as the condition of efficacy in four transmissions, and this corpus makes the handed-down words the whole ground of the operation, so it is the obvious place to ask." ;
+    pm:searchTerms "Term search of the whole volume, on the normalised text, for: wrongly, mistake, mistaken, forget, forgets, forgetting, forgot, wrong word, err, erred, error, fail, fails, failed, failure, unless, if he does not, who knows not, not know. Every hit read in its place." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-16" ;
+    dcterms:date "2026-09-16" ;
+    skos:note "Nothing came back. In a corpus whose central line makes the expulsion follow from pronouncing a deep origin, words that are handed down, no passage read states that the words must be exact, and none names a consequence for the operator who errs, forgets or does not know them. The nearest thing to a rule for not knowing is the formula to discover the cause, which is a remedy and not a penalty."@en ;
+    skos:note "The one statement in the volume about exactness runs the other way and is the editor's, not the transmission's: he holds that one or only a very few of the songs stand in the shape in which they were sung, and that the singers, through failure of memory, did not recite them precisely the same on each occasion but unconsciously made small changes. That is an observation about the practice by the man who printed it, and it is recorded here as his."@en ;
+    skos:note "Why the empty result is worth having. The holding asserts a convergence at pmc:ExactnessAsConditionOfEfficacy over four transmissions in which exactness is stated as the condition of efficacy. This is a fifth transmission of the same kind — spoken words, an operator, a claimed effect — in which the condition is not stated at all. That does not refute a convergence, which claims agreement among its members and not universality; it fixes the boundary of the agreement, and a later run that wants to say anything general about exactness now has a case outside it to account for."@en .
