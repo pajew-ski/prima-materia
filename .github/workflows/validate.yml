@@ -1,27 +1,26 @@
 name: Validate
 
+# Arbeitsbranches (claude/**) laufen nicht bei jedem Push. Ein Agent schreibt
+# eine Aenderung ueber mehrere Commits, die Zwischenstaende sind planmaessig rot,
+# und jeder davon endete als Fehlschlag mit Benachrichtigung an den Token-Inhaber.
+# Geprueft wird nur der Stand, der PR werden soll: prima_repo_check stoesst den
+# Lauf per workflow_dispatch an, wenn es fuer den Kopf-SHA keinen gibt. Siehe
+# pajew-ski/data#337; damit entfallen auch #352 und #650.
 on:
   push:
-    branches: [main, 'claude/**']
+    branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
-# Ein Arbeitsbranch bekommt mehrere Commits hintereinander, und nur der letzte
-# Stand ist zu prüfen. Ohne diese Gruppe laufen alle parallel, der Branch wartet
-# auf Läufe, deren Ergebnis schon überholt ist, und der Agent liest den falschen
-# Zustand. Der PR-Lauf bekommt eine eigene Gruppe, damit ein Push auf den Branch
-# ihn nicht abbricht.
+# Ein zweiter Anstoss auf denselben Branch macht den ersten wertlos. Der PR-Lauf
+# bekommt eine eigene Gruppe, damit ein Anstoss auf den Branch ihn nicht abbricht.
 concurrency:
   group: validate-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   validate:
-    # Ein Push, der einen Ref erst erzeugt, prueft einen Commit, der auf seinem
-    # Ursprungsbranch bereits geprueft ist. Der Lauf hat nie Aussagewert, haengt
-    # aber am geerbten Kopf-SHA und erscheint deshalb als abgebrochener Check am
-    # PR darunter. Siehe #352.
-    if: ${{ !(github.event_name == 'push' && github.event.created) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

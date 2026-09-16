@@ -64,7 +64,7 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 ├── tests/                       # eine Datei je Skript, plus die Wächtertests
 └── .github/
     └── workflows/
-        ├── validate.yml         # SHACL und pytest auf main und claude/**
+        ├── validate.yml         # SHACL und pytest auf main, PR und Abruf
         ├── pages.yml            # baut und deployt den Namensraum-Host
         └── distribute.yml       # Auto-Build & Push zu prima-materia-dist
 
@@ -408,13 +408,11 @@ pm:NoSubstanceClassesShape a sh:NodeShape ;
 
 ### `validate.yml`
 
-Läuft auf `push` nach `main` und nach `claude/**` sowie auf `pull_request` gegen `main`, installiert die Abhängigkeiten und führt `scripts/validate.py` und `pytest tests/` aus.
+Läuft auf `push` nach `main`, auf `pull_request` gegen `main` und auf `workflow_dispatch`, installiert die Abhängigkeiten und führt `scripts/validate.py` und `pytest tests/` aus.
 
-Der Trigger auf `claude/**` ist die Bedingung dafür, dass die in `AGENTS.md` vorgeschriebene Reihenfolge überhaupt erfüllbar ist: auf dem Arbeitsbranch prüfen, dann den PR öffnen. Ohne ihn entsteht der erste Lauf mit dem PR, und ein Fehler in einer TTL-Datei fällt erst an der offenen Änderung auf.
+**Arbeitsbranches laufen nur auf Abruf.** `prima_repo_check` stößt den Lauf per `workflow_dispatch` an, wenn es für den Kopf-SHA keinen Lauf mit Befund gibt, und wertet ihn beim nächsten Aufruf aus. Damit bleibt die Reihenfolge aus `AGENTS.md` erfüllbar — auf dem Arbeitsbranch prüfen, dann den PR öffnen —, ohne dass jeder Zwischenstand einen Lauf erzeugt. Bis zum 2026-09-16 hörte der Workflow auf `push` nach `claude/**` (seit #32). Ein Bündel über mehrere Dateien ist zwischendurch planmäßig rot, und jeder rote Zwischenstand, der länger stand als ein Lauf dauert, endete als Fehlschlag mit Benachrichtigung an den Token-Inhaber. Aussagewert hatte nur der letzte. Derselbe Trigger war die Ursache von #352 (Lauf beim bloßen Anlegen eines Refs, rotes Kreuz am PR darunter) und #650 (ausbleibender Push-Lauf, Check dauerhaft auf `kein_lauf`); beide Klassen entfallen, weil der Check nicht mehr auf ein Ereignis wartet. Entscheidung in pajew-ski/data#337.
 
-Eine `concurrency`-Gruppe je Ereignistyp und Ref mit `cancel-in-progress: true` bricht die Läufe überholter Zwischenstände ab. Gewollte Nebenwirkung: ein Branch mit mehreren Commits sammelt `cancelled`-Läufe. Ein abgebrochener Lauf hat nichts festgestellt und ist kein Fehlschlag; `prima_repo_check` wertet deshalb ausschließlich den Lauf des aktuellen Kopf-SHA. Siehe #32 und #44.
-
-**Kein Lauf beim bloßen Anlegen eines Branches.** Ein Push, der einen Ref erst erzeugt, prüft einen Commit, der auf seinem Ursprungsbranch bereits geprüft ist; der Lauf hat nie Aussagewert. Er hat aber eine Nebenwirkung, und sie ist teuer: bei gestapelten Branches trägt der neue Ref anfangs den Kopf-SHA des darunterliegenden PR. Der erste echte Commit auf dem neuen Branch bricht diesen Lauf ab, der abgebrochene Lauf bleibt an jenem SHA hängen, und GitHub rollt für einen PR alle Check-Runs am Kopf-SHA zusammen, gleich von welchem Ref sie stammen. Ergebnis: ein rotes Kreuz an einem grünen PR, und zwar ausgerechnet an dem, von dem abgezweigt wurde. Der Job trägt deshalb `if: ${{ !(github.event_name == 'push' && github.event.created) }}`; `github.event.created` ist genau dann wahr, wenn der Ref mit diesem Push entstanden ist, und ist bei `pull_request` null. Fall und Lauf-Nummern in prima-materia#352.
+Eine `concurrency`-Gruppe je Ereignistyp und Ref mit `cancel-in-progress: true` bricht einen überholten Anstoß ab, wenn der Check vor dem Erscheinen des ersten Laufs erneut anstößt. Ein abgebrochener Lauf hat nichts festgestellt und ist kein Fehlschlag; `prima_repo_check` wertet ausschließlich den Lauf des aktuellen Kopf-SHA. Siehe #32 und #44.
 
 ### `pages.yml`
 
