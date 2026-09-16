@@ -369,6 +369,14 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   zusammenzieht; Ganander, Mythologia Fennica 1789, als früheste gedruckte
   Erschließung — der Kalevala gehört nicht dazu und geht als Ordnungsakt ein,
   nie als Quelle, und die Folkloristik geht als `pm:evidenceFrom` ein)
+- `korpus:yangsheng` (die frühe chinesische Nährung-des-Lebens-Literatur in
+  ihren ausgegrabenen Handschriften: das Zhangjiashan Yinshu, Grab 247, in
+  Vivienne Los Übersetzung von 2014 nach dem Wenwu-Transkript von 2001; die
+  Mawangdui-Handschriften Daoyin tu und Quegu shiqi, für die in diesem Lauf
+  keine frei lesbare englische Ausgabe zu finden war; das Huangting jing —
+  von `korpus:daoistisch` getrennt geführt, weil diese Handschriften vor
+  jedem belegten Kontaktweg im Boden lagen und der Bestand genau das an
+  ihnen braucht)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
