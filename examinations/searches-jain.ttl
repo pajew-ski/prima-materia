@@ -1,0 +1,67 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Jain run of 2026-09-16
+#
+# In a file of their own for the mechanical reason given in
+# examinations/searches-norse-seidr.ttl and in prima-materia#703: two branches
+# appending to the end of examinations/searches.ttl do not merge without a
+# hand. The register is the class and not the file.
+#
+# Two of the four came back empty, and those two are the point. A transmission
+# that names no perceptible sign of success and no consequence for the omitted
+# step is a transmission whose promises cannot be missed, and the way to say
+# that in this holding is a search that was carried and found nothing.
+#
+
+pmp:JainaSignOfSuccessSearch a pm:Searching ;
+    rdfs:label "Whether the Jain corpus names a perceptible sign that a practice has worked"@en, "Ob der jainistische Bestand ein wahrnehmbares Zeichen des Gelingens nennt"@de ;
+    pm:searchedCorpus "Hermann Jacobi, Jaina Sūtras Part II, Sacred Books of the East 45 (Oxford: Clarendon 1895; Motilal Banarsidass reprint, Delhi 2010), the Uttarādhyayana and the Sūtrakṛtāṅga; and Jaina Sūtras Part I, Sacred Books of the East 22 (Oxford: Clarendon 1884; Motilal Banarsidass reprint, Delhi 1964), the Ācārāṅga and the Kalpa Sūtra. Both volumes searched whole by term; the hits read at the wording, and the lectures named in the coverage note of pmt:Jain read in full."@en ;
+    pm:searchedFor "A passage in which the transmission tells the practitioner what he will perceive when a practice has taken effect: a light, a warmth, a fragrance, an apparition, a bodily change, anything at all by which he would know rather than be told. This holding carries such signs from the Chinese inner alchemy and from the Tibetan heat practice and treats them as their own harvest category, so their absence in a transmission with a capacity catalogue of its own had to be established and not assumed."@en ;
+    pm:searchTerms "Term search of both volumes, case-insensitive, for: sign, signs, token, tokens, radiance, radiant, lustre, fragrance, fragrant, warmth, glow, glowing, vision, appears, appeared, appearance, mark of, he will know, knows that he. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-16" ;
+    dcterms:date "2026-09-16" ;
+    skos:note "Nothing came back. Every occurrence of light, lustre and radiance in the two volumes belongs to one of four things that are not signs of a practice: the gods and their lustre, the mountain Sudarśana and the similes built on it, the lights and portents at the birth and death of the founder, and the fourteen dreams of his mother. The nearest thing to a sign is the statement that the twenty-ninth lecture makes at its close about absolute knowledge penetrating the whole universe, which is the attainment itself and not a mark of it."@en ;
+    skos:note "The one passage that speaks of a perception during a practice speaks against believing it: the man dying by the fast is told not to trust in the delusive power of the gods. That is entered at pmc:JainaDevamaya, and it makes the absence sharper rather than softer. The transmission expects something to be seen and tells the practitioner in advance that it proves nothing."@en ;
+    skos:note "What follows for a later run is where to look next rather than what to conclude. The sign literature of this transmission, if it has one, would be in the works with no public-domain English translation — the Aupapātika, the Pravacanasāroddhāra, the Tiloyapaṇṇatti — and the negative finding is about the four works read and says so."@en .
+
+pmp:JainaStatedTermSearch a pm:Searching ;
+    rdfs:label "Whether a Jain practice is bounded by a stated term"@en, "Ob eine jainistische Praxis durch eine genannte Frist begrenzt ist"@de ;
+    pm:searchedCorpus "Hermann Jacobi, Jaina Sūtras Part II, Sacred Books of the East 45 (Oxford 1895; Motilal Banarsidass reprint, Delhi 2010) and Jaina Sūtras Part I, Sacred Books of the East 22 (Oxford 1884; Motilal Banarsidass reprint, Delhi 1964), both volumes searched whole by term."@en ;
+    pm:searchedFor "A passage that puts a term on a practice: a number of days, months or years within which the result is to appear, or after which it is not to be expected. The testability-driven entrance of SPEC §14 looks for exactly this, and the registration of this transmission was made on the expectation that a catalogue of capacities would carry one."@en ;
+    pm:searchTerms "Term search of both volumes for: within a, within one, within two, within three, within six, within twelve, six months, twelve years, after a day, after a month, after a year, after one night, muhurta, muhirta, fortnight, month, months, in due time. The hits read in their places; the numerals in the enumerations of the lifespans of classes of beings set aside as not being terms of a practice."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:JainaTribhavaAvadhi, pmp:JainaDvadashavarshaNirodha, pmc:JainaKevalaprapti, pmp:JainaMahaviraUpadhana ;
+    pm:searchedBy "prima-materia, 2026-09-16" ;
+    dcterms:date "2026-09-16" ;
+    skos:note "Four kinds of term came back and none of them is the kind that was looked for. A bound in births, at most three, on the purity of faith. A term the practitioner sets himself, the twelve years of neglecting the body. A date for a single attainment, given down to the muhūrta and the direction of the shadow. And counts of fasting stated in meals rather than in days, the sixth meal, the eighth, the tenth, the twelfth."@en ;
+    skos:note "The absent kind is the useful one. Nowhere does a passage say that a practice carried out for so long should have produced its result by then, which is the form from which a failure condition can be made. The nearest approach runs the other way: the two and a half days of fasting without water that stand immediately before the attainment in the Kalpa Sūtra are a circumstance of one event and not a rule."@en .
+
+pmp:JainaWarningAgainstThePowersSearch a pm:Searching ;
+    rdfs:label "Whether the Jain corpus warns against the capacities it names"@en, "Ob der jainistische Bestand vor den Vermögen warnt, die er nennt"@de ;
+    pm:searchedCorpus "Hermann Jacobi, Jaina Sūtras Part II, Sacred Books of the East 45 (Oxford 1895; Motilal Banarsidass reprint, Delhi 2010) and Jaina Sūtras Part I, Sacred Books of the East 22 (Oxford 1884; Motilal Banarsidass reprint, Delhi 1964), both volumes searched whole by term and the hits read at the wording."@en ;
+    pm:searchedFor "A passage in which the transmission warns against the operative capacities themselves rather than against their misuse, which is the position the secondary literature ascribes to it and which the landscape stage of this run located at Uttarādhyayana XXXV.18 and at a work outside these two volumes."@en ;
+    pm:searchTerms "Term search of both volumes for: supernatural, magic, magical, sorcery, miraculous, riddhi, labdhi, iddhi, augury, omen, omens, fortune-telling, spell, spells, incantation, charm, charms, exorcism, occult, prognostics. Every hit read in its place, and Uttarādhyayana XXXV read in full to check the passage the landscape stage named."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:JainaPapavidya, pmc:JainaPapavidyaphala, pmc:JainaAbhiyogikabhavana, pmc:JainaNimittavidya, pmc:JainaCikitsavidya ;
+    pm:searchedBy "prima-materia, 2026-09-16" ;
+    dcterms:date "2026-09-16" ;
+    skos:note "The passage the landscape stage named is not the passage it was said to be, and the search is recorded partly for that. Uttarādhyayana XXXV.18 in the edition read forbids the monk to desire flowers, a seat, an eloquent greeting, presents or a magnificent welcome; it is about honours and says nothing of powers. The warning that was looked for stands elsewhere and in a stronger form, in the catalogue of the Sūtrakṛtāṅga and in the two dispositions of Uttarādhyayana XXXVI."@en ;
+    skos:note "What was found is not a warning against the capacities but a penalty on living by them, and the difference decides how the nodes are worded. In every one of the four places the condition is a motive: for the sake of food, drink, clothes, a lodging, a bed and objects of pleasure; for the sake of pleasure, amusement or power; as a sinful living. The transmission never says that the arts do not work, and in one place it says outright that they do."@en .
+
+pmp:JainaConsequenceOfOmissionSearch a pm:Searching ;
+    rdfs:label "Whether a Jain prerequisite states what befalls the one who skips it"@en, "Ob eine jainistische Voraussetzung nennt, was dem widerfährt, der sie überspringt"@de ;
+    pm:searchedCorpus "Hermann Jacobi, Jaina Sūtras Part II, Sacred Books of the East 45 (Oxford 1895; Motilal Banarsidass reprint, Delhi 2010) and Jaina Sūtras Part I, Sacred Books of the East 22 (Oxford 1884; Motilal Banarsidass reprint, Delhi 1964), both volumes searched whole by term; the ordered sequences at Uttarādhyayana XXIX.72, XXX.7-11 and XXX.30-36 and at Ācārāṅga I.7.8 read in full."@en ;
+    pm:searchedFor "A passage attaching a named consequence to the omission of a step or to taking a prescribed sequence out of order. Every prerequisite claim entered from this transmission is set at pm:prescribedOrder rather than pm:statedNecessity, and under pm:StatedNecessityShape that setting has to rest on the absence of a quotable consequence rather than on not having looked."@en ;
+    pm:searchTerms "Term search of both volumes for: if he does not, unless, otherwise, will not attain, in vain, fails, fail, without which, without it, he cannot. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-16" ;
+    dcterms:date "2026-09-16" ;
+    skos:note "No passage came back that attaches a consequence to an omitted step. What the conditionals of these works govern is conduct as a whole and never a position in a sequence: if an ordained monk through carelessness does not strictly keep the great vows, then his fetters will not be completely cut off; in vain he adopts nakedness, who errs about matters of paramount interest. Both are entered at pmc:JainaLingamNaTrayate, and both are about the man and not about the order of his acts."@en ;
+    skos:note "This is why every pm:Presupposing in traditions/jain.ttl carries pm:prescribedOrder and one of them carries only pm:presentationOrder. The setting is now a finding of a search rather than a default, and a later reader who disputes it has a term list to dispute."@en .
