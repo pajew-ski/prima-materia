@@ -329,6 +329,65 @@ pmc:JainaSamyamaJnanaPurva a pm:Presupposing ;
     dcterms:source "Ācārāṅga Sūtra I.7.8.1-2 (Jacobi, SBE 22, Oxford 1884; Motilal Banarsidass reprint, Delhi 1964)" .
 
 #
+# The one prerequisite chain in this corpus that states what the omission
+# costs. Read after the first pass had already reported that no such passage
+# exists; the correction stands at the search node and the reason it was
+# missed stands there too.
+#
+
+pmp:JainaDashaBrahmacaryasamadhi a pm:Practicing ;
+    rdfs:label "The ten conditions for the realisation of celibacy"@en, "Die zehn Bedingungen zur Verwirklichung der Keuschheit"@de ;
+    skos:altLabel "brahmacaryasamādhi"@en ;
+    skos:definition "The ten avoidances the sixteenth lecture sets out in prose and repeats in verse, attributed to the venerable Sthaviras. A Nirgrantha should not occupy places for sleep or rest frequented by women, cattle or eunuchs; should not converse with women; should not sit with women on the same seat; should not look at or contemplate the charms and beauties of women; should not, behind a screen or curtain or wall, listen to their screeching, screaming, singing, laughing, giggling or crying; should not recall to memory the pleasures and amusements he enjoyed with women in the past; should not eat well-dressed food; should not eat or drink to excess; should not wear ornaments or adorn his body, lest he become an object of desire; and should not care for sounds, colours, tastes, smells and feelings."@en ;
+    skos:note "Two of the ten are about food and not about women, and they stand in the same list and carry the same consequence: well-dressed food is said soon to raise sensuality, and eating to excess is forbidden beside the prescribed quantity and the right time. The transmission therefore makes the diet a condition of the celibacy and not a separate discipline."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Jain ;
+    dcterms:source "Uttarādhyayana Sūtra XVI.1-10, with the verses XVI.1-14 (Jacobi, SBE 45, Oxford 1895; Motilal Banarsidass reprint, Delhi 2010)" .
+
+pmc:JainaBrahmacaryasamadhiPhala a pm:Conceptualizing ;
+    rdfs:label "What hearing and understanding the ten is said to bring"@en, "Was das Hören und Verstehen der zehn bringen soll"@de ;
+    skos:definition "The outcome the lecture states twice, in its opening and in its restatement of the question: by hearing and understanding these ten conditions the monks will reach a high degree of self-discipline, of saṃvara and of contemplation, will be well protected, will guard their senses, will guard their chastity, and will thus never be remiss in the attendance on their religious duties."@en ;
+    skos:note "Stated of the hearing and understanding and not of the keeping, which is unusual enough to keep as it stands rather than to smooth. The lecture then spends its whole length on the keeping."@en ;
+    pm:withinTradition pmt:Jain ;
+    dcterms:source "Uttarādhyayana Sūtra XVI, opening formula (Jacobi, SBE 45, Oxford 1895; Motilal Banarsidass reprint, Delhi 2010)" .
+
+pmc:JainaDashaYieldsSamadhi a pm:Yielding ;
+    rdfs:label "The ten conditions bring the guarding of chastity"@en, "Die zehn Bedingungen bringen die Bewahrung der Keuschheit"@de ;
+    pm:byPractice pmp:JainaDashaBrahmacaryasamadhi ;
+    pm:yieldsCapacity pmc:JainaBrahmacaryasamadhiPhala ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Jain ;
+    dcterms:source "Uttarādhyayana Sūtra XVI, opening formula (Jacobi, SBE 45, Oxford 1895; Motilal Banarsidass reprint, Delhi 2010)" .
+
+pmc:JainaBrahmacaryabhangaPhala a pm:Conceptualizing ;
+    rdfs:label "The seven things said to follow the breach"@en, "Die sieben Dinge, die dem Bruch folgen sollen"@de ;
+    skos:definition "The consequence the lecture attaches to each of the ten, in one formula repeated at every item: then, though he be chaste, there may arise a doubt with regard to his chastity, or a sensual desire, or a feeling of remorse, or he will break the rules, or he will become a slave to passion, or he will acquire a dangerous illness of long duration, or he will desert the faith which the Kevalin has proclaimed."@en ;
+    skos:note "This is the only stated consequence of an omission anywhere in the four works read, and it is the reason the prerequisite below carries pm:statedNecessity while every other prerequisite in this file carries pm:prescribedOrder or less. Six of the seven outcomes are states of the man and unobservable from outside; the sixth is not. A dangerous illness of long duration is an event a bystander could record, and it is the only item in the list of which that is true."@en ;
+    skos:note "The formula is introduced by the sentence that the preceptor has explained the reason for this, and then gives the consequence in place of a reason. The transmission therefore treats the consequence as the reason, which is what makes the clause usable: it is not a threat appended to a rule but the ground the rule is said to rest on."@en ;
+    pm:withinTradition pmt:Jain ;
+    dcterms:source "Uttarādhyayana Sūtra XVI.1, with the same formula at XVI.2-10 (Jacobi, SBE 45, Oxford 1895; Motilal Banarsidass reprint, Delhi 2010)" .
+
+pmc:JainaDashaPresupposesCelibacy a pm:Presupposing ;
+    rdfs:label "The ten come before the chastity they are conditions of"@en, "Die zehn gehen der Keuschheit voraus, deren Bedingungen sie sind"@de ;
+    pm:dependentStep pmc:JainaBrahmacaryasamadhiPhala ;
+    pm:priorStep pmp:JainaDashaBrahmacaryasamadhi ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Though he be chaste, there may arise a doubt with regard to his chastity, or a sensual desire, or a feeling of remorse, or he will break the rules, or he will become a slave to passion, or he will acquire a dangerous illness of long duration, or he will desert the faith which the Kevalin has proclaimed. The lecture states this consequence separately at each of the ten conditions and states it in place of a reason."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Jain ;
+    skos:note "Stated necessity, and the only one in this file. What earns it is that the consequence is quotable and attached to each item singly rather than to the set, so that the omission of one condition and not only the abandonment of the whole discipline has a named cost."@en ;
+    dcterms:source "Uttarādhyayana Sūtra XVI.1-10 (Jacobi, SBE 45, Oxford 1895; Motilal Banarsidass reprint, Delhi 2010)" .
+
+pmc:JainaCautionAgainstThePleasantThings a pm:Cautioning ;
+    rdfs:label "The pleasant things are like the poison Tālapuṭa"@en, "Die angenehmen Dinge sind wie das Gift Tālapuṭa"@de ;
+    skos:definition "The verse that closes the enumeration: a lodging frequented by women, their pleasant talk, their company, looking at their charms, their screeching, screaming, singing and laughing, eating and sleeping together with them, well-dressed food and drink or partaking of them to excess, and ornaments and finery — these pleasant things, which are hard to leave, are like the poison Tālapuṭa for a man who seeks after the true Self."@en ;
+    pm:cautionsAbout pmp:JainaDashaBrahmacaryasamadhi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Jain ;
+    skos:note "The comparison is to a poison the commentary of the edition read glosses as killing by merely touching the palate, while the translator notes that the etymology behind that gloss is doubtful. The gloss is not entered; what is entered is that the transmission chose a poison and not a snare for the image, which puts the harm in the contact and not in the pursuit."@en ;
+    dcterms:source "Uttarādhyayana Sūtra XVI.11-14 (Jacobi, SBE 45, Oxford 1895; Motilal Banarsidass reprint, Delhi 2010)" .
+
+#
 # Where the failure is located, and the mark it does not have
 #
 
