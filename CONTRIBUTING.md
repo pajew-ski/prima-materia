@@ -350,6 +350,16 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Knoten nach §10 die Ausgabe nennt, aus der gelesen wurde; die Assyriologie
   geht als `pm:evidenceFrom` ein, nie als Quelle, ausgenommen die kritischen
   Editionen selbst, die den Text tragen und nicht über ihn urteilen)
+- `korpus:jain` (der jainistische Kanon und seine Kommentarschicht: Ācārāṅga,
+  Sūtrakṛtāṅga, Uttarādhyayana und Kalpa Sūtra in Jacobis Übersetzungen,
+  Sacred Books of the East 22 und 45; die Chedasūtras Vyavahāra, Bṛhatkalpa
+  und Niśītha für die Bußordnung; Aupapātika, Pravacanasāroddhāra und
+  Tiloyapaṇṇatti für die labdhi- und ṛddhi-Kataloge; Umāsvāti,
+  Tattvārthasūtra, und Hemacandra, Yogaśāstra — von `korpus:patanjala` und
+  `korpus:hathayoga` getrennt geführt, weil dieser Korpus seine Vermögensliste
+  in Verboten führt und eine eigene Bußordnung mit Fristen trägt; die
+  Indologie und die Jaina-Studien gehen als `pm:evidenceFrom` ein, nie als
+  Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
