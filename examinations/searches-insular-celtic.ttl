@@ -1,0 +1,72 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the insular Celtic run
+#
+# In a file of their own for the mechanical reason given in
+# examinations/searches-norse-seidr.ttl and in prima-materia#703. The register
+# is the class and not the file.
+#
+# Four searches. The first two are about this transmission, the third is about
+# a library, and the fourth is not about this transmission at all: it is the
+# counter-search that a generalization formed in this run had to pass, and did
+# not. It is recorded for the reason the header of
+# generalizations/the-criterion-no-party-controls.ttl gives for its own
+# refuted candidate — a claim that died in the counter-search is worth more to
+# the next run as a recorded search than as nothing.
+#
+
+pmp:CelticEfficacyDenialSearch a pm:Searching ;
+    rdfs:label "Whether the insular Celtic material anywhere denies that the procedures work"@en, "Ob das inselkeltische Material irgendwo bestreitet, dass die Verfahren wirken"@de ;
+    pm:searchedCorpus "Sanas Cormaic in the Irish of Whitley Stokes, Three Irish Glossaries (London 1862), and in the English of John O'Donovan, Cormac's Glossary, ed. Stokes (Calcutta 1868), both searched whole. Ancient Laws of Ireland, vol. I, the Senchas Már with its prologue and the editors' notes (Dublin: HMSO, 1865), searched whole. Rudolf Thurneysen, Mittelirische Verslehren, in Irische Texte III/1 (Leipzig 1891), searched whole, text and commentary. Kuno Meyer, The Triads of Ireland (Dublin 1906). Kuno Meyer, Finn and the Man in the Tree, Revue Celtique 25 (1904). Giraldus Cambrensis, Descriptio Kambriae I.16, in Thomas Wright's translation (London 1863)."@en ;
+    pm:searchedFor "A passage in which the transmission, or the churchmen who transmit it, say that the procedures do not work: that they had been tried and failed, that what they revealed was false, that the poets deceived, or that the revelation came from the poet's own invention. The prohibition is the natural place for such a statement, and this holding needed to know whether it is there or whether the ground is something else entirely."@en ;
+    pm:searchTerms "Searched for: false, falsehood, lie, lying, deceit, deceive, deception, fraud, imposture, vain, in vain, no effect, without effect, nothing, avail, availed, pretend, pretended, feign, folly, foolish, empty, idle, superstition, superstitious, credulous, believe not. Every hit read in its place, and the whole of the glossary entry, the whole of the law prologue between pages 24 and 46, and the whole of the Welsh chapter read in full."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-17" ;
+    dcterms:date "2026-09-17" ;
+    skos:note "Nothing came back in that direction, and the absence is the finding. Both prohibiting witnesses give a ground and both grounds are about the offering. The glossary: whoever should practise them should have neither heaven nor earth, because it was renouncing baptism. The law prologue: they were abolished as profane rites, for teinm laegha and imus forosna could not be performed without offering to idol-gods. Neither says that the procedures failed, that they revealed anything false, or that the poets were pretending."@en ;
+    skos:note "What that leaves standing is the strongest attestation of efficacy in the material, and it comes from the party with the least reason to give it. The one operation the prohibition keeps, díchetal do chennaib, is kept on a ground about its mechanism and not about its results: it requires no offering to demons, and it was acquired through great knowledge and application. A transmitting hand that sorts three procedures by what they require and forbids two of them without ever saying they do not work has attested them in the act of suppressing them."@en ;
+    skos:note "The one thing in the neighbourhood that looks like a denial is not one. The editor of the verse tract remarks in 1891 that the whole treatise makes a young and arbitrary impression and doubts whether the description of the glám dícenn rests on old tradition, adding that the passage speaks in the imperfect and therefore of something no longer usual. That is a modern scholar on the age of a description, not a source on the working of a procedure, and it is recorded at pmc:TalamDiaSlugadh rather than entered."@en .
+
+pmp:CelticSuccessSignSearch a pm:Searching ;
+    rdfs:label "Whether the insular Celtic material names a perceptible sign that a procedure has worked"@en, "Ob das inselkeltische Material ein wahrnehmbares Zeichen des Gelingens nennt"@de ;
+    pm:searchedCorpus "The same corpus as pmp:CelticEfficacyDenialSearch: Sanas Cormaic in Stokes 1862 and O'Donovan 1868; Ancient Laws of Ireland, vol. I (Dublin 1865); Thurneysen, Mittelirische Verslehren, Irische Texte III/1 (Leipzig 1891); Meyer, The Triads of Ireland (Dublin 1906); Meyer, Finn and the Man in the Tree, Revue Celtique 25 (1904); Giraldus, Descriptio Kambriae I.16, trans. Wright (London 1863)."@en ;
+    pm:searchedFor "A passage telling the operator or a bystander what would be perceived when one of these procedures has taken effect: a light, a warmth, a sound, a mark on the body, a change in the sleeper. This holding treats signs of success as their own harvest category and counts them apart from conditions of failure, and a transmission with four named operations and no sign at all would be a finding of its own."@en ;
+    pm:searchTerms "Searched for: sign, signs, token, mark, marks, blotch, blotches, blemish, light, shining, radiance, glow, heat, warmth, cold, sound, voice, appears, appeared, apparition, vision, knew, knows, revealed, revelation, colour, face, countenance, swelling, blister. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:BolgaGubrethe ;
+    pm:searchedBy "prima-materia, 2026-09-17" ;
+    dcterms:date "2026-09-17" ;
+    skos:note "The question came back answered about the wrong office. No sign of a successful divination was found anywhere: the glossary says that everything is revealed to the poet and stops, the law prologue says that he discovered every unknown thing proposed to him and stops, and the Welsh chapter has the answer buried in a turn of a word that a skilful observer must pick out, which is the opposite of a sign. What the search did find is a set of signs attached to judging: three permanent blotches on Sencha's face for each false judgment, a chain that tightened on Morann's neck when he judged falsely and expanded when he judged truly, and perfect fruit on the trees when Fachtna judged truly."@en ;
+    skos:note "The finding is entered as opposing rather than as a find because it tells against the question as it was put. The transmission puts its bodily signs on the fault of a judge, where a bystander can read them, and puts none on the success of a seer, where a bystander cannot. That division is worth more than the sign would have been: it shows the transmission is capable of stating a legible criterion and does not do it for the operations this file is about."@en ;
+    skos:note "One consequence for the file. The absence of a success sign is what makes the outcome of the glám dícenn stand out: it is the only place in this material where the transmission names an event by which a performance could be judged, and it is an event that falls on somebody rather than an appearance shown to somebody."@en .
+
+pmp:CelticCriticalEditionSearch a pm:Searching ;
+    rdfs:label "Whether the standard critical edition of the glossary can be reached"@en, "Ob die maßgebliche kritische Ausgabe des Glossars erreichbar ist"@de ;
+    pm:searchedCorpus "Kuno Meyer (ed.), Sanas Cormaic. An Old-Irish Glossary compiled by Cormac úa Cuilennáin, in Anecdota from Irish Manuscripts IV (Halle and Dublin: Hodges and Figgis, 1912), pp. 1-128, which alone prints the longer recension of the Yellow Book of Lecan and is the edition the field cites by section number."@en ;
+    pm:searchedFor "A readable text of the edition that carries the entry as section 756, so that the Irish entered in traditions/insular-celtic.ttl from the shorter Leabhar Breac recension could be checked against the longer one. The two recensions differ in length by about six hundred entries, and a holding that has read only the shorter one has read the shorter one."@en ;
+    pm:searchTerms "Searched under Sanas Cormaic, Sanas Chormaic, Cormac's Glossary, Anecdota from Irish Manuscripts, Anecdota IV, Anecdota volume 4, Anecdota volume 5, Meyer 1912, Meyer 1913, and under the companion volumes of the same series, which are present."@en ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-09-17" ;
+    dcterms:date "2026-09-17" ;
+    skos:note "The ways SPEC 15 names were tried. Other volumes of the same series are digitised and were found, which is what makes the absence of this one a fact about the item and not about the series. Another transliteration of the title was tried in five forms. The series is cited inconsistently in the literature, as volume IV of 1912 and as volume 5 of 1913, and both were searched. The only digital record found is a catalogue entry for a modern reprint, in limited view, which is a rights restriction on a twentieth-century edition and not a path."@en ;
+    skos:note "What this costs the file, stated so that a later reader can size it. The Irish text of the entry was read in Stokes's edition of 1862 from the Leabhar Breac and the English in O'Donovan's translation of 1868; both are printed from the shorter recension, and every citation in traditions/insular-celtic.ttl names which. What has not been checked is whether the longer recension carries the same wording of the term, of the prohibition, and of the clause about the ends of the bones, all three of which this run found to be places where the translations diverge."@en ;
+    skos:note "A second and free path was found for the manuscript wording and is named here because it is not a work and cannot be cited as one: the Early Irish Glossaries Database of the Cambridge department, which prints diplomatic transcriptions of all witnesses with their manuscript places. It is a way to the readings and never a citation, by the same rule that keeps every URL out of a source."@en .
+
+pmp:DisqualifyingFaultOutsideTheOperationSearch a pm:Searching ;
+    rdfs:label "Whether the fault that costs a practitioner his faculty always lies outside the operation"@en, "Ob der Fehler, der dem Übenden sein Vermögen kostet, stets außerhalb des Verfahrens liegt"@de ;
+    pm:searchedCorpus "The compiled holding as of 2026-09-17, queried over all traditions, examinations, convergences and originations for claims in which a practitioner is said to lose, forfeit or be barred from an operative capacity."@en ;
+    pm:searchedFor "Counter-material to a generalization this run had formed and had not yet written: that where a transmission makes an operative capacity depend on the standing of the practitioner, the fault that costs him the capacity is one committed and judged outside the operation — a judgement given in court, a motive for exercising the art, a breach of the rule of an order — rather than an error in the performance. The insular Celtic law prologue and the Jain penalty on living by the arts had supplied the two witnesses; SPEC 16 requires that the counter-search run against the holding before the node is written."@en ;
+    pm:searchTerms "The compiled graph searched over every literal for: forfeit, forfeited, disqualify, disqualified, unfit, deprived, debarred, no longer, loses, lost the, may not practise, ceases to be. Every hit read at its node."@en ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:HekhalotDescentPresupposesFitness, pmc:PgmIvTerInAnno ;
+    pm:searchedBy "prima-materia, 2026-09-17" ;
+    dcterms:date "2026-09-17" ;
+    skos:note "The candidate was refuted and was not written. Two nodes that had stood in the holding for weeks put the disqualifying fault squarely inside the operation. At the gate of the sixth palace the descender is stoned and declared unfit for asking a question about the water, which is an act performed in the middle of the procedure and nowhere else. And the appended instruction of the Mithras rite states that the immortalization takes place three times in the year and that whoever, having received the instruction, disregards it, will have it come about for him no longer — a forfeiture attached to the frequency of the operation itself."@en ;
+    skos:note "The verdict is worth keeping because the mistake behind it is repeatable. The two witnesses the candidate was formed from were both read in the same two runs, one of them this one, and both happened to be transmissions in which the operative capacity belongs to an office with a legal or monastic standing beside it. Generalizing from them was generalizing from the class the reading had just been in, which is the exact confusion SPEC 16 records for the four generalizations of 2026-09-09."@en ;
+    skos:note "What survives of the candidate is narrower and is not a generalization. Two transmissions in this holding attach the loss of an operative capacity to a fault adjudicated in another forum, and the insular Celtic case is the sharper of the two because the fault is a false judgment given in court and the loss is of imbas forosnai and teinm laída by name. That is a pair and not a pattern, and it is recorded here so that a third case would be recognised if one turns up."@en .
