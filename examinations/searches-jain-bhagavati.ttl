@@ -1,0 +1,66 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the second Jain run, at the fifteenth book
+#
+# In a file of their own for the mechanical reason given in
+# examinations/searches-norse-seidr.ttl and in prima-materia#703: two branches
+# appending to the end of one register do not merge without a hand. The
+# register is the class and not the file.
+#
+# Three searches, and their interest is in how differently they came out. The
+# first filled a gap the previous Jain run had exhibited, and filled it from a
+# work that run had not opened. The second went after the detail of a
+# procedure and came back empty, not because the corpus is silent but because
+# both translations that could be obtained abridge exactly that sentence. The
+# third could not be carried at all, and says so with the value built for it,
+# after the ways that exist had been tried.
+#
+# The middle one is the instructive case. A corpus that was read and stayed
+# silent, and a corpus read only through a translator who dropped the passage,
+# are different findings, and only the first is a statement about the
+# transmission.
+#
+
+pmp:JainaTejolesyaTermSearch a pm:Searching ;
+    rdfs:label "Whether the fifteenth book puts a stated period on the acquisition of a capacity"@en, "Ob das fünfzehnte Buch dem Erwerb eines Vermögens eine genannte Frist setzt"@de ;
+    pm:searchedCorpus "Viyāhapannatti (Bhagavaī), book XV, in the two translations from the Prakrit that could be obtained: Ernst Leumann, Appendix I: Extracts from Bhagavatī XV on the Intercourse Between Mahāvīra and Gosāla Maṅkhaliputta, in W. W. Rockhill, The Life of the Buddha and the Early History of his Order (London: Trubner 1884), pp. 249-255; and A. F. Rudolf Hoernle, The Uvāsagadasāo, vol. II, Appendix I: The History of Gosāla Maṅkhaliputta, briefly translated from Bhagavatī saya XV (Bibliotheca Indica, Calcutta 1888), pp. 1-14. Both read in full and at the wording."@en ;
+    pm:searchedFor "A passage putting a term on a practice: a number of days, months or years within which a result is to appear. The search that stands at pmp:JainaStatedTermSearch had reported this kind of term absent from the four works of the Jacobi volumes, and had said in its own note that the absent kind was the useful one. This search put the same question to a fifth work, named in prima-materia#722 and not opened by that run."@en ;
+    pm:searchTerms "Both texts read whole; then searched for six months, seven days, seven nights, sixteen years, within, after the lapse of, at the end of, last night, term, period, fever, and for the Prakrit and Sanskrit forms of the capacity, teya-lessa, teyalesse, tejolesya, tejolesyah, tejolabdhi, sankhitta-viula, sanksipta-vipula. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:JainaSanmasaTejolesyaprapti, pmc:JainaSuddhapanayaAntyaratri, pmc:JainaUbhayamaranavacana ;
+    pm:searchedBy "prima-materia, 2026-09-17" ;
+    dcterms:date "2026-09-17" ;
+    skos:note "Three kinds of term came back and the first two are the kind the earlier search missed. A course of asceticism followed for six months, after which the capacity is said to have arrived. A regimen of six months with an appearance dated to its last night and two named outcomes turning on what the practitioner does then. And a pair of predictions of death, six months against seven days, uttered by two men about each other in each other's presence, with a public said to have argued about which would prove true."@en ;
+    skos:note "What the find does not establish. None of the three is laid down as a rule for a practitioner: the first is narrated of one man, the third is a prediction about named persons, and only the second is stated as a general course. The gap the earlier search exhibited was for a period after which a result should have arrived and could be missed; the second of these comes closest to it and still puts the branch point in an act of the practitioner on the final night rather than in the arrival or non-arrival of a result."@en ;
+    skos:note "The corpus this was found in was reached only in abridged translation, and every node it yielded carries pm:mediatedAttestation with pm:readVia for that reason. A later run with the Prakrit edition should read these three places again before anything is built on them."@en .
+
+pmp:JainaTejolesyaVidhiSearch a pm:Searching ;
+    rdfs:label "Whether the reachable translations print the discipline by which the fiery power is obtained"@en, "Ob die erreichbaren Übersetzungen die Askese abdrucken, durch die die Feuerkraft erlangt wird"@de ;
+    pm:searchedCorpus "Viyāhapannatti (Bhagavaī), book XV, in Ernst Leumann's extracts in Rockhill, The Life of the Buddha (London: Trubner 1884), pp. 249-255, and in A. F. Rudolf Hoernle, The Uvāsagadasāo, vol. II, Appendix I (Bibliotheca Indica, Calcutta 1888), pp. 1-14. Also searched, for the same question: L. D. Barnett, The Antagaḍa-dasāo and Anuttarovavāiya-dasāo (Oriental Translation Fund NS 17, London 1907), and B. M. Barua, The Ājīvikas, Part I (University of Calcutta 1920)."@en ;
+    pm:searchedFor "The content of the discipline the book says Mahāvīra taught to Gosāla: whether either translation prints what it consisted of. The secondary literature reports a formula in the Prakrit with continuous two-day fasts, a handful of beans, a cupped handful of water and exposure to the sun with raised arms, and prima-materia#722 was opened on that report."@en ;
+    pm:searchTerms "Searched in all four works for: discipline, austerity, austere, asceticism, penance, fast, fasting, beans, bean, pulse, handful, water, palm, sun, solar, arms, raised, upraised, exposure, three days, every third day. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-17" ;
+    dcterms:date "2026-09-17" ;
+    skos:note "Neither translation prints it, and both mark the place where it would stand. Hoernle: Mahāvīra then explained to him the severe ascetic discipline by which he had obtained it, with the page of the Calcutta print against the sentence. Leumann: I explained to him the austere discipline which it required, and he thought of undergoing it. The sentence is there in both and its content is in neither."@en ;
+    skos:note "This is a finding about two translations and not about the transmission, and the distinction is the reason the search is recorded rather than the absence simply noted. Both renderings are condensations made by philologists working from the Prakrit, and both condense at exactly the sentence a reader of this holding wants. What the Prakrit carries at that place has not been established here."@en ;
+    skos:note "What the search did find is the posture, and it is entered at pmc:JainaAtapanabhumi: the man who already has the power is shown sitting with upraised arms and upturned face in the glare of the sun. That is one element of the reported formula, standing in the same episode and predicated of the wrong person. A reader may join it to the discipline; neither translation does."@en ;
+    skos:note "Barnett and Barua were searched for the same thing because both handle this material and both are public domain. Barnett has no Gosāla narrative at all and gives only a note on the capacity; Barua reports the episode at length and likewise does not print the discipline."@en .
+
+pmp:JainaLabdhiSucipatraSearch a pm:Searching ;
+    rdfs:label "Whether the numbered catalogue of capacities can be reached in translation"@en, "Ob der durchnummerierte Vermögenskatalog in Übersetzung erreichbar ist"@de ;
+    pm:searchedCorpus "The works named in prima-materia#721 as carrying the catalogue: the Aupapātika Sūtra (Ovavāiya), first Upāṅga; the Tiloyapaṇṇatti of Yativṛṣabha, book 4; the Pravacanasāroddhāra of Nemicandra; and the Viśeṣāvaśyaka Bhāṣya of Jinabhadra. Searched for an English or German translation, in the digitised collections, in the nineteenth-century oriental series and in the journals of the field."@en ;
+    pm:searchedFor "A translation in which the numbered catalogue of capacities obtained by austerity could be read at the wording, so that the items could be entered with their places. The claim that the Jain transmission carries such a catalogue came from outside this holding and is the reason prima-materia#721 stands."@en ;
+    pm:searchTerms "Searched under the title forms Aupapātika, Aupapātika Sūtra, Ovavāiya, Uvavāiya, Ovavāiya Suttam, Tiloyapaṇṇatti, Tiloya Pannatti, Trilokaprajñapti, Pravacanasāroddhāra, Viśeṣāvaśyaka Bhāṣya, and under the author forms Yativṛṣabha, Yativrishabha, Jadivasaha, Nemicandra, Jinabhadra; and for the item names khelosahi, jallosahi, vipposahi, amosahi, savvosahi, kottha-buddhi, bija-buddhi, pada-buddhi, padanusari, sambhinnasoya, akkhina-mahanasiya, ujjumai, vipulamai, veuvviya, carana-labdhi, labdhi, laddhi, rddhi, riddhi."@en ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-09-17" ;
+    dcterms:date "2026-09-17" ;
+    skos:note "The ways SPEC 15 requires before unreachability may be asserted were tried and are named. Another identifier for the same work in the same archive: Leumann's edition of the Aupapātika of 1883 is there in full text and is Prakrit text with a German glossary, with no translation, and a second edition of the same work of 1931 likewise carries only the text. An older or public-domain translation: none exists in any language, and no translation volume to Leumann's text was ever published. Another transliteration of title or author: all the forms above were tried. The work inside a collection or a commentary printing it entire: the Tiloyapaṇṇatti stands in the Sholapur edition of 1951 with a Hindi introduction and no translation of book 4. Another digitisation project: the field's own text collections carry romanised Prakrit and no translation. Nothing was blocked at the access path; the translations do not exist."@en ;
+    skos:note "The finding is therefore about the state of the field and not about the transmission, which is what this outcome value is for. Whether the Jain corpus carries a numbered and closed catalogue of capacities is open, and the note that would have to accompany any answer is that the works said to carry it are readable only by someone who reads Prakrit."@en ;
+    skos:note "One correction the attempt did produce, and it is recorded here rather than entered as a node because it was not read at the wording. The tenfold laddhi of the fifth Anga at the place prima-materia#721 names is, in the analytical index of that book that could be obtained, a list of the soul's basic faculties — knowledge, belief, conduct, giving, gain, enjoying, using, willing and the senses — and not a list of operative powers. The word is the same and the thing is not, which is a good reason for a later run to reach the catalogue claim through the works rather than through the term."@en .
