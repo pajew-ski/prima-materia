@@ -130,6 +130,7 @@ Die Ontologie erscheint unter `https://pajew.ski/prima-materia/` und wird dort g
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -144,6 +145,7 @@ Die Ontologie erscheint unter `https://pajew.ski/prima-materia/` und wird dort g
 - Properties in `camelCase`: `pm:assertedIn`, `pm:analogueConcept`
 - Tradition-Instanzen in `pmt:` namespace: `pmt:ValentinianGnosis`
 - Konzept-Instanzen in `pmc:` namespace: `pmc:Pleroma`, `pmc:Hen`
+- Werk-Instanzen in `pmw:` namespace: `pmw:ClaviculaSalomonis`, typisiert als `dcterms:BibliographicResource` und nicht mit einer `pm:`-Klasse. Ein Werk ist der Bezeichner, über den `pm:corpusWork` an der Tradition und `pm:fromWork` am Knoten zusammenfinden; eine eigene Klasse wäre entweder eine Substanzklasse (Abschnitt 3) oder ein Gerundium, das ein Buch als Prozess ausgibt. Der Bezeichner folgt der Regel aus `AGENTS.md`: gebildet aus dem Werktitel in der Originalsprache, englische Schreibung nur, wo das Werk keinen anderen Titel trägt
 
 ## 3. Bewusstsein-erste Ontologie — Kern-Designprinzipien
 
@@ -646,6 +648,10 @@ Der Korpus ist rückwärts aus einem Methodenentwurf gewachsen: jede Datei exist
 **Bedarfsgetrieben.** Ein `korpus:`-Label auf einer Behauptung, für die es noch keine Datei gibt, ist bereits die Nachfragemeldung. Offene Issues je fehlendem Label ergeben die geordnete Warteschlange; ein zweites Verzeichnis dafür wird nicht geführt.
 
 **Strukturgetrieben.** Ein Werk wird geöffnet, weil es zu einer registrierten Tradition gehört, deren Bestand dünn ist, und nicht, weil eine Behauptung darauf zeigt. Die Warteschlange ist der Registrierungsstand selbst: `pm:coverageState pm:corpusNamed`, sortiert nach der Zahl der Knoten, die die Tradition bisher trägt. Ein zweites Verzeichnis entsteht auch hier nicht.
+
+**Dieselbe Warteschlange hat eine zweite Ebene, und sie liegt unter der Tradition.** `pm:coverageState` sagt, wie weit eine Überlieferung erschlossen ist, nicht welche ihrer Werke. Eine Tradition auf `pm:placesEntered` fiel deshalb aus jeder Warteschlange, gleich wie viele Werke ihres Korpus ungeöffnet blieben; belegt am 2026-09-17 am Lemegeton, das im salomonischen Korpus stand und weder im Graphen noch im Tracker als offen sichtbar war (prima-materia#736, prima-materia#737). Seitdem führt eine migrierte Tradition ihre Werke mit `pm:corpusWork`, jeder ihrer Knoten mit Quelle nennt sein Werk mit `pm:fromWork`, und `queries/unopened-works.rq` liefert die Werke ohne eingetragene Stelle. Wie viel eines Werkes gelesen ist, beantwortet das nicht, und das ist Absicht: der Graph hält keine Gliederung, gegen die zu zählen wäre.
+
+**Die Migration läuft je Tradition und an der Entstehungsstelle.** Wer eine Traditionsdatei anfasst, migriert sie im selben Lauf; `pm:FromWorkRequiredShape` greift ab dem ersten `pm:corpusWork` und macht einen halb migrierten Knoten sichtbar. Welche erschlossenen Traditionen noch ausstehen, sagt `queries/work-migration-backlog.rq`; ein zweites Verzeichnis entsteht nicht. Ist die Abfrage leer, wird der Wächter unbedingt.
 
 Der Ertrag ist nicht Menge, sondern eine Art von Befund, die die anderen Eingänge nicht erzeugen können: **Behauptungen, nach denen niemand gefragt hat.** Wer mit einer Frage sucht, findet Übereinstimmungen, deren Begriff schon im Suchbegriff steckte, und eine solche Übereinstimmung bestätigt die Frage, bevor sie irgendetwas über die Überlieferung sagt. Eine Kategorie, die der Bearbeiter vorher nicht hatte, kann dagegen kein Suchartefakt sein. Aus diesem Eingang kommen deshalb die Konvergenzen, die als Befund tragen, und aus ihm kommt das Material für die Verallgemeinerungen nach §16.
 
