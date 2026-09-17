@@ -1501,3 +1501,117 @@ def test_complete_naming_conforms() -> None:
     """
     conforms, report = _validate(permitted)
     assert conforms, f"A complete naming must conform.\n{report}"
+
+
+#
+# Works as identifiers (ontology/coverage.ttl, prima-materia#737). Negative
+# fixtures for each of the three guards, and positive fixtures for the two
+# exemptions: a tradition not yet migrated, and a migrated one whose nodes say
+# which work their source lies in.
+#
+_WORK_PREFIXES = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+    @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+"""
+
+_MIGRATED_TRADITION = """
+    pmt:Placeholder a pm:Tradition ;
+        rdfs:label "Placeholder"@en ;
+        pm:coverageState pm:placesEntered ;
+        pm:corpusWork pmw:SomeWork .
+
+    pmw:SomeWork a dcterms:BibliographicResource ;
+        rdfs:label "Some work"@en .
+"""
+
+
+def test_node_of_a_migrated_tradition_without_its_work_is_rejected() -> None:
+    offending = _WORK_PREFIXES + _MIGRATED_TRADITION + """
+    pmc:Claim a pm:Conceptualizing ;
+        rdfs:label "Claim"@en ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A migrated tradition's node must name its work."
+    assert "pm:fromWork which work" in report
+
+
+def test_node_of_a_migrated_tradition_with_its_work_conforms() -> None:
+    permitted = _WORK_PREFIXES + _MIGRATED_TRADITION + """
+    pmc:Claim a pm:Conceptualizing ;
+        rdfs:label "Claim"@en ;
+        pm:withinTradition pmt:Placeholder ;
+        pm:fromWork pmw:SomeWork ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, report
+
+
+def test_node_of_an_unmigrated_tradition_needs_no_work() -> None:
+    permitted = _WORK_PREFIXES + """
+    pmt:Placeholder a pm:Tradition ;
+        rdfs:label "Placeholder"@en ;
+        pm:coverageState pm:placesEntered .
+
+    pmc:Claim a pm:Conceptualizing ;
+        rdfs:label "Claim"@en ;
+        pm:withinTradition pmt:Placeholder ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(permitted)
+    assert conforms, report
+
+
+def test_migrated_tradition_node_itself_must_name_its_work() -> None:
+    offending = _WORK_PREFIXES + _MIGRATED_TRADITION.replace(
+        "pm:corpusWork pmw:SomeWork .",
+        'pm:corpusWork pmw:SomeWork ;\n        dcterms:source "Some work, some passage" .',
+    )
+    conforms, report = _validate(offending)
+    assert not conforms, "The alternative path must reach the tradition itself."
+    assert "pm:fromWork which work" in report
+
+
+def test_undeclared_work_is_rejected() -> None:
+    offending = _WORK_PREFIXES + _MIGRATED_TRADITION + """
+    pmc:Claim a pm:Conceptualizing ;
+        rdfs:label "Claim"@en ;
+        pm:withinTradition pmt:Placeholder ;
+        pm:fromWork pmw:SomeWrok ;
+        dcterms:source "Some work, some passage (some edition)" .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A misspelt work must not pass as a work."
+    assert "declared under https://pajew.ski/prima-materia/works/" in report
+
+
+def test_work_outside_the_works_namespace_is_rejected() -> None:
+    offending = _WORK_PREFIXES + """
+    pmt:Placeholder a pm:Tradition ;
+        rdfs:label "Placeholder"@en ;
+        pm:coverageState pm:placesEntered ;
+        pm:corpusWork pmc:SomeWork .
+
+    pmc:SomeWork a dcterms:BibliographicResource ;
+        rdfs:label "Some work"@en .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "A work lives under works/ and nowhere else."
+
+
+def test_work_without_a_source_is_rejected() -> None:
+    offending = _WORK_PREFIXES + _MIGRATED_TRADITION + """
+    pmc:Claim a pm:Conceptualizing ;
+        rdfs:label "Claim"@en ;
+        pm:withinTradition pmt:Placeholder ;
+        pm:fromWork pmw:SomeWork .
+    """
+    conforms, report = _validate(offending)
+    assert not conforms, "pm:fromWork without dcterms:source names nothing."
+    assert "a node without a source has no work to name" in report

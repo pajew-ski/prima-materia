@@ -1,0 +1,17 @@
+# SPEC §14, strukturgetriebener Eingang auf Werkebene.
+# Werke im Korpus einer Überlieferung, auf die kein Knoten mit pm:fromWork zeigt:
+# benannt, aber keine Stelle daraus eingetragen. Gilt nur für migrierte
+# Überlieferungen, also solche mit pm:corpusWork; den Rest nennt
+# work-migration-backlog.rq. Siehe prima-materia#737.
+
+PREFIX pm: <https://pajew.ski/prima-materia/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?tradition ?coverage ?work ?label
+WHERE {
+  ?tradition pm:corpusWork ?work ;
+             pm:coverageState ?coverage .
+  OPTIONAL { ?work rdfs:label ?label . FILTER(lang(?label) = "en") }
+  FILTER NOT EXISTS { ?node pm:fromWork ?work }
+}
+ORDER BY ?coverage ?tradition ?work

@@ -1,0 +1,19 @@
+# Überlieferungen, deren Korpus noch nicht als Werkbezeichner geführt wird.
+# Registrierte Überlieferungen (pm:corpusNamed) sind ausgenommen: dort ist noch
+# nichts gelesen, und coverage-queue.rq führt sie bereits. Die Liste wird kürzer,
+# indem ein Lauf, der eine Traditionsdatei anfasst, sie im selben Zug migriert
+# (AGENTS.md). Ist sie leer, wird pm:FromWorkRequiredShape unbedingt.
+# Siehe prima-materia#737.
+
+PREFIX pm: <https://pajew.ski/prima-materia/ontology#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?tradition ?coverage ?corpus
+WHERE {
+  ?tradition a pm:Tradition ;
+             pm:coverageState ?coverage .
+  FILTER(?coverage != pm:corpusNamed)
+  OPTIONAL { ?tradition pm:principalCorpus ?corpus }
+  FILTER NOT EXISTS { ?tradition pm:corpusWork ?work }
+}
+ORDER BY ?coverage ?tradition

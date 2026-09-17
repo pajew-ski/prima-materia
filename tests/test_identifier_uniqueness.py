@@ -39,7 +39,12 @@ INSTANCE_PREFIXES = (
     "https://pajew.ski/prima-materia/traditions/",
     "https://pajew.ski/prima-materia/concepts/",
     "https://pajew.ski/prima-materia/practices/",
+    "https://pajew.ski/prima-materia/works/",
 )
+# Works are typed with the Dublin Core class and not with a pm: class
+# (ontology/coverage.ttl). They count as typed all the same, or every work
+# would read as an orphan and a work declared in two files would merge unseen.
+WORK_CLASS = "http://purl.org/dc/terms/BibliographicResource"
 
 
 def _collect_ttl() -> list[Path]:
@@ -57,7 +62,8 @@ def _typed_subjects(path: Path) -> set[URIRef]:
     return {
         subject
         for subject, _, obj in graph.triples((None, RDF.type, None))
-        if isinstance(subject, URIRef) and str(obj).startswith(PM)
+        if isinstance(subject, URIRef)
+        and (str(obj).startswith(PM) or str(obj) == WORK_CLASS)
     }
 
 

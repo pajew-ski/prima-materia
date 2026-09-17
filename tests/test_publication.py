@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from rdflib import RDF, Graph, Literal, Namespace, URIRef
+from rdflib import RDF, RDFS, Graph, Literal, Namespace, URIRef
 
 import compile as compile_script
 import publish as publish_script
@@ -283,12 +283,15 @@ def test_parts_partition_the_content_and_dangle_nothing() -> None:
     }
     assert content <= covered, sorted(publish_script.curie(s) for s in content - covered)
 
-    # The tradition-less nodes are the point of the findings part.
+    # The tradition-less nodes are the point of the findings part. A work a
+    # corpus names is tradition-less by construction and travels with that
+    # tradition instead (test_a_corpus_work_travels_with_its_tradition).
     tradition_less = {
         s
         for s in content
         if not any(graph.objects(s, publish_script.PM.withinTradition))
         and (s, RDF.type, publish_script.PM.Tradition) not in graph
+        and not any(graph.subjects(publish_script.PM.corpusWork, s))
     }
     assert tradition_less <= set(parts["findings"].subjects())
 
@@ -306,3 +309,14 @@ def test_publish_writes_the_parts(tmp_path: Path) -> None:
     assert (parts / "vocabulary.ttl").is_file()
     assert (parts / "findings.ttl").is_file()
     assert (parts / "vocabulary.jsonld").is_file()
+
+
+def test_a_corpus_work_travels_with_its_tradition() -> None:
+    # Works carry no pm:withinTradition. Without the corpusWork rule they would
+    # all land in the findings part, which is the yield of the project and not
+    # a shelf for bibliography.
+    graph = compile_script.compile_graph(compile_script.DEFAULT_INPUTS)
+    parts = publish_script.split_graph(graph)
+    work = URIRef("https://pajew.ski/prima-materia/works/Lemegeton")
+    assert (work, RDFS.label, None) in parts["solomonic-grimoire"]
+    assert not list(parts["findings"].predicate_objects(work))

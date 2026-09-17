@@ -60,6 +60,7 @@ PREFIXES: tuple[tuple[str, str], ...] = (
     ("pmt", "https://pajew.ski/prima-materia/traditions/"),
     ("pmc", "https://pajew.ski/prima-materia/concepts/"),
     ("pmp", "https://pajew.ski/prima-materia/practices/"),
+    ("pmw", "https://pajew.ski/prima-materia/works/"),
     ("pm", "https://pajew.ski/prima-materia/ontology#"),
     ("owl", "http://www.w3.org/2002/07/owl#"),
     ("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
@@ -320,6 +321,13 @@ def split_graph(graph: Graph) -> dict[str, Graph]:
         traditions = [
             o for o in graph.objects(subject, PM.withinTradition) if o in slugs
         ]
+        if not traditions:
+            # A work belongs to no tradition by pm:withinTradition; it goes
+            # with the traditions whose corpus names it. A work that no
+            # corpus names, cited only by a finding, stays with the findings.
+            traditions = [
+                t for t in graph.subjects(PM.corpusWork, subject) if t in slugs
+            ]
         if traditions:
             for tradition in traditions:
                 members[slugs[tradition]].add(subject)

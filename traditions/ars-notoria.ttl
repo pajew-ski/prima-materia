@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -20,28 +21,33 @@
 #
 
 pmt:ArsNotoria a pm:Tradition ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "Ars Notoria"@en, "Ars Notoria"@de ;
     skos:definition "The transmission of a set of orations, said on prescribed days of the moon and at prescribed hours, held to confer the liberal arts, eloquence, memory and understanding within a stated term, and bound to conditions of solitude, silence, fasting and freedom from crime."@en ;
     skos:note "Read for the first time in Robert Turner's English translation, London 1657, in the digital edition of Joseph H. Peterson, which carries the printed pagination and the Latin of the Agrippa text beside it; the wording of every passage cited here was additionally checked against the optical text of the 1657 printing itself. Liber Juratus Honorii was not opened, and neither was the critical Latin edition of Véronèse."@en ;
     skos:note "The version read is incomplete in a way that bears on every claim in this file. Both Turner's translation and the Latin of the Agrippa printing omit the notae, the figures which the text itself calls the centre of the art; the orations are given and the drawings they accompany are not. What was read is therefore the verbal half of a procedure whose other half is missing, and no claim entered here can be carried out from this witness alone."@en ;
     pm:principalCorpus "Ars Notoria in the medieval recensions; Liber Juratus Honorii" ;
+    pm:corpusWork pmw:ArsNotoria, pmw:LiberIuratusHonorii ;
     pm:coverageState pm:placesEntered ;
     pm:contactRoute pm:contactRouteDocumented ;
     dcterms:source "Ars Notoria: The Notory Art of Solomon, trans. Robert Turner (London: J. Cottrel, 1657), in the digital edition of Joseph H. Peterson" .
 
 pmc:ArsNotoriaLunationes a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The days of the moon on which the orations are said"@en, "Die Mondtage, an denen die Orationen gesprochen werden"@de ;
     skos:definition "The seven days of the lunation on which the orations are to be put in operation: the fourth, the eighth, the twelfth, the sixteenth, the twenty-fourth, the twenty-eighth and the thirtieth day of the moon."@en ;
     pm:withinTradition pmt:ArsNotoria ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 15, p. 12, ed. Peterson" .
 
 pmc:ArsNotoriaHorae a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The hours of the day and the count of repetitions"@en, "Die Tagesstunden und die Zahl der Wiederholungen"@de ;
     skos:definition "The division of the day the orations follow: once in the morning, once about the third hour, once about the ninth hour and once at evening; where a great work presses, twice in the morning and twice about the ninth hour."@en ;
     pm:withinTradition pmt:ArsNotoria ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), pp. 13-14, ed. Peterson" .
 
 pmc:ArsNotoriaSolitudo a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "Alone, and scarcely audible to himself"@en, "Allein, und kaum sich selbst hörbar"@de ;
     skos:definition "The condition that the oration be spoken secretly, that the speaker be alone, and that he pronounce it with so low a voice that he scarcely hears himself; with fasting on the first day of the rehearsal and a chaste and devout life."@en ;
     skos:note "The condition is on the manner of speaking and not on the words. It is the counterpart of the exactness demands the graph holds elsewhere: there the wording carries the effect, here it is the inaudibility that is prescribed, and the two are not the same requirement."@en ;
@@ -50,6 +56,7 @@ pmc:ArsNotoriaSolitudo a pm:Conceptualizing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), p. 14, ed. Peterson" .
 
 pmp:ArsNotoriaOratio a pm:Practicing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The saying of the orations"@en, "Das Sprechen der Orationen"@de ;
     skos:definition "Pronouncing the orations of the art on the prescribed days of the moon, at the prescribed hours and with the prescribed number of repetitions, alone, secretly and in a voice barely audible to the speaker, having fasted on the first day and living chastely."@en ;
     skos:note "The procedure the text prescribes is larger than this node: the orations accompany the notae, and the witness read carries none of them. What is entered is the part the witness gives."@en ;
@@ -58,12 +65,14 @@ pmp:ArsNotoriaOratio a pm:Practicing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), §§ 14-15 and pp. 13-14, ed. Peterson" .
 
 pmc:ArsNotoriaFacundia a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "Profiting in all the sciences"@en, "Das Zunehmen in allen Wissenschaften"@de ;
     skos:definition "The capacity claimed for the art: to profit in all the sciences and to attain them in an extraordinary manner, with memory, understanding and eloquence increased and established in the speaker."@en ;
     pm:withinTradition pmt:ArsNotoria ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 14, p. 12, ed. Peterson" .
 
 pmc:ArsNotoriaOratioYieldsFacundia a pm:Yielding ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The orations confer the sciences within one month"@en, "Die Orationen bringen die Wissenschaften binnen eines Monats"@de ;
     pm:byPractice pmp:ArsNotoriaOratio ;
     pm:yieldsCapacity pmc:ArsNotoriaFacundia ;
@@ -73,6 +82,7 @@ pmc:ArsNotoriaOratioYieldsFacundia a pm:Yielding ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 14, p. 12, ed. Peterson" .
 
 pmc:ArsNotoriaPresupposesLunationes a pm:Presupposing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The effect presupposes the appointed day"@en, "Die Wirkung setzt den bestimmten Tag voraus"@de ;
     pm:dependentStep pmc:ArsNotoriaFacundia ;
     pm:priorStep pmc:ArsNotoriaLunationes ;
@@ -83,6 +93,7 @@ pmc:ArsNotoriaPresupposesLunationes a pm:Presupposing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 14, p. 12, ed. Peterson" .
 
 pmc:ArsNotoriaPresupposesSolitudo a pm:Presupposing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The effect presupposes solitude and the lowered voice"@en, "Die Wirkung setzt Alleinsein und die gesenkte Stimme voraus"@de ;
     pm:dependentStep pmc:ArsNotoriaFacundia ;
     pm:priorStep pmc:ArsNotoriaSolitudo ;
@@ -92,6 +103,7 @@ pmc:ArsNotoriaPresupposesSolitudo a pm:Presupposing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), p. 14, ed. Peterson" .
 
 pmc:ArsNotoriaCrimenKautel a pm:Cautioning ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "No one impeded by crime may presume to say it"@en, "Wer durch ein Verbrechen behindert ist, darf sie nicht sprechen"@de ;
     skos:definition "The warning that no man impeded or corrupted with any crime ought to presume to say the oration; on a day on which he is so impeded he may only call it to mind in his heart."@en ;
     skos:note "The caution is the closest thing in this witness to a condition of failure, and it is worth naming what it does not do: it names who may not say the words, not what happens to one who says them anyway. The distinction decides whether the condition is examinable or absorbing, and the text leaves it on the safer side of that line."@en ;
@@ -101,6 +113,7 @@ pmc:ArsNotoriaCrimenKautel a pm:Cautioning ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), pp. 46-47, ed. Peterson" .
 
 pmc:ArsNotoriaEbrietasKautel a pm:Cautioning ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "Not after drink or luxury, and not fasting without discretion"@en, "Nicht nach Trunk oder Ausschweifung, und nicht nüchtern ohne Bedacht"@de ;
     skos:definition "The warning that no man presume to say any of the oration after too much drinking or luxury, nor fasting, without great reverence and discretion, and that it be treated only at certain determinate and appointed times."@en ;
     skos:note "Fasting appears on both sides of the corpus: it is prescribed for the first day of a rehearsal and warned against here without reverence and discretion. The two passages are held apart rather than reconciled; whether the witness contradicts itself or distinguishes two situations is not decided from what was read."@en ;
@@ -110,6 +123,7 @@ pmc:ArsNotoriaEbrietasKautel a pm:Cautioning ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), p. 44, ed. Peterson" .
 
 pmc:ArsNotoriaSecretumKautel a pm:Cautioning ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The inexcusable prohibition on passing it on"@en, "Das unentschuldbare Verbot der Weitergabe"@de ;
     skos:definition "The warning, ascribed in the text to the angel who declared the oration, that the holder presume neither to give it to another nor to expound anything out of it, neither himself, nor any one by him, nor any one after him."@en ;
     skos:note "This is the gate the project's criterion is directed at, stated by the transmission in its own words and attributed to an angel so that no holder can lift it. It stands here as a claim of the tradition and not as an instruction; the text it guards has been in print since sixteen fifty-seven."@en ;
@@ -124,6 +138,7 @@ pmc:ArsNotoriaSecretumKautel a pm:Cautioning ;
 #
 
 pmp:ArsNotoriaOratioPhysicae a pm:Practicing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The oration of the physical art said before the sick"@en, "Die Oration der Heilkunst, vor dem Kranken gesprochen"@de ;
     skos:definition "Standing before a sick person who lies languishing and saying the oration of the physical art three times with great reverence, and then asking him how he feels himself."@en ;
     skos:note "The asking is part of the procedure and not an afterthought. Without it the oration yields nothing that could be read, and with it the reading is fixed in advance: the text sets out the answers and what each of them decides."@en ;
@@ -132,6 +147,7 @@ pmp:ArsNotoriaOratioPhysicae a pm:Practicing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), §§ 26-30a, pp. 24-25, ed. Peterson" .
 
 pmc:ArsNotoriaInterrogatioAegroti a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The rule of decision on the sick man's answer"@en, "Die Entscheidungsregel an der Antwort des Kranken"@de ;
     skos:definition "The rule the text lays down for reading the answer: if he says he is at good ease or begins to mend, judge without doubt that he shall recover; if he says he is grievously ill or worse and worse, conclude that he will die; if he says he does not know whether he is better or worse, he will either die or the disease will change for the worse. Where the sick man is a child too young to answer, or too ill to answer, the oration is said three times and what first arises in the speaker's mind is the judgement."@en ;
     skos:note "Three answers, and only two of them decide. The third covers dying and getting worse together, so no fate the sick man can meet falls outside it, and that branch alone cannot fail. The first two are not like that: each names one outcome and excludes the other."@en ;
@@ -140,12 +156,14 @@ pmc:ArsNotoriaInterrogatioAegroti a pm:Conceptualizing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 30a, pp. 24-25, ed. Peterson" .
 
 pmc:ArsNotoriaCognitioAegritudinis a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "Perfect knowledge whether a disease tends to death or life"@en, "Vollkommene Kenntnis, ob eine Krankheit zum Tod oder zum Leben führt"@de ;
     skos:definition "The capacity claimed for the oration of the physical art: to have the perfect knowledge of any disease, whether the same tend to death or to life, including for a sick person who is far off and named only, and for one who dissembles and hides his infirmity."@en ;
     pm:withinTradition pmt:ArsNotoria ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), §§ 26, 30a-30b, pp. 24-25, ed. Peterson" .
 
 pmc:ArsNotoriaOratioYieldsCognitioAegritudinis a pm:Yielding ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The oration of the physical art yields the knowledge of death or life"@en, "Die Oration der Heilkunst bringt die Kenntnis von Tod oder Leben hervor"@de ;
     pm:byPractice pmp:ArsNotoriaOratioPhysicae ;
     pm:yieldsCapacity pmc:ArsNotoriaCognitioAegritudinis ;
@@ -155,6 +173,7 @@ pmc:ArsNotoriaOratioYieldsCognitioAegritudinis a pm:Yielding ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), §§ 26-30a, pp. 24-25, ed. Peterson" .
 
 pmc:ArsNotoriaTerminusMortisDisputatus a pm:Disputing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "Whether the death is set for the morrow or only soon"@en, "Ob der Tod auf den folgenden Tag oder nur auf bald gesetzt ist"@de ;
     pm:disputedClaim pmc:ArsNotoriaInterrogatioAegroti ;
     pm:attestedBy pm:textualAttestation ;
@@ -166,6 +185,7 @@ pmc:ArsNotoriaTerminusMortisDisputatus a pm:Disputing ;
     dcterms:source "Ars notoria, the Latin of the Beringos printing appended to the Agrippa Opera, § 30a, printed beside the translation in the edition of Peterson" .
 
 pmc:ArsNotoriaSexusInfantis a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The sex of the unborn child at the pulse"@en, "Das Geschlecht des ungeborenen Kindes am Puls"@de ;
     skos:definition "The claim that if the same oration is said while touching the pulse of a woman with child, it shall be revealed whether she shall bring forth a male or a female."@en ;
     skos:note "The most examinable claim the run found in this corpus, and it is examinable for a reason that has nothing to do with how strongly it is asserted: the outcome is binary, its base rate is known and close to even, it becomes public within months, and the prediction can be recorded before it does. Nothing in the passage makes the result depend on the operator's worthiness."@en ;
@@ -173,6 +193,7 @@ pmc:ArsNotoriaSexusInfantis a pm:Conceptualizing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 30b, p. 25, ed. Peterson" .
 
 pmc:ArsNotoriaOratioYieldsSexusInfantis a pm:Yielding ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The oration reveals the sex of the unborn child"@en, "Die Oration offenbart das Geschlecht des ungeborenen Kindes"@de ;
     pm:byPractice pmp:ArsNotoriaOratioPhysicae ;
     pm:yieldsCapacity pmc:ArsNotoriaSexusInfantis ;
@@ -181,6 +202,7 @@ pmc:ArsNotoriaOratioYieldsSexusInfantis a pm:Yielding ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), § 30b, p. 25, ed. Peterson" .
 
 pmc:ArsNotoriaVirtusNonExNatura a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The miracle proceeds not from your own nature"@en, "Das Wunder geht nicht aus deiner eigenen Natur hervor"@de ;
     skos:definition "The statement the text makes about its own procedure: that this miracle proceeds not from the operator's nature but from the nature and virtues of the holy angels, it being a part of their office wonderfully to reveal these things to him."@en ;
     skos:note "A transmission that says outright where it locates the acting is uncommon, and this one says it in the middle of an instruction rather than in a prologue. It is why the placement on the agency axis beside this file rests on the wording and not on a reading of it."@en ;
@@ -199,6 +221,7 @@ pmc:SituatingArsNotoriaPrognosisAgency a pm:Situating ;
 #
 
 pmp:ArsNotoriaOratioRepetita a pm:Practicing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The oration repeated once, twice or three times"@en, "Die ein-, zwei- oder dreimal wiederholte Oration"@de ;
     skos:definition "Pronouncing the oration on any day on which the speaker is not hindered by a criminal sin, with confession of heart and mouth preceding and early in the morning: three times if he desires to be made eloquent, once if an evil thing troubles him or he is involved in some great business, twice for the greater measure."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -206,6 +229,7 @@ pmp:ArsNotoriaOratioRepetita a pm:Practicing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), pp. 46-47, ed. Peterson" .
 
 pmc:ArsNotoriaGradatioFacundiae a pm:Conceptualizing ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "Eloquence measured out by the count of repetitions"@en, "Nach der Zahl der Wiederholungen zugemessene Beredsamkeit"@de ;
     skos:definition "The graded effect the text attaches to the number of repetitions: said once by a man troubled or involved in a great business, eloquence shall be added to him as much as is needed; said twice, great eloquence shall be given to him; said three times by a man who desires to be made eloquent, he shall be made eloquent."@en ;
     skos:note "A dose and its effect, which the corpus this graph holds gives almost nowhere else. The interest is not the promise but the monotony: more of the same act is said to produce more of the same effect, and a monotony can be examined without the underlying claim being settled first."@en ;
@@ -214,9 +238,22 @@ pmc:ArsNotoriaGradatioFacundiae a pm:Conceptualizing ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), pp. 46-47, ed. Peterson" .
 
 pmc:ArsNotoriaRepetitioYieldsGradatio a pm:Yielding ;
+    pm:fromWork pmw:ArsNotoria ;
     rdfs:label "The repeated oration yields eloquence by measure"@en, "Die wiederholte Oration bringt Beredsamkeit nach Maß hervor"@de ;
     pm:byPractice pmp:ArsNotoriaOratioRepetita ;
     pm:yieldsCapacity pmc:ArsNotoriaGradatioFacundiae ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:ArsNotoria ;
     dcterms:source "Ars Notoria, trans. Robert Turner (London, 1657), pp. 46-47, ed. Peterson" .
+
+#
+# The works this file names, as identifiers (ontology/coverage.ttl). Which of
+# them has been opened is not stated here; it follows from pm:fromWork.
+#
+
+pmw:ArsNotoria a dcterms:BibliographicResource ;
+    rdfs:label "Ars Notoria"@en, "Ars Notoria"@de ;
+    skos:note "One identifier for the work across its recensions and printings. The witness a node was read in stays in its dcterms:source; the divergence between the Latin of the printing and Turner's English is held as a dispute and not as two works."@en .
+
+pmw:LiberIuratusHonorii a dcterms:BibliographicResource ;
+    rdfs:label "Liber Iuratus Honorii"@en, "Liber Iuratus Honorii"@de .
