@@ -91,6 +91,7 @@ Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im I
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
@@ -103,6 +104,7 @@ Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im I
 - **Properties:** `camelCase`: `pm:assertedIn`, `pm:withinTradition`
 - **Tradition-Instanzen:** `pmt:`-namespace, `PascalCase`: `pmt:ValentinianGnosis`
 - **Konzept-Instanzen:** `pmc:`-namespace, `PascalCase`: `pmc:Pleroma`
+- **Werk-Instanzen:** `pmw:`-namespace, `PascalCase`, typisiert als `dcterms:BibliographicResource`: `pmw:ClaviculaSalomonis`. Wer eine Traditionsdatei anfasst, migriert sie auf Werkbezeichner (`AGENTS.md`, `SPEC.md` §14)
 - **Identifier sind englisch.** Mehrsprachige Labels via `rdfs:label "..."@en, "..."@de`
 
 ## Repositories
