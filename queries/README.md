@@ -27,6 +27,8 @@ Gegen einen SPARQL-Endpunkt, der den Graphen geladen hat, unverändert.
 | `coverage-queue.rq` | welche registrierten Überlieferungen sind noch nicht erschlossen, und auf welchem Kontaktweg | §14 |
 | `untested-generalizations.rq` | welche Verallgemeinerungen trägt kein Prüfknoten, geordnet nach der Zahl ihrer Belege | §16 |
 | `exhibited-gaps.rq` | wo wurde gesucht und nichts gefunden | §13 |
+| `unopened-works.rq` | welche Werke im Korpus einer erschlossenen Überlieferung trägt noch keine eingetragene Stelle | §14 |
+| `work-migration-backlog.rq` | welche erschlossenen Überlieferungen führen ihren Korpus noch nicht als Werkbezeichner | §14 |
 
 ## Zwei Lesehilfen
 
