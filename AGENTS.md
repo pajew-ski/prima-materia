@@ -121,6 +121,8 @@ Gilt, sobald mehrere Agenten parallel gemeinfreie Werke ernten.
 
 **Der Lease verhindert nur gleichzeitige Doppelarbeit, und das ist die kleinere Hälfte.** Er verhindert nicht, dass dasselbe Werk in drei Monaten erneut geöffnet wird, dass ein abgestürzter Lauf halb eingetragene Knoten hinterlässt, oder dass ein zweiter Agent denselben Sachverhalt anders benennt. Dagegen hilft nur, dass **derselbe Sachverhalt bei zwei unabhängigen Läufen denselben Bezeichner ergibt.** `tests/test_identifier_uniqueness.py` meldet gleiche Bezeichner in zwei Dateien sofort; verschiedene Bezeichner für dieselbe Sache meldet er nie, und der Bestand hat dann still zwei Knoten für einen Gegenstand.
 
+**Wer eine Traditionsdatei anfasst, führt ihren Korpus im selben Lauf als Werkbezeichner**, sofern sie es noch nicht tut: `pm:corpusWork` an der Tradition, `pm:fromWork` an jedem Knoten mit `dcterms:source`, die Werke als `pmw:`-Knoten in derselben Datei. Ein Werk, das mehrere Dateien zitieren, wird einmal deklariert und sonst nur genannt. Der Grund und das Muster stehen in `ontology/coverage.ttl` und `SPEC.md` §14; die ausstehenden Traditionen liefert `queries/work-migration-backlog.rq`. Ohne diese Regel bleibt ein ungeöffnetes Werk einer erschlossenen Tradition unsichtbar (prima-materia#737).
+
 **Bezeichner werden deshalb aus dem Gegenstand gebildet, nicht aus der Formulierung:** Tradition plus normalisierter Terminus in der Originalsprache, bei einem Namen die Namensform in der Leitumschrift der benutzten Ausgabe. Ausdrücklich nicht aus der deutschen oder englischen Übersetzung — dort übersetzen zwei Bearbeiter verschieden, und derselbe Gegenstand fällt auseinander, ohne dass ein Wächter etwas sagt.
 
 ## Prüfung, Läufe und der Abgleich vor dem PR
