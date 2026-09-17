@@ -945,6 +945,48 @@ pm:SituatingShape a sh:NodeShape ;
     ] .
 
 #
+# Works as identifiers (ontology/coverage.ttl, prima-materia#737).
+#
+# Three guards. The first keeps the identifier an identifier: whatever
+# pm:corpusWork or pm:fromWork points at is a declared work under works/ with
+# a name, so a typo cannot open a work nobody declared. The second makes the
+# join binding once a tradition has been migrated: a node of that tradition
+# that names a source and not its work would make the work look unopened, and
+# the query would report a gap that is not there. The third keeps the
+# property where it means something.
+#
+pm:WorkIsDeclaredShape a sh:NodeShape ;
+    sh:targetObjectsOf pm:corpusWork, pm:fromWork ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^https://pajew\\.ski/prima-materia/works/" ;
+    sh:class dcterms:BibliographicResource ;
+    sh:property [
+        sh:path rdfs:label ;
+        sh:minCount 1 ;
+        sh:message "A work named by pm:corpusWork or pm:fromWork carries an rdfs:label."
+    ] ;
+    sh:message "pm:corpusWork and pm:fromWork point at a work declared under https://pajew.ski/prima-materia/works/ as dcterms:BibliographicResource." .
+
+pm:FromWorkRequiredShape a sh:NodeShape ;
+    sh:targetSubjectsOf dcterms:source ;
+    sh:or (
+        [ sh:not [ sh:property [
+            sh:path [ sh:alternativePath ( ( pm:withinTradition pm:corpusWork ) pm:corpusWork ) ] ;
+            sh:minCount 1
+        ] ] ]
+        [ sh:property [ sh:path pm:fromWork ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "A node of a tradition that names its works with pm:corpusWork says with pm:fromWork which work its dcterms:source lies in. Without it the work reads as unopened." .
+
+pm:FromWorkNeedsSourceShape a sh:NodeShape ;
+    sh:targetSubjectsOf pm:fromWork ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "pm:fromWork names the work a dcterms:source lies in; a node without a source has no work to name."
+    ] .
+
+#
 # Static-substance classes are forbidden. The shape targets the four
 # blacklisted URIs directly; if any of them is ever asserted as owl:Class,
 # validation fails.
