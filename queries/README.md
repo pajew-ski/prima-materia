@@ -2,7 +2,7 @@
 
 Die Abfragen, aus denen SPEC seine Warteschlangen ableitet, statt sie zu führen.
 
-SPEC §13 verbietet, eine Frage als Issue einzutragen, die aus dem Zustand des Bestands folgt: sie wird abgefragt. §14 und §16 nennen drei solche Warteschlangen namentlich. Bis hierher stand nirgends, wie man sie abfragt, und es gab keinen Endpunkt dafür. Dieser Ordner trägt die Abfragen; der Endpunkt kommt getrennt.
+SPEC §13 verbietet, eine Frage als Issue einzutragen, die aus dem Zustand des Bestands folgt: sie wird abgefragt. §13, §14 und §16 nennen solche Warteschlangen namentlich; welche es gibt, sagt die Tabelle unten. Bis hierher stand nirgends, wie man sie abfragt, und es gab keinen Endpunkt dafür. Dieser Ordner trägt die Abfragen; der Endpunkt kommt getrennt.
 
 ## Ausführen
 
