@@ -377,6 +377,15 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   von `korpus:daoistisch` getrennt geführt, weil diese Handschriften vor
   jedem belegten Kontaktweg im Boden lagen und der Bestand genau das an
   ihnen braucht)
+- `korpus:inselkeltisch` (das irische und walisische Schrifttum zum
+  dichterischen Wissen als erworbenem Vermögen: Sanas Cormaic in den Ausgaben
+  von Stokes 1862 und O'Donovan 1868 und in Meyers kritischer Ausgabe von
+  1912; der Prolog zum Senchas Már in den Ancient Laws of Ireland Bd. I; die
+  Mittelirischen Verslehren in Thurneysens Ausgabe; Uraicecht na Ríar und die
+  Bretha Nemed, dazu der Corpus Iuris Hibernici; die Triaden; die immrama; das
+  Buch von Taliesin — Giraldus Cambrensis gehört als Bericht eines
+  Außenstehenden dazu, die Keltologie geht als `pm:evidenceFrom` ein, nie als
+  Quelle)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
