@@ -2,6 +2,7 @@
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 #
 # prima-materia — coverage and contact vocabulary
@@ -76,4 +77,48 @@ pm:principalCorpus a owl:DatatypeProperty ;
     rdfs:label "principal corpus"@en ;
     rdfs:domain pm:Tradition ;
     skos:definition "The works in which this transmission is chiefly carried, named so that a later reader can find them."@en ;
+    skos:note "Kept as the readable listing once a tradition names its works with pm:corpusWork. The literal is what a reader sees; the identifiers are what a query can join."@en ;
     skos:note "Deliberately not dcterms:source. A source carries a passage that was read, with its place and its edition; this names a corpus that was not read. Using dcterms:source here would let a registration claim a textual knowledge it does not have. The literature rule applies all the same: a work, never a URL."@en .
+
+#
+# Works as identifiers
+#
+# pm:principalCorpus and dcterms:source both name works, and both are
+# literals. Nothing joins them: whether a named work has had a single passage
+# entered could only be guessed by comparing strings, and the guess failed in
+# both directions when it was measured (prima-materia#737). A tradition at
+# pm:placesEntered therefore dropped out of every queue however many of its
+# works were still unopened.
+#
+# The join is an identifier and nothing more. A work gets an IRI under
+# works/, the tradition points at the works of its corpus, and every node
+# that names a source points at the work that source is in. Whether a work of
+# a corpus has been opened is then an exact query (queries/unopened-works.rq).
+# How much of it has been read is deliberately not modelled: the graph holds no
+# division of a work to count against, and one is added when a question needs
+# it and not before.
+#
+# The work is typed dcterms:BibliographicResource and not with a class of this
+# ontology. The class that dcterms:source already presupposes for its referent
+# exists, and a pm: class for a book would either be a static substance class,
+# which SPEC §3 forbids, or a gerund pretending a book is a process.
+#
+# Migration runs tradition by tradition. A tradition that names one work with
+# pm:corpusWork is migrated, and from then on every node of it that names a
+# source must say which work (pm:FromWorkRequiredShape). The traditions not yet
+# migrated are themselves a query (queries/work-migration-backlog.rq), so the
+# backlog needs no list.
+#
+
+pm:corpusWork a owl:ObjectProperty ;
+    rdfs:label "corpus work"@en, "Korpuswerk"@de ;
+    rdfs:domain pm:Tradition ;
+    rdfs:range dcterms:BibliographicResource ;
+    skos:definition "A work in which this transmission is chiefly carried, as an identifier. The identifier counterpart of pm:principalCorpus, which stays as the readable listing."@en ;
+    skos:note "Says nothing about whether the work was read. That follows from whether any node points at the work with pm:fromWork."@en .
+
+pm:fromWork a owl:ObjectProperty ;
+    rdfs:label "from work"@en, "aus Werk"@de ;
+    rdfs:range dcterms:BibliographicResource ;
+    skos:definition "The work that a dcterms:source of this node lies in. A node whose sources lie in two works carries both."@en ;
+    skos:note "It does not replace dcterms:source. The source keeps the passage and the edition; this carries only the identity of the work, which a literal cannot carry without a string comparison."@en .
