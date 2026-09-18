@@ -181,6 +181,21 @@ pm:Symbolizing a owl:Class ;
 | `pm:Conceptualizing` | Begriffsbildung |
 | `pm:Relating` | Beziehungs-Akt zwischen Konzepten |
 
+**Was das Verbot nicht verbietet: Bezeichner.** Die Regel richtet sich gegen Klassen, an denen eine Behauptung hängen könnte — ein Graph aus `Symbol` und `Entity` meldet Substanzen, wo er Aussagen über sie hält. Ein Bezeichner meldet nichts. Er trägt ein Label, er trägt keine Quelle, keine Tradition, keinen Bezeugungsmodus und keine Behauptung; er ist der Schlüssel, unter dem sich Knoten verbinden lassen, die sonst nur über Zeichenkettenvergleich zusammenfänden. Dieser Vergleich ist gemessen worden und in beide Richtungen fehlgeschlagen (prima-materia#737).
+
+Deshalb gilt seit dem 2026-09-18 für beide Ebenen dieselbe Lösung, und sie ist **kein** Einfallstor für statische Klassen:
+
+| Was | Bezeichner unter | Typ | Prädikat |
+|---|---|---|---|
+| Werke eines Korpus | `works/` (`pmw:`) | `dcterms:BibliographicResource` | `pm:corpusWork`, `pm:fromWork` |
+| Was ein Verfahren beim Namen verlangt — Stoff, Gerät, feste Wortfolge | `materia/` (`pmm:`) | `skos:Concept` | `pm:uses` |
+
+Beide sind mit einer fremden Klasse typisiert und nicht mit einer dieser Ontologie, und zwar aus demselben Grund: die fremde Klasse sagt, wofür der Bezeichner da ist, während eine `pm:`-Klasse für ein Buch oder für eine Kuhmilch entweder eine statische Substanzklasse wäre, die dieser Parameter verbietet, oder ein Gerundium, das ein Ding als Prozess ausgibt.
+
+**Die Behauptung bleibt, wo sie war.** Dass die Lampe kein Mennige enthalten darf, steht in der `skos:definition` des Verfahrens; dass sie es nicht enthalten *muss*, damit etwas geschieht, steht in einem `pm:Presupposing`-Knoten mit `pm:consequenceOfSkipping`. `pm:uses` sagt nur, dass dieses Verfahren dieses Ding beim Namen verlangt. Wer daraus liest, das Ding wirke, liest etwas, das dort nicht steht.
+
+**Ein Namensraum für drei Arten**, weil noch keine Abfrage sie auseinander braucht; sobald eine es tut, trennt `skos:inScheme` sie dann und nicht vorher. Die Begründung im vollen Umfang steht in `ontology/coverage.ttl` neben `pm:uses`.
+
 ### Parameter 2: Die Bewusstseinsachsen
 
 Die Ontologie ist bewusstseinszentriert, und das ist erst eingelöst, wenn die Zustände nicht bloß im Vokabular stehen, sondern an den Behauptungen aller Traditionen hängen. Das Ziel ist die Abfrage: welche Methoden werden nur an der Schlafschwelle ausgeführt, welche Vermögen nur in abgezogener Vertiefung ausgeübt, welche Zustände fallen zu und welche werden erworben.
@@ -769,6 +784,10 @@ Ein Werk, das für eine Behauptung geöffnet wurde, wird nicht für diese eine B
 **Aufzunehmen ist, was der Graph tragen kann.** Vier Arten sind dabei nicht wahlfrei, sondern geschuldet:
 
 - **Vermögen** — was an Zuständen, Fähigkeiten und Erreichungen als durch Übung erlangbar behauptet wird. Hier gilt Vollständigkeit im strengen Sinn: ein übergangenes Vermögen ist etwas, das zu lernen wäre und niemandem mehr auffällt.
+
+  **Ein Rezept ist ein Vermögen, auch wenn es nichts weiter trägt.** Ein Handbuch, das fünfzig Vorschriften mit Zutatenliste und einem Wirkungssatz führt — bringe diese Frau zu diesem Mann, blende diesen Menschen, heile diesen Biss —, behauptet fünfzig Vermögen, und die strenge Vollständigkeit gilt für sie. Dass ein solches Rezept keine Voraussetzungskette, keine Kautel und keine Misslingensbedingung trägt, ist **kein** Grund, es wegzulassen: es ist der Befund über das Rezept, und er ist nur zählbar, wenn das Rezept dasteht. Am 2026-09-18 wurden aus diesem Grund die Erotika, Gifte und Heilrezepte eines geöffneten Handbuchs zu einem einzigen Listenknoten zusammengezogen; das war Ökonomie in der Gestalt einer Regel, und diese Fassung nimmt sie zurück. Was ein solcher Knoten spart, ist der Aufwand des Eintragens; was er kostet, ist die Möglichkeit, je zu zählen, wie viele Behauptungen eines Korpus prüfbar sind und wie viele nicht.
+
+  Der Aufwand ist dabei kleiner, als er aussieht, seit Abschnitt 3 Parameter 1 die Zutaten als Bezeichner führt: was fünfzig Rezepte gemeinsam haben, steht fünfzigmal als `pm:uses` auf denselben Knoten und nicht fünfzigmal als Prosa.
 - **Voraussetzungsketten** — was vor etwas anderem da sein muss, damit es überhaupt eintreten kann. Sie sind der Teil, den Zusammenfassungen zuerst verlieren, und der Teil, an dem eine Praxis scheitert.
 - **Warnungen und Kautelen** — besonders die, die ihre eigene Verkennung mitnennen, und die Selbstwarnungen eines Textes gegen das, was er vorschreibt.
 - **Misslingensbedingungen** — was der Text als Anzeichen dafür nennt, dass es *nicht* gewirkt hat, und woran das liegt: eine Frist, nach der nichts mehr kommt, ein Fehlschlag beim dritten Versuch, eine unvollständige Reinigung. Nur daraus wird ein `pm:falsifiedBy`, weil nur das einen Ausgang ausschließt.

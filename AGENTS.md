@@ -232,6 +232,10 @@ Drei Prüfungen, jede einzeln: **trägt die Werkangabe** — Band, Heft, Seiten,
 
 **Im Batch, nicht nacheinander.** Was in einem Lauf unabhängig voneinander bearbeitet werden kann, wird unabhängig voneinander bearbeitet: je Strang ein eigener Branch von `main`, ein eigener PR, eine eigene Begründung. Nicht gestapelt, wo nichts stapeln muss — gestapelt wird nur, wenn zwei Stränge dieselbe Datei anfassen, und dann sagt der PR es im ersten Absatz.
 
+**Welche Datei ein Erntelauf anfasst, weiß er erst nach der Lektüre.** Die Regel oben setzt voraus, dass die Überschneidung beim Aufsetzen des zweiten Strangs schon bekannt ist; bei einer Ernte ist sie es nicht, weil sich erst am gelesenen Text zeigt, welche Verallgemeinerung einen Zeugen bekommt. Daraus folgt kein Verzicht, sondern ein Zeitpunkt: **sobald die Überschneidung sichtbar wird, wird der spätere Strang auf den Kopf des früheren gesetzt**, auch wenn er schon von `main` abgezweigt war. Der Preis ist die Merge-Reihenfolge — wird der untere PR abgelehnt, hängt der obere —, und er ist der kleinere. Die Gegenrechnung steht in prima-materia#744: der Lauf vom 2026-09-18 hat statt dessen eine Schuld angelegt, und eine Schuld gegen gemergte Daten ist teurer als ein PR, der auf einen anderen wartet.
+
+Ein abgezweigter Branch ohne eigenen Commit lässt sich mit diesem Werkzeugsatz nicht entfernen (prima-materia#573); er gehört dann namentlich in das Issue des Laufs.
+
 Der Grund ist nicht Geschwindigkeit, sondern Prüfbarkeit. Ein PR, der einen Wächter, eine Registrierung und einen Traditionsknoten zusammenfasst, ist als Ganzes anzunehmen oder abzulehnen; drei PR sind einzeln zu beurteilen und einzeln zurückzuweisen. Und ein Strang, der auf einen anderen wartet, obwohl er nicht muss, verlängert nur die Zeit, in der Arbeit im Gesprächsverlauf statt im Repo liegt.
 
 **Bis zum PR wird nicht innegehalten.** Keine Zwischenberichte, keine Bestätigungsfragen, keine Freigabe vor dem Schreiben. Der Mensch prüft am Merge; alles davor ist der Auftrag, nicht die Verhandlung darüber.
