@@ -1,0 +1,49 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — three searches carried in the chronicle of 720
+#
+# All three were carried on 2026-09-18 while the work was open, over the whole
+# of volume I of the English of 1896, Books I to XVI. Volume II was not
+# obtained, and every note below says so rather than letting the silence of one
+# volume pass for the silence of a chronicle.
+#
+
+pmp:ShintoOrdealCountSearch a pm:Searching ;
+    rdfs:label "Whether the chronicle gives any number for the ordeal of boiling water"@en, "Ob die Chronik für die Probe des siedenden Wassers irgendeine Zahl nennt"@de ;
+    pm:searchedCorpus "Nihongi, Books I to XVI, in the English of W. G. Aston, Nihongi: Chronicles of Japan from the Earliest Times to A.D. 697, vol. I, London: Kegan Paul, Trench, Trübner, 1896" ;
+    pm:searchedFor "At the ordeal of the fourth year of Ingyō, which reports that the true were uninjured and the false harmed: how many came to the cauldrons, how many were harmed, how many stayed away. Any figure at all would make the report a count rather than a verdict, and the passage is the only place in this holding where a transmission states a criterion on both sides and then says what happened." ;
+    pm:searchTerms "Whole-text search of volume I for: Kuka-tachi (one hit, the naming sentence); caldron (three, all in the one passage); boiling water (six, of which four are in this passage and two in the earlier two-party ordeal of Ōjin); boiling mud (one); red-hot (one); uninjured (two); harmed (two); scalded, persons underwent (none). The whole passage and the two pages around it were read continuously, and so was the Ōjin ordeal." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-18" ;
+    dcterms:date "2026-09-18" ;
+    skos:note "No number anywhere. The chronicle says that everybody was told to go, that the true were uninjured and the false harmed, and that those who had falsified their titles slipped away beforehand and did not come forward. It counts nobody in either group, so the report of a perfect result rests on no enumeration, and the same passage supplies the reason there may have been nothing to enumerate. See pmc:ShintoKukatachiExitus."@en ;
+    skos:note "Limits. One volume of two and one translation. Volume II carries Books XVII to XXX, and the later reigns were not searched; a further ordeal with figures in them would change the finding and nothing here makes that unlikely."@en .
+
+pmp:ShintoDivinationMethodSearch a pm:Searching ;
+    rdfs:label "Whether the chronicle describes its own Greater Divination"@en, "Ob die Chronik ihre eigene Große Wahrsagung beschreibt"@de ;
+    pm:searchedCorpus "Nihongi, Books I to XVI, in the English of W. G. Aston, Nihongi: Chronicles of Japan from the Earliest Times to A.D. 697, vol. I, London: Kegan Paul, Trench, Trübner, 1896" ;
+    pm:searchedFor "A passage in which the chronicle says, in its own voice, what the Greater Divination consisted in: what was burnt, what was read off it, who read it, and what a reading looked like. The procedure is named four times and used to settle the cause of a failed rite, a time, a plot of ground and an appointment, so the method decides how much any of those findings is worth." ;
+    pm:searchTerms "Whole-text search of volume I for: Greater Divination (three hits, all of them namings and none a description); futomani, futo-mani (none — the translation gives the term only in English); shoulder-blade (one hit, and it is in an editor's footnote); crack (three, of which two are in editor's footnotes and one is a metaphor about a carriage); tortoise (seven, of which one is the Sacred Tortoise proposed by Sujin, two are editor's footnotes, and the rest are animals); deer (forty, all of them animals, hunts and place-names); scapula, seared (none)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-18" ;
+    dcterms:date "2026-09-18" ;
+    skos:note "The chronicle names the procedure and never describes it. Everything this holding knows about how it was done comes from two footnotes by the translator of 1896, who also states there that the tortoise-shell named in the chronicle is the Chinese practice and the deer's shoulder-blade the Japanese one. That is a scholar's distinction imposed on a text that draws none, and pmp:ShintoFutomani says so at the node."@en ;
+    skos:note "The gap is worth exhibiting because of what hangs on it. A divination whose method is unknown cannot be placed on either side of the division pmc:TheCriterionNoPartyControls draws — nobody can say whether the reader of the cracks had an interest in the outcome, or whether anyone but him could see them. Whoever opens the Kojiki or the Kogoshūi can close this in an afternoon."@en .
+
+pmp:ShintoUkehiVerdictSearch a pm:Searching ;
+    rdfs:label "Whether the chronicle anywhere settles the oath into one verdict"@en, "Ob die Chronik den Eid irgendwo zu einem Urteil auflöst"@de ;
+    pm:searchedCorpus "Nihongi, Books I and II, the Age of the Gods with all their variant versions, in the English of W. G. Aston, Nihongi: Chronicles of Japan from the Earliest Times to A.D. 697, vol. I, London: Kegan Paul, Trench, Trübner, 1896" ;
+    pm:searchedFor "A passage deciding, for the oath between the sun goddess and her brother, which of the two produced the male children and therefore whether the criterion was met — the rule of attribution that the criterion presupposes and does not state." ;
+    pm:searchTerms "The whole of Books I and II was read continuously rather than searched, because the variants are printed as running text and a term search would have returned the same words from four passages without telling them apart. Searched in addition over the whole volume for: oath (nine hits), covenant, pledge, I have won, proof of his victory, red heart, black heart, impure heart." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:ShintoUkehiVariaeLectiones ;
+    pm:searchedBy "prima-materia, 2026-09-18" ;
+    dcterms:date "2026-09-18" ;
+    skos:note "The search was for a verdict and found four incompatible ways of reaching one. The physical outcome is the same in every version — three female deities and five or six male ones — and the verdict varies with who is said to have produced which, which is a rule none of the four states in advance. Two versions declare the brother vindicated, two draw no verdict at all, and the main narrative reassigns the children by the ownership of the material after they are born."@en ;
+    skos:note "That is the productive outcome the class was built for. A run that had only checked whether the criterion names both sides would have entered a clean witness for the first clause of pmc:TheCriterionNoPartyControls and moved on; what the reading found is a third way for a two-sided criterion to decide nothing, and it is recorded at the node it became."@en .
