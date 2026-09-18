@@ -1,0 +1,65 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — four searches carried in the Papyrus of London and Leiden
+#
+# All four were carried on 2026-09-18 while the work was open, over the whole
+# translation of recto and verso, in the edition of Griffith and Thompson of
+# 1904. The digitised text separates its words with runs of two and three
+# spaces, so a plain search for a phrase returns nothing; every count below was
+# taken over a whitespace-normalised copy with the hits rewritten back into the
+# raw text by position, which is the method AGENTS.md records for damaged
+# scans. Three of the four came back empty, and those three are the return on
+# the reading that a reader loading the graph could not otherwise have.
+#
+
+pmp:PdmFailureConditionSearch a pm:Searching ;
+    rdfs:label "Whether the demotic manual names any outcome that would count against an inquiry"@en, "Ob das demotische Handbuch irgendeinen Ausgang nennt, der gegen eine Befragung zählte"@de ;
+    pm:searchedCorpus "Papyrus of London and Leiden (PDM xiv), recto columns I to XXIX and verso columns I to XXXIII entire, in the translation of F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" ;
+    pm:searchedFor "A passage naming a result of a correctly prepared inquiry under which the operator is to conclude that it did not work: a term after which he is to stop, a number of addresses beyond which the god is not to be pressed, or a sign that nothing will come. This is the material from which a pm:falsifiedBy can be formed out of a transmission's own mouth, and the same question was put to the Clavicula at pmp:ClaviculaFailureConditionSearch." ;
+    pm:searchTerms "Whole-text search of the translation, over a whitespace-normalised copy, for: in vain, fruitless, of no effect, no effect, useless, unsuccessful, leave off, give over, give up, break off, desist (none of them occurs); fail (two hits, one inside an invocation of the speaker's own strength, one the phrase without fail); faileth (one, inside an invocation); cease (eight; the only two that touch an operation are at XVII/17, where the operator ceases from the inquiry because the boy has looked away, and the clause about the gods going away and the boy ceasing to see them); abandon (one, in the editors' introduction); stop (four, all of stopping a vessel's mouth or staunching blood); not succeed (one, the purity clause at XVII/26); delay, obduracy, obstinacy, slow to come, do not come, not come (thirteen between them, every one of which is answered by a further formula and none by an end)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-18" ;
+    dcterms:date "2026-09-18" ;
+    skos:note "Nothing came back, and what came back instead is the finding. Every hit that touches an inquiry at all is an escalation or an assignment: the compulsion, the further cry, the name said nine times until they answer truthfully, and the two general assignments to purity and to the boy's fright. The one place where a session is broken off is broken off because of the medium and not because of the god. The manual takes up the empty session six times and does not once treat it as a result."@en ;
+    skos:note "It is the ground of the first clause of pmc:TheStrongerAddress, and it is recorded rather than summarised for the reason the class exists: without a node saying which terms were put and what came back, that clause would rest on an impression formed while reading, and a reader who suspects the impression would have to read the manual again."@en ;
+    skos:note "Limits. One translation, one editor, one optical transcription, and a stopping rule could be phrased without any of the twenty-three terms above — as an hour at which the operator departs, say. Against that, the nine datings collected at pmc:PdmHoraEtLuna were read continuously for exactly that possibility and none of them states a consequence, and the columns that carry the graded compulsions were read in full and not only searched."@en .
+
+pmp:PdmProbatumQuidSearch a pm:Searching ;
+    rdfs:label "Whether the manual says what its nine trials consisted in"@en, "Ob das Handbuch sagt, worin seine neun Erprobungen bestanden"@de ;
+    pm:searchedCorpus "Papyrus of London and Leiden (PDM xiv), recto columns I to XXIX and verso columns I to XXXIII entire, in the translation of F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" ;
+    pm:searchedFor "At the six places where the manual marks a procedure as tested, tried or well tested, and at the two where it gives the number nine: who carried the trials, on what question, against what the answer was afterwards set, and what an unsuccessful trial would have looked like." ;
+    pm:searchTerms "Whole-text search for: tested, tried, proved, approved, tries, trial, times tried, nine times, true and tried. The six marks are at IV/23, V/3, VIII/12, XIV/31, XXIV/1 and XXIX/1; each was read at its place together with the recipe it stands over and the recipe following it. Read as well: the editors' note to VIII/12, which compares the phrase with XIV/31 and XXIX/1 and holds nine times tried to be proverbial." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-18" ;
+    dcterms:date "2026-09-18" ;
+    skos:note "Not one of the six marks carries anything behind it. The mark is attached to the recipe and never to an outcome; no question is named, no answer is checked, and no trial is described. In one of the two numbered cases the number is not even the compiler's own — it is what he reports the informant as having said. The claim of nine trials therefore stands in a manual that pmp:PdmFailureConditionSearch shows has no way of counting an unsuccessful one."@en ;
+    skos:note "The finding is entered as a search and not as a node because it is an absence in the work, and the node it bears on, pmc:PdmProbatumNovies, carries what the work does say. The distinction matters here more than usual: a reader who meets tested nine times in a translation will supply the missing half by himself unless something in the record says it is missing."@en .
+
+pmp:PdmReworkingSearch a pm:Searching ;
+    rdfs:label "Whether the compiler says what he changed in a procedure he received"@en, "Ob der Zusammensteller sagt, was er an einem übernommenen Verfahren geändert hat"@de ;
+    pm:searchedCorpus "Papyrus of London and Leiden (PDM xiv), recto columns I to XXIX and verso columns I to XXXIII entire, in the translation of F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" ;
+    pm:searchedFor "An addition the compiler makes to a procedure he says he received from somebody else — a term, a caution, a sign, a condition of failure that the donor's version is said not to have had. That is the material of pm:Reworking, and a manual that names four donors and cites competing rolls is the likeliest place in this holding to find it." ;
+    pm:searchTerms "Every place where the work names a source or a variant was read at its wording: gave to me (I/1 and XVIII/7), said to me (XIV/1), he tells it (VIII/12), another roll says, another book says, another volume saith, another says, as says another book, otherwise said. Searched additionally for: I added, I found, I corrected, I have proved, better than, stronger than, is better." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-18" ;
+    dcterms:date "2026-09-18" ;
+    skos:note "The compiler names his donors and sets his variants beside one another, and nowhere says that he changed anything or why one reading is preferred. The two comparative judgments the work does make are about procedures and not about versions: that this vessel-inquiry of the lamp is better than the beginning, and that there is none better than the amulet of the sixteen-thread band. Neither names what the worse one lacked."@en ;
+    skos:note "The finding bears on how much a chain of copies is worth. This manual is at the near end of the demotic and Greek handbook tradition and at the far end of the grimoire stream, and it hands on procedures from at least four named persons without recording a single alteration. pm:Reworking counts the stations at which somebody took an instruction, carried it out and wrote down what was not in the exemplar; on the evidence of this work, this station is not one of them."@en .
+
+pmp:PdmBothSidesSearch a pm:Searching ;
+    rdfs:label "Whether the manual anywhere states both sides of a criterion"@en, "Ob das Handbuch irgendwo beide Seiten eines Kriteriums nennt"@de ;
+    pm:searchedCorpus "Papyrus of London and Leiden (PDM xiv), recto columns I to XXIX and verso columns I to XXXIII entire, in the translation of F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" ;
+    pm:searchedFor "A passage that fixes an outcome to a perceptible event and says what the event would be in each of the two cases — the form pmc:TheCriterionNoPartyControls describes, and in particular the form its second clause says does not occur, an appearance announced to the participant beforehand that carries the failing side as well as the succeeding one." ;
+    pm:searchTerms "Every conditional clause of the translation was read at its place; searched additionally for: if he says, if it be that, if you find, if thou, then she will, will not, shall not come to pass, otherwise, on the contrary. Three hundred and more conditionals stand in the work and almost all of them are instructions, not readings." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:PdmRamshauFormaDuplex, pmc:PdmProbatioGraviditatis, pmc:PdmProbatioLapidis ;
+    pm:searchedBy "prima-materia, 2026-09-18" ;
+    dcterms:date "2026-09-18" ;
+    skos:note "Three places in a manual of sixty-two columns, and their distribution is the finding. The pregnancy test and the assay of the stone are in the medical and pharmacological half of the verso, where nothing is being invoked; the third, the priest's inquiry at VIII/12-16, is in the divinatory half and is the only one there. Against those three stand the seven or eight announced signs of arrival at pmc:PdmSignaAdventus, none of which has a failing side, and the six escalations at pmc:PdmCompulsioNonAdventus, which make one impossible."@en ;
+    skos:note "The one in the divinatory half is the reason this search was worth carrying. pmc:TheCriterionNoPartyControls asserts that where a criterion is an appearance announced to the participants beforehand, the transmission states the success side alone; here two distinct appearances are announced in advance and each is bound to one of the two answers before anything is seen. That is opposition to the second clause and is recorded at the protocol on it, pmp:BothSidesOfTheCriterionExamination, where a claim is corrected."@en .

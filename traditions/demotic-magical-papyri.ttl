@@ -1,0 +1,281 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the demotic half of the magical papyri: the Papyrus of
+# London and Leiden
+#
+# The tradition instance is pmt:GreekMagicalPapyri and stands in
+# traditions/greek-magical-papyri.ttl, whose registration names the demotic
+# papyri as part of its corpus. This file carries a second work of that same
+# transmission and is a repository unit only; SPEC §10 says the file is not an
+# entity of the subject matter and two works may sit in two files.
+#
+# Why this work and not another. SPEC §14 gives the examinability-driven
+# entrance priority: the transmissions wanted are those that name signs,
+# terms, cautions and conditions of failure. The editors of this papyrus say
+# in their preface that where the Greek papyri assume a knowledge of the
+# procedure of divination by the lamp and the bowl, this one describes it in
+# great detail, and that is what the reading found: a manual that states what
+# the operator does, what the medium is to see, at what hour, in what
+# condition of body, and — six times over, in six different wordings — what
+# to do when nothing appears. The second reason is the work level of the same
+# entrance (prima-materia#737): the tradition stood at pm:placesEntered with
+# one opened piece of one Greek papyrus, and a named work of it that nobody
+# had opened was invisible to every queue.
+#
+# Order of the file: the three procedures and the instrument they
+# run through; the conditions set on the operator and on the medium; what is
+# claimed to result; the announced signs, counted apart; the conditions of
+# failure and what the text prescribes in their place; the two procedures
+# that state both sides of a criterion; and what the papyrus says about its
+# own sources and its own trials.
+#
+
+# The work identifier pmw:PapyrusLondonLeiden is declared with the other works
+# of this corpus in traditions/greek-magical-papyri.ttl, beside the tradition
+# instance that names them, and what was read of it stands as a note there.
+# It is only used here.
+#
+
+#
+# The three procedures, and the fourth that vets the instrument
+#
+
+pmp:PdmShenHne a pm:Practicing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The vessel-inquiry"@en, "Die Gefäßbefragung"@de ;
+    skos:definition "A divination into a vessel of oil. A dark clean room is sprinkled with river sand or purified with natron water; a new dish is filled with clear oil, or a bronze cup with water finished on its surface with oil; new bricks that have not been turned are set under the vessel and under the boy; seven clean loaves and seven lumps of salt are arranged around it; a boy who is pure and has not gone with a woman is laid or seated at the vessel with his eyes shut, and the operator recites the invocation down into his head seven times with his hand over the boy's eyes. The boy then opens his eyes and is asked what he sees, and the questioning proceeds through Anubis, who is sent to fetch the other gods, seat them at a table, give them food and drink, and produce the one god who will answer."@en ;
+    skos:note "The procedure is given in this papyrus more than a dozen times with variations of the vessel, the oil, the wick, the hour and the invocation, and the editors' own classification counts eleven places for the vessel alone. What is constant across them is the apparatus: a new or unused object at every point of contact, an odd count of repetitions, a boy at the vessel and the operator behind him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. III/5-15 and col. X/9-19, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmp:PdmShenHbs a pm:Practicing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The lamp-inquiry"@en, "Die Lampenbefragung"@de ;
+    skos:definition "A divination at a lamp. A clean dark cell without light is taken and a new hole dug in an east wall; a white lamp in which no minium or gum-water has been put is filled with clean genuine oil and a clean wick; the spells of praising Ra are recited at dawn and the lit lamp is held opposite the sun and recited to four times; the lamp and the boy are then carried into the cell, the operator being pure and the boy also, and the spells are said seven times to the boy with his eyes closed and the operator's finger on his head. The boy then opens his eyes towards the lamp and sees the shadow of the god about the lamp, and inquires on the operator's behalf. The wick and the oil are varied by the business: a wick of sail-cloth and butter for a damned spirit, a clean wick and pure oil for anything else, ointment of roses to bring a woman to a man."@en ;
+    skos:note "The one place in the procedure where the operator's choice is said to matter to the outcome is the wick and the filling, and it is fixed by the kind of question and not by the operator's state. That is an unusually specific instruction and it is also the only one in the three procedures that could be got wrong without anybody noticing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. VI/1-10, with col. XXV/8-22 and col. XXVII/13-19, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmp:PdmShenPre a pm:Practicing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The inquiry of the sun"@en, "Die Sonnenbefragung"@de ;
+    skos:definition "A divination made facing the rising sun. A young pure boy is stood on a new brick at the moment the sun rises and comes up entire with the whole disk, a new mat of linen behind him and his eyes shut; the operator stands over him, recites down into his head, strikes down on his head with the Ra-finger of his right hand, and has first filled the boy's eye with a prepared paint. A variant has the boy gaze at the sun when it fills the uzat instead of at its rising, and a further variant has the operator do it alone with the paint in his own eyes and his eyes open towards the sun."@en ;
+    skos:note "The last words of the recto are the plainest statement in the work of what it holds the whole apparatus to depend on, and they are said of this procedure: its chief point is purity, and it is profitable for the boy and profitable for the operator acting alone. The same sentence therefore states the condition and says that the condition is indifferent to which of the two persons carries the perception."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIX/1-30, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmp:PdmProbatioAurium a pm:Practicing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The testing of the boy in his ears"@en, "Die Prüfung des Knaben an seinen Ohren"@de ;
+    skos:definition "A test carried on the boy before the vessel is used, to learn whether he will be profitable in going to the vessel. The operator recites a short formula down into the boy's head seven times, asking that he be purified in the manner of the noble ibis, falcon and hawk; then the boy's ears speak. If both ears speak he is very good; if it is his right ear, he is good; if it is his left ear, he is bad."@en ;
+    skos:note "The graded outcome is the reason this is a practice of its own and not a clause of the vessel-inquiry. A later column requires that the child brought to the vessel be one that has been tested in his ears before, so the test is a standing precondition and not a flourish of one recipe."@en ;
+    skos:note "What the test measures is not the boy's accuracy about anything. No question with a knowable answer is put to him, and nothing he reports is checked against a fact; the whole of it is an event in his own body, reported by himself, in three grades, after the operator has told him what the grades are. That is worth stating because the procedure looks at first like a control and works like an initiation."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. III/16-20, with col. X/14-15, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmp:PdmUnctioOculorum a pm:Practicing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The filling of the eyes, which lets the operator dispense with the boy"@en, "Das Füllen der Augen, das den Knaben entbehrlich macht"@de ;
+    skos:definition "A preparation put into the eyes so that the operator himself perceives what the boy would otherwise perceive. Several are given. The chief one is made from flowers of the Greek bean bought from the garland-seller or the lupin-seller, shut into a glass vessel in a hidden dark place for twenty days, at which point a pair of testicles with a phallus is said to be found in it, and for forty days more, at which point it is said to have become bloody; the blood is what the eyes are filled with. Others are a hawk's egg with myrrh, the head and blood of a hoopoe, and a paint of green eye-paint and stibium ground with further ingredients."@en ;
+    skos:note "It is the hinge of the whole apparatus. Wherever the papyrus offers to do an inquiry alone it offers this and nothing else in place of the boy, so the second person is replaceable by a substance while the purity, the hour, the new brick and the count are not."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. V/24-31, with col. IV/23-24 and col. verso XXII/2-8, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+#
+# What is claimed to come of it
+#
+
+pmc:PdmResponsumVerum a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "A god comes in and answers every question truly"@en, "Ein Gott kommt herein und antwortet auf jede Frage wahrhaftig"@de ;
+    skos:definition "The capacity the procedures are for: that a named god enters, gives his name when asked for it, and answers whatever the operator asks, in truth and without falsehood. One passage puts the scope of the answer in full — that the gods do not depart before they have been questioned concerning every word and have told the answer about heaven, earth and the underworld, a distant inquiry, water and the fields."@en ;
+    skos:note "The phrase truly without falsehood recurs through the work as a fixed demand of the invocations, together with the demand that the god not substitute a face for a face or a name for a true name. The transmission therefore knows the failure mode of a false answer from an impostor and addresses it by asking the god not to commit it, which is not a check."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIII/2-5, with col. IX/28-29, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmShenHneYieldsResponsum a pm:Yielding ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The vessel-inquiry brings the god in to answer"@en, "Die Gefäßbefragung bringt den Gott zum Antworten"@de ;
+    pm:byPractice pmp:PdmShenHne ;
+    pm:yieldsCapacity pmc:PdmResponsumVerum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    skos:note "Entered as the claim of the transmission and not as a result. What makes the pairing worth a node of its own is that the claimed effect is an event in one person's visual field, reported by that person, and that the person is chosen and graded by the operator before the session."@en ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. II/24-III/5, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmResponsumPerSomnium a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The answer that comes in sleep instead"@en, "Die Antwort, die statt dessen im Schlaf kommt"@de ;
+    skos:definition "A second outlet the same procedures provide: after the invocation the operator lies down on a rush mat without speaking to anyone on earth, and the god makes answer to him by dream. In one recipe the two are offered as alternatives in one sentence — either the figure of a god stands behind the lamp and speaks concerning the question, or the operator lies down and the god comes to him. A separate short recipe writes a name on a rush-leaf, places it under the head, and is said both to make dreams and to send them, the sending being done by laying the leaf on the mouth of a mummy."@en ;
+    skos:note "The alternative is what makes the session hard to end empty. A god who has not appeared at the lamp has not yet failed to answer, because the sleep that follows is part of the same procedure and its outcome is reported by the sleeper the next day. This is the same construction as the graded compulsions at pmc:PdmCompulsioNonAdventus, reached by a different route."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. V/6-8 and col. V/29-31, with col. verso XVII/3-4, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmVirtutesCeterae a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The further capacities the papyrus claims"@en, "Die weiteren Vermögen, die der Papyrus beansprucht"@de ;
+    skos:definition "Beside the inquiries the work claims, each with its own recipe: to obtain praise, love and reverence before every man, and before a king and his host; to avert the anger of a superior who will not parley; to see the bark of Phre; to make the moon or a god in the moon appear and speak; to see the shadow of every god and every goddess; to put the heart of a woman after a man and to separate a man and a woman; to bring a woman at once by a ring laid on a lighted lamp; to blind, to send a skin disease that shall not be healed, to make a man sleep for two days, and to kill; to heal the bite of a dog, a sting, poison in the heart, a bone in the throat, gout, water in the ear, ophthalmia and fever; to save a ship about to founder; and to know whether a woman will conceive."@en ;
+    skos:note "Listed in one node and not split, because the individual recipes are the material of a later run and the list itself is the finding: the same manual that carries the divination carries the poisons, the erotica and the medicine, and the editors' own table of contents sets them side by side under six headings. What that means for this graph is that the boundary between a procedure that claims an apparition and one that claims a physiological effect is not a boundary the transmission draws."@en ;
+    skos:note "Two of them are separated out below because they state both sides of a criterion, which almost nothing else in the work does: the pregnancy test at pmc:PdmProbatioGraviditatis and the assay of the stone at pmc:PdmProbatioLapidis."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XI, col. XIII, col. XV/24-31, col. XIX-XX, col. XXIII/1-20, col. XXIV, and col. verso V, VIII-X, XV, XVII, XX, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+#
+# What is required, and what the text says happens without it
+#
+
+pmc:PdmPuritas a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Purity, named twice as the chief matter"@en, "Die Reinheit, zweimal als die Hauptsache genannt"@de ;
+    skos:definition "The condition the work names above all others, and the only one for which it states the consequence of the want in plain words: if it be that you do not apply purity to it, it does not succeed, its chief matter is purity; and at the end of the recto, of the inquiry of the sun, its chief point is purity. What the word covers in the recipes is a room cleansed with natron water, new and untouched objects, a boy who has not gone with a woman, and an operator who is pure and who in several places has spoken to no one on earth since rising."@en ;
+    skos:note "The papyrus nowhere says how purity is to be ascertained, by whom, or what would show that it had lapsed. It is therefore the perfect assignment for an empty run: available in every case, verifiable in none, and named by the text itself as the one thing everything depends on."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XVII/26 and col. XXIX/30, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmResponsumPresupponitPuritatem a pm:Presupposing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The answer presupposes purity"@en, "Die Antwort setzt die Reinheit voraus"@de ;
+    skos:note "Entered at stated necessity because the source states the failure in the same clause as the requirement and in the plainest available form: it does not succeed. This is the rare case in this graph where a general condition is given a general consequence rather than being left to be read off a recipe."@en ;
+    pm:dependentStep pmc:PdmResponsumVerum ;
+    pm:priorStep pmc:PdmPuritas ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "If it be that you do not apply purity to it, it does not succeed; its chief matter is purity."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XVII/26, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmPuerIntactus a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The boy who has not yet gone with a woman"@en, "Der Knabe, der noch nicht bei einer Frau war"@de ;
+    skos:definition "The condition fixed on the medium and repeated in three separate recipes: a boy, pure, before he has gone with a woman; a boy who has not yet gone with a woman is he whom you make come before you; the boy standing before the lamp, he being pure and not having gone with a woman. A fourth passage requires in addition that the child be one who has been tested in his ears before."@en ;
+    skos:note "A condition of the body that cannot be acquired and that the boy himself is the only witness to. Set beside the ear test, the two requirements on the medium are a state he cannot demonstrate and a sign he reports from inside his own head; neither is anything an onlooker could check, and together they are the whole of his qualification. Nothing in the work asks whether he has answered correctly before."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. III/11, col. XXV/20-21 and col. XXVII/15, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmShenHnePresupponitPuerum a pm:Presupposing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The vessel-inquiry with a medium presupposes the untouched and tested boy"@en, "Die Gefäßbefragung mit Medium setzt den unberührten und geprüften Knaben voraus"@de ;
+    skos:note "Entered at prescribed order and not higher, deliberately. The work says who is to be brought and it says that the child must have been tested in his ears beforehand, but it nowhere says what happens if an untested or an unchaste boy is used; the nearest thing to a consequence is the grading of the test itself, which says that a boy whose left ear speaks is bad, and that is the outcome of the test and not of skipping it. The distinction is the one SPEC §17 keeps between an order and a necessity, and it is the commonest way a modern reading acquires a warrant the text does not give."@en ;
+    pm:dependentStep pmp:PdmShenHne ;
+    pm:priorStep pmc:PdmPuerIntactus ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. III/10-15 and col. X/14-15, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmHoraEtLuna a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The hour and the day of the moon on which the operation may be done"@en, "Stunde und Mondtag, an denen der Vorgang geschehen darf"@de ;
+    skos:definition "The work fixes several of its operations to a time and not to a state of either party. The vessel-inquiry with the eye-ointment is done from the fourth day of the lunar month until the fifteenth, which is the half-month when the moon fills the uzat. The divination opposite the moon is addressed to it on the fifteenth day when it fills the uzat, the operator having been pure for three days beforehand. The inquiry of the lamp must be done at midday in a place without light. The vessel-inquiry with the boy is carried until the time of the seventh hour of the day; another is done at the third hour of the evening. The inquiry of the sun is made at the moment the sun rises and comes up entire with the whole disk. Outside the inquiries: the priest's procedure is said opposite the Shoulder constellation on the third day of the month; the scarab is done at the rising of the sun, and repeated on the third of the lunar month; a love charm is done on the fourteenth of the lunar month; and the amulet for a gouty foot is made when the moon is in the constellation of Leo."@en ;
+    skos:note "Nine datings in one manual, and not one of them is stated with a consequence for acting outside the window. The work binds the operation to a time as firmly as any transmission in this holding and says nothing at all about what going outside the time would produce, which is the half of the construction that a reader supplies by himself if the node does not say so."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. III/15, col. VI/7, col. IX/17, col. X/21-22, col. XXI/19, col. XXIII/22-23, col. XXVII/37, col. XXIX/2-3 and col. verso IX/12, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+#
+# The announced signs, counted apart from everything else
+#
+
+pmc:PdmSignaAdventus a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "What the boy is told beforehand that he will see"@en, "Was dem Knaben vorher angesagt wird, dass er es sehen werde"@de ;
+    skos:definition "The signs announced in advance, in the order in which the recipes expect them. The light appears and grows in the flame of the lamp; the boy says I see the light; Anubis comes in and takes his stand; the shadow of the god appears about the lamp; the gods are brought in, seated at a table, and eat and drink; the god who will answer stands up and tells his name; and in the variant done alone, the operator sees the god behind him while standing or lying down. In one recipe the boy is first asked what he sees and answers that he sees a darkness, and is then told the sentence he is to say next."@en ;
+    skos:note "Entered under the separate count SPEC §15 requires for signs of success. Every one of them is told to the medium before the session by the person who will afterwards ask him whether it happened, and in the darkness-answer the text supplies the boy's next line as well. Read as evidence they can only confirm; the reason they are here is that a transmission which announces its signs in advance, in this detail, is itself a finding about the transmission."@en ;
+    skos:note "The count for this work, which is the point of keeping the two apart. Seven or eight announced signs of arrival against the conditions of failure listed at pmc:PdmCompulsioNonAdventus, of which not one is a verdict on the operation. The two procedures in this file that do state a verdict on both sides — the pregnancy test and the assay of the stone — are the two that have nothing to do with an apparition."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. II/1-3 and II/24-27, col. VI/6, col. XIV/24-25, col. XVII/12-15, col. XIX/25-32 and col. XXVII/16-19, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+#
+# The conditions of failure, and what stands in their place
+#
+
+pmc:PdmCompulsioNonAdventus a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Nothing appeared, and what the text prescribes is a stronger name"@en, "Es erschien nichts, und was der Text vorschreibt, ist ein stärkerer Name"@de ;
+    skos:definition "The work takes up the case of an inquiry that produces nothing in at least six places and never once treats it as an outcome. If the boy opens his eyes and does not see the light, he is made to close them and the operator calls again. If obduracy takes place, the operator rises and recites the summons, which is the god's compulsion. If obstinacy appears, the boy not having seen the god, the operator turns round and pronounces the compulsion. If the god delays so as not to come in, a further cry is given. If the light has not come forth, the boy himself is made to speak to the lamp, and then the god reveals himself to him in the moment named. If the light is slow to come within, a seventh-times name is said, frankincense is put on the brazier, and a great name is uttered forwards and backwards four times. And if the gods give no answer once they are in, another name is recited nine times until they inquire for the operator truthfully."@en ;
+    skos:note "There is no term anywhere in the work at which the operator is told to stop. Non-appearance is never an outcome of the procedure; it is the instruction to proceed to a stronger address of the same kind, and the strongest of them is a formula of compulsion that asserts the speaker's identity with the god. A session is not over until it has succeeded, and the transmission therefore cannot register a failed run."@en ;
+    skos:note "Where the work does assign a cause, it assigns it to the operator or to the medium and never to the procedure. The general assignment is purity at pmc:PdmPuritas; the particular one is at pmc:PdmCautioAspectus, where a boy who has looked away is afraid and the session is broken off. Both are conditions the only witnesses to which are the two people in the room."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. II/3-4, col. VI/21-22, col. VIII/1 and VIII/27-28, col. XVII/12-15, col. XXIX/16-18 and col. verso XXVI/4-8, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCautioAspectus a pm:Cautioning ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Do not let him look elsewhere, or he is afraid"@en, "Lass ihn nirgends anders hinsehen, sonst fürchtet er sich"@de ;
+    skos:definition "The one instruction in the work whose breach is given a named consequence in the medium. The boy is to look towards the lamp and towards nothing else; if he does not look towards it, then he is afraid. Where that has happened the operator is to do all these things, cease from the inquiry, return, make the boy close his eyes, and recite a further invocation over him if the gods go away and the boy ceases to see them, asking that the boy not be frightened, terrified or scared and be made to return to his original path. A separate formula dismisses the god to his home at the end of a successful session, and the lamp, the vessel and the cloth are then taken off the child."@en ;
+    skos:note "The caution is about the medium and not about the operator or the god, and the harm it names is fright. It is the only place in the work where an inquiry is broken off, and the reason given is the state of the boy; a run ended this way is therefore not an inquiry that produced nothing but a boy who was not fit at that moment."@en ;
+    pm:cautionsAbout pmp:PdmShenHbs ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XVII/16-20, with col. XIV/27-30, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+#
+# The two places where both sides of a criterion are stated
+#
+
+pmc:PdmRamshauFormaDuplex a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Come as a priest if it will happen, as a Kalashire if it will not"@en, "Komm als Priester, wenn es geschieht, als Kalashire, wenn nicht"@de ;
+    skos:definition "A direct inquiry ascribed to the voice of Pasash the priest of Kes, which the informant is said to report as tested nine times. The operator declares himself Ramshau son of Tapshau and lays down in advance which of two appearances is to mean which answer: if the thing in question shall happen, the god is not to come with his face of Pekhe but in his form of a priest, in his figure of a servant of the temple; but if it shall not come to pass, he is to come in his form of a Kalashire. The formula is said seven times opposite the Shoulder constellation on the third day of the month, over a clove of three-lobed white garlic pierced by three iron needles, which is then put at the operator's head; then he attends to the operator and speaks with him."@en ;
+    skos:note "The criterion is announced to the participant before the session and states both sides, which is the combination this holding had found nowhere. In the ten witnesses gathered at pmc:TheCriterionNoPartyControls the two-sidedness always belongs to the other column, the one where the deciding event is a physical process; where the criterion is an announced appearance the transmissions state the success side alone. Here the appearance is announced, the two forms are distinct and mutually exclusive, and each is tied to one of the two answers before anything is seen."@en ;
+    skos:note "What weakens it, stated so that it is not read as more than it is. The appearance occurs in a dream or a vision belonging to one person, so nobody but the operator can say which form came; there is no provision for the case in which neither form comes; and the promise that he attends to you and speaks with you means the session can still be carried by speech if the forms fail. The finding is therefore about the wording of the criterion and not about a practice that could be checked, which is the limit pmc:TheCriterionNoPartyControls states of itself."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. VIII/12-16 and col. IX/17-18, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmProbatioGraviditatis a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The way to know of a woman whether she is with child"@en, "Wie man an einer Frau erkennt, ob sie schwanger ist"@de ;
+    skos:definition "A test standing among the medical recipes of the verso. The woman passes her water on a named herb in the evening; when the morning comes, if the plant is found scorched she will not conceive, and if it is found flourishing she will conceive. Both readings are stated, in consecutive clauses, and the outcome is a state of a plant on the following morning."@en ;
+    skos:note "The most checkable claim in the whole work and the only one in it whose criterion neither party can produce at will, whose two sides are both stated, and whose verdict falls due at a named time without any further address being prescribed. It stands in the same manuscript as the inquiries, written by the same hand, which is why it is worth a node beside them rather than in a file of medicine: the transmission that cannot register a failed inquiry can state a falsifiable prognosis three columns later."@en ;
+    skos:note "The identity of the herb is not established here. The translation says on this herb as above again, referring back to a plant described in the preceding entries of the same column, and the editors note a similar prescription in a nineteenth-dynasty text. What the node claims is the form of the test and its two readings, which is what the wording carries; the botanical identification and the modern work on this test were not opened in this run and are prima-materia#740."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. verso V/4-8, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmProbatioLapidis a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The way to know that the stone is genuine"@en, "Wie man erkennt, dass der Stein echt ist"@de ;
+    skos:definition "An assay of a material, given in the plant and drug list of the verso. Of the white stone called foam of the moon the text says that there is another sort which is made into lime, and that the way to know it that it is genuine is this: you grind a little with water, you rub it on the skin of a man for a short time, then it removes the skin."@en ;
+    skos:note "A stated procedure with a stated outcome on a body other than the operator's, applied to the ingredient rather than to the operation. The work thus contains the form of a test and applies it to what it buys and not to what it does. That contrast is the finding, and it is the same one the pregnancy test makes from the other direction."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. verso III/7-13, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmPodagraInterrogatio a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "You ask the man for three days whether it has hearkened"@en, "Du fragst den Mann drei Tage lang, ob es gehört hat"@de ;
+    skos:definition "The gout treatment of the verso sets the man down with clay under his feet, and then: you ask the man, saying, Has it hearkened? for three days. Thereafter a further course of anointing follows, with an ant cooked in oil of henna, then figs, dried grapes and potentilla pounded with wine, and the operator blows on him with his mouth."@en ;
+    skos:note "A term and a question, which is more than any inquiry in the work carries, and it is put to the patient rather than to a sign. What follows the three days is not a verdict but the next remedy, so the interval orders the treatment and does not close it. It is entered because a stated interval with a stated question is the raw material of a condition of failure, and because the work has three of them in its medical half and none in its divinatory one."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. verso VIII/1-8, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+#
+# What the papyrus says about where it got its procedures and how it knows
+# they work
+#
+
+pmc:PdmDonatoresNominati a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The compiler names who gave him the procedure"@en, "Der Zusammensteller nennt, wer ihm das Verfahren gab"@de ;
+    skos:definition "The work repeatedly says where a recipe came from, in the first person. A vessel-divination which a physician of the nome of Pemze gave to me; another vessel-inquiry which a physician in the Oxyrhynchus nome gave me; that which another man said to me; a direct inquiry by the voice of Pasash the priest of Kes, he the informant telling it. Beside the donors it cites competing copies: another roll says, as says another book, another volume saith, another says, another book gives this name instead."@en ;
+    skos:note "A compiler who marks his sources and his variants is doing in the third century what this graph does now, and the marks are the reason several of its claims can be attributed at all. Two of the four named donors are physicians, which places the divination and the medicine of the verso in the same hands and not merely in the same manuscript."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. I/1, col. VIII/12, col. XIV/1 and col. XVIII/7, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmProbatumNovies a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Tested, and tested nine times"@en, "Erprobt, und neunmal erprobt"@de ;
+    skos:definition "The work marks certain procedures as having been tried, and twice attaches a number. A question-form, tested. A method of lucky-shadows, that is tested. A direct inquiry by the voice of Pasash the priest of Kes, he tells it, saying it is tested, nine times. You do it also by vessel-inquiry alone, excellent, tried, tested nine times. Behold a form of inquiry of the sun, of which they say it is well tested. A medicament, when you wish to drug a man — tested. Elsewhere the marks are bare praise: very excellent, very good, there is nothing in the world better than it, excellent and tried."@en ;
+    skos:note "Nowhere does the work say who tried, on what question, against what afterwards, or what an unsuccessful trial would have looked like. The mark is attached to the recipe and never to an outcome, and it sits in the same manuscript as the graded compulsions that make an unsuccessful trial unrecordable. A claim of nine trials from a transmission that has no way of counting a failure is a claim about nine performances and not about nine results."@en ;
+    skos:note "The editors read the phrase as a formula rather than as a count: nine times tried seems proverbial, they note, comparing the two places where it stands. That reading is theirs and is entered as theirs; what the text carries is the number, twice, at two unconnected recipes, and once as a report of what somebody else said about a third."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. IV/23, col. V/3, col. VIII/12, col. XIV/31, col. XXIV/1 and col. XXIX/1, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
