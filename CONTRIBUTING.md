@@ -386,6 +386,18 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Buch von Taliesin — Giraldus Cambrensis gehört als Bericht eines
   Außenstehenden dazu, die Keltologie geht als `pm:evidenceFrom` ein, nie als
   Quelle)
+- `korpus:shinto` (die japanischen Reichschroniken und Liturgien: Kojiki in
+  Chamberlains Übersetzung von 1882, Nihon shoki in Astons Übersetzung von
+  1896, die Norito des Engishiki in Satows Übersetzungen in den Transactions
+  of the Asiatic Society of Japan 1879–1881, dazu Kogoshūi und Kujiki — die
+  Kokugaku-Kommentare von Motoori und Hirata gehören als spätere Bearbeiter
+  dazu, die moderne Japanologie geht als `pm:evidenceFrom` ein, nie als
+  Quelle)
+- `korpus:chinaberichte-japan` (die chinesischen Geschichtswerke, soweit sie
+  über Japan berichten, voran die Beschreibung von Wo im Sanguozhi, Wei shu
+  30 — sie sind Berichte von Außenstehenden und werden von `korpus:shinto`
+  getrennt geführt, weil dort die Überlieferung über sich selbst spricht und
+  hier über sie gesprochen wird)
 
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label

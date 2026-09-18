@@ -1,0 +1,197 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Shintō, taken down from the register
+#
+# The instance was registered in traditions/registry-east-asian.ttl and is
+# moved here now that passages have been read. One of the three works its
+# registration names has been opened, the chronicle of 720, in the English of
+# 1896; the Kojiki and the norito of the Engishiki have not been opened and
+# the file says so at the work identifiers rather than letting the coverage
+# state cover them.
+#
+# Why this one out of the register. The examinability-driven entrance of
+# SPEC §14 asks for the transmissions that name signs, terms, cautions and
+# conditions of failure. This chronicle carries two procedures that state
+# their criterion on both sides before the event — an oath-divination whose
+# outcome is a sex ratio and an ordeal of boiling water — and it carries, for
+# the second of them, something almost nothing else in this holding does: a
+# report of what happened when it was run, with the mechanism of the outcome
+# named inside the report.
+#
+# Order of the file: the tradition and what was read; the divination that is
+# applied to a procedure that went wrong; the oath with its criterion and the
+# dispute the same work carries about how to read it; the ordeal, its
+# criterion, its reported outcome; the two conditions the transmission sets on
+# anyone who approaches the gods; and the case of an instruction carried out
+# and followed by nothing.
+#
+
+pmt:Shinto a pm:Tradition ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "Shintō"@en, "Shintō"@de ;
+    skos:definition "The Japanese transmission of kami, of purification as the central operation, and of formal address preserved in the imperial liturgies."@en ;
+    skos:note "Read in this run at the wording: the chronicle of 720 in the English of W. G. Aston of 1896, volume I, which covers Books I to XVI, from the Age of the Gods to the reign of Seinei. Read closely and in full: Books I and II, the two Books of the Age of the Gods with all their variant versions; and within Books V, IX, X and XIII the passages on divination, on the ordeal and on abstinence. Not read: the reigns of Books III, IV, VI to VIII, XI, XII, XIV to XVI except where a search fell in them, and the whole of volume II, Books XVII to XXX. Not opened at all: the Kojiki and the norito of the Engishiki, which its registration names beside the chronicle."@en ;
+    skos:note "The contact route stays at disputed and this run did not settle it, but it did read what the work itself says about the question. The chronicle is written in Chinese, dates by the Chinese cycle, and quotes Chinese books; and at the place where an emperor proposes to commit a question to the Sacred Tortoise, the editor notes that the ancient Japanese divination was by roasting a deer's shoulder-blade and that the tortoise-shell is the Chinese practice. The work therefore carries two divinatory techniques at once, one of which its own editor marks as foreign, and the borrowing is visible inside the source rather than only in the scholarship. What the run did not do is establish which parts of the doctrine travel with the technique, and no node here claims it."@en ;
+    skos:note "What kind of witness this work is. It is a court chronicle compiled in 720 out of earlier material, and it says so of itself by printing its variants: the Age of the Gods is given as a main narrative with up to eleven further versions introduced as in one writing it is said, and the versions differ on matters this project cares about, including who produced which children in the oath below. A transmission that prints its disagreements is a better witness than one that smooths them, and it is also a warning: a claim read off the main text alone is a claim about one recension."@en ;
+    pm:principalCorpus "Kojiki; Nihon shoki; the norito of the Engishiki" ;
+    pm:corpusWork pmw:Nihonshoki, pmw:Kojiki, pmw:EngishikiNorito ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Nihongi, Book I, the Age of the Gods, in the English of W. G. Aston, Nihongi: Chronicles of Japan from the Earliest Times to A.D. 697, vol. I, London: Kegan Paul, Trench, Trübner, 1896, pp. 35-40" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:Nihonshoki a dcterms:BibliographicResource ;
+    rdfs:label "Nihon shoki (Nihongi), the chronicle of 720"@en, "Nihon shoki (Nihongi), die Chronik von 720"@de ;
+    skos:note "Opened on 2026-09-18 in the English of W. G. Aston, volume I of 1896, covering Books I to XVI. Volume II, Books XVII to XXX, was not obtained in this run; that is a statement about the run and not about the work."@en .
+
+pmw:Kojiki a dcterms:BibliographicResource ;
+    rdfs:label "Kojiki, the record of 712"@en, "Kojiki, die Aufzeichnung von 712"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It carries its own version of the oath-divination entered below, and a run that wants to know whether the disagreement about how to read that criterion is confined to one chronicle goes here first. The English of B. H. Chamberlain of 1882 is public domain."@en .
+
+pmw:EngishikiNorito a dcterms:BibliographicResource ;
+    rdfs:label "The norito of the Engishiki"@en, "Die Norito des Engishiki"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is where the purification liturgy entered below stands in full; the chronicle only says that it was recited and by whom. The English of E. M. Satow in the Transactions of the Asiatic Society of Japan of 1879 to 1881 is public domain."@en .
+
+#
+# The divination that is put to a procedure which went wrong
+#
+
+pmp:ShintoFutomani a pm:Practicing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "The Greater Divination"@en, "Die Große Wahrsagung"@de ;
+    skos:definition "The procedure the chronicle names when a question is put to the gods: futomani, the Greater Divination. It is used to find the cause of a failed rite, to fix a time for a second attempt, to choose the plot of ground in which the rice of the first-fruits festival is grown, and, at the sending down of the heavenly grandchild, as the service a named house is appointed to perform."@en ;
+    skos:note "The work names the procedure and does not describe it. What it consisted in — the roasting of a deer's shoulder-blade and the reading of the cracks — is supplied by the editor of the translation read here, who also states that the tortoise-shell used elsewhere in the same chronicle is the Chinese practice and not the Japanese one. The method is therefore entered as his and not as the chronicle's, and a run that wants it from inside the transmission has to go to another work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Books I and II, the Age of the Gods, in the English of W. G. Aston, vol. I, London 1896, pp. 15, 83 and 86" .
+
+pmc:ShintoFutomaniCausaDefectus a pm:Conceptualizing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "The divination that says why the rite produced a leech"@en, "Die Wahrsagung, die sagt, warum der Ritus einen Blutegel hervorbrachte"@de ;
+    skos:definition "The first use the chronicle makes of the procedure, and it is put to a rite that went wrong. The two deities set up the pillar of heaven, agree to go round it from opposite sides, and meet; the female speaks first. Their first child is a leech, which is put in a reed-boat and set adrift, and their next is not counted among their children either. They return to heaven and report the circumstances, and the heavenly gods divine the matter by the Greater Divination and instruct them: it was by reason of the woman's having spoken first. They then divine a time, go down again, and the second attempt succeeds."@en ;
+    skos:note "Every element of the shape this holding calls the excusing clause is here and none of it is a later gloss: a procedure whose outcome cannot be judged apart from itself, an outcome that plainly did not come off, a cause located in a nameable act of one of the two operators, and a repetition that succeeds. What makes it worth a node rather than a mention is that the cause is not asserted by the operators but produced by a second procedure whose own outcome nobody could establish either. The excuse is itself divined."@en ;
+    skos:note "The time of the second attempt is divined as well, which puts a calendar condition on the repetition. The chronicle does not say what would have followed from going down at another time."@en ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book I, the Age of the Gods, in the English of W. G. Aston, vol. I, London 1896, pp. 15-16" .
+
+#
+# The oath with its criterion, and the dispute the same work carries about how
+# to read it
+#
+
+pmp:ShintoUkehi a pm:Practicing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "The oath that settles a question by what is produced under it"@en, "Der Eid, der eine Frage durch das entscheidet, was unter ihm hervorgebracht wird"@de ;
+    skos:definition "The procedure by which the sun goddess and her younger brother settle whether his heart is pure. The two stand opposite one another, agree on what the outcome is to mean, and then each takes an object, rinses it in the true-well of heaven, chews or bites it and blows it away, whereupon deities are produced from the mist of the breath. The sexes of the deities produced are the outcome read."@en ;
+    skos:note "Its shape is what makes it valuable to this holding. The criterion is fixed by agreement before anything is done; the event that decides it is the sex of children, which neither party is in a position to determine; and the transmission states what each of the two possible outcomes would mean. That combination is the first column of pmc:TheCriterionNoPartyControls, and this is the first witness for it from the Japanese material."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book I, the Age of the Gods, in the English of W. G. Aston, vol. I, London 1896, pp. 35-36" .
+
+pmc:ShintoUkehiCriterium a pm:Conceptualizing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "Females for an impure heart, males for a pure one"@en, "Töchter für ein unreines Herz, Söhne für ein reines"@de ;
+    skos:definition "The criterion as the main narrative states it, in the brother's own words and before anything is produced: let us make an oath together; while bound by this oath we shall surely produce children; if the children which I produce are females, then it may be taken that I have an impure heart, but if they are males, then it must be considered that my heart is pure."@en ;
+    skos:note "Both sides are named in one sentence, and the failing side falls on the speaker who proposes the test. That is the rarer of the two shapes: a criterion whose adverse reading costs the operator, stated by the operator."@en ;
+    skos:note "What the sentence leaves open is which children count as his, and the rest of the passage turns on exactly that. The criterion says the children which I produce; it does not say what produces a child — the breath that blows the fragments away, or the object the fragments came from. See pmc:ShintoUkehiVariaeLectiones."@en ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book I, the Age of the Gods, in the English of W. G. Aston, vol. I, London 1896, p. 35" .
+
+pmc:ShintoUkehiVariaeLectiones a pm:Disputing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "The same outcome, four versions, and the verdict moves with the attribution rule"@en, "Derselbe Ausgang, vier Fassungen, und das Urteil wandert mit der Zurechnungsregel"@de ;
+    skos:definition "The chronicle prints the episode four times and the physical outcome is the same in all of them: three female deities and five or six male ones. What differs is who is said to have produced which, and the verdict follows that and not the outcome. In the main narrative the goddess takes her brother's sword and produces the three females while he takes her jewels and produces the five males; she then assigns the children by the ownership of the material, so that the males are hers and the females his, and the narrative draws no verdict at all. In the first variant each uses his or her own object, and the passage concludes that he had thereby acquired proof of his victory and that she learnt his intentions were free from guilt. In the second variant the two first exchange objects by covenant, she produces the females from his jewels and he the males from her sword, and the passage closes with the words such is the story and no verdict. In the third variant she states the criterion herself over the children he will produce, she produces the females from her own swords and he six males from his own jewel-strings, he says truly I have won, and she is said to have known exactly that his intentions had been honest from the first."@en ;
+    skos:note "The disagreement is not about what happened. It is about the rule that maps the event onto the criterion, and that rule was not fixed when the criterion was agreed. Two of the four versions therefore return a verdict and two return none, out of one and the same outcome."@en ;
+    skos:note "That is a third way for an announced criterion to decide nothing, and this holding did not have it. pmc:TheCriterionNoPartyControls describes criteria that state one side only, and its protocol at examinations/both-sides-of-the-criterion.ttl added a second shape, the failing side named and then abolished. Here the criterion is two-sided, the event is uncontrollable, the outcome is fixed and identical across the witnesses, and the verdict still varies — because the attribution was underdetermined. A reader who wants to know whether a stated criterion can settle anything has to ask not only whether both sides are named but whether the mapping is."@en ;
+    skos:note "Worth stating so it is not read as more than it is: the four versions are four recensions of one episode in one work, not four transmissions. What the node establishes is that the compiler of 720 had before him readings that disagreed on the verdict and printed them side by side without choosing."@en ;
+    pm:disputedClaim pmc:ShintoUkehiCriterium ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book I, the Age of the Gods, main narrative, in the English of W. G. Aston, vol. I, London 1896, pp. 35-36", "Nihongi, Book I, the Age of the Gods, the three versions introduced as in one writing it is said, in the English of W. G. Aston, vol. I, London 1896, pp. 37-40" .
+
+#
+# The ordeal, its criterion, and what the chronicle says happened when it was
+# run
+#
+
+pmp:ShintoKukatachi a pm:Practicing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "Kukatachi, the ordeal of boiling water"@en, "Kukatachi, die Probe des siedenden Wassers"@de ;
+    skos:definition "The procedure ordered in the fourth year of the emperor Ingyō to settle which houses and surnames were falsely claimed. The people of the various houses and surnames are to wash themselves and practise abstinence, and then, each one calling the gods to witness, to plunge their hands into boiling water. Cauldrons were placed on a named spur of a named hill and everybody was told to go there. The chronicle gives two variants of the same ordeal: mud was sometimes put in a cauldron and made to boil and the bared arms used to stir it, and sometimes an axe was heated red-hot and placed on the palm of the hand. Those taking it put on straps of tree-fibre before coming to the cauldrons."@en ;
+    skos:note "The preparation is the same purification the rest of this file turns on — washing and abstinence — and it is required of everyone rather than of an officiant. An earlier reign carries the same ordeal in its two-party form: two ministers who wrangled so that the right and the wrong could not be ascertained were sent to the bank of a river to undergo the ordeal of boiling water, and one of them was victorious. That passage states no criterion; it states a winner."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book XIII, Ingyō 4th year, 9th month, in the English of W. G. Aston, vol. I, London 1896, pp. 316-317", "Nihongi, Book X, Ōjin 9th year, 4th month, in the English of W. G. Aston, vol. I, London 1896, p. 258" .
+
+pmc:ShintoKukatachiCriterium a pm:Conceptualizing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "He who tells the truth will be uninjured; he who is false will assuredly suffer harm"@en, "Wer die Wahrheit sagt, bleibt unversehrt; wer falsch ist, nimmt gewiss Schaden"@de ;
+    skos:definition "The criterion, announced to the whole company before the ordeal and in the same words to everyone: he who tells the truth will be uninjured, he who is false will assuredly suffer harm."@en ;
+    skos:note "Both sides stated, in one sentence, of an event nobody present can produce at will, and announced before the first hand goes in. It is as clean an instance of the first column of pmc:TheCriterionNoPartyControls as the holding carries, and unlike most of them it is followed by a report of the outcome."@en ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book XIII, Ingyō 4th year, 9th month, in the English of W. G. Aston, vol. I, London 1896, p. 317" .
+
+pmc:ShintoKukatachiExitus a pm:Conceptualizing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "The outcome reported, and the reason the chronicle gives for it"@en, "Der berichtete Ausgang, und der Grund, den die Chronik dafür angibt"@de ;
+    skos:definition "What the chronicle says happened. Those who were true remained naturally uninjured, and all those who were false were harmed. Then, in the next sentence: therefore those who had falsified their titles were afraid, and slipping away beforehand, did not come forward. From that time the houses and surnames were spontaneously ordered, and there was no longer anyone who falsified them."@en ;
+    skos:note "The transmission reports a perfect result and, immediately after it, the mechanism that would produce a perfect result without the water doing anything: the people with something to hide did not take the test. It names its own selection effect, in its own voice, in the sentence after the verdict. Nothing else in this holding does that, and it is the reason this node is kept apart from the criterion above rather than folded into it."@en ;
+    skos:note "The two sentences also stand in the wrong order for the account they give. If the false had slipped away beforehand, there was nobody left to be harmed, and the clause saying that all those who were false were harmed has no subject. The chronicle asserts both and reconciles neither."@en ;
+    skos:note "What the passage does not carry: any number. Not how many came, not how many were harmed, not how many withdrew. The editor of the translation read here adds in a note that the measure can only have been applicable to a dominant caste and that the nation cannot all have been subjected to the ordeal; that is his and is entered as his."@en ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book XIII, Ingyō 4th year, 9th month, in the English of W. G. Aston, vol. I, London 1896, p. 317" .
+
+pmc:ShintoKukatachiYieldsDiscrimen a pm:Yielding ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "The ordeal separates the true from the false"@en, "Die Probe scheidet die Wahren von den Falschen"@de ;
+    pm:byPractice pmp:ShintoKukatachi ;
+    pm:yieldsCapacity pmc:ShintoKukatachiCriterium ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Shinto ;
+    skos:note "Entered as the claim of the transmission. It is one of the few in this holding for which the transmission also supplies an outcome and a rival explanation of that outcome, both at pmc:ShintoKukatachiExitus, so a protocol on it would start further along than usual."@en ;
+    dcterms:source "Nihongi, Book XIII, Ingyō 4th year, 9th month, in the English of W. G. Aston, vol. I, London 1896, pp. 316-317" .
+
+#
+# What is required of anyone who approaches the gods
+#
+
+pmc:ShintoHarahi a pm:Conceptualizing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "Harahi, the purification that is imposed as a penalty"@en, "Harahi, die Reinigung, die als Buße auferlegt wird"@de ;
+    skos:definition "The central operation of the transmission, and the chronicle introduces it as a sentence passed on an offender. After the brother's offences against the rice-fields, the new palace and the weaving hall, he is convicted and fined in the articles required for the ceremony of purification: things abhorrent of luck from the tips of his fingers and things abhorrent of calamity from the tips of his toes, white soft offerings of his spittle and blue soft offerings of his nose-mucus. A named deity is then charged with the Great Purification Liturgy and made to recite it, and the offender is banished."@en ;
+    skos:note "Two things follow from the passage that a summary loses. The purification is a penalty with a tariff, paid in materials taken from the offender's own body; and the liturgy is not given here — the chronicle says only that it was recited and by whom, and the text of it stands in the work this file lists as unopened. The chronicle closes with an aetiology: this is the reason why the people of the world are careful in the disposal of their own nails."@en ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book I, the Age of the Gods, in the English of W. G. Aston, vol. I, London 1896, pp. 45 and 49-50" .
+
+pmc:ShintoImi a pm:Conceptualizing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "Imi, the abstinence practised on behalf of another"@en, "Imi, die Enthaltung, die für einen anderen geübt wird"@de ;
+    skos:definition "The standing condition on approach. Two named deities are told to take the heavenly divine fence down to the central land and there to practise religious abstinence on behalf of the sun goddess's descendants; the hereditary corporation descended from one of them is named from the same word. The rice of the first-fruits festival is grown in a plot fixed by divination and prepared under strict conditions of ceremonial purity, and the emperor who is not answered bathes and practises abstinence before praying again."@en ;
+    skos:note "The construction worth recording is that the abstinence is performed on behalf of somebody else. The person who keeps the condition and the person for whom it is kept are different, which means the one who could tell whether it lapsed is not the one who bears the consequence. Compare generalizations/displaced-penalties.ttl; this is the same separation seen from the requirement side rather than from the penalty side."@en ;
+    skos:note "The editor of the translation quotes a Chinese book of about the third century which states the consequence of a lapse in plain terms — that when the Japanese fall ill or meet with disaster they set it down to the abstainer's failure to keep his vows and put him to death. That work was not opened in this run and no node here rests on it; the address is in prima-materia#742."@en ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book II, the Age of the Gods, in the English of W. G. Aston, vol. I, London 1896, pp. 82-83", "Nihongi, Book V, Sujin 7th year, 2nd month, in the English of W. G. Aston, vol. I, London 1896, p. 152" .
+
+#
+# An instruction carried out, and nothing following
+#
+
+pmc:ShintoSujinIteratio a pm:Conceptualizing ;
+    pm:fromWork pmw:Nihonshoki ;
+    rdfs:label "He worshipped as he was told, but without effect"@en, "Er verehrte, wie ihm gesagt war, und es blieb ohne Wirkung"@de ;
+    skos:definition "The chronicle's plainest case of an empty run. Calamities befall the country; the emperor assembles the deities and inquires by divination; a princess is inspired to answer that reverent worship would pacify the land of itself, and names the god who speaks. The emperor worshipped as he was told, but without effect. He then bathes, practises abstinence, purifies the interior of the hall, and prays again, asking whether the observance of due ceremonies is not yet complete and calling the non-acceptance cruel. That night the same god appears in a dream with a further instruction: let a named man be made master of the worship, and there will be peace at once. Three other people report the same dream, the man is found, the appointment is made, and the chronicle then says the country was at peace."@en ;
+    skos:note "The sequence is the one generalizations/no-failed-run-counts.ttl describes, in narrative rather than in doctrine. An instruction is given by the procedure, carried out, and produces nothing; the emperor's own reading of the nothing is that his ceremonies were incomplete; and the remedy prescribed is a further and stronger address of the same kind, ending in a further instruction that supersedes the first without withdrawing it. At no point is the possibility raised that the first answer was wrong."@en ;
+    skos:note "The confirmation by three independent dreamers is the other half and is worth keeping in view: the second instruction is corroborated by three further people having the same dream on the same night. That is a check the transmission itself supplies, and it checks the instruction and not the outcome."@en ;
+    pm:withinTradition pmt:Shinto ;
+    dcterms:source "Nihongi, Book V, Sujin 7th year, 2nd and 8th months, in the English of W. G. Aston, vol. I, London 1896, pp. 151-153" .
