@@ -122,3 +122,51 @@ pm:fromWork a owl:ObjectProperty ;
     rdfs:range dcterms:BibliographicResource ;
     skos:definition "The work that a dcterms:source of this node lies in. A node whose sources lie in two works carries both."@en ;
     skos:note "It does not replace dcterms:source. The source keeps the passage and the edition; this carries only the identity of the work, which a literal cannot carry without a string comparison."@en .
+
+#
+# What a procedure calls for, as identifiers
+#
+# The same problem one level down, and it was met on 2026-09-18 at a working
+# manual of recipes. A procedure calls for things by name — a lamp in which no
+# minium has been put, milk of a black cow, blood of a hoopoe, a wick of clean
+# linen, a fixed form of words said seven times — and those names carried the
+# whole difference between one recipe and the next. They were entered as prose
+# inside skos:definition, which means a reader can see them and no query can
+# join them: whether two transmissions with no contact route call for the same
+# substance could only be guessed by comparing strings, and that guess is the
+# one that failed in both directions for works (prima-materia#737).
+#
+# The answer is the works answer and nothing new. The thing gets an IRI under
+# materia/, the process points at it with pm:uses, and the claim stays where it
+# was: in the definition of the process, and, where the source states a
+# necessity, in a pm:Presupposing node with its consequence. The identifier
+# asserts nothing. It carries a label and, where the identification is
+# doubtful, a note saying so; it never carries dcterms:source, pm:withinTradition
+# or any claim, because it is not a claim — it is the join key under one.
+#
+# That is why this does not reopen the substance ban of SPEC §3. The ban is on
+# classes that would let a thing carry a claim, so that a graph of Symbols and
+# Entities would report substances where it holds assertions about them. An
+# identifier reports nothing. The thing is typed skos:Concept, a term in a
+# controlled vocabulary, for the same reason a work is typed
+# dcterms:BibliographicResource: the external class says what the IRI is for
+# and a pm: class would either be a static substance class or a gerund
+# pretending a substance is a process.
+#
+# One namespace for three kinds — substance, instrument, and fixed utterance —
+# because no query yet needs them apart. When one does, skos:inScheme separates
+# them then. One predicate for the same reason; what kind of thing it is, is
+# readable from the thing.
+#
+# What it buys is the query the holding cannot ask today: which procedures
+# across which traditions call for the same thing, and how far apart those
+# traditions stand. That is convergence material of a kind the four entrances
+# of SPEC §14 do not produce, because nobody asked for it.
+#
+
+pm:uses a owl:ObjectProperty ;
+    rdfs:label "uses"@en, "verwendet"@de ;
+    rdfs:range skos:Concept ;
+    skos:definition "A thing this process calls for by name: a substance, an instrument, or a fixed form of words. An identifier for joining, never a claim."@en ;
+    skos:note "Says nothing about whether the thing is necessary, whether it works, or what it does. Necessity is a pm:Presupposing node with its stated consequence; what the source says the thing is for stays in the definition of the process that calls for it."@en ;
+    skos:note "Its absence means nobody has entered the materials of that procedure, not that it calls for none. The same asymmetry pm:Testing and pm:Searching keep, and for the same reason: stubs would destroy it."@en .
