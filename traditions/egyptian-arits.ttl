@@ -1,0 +1,289 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the twenty-one officers of the seven arits
+#
+# The second instalment of the names of the Book of the Dead. The first,
+# traditions/egyptian-names.ttl, holds the forty-two gods of the hall of the
+# two Maati. This file holds chapter 147, which is shorter and harder in one
+# respect: the chapter consists almost entirely of names. Each of the seven
+# arits is guarded by three officers — a doorkeeper, a watcher and a herald —
+# and the text does nothing with them except name them, one after the other,
+# before the dead man makes his address. Twenty-one names, no epithets, no
+# functions beyond the office, nothing said about any of them anywhere else in
+# the corpus this run read.
+#
+# That is worth saying plainly, because it is the strongest single piece of
+# evidence for what pmc:AegyptiaRubricaScientiae and pmc:AegyptiaPortaeNomina
+# describe. A chapter whose whole content is a list of names to be known is
+# not a chapter about gods. It is an examination paper with the answers
+# printed on it.
+#
+# Identifiers, and here they are easier than in the first file. Budge's
+# translation of 1901 carries these names transliterated in the running text
+# rather than translated, because they are not translatable epithets; the
+# Papyrus of Ani is his base manuscript for the chapter and he names it. So
+# the form in the translation is the form of the edition, and no repair
+# against the vocabulary was needed. Two names carry a restoration of Budge's
+# own, marked in the edition with square brackets and noted at the node.
+#
+# What is not here. The twenty-one pylons of chapters 145 and 146, whose names
+# Budge gives as English epithets rather than in transliteration — Clother is
+# her name, Knife which cutteth — so that an identifier formed from them would
+# be formed from a translation, which AGENTS.md forbids. That bundle needs the
+# hieroglyphic text or a transliterating edition and is left open. Likewise
+# the named parts of the doorway of the hall of the two Maati in chapter 125,
+# which are held as prose at pmc:AegyptiaPortaeNomina.
+#
+
+pmp:AegyptiaSeptemAritae a pm:Practicing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The passage of the seven arits: knowing the three names and saying the address"@en, "Der Durchgang der sieben Arits: die drei Namen wissen und die Anrede sprechen"@de ;
+    skos:definition "The operation chapter 147 prescribes. At each of the seven arits the dead man is given three names — the doorkeeper, the watcher, the herald — and then says an address of his own, in which he states what he has done for Osiris and asks that the way be opened. The naming and the address are the whole of it. No object is handled, no material is named, no time of day is set, and no assistant is required."@en ;
+    skos:note "The structure is that of chapter 125 with the dialogue removed. There the doorway asks and the dead man answers; here the answers are supplied in advance and there is no question. Which of the two is the older arrangement this run cannot say, and the note is here rather than in a claim because nothing in either translation bears on it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaAritaeTransitus a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Neither turned back nor repulsed before Osiris"@en, "Weder zurückgewiesen noch abgewiesen vor Osiris"@de ;
+    skos:definition "What the chapter's closing rubric says the recitation obtains. If these words be recited by the deceased when he cometh to the seven arits and entereth into the pylons, he shall neither be turned back nor repulsed before Osiris; he shall be made to have his being among the blessed Khus and to have dominion among the principal followers of Horus; and if these things be done for any deceased person he shall have his being there like a lord of eternity in one body along with Osiris, and at no place shall any great fight be made concerning him."@en ;
+    skos:note "The rubric is not in the Papyrus of Ani. Budge prints it in a footnote as an addition of the Papyrus of Thenna the scribe, which is the ordinary state of the rubrics in this corpus and the reason every source string here names a manuscript. A node that cited chapter 147 without the manuscript would assert of Ani's papyrus something Ani's papyrus does not contain."@en ;
+    skos:note "The formulation is negative on one side — neither turned back nor repulsed — which is as close as this chapter comes to naming the failure it averts. It still does not say what happens to a man who recites nothing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, closing rubric of the Papyrus of Thenna, printed as a footnote in E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, p. 479" .
+
+pmc:AegyptiaAritaeEfficacia a pm:Yielding ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The recitation at the seven arits yields unimpeded passage"@en, "Die Rezitation an den sieben Arits bringt den ungehinderten Durchgang hervor"@de ;
+    pm:byPractice pmp:AegyptiaSeptemAritae ;
+    pm:yieldsCapacity pmc:AegyptiaAritaeTransitus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    skos:note "Entered as the claim of the transmission and not as a finding. The claim names a condition — that the words be recited at the seven arits — and an outcome, and it names no term, no sign and no way for the outcome to fail. It is the standard shape of this corpus; see pmc:AegyptiaRubricaScientiae."@en ;
+    dcterms:source "Book of the Dead, chapter 147, closing rubric of the Papyrus of Thenna, printed as a footnote in E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, p. 479" .
+
+#
+# The twenty-one, arit by arit
+#
+
+pmc:AegyptiaSekhetHraAshtAru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Sekhet-hra-asht-aru"@en, "Sekhet-hra-asht-aru"@de ;
+    pm:nameForm "sekhet-hra-asht-aru" ;
+    pm:nameRole "doorkeeper of the first arit" ;
+    skos:definition "One of the three officers of the first of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the first arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaSemetti a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Semetti"@en, "Semetti"@de ;
+    pm:nameForm "semetti" ;
+    pm:nameRole "watcher of the first arit" ;
+    skos:definition "One of the three officers of the first of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    skos:note "Budge prints [Se]metti; the first syllable is his restoration and stands in square brackets in the edition."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the first arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaHaKheru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Ha-kheru"@en, "Ha-kheru"@de ;
+    pm:nameForm "ha-kheru" ;
+    pm:nameRole "herald of the first arit" ;
+    skos:definition "One of the three officers of the first of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the first arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaUnHat a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Un-hat"@en, "Un-hat"@de ;
+    pm:nameForm "un-hat" ;
+    pm:nameRole "doorkeeper of the second arit" ;
+    skos:definition "One of the three officers of the second of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the second arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaSeqetHra a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Seqet-hra"@en, "Seqet-hra"@de ;
+    pm:nameForm "seqet-hra" ;
+    pm:nameRole "watcher of the second arit" ;
+    skos:definition "One of the three officers of the second of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the second arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaUset a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Uset"@en, "Uset"@de ;
+    pm:nameForm "uset" ;
+    pm:nameRole "herald of the second arit" ;
+    skos:definition "One of the three officers of the second of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the second arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaAmHauatuEntPehui a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Am-hauatu-ent-pehui"@en, "Am-hauatu-ent-pehui"@de ;
+    pm:nameForm "am-hauatu-ent-pehui" ;
+    pm:nameRole "doorkeeper of the third arit" ;
+    skos:definition "One of the three officers of the third of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the third arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaSeresHra a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Seres-hra"@en, "Seres-hra"@de ;
+    pm:nameForm "seres-hra" ;
+    pm:nameRole "watcher of the third arit" ;
+    skos:definition "One of the three officers of the third of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the third arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaAa a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Aa"@en, "Aa"@de ;
+    pm:nameForm "aa" ;
+    pm:nameRole "herald of the third arit" ;
+    skos:definition "One of the three officers of the third of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the third arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaKhesefHraAshtKheru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Khesef-hra-asht-kheru"@en, "Khesef-hra-asht-kheru"@de ;
+    pm:nameForm "khesef-hra-asht-kheru" ;
+    pm:nameRole "doorkeeper of the fourth arit" ;
+    skos:definition "One of the three officers of the fourth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the fourth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaSeresTepu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Seres-tepu"@en, "Seres-tepu"@de ;
+    pm:nameForm "seres-tepu" ;
+    pm:nameRole "watcher of the fourth arit" ;
+    skos:definition "One of the three officers of the fourth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the fourth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaKhesefAt a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Khesef-at"@en, "Khesef-at"@de ;
+    pm:nameForm "khesef-at" ;
+    pm:nameRole "herald of the fourth arit" ;
+    skos:definition "One of the three officers of the fourth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the fourth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaAnkhFEmFent a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Ankh-f-em-fent"@en, "Ankh-f-em-fent"@de ;
+    pm:nameForm "ankh-f-em-fent" ;
+    pm:nameRole "doorkeeper of the fifth arit" ;
+    skos:definition "One of the three officers of the fifth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the fifth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaShabu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Shabu"@en, "Shabu"@de ;
+    pm:nameForm "shabu" ;
+    pm:nameRole "watcher of the fifth arit" ;
+    skos:definition "One of the three officers of the fifth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the fifth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaTebHraHaKheft a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Teb-hra-ha-kheft"@en, "Teb-hra-ha-kheft"@de ;
+    pm:nameForm "teb-hra-ha-kheft" ;
+    pm:nameRole "herald of the fifth arit" ;
+    skos:definition "One of the three officers of the fifth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the fifth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaAtekTauKehaqKheru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Atek-tau-kehaq-kheru"@en, "Atek-tau-kehaq-kheru"@de ;
+    pm:nameForm "atek-tau-kehaq-kheru" ;
+    pm:nameRole "doorkeeper of the sixth arit" ;
+    skos:definition "One of the three officers of the sixth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the sixth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaAnHra a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "An-hra"@en, "An-hra"@de ;
+    pm:nameForm "an-hra" ;
+    pm:nameRole "watcher of the sixth arit" ;
+    skos:definition "One of the three officers of the sixth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the sixth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaAtesHraAriShe a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Ates-hra-ari-she"@en, "Ates-hra-ari-she"@de ;
+    pm:nameForm "ates-hra-ari-she" ;
+    pm:nameRole "herald of the sixth arit" ;
+    skos:definition "One of the three officers of the sixth of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    skos:note "Budge prints Ates-hra-[ari]-she; the middle element is his restoration and stands in square brackets in the edition."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the sixth arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaSekhemetEmTesuSen a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Sekhemet-em-tesu-sen"@en, "Sekhemet-em-tesu-sen"@de ;
+    pm:nameForm "sekhemet-em-tesu-sen" ;
+    pm:nameRole "doorkeeper of the seventh arit" ;
+    skos:definition "One of the three officers of the seventh of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the seventh arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaAaMaaKheru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Aa-maa-kheru"@en, "Aa-maa-kheru"@de ;
+    pm:nameForm "aa-maa-kheru" ;
+    pm:nameRole "watcher of the seventh arit" ;
+    skos:definition "One of the three officers of the seventh of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the seventh arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
+
+pmc:AegyptiaKhesefKhemi a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Khesef-khemi"@en, "Khesef-khemi"@de ;
+    pm:nameForm "khesef-khemi" ;
+    pm:nameRole "herald of the seventh arit" ;
+    skos:definition "One of the three officers of the seventh of the seven arits. The chapter gives the three names and nothing else about them: the dead man is told the name of the doorkeeper, the name of the watcher and the name of the herald, and then says his address."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 147, the seventh arit, Papyrus of Ani (British Museum No. 10,470, sheets 11 and 12), in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 473-479" .
