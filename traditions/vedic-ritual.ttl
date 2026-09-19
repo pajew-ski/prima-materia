@@ -414,3 +414,36 @@ pmc:VaidikaAsadhimrtyu a pm:Conceptualizing ;
     skos:note "Who bore it is worth noting beside the rest. The heads were put on for Aṣāḍhi, by others; the sentence is in the plural for the doing and the singular for the dying. The fault is the officiants', the death is the patron's, which is the arrangement generalizations/displaced-penalties.ttl describes, here with the consequence reported as having been seen to arrive."@en ;
     pm:withinTradition pmt:VedicRitual ;
     dcterms:source "Śatapatha Brāhmaṇa VI,2,1,37 (Mādhyandina), in the English of Julius Eggeling, Sacred Books of the East 41, Oxford 1894, pp. 170-171" .
+
+#
+# The formula that attaches an attainment to knowing, and the one attainment
+# in the passages read that is not formulaic
+#
+
+pmc:VaidikaYaEvamVeda a pm:Conceptualizing ;
+    pm:fromWork pmw:SatapathaBrahmana ;
+    rdfs:label "Ya evaṃ veda: what is promised to whoever knows this"@en, "Ya evaṃ veda: was dem versprochen wird, der dies weiß"@de ;
+    skos:definition "The recurring clause of this corpus, which attaches an attainment not to the performance but to the knowing of what the performance means. Every passage read in this run carries it, and the attainments are these. He who knows the year to be Death — that year does not destroy his life before old age, and he attains his full extent of life. He who knows the balance mounts it in this world and escapes being placed on it in the world beyond. He who studies at the four thunder-calls is freed from the death that comes again and attains community of nature with the Brahman. He who knows the meaning of the full-moon offering attains Indra's prosperity, is endowed with glory, and becomes such a consumer of food. In the Aitareya: he who knows the continuity of the vaṣaṭ call is united with offspring and cattle; he who knows its appeasing lives a full life; he who knows the placing of the Nivid is propagated with offspring and cattle and shines on all sides with the decoration of the sacrifice."@en ;
+    skos:note "Held in one node and not in seven, with the reason stated because the harvest rule of SPEC §15 is against exactly this kind of economy. What that rule protects is the count of distinct claims a corpus makes, and these are not distinct claims: they are one clause with one small set of outcomes — a full life, offspring, cattle, prosperity, glory — reattached at the end of each exposition to whatever that exposition explained. The distinct attainments of this corpus, escape from the death that comes again and the fixing of the balance, have their own nodes; what is held here is the form and the list of places, so that a later run can count them without reading the passages again."@en ;
+    skos:note "Why the form matters more than any one of its instances. The clause makes the attainment turn on an item of knowledge and not on anything done, so two men who perform identically are promised different things, and nothing about the performance shows which. That is the same construction as pmc:VaidikaJnanenaJitam on the side of the harm, and the two together are the corpus's characteristic move: knowledge decides, and knowledge is reported only by the man who has it."@en ;
+    skos:note "The count is of the passages read and not of the corpus. Searching Eggeling's five volumes for knows this and knowing this, on the whitespace-normalised text, returns 268 occurrences: 74 in kāṇḍas I to II, 17 in III to IV, 14 in V to VII, 57 in VIII to X, 106 in XI to XIV. Nobody has gone through them, and this node does not stand for that work. The distribution is itself worth a run: the clause is commonest where the corpus turns the rite into knowledge, and it is nearly as common in the first two kāṇḍas, where it does not."@en ;
+    pm:withinTradition pmt:VedicRitual ;
+    dcterms:source "Śatapatha Brāhmaṇa X,4,3,1-2, XI,2,7,33, XI,5,6,9 and I,6,3,15 (Mādhyandina), in the English of Julius Eggeling, Sacred Books of the East 43, Oxford 1897, p. 356, and 44, Oxford 1900, pp. 45-46 and 99, and 12, Oxford 1882, p. 167", "Aitareya Brāhmaṇa iii,7, iii,8 and iii,10 (xi,7, xi,8 and xi,10), in the English of Arthur Berriedale Keith, Rigveda Brahmanas, Harvard Oriental Series 25, Cambridge 1920, pp. 169-171" .
+
+pmc:VaidikaIndrasampad a pm:Conceptualizing ;
+    pm:fromWork pmw:SatapathaBrahmana ;
+    rdfs:label "The prosperity Indra came to have"@en, "Der Wohlstand, zu dem Indra gelangte"@de ;
+    skos:definition "The attainment the full-moon offering is said to obtain, defined by the legend it closes. Agni and Soma come over to Indra for the cake on eleven potsherds, and after them go all the gods, all the sciences, all glory, all nourishment, all prosperity: thus by offering that cake Indra became what Indra now is. The claim follows: he who, knowing this, performs the full-moon offering in this wise attains to the same state of prosperity, becomes thus endowed with glory, becomes such a consumer of food."@en ;
+    skos:note "Entered because the harvest rule counts attainments strictly and this is one, although it is the vaguest kind: prosperity, glory and the consumption of food, with no term, no sign and no amount. It is worth having beside the sharp claims of the same corpus rather than instead of them — the same book that fixes an altar at ten thousand eight hundred bricks also promises this."@en ;
+    pm:withinTradition pmt:VedicRitual ;
+    dcterms:source "Śatapatha Brāhmaṇa I,6,3,14-15 (Mādhyandina), in the English of Julius Eggeling, Sacred Books of the East 12, Oxford 1882, p. 167" .
+
+pmc:VaidikaDarsapurnamasaSampad a pm:Yielding ;
+    pm:fromWork pmw:SatapathaBrahmana ;
+    rdfs:label "The full-moon offering yields that prosperity to whoever knows this"@en, "Das Vollmondopfer bringt jenen Wohlstand dem hervor, der dies weiß"@de ;
+    pm:byPractice pmp:VaidikaDarsapurnamasa ;
+    pm:yieldsCapacity pmc:VaidikaIndrasampad ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:VedicRitual ;
+    skos:note "The condition is double and the second half is the corpus's own: performing it in this wise, and knowing this. See pmc:VaidikaYaEvamVeda."@en ;
+    dcterms:source "Śatapatha Brāhmaṇa I,6,3,15 (Mādhyandina), in the English of Julius Eggeling, Sacred Books of the East 12, Oxford 1882, p. 167" .
