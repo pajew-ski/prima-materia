@@ -1,0 +1,81 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — what the chapter titles say the book is for
+#
+# The registration that brought this tradition off the register said it was a
+# capacity list in the strict sense: each chapter states what the speaker
+# becomes and what that state permits. Four files have now tested that claim
+# at the wording — names, arits, gates, rubrics — and this one tests it where
+# it was made, at the titles of the chapters themselves.
+#
+# The denominator, honestly. Budge's three volumes number their chapters up to
+# 190, with letter-suffixes and gaps; two independent passes over his running
+# heads and chapter headings agreed on 170 distinct chapter numbers. Titles
+# could be recovered for 132 of them from the tables of contents of the three
+# volumes together with the headings in the body. The other 38 are lost to the
+# scan, or carry no title in the Theban recension, or are cross-references —
+# See Chapter X, Another chapter, Vignettes of Chapter XV. The classification
+# below therefore reports 132 and not 170, and the method is at
+# pmp:EgyptianChapterTitleSurvey.
+#
+# The finding. The registration was right that the titles are a capacity list
+# and wrong about the kind. Roughly a quarter of the recovered titles state
+# the capacity as a harm averted rather than a power gained: not letting the
+# heart be carried away, not letting the head be cut off, not letting the soul
+# be taken, not dying a second time, not eating filth, not drinking foul
+# water, not being bitten by snakes, not doing work, driving back the eater of
+# the ass, repulsing the serpent Rerek, beating back the crocodile that cometh
+# to carry off the charm. The transformations that the registration named are
+# there and are a real group, but they are eight of the recovered titles, and
+# the largest single class is provisioning — food, drink, air, and the two
+# chapters against eating filth.
+#
+# Why that matters for what the graph asserts. A capacity stated as an averted
+# harm is a claim of a different shape: it is satisfied by nothing happening,
+# and nothing happening is what the ordinary case looks like. This corpus
+# stakes a quarter of its titles on outcomes that cannot come apart from the
+# default, and it pairs them, as pmc:AegyptiaRubricaeAnatomia shows, with
+# prescriptions that name no test. The two silences are the same silence seen
+# from the two ends of the book.
+#
+
+pmc:AegyptiaTituliCapacitatum a pm:Systematizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "What the titles state: the classes of capacity across the recovered chapter headings"@en, "Was die Titel aussagen: die Klassen von Vermögen über die gewonnenen Kapitelüberschriften"@de ;
+    skos:definition "One hundred and thirty-two chapter titles were recovered from Budge 1901 and read for the capacity each states. The classes, with the count of recovered titles falling under each: provisioning with food, drink or air, fifteen; passing, entering, journeying or sailing, twenty-one; the soul, its unity with the body and its freedom, ten; the heart, its giving, its keeping and its not being carried off, eight; coming forth by day, ten; transformation into a named creature or state, eight; amulets given to the deceased, three. Thirty-two of the hundred and thirty-two state the capacity in the negative, as a harm not to be suffered or an assailant driven back; these overlap the other classes rather than standing beside them."@en ;
+    skos:note "The counts are of recovered titles and not of chapters. Thirty-eight of the hundred and seventy chapter numbers yielded no title to this run, and the transformation group is the clearest casualty: chapters 76 to 88 are the transformation chapters in Budge's arrangement and only eight of them came back with a legible heading. A reader who took eight as the number of transformations in the corpus would be reading the scan and not the book."@en ;
+    skos:note "The registration of this tradition described it as a capacity list in which each chapter states what the speaker becomes and what that state permits. The titles bear that out for the transformation group and for little else. What the majority of them state is not what the speaker becomes but what he keeps, reaches, eats, or is not subjected to."@en ;
+    skos:note "Compiled by this project. The titles are Budge's; grouping them into classes and counting the classes is an act of this holding, with its date, and no Egyptian source arranges them so."@en ;
+    pm:compiledBy "prima-materia" ;
+    dcterms:date "2026-09-19" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, the chapter titles of the Theban recension, from the tables of contents and the chapter headings of E. A. Wallis Budge, The Book of the Dead: An English Translation of the Chapters, Hymns, etc., of the Theban Recension, London: Kegan Paul, Trench, Trübner, 1901, vols. I to III" .
+
+pmc:AegyptiaMalaAversa a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The chapters of not: capacities stated as harms averted"@en, "Die Kapitel des Nicht: Vermögen, als abgewendete Schäden ausgesprochen"@de ;
+    skos:definition "Thirty-two of the hundred and thirty-two recovered titles name their capacity by the harm it prevents. Among them, in Budge's wording: of not letting the deceased do work in the underworld; of not letting the heart be taken from him; of not letting the head of a man be cut off from him; of not letting the soul of a man be taken from him; of not letting the soul be captive; of not letting the seat and throne be taken away; of not perishing and of becoming alive; of not dying a second time, which the corpus states twice under two numbers; of not eating filth and of not drinking foul water; of not being bitten by snakes; of not being burnt by fire; of not sailing to the east; of not allowing the body of a man to moulder away; of not letting a man make a journey being hungry. Beside them stand the chapters of driving back and repulsing: the eater of the ass, the serpent Rerek, the crocodile that cometh to carry off the charm, the slaughterings performed in the underworld, and Apshait."@en ;
+    skos:note "The shape of the claim is what is entered here, not a judgement on it. A capacity whose whole content is that something does not happen is satisfied by the ordinary course of things and cannot be distinguished from it by any observation the corpus names. Read together with pmc:AegyptiaRubricaeAnatomia, which found that no rubric in the three volumes states a sign or a term, this is the same absence approached from the other side of the book: the ends are stated so that nothing would count against them, and the means are stated so that nothing would count for them."@en ;
+    skos:note "Two of the negatives are unlike the rest and worth marking. Not eating filth and not drinking foul water name a state a living person could report of himself, and chapter 189 pairs the second with not making a journey being hungry. These are the only averted harms in the group that belong to the body rather than to the fate of the dead."@en ;
+    skos:note "The count is of recovered titles. Where a title is lost to the scan its capacity is unclassified, and the proportion given here is a floor and not a measurement of the corpus."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, the chapter titles of the Theban recension, chapters 5, 27, 28, 30, 30A, 31, 32, 34, 39, 40, 41, 42, 43, 44, 45, 46, 47, 53, 61, 63A, 85, 91, 93, 101, 154, 163, 175, 176, 182 and 189, in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vols. I to III" .
+
+pmc:AegyptiaVictusInferorum a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Bread, water and air: the largest class of titles"@en, "Brot, Wasser und Luft: die größte Klasse der Titel"@de ;
+    skos:definition "Fifteen of the recovered titles are about provisioning, which makes it the largest single class. They cover the giving of air and of water in the underworld, the snuffing of the air, the drinking of water at the stream, the providing of the deceased with food, the eating of cakes and ale at the altar of the great god, and the two chapters that state the same concern negatively: of not eating filth and of not drinking foul water, and of not letting a man make a journey being hungry."@en ;
+    skos:note "This is the class the registration of the tradition did not mention, and it is larger than the transformations it did. What the book is most often for, judged by its own headings, is that the dead man should breathe, drink and eat."@en ;
+    skos:note "The same concern runs through the outcomes of the rubrics: bread, wine and cakes at the altar of the great god at chapter 99, an estate sown with wheat and barley which the followers of Horus reap for him, cakes and ale at chapter 125. The class is not an artefact of the titles."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, the chapter titles of the Theban recension, chapters 53 to 63, 148, 182 and 189, in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vols. I to III" .
