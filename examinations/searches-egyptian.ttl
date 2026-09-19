@@ -1,0 +1,39 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — two searches carried in the Book of the Dead
+#
+# Both were carried on 2026-09-19 while the work was open, over the whole of
+# the three volumes of Budge 1901, the whole of Budge 1895 and the whole of
+# Renouf and Naville 1904, on the whitespace-normalised text.
+#
+
+pmp:EgyptianNegativeRubricSearch a pm:Searching ;
+    rdfs:label "Whether any rubric says what follows from not meeting its condition"@en, "Ob eine Nachschrift sagt, was folgt, wenn ihre Bedingung nicht erfüllt ist"@de ;
+    pm:searchedCorpus "The Book of the Dead, Theban recension, in the English of E. A. Wallis Budge, London: Kegan Paul, Trench, Trübner, 1901, vols. I to III, complete; Budge, The Book of the Dead: The Papyrus of Ani, London: British Museum, 1895, complete; and Peter le Page Renouf and Édouard Naville, The Egyptian Book of the Dead, London: Society of Biblical Archaeology, 1904, complete" ;
+    pm:searchedFor "A rubric that states an adverse outcome for the case in which its own condition is not met — the chapter not known, the object not made of the prescribed material, the purity not kept, the secrecy broken. The corpus states what knowing and doing obtain on almost every other page; whether it anywhere states the other half decides whether its claims exclude anything." ;
+    pm:searchTerms "Whole-text search of all five volumes on the whitespace-normalised text for: be not known; if he know not; if he knoweth not; who knoweth not; if it be not done; shall be of no effect; without effect; in vain; shall fail; doth not know this; knoweth it not; unless he; unless thou; if thou doest not; if he do not. Every hit was inspected. The four chapters that carry the densest condition lists — 30B, 64, 125, 137A — were read continuously in Budge 1901, and the transformation chapters 76 to 88 were read through in the same volume."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AegyptiaRubricaBilateralis, pmc:AegyptiaPortaeNomina ;
+    pm:searchedBy "prima-materia, 2026-09-19" ;
+    dcterms:date "2026-09-19" ;
+    skos:note "Two finds and one large silence, and the silence is where the run expected the finds. Among the rubrics proper there is exactly one two-sided statement in five volumes: the rubric printed as Appendix 1 to chapter 76 in the Papyrus of Ani, which says that if the chapter be known the dead man shall come forth by day and go in again, and that if it be not known he shall not enter in after he hath come forth, nor shall he come forth by day. No other rubric read in either translation states an adverse outcome for its own condition, and the purity condition of chapter 64, which is repeated three times over, states none at all."@en ;
+    skos:note "The second find is not a rubric and is worth more than the first. In the hall of the two Maati the doorway itself refuses passage a dozen times over in the same form — I will not let thee enter, or pass over, or open to thee, or make mention of thee, unless thou tell my name — and that is a stated failure condition for the whole operation, given as dialogue rather than as postscript. A run that had searched only the rubrics would have reported a clean negative and missed the place where the corpus does say what happens to a man who does not know."@en ;
+    skos:note "Limits. Two translations, both public domain, both a century and more old, and one of them by a translator whose English is not now considered reliable. The modern standard translations are under copyright and were not obtained, so a rubric that a later translator renders as a threat and Budge renders otherwise would not appear in this search. One such place is known and is entered at pmp:EgyptianMillionFormulaSearch."@en .
+
+pmp:EgyptianMillionFormulaSearch a pm:Searching ;
+    rdfs:label "Whether the public-domain translations carry the formula that a spell is proved a million times"@en, "Ob die gemeinfreien Übersetzungen die Formel führen, ein Spruch sei millionenfach erprobt"@de ;
+    pm:searchedCorpus "The Book of the Dead, Theban recension, in the English of E. A. Wallis Budge, London 1901, vols. I to III, complete; Budge, The Papyrus of Ani, London 1895, complete; and Renouf and Naville, The Egyptian Book of the Dead, London 1904, complete" ;
+    pm:searchedFor "The efficacy formula that later translators render as a thing proved a million times or truly effective a million times, which would be the only statement in this corpus asserting that its prescriptions have been tested rather than that they work. Whether the public-domain translations carry it decides whether this holding can enter the claim at all." ;
+    pm:searchTerms "Whole-text search of all five volumes on the whitespace-normalised text for: million times; a matter a million times; proved a million; truly effective; hath been proved; tested; for millions of times; millions of years. The last two are frequent — one hit in Budge 1901 vol. II and a hundred and nine for millions of years across the five volumes — and every one inspected proved to be a duration and not an assertion of efficacy."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-19" ;
+    dcterms:date "2026-09-19" ;
+    skos:note "Not in either translation as an efficacy claim. The one place in Budge 1901 with the words for millions of times is the rubric of chapter 72, where it modifies what the dead man shall do continually and regularly, not how often the spell has been tried. At the place in the rubric of chapter 137A where a later translator reads the formula, Budge has the words it is a great struggle — a rendering that shares nothing with it and that suggests the two are reading the same consonants differently."@en ;
+    skos:note "This is an exhibited gap in the access and not in the corpus, and the difference matters. The finding is that a claim widely reported of this tradition cannot be grounded from any translation this project may use. It is entered so that the next run does not spend the search again, and so that nobody enters the formula on the strength of having read about it."@en ;
+    skos:note "The way to close it is named: a modern critical translation, or the hieroglyphic text of Budge 1898 and 1910 with a reader of Egyptian. Both are public domain; neither was usable by this run."@en .
