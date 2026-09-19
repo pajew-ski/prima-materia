@@ -1,0 +1,264 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the pharaonic Egyptian ritual, taken down from the register
+#
+# The instance was registered in traditions/registry-west-asia.ttl and is
+# moved here now that passages have been read. One of the five items its
+# registration names has been opened, the Book of the Dead, in the Theban
+# recension in the English of 1901 and in the Papyrus of Ani in the English
+# of 1895, with the translation of Renouf and Naville of 1904 beside them.
+# The Pyramid Texts, the Coffin Texts and Papyrus Westcar were not opened.
+# The demotic magical papyrus of London and Leiden, which the registration
+# also names, is held in this graph as a transmission of its own at
+# traditions/demotic-magical-papyri.ttl; the note at the instance below says
+# what that costs and what it does not.
+#
+# Why this one out of the register. Its registration said in one line what
+# the examinability-driven entrance of SPEC §14 asks for: the transformation
+# spells are a capacity list in the strict sense, each stating what the
+# speaker becomes and what that state permits. What the reading found beside
+# them is the more valuable half. This corpus attaches its attainments not to
+# a performance but to knowing a text, and it states the failure condition in
+# the same form: at every gate of the underworld a doorkeeper says that he
+# will not let the dead man pass unless he tells his name. Knowing is the
+# operation, not knowing is the failure, and the book is the remedy for the
+# failure — it is sold to the dead as the thing that closes the gap.
+#
+# That is the same construction as the Vedic one entered in the same run at
+# traditions/vedic-ritual.ttl, from a corpus with which no route of contact
+# is available, and the correspondence is at
+# convergences/knowing-as-the-condition.ttl.
+#
+# Order of the file: the tradition and what was read; the works; the knowledge
+# rubric and the one place where it states both sides; the gates and the names;
+# the four flames with the only success sign in the corpus; the heart that is
+# asked not to testify, and the balance that decides; the purity condition
+# without a consequence; the find legend in two incompatible versions; and
+# three transformations read at the wording.
+#
+
+pmt:EgyptianRitual a pm:Tradition ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Pharaonic Egyptian ritual"@en, "Pharaonisch-ägyptisches Ritual"@de ;
+    skos:definition "The transmission of heka as an operative power held by gods, kings and the transfigured dead, carried in mortuary and temple literature."@en ;
+    skos:note "Read in this run at the wording, on 2026-09-19. The Theban recension in the English of E. A. Wallis Budge, The Book of the Dead: An English Translation of the Chapters, Hymns, etc., of the Theban Recension, three volumes, London 1901, whose base manuscript changes from chapter to chapter and is named in each heading. Read closely: chapter 30B with its rubric (vol. I); the three rubrics of chapter 64, the short version and the two of the long version (vol. I); chapters 83 and 86 with their rubrics and the surrounding transformation spells (vol. II); the doorkeeper dialogue and the rubric of chapter 125 (vol. II); chapter 137A with its rubric and the four appended brick rubrics (vol. II). Beside them the Papyrus of Ani in Budge's English of 1895, plate III, the weighing of the heart with the verdict of Thoth, and the appendix rubric to chapter 76. The translation of Peter le Page Renouf and Édouard Naville, The Egyptian Book of the Dead, London 1904, was searched throughout and read at the places where it disagrees with Budge."@en ;
+    skos:note "Not opened: the Pyramid Texts, the Coffin Texts and Papyrus Westcar, which the registration names as parts of the principal corpus. They stand at the work identifiers as unopened rather than under the coverage state."@en ;
+    skos:note "The edition is the whole citation here and not a formality, because the two public-domain translations disagree in ways that change the claim. At chapter 137A Budge has the secrecy clause admit the father and the son — perform this before no human being except thine own self, or thy father, or thy son — while Renouf, from the Turin text and under chapter 161, has it exclude them: reveal it to no one, may he be thy father or thy son, except thyself. A node that gave the place without the edition would assert one of these against the other by accident. Every source string below therefore names translator, volume and page."@en ;
+    skos:note "What kind of witness this is, and it is an unusual one. There is no Book of the Dead in the sense of a work: no manuscript carries all the chapters, the selection was made by the family and, as the editor of 1904 says in his introduction, by the number of chapters corresponding to the price they wished to pay. A fixed order appears only under the Saite kings, and the numbering used everywhere goes back to Lepsius of 1842 on one late Turin papyrus. A claim read here is a claim of one manuscript in one recension, and the sources say which."@en ;
+    skos:note "The contact route stays at disputed and this run did not settle it. What it did establish is which question the dispute is about. The demotic magical manuscripts of the Roman period share the trade, the ritual technique and part of the technical vocabulary of the pharaonic priesthood, and the graph holds them separately; what is not established anywhere the run looked is a textual filiation from the mortuary literature into the later magical corpora, and the strongest argument on the other side is that a priest writing for a hellenistic readership had reason to perform an expected Egyptianness. The dispute is about the direction and the mode of the contact and not about whether there was any."@en ;
+    pm:principalCorpus "Pyramid Texts; Coffin Texts; Book of the Dead; Papyrus Westcar; the demotic magical papyrus of London and Leiden" ;
+    pm:corpusWork pmw:BookOfTheDead, pmw:PyramidTexts, pmw:CoffinTexts, pmw:PapyrusWestcar ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Book of the Dead, chapter 137A, rubric, Papyrus of Nu (British Museum 10.477), in the English of E. A. Wallis Budge, The Book of the Dead: An English Translation of the Chapters, Hymns, etc., of the Theban Recension, London: Kegan Paul, Trench, Trübner, 1901, vol. II, pp. 417-418" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:BookOfTheDead a dcterms:BibliographicResource ;
+    rdfs:label "The Book of the Dead"@en, "Das Totenbuch"@de ;
+    skos:note "Opened on 2026-09-19 in two public-domain English translations: Budge 1901, three volumes, the Theban recension, base manuscripts named chapter by chapter, dominant among them the Papyrus of Nu, the Papyrus of Ani and the Papyrus of Nebseni; and Budge 1895, the Papyrus of Ani alone, with text, transliteration and translation. Renouf and Naville 1904, which translates from Naville's synoptic edition and refers to its manuscripts by sigla rather than by name, was used as the second translation and as the check on Budge."@en ;
+    skos:note "Not a work in the ordinary sense and the file treats it accordingly. Chapter numbers are Lepsius's of 1842, taken from one late Turin papyrus; Naville's edition of 1886 extends them from the manuscripts of the New Kingdom; Budge follows Naville and subdivides further, so that 30A and 30B, 81A and 81B, 136A and 136B, 137A and 137B are his divisions. A place is therefore given here as chapter number plus manuscript plus translation plus page, and nothing less will locate it."@en ;
+    skos:note "One place in this file is given without a page number, and the reason is a property of the copy and not of the work: in the scanned text of Budge 1895 the running heads are legible on some pages and not on others, and the rubric to chapter 76 falls in a stretch where they are not. It is located instead by chapter, by its printed heading Appendix 1, and by the chapter it stands immediately before. SPEC §10 measures a place by findability and not by numbering, and a page number guessed by interpolation would have looked better and been worth less."@en ;
+    skos:note "Budge's translations are the weakest part of this reading and the file says so where it matters. The criticism is old and specific: contemporaries called his books filled with egregious errors, and the modern verdict is that the hieroglyphic editions remain usable while the English is not. Two places in this file rest on him alone because no public-domain alternative exists, and both carry a note. The standard modern translations — Faulkner 1972, Allen 1974, Hornung 1979, Quirke 2013 — are under copyright and were not obtained."@en .
+
+pmw:PyramidTexts a dcterms:BibliographicResource ;
+    rdfs:label "The Pyramid Texts"@en, "Die Pyramidentexte"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is the oldest layer, inscribed from the fifth dynasty onward, and about a third of the Coffin Text spells are said to descend from it. Whoever opens it can say whether the knowledge rubric entered below is as old as the claims it attaches to, or whether it is a later addition to older spells — which is the question the editors of 1901 and 1904 both raise and neither answers."@en .
+
+pmw:CoffinTexts a dcterms:BibliographicResource ;
+    rdfs:label "The Coffin Texts"@en, "Die Sargtexte"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is the layer between the Pyramid Texts and the Book of the Dead, and the transition is dated by both editors to the coffins of Horhotep and of Queen Mentuhotep."@en .
+
+pmw:PapyrusWestcar a dcterms:BibliographicResource ;
+    rdfs:label "Papyrus Westcar"@en, "Papyrus Westcar"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is the one item of the registered corpus that reports magical acts as events with witnesses rather than prescribing them, and it is therefore the first place to go for a case rather than a claim."@en .
+
+#
+# The knowledge rubric, and the one place where it states both sides
+#
+
+pmp:AegyptiaPeretEmHeru a pm:Practicing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Coming forth by day: the recitation and the knowing of the chapters"@en, "Das Herausgehen am Tage: das Rezitieren und das Wissen der Kapitel"@de ;
+    skos:definition "The operation the corpus is built around. Its own title for itself is the chapters of coming forth by day, and what it prescribes is of two kinds: the recitation of a named chapter, sometimes over a named object and at a named time, and the knowing of it. The two are not the same, and the rubrics keep them apart: some say that this chapter shall be recited over such and such a thing, and others that if this chapter be known by the deceased, such and such will follow."@en ;
+    skos:note "The distinction is the reason this tradition was worth taking off the register. An operation that consists in knowing a text has no performance an onlooker could watch and no step that could be done wrongly in a way anyone could see. The corpus nevertheless states a failure condition for it, and states it in the same terms; see pmc:AegyptiaPortaeNomina."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 64, short version, rubric, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. I, pp. 217-218" .
+
+pmc:AegyptiaRubricaScientiae a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "If this chapter be known: what knowing is said to obtain"@en, "Wenn dieses Kapitel gewusst wird: was das Wissen erlangt"@de ;
+    skos:definition "The recurring postscript that attaches an attainment to the knowing of a chapter. The places read carry these. Chapter 64: if this chapter be known, he shall be victorious both upon earth and in the underworld, he shall do whatsoever a man doeth who is upon the earth, and he shall perform all the deeds which those do who are alive; the longer version adds that he shall not be repulsed at any gate of the underworld, either in going in or in coming out, that he shall perform all the transformations which his heart shall desire, and that he shall not die. Chapter 83: he shall come forth pure by day after his death, he shall perform whatsoever transformations his heart desireth, and no evil thing whatsoever shall have dominion over him for ever and ever. Chapter 86: he shall come forth by day, he shall not be turned back at any gate in the underworld, and he shall make his transformation into a swallow regularly and continually. Chapter 125, after its conditions: he shall flourish, his children shall flourish, his name shall never fall into oblivion, and he shall be as one who filleth the heart of the king and of his princes."@en ;
+    skos:note "Three things about the form, all of them in the wording and none of them read into it. The condition is knowledge and not performance, so two men buried with the same papyrus are promised different things and nothing distinguishes them. The attainments are of two kinds and the corpus does not separate them — passage and transformation after death, which nobody can report, and flourishing children and the favour of the king, which anybody can. And the rubric is attached to the chapter rather than contained in it, which matters because the rubrics move: the editors of 1901 and 1904 both note chapters whose rubric stands elsewhere in another manuscript, and one of them holds that the rubric of chapter 1 was originally the rubric of chapter 72."@en ;
+    skos:note "Read beside pmc:VaidikaYaEvamVeda in traditions/vedic-ritual.ttl, which is the same construction in a corpus with which no contact route is available. The correspondence is asserted at convergences/knowing-as-the-condition.ttl and not here."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapters 64, 83, 86 and 125, rubrics, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. I, pp. 217-218 and 221-222, and vol. II, pp. 269, 276-277 and 377-378" .
+
+pmc:AegyptiaRubricaBilateralis a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The one rubric that states what follows from not knowing"@en, "Die eine Nachschrift, die sagt, was aus dem Nichtwissen folgt"@de ;
+    skos:definition "Appended to the chapter of making the transformation into whatever form the speaker pleaseth, in the Papyrus of Ani: if this chapter be known by the deceased, he shall come forth by day in Neter-khert, and he shall go in again after he hath come forth. If this chapter be not known, he shall not enter in after he hath come forth, nor shall he come forth by day."@en ;
+    skos:note "This is the only rubric in the volumes read that names both outcomes, and it was found by searching for it rather than by reading. Everywhere else the corpus states what knowing obtains and is silent about not knowing; here the two halves stand in one sentence, and the second is the exact negation of the first. What makes it worth a node of its own is that it shows the silence elsewhere to be a property of those rubrics and not of the genre: the form was available."@en ;
+    skos:note "It is also the weakest kind of two-sided statement, and the file does not pretend otherwise. The adverse outcome happens after death to a man who cannot report it, and the condition that produces it is the absence of an item of knowledge in that same man. Nothing here could be observed by anyone at any time. The search that found it is at examinations/searches-egyptian.ttl."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 76, the rubric printed as Appendix 1 to that chapter, immediately before the chapter of changing into a golden hawk, Papyrus of Ani, in the English of E. A. Wallis Budge, The Book of the Dead: The Papyrus of Ani, London: British Museum, 1895, translation section, between the pages headed 329 and 333" .
+
+pmc:AegyptiaPortaeNomina a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "I will not let thee pass unless thou tell my name"@en, "Ich lasse dich nicht vorbei, wenn du nicht meinen Namen nennst"@de ;
+    skos:definition "The failure condition of the whole apparatus, stated as a dialogue and repeated part by part. At the hall of the two Maati every element of the doorway speaks in turn and refuses passage on the same terms: the bolt, the right lintel, the left lintel, the threshold, the fastening, the socket of the fastening, the guardian, the doorposts, the floor of the hall, the doorkeeper. Each says that it will not let him enter, or pass over, or open to him, or make mention of him, unless he tells its name; each name is then given; and each concludes that since he knows it he may pass. The floor of the hall adds a condition of its own — it will not be trodden on by one who does not know the names of its two feet — and the doorkeeper, who is called the discerner of hearts and searcher of the reins, will not announce him until he has named a further god."@en ;
+    skos:note "Here the corpus says what happens to a man who does not know, and it says it a dozen times in one chapter: he does not pass. Set beside pmc:AegyptiaRubricaScientiae this completes the construction — knowing is the operation, not knowing is the failure, the gates are the assay, and the book is what the buyer acquires against the assay. Nothing in the arrangement is left to chance except whether the man has the text."@en ;
+    skos:note "Two things the passage does not do. It never says that anyone failed; the dialogue is written from the answer sheet, with every name supplied in the same breath as the question. And the same corpus prescribes an amulet to keep the heart from testifying at the weighing that follows, so the one element of the examination which the candidate cannot answer is provided for by an object rather than by knowledge. See pmc:AegyptiaCorNeTestetur."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the gods of the hall of the two Maati, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. II, pp. 375-377" .
+
+#
+# The four flames: the only rubric in the reading that names a sign
+#
+
+pmp:AegyptiaQuattuorFlammae a pm:Practicing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The ceremony of the four blazing flames"@en, "Die Zeremonie der vier lodernden Flammen"@de ;
+    skos:definition "Four fires made of afma cloth anointed with hatet unguent of Thehennu are placed in the hands of four men who have the names of the pillars of Horus written upon their shoulders, and are burnt in the beautiful rays of Ra. The chapter is recited over them. Four further rubrics hang on the same chapter, each prescribing an object walled into one side of the tomb: a Tet of crystal on a green clay brick in the west wall, and three more."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 137A, rubric, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. II, pp. 417-419" .
+
+pmc:AegyptiaFlammaeSignum a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The gods and the dead shall see him in the form of the Governor of Amenti"@en, "Die Götter und die Toten sollen ihn in der Gestalt des Herrschers von Amenti sehen"@de ;
+    skos:definition "The outcome the rubric names, and it names it as something seen by others: when this ceremony hath been performed, the gods, and the Khus, and the dead shall see him in the form of the Governor of Amenti, and he shall have power and dominion like this god. The rubric adds a second criterion in the same place: he shall not have sentence of evil passed upon him on the day of the weighing of words before the god Osiris, for ever and ever. It also promises that he shall never, never fail, that he shall enter in through the hidden pylons and not be turned back, and that no limit to his journeying shall be set."@en ;
+    skos:note "This is the nearest thing to a criterion of success that the run found in the corpus, and it is worth exactly what its witnesses are worth: the parties who would see him are gods, transfigured spirits and the dead. The second criterion is better placed, because the weighing of words is a procedure the same corpus describes in detail and with a verdict; see pmc:AegyptiaLibraIudicium. What the rubric does not supply, here or anywhere else in the volumes read, is a sign that the ceremony failed."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 137A, rubric, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. II, pp. 417-418" .
+
+pmc:AegyptiaFlammaeEfficacia a pm:Yielding ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The four flames yield the form and the dominion of the god"@en, "Die vier Flammen bringen die Gestalt und die Herrschaft des Gottes hervor"@de ;
+    pm:byPractice pmp:AegyptiaQuattuorFlammae ;
+    pm:yieldsCapacity pmc:AegyptiaFlammaeSignum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    skos:note "Entered as the claim of the transmission. The rubric states the operation, the materials, the personnel, the time of day and the outcome, which is more than most of this corpus states; what it does not state is any term or any way for the thing to come out otherwise."@en ;
+    dcterms:source "Book of the Dead, chapter 137A, rubric, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. II, pp. 417-418" .
+
+pmc:AegyptiaArcanumAmenti a pm:Cautioning ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Perform this before no human being, because it is an exceedingly great mystery"@en, "Vollziehe dies vor keinem Menschen, denn es ist ein überaus großes Geheimnis"@de ;
+    skos:definition "The secrecy clause of the same rubric: thou shalt not perform this ceremony before any human being except thine own self, or thy father, or thy son, because it is an exceedingly great mystery of Amentet and is a type of the hidden things of the underworld. The rubric adds that these things shall be done secretly in the underworld, and that they are mysteries of Neter-khert."@en ;
+    skos:note "The exception is the finding, and it is edition-dependent. Budge admits the father and the son to the ceremony; Renouf, translating the Turin text under chapter 161, has the same clause exclude them by name — reveal it to no one, may he be thy father or thy son, except thyself. The two readings put the boundary of the transmission in different places, one at the lineage and one at the single person, and no reading of the Egyptian was available to this run to decide between them. The node therefore reports both and asserts neither."@en ;
+    skos:note "No consequence is stated for breaking the clause in either translation. That is the ordinary state of this corpus and is recorded rather than filled in."@en ;
+    pm:cautionsAbout pmp:AegyptiaQuattuorFlammae ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 137A, rubric, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. II, pp. 417-418", "Book of the Dead, chapter 161, rubric, from the Turin text, in the English of Peter le Page Renouf and Édouard Naville, The Egyptian Book of the Dead, London: Society of Biblical Archaeology, 1904" .
+
+#
+# The heart that is asked not to testify, and the balance that decides
+#
+
+pmp:AegyptiaScarabaeusCordis a pm:Practicing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The heart scarab of green stone"@en, "Der Herzskarabäus aus grünem Stein"@de ;
+    skos:definition "A scarab of green stone encircled with a band of refined copper and having a ring of silver, placed on the neck of the transfigured dead, over which the words of the chapter are said. The rubric of chapter 64 prescribes the same object in another form — a scarab of green stone washed with gold, placed in the heart of the man, which will perform for him the opening of the mouth, anointed with anti unguent and recited over with the words that follow."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 30B, rubric, Papyrus of Amen-hetep, in the English of E. A. Wallis Budge, London 1901, vol. I, pp. 151-152" .
+
+pmc:AegyptiaCorNeTestetur a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "My heart my mother: let it not part from me before him who keepeth the scales"@en, "Mein Herz, meine Mutter: dass es sich nicht von mir trenne vor dem, der die Waage hält"@de ;
+    skos:definition "The words said over the scarab. The heart is addressed as mother and as the speaker's own ka, and asked for four things: that nothing stand up to oppose him at his judgment, that there be no opposition to him in the presence of the sovereign princes, that it not part from him in the presence of him that keepeth the balance, and that the officers of the court not cause his name to stink. The Nebseni manuscript adds: let not that which is false be uttered against me before the great god, the lord of Amentet."@en ;
+    skos:note "The construction is what this holding is built to record. The corpus stages a judgment whose instrument is the man's own heart, and then sells him an object, worn at the neck or laid in the body, whose stated purpose is to keep that instrument from testifying against him. The examination and the means of defeating it are transmitted in the same book and often on the same sheet."@en ;
+    skos:note "Whether the object is asked to make the heart silent or to make it truthful is not decided by the wording read: the request is that it not part from him and that no lies be spoken. A run with a modern translation should take this up, because the two readings differ in whether the amulet is a defence against a false accusation or a defence against a true one."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 30B, Papyrus of Ani with additions from the Papyrus of Nebseni, in the English of E. A. Wallis Budge, London 1901, vol. I, pp. 150-151" .
+
+pmc:AegyptiaScarabaeusEfficacia a pm:Yielding ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The scarab keeps the heart from being driven from its owner"@en, "Der Skarabäus hält das Herz davon ab, seinem Träger genommen zu werden"@de ;
+    pm:byPractice pmp:AegyptiaScarabaeusCordis ;
+    pm:yieldsCapacity pmc:AegyptiaCorNeTestetur ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    skos:note "The title of the chapter states the claim as plainly as any in this holding: the chapter of not letting the heart of the deceased be driven from him in the underworld."@en ;
+    dcterms:source "Book of the Dead, chapter 30B with its rubric, in the English of E. A. Wallis Budge, London 1901, vol. I, pp. 150-152" .
+
+pmc:AegyptiaLibraIudicium a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "It hath been found true by trial in the Great Balance"@en, "Es ist durch die Probe in der großen Waage als wahr befunden worden"@de ;
+    skos:definition "The verdict, given in the corpus's own words at the scene of the weighing. Thoth, the righteous judge of the great company of the gods who are in the presence of Osiris, saith: Hear ye this judgment. The heart of Osiris hath in very truth been weighed, and his soul hath stood as a witness for him; it hath been found true by trial in the Great Balance. There hath not been found any wickedness in him; he hath not wasted the offerings in the temples; he hath not done harm by his deeds; and he uttered no evil reports while he was upon earth. The company of the gods reply that what cometh forth from his mouth hath been ordained."@en ;
+    skos:note "This is a procedure with an instrument, a criterion, an announced result and a bench of witnesses, written out in full, and it is one of the few things in this holding that looks like a protocol from the inside. What it is not is a case: it is the scene as the buyer of the papyrus wanted it inscribed for himself, with his own name in it and with the favourable outcome already written. The manuscript is the record of the verdict and the verdict is part of what the manuscript was bought to obtain."@en ;
+    skos:note "Read together with pmc:AegyptiaCorNeTestetur and pmc:AegyptiaPortaeNomina this is the whole shape: an examination whose questions are published with their answers, whose one uncontrollable witness is neutralised by an amulet, and whose verdict is written in advance on the document the candidate carries."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, the weighing of the heart, Papyrus of Ani, plate III, in the English of E. A. Wallis Budge, The Book of the Dead: The Papyrus of Ani, London: British Museum, 1895, p. 258" .
+
+#
+# A condition with no consequence attached
+#
+
+pmc:AegyptiaPuritasRecitantis a pm:Presupposing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Recited by one who is clean and hath not eaten flesh or fish or touched women"@en, "Zu sprechen von einem, der rein ist und weder Fleisch noch Fisch gegessen noch Frauen berührt hat"@de ;
+    skos:definition "The condition attached to chapter 64 in all three of its rubrics: this chapter shall be recited by a man who is ceremonially clean and pure, who hath not eaten the flesh of animals or fish, and who hath not had intercourse with women. Chapter 125 sets a longer list of the same kind before its own recitation: cleansed and purified, arrayed in apparel, shod with white leather sandals, the eyes painted with antimony, the body anointed with unguent of anti, and offerings of oxen, fowl, incense, cakes, ale and garden herbs; and the representation is to be drawn on a new tile moulded from earth upon which neither a pig nor other animals have trodden."@en ;
+    skos:note "Entered at prescribed order and not at stated necessity, and the reason is the finding. The corpus sets the condition three times over in the same chapter and never says what follows if it is broken. A reader who took the strength from the insistence rather than from the wording would enter a necessity the text does not state."@en ;
+    skos:note "The tile untrodden by a pig is the one condition in the passage that a second person could have checked before the fact. Everything else on the list is a state of the reciter."@en ;
+    pm:dependentStep pmc:AegyptiaRubricaScientiae ;
+    pm:priorStep pmp:AegyptiaPeretEmHeru ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 64, the three rubrics, Papyrus of Nu and Papyrus of Mes-em-neter, in the English of E. A. Wallis Budge, London 1901, vol. I, pp. 217-218 and 221-222", "Book of the Dead, chapter 125, rubric, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. II, pp. 377-378" .
+
+#
+# The find legend, in two versions that cannot both be true
+#
+
+pmc:AegyptiaInventioLibri a pm:Disputing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Who found the chapter, and under which king"@en, "Wer das Kapitel fand, und unter welchem König"@de ;
+    skos:definition "One chapter, two accounts of its discovery, in the same manuscript and separated by a few sheets. The rubric of the short version says that this chapter was found in the foundations of the shrine of the divine Hennu boat by the chief mason in the time of Semti, a king of the first dynasty, who carried it away as a mysterious object which had never before been seen or looked upon. The rubric of the long version says that this chapter was found in the city of Khemennu upon a block of iron of the south inlaid with letters of real lapis lazuli, under the feet of the god, in the time of Men-kau-Ra, by the royal son Heru-ta-ta-f, while he was journeying to make an inspection of the temples; one Nekht was with him and made him understand it; and he brought it to the king as a wonderful object when he saw that it was a thing of great mystery, which had never before been seen or looked upon. The same Hermopolis legend is attached in other manuscripts to chapter 30B and to chapter 148."@en ;
+    skos:note "Two dynasties, two places, two finders, and the identical closing formula about a thing never before seen. The editor of 1901 proposes in his introduction that both may be true because the long version is an amplification of the short; the editor of 1904 says of the same legend where it recurs at chapter 137A that it is told in imitation of the rubric of chapter 64, and calls the statement veracious in a tone that leaves no doubt. The second reading makes the find legend a form rather than a report, and the fact that the same legend travels between three different chapters is evidence for it."@en ;
+    skos:note "Why a transmission tells such a story is a question this holding can put to other corpora: it is the claim that the text is older than any line of teachers, was written by the god himself, and was recovered rather than composed. Whatever else it does, it removes the text from the reach of anyone who might remember where it came from."@en ;
+    pm:disputedClaim pmc:AegyptiaRubricaScientiae ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 64, long version, rubric I, Papyrus of Nu sheet 13, in the English of E. A. Wallis Budge, London 1901, vol. I, p. 221", "Book of the Dead, chapter 64, long version, rubric II, Papyrus of Nu sheet 21, in the English of E. A. Wallis Budge, London 1901, vol. I, pp. 221-222" .
+
+#
+# Three transformations read at the wording
+#
+
+pmc:AegyptiaTransformatioQuaelibet a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Transforming himself into whatever he pleaseth"@en, "Sich in was immer er will zu verwandeln"@de ;
+    skos:definition "The general capacity the series opens with: the chapter of a man transforming himself into whatever he pleaseth. The speaker enters the house of the king, has gathered together the great gods, is mighty, has made his way and has travelled along thereon. The rubric appended to it in the Papyrus of Ani is the two-sided one entered at pmc:AegyptiaRubricaBilateralis."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 76, Papyrus of Ani, in the English of E. A. Wallis Budge, The Book of the Dead: The Papyrus of Ani, London: British Museum, 1895, translation section, between the pages headed 329 and 333" .
+
+pmc:AegyptiaBennuTransformatio a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Transformation into the Bennu bird, and what it permits"@en, "Verwandlung in den Bennu-Vogel, und was sie erlaubt"@de ;
+    skos:definition "The speaker declares that he has germinated like the things which germinate, that he is of the germs of every god, that he is Yesterday of the four quarters and of the seven uraei which came into existence in Amentet, that he has come by day and risen in the footsteps of the gods, and that he is the god Khensu who driveth back all that oppose him. The rubric states what the state permits: he shall come forth pure by day after his death, he shall perform whatsoever transformations his heart desireth, he shall be in the following of Un-nefer, he shall be satisfied with the food of Osiris and with sepulchral meals, he shall see the disk, he shall be in good case upon earth before Ra, he shall be triumphant before Osiris, and no evil thing whatsoever shall have dominion over him for ever and ever."@en ;
+    skos:note "Entered singly and not in a list with the other transformations, because the harvest rule counts capacities strictly and because these are not one claim restated: each spell names a different form and a different set of permissions. Of the thirteen transformation spells only three were read at the wording in this run, and only two of those carry a rubric of their own."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 83, with its rubric, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. II, pp. 268-269" .
+
+pmc:AegyptiaHirundoTransformatio a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Transformation into a swallow, and what it permits"@en, "Verwandlung in eine Schwalbe, und was sie erlaubt"@de ;
+    skos:definition "The speaker declares that he is a swallow and the Scorpion, the daughter of Ra; that the beings who guard the doors are to make him a way, for he is like unto them; that he has come forth by day, journeyed on his legs and gained the mastery over his footsteps before the God of Light; that he knows the hidden ways and the doors of the Sekhet-Aarru; and that he has overthrown his enemies upon earth while his perishable body is in the grave. The rubric states what the state permits: he shall come forth by day, he shall not be turned back at any gate in the underworld, and he shall make his transformation into a swallow regularly and continually."@en ;
+    skos:note "The permission is the negation of the failure condition entered at pmc:AegyptiaPortaeNomina, and it is granted on the same ground: the speaker says he is like unto the guardians of the doors and knows the ways. The corpus keeps its instrument, its examination and its answer in one register."@en ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 86, with its rubric, Papyrus of Nu, in the English of E. A. Wallis Budge, London 1901, vol. II, pp. 275-277" .
