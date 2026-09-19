@@ -1,0 +1,564 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the forty-two gods of the hall of the two Maati, named
+#
+# traditions/egyptian-ritual.ttl entered the apparatus of chapter 125 as a
+# single concept, pmc:AegyptiaPortaeNomina, on the ground that the failure
+# condition of the whole corpus is stated there: the doorway refuses passage
+# to a man who cannot tell its name. That node said what the chapter does. It
+# did not carry a single one of the names, and a tradition whose operation
+# consists in knowing names is not entered until the names are in the graph.
+# pm:Naming exists for exactly this and the reason is at ontology/naming.ttl:
+# a name is a harder identity than a concept, because the three grounds SPEC
+# §14 gives for agreement without contact do not produce the same sequence of
+# sounds.
+#
+# The forty-two are the first instalment. The doorkeepers of the arits of
+# chapter 144, the pylon gods of chapters 145 and 146, the gods of the
+# fourteen aats of chapters 149 and 150 and the named gods of the chapters
+# already read are not here and are not claimed.
+#
+# Where the identifiers come from, because this is the decision the file
+# stands or falls on. AGENTS.md requires the name form of the leading
+# transliteration of the edition used, not of a translation, and two
+# independent runs must arrive at the same identifier. The Papyrus of Ani of
+# 1895 is the only public-domain edition available to this run that prints a
+# transliteration at all: Budge sets it interlinearly under the hieroglyphs
+# with his English beneath. That is the leading transliteration here and the
+# forms below are taken from it, address by address, forty-two of them in the
+# order of plates XXXI and XXXII.
+#
+# The text used is a scanned one and its transliteration line is the worst-set
+# line on the page — diacritics, the Greek chi Budge uses for kh, and his
+# apostrophe for tch are the first things a scanner loses. Every form was
+# therefore repaired by hand against Budge's own Hieroglyphic Vocabulary to
+# the Theban Recension of 1911, which marks the relevant entries with the
+# words the name of one of the Forty-two Judges in the Hall of Osiris and
+# whose headword line is set in ordinary roman. Thirty-nine of the forty-two
+# are confirmed there under a headword; the source field of each node names
+# both volumes, and skos:altLabel carries the other form wherever the two
+# differ. Three are carried by the 1895 line alone, because the vocabulary has
+# no marked entry for them: addresses 2, 17 and 22.
+#
+# What this does not claim. These are Budge's forms of the 1890s and 1900s and
+# they are not the transliteration of current Egyptology; Usekh-nemmet is
+# wsḫ-nmtt and Her-f-ha-f is ḥr.f-ḥꜣ.f in any modern handbook. The
+# identifiers are reproducible from a named public-domain edition, which is
+# what the rule asks for, and they are not correct Egyptian. A run with access
+# to a modern critical edition should treat every identifier here as a form to
+# be superseded and should say so at pmw:BookOfTheDead rather than renaming in
+# silence.
+#
+# What the vocabulary showed that the chapter does not. Budge's index to the
+# same recension marks judge names that do not occur in the Ani sequence at
+# all — Uatch-nesert, Uarekht, Utent, Maa-ha-f, Neb-nebu, Then-ret, Serekhi,
+# Ra. The number forty-two is therefore a count of slots and not of names, and
+# the finding is entered as a search at examinations/searches-egyptian.ttl
+# rather than as prose here.
+#
+
+pmc:AegyptiaConfessioNegativa a pm:Conceptualizing ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "The forty-two addresses: one god, one denial"@en, "Die zweiundvierzig Anreden: ein Gott, eine Verneinung"@de ;
+    skos:definition "The form the second half of chapter 125 takes in the Papyrus of Ani. Forty-two times the dead man says Hail, followed by a name, followed by the place the god comes forth from, followed by one thing he has not done. Nothing else stands in the unit: no petition, no offering, no act. The denial is bound to the god by position alone, and the binding is the whole content of the address."@en ;
+    skos:note "Two counts that do not agree, and they are in the text rather than read into it. There are forty-two addresses and there are forty-four denials, because address 33 carries I have not harmed and I have not done evil, and address 41 carries I have not carried off the food of the infant and I have not sinned against the god of my town. The apparatus is built to a number and the material does not divide by it."@en ;
+    skos:note "Two denials are also repeated word for word: addresses 20 and 21 both say I have not defiled the wife of a man, and addresses 17 and 31 both say I have not been an eavesdropper. A list assembled to fill forty-two places behaves like one."@en ;
+    skos:note "What the form is for is stated at pmc:AegyptiaPortaeNomina and not here: the man passes because he can say the name. The denial is what he says once he has the name right, and no part of the chapter makes the passage depend on the denial being true."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" .
+
+#
+# The forty-two, in the order of the plates
+#
+
+pmc:AegyptiaUsekhNemmet a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Usekh-nemmet"@en, "Usekh-nemmet"@de ;
+    pm:nameForm "usekh-nemmet" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "usekh (Papyrus of Ani, 1895, as read)"@en ;
+    skos:definition "The first address of chapter 125 in the Papyrus of Ani. Budge renders the name strider. The god is addressed as coming forth from Annu, and the address is bound to one denial: I have not done wrong."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 1, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Usekh-nemmet, p. 115" .
+
+pmc:AegyptiaHeptSeshet a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Hept-seshet"@en, "Hept-seshet"@de ;
+    pm:nameForm "hept-seshet" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The second address of chapter 125 in the Papyrus of Ani. Budge renders the name embraced with flame. The god is addressed as coming forth from Kher-aba, and the address is bound to one denial: I have not despoiled."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 2, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" .
+
+pmc:AegyptiaFenti a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Fenti"@en, "Fenti"@de ;
+    pm:nameForm "fenti" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "fentiu (Papyrus of Ani, 1895)"@en ;
+    skos:definition "The third address of chapter 125 in the Papyrus of Ani. Budge renders the name nose. The god is addressed as coming forth from Khemennu, and the address is bound to one denial: I have not robbed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 3, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Fenti, p. 157" .
+
+pmc:AegyptiaAmKhaibit a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Am-khaibit"@en, "Am-khaibit"@de ;
+    pm:nameForm "am-khaibit" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Am-khaibitu (Vocabulary, 1911)"@en ;
+    skos:definition "The fourth address of chapter 125 in the Papyrus of Ani. Budge renders the name eater of shades. The god is addressed as coming forth from Qernet, and the address is bound to one denial: I have not slain men, twice said."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 4, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Am-khaibitu, p. 82" .
+
+pmc:AegyptiaNehaaHra a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Nehaa-hra"@en, "Nehaa-hra"@de ;
+    pm:nameForm "nehaa-hra" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Neha-her (Vocabulary, 1911)"@en ;
+    skos:definition "The fifth address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from Re-stau, and the address is bound to one denial: I have not defrauded the offerings."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 5, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Neha-her, p. 213" .
+
+pmc:AegyptiaRereti a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Rereti"@en, "Rereti"@de ;
+    pm:nameForm "rereti" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Rerti (Vocabulary, 1911)"@en ;
+    skos:definition "The sixth address of chapter 125 in the Papyrus of Ani. Budge renders the name double lion-god. The god is addressed as coming forth from pet, the heaven, and the address is bound to one denial: I have not diminished the oblations."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 6, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Rerti (?), p. 239" .
+
+pmc:AegyptiaMaaFEmKhet a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Maa-f-em-khet"@en, "Maa-f-em-khet"@de ;
+    pm:nameForm "maa-f-em-khet" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Maati-f-em-khet (Vocabulary, 1911)"@en ;
+    skos:definition "The seventh address of chapter 125 in the Papyrus of Ani. Budge renders the name whose two eyes are of fire. The god is addressed as coming forth from Saut, and the address is bound to one denial: I have not despoiled the things of the god."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 7, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Maati-f-em-khet, p. 162" .
+
+pmc:AegyptiaNeba a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Neba"@en, "Neba"@de ;
+    pm:nameForm "neba" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The eighth address of chapter 125 in the Papyrus of Ani. Budge renders the name flame. The god is addressed as coming forth from in going back, and the address is bound to one denial: I have not spoken lies."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 8, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Neba, p. 205" .
+
+pmc:AegyptiaSetQesu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Set-qesu"@en, "Set-qesu"@de ;
+    pm:nameForm "set-qesu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The ninth address of chapter 125 in the Papyrus of Ani. Budge renders the name breaker of bones. The god is addressed as coming forth from Suten-henen, and the address is bound to one denial: I have not carried off food."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 9, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Set-qesu (or Set-qersu), p. 386" .
+
+pmc:AegyptiaUtuNesert a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Utu-nesert"@en, "Utu-nesert"@de ;
+    pm:nameForm "utu-nesert" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "utu neser (Papyrus of Ani, 1895, as read)"@en ;
+    skos:definition "The tenth address of chapter 125 in the Papyrus of Ani. Budge renders the name shooter forth of flame. The god is addressed as coming forth from Het-ka-Ptah, and the address is bound to one denial: I have not afflicted any."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 10, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Utu-nesert, p. 118" .
+
+pmc:AegyptiaQererti a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Qererti"@en, "Qererti"@de ;
+    pm:nameForm "qererti" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Qerti (Vocabulary, 1911)"@en ;
+    skos:definition "The eleventh address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from Amentet, and the address is bound to one denial: I have not committed fornication."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 11, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Qerti, p. 418" .
+
+pmc:AegyptiaHerFHaF a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Her-f-ha-f"@en, "Her-f-ha-f"@de ;
+    pm:nameForm "her-f-ha-f" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The twelfth address of chapter 125 in the Papyrus of Ani. Budge renders the name whose face is behind him. The god is addressed as coming forth from his cavern, and the address is bound to one denial: I have not made to weep."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 12, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Her-f-ha-f, p. 272" .
+
+pmc:AegyptiaBasti a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Basti"@en, "Basti"@de ;
+    pm:nameForm "basti" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The thirteenth address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from the secret place, and the address is bound to one denial: I have not eaten my heart."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 13, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Basti, p. 129" .
+
+pmc:AegyptiaTaRet a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Ta-ret"@en, "Ta-ret"@de ;
+    pm:nameForm "ta-ret" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The fourteenth address of chapter 125 in the Papyrus of Ani. Budge renders the name blazing legs. The god is addressed as coming forth from the darkness, and the address is bound to one denial: I have not transgressed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 14, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Ta-ret, p. 425" .
+
+pmc:AegyptiaAmSnef a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Am-snef"@en, "Am-snef"@de ;
+    pm:nameForm "am-snef" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The fifteenth address of chapter 125 in the Papyrus of Ani. Budge renders the name eater of blood. The god is addressed as coming forth from nemmat, the block, and the address is bound to one denial: I have not acted deceitfully."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 15, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Am-snef, Eater of Blood" .
+
+pmc:AegyptiaAmBesek a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Am-besek"@en, "Am-besek"@de ;
+    pm:nameForm "am-besek" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Am-besku (Vocabulary, 1911)"@en ;
+    skos:definition "The sixteenth address of chapter 125 in the Papyrus of Ani. Budge renders the name eater of intestines. The god is addressed as coming forth from Mabet, and the address is bound to one denial: I have not desolated ploughed lands."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 16, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Am-besku, Eater of Livers, or intestines" .
+
+pmc:AegyptiaNebMaat a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Neb-Maat"@en, "Neb-Maat"@de ;
+    pm:nameForm "neb-maat" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The seventeenth address of chapter 125 in the Papyrus of Ani. Budge renders the name lord of maat. The god is addressed as coming forth from Maati, and the address is bound to one denial: I have not been an eavesdropper."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 17, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" .
+
+pmc:AegyptiaThenemiu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Thenemiu"@en, "Thenemiu"@de ;
+    pm:nameForm "thenemiu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Thenemi (Vocabulary, 1911)"@en ;
+    skos:definition "The eighteenth address of chapter 125 in the Papyrus of Ani. Budge renders the name strider backwards. The god is addressed as coming forth from Bast, and the address is bound to one denial: I have not set my mouth in motion against any man."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 18, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Thenemi, p. 452" .
+
+pmc:AegyptiaSertiu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Sertiu"@en, "Sertiu"@de ;
+    pm:nameForm "sertiu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The nineteenth address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from Annu, and the address is bound to one denial: I have not raged except with a cause."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 19, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Sertiu, p. 360" .
+
+pmc:AegyptiaTutuF a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Tutu-f"@en, "Tutu-f"@de ;
+    pm:nameForm "tutu-f" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Tutu (Vocabulary, 1911)"@en ;
+    skos:definition "The twentieth address of chapter 125 in the Papyrus of Ani. Budge renders the name doubly wicked. The god is addressed as coming forth from Ati, and the address is bound to one denial: I have not defiled the wife of a man."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 20, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Tutu, p. 439" .
+
+pmc:AegyptiaUaamemti a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Uaamemti"@en, "Uaamemti"@de ;
+    pm:nameForm "uaamemti" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Uamemti (Vocabulary, 1911)"@en ;
+    skos:definition "The twenty-first address of chapter 125 in the Papyrus of Ani. Budge renders the name double serpent. The god is addressed as coming forth from khebt, the torture chamber, and the address is bound to one denial: I have not defiled the wife of a man."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 21, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Uamemti, p. 95" .
+
+pmc:AegyptiaMaaAntuF a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Maa-antu-f"@en, "Maa-antu-f"@de ;
+    pm:nameForm "maa-antu-f" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The twenty-second address of chapter 125 in the Papyrus of Ani. Budge renders the name looker at what is brought to him. The god is addressed as coming forth from Per-Amsu, and the address is bound to one denial: I have not polluted myself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 22, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" .
+
+pmc:AegyptiaHeriUru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Heri-uru"@en, "Heri-uru"@de ;
+    pm:nameForm "heri-uru" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Her-uru (Papyrus of Ani, 1895)"@en ;
+    skos:definition "The twenty-third address of chapter 125 in the Papyrus of Ani. Budge renders the name chief of the mighty. The god is addressed as coming forth from Amemt, and the address is bound to one denial: I have not caused terror."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 23, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Heri-uru, p. 270" .
+
+pmc:AegyptiaKhemiu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Khemiu"@en, "Khemiu"@de ;
+    pm:nameForm "khemiu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Khemi (Vocabulary, 1911)"@en ;
+    skos:definition "The twenty-fourth address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from Kesiu, and the address is bound to one denial: I have not committed offence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 24, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Khemi, p. 303" .
+
+pmc:AegyptiaShetKheru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Shet-kheru"@en, "Shet-kheru"@de ;
+    pm:nameForm "shet-kheru" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Seset-kheru (Papyrus of Ani, 1895, as read)"@en ;
+    skos:definition "The twenty-fifth address of chapter 125 in the Papyrus of Ani. Budge renders the name disposer of speech. The god is addressed as coming forth from Urit, and the address is bound to one denial: I have not inflamed myself with rage."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 25, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Shet-kheru, p. 406" .
+
+pmc:AegyptiaNekhennu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Nekhennu"@en, "Nekhennu"@de ;
+    pm:nameForm "nekhennu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Nekhenu (Vocabulary, 1911)"@en ;
+    skos:definition "The twenty-sixth address of chapter 125 in the Papyrus of Ani. Budge renders the name babe. The god is addressed as coming forth from Uab, and the address is bound to one denial: I have not made myself deaf to the words of right and truth."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 26, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Nekhenu, p. 215" .
+
+pmc:AegyptiaKennememti a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Kennememti"@en, "Kennememti"@de ;
+    pm:nameForm "kennememti" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Kenemti (Vocabulary, 1911)"@en ;
+    skos:definition "The twenty-seventh address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from Kennemmet, and the address is bound to one denial: I have not caused grief."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 27, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Kenemti, p. 410" .
+
+pmc:AegyptiaAnHetep a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "An-hetep"@en, "An-hetep"@de ;
+    pm:nameForm "an-hetep" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The twenty-eighth address of chapter 125 in the Papyrus of Ani. Budge renders the name bringer of his offering. The god is addressed as coming forth from Sau, and the address is bound to one denial: I have not acted insolently."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 28, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. An-hetep, p. 48" .
+
+pmc:AegyptiaSerKheru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Ser-kheru"@en, "Ser-kheru"@de ;
+    pm:nameForm "ser-kheru" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Sera-kheru (Vocabulary, 1911)"@en ;
+    skos:definition "The twenty-ninth address of chapter 125 in the Papyrus of Ani. Budge renders the name disposer of speech. The god is addressed as coming forth from Unaset, and the address is bound to one denial: I have not stirred up strife."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 29, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Ser-kheru, p. 358" .
+
+pmc:AegyptiaNebHeru a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Neb-heru"@en, "Neb-heru"@de ;
+    pm:nameForm "neb-heru" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The thirtieth address of chapter 125 in the Papyrus of Ani. Budge renders the name lord of faces. The god is addressed as coming forth from Netchefet, and the address is bound to one denial: I have not judged hastily."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 30, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Neb-heru, p. 201" .
+
+pmc:AegyptiaSekheriu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Sekheriu"@en, "Sekheriu"@de ;
+    pm:nameForm "sekheriu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Serekhi (Vocabulary, 1911, p. 359)"@en ;
+    skos:definition "The thirty-first address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from Uten, and the address is bound to one denial: I have not been an eavesdropper."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 31, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Sekheriu, pp. 369 and 409" .
+
+pmc:AegyptiaNebAbui a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Neb-abui"@en, "Neb-abui"@de ;
+    pm:nameForm "neb-abui" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The thirty-second address of chapter 125 in the Papyrus of Ani. Budge renders the name lord of two horns. The god is addressed as coming forth from Sauti, and the address is bound to one denial: I have not multiplied my words upon words."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 32, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Neb-abui, p. 199" .
+
+pmc:AegyptiaNeferTemu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Nefer-Temu"@en, "Nefer-Temu"@de ;
+    pm:nameForm "nefer-temu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Nefer-Tem (Vocabulary, 1911)"@en ;
+    skos:definition "The thirty-third address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from Het-ka-Ptah, and the address is bound to one denial: I have not harmed, I have not done evil."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 33, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Nefer-Tem, p. 208" .
+
+pmc:AegyptiaTemSepu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Tem-sepu"@en, "Tem-sepu"@de ;
+    pm:nameForm "tem-sepu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Tem-sep (Vocabulary, 1911)"@en ;
+    skos:definition "The thirty-fourth address of chapter 125 in the Papyrus of Ani. Budge renders the name tem in his seasons. The god is addressed as coming forth from Tettu, and the address is bound to one denial: I have not made curses of the king."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 34, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Tem-sep" .
+
+pmc:AegyptiaAriEmAbF a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Ari-em-ab-f"@en, "Ari-em-ab-f"@de ;
+    pm:nameForm "ari-em-ab-f" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Ari-en-ab-f (Vocabulary, 1911)"@en ;
+    skos:definition "The thirty-fifth address of chapter 125 in the Papyrus of Ani. Budge renders the name working in his heart. The god is addressed as coming forth from Tebu, and the address is bound to one denial: I have not fouled water."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 35, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Ari-em-ab-f, p. 52" .
+
+pmc:AegyptiaAhi a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Ahi"@en, "Ahi"@de ;
+    pm:nameForm "ahi" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The thirty-sixth address of chapter 125 in the Papyrus of Ani. Budge renders the name sistrum bearer. The god is addressed as coming forth from Nu, and the address is bound to one denial: I have not made my voice haughty."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 36, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Ahi, a sistrum bearer" .
+
+pmc:AegyptiaUtuRekhit a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Utu-rekhit"@en, "Utu-rekhit"@de ;
+    pm:nameForm "utu-rekhit" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "uatch-rekhit (Papyrus of Ani, 1895, as read)"@en ;
+    skos:definition "The thirty-seventh address of chapter 125 in the Papyrus of Ani. Budge renders the name provider of mankind. The god is addressed as coming forth from Sau, and the address is bound to one denial: I have not cursed God."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 37, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Utu-rekhit, p. 118" .
+
+pmc:AegyptiaNehebKa a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Neheb-ka"@en, "Neheb-ka"@de ;
+    pm:nameForm "neheb-ka" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The thirty-eighth address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from his cavern, and the address is bound to one denial: I have not committed theft."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 38, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Neheb-ka, he who yokes together the Kau, p. 214" .
+
+pmc:AegyptiaNehebNefert a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Neheb-nefert"@en, "Neheb-nefert"@de ;
+    pm:nameForm "neheb-nefert" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The thirty-ninth address of chapter 125 in the Papyrus of Ani. Budge carries the name over untranslated. The god is addressed as coming forth from his cavern, and the address is bound to one denial: I have not defrauded the offerings of the gods."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 39, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Neheb-nefert, p. 214" .
+
+pmc:AegyptiaTcheserTep a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Tcheser-tep"@en, "Tcheser-tep"@de ;
+    pm:nameForm "tcheser-tep" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Sefeser-tep (Papyrus of Ani, 1895, as read)"@en ;
+    skos:definition "The fortieth address of chapter 125 in the Papyrus of Ani. Budge renders the name arranger of his head. The god is addressed as coming forth from kera, his shrine, and the address is bound to one denial: I have not carried away offerings from the beatified ones."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 40, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Tcheser-tep, p. 463" .
+
+pmc:AegyptiaAnAF a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "An-a-f"@en, "An-a-f"@de ;
+    pm:nameForm "an-a-f" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:definition "The forty-first address of chapter 125 in the Papyrus of Ani. Budge renders the name bringer of his arm. The god is addressed as coming forth from Maat, and the address is bound to one denial: I have not carried off the food of the infant, I have not sinned against the god of my town."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 41, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. An-a-f, p. 46" .
+
+pmc:AegyptiaHetchAbehu a pm:Naming ;
+    pm:fromWork pmw:BookOfTheDead ;
+    rdfs:label "Hetch-abehu"@en, "Hetch-abehu"@de ;
+    pm:nameForm "hetch-abehu" ;
+    pm:nameRole "one of the forty-two gods of the hall of the two Maati" ;
+    skos:altLabel "Het-abehu (Papyrus of Ani, 1895, as read)"@en ;
+    skos:definition "The forty-second address of chapter 125 in the Papyrus of Ani. Budge renders the name white teeth. The god is addressed as coming forth from Ta-she, and the address is bound to one denial: I have not slaughtered the divine cattle."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EgyptianRitual ;
+    dcterms:source "Book of the Dead, chapter 125, the address to the forty-two gods, address 42, Papyrus of Ani, in the transliteration and English of E. A. Wallis Budge, London: British Museum, 1895, plates XXXI-XXXII, pp. 198-203" ,
+        "Budge, A Hieroglyphic Vocabulary to the Theban Recension of the Book of the Dead, London: Kegan Paul, 1911, s.v. Hetch-abehu, p. 289" .
