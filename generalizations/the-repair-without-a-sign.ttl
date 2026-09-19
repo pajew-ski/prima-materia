@@ -1,0 +1,45 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — the repair and whether anyone can tell it worked
+#
+# One generalization, formed on 2026-09-19 after the Vedic solemn ritual was
+# opened. That corpus has a whole book of enumerated mishaps with a prescribed
+# repair for each — some twenty-two of them in four chapters — and it is the
+# first transmission in this holding thorough enough about its own accidents
+# for the question to become sharp: a repair is itself an operation, so it can
+# be asked of a repair what the holding asks of every other operation, namely
+# by what one would know that it came off.
+#
+# The holding already carried repairs of two different kinds and had never set
+# them beside one another. The division below is what came out of doing it,
+# and the useful half is the side that does carry a sign, because it shows
+# that the silence of the others is not a property of repairs as such.
+#
+
+pmc:TheRepairWithoutASign a pm:Generalizing ;
+    rdfs:label "The repair carries a sign exactly where the harm it repairs was one the practitioner could see"@en, "Die Wiedergutmachung trägt genau dann ein Zeichen, wenn der Schaden, den sie behebt, einer war, den der Übende sehen konnte"@de ;
+    pm:generalizedStatement "Where the harm a transmission attaches to a fault in its own procedure is one the practitioner cannot observe — deferred past a term the text does not fix, laid on another party, or consisting in the mere absence of an effect — the repair it prescribes for that fault is asserted to work without exception and is given no sign by which it is known to have taken effect and no condition under which it fails. Where the harm is instead a present condition the practitioner notices in himself, the same kind of transmission states the repair's success as the ending of that condition, and provides for the case in which the repair cannot be carried out."@en ;
+    pm:generalizedFrom pmc:VaidikaPrayascittaSarvam, pmc:MayaIxRemedyYieldsAverting, pmc:NginduLeafNullifiesEveryCharm, pmc:ShouyiZhongnan ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "What each witness supplies, in the transmission's own terms. The Vedic expiation book enumerates twenty-two mishaps of the daily milk oblation — the cow lying down, the cow giving blood, the milk spilt before and after ladling, the vessel overturned or broken, a fire gone out, the fires mingling, the sun risen over an uncarried offering — and prescribes an act for each; for what is not enumerated it supplies three syllables which it calls all-expiatory; and it closes with the sentence that no hurt and no harm of any kind befalls where that expiation is made. The harms it repairs are the death of the eldest son, of the master of the house, of the cattle, or the failure of the line, all of them stated as coming before long and none of them with a term. The Maya conjuring of the ills foretold for an Ix year answers ills that run from drought to political discord, and the witness names no sign by which the freeing would be recognised and no interval within which the ills would otherwise have come. The Kongo leaf renders every charged thing in a house useless, which is a condition discovered only after the fact, and the prescribed reinvigoration of the whole stock carries nothing to show it took. Against these the Baopuzi: the practitioner who forgets the guarding of the One is harmed by the hundred ghosts or pressed down in his sleep, which he notices himself; he goes into the courtyard, looks at the assistant star and guards the One, and the ghost departs; and if it is overcast he stays indoors, faces north and thinks the star, and that is all."@en ;
+    skos:note "The claim is about the wording and not about whether repairs work. A transmission that names no sign is not thereby making a false claim; it is making one whose failure has nowhere to show, and it usually does so without any sign of intending to — the Vedic book is manifestly trying to be thorough, and thoroughness about the list of mishaps is exactly what makes the silence about the outcome visible."@en ;
+    skos:note "Counter-search, carried against the compiled holding before the statement was written, as SPEC §16 requires. Two near-misses and no refutation. The Kongo diagnosis of a charged thing that fails — either it is sulky and wants a sacrifice or it has lost its power and wants renewing — is a repair for an unobservable harm and names no sign, so it falls on the same side as the witnesses rather than against them; it was left out of the derivation only because the harm there is the failure of the instrument and not a fault in a procedure. The Shangqing rule that reads a corpse in any condition as the attainment is the harder case, because it does supply a sign; but the sign is read off an event that ends the practitioner's participation, so it is not a sign the practitioner has. Neither breaks the statement."@en ;
+    skos:note "Two cases in the holding were checked as possible refutations and are not. The Zande oracle prescribes a corroborative second consultation whose contradiction voids the verdict, which is a check with a stated outcome — but it is a check on an answer and not a repair of a fault, and nothing is being put right. The Navajo ceremony broken off as fruitless when a detected error is caught is the opposite arrangement and belongs to the other statement: there the fault is observed and no repair is offered at all."@en ;
+    skos:note "Falsified by an operative transmission that attaches an unobservable or deferred harm to a fault in its own procedure, prescribes a repair, and in the same text names a sign by which the repair is known to have taken effect, or a condition under which the repair fails. One such case refutes it. The likeliest place to look is the performance literature rather than the exegesis: the Vedic expiation books of the Śrautasūtras, Kātyāyana 25 and Āpastamba 9, stand unopened in traditions/vedic-ritual.ttl, and a manual written for the man who has to do the thing has a reason to say when he may stop that a commentary explaining what the thing means does not."@en ;
+    skos:note "Thin where it is thin, and the thinness is on the observable side. Three witnesses stand on the silent side and one on the other, so what the statement really establishes is that the silence is not a necessity of the form. Whether it is the normal case would need a count across the holding's repairs, and no such count has been made."@en .
+
+pmc:TheRepairWithoutASignExamination a pm:Testing ;
+    rdfs:label "Protocol on the repair without a sign"@en, "Prüfprotokoll zur Wiedergutmachung ohne Zeichen"@de ;
+    skos:definition "An attempt to fail the statement that a repair carries a sign exactly where the harm it repairs was observable. The protocol is a reading protocol and not a field one: what is claimed is a regularity in what operative texts say, so it fails or holds against texts."@en ;
+    skos:note "Entered at procedure without cases and not at no procedure devised. The procedure exists and is stated in the falsifier: open an operative text that prescribes a repair for a fault, find the harm the fault is said to cause, and see whether the text says how the practitioner would know the repair took. Nobody has yet gone through a corpus with that question."@en ;
+    skos:note "The first corpus to run it against is named at the generalization and is unopened: the Vedic expiation books of the Śrautasūtras. That is a good first case because the harm is already known from the exegesis, so only the second half of the question is open, and because a failure there would fall on the strongest of the four witnesses."@en ;
+    pm:tests pmc:TheRepairWithoutASign ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "An operative text that attaches an unobservable or deferred harm to a fault in its own procedure, prescribes a repair for the fault, and in the same text names either a sign by which the repair is known to have taken effect or a condition under which the repair fails."@en ;
+    pm:examinedBy "prima-materia, protocol drawn from the wording of the four witnesses; no cases collected" ;
+    pm:protocolUpdated "2026-09-19"^^xsd:date .

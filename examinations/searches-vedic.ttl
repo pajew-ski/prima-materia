@@ -1,0 +1,62 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — three searches carried in the Vedic Brāhmaṇas
+#
+# All three were carried on 2026-09-19 while the works were open, over the
+# whole of the five Eggeling volumes of the Śatapatha and the whole of the
+# Keith volume holding the Aitareya and the Kauṣītaki.
+#
+# One thing about the method belongs here rather than in each note. The
+# archive.org full texts of these volumes break every line, so a phrase of two
+# words is split across lines at unpredictable places and a line-based search
+# returns almost nothing: before long gave no hits in five volumes and five
+# hits after the whitespace was collapsed, and died gave one apparent hit per
+# volume and four real ones. Every count below was taken on the whitespace-
+# normalised text, and a run that skips that step will report negatives it has
+# not earned. This is the same trap as the one recorded for damaged OCR in
+# AGENTS.md, from a different cause.
+#
+
+pmp:VedicExpiationSignSearch a pm:Searching ;
+    rdfs:label "Whether the Brāhmaṇas name a sign that an expiation has taken effect"@en, "Ob die Brāhmaṇas ein Zeichen dafür nennen, dass eine Sühne gewirkt hat"@de ;
+    pm:searchedCorpus "Śatapatha Brāhmaṇa (Mādhyandina) in the English of Julius Eggeling, Sacred Books of the East 12, 26, 41, 43 and 44, Oxford 1882-1900, kāṇḍas I to XIV complete; and Aitareya and Kauṣītaki Brāhmaṇas in the English of Arthur Berriedale Keith, Rigveda Brahmanas, Harvard Oriental Series 25, Cambridge 1920, complete" ;
+    pm:searchedFor "Anywhere in either corpus: a sign, mark or event by which a performer would know that a prescribed expiation had taken effect; or an interval within which the harm the expiation averts would otherwise have arrived; or a case in which an expiation was made and failed. The expiation is the corpus's own repair for its own accidents, and it is prescribed case by case with great care; whether it is also given a criterion decides whether the whole apparatus of stated failure conditions is examinable or only enumerable." ;
+    pm:searchTerms "Whole-text search of all six volumes on the whitespace-normalised text for: expiation (69 in the five Śatapatha volumes, 130 in Keith); expiatory (36 and 5); in vain (9 and 1, every one inspected and none about a rite that did not take); of no avail, did not avail, availed not, unavailing (none anywhere); failed (6 and 0, all inspected — five are the Vaiśvānara dialogue of Śatapatha X,6,1 and one is a simile about a stronghold gate); sign of (11 and 12); token (2 and 1); thereby he knows, he knows that the expiation, sign of the expiation (none). In addition the four chapters of the expiation book, Śatapatha XII,4,1 to XII,4,4, were read continuously, and so were Aitareya vii,2 to vii,12 in outline." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-19" ;
+    dcterms:date "2026-09-19" ;
+    skos:note "No sign anywhere, and one sentence in the opposite direction. The standing form of the expiation book is a question — they also say, if such and such were to happen, what rite and what expiation would there be in that case? — an act, and the closing formula this, then, is the rite performed in that case. Some twenty-two of these stand in four chapters. The only statement about efficacy the run found is general and unconditional: no hurt and no harm of any kind befalls where that expiation is made. Beside it stands the clause for everything not enumerated, the three utterances which the text calls all-expiatory and of which it says that he thus makes expiation with all this universe."@en ;
+    skos:note "This is the exhibited gap the class exists for, and it is not a gap in the reading. A corpus that lists its accidents this carefully has plainly attended to the question of what can go wrong; the silence is about how one would know it had been put right, and it is complete over six volumes."@en ;
+    skos:note "Limits, and they are real. The performance literature was not opened: the expiation is a book of its own in the Śrautasūtras, Kātyāyana 25 and Āpastamba 9, and Eggeling's notes refer to Kātyāyana at exactly the places searched. A manual written for the man who has to do the thing may well say when he may stop. The finding is about the exegesis and says nothing about the sūtras."@en .
+
+pmp:VedicPenaltyCaseSearch a pm:Searching ;
+    rdfs:label "Whether the Brāhmaṇas report a case of the threatened harm actually arriving"@en, "Ob die Brāhmaṇas einen Fall berichten, in dem der angedrohte Schaden wirklich eintrat"@de ;
+    pm:searchedCorpus "Śatapatha Brāhmaṇa (Mādhyandina) in the English of Julius Eggeling, Sacred Books of the East 12, 26, 41, 43 and 44, Oxford 1882-1900, kāṇḍas I to XIV complete; and Aitareya and Kauṣītaki Brāhmaṇas in the English of Arthur Berriedale Keith, Rigveda Brahmanas, Harvard Oriental Series 25, Cambridge 1920, complete" ;
+    pm:searchedFor "A passage reporting that a named human being committed one of the ritual faults this corpus attaches a consequence to, and that the consequence followed. The corpus states such consequences by the dozen — the eldest son dies, the master of the house dies, the cattle die, the line fails, the sacrificer becomes worse, is confused, is likely to die — and a single reported instance is worth more to an examination than any number of further statements of the rule." ;
+    pm:searchTerms "Whole-text search of all six volumes on the whitespace-normalised text for: died (4 in the Śatapatha, 3 in Keith, every one inspected); he perished, came to ruin, was ruined, his cattle died, his eldest son died, the sacrificer died, his head flew off, head fell off (none anywhere); before long (5 in the Śatapatha, all in the dialogue of Śauceya and Uddālaka at XI,5,3, all of them statements of the rule and none a report); within a year, within the year, within a month, within ten days, on the tenth day (15 across the six volumes, inspected, none of them a term set to a penalty). The line-based counts before normalisation were 1 per volume for died, which is the artefact described in the header of this file."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:VaidikaAsadhimrtyu ;
+    pm:searchedBy "prima-materia, 2026-09-19" ;
+    dcterms:date "2026-09-19" ;
+    skos:note "One case in six volumes, and the search is the only reason it is in the holding: it stands in a chapter on the heads of the victims that no part of this run had any reason to read. Some obtain the heads without performing the animal sacrifice and put them on the altar; they who do this become mortal carcases; in this way they did put them on for Aṣāḍhi Sauśromateya, but quickly indeed he died after that."@en ;
+    skos:note "What the negative half of the finding is worth. Four occurrences of the word died in fourteen kāṇḍas, of which one is a dyed ox-hide, one a wind dying away, one the immortality passage of X,4,3, and one this case. A corpus this insistent about what follows a fault records the following of it once. That is a statement about the genre — the Brāhmaṇas argue from equivalences and not from instances — and it bounds what any protocol built on them can expect to find."@en ;
+    skos:note "Limits. One translation each, and the Kāṇva recension of the Śatapatha, which is not a variant of the Mādhyandina numbering but a separate text, was not obtained in any form. Eggeling's rendering decides the search terms: he writes recurring death where Keith writes repeated death, and a search in either wording alone loses half the corpus."@en .
+
+pmp:VedicPunarmrtyuWordingSearch a pm:Searching ;
+    rdfs:label "Whether the escape from the death that comes again is credited to anything besides the altar"@en, "Ob das Entkommen vom wiederkehrenden Tod noch etwas anderem als dem Altar zugeschrieben wird"@de ;
+    pm:searchedCorpus "Śatapatha Brāhmaṇa (Mādhyandina) in the English of Julius Eggeling, Sacred Books of the East 12, 26, 41, 43 and 44, Oxford 1882-1900, kāṇḍas I to XIV complete; and Aitareya and Kauṣītaki Brāhmaṇas in the English of Arthur Berriedale Keith, Rigveda Brahmanas, Harvard Oriental Series 25, Cambridge 1920, complete" ;
+    pm:searchedFor "Every operation to which either corpus credits escape from punarmṛtyu, the death that comes again. The question is whether the claim is tied to the one expensive operation that states an exact condition — the piling of the fire-altar with its counted bricks — or is spread over operations of very different cost, because the second would mean that the condition stated at X,4,3 governs nothing." ;
+    pm:searchTerms "Whole-text search of all six volumes on the whitespace-normalised text for: recurring death and recurrent death, which is Eggeling's rendering; repeated death, which is Keith's; death again, dies again, come to life again; immortality (29 in the Śatapatha volumes, inspected around the passages found). Eggeling's and Keith's renderings do not overlap, and a search in one alone returns nothing from the other corpus." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:VaidikaSvadhyayaPunarmrtyujaya ;
+    pm:searchedBy "prima-materia, 2026-09-19" ;
+    dcterms:date "2026-09-19" ;
+    skos:note "Spread, and over a wide range of cost. Nine places in the six volumes, every one read at the wording. In the Śatapatha: the piled altar with its ten thousand eight hundred bricks at X,4,3; the altar built above the sun rather than on this side of it, in kāṇḍa X, where the building is said to be done thereabove by the builder's knowledge; two places in the same kāṇḍa where the escape is credited to knowing an equivalence and to nothing else, one of them adding that he attains the whole life; the daily recitation of one's lesson at XI,5,6,9, where a single divine word suffices on a day when nothing else is possible; a place in kāṇḍa XII where passing from the imperishable to the imperishable does it; and the Sautrāmaṇī at XII,9,3,11 and 12, which wards off the recurring death of a man's cattle and of his dead, and which does so for him for whom the rite is performed as well as for him who knows. In the Kauṣītaki, the Viṣuvant day: without it are hunger and repeated death, and they conquer hunger and repeated death who perform it, at xxv,1 in Keith's page 486."@en ;
+    skos:note "The finding bears on the condition and not on the claim. X,4,3 is the only place where the corpus reports its own failures and names an exact count as what ends them, and it is the passage a reader would take for the corpus's considered position. Four other places give the same result for operations that meet no such condition. Whatever the count at X,4,3 is doing, it is not the condition on which escape from the death that comes again is generally made to depend."@en ;
+    skos:note "Not searched: the Kāṇva recension, and the Upaniṣadic parts of kāṇḍa XIV beyond the passages the other searches touched, where the term is known to recur in a different argument."@en .
