@@ -1,0 +1,74 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — five searches carried in the Mandaean corpus
+#
+# All five were carried on 2026-09-20 while the works were open. Four of them
+# put one question, and it is the question the tradition file was assembled
+# around: the rules that price and void a Mandaean rite are reported from the
+# field and from a priestly manual, so where do they stand in writing? The
+# answer is that in the two transmitted books that could be opened they do not
+# stand at all, and the fifth search says why the book in which they do stand
+# could not be got.
+#
+
+pmp:MandaeanGinzaTaxatioSearch a pm:Searching ;
+    rdfs:label "Whether the Ginzā anywhere prices a ritual fault"@en, "Ob der Ginzā irgendwo einen Ritualfehler beziffert"@de ;
+    pm:searchedCorpus "Ginzā, right and left side, in the German of Mark Lidzbarski, Ginzā: Der Schatz oder das große Buch der Mandäer (Göttingen: Vandenhoeck und Ruprecht, 1925)" ;
+    pm:searchedFor "A passage in which the scripture itself states a counted penalty for a fault in a rite, or declares a performance void: the sixty and fifty and three hundred and sixty-six baptisms that the field record of 1937 reports as the price of a broken cult object, of a nocturnal emission on a given day, or of a marriage performed for a woman who was not a virgin. The question decides how the tariff in traditions/mandaean.ttl is to be read: as the transmission's own written rule, or as priestly practice that stands beside the scripture." ;
+    pm:searchTerms "Whole-text search of the volume, with the text normalised to bare letters first so that the scan's broken umlauts would not hide a spelling. Searched for: Taufen (nineteen hits, every one of them the rite and none a penalty); sechzig Taufen, dreihundert (ten, all of them numbers of heavenly dwellings or ages, none a penalty); 366 (twenty-one, all of them the count of dwellings or of days, the nearest being the head of the three hundred and sixty-six dwellings); Buße and Bue and Busse (thirteen, all of them repentance and none of them a tariff); ungültig in three spellings (none); wiederholen (four, none ritual); Strafe der Taufe (none)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-20" ;
+    dcterms:date "2026-09-20" ;
+    skos:note "Nothing anywhere. The scripture threatens, and it threatens at length — the blazing fire, the boiling cauldrons, the second death that does not come — but it never converts a fault into a number, and it never says that a performance did not count. The whole quantified apparatus of this transmission lies outside the two books this run could open."@en ;
+    skos:note "The limit that matters here is one of translation and not of coverage. The search was carried over a German translation of 1925, so it would miss a penalty that its translator rendered in words the search did not try. Against that stands the shape of the finding: the absence is not of one term but of a whole form of sentence, and a translator who had met such sentences would have had to render them somehow."@en .
+
+pmp:MandaeanQolastaIrritumSearch a pm:Searching ;
+    rdfs:label "Whether the prayerbook anywhere declares a performance void"@en, "Ob das Gebetbuch irgendwo eine Handlung für ungültig erklärt"@de ;
+    pm:searchedCorpus "Qolastā, in the English of E. S. Drower, The Canonical Prayerbook of the Mandaeans (Leiden: E. J. Brill, 1959), the whole volume including the rubrics" ;
+    pm:searchedFor "A rubric in the liturgical book stating that a performance is invalid, is to be broken off, or is to be repeated, and any statement of what the celebrant is to do when something goes wrong. The prayerbook is the text actually in the celebrant's hands and carries bracketed rubrics throughout, so if the fault rules were anywhere in the liturgy this is where they would be." ;
+    pm:searchTerms "Whole-text search of the volume, normalised to bare letters. Searched for: invalid (no hits at all); must repeat (none); repeat the (two, both of them ordinary instructions to say a prayer again in sequence); mistake (twenty-five, and every one of them inside the same liturgical formula, sins, trespasses, follies, stumblings and mistakes, asking that they be forgiven); error (nine, all of them the editor's notes on the manuscripts); fault (twelve, likewise); defil (one); pollut (six, all of them the state of a person and none the state of a rite); penalt (one, in an editor's note); omit (eighty-three, all of them the editor recording what a manuscript leaves out); sixty (thirty-five, all of them counts of prayers, loaves or days)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-20" ;
+    dcterms:date "2026-09-20" ;
+    skos:note "The word for a void performance does not occur in the book of the performance. What the liturgy has instead is a standing formula in which the celebrant asks that sins, trespasses, follies, stumblings and mistakes be loosed — a petition, addressed upward, about the state of souls, and not a rule about the state of a rite. The two ways of handling a fault sit in two different books: the prayerbook asks for it to be forgiven, and the manual, which could not be got, prices it."@en ;
+    skos:note "This is the finding of the run that a later reader is most likely to want and least likely to expect, so it is stated plainly: the transmission's famous severity about ritual error is not visible in its liturgy. Whoever opens the Alf Trisar Šuialia should ask the reverse question there, whether the manual ever asks for forgiveness or only ever charges."@en .
+
+pmp:MandaeanSacerdotissaeSearch a pm:Searching ;
+    rdfs:label "Whether the thirteenth book mentions priestesses, as the field record says"@en, "Ob das dreizehnte Buch Priesterinnen nennt, wie der Feldbericht sagt"@de ;
+    pm:searchedCorpus "Ginzā, right side, book 13, in the German of Mark Lidzbarski, Ginzā (Göttingen 1925), pp. 283-288, read continuously, with a whole-volume search beside it" ;
+    pm:searchedFor "The passage the field monograph of 1937 cites when it says that there is a mention of Mandaean priestesses in the thirteenth book of the right side. The citation matters because it is the only textual support offered for a claim the same page reports as contested in the community and forbidden by the priestly manual." ;
+    pm:searchTerms "Whole-volume search for Priesterin and Priesterinnen, which returns exactly one place in six hundred pages, and it is a footnote. The thirteenth book was then read continuously around that place rather than searched, because the word sought was known not to stand in the running text. Also searched: Jüngerin, Frauen, Töchter." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:MandaeanSacerdotissaeDisputatae ;
+    pm:searchedBy "prima-materia, 2026-09-20" ;
+    dcterms:date "2026-09-20" ;
+    skos:note "The place is there and it says the opposite of what it was cited for. At text 288,24 the translation has a feminine plural rendered as die Jüngerinnen, the women disciples, and a footnote hanging on it which says that the Mandaic word cannot mean priestesses, since there are none among the Mandaeans. The only occurrence of the word priestesses in the whole translation is thus a denial that it belongs in the translation."@en ;
+    skos:note "What the search turned up is therefore not a missing passage but a decision taken inside the standard translation, on a ground that assumes the answer: the reading is excluded because the community has no priestesses, which is precisely what the passage would bear on. It became pmc:MandaeanSacerdotissaeDisputatae, and the search is recorded here because the node would otherwise look like a finding of the reading rather than a finding about how the reading was closed off."@en .
+
+pmp:MandaeanCasusIrritiSearch a pm:Searching ;
+    rdfs:label "Whether the field record ever counts a consecration that failed"@en, "Ob der Feldbericht je eine gescheiterte Weihe zählt"@de ;
+    pm:searchedCorpus "E. S. Drower, The Mandaeans of Iraq and Iran: Their Cults, Customs, Magic, Legends, and Folklore (Oxford: Clarendon Press, 1937), the whole volume" ;
+    pm:searchedFor "A figure, or even a single dated case, for how often the voiding conditions this transmission states are actually met: a consecration invalidated by the wife's uncleanness, a crown that fell, a year's postponement, a candidate for the high priesthood whose dying man recovered. The rules are stated with great precision, and a rule that is never triggered and a rule that is triggered constantly look identical in a book of rules." ;
+    pm:searchTerms "Whole-text search, normalised to bare letters, for: postponed for a year (one hit, the rule itself and no case); was invalidated (none); had to be repeated (none); how often (none); cases of (two, neither of them a case of a voided rite); I have known, I knew of, happened once, never happened (none); has happened (one, and it is about men returning from death); twice in, three times in (seven, none of them about a rite)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-20" ;
+    dcterms:date "2026-09-20" ;
+    skos:note "No number, and only three named cases in the whole book, none of them a voiding: two men who went through the expiation for marrying a woman who was not a virgin, and one purification the recorder watched at Litlata in 1934. The recorder says of the recovery case that it happens rarely and gives no instance, and of the fallen crown nothing at all."@en ;
+    skos:note "The gap is exhibited rather than deplored, because it is the same gap the holding has everywhere and it is unusually visible here. This transmission states more conditions of failure than almost anything else in the graph, and states none of the frequencies. A reader who wanted to know whether the severity is lived or recited would have to count consecrations, and nobody has."@en .
+
+pmp:MandaeanManualisAccessusSearch a pm:Searching ;
+    rdfs:label "Whether the priestly manual of faults could be reached"@en, "Ob das priesterliche Fehlerhandbuch erreichbar war"@de ;
+    pm:searchedCorpus "Alf Trisar Šuialia, in the edition of E. S. Drower, The Thousand and Twelve Questions (Alf Trisar Šuialia): A Mandaean Text (Berlin: Akademie-Verlag, 1960)" ;
+    pm:searchedFor "The text of the part titled Mhita u-Asuta, blow and healing, which is the transmission's own book of ritual faults and their remedies, and of the part on unintentional defilement and its healing. Every counted penalty in traditions/mandaean.ttl presumably stands there, and stands there in the transmission's own words rather than in a recorder's summary." ;
+    pm:searchTerms "The ways SPEC §15 requires before unreachability may be asserted were worked through rather than assumed. Searched the full-text archive under the title, under the transliterated title in two spellings, and under the editor's name; one scan of the edition of 1960 exists and is a lending copy, whose text file answers 401 to a direct request. Searched for a second identifier of the same work in the same archive, which is how the prayerbook was got in this run, and found none. The transliteration held by the Comprehensive Aramaic Lexicon refuses automated retrieval by its own notice. No other digitisation was found." ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-09-20" ;
+    dcterms:date "2026-09-20" ;
+    skos:note "Entered on the fourth outcome and not on the second, which is the distinction the scale exists for: this corpus was not read and found silent, it could not be opened. Two nodes in the tradition file rest on it at second hand through the field monograph, and they are marked as such."@en ;
+    skos:note "What actually worked in this run is worth leaving beside the failure, because it is the reason the failure can be called one. The prayerbook was first found as a lending copy too, and a second identifier of the same edition in the same archive turned out to carry an open text. The same move was tried here and there is no second identifier. That is the difference between a statement about a run and a statement about a work."@en .
