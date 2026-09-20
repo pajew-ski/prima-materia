@@ -1,0 +1,53 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — what a protection would have to fail at
+#
+# One generalization, formed on 2026-09-20. The occasion was the Egyptian
+# corpus: a count of its chapter titles found that a quarter of them state
+# their capacity as a harm averted rather than a power gained, which put the
+# question of what such a claim could fail at into the holding with a number
+# behind it. The holding turned out to have the same arrangement in four
+# other transmissions with no contact route between them, and to have one
+# case of the opposite arrangement, which is what makes the statement worth
+# writing rather than merely observing.
+#
+# It is not the statement at generalizations/no-failed-run-counts.ttl and the
+# two should not be run together. That one is about what a transmission says
+# after a run that produced nothing: an excuse is supplied and located in the
+# operator, the patient, the material or a third party. This one is about the
+# wording of the claim before any run at all: the harms are named in such a
+# combination that no run could produce nothing. The first repairs a visible
+# failure, the second prevents one from being visible. The Fon corpus
+# supplies a witness to each, which is the neatest evidence that they are two
+# arrangements and not one.
+#
+
+pmc:TheProtectionAndWhatWouldShowItFailed a pm:Generalizing ;
+    rdfs:label "The harms a protection averts are named in both kinds at once, and the recordable ones are never the test"@en, "Die Schäden, die ein Schutz abwendet, werden in beiden Arten zugleich genannt, und die feststellbaren sind nie die Probe"@de ;
+    pm:generalizedStatement "Where an operative transmission names the harms that its protection averts, it joins in one sentence or one list, and without marking the difference, harms whose occurrence any bystander would notice — a spear striking, a man behaving as a contrary, a head cut off, a drought, a named disease — to harms whose occurrence nobody could record — a devil drawing nigh, a god paying a visit, ills indicated as to come, anything bad approaching. The protection is claimed as satisfied whole, so no recordable harm is ever made the test of it, and none of these transmissions states a condition under which the protection would be judged to have failed. Where only one harm is named it is of the unrecordable kind. A protection attached to a single recordable harm and to nothing else occurs in the holding, and occurs once."@en ;
+    pm:generalizedFrom pmc:AegyptiaMalaAversa, pmc:EthiopianKeepingOfTheDevilsInRestraint, pmc:MayaAvertingOfForetoldIlls, pmc:CedarWardsTheWingedGod, pmc:AsipuMimmaLemnuLaTehi, pmc:VoSesa ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "What each witness supplies, in the transmission's own words. The Book of the Dead states thirty-two of its recovered chapter titles as harms averted and mixes them without a mark: not letting the head of a man be cut off, which a mourner would see, stands in the same list as not dying a second time, which nobody can report. The Ethiopian roll does it inside one sentence — that no devil shall draw nigh, and that the man shall be smitten neither by the arrows of his adversary nor by the stone hurled at him nor by the spear. The Lakota cedar does it in one clause and its continuation: the Winged God will not visit one protected by it, nor cause such a one to act foolishly; the visit is between the god and the man, the foolish conduct is what the camp sees and names. The Maya conjuring frees from the ills indicated as to come, and the ills run from drought to political discord. The Mesopotamian anointing has no list at all and says only that nothing bad will approach him, which is the same silence reached by the shorter road."@en ;
+    skos:note "The one witness on the other side, and it is the reason the statement is not a truism about religious language. The Fon vo-sesa is bound to crops standing in the bush and to goods left for sale beside a frequented path, with a few cowries on each article to show the price, and they are said to be quite safe from pillage. One harm, no companion, and the harm is a theft or the absence of one. That claim is about a distribution in the world and could have come out against the transmission on any market day."@en ;
+    skos:note "Why the mixing matters and what it is not. It is not an accusation of evasion. Nothing suggests the compilers arranged the lists so as to be safe; the Ethiopian prayer is plainly trying to cover everything that can happen to a nursing child, and covering everything is exactly what produces the mixture. The consequence holds regardless of the intention: once the unrecordable member is in the list, the recordable member never has to carry the claim, and a spear that does strike is not a refutation of a sentence that also promised that no devil would draw nigh."@en ;
+    skos:note "Counter-search, carried against the compiled holding before the statement was written, as SPEC §16 requires. Every node in the traditions whose wording names an averting and also names a sign, a test or a term was read. No refutation and three near-misses. The Kongo kandu announces a curse before the theft and states a rule of fairness requiring the announcement, which is a two-sided arrangement — but it announces a harm rather than averting one, and the corpus itself notes that a curse announced in advance is one the announcement could bring about. The Ethiopian prayer for the suckling sets a term, until the years of childbearing are ended, but it is a term of the wearing and not a term within which the harm would otherwise have come; the holding already marks this at pmc:EthiopianSucklingProtectionPresupposesTheWearing, which is prescribed order and carries no consequence of breaking off. And the Lakota transmission names three different protections against one and the same outcome in three different rites, which multiplies the means without ever stating what would show any of them had failed."@en ;
+    skos:note "The strongest thing the counter-search found is not a near-miss but a contrast, and it bears on whether the silence is a property of these sources or of these claims. The same holding, and in the Inuit case the same kind of report by the same kind of recorder, does carry two-sided signs where the operation is a divination: the fork that falls means the sick person dies and the fork that stands upright means she lives, stated in advance and in both directions. A recorder who wrote that down would have written down a stated failure condition for a protection if the transmission had supplied one. It appears that they do not supply one."@en ;
+    skos:note "Independence, and one confound named. Six witnesses from six transmissions with no contact route asserted between any pair in this holding. Five recorders: Budge, Landa through Gates, Walker, Geller, Ellis. Two of the six — the Egyptian and the Ethiopian — reach the graph through the same editor and translator, and the claim here is a claim about wording, so for this statement that pair counts as something closer to one witness than to two. The Lakota witness was sought for exactly that reason and is the one that carries the mixing side independently of Budge."@en ;
+    skos:note "Thin where it is thin. The other side of the statement rests on a single case, so what is established is that the arrangement is avoidable and not how often it is avoided. A count of the protections in the holding, sorted by whether the harms they name are recordable, has not been made and would settle the proportion."@en .
+
+pmc:TheProtectionAndWhatWouldShowItFailedExamination a pm:Testing ;
+    rdfs:label "Protocol on the protection and what would show it failed"@en, "Prüfprotokoll zum Schutz und woran sein Versagen zu sehen wäre"@de ;
+    skos:definition "An attempt to fail the statement that transmissions naming the harms their protections avert mix the recordable with the unrecordable and never make the recordable ones the test. The protocol is a reading protocol: what is claimed is a regularity in what operative texts say, so it fails or holds against texts."@en ;
+    skos:note "Entered at procedure without cases. The procedure is stated in the falsifier and is cheap to run: take an operative text that promises protection, list the harms it names, sort them by whether a bystander could tell the harm had occurred, and see whether the text sorts them too. What is missing is not a method but a corpus gone through with it."@en ;
+    skos:note "Where to run it first, and the choice is not neutral. The apotropaic literature written for practitioners rather than for buyers is the likeliest place to find the sorting, because a manual that has to answer a dissatisfied client has a reason to say in advance what the protection does not cover. The Mesopotamian namburbi rituals are the obvious corpus and stand unopened beside traditions/mesopotamian-asiputu.ttl, which this run entered only from the exorcist's self-protection."@en ;
+    skos:note "A second and independent way to fail it: find a second transmission of the Fon kind, where a protection is attached to a single recordable harm with no companion. Two such cases would turn the other side of the statement from an existence proof into a class, and would raise the question the statement cannot now put — what distinguishes the transmissions that risk a checkable claim from those that do not."@en ;
+    pm:tests pmc:TheProtectionAndWhatWouldShowItFailed ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "An operative transmission that names the harms its protection averts and does any one of three things: marks off the harms whose occurrence a bystander could establish from those whose occurrence nobody could record; names one of the recordable harms as the test of whether the protection held; or states a condition under which the protection is to be judged to have failed."@en ;
+    pm:examinedBy "prima-materia, protocol drawn from the wording of the six witnesses; no cases collected" ;
+    pm:protocolUpdated "2026-09-20"^^xsd:date .
