@@ -1,0 +1,50 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — the doctrine that the name is everything, and the clause
+# that lets the work go on without it
+#
+# One generalization, formed on 2026-09-20. It was pointed at by a node
+# written the same day: pmc:AsipuNominisIncertitudo said that the Babylonian
+# adjuration is worded so the exorcist need not establish which of twelve
+# harms he is treating, and said that the next statement in that direction
+# should start there. This is that statement.
+#
+# What made it worth looking for is that the holding had just spent several
+# runs on the opposite case. The Egyptian material entered here in September
+# is the hardest statement of the requirement anywhere in the graph: at the
+# hall of the two Maati the doorway refuses passage to a man who cannot tell
+# its name, and it refuses a dozen times in one chapter. Set beside that, a
+# corpus which also contains a way of not needing the name is not a curiosity
+# but a pattern worth testing, and the Egyptian corpus turns out to contain
+# the completest one of all.
+#
+
+pmc:TheProvisionForNotKnowing a pm:Generalizing ;
+    rdfs:label "The transmission that makes everything depend on the name also carries a way of working without it"@en, "Die Überlieferung, die alles vom Namen abhängen lässt, führt auch einen Weg, ohne ihn zu arbeiten"@de ;
+    pm:generalizedStatement "Where a transmission makes an operation depend on identifying what is being dealt with — the name of the adversary, the origin of the hurt, the name of the thing met on the road — the same corpus carries a standing provision for proceeding without that identification, and the provision is not an emergency measure but has a place of its own. It takes one of three forms: a disjunction that names every candidate at once, so that the identification need not be made; a form of words for the case of not knowing, with a number and a fixed position in the order of recitation; or an apparatus of objects that answers the same encounters and does not require a name at all. In no case read here does the corpus that states the requirement leave the practitioner who cannot meet it with nothing."@en ;
+    pm:generalizedFrom pmc:AsipuNominisIncertitudo, pmp:FinnicSynnynLukeminen, pmp:FinnicSyynTiedustus, pmc:HuwuZhiming, pmc:AegyptiaPortaeNomina, pmp:AegyptiaSeptemAritae ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The three forms, one witness each. The disjunction: the Babylonian adjuration runs whether thou be an evil Spirit or an evil Demon, or sickness, or death, or evil pestilence, and then removes whichever it is. The formula for not knowing: the Finnish collection makes the pronouncing of the origin the operation itself and treats it as a thing the operator either has or lacks, and it carries a separate formula for lacking it — one whose speaker says outright that he does not know who the maker of the hurt is, and which has a number and a place in the order rather than standing as an emergency measure. The apparatus of objects: the eighteenth chapter of the Baopuzi gives a key by which a thing met in the mountains is named from the day-branch and the title it gives itself, closes the list with the rule that only knowing the name takes away the harm, and then answers the same encounters in its other half with talismans in cinnabar on peachwood, a seal of jujube heartwood, the mirror and realgar, none of which requires the name."@en ;
+    skos:note "The Egyptian corpus supplies both ends and is the reason the statement is worth making. At the hall of the two Maati every element of the doorway refuses passage unless told its name, which is the requirement in its strictest form; and chapter 147 hands the dead man the name of the doorkeeper, the watcher and the herald of each of the seven arits before he is asked for any of them. The provision there is not a clause but the book: what is sold to the buyer is the answer sheet to an examination the same book describes as unpassable without it. Twenty-one names entered at traditions/egyptian-arits.ttl are the whole content of that chapter."@en ;
+    skos:note "What the statement does not say. It does not say that the identification is a pretence, and it does not say the provisions were added later by people who found the requirement inconvenient; neither would follow from the wording and neither was investigated. It says that in every corpus read here the two stand together, and that the requirement therefore never bears the weight a reader of it alone would give it."@en ;
+    skos:note "Counter-search, carried against the compiled holding before the statement was written, as SPEC §16 requires. Every node in the traditions whose wording makes knowing a name or an origin the condition of an operation was listed and read, and each was checked for a clause covering the case of not knowing. No refutation among those read, and two near-misses that are worth naming because both were candidates. The Mandaean watch-houses demand a name at every station, but the name demanded is the traveller's own and is conferred by a ceremony performed while alive, so there is nothing for him to fail to know; the holding already marks this at pmc:MandaeanNomenEtSignum. And the Shangqing requirement to know the names of the three times eight luminaries carries a stated consequence for not knowing them and no provision at all — but what is to be known there is the practitioner's own pantheon and not the identity of anything he is dealing with, so it falls outside the statement rather than against it."@en ;
+    skos:note "Where the statement is most likely to break, named here rather than left for a reader to find. The Zande poison oracle exists to name the one who is bewitching at this moment, and the question is put to it about a person the questioner has already named; a transmission whose whole apparatus needs a name supplied from outside is the shape that would refute this, if it also turns out to supply nothing for the case of having no name to put. The holding does not carry enough of the Zande consultation procedure to decide that, and a run that reads it would settle the statement one way or the other faster than any other corpus now in the graph."@en ;
+    skos:note "Thin where it is thin, and it is thin in two places. Three traditions carry the three forms and a fourth carries both ends, which is four corpora and not a survey; and two of the four, the Babylonian and the Egyptian, were read in this same September, so the pattern was found by a reader who had just been looking at one of them. That is a reason to state the falsifier precisely and to run it in a corpus nobody chose for this purpose."@en .
+
+pmc:TheProvisionForNotKnowingExamination a pm:Testing ;
+    rdfs:label "Protocol on the provision for not knowing"@en, "Prüfprotokoll zur Vorsorge für das Nichtwissen"@de ;
+    skos:definition "An attempt to fail the statement that a corpus which makes an operation depend on identifying what is dealt with also carries a standing way of proceeding without the identification. A reading protocol: the claim is about what operative corpora contain, so it fails or holds against corpora."@en ;
+    skos:note "Entered at procedure without cases. The procedure: take a corpus in which the operator must name, identify or trace the origin of what he is treating; establish that the requirement is stated and not merely implied; then read the whole of that corpus for a covering disjunction, a formula for the unknown case, a key of identification, or an apparatus that works without the name. The statement fails if the reading comes back empty."@en ;
+    skos:note "Run it on the Zande poison oracle first, for the reason given at the statement: it is the one corpus in the holding whose procedure takes the name from outside itself, and the ethnography that would settle it is a single well-known monograph rather than a scattered literature. A second target with the opposite property is the Finnish collection, where the provision is already known to exist and the open question is the reverse one — how often the origin-words are actually supplied, against how often the formula for not knowing them is."@en ;
+    skos:note "One methodological trap, recorded because this run nearly fell into it. A corpus can look as though it has no provision simply because the holding entered only its strict passages. The Egyptian material carried the requirement for two weeks before the chapter that hands over the answers was read, and had the statement been written then it would have had a false refuter in it. The protocol therefore requires that the whole corpus be read, and not the nodes the holding happens to carry from it."@en ;
+    pm:tests pmc:TheProvisionForNotKnowing ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "An operative corpus that makes an operation depend on naming, identifying or tracing the origin of what is being dealt with, states that requirement rather than implying it, and contains nowhere in itself a covering disjunction, a formula for the case of not knowing, a key by which the identification can be made, or an apparatus that answers the same encounters without a name."@en ;
+    pm:examinedBy "prima-materia, protocol drawn from the wording of the witnesses; no cases collected" ;
+    pm:protocolUpdated "2026-09-20"^^xsd:date .
