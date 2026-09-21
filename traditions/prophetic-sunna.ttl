@@ -1,0 +1,62 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the prophetic tradition on omens and diviners
+#
+# This transmission was never registered. It enters the holding here with one
+# node, because a run looking for the falsifier of a statement it had written
+# the same day found the passage and could not leave it unrecorded; SPEC puts
+# taking a passage in ahead of completeness, and an unregistered transmission
+# is a reason to write the instance, not a reason to drop the reading.
+#
+# What is held is narrow and the file says so at every node. The transmission
+# is enormous and this holding has opened one paragraph of a nineteenth-century
+# European dictionary that quotes it. The coverage state is set accordingly.
+#
+# The edition question, and it is the reason the attestation mode is mediated.
+# The canonical collections are not available in this holding in a translation
+# that may be reproduced: the standard English versions are in copyright, and
+# the search for a public-domain rendering of the traditions on omens returned
+# nothing usable. What was found is Hughes, a compiler of 1885 who prints the
+# traditions in his own English and names the place he took them from. The node
+# below is therefore attested as mediated and names Hughes with pm:readVia. It
+# is not a reading of the Mishkāt and does not claim to be one.
+#
+
+pmt:PropheticSunna a pm:Tradition ;
+    pm:fromWork pmw:MishkatAlMasabih ;
+    rdfs:label "The prophetic tradition on omens and diviners"@en, "Die prophetische Überlieferung über Vorzeichen und Wahrsager"@de ;
+    skos:definition "The transmission of sayings ascribed to the Prophet, here only in the part that bears on omens, auguries, the consulting of diviners and the taking of a day or a sign as favourable or unfavourable."@en ;
+    skos:note "Opened in this run at one place only and through a compiler: the entries FA'L and DIVINATION in Thomas Patrick Hughes, A Dictionary of Islam, London 1885, which print the traditions in Hughes's English and refer them to the Mishkāt al-Maṣābīḥ, book xxi. Nothing of the canonical collections was read. The transmission is entered at pm:placesEntered rather than pm:corpusNamed because a passage was read and taken in, not because the corpus was surveyed."@en ;
+    skos:note "What this holding does not have, and it is most of what there is. The two ṣaḥīḥ collections, the four sunan, the Muwaṭṭaʾ and the Musnad are all unopened. The tradition this run originally went looking for — the denial of the ill omen of the month of Ṣafar, which stands in the canonical collections beside the denials of contagion, of the bird of ill omen and of the owl — was not found in any edition this run could reach and is not entered. Its absence is recorded at pmp:SafarOmenSearch and not papered over here."@en ;
+    pm:principalCorpus "Ṣaḥīḥ al-Buḵārī; Ṣaḥīḥ Muslim; Mishkāt al-Maṣābīḥ" ;
+    pm:corpusWork pmw:MishkatAlMasabih ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Mishkāt al-Maṣābīḥ, book xxi, as quoted in Thomas Patrick Hughes, A Dictionary of Islam, London: W. H. Allen 1885, pp. 125 and 87" .
+
+pmw:MishkatAlMasabih a dcterms:BibliographicResource ;
+    rdfs:label "Mishkāt al-Maṣābīḥ"@en, "Mishkāt al-Maṣābīḥ"@de ;
+    skos:note "Not opened. The work is known to this holding only through the passages Hughes quotes from its twenty-first book, and the quotation is his English and not a translation this run can check against an original."@en .
+
+#
+# The refusal of the omen, and it rests on a rule of conduct
+#
+
+pmc:SunnaTiyaraLaTamnaka a pm:Conceptualizing ;
+    pm:fromWork pmw:MishkatAlMasabih ;
+    rdfs:label "If a bad omen throws you into perplexity, let it not hinder the work you intended"@en, "Wenn ein böses Vorzeichen dich verwirrt, so halte es dich nicht von dem Werk ab, das du vorhattest"@de ;
+    skos:definition "Muʿāwiya ibn Ḥakam relates that he told the Prophet of three things done in the time of ignorance and asked after each. Of consulting diviners about future events he was told that now that he had embraced Islam he must not consult them. Of taking bad omens he was told: if from a bad omen you are thrown into perplexity, let it not hinder you from doing the work you had intended to do. Of drawing lines on the ground he was told that one of the prophets used to draw lines, so that if he could draw a line like him it is good and otherwise it is vain. Beside it stands the saying that one is not to put faith in a bad omen but rather take a good one, and the report of Qatʿan ibn Qabīṣa that the Prophet forbade taking omens from the running of animals, the flight of birds and the throwing of pebbles."@en ;
+    skos:note "The ground is what makes this worth a node. The answer is not that the omen is false and not that the hearer is exempt from it. It is an instruction about what to do when the omen has already had its effect: go on with what you intended. The saying concedes the perplexity and refuses to let it govern the act, which is a rule of conduct and not a claim about the world at all."@en ;
+    skos:note "Set beside the neighbouring answers, the shape is deliberate. The diviner is forbidden outright, and the answer on diviners elsewhere in the same compiler's entry gives a mechanism — one of the jinn steals away the truth and carries it into the diviner's ear, and to that the diviner adds a hundred lies. For the omen no mechanism is given and no prohibition either. The transmission can argue when it wants to; here it declines to, and prescribes instead."@en ;
+    skos:note "Limits, and they are severe. One paragraph, read in a compiler of 1885 who gives neither the Arabic nor a chapter number within the book he cites, and no isnād. The wording of the saying in the canonical collections was not checked against this. Nothing in this node should be cited as the text of a ḥadīṯ; it is what Hughes printed."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "Thomas Patrick Hughes, A Dictionary of Islam, being a cyclopaedia of the doctrines, rites, ceremonies, and customs, together with the technical and theological terms, of the Muhammadan religion, London: W. H. Allen 1885, entry DIVINATION, p. 87, and entry FA'L, p. 125" ;
+    pm:withinTradition pmt:PropheticSunna ;
+    dcterms:source "Mishkāt al-Maṣābīḥ, book xxi, chapter ii, as quoted in Thomas Patrick Hughes, A Dictionary of Islam, London 1885, pp. 87 and 125" .
