@@ -1,0 +1,36 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — who refuses the calendar, and what the refusal rests on
+#
+# One generalization, formed from six attested claims in six transmissions and
+# four spheres. It is the counterpart of pmc:AdmissibilityBoundToTheCalendar:
+# that one describes the transmissions that bind an operation to a date, this
+# one the transmissions that refuse to.
+#
+# It exists because the protocol on the first statement, run on 2026-09-21,
+# reported that the refusing class had two members and no way of telling them
+# apart. Reading three further refusals at the wording showed that the class
+# divides cleanly, that the division runs along who is speaking, and that the
+# two halves argue in ways which have nothing in common.
+#
+# The counter-search was carried against the compiled holding before the node
+# was written, as SPEC §16 requires, and it drew every node in the holding
+# whose wording rejects the choosing of a day. It returned six and no seventh.
+#
+
+pmc:TheRefusalAndWhatItRestsOn a pm:Generalizing ;
+    rdfs:label "The refusal from outside rests on a case, the refusal from inside on a state of the practitioner"@en, "Die Zurückweisung von außen stützt sich auf einen Fall, die von innen auf einen Zustand des Übenden"@de ;
+    pm:generalizedStatement "Where a transmission rejects the choosing of a day from outside the practice that chooses it, it grounds the rejection in a case: an occasion on which one date carried two outcomes, or one outcome many dates, or the rule was followed exactly and the follower lost what he sought. Where a transmission rejects the same choosing from inside the practice that teaches it, it grounds the rejection in a state of the practitioner — his attainment, his faith, the condition moved into his body — and adduces no case at all."@en ;
+    pm:generalizedFrom pmc:TheravadaNakkhatta, pmc:CiceroGeminiDiscrepantes, pmc:ZeriDispute, pmc:NeidanHuohouBuyongshi, pmc:ShouyiMianLiri, pmc:ClaviculaAdeptiExempti ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The three that refuse from outside, and all three argue from an occasion. The forty-ninth Jātaka tells one story twice: a family fixes a wedding day, asks its household ascetic afterwards whether the stars are favourable, is told they are not, stays at home, and loses the bride to somebody else — and the stanza that closes it says that the fool may watch for lucky days yet luck shall always miss, for it is luck itself that is luck's own star. The second book of Cicero's treatise sets two cases against the calculation of nativities and they cut in opposite directions: twin kings of the Lacedaemonians of whom one died a year before the other and much excelled him in glory, and the dead of Cannae, who met one end and cannot all have been born under one constellation. The first-century treatise against the choosing of days puts King Wu winning his battle on a jiazi day and the tyrant losing his on the same jiazi day, the two armies facing one another with their standards in sight."@en ;
+    skos:note "The three that refuse from inside, and not one of them names an occasion. The thirteenth quatrain of the Jindan sizi says that the fire phases use no hour and that the winter solstice is not at zi, and its commentary adds that once a man has started the fire on the circuit within his own body the withdrawing and adding are there of themselves and one may not be bound to the four seasons: the condition has been moved from the calendar into the body. The eighteenth chapter of the Baopuzi says that one who can guard the One need not divine the day or choose the hour and no longer consults the siting calendars: the exemption is granted by an attainment. The Key of Solomon says that so exact a preparation of days and hours is not necessary for those who are adepts in the art but is extremely necessary for apprentices and beginners, and gives as the ground that beginners lack faith in the experiments: the exemption is granted by a state of mind, and the text says so."@en ;
+    skos:note "Why the division is worth stating rather than the refusal. A refusal from outside has to persuade somebody who is still in the practice, and the only currency that buys that is an outcome the practice itself would have had to predict; a refusal from inside does not have to persuade anybody, because it is addressed to those who already accept the teacher, and it can therefore be granted as a privilege. The two are not weak and strong versions of one move. They are different moves, and only the first produces anything a protocol can take over."@en ;
+    skos:note "The consequence for this holding, and it is the reason the node was written. The counter-material against pmc:AdmissibilityBoundToTheCalendar consisted, until 2026-09-21, of the two refusals from inside and of one critic. That is a body of counter-material that cannot discriminate: an exemption for the attained says nothing about whether an operation done on the wrong day works, and both of the earlier cases say in so many words that it does not. The three from outside do discriminate, and two of the three were read at the wording on the day this node was written. See pmp:CalendarFailureLocationExamination, whose own finding was that the sharpest argument in the holding came from a single Chinese critic."@en ;
+    skos:note "Falsified by a transmission that rejects the choosing of a day from outside the practice and grounds the rejection in doctrine alone, adducing no occasion — a cosmology, a scriptural prohibition, an argument from the nature of the heavens with no instance under it; or by one that rejects it from inside and does adduce an occasion, naming a practitioner who acted outside the window and reporting what followed. Either breaks it, and the first is the likelier: the scriptural prohibitions of the Hebrew Bible, the ḥadīṯ against the ill omen of the month of Ṣafar and the treatment of naksatra prognostication among the low arts in the first discourse of the Dīgha are all refusals from outside, none of them was read at the wording in this run, and any of them may well be doctrine without a case. They are named here so that the statement can be attacked at its weakest point rather than at its strongest."@en ;
+    skos:note "Weakened, without being refuted, if the division turns out to track the genre and not the position of the speaker. Two of the three outside witnesses are narrative and argumentative literature, which is where cases live anyway, and two of the three inside ones are operative manuals, which state rules and not stories. A transmission that refuses from outside in the form of a manual, or from inside in the form of a story, would separate the two readings, and this holding carries neither."@en ;
+    skos:note "The count is six claims in six transmissions and four spheres — Pāli, Latin, Chinese in two separate streams, and the Latin grimoire — with no proposed route between the three that argue from cases. That is a better spread than most statements here, and it is still six."@en .
