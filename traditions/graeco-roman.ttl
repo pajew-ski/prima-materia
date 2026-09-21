@@ -1,6 +1,7 @@
 @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -17,19 +18,51 @@
 #
 
 pmt:GraecoRoman a pm:Tradition ;
+    pm:fromWork pmw:HerodotiHistoriai ;
     rdfs:label "Graeco-Roman testimony"@en, "Griechisch-römisches Zeugnis"@de ;
-    skos:definition "The transmission of Greek and Latin historiographical and doxographical reports of extraordinary capacities."@en ;
+    skos:definition "The transmission of Greek and Latin historiographical and doxographical reports of extraordinary capacities, and of the argumentative literature that disputes them."@en ;
     skos:note "Edition finding, prima-materia#45. For every citation in this file the edition or translation the passage was read from is not recoverable, and it is left unstated rather than guessed. The book and chapter numbers are stable across the modern critical editions, which is why the loss is smaller here than elsewhere; it is still a loss, because it is unknown whether the passages were read in the original or in translation."@en ;
-    pm:principalCorpus "Herodotus, Histories; Tacitus, Historiae; Suetonius, Divus Vespasianus; Pliny, Naturalis Historia" ;
+    pm:principalCorpus "Herodotus, Histories; Tacitus, Historiae; Suetonius, Divus Vespasianus; Pliny, Naturalis Historia; Cicero, De divinatione" ;
+    pm:corpusWork pmw:HerodotiHistoriai, pmw:TacitiHistoriae, pmw:DivusVespasianus, pmw:NaturalisHistoria, pmw:DeDivinatione ;
     dcterms:source "Herodotus, Histories IV.13-16" .
 
+#
+# The works of this corpus as identifiers
+#
+# Added on 2026-09-21 with the first passage that argues instead of reporting.
+# The file was not migrated before; AGENTS.md requires it of anyone who touches
+# a tradition file.
+#
+
+pmw:HerodotiHistoriai a dcterms:BibliographicResource ;
+    rdfs:label "Herodotus, Histories"@en, "Herodot, Historien"@de ;
+    skos:note "Opened at IV.13-16. The edition is not recoverable; see prima-materia#45."@en .
+
+pmw:TacitiHistoriae a dcterms:BibliographicResource ;
+    rdfs:label "Tacitus, Historiae"@en, "Tacitus, Historien"@de ;
+    skos:note "Opened at IV.81. The edition is not recoverable; see prima-materia#45."@en .
+
+pmw:DivusVespasianus a dcterms:BibliographicResource ;
+    rdfs:label "Suetonius, Divus Vespasianus"@en, "Sueton, Divus Vespasianus"@de ;
+    skos:note "Opened at chapter 7. The edition is not recoverable; see prima-materia#45."@en .
+
+pmw:NaturalisHistoria a dcterms:BibliographicResource ;
+    rdfs:label "Pliny, Naturalis Historia"@en, "Plinius, Naturalis Historia"@de ;
+    skos:note "Opened at VII.174. The edition is not recoverable; see prima-materia#45."@en .
+
+pmw:DeDivinatione a dcterms:BibliographicResource ;
+    rdfs:label "Cicero, De divinatione"@en, "Cicero, De divinatione"@de ;
+    skos:note "Opened on 2026-09-21 at Book II, chapters XLII to XLVII, in the English of C. D. Yonge, The Treatises of M. T. Cicero, Bohn's Classical Library, London 1878. Read continuously; the remainder of both books was not read. Unlike the other four works of this corpus the edition is recoverable, because this passage was read in this run and not inherited."@en .
+
 pmc:SoulJourney a pm:Conceptualizing ;
+    pm:fromWork pmw:HerodotiHistoriai, pmw:NaturalisHistoria ;
     rdfs:label "Journey of the soul apart from the body"@en, "Seelenreise ohne den Körper"@de ;
     skos:definition "The claim that the soul leaves the body and returns to it, reported of Aristeas of Proconnesus and of Hermotimus of Clazomenae."@en ;
     pm:withinTradition pmt:GraecoRoman ;
     dcterms:source "Herodotus, Histories IV.13-16", "Pliny, Naturalis Historia VII.174" .
 
 pmc:AristeasJourney a pm:Attributing ;
+    pm:fromWork pmw:HerodotiHistoriai, pmw:NaturalisHistoria ;
     rdfs:label "The soul-journey ascribed to Aristeas"@en, "Die Seelenreise, Aristeas zugeschrieben"@de ;
     skos:definition "A capacity ascribed to a figure who is not available to report it, in a historian's account of what was told of him."@en ;
     pm:ascribedCapacity pmc:SoulJourney ;
@@ -38,12 +71,14 @@ pmc:AristeasJourney a pm:Attributing ;
     dcterms:source "Herodotus, Histories IV.13-16", "Pliny, Naturalis Historia VII.174" .
 
 pmc:HealingByTouch a pm:Conceptualizing ;
+    pm:fromWork pmw:TacitiHistoriae, pmw:DivusVespasianus ;
     rdfs:label "Healing by touch"@en, "Heilung durch Berührung"@de ;
     skos:definition "The restoration of a withered hand and of sight, ascribed to the touch of a ruler in Alexandria."@en ;
     pm:withinTradition pmt:GraecoRoman ;
     dcterms:source "Tacitus, Historiae IV.81", "Suetonius, Divus Vespasianus 7" .
 
 pmc:VespasianHealing a pm:Attributing ;
+    pm:fromWork pmw:TacitiHistoriae, pmw:DivusVespasianus ;
     rdfs:label "Healing by touch ascribed to Vespasian"@en, "Heilung durch Berührung, Vespasian zugeschrieben"@de ;
     skos:definition "A capacity ascribed to a named ruler, in an account whose author remarks that those who were present still tell it although there is now no reward for the lie."@en ;
     skos:note "The remark about eyewitnesses is part of the ascription, not an endorsement of it. It records how the historian wanted the claim received."@en ;
@@ -54,6 +89,7 @@ pmc:VespasianHealing a pm:Attributing ;
     dcterms:source "Tacitus, Historiae IV.81", "Suetonius, Divus Vespasianus 7" .
 
 pmc:Vespasian a pm:Conceptualizing ;
+    pm:fromWork pmw:TacitiHistoriae ;
     rdfs:label "Vespasian"@en, "Vespasian"@de ;
     skos:definition "The Roman emperor to whom the Alexandrian healings are ascribed by two independent historians."@en ;
     pm:withinTradition pmt:GraecoRoman ;
@@ -64,9 +100,37 @@ pmc:Vespasian a pm:Conceptualizing ;
 #
 
 pmc:SoulJourneyIsDisplaced a pm:Situating ;
+    pm:fromWork pmw:HerodotiHistoriai, pmw:NaturalisHistoria ;
     rdfs:label "The journey of the soul is a displaced locus"@en, "Die Seelenreise ist ein verlagerter Ort"@de ;
     pm:situatedNode pmc:SoulJourney ;
     pm:axisValue pm:displacedLocus ;
     pm:situationGround "The reports have the soul leave the body and return to it. That is the criterion for this value, and it is what the accounts of Aristeas and Hermotimus turn on; whether anything of the sort occurred is a separate question and not this one."@en ;
     pm:attestedBy pm:compilerInference ;
     dcterms:source "Herodotus, Histories IV.13-16", "Pliny, Naturalis Historia VII.174" .
+
+#
+# The argument against the calendar, and it argues from cases
+#
+# Two nodes from one passage, kept apart because they do different work. The
+# first is the discriminating argument; the second is a claim about the
+# evidence behind the practice, and it has a counterpart in a corpus that could
+# not have known this one.
+#
+
+pmc:CiceroGeminiDiscrepantes a pm:Conceptualizing ;
+    pm:fromWork pmw:DeDivinatione ;
+    rdfs:label "One nativity and two fates, one fate and many nativities"@en, "Eine Geburtsstunde und zwei Geschicke, ein Geschick und viele Geburtsstunden"@de ;
+    skos:definition "The two cases the second book puts against the calculation of nativities, and they cut in opposite directions. First, two born at one moment whose lives diverge: Procles and Eurysthenes, twin kings of the Lacedaemonians, did not live the same number of years, for Procles died a year before his brother and much excelled him in the glory of his actions. Second, many born at many moments who meet one end: were all those slain in the battle of Cannae born under the same constellation, since they met with one and the same end? The passage adds a third of the same form, that a multitude is born at every moment and yet no one has ever been like Homer."@en ;
+    skos:note "The shape is what this holding is short of. Neither case argues that the stars have no power; each takes the practice at its word, finds a pair the rule must classify alike, and points at the outcome. That is a criterion the practice itself supplies, applied to a case it cannot have chosen. The treatise also names the arguments as Panaetius's and not Carneades's, which places them inside the Stoa rather than outside it."@en ;
+    skos:note "Held as what the transmission says and not as evidence. Nothing here is counted; two twins and one battle are instances adduced in an argument, and a protocol that wanted a rate would have to build it. SPEC §14 keeps such a work on the testimony side as long as it argues instead of counting, and this one argues."@en ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Cicero, De divinatione II.43 and II.47, in the English of C. D. Yonge, The Treatises of M. T. Cicero, London: Bohn 1878, pp. 237-238 and 240" .
+
+pmc:CiceroNullaTabulaObservationum a pm:Conceptualizing ;
+    pm:fromWork pmw:DeDivinatione ;
+    rdfs:label "A claim of four hundred and seventy thousand years of records, and no record"@en, "Eine Behauptung von vierhundertsiebzigtausend Jahren Aufzeichnung, und keine Aufzeichnung"@de ;
+    skos:definition "Some pretend, the passage says, that the Chaldean astrologers have verified the nativities of children by calculations and experiments in the cases of all the children born for four hundred and seventy thousand years; and this is a mistake, for had they been in the habit of doing so they would never have given up the practice, and as it is no author remains who knows of such a thing being done now or ever having been done. The chapter closes with the counterpart from the other side: how many Chaldean prophecies were repeated to Pompey, Crassus and Caesar, according to which not one of them was to die except in old age, in domestic felicity and perfect renown."@en ;
+    skos:note "The argument is not that the record is bad but that it does not exist, and the ground given is behavioural: a practice that had such a record would still be keeping it. That is a test of a claim of verification by the presence of its own apparatus, and it is worth having as a form."@en ;
+    skos:note "It has a counterpart in a corpus that could not have known it, and the pairing is the reason this node is separate. The rasāyana lesson of the Caraka states five times that its combinations are well tested by experience and reports no case; here a critic names the same gap in somebody else's practice and draws the consequence the Indian handbook does not draw about its own. Two corpora, one shape, and only one of them is looking at itself. See pmp:AyurvedaRasayanaPariksaSearch."@en ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Cicero, De divinatione II.46-47, in the English of C. D. Yonge, The Treatises of M. T. Cicero, London: Bohn 1878, pp. 240-241" .
