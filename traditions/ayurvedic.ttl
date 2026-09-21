@@ -1,0 +1,1000 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Ayurvedic transmission, taken down from the register
+#
+# The instance was registered in traditions/registry-indic.ttl and moves here
+# now that passages have been read. One lesson of one of the three works its
+# registration names has been opened and read continuously and in full: the
+# first lesson of the Cikitsasthana of the Caraka Samhita, the lesson on
+# rasayana, in all four of its sections. The other two works, Susruta and
+# Vagbhata, were not opened, and the work identifiers below say so rather than
+# letting the coverage state cover them.
+#
+# Why this one out of the register. Its own registration note named it: among
+# the most testable claims available anywhere in the holding, and testable in
+# two directions at once, the promised outcome and the toxicity of the means.
+# That is the examinability-driven entrance of SPEC §14, and the lesson bears
+# it out in a way the note did not anticipate. It states its outcome as a
+# figure — a hundred years, a thousand, ten thousand — it states a ceiling on
+# one of its drugs in counted fruits, it states one condition of failure, and
+# it claims five times over that its combinations are well tested by
+# experience. What it does not carry anywhere in a hundred and forty thousand
+# characters is a single report of a case. The gap between the fifth claim and
+# the missing sixth is the finding of this run, and it is exhibited as a search
+# node rather than argued about here.
+#
+# Order of the file: the transmission and what was read; the works as
+# identifiers; the capacities the lesson claims; the two routes and the
+# operation they are routes to; the preparations, section by section, each as
+# its own practice with its own claim, because a count of prescriptions is
+# worth nothing if the prescriptions are pooled; the conditions the lesson sets
+# before the operation; the cautions and the one clause that says what a
+# deviation costs; the signs; and the one dispute the translation carries about
+# how hard the failure clause is to be read.
+#
+# A remark on the citation form, because it decides what a later reader can
+# check. The translation read is divided into Lessons and Sections and numbers
+# its verses within each Section; the standard reference for the same place is
+# Cikitsasthana 1, pada 1 to 4, verse. Both are given: the sthana, pada and
+# verse first, because that is what any edition carries, and the translator's
+# page after it, because that is what was in front of the writer. The Sanskrit
+# vulgata of Yadavji Trikamji Acarya was not consulted and no node here claims
+# a reading of it.
+#
+
+pmt:Ayurvedic a pm:Tradition ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Ayurvedic transmission"@en, "Ayurvedische Überlieferung"@de ;
+    skos:definition "The Indian medical transmission, including the rasayana section that claims restoration of vigour and extension of life by regimen, by compounded drugs and by conduct."@en ;
+    skos:note "Read in this run at the wording: the Caraka Samhita, Cikitsasthana, Lesson I, the lesson on rasayana, in all four of its sections — Abhayamalakiya, Pranakamiya, Karapracitiya and Ayurvedasamutthaniya — in the English of Avinash Chandra Kaviratna, parts XXXIII to XXXV, Calcutta 1904-1905, pages 1015 to 1070. Read continuously and in full, from the definition of medicine at the head of the lesson to its closing colophon. Not read: Lesson II on vajikarana, which begins on page 1071 and was opened far enough to establish where the lesson read here ends; the remaining twenty-eight lessons of the Cikitsasthana; and the Sutra-, Nidana-, Vimana-, Sarira-, Indriya-, Kalpa- and Siddhisthana. Not opened at all: the Susruta Samhita and Vagbhata's Astangahrdaya, which the registration names beside the Caraka."@en ;
+    skos:note "The contact route stays at documented and this run did nothing to change it. The lesson names its own descent inside itself — from Brahman to Daksa to the twin Asvins to Indra to the seers on the Himavat — which is a claim of the transmission about itself and not a route in the sense this holding uses; and the Indian sphere is the one in which this holding is already densest, so a witness from here raises the count of files and not the count of independent witnesses. It was taken from the register for its examinability and for nothing else."@en ;
+    skos:note "What kind of witness this work is. It is a handbook for a practitioner, arranged as a teaching by Atreya Punarvasu to his pupil Agnivesa and redacted by Caraka, and the redaction is visible: the fourth section retells the origin of the science in a form the translator marks as differing from the account in the first lesson of the Sutrasthana of the same work. The colophon of this lesson names Agnivesa and Caraka and not Drdhabala, whose supplement covers other lessons of the same Cikitsasthana; that is the transmission's own division of its layers and it is entered here as such, not as a dating."@en ;
+    skos:note "One thing about the drugs, because it bounds every node below. The translation identifies the plants by nineteenth-century botanical names and the translator marks several as unidentifiable in his own day and some as unidentifiable already in the compiler's. Nothing in this file turns on the identification of a plant, and no node here should be read as asserting one."@en ;
+    pm:principalCorpus "Caraka Samhita; Susruta Samhita; Vagbhata, Astangahrdaya" ;
+    pm:corpusWork pmw:CarakaSamhita, pmw:SusrutaSamhita, pmw:Astangahrdaya ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.1-15, in the English of Avinash Chandra Kaviratna, Charaka-Samhita translated into English, part XXXIII, Calcutta 1904, pp. 1015-1017" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:CarakaSamhita a dcterms:BibliographicResource ;
+    rdfs:label "Caraka Samhita"@en, "Caraka Samhita"@de ;
+    skos:note "Opened on 2026-09-21 at one lesson, Cikitsasthana I in its four sections, in the English of Avinash Chandra Kaviratna, Calcutta 1904-1905. The remainder of the work was not read. The same translation carries the whole of the Samhita and is the cheapest continuation: a run that wants the vajikarana lesson, the Sutrasthana groups of drugs this lesson refers to by name, or the Vimanasthana account of how a physician is to be judged, opens the same volume and needs no new acquisition."@en .
+
+pmw:SusrutaSamhita a dcterms:BibliographicResource ;
+    rdfs:label "Susruta Samhita"@en, "Susruta Samhita"@de ;
+    skos:note "Named here as a work of the corpus and unopened. Two open claims in the tracker turn on it — the graded death-terms of the marman in Sarirasthana 6 and the states in which an operation is forbidden — and both of them ask it a question this lesson cannot answer. The same translator edited and translated it, so it is reachable by the route already used here."@en .
+
+pmw:Astangahrdaya a dcterms:BibliographicResource ;
+    rdfs:label "Vagbhata, Astangahrdaya"@en, "Vagbhata, Astangahrdaya"@de ;
+    skos:note "Named here as a work of the corpus and unopened. Its Uttarasthana carries the same rasayana material one stage further on, which makes it the place to ask whether a later station of this transmission added a term, a sign or a condition of failure to what the lesson read here states — the question pm:Reworking exists for."@en .
+
+#
+# The capacities the lesson claims
+#
+# Kept apart from the preparations on purpose. The lesson runs some forty
+# named preparations and states, for most of them, that their virtues are like
+# those of the ones before; what it claims is therefore a small set of
+# capacities asserted many times over, and both numbers are worth having. The
+# capacities are here, the preparations below, and each preparation carries its
+# own claim so that the second number is countable.
+#
+
+pmc:AyurvedaDirghayus a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "A hundred years without decrepitude"@en, "Hundert Jahre ohne Verfall"@de ;
+    skos:definition "The capacity the lesson claims most often and in the most nearly checkable form: that the user lives out a stated span, and lives it without the signs of age. The span is given as a figure and the figure moves — a hundred years for most of the preparations, a thousand for the seers of old, ten thousand for the one that is taken lying in a covered wooden vessel — and where it is a hundred it is the span the same work elsewhere assigns to human life, so that the claim at its commonest is that the user reaches the full term rather than that he exceeds it."@en ;
+    skos:note "The form of the claim decides what could ever be done with it. A span of a hundred years is stated of a person and is settled only by that person's death, which is the outcome the user cannot be present for and the physician will not outlive. Every shorter criterion the lesson might have given — a term at which the effect should be noticeable, a sign that it has begun — is absent, and its absence was searched for rather than assumed. See pmp:AyurvedaRasayanaLingaSearch."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.7-8 and I.2.20, in the English of A. C. Kaviratna, parts XXXIII-XXXIV, Calcutta 1904-1905, pp. 1018 and 1034" .
+
+pmc:AyurvedaVayahsthapana a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The arresting of age, and the return of youth to one already old"@en, "Das Aufhalten des Alters, und die Rückkehr der Jugend zu einem bereits Alten"@de ;
+    skos:definition "The second capacity, and the one the lesson separates from mere length of life: not that age is slowed but that a body already decrepit is exchanged for a young one. The seers are said to have been freed from decayed bodies and to have obtained bodies that were foremost of their kind and youthfulness of years; Cyavana, who had become very old, is said to have become youthful once more through the preparation that carries his name; and of the same preparation it is said that one who is even decrepit, entering the chamber and taking it, soon casts off his decrepit form and acquires that of prime of youth."@en ;
+    skos:note "A group of ten drugs is named in the lesson by the technical term vayahsthapana, capable of preventing the effects of age, and referred back to a list in the fourth lesson of the Sutrasthana which this run did not open. The capacity is entered from the places in this lesson that state it and not from that list."@en ;
+    skos:note "This is the half of the claim that would be settled in a season rather than in a century, and the lesson states it of named figures of the remote past — the Vaikhanasas, the Valakhilyas, Cyavana, Vasistha and the rest — and of nobody living. The distance between the strongest form of the claim and the nearest reported instance is the whole of the tradition's own prehistory."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.54-55 and I.1.71-73, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1022 and 1025-1026" .
+
+pmc:AyurvedaSmrtimedha a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Memory and understanding, and the retaining of what is heard once"@en, "Gedächtnis und Verstand, und das Behalten des einmal Gehörten"@de ;
+    skos:definition "The capacity claimed for almost every preparation in the lesson and stated twice in a form that is not a matter of degree: that the user becomes able to retain all he hears, and that whatever he hears even once he succeeds in remembering. The translator notes at the second place that some Bengali renderings make the user a srutidhara, one capable of reproducing whatever he hears even once, and rejects that reading for the passage he is annotating while adopting it at the other."@en ;
+    skos:note "Of the whole set of capacities this is the one a trial could touch tomorrow, and the lesson gives it no term, no measure and no procedure. It is also the one place where the wording of the claim is disputed inside the translation itself, which is why the translator's note is reported here rather than smoothed away."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.58-60 and I.1.76, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1023-1024 and 1028" .
+
+pmc:AyurvedaVaksiddhi a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The power of making speech true"@en, "Das Vermögen, die Rede wahr zu machen"@de ;
+    skos:definition "Named in the opening enumeration of what rasayana confers and stated again of the preparation made with iron: whatever he utters becomes accomplished. The translator glosses it as vaksiddha, one who has attained to success of speech, and says of such a man that if he were to say at midday that it is night, the sun would hide itself; that his benedictions and curses bear immediate fruit; and that this is one of the eight siddhis a yogin acquires by penances."@en ;
+    skos:note "The gloss is the translator's and the enumeration of the eight siddhis with it; the lesson names the capacity and does not describe it. The distinction matters because the gloss imports the yoga literature into a medical text that does not cite it, and a later run that wants the capacity in its Indian breadth should go to the Yogasutra places this holding already carries rather than to this note."@en ;
+    skos:note "Worth marking as the point at which a medical handbook crosses into the material this project is looking for. Everything else in the lesson is a claim about a body; this is a claim that a man's sentences determine what is the case, stated in the same list and with no change of register."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.7-8 and I.3.26-27, in the English of A. C. Kaviratna, parts XXXIII-XXXIV, Calcutta 1904-1905, pp. 1018 and 1047" .
+
+pmc:AyurvedaVisavighata a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Poison losing its force on contact with the body"@en, "Das Gift, das bei Berührung des Körpers seine Kraft verliert"@de ;
+    skos:definition "Claimed of three preparations in the same wording: if poison comes in contact with his system it loses its force; if poison comes in contact with his body it fails to affect him; poison cannot affect him. It is stated as a standing property of the user and not as a remedy applied after a poisoning."@en ;
+    skos:note "This is the most nearly falsifiable capacity in the lesson and the only one of the set that a single trial would settle, which is presumably why no trial is reported. The lesson elsewhere prescribes a drug it calls keen and like fire and sets a counted ceiling on it, so the transmission is not indifferent to what a substance does to a body; the immunity is claimed beside that ceiling and not instead of it."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.58-60, I.1.76 and I.3.28-33, in the English of A. C. Kaviratna, parts XXXIII-XXXIV, Calcutta 1904-1905, pp. 1024, 1028 and 1048" .
+
+pmc:AyurvedaKrtyapratighata a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Immunity from incantation and from the spirit of adversity"@en, "Unangreifbarkeit durch Beschwörung und durch den Geist des Unglücks"@de ;
+    skos:definition "Claimed of two preparations: that the user is freed from fear of incantations, and that no krtya performed by Atharvan rites can injure a man who takes the medicine, nor can Alaksmi, the spirit of adversity, approach him. The translator explains krtya as a fire ignited with formulas of the Atharvaveda by which a person may be brought under subjection, deprived of reason, or killed."@en ;
+    skos:note "A medical handbook that promises protection against an operation performed by somebody else is doing two things at once: claiming a capacity and conceding that the operation works. The lesson does not describe the incantation and does not deny that it has effect; it sells the defence. Where a corpus transmits the attack and the defence together the holding has a generalization for it, and this is not quite that case — the attack is not transmitted here but in another Veda — so it is entered as what it is and not counted there."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.75 and I.3.28-33, in the English of A. C. Kaviratna, parts XXXIII-XXXIV, Calcutta 1904-1905, pp. 1027 and 1048" .
+
+pmc:AyurvedaAtitajnana a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Speech that reveals the past"@en, "Rede, die das Vergangene offenbart"@de ;
+    skos:definition "Claimed of the preparation taken lying in a covered wooden vessel and again of the Vedic rasayana of the fourth section: one gets such an excellence that one's speech reveals even the past; it imparts to one the power of knowing the past. Eyes and ears are said in the same place to become like those of the immortals."@en ;
+    skos:note "A capacity about knowledge of fact, claimed by a medical text, and therefore of the kind a protocol could get hold of if the transmission stated any procedure by which a report is produced and checked. It states none. The claim is that the user has the power, not that anybody ever put a question to him."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.28 and I.4.46-48, in the English of A. C. Kaviratna, parts XXXIV-XXXV, Calcutta 1905, pp. 1061 and 1064-1065" .
+
+pmc:AyurvedaDuragamana a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Traversing a thousand yojanas at a stretch"@en, "Tausend Yojana in einem Zug zurücklegen"@de ;
+    skos:definition "Claimed of the preparation taken lying in a covered wooden vessel: one can traverse a thousand yojanas at a stretch, and one's period of life is extended to full ten thousand years uninterrupted by any ailment. The distance and the span are given as figures and neither is qualified."@en ;
+    skos:note "Entered because the strict completeness SPEC §15 demands of capacities is completeness and not selection, and a handbook that claims this beside a dose in counted fruits is telling a reader something about itself. The same section states that the herbs from which it is made were already unobtainable and unidentifiable in the compiler's own day, which the translator notes in so many words."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.29, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1061" .
+
+pmc:AyurvedaDehasamhanana a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The body made compact, and unassailable by all creatures"@en, "Der Körper dicht gemacht und von keinem Geschöpf angreifbar"@de ;
+    skos:definition "Claimed in three wordings: the compactness of the body becomes like that of a mountain and the user's energy like that of the wind; his body becomes as compact as stone, he becomes irresistible to view and unassailable by all creatures; and, of the preparation made with iron, that he is endued with the strength of an elephant and never succumbs to aggressions of violence committed on his person, nor to diseases, nor to the decrepitude of age, nor to death itself."@en ;
+    skos:note "The third wording is the place where the lesson's strongest claim stands in its plainest form: not that death is postponed but that the user does not succumb to it. It is claimed of a preparation of iron leaf quenched seven times and kept a year under barley, that is, of something a reader could make."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.58-60, I.1.76 and I.3.26-27, in the English of A. C. Kaviratna, parts XXXIII-XXXIV, Calcutta 1904-1905, pp. 1024, 1028 and 1047" .
+
+pmc:AyurvedaOjovrddhi a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The increase of ojas in a healthy person"@en, "Die Mehrung des Ojas beim Gesunden"@de ;
+    skos:definition "The division the lesson opens with, and the one that places the whole of it. Medicine is of two kinds: some has for its purpose the increase of the ojas of a healthy person, some the alleviation of disease. What increases the ojas of a healthy person is again of two kinds, aphrodisiac and rasayana. Rasayana is therefore defined in the text as an operation on the healthy and not as a treatment, and the lesson adds that of almost all diseases it is regarded as alleviative besides."@en ;
+    skos:note "Worth holding as its own node because it is the claim that makes every other claim in the lesson unanswerable by an ordinary clinical observation: the population is people who are not ill, the outcome is a quantity not otherwise measured, and the span over which it is asserted is the rest of a life. A transmission that had wanted its promises checked would have started somewhere else."@en ;
+    skos:note "The same division is what the translator's own preface to the part singles out: no system of medicine except this one, he writes, gives such importance to the treatment of the healthy. That is his judgement and not the text's, and it is recorded here as his."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.2-6, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1015-1017" .
+
+#
+# The operation and its two routes
+#
+# The lesson names two methods for administering rasayana in one verse and
+# never merges them again: one enters a built chamber, the other does not.
+# Everything that follows — the calendar, the cleansing, the qualification of
+# the user — hangs on the first and on nothing else. That the transmission
+# offers the second in the same breath is the most useful thing in the file
+# and the reason a generalization elsewhere had to be qualified.
+#
+
+pmp:AyurvedaRasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Rasayana, the administration of what increases ojas in a healthy person"@en, "Rasayana, die Gabe dessen, was beim Gesunden das Ojas mehrt"@de ;
+    skos:definition "The operation the lesson is about: a course of compounded drugs, taken on an empty stomach in the morning in a dose fixed by the strength of the user's digestive fire, followed when digested by a prescribed food of rice with milk and ghee, and continued for a stated term — a year for most of the preparations, three years for one, six months for two. The lesson derives the name from rasa and ayana and glosses it as that which imparts superior rasa and the other constituents of the body."@en ;
+    skos:note "Two features of the prescription are what make the whole set unexaminable from inside, and both are stated as care rather than as vagueness. The dose is not a quantity but a relation — such a measure as may not prevent one from taking one's ordinary meals, a measure regulated by the strength of one's digestive fire — and the term is a year. A course with an unstated dose and a year's term has no point before its end at which anything could be said to have gone wrong."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.7-8, I.1.14 and I.1.51-52, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1018 and 1021-1022" .
+
+pmp:AyurvedaKutipravesika a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The route that enters the hut"@en, "Der Weg, der in die Hütte eintritt"@de ;
+    skos:definition "The first of the two methods. A chamber is built on good ground in an inhabited place, to the east or north of it, wide and spacious and high, enclosed by two outer sets of apartments, its eyes — its doors and windows — small, its walls thick, adapted to the season, not gloomy, pleasing to the mind, impenetrable to all inauspicious sounds, barred entirely against the access of women, and equipped with physicians, medicines and Brahmans. The user enters it shaven, after worship, on a day the calendar has qualified, and takes the rasayana inside it."@en ;
+    skos:note "The specification is of a place and not of a state, and every item of it can be checked by a bystander: the orientation, the thickness of the wall, the size of the openings, the two outer rings of rooms. That is unusual in this holding and it is worth saying plainly, because the outcome the place is built for cannot be checked at all."@en ;
+    skos:note "The lesson calls this method certainly superior and adds in the same sentence that it is exceedingly difficult of observance. The comparison is made on the ground of difficulty and of what the user can meet, not on a ground of dignity, which is the shape the holding's generalization about comparative judgements describes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.16-20 and I.4.49-50, in the English of A. C. Kaviratna, parts XXXIII-XXXV, Calcutta 1904-1905, pp. 1017 and 1065" .
+
+pmp:AyurvedaVatatapika a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The route of wind and sun, which binds nothing to a day"@en, "Der Weg von Wind und Sonne, der nichts an einen Tag bindet"@de ;
+    skos:definition "The second of the two methods, named in the same verse as the first and defined by the translator as its reverse: vata is wind and atapa the heat of the sun, and the user is not commanded to shut himself up within any closed chamber. The lesson assigns it in the fourth section to everyone who does not meet the conditions of the first — those who are not strong, not free from disease, not intellectual, not self-controlled, not forgiving, not possessed of men and riches — and states that for them the ordinance about entering a hut does not apply."@en ;
+    skos:note "This is the finding of the run for the calendar question and it is worth stating exactly. The whole of the lesson's calendar apparatus — the northern course of the sun, the lighted fortnight, the propitious lunation and constellation, the favourable muhurta and karana, the auspicious day — stands at the entry into the hut and at no other point of the operation. The second route is prescribed in the same lesson, for the larger class of users, and carries no date at all. A transmission that binds an operation to a calendar here also carries its own release from it, and the release is not a later gloss or a rival school but the alternative the same passage offers."@en ;
+    skos:note "What it does not say, and the distinction decides how much it is worth. It does not say that the operation works on any day. It says that a user who cannot meet the conditions of the hut takes the drug outside, exposed to sun and wind, and it states no calendar for that. The release is by omission and not by denial, which is exactly the difference between this case and a transmission that refuses the binding in so many words."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.16 and I.4.49-50, in the English of A. C. Kaviratna, parts XXXIII-XXXV, Calcutta 1904-1905, pp. 1017 and 1065" .
+
+pmp:AyurvedaSamsodhana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The cleansing that goes before, and the sign at which it is complete"@en, "Die Reinigung, die vorausgeht, und das Zeichen, an dem sie vollständig ist"@de ;
+    skos:definition "The preliminary the lesson sets out in four verses. The body is first rubbed with oil and made to sweat; then a powder of chebulic myrobalan, rock salt, emblic myrobalan with raw sugar, sweet flag, embelia, turmeric, long pepper and ginger is drunk in hot water; then light food is given, and gruel of old barley with ghee for three, five or seven nights, until the bowels become clear and the stools regular. Only when physicians conversant with age, constitution and power of assimilation have ascertained that the bowels are properly cleansed is the rasayana itself administered, and it is chosen to suit the individual."@en ;
+    skos:note "The only place in the lesson where an operation is carried until a stated observable condition is reached rather than for a stated number of days. Three, five or seven nights is the range; what ends it is the state of the stools. That is a criterion, it is checkable, and it belongs to the preliminary and not to the operation the preliminary is for."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.24-27, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1018-1019" .
+
+pmp:AyurvedaAcararasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Conduct as a rasayana, without drug, chamber or date"@en, "Verhalten als Rasayana, ohne Droge, Kammer und Termin"@de ;
+    skos:definition "The section the translator heads Rasayana of conduct. A list of some thirty dispositions and practices — truthfulness, freedom from wrath, abstention from wine and from sexual indulgence, absence of animosity, labour that does not fatigue, tranquillity, amiable speech, silent recitation, purity, gravity, charity, penance, honouring of teachers and of the aged, aversion to cruelty, regularity of sleep and waking, the taking of milk and ghee, knowledge of time and place, freedom from pride, senses turned towards the self, devotion to the scriptures — and the conclusion that such a person should be known as a user of rasayana. The translator's note draws the consequence the passage implies: such a person does not require the aid of any rasayana of drugs, and attains through his conduct to all the effects of rasayana."@en ;
+    skos:note "Entered as a practice of its own and not as a remark, because it is the lesson's own alternative to everything else in it and because it carries no date, no chamber, no purification and no drug. Whatever the calendar at the entry to the hut is doing, it is not a condition on the effect the lesson names; the same effect is claimed here for conduct alone."@en ;
+    skos:note "The drawing of the consequence is the translator's, in a footnote, and the text says only that such a person is to be known as a user of rasayana. The difference is small and it is the difference between a claim the passage makes and a claim a reader makes for it, so it is marked."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.52-57, in the English of A. C. Kaviratna, part XXXV, Calcutta 1905, pp. 1065-1066" .
+
+pmc:AyurvedaAcararasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Conduct alone yields what the drugs are said to yield"@en, "Das Verhalten allein bringt hervor, was die Drogen hervorbringen sollen"@de ;
+    pm:byPractice pmp:AyurvedaAcararasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "The claim is stated in the next verse and not in the list: he who, endued with these high attributes, uses rasayana, enjoys all the effects enumerated of rasayana. Read with the verse after it, which says that one who has not cast off the graver faults never reaps the effects, the conduct is doing two jobs at once — it is a route to the result and it is the condition on every other route. The lesson does not separate them and this holding should not pretend it does."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.57, in the English of A. C. Kaviratna, part XXXV, Calcutta 1905, p. 1066" .
+
+#
+# The preparations, section by section
+#
+# Each named preparation is a practice of its own and carries its own yielding
+# claim. That is deliberate and it is the expensive way to do it: the lesson
+# itself pools them, saying of most that their other virtues are like those of
+# the ones before, and a single node with a list would have said the same in a
+# tenth of the space. It would also have made it impossible to count how many
+# prescriptions a corpus carries and how many of them state anything that could
+# fail — which is the number this project is for. SPEC §15 took that economy
+# back on 2026-09-18 and this file is written after the correction.
+#
+# The counts the lesson gives of itself: six combinations in the first section,
+# seventeen preparations in the second, sixteen in the third. The headings the
+# translation prints do not reach those numbers, because several headings carry
+# more than one combination in their prose. Where that happens the node follows
+# the heading and the note says so, so that the difference between the
+# transmission's own count and the holding's is visible rather than silently
+# resolved.
+#
+
+# — First section: Abhayamalakiya, six combinations —
+
+pmp:AyurvedaBrahmarasayanaPrathama a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The first Brahmya rasayana"@en, "Das erste Brahmya-Rasayana"@de ;
+    skos:definition "Ten palas of each of the five groups of five roots boiled in tenfold water down to a tenth, strained, with a thousand chebulic and three thousand fresh emblic myrobalans pounded in, thirteen further powders at four palas each, eleven hundred palas of sugarcandy, two adhakas of oil and three of ghee, boiled in a copper vessel over a mild fire until it will bear licking, honey added when cool, kept in a ghee-soaked earthen jar. Administered at the proper time in a measure the physician thinks judicious; when digested, rice of the sixty-day variety with milk."@en ;
+    skos:note "The one preparation of the lesson for which the promised span is not a figure. What is claimed is immeasurable longevity, and it is claimed of the Vaikhanasas and Valakhilyas rather than of a user."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.41-56, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1020-1022" .
+
+pmc:AyurvedaBrahmarasayanaPrathamaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The first Brahmya rasayana yields immeasurable longevity and a body exchanged for a new one"@en, "Das erste Brahmya-Rasayana bringt unermessliche Lebensdauer und einen gegen einen neuen getauschten Körper hervor"@de ;
+    pm:byPractice pmp:AyurvedaBrahmarasayanaPrathama ;
+    pm:yieldsCapacity pmc:AyurvedaVayahsthapana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "Freed from decayed bodies they obtained bodies that were foremost of their kind, as also youthfulness of years; freed from langour and fatigue and shortness of breath, without disease of any kind, with minds concentrated. The claim is made of ascetics of the remote past and then transferred to the reader in the next verse: one desirous of longevity should use this rasayana, and by so doing is sure to attain to long life."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.53-56, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, p. 1022" .
+
+pmp:AyurvedaBrahmarasayanaDvitiya a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The second Brahmya rasayana"@en, "Das zweite Brahmya-Rasayana"@de ;
+    skos:definition "A thousand emblic myrobalans steamed over boiling milk, dried in the shade, the kernels powdered, macerated seven days in the juice of a thousand more of the same, twenty further drugs added at an eighth of the powder's measure, macerated seven days again in the juice of a thousand palas of nagabala, dried in the shade, mixed with twice its measure of ghee or of ghee and honey, made into a ball and kept in a ghee-soaked jar buried under a heap of ashes for a fortnight. Taken up after the fortnight by a physician conversant with the Atharvans, mixed with a globular mass of gold, silver, copper, coral and black iron at an eighth of its measure, and administered every morning with the dose increased by half a karsha a day."@en ;
+    skos:note "Two conditions here are on the operator and not on the drug: the jar is to be taken up by a physician conversant with the Atharvans, and the dose is raised by a fixed step every day. The first is the only place in the lesson where the person who handles a preparation must have a qualification of that kind."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.57, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1022-1023" .
+
+pmc:AyurvedaBrahmarasayanaDvitiyaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The second Brahmya rasayana yields memory that retains all it hears, and poison that loses its force"@en, "Das zweite Brahmya-Rasayana bringt ein Gedächtnis hervor, das alles Gehörte behält, und ein Gift, das seine Kraft verliert"@de ;
+    pm:byPractice pmp:AyurvedaBrahmarasayanaDvitiya ;
+    pm:yieldsCapacity pmc:AyurvedaSmrtimedha, pmc:AyurvedaVisavighata, pmc:AyurvedaDehasamhanana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "The fullest list in the first section: freedom from disease, longevity, great strength, the love and affection of all creatures, the fruition of all desires, a complexion like the moon or the sun, memory improved so that he retains all he hears, a mind like that of the seers, a body compact as a mountain, powers like the wind, and poison that loses its force on contact."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.58-60, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1023-1024" .
+
+pmp:AyurvedaCyavanaprasa a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Cyavanaprasa"@en, "Cyavanaprasa"@de ;
+    skos:definition "Some thirty drugs at one pala each with five hundred emblic myrobalans boiled in a drona of water; when the juices have come out the vessel is taken down, the seeds of the myrobalans thrown away, their kernels fried in twelve palas of ghee and oil, the fried mass boiled in the decoction with pure raw sugar; honey added when cool, with bamboo manna, long pepper, cinnamon bark, cardamom, cinnamon leaf and mesua."@en ;
+    skos:note "Four of the drugs are given with a named substitute because the original is stated to be unobtainable — guduci for jivaka, bamboo manna for rsabhaka, asvagandha for meda, kustha for puskara. A prescription that names its own substitutions is telling a later reader that its materia was already incomplete when it was written down, and it is the one place in the lesson where the transmission concedes it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.61-69, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1024-1025" .
+
+pmc:AyurvedaCyavanaprasaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Cyavanaprasa yields youth to one already very old"@en, "Cyavanaprasa bringt einem schon sehr Alten die Jugend hervor"@de ;
+    pm:byPractice pmp:AyurvedaCyavanaprasa ;
+    pm:yieldsCapacity pmc:AyurvedaVayahsthapana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "Through administration of this medicine Cyavana, who had become very old, once more became youthful; and if one that is even decrepit enters the chamber spoken of and takes this rasayana, he soon casts off his decrepit form and acquires that of prime of youth. The second sentence is the only place in the lesson where the hut is made a condition of a named preparation's strongest claim rather than a route to rasayana in general."@en ;
+    skos:note "The lesson calls it the foremost of all rasayanas and adds a list of diseases it cures — cough, asthma, loss of voice, diseases of the chest and heart, leprosy, thirst, diseases of the urine and of the vital seed — so that the same preparation is claimed both as a rasayana for the healthy and as a remedy. The translator's note supplies the story of Cyavana and the Asvins from the epic; the lesson gives only the name."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.70-73, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1025-1026" .
+
+pmp:AyurvedaAmalakarasayanaCaturtha a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The fourth, the amalaka rasayana taken in the chamber"@en, "Das vierte, das in der Kammer genommene Amalaka-Rasayana"@de ;
+    skos:definition "Emblic with chebulic, or emblic with belleric, or all three myrobalans in equal numbers, wrapped in the bark of butea and plastered with soft clay, steamed in a perforated vessel over water; the seeds thrown out, a thousand palas of the kernel pounded, mixed with curds, ghee, honey, powdered sesame, oil and sugar. Taken on an empty stomach, having entered the chamber described; after it, barley gruel until the constitution is restored, then the body rubbed with ghee and with barley powder; then two meals a day with soups, milk and ghee; after that the user may bear himself as he pleases."@en ;
+    skos:note "The lesson calls this method of administration the best, and it is the only preparation in the first section whose ordinance sets out what the user does after the course as well as during it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.74, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1026-1027" .
+
+pmc:AyurvedaAmalakarasayanaCaturthaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The fourth amalaka rasayana yields the seers their youth and many centuries of life"@en, "Das vierte Amalaka-Rasayana bringt den Sehern ihre Jugend und viele Jahrhunderte Leben hervor"@de ;
+    pm:byPractice pmp:AyurvedaAmalakarasayanaCaturtha ;
+    pm:yieldsCapacity pmc:AyurvedaVayahsthapana, pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "Through the use of this rasayana the seers got back their youth and succeeded in living for many centuries, freed from disease and endued with great strength of body, of understanding and of the senses; it was through it that they were able to practise severe penances. The claim is again attached to the past and to no living user."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.74, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, p. 1027" .
+
+pmp:AyurvedaHaritakirasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The fifth, the haritaki rasayana"@en, "Das fünfte, das Haritaki-Rasayana"@de ;
+    skos:definition "A kumbha of ghee boiled with the decoction of the three myrobalans and the five groups of five roots, with a paste of long pepper, liquorice, bassia flowers, kakoli, ksirakakoli, mucuna, jivaka, rsabhaka and ksirasukla, with the expressed juice of vidari and eight times its measure of cow's milk. Administered with an eye to the strength of the digestive fire; when digested, rice with milk and ghee, and hot water to drink after."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.75, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, p. 1027" .
+
+pmc:AyurvedaHaritakirasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The haritaki rasayana yields a body freed from the fear of incantations"@en, "Das Haritaki-Rasayana bringt einen von der Furcht vor Beschwörungen befreiten Körper hervor"@de ;
+    pm:byPractice pmp:AyurvedaHaritakirasayana ;
+    pm:yieldsCapacity pmc:AyurvedaKrtyapratighata, pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "With body freed from decrepitude, disease, sin and fear of incantations, and acquiring extraordinary strength of understanding and the senses, with all efforts crowned with success, one would attain to a long life. Sin and the fear of incantations stand in the same list as decrepitude and disease, without a change of register."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.75, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, p. 1027" .
+
+pmp:AyurvedaLauhaghrta a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The sixth, the ghee with powdered iron, taken for three years"@en, "Das sechste, das Ghee mit Eisenpulver, drei Jahre lang genommen"@de ;
+    skos:definition "The decoction of the three myrobalans with turmeric, sthira, sweet flag, embelia, tinospora, dry ginger, liquorice, long pepper and white acacia, boiled with milk and ghee, honey and sugar; a hundred palas of emblic powder macerated in the juice of its own species added, and powdered iron at a fourth of that measure. Two tolas of the ghee every morning, having entered the chamber; in the evening rice with mung soup, milk and ghee."@en ;
+    skos:note "The only preparation in the lesson with a term longer than a year, and the one whose claim is stated as a conditional with a figure on each side: if one takes the ghee continually for three years, one lives for a hundred years."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.76, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, p. 1028" .
+
+pmc:AyurvedaLauhaghrtaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Three years of the iron ghee yield a hundred years, a body compact as stone, and a person unassailable by all creatures"@en, "Drei Jahre Eisen-Ghee bringen hundert Jahre hervor, einen steinharten Körper und einen von keinem Geschöpf Angreifbaren"@de ;
+    pm:byPractice pmp:AyurvedaLauhaghrta ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus, pmc:AyurvedaSmrtimedha, pmc:AyurvedaVisavighata, pmc:AyurvedaDehasamhanana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "He lives for a hundred years freed from decrepitude or decay; he succeeds in retaining what he hears; no disease overtakes him; if poison comes in contact with his body it fails to affect him; his body becomes as compact as stone; he becomes irresistible to view and unassailable by all creatures. Six claims in one verse, of which the third and the fourth would be settled by a single instance and the first by none."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.76, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, p. 1028" .
+
+# — Second section: Pranakamiya, seventeen preparations under ten headings —
+
+pmp:AyurvedaAmalakaghrtaSahasrapaka a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The amalaka ghee cooked a hundred or a thousand times"@en, "Das hundert- oder tausendfach gekochte Amalaka-Ghee"@de ;
+    skos:definition "An adhaka of ghee cooked with the expressed juice of amalaka and a paste of white punarnava; then with the juice of vidari and a paste of jivanti; then with fourfold milk and the cold infusion of bala and atibala and a paste of satavari. The three stages together are one round, and the round is repeated a hundred or a thousand times, sugar and honey being added each time. Kept in a vessel of gold, silver or clean strong earth."@en ;
+    skos:note "The prescription's cost is the point of it. The translator sets out the arithmetic of the rounds in a long note and the quantities are in tens of seers; a hundred rounds of a three-stage cooking is a year's work for somebody. Nothing in the lesson says what the hundredth round does that the tenth does not."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.10-12, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1031-1032" .
+
+pmc:AyurvedaAmalakaghrtaSahasrapakaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The hundred-cooked ghee yields a hundred years with the powers of mind unimpaired to the last"@en, "Das hundertfach gekochte Ghee bringt hundert Jahre hervor, mit bis zuletzt ungeschwächten Geisteskräften"@de ;
+    pm:byPractice pmp:AyurvedaAmalakaghrtaSahasrapaka ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus, pmc:AyurvedaSmrtimedha, pmc:AyurvedaDehasamhanana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "One lives a hundred years without disease; the powers of mind remain in full vigour for the entire period; all diseases disappear; the power of sexual congress is retained throughout life; the body has the strength of adamant and the senses are unimpaired; the voice resembles the roar of the clouds or of the surging ocean; the children are many and long-lived. The claim about the children is the only one in the lesson that would be settled in a generation and not in a century."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.13-16, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1032-1033" .
+
+pmp:AyurvedaAmalakavaleha a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The amalaka extract"@en, "Der Amalaka-Extrakt"@de ;
+    skos:definition "A thousand amalakas with a thousand long peppers drenched in water in which the ashes of butea wood are dissolved, dried in the shade, the seeds thrown out, powdered together, mixed with honey and ghee at four times the measure of the powder and sugar at a fourth, kept in a ghee-soaked jar underground for six months. Taken in the morning in a measure agreeable to strength and appetite; no food in the afternoon or evening while the course lasts."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.17-19, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1033" .
+
+pmc:AyurvedaAmalakavalehaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The amalaka extract yields a hundred years without a sign of decrepitude"@en, "Der Amalaka-Extrakt bringt hundert Jahre ohne ein Zeichen des Verfalls hervor"@de ;
+    pm:byPractice pmp:AyurvedaAmalakavaleha ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "The first of the preparations whose claim is stated by reference: one lives a hundred years without any sign of decrepitude, and as regards its other virtues they agree with those of the rasayana spoken of before. The formula recurs five times in this section and once in the third, and each time it transfers a whole list of capacities to a new preparation without restating any of them."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.20, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1034" .
+
+pmp:AyurvedaAmalakacurna a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The amalaka powder, buried through the rains"@en, "Das Amalaka-Pulver, durch die Regenzeit vergraben"@de ;
+    skos:definition "An adhaka of amalaka powder soaked twenty-one nights in the juice of a thousand amalakas, mixed with two adhakas of honey and ghee, an eighth of an adhaka of long pepper powder and a fourth of sugar, placed in a ghee-soaked jar and kept buried in a heap of ashes in the rainy season, in the month of Asadha or Sravana, and taken up after the rains have ended."@en ;
+    skos:note "One of the five places in the lesson where a calendar enters, and it enters at the making and not at the taking. What is bound to a season here is the maturing of the drug in the jar, and the passage states no consequence for doing it in another month."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.21-22, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1034" .
+
+pmc:AyurvedaAmalakacurnaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The amalaka powder yields a hundred years without a sign of decrepitude"@en, "Das Amalaka-Pulver bringt hundert Jahre ohne ein Zeichen des Verfalls hervor"@de ;
+    pm:byPractice pmp:AyurvedaAmalakacurna ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "Stated by reference, in the same formula as the extract before it."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.22, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1034" .
+
+pmp:AyurvedaVidangavaleha a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The vidanga extract"@en, "Der Vidanga-Extrakt"@de ;
+    skos:definition "An adhaka of embelia grains powdered, an adhaka of long pepper powdered, an adhaka and a half of white sugar, and four adhakas each of ghee, sesame oil and honey, mixed, placed in a ghee-soaked jar, buried in ashes at the beginning of the rains and taken up after them."@en ;
+    skos:note "The measures of the three liquids are not given in the text; the translator supplies them from Gangadhara's rule that a liquid is taken at twice the stated solid and doubled again for the direction about time. That is a commentator's arithmetic standing where a quantity should be, and it is marked here because the prescription is otherwise exact."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.23, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1034-1035" .
+
+pmc:AyurvedaVidangavalehaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The vidanga extract yields what the preparations before it yield"@en, "Der Vidanga-Extrakt bringt hervor, was die Zubereitungen vor ihm hervorbringen"@de ;
+    pm:byPractice pmp:AyurvedaVidangavaleha ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "The claim is made entirely by reference — the effects are the same as those of the medicines mentioned above — and the preparation shares no ingredient with the amalaka extracts it is referred to. A reader who wanted to know what this one does has to read the promise off a different recipe."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.23, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1035" .
+
+pmp:AyurvedaAmalakavalehaDvitiya a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The second amalaka extract, roasted in a vessel of raw butea wood"@en, "Der zweite Amalaka-Extrakt, in einem Gefäß aus rohem Butea-Holz geröstet"@de ;
+    skos:definition "A thousand amalakas heated in a vessel of raw butea wood covered so that no vapour escapes, over a fire of dried cowdung from fields and forests; cooled, the seeds thrown out, powdered; an adhaka each of that powder, of long pepper and of embelia, an adhaka and a half of sugar, with thirty-two seers each of sesame oil, honey and ghee, kept twenty-one days in a clean strong ghee-soaked jar."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.24-26, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1035-1036" .
+
+pmc:AyurvedaAmalakavalehaDvitiyaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The second amalaka extract yields a hundred years without symptoms of decrepitude"@en, "Der zweite Amalaka-Extrakt bringt hundert Jahre ohne Merkmale des Verfalls hervor"@de ;
+    pm:byPractice pmp:AyurvedaAmalakavalehaDvitiya ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.26, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1036" .
+
+pmp:AyurvedaNagabalarasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The nagabala rasayana, with the longest specification of a drug in the lesson"@en, "Das Nagabala-Rasayana, mit der längsten Drogenvorschrift der Lektion"@de ;
+    skos:definition "The roots of nagabala growing in a dry region overgrown with kusa grass, on soil oily, sweet and black or gold-coloured, free from the faults of poison, beasts of prey, wind, water and fire, never cultivated, free from anthills, with no crematorium upon or adjacent to it, no chaitya tree upon it and no alkaline salts, exposed to such wind, water and sun as are agreeable whatever the season; the plants unharmed, not overgrown, neither young nor old, undiminished in virtue, having put forth new leaves after casting the old, and not having borne fruit. The roots are extracted in the month of Magha or Phalguna by a person in a state of purity and observing self-restraint, after worship of the deities and the benediction of Brahmans, in an auspicious hour. Only the bark of the root is used, pounded to paste and given in milk every morning for a year."@en ;
+    skos:note "Fourteen conditions on the place and the plant and three on the gatherer, and every one of them checkable by anybody standing there. This is the densest specification in the lesson and it is entirely on the material and its collection; nothing of comparable precision is said anywhere about what the drug then does or when one would know."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.27-30, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1036-1037" .
+
+pmc:AyurvedaNagabalarasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "A year of the nagabala root yields a hundred years without decrepitude"@en, "Ein Jahr der Nagabala-Wurzel bringt hundert Jahre ohne Verfall hervor"@de ;
+    pm:byPractice pmp:AyurvedaNagabalarasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "By taking this medicine continuously for one year one lives for a hundred years without any indication of decrepitude; the other virtues are those of the medicines mentioned before. A year of daily observance is the condition and the verification lies ninety-nine years beyond it."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.29-30, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1037" .
+
+pmp:AyurvedaSvarasarasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The expressed juices taken in the manner of the nagabala root"@en, "Die Presssäfte, nach der Weise der Nagabala-Wurzel genommen"@de ;
+    skos:definition "The expressed juice of bala, atibala, sandal, agallochum, dhava, tinisa, catechu, sissoo and asana, and the juice of the ten plants named as capable of preventing the effects of age — tinospora, chebulic myrobalan, emblic myrobalan, vanda, white clitoria, jivanti, satavari, mandukaparni, sthira and punarnava — each taken like the rasayana of nagabala, with the same directions and, the translator adds, the same virtues. Where the expressed juice is not obtainable, an adhaka of the powder steeped a day and a night in an adhaka of water and strained is to be used in its place."@en ;
+    skos:note "Nineteen drugs under one heading, each of which the section counts separately towards its own total of seventeen preparations. The node follows the heading; the discrepancy between the two counts is noted at the head of this block."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.31-32, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1038" .
+
+pmc:AyurvedaSvarasarasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The expressed juices yield what the nagabala root yields"@en, "Die Presssäfte bringen hervor, was die Nagabala-Wurzel hervorbringt"@de ;
+    pm:byPractice pmp:AyurvedaSvarasarasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus, pmc:AyurvedaVayahsthapana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "The virtues of the two medicines are equal — the translator's words for the text's reference. Ten of the nineteen drugs are named by the technical term for arresting age, so the capacity is carried by the classification of the drug and not by a statement about this preparation."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.31, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1038" .
+
+pmp:AyurvedaBhallatakaksira a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The bhallataka course in milk, with its ramp of counted fruits"@en, "Die Bhallataka-Kur in Milch, mit ihrer Rampe gezählter Früchte"@de ;
+    skos:definition "Bhallataka fruits unharmed, undiseased and full in juice, size and energy, coloured like ripe jambolan, gathered in the month of Suci or Sukra, buried in a heap of barley or of phaseolus for four months and taken out in the month of Sahas or Sahasya. Before the course the body is nourished with cooling, oily and sweet food. Ten fruits are powdered and cooked in eight times their measure of water down to an eighth, strained and drunk with milk, the mouth first wetted with ghee. The number is raised by one fruit a day until it reaches thirty and then lowered by one a day until it reaches ten again."@en ;
+    skos:note "The one prescription in the lesson that states a quantity as a count, a schedule as a series and a ceiling as a number. It is also the drug the lesson calls keen and like fire, which is the nearest the section comes to saying that a rasayana can do harm."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.33-39, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1038-1039" .
+
+pmc:AyurvedaBhallatakaksiraPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The bhallataka course in milk yields a hundred years without decrepitude"@en, "Die Bhallataka-Kur in Milch bringt hundert Jahre ohne Verfall hervor"@de ;
+    pm:byPractice pmp:AyurvedaBhallatakaksira ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.40, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1039" .
+
+pmp:AyurvedaBhallatakaksaudra a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The bhallataka juice drawn down into a buried jar, with honey"@en, "Der in ein vergrabenes Gefäß herabgezogene Bhallataka-Saft, mit Honig"@de ;
+    skos:definition "Bhallataka fruits of the kind and collection already described, pounded and kept in a vessel with a hole in the bottom, which is set on a strong ghee-soaked jar buried to its neck in the ground; the upper vessel is sealed with an earthen cup and black earth and heated with a fire of dried cowdung, so that the juice descends into the lower jar. The juice is mixed with honey at an eighth of its measure and ghee at twice, both a year old and the ghee from cow's milk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.41-42, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1040" .
+
+pmc:AyurvedaBhallatakaksaudraPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The bhallataka juice with honey yields a hundred years without decrepitude"@en, "Der Bhallataka-Saft mit Honig bringt hundert Jahre ohne Verfall hervor"@de ;
+    pm:byPractice pmp:AyurvedaBhallatakaksaudra ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.43, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1040" .
+
+pmp:AyurvedaBhallatakataila a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The bhallataka oil cooked a hundred times"@en, "Das hundertfach gekochte Bhallataka-Öl"@de ;
+    skos:definition "A patra of the oil drawn off in the preceding manner, mixed with cow's milk and with an aksha of liquorice paste, and cooked a hundred times; the milk is evaporated at each round and replaced. The manner of administration, the diet during and after the course, and the effects are those already stated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.44, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1040-1041" .
+
+pmc:AyurvedaBhallatakatailaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The bhallataka oil yields what the two preparations before it yield"@en, "Das Bhallataka-Öl bringt hervor, was die zwei Zubereitungen vor ihm hervorbringen"@de ;
+    pm:byPractice pmp:AyurvedaBhallatakataila ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.44, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1041" .
+
+pmp:AyurvedaBhallatakavidhi a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The ten forms in which bhallataka is given, and the physician who must choose among them"@en, "Die zehn Formen der Bhallataka-Gabe, und der Arzt, der unter ihnen zu wählen hat"@de ;
+    skos:definition "Bhallataka in milk, in honey, in oil, in treacle, in soup, in ghee, in flesh, in flour, in salt and in tarpana: the lesson names ten forms and describes three. The physician conversant with diseases, with the nature of the human constitution and with the laws of assimilation is to select the method of administration; the remaining seven, the translator notes, are not laid down and the physician must learn to make them."@en ;
+    skos:note "A transmission that names ten forms of its most dangerous drug and describes three of them is not withholding a secret; it is recording that the operative knowledge was elsewhere. Where a transmission keeps part of its operative content out of writing this holding has a generalization for it, and the case is noted rather than counted, because the lesson states no condition of failure for the seven it omits."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.45-48, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1041-1042" .
+
+pmc:AyurvedaBhallatakavidhiPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Bhallataka rightly administered yields the alleviation of every disease of phlegm and every constipation"@en, "Recht gegebenes Bhallataka bringt die Linderung jeder Schleimkrankheit und jeder Verstopfung hervor"@de ;
+    pm:byPractice pmp:AyurvedaBhallatakavidhi ;
+    pm:yieldsCapacity pmc:AyurvedaSmrtimedha ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "There is no disease born of phlegm and no form of constipation which bhallataka properly administered cannot alleviate promptly; and it enhances mental powers and the digestive fire. The claim is universal over a class of disease and it is guarded by the clause properly administered, which is the guard the fourth section generalizes."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.46-48, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1041-1042" .
+
+# — Third section: Karapracitiya, sixteen combinations —
+
+pmp:AyurvedaAmalakayasarasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The amalaka and iron rasayana, from fruits plucked by hand"@en, "Das Amalaka-Eisen-Rasayana, aus mit der Hand gepflückten Früchten"@de ;
+    skos:definition "Amalakas plucked with the hand and not by shaking the branches, in the month of Magha or Phalguna, seedless, sun-dried, powdered, and made to absorb twenty-one times the expressed juice of other fruits of the same kind: an adhaka. With an adhaka of the five groups of drugs called life-lengthening, nourishing, milk-producing, semen-increasing and age-arresting, with the chipped stems of six trees and seven further drugs. Boiled in a hundred and sixty seers of water down to sixteen, strained, the amalaka powder thrown in, heated over a fire of dried cowdung or split bamboo until the liquid has gone, dried on an iron plate, pounded on a stone laid on a black deerskin, kept in an iron vessel, mixed with an eighth of its measure of iron powder and given with honey and ghee."@en ;
+    skos:note "The name of the section comes from this prescription: karapracita, plucked with the hand. Three of its conditions are on the manner of gathering, one on the month, one on the surface the powder is pounded on. None of them is given a reason and none a consequence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.2-7, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1042-1044" .
+
+pmc:AyurvedaAmalakayasarasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The amalaka and iron rasayana yields freedom from fatigue, disease and decrepitude, and lives Time did not touch"@en, "Das Amalaka-Eisen-Rasayana bringt Freiheit von Ermüdung, Krankheit und Verfall hervor, und Leben, die die Zeit nicht berührte"@de ;
+    pm:byPractice pmp:AyurvedaAmalakayasarasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus, pmc:AyurvedaVayahsthapana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "Vasistha, Kasyapa, Angiras, Jamadagni, Bharadvaja, Bhrgu and others like them, having taken this rasayana under proper restraints, became free from the fear of fatigue, disease and decrepitude, and their lives did not come under the touch of Time. The translator glosses the last phrase: they lived as long as they liked and death did not come to them until they desired it."@en ;
+    skos:note "The verse after it is the one place in the lesson where the transmission accounts for those who had no rasayana. There were no great seers before that time; there was no rasayana; the men of those days were boorish, engaged in acts other than penances, and of souls entirely unrestrained; hence success they had not. The failure of an earlier age is thus assigned to the conduct of its people and to the absence of the drug at once, which is the same double account the fourth section gives of a living user."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.8-12, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1044-1045" .
+
+pmp:AyurvedaKevalamalaka a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The amalaka taken alone, in the forest, under the recitation of the syllable"@en, "Das allein genommene Amalaka, im Wald, unter der Rezitation der Silbe"@de ;
+    skos:definition "One lives a year on milk alone among kine, mentally reciting the Savitri, in sexual continence and with the senses under control. After the year, on the day of the full moon of Pausa, Magha or Phalguna, having fasted three days, one enters an amalaka forest, climbs a large tree rich in fruit, plucks a few fruits with the hand, and holding them mentally recites the pranava, the syllable Om, until nectar comes into them. One then eats until hunger is gratified."@en ;
+    skos:note "The only procedure in the lesson whose central operation is a recitation and not a compounding, and the only one that states a perceptible sign of its own working. It is also the only one with a full-moon date, a three-day fast and a year of preliminary observance, so that a user who wanted to try it would have to begin twelve months before the one day on which it can be done."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.13-17, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1045-1046" .
+
+pmc:AyurvedaKevalamalakaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "A thousand years of youth for each fruit eaten"@en, "Tausend Jahre Jugend für jede gegessene Frucht"@de ;
+    pm:byPractice pmp:AyurvedaKevalamalaka ;
+    pm:yieldsCapacity pmc:AyurvedaVayahsthapana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "One will live in the enjoyment of youth for as many thousands of years as the number of fruits one eats according to this method; by eating them until hunger is gratified one becomes like unto an immortal; and Sri, the Vedas and Speech in her embodied form come to such a person. The claim is the only one in the lesson that is stated as a proportion, and the quantity it is proportional to is the one thing in the whole procedure the user controls."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.17-18, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1046" .
+
+pmp:AyurvedaLauhadirasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The iron leaf quenched seven times"@en, "Das siebenmal abgeschreckte Eisenblatt"@de ;
+    skos:definition "A leaf of keen iron four fingers long and as thick as a sesame seed, made red hot and quenched in turn in the juice of the three myrobalans, in cow's urine, in water with the ashes of green barley spikes, in salt water, in water with the ashes of ingudi wood and in water with the ashes of kimsuka wood, until it takes a hue as black as collyrium; then pounded, mixed with honey and amalaka juice to a lickable paste, placed in a ghee-soaked vessel and kept a year under a heap of barley, the physician stirring the whole of the contents once a month. Administered after the year with honey and ghee every morning."@en ;
+    skos:note "Six quenchings are named and the heating before the first makes seven operations; the sequence is fixed and the endpoint is a stated colour. It is the nearest thing in the lesson to a procedure with a criterion inside it, and the criterion governs the making of the drug and not its working."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.19-25, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1045-1046" .
+
+pmc:AyurvedaLauhadirasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "A year of the iron rasayana yields a man who does not succumb to violence, disease, age or death"@en, "Ein Jahr Eisen-Rasayana bringt einen Menschen hervor, der weder Gewalt noch Krankheit, Alter oder Tod erliegt"@de ;
+    pm:byPractice pmp:AyurvedaLauhadirasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDehasamhanana, pmc:AyurvedaVaksiddhi, pmc:AyurvedaSmrtimedha ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "The person who takes rasayana made of iron for a whole year becomes endued with the strength of an elephant and possessed of senses in their full vigour; he never succumbs to aggressions of violence committed on his person, or to diseases of any kind, or to the decrepitude of age, or to death itself; whatever he utters becomes accomplished; whatever he hears even once he remembers. The strongest claim of the lesson, attached to the most ordinary of its procedures."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.26-27, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1047" .
+
+pmp:AyurvedaSuvarnarajatarasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Rasayanas of gold and of silver, prepared in the same manner"@en, "Rasayanas aus Gold und Silber, auf dieselbe Weise bereitet"@de ;
+    skos:definition "Agreeably to the method laid down for the iron leaf, rasayanas are to be prepared of gold and of silver. The lesson gives the direction in one sentence and adds that the administration of every one of these rasayanas extends the period of life, as has been fully tested by experiment, and dispels all sorts of disease."@en ;
+    skos:note "Two further preparations in a single clause, and the clause carries the lesson's most explicit appeal to trial. What is claimed as tested by experiment is a set of preparations for which no procedure beyond by the same method is given."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.19-25, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1047" .
+
+pmc:AyurvedaSuvarnarajatarasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The gold and silver rasayanas extend life and dispel all sorts of disease"@en, "Die Gold- und Silber-Rasayanas verlängern das Leben und vertreiben Krankheiten aller Art"@de ;
+    pm:byPractice pmp:AyurvedaSuvarnarajatarasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.25, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1047" .
+
+pmp:AyurvedaAindrirasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The Aindri rasayana, with aconite and gold by weight of barleycorns"@en, "Das Aindri-Rasayana, mit Eisenhut und Gold nach Gerstenkorngewicht"@de ;
+    skos:definition "Aindri, matsyaksika, brahmi, sweet flag, brahmasuvarcala, long pepper and rock salt, each three yavas; gold two yavas; aconite two tilas; ghee one pala. All mixed and taken in proper measure; when digested, boiled rice with honey and a copious measure of ghee."@en ;
+    skos:note "The only prescription in the lesson whose quantities are given in barleycorns and sesame seeds, and the only one containing a drug the translation names as Aconitum ferox. The measure of the aconite is the smallest quantity stated anywhere in the lesson, and nothing is said about what a larger one would do."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.28-33, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1047-1048" .
+
+pmc:AyurvedaAindrirasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The Aindri rasayana yields immunity from incantation, from adversity and from poison"@en, "Das Aindri-Rasayana bringt Unangreifbarkeit durch Beschwörung, Unglück und Gift hervor"@de ;
+    pm:byPractice pmp:AyurvedaAindrirasayana ;
+    pm:yieldsCapacity pmc:AyurvedaKrtyapratighata, pmc:AyurvedaVisavighata, pmc:AyurvedaSmrtimedha, pmc:AyurvedaOjovrddhi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "It is the foremost of all those things which generate ojas; its potency has been well tested; no incantation according to Atharvan rites can injure a man who takes this medicine; Alaksmi cannot approach him; poison cannot affect him; neither does he succumb to any disease. Four immunities and a claim of testing in five consecutive clauses."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.28-33, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1048" .
+
+pmp:AyurvedaMedhakararasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The rasayanas that invigorate the understanding"@en, "Die Rasayanas, die den Verstand stärken"@de ;
+    skos:definition "The expressed juice of mandukaparni; liquorice reduced to powder; the juice of guduci — each used with milk; and the paste of the roots and blossoms of sankhapuspi used with the liquid. Four preparations under one heading, of which the lesson singles out the last."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.34-35, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1048-1049" .
+
+pmc:AyurvedaMedhakararasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The understanding-rasayanas yield strength of understanding, and one of them especially"@en, "Die Verstandes-Rasayanas bringen Verstandesstärke hervor, und eines von ihnen besonders"@de ;
+    pm:byPractice pmp:AyurvedaMedhakararasayana ;
+    pm:yieldsCapacity pmc:AyurvedaSmrtimedha, pmc:AyurvedaDirghayus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "These rasayanas promote longevity, destroy disease, increase strength and improve digestion, complexion and voice; they also invigorate the understanding; and of these, that made of sankhapuspi especially conduces to strength of understanding. A comparative judgement between four preparations of the same kind, given without a ground."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.35, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1049" .
+
+pmp:AyurvedaPippalirasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The long pepper rasayana, five to ten fruits for a year"@en, "Das Langpfeffer-Rasayana, fünf bis zehn Früchte ein Jahr lang"@de ;
+    skos:definition "Five, six, seven or ten fruits of long pepper with honey and ghee, used for a whole year. Alternatively a handful of the fruits soaked in water in which the ashes of kimsuka wood are dissolved, fried, and three of them taken three times a day, before and after meals, with honey and ghee. Gangadhara, the translator notes, has the soaking repeated seven times and the second preparation continued for a whole year."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.36-39, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1049-1050" .
+
+pmc:AyurvedaPippalirasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The long pepper rasayana cures a named list of fourteen disorders"@en, "Das Langpfeffer-Rasayana heilt eine benannte Liste von vierzehn Leiden"@de ;
+    pm:byPractice pmp:AyurvedaPippalirasayana ;
+    pm:yieldsCapacity pmc:AyurvedaOjovrddhi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "Bronchitis, phthisis, asthma, consumption, hiccup, all diseases of the throat, piles, the disease of the grahani, chlorosis, obstinate fever, hoarseness, inflammation of the nasal membrane with loss of smell, inflammatory swellings, abdominal tumours, and all diseases born of excited wind and phlegm. A list of conditions is the most nearly checkable form any claim in the lesson takes, and it is attached to the preparation with the smallest dose and the longest term."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.37-39, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1049" .
+
+pmp:AyurvedaPippalivardhamana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The rising course of long pepper, a thousand fruits in nineteen days"@en, "Die steigende Langpfeffer-Kur, tausend Früchte in neunzehn Tagen"@de ;
+    skos:definition "Ten fruits of long pepper with milk on the first day, the number raised by ten each day to the tenth, and from the eleventh lowered by ten each day: a thousand fruits in nineteen days. Every day, when the medicine is digested, rice of the sixty-day variety with milk and ghee. The powder for a strong man, the decoction for one of average strength, the cold infusion for one of little strength; and the course beginning with six fruits is called tolerable, that beginning with three the least in efficacy and the one a weak man should use."@en ;
+    skos:note "The lesson's second counted ramp, and the one whose arithmetic the translator works out: ten to a hundred and back gives a thousand, six gives one thousand and fourteen, three gives one thousand and twenty-six. Gangadhara is quoted as remarking that the excess over a thousand is not injurious. A commentator who has to say that an excess does no harm is answering a question the text left open, and the question is the only one in the neighbourhood that a body could settle."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.40-43, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1050-1051" .
+
+pmc:AyurvedaPippalivardhamanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The rising course of long pepper yields strength, voice and longevity and counteracts age"@en, "Die steigende Langpfeffer-Kur bringt Kraft, Stimme und Lebensdauer hervor und wirkt dem Alter entgegen"@de ;
+    pm:byPractice pmp:AyurvedaPippalivardhamana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus, pmc:AyurvedaVayahsthapana, pmc:AyurvedaSmrtimedha ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "It promotes strength, improves the voice and conduces to longevity; it alleviates enlarged spleen and all other diseases of the stomach; it counteracts the effects of age and sharpens intellect. The three grades of the course are ranked by efficacy without a ground being given for the ranking, and the grade is chosen by the strength of the user."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.44, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1051" .
+
+pmp:AyurvedaTriphalarasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The rasayanas of the three myrobalans"@en, "Die Rasayanas der drei Myrobalanen"@de ;
+    skos:definition "One chebulic fruit before the meal, two belleric, and four emblic just after it, all with honey and ghee, taken for a whole year. Or a new iron leaf laved a day and a night with the paste of the three myrobalans, the paste then used with honey and water. Or the three used with powdered liquorice, or with bamboo manna, or with long pepper, or with honey and ghee, or with sugar; or with iron powder, or with gold, or with sweet flag, or with embelia, or with rock salt."@en ;
+    skos:note "Under one heading the lesson gives twelve combinations and calls five of them well tried. The five are named as a group and no one of them is distinguished from the rest."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.45-51, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1051-1052" .
+
+pmc:AyurvedaTriphalarasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "A year of the three myrobalans yields a hundred years untouched by age"@en, "Ein Jahr der drei Myrobalanen bringt hundert vom Alter unberührte Jahre hervor"@de ;
+    pm:byPractice pmp:AyurvedaTriphalarasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus, pmc:AyurvedaSmrtimedha ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "By its use one would live for a full hundred years without being influenced by age and without being afflicted by disease; used for a full year any of these would sharpen the understanding and the memory, infuse strength, impart longevity, counteract the effects of age and alleviate diseases."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.46 and I.3.50-51, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1051-1052" .
+
+pmp:AyurvedaSilajaturasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The silajatu course, with its four kinds, its three lengths and its three doses"@en, "Die Silajatu-Kur, mit ihren vier Arten, drei Längen und drei Gaben"@de ;
+    skos:definition "Silajatu, held to be the impurity of gold, silver, copper and black iron dissolved by the heat of the sun on the mountain, each kind identified by taste, colour, potency and post-digestive taste, and all of them smelling of cow's urine. It is soaked in a lukewarm decoction of drugs that allay the excited humours, dried in the sun, and soaked again, seven days in all; then taken with iron powder and milk. The course is of three lengths — seven weeks, three weeks, one week — and the dose of three measures — one pala, half a pala, two tolas — the length and the measure chosen by the strength of the user."@en ;
+    skos:note "The one preparation in the lesson with a stated grading on both axes at once, length and quantity, and with a rule for reading the grade off the user. It is also the one with an interdicted food attached; see pmc:AyurvedaSilajatukulattha."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.52-65, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1052-1054" .
+
+pmc:AyurvedaSilajaturasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "There is no curable disease on earth which silajatu cannot conquer"@en, "Es gibt auf Erden keine heilbare Krankheit, die Silajatu nicht bezwingen könnte"@de ;
+    pm:byPractice pmp:AyurvedaSilajaturasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus, pmc:AyurvedaSmrtimedha, pmc:AyurvedaDehasamhanana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "The widest claim in the lesson and the one that guards itself twice in a single sentence. There is no such curable disease on earth which silajatu cannot conquer; administered to a healthy person, according to the ordinances in respect of its combinations, it imparts excessive vigour to him. The word curable exempts every case that does not recover, and the clause according to the ordinances exempts every case that was not done right; between them nothing is left that could count against the claim."@en ;
+    skos:note "Entered without a protocol and without an examination state, because no protocol was opened on it in this run. It is named here as the clearest candidate the lesson offers for the state in which a claim treats a result and its opposite alike."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.69, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1055" .
+
+# — Fourth section: Ayurvedasamutthaniya —
+
+pmp:AyurvedaIndropadistarasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The rasayana Indra taught on the Himavat"@en, "Das Rasayana, das Indra auf dem Himavat lehrte"@de ;
+    skos:definition "Aindri, brahmi, ksirakakoli, ksirapuspi, sravani, mahasravani, satavari, vidari, jivanti, punarnava, nagabala, sthira, sweet flag, chatraticchatra, meda, mahameda and the other drugs of the life-lengthening group, made into a paste and used with milk for six months."@en ;
+    skos:note "Prefaced by the only date the lesson gives for the operation as a whole rather than for a drug: this is the auspicious time for rasayanas, Indra says, and the herbs born on Himavat have now attained to maturity and potency. The statement is made once, in a narrative frame, and no other passage refers back to it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.14-17, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1058-1059" .
+
+pmc:AyurvedaIndropadistarasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Six months of Indra's paste yield longevity, preserved youth and a strengthened memory"@en, "Sechs Monate von Indras Paste bringen Lebensdauer, bewahrte Jugend und gestärktes Gedächtnis hervor"@de ;
+    pm:byPractice pmp:AyurvedaIndropadistarasayana ;
+    pm:yieldsCapacity pmc:AyurvedaDirghayus, pmc:AyurvedaVayahsthapana, pmc:AyurvedaSmrtimedha ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "It promotes longevity, preserves youth, prevents disease, confers wealth of voice and complexion, sharpens the understanding, strengthens the memory, gives great strength and produces other desirable effects; and it is a well-tried preparation. The fourth of the five claims of trial in the lesson."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.15-17, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1059" .
+
+pmp:AyurvedaDronipravesika a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The route that enters a wooden vessel"@en, "Der Weg, der in ein hölzernes Gefäß eintritt"@de ;
+    skos:definition "Eight herbs are described by their shape and their exudation — brahmasuvarcala with golden milk and lotus leaves, adityaparni with a flower like the disc of the sun, nari whose leaves look like a goat, kasthagodha shaped like an iguana, sarpa shaped like a snake, soma with fifteen leaves that wax and wane with the moon, padma like the lotus, aja, and nila with blue milk. Of whichever can be obtained the expressed juice is drunk to the measure of gratification. The user then lies naked within a covered vessel built of the raw wood of butea and soaked in ghee, and is fed on goat's milk; the translator reports Gangadhara's direction that the milk is poured drop by drop through a hole in the lid."@en ;
+    skos:note "The procedure with the longest term, the most extreme claim and the least available material in the lesson. The translator observes of the herbs that many are not to be found, that Agnivesa's own way of speaking of them shows they were obsolete and unidentifiable even in his day, and that they are named by Indra to seers on a mountain. A prescription whose ingredients the compiler could not obtain is not a prescription anyone could have run."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.18-26, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1059-1061" .
+
+pmc:AyurvedaDronipravesikaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Six months in the vessel yield ten thousand years, speech that reveals the past and a thousand yojanas at a stretch"@en, "Sechs Monate im Gefäß bringen zehntausend Jahre hervor, Rede, die das Vergangene offenbart, und tausend Yojana in einem Zug"@de ;
+    pm:byPractice pmp:AyurvedaDronipravesika ;
+    pm:yieldsCapacity pmc:AyurvedaAtitajnana, pmc:AyurvedaDuragamana, pmc:AyurvedaVayahsthapana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "When the process is continued for full six months one becomes like unto a celestial in age, complexion, voice, shape, strength and lustre; one's speech reveals even the past; one's eyes and ears become like those of the immortals; one can traverse a thousand yojanas at a stretch; one's period of life is extended to full ten thousand years, uninterrupted by any ailment."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.27-29, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1061" .
+
+pmp:AyurvedaVaidikarasayana a pm:Practicing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The Vedic rasayana, for those unable to seek out the herbs"@en, "Das vedische Rasayana, für die, die die Kräuter nicht suchen können"@de ;
+    skos:definition "Offered expressly to those who seek ease and are unable to seek out herbs and undergo the discomforts of administration. The juices of four groups of ten drugs and of some twenty-six further drugs, with the ashes of butea wood, cooked with cow's milk, sesame oil and ghee; an adhaka of amalaka powder soaked a hundred times in its own juice, new honey, sugar, bamboo manna and long pepper added; kept fifteen days in a ghee-soaked jar. Taken with a sixteenth part of powdered gold, copper, coral, ivory, crystal, pearl, lapis, conch and silver. While the course lasts the user refrains from toil and from sexual congress."@en ;
+    skos:note "The third route the lesson opens, after the hut and the wind and sun, and it is opened on the same ground as the second: the user cannot meet what the harder way asks. The lesson grades its own procedures by what a user can do and says so in plain words, here and at the comparison of the two methods."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.34-45, in the English of A. C. Kaviratna, parts XXXIV-XXXV, Calcutta 1905, pp. 1062-1064" .
+
+pmc:AyurvedaVaidikarasayanaPhala a pm:Yielding ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The Vedic rasayana yields the power of knowing the past and turns aside poison and adversity"@en, "Das vedische Rasayana bringt das Vermögen hervor, das Vergangene zu wissen, und wendet Gift und Unglück ab"@de ;
+    pm:byPractice pmp:AyurvedaVaidikarasayana ;
+    pm:yieldsCapacity pmc:AyurvedaAtitajnana, pmc:AyurvedaVisavighata, pmc:AyurvedaKrtyapratighata, pmc:AyurvedaOjovrddhi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "It is alleviative of all sorts of diseases; it generates semen; it promotes longevity; it strengthens mind, memory, body, digestive fire, intellect and senses; it is the foremost of all medicines that impart vigour; it improves the complexion; it counteracts the action of poisons and the genius of adversity; and it imparts the power of knowing the past. The easiest of the three routes carries the second-widest set of claims in the lesson."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.46-48, in the English of A. C. Kaviratna, part XXXV, Calcutta 1905, pp. 1064-1065" .
+
+#
+# What the lesson requires before the operation
+#
+
+pmc:AyurvedaSamsodhanapurvakatva a pm:Presupposing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The cleansing must be complete before the rasayana is given"@en, "Die Reinigung muss vollständig sein, bevor das Rasayana gegeben wird"@de ;
+    skos:definition "The order the lesson sets and the only one it makes a physician certify. Oil and sweating, then the corrective powders in hot water, then light food, then barley gruel with ghee for three, five or seven nights until the bowels are clear and the stools regular; and only when physicians conversant with age, constitution and power of assimilation have ascertained that the bowels are properly cleansed is the rasayana administered."@en ;
+    pm:dependentStep pmp:AyurvedaRasayana ;
+    pm:priorStep pmp:AyurvedaSamsodhana ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    skos:note "Entered at prescribed order and not at stated necessity, because the lesson gives the sequence and the certification and does not say at this place what follows if the sequence is broken. What it does say, two sections later and in general terms, is that disease sets in from a deviation; that is a separate node and it is not read back into this one."@en ;
+    skos:note "The translator supplies the reason in a footnote at the fourth preparation — before beginning to take rasayana one requires one's body to be corrected or purified — and that is his gloss on the same rule, not a second statement of it."@en ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.24-27, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1018-1019" .
+
+pmc:AyurvedaKutipravesaKala a pm:Presupposing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Four calendar conditions at once on the entry into the hut"@en, "Vier Kalenderbedingungen zugleich für den Eintritt in die Hütte"@de ;
+    skos:definition "The one place in the lesson where the operation itself, and not the gathering or the maturing of a drug, is bound to a date, and it is bound fourfold. During the period of the sun's northern course, in the lighted fortnight, when the lunation and the constellation are propitious, when the muhurta and the karana are favourable, on an auspicious day, one should after a shave enter the chamber — with strength of understanding and memory, with faith and concentrated attention, having dispelled all mental faults, with mind dwelling on love of all creatures, having worshipped the deities and Brahmans and circumambulated images of gods, of the twice-born and of kine."@en ;
+    skos:note "Two kinds of condition stand in one sentence and they behave differently. The ayana, the fortnight, the lunation, the constellation, the muhurta and the karana are fixed outside every party and no examination of anybody could establish or remove them; the faith, the attention and the dispelled faults are states of the user and only he can report them. The transmission does not mark the difference, and a reader who takes the passage for a calendar rule alone has dropped half of it."@en ;
+    skos:note "What the passage does not say is as much the finding as what it says: no consequence is attached to entering on another day. The lesson names five further calendar conditions — the jar buried through the rains, the nagabala roots dug in Magha or Phalguna in an auspicious hour, the bhallataka gathered in Suci or Sukra and given in Sahas or Sahasya, the amalakas plucked in Magha or Phalguna, the forest entered on the full moon of Pausa, Magha or Phalguna after a three-day fast — and attaches a consequence to none of them either. Six windows and no penalty anywhere."@en ;
+    skos:note "The translator explains the two technical terms: a muhurta is a division of time of forty-eight minutes, a karana a division of which two make a lunar day, eleven in all, some auspicious and some not. The explanation is his and the grid it belongs to is the calendrical literature, which this lesson does not cite."@en ;
+    pm:dependentStep pmp:AyurvedaKutipravesika ;
+    pm:priorStep pmp:AyurvedaRasayana ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.21-23, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, pp. 1017-1018" .
+
+pmc:AyurvedaKutyadhikarin a pm:Presupposing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Who the hut is for, and what the others are to do instead"@en, "Für wen die Hütte ist, und was die Übrigen stattdessen tun sollen"@de ;
+    skos:definition "For those that are endued with strength, free from diseases, intellectual, with their minds under control, of a forgiving disposition, and having men and riches at their command, for them only is the ordinance about entering a hut beneficial. Unto those of a different disposition the ordinance does not apply; they, while taking the rasayana, should expose themselves to both sun and wind. Of the two methods the former is certainly superior, and it should however be stated that the superior method is exceedingly difficult of observance."@en ;
+    skos:note "Six conditions on the person, of which the last is money. A transmission that states what its best route costs, and names an inferior route for those who cannot pay it, is being unusually plain about the distribution of its own promise."@en ;
+    skos:note "The comparison is made on a ground the holding's generalization about comparative judgements predicts: difficulty of observance, a property of the procedure and of what it demands, and not the dignity of the persons who work it. The same passage is the reason the calendar at the entry to the hut governs one route and not the operation."@en ;
+    pm:dependentStep pmp:AyurvedaKutipravesika ;
+    pm:priorStep pmp:AyurvedaVatatapika ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.49-50, in the English of A. C. Kaviratna, part XXXV, Calcutta 1905, p. 1065" .
+
+pmc:AyurvedaDosatyagapurvakatva a pm:Presupposing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Without casting off the graver faults of body and mind, he never reaps the effects"@en, "Ohne das Ablegen der gröberen Fehler von Körper und Geist erntet er die Wirkungen nie"@de ;
+    skos:definition "The lesson's own condition on all its promises, stated immediately after the rasayana of conduct. That person who, without casting off at least the graver faults of both body and mind, uses rasayana, never reaps the effects of rasayana; and rasayanic combinations, which have for their objects the lengthening of life and the prevention of decrepitude and disease, succeed with those who are cleansed in respect of mind and body and who have their souls under control."@en ;
+    skos:note "This is the condition that decides what the calendar and the hut and the counted fruits are worth. Every outward condition of the lesson can be met or missed in public; this one is a state of the user, it is stated as a necessary condition of the whole class, and its absence accounts in advance for any user in whom nothing happened."@en ;
+    skos:note "The corresponding statement for the drug taken in the wooden vessel is harder still and runs the same way: the effects of these celestial herbs can be borne by persons like yourselves, and cannot be borne by sinful souls. Spoken by Indra to seers, in the section where the procedure is given."@en ;
+    pm:dependentStep pmp:AyurvedaRasayana ;
+    pm:priorStep pmp:AyurvedaAcararasayana ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "He never reaps the effects of rasayana. Stated in the text as the outcome for one who uses rasayana without casting off at least the graver faults of body and mind; the effect is withheld entire and no partial effect is named."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.58-59, in the English of A. C. Kaviratna, part XXXV, Calcutta 1905, p. 1066" .
+
+pmc:AyurvedaDosatyagavivada a pm:Disputing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Whether the faulty user gets nothing or only the grosser part"@en, "Ob der fehlerhafte Anwender nichts erhält oder nur den gröberen Teil"@de ;
+    skos:definition "Two readings of the same verse, and they differ on exactly the point that decides whether the condition is an excuse or a rule. Gangadhara, in his commentary, takes it to mean that one who uses rasayana without casting off the faults of body and mind does not obtain the superior or subtler virtues of rasayana although he may reap its grosser virtues. The translator rejects that reading and takes the verse to say that if one takes rasayana while indulging in all sorts of evil practices, one can never be benefited by it at all; he grounds the rejection on common sense and on the verse that follows."@en ;
+    skos:note "Worth a node because the two readings are not a nuance. On Gangadhara's reading the condition grades the result and a user who got a little has the rule confirmed; on the translator's it is a switch, and a user who got a little has a case against the rule. The wording of the failure clause therefore decides whether the claim can be met by any outcome at all, and the transmission as it reaches a reader in English has already had that decision made for it by an editor who says so."@en ;
+    skos:note "Both sides are in one book and neither is a separate transmission: the commentator is of the seventeenth to nineteenth century and the translator of 1905. The dispute is entered because it is about the reading of a passage this file carries and because the choice was made in the only edition read; it is not evidence of a disagreement between traditions."@en ;
+    pm:disputedClaim pmc:AyurvedaDosatyagapurvakatva ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.58, in the English of A. C. Kaviratna, part XXXV, Calcutta 1905, p. 1066, with the translator's note" ;
+    dcterms:source "Gangadhara Kaviraja Ray, Jalpakalparu, commentary on Cikitsasthana I.4.58, as reported in A. C. Kaviratna's note at that place, part XXXV, Calcutta 1905, p. 1066" .
+
+pmc:AyurvedaRasayanapradanavidhi a pm:Presupposing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "To whom the lesson may not be imparted"@en, "Wem die Lektion nicht mitgeteilt werden darf"@de ;
+    skos:definition "All this that has been said of rasayana should not be imparted to those persons who have slain their selves, or to those who are free from ailments, or who do not belong to the twice-born classes, or who have no desire to hear it. The translator glosses the first as one addicted to evil practices of every kind or who disregards all duties, and leaves open whether the second qualifies the third, in which case the excluded would be the healthy of the fourth class."@en ;
+    skos:note "The restriction stands inside the operative text, at the end of the section that gives the procedures, and it names the classes of excluded recipient rather than the permitted one. It gives no ground, unlike the transmissions elsewhere in this holding that attribute the restriction to the authority of the contents; the lesson simply forbids."@en ;
+    skos:note "The second exclusion is the strange one and the translator marks it as unclear. Rasayana is defined at the head of the lesson as the medicine for the healthy; a rule excluding the healthy from hearing about it would contradict the definition, which is presumably why the reading that ties it to the fourth class is offered."@en ;
+    pm:dependentStep pmp:AyurvedaRasayana ;
+    pm:priorStep pmp:AyurvedaAcararasayana ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.60, in the English of A. C. Kaviratna, part XXXV, Calcutta 1905, p. 1066" .
+
+#
+# The cautions, and the one clause that says what a deviation costs
+#
+
+pmc:AyurvedaBhallatakamatra a pm:Cautioning ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "No excess above thirty, and not more than a thousand fruits"@en, "Kein Übermaß über dreißig, und nicht mehr als tausend Früchte"@de ;
+    skos:definition "In the administration of the bhallatakas there should be no excess above the number thirty, nor should one take more than a thousand fruits agreeably to the method indicated. The ceiling is stated as two numbers, a daily one and a total, and it stands immediately after the ramp that reaches the first of them."@en ;
+    skos:note "The only quantitative limit in the lesson and the only place where a rasayana is spoken of as something a body can have too much of. The lesson says why the drug needs one, in the verses that close the section: bhallatakas are keen, they promote digestion, they are like fire, and administered according to the ordinances laid down they become like nectar. The consequence of exceeding the ceiling is not stated."@en ;
+    skos:note "A caution with two exact numbers and no stated penalty is a rarer thing than it looks, and it is the shape a later reader should test against the other direction: the same lesson states a ceiling here and states no ceiling anywhere else, including for the aconite it measures in sesame seeds."@en ;
+    pm:cautionsAbout pmp:AyurvedaBhallatakaksira ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.38 and I.2.46, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1039 and 1041" .
+
+pmc:AyurvedaSilajatukulattha a pm:Cautioning ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The pulse that is interdicted with silajatu, and the reason given"@en, "Die Hülsenfrucht, die mit Silajatu untersagt ist, und der angegebene Grund"@de ;
+    skos:definition "While using silajatu one should avoid food that causes an acrid or burning sensation and food that is heavy; and the seeds of kulattha should as a rule be avoided. Since these seeds are exceedingly hostile to it, they are pre-eminently piercers of stone, as seen by men; hence their use is interdicted. The translator sets out the inference: silajatu is the product of stone, kulattha is seen to break stone, therefore kulattha is hostile to silajatu."@en ;
+    skos:note "The one caution in the lesson that gives its ground, and the ground is an argument from a likeness which the text marks as something men have observed. It is also the only prohibition here that could be examined, because both of its terms are things and one of the two assertions about them is a claim about what kulattha does to stone."@en ;
+    pm:cautionsAbout pmp:AyurvedaSilajaturasayana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.66-67, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1054-1055" .
+
+pmc:AyurvedaVyapadvidhi a pm:Cautioning ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "If disease sets in from a deviation, the course is suspended and the disease treated"@en, "Setzt aus einer Abweichung Krankheit ein, wird die Kur ausgesetzt und die Krankheit behandelt"@de ;
+    skos:definition "The lesson's one statement of what a departure from its own rules costs, and of what is then to be done. If in consequence of any deviation from the rules regarding the use of rasayana diseases set in, the taking of the rasayana should be suspended and the treatment should be taken up of those diseases."@en ;
+    skos:note "Three things stand in this sentence and they are worth separating. The harm is named and it is a present condition anybody can see, disease. The cause is named and it is the user's own departure from the rule. And the repair is neither a repetition nor an expiation but a suspension: the operation stops and something else begins. That combination is rare in this holding, where a repair is usually a second attempt."@en ;
+    skos:note "It is also the only sentence in a hundred and forty thousand characters from which a condition of failure could be built, and it does not quite reach one. It says that a deviation can produce disease; it does not say at what point the user should conclude that the rasayana is not working, and it names no term. The distance between this clause and a falsifier is the whole finding of the run, and it is exhibited at pmp:AyurvedaRasayanaLingaSearch rather than argued here."@en ;
+    skos:note "Read beside the verse eight lines further on — he who has not cast off the graver faults never reaps the effects — the lesson has two accounts of a user in whom nothing happened, and they point in opposite directions. The first says a deviation makes him ill and is noticed; the second says a fault of character leaves him as he was and is not."@en ;
+    pm:cautionsAbout pmp:AyurvedaRasayana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.51, in the English of A. C. Kaviratna, part XXXV, Calcutta 1905, p. 1065" .
+
+pmc:AyurvedaDosaprakopahetu a pm:Cautioning ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "What excites the faults, and must be given up before the rasayana is begun"@en, "Was die Fehler erregt und vor dem Beginn des Rasayana aufzugeben ist"@de ;
+    skos:definition "The second section opens with a long list of what excites the faults of the body: sour, saline, pungent, alkaline and dry food, certain pulses, sesame, flesh and cakes; sprouted or new rice; incompatible, unassimilable or secretion-suppressing food; filthy, heavy, putrid or stale food; irregular meals and eating before the last is digested; sleep by day, women and wine; shocks from excessive exercise or untoward postures; fear, wrath, cupidity, heedlessness, grief and severe toil. From the excitement of the faults the flesh becomes lax, the joints slacken, the blood heats, the adeps escapes, the marrow does not adhere to the bones, semen is not generated and the ojas wastes; and such a person does not attain the full limit of the period of life assigned to human beings."@en ;
+    skos:note "A causal chain with seven named bodily consequences and one stated outcome, and it runs in the opposite direction from everything else in the lesson: here the transmission says what shortens a life rather than what lengthens one. The negative claim is the more nearly checkable of the two and it is the one the lesson does not return to."@en ;
+    pm:cautionsAbout pmp:AyurvedaRasayana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.2.5-9, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1030-1031" .
+
+#
+# The signs, kept separate and counted separately
+#
+# SPEC §15 requires signs of success to be held apart from conditions of
+# failure, because a sign announced to the practitioner in advance is reported
+# by him and produces nothing but confirmations. The whole of Lesson I yields
+# three, and only one of them is a sign of the operation working; the other two
+# are signs that a preliminary is complete and that a transformation has begun.
+# Against them stands one condition of failure. The two numbers are three and
+# one and they are not summed.
+#
+
+pmc:AyurvedaPranavamadhurya a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The fruit turns sweet in the hand while the syllable is recited"@en, "Die Frucht wird in der Hand süß, während die Silbe rezitiert wird"@de ;
+    skos:definition "The one sign in the lesson that is announced before the operation and is perceived during it. Holding the plucked fruits, one mentally recites the pranava until nectar comes into them; while the syllable is being recited nectar will come into the fruits for at least a short space of time, and at that time the fruits will become as sweet as sugar or honey, juicy and soft, in consequence of their union with nectar. The translator adds that this implies their astringent taste will disappear."@en ;
+    skos:note "It is the only criterion in Lesson I that a user could apply on the day, and the thing it turns on is a taste. An amalaka is astringent; the sign is that it stops being so. Announced in advance, reported by the person who wants it, and settled by nobody else — the shape the separate counting of signs exists for."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.3.15-17, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, pp. 1045-1046" .
+
+pmc:AyurvedaKosthasuddhilinga a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "The bowels clear and the stools regular"@en, "Der Darm klar und der Stuhl geregelt"@de ;
+    skos:definition "The sign at which the preliminary cleansing is complete and the rasayana may be given: the barley gruel is continued for three, five or seven nights till the bowels become clear and the stools become regular, and physicians then ascertain that the cleansing has been properly done."@en ;
+    skos:note "A sign of a preliminary and not of the operation, which is why it is entered separately from the one above. It is nonetheless the only place in the lesson where a physician other than the user certifies a state of the user's body, and it is the model of what the operation itself lacks."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.1.26-27, in the English of A. C. Kaviratna, part XXXIII, Calcutta 1904, p. 1019" .
+
+pmc:AyurvedaDronipunarudbhava a pm:Conceptualizing ;
+    pm:fromWork pmw:CarakaSamhita ;
+    rdfs:label "Attenuated into nothingness, and grown again within six months"@en, "Zu nichts aufgezehrt, und binnen sechs Monaten wieder gewachsen"@de ;
+    skos:definition "The course of the procedure in the wooden vessel, given as what happens rather than as what is done: one subjecting oneself to this process becomes attenuated into nothingness; one grows again within six months; goat's milk is one's sustenance."@en ;
+    skos:note "Entered among the signs because it is what the transmission offers a user in place of a criterion: a described course whose stages he would pass through, announced beforehand, and observable by him and by whoever feeds him. It is the most extreme statement in the lesson and it is also the one that would be settled soonest, which is why it is worth having the wording rather than a summary of it."@en ;
+    pm:withinTradition pmt:Ayurvedic ;
+    dcterms:source "Caraka Samhita, Cikitsasthana I.4.26, in the English of A. C. Kaviratna, part XXXIV, Calcutta 1905, p. 1061" .
