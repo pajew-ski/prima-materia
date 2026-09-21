@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -16,17 +17,48 @@
 #
 
 pmt:Theravada a pm:Tradition ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Theravāda"@en, "Theravāda"@de ;
     skos:definition "The transmission of the Pāli canon and its commentarial literature, of which the Visuddhimagga of Buddhaghosa is the systematising handbook."@en ;
     skos:note "Edition finding, prima-materia#45. The Visuddhimagga citations name the translation they were read from, and Dīgha Nikāya 2 was reopened for this purpose. For Majjhima Nikāya 118, Dīgha Nikāya 11 and Vinaya, Cūḷavagga V.8 the edition or translation is not recoverable and is left unstated rather than guessed; those three passages are to be reopened."@en ;
-    pm:principalCorpus "The Pali Canon, in the Dīgha and Majjhima Nikāyas and the Vinaya; Buddhaghosa, Visuddhimagga" ;
+    pm:principalCorpus "The Pali Canon, in the Dīgha and Majjhima Nikāyas, the Vinaya and the Jātaka; Buddhaghosa, Visuddhimagga" ;
+    pm:corpusWork pmw:Visuddhimagga, pmw:DighaNikaya, pmw:MajjhimaNikaya, pmw:VinayaPitaka, pmw:Jataka ;
     dcterms:source "Buddhaghosa, Visuddhimagga (trans. Ñāṇamoli 1956)" .
+
+#
+# The works of this corpus as identifiers
+#
+# Added on 2026-09-21 with the first passage from outside the Visuddhimagga
+# group. The file was not migrated before; AGENTS.md requires the migration of
+# anyone who touches a tradition file, and it is the cheap half of this change.
+#
+
+pmw:Visuddhimagga a dcterms:BibliographicResource ;
+    rdfs:label "Buddhaghosa, Visuddhimagga"@en, "Buddhaghosa, Visuddhimagga"@de ;
+    skos:note "The systematising handbook of the tradition and the source of most of this file. Read in Ñāṇamoli's English of 1956."@en .
+
+pmw:DighaNikaya a dcterms:BibliographicResource ;
+    rdfs:label "Dīgha Nikāya"@en, "Dīgha Nikāya"@de ;
+    skos:note "Opened at suttas 2 and 11. The edition of the second is not recoverable and prima-materia#45 records that."@en .
+
+pmw:MajjhimaNikaya a dcterms:BibliographicResource ;
+    rdfs:label "Majjhima Nikāya"@en, "Majjhima Nikāya"@de ;
+    skos:note "Opened at sutta 118. The edition is not recoverable; see prima-materia#45."@en .
+
+pmw:VinayaPitaka a dcterms:BibliographicResource ;
+    rdfs:label "Vinaya Piṭaka"@en, "Vinaya Piṭaka"@de ;
+    skos:note "Opened at Cūḷavagga V.8. The edition is not recoverable; see prima-materia#45."@en .
+
+pmw:Jataka a dcterms:BibliographicResource ;
+    rdfs:label "Jātaka"@en, "Jātaka"@de ;
+    skos:note "Opened on 2026-09-21 at story 49 only, in the English of Robert Chalmers under E. B. Cowell's editorship, volume I of 1895. The remaining five hundred and forty-six stories were not read. All six volumes are public domain and reachable by the regular route, which makes this the cheapest continuation for anything the canon states as doctrine and the Jātaka reports as a case."@en .
 
 #
 # Practices
 #
 
 pmp:Anapanasati a pm:Practicing ;
+    pm:fromWork pmw:Visuddhimagga, pmw:MajjhimaNikaya ;
     rdfs:label "Ānāpānasati"@en, "Ānāpānasati"@de ;
     skos:definition "Mindfulness of in-breath and out-breath, set out as a sixteen-step progression in the discourse and as a meditation subject in the handbook."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -34,6 +66,7 @@ pmp:Anapanasati a pm:Practicing ;
     dcterms:source "Majjhima Nikāya 118", "Buddhaghosa, Visuddhimagga VIII (trans. Ñāṇamoli 1956)" .
 
 pmc:AnapanasatiYieldsPiti a pm:Yielding ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Mindfulness of breathing yields rapture"@en, "Atemachtsamkeit bringt Verzückung hervor"@de ;
     skos:note "Rapture appears in the handbook as a factor of absorption reached through the meditation subject, not as something aimed at directly. The pairing is recorded at that strength."@en ;
     pm:byPractice pmp:Anapanasati ;
@@ -43,6 +76,7 @@ pmc:AnapanasatiYieldsPiti a pm:Yielding ;
     dcterms:source "Buddhaghosa, Visuddhimagga IV.94ff. (trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga VIII (trans. Ñāṇamoli 1956)" .
 
 pmp:BrahmaviharaBhavana a pm:Practicing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Cultivation of the divine abidings"@en, "Kultivierung der göttlichen Verweilungen"@de ;
     skos:definition "The deliberate raising and sustaining of a chosen affective state as a meditation subject in its own right."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -54,6 +88,7 @@ pmp:BrahmaviharaBhavana a pm:Practicing ;
 #
 
 pmc:Piti a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Pīti"@en, "Pīti"@de ;
     skos:definition "Rapture as a bodily felt state, graded in the handbook into five degrees of increasing pervasion."@en ;
     skos:note "The five degrees are khuddikā, khaṇikā, okkantikā, ubbegā and pharaṇā."@en ;
@@ -61,6 +96,7 @@ pmc:Piti a pm:Conceptualizing ;
     dcterms:source "Buddhaghosa, Visuddhimagga IV.94ff. (trans. Ñāṇamoli 1956)" .
 
 pmc:KhuddikaPiti a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Minor rapture"@en, "Geringe Verzückung"@de ;
     skos:definition "The least of the five degrees of rapture, described as able to raise the hairs of the body."@en ;
     skos:note "This is the passage that attests piloerection as a recognised concomitant of a meditative state, not as its object."@en ;
@@ -68,30 +104,35 @@ pmc:KhuddikaPiti a pm:Conceptualizing ;
     dcterms:source "Buddhaghosa, Visuddhimagga IV.94ff. (trans. Ñāṇamoli 1956)" .
 
 pmc:UbbegaPiti a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Uplifting rapture"@en, "Erhebungsverzückung"@de ;
     skos:definition "The fourth of the five degrees of rapture, described as strong enough to lift the body."@en ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Buddhaghosa, Visuddhimagga IV.94ff. (trans. Ñāṇamoli 1956)" .
 
 pmc:Manomayakaya a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga, pmw:DighaNikaya ;
     rdfs:label "Mind-made body"@en, "Geistgemachter Körper"@de ;
     skos:definition "A second body, formed and complete in its faculties, said to be produced from this one; the classical form of the claim the modern draft calls exteriorisation."@en ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Dīgha Nikāya 2, Sāmaññaphala Sutta, DN i.77 (trans. Ṭhānissaro Bhikkhu)", "Buddhaghosa, Visuddhimagga XII (trans. Ñāṇamoli 1956)" .
 
 pmc:Dibbacakkhu a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Divine eye"@en, "Göttliches Auge"@de ;
     skos:definition "Sight beyond the range of the physical eye."@en ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Buddhaghosa, Visuddhimagga XIII (trans. Ñāṇamoli 1956)" .
 
 pmc:Dibbasota a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Divine ear"@en, "Göttliches Ohr"@de ;
     skos:definition "Hearing beyond the range of the physical ear."@en ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Buddhaghosa, Visuddhimagga XIII (trans. Ñāṇamoli 1956)" .
 
 pmc:Cetopariyanana a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Knowledge encompassing another mind"@en, "Kenntnis fremden Bewusstseins"@de ;
     skos:definition "Knowledge of the state of another consciousness."@en ;
     pm:withinTradition pmt:Theravada ;
@@ -102,24 +143,28 @@ pmc:Cetopariyanana a pm:Conceptualizing ;
 #
 
 pmc:Sila a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Virtue"@en, "Sittlichkeit"@de ;
     skos:definition "The first of the three trainings, on which the handbook is built as a commentary on the verse about the tangle."@en ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Buddhaghosa, Visuddhimagga I.1-I.8 (trans. Ñāṇamoli 1956)" .
 
 pmc:Samadhi a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "Concentration"@en, "Sammlung"@de ;
     skos:definition "The second of the three trainings, named in the handbook as the condition for the six direct knowledges."@en ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Buddhaghosa, Visuddhimagga I.7-I.11 (trans. Ñāṇamoli 1956)" .
 
 pmc:FourthJhana a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "The fourth absorption"@en, "Die vierte Vertiefung"@de ;
     skos:definition "The absorption from which the handbook has the supernormal powers proceed, and which it calls their natural plane."@en ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Buddhaghosa, Visuddhimagga XII.1 (trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga XII.49 (trans. Ñāṇamoli 1956)" .
 
 pmc:Iddhividha a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
     rdfs:label "The kinds of supernormal power"@en, "Die Arten übernatürlicher Kraft"@de ;
     skos:definition "Transformation by supernormal power, the first of the direct knowledges treated in the handbook."@en ;
     pm:withinTradition pmt:Theravada ;
