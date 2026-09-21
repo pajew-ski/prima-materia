@@ -1,0 +1,78 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — four searches carried in the rasayana lesson of the Caraka
+#
+# All four were carried on 2026-09-21 over the whole of Cikitsasthana I in its
+# four sections, in the English of A. C. Kaviratna, about a hundred and forty
+# thousand characters, while the work was open. The searches were run on the
+# whitespace-normalised text for the reason recorded in
+# examinations/searches-vedic.ttl: the archive.org full text of this volume
+# breaks lines inside sentences, and a line-based search for a phrase of two
+# words returns almost nothing. Every count below is from the normalised text
+# and every hit was read at its place.
+#
+# Two of the four came back empty and they are the point of the file. The
+# lesson claims five times over that its combinations are well tested by
+# experience, and it reports no case; it promises outcomes at a hundred years
+# and does not say how a user would know at any earlier point whether anything
+# had begun. A holding that only recorded what this lesson says would report a
+# very confident transmission. What it leaves out is here.
+#
+
+pmp:AyurvedaRasayanaLingaSearch a pm:Searching ;
+    rdfs:label "Whether the rasayana lesson names a sign that the course has taken effect"@en, "Ob die Rasayana-Lektion ein Zeichen dafür nennt, dass die Kur gewirkt hat"@de ;
+    pm:searchedCorpus "Caraka Samhita, Cikitsasthana, Lesson I in its four sections — Abhayamalakiya, Pranakamiya, Karapracitiya and Ayurvedasamutthaniya — in the English of Avinash Chandra Kaviratna, Charaka-Samhita translated into English, parts XXXIII to XXXV, Calcutta 1904-1905, pp. 1015-1070, complete" ;
+    pm:searchedFor "Anywhere in the lesson: a mark, sign, token or perceptible event by which a user of a rasayana would know, before the promised span had elapsed, that the course had taken effect; or a term within which such a mark should appear; or an instruction to the physician on what to look for while the course runs. The question decides whether the lesson's promises are examinable at all by anyone who takes one of its preparations, since every stated outcome is a span of a hundred years or more." ;
+    pm:searchTerms "Whole-text search of the normalised lesson for: sign (8 hits, every one inspected); symptom (1); token (0); know that (0); he knows (0); thereby he knows (0); mark of (0); appears (inspected); perceive, perceives (0); within a month, within a year, within six months, after a fortnight, on the seventh day (the date expressions were inspected and all belong to the preparation of a drug, not to its effect). In addition the closing verses of all four sections and the two comparison passages at I.4.49-51 were read continuously." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-21" ;
+    dcterms:date "2026-09-21" ;
+    skos:note "Eight occurrences of the word sign and all eight are the same phrase: one lives for a period of a hundred years without any sign of decrepitude. That is the absence of a mark and not the presence of one, and it is an absence stated over a century. The lesson therefore names no criterion that any user of any of its some forty preparations could apply to his own case at any point during the course."@en ;
+    skos:note "What it does name, and the contrast is the finding. The preliminary cleansing runs until the bowels are clear and the stools regular, and physicians conversant with age and constitution then certify that it has been properly done; the amalaka plucked under the recitation is to turn sweet in the hand; the man in the wooden vessel is to waste to nothing and grow again in six months. The transmission is perfectly capable of stating an observable endpoint. It states one for a preliminary, one for a recitation, one for a procedure whose herbs it concedes were already unobtainable — and none for the operation the lesson is about."@en ;
+    skos:note "Limits. One translation, one lesson, one work. The lesson refers five times to groups of drugs set out in the fourth lesson of the Sutrasthana, which this run did not open, and the Cikitsasthana has twenty-nine further lessons. Whether the Susruta or Vagbhata name such a sign is a different question and was not asked here."@en .
+
+pmp:AyurvedaRasayanaPariksaSearch a pm:Searching ;
+    rdfs:label "Whether the lesson reports a case behind its five claims of having been tested"@en, "Ob die Lektion hinter ihren fünf Erprobungsbehauptungen einen Fall berichtet"@de ;
+    pm:searchedCorpus "Caraka Samhita, Cikitsasthana, Lesson I in its four sections, in the English of Avinash Chandra Kaviratna, parts XXXIII to XXXV, Calcutta 1904-1905, pp. 1015-1070, complete" ;
+    pm:searchedFor "A report, anywhere in the lesson, of a rasayana having been administered to a named or unnamed person with a stated outcome: a case, an observation, a trial, a comparison, a failure. The lesson asserts five times that its preparations are well tested by experience or by experiment, and the value of that assertion depends entirely on whether anything stands behind it." ;
+    pm:searchTerms "Whole-text search of the normalised lesson for: tested (5), test (8, of which three are the word in another sense), experiment (1), tried (2), proved (1), observed and observation (12, all inspected), seen by men (1), case, instance (inspected). All hits read at their places. In addition the five summary verses that close the sections and the narrative frame of the fourth section were read continuously." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-21" ;
+    dcterms:date "2026-09-21" ;
+    skos:note "The five claims, in the order they stand: six combinations of rasayanas well tested by experience, closing the first section; seventeen well-tested preparations, closing the second; the administration of every one of these extends the period of life as has been fully tested by experiment, of the gold and silver preparations; the potency of this rasayana has been well tested, of the Aindri; and sixteen well-tested combinations, closing the third. Two more preparations are called well tried."@en ;
+    skos:note "Behind them, nothing. No person is reported as having taken a rasayana and been observed. The named users are Cyavana, the Vaikhanasas, the Valakhilyas, Vasistha, Kasyapa, Angiras, Jamadagni, Bharadvaja and Bhrgu, all of them figures of the remote past, and what is reported of them is the outcome and never the observation. The one thing in the lesson said to have been seen by men is that the seeds of kulattha break stone."@en ;
+    skos:note "This is the exhibited gap the class exists for, and it is a gap of a particular kind. It is not that the transmission was indifferent to trial — it uses the vocabulary of trial in six separate places and reserves it for some preparations and not others, which is what a writer does who thinks the distinction matters. It is that the trials, if there were any, were not written down, and the corpus that would carry them is not this one. A run that wants to know whether the physician's literature ever recorded a case goes to the Vimanasthana, which sets out how a physician and a treatment are to be judged, and this run did not open it."@en ;
+    skos:note "Limits. The absence of a reported case in a handbook is weak evidence about a practice and strong evidence about a genre, and only the second is claimed here. One translation, one lesson."@en .
+
+pmp:AyurvedaKalanirapeksaSearch a pm:Searching ;
+    rdfs:label "Whether the lesson anywhere frees a rasayana from the calendar"@en, "Ob die Lektion irgendwo ein Rasayana vom Kalender löst"@de ;
+    pm:searchedCorpus "Caraka Samhita, Cikitsasthana, Lesson I in its four sections, in the English of Avinash Chandra Kaviratna, parts XXXIII to XXXV, Calcutta 1904-1905, pp. 1015-1070, complete" ;
+    pm:searchedFor "Two questions at once, and they were put separately. First, every place in the lesson at which an operation or the preparation of a drug is bound to a date, a month, a fortnight, a lunar day, a constellation or an hour, and whether any of them states what follows from acting outside the window. Second, whether the lesson anywhere says of a rasayana that it works whatever the day — a statement that the time is indifferent, or a route that carries no date at all." ;
+    pm:searchTerms "Whole-text search of the normalised lesson for: month (20), season (10), full moon (2), new moon (2), lunar (2), constellation (1), muhurta (2), karana (9), auspicious (12), inauspicious (3), hour (2), day of (4), fortnight, northern course, uttarayana, udagayana; and for the other question: whatever the (0), regardless (0), at all times (0), any time (0), at any season (0), indifferent (0). Every date expression was read at its place." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmp:AyurvedaVatatapika ;
+    pm:searchedBy "prima-materia, 2026-09-21" ;
+    dcterms:date "2026-09-21" ;
+    skos:note "Six windows, and not one penalty. The entry into the hut takes four calendar conditions at once — the sun's northern course, the lighted fortnight, a propitious lunation and constellation, a favourable muhurta and karana — and the other five bind the handling of a drug: the amalaka powder buried through the rains, the nagabala roots dug in Magha or Phalguna in an auspicious hour, the bhallataka gathered in Suci or Sukra and administered in Sahas or Sahasya, the amalakas plucked by hand in Magha or Phalguna, the forest entered on the full moon of Pausa, Magha or Phalguna after three days of fasting. At no one of the six does the lesson say what befalls a user who acts outside it."@en ;
+    skos:note "To the second question the direct answer is no and the structural answer is yes, and the difference matters. Nowhere does the lesson say that a rasayana works whatever the day; the search terms for that returned nothing. What it does is offer, in the same verse that names the hut, a second route that carries no date — the route of wind and sun — and assign it in the fourth section to everyone who cannot meet the conditions of the first. It then adds a third, the rasayana of conduct, which has neither drug nor chamber nor date. The release is by omission and not by denial."@en ;
+    skos:note "Why that is worth a node rather than a remark. This holding carries a generalization that transmissions binding an operation to a calendar state the condition as a date and locate any stated failure in the time; its counter-material so far has come from a rival stream of the same tradition or from another work of the same author. Here the binding and the release stand in one lesson, for one operation, four sections apart, and the release is offered to the majority of users. See pmc:AdmissibilityBoundToTheCalendar, to which this lesson is a ninth witness and its own qualification."@en ;
+    skos:note "Limits. The calendrical apparatus the lesson uses — ayana, paksa, tithi, naksatra, muhurta, karana — belongs to a literature this lesson does not cite and this run did not open, and the translator's explanations of muhurta and karana come from there. What the lesson supplies is the binding; what would say why these units and not others is elsewhere."@en .
+
+pmp:AyurvedaVyapattiSearch a pm:Searching ;
+    rdfs:label "Whether the lesson names a harm that a rasayana itself can do"@en, "Ob die Lektion einen Schaden nennt, den ein Rasayana selbst anrichten kann"@de ;
+    pm:searchedCorpus "Caraka Samhita, Cikitsasthana, Lesson I in its four sections, in the English of Avinash Chandra Kaviratna, parts XXXIII to XXXV, Calcutta 1904-1905, pp. 1015-1070, complete" ;
+    pm:searchedFor "Every place in the lesson at which a harm, an injury, an excess, an interdiction or a limit is attached to one of its own preparations, as against the harms it attributes to food, conduct and the excitement of the humours. The registration of this transmission named its double examinability — the promised outcome and the toxicity of the means — and the second half of that is only there if the transmission itself concedes that its drugs can hurt." ;
+    pm:searchTerms "Whole-text search of the normalised lesson for: injur (3), harm (12), excess (6), should not (10), must not (0), never (9), avoid (3), abstain (1), forbid (1), interdict (2), hostile (3), baneful (2), suspend (1), deviation (1), poison (8), fire (inspected at the bhallataka verses). All hits read at their places." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AyurvedaVyapadvidhi ;
+    pm:searchedBy "prima-materia, 2026-09-21" ;
+    dcterms:date "2026-09-21" ;
+    skos:note "Four places and no more. A counted ceiling on bhallataka, thirty fruits a day and a thousand in all, with the drug described as keen and like fire and made nectar only by being given according to the ordinances. An interdiction of the seeds of kulattha with silajatu, grounded on an argument from what those seeds do to stone. A commentator's remark, reported by the translator, that the fourteen or twenty-six fruits by which two versions of the long-pepper course overshoot a thousand are not injurious — an answer to a question the text does not raise. And the one general clause: if in consequence of any deviation from the rules diseases set in, the course is suspended and the diseases treated."@en ;
+    skos:note "The count is the result. Some forty preparations, among them iron, gold, silver, copper, coral, lapis, mercury-free but aconite-bearing compounds, and one drug the lesson itself likens to fire — and four statements in the whole lesson that any of it could go wrong, of which only the last is general. Against that stand five claims of having been tested and three claims that poison loses its force on the user's body. The registration's expectation of double examinability is half met: the promise is stated in falsifiable-looking figures, the toxicity is conceded in one drug and one pulse and nowhere else."@en ;
+    skos:note "Limits. The lesson is a section on the healthy and the Cikitsasthana's other twenty-nine lessons treat the sick; the literature on what a drug does wrong may well sit there, and the Kalpasthana and Siddhisthana exist for the management of purgatives that overshoot. Nothing here is a statement about the corpus."@en .
