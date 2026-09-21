@@ -82,6 +82,7 @@ Der Katalog ist die Anwendung des vorigen Absatzes und steht hier, damit kein La
 | HathiTrust, Bände im Rechtestand `pdus` | geprüft und gesperrt: Katalogsuche und Bib-API antworten durchgehend mit `403` hinter einer Cloudflare-Abfrage, der Rechtestand war nicht zu verifizieren (prima-materia#556, prima-materia#702) |
 | archive.org, Kennung antwortet mit `503` | Sperre am Weg und keine Aussage über das Werk: für einen Band waren drei von vier naheliegenden Kennungen `503` und eine fünfte trug (prima-materia#702) |
 | archive.org, Dateiname über `https://archive.org/metadata/<kennung>` | trägt, wo das Standardschema `<kennung>_djvu.txt` mit `404` oder `503` antwortet: die Textdatei heißt dann anders und der Name ist nur den Metadaten zu entnehmen (prima-materia#700, prima-materia#702) |
+| archive.org, Volltext eines Scans mit gemischter Schrift | ein eigener Ausfall neben der Sperre: der Abruf gelingt, die Datei ist vollständig, und die OCR hat den lateinischen Satz durchgehend in Glyphen der zweiten Schrift zerlesen. Vor der Lektüre den ASCII-Buchstabenanteil je Block messen; unter etwa 0,3 ist der Scan am Wortlaut nicht zu gebrauchen. Für die Caraka-Saṃhitā trägt allein `BIUSante_47357` mit 0,66, während zwei naheliegende Kennungen bei 0,00 liegen (prima-materia#767) |
 | ctext.org | `403` nach dem ersten Kapitel (prima-materia#614) |
 | zh.wikisource.org, zysj.com.cn | nicht abrufbar (prima-materia#614) |
 | HAL, alle Spiegel | Proof-of-Work-Abwehr, sechs Adressformen versucht, der Browserweg noch offen (prima-materia#565) |
