@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -21,13 +22,16 @@
 #
 
 pmt:EuropeanFolkMagic a pm:Tradition ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850, pmw:HohmanFreund1828, pmw:RomanusBuechlein, pmw:LeechdomsCockayne ;
     rdfs:label "European folk magic"@en, "Europäische Volksmagie"@de ;
     skos:definition "The transmission of household charms, blessings and remedies in handbooks passed from hand to hand, manuscript before it was printed, in which the words are given together with the conditions of time, silence and material under which they are to be used."@en ;
     skos:note "Read for the first time in two printings of one handbook and in the booklet that stands behind it: Hohman's Der lange verborgene Freund in the Reading printing of eighteen twenty, its Harrisburg translation of eighteen fifty, and the Romanus-Büchlein first dated to Glatz seventeen eighty-eight. The reading was directed by term through the full text of both Hohman printings and not carried page by page; the pharmacological recipes, which state no condition and claim no capacity, were passed over. The remaining works named in the principal corpus were not opened."@en ;
     skos:note "Read a second time on the thirteenth of September twenty twenty-six, in three printings rather than two: the Ephrata printing of eighteen twenty-eight was opened beside the Reading original and the Harrisburg translation. That third printing settles a question the first reading left open, because the appendix that carries the transfer of a disease to a cow stands there and not in the original, and the Reading printing of eighteen twenty has no appendix at all. The reading of this run was directed at the front matter, at the closing pages and at the appendix, and the middle of the book was again searched by term and not carried page by page."@en ;
     skos:note "The definition was widened in this run from printed handbooks to handbooks, manuscript before printed, and the Old English Herbarium was added to the principal corpus. The reason is that pm:principalCorpus already named Lacnunga and Bald's Leechbook, which are manuscript and not printed, so the definition was narrower than the corpus it stood over; the Herbarium travels in the same edition and the same medical transmission. The widening is a decision and is named here rather than made silently."@en ;
     skos:note "The two Hohman printings are held apart deliberately. They differ at two places where the difference falls on the examinable part of a claim, and both differences stand in this file as their own nodes rather than being smoothed into one reading."@en ;
+    skos:note "Read a third time on the twenty-second of September twenty twenty-six, and this time the booklet behind Hohman was opened instead of cited. Until this run the three nodes resting on the Romanus-Büchlein named a printing of seventeen eighty-eight that nobody here had seen; what stood behind them was a modern digital edition whose own base is a reprint of eighteen forty-six. The correction is in this file at those three nodes, and what the reading added stands below."@en ;
     pm:principalCorpus "The Merseburg charms; Lacnunga; Bald's Leechbook; the Old English Herbarium of pseudo-Apuleius; Romanusbüchlein; Sechstes und Siebtes Buch Mosis; Hohman, Der lange verborgene Freund" ;
+    pm:corpusWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850, pmw:HohmanFreund1828, pmw:RomanusBuechlein, pmw:LeechdomsCockayne, pmw:SextumSeptimumMosis ;
     pm:coverageState pm:placesEntered ;
     pm:contactRoute pm:contactRouteDocumented ;
     dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa.: gedruckt für den Verfasser, 1820)" ;
@@ -36,6 +40,7 @@ pmt:EuropeanFolkMagic a pm:Tradition ;
     dcterms:source "Oswald Cockayne, Leechdoms, Wortcunning and Starcraft of Early England, vol. I (Rolls Series 35, London 1864)" .
 
 pmc:EuropeanFolkMagicUnbeschrauen a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Unbeschrauen"@en, "Unbeschrauen"@de ;
     skos:definition "The condition, attached to a procedure and not to a formula, that the act be carried out without being called at and without the doing being spoken of. It is set on cutting a sod, on knotting twigs, on hanging a written letter around the neck, on passing water into a vessel and on going to a wagon, that is on acts of every kind, and never on the words themselves."@en ;
     skos:note "The eighteen fifty translation renders the term as unbeshrewedly, a coinage with no currency in English, which is why the identifier keeps the German word of the printing that carries it."@en ;
@@ -44,6 +49,7 @@ pmc:EuropeanFolkMagicUnbeschrauen a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 17, 18, 32" .
 
 pmc:EuropeanFolkMagicMondfenster a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The window of weekday and moon"@en, "Das Fenster aus Wochentag und Mond"@de ;
     skos:definition "The condition that an act fall on a named weekday, before sunrise, and in a named quarter of the moon: Friday before sunrise in the waning moon for the knotting of twigs, the first Friday in the new light for the written slip against the falling sickness, the last Friday in the old light for the letter against rheumatism, Thursday morning before sunrise and in the open air for the binding of a thief."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
@@ -51,6 +57,7 @@ pmc:EuropeanFolkMagicMondfenster a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 17, 18, 32, 41" .
 
 pmp:EuropeanFolkMagicGichterKnoten a pm:Practicing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The knotting of three twigs against the fits"@en, "Das Knüpfen dreier Schüsse gegen die Gichter"@de ;
     skos:definition "Going onto another man's land, saying that one goes before another court and knots one's seventy-seven kinds of fits, cutting three shoots there and making a knot in each, on a Friday before sunrise in the waning moon and unbeschrauen, then making the crosses over the body at the place where the fits are felt."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -59,6 +66,7 @@ pmp:EuropeanFolkMagicGichterKnoten a pm:Practicing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
 
 pmc:EuropeanFolkMagicGichterHeilung a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The ceasing of the fits"@en, "Das Weichen der Gichter"@de ;
     skos:definition "The effect the knotting is performed for: that the fits, counted by the charm as seventy-sevenfold, leave the body at the place the crosses are made."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
@@ -66,6 +74,7 @@ pmc:EuropeanFolkMagicGichterHeilung a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
 
 pmc:EuropeanFolkMagicGichterYieldsHeilung a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The knotting drives out the fits"@en, "Das Knüpfen vertreibt die Gichter"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGichterKnoten ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicGichterHeilung ;
@@ -75,6 +84,7 @@ pmc:EuropeanFolkMagicGichterYieldsHeilung a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
 
 pmc:EuropeanFolkMagicGichterPresupposesUnbeschrauen a pm:Presupposing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The knotting presupposes that it is done unbeschrauen"@en, "Das Knüpfen setzt voraus, dass es unbeschrauen geschieht"@de ;
     pm:dependentStep pmc:EuropeanFolkMagicGichterHeilung ;
     pm:priorStep pmc:EuropeanFolkMagicUnbeschrauen ;
@@ -86,6 +96,7 @@ pmc:EuropeanFolkMagicGichterPresupposesUnbeschrauen a pm:Presupposing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
 
 pmc:EuropeanFolkMagicGichterPresupposesMondfenster a pm:Presupposing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The knotting presupposes the window of weekday and moon"@en, "Das Knüpfen setzt das Fenster aus Wochentag und Mond voraus"@de ;
     pm:dependentStep pmc:EuropeanFolkMagicGichterHeilung ;
     pm:priorStep pmc:EuropeanFolkMagicMondfenster ;
@@ -96,6 +107,7 @@ pmc:EuropeanFolkMagicGichterPresupposesMondfenster a pm:Presupposing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 18" .
 
 pmc:EuropeanFolkMagicRheumaBrief a pm:Practicing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The sewn letter against rheumatism"@en, "Der eingenähte Brief gegen das Reissen"@de ;
     skos:definition "A written letter sewn into a piece of cloth and hung around the neck, where cloth, tape and thread must never have been in water, the thread must carry no knot, and cloth and tape must have been spun by a child of not more than seven years; the hanging on is unbeschrauen and falls in a named Friday of the moon, and the Lord's prayer and the articles of faith are said immediately after."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -104,6 +116,7 @@ pmc:EuropeanFolkMagicRheumaBrief a pm:Practicing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 32" .
 
 pmc:EuropeanFolkMagicRheumaBriefFrist a pm:Disputing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Which Friday of the moon the letter is hung on"@en, "An welchem Freitag des Mondes der Brief angehängt wird"@de ;
     pm:disputedClaim pmc:EuropeanFolkMagicRheumaBrief ;
     pm:attestedBy pm:textualAttestation ;
@@ -114,6 +127,7 @@ pmc:EuropeanFolkMagicRheumaBriefFrist a pm:Disputing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 32" .
 
 pmp:EuropeanFolkMagicBlauerVitriol a pm:Practicing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Blue vitriol in the hollow tooth"@en, "Blauer Vitriol im hohlen Zahn"@de ;
     skos:definition "Putting a small piece of blue vitriol into the hollow tooth when the pain begins, not too much, and spitting out the water that collects rather than swallowing it."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -122,6 +136,7 @@ pmp:EuropeanFolkMagicBlauerVitriol a pm:Practicing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
 
 pmc:EuropeanFolkMagicZahnschmerzStillung a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The driving out of the severest toothache"@en, "Das Vertreiben der allerheftigsten Zahnschmerzen"@de ;
     skos:definition "The effect claimed for the vitriol, stated for hollow teeth and left open by the author for teeth that are not hollow."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
@@ -129,6 +144,7 @@ pmc:EuropeanFolkMagicZahnschmerzStillung a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
 
 pmc:EuropeanFolkMagicVitriolYieldsStillung a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The vitriol drives out the toothache"@en, "Der Vitriol vertreibt die Zahnschmerzen"@de ;
     pm:byPractice pmp:EuropeanFolkMagicBlauerVitriol ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicZahnschmerzStillung ;
@@ -140,6 +156,7 @@ pmc:EuropeanFolkMagicVitriolYieldsStillung a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
 
 pmc:EuropeanFolkMagicVitriolZaehlungStrittig a pm:Disputing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "On whom the sixty applications were made"@en, "An wem die sechzig Anwendungen geschahen"@de ;
     pm:disputedClaim pmc:EuropeanFolkMagicVitriolYieldsStillung ;
     pm:attestedBy pm:textualAttestation ;
@@ -149,6 +166,7 @@ pmc:EuropeanFolkMagicVitriolZaehlungStrittig a pm:Disputing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 28" .
 
 pmp:EuropeanFolkMagicRadNabe a pm:Practicing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The three chips in the wheel hub"@en, "Die drey Spänlein in der Rad-Nabe"@de ;
     skos:definition "Cutting three chips at the place the thief went out, going to a wagon unbeschrauen, taking off a wheel, putting the chips into the hub and driving the wheel backwards while the compelling words are spoken."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -157,6 +175,7 @@ pmp:EuropeanFolkMagicRadNabe a pm:Practicing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 52-53" .
 
 pmc:EuropeanFolkMagicRadKautel a pm:Cautioning ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Do not drive the wheel too hard"@en, "Treib das Rad nicht gar zu stark um"@de ;
     skos:definition "The warning against turning the wheel too hard, printed inside the spoken charm and addressed to the operator rather than to the thief the surrounding words address."@en ;
     pm:cautionsAbout pmp:EuropeanFolkMagicRadNabe ;
@@ -167,32 +186,35 @@ pmc:EuropeanFolkMagicRadKautel a pm:Cautioning ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 53" .
 
 pmp:EuropeanFolkMagicWachholderbusch a pm:Practicing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850, pmw:RomanusBuechlein ;
     rdfs:label "The bent juniper bush"@en, "Der gebogene Wachholderbusch"@de ;
     skos:definition "Going before sunrise to a juniper bush, bending it towards the rising sun with the left hand while telling it that it will be bent and pressed until the thief has carried the stolen goods back, then laying a stone on the bush and the skull of a malefactor beneath stone and bush."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
-    dcterms:source "Romanus-Büchlein (Glatz: Franz Pompejus, 1788), Nr. 65, in the edition of Joseph H. Peterson, 2006" ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 516" ;
     dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 90" ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 57" .
 
 pmc:EuropeanFolkMagicWachholderKautel a pm:Cautioning ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850, pmw:RomanusBuechlein ;
     rdfs:label "Loose the bush again once the goods are back"@en, "Den Busch wieder losmachen, sobald das Gut zurück ist"@de ;
     skos:definition "The warning to watch for the return of the stolen goods and, when they are back, to carry the stone to the place it lay and to loose the bush again."@en ;
     pm:cautionsAbout pmp:EuropeanFolkMagicWachholderbusch ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
     skos:note "A caution about what the operator owes after the effect has occurred, not about the risk of performing it. Both printings and the older booklet carry it in the same order and with the same clause; no consequence of leaving the bush bent is named in any of them."@en ;
-    dcterms:source "Romanus-Büchlein (Glatz: Franz Pompejus, 1788), Nr. 65, in the edition of Joseph H. Peterson, 2006" ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 516" ;
     dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 90" ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 57" .
 
 pmc:EuropeanFolkMagicBuechleinSchutz a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850, pmw:RomanusBuechlein ;
     rdfs:label "The protection of the carried booklet"@en, "Der Schutz des getragenen Büchleins"@de ;
     skos:definition "The claim, printed after the charm against powder and ball, that whoever carries this booklet is safe from all his enemies, visible and invisible; that whoever has it with him cannot die without the whole corpus Christi, cannot drown in any water, cannot burn in any fire, and that no unjust sentence can be spoken over him."@en ;
     skos:note "The claim stands word for word in the Romanus-Büchlein of seventeen eighty-eight and again in the Reading printing of eighteen twenty, and in both it says this booklet. The referent therefore moves with the reprinting: the sentence that guarantees the bearer of one book is carried over unchanged into another and guarantees the bearer of that one. Nothing in either printing marks the transfer."@en ;
     skos:note "This is the passage the transmission is most reliably misreported on. It is regularly given as a Pennsylvania German claim of eighteen twenty; it was in print in Silesia thirty-two years earlier. The title page of the Reading printing does not in fact claim otherwise: it says the greater part is still little known and appears in print in America for the very first time, which is a claim about America and not about first publication. The English title page of eighteen fifty drops in America from the first half of that sentence and thereby makes the wider claim the German never made."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
-    dcterms:source "Romanus-Büchlein (Glatz: Franz Pompejus, 1788), Nr. 66, S. 29, in the edition of Joseph H. Peterson, 2006" ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 517" ;
     dcterms:source "Johann Georg Hohman, Der lange verborgene Freund (Reading, Pa., 1820), S. 90" ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 57" .
 
@@ -208,6 +230,7 @@ pmc:EuropeanFolkMagicBuechleinSchutz a pm:Conceptualizing ;
 #
 
 pmc:EuropeanFolkMagicUngluecklicheTage a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850, pmw:HohmanFreund1828 ;
     rdfs:label "The table of unlucky days"@en, "Die Tafel der unglücklichen Tage"@de ;
     skos:definition "A fixed list of about thirty-two days of the year, printed month by month, to which four consequences are attached: whoever is born on one of them is unlucky and suffers poverty; whoever falls ill on one of them seldom regains his health; whoever becomes engaged or marries on one of them comes into great poverty and misery; and on such a day one should not move house, not travel, not trade and not begin a lawsuit."@en ;
     skos:note "The days as the Reading printing of eighteen twenty gives them: January one, two, three, four, six, eleven, twelve; February one, seventeen, eighteen; March fourteen, sixteen; April ten, seventeen, eighteen; May seven, eight; June seventeen; July seventeen, twenty-one; August twenty, twenty-one; September ten, eighteen; October six; November six, ten; December six, eleven, fifteen. The Ephrata printing of eighteen twenty-eight agrees except at July, where it prints seven and twenty-one."@en ;
@@ -219,6 +242,7 @@ pmc:EuropeanFolkMagicUngluecklicheTage a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 57-58" .
 
 pmc:EuropeanFolkMagicKalbZeichen a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850, pmw:HohmanFreund1828 ;
     rdfs:label "The calf born under the Virgin does not live a year"@en, "Das im Zeichen der Jungfrau geborene Kalb lebt kein Jahr"@de ;
     skos:definition "The claim, printed immediately below the table of unlucky days, that a calf whose cow calves in the sign of the Virgin does not live one year, and that one which falls in the Scorpion dies sooner still; from which the book draws the instruction to wean no calf in those signs, nor in Capricorn or Aquarius, so that they do not easily take the deadly inflammation."@en ;
     skos:note "The most examinable sentence on the page and the one the tracker passed over. It names an animal, a determinable date of birth, a deadline of one year and an outcome that either occurs or does not, and it needs no practitioner, no state and no condition. Where the table of days above it requires a run of human lives to test, this requires a herd book."@en ;
@@ -229,6 +253,7 @@ pmc:EuropeanFolkMagicKalbZeichen a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 58" .
 
 pmp:EuropeanFolkMagicFallendeKrankheitZettel a pm:Practicing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The reversed slip against the falling sickness"@en, "Der rückwärts geschriebene Zettel gegen die fallende Krankheit"@de ;
     skos:definition "Writing backwards on a slip of paper the words that all is accomplished, once only and not more; laying the writing in a little scarlet-red cloth and a linen cloth over it; and hanging it on unbeschrauen on the first Friday in the new light, with the linen cloth and the thread unbleached."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -237,6 +262,7 @@ pmp:EuropeanFolkMagicFallendeKrankheitZettel a pm:Practicing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 17" .
 
 pmc:EuropeanFolkMagicFallendeKrankheitHeilung a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The ceasing of the falling sickness"@en, "Das Weichen der fallenden Krankheit"@de ;
     skos:definition "The effect the hung slip is worn for: that the falling sickness leaves the sufferer."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
@@ -244,6 +270,7 @@ pmc:EuropeanFolkMagicFallendeKrankheitHeilung a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 17" .
 
 pmc:EuropeanFolkMagicFallendeKrankheitYieldsHeilung a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The hung slip takes away the falling sickness"@en, "Der angehängte Zettel nimmt die fallende Krankheit"@de ;
     pm:byPractice pmp:EuropeanFolkMagicFallendeKrankheitZettel ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicFallendeKrankheitHeilung ;
@@ -254,6 +281,7 @@ pmc:EuropeanFolkMagicFallendeKrankheitYieldsHeilung a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 17" .
 
 pmc:EuropeanFolkMagicFallendeKrankheitAusschluss a pm:Presupposing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The remedy holds only for one who has not yet fallen into fire or water"@en, "Das Mittel gilt nur für den, der noch nicht ins Feuer oder Wasser gefallen ist"@de ;
     pm:dependentStep pmc:EuropeanFolkMagicFallendeKrankheitHeilung ;
     pm:priorStep pmp:EuropeanFolkMagicFallendeKrankheitZettel ;
@@ -267,6 +295,7 @@ pmc:EuropeanFolkMagicFallendeKrankheitAusschluss a pm:Presupposing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 17" .
 
 pmc:EuropeanFolkMagicDoctorsAusrede a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "What words cannot cure, no doctor can cure"@en, "Was mit Worten nicht zu heilen ist, kann ein Doktor erst recht nicht heilen"@de ;
     skos:definition "The rejoinder printed in the preface: that the objection, according to which medical treatment no longer helps after the blessing words have been used in vain, is merely the physicians' excuse, because whatever cannot be cured by words can certainly be cured still less by a doctor."@en ;
     skos:note "It stands in the preface, that is at the place where a book says what it is defending itself against. A holding that takes in the prescriptions and leaves out the defence loses the record of how the transmission handles its own failures, and that record is where a copying chain and a series of trials come apart."@en ;
@@ -275,6 +304,7 @@ pmc:EuropeanFolkMagicDoctorsAusrede a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), preface, pp. 3-4" .
 
 pmp:EuropeanFolkMagicSchelwurzelProbe a pm:Practicing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Celandine and a mole's heart laid on the sick man's head"@en, "Schelwurzel und Maulwurfsherz auf das Haupt des Kranken gelegt"@de ;
     skos:definition "Taking the herb that grows at the time when the swallows build their nests or the eagles breed, together with the heart of a mole, and laying both on the head of a sick man."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -283,6 +313,7 @@ pmp:EuropeanFolkMagicSchelwurzelProbe a pm:Practicing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 20, Abschnitt »Swallow-wort«" .
 
 pmc:EuropeanFolkMagicSchelwurzelVorzeichen a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Weeping for recovery, glad singing for death"@en, "Weinen für die Genesung, fröhliches Singen für den Tod"@de ;
     skos:definition "The sign the laying on is performed to obtain: if the sick man is to recover he weeps, and if he is to die he sings with a glad voice."@en ;
     skos:note "The sharpest claim in the handbook and the only one in it whose two outcomes exclude each other. It requires no interpretation, it is read off the sick man within the same hour, and any case in which the one who weeps dies or the one who sings recovers tells against it. Most of the book promises an effect and leaves the absence of the effect unaccounted for; this predicts, and a prediction can miss."@en ;
@@ -291,6 +322,7 @@ pmc:EuropeanFolkMagicSchelwurzelVorzeichen a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 20" .
 
 pmc:EuropeanFolkMagicSchelwurzelYieldsVorzeichen a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The laying on brings out the sign of the outcome"@en, "Das Auflegen bringt das Vorzeichen des Ausgangs hervor"@de ;
     pm:byPractice pmp:EuropeanFolkMagicSchelwurzelProbe ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchelwurzelVorzeichen ;
@@ -311,6 +343,7 @@ pmc:EuropeanFolkMagicSchelwurzelYieldsVorzeichen a pm:Yielding ;
 #
 
 pmp:EuropeanFolkMagicKuhstallUebertragung a pm:Practicing ;
+    pm:fromWork pmw:HohmanLongLostFriend1850, pmw:HohmanFreund1828 ;
     rdfs:label "The bed built over the cow stable"@en, "Die Bettstelle über dem Kuhstall"@de ;
     skos:definition "Setting up a bedstead for the sick man over the cow stable and keeping him there by day as well, leaving a good opening in the ceiling of the stable so that the exhalation of the stable passes into the room and is breathed by the sick man, and the exhalation of the sick man is breathed by the cow; not mucking out the stable during the operation, though fresh straw may be laid in, and pouring away the cow's milk as unusable for as long as she still gives any."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -319,6 +352,7 @@ pmp:EuropeanFolkMagicKuhstallUebertragung a pm:Practicing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), Appendix, pp. 59-60" .
 
 pmc:EuropeanFolkMagicKuhFaelltTodt a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanLongLostFriend1850, pmw:HohmanFreund1828 ;
     rdfs:label "The cow falls dead to the ground"@en, "Die Kuh fällt todt zur Erde"@de ;
     skos:definition "The stated course of the transfer: the animal draws the whole disease to itself little by little, takes the convulsive attacks, and when the man has entirely lost them the cow falls dead to the ground."@en ;
     skos:note "An outcome and not a description of a state. It happens in a stable, to an animal, before witnesses, and it excludes the case in which the sick man and the cow both stay as they were. That is why the passage is here and not left in the tracker."@en ;
@@ -328,6 +362,7 @@ pmc:EuropeanFolkMagicKuhFaelltTodt a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), Appendix, pp. 59-60" .
 
 pmc:EuropeanFolkMagicKuhstallYieldsUebergang a pm:Yielding ;
+    pm:fromWork pmw:HohmanLongLostFriend1850, pmw:HohmanFreund1828, pmw:RomanusBuechlein ;
     rdfs:label "The shared air carries the disease over to the cow"@en, "Die geteilte Luft trägt die Krankheit auf die Kuh hinüber"@de ;
     pm:byPractice pmp:EuropeanFolkMagicKuhstallUebertragung ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicKuhFaelltTodt ;
@@ -352,6 +387,7 @@ pmc:EuropeanFolkMagicKuhstallYieldsUebergang a pm:Yielding ;
 #
 
 pmp:EuropeanFolkMagicGebrauchen a pm:Practicing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Using out of this book for a sufferer"@en, "Für jemanden aus diesem Buch gebrauchen"@de ;
     skos:definition "The act the testimonials report without naming the prescription used: the author, or in two cases his wife, applies to a named sufferer what the book contains, and an outcome follows within a stated interval. The book calls this brauchen, using, and holds it apart from the physician's craft throughout the preface."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -361,6 +397,7 @@ pmp:EuropeanFolkMagicGebrauchen a pm:Practicing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 5-8" .
 
 pmc:EuropeanFolkMagicSchussblatterHeilung a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The healing of a shot-blister on the eye"@en, "Das Heilen einer Schußblatter am Auge"@de ;
     skos:definition "The outcome claimed four times over in the testimonials: an eye suffering from what the book calls a Schußblatter becomes as good as the other, in a little more than twenty-four hours."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
@@ -368,6 +405,7 @@ pmc:EuropeanFolkMagicSchussblatterHeilung a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 5-6" .
 
 pmc:EuropeanFolkMagicRothlaufStillung a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The stilling of the erysipelas"@en, "Das Stillen des Rothlaufs"@de ;
     skos:definition "The outcome claimed three times in the testimonials: a spreading red inflammation of leg, cheek or finger goes away, in one case within some seven or nine hours, in another by the following morning."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
@@ -375,6 +413,7 @@ pmc:EuropeanFolkMagicRothlaufStillung a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 6-7" .
 
 pmc:EuropeanFolkMagicKalterBrandVertreibung a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The driving out of mortification"@en, "Das Vertreiben des kalten Brandes"@de ;
     skos:definition "The outcome claimed for a boy badly burnt in whom mortification had already set in: it is driven out in a short time and he is restored."@en ;
     skos:note "The preface makes this the gravest of the claims: it pronounces a woe on whoever is at fault that a man lose his life through mortification, or lose a limb or the sight of an eye, when help out of this booklet could have been given. The testimonial is the case that sentence is written against."@en ;
@@ -383,6 +422,7 @@ pmc:EuropeanFolkMagicKalterBrandVertreibung a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 6" .
 
 pmc:EuropeanFolkMagicKopfwehStillung a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The stilling of severe pain in the head"@en, "Das Stillen heftiger Schmerzen am Haupte"@de ;
     skos:definition "The outcome claimed four times in the testimonials: severe pain in the head goes away in a short time."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
@@ -390,6 +430,7 @@ pmc:EuropeanFolkMagicKopfwehStillung a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 6-7" .
 
 pmc:EuropeanFolkMagicSchmerzStillungAmGlied a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The stilling of pain in a limb or in the mouth"@en, "Das Stillen der Schmerzen an einem Glied oder im Munde"@de ;
     skos:definition "The outcome claimed four times in the testimonials for an arm, a finger, a leg with a running sore and a child's very sore mouth: the pain is relieved or the part healed, in a little more than twenty-four hours or in a short time."@en ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
@@ -397,6 +438,7 @@ pmc:EuropeanFolkMagicSchmerzStillungAmGlied a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 5-6" .
 
 pmc:EuropeanFolkMagicBrandNehmen a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Taking the burn out so that the arm does not go sore"@en, "Den Brand herausnehmen, so dass der Arm nicht wehe wird"@de ;
     skos:definition "The outcome claimed for a scald: the burn is taken out on the spot, and thereafter the arm does not go sore at all but heals in a very short time."@en ;
     skos:note "The only case in the section in which the author states that he was present and saw the injury happen. It is therefore also the only one in which the interval between injury and application is fixed by the report itself."@en ;
@@ -405,6 +447,7 @@ pmc:EuropeanFolkMagicBrandNehmen a pm:Conceptualizing ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 7" .
 
 pmc:EuropeanFolkMagicZeugnisStoudt a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Benjamin Stoudt of Reading, 1817"@en, "Benjamin Stoudt in Reading, 1817"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchussblatterHeilung ;
@@ -415,6 +458,7 @@ pmc:EuropeanFolkMagicZeugnisStoudt a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 5" .
 
 pmc:EuropeanFolkMagicZeugnisJorger a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Henrich Jorger's boy, 1814"@en, "Henrich Jörgers Bube, 1814"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchussblatterHeilung ;
@@ -425,6 +469,7 @@ pmc:EuropeanFolkMagicZeugnisJorger a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 5" .
 
 pmc:EuropeanFolkMagicZeugnisMeck a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Catharina Meck of Alsace Township"@en, "Catharina Meck in Elsaß Taunschip"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchussblatterHeilung ;
@@ -435,6 +480,7 @@ pmc:EuropeanFolkMagicZeugnisMeck a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 5" .
 
 pmc:EuropeanFolkMagicZeugnisSilvis a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Mr Silvis of Reading"@en, "Herr Silvis in Reading"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchussblatterHeilung ;
@@ -445,6 +491,7 @@ pmc:EuropeanFolkMagicZeugnisSilvis a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 5" .
 
 pmc:EuropeanFolkMagicZeugnisBayer a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "John Bayer near Reading, 1818"@en, "John Bayer bei Reading, 1818"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchmerzStillungAmGlied ;
@@ -455,6 +502,7 @@ pmc:EuropeanFolkMagicZeugnisBayer a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 5" .
 
 pmc:EuropeanFolkMagicZeugnisGottwalt a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Landlin Gottwalt of Reading"@en, "Landlin Gottwalt in Reading"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchmerzStillungAmGlied ;
@@ -465,6 +513,7 @@ pmc:EuropeanFolkMagicZeugnisGottwalt a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 5" .
 
 pmc:EuropeanFolkMagicZeugnisSchneider a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Anna Schneider of Alsace Township"@en, "Anna Schneider in Elsaß Taunschip"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchmerzStillungAmGlied ;
@@ -475,6 +524,7 @@ pmc:EuropeanFolkMagicZeugnisSchneider a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 6" .
 
 pmc:EuropeanFolkMagicZeugnisHartman a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Michael Hartman junior's child, Alsace Township"@en, "Michael Hartmans jun. Kind, Elsaß Taunschip"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicSchmerzStillungAmGlied ;
@@ -485,6 +535,7 @@ pmc:EuropeanFolkMagicZeugnisHartman a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 6" .
 
 pmc:EuropeanFolkMagicZeugnisBingemanBube a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Johann Bingeman's boy, Ruscombmanor, autumn 1812"@en, "Johann Bingemans Bube, Ruscombmanor, Spätjahr 1812"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicKalterBrandVertreibung ;
@@ -496,6 +547,7 @@ pmc:EuropeanFolkMagicZeugnisBingemanBube a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 6" .
 
 pmc:EuropeanFolkMagicZeugnisBingemanFrau a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Johann Bingeman's wife, Ruscombmanor, autumn 1812"@en, "Johann Bingemans Frau, Ruscombmanor, Spätjahr 1812"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicRothlaufStillung ;
@@ -506,6 +558,7 @@ pmc:EuropeanFolkMagicZeugnisBingemanFrau a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 6" .
 
 pmc:EuropeanFolkMagicZeugnisGomber a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Susanna Gomber near Reading"@en, "Susanna Gomber bei Reading"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicKopfwehStillung ;
@@ -516,6 +569,7 @@ pmc:EuropeanFolkMagicZeugnisGomber a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 6-7" .
 
 pmc:EuropeanFolkMagicZeugnisBrecht a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "David Brecht's wife, Reading"@en, "David Brechts Frau in Reading"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicKopfwehStillung ;
@@ -526,6 +580,7 @@ pmc:EuropeanFolkMagicZeugnisBrecht a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 6-7" .
 
 pmc:EuropeanFolkMagicZeugnisJunckenTochter a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "John Juncken's daughter and son's wife, Nackenmixen, 1819"@en, "Johann Junckens Tochter und Sohnesfrau, Nackenmixen, 1819"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicKopfwehStillung ;
@@ -536,6 +591,7 @@ pmc:EuropeanFolkMagicZeugnisJunckenTochter a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 6-7" .
 
 pmc:EuropeanFolkMagicZeugnisJunckenBacken a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The erysipelas on John Juncken's son's wife's cheek, 1819"@en, "Der Rothlauf am Backen von Junckens Sohnesfrau, 1819"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicRothlaufStillung ;
@@ -547,6 +603,7 @@ pmc:EuropeanFolkMagicZeugnisJunckenBacken a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 7" .
 
 pmc:EuropeanFolkMagicZeugnisArnold a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Arnold's daughter near Lebanon, 1815"@en, "Arnolds Tochter bei Libanon, 1815"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicBrandNehmen ;
@@ -557,6 +614,7 @@ pmc:EuropeanFolkMagicZeugnisArnold a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 7" .
 
 pmc:EuropeanFolkMagicZeugnisStaufer a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "Jacob Staufer's child at the Heckack, Bucks County"@en, "Jacob Staufers Kind am Heckack, Bucks Caunty"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicGichterHeilung ;
@@ -568,6 +626,7 @@ pmc:EuropeanFolkMagicZeugnisStaufer a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), pp. 7-8" .
 
 pmc:EuropeanFolkMagicZeugnisAlgaier a pm:Yielding ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "John Algaier of Reading, 1819"@en, "John Algaier in Reading, 1819"@de ;
     pm:byPractice pmp:EuropeanFolkMagicGebrauchen ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicRothlaufStillung ;
@@ -578,6 +637,7 @@ pmc:EuropeanFolkMagicZeugnisAlgaier a pm:Yielding ;
     dcterms:source "John George Hohman, The Long Lost Friend (Harrisburg, Pa., 1850), p. 8" .
 
 pmc:EuropeanFolkMagicZeugnisAufnahmeregel a pm:Conceptualizing ;
+    pm:fromWork pmw:HohmanFreund1820, pmw:HohmanLongLostFriend1850 ;
     rdfs:label "The witnesses may be compelled before a justice of the peace"@en, "Die Zeugen sind vor einen Friedensrichter zu nötigen"@de ;
     skos:definition "The rule of admission the section closes with: should any of the named witnesses, who received help through the author or through his wife and through God, call him a liar and say that they were not helped, when they themselves acknowledged to him that they were, then he will compel them to acknowledge it once more before a justice of the peace, if it is possible; and he believes for the greater part that this can be done."@en ;
     skos:note "This is the part of the section that makes it more than a list. A transmission that names a forum in which its own witnesses can be made to repeat or withdraw their testimony has stated a procedure with an outcome that could have gone otherwise. Nothing else in the corpus does so."@en ;
@@ -598,6 +658,7 @@ pmc:EuropeanFolkMagicZeugnisAufnahmeregel a pm:Conceptualizing ;
 #
 
 pmp:EuropeanFolkMagicAsterionBeeren a pm:Practicing ;
+    pm:fromWork pmw:LeechdomsCockayne ;
     rdfs:label "Berries of asterion eaten at the waning moon in Virgo"@en, "Beeren des asterion, gegessen bei abnehmendem Mond in der Jungfrau"@de ;
     skos:definition "Taking the berries of the wort called asterion and giving them to be eaten when the moon is on the wane, and that when the course of the sun is in the constellation named the Virgin, which is the month called August; and hanging the same wort on the sufferer's neck."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -605,6 +666,7 @@ pmp:EuropeanFolkMagicAsterionBeeren a pm:Practicing ;
     dcterms:source "Herbarium Apuleii Platonici, chapter LXI, in Oswald Cockayne, Leechdoms, Wortcunning and Starcraft of Early England, vol. I (Rolls Series 35, London 1864), Old English text and translation, p. 165" .
 
 pmc:EuropeanFolkMagicAsterionYieldsHeilung a pm:Yielding ;
+    pm:fromWork pmw:LeechdomsCockayne ;
     rdfs:label "The berries in their month take away the falling sickness"@en, "Die Beeren in ihrem Monat nehmen die fallende Krankheit"@de ;
     pm:byPractice pmp:EuropeanFolkMagicAsterionBeeren ;
     pm:yieldsCapacity pmc:EuropeanFolkMagicFallendeKrankheitHeilung ;
@@ -614,6 +676,7 @@ pmc:EuropeanFolkMagicAsterionYieldsHeilung a pm:Yielding ;
     dcterms:source "Herbarium Apuleii Platonici, chapter LXI, in Oswald Cockayne, Leechdoms, Wortcunning and Starcraft of Early England, vol. I (Rolls Series 35, London 1864), p. 165" .
 
 pmc:EuropeanFolkMagicAsterionPresupposesFenster a pm:Presupposing ;
+    pm:fromWork pmw:LeechdomsCockayne ;
     rdfs:label "The eating presupposes the waning moon and the sun in the Virgin"@en, "Das Essen setzt abnehmenden Mond und die Sonne in der Jungfrau voraus"@de ;
     pm:dependentStep pmc:EuropeanFolkMagicFallendeKrankheitHeilung ;
     pm:priorStep pmp:EuropeanFolkMagicAsterionBeeren ;
@@ -622,3 +685,126 @@ pmc:EuropeanFolkMagicAsterionPresupposesFenster a pm:Presupposing ;
     pm:withinTradition pmt:EuropeanFolkMagic ;
     skos:note "The second calendar window this file now holds for the same disease. Hohman's slip against the falling sickness is hung on at the first Friday in the new light; the Anglo-Saxon berries are eaten at the waning moon in August. The two windows are incompatible with each other and neither text knows of the other, which is a finding about the shape of the prescriptions and not about the moon."@en ;
     dcterms:source "Herbarium Apuleii Platonici, chapter LXI, in Oswald Cockayne, Leechdoms, Wortcunning and Starcraft of Early England, vol. I (Rolls Series 35, London 1864), p. 165" .
+
+
+#
+# What the booklet behind Hohman carries, read at the wording on 2026-09-22
+#
+# The booklet was cited in this file three times and never opened. Opened now,
+# it turns out to carry the one thing the whole handbook tradition of this
+# holding was said not to have: a test of its own operation, offered to the
+# reader who will not believe it, with an outcome that could come out the other
+# way and no excuse attached to the outcome that would refute it. That test
+# refutes a generalization this holding wrote three days earlier, and the
+# refutation is recorded at generalizations/the-test-on-the-ingredient.ttl
+# rather than smoothed away here.
+#
+
+pmp:RomanusEpistulaSanguinis a pm:Practicing ;
+    pm:fromWork pmw:RomanusBuechlein ;
+    rdfs:label "The letter laid on the wound to staunch blood"@en, "Der auf die Wunde gelegte Brief"@de ;
+    skos:definition "The third of the booklet's blood-staunchings, and the one it calls entirely certain. Where the blood will not stand, or where a vein is opened, the letter carrying the prescribed line of letters is laid upon the place, and the blood stands from that hour. Whoever carries it about him, the booklet adds, can stand before all his enemies; and a woman in labour, or in any distress of heart, is to take the letter to her."@en ;
+    skos:note "Entered as its own procedure because the assay below is attached to it and to nothing else in the booklet. The words written are a line of letters and abbreviations which the optical transcription of the copy used does not render reliably, and none of them is reproduced here."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 503" .
+
+pmc:RomanusProbaAdIncredulum a pm:Conceptualizing ;
+    pm:fromWork pmw:RomanusBuechlein ;
+    rdfs:label "For whoever will not believe it: stab an animal and it will not bleed"@en, "Wer es nicht glauben will: steche ein Thier, es wird nicht bluten"@de ;
+    skos:definition "The demonstration the booklet offers against disbelief, printed immediately after the blood-staunching it belongs to: but whoever will not believe it, let him write the letters on a knife and stab an unreasoning animal, and it will not bleed."@en ;
+    skos:note "This is a test of the operation itself and not of a material it consumes, it names an outcome that could come out the other way, and the booklet attaches to that outcome neither a rule of repetition nor a cause lying outside the procedure. Nothing is said about what a bleeding animal would mean. The sentence is addressed to the doubter, which is what makes it a demonstration rather than an instruction: the operator who already believes has no occasion to run it."@en ;
+    skos:note "It refutes the second limb of pmc:TheTestOnTheIngredient, written into this holding on 2026-09-19 and named there as falsifiable by exactly this shape. The protocol at pmc:TheTestOnTheIngredientExamination carries the deviation. What survives of that statement is the first limb and an observation about where handbooks put their assays most of the time; what does not survive is the claim that an assay of the operation always comes with its escape."@en ;
+    skos:note "The cost of the test falls on a third party that cannot refuse it, and the holding should say so plainly: the thing that establishes the charm is a wound inflicted on an animal for the purpose of settling an argument. That is a property of the demonstration and not a reason to leave it out; a transmission which will put its claim at risk, and which puts it at risk in this way, has told two things about itself at once."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 503" .
+
+pmc:RomanusProbatioPastoris a pm:Conceptualizing ;
+    pm:fromWork pmw:RomanusBuechlein ;
+    rdfs:label "A shepherd made the trial on that same nobleman"@en, "Ein Schäfer hat die Probe an demselbigen Edelmanne gemacht"@de ;
+    skos:definition "The closing sentence of the instruction for cutting a stick with which a man may be beaten however far away he is: the stick is cut at the new moon on a Tuesday before sunrise, facing the rising sun, with two prescribed addresses to it and three written words; a garment is laid on a mound of clods, the stick is struck on the garment and the man's name is named. Instead of the mound the threshold under the door will serve, the booklet says, as a shepherd of a named place made the trial on that same nobleman."@en ;
+    skos:note "A reported case, with a station, a party who performed it and a party it was performed on, and it is the only one in the booklet. It is not a report of an outcome: what is said to have been tried is the substitution of the threshold for the mound, so the sentence vouches for a variant of the procedure and says nothing about what happened to the nobleman."@en ;
+    skos:note "That is the finding worth keeping, because it is the shape a reported trial takes here. The booklet has a place to record that somebody did this, it uses that place once in thirty-five pages, and it uses it to authorise a change of apparatus rather than to state an effect."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 511-512" .
+
+pmc:RomanusSolutioBanni a pm:Cautioning ;
+    pm:fromWork pmw:RomanusBuechlein ;
+    rdfs:label "Every binding in the booklet is printed with its release"@en, "Jede Bindung des Büchleins ist mit ihrer Lösung gedruckt"@de ;
+    skos:definition "Three releases, each printed immediately after the binding it undoes. The thief held standing is freed by bidding him go in the name of Saint John. The very swift stelling of rider and footman, which must be spoken three times, is followed by a paragraph headed Release again, which sends them riding off in the name of Jesus Christ; a second such charm closes with the clause that with the same words by which they were stelled they are loosed again. And the bent juniper carries the instruction to watch for the return of the stolen goods and then to carry the stone back to where it lay and loose the bush."@en ;
+    skos:note "A binding with a printed release is a claim with a stated end, and that is rarer in this holding than a claim with a stated beginning. The release also supplies the only observable the operation has: the juniper is to be loosed when the goods are back, so the operator is told to watch for an event outside himself and to act on it."@en ;
+    skos:note "What no release carries is a consequence for omitting it. Nothing is said about the thief who is never sent off, or the bush left bent, and the holding already records that gap at pmc:EuropeanFolkMagicWachholderKautel from the receiving handbook. It is now confirmed in the source: the omission is not Hohman's."@en ;
+    pm:cautionsAbout pmp:EuropeanFolkMagicWachholderbusch ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 498-499, 509 and 516" .
+
+pmc:RomanusVisioVeneficarum a pm:Conceptualizing ;
+    pm:fromWork pmw:RomanusBuechlein ;
+    rdfs:label "You will not only see all the witches, the cattle will also be helped"@en, "Du wirst nicht allein alle Hexen sehen, es wird auch dem Vieh geholfen"@de ;
+    skos:definition "The announced outcome of the second charm for a cow whose milk has been taken: three slips carrying the prescribed lines are written, milk from the sick cow is taken with them and something is scraped from the skull of a poor sinner, all of it sealed in a pot and boiled properly, whereupon the witch must burst. The slips may instead be taken into the mouth, spoken three times outside the eaves-drip and then given to the beast, and then, the booklet says, you will not only see all the witches but the cattle will also be helped."@en ;
+    skos:note "Two outcomes in one clause and they are of different kinds. That the cattle are helped is the effect sought and has no sign attached; that the operator will see all the witches is an announced perception, told in advance, of a thing nobody else in the room can check. The first is unfalsifiable because no criterion is given, the second because the criterion is private, and the booklet puts them in the same sentence joined by not only."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 496-497" .
+
+pmc:RomanusNonusDies a pm:Conceptualizing ;
+    pm:fromWork pmw:RomanusBuechlein ;
+    rdfs:label "Straight again by the ninth day"@en, "Wieder gerade bis auf den neunten Tag"@de ;
+    skos:definition "The blessing for a sheep or other beast with a broken leg. The break is blessed on this present day so that it shall be straight again by the ninth day, and the wound shall not swell and not suppurate until the mother of God bears another son. A plaster is required with it: a good charge of powder finely pounded, leaven to the bulk of half an egg and the whites of two eggs mixed together and laid over — and of that plaster the booklet says it is approved."@en ;
+    skos:note "The one term in the booklet that falls due. A broken leg either bears weight on the ninth day or it does not, the beast is at hand, and the claim is made of an animal whose owner is counting. Set against it, in the same blessing, is the second clause: the wound shall not swell until the mother of God bears another son, which is a term that never falls due at all. The booklet puts a checkable deadline and an unreachable one in consecutive lines."@en ;
+    skos:note "The word approved stands on the plaster and not on the blessing. Where the booklet labels something as tried it labels the pharmacological half, and the blessing beside it carries the deadline; whether that division is regular across the text was searched and the search is at pmp:RomanusApprobatumSearch."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 518-519" .
+
+pmp:RomanusFeuernothBuendel a pm:Practicing ;
+    pm:fromWork pmw:RomanusBuechlein ;
+    rdfs:label "The bundle buried under the threshold against fire"@en, "Das Bündel unter der Hausschwelle gegen Feuersnoth"@de ;
+    skos:definition "A black hen is taken from the nest morning or evening and its throat cut, the stomach taken out and left as it is; a piece of cloth the breadth of a plate is got from the shift of a girl who is still a maid, from the part most stained; and an egg laid on Maundy Thursday. The three pieces are wrapped together with wax, put in a small pot, covered and buried under the house threshold; and so long as a stake of the house stands, fire before or behind the dwelling can do the operator and his children no harm. For a fire already broken out, a whole shift of a maid, or a sheet a woman has borne a child in, is thrown wrapped together into the fire in silence."@en ;
+    skos:note "Entered for the shape of its claim rather than its contents. The buried bundle is warranted for as long as the house stands, which is a term no run can close; the thing thrown in silence is warranted for the moment, and the booklet says of both that they help quite certainly, of the first adding that it is by God's power also quite certain and truthful. Two quite different exposures, one label."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here p. 492-493" .
+
+pmc:RomanusFurtiTempus a pm:Conceptualizing ;
+    pm:fromWork pmw:RomanusBuechlein ;
+    rdfs:label "Thursday morning, before sunrise, under the open sky"@en, "Donnerstag früh, vor Sonnenaufgang, unter freiem Himmel"@de ;
+    skos:definition "The three conditions the booklet sets on its thief-bindings, printed as a rubric above the charm: this blessing is to be spoken on Thursday morning early, before the rising of the sun, under the open sky. The same conditions recur at the two procedures for making a thief bring the goods back — the nails held against the sunrise, taken before sunrise at a pear tree, and the juniper bent towards the rising sun before sunrise."@en ;
+    skos:note "A day of the week, a boundary of the day and a place, and none of the three carries a consequence for being missed. Entered as a statement about the booklet's conditions and not as a prerequisite chain: a first draft of this node made the fire bundle the prior step of the juniper, which is a relation the text does not assert anywhere, and it was withdrawn rather than kept on the weakest strength the scale allows. What the booklet arranges in an order is not thereby a chain."@en ;
+    skos:note "The conditions are the calendar family this holding collects, and they arrive here from the source rather than from the receiving handbook: the thief-binding of the Reading printing of 1820 carries them too. That the earlier witness has them settles that they are not an American addition."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:EuropeanFolkMagic ;
+    dcterms:source "Romanus-Büchlein, in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, here pp. 497, 499 and 516" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:HohmanFreund1820 a dcterms:BibliographicResource ;
+    rdfs:label "Hohman, Der lange verborgene Freund (Reading, Pa. 1820)"@en, "Hohman, Der lange verborgene Freund (Reading, Pa. 1820)"@de ;
+    skos:note "The first printing, and the one this file treats as the text. Read by term through the whole book and page by page at the front matter, the closing pages and the section of unlucky days. The optical transcription of the copy used is a Fraktur scan: the German is legible, and the figures of the day list are destroyed in places and were supplied from the Ephrata printing of 1828, which is named as its own work for that reason."@en .
+
+pmw:HohmanLongLostFriend1850 a dcterms:BibliographicResource ;
+    rdfs:label "Hohman, The Long Lost Friend (Harrisburg, Pa. 1850)"@en, "Hohman, The Long Lost Friend (Harrisburg, Pa. 1850)"@de ;
+    skos:note "The English translation, held apart from the German printing rather than smoothed into it, because the two differ at places where the difference falls on the examinable part of a claim. It is not a complete translation: a group of charms that stands in the German original — marksmanship, the silencing of dogs, the whitening of a black horse — is absent from it, and its appendix of unmagical remedies is an accretion the first printing does not carry."@en .
+
+pmw:HohmanFreund1828 a dcterms:BibliographicResource ;
+    rdfs:label "Hohman, Der lange verborgene Freund (Ephrata, Pa. 1828)"@en, "Hohman, Der lange verborgene Freund (Ephrata, Pa. 1828)"@de ;
+    skos:note "The second German printing, opened for its appendix and for the day list its scan carries whole. Its title page says it is printed a second time on request, which dates it against the Reading original."@en .
+
+pmw:RomanusBuechlein a dcterms:BibliographicResource ;
+    rdfs:label "Romanus-Büchlein"@en, "Romanus-Büchlein"@de ;
+    skos:note "Opened on 2026-09-22 and read at the wording throughout, in the reprint in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523, which presents itself in a footnote as a verbatim reprint of the booklet once offered for sale at fairs and carries the fictitious imprint Printed at Venice. The whole of those thirty-five pages was read; the printed page numbers survive in the optical transcription and the citations here are made from them."@en ;
+    skos:note "What is known about the booklet's own printing history is not known from a copy. The earliest dated printing is given as Glatz 1788, from the printer named on its title page, and that date reaches this holding through a modern digital edition which takes it from the philological commentary of 1958; neither the printing of 1788 nor that commentary was seen here. The witness that was read is fifty-eight years later than that date and twenty-six years later than Hohman. Anything this file says about what stood in print before 1820 therefore rests on a dating nobody here has checked, and the three nodes that used to name the printing of 1788 as their source now name the reprint that was actually read."@en ;
+    skos:note "Why the distinction is worth this much space. The holding asserts at pmc:EuropeanFolkMagicBuechleinSchutz that the sentence guaranteeing the bearer of the booklet was in print in Silesia thirty-two years before Hohman reprinted it, and that assertion is the sharpest thing this file says about how the transmission travelled. It stands or falls with the date of 1788, and the date is the one element of the claim that was taken on trust. The passage itself is now confirmed against a witness independent of the edition that supplied it."@en .
+
+pmw:SextumSeptimumMosis a dcterms:BibliographicResource ;
+    rdfs:label "Sechstes und Siebtes Buch Mosis"@en, "Sechstes und Siebtes Buch Mosis"@de ;
+    skos:note "Named here as a work of the principal corpus and unopened. A contemporary letter printed in the study of 1904 names it beside Hohman as a foundation of the practice, and it does so with a weaker warrant than it gives Hohman: the writer says he understands the one and knows the other. That gradation is the reason this work is named and not yet used."@en .
+
+pmw:LeechdomsCockayne a dcterms:BibliographicResource ;
+    rdfs:label "The Old English Herbarium of pseudo-Apuleius, in Cockayne's Leechdoms vol. I"@en, "Das altenglische Herbarium des Pseudo-Apuleius, in Cockaynes Leechdoms Bd. I"@de ;
+    skos:note "Opened at one chapter, on the herb asterion against the falling sickness, in the edition of 1864 which prints the Old English with a facing translation. The rest of the volume, and the Lacnunga and Bald's Leechbook that the same principal corpus names, are unopened."@en .

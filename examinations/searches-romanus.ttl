@@ -1,0 +1,41 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Romanus-Büchlein run, 2026-09-22
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+# Two searches. The first found the place that refutes a generalization of this
+# holding and is therefore the most useful search it has run; the second came
+# back empty on the label this booklet is supposed to be full of.
+#
+
+pmp:RomanusOperationAssaySearch a pm:Searching ;
+    rdfs:label "Whether the booklet states a test of one of its own operations"@en, "Ob das Büchlein eine Probe einer eigenen Verrichtung nennt"@de ;
+    pm:searchedCorpus "Romanus-Büchlein in full, all thirty-five pages, in the reprint in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523."@en ;
+    pm:searchedFor "An act with a definite perceptible outcome by which one of the booklet's own operations is established to have worked or not worked, together with whatever clause stands beside the refuting outcome. The question comes from pmc:TheTestOnTheIngredient, which states that handbooks assay their materials and not their operations, and which names this shape as the thing that would refute it."@en ;
+    pm:searchTerms "The whole of pp. 489-523 read in order, and a term search of the same text for: Probe, probirt, approbirt, versucht, bewährt, gewiß, ganz gewiß, hilft gewiß, glauben, nicht glauben, wer es nicht glauben will, so wirst du sehen, so vergehet es, bis auf den, Tag. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:RomanusProbaAdIncredulum ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "One case, at p. 503, and it opposes the statement. After the blood-staunching it calls entirely certain, the booklet turns to the reader who will not believe it and tells him to write the letters on a knife, stab an unreasoning animal, and see that it does not bleed. Nothing is said about an animal that bleeds. That is an assay of the operation with no escape attached, which is what the generalization declared impossible."@en ;
+    skos:note "Two passages were read as candidates and set aside. The shepherd's trial on the nobleman at pp. 511-512 is a report that somebody performed a variant and vouches for the apparatus rather than for an outcome. The ninth-day term for a beast's broken leg at pp. 518-519 is a deadline on an effect and not an act performed in order to establish something; it is entered separately at pmc:RomanusNonusDies because a deadline that falls due is scarce in this holding for its own reasons."@en ;
+    skos:note "What the found case does not settle. It removes a universal and it does not measure a proportion: this is one booklet and one clause. It also has a property worth carrying forward — the demonstration is addressed to a doubter and not to the practitioner, and the only comparable clause this holding has, the assay of the white stone in the demotic handbook, is likewise a way of settling something rather than a step of an operation. Whether every assay of an operation in these corpora turns out to be aimed at a sceptic is the question the protocol now holds."@en .
+
+pmp:RomanusApprobatumSearch a pm:Searching ;
+    rdfs:label "Whether the booklet's efficacy labels fall on the charms or on the remedies"@en, "Ob die Wirksamkeitsetiketten des Büchleins auf den Segen oder auf das Mittel fallen"@de ;
+    pm:searchedCorpus "Romanus-Büchlein in full, all thirty-five pages, in the reprint in Johann Scheible (ed.), Das Kloster, weltlich und geistlich, vol. III (Stuttgart 1846), pp. 489-523."@en ;
+    pm:searchedFor "The distribution of the booklet's own marks of tried efficacy — approved, certain, helps certainly — across the two kinds of thing it prints: the spoken blessings and stellings on one side, the prepared plasters, bundles and draughts on the other. The question was put because at the broken leg the label approved stands on the plaster and the blessing beside it carries the deadline, and a regular division would say something about what the transmission thought was at stake in each half."@en ;
+    pm:searchTerms "Term search of the whole text for: approbirt, probirt, Probe, bewährt, es hilft, hilft gewiß, ganz gewiß, gewisser, gewisse, allezeit hilft, wahrhaftig, richtige, rechte. Every hit read in its place and assigned to the kind of item it stands on."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "No division. The labels fall on both kinds without a pattern: a certain fire-blessing that helps at all times and a right approved shot-stelling are spoken charms, the approved plaster for the broken leg is a preparation, and the bundle buried under the threshold, which is a preparation, is called quite certain and truthful by God's power. The one instance that suggested a rule is the only one of its kind."@en ;
+    skos:note "The empty result is worth carrying because it removes a reading that was available and attractive. It would have been a tidy finding that this transmission labels as tried whatever it could actually try, and it is not so: the labels are distributed over what can be watched and what cannot alike, and the marks of certainty are heaviest exactly where the claim reaches furthest, on the bundle warranted for as long as the house stands."@en .
