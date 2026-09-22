@@ -1,0 +1,56 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the run on Dieterich's edition, 2026-09-22
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703: two branches
+# appending to the end of examinations/searches.ttl do not merge without a
+# hand. The register is the class and not the file.
+#
+# Three searches. One found the place it was looking for, one came back empty
+# and is the more useful of the two, and one reports the corpus as unreachable
+# in the layer that was wanted — which is the outcome the scale exists for,
+# because a work read in translation and a work whose original script the copy
+# does not carry are opposite findings.
+#
+
+pmp:MithrasFailureSignSearch a pm:Searching ;
+    rdfs:label "Whether the piece names a perceptible sign that the rite has not worked"@en, "Ob das Stueck ein wahrnehmbares Zeichen dafuer nennt, dass der Ritus nicht gewirkt hat"@de ;
+    pm:searchedCorpus "PGM IV.475-834 in full, Greek text with apparatus and the editor's German translation, in A. Dieterich, Eine Mithrasliturgie, 2nd ed. by R. Wuensch, Leipzig and Berlin: Teubner 1910, pp. 1-22."@en ;
+    pm:searchedFor "A passage telling the operator what he would perceive if the rite had failed: a sight that does not come, an interval after which nothing further arrives, a state of the body that shows the breath was taken wrongly, an outcome that excludes the announced one. The piece announces a dozen sights in order and this holding has recorded the imbalance twice; whether the other side is entirely absent had to be established in the edition and not in the translation, because the translation stops before the appendix."@en ;
+    pm:searchTerms "Term search of the whole text and translation part for the German of the editor — nicht wirk, vergeblich, umsonst, misslingen, wenn nicht, sonst, versagt, ausbleiben, ohne Erfolg, nichts geschieht, wird nicht, verwirkt, nicht mehr — and for the Greek negations in the forms the optical transcription of this copy produces for ouketi, ouk and oux. Every hit read in its place, and the appendix pp. 16-22 read through in order for an unmarked clause."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "Nothing of the kind, and the three negations that do occur are not it: one stands in the prayer, where the speaker says it is not attainable for him as a mortal to rise with the flame-glance of the immortal light, and two stand in the botanical note and in the apparatus. The single clause that says the thing will not come about is the forfeiture already entered at pmc:PgmIvTerInAnno, and it names a cause in the operator's conduct rather than anything he would perceive."@en ;
+    skos:note "What the empty result is worth. It settles that the asymmetry recorded at pmc:PgmIvSignaSuccessus is a property of the piece and not of the translation that was read first, which was the open point: a reading that stops at P 723 cannot distinguish the two. It does not settle anything about the rite, and it does not mean the operator had no way of telling. It means the text gave him none."@en ;
+    skos:note "The one thing in the whole piece that could come out the other way is a test of an ingredient and not of the rite, and it was found in the same reading: the feather whose barbs fall off at pmc:PgmIvProbatioKentritidis. That is the finding the two searches produce together, and it is the material of the generalization in generalizations/the-test-on-the-ingredient.ttl."@en .
+
+pmp:MithrasNamesInAddendaSearch a pm:Searching ;
+    rdfs:label "Whether the addenda of the edition argue the fourteen names belong to the rite"@en, "Ob die Nachtraege der Ausgabe die vierzehn Namen dem Ritus zusprechen"@de ;
+    pm:searchedCorpus "The addenda and the two registers of A. Dieterich, Eine Mithrasliturgie, 2nd ed. by R. Wuensch, Leipzig and Berlin: Teubner 1910, pp. 219-248, which collect what had been printed on the piece between 1903 and 1909 together with Wuensch's own notes."@en ;
+    pm:searchedFor "An argument, in the addenda rather than in the apparatus, that the names of the seven maidens and of the seven pole-rulers stood in the liturgy the magicians took over, as against being their own insertions. The holding asserts at pmc:PgmIvSalutatioNominatim that the editor holds names must have stood in these two places and that this rests on the shape of the passage and not on a mark in the manuscript. That assertion had been read off the apparatus alone."@en ;
+    pm:searchTerms "Term search of pp. 219-248 for Namen, vox, voces, mystica, Jungfrauen, Polherrscher, Tychai, Vokal, and for the transcriptions the copy produces for the Greek words for name and for the Fates. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "The addenda do not return to the question. Every hit falls in the two registers at the end of the volume and not in the addenda: the subject index lists the pole-rulers, the Fates, the seven vowels, the magical words and the hissing and smacking, each with the page of the commentary where they were already treated in 1903. Nothing between 1903 and 1909 that the editor thought worth reprinting bore on whether these fourteen names are the rite's own."@en ;
+    skos:note "One sentence found in passing decides more than the search did, and it is the editor's own: the preamble to his word-index to the liturgy states that the voces mysticae are not registered. So the edition indexes the liturgical vocabulary word by word with page and line and deliberately leaves out the one class of word a reconstruction of the sounds would need. The material is in the text and out of the apparatus that makes the text usable."@en .
+
+pmp:MithrasGreekLayerSearch a pm:Searching ;
+    rdfs:label "Whether any reachable copy of the edition carries its Greek as Greek"@en, "Ob ein erreichbares Exemplar der Ausgabe ihr Griechisch als Griechisch traegt"@de ;
+    pm:searchedCorpus "Three digitised copies of the edition on the full-text archive that is this holding's regular way to public-domain volumes: the first edition of 1903, the second of 1910, and a lending copy of the second catalogued as carrying both German and ancient Greek. A. Dieterich, Eine Mithrasliturgie, Leipzig and Berlin: Teubner, 1st ed. 1903 and 2nd ed. 1910."@en ;
+    pm:searchedFor "The letter-exact wording of the barbarous names, the vowel chain and the fourteen names of the two ranks, which is what prima-materia#643 was opened for. The edition prints them; the question was whether any copy the machine can read reproduces the Greek script rather than substituting letters of the Latin one."@en ;
+    pm:searchTerms "For each of the three copies the whole full-text file was taken and the characters counted by block: the Greek and Coptic block, the Greek extended block, and the Latin letters. Counts of Greek characters: nil, nil and nil, against 373279, 412885 and 376632 Latin letters. The metadata of each copy was read for the list of files it carries, and the alternative text layers were looked for there."@en ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "Not one Greek character in any of the three. The optical transcription renders the Greek throughout in visually similar letters of the Latin alphabet with diacritics, so that the opening invocation comes out as a line of Latin letters. The German is clean and the apparatus is clean, which is why the reading this run did was possible at all; what is not possible from this copy is a single name spelt out."@en ;
+    skos:note "The distinction the outcome makes is the point of entering it. The work was read, the operative content of the appendix was harvested from it, and nineteen nodes in traditions/greek-magical-papyri.ttl stand on it. One layer of the same work is unreachable on this path, and it is precisely the layer the issue wanted. A node saying the work was not reachable would be false; a silence would leave the next run to pay for the same three downloads."@en ;
+    skos:note "Where a later run should go. Not to a fourth copy of the same volume on the same archive — three is enough to establish that the transcription engine is the cause and not the scan. The remaining ways are an edition whose Greek was set rather than photographed, a corpus of Greek documentary texts that carries PGM IV in its own transcription, and the printed apparatus of the standard edition of the papyri. Which of these exists as machine-readable text is an open question and stands in the issue."@en .
