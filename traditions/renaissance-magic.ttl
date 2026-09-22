@@ -1,0 +1,238 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Renaissance learned magic, taken down from the register
+#
+# The instance was registered in traditions/registry-western-esoteric.ttl and is
+# moved here now that passages have been read. One of the four works its
+# registration names has been opened, Agrippa's three books; Ficino, Bruno and
+# Dee have not been opened and the file says so at the work identifiers rather
+# than letting the coverage state cover them.
+#
+# Why this one out of the register. It is the corpus this project's own criterion
+# points at hardest. Nothing in the holding is more reliably misreported
+# elsewhere: the work is sold as the complete how-to of western magic, and it
+# says of itself that it passes over the chief mysteries in silence, that its
+# author does not approve of much of what he reports, that he retracted it, and
+# that a reader who does not obtain his desire should accuse himself. Every one
+# of those four sentences is in the volume, and each of them removes something
+# the modern presentation supplies.
+#
+# The three decisions of SPEC §14, taken before the first node.
+#
+# The contact route is documented and unchanged: this transmission is a
+# compilation with named sources, and its author names them, Picatrix among
+# them. It is therefore a witness for reception and not an independent one.
+#
+# The recension and the edition, and this is the weak place of the file. What
+# was read is the English translation of 1651 by the hand signing itself J. F.,
+# not the Latin of 1533 and not the critical edition of 1992. The critical
+# edition is access-restricted and nobody here has it. The Latin print of 1533,
+# however, is reachable: three digitised copies were taken and their optical
+# transcription of the Latin body is noisy but continuously legible — the
+# long s throughout as f, the nasal suspensions unresolved, the ligatures run
+# together, and the French privilege at the front mangled past use, but whole
+# chapters of Latin prose readable at the sentence. It is therefore not safe
+# for a claim that turns on one word, and it is entirely safe for a claim about
+# what is made to depend on what. That the Latin was not read at the nine
+# places is a debt of this run and not a property of the work, and it is
+# recorded as such rather than as an unreachability.
+#
+# The first draft of this file said the Latin scan was unusable at the level of
+# words. That was written from a reconnaissance report and not from the file,
+# and checking it took two commands and refuted it. It is the error SPEC §15
+# counts four times over in prima-materia#76, and it is corrected here rather
+# than left standing, because a wrong unreachability is the one kind of note
+# that stops the next run from looking.
+#
+# The translation of 1651 is a translation known to diverge from the Latin in
+# places, so every node in this file carries the claim of the English print and
+# not of the Latin. That is stated once here and not repeated at each node.
+#
+# The number of citable passages is small on purpose. Nine places were read at
+# the wording and nine nodes stand on them. The work runs to some two hundred
+# chapters and the rest of it is unopened.
+#
+
+pmt:RenaissanceMagic a pm:Tradition ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "Renaissance learned magic"@en, "Gelehrte Magie der Renaissance"@de ;
+    skos:definition "The early modern attempt to give magic a philosophy: sympathies, images, memory as an operative art, and angelic communication kept as a record."@en ;
+    skos:note "What was read: Agrippa, De occulta philosophia, in the English translation of 1651, at nine places — the address to the reader in full; book I chapters 20, 66 and 67; book II chapters 29 and 34; book III chapters 2, 3, 4, 53 and 65; and the opening of the piece headed as the author's censure or retraction, printed after book III. Nothing else of the work is opened, and nothing of Ficino, Bruno or Dee."@en ;
+    skos:note "Two layers stand between these nodes and the work, and both are named because the holding has been caught by an unnamed second layer before. The first is the translation of 1651, which is a translation and not the text; the second is the digital transcription of that print in which it was read, which carries the translator's English with the transcriber's corrections marked in brackets against the Latin. Nothing in bracket is treated here as the print's wording. As a control, the optical transcriptions of two copies of the same print of 1651 were taken from the full-text archive; both render the long s as f and break words badly enough that they are usable to confirm that a passage exists and not to read it, and they were used for that and nothing more."@en ;
+    skos:note "The Latin of 1533 is reachable and was not read, and the distinction matters for what a later run has to do. Three digitised copies of the Latin print were taken and found legible in the body at the sentence, with the usual noise of an early modern scan; a run that wants to know whether a condition entered below stands in the Latin as it stands in the English has the text and needs no new acquisition. The chapters at issue are also the ones where that question has teeth: the literature reports that the manuscript of 1510 does not contain the chapters carrying the dignification doctrine, so the belief condition and the sentence about false operations may belong to the print of 1533 and not to the work as its author first gave it away."@en ;
+    skos:note "What the translation of 1651 is good enough for, and what it is not. The nodes below turn on whether a condition is stated, on what is made to depend on what, and on where a failure is assigned. Those survive a translation. A node turning on a single word would not, and none is written; the one place where a single word decides something — the translator's credulous, which in 1651 means trusting and now means gullible — is recorded at the node itself rather than built into a claim."@en ;
+    skos:note "Why it is not an independent witness, stated at the registration and unchanged. The author names his predecessors himself, and among them the Spanish Picatrix, so an agreement between this work and the Arabic astral magic is reception with a route and not two witnesses. What the work can carry is the other thing SPEC §14 asks for: it states conditions, terms, hours and failures, and it states them about operations it prescribes."@en ;
+    pm:principalCorpus "Ficino, De vita libri tres; Agrippa, De occulta philosophia; Bruno, De umbris idearum; Dee, Monas Hieroglyphica and the spiritual diaries" ;
+    pm:corpusWork pmw:DeOccultaPhilosophia, pmw:DeVitaLibriTres, pmw:DeUmbrisIdearum, pmw:MonasHieroglyphica ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Agrippa, De occulta philosophia I.66 (trans. J. F., London 1651)" ;
+    dcterms:source "Agrippa, De occulta philosophia III.4 (trans. J. F., London 1651)" .
+
+#
+# The condition the work puts on every operation, and the sentence that makes
+# it unfalsifiable
+#
+
+pmc:AgrippaFides a pm:Conceptualizing ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "Faith as a fixed intention, and the worker who must not doubt at all"@en, "Der Glaube als festgesetzte Absicht, und der Handelnde, der gar nicht zweifeln darf"@de ;
+    skos:definition "The condition stated of every operation in the first book. The mind effects things by faith, which the work defines as a firm adhesion, a fixed intention and a vehement application of the worker or the receiver to that which co-operates; in every work one is therefore to affect vehemently, imagine, hope and believe strongly. He that works in magic must be of a constant belief and not at all doubt of obtaining the effect. The medical analogy stands beside it: a strong belief, an undoubted hope and love towards the physician conduce much to health, sometimes more than the medicine itself."@en ;
+    skos:note "The sentence that decides the standing of the whole work stands in the same paragraph and is not an aside: a firm and strong belief works wonderful things, the work says, although it be in false works. So the transmission states, of its own operations, that the condition it requires would produce the effect even where the operation is worthless — and it states this as an argument for the condition."@en ;
+    skos:note "The other half is the failure clause: distrust and doubting dissipate and break the virtue of the mind of the worker, whence it happens that he is frustrated of the desired influence of the superiors. A run that produced nothing therefore has an account waiting for it that does not touch the procedure, and the account is in the instructions."@en ;
+    skos:note "One word of the translation carries more than the Latin will bear and is therefore not built into this node. The print of 1651 has the worker be credulous, which in that English means trusting and in present English means gullible. What the node claims is the shape of the condition — firm belief required, doubt named as the cause of failure — which does not turn on that word."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia I.66 (trans. J. F., London 1651)" .
+
+pmc:AgrippaCredulitas a pm:Conceptualizing ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "Constant credulity works miracles in opinions and false operations"@en, "Beständige Leichtgläubigkeit wirkt Wunder in Meinungen und falschen Verrichtungen"@de ;
+    skos:definition "The third book states of superstition — which it defines as a resemblance of religion, imitating its miracles, sacraments, rites and observations — that it gets no small power from that imitation and no less strength from the credulity of the operator; that a constant credulity can do so great things as even to work miracles in opinions and false operations; and that whosoever in his religion, though false, yet believes most strongly that it is true, and raises his spirit by that credulity until it is assimilated to the leading spirits of that religion, may work those things which nature and reason do not discern. It adds that incredulity and diffidence weaken every work, not only in superstition but also in true religion, and enervate the desired effect even of the strongest experiments."@en ;
+    skos:note "This is the sharpest sentence the holding carries on the point, and it is the work's own. The transmission states in its instructions that the truth of the doctrine is not what decides the outcome, and that the same condition produces the effect inside a religion its author holds to be false. Once that is said, no result can tell for or against any particular doctrine of the work, and the author says it while arguing that the reader should therefore be careful which religion he imitates."@en ;
+    skos:note "It is not a critic's observation reported by the work; it is the work's premise for a practical warning. The chapter goes on to say that the old authors of the art were Chaldaeans, Egyptians, Assyrians, Persians and Arabians whose religion was polluted idolatry, and that their errors must not be allowed to war against the Catholic religion. The argument runs: since credulity works either way, the choice of what to be credulous about is a matter of piety and not of efficacy."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia III.4 (trans. J. F., London 1651)" .
+
+pmc:AgrippaVirtutesInSubstantia a pm:Conceptualizing ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "Virtues seated in the whole substance or in a part, working by touch or by sight"@en, "Kräfte in der ganzen Substanz oder in einem Teil, wirkend durch Berührung oder Blick"@de ;
+    skos:definition "The doctrine of the first book about where a natural virtue is seated. In some things it is in the whole substance or in all their parts — the little fish that is said to stop a ship by its mere touch, the plant good for the sight no more in the root than in the leaves and the seeds — and in other things only in a member: in the eyes of the basilisk a power to kill as soon as it sees, in the eyes of certain wolves a power to take away a man's voice if they see him first. The work adds that those who work by witchcraft use the eyes of such animals in their waters for that reason, and gives a list of further cases: ants fleeing the heart of one bird and not its head or eyes, the gall of one animal gathering weasels, the gall of another gathering frogs."@en ;
+    skos:note "Entered because it is the other theory of the same work and it is not reconciled with the first. Here the virtue is in the substance and acts by touch or by being seen; nothing is required of an operator, nothing is said of his belief, and in the clearest cases — the fish, the basilisk, the wolf — there is no operator at all. Set beside the condition of firm belief and the clause about credulity in false operations, the volume carries two accounts of how its own effects come about and joins them nowhere that was read."@en ;
+    skos:note "The reason for keeping both and not choosing is that the choice is exactly what a later reader would supply. A holding that entered only the belief condition would report a psychological magic; one that entered only the substances would report a natural philosophy; the work is both, and which of the two a modern presentation quotes is the first thing to check about that presentation."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia I.20 (trans. J. F., London 1651)" .
+
+pmc:AgrippaDuaeRationesEfficaciae a pm:Disputing ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "Whether the effect requires the operator's belief, disputed inside one work"@en, "Ob die Wirkung den Glauben des Handelnden verlangt, innerhalb eines Werkes bestritten"@de ;
+    skos:definition "The two sides the volume carries without joining them. On one side the operation requires a firm belief in the worker, doubt breaks the virtue of his mind, and a constant credulity works even in false operations. On the other side the virtue is seated in the substance of a thing or in one of its members and acts by mere touch or by being seen, with nothing required of anybody. The dispute is not between parties: it is between two chapters of the same book, and neither refers to the other at the places read."@en ;
+    pm:disputedClaim pmc:AgrippaFides ;
+    skos:note "Entered as a dispute and not as a remark because the two sides have different consequences for everything else in the work. If the belief condition governs, then every failure is accounted for in advance and no operation of the work can be tested; if the substance doctrine governs, then a good part of the first book states claims that could be tried on a bench. A reader who wants to know which the work means has to decide, and the work does not decide for him at the places read."@en ;
+    skos:note "The two sources of this node are two places in one volume rather than two works, which is unusual for this class in the holding and is the honest form here: what is in dispute is stated twice in one book. Whether the Latin of 1533 or the manuscript of 1510 joins them somewhere is open, and it is the first thing a run with the critical edition should look at, because the chapters carrying the belief condition are among those the manuscript is reported not to contain."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia I.66 (trans. J. F., London 1651)" ;
+    dcterms:source "Agrippa, De occulta philosophia I.20 (trans. J. F., London 1651)" .
+
+#
+# What the work withholds, and where it puts a failure
+#
+
+pmc:AgrippaSilentium a pm:Cautioning ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "Strengthened by silence, destroyed by publication, and no complete effect follows"@en, "Durch Schweigen gestärkt, durch Veröffentlichung zerstört, und keine vollständige Wirkung folgt"@de ;
+    skos:definition "The rule at the head of the third book. Those secrets which are among a few wise men and communicated by mouth only are not fit to be publicly written, and the author asks the reader's pardon for passing over in silence many and the chiefest secret mysteries of ceremonial magic; he supposes he has done enough if he opens what is necessary to be known. He then warns that every magical experiment flees the public, seeks to be hid and is strengthened by silence, but is destroyed by publication, neither does any complete effect follow after; and that the prating of a companion, his incredulity and unworthiness, hinders and disturbs the effect in every operation."@en ;
+    skos:note "The failure condition sits on what the text keeps out of itself, which is the arrangement this holding already carries from three other transmissions. Here it is put twice over in one chapter: the chief mysteries are withheld, and the withholding is itself made a condition of the working. A reader who has the printed book therefore holds, by the book's own rule, a thing whose effect publication has destroyed."@en ;
+    skos:note "The clause about the companion is the same displacement as the clause about the reader at the conclusion, one degree closer to the operation: a second person's talk, disbelief or unworthiness accounts for a failure, and none of the three is anything the operator could establish beforehand."@en ;
+    pm:cautionsAbout pmp:AgrippaPraeparatioOraculi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia III.2 (trans. J. F., London 1651)" .
+
+pmc:AgrippaCulpaLectoris a pm:Cautioning ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "If he does not obtain his desire, let him accuse himself"@en, "Erlangt er sein Verlangen nicht, so klage er sich selbst an"@de ;
+    skos:definition "The clause closing the whole work. If any therefore through his incredulity or dulness of intellect does not obtain his desire, let him not impute the fault of his ignorance to the author, or say that he has erred or purposely written falsely and lied, but let him accuse himself, who does not understand the writings; for they are obscure and covered with divers mysteries, by which it will easily happen that many err and lose their sense. The author adds that he has folded up the truth of the science with many enigmas and dispersed it in divers places, and has delivered it in words which necessarily blind the foolish."@en ;
+    skos:note "The failed run is assigned to the reader, and the two causes named — incredulity and dulness of intellect — are both properties of whoever complains. Neither can be cleared in advance and neither is anything the work undertakes to test. This is the same construction the holding carries from the burial book, from the elixir chapter and from the internal alchemy, arriving here from a learned author writing in print rather than from a lineage."@en ;
+    skos:note "It is placed where it does the most work: at the end, after two hundred chapters, as the conclusion of the whole work. Whoever has read that far and has nothing to show for it meets this sentence and no other account."@en ;
+    pm:cautionsAbout pmp:AgrippaPraeparatioOraculi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia III.65 (trans. J. F., London 1651)" .
+
+pmc:AgrippaNonApprobo a pm:Cautioning ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "The gate of Acheron is in this book, and I do not approve of them"@en, "Das Tor des Acheron ist in diesem Buch, und ich billige sie nicht"@de ;
+    skos:definition "The author's warning against his own book, in the address to the reader. Those who would take the name of magic in the worse sense are advised not to read his writings, nor understand them, nor remember them, for they are pernicious and full of poison; the gate of Acheron is in this book, and it speaks stones, so let them take heed that it does not beat out their brains. To the reader who comes without prejudice he says that if he finds anything that may not please him, he should let it alone and make no use of it, for the author does not approve of those things but declares them to him; and that he has written many things rather narratively than affirmatively."@en ;
+    skos:note "A self-warning standing inside the passage that publishes the thing, which is the shape this holding already carries from several transmissions; what is unusual here is that it is a warning of non-approval rather than of danger alone. The author reserves, in advance and without naming which, a portion of his own contents that he reports without endorsing. That leaves no way to tell an endorsed instruction from a reported one, and it leaves the author right whatever the reader finds."@en ;
+    skos:note "The same address carries the retraction and the objection to it in the author's own voice: he says that being become a man he retracted what he did as a boy, and that in his book on the vanity of the sciences he for the most part retracted this book; he then puts the reader's obvious question — you wrote it young and have retracted it, what then have you published — and answers not by withdrawing anything but by an account of how an unfinished copy got loose in Italy, France and Germany. So the work is published as a thing its author has retracted, and the reason given for publishing is the control of the text and not its truth."@en ;
+    pm:cautionsAbout pmp:AgrippaPraeparatioOraculi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia, the address to the reader (trans. J. F., London 1651)" .
+
+pmc:AgrippaCensuraInEodemVolumine a pm:Conceptualizing ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "The retraction printed inside the volume it retracts"@en, "Der Widerruf, gedruckt in dem Band, den er widerruft"@de ;
+    skos:definition "A structural fact of the volume, read at the wording. After the conclusion of the third book and two letters of the author there follows a piece headed as the censure or retraction of Henry Cornelius Agrippa concerning magic, after his declamation of the vanity of the sciences and the excellency of the word of God. It is not a withdrawal of the contents: it opens by saying that this place requires that we speak of magic, that he who professes magic without astrology does nothing but is altogether in error, and it then divides magic into natural and ceremonial and treats natural magic as the highest power of the natural sciences, naming the peoples who chiefly excelled in it."@en ;
+    skos:note "Entered because the arrangement decides how the work is to be read and is regularly reported the other way round. The retraction is not a later document set against the book; it is bound into the book, after the conclusion, in the same volume, and what stands under its heading is a further exposition of magic. A reader told that the author withdrew the work will find the withdrawal printed as one of its parts."@en ;
+    skos:note "What was read is the heading, its place in the sequence, and the opening sections on magic in general and on natural magic. The rest of the piece was not read, and the declamation on the vanity of the sciences from which it is drawn was not opened."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia, the censure or retraction printed after book III (trans. J. F., London 1651)" .
+
+#
+# The hour, the moon, and what is owed the operator's body
+#
+
+pmc:AgrippaSineLuna a pm:Cautioning ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "Thou shalt do nothing without the assistance of the Moon"@en, "Ohne den Beistand des Mondes wirst du nichts zustande bringen"@de ;
+    skos:definition "The rule on celestial opportunity in the second book. In every work the situation, motion and aspect of the stars and planets in signs and degrees are to be observed, and how these stand to the length and latitude of the climate. When working anything belonging to a planet, that planet must be placed in its dignities, fortunate and powerful, and ruling in the day, in the hour and in the figure of the heaven; and the moon must be observed as opportunely directed to the work, for, the work says, thou shalt do nothing without the assistance of the moon."@en ;
+    skos:note "A condition of failure fixed by the date and not by either party, which is the family of claims the holding has been collecting; and it is stated as a flat impossibility rather than as a diminution. What the clause does not carry is an account of how the operator would tell afterwards which condition had failed him, and the work supplies several candidates a page apart — the planet not in its dignities, the aspect not friendly, the moon not directed — so any one failure has a choice of causes."@en ;
+    pm:cautionsAbout pmp:AgrippaPraeparatioOraculi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia II.29 (trans. J. F., London 1651)" .
+
+pmc:AgrippaHoraePlanetariae a pm:Conceptualizing ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "The unequal hours, and the neglect by which many are defrauded of their effect"@en, "Die ungleichen Stunden, und die Nachlässigkeit, durch die viele ihrer Wirkung beraubt werden"@de ;
+    skos:definition "The ground of the planetary hours as the second book gives it. Two things are to be observed: the motions, ascensions and windings of the stars as they truly are in the eighth sphere, through the neglect of which, the work says, it happens that many err in fabricating the celestial images and are defrauded of their desired effect; and the times of choosing the planetary hours, which are formed by dividing the span from sunrise to sunset into twelve equal parts and the span from sunset to sunrise likewise, and distributing those hours to the planets in order, the first hour of the day going always to the lord of that day."@en ;
+    skos:note "A named cause of failure that lies neither in the operator's belief nor in a third party but in a calculation, and it is the only one of that kind among the places read. It is also the only one a later reader could in principle audit: whether an image was made at a given hour, and whether that hour was computed in the eighth sphere, are questions about a record rather than about a state of mind."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia II.34 (trans. J. F., London 1651)" .
+
+pmp:AgrippaPraeparatioOraculi a pm:Practicing ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "How one who would receive oracles disposes himself"@en, "Wie sich einrichtet, wer Orakel empfangen will"@de ;
+    skos:definition "The preparation prescribed in the third book for whoever, desiring to come to the supreme state of the soul, goes to receive oracles. He must go chastely and devoutly disposed, pure and clean, his soul polluted with no filthiness and free from all guilt; he must purify mind and body as far as he may from all diseases and passions and all irrational conditions, which adhere as rust to iron, by rightly composing what belongs to the tranquillity of the mind. By this means, the work says, he shall receive the truer and more efficacious oracles. Three chapters follow on cleanness, on abstinence, fastings, chastity and solitariness, and on penitence."@en ;
+    skos:note "The stated effect of the preparation is comparative and not a threshold: truer and more efficacious oracles, with no line below which an oracle would not be received at all. So the condition cannot fail in the way the moon clause fails, and a poor oracle is evidence of insufficient purity rather than of anything about the procedure."@en ;
+    skos:note "The four chapters were read at their headings and the first at its wording; the contents of the chapters on cleanness, abstinence and penitence were not read, and what they prescribe in detail is not entered."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia III.53 (trans. J. F., London 1651)" .
+
+pmc:AgrippaDignificatio a pm:Cautioning ;
+    pm:fromWork pmw:DeOccultaPhilosophia ;
+    rdfs:label "Many prosecute this art in vain, for want of being dignified to it"@en, "Viele treiben diese Kunst vergeblich, weil ihnen die Würdigung fehlt"@de ;
+    skos:definition "The requirement the third book calls the beginning, the perfection and the key of all magical operations. The faculty requires in a man a wonderful dignifying, because the understanding, the highest faculty of the soul and the only worker of wonders, is not worthy of the command of divine substances when it is overwhelmed by too much commerce with the flesh; therefore, the work says, many prosecute this art in vain. Two things are to be meditated: how to leave carnal affections, frail sense and material passions, and by what means to ascend to an intellect pure and conjoined with the powers above. Natural dignity is the best disposition of the body and its organs and proceeds from the situation and influence of the celestial bodies at a man's generation; whoever is not born such must recompense the defect of nature by education and the right use of natural things."@en ;
+    skos:note "The condition is partly fixed before birth, and the work says so in astrological terms: whether a man has it depends on the state of his ninth house at his generation. What is offered to the man who lacks it is a recompense by education with no stated point at which the recompense is complete. Between that and the reader's dulness of intellect at the conclusion, the work has assigned a failure to the operator's constitution at both ends."@en ;
+    skos:note "A second clause of the same kind was read in the third book, in the chapter on holy names: the manner and rules delivered by the first institutor must be observed, for they who are ignorant of these things lose their labour and work in vain. Which rules those are, and where they are delivered, is not said at that place."@en ;
+    pm:cautionsAbout pmp:AgrippaPraeparatioOraculi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RenaissanceMagic ;
+    dcterms:source "Agrippa, De occulta philosophia III.3 (trans. J. F., London 1651)" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:DeOccultaPhilosophia a dcterms:BibliographicResource ;
+    rdfs:label "Agrippa, De occulta philosophia libri tres"@en, "Agrippa, De occulta philosophia libri tres"@de ;
+    skos:note "The three books, first printed complete in 1533 and read here in the English translation of 1651. Opened at nine places out of some two hundred chapters; the rest is unopened. The Latin print of 1533 was located in three digitised copies whose Latin body is legible at the sentence and was not read at those nine places; that is a debt and not an unreachability. The critical edition of 1992 is access-restricted, and until somebody has it the citations of this file name book and chapter of the English print without the edition's page."@en ;
+    skos:note "The volume of 1651 contains more than the three books, and two of the additions are cited here: the author's address to the reader, and the piece headed as his censure or retraction, printed after book III together with two letters. The fourth book that circulates under the author's name is not part of this volume; it is first printed in 1559, twenty-four years after his death, and nothing of it is entered here."@en .
+
+pmw:DeVitaLibriTres a dcterms:BibliographicResource ;
+    rdfs:label "Ficino, De vita libri tres"@en, "Ficino, De vita libri tres"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is the source the literature names for a part of the doctrine entered above, so it is the first place a run should go to ask whether the belief condition is this author's own or taken over."@en .
+
+pmw:DeUmbrisIdearum a dcterms:BibliographicResource ;
+    rdfs:label "Bruno, De umbris idearum"@en, "Bruno, De umbris idearum"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It carries the memory art of this transmission, which nothing in the holding yet touches."@en .
+
+pmw:MonasHieroglyphica a dcterms:BibliographicResource ;
+    rdfs:label "Dee, Monas Hieroglyphica, with the spiritual diaries"@en, "Dee, Monas Hieroglyphica, mit den geistlichen Tagebüchern"@de ;
+    skos:note "Named here as a work of the corpus and unopened. The registration singled the diaries out for a reason that still holds: they are a working log with dates, which makes them a different kind of witness from the treatises around them, and the only one in this corpus that could report what happened on a given day."@en .
