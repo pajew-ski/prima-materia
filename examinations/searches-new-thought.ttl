@@ -1,0 +1,55 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the New Thought run, 2026-09-22
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+# Three searches. Two came back empty and the empty results are the substance
+# of this file: a volume of some four hundred pages, published to establish
+# what a healer had achieved, reports not one patient he treated and did not
+# cure. The third found the one clause that does put a failure on the sick
+# person, and it turns out to depend on a rival remedy rather than on faith.
+#
+
+pmp:NewThoughtUncuredPatientSearch a pm:Searching ;
+    rdfs:label "Whether the volume reports a patient treated and not cured"@en, "Ob der Band einen behandelten und nicht geheilten Kranken nennt"@de ;
+    pm:searchedCorpus "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), in the optical transcription of a copy in the full-text archive; all five kinds of text in the volume, with the chapters of contemporary testimony, letters from patients, letters to patients and inquirers, and disease and healing read in place."@en ;
+    pm:searchedFor "Any report, from any of the five hands the volume prints, of a person who came under this treatment and did not recover: a case broken off, a patient who died under care, a treatment declared unsuccessful, or a refusal to take a case on the ground that it could not be cured."@en ;
+    pm:searchTerms "Term search of the whole text for: fail, failure, failed, not cured, could not cure, cannot cure, no benefit, without success, no better, gave up the case, declined, refused to take, relapse, grew worse, worse, died, death of, want of faith, lack of faith, unsuccessful. Every hit read in its place and assigned to the hand that wrote it."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "Not one case. The hits on death are about the death of Jesus, the death of the natural man, the deaths of people before they came, or the healer's own death in 1866; the hits on failure are about the mesmeric experiments of the eighteen-forties and about the world's failure to understand the science; the hits on worse are about what doctors do. The chapters of letters are testimonials of gratitude without exception."@en ;
+    skos:note "The finding is about the volume and not about the practice, and the distinction is the whole of what this search is worth. A collection of papers edited by a follower sixty years after the fact, published into a dispute about priority, is exactly the document in which uncured patients would not appear, and the absence therefore establishes nothing about how many there were. What it does establish is that the transmission, at the moment it was made into a book, carried no record of its own negative cases — so nobody reading it then or since could have counted."@en ;
+    skos:note "Two near-misses are worth naming because they are what a later run will find and think it has found more. A correspondent reports a partial relapse a year after her recovery, which is handled by a further absent treatment and reported as successful. And an editorial footnote under the letters says the chief difficulty of former patients who depended solely on the new Science was avoiding old fears when meeting sceptical friends, which concedes that some difficulty existed and names no case. Both are entered in the tradition file, the second at pmc:QuimbyAmiciIncreduli."@en .
+
+pmp:NewThoughtPatientsBeliefBlamedSearch a pm:Searching ;
+    rdfs:label "Whether an unsuccessful treatment is ever put down to the patient's want of belief"@en, "Ob ein misslungene Behandlung je dem fehlenden Glauben des Kranken zugeschrieben wird"@de ;
+    pm:searchedCorpus "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), the same text and the same reading."@en ;
+    pm:searchedFor "The construction this holding collects at pmc:NoFailedRunCountsAgainstTheOperation in the form it takes most often: a clause assigning an empty run to the person operated on. In a transmission whose entire doctrine is that belief makes and unmakes disease, the patient's insufficient belief is the excuse that lies nearest to hand, and the question is whether it is used."@en ;
+    pm:searchTerms "Term search for: want of faith, lack of faith, if you do not believe, unless you believe, if the patient believes, the patient is to blame, fault of the patient, your want, your lack, did not believe enough, doubted, doubt. Every hit read in its place. The doctrinal chapters on belief were read at the passages the hits fell in."@en ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:QuimbyCulpaOperantis ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "The excuse is not used, and the opposite construction is stated twice. Of the mesmeric practice: if a failure occurred the fault was the operator's and not that of the subject. Of the healing: I plead his case, and if I get the verdict the criminal is set at liberty; if I fail, I lose the case. A transmission which holds that the sick person's belief is the disease, and which declines to hold that his belief is the reason the cure did not take, has left the easiest immunising clause in the register on the table."@en ;
+    skos:note "One case contradicts the clean reading and is kept, because a search that reports only its own conclusion is worthless. A patient improving under treatment bought an advertised medicine for catarrh, took it, and ran down very rapidly; the healer reports the deterioration and puts it on the patient's belief in the advertisement. So a failure is assigned to the patient once, and what is blamed is not the absence of belief in the healer but the presence of belief in a rival remedy. The distinction matters for the register: a transmission can decline the want-of-faith clause and still have a construction that covers every case in which the patient consulted anyone else."@en ;
+    skos:note "The result is entered as opposing and not as an ordinary finding because of what it does to pmc:NoFailedRunCountsAgainstTheOperation. It does not refute that statement — the operator is one of the four places the statement names, and this transmission does put the failure there. It removes something else: the impression, which fourteen witnesses could easily give, that the place is chosen for the convenience of the transmission. Here it is chosen against the convenience of the man who wrote it down."@en .
+
+pmp:NewThoughtStatedTermSearch a pm:Searching ;
+    rdfs:label "Whether the treatment states a term within which the cure is to appear"@en, "Ob die Behandlung eine Frist nennt, in der die Heilung eintreten soll"@de ;
+    pm:searchedCorpus "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), the same text and the same reading."@en ;
+    pm:searchedFor "A stated period after which the treatment would be at an end and its outcome readable: a number of sittings, a count of days, a date by which the patient would be up. The question is put because a deadline that falls due is the cheapest examinable feature a healing transmission can have, and this holding found exactly one in the last corpus it opened."@en ;
+    pm:searchTerms "Term search for: in three weeks, within a week, in a few days, number of sittings, how many visits, by the time, appointed time, how long, would take. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "No term is prescribed anywhere. The treatment is an explanation given until the patient admits the point, and it ends when he admits it; the healer describes it as pleading a case before a judge who is the patient's own judgment, which has no calendar. The one place a period appears is an editorial footnote saying the healer was skilful in telling how long his absent work would take before the patient would be up and about — a skill attributed to him rather than a rule stated by him, and no instance of such a prediction with its period is printed."@en ;
+    skos:note "The empty result is worth keeping for the contrast it draws with the neighbouring corpus. The Romanus-Büchlein, a booklet of charms with no doctrine at all, sets a beast's broken leg straight again by the ninth day; this volume, which argues for four hundred pages that its healing is a science, sets no term anywhere. The transmission that calls itself a science is the one with nothing that falls due."@en .
