@@ -1,0 +1,211 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — New Thought, taken down from the register
+#
+# Registered in traditions/registry-modern.ttl and moved here now that one of
+# its three named works has been read. Hopkins and Troward are named at the
+# work identifiers and are unopened.
+#
+# Why this one out of the register, and it is an examinability argument rather
+# than a thematic one. The holding stands at forty-seven protocols on
+# procedure without cases against one on cases without deviation: it is rich in
+# what transmissions prescribe and poor in what anybody did and saw. The papers
+# of the founder of this transmission are a rare thing in the register — a
+# practitioner who ran his own procedure against his own conditions, found the
+# conditions empty, and printed the finding.
+#
+# The three decisions of SPEC §14, taken before the first node.
+#
+# The contact route is documented and unchanged. The transmission arrives by a
+# route it names itself: the founder began as an operator of animal magnetism
+# and the papers say where he got it. It is therefore a witness for reception
+# with respect to mesmerism, which this holding already carries, and an
+# independent one only in what it did with it.
+#
+# The edition, and its layers. What was read is the second edition of the
+# collected papers, New York 1921, in the optical transcription of a copy in
+# the full-text archive; the transcription is clean, running heads and printed
+# page numbers survive throughout, and the citations here are made from them.
+# The volume is not one text but five kinds of text bound together, and no node
+# below is entered without saying which kind it stands on: the editor's
+# connecting narrative; the founder's own manuscripts printed verbatim;
+# newspaper notices of the years 1840 to 1847; letters from patients; and the
+# private journal of the mesmeric subject. They are separated here because they
+# are not equally good evidence for anything, and the file marks the difference
+# at the attestation mode of each node rather than in a preface nobody reads.
+#
+# The manuscripts themselves were withheld from print for some sixty years and
+# the volume was published into a dispute about who owed what to whom. That is
+# a reason to read the editor's narrative as an interested account and not a
+# reason to doubt the manuscripts he prints, and the nodes are apportioned
+# accordingly: where the editor summarises, the mode is mediated attestation;
+# where the founder writes in the first person, it is a first-person report.
+#
+# Fourteen places were read at the wording and nine nodes stand on them. The
+# volume runs to some four hundred pages and the doctrinal chapters, which are
+# the bulk of it, are opened only where a procedure or a case is stated in them.
+#
+
+pmt:NewThought a pm:Tradition ;
+    pm:corpusWork pmw:QuimbyManuscripts, pmw:HopkinsScientificChristianMentalPractice, pmw:TrowardEdinburghLectures ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "New Thought"@en, "New Thought"@de ;
+    skos:definition "The American transmission holding that mental states determine bodily and material conditions, and that the determination can be exercised deliberately."@en ;
+    skos:note "The claim is stated in a form that invites counting, and it is the ancestor of most of what circulates today as manifestation."@en ;
+    skos:note "What was read: the collected papers of 1921 at fourteen places — pp. 30 to 35, the account of the mesmeric years and of the founder's own recovery; pp. 44 and 45 from the subject's journal; pp. 50, 51, 55, 60 and 61, the editor's account of the conditions that were dropped and of the rule of mental command; p. 115 with its editorial footnote; p. 195 from the manuscript headed Christ or Science; and pp. 301 to 302, a patient's account of a first interview. Nothing else of the volume is opened, and nothing of Hopkins or Troward."@en ;
+    pm:principalCorpus "Quimby, The Quimby Manuscripts; Emma Curtis Hopkins, Scientific Christian Mental Practice; Troward, The Edinburgh Lectures on Mental Science" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 30-35" ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 50-61" .
+
+#
+# The conditions that were held and dropped
+#
+
+pmp:QuimbyExperimentumMentale a pm:Practicing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "Every command to the subject given mentally and never aloud"@en, "Jeder Auftrag an das Medium nur gedanklich, nie laut"@de ;
+    skos:definition "The rule the operator adopted at the outset and held for the four years of his association with the subject: never to let the subject know what was expected of him save mentally. Even a wish that the subject give him his hand was asked mentally and never audibly. All communication during an experiment was silent, the subject answering as if spoken to aloud."@en ;
+    skos:note "It is entered as a procedure because it is stated as one and kept as one, and it is the reason the rest of this file is worth entering. The operator gives his own ground for it in the first person: being a sceptic he would not believe anything his subject did if there was any chance for deception, so all his experiments were carried on mentally. A control against his own credulity, built into the procedure by the person whose claim it protects, is a thing this holding has almost none of."@en ;
+    skos:note "What it does and does not exclude. It removes the spoken cue and nothing else: the operator was in the room, holding the subject's hands, and whatever passed between them that was not speech passed freely. The volume itself supplies the limit a page later, where the operator finds that his own unspoken belief about silk moved the subject's hand. So the rule bought him certainty against one channel and left him inside another, and he says so."@en ;
+    pm:readVia "The editor's connecting narrative in Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York 1921), which summarises the mesmeric years from the papers, the journal and the notices rather than printing them at the place" ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 50-51, with the operator's own statement of the ground at p. 60" .
+
+pmc:QuimbyTonitruumNonObstat a pm:Conceptualizing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "The storm he did not notice: a condition removed by a run that was blind to it"@en, "Das nicht bemerkte Gewitter: eine Bedingung, die ein für sie blinder Durchgang beseitigte"@de ;
+    skos:definition "While he held that the phenomenon was animal magnetism and had to do with electricity, the operator was never able to get satisfactory results when the conditions were not right as he believed they should be, and during a thunderstorm his trials would prove failures. One evening, after making experiments with excellent results, he found that there had been a severe thunderstorm throughout, and, being so interested in the experiments, he had not noticed it. From that time he could produce as good results during a storm as in fair weather."@en ;
+    skos:note "The one place in this holding where a stated condition of failure was tested by a run in which the operator was blind to the condition, and the transmission then dropped the condition instead of the case. He did not learn that storms are harmless by reasoning about storms; he learned it because he had not known that one was going on. Nobody arranged this and it is not an experiment; it is an accident with the structure of one."@en ;
+    skos:note "It belongs beside pmc:NoFailedRunCountsAgainstTheOperation rather than against it. That statement is about what a transmission supplies, and this transmission supplies an operator-condition in its mature form all the same. What the case adds is the mechanism by which such a condition can be removed at all, and it turns out to be a narrow one: the condition has to be of a kind the operator can be unaware of while it holds. Steel in the pocket, a sceptic in the chair and the purity of an officiant are not of that kind, and none of the fourteen witnesses of that statement names a condition that could have been tested this way."@en ;
+    skos:note "Two neighbouring conditions went the same way and are recorded here rather than as nodes of their own, because the volume states them in a list and not at length. Pointing the sharp end of a steel instrument at the subject made him start as if pricked with a pin, while the blunt end left him unmoved; after the revision the operator could make him start by simply pointing a finger. And so long as he believed that steel had to do with his failures he had to keep all steel away from him. What connects the three is that each was a material condition whose falsity became visible only once the operator stopped believing it, which is the awkward part of the case and the reason it is entered as a claim and not as a proof."@en ;
+    pm:readVia "The editor's connecting narrative in Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York 1921), which summarises the mesmeric years from the papers, the journal and the notices rather than printing them at the place" ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 30-31, with the list of dropped conditions at p. 50" .
+
+pmc:QuimbySericumOperantis a pm:Attributing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "The silk was the operator's belief and not the silk"@en, "Die Seide war der Glaube des Operateurs und nicht die Seide"@de ;
+    skos:definition "The operator's own account of how he found the cause of an effect he had located in a material. He believed that silk would attract the subject, a belief he says he held in common with mankind; so if anyone present had any silk about him, a lady with a silk apron for instance, the subject's hand would be affected by it and would move towards her even if she were behind him. He reports the finding in general terms: his own belief, as distinct from his thought, produced effects in the subject whether he was thinking of it or not."@en ;
+    skos:note "An assay of a material that came out empty, reported by the practitioner against his own practice, with the cause relocated from the material to the operator's mind. The first limb of pmc:TheTestOnTheIngredient says that operative handbooks assay their materials; here the assay is not in a handbook but in a memoir, and its result is not that the material is genuine or counterfeit but that no material was involved. That is a third outcome the statement does not provide for."@en ;
+    skos:note "The asymmetry the operator draws and the reason it matters for reading this whole file: he distinguishes what he thought from what he believed, and says the effect followed the belief. A transmission which locates its variable in the operator's belief has made that variable unreachable from outside, and it has done so while sounding as though it had localised the cause more precisely, not less."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 60-61" .
+
+#
+# What the practitioner found out about his own instrument
+#
+
+pmc:QuimbyDiagnosisEstOpinio a pm:Conceptualizing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "The clairvoyant diagnosis was the opinion of somebody in the room"@en, "Die hellsichtige Diagnose war die Meinung eines Anwesenden"@de ;
+    skos:definition "After a time the operator became convinced that whenever the subject examined a patient, his diagnosis of the case would be identical with what either the patient himself or someone present believed, instead of the subject really looking into the patient and giving the true condition of the organs; that he was reading the opinion of someone rather than stating truth acquired by himself. Having satisfied himself of this, he gave up the subject altogether and began what became mental healing."@en ;
+    skos:note "A discriminating observation with a stated criterion — agreement with a belief held in the room — run by the practitioner against the instrument on which his reputation rested, and acted on by abandoning it. The holding carries protocols on distant perception against a control; none of them was devised by the practitioner and none of them ended the practice. This one did both."@en ;
+    skos:note "The editor will not let it stand unqualified and the qualification is kept here rather than trimmed, because a file that reports only the sharp half of its source is reporting badly. He adds that the subject also discerned at other times the actual state of the body, that there is documentary evidence of descriptions of the body after death, and that events at a distance were described when the subject was put in communication with someone in the audience who thought of the place. The conflict between the practitioner's conclusion and his editor's reservation is not resolved in the volume and is not resolved here."@en ;
+    pm:readVia "The editor's connecting narrative in Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York 1921), which summarises the mesmeric years from the papers, the journal and the notices rather than printing them at the place" ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), p. 32" .
+
+pmc:QuimbyAbsurditasCurat a pm:Conceptualizing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "Cured by the absurdity of the cure"@en, "Geheilt durch die Absurdität der Heilung"@de ;
+    skos:definition "The operator's first-person account of his own recovery. He had been told his kidneys were partly consumed and his lungs ulcerated and believed it. The subject, asked in the mesmeric state, described the pain, said one kidney was half consumed with a piece three inches long separated from it and hanging by a thread, and then offered to put the piece on so that it would grow; he laid on his hands, said he had united the pieces, and the next day said they had grown together. From that day the operator never felt the pain again. His own explanation: the absurdity of the remedy made him doubt that the kidneys were diseased at all, and the disease vanished by the absurdity of the cure."@en ;
+    skos:note "The founding case of the transmission is a cure the transmission itself explains by the worthlessness of the remedy. A parallel case is printed on the following page: the subject told a man that his lungs looked like a honeycomb and his liver was covered with ulcers, prescribed a simple herb tea, and the patient recovered; the attending physician credited the medicine, and the operator concluded that the physician had made the disease and that faith in the boy had changed the patient's mind."@en ;
+    skos:note "What makes it more than an anecdote of scepticism is the direction of the inference. The remedy is inert, the cure happened, and instead of concluding that something else cured the man, the practitioner concludes that the disease was never there. That move keeps the effect and discards the illness, and it is the step on which the whole later doctrine rests: the sequel is not that treatment is useless but that the doctor's opinion is what has to be treated."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 34-35" .
+
+#
+# Where the failure is put, and to whom the operation is shown
+#
+
+pmc:QuimbyCulpaOperantis a pm:Conceptualizing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "If a failure occurred the fault was the operator's, not the subject's"@en, "Bei einem Misslingen lag die Schuld beim Operateur, nicht beim Medium"@de ;
+    skos:definition "The rule the editor states of the mesmeric years: the subject would see or do what was commanded once the operator gained his attention, and until the subject gave his full attention nothing resulted; if a failure occurred, the fault was the operator's and not that of the subject. The founder states the same division in his own voice of the healing practice: he pleads the patient's case as a lawyer does, and if he gets the verdict the patient is released, and if he fails he loses the case."@en ;
+    skos:note "A witness for pmc:NoFailedRunCountsAgainstTheOperation and a peculiar one, because the place it assigns the empty run to is the only one of the four named places that costs the transmission anything. Fourteen witnesses put the failure on the person operated on, on the material, on a third party or on an operator understood as some other operator; this one puts it on the operator who is speaking, by name, in the first person. It immunises the doctrine exactly as the others do and it does not immunise the man."@en ;
+    skos:note "One case in the volume runs the other way and is recorded here rather than left for a later reader to find. A gentleman under treatment who thought he had consumption was improving; he read a newspaper advertisement for a medicine against catarrh, bought a bottle, and instead of the discharge lessening it grew worse and he ran down very rapidly. The healer reports the deterioration and assigns it to the patient's belief in the advertisement, adding that there is more virtue or misery in the advertisement than in the medicine. So the operator takes the failure of his own operation and the patient takes the relapse, and the dividing line is whether a rival remedy was believed in. The admission below should be read with that limit on it."@en ;
+    skos:note "The difference is worth stating precisely, because it is easy to overstate. Losing the case is not an outcome that counts against the claim: the science is untouched by it and only the pleader has lost. What the wording does supply that the others do not is an admission, published, that the thing can fail at all and that no property of the sick person will be produced to explain it. Whether that admission survives into the later transmission is a question for the works of Hopkins and Troward, which are named at the foot of this file and unopened."@en ;
+    pm:readVia "The editor's connecting narrative in Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York 1921), which summarises the mesmeric years from the papers, the journal and the notices rather than printing them at the place" ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), p. 55, and the founder's own wording at p. 195" ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 290-291, the case of the advertised medicine" .
+
+pmp:QuimbyExhibitioPublica a pm:Practicing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "The operation shown in public to an audience that thought it fraud"@en, "Die Verrichtung öffentlich vor einem Publikum, das sie für Betrug hielt"@de ;
+    skos:definition "For several years the operator travelled with his subject through Maine and New Brunswick giving exhibitions, which attracted much attention and were noticed in the newspapers. The volume states what the audiences were: at that time the phenomenon was looked upon as a deception, a fraud, a humbug, the operator was vilified and frequently threatened with mob violence, and the exhibitions smacked too strongly of witchcraft to suit the people. The subject's own journal records that the people seemed very bitter upon the subject and that they had nevertheless satisfied a great many, some very hard cases, and as a general thing satisfied all sceptics beyond a doubt."@en ;
+    skos:note "Entered for what it does to pmc:TheUnsympatheticWitnessAsStatedCauseOfFailure, whose falsifier names as the first thing to look for a transmission that prescribes its operation be shown to a doubter as a proof. This transmission did that as its normal business, for years, for money, before hostile rooms — and it had previously held the excluding condition in the standard form, that if a sceptic sat too near he failed. The two facts are in the same volume about the same man."@en ;
+    skos:note "It does not refute that statement, and the reason it does not is the statement's own second clause. What was exhibited was the subject describing a place someone in the audience was thinking of, or the inside of a body a physician could afterwards examine: an outcome a bystander could read off, which is precisely the case in which the statement predicts the bystanders will be admitted and no unsympathetic witness named. So the transmission passes from the first clause to the second as its outcomes become checkable, and the excluding condition falls away in the same movement as the steel and the storm."@en ;
+    skos:note "The claim that all sceptics were satisfied beyond a doubt is the subject's own journal entry and is treated here as a claim about the exhibitions and not about their success. He was the person whose performance was at stake and he was seventeen."@en ;
+    pm:readVia "The editor's connecting narrative in Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York 1921), which summarises the mesmeric years from the papers, the journal and the notices rather than printing them at the place" ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), p. 31, with the subject's journal at p. 44 and the abandoned condition at p. 50" .
+
+pmc:QuimbyProbaAdAegrum a pm:Conceptualizing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "He would not be told the feelings, and named them"@en, "Er ließ sich die Beschwerden nicht sagen und benannte sie"@de ;
+    skos:definition "A patient's account of a first interview, printed among the manuscripts. Asked whether he could cure spinal disease, the healer answered that he never wished a patient to tell him his feelings; asked what the patient should do, he said nothing but listen. He then sat down, took the patient's hand, passed his hand to one vertebra and said there was a very sharp pain in it at that moment, then to the left temple and said there was a very bad pain there affecting the sight of the left eye. The patient confirmed both. Only then did the healer explain his theory."@en ;
+    skos:note "A demonstration addressed to a doubter and placed before the treatment rather than inside it. The patient had come after hearing the healer called a spiritualist, a mesmerist and an enemy of religion, and says so; the opening move of the procedure is a statement about the patient's body that the patient alone can confirm or deny, made before he has been allowed to say anything."@en ;
+    skos:note "It is the third such demonstration in this holding and the pattern across the three is now worth naming. The demotic handbook assays its white stone, the Romanus-Büchlein tells the man who will not believe to stab an animal, and here a healer declines to be told and reports the pain. All three put the operation at risk, all three are offered to somebody who does not believe, and none of them is a step the convinced practitioner would have any occasion to perform. That the shape recurs in a New England consulting room in 1860 is what makes it a candidate for a statement rather than a coincidence of two manuscripts; the question is registered at pmc:TheTestOnTheIngredientExamination and is not settled here."@en ;
+    skos:note "What the demonstration is worth as evidence is another matter and the file does not inflate it. The healer is holding the patient's hand and watching his face, the pains named are the commonest sites of complaint in a patient who has come about the spine, and the report reaches print through the patient's own recollection in a volume edited to defend the healer's priority. It is entered for its form and not for its result."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 301-302" .
+
+pmc:QuimbyAmiciIncreduli a pm:Cautioning ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "The sceptical friend, named by the editor as the difficulty of the cured"@en, "Der skeptische Freund, vom Herausgeber als Schwierigkeit der Geheilten benannt"@de ;
+    skos:definition "An editorial footnote to the patients' letters: the chief difficulty encountered by former patients who depended solely on the new Science was in avoiding old fears and other mental associations readily called up when meeting sceptical friends. The letters it annotates bear it out in their own words — one correspondent, whose case was well known, reports that the doctors are sceptical and sometimes angry and that she must maintain her faith against opposition, and that at times she can hardly call herself well."@en ;
+    skos:note "The excluding condition, gone from the operation, reappears at the far end of it: not as a cause of the cure failing but as a cause of the cured relapsing. It is located in a third party who is present after the fact, and no criterion is offered by which a relapse with a sceptical friend nearby could be told from a relapse without one."@en ;
+    skos:note "It is the editor's sentence and not the founder's, written sixty years later by a man defending the founder's priority, and it is entered at that weight. What makes it worth entering at all is its position: it stands as a footnote under the testimonials, which is exactly where a reader counting cures would arrive at the ones that did not hold."@en ;
+    pm:cautionsAbout pmp:QuimbyExhibitioPublica ;
+    pm:readVia "The editor's connecting narrative in Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York 1921), which summarises the mesmeric years from the papers, the journal and the notices rather than printing them at the place" ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), p. 115" .
+
+pmc:QuimbyAbsensWhitney a pm:Conceptualizing ;
+    pm:fromWork pmw:QuimbyManuscripts ;
+    rdfs:label "Treated at a distance at an appointed hour, with three witnesses counted in advance"@en, "Aus der Ferne zur verabredeten Stunde behandelt, mit drei vorher gezählten Zeugen"@de ;
+    skos:definition "The editor's account of an absent treatment, told from a witness of his own and from the patient's household. Being in Lancaster, New Hampshire, the healer remarked at the appointed time that he must go to Wayne to visit a patient; he retired to the parlour for an hour, returned, and said he had got the lady up from her bed, that she walked, and that three persons were present in the room who witnessed it. On writing to the husband it was found that he and two friends who had come home with him from meeting were present at that time and saw her walk. The husband's own letter reports that he attended church not expecting her to rise, and found her up and dressed on his return, and that between eleven and twelve she rose, walked across the room, and the next morning took breakfast with the family."@en ;
+    skos:note "Entered for the shape and not for the result, and the shape is the rarest in this file: a claim made before the fact, at a named hour, about a discrete event in another place, with a count of the persons who would see it, checkable by a party who had no part in making it. Almost nothing in this holding is stated that way. A run that wants to know what this transmission would look like if it had been examined has this case and no other."@en ;
+    skos:note "Its weaknesses are as plain as its shape and they are not small. Every element reaches the record through the editor, sixty years later, in a volume written to establish the healer's priority; the count of three persons is reported by him as the healer's word and then reported as confirmed by him; the woman in Lancaster who supplies the independent half is unnamed; and nobody wrote anything down at the time. The correct reading is that the transmission made a claim of a checkable kind and that the check was not conducted, not that the check was passed."@en ;
+    skos:note "It is also the one case in this file bearing on the question of the protocol at examinations/magnetic-action-without-the-subjects-knowledge.ttl, because the household reports that a later absent treatment was given at the husband's request without informing the wife. That is the condition that protocol exists to test, arrived at from a transmission it was not built for."@en ;
+    pm:readVia "The editor's connecting narrative and newspaper scrap-book in Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York 1921), pp. 104-106, which prints the husband's letter and adds the editor's own corroborating enquiry" ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:withinTradition pmt:NewThought ;
+    dcterms:source "Horatio W. Dresser (ed.), The Quimby Manuscripts, 2nd ed. (New York: Thomas Y. Crowell, 1921), pp. 105-106" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:QuimbyManuscripts a dcterms:BibliographicResource ;
+    rdfs:label "Dresser (ed.), The Quimby Manuscripts, 2nd ed., New York 1921"@en, "Dresser (Hrsg.), The Quimby Manuscripts, 2. Aufl., New York 1921"@de ;
+    skos:note "Opened on 2026-09-22 at fourteen places. Not one text but five: the editor's connecting narrative, the founder's manuscripts printed verbatim, newspaper notices of 1840 to 1847, letters from patients, and the private journal of the mesmeric subject beginning 26 December 1843. Each node above says which of the five it stands on, and the attestation modes differ accordingly."@en ;
+    skos:note "The volume was published into a dispute over what the founder of Christian Science owed to this healer, whose patient she had been, and its preface says the manuscripts had been withheld from publication for many years although earnestly sought. That is the reason the editor's narrative is taken here as an interested account and the manuscripts he prints are not."@en .
+
+pmw:HopkinsScientificChristianMentalPractice a dcterms:BibliographicResource ;
+    rdfs:label "Emma Curtis Hopkins, Scientific Christian Mental Practice"@en, "Emma Curtis Hopkins, Scientific Christian Mental Practice"@de ;
+    skos:note "Named by the registration of this tradition and unopened. It is the work that turns the founder's practice into a taught method with pupils, so it is where the question of pmc:QuimbyCulpaOperantis has to be put next: whether the admission that the operator can fail survives into a transmission with a school behind it."@en .
+
+pmw:TrowardEdinburghLectures a dcterms:BibliographicResource ;
+    rdfs:label "Thomas Troward, The Edinburgh Lectures on Mental Science"@en, "Thomas Troward, The Edinburgh Lectures on Mental Science"@de ;
+    skos:note "Named by the registration of this tradition and unopened. It is the work through which the transmission passes into its twentieth-century form, and the one a run should open to find out whether the conditions dropped here were later put back."@en .
