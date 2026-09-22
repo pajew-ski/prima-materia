@@ -1,0 +1,44 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Anthroposophy run, 2026-09-22
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+# Two searches, both put to a book that publishes a whole training and asks the
+# reader to check it. The first asked who is competent to say that a pupil has
+# attained anything, and found the answer stated in one sentence and perfectly
+# circular. The second asked when the training would be due, and found a clause
+# that provides in advance for progress which does not show.
+#
+
+pmp:AnthroposophyThirdPartyCheckSearch a pm:Searching ;
+    rdfs:label "Whether anybody other than the pupil can establish that he has attained"@en, "Ob jemand außer dem Schüler feststellen kann, daß er etwas erlangt hat"@de ;
+    pm:searchedCorpus "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, in the German text of 1918, in a plain-text transcription in the full-text archive: the prefaces of 1909 and 1918 and the chapters Bedingungen, Innere Ruhe, Die Stufen der Einweihung, Praktische Gesichtspunkte, Die Bedingungen zur Geheimschulung, and Über einige Wirkungen der Einweihung, read in order."@en ;
+    pm:searchedFor "Any provision by which a party other than the pupil establishes that a stage has been reached: an examination, a confirmation, a grade conferred, a sign another could read, a criterion a fellow pupil or a household could apply. The question is put because the book publishes the whole method to strangers, which removes the initiatory gate, and a transmission without that gate has to put its verification somewhere."@en ;
+    pm:searchTerms "Term search of the whole text for: Lehrer, Prüfung, prüfen, bestätigen, Zeugnis, Grad, Mitschüler, beglaubigen, nachprüfen, feststellen, Kennzeichen, Merkmal, erkennen ob, Kontrolle, Selbstkontrolle. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:SteinerPruefungDurchUrteilskraft ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "One place and it closes the circle. In the chapter on the effects of initiation the book states that only he can speak about instruction for the development of supersensible faculties who has himself experienced in himself everything he is to develop in another, and who is fully in a position to recognise whether his instructions lead to the entirely correct result. So a competent judge is provided for, the qualification for the office is possession of the faculty in question, and the criterion by which he recognises the correct result is nowhere stated. Nobody outside can occupy the position and nobody inside has to show his working."@en ;
+    skos:note "What the search did not find, listed because the absences are what a later reader will want. No examination, no conferred grade, no confirmation by a teacher of a pupil's perception, and no role for a second person at any stage. The teacher appears thirteen times in the text read and in none of them does he verify anything: he gives advice, which the book says is all he can give; he receives, perhaps, the pupil's first account of a perception — if one happens to have a teacher; and he is otherwise a figure whose authority the preface of 1918 is at pains to reduce, saying that what matters is a wholly immediate relation to the objective spiritual world rather than a relation to the personality of a teacher."@en ;
+    skos:note "The one check the book does name is self-examination, and it names a question somebody else could have answered. The pupil is to examine again and again whether he has fallen out of his equilibrium and whether he has remained the same man within the circumstances in which he lives. His household could answer that; it is put to him alone. That is the sharpest thing this search found and it is entered at pmp:SteinerUebungAmSamen rather than here."@en .
+
+pmp:AnthroposophyStatedTermSearch a pm:Searching ;
+    rdfs:label "Whether the schooling states a term by which its result is due"@en, "Ob die Schulung eine Frist nennt, zu der ihr Ergebnis fällig ist"@de ;
+    pm:searchedCorpus "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, the same text and the same reading."@en ;
+    pm:searchedFor "A stated period after which the pupil should have the perception, or after which its absence would mean something: a count of days, weeks or years, a number of repetitions, a stage that falls due. The question is put because this holding has just found that the transmission with the most elaborate claim to being a science set no term anywhere, and the comparison is worth having twice."@en ;
+    pm:searchTerms "Term search for: nach einiger Zeit, nach angemessener Zeit, kurze Zeit, lange Zeit, Wochen, Monate, Jahre, Jahrzehnte, wie lange, Frist, reif, Reife, sogleich, bald. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-22" ;
+    dcterms:date "2026-09-22" ;
+    skos:note "No term anywhere. The periods the text gives are after some time, after an appropriate time, and perhaps only after many attempts — each of them the length of time the thing takes, stated as the thing taking time. The one place where a term is nearly set is the instruction to impress on oneself that it will one day come to me, what is to come to me, when I am ripe for it, which makes ripeness the condition and the arrival of the result its only evidence."@en ;
+    skos:note "The book provides in advance for the pupil who finds nothing, and this is the clause the search was really looking for. He must always keep before his eyes, it says in the chapter on inner calm, that he may already have made quite considerable progress after some time without its showing itself to him in the way he perhaps expected; whoever does not consider this will easily lose steadfastness and give up all attempts after a short time. Progress that does not show is thereby made the normal case, and the absence of the expected sign is given its account before any pupil can report it."@en ;
+    skos:note "Set beside the two corpora this holding opened in the same week, the pattern is worth recording even though three cases are not a count. A booklet of household charms with no doctrine sets a broken leg straight by the ninth day. A volume arguing for four hundred pages that its healing is a science sets no term. A book publishing a graded training of perception sets no term and adds a clause explaining why the pupil should not expect one. The elaboration of the doctrine and the presence of something that falls due run in opposite directions in all three, and whether that holds generally is a question for a statement and not for this file."@en .
