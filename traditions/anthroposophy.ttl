@@ -1,0 +1,173 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Anthroposophy, taken down from the register
+#
+# Registered in traditions/registry-modern.ttl and moved here now that one of
+# its two named works has been read at the wording throughout. The outline of
+# occult science is named at the work identifiers and is unopened.
+#
+# Why this one out of the register. It is the clearest case in the register of a
+# transmission that puts a whole graded training into a printed book sold to
+# strangers and keeps nothing of the procedure back — and then makes every one
+# of its outcomes uncheckable by a rule stated in the same book. It is
+# therefore the sharpest test the holding has of the statement at
+# generalizations/the-text-and-what-is-withheld.ttl, whose first limb says that
+# a transmission which writes everything down names no further condition a
+# possessor of the text could fail. This one names many. Whether they are of the
+# kind that limb excludes is the question this file answers, and the answer is
+# in the notes rather than in a claim of refutation.
+#
+# The three decisions of SPEC §14, taken before the first node.
+#
+# The contact route is documented and unchanged. The author names his own
+# sources in the register's terms and the book itself invokes the secret schools
+# of primeval times; it is a witness for reception, not an independent one.
+#
+# The edition, and the one weakness of this file. What was read is the German
+# text of the book as it stood in 1918, in a plain-text transcription in the
+# full-text archive whose head gives the three prefaces of 1909, 1914 and 1918
+# and the chapter list. The transcription carries no pagination at all: it is a
+# continuous text, and the printed pages of no edition survive in it. Every
+# citation below therefore names the chapter and not a page. That is findable in
+# the sense SPEC §10 requires and it is coarser than this holding's usual
+# practice, and a later run that wants a page has to acquire the collected
+# edition, which was not obtained here. The transcription itself is otherwise
+# clean: a handful of optical errors in single words, none of them in a sentence
+# cited below.
+#
+# What was read: the preface of 1909 and that of 1918; the chapters Bedingungen,
+# Innere Ruhe, Die Stufen der Einweihung, Praktische Gesichtspunkte, Die
+# Bedingungen zur Geheimschulung, and Über einige Wirkungen der Einweihung. The
+# chapters on the changes in dream life, on the continuity of consciousness, on
+# the splitting of the personality and on the guardian of the threshold were
+# not read, and eight nodes stand on what was.
+#
+
+pmt:Anthroposophy a pm:Tradition ;
+    pm:corpusWork pmw:SteinerWieErlangtMan, pmw:SteinerGeheimwissenschaft ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "Anthroposophy"@en, "Anthroposophie"@de ;
+    skos:definition "The transmission holding that a schooling of the inner life develops organs of perception for a supersensible world, and that the schooling can be set out in full and followed without a teacher."@en ;
+    skos:note "Entered at places entered on 2026-09-22 from the book of the schooling. The claim that distinguishes it in this register is the second half of the definition: the training is published entire, and the book says of itself that the teacher can give nothing but advice and that one speaks of one's perceptions to a teacher only if one happens to have one."@en ;
+    pm:principalCorpus "Steiner, Wie erlangt man Erkenntnisse der höheren Welten; Steiner, Die Geheimwissenschaft im Umriss" ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, Vorrede zur dritten Auflage (1909), in the German text of 1918" ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, chapter Die Bedingungen zur Geheimschulung, in the German text of 1918" .
+
+#
+# The check offered to the reader, and its stipulated outcome
+#
+
+pmc:SteinerPruefungDurchUrteilskraft a pm:Conceptualizing ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "A large part is checkable by sound judgement, and no scientific result contradicts it"@en, "Ein großer Teil ist mit gesunder Urteilskraft prüfbar, und kein wissenschaftliches Ergebnis widerspricht"@de ;
+    skos:definition "The offer the preface makes to the reader who will not walk the path. Whoever wants to observe the facts must ascend to supersensible knowledge; but one who does not perceive them can still obtain a sufficient conviction of the truth of the communications. A large part of them is checkable straight away by applying sound judgement in a really unprejudiced way. It is added in the same paragraph that in truth there is no scientific result which contradicts spiritual research, and that whoever believes some scientific judgement does not agree has not consulted the scientific results impartially and from all sides. A further part withdraws more or less from mere intellectual judgement, and for that part healthy feeling can be a judge of truth, where the feeling is not driven by sympathy or antipathy."@en ;
+    skos:note "A check is offered and its outcome is fixed in the same breath. The reader is invited to apply his judgement, told in advance what the judgement will find, and given the account of every other finding: prejudice, or a one-sided consultation of the sciences. Where the intellect will not come to the stipulated result, the office of judge passes to feeling, and the feeling that judges otherwise is disqualified as sympathy or antipathy."@en ;
+    skos:note "This is a different construction from the fifteen the holding collects at pmc:NoFailedRunCountsAgainstTheOperation and should not be filed with them. Those excuse a run of the operation that produced nothing. This one excuses a failed check by a third party who never ran the operation at all — it is the immunising clause moved from the practitioner's result to the outsider's verdict. The holding has no statement about that move and this is the first witness for one; whether there is a second is the question, and the register's other public transmissions with a printed doctrine are where to look."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Anthroposophy ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, Vorrede zur dritten Auflage (1909), in the German text of 1918" .
+
+pmc:SteinerBedingungenNieGanzErfuellbar a pm:Conceptualizing ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "None of the conditions can be fully met; only the striving is required"@en, "Keine der Bedingungen ist ganz erfüllbar; verlangt ist nur das Streben"@de ;
+    skos:definition "The clause that governs the whole list of conditions for the schooling, printed immediately before the first of them: it must be emphasised that with none of these conditions is a complete fulfilment demanded, but merely the striving after such a fulfilment. Nobody can fulfil the conditions entirely; but everybody can set out on the way to fulfilling them. Everything depends on the will, on the disposition to set out on that way. The conditions themselves are called strict but not hard, since their fulfilment is not only permitted to be a free act but must be one."@en ;
+    skos:note "The reason no condition in this file carries a value on pm:PrerequisiteStrength. The scale grades how firmly a transmission ties a step to a prior one — stated necessity, prescribed order, order of presentation — and it has no value for a condition declared unfulfillable in the act of being stated. The transmission has produced a prerequisite that is strict in wording and has no determinate state of affairs answering to it, so nobody, including the pupil, can establish whether it is met."@en ;
+    skos:note "It is also the answer to the first limb of pmc:TheFailureConditionFollowsWhatIsWithheld and the reason this transmission does not refute it. That limb says a transmission which writes its whole operation down names no further condition a possessor of the text could fail. This one names eight or more; but the falsifier asks for a condition a possessor could fail to meet and could be seen to have failed, and this clause removes the second half. The conditions are determinate as sentences and indeterminate as facts, and the book says so itself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Anthroposophy ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, chapter Die Bedingungen zur Geheimschulung, in the German text of 1918" .
+
+#
+# Where the empty or wrong result goes
+#
+
+pmc:SteinerEinbildungStattWahrheit a pm:Conceptualizing ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "Into his own imagination instead of higher worlds"@en, "In die eigene Einbildungskraft statt in höhere Welten"@de ;
+    skos:definition "The stated consequence of not meeting the first condition, which is the striving after bodily and mental health. Nothing should lie further from the pupil than the inclination to the fantastic, to excitement, nervousness, exaltation and fanaticism; he should acquire a sound eye for all the circumstances of life and let things speak to him calmly. Were this condition not met, the pupil would come, instead of into higher worlds, into that of his own imagination, and favourite opinions would assert themselves in him in place of the truth. It is better for him, the chapter adds, to be sober than exalted and fantastical."@en ;
+    skos:note "The transmission prints the deflationary account of its own results and attaches it to a condition nobody can be shown to have met. Every case in which the pupil's perceptions are fantasy is provided for in advance, and the party at fault is the pupil, on a count — insufficient mental health, in the sense of freedom from exaltation — that has no criterion."@en ;
+    skos:note "A sixteenth witness for pmc:NoFailedRunCountsAgainstTheOperation, and it is owed rather than entered: that file is being written in a parallel strand of the same run and this branch cannot touch it. What it adds to the fifteen is that the condition is not a defect of the procedure or of a material but a psychiatric property of the practitioner, named by the transmission in the vocabulary a critic would use. The debt is filed as an issue in the tracker and the note belongs at that generalization."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Anthroposophy ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, chapter Die Bedingungen zur Geheimschulung, first condition, in the German text of 1918" .
+
+pmc:SteinerKeineAnderenHindernisse a pm:Conceptualizing ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "There are no obstacles but those each man throws in his own way"@en, "Es gibt keine anderen Hindernisse als die, die sich jeder selbst in den Weg wirft"@de ;
+    skos:definition "The general form of the same construction, printed after the instruction every pupil is said to receive from his teacher at the beginning of the way. The pupil is told he must not expect to see and hear at once, that what he does only contributes to forming the higher senses, and to impress on himself the thought: it will one day come to me, what is to come to me, when I am ripe for it. Then: if he observes these instructions he perfects himself; if he does not observe them, all his working is in vain. But they are difficult only for the man who has no patience and steadfastness. There are no other obstacles than those which each man throws in his own way, and which each can also avoid if he really wills it."@en ;
+    skos:note "Three devices in one paragraph, and each of them closes a different exit. The result is postponed to ripeness, which is a term that cannot fall due. The absence of the result is assigned to the pupil's observance, which only he can report. And the possibility of any other obstacle is denied outright, so that a pupil who did observe the instructions and saw nothing has no case to make: by the wording there was nothing else it could have been."@en ;
+    skos:note "It resembles the general clause of the Clavicula Salomonis, which this holding carries at pmc:ClaviculaDefectusOperantis, and it goes one step further. The grimoire says an unsuccessful experiment must have been false and defective and the operator must have failed in some matter. This book adds that no other kind of obstacle exists at all, and that whatever obstacle there was, the man could have avoided it had he really willed it. The second clause converts an excuse into an imputation."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Anthroposophy ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, chapter Praktische Gesichtspunkte, in the German text of 1918" .
+
+pmc:SteinerVerkehrteSchulung a pm:Cautioning ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "Clairvoyant and blinder than before"@en, "Hellsehend und blinder als vorher"@de ;
+    skos:definition "The warning attached to a schooling undertaken without the prescribed ordering of life. He could then enter the higher worlds only with a defective eye of thought, and instead of knowing the truth would be subject to nothing but deceptions and illusions; he would become clairvoyant in a certain respect but would at bottom be subject to a greater blindness than before, since formerly he at least stood firm within the world of the senses and had a definite hold on it, whereas now he sees behind it and goes astray in it before standing securely in a higher world; he may then no longer be able to distinguish truth from error at all and loses all direction in life. The same chapter states the consequences of a distorted development of one of the organs: not only illusions and fantastic notions where a clairvoyant gift appears, but also aberration and unsteadiness in ordinary life, so that one may become fearful, envious, vain, arrogant and self-willed, having had none of these properties before."@en ;
+    skos:note "The transmission names, precisely and in its own voice, the outcome an outside observer would report of a failed case — illusion, loss of the hold on the sensory world, inability to tell truth from error, a change of character for the worse — and assigns it to a wrong or premature schooling. It is the most complete self-diagnosis in this holding and it is perfectly immunising: an observer who reports exactly these things about a practitioner reports something the book has already classified as a departure from the method."@en ;
+    skos:note "It is entered as a caution and not as a claim about outcomes because that is its grammatical form; but it carries a statement of fact about what happens to people, which no node in this file can examine. Whether any case of it was ever recorded is a question for the biographical and institutional literature of this transmission and not for the book."@en ;
+    pm:cautionsAbout pmp:SteinerUebungAmSamen ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Anthroposophy ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, chapter Über einige Wirkungen der Einweihung, in the German text of 1918" .
+
+#
+# The transmission's own account of how its perceptions are made
+#
+
+pmc:SteinerAhnungAusUnbemerktemEindruck a pm:Conceptualizing ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "The presentiment was a newspaper on a table nobody noticed reading"@en, "Die Ahnung war ein Zeitungsblatt auf einem Tisch, das niemand bemerkt hat"@de ;
+    skos:definition "Three worked examples, given to show the source of countless illusions. A man in a railway carriage is following a thought when it suddenly turns and he recalls an experience of years ago; he has not noticed that his eye was turned to the window and his glance fell on a person resembling somebody involved in that experience, so he believes the thing occurred to him of itself. A man cannot bear a certain colour and does not know that it is because a teacher who tormented him years ago had a coat of that colour. And a man reads in the paper of a death and maintains firmly that he foresaw it yesterday, having heard and seen nothing that could have brought him to the thought; he was in fact visiting an acquaintance a few hours before, a newspaper lay on the table which he did not read, and his eye fell unconsciously on the notice of that person's grave illness. He did not become conscious of the impression, but the effect was the presentiment. Truth is to be ascribed to the perceptions of the ten-petalled organ, the chapter concludes, only when one has become entirely free of the deceptions described."@en ;
+    skos:note "The transmission supplies the sceptical explanation of precognition, in more detail and with better examples than most of its critics, and then converts it into a prerequisite. Freedom from unnoticed impressions is made the condition under which the perceptions count as true — and it is a condition no third party can assess and the practitioner cannot assess either, since the impressions in question are by definition ones he did not notice."@en ;
+    skos:note "The construction deserves its own name and this file does not have one for it. It is not the excusing clause of pmc:NoFailedRunCountsAgainstTheOperation, which disposes of an empty run; it is a condition built out of the strongest available objection to the claim, so that the objection becomes a stage of the training rather than a reason to doubt it. The neighbouring prescription in the same chapter follows from it: one must become master of what works on one from outside, so that impressions one does not wish to receive are really not received, and what one sees one must will to see."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Anthroposophy ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, chapter Über einige Wirkungen der Einweihung, on the ten-petalled organ, in the German text of 1918" .
+
+pmp:SteinerUebungAmSamen a pm:Practicing ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "The exercise on the seed and the dying plant, with the colours named in advance"@en, "Die Übung am Samenkorn und an der sterbenden Pflanze, mit vorher genannten Farben"@de ;
+    skos:definition "Two exercises given in sequence. One places oneself before a seed and fills oneself with the thought that what one does not now see will grow from it; what was sensibly invisible reveals itself in a spiritually visible way, and there appears a spiritual flame-formation whose middle is felt as lilac-blue and whose edge is felt as bluish. The other places oneself before a plant at full development and fills oneself with the thought that it will die and leave seeds; after an appropriate time a force develops in the soul which becomes a new perception, and a larger flame grows out of the plant, to be felt as greenish-blue in its middle part and yellowish-red at its outer edge. It is expressly said that these are not colours seen as physical eyes see colours, but that spiritual perception feels something similar to a physical colour impression."@en ;
+    skos:note "The sign is announced before the exercise, in the same sentence as the instruction, down to the two colours and their position in the figure. Whatever a pupil then reports, the report was prescribed. That is a property of the procedure and not an accusation: the book is a manual and a manual says what is to be expected. What the holding should record is that this transmission, which publishes its whole method, has no way left of distinguishing a pupil who perceived the flame from one who was told what to perceive."@en ;
+    skos:note "The book faces the objection and answers it with resolve rather than with a criterion. It is understandable, the same chapter says, that many a man will take all this for illusion, and many will say what are such visions, such phantasms to me, and some will fall away and not continue the path; and it is exactly there that everything depends on not confusing fantasy with spiritual reality, and on having the courage to press forward. The instruction for telling them apart, given two paragraphs later, is that the sound sense which distinguishes truth from deception must be continually cultivated, that the pupil must never lose full conscious mastery of himself, and that he should examine again and again whether he has fallen out of his equilibrium and remained the same man within the circumstances in which he lives."@en ;
+    skos:note "That self-examination is the one thing in the book which somebody other than the pupil could carry out, and the book does not ask anybody to. Whether he has remained the same man inside his own circumstances is a question his household could answer; it is put to him alone."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Anthroposophy ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, chapter Die Stufen der Einweihung, in the German text of 1918" .
+
+pmc:SteinerSchweigeGebot a pm:Cautioning ;
+    pm:fromWork pmw:SteinerWieErlangtMan ;
+    rdfs:label "Be silent about your spiritual sights, even before yourself"@en, "Schweige über deine geistigen Gesichte, sogar vor dir selber"@de ;
+    skos:definition "The rule given immediately after the colours of the astral image are named. One does best to speak of such a perception at first to nobody except perhaps one's teacher, if one has such a one; for in trying to describe such an appearance in clumsy words one mostly gives oneself over to bad deceptions, using ordinary words which are not meant for such things and are too coarse and heavy for them, with the result that one is seduced by one's own attempt at wording into mixing all kinds of fantasy-dazzle into the true perceptions. Then, as a rule for the pupil: understand how to be silent about your spiritual sights. Indeed, be silent about them even before yourself. Do not try to clothe what you behold in spirit in words or to fathom it with the clumsy understanding; give yourself to your perception without prejudice and do not disturb it by much thinking about it, for your thinking is at first not at all equal to your seeing."@en ;
+    skos:note "The outcome of the operation is placed under a rule of silence, and the ground given for the silence is the very risk of self-deception the same book elsewhere analyses at length. Wording the perception is said to corrupt it; so the one act by which a perception could enter a record, be compared with another pupil's, or be held against the colours announced in advance, is the act the rule forbids. That the prohibition extends to the pupil's own reflection closes the last channel."@en ;
+    skos:note "It is the third arrangement of the pair at pmc:TheFailureConditionFollowsWhatIsWithheld and the statement has no room for it yet. The first limb is a transmission that writes the whole operation down; the second is one that keeps part of the operation out of writing. Here the whole operation is written down and published, and what is withheld is the result: the pupil receives every step in print and is forbidden to put his outcome into words. The failure condition then sits neither on the text nor on an orally transmitted part, but on the pupil's silence. That is a distinction for a later run at that statement and not a refutation of it."@en ;
+    skos:note "The neighbouring authority clause belongs with it. The directions of thought given here, the same chapter says, have been tested and practised in the secret schools since primeval times, and only such are communicated; whoever would apply others of another kind, which he forms himself or of which he hears or reads here or there, must go astray and will soon find himself on the path of shoreless fantasy. So the pupil may not word his results, may not devise his own exercises, and may not take them from elsewhere."@en ;
+    pm:cautionsAbout pmp:SteinerUebungAmSamen ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Anthroposophy ;
+    dcterms:source "Rudolf Steiner, Wie erlangt man Erkenntnisse der höheren Welten?, chapter Die Stufen der Einweihung, in the German text of 1918" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:SteinerWieErlangtMan a dcterms:BibliographicResource ;
+    rdfs:label "Steiner, Wie erlangt man Erkenntnisse der höheren Welten? (German text of 1918)"@en, "Steiner, Wie erlangt man Erkenntnisse der höheren Welten? (deutscher Text von 1918)"@de ;
+    skos:note "Opened on 2026-09-22 and read at the wording in the prefaces of 1909 and 1918 and in six of its chapters. Assembled by its author from separate essays, as the preface of 1909 says; the prefaces of 1914 and 1918 revise the presentation without withdrawing the method, and the preface of 1918 states that whoever strives for this path must give himself over to no deceptions, and that the soul experience meant here is misplaced when it is put in the same rank as mediumism and other degenerations of human striving."@en ;
+    skos:note "The transcription used carries no pagination, so the citations in this file name chapters. A run that needs a page must acquire the collected edition, which was not obtained here. This is a debt of the run and not a property of the work."@en .
+
+pmw:SteinerGeheimwissenschaft a dcterms:BibliographicResource ;
+    rdfs:label "Steiner, Die Geheimwissenschaft im Umriss"@en, "Steiner, Die Geheimwissenschaft im Umriss"@de ;
+    skos:note "Named by the registration of this tradition and unopened. It carries the cosmology the book of the schooling refers to and does not state, so it is where the content of the perceptions is to be found rather than the method of obtaining them."@en .
