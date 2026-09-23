@@ -1,6 +1,7 @@
 @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
@@ -36,13 +37,38 @@ pmt:Daoist a pm:Tradition ;
     skos:note "Read at the wording on 2026-09-10, in the Chinese: Baopuzi neipian 17, on climbing into the mountains, and Baopuzi neipian 18, on the earthly truth, both in the Daozang text the citations name. What the two chapters gave stands at the nodes below and is listed in the note at the head of this file. Three of the twenty chapters of the inner book are now read at the wording; the remaining seventeen, and the whole of the outer book, are searched by term only, and the harvest still owed at the opened work is recorded at prima-materia#633."@en ;
     skos:note "The first note above counts two places that could be run down to a text naming its own words. It states the position of the run that wrote it and is left standing as that record; the holding now rests on the jade inscription, on Zhuangzi 4 and on three chapters of the Baopuzi neipian, and the thinness it reports is no longer the same thinness."@en ;
     pm:principalCorpus "Xingqi yupei ming, the jade inscription on circulating the qi; Zhuangzi; Ge Hong, Baopuzi neipian; Chen Zhixu, Jindan dayao" ;
-    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" .
+    pm:corpusWork pmw:XingqiYupeiMing, pmw:Zhuangzi, pmw:BaopuziNeipian, pmw:JindanDayao ;
+    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" ;
+    pm:fromWork pmw:XingqiYupeiMing .
+
+#
+# The works of the corpus, named on 2026-09-23 when the file was migrated to
+# work identifiers (SPEC 14, AGENTS.md). Until then an unopened work of this
+# transmission was invisible to queries/unopened-works.rq.
+#
+
+pmw:XingqiYupeiMing a dcterms:BibliographicResource ;
+    rdfs:label "Xingqi yupei ming, the jade inscription on circulating the qi"@en, "Xingqi yupei ming, die Jadeinschrift über die Zirkulation des Qi"@de ;
+    skos:note "Not a book but an inscribed object of some forty-five characters, read here through the transcriptions and renderings of three modern works because no facsimile was reached. Its date is the subject of pmc:XingqiInscriptionDispute and the range proposed runs across three centuries, which is why the dispute node and not the concept nodes carries the question."@en .
+
+pmw:Zhuangzi a dcterms:BibliographicResource ;
+    rdfs:label "Zhuangzi"@en, "Zhuangzi"@de ;
+    skos:note "Opened at chapter 4 only, in Legge's translation of 1891. The remaining thirty-two chapters are unopened, and the inner chapters in particular carry further material of the kinds this holding owes — the cook, the swimmer at the falls, the ferryman — which is claims about acquired capacity in the register this file collects."@en .
+
+pmw:BaopuziNeipian a dcterms:BibliographicResource ;
+    rdfs:label "Ge Hong, Baopuzi neipian"@en, "Ge Hong, Baopuzi neipian"@de ;
+    skos:note "Twenty juan, DZ 1185 in the Zhengtong Daozang, read in the Hanfenlou facsimile. Five chapters are now read at the wording: 4 on the golden elixir, 8 on releasing the obstruction, 17 on climbing into the mountains, 18 on the earthly truth, and 9 on the intention of the Way, read on 2026-09-23. Of chapter 8 a part was read in an earlier run and the remainder of that chapter is still owed. Fifteen chapters of the inner book and the whole of the outer book are searched by term only; the harvest still owed is recorded at prima-materia#633."@en .
+
+pmw:JindanDayao a dcterms:BibliographicResource ;
+    rdfs:label "Chen Zhixu, Jindan dayao"@en, "Chen Zhixu, Jindan dayao"@de ;
+    skos:note "Named here as a work of the corpus and unopened. Its juan division is itself edition-dependent, which is why the two nodes citing it name a juan without an edition and are flagged in the file's edition note."@en .
 
 pmc:Qi a pm:Conceptualizing ;
     rdfs:label "Qi"@en, "Qi"@de ;
     skos:definition "The vital breath or energy held to circulate in the body and to be susceptible of deliberate direction."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" .
+    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 pmc:XingqiInscriptionDispute a pm:Disputing ;
     rdfs:label "The dating and reading of the jade inscription"@en, "Datierung und Lesung der Jadeinschrift"@de ;
@@ -50,7 +76,8 @@ pmc:XingqiInscriptionDispute a pm:Disputing ;
     skos:note "Held as a node rather than as a remark, because the dating decides whether this is the earliest datable witness to deliberate circulation of the qi or one witness among several, and because a citation that names only the inscription conceals that anything is at issue."@en ;
     pm:disputedClaim pmp:Xingqi ;
     pm:attestedBy pm:compilerInference ;
-    dcterms:source "D. Harper, Early Chinese Medical Literature (1998), p. 125", "J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" .
+    dcterms:source "D. Harper, Early Chinese Medical Literature (1998), p. 125", "J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 pmc:EmptyingOfTheHeart a pm:Conceptualizing ;
     rdfs:label "Fasting of the heart"@en, "Fasten des Herzens"@de ;
@@ -58,7 +85,8 @@ pmc:EmptyingOfTheHeart a pm:Conceptualizing ;
     skos:note "The third term is where the translations part, and the passage was reopened in this run because of it. The edition read renders it 'the spirit' in the body of the text and states in its own footnote that the character standing there is qi, 'the breath'. Whoever reads only the translation gets a graded ascent from ears to mind to spirit; whoever reads the footnote gets an ascent that ends in the breath, which is what the whole of this file is about. The earlier wording of this definition ended with the way gathering in emptiness alone, which is a third rendering again and follows a translation this file could not name. All three are recorded rather than harmonised."@en ;
     skos:note "The name is a second case of the same thing. The tradition's term is xinzhai, the fasting of the xin, and the label here says heart where the edition read says mind. Both are the same character, and the graph carries the German and English labels of an earlier run beside a source that translates it otherwise. The label is left standing and the divergence is recorded, because renaming it would hide that the term does not resolve into either word."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" .
+    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" ;
+    pm:fromWork pmw:Zhuangzi .
 
 pmc:QiListeningPresupposesEmptying a pm:Presupposing ;
     rdfs:label "Attending with the qi presupposes the emptying of the heart"@en, "Das Hören mit dem Qi setzt das Leeren des Herzens voraus"@de ;
@@ -69,14 +97,16 @@ pmc:QiListeningPresupposesEmptying a pm:Presupposing ;
     skos:note "Reopened in this run and confirmed at the wording, with one correction. The consequence stood here as a paraphrase of the dialogue and is now quotable from the edition named. What the earlier wording added and the passage does not say is that the hearing which stops at the ears and the mind does not reach the qi at all; the text says the pupil is to wait for the third hearing and that the first two are to rest where they are, which is an instruction and not a statement about what fails to arrive."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" .
+    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" ;
+    pm:fromWork pmw:Zhuangzi .
 
 pmc:NeidanThreeStages a pm:Conceptualizing ;
     rdfs:label "The three stages of the inner elixir"@en, "Die drei Stufen des inneren Elixiers"@de ;
     skos:definition "Refining essence into breath, breath into spirit, and spirit back into emptiness."@en ;
     skos:note "A dating warning belongs on this node. The sequence is routinely attributed to the Cantong qi or to the Wuzhen pian, but neither carries it as a fixed numbered progression; the Wuzhen pian sets only a precedence of vital force before inner nature, and of doing before non-doing. The earliest ordered witness located for the full triad is the Yuan-period Jindan dayao."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" .
+    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" ;
+    pm:fromWork pmw:JindanDayao .
 
 pmc:SpiritPresupposesBreath a pm:Presupposing ;
     rdfs:label "Refining spirit presupposes refining breath"@en, "Die Verfeinerung des Geistes setzt die des Atems voraus"@de ;
@@ -86,7 +116,8 @@ pmc:SpiritPresupposesBreath a pm:Presupposing ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
     skos:note "Recorded from the Yuan-period witness, not from the Han or Song works to which the sequence is commonly credited."@en ;
-    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" .
+    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" ;
+    pm:fromWork pmw:JindanDayao .
 
 pmp:Xingqi a pm:Practicing ;
     rdfs:label "Circulating the qi"@en, "Zirkulation des Qi"@de ;
@@ -94,7 +125,8 @@ pmp:Xingqi a pm:Practicing ;
     skos:note "The two axes of disagreement belong to the claim and are recorded with it. Dating: Harper places the inscription in the late fourth or early third century BCE, Needham in the middle of the sixth. Reading: Harper takes the opening two characters as the title and begins the text at the second line, where Roth counts and construes differently. A citation that names only the inscription conceals both."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125", "Xingqi yupei ming, in J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" .
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125", "Xingqi yupei ming, in J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 #
 # The graded sequence of the inscription
@@ -104,14 +136,16 @@ pmc:XingqiDepth a pm:Conceptualizing ;
     rdfs:label "Depth as the first stage"@en, "Die Tiefe als erste Stufe"@de ;
     skos:definition "The opening stage of the inscription: the breath is taken deeply, whereupon it gathers."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" .
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 pmc:XingqiDescent a pm:Conceptualizing ;
     rdfs:label "Descent as a stage of the sequence"@en, "Der Abstieg als Stufe der Folge"@de ;
     skos:definition "The stage at which the gathered and extended breath goes downward, after which it settles and becomes firm; the sequence then turns and rises."@en ;
     skos:note "The inscription assigns direction to a place in a sequence, not to a phase of breathing. Descent follows gathering and extension; ascent follows sprouting and growing. The closing lines set the two directions against the two powers, the dynamism of heaven showing in what rises and that of earth in what descends. Nothing here binds a direction to inhaling or to exhaling. See prima-materia#27 and prima-materia#28."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" .
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 pmc:DescentPresupposesDepth a pm:Presupposing ;
     rdfs:label "The descent presupposes the depth that gathers the breath"@en, "Der Abstieg setzt die Tiefe voraus, die den Atem sammelt"@de ;
@@ -122,7 +156,8 @@ pmc:DescentPresupposesDepth a pm:Presupposing ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
     skos:note "Recorded at stated necessity because a consequence is quotable, which is unusual: most sequences in this collection state an order and leave the consequence unsaid. The strength rests on the closing line, not on the chain of conditionals, which on its own would carry only a prescribed order."@en ;
-    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" .
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 #
 # Which opening the breath takes, and how slowly
@@ -134,7 +169,8 @@ pmp:Biqi a pm:Practicing ;
     skos:note "Correction, and the reason the edition rule exists. The earlier wording of this definition said that the retention is counted in heartbeats and gave no number. The chapter counts in the mind, not at the pulse, and it names both ends of the scale, one hundred and twenty at the start and a thousand in the long run. Neither could be checked while the citation named no edition, which is the harm SPEC §10 describes; the citation now names the one that was read. See prima-materia#45."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:InaudibleAndUnevenBreath a pm:Conceptualizing ;
     rdfs:label "The breath inaudible to its own bearer and shorter out than in"@en, "Der für den Übenden selbst unhörbare Atem, kürzer aus als ein"@de ;
@@ -142,7 +178,8 @@ pmc:InaudibleAndUnevenBreath a pm:Conceptualizing ;
     skos:note "The intake is at the nose and the release at the mouth. The distribution is the reverse of the one a modern draft assigns, which treats mouth breathing as a fault on the intake and says nothing of the release. The passage also fixes the pace by an external test rather than by a count of seconds, which is what makes it examinable at all. See prima-materia#26."@en ;
     skos:note "Reopened and confirmed at the wording, with the test made exact. The chapter names the material and the place: a goose down is laid on the nose and the mouth, and that it does not stir while the qi is let out is the sign. Nothing is said about the intake. That is an outcome a second person can observe, which is rare enough in this graph to carry a protocol of its own."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 #
 # Placement on the awareness axes.
@@ -154,7 +191,8 @@ pmc:EmptyingOfTheHeartIsWithdrawnAbsorption a pm:Situating ;
     pm:axisValue pm:withdrawnAbsorption ;
     pm:situationGround "The three steps are a graded withdrawal from the sensory channel and are stated as such: not to wait for the hearing of the ears, then not even for the hearing of the mind. The practitioner is awake throughout; what is withdrawn is the reliance on what the ears report. That is the criterion this coordinate names."@en ;
     pm:attestedBy pm:compilerInference ;
-    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" .
+    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" ;
+    pm:fromWork pmw:Zhuangzi .
 
 #
 # What the circulation is said to accomplish, and the conditions the chapter
@@ -167,20 +205,23 @@ pmc:Taixi a pm:Conceptualizing ;
     skos:definition "The chapter names it the great essential of the whole art: whoever has obtained the embryonic breathing can breathe without using nose or mouth, as though he were within the womb, and then the way is complete."@en ;
     skos:note "The definition is stated as a threshold and not as a degree, which is unusual in this collection: not better breathing but breathing without the two openings. It is also the point at which the chapter stops being examinable from outside, because the sign it gives for the lower stage, the down that does not stir, would be satisfied trivially by someone who had reached this one."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:XingqiCapacities a pm:Conceptualizing ;
     rdfs:label "What the circulation of the qi is said to accomplish"@en, "Was die Zirkulation des Qi vermögen soll"@de ;
     skos:definition "A list given in one breath: circulating the qi may cure the hundred illnesses, may take one into a place of pestilence, may hold off snakes and tigers, may stop the blood of a wound, may let one stay in water, may let one go on water, may keep off hunger and thirst, and may lengthen the years."@en ;
     skos:note "Eight items, of which the middle ones are decidable and the outer ones are not. Staying in water, going on water and holding off a tiger are outcomes a witness could report; curing the hundred illnesses and lengthening the years are not, in this form. The list is recorded whole rather than filtered, because a transmission that puts both kinds in one sentence is telling something about itself."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmp:XingqiBaopuzi a pm:Practicing ;
     rdfs:label "The circulation of the qi as the eighth chapter sets it out"@en, "Die Zirkulation des Qi, wie das achte Kapitel sie darstellt"@de ;
     skos:definition "One of three things the chapter names as the essentials, beside the guarding of the essence and the taking of the one great medicine. It says of itself that there are several methods within it, that no method is given whole at the first teaching, and that the essential is told only to one who has not slackened."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:XingqiYieldsCapacities a pm:Yielding ;
     rdfs:label "Circulating the qi yields those capacities"@en, "Die Zirkulation des Qi bringt jene Vermögen hervor"@de ;
@@ -188,7 +229,8 @@ pmc:XingqiYieldsCapacities a pm:Yielding ;
     pm:yieldsCapacity pmc:XingqiCapacities ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:ShengqiSiqi a pm:Conceptualizing ;
     rdfs:label "The living hours and the dead hours"@en, "Die lebendigen und die toten Stunden"@de ;
@@ -196,7 +238,8 @@ pmc:ShengqiSiqi a pm:Conceptualizing ;
     skos:note "This is the sentence for which the chapter was worth opening. It states a condition under which the practice does nothing, it binds the condition to the clock rather than to the practitioner, and it therefore names an outcome the practice excludes: a benefit obtained in the afternoon. Almost nothing else in this file does that."@en ;
     skos:note "It is also, read the other way, the cheapest possible defence: any session without result can be assigned to the hour. Both readings are true of the same sentence, and which of them the transmission intends is not decided here."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:XingqiProhibitions a pm:Cautioning ;
     rdfs:label "Not much food, and no anger"@en, "Nicht viel essen, und nicht zürnen"@de ;
@@ -204,7 +247,8 @@ pmc:XingqiProhibitions a pm:Cautioning ;
     skos:note "Both consequences are physical and immediate and neither is a misfortune sent from outside, which distinguishes these from most of the prohibitions this graph holds. The second also names a mechanism: anger does not spoil the practice directly, it makes the qi unable to overflow, and the cough is what follows from that."@en ;
     pm:cautionsAbout pmp:XingqiBaopuzi ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:XuZhu a pm:Conceptualizing ;
     rdfs:label "Blowing on water, fire, beasts and wounds"@en, "Das Anblasen von Wasser, Feuer, Tieren und Wunden"@de ;
@@ -212,7 +256,8 @@ pmc:XuZhu a pm:Conceptualizing ;
     skos:note "The laterality is the part this graph should not lose: the practitioner blows over his own left hand for a male patient and his own right for a female. A rule of that shape is not a description of an experience but an instruction that can be got wrong, and it is the kind of detail a later station adds rather than invents."@en ;
     skos:note "The distant healing is stated with a distance and an immediacy, a hundred li and on the spot, and with no condition attached to the patient. That makes it the most examinable claim in the chapter and the one furthest from anything the chapter offers to check it with."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:GeXuanInTheDeep a pm:Attributing ;
     rdfs:label "The great-uncle who lay a day at the bottom of a pool"@en, "Der Großonkel, der einen Tag auf dem Grund eines Teiches lag"@de ;
@@ -221,14 +266,16 @@ pmc:GeXuanInTheDeep a pm:Attributing ;
     pm:ascribedCapacity pmc:Taixi ;
     pm:attestedBy pm:thirdPartyAscription ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:MouthToMouthOnly a pm:Conceptualizing ;
     rdfs:label "The essential is passed from mouth to mouth and not written"@en, "Das Wesentliche geht von Mund zu Mund und wird nicht geschrieben"@de ;
     skos:definition "Of the bedchamber arts the chapter says that the great essential lies in one thing, and that this method is passed by the true men from mouth to mouth and is fundamentally not written down; that whoever takes the famed medicines without knowing this essential does not attain long life either; and that the older authorities set down only the coarse matters and never put the essential on paper."@en ;
     skos:note "Entered because it is a statement the graph can use about its own limits rather than about a capacity. A transmission that says its decisive step was never written is telling every later reader, including this project, that the written corpus is not the transmission. The claim is unfalsifiable and its being so is the point; it is recorded as what the source says, not as an obstacle discovered here."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:BaopuziAgainstTheZhuangzi a pm:Disputing ;
     rdfs:label "Whether the Laozi and the Zhuangzi carry the way to the transcendents"@en, "Ob Laozi und Zhuangzi den Weg zu den Unsterblichen tragen"@de ;
@@ -237,7 +284,8 @@ pmc:BaopuziAgainstTheZhuangzi a pm:Disputing ;
     pm:disputedClaim pmc:EmptyingOfTheHeart ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8", "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" .
+    dcterms:source "Ge Hong, Baopuzi neipian 8 (Shizhi), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 8", "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" ;
+    pm:fromWork pmw:Zhuangzi, pmw:BaopuziNeipian .
 
 #
 # Entering the mountains: a discrimination procedure, a calendar and a naming
@@ -249,7 +297,8 @@ pmp:MingjingRushan a pm:Practicing ;
     skos:note "This is the second procedure of its kind found in this graph and the first outside the medical canon. It states a fixed instrument, a threshold on that instrument, an act to be performed, and two outcomes that are not the same, and it says what each outcome means. Its criteria differ in strength: the reflection is a claim about what a mirror does, the heels are a claim about what such a thing lacks, and the second could be checked without a mirror at all."@en ;
     skos:note "Two cases are given with it, and both are third-hand. Zhang Gaita and Ou Gaocheng, refining their thought in a stone chamber on Mount Yuntai in Shu, were visited by a man in a yellow silk gown and a hemp cap; they looked in the mirror, saw a deer, and asked it why an old deer of the mountain dared take a human form, whereupon it became a deer and fled. Xi Boyi, lodging in the haunted pavilion below Mount Linlü where guests had been dying, sat up with the lamps lit reciting a scripture; at midnight ten and more people came and gambled with him; he lit them secretly with the mirror, saw a pack of dogs, singed one with the lamp so that it smelt of burnt hair, then stabbed one, which cried out as a man and died as a dog. The chapter says of the second that it was the power of the mirror."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" .
+    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:RushanJinri a pm:Cautioning ;
     rdfs:label "The years, months and days on which one may not enter the mountains"@en, "Die Jahre, Monate und Tage, an denen man nicht ins Gebirge geht"@de ;
@@ -258,7 +307,8 @@ pmc:RushanJinri a pm:Cautioning ;
     skos:note "The chapter also names what the calendar is a defence against, and it is not an outcome of the work but the tester: whoever does not know the art of entering meets illness, wounding, fright, lights, strange voices, great trees falling without wind, rocks dropping without cause and men going astray into ravines. The prohibition therefore protects against the mountain and not against a failure of the practice, which distinguishes it from the hours of dead qi in the eighth chapter."@en ;
     pm:cautionsAbout pmp:MingjingRushan ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" .
+    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:HuwuZhiming a pm:Conceptualizing ;
     rdfs:label "Knowing the thing's name takes away its power"@en, "Den Namen des Dinges zu wissen nimmt ihm die Macht"@de ;
@@ -266,14 +316,16 @@ pmc:HuwuZhiming a pm:Conceptualizing ;
     skos:note "The claim is that a name is an operator and not a label, and it is stated as a rule rather than as an anecdote. What makes it examinable in principle is that it is a rule of identification with a stated key: the day and the self-designation together determine the answer, so two practitioners given the same encounter should return the same name. What makes it unexaminable in practice is that the encounters the key applies to are the ones in dispute."@en ;
     skos:note "The other half of the chapter answers the same encounters with objects rather than names: five talismans in cinnabar on peachwood at the door and the four quarters, a seal of jujube heartwood two inches square, the seal of the yellow spirit with its hundred and twenty characters, the mirror above, and realgar for the snakes. The naming rule is entered separately because it alone claims that knowledge does the work."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" .
+    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmp:Yubu a pm:Practicing ;
     rdfs:label "The pace of Yu"@en, "Der Schritt des Yu"@de ;
     skos:definition "A gait set out step by step. Stand upright with the right foot in front and the left behind; next advance the right foot and bring the left up beside it, and that is one pace; next advance the right foot, then the left, and bring the right up beside the left, and that is two paces; next advance the right foot and bring the left up beside it, and that is three paces; and with that the way of the pace of Yu is complete. The chapter gives the length of a pace as seven feet, notes a variant reading, and says the walker looks back at nine footprints. Of its scope it says that in performing any of the hundred arts under heaven one ought to know the pace of Yu, and not for this matter alone."@en ;
     skos:note "Entered because of that last clause. The chapter treats the gait as a component shared by a whole class of operations rather than as a rite of its own, which is the sort of statement that lets a graph ask whether the class has anything else in common. It is also given with an exactness — which foot, in which order, brought up beside which — that almost nothing else in this work carries."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" .
+    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:HundredArtsPresupposeYubu a pm:Presupposing ;
     rdfs:label "The hundred arts presuppose the pace of Yu"@en, "Die hundert Künste setzen den Schritt des Yu voraus"@de ;
@@ -283,7 +335,8 @@ pmc:HundredArtsPresupposeYubu a pm:Presupposing ;
     pm:attestedBy pm:textualAttestation ;
     skos:note "Entered at prescribed order and not higher because the chapter says one ought to know it and states no consequence for not knowing it. The dependent step is named as the operation this chapter is about; the text's own claim is wider and covers the hundred arts, which the graph cannot express as a single edge and does not try to."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" .
+    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:ChuiqiJinshe a pm:Conceptualizing ;
     rdfs:label "Blowing the qi at snakes, near and at a distance"@en, "Das Qi gegen Schlangen blasen, nah und aus der Ferne"@de ;
@@ -291,7 +344,8 @@ pmc:ChuiqiJinshe a pm:Conceptualizing ;
     skos:note "The last clause repeats the rule of the eighth chapter word for word in its operative part: the practitioner blows and incants over his own hand, left for a male patient and right for a female, at a distance, on someone he does not see. It is therefore not a single formula of one chapter but a rule the work states twice, in two different operations, and it is what a search for the palms as an organ of transmission finds instead."@en ;
     skos:note "The sending organ in both places is the breath, and the hand is where the breath is directed. The chapter has the qi do the work throughout — over the grass, over the snake, over the wound, over the distance — and gives the hand no office except in the distant case, where it is the thing blown upon."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" .
+    dcterms:source "Ge Hong, Baopuzi neipian 17 (Dengshe), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 17" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 #
 # Guarding the One, and the attainment that lifts the calendar
@@ -303,14 +357,16 @@ pmp:Shouyi a pm:Practicing ;
     skos:note "The condition of transmission is stated as an operative condition and not as an etiquette: the blood of a white victim is smeared, the day is one of the ruling and assisting phases, white silk and white silver are the pledge, a metal tally is cut and divided, and where it is spoken of lightly or handed on wrongly, the spirit does not work. That is a stated failure condition attached to the transmission rather than to the performance, and this graph holds few of those."@en ;
     skos:note "The chapter also states what the practice replaces. There are, it says, several thousand methods of holding things in mind for warding off harm, and some make one think up several thousand objects to guard oneself with, which is mostly troublesome and wearies the mind; whoever knows the way of guarding the One puts all of that aside. A transmission that names the number of its own alternatives and calls them laborious is describing its own economy."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" .
+    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:ShouyiCapacities a pm:Conceptualizing ;
     rdfs:label "What guarding the One is said to accomplish"@en, "Was das Bewahren des Einen vermögen soll"@de ;
     skos:definition "On land it turns aside evil beasts, on water it repels the jiaolong; there is no fear of the wangliang or of venomous creatures, ghosts dare not approach and a blade dares not strike. With the bare blade at the neck, thinking the One obtains life. In a ghost temple, under the trees of a mountain, in a place of great pestilence, among graves, in the thicket of tigers and wolves, in the haunt of vipers, guarding the One without slackening drives every evil far off. Where soldiers or bandits have surrounded a man and there is no ground of life left, he enters at once into the yin of the six jia, lies hidden and guards the One, and the five weapons cannot reach him."@en ;
     skos:note "The list is of the same kind as the eight things the circulation of the qi is said to accomplish in the eighth chapter, and it has the same mixture: some items name an outcome a witness could report, the blade that does not cut and the encirclement escaped, and others are dispositions of the world that nothing could count against. It is recorded whole for the same reason as the other."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" .
+    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:ShouyiYieldsCapacities a pm:Yielding ;
     rdfs:label "Guarding the One yields those capacities"@en, "Das Bewahren des Einen bringt jene Vermögen hervor"@de ;
@@ -318,7 +374,8 @@ pmc:ShouyiYieldsCapacities a pm:Yielding ;
     pm:yieldsCapacity pmc:ShouyiCapacities ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" .
+    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:ShouyiZhongnan a pm:Cautioning ;
     rdfs:label "Knowing it is not the hard part; ending in it is"@en, "Nicht das Wissen ist schwer, sondern das Durchhalten"@de ;
@@ -326,7 +383,8 @@ pmc:ShouyiZhongnan a pm:Cautioning ;
     skos:note "The remedy is the part worth having, and it is the shape a claim takes when the transmission expects its own practice to fail intermittently. It names the failure, names a sign of it that the practitioner does not have to interpret, prescribes a corrective act, and provides a fallback for the case in which the corrective act cannot be performed. Very little in this holding sets out a repair rather than a prohibition."@en ;
     pm:cautionsAbout pmp:Shouyi ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" .
+    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:ShouyiMianLiri a pm:Conceptualizing ;
     rdfs:label "He who guards the One is no longer under the calendar"@en, "Wer das Eine bewahrt, steht nicht mehr unter dem Kalender"@de ;
@@ -335,14 +393,16 @@ pmc:ShouyiMianLiri a pm:Conceptualizing ;
     skos:note "What it does not say is that an operation done outside its window works. It says that this man no longer chooses days at all, which is a claim about who stands under the rule and not about what the rule does. The difference decides whether it refutes the generalization in generalizations/efficacy-bound-to-the-calendar.ttl or only narrows it, and the note there records that it narrows it."@en ;
     skos:note "It also names the interest the exemption serves inside the work. The chapter is arguing that guarding the One replaces several thousand other methods, and an exemption from the calendar is one more thing the reader no longer has to do. That is a reason for caution about the claim and not a reason to leave it out."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" .
+    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:Fenxing a pm:Conceptualizing ;
     rdfs:label "The dividing of the form"@en, "Die Teilung der Gestalt"@de ;
     skos:definition "Guarding the mysterious One, the chapter says, one thinks one's own body divided into three persons; when the three are seen one adds to them, up to several tens, all as one's own body, and the hiding and showing of them has its own oral instruction. This is what is called the way of dividing the form. The chapter adds that guarding the One together with the cultivating of the bright mirror gives the same, the way of the mirror being able to divide the form into several tens of persons, all alike in dress and face."@en ;
     skos:note "The mysterious One is distinguished from the true One in the same chapter and the distinction bears on the practice: the true One has a surname, a name, a length and a colour of dress, and the mysterious One has none of that but is first sought in the midst of the sun. It is said to be easier to guard than the true One, and to be got after a hundred days of purification and then not more than three or four days of waiting."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" .
+    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:ThreeMastersInThreePlaces a pm:Attributing ;
     rdfs:label "Three men who were in several places at once"@en, "Drei Männer, die an mehreren Orten zugleich waren"@de ;
@@ -351,7 +411,8 @@ pmc:ThreeMastersInThreePlaces a pm:Attributing ;
     pm:ascribedCapacity pmc:Fenxing ;
     pm:attestedBy pm:thirdPartyAscription ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" .
+    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" ;
+    pm:fromWork pmw:BaopuziNeipian .
 
 pmc:FenxingPresupposesShouxuanyi a pm:Presupposing ;
     rdfs:label "The dividing of the form presupposes the guarding of the mysterious One"@en, "Die Teilung der Gestalt setzt das Bewahren des dunklen Einen voraus"@de ;
@@ -361,4 +422,132 @@ pmc:FenxingPresupposesShouxuanyi a pm:Presupposing ;
     pm:attestedBy pm:textualAttestation ;
     skos:note "At prescribed order and not higher: the chapter derives the dividing from the guarding and names no consequence of attempting it without. The prior step is entered as the guarding as such, because the chapter treats the mysterious One as a second way of the same practice and not as a separate one; where the two are distinguished, the distinction is on the node for the dividing."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" .
+    dcterms:source "Ge Hong, Baopuzi neipian 18 (Dizhen), in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 18" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+#
+# Baopuzi neipian 9, on the intention of the Way, read at the wording on
+# 2026-09-23
+#
+# The chapter was opened from the harvest still owed at prima-materia#633 and
+# chosen within it on the testability criterion, and it turned out to be the
+# most examinable chapter of the work. It is a sustained argument against
+# sacrifice and petitionary prayer as a remedy for illness, and it argues by
+# cases: eight named historical instances in two columns, a control group from
+# the author's own acquaintance, four etiologies of a healing cult traced back
+# to the accident that started it, and one healer followed to his death.
+#
+# It also does, two folios later, what it spent eight folios condemning. That
+# is the finding of the reading and it stands at pmc:GehongYuer and
+# pmc:GehongFangshuWuyi.
+#
+
+pmc:GehongDaoyiBuji a pm:Cautioning ;
+    rdfs:label "Prayer does not cure what the body was brought to by conduct"@en, "Das Gebet heilt nicht, was der Leib durch die Lebensführung erlangt hat"@de ;
+    skos:definition "The chapter states the objection in the form of three cases: a change arises in the vitals and one sacrifices and prays for a cure; one lies in the wind and the damp and then confesses one's fault to the numinous powers; one eats and drinks without measure and then puts the blame on ghosts and goblins. This small body, it says, brought the trouble on itself, and heaven, earth and the bright spirits — how should they save it? It adds that to boil the victims and exhaust the herd is of no help in it."@en ;
+    skos:note "The three cases are the ordinary occasions of the transmission this holding entered on the same day, where illness is the consequence of fault and healing proceeds by confession and petition. The objection is therefore contemporary, internal to the Chinese material, and directed at a named practice rather than at superstition in general."@en ;
+    pm:cautionsAbout "Treating by sacrifice and confession an illness that arose from exposure, from immoderate eating, or from the wearing out of the body" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 2a-2b, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongFuguiChangsheng a pm:Disputing ;
+    rdfs:label "If prayer lengthened life the rich would necessarily live long"@en, "Wenn Gebet das Leben verlängerte, müssten die Reichen zwangsläufig lange leben"@de ;
+    skos:definition "The chapter puts a conditional against the claim it is disputing: good fortune is not obtained by servile reverence and calamity is not averted by sacrifice; for if a destiny could be extended by repeated prayer and an illness removed by lavish offering, then the wealthy would of necessity live long and the noble would be without sickness. It adds that the spirits do not partake of what is not of their kin and that ghosts do not accept illicit offerings, and concludes that they are not to be moved by artful speech and not to be sought by dressed-up bribes."@en ;
+    skos:note "This is an argument of the form the holding rarely gets from inside a transmission: it derives from the claim a consequence about a class of people, observes that the consequence does not hold, and rejects the claim. The class is besides the one with the most to spend on the remedy, which makes the observation cheap to check and hard to explain away. Entered as a dispute because the other side is in the holding: the transmission at traditions/celestial-masters.ttl makes exactly the claim this argument attacks, and the chapter's own remedy is exposed to the same argument at pmc:GehongFangshuWuyi."@en ;
+    pm:disputedClaim "Whether prayer and offering lengthen a life or remove an illness" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 2b-3a, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9", "Lu Xiujing, Lu xiansheng daomen kelüe 001b-002a (DZ 1127), Zhengtong Daozang, Hanfenlou facsimile" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongBaLi a pm:Testing ;
+    rdfs:label "Eight named cases, four on each side, set against the efficacy of sacrifice"@en, "Acht benannte Fälle, vier je Seite, gegen die Wirksamkeit des Opfers gesetzt"@de ;
+    skos:definition "The chapter argues the point with eight named historical instances in two columns. Four who sacrificed and were not helped: King Ling of Chu, who acted as his own shaman and spared no victim and could not turn back the punitive expedition of Wu; the Prince of Guangling of the Han, who reverenced Li Ran and emptied his treasury and could not escape execution for rebellion; Emperor Wen, who trusted the ghosts and spirits above all and could not save his grandson; and a lord whose grants and titles did not extend the term when his destiny was spent. Four who abolished a cult and prospered: the Fifth Lord, who extirpated a heterodox way and lived both long and honoured; the Lujiang of Song, who abolished the mountain sacrifices and whose fortune lasted to the end; Wen Weng, who destroyed the shrine of the water spirit and was himself fortunate and his people at peace; and Cao Cao, who prohibited the custom of illicit sacrifice and to whom abundant blessing came. The chapter states the inference: it was not that the victims were not large, nor that the jade and silk were not rich, nor the faith not earnest, nor the reverence not weighty — there was the loss of a hill and a mountain and not a hair's breadth of gain."@en ;
+    skos:note "Entered as a protocol and not as a caution because it is one in form: a claim, a population, two outcomes, and a stated inference from the count. It is also as weak as such a protocol can be while still being one, and the weakness is worth naming rather than discounting. The eight are selected by the arguer, the population from which they are drawn is not stated, no case is named that would have told the other way, and the second column is a rhetorical mirror of the first rather than an independent search. What the chapter does not do — and it is the reason the state below is what it is — is name a case of a man who sacrificed and was helped."@en ;
+    pm:tests pmc:GehongFuguiChangsheng ;
+    pm:falsifiedBy "A named case of a person who sacrificed or petitioned and whose illness or destiny then turned, set beside the eight. The chapter names none and does not say whether it looked." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:counterSearch pm:counterSearchNotCarried ;
+    pm:counterSearchNote "No counter-search was carried, by the chapter or here. The chapter's eight cases are the arguer's own selection and the state is set to procedureWithoutCases on that ground rather than on the ground that no cases were offered: cases were offered, and what is missing is any indication that the other side of the ledger was looked for. The holding's own search would be a different undertaking and has not been made; what it would have to establish first is the population, because a list of emperors who died is not a sample of people who prayed." ;
+    pm:examinedBy "Ge Hong, in the chapter itself; recorded by prima-materia, 2026-09-23" ;
+    pm:protocolUpdated "2026-09-23" ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 3a-3b, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongWuSuoBuFeng a pm:Cautioning ;
+    rdfs:label "A control group of the author's own acquaintance"@en, "Eine Kontrollgruppe aus dem eigenen Bekanntenkreis"@de ;
+    skos:definition "The chapter reports, in the first person, that the author has himself seen several people of his acquaintance who did not serve the bright spirits at all and who prayed and sacrificed not once in their lives, and who enjoyed a far span of years, whose name and rank were lofty, whose descendants were numerous, and who were both rich and honoured. He adds the same of himself: that he has nothing to do with these things and sacrifices only to his forebears at the four seasons; that he has travelled ten thousand li by land and water past some hundred shrines and wayside chapels and has passed every one of them by without stopping; that his carriage and horses met with no overturning and his river crossings with no storm; that he has repeatedly met with epidemics and has regularly had the benefit of drugs; and that he has repeatedly braved arrow and stone without the misfortune of a wound. From this, he says, he knows the better that ghosts and spirits can do nothing."@en ;
+    skos:note "The nearest thing to a control group in this holding, and it is worth having for its form rather than for its force. It is a first-person report of non-exposure with the outcomes stated, the comparison is made explicitly, and the conclusion is drawn from the comparison. What it lacks is what such a report always lacks: the cases are the ones he remembers, the outcomes were not fixed in advance, and he does not say how many of his acquaintance who did not sacrifice died young. He also notices without pursuing it that he had regularly had the benefit of drugs, which is a third factor in his own account."@en ;
+    pm:cautionsAbout "Inferring the efficacy of sacrifice from the fortunes of those who practise it, without regard to those who do not" ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 5b, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongOuYu a pm:Cautioning ;
+    rdfs:label "If one happens to recover it is the god's gift, and if he dies the ghosts withheld pardon"@en, "Genest einer zufällig, ist es die Gabe des Gottes, stirbt er, haben die Geister die Begnadigung verweigert"@de ;
+    skos:definition "The chapter describes what happens around a sick person in the hands of the shamans and invokers: they can neither practise the art of treating the illness nor turn back from their great delusion, they do not apply the rescue of drug and stone but devote themselves solely to the error of invocation and sacrifice, praying without end and consulting the oracle without weariness; the expense is beyond reckoning, the rich household exhausts its stores, the poor man borrows at double interest, the fields and the dwelling are parcelled out until they are gone. And then, it says, if the sick man happens of himself to mend, they say he has received the god's bestowal; and if he dies, they say the ghosts did not pardon him."@en ;
+    skos:note "The objection this holding would raise against a transmission of that kind, raised in the fourth century and in the same terms: an outcome and its opposite are both accounted for, so that nothing the sick person does can count against the procedure. It is the second such contemporary statement the holding now carries about Chinese healing practice, the first being the Dianlüe's report at pmc:CmBuxindaoDispute that those who recovered were said to have trusted the Way and those who did not to have not trusted it. The two are a century apart and are aimed at different movements, and neither depends on the other."@en ;
+    pm:cautionsAbout "Reading a recovery as the god's gift and a death as the ghosts' refusal of pardon" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 4a, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongSiMiao a pm:Systematizing ;
+    rdfs:label "Four cults traced back to the accident that began them"@en, "Vier Kulte, zurückverfolgt auf den Zufall, der sie begann"@de ;
+    skos:definition "The chapter sets out four etiologies, each with the same shape. A man in Runan set a snare for a river-deer and did not come back for it, and a passing dealer in salt fish put one fish in the snare and went away; the owner found it, thought it uncanny, dared not take it home, the village heard of it and built a hut and a shrine and called it the Lord Salt-fish, with painted pillars and unceasing drums, and if anybody happened to recover of an illness they said there was a god there, and every traveller sacrificed as he passed; after seven or eight years the fish dealer came by, asked what it was about, was told, and said this was only his own salt fish and what god was there — and the thing ceased. A man of Nandun named Zhang Zhu found a plum seedling while ploughing, wrapped its root in wet earth and set it in a hollow mulberry and forgot it; the neighbours saw a plum growing in the mulberry and called it a god; a man with sore eyes rested in its shade and vowed a piglet if the Lord Plum would cure him, his eyes happened to mend, he killed the piglet; the tellers exaggerated and it was said the tree could make the blind see; carriages filled the road and wine and meat flowed for several years, until Zhang Zhu came back from his post, saw it and said this was only the seedling he had set — and he cut it down and it stopped. By the tomb of the Peng family a stone figure stood at the roadside, and an old farm woman coming from market laid her cakes on its head in the shade and went off and forgot them; passers-by saw the cakes and asked, and somebody said there was a god in the stone that could cure illness and the cured brought cakes in thanks; so it was passed on that one with a headache should rub the stone man's head and one with a bellyache his belly, and rub himself in the same place, and there was none who did not recover; people came a thousand li to be treated, first with a chicken and later with oxen and sheep, with a curtained enclosure and unceasing strings — until one day the woman who had forgotten the cakes heard of it and told what she had done, and from then nobody went any more. And west of Luoyang an old tomb had broken open and held much water, and there was much quicklime in it, and lime-water is sovereign for sores; a traveller with sores in the summer saw the water clear and good and washed in it, and his sores happened to mend; so all the sick went to wash, and some drank it for disorders of the belly, and the people living by the tomb put up a shrine there and sold the water, and those who came to buy also sacrificed."@en ;
+    skos:note "Four cases, one structure: an accident, a witness who infers an agent, a recovery marked by the chapter as happening of itself, an amplification in the retelling, a cult with its economy, and in three of the four a termination that comes not from a failure of the cure but from the disclosure of the original accident. That is a claim about how such a practice arises and how it ends, made by a contemporary who names the places and in two cases the men. It is a Systematizing node because the order is the arguer's: the four cases are arranged by him to exhibit the pattern, and no source says they are of a kind."@en ;
+    skos:note "The stone figure is the case that bears hardest on this holding's own material, because of the clause there is none who did not recover. A procedure applied by the sufferer to himself, with a hundred-per-cent success rate reported by the sufferers, drawing people from a thousand li — and the author has the antecedent, which is a woman's forgotten cakes. It is the clearest illustration the holding carries of what a uniform success report is worth when the base rate is unknown, and it is offered by a witness who believed in other procedures."@en ;
+    skos:note "The fourth case ends differently from the other three and the difference is the sharper finding. The lime-water is the one of the four where something did work, since lime-water is in fact an antiseptic and the chapter says so as a matter of course. Its cult did not end when an antecedent was disclosed; it ended when the water ran out and the seller took to topping it up at night from elsewhere, grew very rich, and was eventually stopped by the authorities filling the tomb in. An efficacious remedy therefore generated the same apparatus as three inefficacious ones and was the only one of the four to end in deliberate fraud."@en ;
+    pm:compiledBy "Ge Hong, in the ninth chapter of the inner book" ;
+    dcterms:date "circa 320" ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 7b-9b, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongMaShi a pm:Cautioning ;
+    rdfs:label "The healer's instruction: say you are cured even if you are not"@en, "Die Anweisung des Heilers: sage, du seist geheilt, auch wenn du es nicht bist"@de ;
+    skos:definition "The chapter reports a case from Xinggu. The prefect Ma had a relation come to him in need; he had the man lodge outside and gave out that he was a divine man and a Daoist who treated illness, with none who was not cured on the spot, and set persuasive speakers to circulate the report that he could make the blind see and the lame walk at once. People gathered from the four quarters and thronged like a market, and money and silk were already heaped up like a hill. And he further instructed all who came for treatment: though you are not cured at once, you are to tell people that you are cured — do it so and you will certainly be cured; but if you tell anybody that you are not yet cured, then in the end you will never be cured; such is the law of the Way, and you must not fail to trust it. So those who came later asked those who had come before, and the earlier ones always told them they were already cured, and none dared say he was not. Within ten days the man had come into an immense fortune."@en ;
+    skos:note "The mechanism by which an efficacy report produces itself, set out in a named case, with the operative rule quoted, and described by a contemporary as a deliberate fraud. It does two things at once. It forbids the negative report by making the report itself the cause of the failure it would report, so that a man who says he is not cured has thereby forfeited the cure; and it turns every earlier patient into a witness for the next. The chapter's own comment is that what people call gods are all of the sort of Ma's deception of people, and that he records these several cases as a warning to those who have not yet seen through it."@en ;
+    skos:note "The rule has a counterpart in a transmission that states it as doctrine rather than as fraud: at pmc:CmYanhuiWuyi the admonitions of the Celestial Masters make it an offence of three thousand to say, after a calamity, that serving the Dao brings no benefit. Two Chinese sources of the same century thus carry the same device, one as a crime committed by a swindler and one as a rule of the Way, and neither depends on the other. Generalized at pmc:TheRuleAgainstReportingTheAbsence."@en ;
+    pm:cautionsAbout "A rule that makes the report of a failure the cause of that failure" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 9b-10a, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongLiKuan a pm:Disputing ;
+    rdfs:label "The healer dies of the epidemic and his followers call it release from the corpse"@en, "Der Heiler stirbt an der Seuche, und seine Anhänger nennen es Leichenbefreiung"@de ;
+    skos:definition "The chapter follows one healer to the end. A man named Li Kuan came to Wu speaking the dialect of Shu and could invoke over water and treat illness, and it often worked; he was taken for the immortal Li A, whom he was not, and from the high ministers downward all gathered at his gate. The author reports that many of his own acquaintance saw Kuan and all said he was decrepit and worn, coughing and belching when he rose or sat, his eyes dim and his ears deaf, his teeth fallen and his hair white, growing muddled and at times forgetting his own grandchildren, and no different from an ordinary man. Then there was a great epidemic in Wu and more than half died; Kuan too took the fever, said he was going into the hut to keep the fast, and died in it. And those who served him still said that he had transformed his shape and been released from the corpse and that it was not a true death. The author's reply: the reason the method of the immortals differs from that of the common man is precisely that it prizes not ageing and not dying; Kuan grew old, and old he was, and he died, and dead he was, and that he did not attain the Way is plain from that. And if he is said to have been one who by the immortals' law should undergo release from the corpse, why did he not stay among men for one or two hundred years, his years arrested and undying, and go after that?"@en ;
+    skos:note "The strongest case in this holding of a stated failure condition being met and then annulled, with both moves recorded and the annulment named as such by a contemporary. The condition is the transmission's own and is the plainest it has: an immortal does not age and does not die. The healer aged, and died, and of the disease he treated. The doctrine of release from the corpse absorbs that outcome, and the author's objection is not that the doctrine is false but that it is being used where it cannot be checked — whereupon he proposes the check, a term of one or two hundred years with the ageing arrested, which would have to be met before the doctrine could be invoked."@en ;
+    skos:note "Entered as a dispute because both sides are in the passage and both are in this holding: the holding already carries the release-from-the-corpse doctrine as a device for absorbing a death at pmc:ShangqingShijieZhengbian, and this is the same device met by a named objection. The objection is also the rarer thing: an insider proposing an antecedent condition under which an unfalsifiable claim would become checkable again."@en ;
+    pm:disputedClaim "Whether a master who grew decrepit and died of an epidemic had attained the Way and was released from the corpse" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 6b-7b, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9", "Ge Hong, Baopuzi neipian 9 (Daoyi) 7a, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongYuer a pm:Cautioning ;
+    rdfs:label "Those who live long without the arts were lucky, like the game the hunt missed"@en, "Wer ohne die Künste lange lebt, hatte Glück wie das Wild, das die Jagd verfehlte"@de ;
+    skos:definition "The chapter puts to itself the question its own control group raises: how is it that there are in the world people with no knowledge at all of the Way, its arts or its techniques, who are nevertheless at peace and live to a great age? It answers with three grounds. Some have hidden virtue and good conduct, and thereby draw down blessing. Some received a long allotment at birth, so that they age with difficulty and die late. And some are simply fortunate and happen not to meet with calamity or injury — as with a hunt, where some birds and beasts are missed and escape, or as after a great fire, where here and there a plant or a tree is left unburnt."@en ;
+    skos:note "This is the same move the chapter has spent eight folios condemning, made by the same author about his own side, and it is entered because the holding is for exactly this. The chapter's argument against sacrifice was that a claim which accounts for every outcome accounts for nothing; here a counter-case to the arts — a man who lives long without them — is accounted for by three alternatives, of which the third, that he happened not to meet with calamity, covers every remaining case by construction. The author does not notice the symmetry, and the passage stands two folios after the case of Ma and one after the four cults."@en ;
+    pm:cautionsAbout "Concluding from a long life lived without the arts that the arts are unnecessary" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 10a, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .
+
+pmc:GehongFangshuWuyi a pm:Cautioning ;
+    rdfs:label "The arts show their worth only in the case that may not arise"@en, "Die Künste zeigen ihren Wert nur in dem Fall, der ausbleiben kann"@de ;
+    skos:definition "The chapter states where the arts are to be relied on and where not. For guarding the person and warding off harm one is to cultivate the prohibitions that guard the form and to wear the talismans and sword of the celestial writ; sacrifice and prayer are of no benefit. One should rely on one's own being unassailable and not on the spirits' not assailing one. And it states a limit: pondering the mystery, holding the One and enclosing the light about the body can turn aside evil and carry one past the inauspicious, but it cannot lengthen the span of life or dispel a sickness of the body. One who follows nature and has no arts is not necessarily prevented from reaching his allotted years; but he cannot meet the violence of a fierce ghost or the passage of a great epidemic, and against those he will have nothing to turn them aside. The chapter closes the argument with an analogy: one who stores armour and keeps a straw cloak does so against war and against rain, and if by good fortune there is no campaign and the sky does not close over, then having them and not having them come to exactly the same; but when arrow and stone gather like fog and the flying points cross like smoke, then the straits of the naked man are known, and when the rain comes down as though a river were tipped out and the snow fills the sky, then the plight of the man standing on the road is felt."@en ;
+    skos:note "Three things stand in this passage and they should not be run together. The first is a limit stated against the author's own side and worth having on that account: the meditative practice is said not to lengthen life and not to dispel bodily illness, which is a narrower claim than the chapter's readers would have expected. The second is a concession that the unequipped may well reach their full span. The third is the reservation that makes the first two costless — the arts show their worth only against a violent ghost or a great epidemic, events that may not arise in a given life, so that in the ordinary case having them and not having them are conceded to come to the same. A claim reserved to the exceptional case cannot be told from a claim about nothing by any ordinary run of lives, and the author has arrived at that position in the course of refuting people who did the same."@en ;
+    pm:cautionsAbout "Judging the arts of self-protection by ordinary years, in which the case they are for does not arise" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Daoist ;
+    dcterms:source "Ge Hong, Baopuzi neipian 9 (Daoyi) 10b-11a, in the Zhengtong Daozang, Hanfenlou reprint, DZ 1185, juan 9" ;
+    pm:fromWork pmw:BaopuziNeipian .

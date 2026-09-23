@@ -1,0 +1,40 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Baopuzi 9 run, 2026-09-23
+#
+# Two searches and both empty. They were put to a chapter that argues for
+# eight folios about whether a practice works, and the emptiness of the first
+# is for that reason worth more than an ordinary silence: the chapter has no
+# word for the thing it is arguing about.
+#
+# In a file of its own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+
+pmp:GehongXiaoyanSearch a pm:Searching ;
+    rdfs:label "Whether the chapter that argues about efficacy has a word for efficacy"@en, "Ob das Kapitel, das über Wirksamkeit streitet, ein Wort für Wirksamkeit hat"@de ;
+    pm:searchedCorpus "Ge Hong, Baopuzi neipian 9 (Daoyi), complete, in the Zhengtong Daozang text as reproduced in the Hanfenlou facsimile, DZ 1185, juan 9. Whole-chapter search in the Chinese."@en ;
+    pm:searchedFor "The vocabulary in which a Chinese operative text states that something has been shown to work: yan, proof of effect; xiao, effect; xiaoyan, the two together; and the related terms for a verified case. The chapter is a sustained argument against the efficacy of sacrifice and petitionary prayer, conducted with named cases on both sides, so the question is whether it reaches for the technical vocabulary the neighbouring transmissions use."@en ;
+    pm:searchTerms "Whole-chapter search for 驗, 效, 效驗, 有驗, 無效, 應驗, 靈驗, 徵. Each term searched in the unspaced text, so that a compound would be caught by either of its characters."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-23" ;
+    dcterms:date "2026-09-23" ;
+    skos:note "Not one occurrence of either character in the whole chapter. What the chapter uses instead is the ordinary vocabulary of getting better — yu, to recover, fifteen times, and chai, to mend, three times — and the adverb ou, of itself or by chance, which it attaches to three of the four recoveries in its etiologies of a healing cult. The argument is therefore carried entirely in the language of outcomes and never in the language of demonstration."@en ;
+    skos:note "The comparison that makes the silence legible. The Celestial Masters manual opened in the same run uses the word for proof of effect twice, once to deny it to an incompetent officiant and once as a blanket claim that the twenty-four officers are all efficacious; and the transmission's code states the outcome of a failed treatment as frailty and no proof of effect. So the vocabulary existed in Chinese operative writing of the period, in the very practice this chapter attacks, and this chapter does not use it. A critic who argues from cases and never asks for a demonstration has conceded the frame of the argument to the party he is attacking, which is visible in what he does two folios later at pmc:GehongYuer."@en .
+
+pmp:GehongCasusPositivusSearch a pm:Searching ;
+    rdfs:label "Whether the chapter names a case of a sacrifice that helped"@en, "Ob das Kapitel einen Fall nennt, in dem ein Opfer geholfen hat"@de ;
+    pm:searchedCorpus "Ge Hong, Baopuzi neipian 9 (Daoyi), complete, in the Zhengtong Daozang text as reproduced in the Hanfenlou facsimile, DZ 1185, juan 9, read at the wording."@en ;
+    pm:searchedFor "A named instance of a person who sacrificed, prayed or petitioned and whose illness or destiny then turned, offered by the chapter as a case it had to account for. The chapter names eight cases against the practice — four who sacrificed and were not helped, four who abolished a cult and prospered — and one control group of its own acquaintance, so the question is whether it exhibits the other side of its own ledger anywhere."@en ;
+    pm:searchTerms "Read at the wording rather than searched by term, because a positive case would not carry a fixed vocabulary. Every named person in the chapter was collected and classified: King Ling of Chu, the Prince of Guangling, Emperor Wen, the Fifth Lord, the Lujiang of Song, Wen Weng, Cao Cao, the Runan snare-setter, the fish dealer, Zhang Zhu of Nandun, the old woman at the Peng tomb, the traveller at the Luoyang tomb, the water seller, Ma of Xinggu, Li A, Li Kuan, and the author himself."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-23" ;
+    dcterms:date "2026-09-23" ;
+    skos:note "Seventeen named persons and not one of them a case for the other side. The nearest thing is the recoveries inside the four etiologies — the man whose eyes mended under the plum tree, the sufferers who rubbed the stone figure, the traveller whose sores healed in the lime-water — and all three are named as having happened of themselves, with the antecedent supplied. Those are not offered as cases to be accounted for; they are the chapter's explanation of how such cases are mistaken."@en ;
+    skos:note "The empty result is why the protocol at pmc:GehongBaLi stands at pm:procedureWithoutCases rather than at a state reporting cases. Cases were offered, in quantity and with names, and what is missing is any sign that the other column of the ledger was looked for. A selection made by the arguer, with no stated population and no counter-instance, is a rhetorical exhibit and not a count — and the chapter's own argument at 2b, that if prayer lengthened life the rich would necessarily live long, would have been far harder to answer if it had been accompanied by the cases that told the other way and a reason for setting them aside."@en .
