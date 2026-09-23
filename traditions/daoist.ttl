@@ -1,6 +1,7 @@
 @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
@@ -36,13 +37,38 @@ pmt:Daoist a pm:Tradition ;
     skos:note "Read at the wording on 2026-09-10, in the Chinese: Baopuzi neipian 17, on climbing into the mountains, and Baopuzi neipian 18, on the earthly truth, both in the Daozang text the citations name. What the two chapters gave stands at the nodes below and is listed in the note at the head of this file. Three of the twenty chapters of the inner book are now read at the wording; the remaining seventeen, and the whole of the outer book, are searched by term only, and the harvest still owed at the opened work is recorded at prima-materia#633."@en ;
     skos:note "The first note above counts two places that could be run down to a text naming its own words. It states the position of the run that wrote it and is left standing as that record; the holding now rests on the jade inscription, on Zhuangzi 4 and on three chapters of the Baopuzi neipian, and the thinness it reports is no longer the same thinness."@en ;
     pm:principalCorpus "Xingqi yupei ming, the jade inscription on circulating the qi; Zhuangzi; Ge Hong, Baopuzi neipian; Chen Zhixu, Jindan dayao" ;
-    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" .
+    pm:corpusWork pmw:XingqiYupeiMing, pmw:Zhuangzi, pmw:BaopuziNeipian, pmw:JindanDayao ;
+    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" ;
+    pm:fromWork pmw:XingqiYupeiMing .
+
+#
+# The works of the corpus, named on 2026-09-23 when the file was migrated to
+# work identifiers (SPEC 14, AGENTS.md). Until then an unopened work of this
+# transmission was invisible to queries/unopened-works.rq.
+#
+
+pmw:XingqiYupeiMing a dcterms:BibliographicResource ;
+    rdfs:label "Xingqi yupei ming, the jade inscription on circulating the qi"@en, "Xingqi yupei ming, die Jadeinschrift über die Zirkulation des Qi"@de ;
+    skos:note "Not a book but an inscribed object of some forty-five characters, read here through the transcriptions and renderings of three modern works because no facsimile was reached. Its date is the subject of pmc:XingqiInscriptionDispute and the range proposed runs across three centuries, which is why the dispute node and not the concept nodes carries the question."@en .
+
+pmw:Zhuangzi a dcterms:BibliographicResource ;
+    rdfs:label "Zhuangzi"@en, "Zhuangzi"@de ;
+    skos:note "Opened at chapter 4 only, in Legge's translation of 1891. The remaining thirty-two chapters are unopened, and the inner chapters in particular carry further material of the kinds this holding owes — the cook, the swimmer at the falls, the ferryman — which is claims about acquired capacity in the register this file collects."@en .
+
+pmw:BaopuziNeipian a dcterms:BibliographicResource ;
+    rdfs:label "Ge Hong, Baopuzi neipian"@en, "Ge Hong, Baopuzi neipian"@de ;
+    skos:note "Twenty juan, DZ 1185 in the Zhengtong Daozang, read in the Hanfenlou facsimile. Four chapters are now read at the wording: 8 on releasing the obstruction, 17 on climbing into the mountains, 18 on the earthly truth, and 9 on the intention of the Way, read on 2026-09-23. Sixteen chapters of the inner book and the whole of the outer book are searched by term only; the harvest still owed is recorded at prima-materia#633."@en .
+
+pmw:JindanDayao a dcterms:BibliographicResource ;
+    rdfs:label "Chen Zhixu, Jindan dayao"@en, "Chen Zhixu, Jindan dayao"@de ;
+    skos:note "Named here as a work of the corpus and unopened. Its juan division is itself edition-dependent, which is why the two nodes citing it name a juan without an edition and are flagged in the file's edition note."@en .
 
 pmc:Qi a pm:Conceptualizing ;
     rdfs:label "Qi"@en, "Qi"@de ;
     skos:definition "The vital breath or energy held to circulate in the body and to be susceptible of deliberate direction."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" .
+    dcterms:source "Xingqi yupei ming (jade inscription on circulating the qi)" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 pmc:XingqiInscriptionDispute a pm:Disputing ;
     rdfs:label "The dating and reading of the jade inscription"@en, "Datierung und Lesung der Jadeinschrift"@de ;
@@ -50,7 +76,8 @@ pmc:XingqiInscriptionDispute a pm:Disputing ;
     skos:note "Held as a node rather than as a remark, because the dating decides whether this is the earliest datable witness to deliberate circulation of the qi or one witness among several, and because a citation that names only the inscription conceals that anything is at issue."@en ;
     pm:disputedClaim pmp:Xingqi ;
     pm:attestedBy pm:compilerInference ;
-    dcterms:source "D. Harper, Early Chinese Medical Literature (1998), p. 125", "J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" .
+    dcterms:source "D. Harper, Early Chinese Medical Literature (1998), p. 125", "J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 pmc:EmptyingOfTheHeart a pm:Conceptualizing ;
     rdfs:label "Fasting of the heart"@en, "Fasten des Herzens"@de ;
@@ -58,7 +85,8 @@ pmc:EmptyingOfTheHeart a pm:Conceptualizing ;
     skos:note "The third term is where the translations part, and the passage was reopened in this run because of it. The edition read renders it 'the spirit' in the body of the text and states in its own footnote that the character standing there is qi, 'the breath'. Whoever reads only the translation gets a graded ascent from ears to mind to spirit; whoever reads the footnote gets an ascent that ends in the breath, which is what the whole of this file is about. The earlier wording of this definition ended with the way gathering in emptiness alone, which is a third rendering again and follows a translation this file could not name. All three are recorded rather than harmonised."@en ;
     skos:note "The name is a second case of the same thing. The tradition's term is xinzhai, the fasting of the xin, and the label here says heart where the edition read says mind. Both are the same character, and the graph carries the German and English labels of an earlier run beside a source that translates it otherwise. The label is left standing and the divergence is recorded, because renaming it would hide that the term does not resolve into either word."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" .
+    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" ;
+    pm:fromWork pmw:Zhuangzi .
 
 pmc:QiListeningPresupposesEmptying a pm:Presupposing ;
     rdfs:label "Attending with the qi presupposes the emptying of the heart"@en, "Das Hören mit dem Qi setzt das Leeren des Herzens voraus"@de ;
@@ -69,14 +97,16 @@ pmc:QiListeningPresupposesEmptying a pm:Presupposing ;
     skos:note "Reopened in this run and confirmed at the wording, with one correction. The consequence stood here as a paraphrase of the dialogue and is now quotable from the edition named. What the earlier wording added and the passage does not say is that the hearing which stops at the ears and the mind does not reach the qi at all; the text says the pupil is to wait for the third hearing and that the first two are to rest where they are, which is an instruction and not a statement about what fails to arrive."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" .
+    dcterms:source "Zhuangzi 4, in James Legge (trans.), The Sacred Books of China: The Texts of Tâoism, Part I, Sacred Books of the East vol. XXXIX (Oxford: Clarendon Press, 1891), Book IV, par. 2, pp. 208-210" ;
+    pm:fromWork pmw:Zhuangzi .
 
 pmc:NeidanThreeStages a pm:Conceptualizing ;
     rdfs:label "The three stages of the inner elixir"@en, "Die drei Stufen des inneren Elixiers"@de ;
     skos:definition "Refining essence into breath, breath into spirit, and spirit back into emptiness."@en ;
     skos:note "A dating warning belongs on this node. The sequence is routinely attributed to the Cantong qi or to the Wuzhen pian, but neither carries it as a fixed numbered progression; the Wuzhen pian sets only a precedence of vital force before inner nature, and of doing before non-doing. The earliest ordered witness located for the full triad is the Yuan-period Jindan dayao."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" .
+    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" ;
+    pm:fromWork pmw:JindanDayao .
 
 pmc:SpiritPresupposesBreath a pm:Presupposing ;
     rdfs:label "Refining spirit presupposes refining breath"@en, "Die Verfeinerung des Geistes setzt die des Atems voraus"@de ;
@@ -86,7 +116,8 @@ pmc:SpiritPresupposesBreath a pm:Presupposing ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
     skos:note "Recorded from the Yuan-period witness, not from the Han or Song works to which the sequence is commonly credited."@en ;
-    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" .
+    dcterms:source "Chen Zhixu, Jindan dayao, juan 4" ;
+    pm:fromWork pmw:JindanDayao .
 
 pmp:Xingqi a pm:Practicing ;
     rdfs:label "Circulating the qi"@en, "Zirkulation des Qi"@de ;
@@ -94,7 +125,8 @@ pmp:Xingqi a pm:Practicing ;
     skos:note "The two axes of disagreement belong to the claim and are recorded with it. Dating: Harper places the inscription in the late fourth or early third century BCE, Needham in the middle of the sixth. Reading: Harper takes the opening two characters as the title and begins the text at the second line, where Roth counts and construes differently. A citation that names only the inscription conceals both."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125", "Xingqi yupei ming, in J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" .
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125", "Xingqi yupei ming, in J. Needham, Science and Civilisation in China II (1956), p. 143", "H.D. Roth, Original Tao (1999)" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 #
 # The graded sequence of the inscription
@@ -104,7 +136,8 @@ pmc:XingqiDepth a pm:Conceptualizing ;
     rdfs:label "Depth as the first stage"@en, "Die Tiefe als erste Stufe"@de ;
     skos:definition "The opening stage of the inscription: the breath is taken deeply, whereupon it gathers."@en ;
     pm:withinTradition pmt:Daoist ;
-    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" .
+    dcterms:source "Xingqi yupei ming, in D. Harper, Early Chinese Medical Literature (1998), p. 125" ;
+    pm:fromWork pmw:XingqiYupeiMing .
 
 pmc:XingqiDescent a pm:Conceptualizing ;
     rdfs:label "Descent as a stage of the sequence"@en, "Der Abstieg als Stufe der Folge"@de ;
