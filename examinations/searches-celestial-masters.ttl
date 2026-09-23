@@ -1,0 +1,57 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Celestial Masters run, 2026-09-23
+#
+# Three searches, two of them empty. The first settles a corpus question that
+# the registration of this tradition had answered wrongly, and it is the reason
+# the principal corpus in traditions/celestial-masters.ttl no longer names the
+# work it used to name. The second and third put to this corpus the two
+# questions the examinability-driven entrance of SPEC §14 puts to every corpus
+# it opens: does the transmission say how long its remedy takes, and does it
+# say what the practitioner would perceive if it had worked.
+#
+# In a file of its own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+
+pmp:CmChengfuSearch a pm:Searching ;
+    rdfs:label "Whether the Celestial Masters corpus carries the inherited-burden doctrine"@en, "Ob der Korpus der Himmelsmeister die Lehre von der ererbten Last fuehrt"@de ;
+    pm:searchedCorpus "The four Daoist works of this transmission in the Zhengtong Daozang, Hanfenlou facsimile: Zhengyi fawen tianshi jiaojie kejing (DZ 789), one juan; Lu Xiujing, Lu xiansheng daomen kelüe (DZ 1127), one juan; Chisongzi zhangli (DZ 615), six juan; Nüqing guilü (DZ 790), six juan. Whole-text search over all four, in the Chinese."@en ;
+    pm:searchedFor "The term chengfu, the doctrine that a person's misfortune is the burden received from the faults of his predecessors and passed on to his successors. The registration of this tradition named the Taiping jing among its principal works, and chengfu is that scripture's characteristic teaching; if the term stood in these four works, the registration would have had a ground. The question is not whether this transmission displaces a penalty onto ancestors — it does, and the places are entered at pmc:CmZhangxinSanfen and pmc:CmWumuJiuzu — but whether it does so under the doctrine and the word of the other movement."@en ;
+    pm:searchTerms "Whole-text search of all four works for 承負, and for 承 and 負 separately in order to catch a split writing across a page break or an interposed particle."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-23" ;
+    dcterms:date "2026-09-23" ;
+    skos:note "Not one occurrence of the compound in any of the four. The corpus displaces penalties onto forebears in its own vocabulary and with its own reckoning — nine generations at the pledge rule, seven at the petition for the five tombs — and it does so without the term under which the neighbouring movement systematised the idea. That is the evidential half of the corpus correction; the doctrinal half is that the foundational document of this transmission calls that movement's founder a heterodox way, which is entered at pmc:CmZhangjueXiedao."@en ;
+    skos:note "What the empty result does not establish. It does not show that the two transmissions had no contact; the passage at pmc:CmXijiaoHu shows the corpus reasoning about its relation to a neighbouring teaching, and the outside chronicle at pmc:CmBuxindaoDispute treats the two movements as one kind. It shows that the scripture was not this transmission's canon, which is the narrower claim the file now makes."@en .
+
+pmp:CmZhangqiSearch a pm:Searching ;
+    rdfs:label "Whether the petition carries a term within which it is answered"@en, "Ob die Eingabe eine Frist traegt, innerhalb derer sie beantwortet wird"@de ;
+    pm:searchedCorpus "Zhengyi fawen tianshi jiaojie kejing (DZ 789), one juan, and Lu Xiujing, Lu xiansheng daomen kelüe (DZ 1127), one juan, both read complete; Chisongzi zhangli (DZ 615), juan 1 and 2 read complete and juan 3 to 6 searched by term. Zhengtong Daozang, Hanfenlou facsimile, in the Chinese."@en ;
+    pm:searchedFor "A stated interval between the sending up of a petition and the effect it is sent for: a number of days after which the sick person is expected to mend, a term after which the petition is held to have failed, or any period at the end of which a verdict could be taken. The corpus counts days in quantity elsewhere — a hundred days of pollution for a death in the house, three days for entering a birth room, one day for a beast — so a term, if the transmission had one, would be stated in the same way."@en ;
+    pm:searchTerms "Term search of the three works for 三日, 七日, 百日, 日中, 期, 限, 剋期, 效, 驗, 差, 愈, 不愈, 不差, and every numeral followed by 日 in the opening two juan of the manual. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-23" ;
+    dcterms:date "2026-09-23" ;
+    skos:note "No term anywhere. The counted days that the search turns up are of two other kinds and of no other. They are pollution intervals, which say when a petition may be sent and not when it will be answered, and they are calendar prohibitions, which say on which days it may not be sent. The manual counts a hundred days for a death in the house, forty for a year's mourning, three for entering a birth room, seven before a household may enter the parish after a beast has given birth, a hundred before a newborn child may; and it prints five separate tables of forbidden days. Not one of these counts forward from the rite."@en ;
+    skos:note "What the absence sits next to is what makes it worth an exhibited gap. The failure of a petition is not merely unmeasured in this corpus, it is the trigger for the next petition: the citation of the Taizhen code at pmc:CmBuyuJizhang runs through some fourteen stages, each entered on the failure of the one before, and at no stage does it say how long one waits before deciding that a stage has failed. The officiant therefore has a complete instruction for what to do when nothing happens and no instruction for when to conclude that nothing has happened. A term would have supplied the one thing that could close the series, and the corpus that counts pollution to the day does not state one."@en ;
+    skos:note "Where a later run should look before treating this as settled. The Nüqing guilü was searched by term and not read, and juan 3 to 6 of the manual were searched and not read; the terms above would have caught an explicit interval but not a term stated by circumlocution. The registers and ordination texts of the Zhengyi fawen group, nine of which survive under separate titles, were not opened at all."@en .
+
+pmp:CmYanSearch a pm:Searching ;
+    rdfs:label "Whether the sick person is told what he would perceive when the petition has been granted"@en, "Ob dem Kranken gesagt wird, was er wahrnimmt, wenn die Eingabe gewaehrt ist"@de ;
+    pm:searchedCorpus "Zhengyi fawen tianshi jiaojie kejing (DZ 789) and Lu Xiujing, Lu xiansheng daomen kelüe (DZ 1127), both complete; Chisongzi zhangli (DZ 615), juan 1 and 2 complete, juan 3 to 6 by term. Zhengtong Daozang, Hanfenlou facsimile, in the Chinese."@en ;
+    pm:searchedFor "A sign of success announced in advance to the party the rite is performed for: something the sick person or his household would see, feel or hear by which the granting of the petition could be known apart from the recovery itself. The corpus states failure signs in quantity, so the question is whether the two sides are stated at the same strength."@en ;
+    pm:searchTerms "Term search for 驗, 效, 應, 徵, 見, 夢, 光, 香氣, 瑞, and for the collocations 有驗, 無效, 效驗. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:CmCunsiKe ;
+    pm:searchedBy "prima-materia, 2026-09-23" ;
+    dcterms:date "2026-09-23" ;
+    skos:note "Nothing for the sick person, and a detailed answer for the officiant. The search returned one sustained passage of prescribed perception and it belongs entirely to the other party: the code of visualisation at 2.23b tells the officiant what he will see on the way up with the sealed petition — the red pneuma from his own heart, the hundred li, the jewel trees, the yellow road of sun and moon, the purple clouds, the gate of heaven at one zhang eight chi. That is entered at pmc:CmCunsiKe and counted among the signs of success, separately from the failure material, as SPEC §15 requires. Nowhere is the party whose illness is at issue told anything he would perceive."@en ;
+    skos:note "The asymmetry is the finding and it runs against the grain of the transmission's own bookkeeping. This corpus is otherwise meticulous about the sick person: it fixes what he confesses, what his household pays, which days he may not be attended on, how many days a death in his house suspends the rite, and what is to be concluded if his illness returns. The one thing it does not give him is a way of telling, other than by getting better, that anything was done. The only prescribed perception in the procedure is the officiant's, it is specified down to the measure of the gate, and it is therefore a report by the one party whose competence the failure rules make the alternative explanation."@en ;
+    skos:note "The two hits on 效驗 are both negative and both belong to the failure side. At 009b of the code the outcome of an incompetent officiant is frailty and no proof of effect; at 2.22a of the manual the twenty-four titles of the body's officers are said to be all efficacious when called upon as the case requires, which is a blanket assertion and not a sign. A corpus whose only uses of the word for proof of effect are one denial and one blanket claim has not given the term any work to do."@en .
