@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -23,12 +24,16 @@
 #
 
 pmt:Hekhalot a pm:Tradition ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "Hekhalot and Merkavah literature"@en, "Hekhalot- und Merkava-Literatur"@de ;
     skos:definition "The Jewish transmission of a descent through palaces whose gatekeepers test the descender, and of an adjuration by which knowledge of the Law is obtained without study."@en ;
     skos:note "Registered at corpus named until this file was written, and moved here on the first passages actually read. What was read at the wording: Hekhalot Rabbati, chapters 26, 30 and 31 in the Smith and Scholem translation edited by Karr, against the Hebrew of the Wertheimer recension; and the opening instructions of the Sword of Moses in Gaster's translation. Not opened: the Sar Torah paragraphs that carry the numbers, Maaseh Merkavah, Hekhalot Zutarti, Shiur Qomah, Sefer ha-Razim and 3 Enoch. The reasons stand in the issues named in the harvest note of prima-materia#492."@en ;
     skos:note "The paragraph numbering of this literature is Schäfer's, from an edition that could not be reached, and the translations read carry it in brackets. Where this file gives a chapter it is the chapter of the digital witness actually read, and where it gives a paragraph the paragraph is taken from that witness and not from the edition itself. That is a weaker citation than the rest of the graph uses and it is marked rather than smoothed. See prima-materia#493."@en ;
     skos:note "How old the practice behind these texts is, and whether there is a practice behind them at all, is the open question of the field and is not decided here. The oldest manuscripts are of the thirteenth century and later, at least half a millennium after the composition anyone claims for the material. Two positions stand against each other and neither was read at the wording. See prima-materia#495."@en ;
+    skos:note "Read again on 2026-09-24, and this time the whole of the Sword of Moses and not its opening instructions. What was read: the framing part entire, and part three entire, the hundred and thirty-six numbered operations. Part two, the list of names the operations refer to, is not printed in Gaster's translation and could not be read. The reading corrected three statements this file already carried; the corrections stand at the nodes and say so."@en ;
+    skos:note "The corpus is carried as work identifiers from 2026-09-24. Two works are named: the Hekhalot Rabbati, opened at chapters 26, 30 and 31, and the Sword of Moses, now opened entire except for its name-list. The remaining five works of the principal corpus are named in the string and carried as no identifier, because none of them has been opened and a work identifier without a read place would report an opening that did not happen."@en ;
     pm:principalCorpus "Hekhalot Rabbati; Hekhalot Zutarti; the Sar Torah material; Maaseh Merkavah; Shiur Qomah; 3 Enoch; the Sword of Moses" ;
+    pm:corpusWork pmw:HekhalotRabbati, pmw:HarbaDeMoshe ;
     pm:coverageState pm:placesEntered ;
     pm:contactRoute pm:contactRouteDocumented ;
     dcterms:source "Hekhalot Rabbati, chapters 26, 30 and 31, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr, against the Hebrew of the Wertheimer recension" .
@@ -38,6 +43,7 @@ pmt:Hekhalot a pm:Tradition ;
 #
 
 pmp:YeridatMerkavah a pm:Practicing ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "The descent to the Merkavah"@en, "Der Abstieg zur Merkava"@de ;
     skos:definition "The passage through the palaces, called a descent although the traveller goes up. The transmission does not explain the word anywhere in the passages read."@en ;
     skos:altLabel "yored merkavah"@en, "yordei merkavah"@en ;
@@ -47,6 +53,7 @@ pmp:YeridatMerkavah a pm:Practicing ;
     dcterms:source "Hekhalot Rabbati, chapter 26, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
 
 pmc:HekhalotFitness a pm:Conceptualizing ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "Fitness to descend to the Merkavah"@en, "Die Eignung zum Abstieg zur Merkava"@de ;
     skos:definition "The property the transmission holds to be decidable and to be decided at a particular place. The hashmal is said to divide, among those who descend, between those who were fit to descend and those who were not."@en ;
     skos:altLabel "hashmal"@en ;
@@ -54,6 +61,7 @@ pmc:HekhalotFitness a pm:Conceptualizing ;
     dcterms:source "Hekhalot Rabbati, chapter 26, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
 
 pmc:SixthPalaceWaterTest a pm:Testing ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "The water that is not there, at the gate of the sixth palace"@en, "Das Wasser, das keines ist, am Tor des sechsten Palastes"@de ;
     skos:definition "A protocol the transmission states for itself, complete in every part. The doorkeepers of the sixth palace place upon the descender a thousand thousands of waves of water, and there is not in that place even a single drop. The test is what he does next: the fault is not a wrong answer but the question. If he says what is the nature of this water, they run after him and stone him, saying that he is of the seed of them that kissed the calf and is unfit to see the King and his throne in his beauty; a voice goes out from the seventh heaven confirming the sentence; and he does not move from the spot before they place on him a thousand thousands of pieces of iron."@en ;
     skos:note "Silence is the pass and the question is the failure, which inverts the shape every other examination in this graph has. It also makes the test unusually cheap to administer and impossible to prepare for by learning an answer, since there is none."@en ;
@@ -66,6 +74,7 @@ pmc:SixthPalaceWaterTest a pm:Testing ;
     dcterms:source "Hekhalot Rabbati, chapter 26, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
 
 pmc:HekhalotDescentPresupposesFitness a pm:Presupposing ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "Passing the sixth palace presupposes fitness to descend"@en, "Das Bestehen am sechsten Palast setzt die Eignung zum Abstieg voraus"@de ;
     pm:dependentStep pmp:YeridatMerkavah ;
     pm:priorStep pmc:HekhalotFitness ;
@@ -77,6 +86,7 @@ pmc:HekhalotDescentPresupposesFitness a pm:Presupposing ;
     dcterms:source "Hekhalot Rabbati, chapter 26, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
 
 pmc:WaterQuestionCaution a pm:Cautioning ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "Do not ask about the water"@en, "Frage nicht nach dem Wasser"@de ;
     skos:definition "A caution whose object is a speech act and not a deed. What the descender must not do at the sixth palace is not touch, not turn back and not doubt, but ask; the transmission attaches the whole penalty to the question about the nature of the water."@en ;
     skos:note "A rule against asking is the form a tradition takes when the thing to be hidden is that there is nothing there. This is not offered as a reading of the passage's intent, which the graph cannot establish, but as the shape the rule has: the prohibition falls exactly on the act that would reveal the absence."@en ;
@@ -90,6 +100,7 @@ pmc:WaterQuestionCaution a pm:Cautioning ;
 #
 
 pmc:SarTorah a pm:Conceptualizing ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "Sar ha-Torah, the Prince of the Torah"@en, "Sar ha-Tora, der Fürst der Tora"@de ;
     skos:definition "The angelic power under whose name the Law is said to be obtained. The transmission gives its own reason for needing him: Israel's understanding was obscured by the exile and the words of the Law became hard as brass and iron, and what the world lacks is this secret and this mystery which is not in it. The remedy is offered as a means of loftiness by which the people are to raise themselves."@en ;
     skos:altLabel "Sar Torah"@en ;
@@ -97,6 +108,7 @@ pmc:SarTorah a pm:Conceptualizing ;
     dcterms:source "Hekhalot Rabbati, chapter 31, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
 
 pmc:TorahWithoutToil a pm:Conceptualizing ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "Learning the Law without toil"@en, "Das Erlernen des Gesetzes ohne Mühe"@de ;
     skos:definition "The capacity claimed. The transmission puts it as a contrast and not as a degree: the voice of the academies sounds, and not with toil and not with weariness do they learn, but with the name of this seal. What is promised beside it is public standing of a specific kind - to seat academies, to expound what is prohibited and what is permitted, to declare the impure impure and the pure pure, to determine the months and the intercalation of years, to appoint judges and to anoint patriarchs."@en ;
     skos:note "Set against it in the same passage is what the ordinary student must do without it, and the transmission puts that in the students' own prayer: may that which we have read remain in our possession, may that which we have studied remain in our possession. The claim is therefore not that learning is easier but that a different faculty is being offered in place of memory."@en ;
@@ -104,6 +116,7 @@ pmc:TorahWithoutToil a pm:Conceptualizing ;
     dcterms:source "Hekhalot Rabbati, chapter 30, trans. Morton Smith, corrected by Gershom Scholem, ed. Don Karr" .
 
 pmc:SarTorahExamination a pm:Testing ;
+    pm:fromWork pmw:HekhalotRabbati ;
     rdfs:label "The Law obtained without study"@en, "Das ohne Studium erlangte Gesetz"@de ;
     skos:definition "A protocol against the claim that the seal replaces study. The claim is unusually well placed for examination and the transmission itself supplies the reason: what it promises is not an inner state but a public performance before witnesses who can judge it. A man who sits in an academy and expounds what is forbidden and permitted either holds up under that or does not, and the people around him are competent to say which."@en ;
     skos:note "This is the rarest thing in the collection: a claim about an acquired capacity whose success condition the tradition itself locates outside the practitioner, in a room full of people qualified to contradict him. Most capacities in this graph are reported by the one who has them."@en ;
@@ -120,15 +133,18 @@ pmc:SarTorahExamination a pm:Testing ;
 #
 
 pmp:HarbaDeMoshe a pm:Practicing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
     rdfs:label "The Sword of Moses"@en, "Das Schwert des Mose"@de ;
-    skos:definition "An operative handbook whose opening instructions state the preparation in numbers. The user must free himself three days beforehand from accidental pollution and from everything unclean; eat and drink once every evening; take his bread from a pure man or wash his hands first; drink only water; bathe once on the first day and no more; pray three times daily; and in the first three hours of the morning mention the hundred sacred names and the mighty ones, whose sum is given as three hundred and four. He is not to approach a woman during the preparation."@en ;
+    skos:definition "An operative handbook whose opening instructions state the preparation in numbers. The user must free himself three days beforehand from accidental pollution and from everything unclean; eat and drink once every evening; take his bread from a pure man or wash his hands first in salt, a clause the translator marks as uncertain; drink only water; bathe once on the first day and no more; and pray three times daily, reciting a named blessing after each prayer. He carries during the three days a piece of leather written with ink."@en ;
     skos:altLabel "Harba de-Moshe"@en, "Sword of Moses"@en ;
-    skos:note "Three days, once a day, water only, one bath, three prayers, a hundred names summing to three hundred and four. A preparation given entirely in counts is checkable in a way a preparation given in dispositions is not, and this one has no clause about the state of mind of the user at all."@en ;
+    skos:note "Three days, once a day, water only, one bath, three prayers. A preparation given entirely in counts is checkable in a way a preparation given in dispositions is not, and this one has no clause about the state of mind of the user at all."@en ;
+    skos:note "Corrected on 2026-09-24 against the whole work. Two clauses stood here that do not belong to the preparation. The hundred sacred names summing to three hundred and four stand in the appendix Gaster prints after the work, which is a different recension from a different manuscript, and not in these instructions. And not approaching a woman is part of the description of the men to whom the messenger was sent, not part of what the user is told to do; it stands in the charge God gives the messenger, some paragraphs later. Both are removed. The leather written with ink, which does belong here, was missing and is added."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Hekhalot ;
     dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the opening instructions" .
 
 pmc:HarbaDeMosheSecrecy a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
     rdfs:label "The secrecy the Sword requires"@en, "Die Verschwiegenheit, die das Schwert verlangt"@de ;
     skos:definition "A condition of a different kind from the counts. No one is to know that the user intends to use the Sword, and it is not to be communicated except to the chaste and the pure, because in it are the mysteries of the universe and they are practised only in secret."@en ;
     skos:note "The secrecy clause is the gate this project exists to remove, stated by the transmission in its own words, and it is worth holding as a node rather than as background: it names the criterion of admission, and the criterion is moral rather than lineal."@en ;
@@ -136,21 +152,1181 @@ pmc:HarbaDeMosheSecrecy a pm:Conceptualizing ;
     dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the opening instructions" .
 
 pmc:HarbaDeMosheCaution a pm:Cautioning ;
+    pm:fromWork pmw:HarbaDeMoshe ;
     rdfs:label "What comes to the man who does not act accordingly"@en, "Was den trifft, der sich nicht daran hält"@de ;
-    skos:definition "The penalty the handbook states for a user who does not keep the preparation. If he will not act accordingly, the angels of wrath, ire, fury and rage will come near him to minister to him, and they will lord over him, and strangle him, and plague him all over. Four leaders are named for the four."@en ;
+    skos:definition "The penalty the handbook states, and the act it is stated for. Upon every amulet written from this Sword the user must first write a named formula, that the Sword be effectual to do his services and that the powers be delivered over to him as they were to Moses. If he will not act accordingly, the angels of wrath, ire, fury and rage will come near him to minister to him, will lord over him, strangle him and plague him all over, and will make his body like unto a dunghill. Four leaders are named: Mzpopiasaiel over the angels of wrath, Zkzoromtiel over those of ire, Kso'ppghiel over those of fury, N'mosnikttiel over those of rage, and the angels under them are numberless."@en ;
+    skos:note "Corrected on 2026-09-24 against the whole work. This node said the penalty was for not keeping the preparation. It is not. The sentence stands at the very end of part three, immediately after the instruction about what to write first on an amulet, and the words not act accordingly point back at that instruction and not at the three days. The difference is the whole value of the node: what the work sanctions is a defect of form in a written object, and it sanctions no breach of purity, no misuse, and no failure of any of its hundred and thirty-six operations."@en ;
     skos:note "The harm named is bodily and immediate and falls on the practitioner himself, which distinguishes this caution from the Hawaiian case in traditions/hawaiian.ttl, where the ill-luck of a fault falls on the party the chant honours. Where the sufferer is the one who could report the fault, the tradition can in principle be contradicted from inside."@en ;
-    pm:cautionsAbout pmp:HarbaDeMoshe ;
+    skos:note "It is a stated consequence and not a condition of failure. What is threatened is an injury to the operator; nothing here says the amulet would not work. The work ends without ever saying what an unsuccessful use of it would look like, and the search at pmp:HarbaDeMosheDefectusSearch establishes that for all hundred and thirty-six operations."@en ;
+    pm:cautionsAbout pmp:HarbaDeMoshe, pmc:HarbaDeMosheGeneralisClausula ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Hekhalot ;
-    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the opening instructions" .
+    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the close of part III after no. 136" .
 
 pmc:HarbaDeMosheUsePresupposesPreparation a pm:Presupposing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
     rdfs:label "Using the Sword presupposes the three days' preparation"@en, "Der Gebrauch des Schwertes setzt die dreitägige Vorbereitung voraus"@de ;
     pm:dependentStep pmp:HarbaDeMoshe ;
     pm:priorStep pmc:HarbaDeMosheSecrecy ;
-    pm:prerequisiteStrength pm:statedNecessity ;
-    pm:consequenceOfSkipping "If he will not act accordingly the angels of wrath, ire, fury and rage come near him to minister to him, and they lord over him, and strangle him, and plague him all over. The consequence is stated for the whole of the preparation and not for a single part of it." ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Hekhalot ;
-    skos:note "The prior step named here is the secrecy and purity condition rather than one of the counts, because the handbook binds them together in a single sentence and attaches the penalty to the whole. Which of the counts, taken alone, the penalty would follow is not stated and is not inferred."@en ;
+    skos:note "The prior step named here is the secrecy and purity condition rather than one of the counts, because the handbook binds them together in a single sentence."@en ;
+    skos:note "Corrected on 2026-09-24 and taken down from stated necessity to prescribed order. The consequence that stood here — the angels of wrath and the rest — was read off the sentence at the close of part three, and that sentence is about the formula at the head of an amulet and not about the preparation; see pmc:HarbaDeMosheCaution. With the consequence removed the strength cannot be held. The handbook does say, at the end of the framing part, that the user is not to touch this Sword before he has done all these things, which is an imperative and not a consequence."@en ;
+    skos:note "What is left standing after the correction is a finding and not a loss. A work that fences its own handling with three days of purity, a secrecy rule and a prohibition on touching states no penalty for any of them, and states one for a defect of form on an amulet. The care is all on the side of the operator's condition and none on the side of what he does with it."@en ;
     dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the opening instructions" .
+
+#
+# The works of this corpus as identifiers
+#
+# Added on 2026-09-24 with the full reading of the second work. The file was
+# not migrated before; AGENTS.md requires the migration of anyone who touches
+# a tradition file, and it is the cheap half of this change.
+#
+
+pmw:HekhalotRabbati a dcterms:BibliographicResource ;
+    rdfs:label "Hekhalot Rabbati"@en, "Hekhalot Rabbati"@de ;
+    skos:note "Opened at chapters 26, 30 and 31 in the translation of Morton Smith, corrected by Gershom Scholem and edited by Don Karr, read against the Hebrew of the Wertheimer recension. The paragraph numbering of this literature is Schäfer's, from an edition that could not be reached; see prima-materia#493. The Sar Torah paragraphs that carry the numbers were not opened."@en .
+
+pmw:HarbaDeMoshe a dcterms:BibliographicResource ;
+    rdfs:label "Ḥarba de-Moshe, the Sword of Moses"@en, "Ḥarba de-Moshe, das Schwert des Mose"@de ;
+    skos:note "Opened on 2026-09-24 in the English of Moses Gaster, London 1896, made from a single manuscript of his own collection, now British Library Or. 10678. The work has three parts: a framing part with the heavenly hierarchy, the revelation to Moses and the conditions of use; the Sword itself, a list of names in no identifiable language; and a part in Aramaic with the operations that refer back to the names. The first and the third were read entire. The second is not printed in the translation, only described in square brackets, and cannot be read from this edition."@en ;
+    skos:note "The division of part three into a hundred and thirty-six numbered items is Gaster's, made so that the operations could be set beside the corresponding stretches of the name-list, and it is his numbering that the later literature cites. The source strings of the operations below therefore give that number and say whose it is. It is the locus and not a second identity scheme in the sense SPEC §11 forbids, and it is the one thing two independent runs would both produce."@en ;
+    skos:note "Two defects of the copy read, both properties of the copy and not of the work. Its English part is a transcription rather than a scan of the print and replaces every mystical name with a bare X, which Gaster set in Hebrew letters inside the English sentence; and it carries no page numbers. A reader who needs pages needs the print: Gaster, Studies and Texts, vol. 1 (London: Maggs Bros., 1925-28), pp. 288-337, where the translation begins at p. 311."@en ;
+    skos:note "The edition has a critical apparatus in no sense of the word. Gaster prints one manuscript, records no variants, and nowhere states the grounds of his readings; at several points his own translation carries a question mark where he could not read the word. A critical Hebrew edition on a fuller manuscript exists — Yuval Harari, Jerusalem 1997 — and was not obtainable in this run. Where Gaster marks a word illegible the node below says so."@en .
+
+#
+# The frame of the Sword, read on 2026-09-24
+#
+
+pmc:HarbaDeMosheNuntiusNeminemInvenit a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "The messenger looked for a man fit to receive it and found none"@en, "Der Bote suchte einen Menschen, der es empfangen durfte, und fand keinen"@de ;
+    skos:definition "God commands the swift messenger to make the Sword known to men who are pious, good, pure, righteous and faithful, whose heart is not divided and in whose mouth is no duplicity, who do not lie with their tongues nor deceive with their lips, who do not grasp with their hands nor are lustful with their eyes, who do not run after evil, keep aloof from every uncleanness, depart from every defilement, keep themselves holy from contamination and do not approach woman. The messenger goes down, asks where such a man is, and says in the work's own words that he thought in his heart there was no man who would do all this, and found none, and it was heavy unto him. He hands the Sword over only because God then binds him to it by an oath."@en ;
+    skos:note "The condition and the admission that nobody meets it stand in the same passage, three sentences apart, and the work goes on to deliver the Sword anyway. That is not a reader's objection smuggled into the text; it is the text's own account of how the transmission began."@en ;
+    skos:note "What it does to the rest of the file. Every operation below is offered to a reader whom the work has already said it could not find, and every failure of an operation therefore has an account waiting for it that the work supplied before the first recipe. No node states that account, because the work does not connect the two; the connection would be a reading and is left to whoever makes it."@en ;
+    skos:note "The clause about not approaching woman belongs here, in the charge to the messenger, and not in the preparation at pmp:HarbaDeMoshe, where this file carried it until 2026-09-24."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the framing part, the charge to the swift messenger" .
+
+pmc:HarbaDeMosheBenedictioAnteOrationem a pm:Cautioning ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Say the blessing before praying, lest they be swept away by the fire"@en, "Sprich den Segen vor dem Gebet, damit sie nicht vom Feuer hinweggerafft werden"@de ;
+    skos:definition "The angels charge Moses to command the generations after him to say a named blessing before their prayer, lest they be swept away by the fire. The blessing itself is given in the text."@en ;
+    skos:note "The second of the two stated consequences in the whole work, and the only one attached to the framing devotions. The danger is named and the remedy is named; what is not named is any way of telling, before or afterwards, whether it was incurred."@en ;
+    pm:cautionsAbout pmp:HarbaDeMoshe ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), the framing part, the letters communicated to Moses" .
+
+pmc:HarbaDeMosheGeneralisClausula a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "The clause that covers everything the list did not name"@en, "Die Klausel, die alles deckt, was die Liste nicht genannt hat"@de ;
+    skos:definition "The hundred and thirty-sixth and last operation, which is not an operation but a rule about the other hundred and thirty-five: for every other thing that has not been mentioned, say this section and read on to the end of the Sword."@en ;
+    skos:note "Entered separately from the operation of the same number because of what it is. A list that ends by covering everything it left out cannot be exhausted, and no reader can ever establish that the work does not provide for a case. It is also the clause on which the operation at number 124 depends, which conjures a heavenly prince by reading from here to the end."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, ed. and trans. Moses Gaster (London: David Nutt, 1896), part III, no. 136 in the editor's numbering" .
+
+#
+# The hundred and thirty-six operations of part three
+#
+# In the order of the work. Nothing is left out and nothing is run together.
+# SPEC §15 is explicit and says it against a run that did otherwise: a recipe
+# is a capacity even when it carries nothing else, and collapsing a list of
+# them into one node saves the work of entering them at the cost of ever being
+# able to count how many claims of a corpus are testable. Here the count is the
+# finding: a hundred and thirty-six operations, and not one of them states a
+# condition under which it would have failed.
+#
+
+pmc:HarbaDeMoshe001 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To unite a woman with a man, drive off spirits, stop a ship, free a prisoner"@en, "Eine Frau mit einem Mann vereinen, Geister vertreiben, ein Schiff anhalten, einen Gefangenen befreien"@de ;
+    skos:definition "Written on a red bowl at full moon. The one recipe the text gives several effects at once: to unite a woman and a man so that they are as one, to destroy winds, demons and satans, to stop a ship, to free a man from prison, and, it adds, for every other thing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 1 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe002 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To break mountains, pass dryshod, enter fire, set up and depose kings"@en, "Berge brechen, trockenen Fußes gehen, ins Feuer treten, Könige einsetzen und absetzen"@de ;
+    skos:definition "Written on the saucer of a cup with the root of the genipa tree in it. Claimed for breaking mountains and hills, passing dryshod through water, entering fire, appointing and deposing kings, blinding eyes, stopping mouths, speaking with the dead, killing the living, bringing down and sending up, conjuring angels to obey, and seeing all the mysteries of the world."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 2 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe003 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against a spirit that moves in the body"@en, "Gegen einen Geist, der sich im Leib bewegt"@de ;
+    skos:definition "Written on a plate."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 3 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe004 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against a spirit that burns"@en, "Gegen einen Geist, der brennt"@de ;
+    skos:definition "Written out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 4 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe005 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against a spirit in the whole body"@en, "Gegen einen Geist im ganzen Leib"@de ;
+    skos:definition "Written out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 5 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe006 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against a demon"@en, "Gegen einen Dämon"@de ;
+    skos:definition "Written out, against a shidda."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 6 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe007 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against shingles"@en, "Gegen die Gürtelrose"@de ;
+    skos:definition "Written out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 7 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe008 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against quinsy"@en, "Gegen die Bräune"@de ;
+    skos:definition "Said over oil of roses, which is then put over the face."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 8 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe009 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the ear"@en, "Gegen Ohrenschmerz"@de ;
+    skos:definition "Whispered into the painful ear."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 9 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe010 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For aches in the eye"@en, "Gegen Augenschmerz"@de ;
+    skos:definition "Said over water three mornings running; the eye is washed with it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 10 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe011 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For cataract"@en, "Gegen den Star"@de ;
+    skos:definition "Said over oil of sesame; the eye is anointed with it for seven mornings."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 11 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe012 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For grit in the eye"@en, "Gegen Sand im Auge"@de ;
+    skos:definition "Said over kohl; the eye is filled with it for three mornings."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 12 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe013 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For blood running from the head"@en, "Gegen Blut, das aus dem Kopf läuft"@de ;
+    skos:definition "Whispered over the head early for three days, at the washing of the hands before rising."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 13 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe014 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For paralysis"@en, "Gegen die Lähmung"@de ;
+    skos:definition "Said seven times over a vessel of water and seven times over sesame oil, with a formula that it depart from the named person; the water is thrown over his head, he is anointed with the oil, three days running, and an amulet of the words is hung round his neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 14 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe015 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For half-sided headache and bad ringing in the ear"@en, "Gegen halbseitigen Kopfschmerz und schlimmes Ohrenklingen"@de ;
+    skos:definition "Written and hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 15 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe016 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For bad deafening of the ear"@en, "Gegen schlimme Ertaubung des Ohres"@de ;
+    skos:definition "Written and hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 16 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe017 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the ear, said backwards"@en, "Gegen Ohrenschmerz, rückwärts gesprochen"@de ;
+    skos:definition "Said into the left ear backwards."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 17 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe018 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For deafness"@en, "Gegen Taubheit"@de ;
+    skos:definition "Said over hemp water while it is mixed with oil, and put into the ear once it has dissolved or warmed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 18 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe019 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For scabs, ulcers, itches and mange"@en, "Gegen Schorf, Geschwüre, Krätze und Räude"@de ;
+    skos:definition "Said over olive oil; the anointing is done with the left hand."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 19 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe020 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For jaundice"@en, "Gegen die Gelbsucht"@de ;
+    skos:definition "Said over water in which radish has been soaked, which is then drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 20 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe021 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the nose and the spirit in the nose"@en, "Gegen Nasenschmerz und den Geist in der Nase"@de ;
+    skos:definition "Said over oil and put into the nostrils."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 21 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe022 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the stomach and bowels"@en, "Gegen Magen- und Darmschmerz"@de ;
+    skos:definition "Said over water, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 22 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe023 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For hot fever"@en, "Gegen hitziges Fieber"@de ;
+    skos:definition "Said over water in which rose-laurels are soaked; the patient bathes in it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 23 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe024 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For tumours"@en, "Gegen Geschwülste"@de ;
+    skos:definition "Said once over them and once over olive oil; they are anointed for three days and no water may come near them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 24 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe025 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For an evil occurrence"@en, "Gegen einen bösen Vorfall"@de ;
+    skos:definition "Said over seven white cups of water drawn from the river, which are thrown over the head."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 25 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe026 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For ulcer of the throat"@en, "Gegen Halsgeschwür"@de ;
+    skos:definition "The operator spits before him and says the words over the patient's mouth and over a cup of strong drink, which the patient drinks; then he watches what comes out of the mouth."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 26 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe027 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For snakebite and the bite of poisonous vermin"@en, "Gegen Schlangenbiss und den Biss giftigen Gewürms"@de ;
+    skos:definition "Said over the place of the bite and drunk; the same for any hurt by a creeping thing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 27 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe028 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a woman who has seen blood before her time"@en, "Für eine Frau, die vor der Zeit Blut gesehen hat"@de ;
+    skos:definition "Said over an ostrich egg, which is burnt; she is fumigated with it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 28 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe029 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the mouth"@en, "Gegen Mundschmerz"@de ;
+    skos:definition "Said over risen flour, which is laid on the mouth."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 29 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe030 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For croup and pains in the shoulder"@en, "Gegen Krupp und Schulterschmerz"@de ;
+    skos:definition "Said over wine, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 30 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe031 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a painful nerve"@en, "Gegen einen schmerzenden Nerv"@de ;
+    skos:definition "Written on a scroll; the words are also said over olive oil, some of it is rubbed on the scroll, the scroll smeared over the painful spot, and the amulet hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 31 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe032 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For the stone"@en, "Gegen den Stein"@de ;
+    skos:definition "Said over a cup of wine, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 32 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe033 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For haemorrhoids, with tow and salt"@en, "Gegen Hämorrhoiden, mit Werg und Salz"@de ;
+    skos:definition "Said over tow salted and mixed with oil, on which the patient sits."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 33 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe034 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For swelling and venereal disease"@en, "Gegen Schwellung und Geschlechtskrankheit"@de ;
+    skos:definition "Said over water in which radishes are soaked, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 34 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe035 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For sprains"@en, "Gegen Verstauchungen"@de ;
+    skos:definition "Either written on a plate laid on the place, whereupon all around it heals, or said over a ball of wool dipped in oil and laid on the sprain."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 35 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe036 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a wound from iron, that it should not fester"@en, "Gegen eine Eisenwunde, dass sie nicht eitere"@de ;
+    skos:definition "Said over white naphtha, which is rubbed over the place of the blow."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 36 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe037 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For cramps and pains of the heart"@en, "Gegen Krämpfe und Herzschmerz"@de ;
+    skos:definition "Said over spinach and oil, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 37 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe038 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For the gall and the bowels"@en, "Gegen Galle und Gedärm"@de ;
+    skos:definition "Said over water in which raisins have been soaked, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 38 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe039 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a spoiled liver"@en, "Gegen eine verdorbene Leber"@de ;
+    skos:definition "Said over a sixth measure of water-lentils, swallowed slowly."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 39 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe040 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For the milt"@en, "Gegen die Milz"@de ;
+    skos:definition "Said over wine-lees and drunk, repeated for three days."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 40 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe041 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For the spirit that rests on the womb"@en, "Gegen den Geist, der auf dem Mutterleib ruht"@de ;
+    skos:definition "Said over camphor oil, applied with a ball of wool."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 41 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe042 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a woman who miscarries"@en, "Für eine Frau, die Fehlgeburten hat"@de ;
+    skos:definition "Said over a cup of wine, strong drink or water, drunk for seven days; and if she does see blood and repeats it over a cup of wine, the child is said to live."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 42 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe043 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For baldness"@en, "Gegen die Kahlheit"@de ;
+    skos:definition "Said over nut oil, with which the head is anointed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 43 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe044 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To conjure a spirit that it reveal what is asked"@en, "Einen Geist beschwören, dass er offenbare, was gefragt wird"@de ;
+    skos:definition "Written on a laurel leaf with an adjuration of the prince named Abraksas that he come and reveal all that is asked and not tarry; the one bound is then said to come down and reveal himself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 44 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe045 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To strip a rich man of his riches"@en, "Einen Reichen seines Reichtums berauben"@de ;
+    skos:definition "Said over the dust of an ant-hill, which is thrown into his face."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 45 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe046 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To heal leprosy"@en, "Den Aussatz heilen"@de ;
+    skos:definition "The patient is taken to the riverside and the leprosy adjured to depart from him; he dips seven times in the river, and on coming out an amulet of the adjuration is hung round his neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 46 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe047 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For diarrhoea"@en, "Gegen den Durchfall"@de ;
+    skos:definition "Written on a red copper plate and hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 47 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe048 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "That the rain should not fall on thy garden"@en, "Dass der Regen nicht auf deinen Garten falle"@de ;
+    skos:definition "Written out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 48 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe049 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To see the sun and have it answer thee"@en, "Die Sonne sehen und von ihr Antwort erhalten"@de ;
+    skos:definition "Taken from a male tree, said standing before the sun; he will appear in the form of a man dressed in white, answer everything asked, and even bring a woman after the operator. The text is defective at this place and Gaster marks it so."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 49 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe050 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To enter a furnace"@en, "In einen Ofen treten"@de ;
+    skos:definition "Written on a silver plate and hung upon the haunch."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 50 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe051 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "That a king or ruler follow thee"@en, "Dass ein König oder Herrscher dir folge"@de ;
+    skos:definition "Said over a basin of water holding the roots of genipa, purslane and birthwort, set on fiery coals in a white earthen vessel with olive leaves thrown on them; whatever is decreed, he is said to bring, and a woman may be commanded as well."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 51 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe052 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To overawe them"@en, "Sie einschüchtern"@de ;
+    skos:definition "Said over water from the fountain, which is thrown into their faces."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 52 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe053 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To loosen any charm, and to free a man from prison"@en, "Jeden Zauber lösen und einen Gefangenen befreien"@de ;
+    skos:definition "Said over water thrown over him and written as an amulet hung round his neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 53 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe054 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To catch fish"@en, "Fische fangen"@de ;
+    skos:definition "Said over olive leaves in a white potsherd at the riverside."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 54 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe055 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "That a woman follow thee"@en, "Dass eine Frau dir folge"@de ;
+    skos:definition "Her name written with the operator's own blood on a newly laid egg, and the words said towards her."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 55 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe056 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "That a man follow thee"@en, "Dass ein Mann dir folge"@de ;
+    skos:definition "A new potsherd dipped in black myrrh, the words pronounced over his name, and the operator walks on without looking back."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 56 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe057 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a tree that bears no fruit"@en, "Für einen Baum, der keine Frucht trägt"@de ;
+    skos:definition "Written on a new potsherd buried under the root of the barren tree; all the trees are then watered, and those that bear nothing with them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 57 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe058 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For blight in the fruit"@en, "Gegen Befall in der Frucht"@de ;
+    skos:definition "Written on a new potsherd buried in the watering place; the words are also said over water, ashes and salt, and the ground watered with it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 58 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe059 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a suckling babe"@en, "Für einen Säugling"@de ;
+    skos:definition "Written on an onyx slab and whispered into its ears three times with spitting after each whisper; then said seventy times over a cupful of water given the child to drink."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 59 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe060 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For one bitten by a rabid dog"@en, "Für den von einem tollen Hund Gebissenen"@de ;
+    skos:definition "Written on the halter of an ass which is then let go; the words are repeated over sesame oil for the patient to anoint himself, he puts on new clothes, and the halter is hung round him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 60 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe061 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For fever and small fever"@en, "Gegen Fieber und kleines Fieber"@de ;
+    skos:definition "Written on the skin of the brains of a ram or a goat and hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 61 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe062 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If anyone loses his way"@en, "Wenn einer seinen Weg verliert"@de ;
+    skos:definition "Said over the four corners of his belt."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 62 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe063 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To ask anything of thy neighbour"@en, "Etwas von deinem Nächsten erbitten"@de ;
+    skos:definition "Said over oil of sesame or over one of two further substances the text leaves illegible."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 63 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe064 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "That a woman follow thee, written in blood on the doors"@en, "Dass eine Frau dir folge, mit Blut auf die Türen geschrieben"@de ;
+    skos:definition "The operator's name and hers written with his blood on her door and on his own, and the words repeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 64 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe065 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To know whether thy journey will be lucky"@en, "Wissen, ob die Reise glücklich sein wird"@de ;
+    skos:definition "A field lettuce with open leaves is held before the sun and the words said; if the leaves close and shut, he is not to go, and if they stay as they are he proceeds and is said to prosper."@en ;
+    skos:note "One of two entries in the whole list with two outcomes. The leaves close and he is not to go; they stay open and he proceeds. It is a question put to the world and not a test of the operation: on either outcome the operation is held to have worked, and there is no result that would tell against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 65 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe066 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To deliver a man from prison"@en, "Einen Mann aus dem Gefängnis holen"@de ;
+    skos:definition "Said once to him, once to the sun, once to the prison house."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 66 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe067 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To conquer"@en, "Siegen"@de ;
+    skos:definition "Said seven times over dust from the operator's house in the road of the town; then dust is taken from the road, the same done, and thrown into his house."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 67 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe068 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To kill a man"@en, "Einen Menschen töten"@de ;
+    skos:definition "Mud from the two sides of the river is formed into a figure and the person's name written on it; seven branches are taken from seven strong palm trees, a bow made of reed with a string of horse sinew, the image placed in a hollow, and the words said at each shot."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 68 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe069 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To send plagues"@en, "Plagen senden"@de ;
+    skos:definition "Parings from seven men are put into a new potsherd, the words said at the cemetery, the potsherd buried where no horse treads; afterwards the dust from it is blown into his face or on his lintel."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 69 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe070 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To send dreams to thy neighbours"@en, "Deinen Nächsten Träume senden"@de ;
+    skos:definition "Written on a silver plate put into the mouth of a cock, which is killed when it has gone down; the plate is taken out, put between the bird's legs and buried at the end of a wall, and the operator sets his foot on the spot and says that a swift messenger go and torment the named man in his dreams until he fulfils the operator's wish."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 70 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe071 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If a snake follows thee"@en, "Wenn eine Schlange dir folgt"@de ;
+    skos:definition "Said, and it is claimed to dry up."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 71 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe072 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To stop a boat in the sea"@en, "Ein Boot auf dem Meer anhalten"@de ;
+    skos:definition "Said over a potsherd or a rounded flintstone thrown against it into the sea."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 72 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe073 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To loosen the boat from the charm"@en, "Das Boot vom Zauber lösen"@de ;
+    skos:definition "Said over dust or a clod thrown into the water; as it dissolves the boat is free to go."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 73 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe074 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To keep an oven, furnace or pot from being spoiled"@en, "Ofen, Esse oder Topf vor dem Verderben bewahren"@de ;
+    skos:definition "Said over dust thrown over them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 74 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe075 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make them hot"@en, "Sie heiß machen"@de ;
+    skos:definition "The operator spits in front of them and says the words, and they are said to boil."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 75 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe076 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To pass dryshod through the sea"@en, "Trockenen Fußes durch das Meer gehen"@de ;
+    skos:definition "Said upon the four corners of the head-dress; one corner is taken in the hand and the other goes before him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 76 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe077 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To curse anyone"@en, "Jemanden verfluchen"@de ;
+    skos:definition "Said inside the Eighteen Benedictions."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 77 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe078 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To speak with the dead"@en, "Mit den Toten sprechen"@de ;
+    skos:definition "Whispered into the left ear of the dead and thrown into their holes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 78 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe079 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To kill a lion, a bear or an adder"@en, "Einen Löwen, einen Bären oder eine Natter töten"@de ;
+    skos:definition "Said over dust taken from under the right foot and thrown into their faces."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 79 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe080 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To catch them"@en, "Sie fangen"@de ;
+    skos:definition "Said over dust taken from under the left foot and thrown into their faces."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 80 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe081 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To open a door"@en, "Eine Tür öffnen"@de ;
+    skos:definition "The root of lotos reed placed under the tongue and the words said against the door."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 81 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe082 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To kill an ox or another beast"@en, "Einen Ochsen oder ein anderes Tier töten"@de ;
+    skos:definition "Said into its ear."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 82 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe083 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To inflame a man's heart"@en, "Das Herz eines Menschen entflammen"@de ;
+    skos:definition "Said over a piece of raw meat given him to eat."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 83 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe084 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make a fool of a man"@en, "Einen zum Narren machen"@de ;
+    skos:definition "Said over an egg placed in his hands."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 84 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe085 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To destroy thy neighbour's house"@en, "Das Haus deines Nächsten zerstören"@de ;
+    skos:definition "Said over a new potsherd thrown into his house."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 85 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe086 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To expose thy neighbour"@en, "Deinen Nächsten bloßstellen"@de ;
+    skos:definition "Said over an oil the text leaves illegible and smeared at the bottom of his jug."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 86 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe087 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make thy neighbour disliked"@en, "Deinen Nächsten verhasst machen"@de ;
+    skos:definition "Said over blood from phlebotomy thrown upon his lintel."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 87 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe088 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make a woman miscarry"@en, "Eine Frau eine Fehlgeburt erleiden lassen"@de ;
+    skos:definition "Said over a cup of water thrown over her lintel."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 88 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe089 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make a man ill"@en, "Einen Menschen krank machen"@de ;
+    skos:definition "Said over olive oil with which he is made to anoint himself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 89 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe090 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To know whether a sick man will live or die"@en, "Wissen, ob ein Kranker leben oder sterben wird"@de ;
+    skos:definition "Said before him: if he turns his face towards the operator he will live, if away, he will die."@en ;
+    skos:note "The second of the two entries with two outcomes, and it has the same shape as the lettuce at number 65. He turns his face towards the operator and lives, or away and dies. Nothing here would show the reading to have been wrong, because the reading is whatever happens next."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 90 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe091 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To catch a lion by the ear"@en, "Einen Löwen am Ohr fangen"@de ;
+    skos:definition "Said with seven knots made in the fringes of the girdle, the words repeated at each knot."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 91 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe092 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make thy renown go through the world"@en, "Deinen Ruf durch die Welt gehen lassen"@de ;
+    skos:definition "Written as an amulet and buried in the operator's house."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 92 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe093 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To shorten the way"@en, "Den Weg verkürzen"@de ;
+    skos:definition "Said over a single lotos reed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 93 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe094 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To cure haemorrhoids with burnt date kernels"@en, "Hämorrhoiden mit verbrannten Dattelkernen heilen"@de ;
+    skos:definition "Date kernels are burnt in fire, the words said, the ash mixed with olive oil and placed as an amulet over the place."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 94 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe095 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For every spirit"@en, "Gegen jeden Geist"@de ;
+    skos:definition "Written upon a bowl hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 95 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe096 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For subtle poison"@en, "Gegen feines Gift"@de ;
+    skos:definition "Written on an egg put into wine, the same words repeated over it, and then drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 96 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe097 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For the thunder that comes from heaven"@en, "Gegen den Donner, der vom Himmel kommt"@de ;
+    skos:definition "Said over a ring of iron and lead hung on the spot to be protected."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 97 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe098 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To go before a king or lord"@en, "Vor einen König oder Herrn treten"@de ;
+    skos:definition "Said over a piece of lion's skin dipped in black hemp and pure wine and carried along."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 98 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe099 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For blight in the field"@en, "Gegen den Brand im Feld"@de ;
+    skos:definition "A sinew soaked in turnip juice in the night from Wednesday to Thursday, the words said over it, and the water sprinkled over the field next morning."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 99 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe100 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If the fruit gets worm-eaten"@en, "Wenn die Frucht wurmstichig wird"@de ;
+    skos:definition "A worm from the mud put into a tube, the words said, the tube closed and buried in that place."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 100 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe101 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To free a man from prison, with grounds and unripe dates"@en, "Einen Gefangenen befreien, mit Bodensatz und unreifen Datteln"@de ;
+    skos:definition "Said over the grounds and unripe dates given him to eat."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 101 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe102 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a field that bears no fruit"@en, "Für ein Feld, das keine Frucht trägt"@de ;
+    skos:definition "Eight cups from eight houses filled with water from eight rivers and salted from eight houses; the words said eight times, two cups poured out at each corner, and the cups broken on eight paths."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 102 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe103 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If it is not known what a man ails from"@en, "Wenn man nicht weiß, woran einer leidet"@de ;
+    skos:definition "Mullein soaked in water, the words said over it, and given him to drink when he is thirsty."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 103 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe104 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make war"@en, "Krieg führen"@de ;
+    skos:definition "Said over dust from under the left foot thrown into the enemies' face; knights with weapons in their hands are said to appear and fight for the operator."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 104 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe105 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To throw thy fear upon mankind"@en, "Deine Furcht auf die Menschen werfen"@de ;
+    skos:definition "Written on a leaden plate buried on the west side of the synagogue."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 105 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe106 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To have light always in the darkness"@en, "Immer Licht in der Finsternis haben"@de ;
+    skos:definition "Written on a chart carried always with him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 106 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe107 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To blind the eye"@en, "Das Auge blenden"@de ;
+    skos:definition "Written on a scroll exposed in a wicker basket to the stars; the operator must not speak while writing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 107 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe108 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To send a sword that should fight for thee"@en, "Ein Schwert senden, das für dich kämpft"@de ;
+    skos:definition "Said over a new knife wholly of iron thrown into their face."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 108 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe109 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "That they kill one another"@en, "Dass sie einander töten"@de ;
+    skos:definition "Said over a new knife wholly of iron buried with the heel into the earth, the heel kept upon it; they are said to kill one another until it is taken out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 109 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe110 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make them pause"@en, "Sie innehalten lassen"@de ;
+    skos:definition "Dust from under the right foot, the same words said backwards, thrown into their face."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 110 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe111 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If an enemy has hold of thee and would kill thee"@en, "Wenn ein Feind dich gepackt hat und töten will"@de ;
+    skos:definition "The little finger of the left hand is bent and the words said; he is said to run away as from his own murderer."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 111 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe112 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To pass unseen"@en, "Ungesehen gehen"@de ;
+    skos:definition "Said over the skin of a lion carried along, whereupon no one is able to see the operator."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 112 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe113 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If thou fallest into a pitfall"@en, "Wenn du in eine Grube fällst"@de ;
+    skos:definition "Said, and the operator is said to come out in peace. The word for the place fallen into is illegible in the text."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 113 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe114 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If thou fallest into a deep pit"@en, "Wenn du in eine tiefe Grube fällst"@de ;
+    skos:definition "Said during the fall, and nothing is said to hurt him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 114 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe115 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If thou fallest into a deep river"@en, "Wenn du in einen tiefen Fluss fällst"@de ;
+    skos:definition "Said, and he is said to come out in peace."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 115 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe116 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If a burden or weight falls upon thee"@en, "Wenn eine Last auf dich fällt"@de ;
+    skos:definition "Said, and he is said to be saved."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 116 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe117 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If the king's servants lay hold on thee"@en, "Wenn die Knechte des Königs dich ergreifen"@de ;
+    skos:definition "The little finger of the left hand bent and the words said before king or judge, who is said to kill the men who laid hands on him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 117 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe118 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If a host has surrounded thee"@en, "Wenn ein Heer dich umzingelt hat"@de ;
+    skos:definition "The face turned to the west and the words said before king or judge; they are said to become like stones and not move."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 118 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe119 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To release them again"@en, "Sie wieder freigeben"@de ;
+    skos:definition "The face turned to the east and the same words repeated backwards."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 119 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe120 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If thou hast no water in vale or mountain"@en, "Wenn du in Tal oder Gebirge kein Wasser hast"@de ;
+    skos:definition "The eyes lifted to heaven and the words said; a fountain of water is said to open."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 120 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe121 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "If thou hungerest"@en, "Wenn du hungerst"@de ;
+    skos:definition "The eyes lifted to heaven, the arms spread and the words said; a spirit is said to stand before him and bring bread and meat."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 121 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe122 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To call the angel of a man"@en, "Den Engel eines Menschen rufen"@de ;
+    skos:definition "Said over the mantle; the angel bound is said to come and tell whatever is wished."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 122 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe123 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To let the angel depart"@en, "Den Engel entlassen"@de ;
+    skos:definition "The same words said before him backwards."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 123 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe124 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "That a heavenly prince come and teach thee"@en, "Dass ein himmlischer Fürst komme und dich lehre"@de ;
+    skos:definition "Conjured in the third hour of the night from the formula of the last recipe to the end of the Sword, with the request that he be sent to reveal and teach all that is in his power."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 124 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe125 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To walk on water without wetting the feet"@en, "Auf dem Wasser gehen, ohne die Füße zu netzen"@de ;
+    skos:definition "Written on a leaden plate placed in the girdle, and then he can walk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 125 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe126 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To become wise"@en, "Weise werden"@de ;
+    skos:definition "The words remembered for three months running from the new moon of Nisan, with a petition added in the Eighteen Benedictions that the gates of wisdom be opened."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 126 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe127 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To remember at once all thou learnest"@en, "Sogleich behalten, was du lernst"@de ;
+    skos:definition "Written on a newly laid egg, washed off with strong wine early in the morning and drunk, with nothing eaten for three hours after."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 127 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe128 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To make another forget what he has learned"@en, "Einen anderen vergessen lassen, was er gelernt hat"@de ;
+    skos:definition "Written in his name on laurel leaves buried under his lintel."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 128 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe129 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To send an evil spirit against thy neighbour"@en, "Einen bösen Geist gegen deinen Nächsten senden"@de ;
+    skos:definition "Said over a green grasshopper buried in an earth-hill, over which the operator jumps."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 129 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe130 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To send a plague"@en, "Eine Plage senden"@de ;
+    skos:definition "The bone of a dead man and dust from under him put in a pot, tied in a woven rag with saliva, the words said in his name, and buried in the cemetery."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 130 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe131 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To bind thieves and robbers"@en, "Diebe und Räuber binden"@de ;
+    skos:definition "Said with the little finger in the ear."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 131 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe132 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To release them"@en, "Sie lösen"@de ;
+    skos:definition "Said with the finger taken out of the ear."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 132 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe133 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To guard thy house from thieves"@en, "Dein Haus vor Dieben hüten"@de ;
+    skos:definition "Said over a cup of water poured out round the roof."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 133 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe134 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To guard a house from robber bands"@en, "Ein Haus vor Räuberbanden hüten"@de ;
+    skos:definition "Earth from an ant-hill strewn round the roof with the words repeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 134 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe135 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To guard thyself from harmful spirits"@en, "Dich vor schädigenden Geistern hüten"@de ;
+    skos:definition "Said in the name of the first five sections, that the operator pass in peace and not in hurt; the same is used to excommunicate them on meeting them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 135 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMoshe136 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For every other thing not mentioned"@en, "Für jede andere Sache, die nicht genannt ist"@de ;
+    skos:definition "The general clause that closes the list: for anything at all that the foregoing has not named, the operator says this section and reads on to the end of the Sword."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hekhalot ;
+    dcterms:source "The Sword of Moses, part III, no. 136 in the editor's numbering (ed. and trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
