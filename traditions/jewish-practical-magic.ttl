@@ -1,0 +1,464 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Jewish practical magic, taken down from the register
+#
+# The instance was registered in traditions/registry-west-asia.ttl and stands
+# here now that one of its named works has been read. It was taken out for the
+# reason SPEC §14 puts first: this is a transmission that states, for a whole
+# corpus at once, what the operator must be before he may touch it, and that
+# names by name the angels who will strangle him if he gets one thing wrong.
+# Very few holdings in this graph carry a sanction with a named executor.
+#
+# Order of the file: the transmission and what was read; the work; the frame,
+# which is the conditions, the secrecy, the prohibition on touching, the two
+# stated consequences and the messenger who could find nobody fit; and then
+# the hundred and thirty-six operations of part three, each as its own node.
+#
+# Why each recipe is a node of its own. SPEC §15 says it outright and says it
+# against a run that did otherwise: a recipe is a capacity even when it carries
+# nothing else, and collapsing a list of them into one node saves the work of
+# entering them at the cost of ever being able to count how many claims of a
+# corpus are testable and how many are not. Here the count is the finding. A
+# hundred and thirty-six operations, and not one of them states a condition
+# under which it would have failed.
+#
+# Why the identifiers carry a number. The operations have no names of their
+# own; the text says do this and that follows. Gaster numbered them in 1896 in
+# order to run part three parallel to the name-list of part two, and that
+# numbering is how the work has been cited ever since — it is the locus and not
+# a second identity scheme in the sense SPEC §11 forbids. It is also the one
+# thing two independent runs would both produce, which is what AGENTS.md asks
+# an identifier to be. That it is the editor's and not the manuscript's is
+# stated at pmw:HarbaDeMoshe and again in every source string.
+#
+
+pmt:JewishPracticalMagic a pm:Tradition ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Jewish practical magic"@en, "Jüdische Praxismagie"@de ;
+    skos:definition "The operative Jewish transmission of adjurations, amulets and bowls, distinct from the speculative literature and older than it in its written witnesses."@en ;
+    skos:note "Read in this run at the wording, on 2026-09-24. One work was opened: the Ḥarba de-Moshe in the English of Moses Gaster of 1896. Read in full were the framing part, which carries the conditions and the adjurations, and the whole of part three, the hundred and thirty-six operations, numbers one to a hundred and thirty-six. Part two, the list of names to which the operations refer, was not read and cannot be: Gaster does not print it in the translation but describes it in square brackets, giving only the grouping of the names."@en ;
+    skos:note "What that does to every node below. Each operation says do this and say number so-and-so, and number so-and-so is a name in part two. The words are therefore not in evidence here and no node claims them. What is in evidence is the operation, its material, and the effect the text says follows — which is what this holding is for."@en ;
+    skos:note "The text used and its two defects, both properties of the copy and not of the work. The English part of the copy read is a transcription rather than a scan of the print, and it replaces every mystical name with a bare X, which Gaster set in Hebrew letters inside the English sentence; and it carries no page numbers. The source strings below therefore cite the editor's numbering of part three, which the transcription does carry and which is how the work is cited. A reader who needs pages needs the print: Gaster, Studies and Texts, vol. 1 (London: Maggs Bros., 1925-28), pp. 288-337, where the translation begins at p. 311."@en ;
+    skos:note "The date is contested and this run did not settle it. Gaster argued from a responsum of Hai Gaon for a terminus ante quem around the year one thousand, and from the resemblance to the Greek magical papyri for an origin in the first four centuries. The later scholarship holds the second step unsound and places the compilation in the third quarter of the first millennium. Nothing below turns on the answer, and no node here dates the work."@en ;
+    skos:note "The contact route stays at documented and this run confirms it rather than testing it. Gaster himself lays out the parallels to the Greek magical papyri: a Leiden papyrus that calls itself the eighth book of Moses, a London papyrus with a crown of Moses, a Greek word for hieratic paper standing in Hebrew letters inside the recipes. The corpus is therefore not an independent witness against the Graeco-Egyptian material this graph already holds, and no convergence should be built on it without that being said."@en ;
+    pm:principalCorpus "Sefer ha-Razim; Ḥarba de-Moshe; the Cairo Genizah magical fragments; the Aramaic incantation bowls" ;
+    pm:corpusWork pmw:HarbaDeMoshe ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Ḥarba de-Moshe, the framing part (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896)" .
+
+#
+# The work
+#
+
+pmw:HarbaDeMoshe a dcterms:BibliographicResource ;
+    rdfs:label "Ḥarba de-Moshe, the Sword of Moses"@en, "Ḥarba de-Moshe, das Schwert des Mose"@de ;
+    skos:note "Opened on 2026-09-24 in the English of Moses Gaster, London 1896, made from a single manuscript of his own collection, now British Library Or. 10678. The work has three parts: a framing part in Hebrew with the heavenly hierarchy, the revelation to Moses and the conditions of use; the Sword itself, a list of names in no identifiable language; and a part in Aramaic with the operations that refer back to the names. The division of part three into a hundred and thirty-six numbered items is Gaster's, made so that the operations could be set beside the corresponding stretches of the name-list, and it is his numbering that the later literature cites."@en ;
+    skos:note "The edition has a critical apparatus in no sense of the word. Gaster prints one manuscript, does not record variants, and nowhere states the grounds of his readings; at several points his own translation carries a question mark where he could not read the word. A critical Hebrew edition exists — Yuval Harari, Jerusalem 1997, on a different and fuller manuscript — and is not obtainable in this run. Two consequences are carried in the nodes below: where Gaster marks a word illegible the node says so, and where the later edition is known to read otherwise the node does not silently follow Gaster."@en .
+
+#
+# The frame: what must be true of the operator before any of it may be used
+#
+
+pmp:HarbaDeMoshePuritas a pm:Practicing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "The three days before the Sword may be used"@en, "Die drei Tage, bevor das Schwert gebraucht werden darf"@de ;
+    skos:definition "The regimen the angels lay on whoever decides to use the Sword. For three days beforehand he frees himself from accidental pollution and from everything unclean; he eats and drinks once only, in the evening; his bread is to come from a pure man, or else he washes his hands first in salt, a clause Gaster marks as uncertain; he drinks water and nothing else. On the first day of his withdrawal he bathes once and no more. He prays three times daily and recites a named blessing after each prayer, and he carries during the three days a piece of leather written with ink."@en ;
+    skos:note "It is a restriction and not a fast: one meal every evening, water instead of drink, one bath and not a course of them. The bathing clause is the unusual one, because purity regimens elsewhere in this holding multiply the washings and this one caps them at one."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, the framing part (trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMosheUsusPraesupponitPuritatem a pm:Presupposing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Use of the Sword presupposes the three days"@en, "Der Gebrauch des Schwertes setzt die drei Tage voraus"@de ;
+    pm:dependentStep pmc:HarbaDeMosheGeneralisClausula ;
+    pm:priorStep pmp:HarbaDeMoshePuritas ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    skos:note "Entered at the weaker strength deliberately. The text prescribes the three days in the imperative and repeats the requirement at the end of the framing part — he is not to touch this Sword before he has done all these things — but it nowhere says what happens to one who touches it anyway. The one consequence the work does state attaches to something else entirely; see pmc:HarbaDeMosheAngeliIrae. A transmission that fences a corpus this heavily and then leaves the fence without a penalty is worth having on record as such."@en ;
+    dcterms:source "Ḥarba de-Moshe, the framing part (trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMosheSecretum a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "No one is to know that he intends to use it"@en, "Niemand soll wissen, dass er es gebrauchen will"@de ;
+    skos:definition "Inside the same sentence as the purity regimen: no one is to know that he intends using this Sword, for therein are the mysteries of the Universe, they are practised only in secret, and they are communicated only to the chaste and the pure."@en ;
+    skos:note "The secrecy is put as a condition of the use and not as a rule of the school. What is to be hidden is the intention, before anything has been done, which is a stricter thing than hiding the result."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, the framing part (trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMosheNuntiusNeminemInvenit a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "The messenger looked for a man fit to receive it and found none"@en, "Der Bote suchte einen Menschen, der es empfangen durfte, und fand keinen"@de ;
+    skos:definition "God commands the swift messenger to make the Sword known to men who are pious, good, pure, righteous and faithful, whose heart is not divided and in whose mouth is no duplicity, who do not lie with their tongues nor deceive with their lips, who do not grasp with their hands nor are lustful with their eyes, who do not run after evil, keep aloof from every uncleanness, depart from every defilement, keep themselves holy from contamination and do not approach woman. The messenger goes down, asks where such a man is, and says in the text's own words that he thought in his heart there was no man who would do all this, and found none, and it was heavy unto him. He hands the Sword over only because God then binds him to it by an oath."@en ;
+    skos:note "The condition and the admission that nobody meets it stand in the same passage, three sentences apart, and the work goes on to deliver the Sword anyway. That is not a reader's objection smuggled into the text; it is the text's own account of how the transmission began."@en ;
+    skos:note "What it does to the rest of the file. Every operation below is offered to a reader whom the work has already said it could not find, and every failure of an operation therefore has an account waiting for it that the work supplied before the first recipe. No node below states that account, because the work does not connect the two; the connection would be a reading and is left to whoever makes it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, the framing part (trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMosheBenedictioAnteOrationem a pm:Cautioning ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Say the blessing before praying, lest they be swept away by the fire"@en, "Sprich den Segen vor dem Gebet, damit sie nicht vom Feuer hinweggerafft werden"@de ;
+    skos:definition "The angels charge Moses to command the generations after him to say a named blessing before their prayer, lest they be swept away by the fire. The blessing itself is given in the text."@en ;
+    skos:note "One of two stated consequences in the whole work, and the only one attached to the framing devotions. The danger is named and the remedy is named; what is not named is any way of telling, before or afterwards, whether it was incurred."@en ;
+    pm:cautionsAbout pmp:HarbaDeMoshePuritas ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, the framing part (trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMosheAngeliIrae a pm:Cautioning ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "The four angels of wrath, ire, fury and rage, named, and what they do"@en, "Die vier Engel des Zorns, des Grimms, der Wut und des Rasens, genannt, und was sie tun"@de ;
+    skos:definition "The closing rule of the work. Upon every amulet written from this Sword the operator must first write a named formula, that the Sword be effectual to do his services and that the powers be delivered over to him as they were to Moses, perfect from his God and no harm befalling him. If he will not act accordingly, the angels of wrath, ire, fury and rage will come near him to minister to him, will lord over him, strangle him and plague him all over, and will make his body like unto a dunghill. Their leaders are named: Mzpopiasaiel over the angels of wrath, Zkzoromtiel over those of ire, Kso'ppghiel over those of fury, N'mosnikttiel over those of rage, and the angels under them are numberless."@en ;
+    skos:note "This is the sanction of the work and it is worth stating exactly where it attaches. It does not attach to impurity, to breaking the three days, to touching the Sword unprepared, or to using an operation for a bad end — the list below includes killing a man, sending plagues and causing a miscarriage, and none of them carries a word of warning. It attaches to a defect of form: the formula omitted from the head of an amulet."@en ;
+    skos:note "It is a stated consequence and not a condition of failure, and the difference decides what a protocol can do with it. What is threatened is an injury to the operator, not the failure of the operation; nothing here says that the amulet would not work. The work therefore ends without ever having said what an unsuccessful use of it would look like."@en ;
+    pm:cautionsAbout pmc:HarbaDeMosheGeneralisClausula ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, the close of part III (trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896)" .
+
+pmc:HarbaDeMosheGeneralisClausula a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "The clause that covers everything the list did not name"@en, "Die Klausel, die alles deckt, was die Liste nicht genannt hat"@de ;
+    skos:definition "The hundred and thirty-sixth and last operation, which is not an operation but a rule about the other hundred and thirty-five: for every other thing that has not been mentioned, say this section and read on to the end of the Sword."@en ;
+    skos:note "Entered separately from the operation of the same number because of what it is. A list that ends by covering everything it left out cannot be exhausted, and no reader can ever establish that the work does not provide for a case. It is also the clause on which the fourth to last operation depends, which conjures a heavenly prince by reading from here to the end."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 136 (trans. Moses Gaster, The Sword of Moses, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+#
+# The hundred and thirty-six operations of part three
+#
+# In the order of the work. Nothing is left out and nothing is run together.
+#
+
+pmc:HarbaDeMoshe001 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To unite a woman with a man, drive off spirits, stop a ship, free a prisoner"@en, "Eine Frau mit einem Mann vereinen, Geister vertreiben, ein Schiff anhalten, einen Gefangenen befreien"@de ;
+    skos:definition "Written on a red bowl at full moon. The one recipe the text gives several effects at once: to unite a woman and a man so that they are as one, to destroy winds, demons and satans, to stop a ship, to free a man from prison, and, it adds, for every other thing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 1 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe002 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "To break mountains, pass dryshod, enter fire, set up and depose kings"@en, "Berge brechen, trockenen Fußes gehen, ins Feuer treten, Könige einsetzen und absetzen"@de ;
+    skos:definition "Written on the saucer of a cup with the root of the genipa tree in it. Claimed for breaking mountains and hills, passing dryshod through water, entering fire, appointing and deposing kings, blinding eyes, stopping mouths, speaking with the dead, killing the living, bringing down and sending up, conjuring angels to obey, and seeing all the mysteries of the world."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 2 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe003 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against a spirit that moves in the body"@en, "Gegen einen Geist, der sich im Leib bewegt"@de ;
+    skos:definition "Written on a plate."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 3 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe004 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against a spirit that burns"@en, "Gegen einen Geist, der brennt"@de ;
+    skos:definition "Written out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 4 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe005 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against a spirit in the whole body"@en, "Gegen einen Geist im ganzen Leib"@de ;
+    skos:definition "Written out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 5 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe006 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against a demon"@en, "Gegen einen Dämon"@de ;
+    skos:definition "Written out, against a shidda."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 6 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe007 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against shingles"@en, "Gegen die Gürtelrose"@de ;
+    skos:definition "Written out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 7 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe008 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "Against quinsy"@en, "Gegen die Bräune"@de ;
+    skos:definition "Said over oil of roses, which is then put over the face."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 8 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe009 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the ear"@en, "Gegen Ohrenschmerz"@de ;
+    skos:definition "Whispered into the painful ear."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 9 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe010 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For aches in the eye"@en, "Gegen Augenschmerz"@de ;
+    skos:definition "Said over water three mornings running; the eye is washed with it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 10 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe011 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For cataract"@en, "Gegen den Star"@de ;
+    skos:definition "Said over oil of sesame; the eye is anointed with it for seven mornings."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 11 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe012 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For grit in the eye"@en, "Gegen Sand im Auge"@de ;
+    skos:definition "Said over kohl; the eye is filled with it for three mornings."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 12 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe013 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For blood running from the head"@en, "Gegen Blut, das aus dem Kopf läuft"@de ;
+    skos:definition "Whispered over the head early for three days, at the washing of the hands before rising."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 13 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe014 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For paralysis"@en, "Gegen die Lähmung"@de ;
+    skos:definition "Said seven times over a vessel of water and seven times over sesame oil, with a formula that it depart from the named person; the water is thrown over his head, he is anointed with the oil, three days running, and an amulet of the words is hung round his neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 14 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe015 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For half-sided headache and bad ringing in the ear"@en, "Gegen halbseitigen Kopfschmerz und schlimmes Ohrenklingen"@de ;
+    skos:definition "Written and hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 15 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe016 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For bad deafening of the ear"@en, "Gegen schlimme Ertaubung des Ohres"@de ;
+    skos:definition "Written and hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 16 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe017 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the ear, said backwards"@en, "Gegen Ohrenschmerz, rückwärts gesprochen"@de ;
+    skos:definition "Said into the left ear backwards."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 17 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe018 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For deafness"@en, "Gegen Taubheit"@de ;
+    skos:definition "Said over hemp water while it is mixed with oil, and put into the ear once it has dissolved or warmed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 18 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe019 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For scabs, ulcers, itches and mange"@en, "Gegen Schorf, Geschwüre, Krätze und Räude"@de ;
+    skos:definition "Said over olive oil; the anointing is done with the left hand."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 19 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe020 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For jaundice"@en, "Gegen die Gelbsucht"@de ;
+    skos:definition "Said over water in which radish has been soaked, which is then drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 20 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe021 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the nose and the spirit in the nose"@en, "Gegen Nasenschmerz und den Geist in der Nase"@de ;
+    skos:definition "Said over oil and put into the nostrils."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 21 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe022 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the stomach and bowels"@en, "Gegen Magen- und Darmschmerz"@de ;
+    skos:definition "Said over water, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 22 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe023 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For hot fever"@en, "Gegen hitziges Fieber"@de ;
+    skos:definition "Said over water in which rose-laurels are soaked; the patient bathes in it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 23 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe024 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For tumours"@en, "Gegen Geschwülste"@de ;
+    skos:definition "Said once over them and once over olive oil; they are anointed for three days and no water may come near them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 24 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe025 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For an evil occurrence"@en, "Gegen einen bösen Vorfall"@de ;
+    skos:definition "Said over seven white cups of water drawn from the river, which are thrown over the head."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 25 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe026 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For ulcer of the throat"@en, "Gegen Halsgeschwür"@de ;
+    skos:definition "The operator spits before him and says the words over the patient's mouth and over a cup of strong drink, which the patient drinks; then he watches what comes out of the mouth."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 26 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe027 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For snakebite and the bite of poisonous vermin"@en, "Gegen Schlangenbiss und den Biss giftigen Gewürms"@de ;
+    skos:definition "Said over the place of the bite and drunk; the same for any hurt by a creeping thing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 27 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe028 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a woman who has seen blood before her time"@en, "Für eine Frau, die vor der Zeit Blut gesehen hat"@de ;
+    skos:definition "Said over an ostrich egg, which is burnt; she is fumigated with it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 28 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe029 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For pains in the mouth"@en, "Gegen Mundschmerz"@de ;
+    skos:definition "Said over risen flour, which is laid on the mouth."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 29 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe030 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For croup and pains in the shoulder"@en, "Gegen Krupp und Schulterschmerz"@de ;
+    skos:definition "Said over wine, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 30 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe031 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a painful nerve"@en, "Gegen einen schmerzenden Nerv"@de ;
+    skos:definition "Written on a scroll; the words are also said over olive oil, some of it is rubbed on the scroll, the scroll smeared over the painful spot, and the amulet hung round the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 31 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe032 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For the stone"@en, "Gegen den Stein"@de ;
+    skos:definition "Said over a cup of wine, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 32 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe033 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For haemorrhoids, with tow and salt"@en, "Gegen Hämorrhoiden, mit Werg und Salz"@de ;
+    skos:definition "Said over tow salted and mixed with oil, on which the patient sits."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 33 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe034 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For swelling and venereal disease"@en, "Gegen Schwellung und Geschlechtskrankheit"@de ;
+    skos:definition "Said over water in which radishes are soaked, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 34 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe035 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For sprains"@en, "Gegen Verstauchungen"@de ;
+    skos:definition "Either written on a plate laid on the place, whereupon all around it heals, or said over a ball of wool dipped in oil and laid on the sprain."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 35 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe036 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a wound from iron, that it should not fester"@en, "Gegen eine Eisenwunde, dass sie nicht eitere"@de ;
+    skos:definition "Said over white naphtha, which is rubbed over the place of the blow."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 36 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe037 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For cramps and pains of the heart"@en, "Gegen Krämpfe und Herzschmerz"@de ;
+    skos:definition "Said over spinach and oil, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 37 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe038 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For the gall and the bowels"@en, "Gegen Galle und Gedärm"@de ;
+    skos:definition "Said over water in which raisins have been soaked, which is drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 38 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe039 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For a spoiled liver"@en, "Gegen eine verdorbene Leber"@de ;
+    skos:definition "Said over a sixth measure of water-lentils, swallowed slowly."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 39 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
+
+pmc:HarbaDeMoshe040 a pm:Conceptualizing ;
+    pm:fromWork pmw:HarbaDeMoshe ;
+    rdfs:label "For the milt"@en, "Gegen die Milz"@de ;
+    skos:definition "Said over wine-lees and drunk, repeated for three days."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Ḥarba de-Moshe, part III, no. 40 (trans. Moses Gaster, The Sword of Moses: An Ancient Book of Magic, London: David Nutt, 1896; the numbering of part III is the editor's)" .
