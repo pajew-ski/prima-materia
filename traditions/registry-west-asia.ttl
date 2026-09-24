@@ -124,21 +124,29 @@ pmt:Yarsan a pm:Tradition ;
 # the counted immersions stand in paragraphs that were not opened, and no node
 # in the new file carries them. See prima-materia#492.
 
-# pmt:JewishPracticalMagic has left this file: one of its named works has
-# been read and the instance now stands in traditions/jewish-practical-magic.ttl
-# at pm:placesEntered, with its contact route unchanged at documented. The
-# route was not corrected but confirmed, and the confirmation is the finding of
-# that run: the editor of the work read there lays out the parallels to the
-# Greek magical papyri himself, down to a Greek word for hieratic paper
-# standing in Hebrew letters inside a recipe, so nothing in this corpus is an
-# independent witness against the Graeco-Egyptian material this graph already
-# holds.
+# pmt:JewishPracticalMagic stays registered, and the reason is a finding of
+# 2026-09-24 rather than an omission. The Ḥarba de-Moshe, which its principal
+# corpus names, was read entire on that day — and it was already in the graph,
+# under pmt:Hekhalot in traditions/hekhalot.ttl, where four nodes had stood
+# from its opening instructions since the fourth of September. The harvest
+# therefore went there, to the tradition that already carried the work, and
+# this entry was not touched.
 #
-# Three of the four works named in the principal corpus remain unopened and
-# are carried as pm:corpusWork nowhere yet: the Sefer ha-Razim, for which no
-# public-domain edition or translation exists, the Genizah magical fragments,
-# and the Aramaic incantation bowls, for which Montgomery's edition of 1913 is
-# public domain and reachable. The last is the cheapest continuation.
+# Two registrations name one corpus, and no query reports it: the label
+# vocabulary in CONTRIBUTING.md puts both the Ḥarba de-Moshe and the Sefer
+# ha-Razim under korpus:hekhalot, while the principal corpus here names them
+# too, and pm:principalCorpus is a literal rather than a work identifier, so
+# nothing compares the two. The question of which registration should keep
+# which works lies with the human and is put, with options and a
+# recommendation, in the pull request of that run.
+
+pmt:JewishPracticalMagic a pm:Tradition ;
+    rdfs:label "Jewish practical magic"@en, "Jüdische Praxismagie"@de ;
+    skos:definition "The operative Jewish transmission of adjurations, amulets and bowls, distinct from the speculative literature and older than it in its written witnesses."@en ;
+    skos:note "The Ḥarba de-Moshe, named in the principal corpus here, is read and stands under pmt:Hekhalot. What is left unopened under this registration is the Sefer ha-Razim, for which no public-domain edition or translation exists, the Genizah magical fragments, and the Aramaic incantation bowls, for which Montgomery's edition of 1913 is public domain and reachable by the regular route. The last is the cheapest continuation and the only part of this corpus that comes out of the ground rather than out of a manuscript chain."@en ;
+    pm:principalCorpus "Sefer ha-Razim; Ḥarba de-Moshe; the Cairo Genizah magical fragments; the Aramaic incantation bowls" ;
+    pm:coverageState pm:corpusNamed ;
+    pm:contactRoute pm:contactRouteDocumented .
 
 pmt:Kabbalah a pm:Tradition ;
     rdfs:label "Kabbalah"@en, "Kabbala"@de ;
