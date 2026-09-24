@@ -1,0 +1,53 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — three searches carried in the Theravāda commentarial handbook
+#
+# All three were carried on 2026-09-24 while the twelfth chapter was open, and
+# all three came back empty. That is the yield: the handbook does not say that
+# what it teaches has become unavailable, it does not put a number on failure
+# anywhere but in that one chapter, and it does not say what happens to a man
+# who attempts the operations from below the absorption it requires.
+#
+# Two of the three were carried over the whole volume rather than the chapter,
+# because the question was about absence and a chapter cannot answer that.
+#
+
+pmp:VisuddhimaggaDeclineSearch a pm:Searching ;
+    rdfs:label "Whether the handbook anywhere says the attainments are no longer to be had"@en, "Ob das Handbuch irgendwo sagt, die Erlangungen seien nicht mehr zu haben"@de ;
+    pm:searchedCorpus "Buddhaghosa, Visuddhimagga, the whole of the twenty-three chapters, in the English of Ñāṇamoli, The Path of Purification, Colombo 1956, searched as one text; the twelfth chapter additionally in the English of Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, London 1931" ;
+    pm:searchedFor "A sentence anywhere in the handbook stating that any of the attainments it prescribes has ceased to be reachable, that the age no longer produces those who reach it, or that the instruction is preserved rather than in use. The question decides how the twelfth chapter is to be read: as instruction addressed to its reader, or as a record of what was once done. It also decides whether the disagreement entered at pmc:IddhiAdhigamaVivada is a disagreement at all, since a handbook that conceded the point would not be a second side." ;
+    pm:searchTerms "Whole-text search with the text normalised to bare letters first, so that the scan's broken characters would not hide a spelling. Searched for: nowadays (no hits at all); at the present day (none); in these days (none); no longer (twenty-six hits, every one of them read — sixteen are the translator's or editor's remarks about commentaries and manuscripts that are lost, and the remaining ten are inside meditation instructions and describe what a meditator no longer does at a given stage; not one is about availability); have vanished (none); disappear and disappeared (one hundred and five hits, of which the ones falling in the chapters on the direct knowledges were read and concern the light that disappears when the preliminary work runs out, not the attainment)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-24" ;
+    dcterms:date "2026-09-24" ;
+    skos:note "Nothing. In nine hundred pages of instruction the handbook never concedes that any part of it has become unreachable, and it never dates itself against the passing of its founder. The gap is exhibited because it is the kind that cannot be found by reading forwards: a reader who works through the chapters will meet no such sentence and will not notice that he has not met it."@en ;
+    skos:note "The limit of the finding is the translation. It was carried over an English rendering, so it would miss a statement that Ñāṇamoli rendered in words none of the terms above would catch. Against that stands the shape of what was sought: not a term but a kind of sentence, and a translator who had met one would have had to render it somehow."@en ;
+    skos:note "The other side of the question was then put to a different work of the same transmission and found at once, which is why this search matters. See pmc:PancaAntaradhanani and pmc:IddhiAdhigamaVivada."@en .
+
+pmp:VisuddhimaggaAttritionElsewhereSearch a pm:Searching ;
+    rdfs:label "Whether the handbook puts a number on failure anywhere but in the twelfth chapter"@en, "Ob das Handbuch außerhalb des zwölften Kapitels irgendwo eine Ausfallzahl nennt"@de ;
+    pm:searchedCorpus "Buddhaghosa, Visuddhimagga, the whole of the twenty-three chapters, in the English of Ñāṇamoli, The Path of Purification, Colombo 1956, searched as one text" ;
+    pm:searchedFor "A second place in the handbook where a proportion of those who attempt a practice is said to succeed or to fail. The handbook describes some forty meditation subjects and the whole graded course to sanctity, so if the rate of attrition stated seven times over in the twelfth chapter were a habit of this author rather than a single passage, a second place would exist. The answer decides whether pmc:SatesuSahassesuVaEko is a form this transmission uses or a sentence it used once." ;
+    pm:searchTerms "Whole-text search, normalised to bare letters. Searched for: one in a hundred (seven hits, and all seven stand in the twelfth chapter, six in one paragraph and the seventh two paragraphs later); one in a thousand (no hits, the phrase being carried inside the first); out of a hundred (none); hundreds or thousands (none); few can (none); rarely (two, neither about a rate of attainment). The three further occurrences of hundred or a thousand in the same chapter were read and are the number of forms the operator creates, not a proportion." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-24" ;
+    dcterms:date "2026-09-24" ;
+    skos:note "The form stands alone. A handbook that grades everything else it treats — the absorptions, the kinds of persons, the sixteen steps of breathing, the ten imperfections — declines to grade its own success rate everywhere except here, and here it does it seven times in a row. That is a gap worth exhibiting rather than a curiosity: whoever wants to know how often these transmissions concede that their instruction fails has, in this corpus, exactly one place to go."@en ;
+    skos:note "The search does not settle whether the sentence is Buddhaghosa's own or taken from the Sinhalese commentaries he abridges, and this run could not settle it, because those commentaries are lost. It is noted because the answer would change what the passage is evidence of."@en .
+
+pmp:VisuddhimaggaBelowFourthAbsorptionSearch a pm:Searching ;
+    rdfs:label "Whether the chapter says what happens to one who attempts the powers from below the fourth absorption"@en, "Ob das Kapitel sagt, was dem widerfährt, der die Kräfte unterhalb der vierten Vertiefung versucht"@de ;
+    pm:searchedCorpus "Buddhaghosa, Visuddhimagga, chapter XII, in the English of Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, London 1931, pp. 432-471, read continuously; and the same chapter in the English of Ñāṇamoli 1956, searched as one text" ;
+    pm:searchedFor "A stated consequence of attempting the operations of the chapter without the fourth absorption, or without the eight attainments in the eight devices: an injury, a delay, a wrong result, a partial result, anything at all beyond the statement that the attempt cannot begin. The holding carries pmc:IddhiPresupposesFourthJhana at the weaker strength of a prescribed order, with a note saying that the handbook does not say what happens to one who attempts it from elsewhere, and this search was carried to establish whether that note is a property of the two places already cited or of the whole chapter." ;
+    pm:searchTerms "Continuous reading of the chapter in the first translation; then a search of the chapter in the second, normalised to bare letters, for: not possible (two hits, both the statement that the beginner who has not tamed his mind in the fourteen ways cannot begin); impossible (one, the same statement); fails and failure (no hits at all); does not succeed (one, and it is the instruction to repeat the preliminary work and the resolve); he cannot (none); injury, injures, hurt, harm in the sense of harm to the operator (none in this chapter)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-24" ;
+    dcterms:date "2026-09-24" ;
+    skos:note "The note at pmc:IddhiPresupposesFourthJhana is a property of the chapter and not of the two places it cites. In a chapter that states a rate of attrition at seven thresholds and prescribes what to do when a resolve does not take, there is no sentence at all about what befalls one who tries this from below the required absorption. The one negative the chapter does state is a bare impossibility: the attempt cannot even begin."@en ;
+    skos:note "That matters for what the chapter can be tested against. A transmission that named an injury, a wrong result or a delay would have said something a run could fail at; this one says that the unqualified simply do not get started, which is not an outcome anybody could observe from outside."@en .
