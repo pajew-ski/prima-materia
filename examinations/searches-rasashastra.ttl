@@ -1,0 +1,91 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — five searches carried in the first volume of the Rasa-Jala-Nidhi
+#
+# All five were carried on 2026-09-25 over the whole of the volume while it was
+# open: Bhudeb Mookerjee, Rasa-Jala-Nidhi or Ocean of Indian Chemistry and
+# Alchemy, vol. I, Calcutta 1926, some three hundred and fifty pages of Sanskrit
+# with the compiler's English. The searches were run on the whitespace-normalised
+# English, for the reason recorded in examinations/searches-vedic.ttl: the full
+# text of the scan breaks lines inside sentences and a line-based search for a
+# phrase of two words returns almost nothing. Every count below is from the
+# normalised text and every hit was read at its place.
+#
+# Two of the five came back empty and they are the point of the file. The volume
+# names eight diseases that its own material causes when it is impure, seven more
+# from the ground it lay in, a class of solidification that kills, and one route
+# whose omission is said to lead to death — and it does not report a single case
+# of any of them. It also states cure-times of a week and three weeks and never
+# says what a user should conclude if the week passes and nothing has happened.
+# A holding that only recorded what this volume asserts would report a
+# transmission unusually candid about its own toxicity. What it never does with
+# that candour is here.
+#
+
+pmp:RasaVrttantaSearch a pm:Searching ;
+    rdfs:label "Whether the volume reports a case of anybody who took one of its preparations"@en, "Ob der Band einen Fall berichtet, in dem jemand eines seiner Präparate genommen hat"@de ;
+    pm:searchedCorpus "Bhudeb Mookerjee, Rasa-Jala-Nidhi or Ocean of Indian Chemistry and Alchemy, vol. I, Calcutta 1926, the compiler's English throughout, preface to closing advertisement, complete" ;
+    pm:searchedFor "A report, anywhere in the volume, of a named or unnamed person who took one of these preparations or underwent one of these operations, with a stated outcome: a case, an observation, a trial, a comparison, a failure. The volume prescribes some fifty preparations with doses in ratis and mashas and states cure-times in weeks, so the question is whether anything behind the prescriptions was written down." ;
+    pm:searchTerms "Whole-text search of the normalised English for: case of (11, every one inspected), instance (1), was cured (3), cured by (5, of which three are the word procured or an indication), patient of mine (0), my patient (0), I saw (0), I have seen (0), observed (4, all inspected), observation (2), experiment (2), experience (1), trial (1, and it is the word industrial), tested (0), no effect (2). All hits read at their places, and in addition the closing sections of chapters III to VIII and the whole of the preface read continuously." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:RasaPramanapatra ;
+    pm:searchedBy "prima-materia, 2026-09-25" ;
+    dcterms:date "2026-09-25" ;
+    skos:note "In three hundred and fifty pages of instruction there is not one case. Every hit for case of in the instructional text is the phrase in another sense — in case of fever, a case of swallowing, in case of constipation — and the four occurrences of observed are all the word in the sense of a rule being observed. The two occurrences of observation and the two of experiment are the same sentence of the preface, and it is the sentence that denies both: this is not a collection of experiential truths or inductive generalizations based on observation and experiment."@en ;
+    skos:note "The cases are all in the back matter, and the search is entered as having found a place because of them. Some ten signed statements of cure stand after the glossary, with names, offices, addresses and dates. They name the practitioner and not the preparation: only one of them names a medicine at all, none states a dose, and every one is written by the person cured or by a relative. The division is the finding — three hundred pages of procedure with no outcome, and eight leaves of outcome with no procedure."@en ;
+    skos:note "Limits. One volume of five. Volumes II to V treat sulphur, mica, the metals and the gems, and whether a case is reported there was not asked. The Sanskrit verses printed above each English passage were not read and nothing here is a statement about them."@en .
+
+pmp:RasaVyapattiVrttantaSearch a pm:Searching ;
+    rdfs:label "Whether the volume reports a case of the harm it says its own material does"@en, "Ob der Band einen Fall des Schadens berichtet, den sein eigenes Material nach seiner Aussage anrichtet"@de ;
+    pm:searchedCorpus "Bhudeb Mookerjee, Rasa-Jala-Nidhi, vol. I, Calcutta 1926, complete, with the toxicological passages at ch. IV pp. 35-38, 134, 196, 206-210 and ch. VII pp. 311-314 read continuously" ;
+    pm:searchedFor "A report of an actual injury or death from one of these preparations: somebody who took impure mercury and got one of the eight diseases named for it, somebody who took the mercury solidified without purification that is said to cause death or serious disease, somebody who took mercury without preparing the body and died as the volume says he will. The registration of this transmission named its double examinability, the promised outcome and the toxicity of the means, and the second half turns on whether the stated harms were ever seen or only taught." ;
+    pm:searchTerms "Whole-text search of the normalised English for: died (3), death (16, every one inspected), fatal (0), poisoned (0), autopsy (0), was killed (0 in this sense), accident (0), injured (0), suffered from (inspected), and the names of the eight ailments of the blemish list — carbuncle, leprosy, swoon, inflammation, loss of vigour, inertness, eruptions — read at every occurrence." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-25" ;
+    dcterms:date "2026-09-25" ;
+    skos:note "Sixteen occurrences of death and not one of them an event. Fourteen are the promise — the conqueror of death, freedom from senility and death, a killer of diseases and death — and two are the threat: the action leads to death where the body was not prepared, and hatha bandha gives rise to death or a very serious disease. The three occurrences of died are a physician who died fifty years ago and twice the word remedied. The one death in the volume that happened to anybody is the death of a Kaviraja who had no faith in metallic medicines."@en ;
+    skos:note "This is the exhibited gap, and it is the more striking half of the reading. A transmission that lists eight faults of mercury against eight diseases, in a fixed order and one to one, has made a claim that a single case would sharpen or break; it writes three antidote regimens with terms of three and seven days, which is what a practitioner writes who has seen the condition; and it reports no patient. The knowledge that the material harms is held as doctrine at exactly the same distance from a case as the knowledge that it cures."@en ;
+    skos:note "Limits. The absence of a reported case in a handbook is weak evidence about a practice and strong evidence about a genre. The compiler's clinical papers, if he wrote any, and the case literature of the college he directed are not this work; the testimonials at the back of this volume report cures and no harm at all, which is what an advertisement does."@en .
+
+pmp:RasaNisphalatvaSearch a pm:Searching ;
+    rdfs:label "Whether the volume says what a user should conclude if nothing happens"@en, "Ob der Band sagt, was ein Anwender schließen soll, wenn nichts geschieht"@de ;
+    pm:searchedCorpus "Bhudeb Mookerjee, Rasa-Jala-Nidhi, vol. I, Calcutta 1926, ch. IV in full, pp. 176-220, with the classes of solidification at ch. VII pp. 311-318" ;
+    pm:searchedFor "Two questions, put separately. First, every place at which the volume states a term within which an effect of a preparation should appear. Second, whether it anywhere says what follows if the term passes and the effect does not come: a rule for stopping, a second attempt, a judgement that the medicine was wrong, or any statement at all about a course that did nothing." ;
+    pm:searchTerms "Whole-text search of the normalised English for the first question: in a week (1), in three weeks (2), fortnight (2), within a month (0), for one month (inspected), in six hours (1), for three days (inspected), for six months (1), for one year (1). For the second: if it does not (0), in case it does not (0), fails (0), failure (3, all inspected), unsuccessful (0), does not cure (0), no benefit (1), does not work (0), abortive (1), proves harmful (1), remains uncured (0)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-25" ;
+    dcterms:date "2026-09-25" ;
+    skos:note "To the first question the answer is yes and the terms are short: all diseases cured in a week by taruna baddha, the diseases of serious vices in three weeks by kumara baddha, purgation within six hours, sexual intoxication in three weeks, senility destroyed in six months, the ball held a year. To the second the answer is nothing at all. The three occurrences of failure are the compiler's word for a chemist's failure to understand the science, the failure to digest the mercury after a broken rule, and the failure of mercury to cure a disease in a man who has fasted — all three of them failures of the user or the reader, and none a case in which the medicine was given correctly and did not work."@en ;
+    skos:note "That is the shape of the whole apparatus around the course. Three hundred pages prescribe, sixty prohibitions hedge, ten signs announce a broken rule, three antidotes repair a mistake, and no sentence anywhere tells the user at what point to stop believing the medicine. The one place where a term and an outcome meet — cure within a week — is therefore the cheapest examination this file makes available, and it is available because the transmission stated a number, not because it invited the question."@en ;
+    skos:note "Limits. One volume, the compiler's English, and the search was for a statement about failure and not for an implicit one. Whether the later volumes state a stopping rule was not asked."@en .
+
+pmp:RasaMulagranthaSearch a pm:Searching ;
+    rdfs:label "Whether the volume names the works it compiles"@en, "Ob der Band die Werke nennt, aus denen er kompiliert"@de ;
+    pm:searchedCorpus "Bhudeb Mookerjee, Rasa-Jala-Nidhi, vol. I, Calcutta 1926, complete, including the preface, the introduction, every footnote and the glossary" ;
+    pm:searchedFor "An attribution, anywhere in the volume, of any printed verse or passage to a named work: the Rasārṇava, the Rasaratnasamuccaya, the Rasahṛdayatantra, the Rasendracūḍāmaṇi, the Rasendracintāmaṇi or any other title. The question decides how every node taken from this volume may be cited, and it had to be settled before a single one was written." ;
+    pm:searchTerms "Whole-text search of the normalised English for: Rasarnava (0), Rasaratna (0), Rasahrdaya (0), Rasendra Chintamani (1), Rasa Chintamani (1), Rasendra (5), Rama rajiya (1), Arka Prakasha (2), authorities (3), according to another version (inspected throughout, some thirty occurrences), commentators (inspected), original text (1). Every hit read at its place; the section headings of chapters III to VIII inspected for attributions." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-25" ;
+    dcterms:date "2026-09-25" ;
+    skos:note "No verse in the volume is attributed to any work. The titles that do occur are all in the preface, where they are named as ancient books assigned to Rāma and Rāvaṇa or as works of which only names survive, and four of the five occurrences of Rasendra are the word as a synonym of mercury. What the body of the volume does instead is print the phrase according to another version some thirty times, and once say that the expert chemists use an ingredient although it is not mentioned in the original text — an acknowledgement that there is an original text, without naming it."@en ;
+    skos:note "This is a search whose empty result is a working instruction and not a lament. Because the volume attributes nothing, no node in traditions/rasashastra.ttl may cite the Rasārṇava or the Rasaratnasamuccaya, and none does; the three classical works stand there as unopened work identifiers. Somebody has done the identification — Meulenbeld's History of Indian Medical Literature sets the borrowings against the chapters of the Rasaratnasamuccaya, the Rasārṇava and the Rasendracūḍāmaṇi — and that is secondary literature and a way to the works, never a source."@en ;
+    skos:note "Limits. The Sanskrit verses were not read, and it is conceivable that a verse names its own provenance where the English does not. The four later volumes were not searched; volume V is reported to carry an introduction with a list of authors, and a run that opens it should put this question again."@en .
+
+pmp:RasaVedhaPariksaSearch a pm:Searching ;
+    rdfs:label "Whether the transmutation claim is anywhere put to a public test"@en, "Ob die Verwandlungsbehauptung irgendwo einer öffentlichen Probe unterworfen wird"@de ;
+    pm:searchedCorpus "Bhudeb Mookerjee, Rasa-Jala-Nidhi, vol. I, Calcutta 1926, ch. V pp. 221-249 and ch. VIII pp. 321-350, read continuously, with the preface" ;
+    pm:searchedFor "Whether the volume, which claims that prepared mercury turns a hundred to ten million times its weight of base metal into gold, anywhere submits that claim to somebody outside the transmission: an assay, a goldsmith, a sale, a witness, a weighed demonstration, a stated fineness that a buyer could dispute." ;
+    pm:searchTerms "Whole-text search of the normalised English for: goldsmith (1), market (1), assay (0), touchstone (0), witness (0), carat (2), parts fine (8), sixteenth (inspected), buried (inspected), sale (1), sell (0), demonstrated (1), form their own judgment (1)." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:RasaHemabhasaVibheda ;
+    pm:searchedBy "prima-materia, 2026-09-25" ;
+    dcterms:date "2026-09-25" ;
+    skos:note "Three places and they pull in different directions. The chapter on the making of gold states the fineness of its products in sixteenths and in carats, which is the language of an assay and is the one measure in the volume a buyer could dispute. The single occurrence of market is the instruction that base metals transformed into gold should be kept buried in the earth for a fortnight before they are taken out for sale, which delays the encounter with a buyer and gives no reason. And the preface has the compiler saying that the transformation was demonstrated to him by his preceptor and that he is confident he could carry it out if he were given a laboratory and the opportunity, which is a claim about a demonstration he witnessed and not one he offers."@en ;
+    skos:note "The one invitation in the volume is to the reader and is about the other claim: let my readers perform faithfully the operations described in the present volume, and then form their own judgment as to the truth of the statement — the statement being that mercury swallows gold without gaining weight. That sentence is the reason pmc:RasaGrasanaParyaptiPariksa is held as the most examinable node in this file. For the transmutation itself no test is offered, no assay is reported and no goldsmith appears."@en ;
+    skos:note "Limits. Sixteen processes for making gold and silver were read in chapter VIII and none was carried out. Whether any of them would yield a metal a goldsmith would call gold is an examination this holding has not opened, and the materials — orpiment, realgar, arsenic — make it one that would need a laboratory and not a reading."@en .
