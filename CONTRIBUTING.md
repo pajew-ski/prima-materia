@@ -399,6 +399,16 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   getrennt geführt, weil dort die Überlieferung über sich selbst spricht und
   hier über sie gesprochen wird)
 
+- `korpus:rasashastra` (die indische Quecksilberalchemie: Rasārṇava,
+  Rasahṛdayatantra des Govindabhagavatpāda, Rasaratnasamuccaya, Rasendracūḍāmaṇi,
+  Ānandakanda, dazu Bhudeb Mookerjees Rasa-Jala-Nidhi, Kalkutta 1926-1938, als
+  die einzige durchgehend englische Fassung des Materials und ausdrücklich als
+  Kompilation ohne Quellenangabe — von `korpus:ayurveda` getrennt geführt, weil
+  dort die klassische Medizin steht und dieser Korpus die achtzehn Operationen am
+  Quecksilber, seine Fehlerlehre und die Verwandlung der Metalle trägt; die
+  Indologie und die Wissenschaftsgeschichte gehen als `pm:evidenceFrom` ein, nie
+  als Quelle)
+
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
 bereits die Nachfragemeldung, und ein zweites Verzeichnis dafür wird
