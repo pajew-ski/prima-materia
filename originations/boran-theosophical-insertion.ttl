@@ -1,0 +1,32 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — a modern system printed inside the translation of an old manual
+#
+# One node. It is here rather than in traditions/boran-kammatthana.ttl because it
+# is not a claim of that transmission, and it is here rather than nowhere because
+# it is the only caution anywhere in the volume that carries the manual, and a
+# reader who found the caution and not this node would credit it to an eighteenth
+# century Sinhala manuscript.
+#
+# The case is the kind SPEC §0 calls most valuable, and it is unusually clean:
+# the modern claim and the old work are bound in one book, twenty-two pages
+# apart, with the modern one in smaller type at the foot of the page where the
+# old one places its five stations in the body.
+#
+
+pmc:WoodwardCakkaInterpolatio a pm:Originating ;
+    rdfs:label "The seven force-centres with their colours, and the danger below the navel"@en, "Die sieben Kraftzentren mit ihren Farben, und die Gefahr unterhalb des Nabels"@de ;
+    skos:definition "The claim that the body carries seven centres of force at the base of the spine, the navel, the spleen, the heart, the throat, between the eyebrows and the top of the head; that each has a stated number of radiations and a predominant colour; that the base of the spine houses a serpent-fire; that the centre between the eyebrows gives clairvoyance and the centre at the throat the hearing of distant sounds when stimulated; that the centre at the crown, called the thousand-petalled lotus, gives unbroken consciousness on all planes; and that arousing the centres below the navel is a process attended with great danger."@en ;
+    pm:originatedBy "C. W. Leadbeater, whose book the translator names as the source he compiled the note from; with G. Sutcliffe for the identification of the four great elements with four densities of modern physics, cited from The Theosophist of September 1914" ;
+    pm:circulatesAs "A note in a Pali Text Society translation of an eighteenth century Sinhala meditation manual, printed at the foot of the page on which that manual places the five raptures in the body, and introduced with the words that it shows the centres according to Yoga. A reader taking the volume for the transmission it translates reads the seven centres, their colours and the warning as part of what the manual teaches." ;
+    skos:note "What makes the case sharp is that the translator marks his source and the marking is easy to miss. The footnote begins by saying he has compiled it from Mr. C. W. Leadbeater's The Inner Life, and it then runs for a page and a half in the same typeface as his philological notes, alongside notes that do render the manuscript. Nothing in the layout separates the compiled system from the translated text."@en ;
+    skos:note "The sentence that matters for this holding is the last of the note: it will be noted that the Buddhist method here does not seek to arouse the centres below the navel, a process attended with great danger. That is a caution about the practice of the manual, expressed as an observation about it, and it is the only caution in the whole volume. The manual itself states no caution and no danger anywhere — established by reading it complete and searched term by term at pmp:BoranPericulumSearch in examinations/searches-boran-kammatthana.ttl. So the one safety statement a reader finds in the book is an inference drawn in 1916 from a theosophical work of 1911 about a system the manuscript does not describe."@en ;
+    skos:note "It is not the same case as pmc:TheosophicalColourKeyToFeeling in originations/affect-scales.ttl and the two should not be merged. That one is a doctrine circulating under its own steam as ancient wisdom; this one is a doctrine printed physically inside a translation of a datable manuscript, which is a stronger form of the same thing and a rarer one. The two share an author and that is worth recording: the same writer supplies the colour key that later affect scales inherit and the force-centre system that gets read back into a Theravāda manual."@en ;
+    skos:note "The diagnostic markers, so that a later presentation can be measured against them. The count: seven. The radiation counts: four, ten, six, twelve, sixteen, two, and nine hundred and sixty for the thousand-petalled lotus. The assignments the note makes to the manual's own vocabulary: the throat centre to the element of mobility and the brow centre to the element of heat. Those two assignments are the join, and they are the translator's, not the manuscript's; the manual assigns its elements to raptures and colours and never to a centre of force."@en ;
+    dcterms:date "1916" ;
+    dcterms:source "F. L. Woodward, Manual of a Mystic (London: Pali Text Society Translation Series VI, 1916), translator's footnote at pp. 13-15, compiled from C. W. Leadbeater, The Inner Life" .
