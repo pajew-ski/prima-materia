@@ -1,0 +1,57 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Turba run, 2026-09-26
+#
+# Three searches over one work that was read complete, so each of them is a
+# statement about the whole of the Turba philosophorum and not about a sample.
+# Two came back empty and those two are the reason the file exists: an exhibited
+# gap can be closed by a stranger who has the Latin, and an unexhibited one
+# cannot.
+#
+# In a file of its own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+
+pmp:TurbaMateriaeProbaSearch a pm:Searching ;
+    rdfs:label "Whether the Turba states any way of knowing that a material is what it is called"@en, "Ob die Turba irgendeine Weise nennt, zu wissen, dass ein Stoff das ist, wofür er gilt"@de ;
+    pm:searchedCorpus "Turba philosophorum, the whole work — the epistle of Arisleus, the seventy-two dicta and the conclusion of Agmon (trans. Waite 1896, longer recension, with the shorter recension in Waite's notes)."@en ;
+    pm:searchedFor "An act with a definite perceptible outcome by which the operator establishes that one of the substances the work names is genuine, pure, or the thing the work means by the name: a test of the quicksilver, of the vinegar, of the orpiment, of the lead, of the copper the work calls ours. The question is put because the work prescribes upwards of thirty named substances under a vocabulary it itself says was multiplied in order to deceive, so a way of knowing that what is in the vessel is what the recipe called for would be the first thing an operator needed."@en ;
+    pm:searchTerms "The whole work was read at the wording, and the reading was checked by term search of the transcription, case-insensitive, for: know that it is, thou shalt know, ye shall know, to test, the test, prove it, proof, if ye find, look and see, take in the hand, true nature of, genuine, pure, unless it be pure, and every occurrence of know, test and find in the operative dicta. Every hit was read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-26" ;
+    dcterms:date "2026-09-26" ;
+    skos:note "Nothing of the kind anywhere in the work. The two acts of assay the Turba does state — the powder taken in the hand at Dictum 28 and the look for the powder at Dictum 13 — both judge the state of the work in progress and neither judges an ingredient. The one sentence that comes near is at Dictum 36, nothing enters therein unless it be pure, and it states a requirement without any way of meeting it. Dictum 16 requires lead of the best quality and says nothing about how best quality is recognised."@en ;
+    skos:note "What the empty result is worth, and it is worth more than an absence usually is. This holding has carried since 2026-09-22 the statement that an operative handbook assays its materials and not its operation, with the assays of the operation as the provided-for exception. The Turba is the mirror image: two assays, both of the operation, and not one of a material. It is the first handbook in the holding of which that is true, and the finding is not that the statement is refuted but that a handbook can consist entirely of what the statement treats as the exceptional case. Recorded at pmc:TheTestOnTheIngredient."@en ;
+    skos:note "Why the absence is a property of the work and not of the translation. A test of a material is a physical act with an outcome, and such acts survive translation better than anything else in an alchemical text; Waite's English renders the two assays of the operation without difficulty, so it would have rendered an assay of a material. The Latin was not read and the finding is stated against Waite's English, which is what the date and the corpus line say."@en ;
+    skos:note "Where a run should go next, and it is named in the file. The Summa perfectionis magisterii is reported to carry exactly the catalogue that is missing here, nine assays of the metal announced as a list and then worked through, and it stands unopened at pmw:SummaPerfectionisMagisterii in traditions/latin-alchemy.ttl. If the report holds, the pair Turba-Summa is one transmission holding both arrangements, which is the sharpest evidence a corpus can give that the device is chosen and not generic."@en .
+
+pmp:TurbaTerminusDesistendiSearch a pm:Searching ;
+    rdfs:label "Whether the Turba names a term, count or sign at which the operator is to stop"@en, "Ob die Turba eine Frist, Zahl oder ein Zeichen nennt, bei dem der Übende aufhören soll"@de ;
+    pm:searchedCorpus "Turba philosophorum, the whole work as above (trans. Waite 1896, longer recension)."@en ;
+    pm:searchedFor "A passage telling the operator what he is to conclude, or to do, or to stop doing, when a stated term has passed and the stated result has not come: a number of attempts after which the recipe is wrong, a state of the matter that settles that this batch will not come to anything, a sign of failure as against the several signs of success the work does give."@en ;
+    pm:searchTerms "The whole work read at the wording, and the reading checked by term search for: if not, but if, otherwise, unless, in vain, profit you nothing, accomplish nothing, effect nought, err, error, relinquish, give up, cease, desist, forty days, forty-two, hundred days, hundred and fifty, one hundred and eighty, and every numeral in the operative dicta. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:TurbaNigredoNonUltraQuadraginta ;
+    pm:searchedBy "prima-materia, 2026-09-26" ;
+    dcterms:date "2026-09-26" ;
+    skos:note "One passage and one only, and it is half of what was sought. Dictum 21 puts an upper bound on a state of the matter — see that the blackness does not remain longer than forty days — which is the single sentence in the work at which a dated fact about a batch could be established by the operator alone. What the work does not do anywhere is say what follows from the bound being exceeded. So the outcome of this search is a find, and the find is a bound without a consequence."@en ;
+    skos:note "Everything else the search turned up is a duration and not a term of abandonment, and the distinction is the whole point. The work has: seven days at Dictum 12 and 16, twenty-one and ten and ten at 16, a hundred and fifty at 16, forty at 18 twice, forty and forty-two at 21 and 22, a hundred at 23, forty at 26 and 33 and 37 and 72, forty-two at 68, a hundred and eighty at 58, and the second work performed between the tenth of September and the tenth degree of Libra at 68. Every one of them says how long to continue. Not one says when to stop."@en ;
+    skos:note "Nor does the work leave the case unaddressed; it addresses it four times and each time in the operator. Blame no one save yourselves at Dictum 17, God has concealed the truth from you at 29, the man who mistook the slow redness for an error at 27, the man who failed of haste and sadness at 39, and over all of them the sentence at 39 that the truth is not discerned except after error. Those are the nodes pmc:TurbaCulpaInOperante, pmc:TurbaExemplumRelinquentis, pmc:TurbaFestinantiaCausaDefectus and pmc:TurbaVeritasPostErrorem, and together they are why no term of abandonment could stand in this work: a term would have to survive the sentence that error precedes the truth, and it could not."@en .
+
+pmp:TurbaCeleritasNocetSearch a pm:Searching ;
+    rdfs:label "Whether the Turba states a bodily injury from proceeding faster than prescribed"@en, "Ob die Turba eine körperliche Schädigung durch zu schnelles Vorgehen nennt"@de ;
+    pm:searchedCorpus "Turba philosophorum, the whole work as above (trans. Waite 1896, longer recension)."@en ;
+    pm:searchedFor "A statement that the operator who goes faster than the work's grades is injured in his body, and in particular that the injury is the disorder the work claims to remove. The question is put because the holding carries a statement to that effect about transmissions prescribing a graded bodily technique, and the Turba prescribes graded stages with day-counts and warns repeatedly against haste, so it is the nearest thing to a case outside the bodily techniques."@en ;
+    pm:searchTerms "Read at the wording and checked by search for: hasty, haste, hastily, speedily, over speedily, patience, patient, weary, sickness, sick, dies, death, perish, poison, poisons, venom get at, harm, disaster, sadness, injure, injury, body perish."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-26" ;
+    dcterms:date "2026-09-26" ;
+    skos:note "No such statement. Haste is warned against four times — Dictum 26, 29, 39 and 61 — and in every one of them what is damaged is the work, not the man: it becomes red prematurely, the spirit perishes, they are deprived of sense and motion, the light is extinguished, the work is corrupted. The one place where the operator's own body is at risk is Dictum 37, and the cause there is a wrong separation and not a wrong pace, and even that reading holds only on the longer recension; the shorter one has the body in the vessel perish and not the operator."@en ;
+    skos:note "Why the empty result is a finding and not a mismatch of scope. The statement about bodily injury from haste is held of transmissions prescribing a technique performed on the practitioner's own body, and the Turba's operation is performed on matter in a vessel. So this search establishes the boundary of that statement from the outside rather than testing it: a transmission with graded stages, day-counts and repeated warnings against haste states no bodily injury when the graded thing is not the body. That is a difference the statement predicts and had not been shown."@en ;
+    skos:note "It also fixes the position of Dictum 37 in the holding's count of transmissions that name a physical hazard to the practitioner. The count is small, the passage is textually uncertain, and it is entered at pmc:TurbaCaveVenenaOperantem with both readings so that the count is not inflated by a variant."@en .
