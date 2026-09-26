@@ -1,0 +1,257 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Borān kammaṭṭhāna, taken down from the register
+#
+# The instance was registered in traditions/registry-buddhist.ttl and is moved
+# here now that its one surviving manual has been read at the wording, complete,
+# from the preamble to the ten forms of knowledge.
+#
+# Why this one out of the register, and it is the examinability-driven entrance
+# again but reached from the other end. The Turba philosophorum, read in the
+# same batch, is a handbook with cautions and terms and four accounts of a run
+# that produced nothing. This one is its opposite and that is why it was opened:
+# a reconnaissance said it carries the fullest catalogue of inner signs in any
+# meditation manual, and the question worth putting to such a catalogue is what
+# it does when a sign does not come. The answer, established by reading the whole
+# work and then searching it term by term, is that it does nothing at all. There
+# is no caution in it, no danger, no condition of failure, no counterfeit, no
+# term at which the practitioner is to conclude anything, and no sentence in
+# which a sign fails to appear. That is the finding of this file and it refutes
+# a generalization the holding has been carrying.
+#
+# The three decisions of SPEC §14, taken before the first node.
+#
+# The contact route is documented and unchanged, and the registration was right
+# about it in a way this run can now specify. The transmission is Theravāda in
+# its vocabulary, its canon and its terminology, and the editors of 1896 and 1916
+# put the manual in the Sinhala revival of the middle eighteenth century, whose
+# ordination line was fetched from Siam and whose returning mission is dated
+# 1753. So the corpus stands inside a documented route to the Pali canon and the
+# commentaries, and an agreement between this file and traditions/theravada.ttl
+# is reception and not two witnesses. What is not documented is the other
+# direction: the editor of 1916 states in as many words that there are no
+# materials for connecting the wax-taper exercise and the colour-visions with
+# either Indian or Burmese Buddhism. Those two are the part of the transmission
+# for which no route is known, and they are the part this file is mostly about.
+#
+# The recension and the edition. What was read is F. L. Woodward, Manual of a
+# Mystic, Pali Text Society Translation Series VI, London 1916, the English
+# translation of the text T. W. Rhys Davids edited in 1896 from a single palm-leaf
+# manuscript at the Bambara-galla Wihāra near Kandy. Three things about that
+# chain are load-bearing and are stated at the work identifier: the manuscript is
+# unique, the printed text rests on a hurried copy of it made by a scribe with
+# little Pali, and the work carries no title of its own — Yogāvacara's Manual is
+# the editor's coinage of 1896. The bilingual layout decides which claims are
+# citable: the Pali paragraphs carry the liturgy and the Sinhala paragraphs carry
+# the colours, and it is the Sinhala half that this file draws on most.
+#
+# One boundary is drawn here once and enforced at every node. The volume of 1916
+# contains three layers: the manual, the editors' apparatus, and the translator's
+# own footnotes. One of those footnotes imports a theosophical system of
+# force-centres from a work of 1911 and prints a caution with it; the caution is
+# the only one anywhere in the volume, it is not in the manuscript, and it is
+# carried as a modern claim in originations/boran-theosophical-insertion.ttl and
+# not as a claim of this transmission. The report of a pupil who went mad is a
+# third thing again — an oral account first fixed in this volume — and it is
+# carried below with pm:fieldAttestation and its gathering named.
+#
+
+pmt:BoranKammatthana a pm:Tradition ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "Borān kammaṭṭhāna"@en, "Borān kammaṭṭhāna"@de ;
+    skos:definition "The esoteric Theravāda transmission of Southeast Asia, working with syllables placed in the body and a nimitta led along an interior path."@en ;
+    skos:note "Largely displaced by the modern reform movements and therefore poorly represented in every general account of Buddhist meditation. The displacement is itself dated and named: the Dhammayuttika reform of the eighteen-thirties in Siam, and then the spread of the Burmese insight movement, after which the older practice survived in a few temple lines and in manuscripts."@en ;
+    skos:note "What was read: the Yogāvacara's Manual complete in Woodward's translation of 1916 — the preamble, the invocation, the meditation of the fivefold zest with its twelve sub-exercises including the wax-taper offering and the task of self-control, the six pairs, the meditation on happiness, the breathing exercise for mental clarity, the exercise by devices, the ten foul things, the bodily parts, the ten recollections, the immaterial realms, the four highest states and the ten forms of knowledge. The two editors' prefaces and the translator's prefatory note were read as apparatus; Jayatilaka's appendix on the Sinhala revival was read for the dating and carries nothing here. Nothing of the Siamese or Khmer branches of the transmission is opened."@en ;
+    skos:note "The shape of the work decides how much of it can be cited and how little needs to be. It is a liturgy with rubrics: a formula of request, a posture instruction, and a rubric saying which element appears and in which three colours, repeated through five raptures, then through twelve exercises, then through five jhānas, then through ten devices, in right succession and in reverse order each time. Rhys Davids reckoned it at a hundred and twelve mental states by twelve ways, doubled by the two directions. The printed text abbreviates most of the repetitions with et cetera, and what varies between them is the element and the colour triad. So the citable content is a small number of rubrics and a large number of repetitions of them, and this file carries the rubrics."@en ;
+    skos:note "Why it is not an independent witness, and where the qualification bites. For anything Theravāda — the jhānas, the kasiṇas, the ten insights, the thirty-two parts of the body — the route to the Pali commentaries is documented and this corpus counts for nothing additional. For the wax-taper clock and for the colour triads the editor of 1916 states that no route is known to Indian or Burmese Buddhism. That is an absence of a documented route and not a documented absence, so it does not license pm:independentAttestation, and none is claimed anywhere in this file."@en ;
+    pm:principalCorpus "The Yogāvacara manuals of Sri Lanka and Siam in the published editions" ;
+    pm:corpusWork pmw:YogavacarasManual ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Yogāvacara's Manual, the preamble (trans. Woodward 1916, PTS Translation Series VI, p. 1-3)" ;
+    dcterms:source "Yogāvacara's Manual, the meditation of the fivefold zest (trans. Woodward 1916, p. 6-10)" .
+
+pmw:YogavacarasManual a dcterms:BibliographicResource ;
+    rdfs:label "Yogāvacara's Manual"@en, "Yogāvacara's Manual"@de ;
+    skos:note "Read here complete in F. L. Woodward, Manual of a Mystic, being a translation from the Pali and Sinhalese work entitled The Yogāvachara's Manual, edited with an introductory essay by Mrs. Rhys Davids, London: Pali Text Society Translation Series VI, 1916, from the text T. W. Rhys Davids edited in 1896. Page references in this file are to the translation of 1916, which gives the manuscript pages in brackets."@en ;
+    skos:note "The title is the editor's and not the work's, and that matters for anybody tracing citations. The manuscript bears no title at either end; Rhys Davids named it after the person addressed in it and added the words of Indian Mysticism, of which his co-editor writes in 1916 that mysticism occurs not at all in the work and that there is no Pali equivalent. In Sinhala terms the work would be called a vidarsana-pota."@en ;
+    skos:note "The textual base is a single copy of a single manuscript and the editors say so at length. The palm-leaf original is at the Bambara-galla Wihāra, Teldeniya, near Kandy; its existence was ascertained in 1892, a copy was made by a scribe engaged for the purpose, and that copy — not the original — reached Europe in 1893 and was returned afterwards. Rhys Davids found it unsatisfactory as a copy and unsatisfactory in its source, the copy showing hasty and inaccurate work and the source suggesting an earlier scribe conversant with Sinhala but unfamiliar with Pali. No second manuscript was obtainable. Every claim in this file therefore rests on one witness at two removes, and nothing here turns on a single word."@en ;
+    skos:note "Dating: no colophon date and no author. The editor of 1916 states in as many words that there is no certain evidence of either date or authorship, the final colophon consisting of pious aspirations still in vogue. The Sinhala diction was judged fairly modern and possibly of the seventeenth or even sixteenth century, and the same judge withdrew the early date on the ground that samādhi and jhāna practice had by then died out in Ceylon, proposing instead the reviver Saraṇaṅkara or a pupil of his in the eighteenth century. Jayatilaka's appendix supports the later date with the revival's history and the Siamese ordination mission that returned in 1753. This file uses the eighteenth century and says that it is an editors' inference."@en ;
+    skos:note "The bilingual layout is a fact about which claims are citable. Larger type from page 3 renders Pali, smaller type from page 8 renders Sinhala, and the preamble is Sinhala but for its first paragraph. The colour triads, which are what this transmission is chiefly known for, stand in the Sinhala descriptive paragraphs, which the translator states outright he was not equipped to render alone and for which he had the help of a Sinhala pandit at his college. That is a fourth layer and it is named here rather than left for a later reader to find."@en .
+
+pmw:WoodwardManualOfAMystic a dcterms:BibliographicResource ;
+    rdfs:label "Woodward, Manual of a Mystic"@en, "Woodward, Manual of a Mystic"@de ;
+    skos:note "The volume of 1916 that translates the manual, declared as a work of its own and deliberately NOT listed under pm:corpusWork of the transmission. It is not a work of this transmission; it is the book in which the transmission was translated, and it contains three layers besides the manual: the editor's preface, the translator's prefatory note, and the translator's footnotes. Two things in this holding lie in those layers and not in the manual, and both point here rather than at pmw:YogavacarasManual: the account of the pupil who went mad, at pmc:BoranSisyaUmmattako, which the prefatory note is the first fixation of; and the compiled system of force-centres, at pmc:WoodwardCakkaInterpolatio in originations/boran-theosophical-insertion.ttl."@en ;
+    skos:note "The identifier exists because the alternative was worse. Pointing those two nodes at the manual's identifier would have made the manual read as the source of a caution and a chakra system it does not contain, which is exactly the confusion the volume's own layout invites. A reader who follows pm:fromWork now lands on the right book."@en .
+
+#
+# The operation, and the two devices that measure it
+#
+
+pmp:BoranParikamma a pm:Practicing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The preparation: the breath watched at the nose-tip under the word Arahan"@en, "Die Vorbereitung: der Atem an der Nasenspitze unter dem Wort Arahan"@de ;
+    skos:definition "The operation on which everything in the work is built, stated once in the preamble and then presupposed by every later rubric. The practitioner goes to a solitary place, sits cross-legged and holds the body straight, sets mindfulness in front of him with Nibbāna as his goal, and breathes in and out knowing of each breath that it is long or quick. He grasps the path of the breath from the nose-tip down to the navel and up again, fixes his sight on the tip of the nose, grasps that he sees the nose-tip with the sight-mind, and fixes in the heart the thing he is attending to. The syllables of the word Arahan are assigned to the three treasures: A the Law, RA the Buddha, HAN the Brotherhood."@en ;
+    skos:note "Entered as the practice and not as a series, because the work treats it so: every later section opens with the rubric that he sits down cross-legged and prepares himself with the word Arahan, abbreviated with et cetera after the first statement of it. What changes between sections is the object and the colour triad, not the operation."@en ;
+    skos:note "The syllable assignment is worth recording because it is the one place where this manual and the Vimuttimagga, the work the literature most often sets beside it, are reported to differ: the distribution of A, RA and HAṀ over the three treasures is inverted between them. That is a textual detail and it is the kind of thing a route between two works is argued from, so it is noted here and not built into a claim."@en ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the preamble (trans. Woodward 1916, p. 1-2)" .
+
+pmp:BoranAnulomaPatiloma a pm:Practicing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "Every station run in right succession and then in reverse order"@en, "Jede Station in rechter Folge und dann in umgekehrter Ordnung"@de ;
+    skos:definition "The rule of motion that governs the whole work. Each state is attained anuloma, in the way of right succession, and then paṭiloma, in reverse order; the thought-forms are taken from the nose-tip, fixed in the heart, then in the navel, and then placed one inch above the place of the station before, upward through the five raptures to the heart; and the reverse run puts each back where the forward run had placed it. The work applies the double run to the five raptures, to the twelve sub-exercises, to the five jhānas, to the ten devices, to the ten quarters of space and to the ten forms of knowledge."@en ;
+    skos:note "The double run is what makes the work long and what makes it short to describe. It is also the only structural feature of the manual that states a completeness condition of any kind: a station is done when it has been held in both directions. Nothing says what a practitioner is to do if the reverse run does not come."@en ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the order due (trans. Woodward 1916, p. 6-16)" .
+
+pmp:BoranItipandamPuja a pm:Practicing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The wax-taper offering: eight sticks in the candle, each station ending at a sound"@en, "Das Wachskerzenopfer: acht Stäbchen in der Kerze, jede Station endet an einem Geräusch"@de ;
+    skos:definition "The exercise that measures the work. Pieces of wood are set into a wax taper at intervals of about an inch, the first section about two inches; the practitioner develops the thought-forms of one element and continues meditating until the taper has burned down to the first stick and the stick falls audibly, whereupon he rises, squats without touching the ground, speaks the formula for the next station, and continues. Eight sticks carry the forward run and eight the reverse run, and the eighth is the token by which he is to know that the way of attainment in right succession is complete."@en ;
+    skos:note "The device is acoustic by design and the editor of 1896 says why: the practitioner cannot see the stick fall, so he is made aware of it by the noise. A meditation whose attention is withdrawn from the eye is given a clock it can hear. That is the most concrete thing in the transmission and it is the only measurement in it that a second person in the room could also take."@en ;
+    skos:note "It is one of the two features of the work for which the editors state that no route to Indian or Burmese Buddhism is known, which is why it is entered as a practice of its own rather than folded into the rubric it serves."@en ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the way of making wax-taper offerings for the fivefold rapture (trans. Woodward 1916, p. 24-27)" .
+
+pmp:BoranAnapanasati a pm:Practicing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The breathing exercise for mental clarity, with the sign extended to Meru and back"@en, "Die Atemübung für geistige Klarheit, mit dem Zeichen bis zum Meru und zurück"@de ;
+    skos:definition "The exercise the work calls the chief aim of meditation. After the concentration is established the three thought-forms of the element of space are withdrawn from the nose-tip, observed inch by inch, and the line of observation is extended: twelve inches to a span, two spans to a cubit, seven carpenter's cubits to a pole, twenty poles to a cast, eighty casts to a league, a hundred and then a thousand leagues until it seems like the ocean, then the Seven Great Rocks, then the peak of Mount Meru, then the six heavens, the sixteen Brahmā worlds and Endless Space; and then the same scale is returned in order to a single inch and placed in the nostril. The same is done for each of the ten quarters."@en ;
+    skos:note "The ladder is a scale of extent and the only quantified thing in the work besides the candle and the count. It is stated in units a carpenter would use at the bottom and in cosmological distances at the top, and the practitioner is to pass through all of them in both directions for each of ten quarters."@en ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, breathing exercise for mental clarity (trans. Woodward 1916, p. 67-71)" .
+
+pmc:BoranPancaDasaVara a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "Not less than five times nor more than ten, and the perception appears"@en, "Nicht weniger als fünf und nicht mehr als zehn Mal, und die Wahrnehmung erscheint"@de ;
+    skos:definition "The one counted threshold in the work, stated in the breathing exercise: to him who practises concentration by in-breathing and out-breathing, doing it not less than five times nor more than ten times, the perception of the mental states appears, the adverting of the door of the mind; and he is then to observe that perception in the colour of light blue and practise it in both directions."@en ;
+    skos:note "It is a closed count, which is rarer than an open one and is what makes the node worth having. A threshold with only a lower bound never falls due, because the practitioner may always do it once more. This one has an upper bound: at the tenth repetition the perception has either appeared or it has not, and the work says nothing whatever about the second case."@en ;
+    skos:note "Held beside pmc:CountedThresholdNeverFallsDue in generalizations/counted-thresholds.ttl and deliberately not entered there as a witness, because it is not one. That statement says a transmission fixing such a number provides in advance for the number being reached without the effect, either by prescribing continuation past it or by assigning the shortfall to an act of the operator. This work provides neither. It is therefore a silence of the same kind that file already records of the Notory Art, and a sharper one, because the Notory Art's count has no ceiling and this one does. Recorded as a note there rather than as a case, since the statement's own falsifier requires the transmission to say that the completed count establishes something, and this one says nothing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, breathing exercise for mental clarity (trans. Woodward 1916, p. 70)" .
+
+#
+# The signs, which are what this transmission is for
+#
+
+pmc:BoranKasinaDosa a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The blots of the device appear like smoke or white clouds"@en, "Die Flecken des Kunstgriffs erscheinen wie Rauch oder weiße Wolken"@de ;
+    skos:definition "The first appearance in the series, and the only one the work presents as a defect. When the meditation proceeds, any blots or blemishes in the induction-artifice, such as marks of froth or scratches in the mark of upholding, will look like smoke or like white clouds in the sky. In the breathing exercise the same blemishes appear as water mixed with foam and bubbles in waves, or as finger-marks and scratches in the earth device, or as steam passing through a tube."@en ;
+    skos:note "It is the nearest thing in the work to a negative sign and it is not one. The blemishes are a stage on the way, announced in advance like everything else, and the work has them fade before the clear image enters: the dim image fades as if by the passing of the blemishes. So the defect is a station and not a fault, and nothing follows from its persisting."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the preamble (trans. Woodward 1916, p. 2)" ;
+    dcterms:source "Yogāvacara's Manual, breathing exercise for mental clarity (trans. Woodward 1916, p. 67)" .
+
+pmc:BoranUggahaNimitta a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The image of the mark: a mirror drawn from its case, a flock of cranes before dark clouds"@en, "Das Bild des Merkmals: ein aus der Hülle gezogener Spiegel, ein Kranichschwarm vor dunklen Wolken"@de ;
+    skos:definition "The second appearance. Forthwith the image of the mark arises in him like a mirror drawn from its case, like a conch-shell scoured clean, like the moon as he slips from the clouds, or like a flock of cranes before dark clouds. The work states it in the indicative, as what arises, and gives four similes without saying that any one of them decides anything."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the preamble (trans. Woodward 1916, p. 2)" .
+
+pmc:BoranPatibhaganimitta a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The after-image: a jewelled fan, a crystal mirror, cleansed a thousand times"@en, "Das Nachbild: ein juwelenbesetzter Fächer, ein Kristallspiegel, tausendfach gereinigt"@de ;
+    skos:definition "The third appearance, given in the breathing exercise under a question the work asks itself: thus closely practising the way of in-breathing and out-breathing the two images appear to him — what is the token thereof? Then the image of the mark appears as a jewelled fan, as a crystal mirror, or the moon breaking through the clouds, or a flock of cranes before the clouds, as if piercing the mark of upholding, freed from the blemishes of the earth device, and cleansed a hundred, nay, a thousand times therefrom."@en ;
+    skos:note "The question the work puts — what is the token thereof — is the only place in the whole manual where it asks how something is known, and the answer is a list of four similes for an appearance. It asks for a token and gives an appearance, and it does not ask the question the other way round anywhere."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, breathing exercise for mental clarity (trans. Woodward 1916, p. 67)" .
+
+pmc:BoranPancapitiVanna a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The five raptures, each with its element and its triad of colours"@en, "Die fünf Freuden, jede mit ihrem Element und ihrer Dreierfarbe"@de ;
+    skos:definition "The catalogue the transmission is known for. Each of the five raptures is bound to an element and each has three colours, one for the ecstasy, one for the preamble and one for the access. The lesser thrill, with the element of extension: the ecstasy like the light of a firefly, self-lit by day and night; the preamble like the mild rays of the morning sun; the access like blue flowers and yellow flowers, named in Sinhala as katarolu and hirikaṇikā blossom. The momentary flash, with the element of heat: the ecstasy the colour of the morning star; the preamble golden; the access like the young sun rising in the east. The flooding rapture, with the element of cohesion: the ecstasy the brightness of the full moon with his sixteen parts complete; the preamble the colour of a lotus; the access a yellow flower, kinihiri. The transporting rapture, with the element of mobility: the ecstasy like the midday sun; the preamble light red like madder; the access the colour of the rain-cloud. The all-pervading rapture, with the element of space: the ecstasy like idda, jasmine and lotus flowers; the preamble like a sheaf of peacock's feathers; the access black as a beetle. Each triad is then withdrawn from the nose-tip, fixed in the heart and placed in the navel, and afterwards one inch above the station before."@en ;
+    skos:note "Three things about the catalogue decide how it should be read, and all three are in the text. It is announced to the practitioner before he sits: the formula of request names the rapture he is to attain, and the rubric that follows states which element appears and in which colours. It is stated in the indicative throughout — the element appears to him, the two images appear to him — and never as something to look for. And the colours are defined by local flowers rather than by abstract colour words, so the standard is a plant somebody in Ceylon could hold up beside the vision."@en ;
+    skos:note "Counted with the signs and carried separately from anything else, as SPEC §15 requires, and the reason is exactly the case this work makes. A sign announced in advance is reported because it was announced; where the same work also states a condition of failure, the announcement can at least be measured against it. Here there is no such condition anywhere in the work, so the catalogue is the whole of what the transmission says about how progress is known."@en ;
+    skos:note "The translator records that the Sinhala nīla covers blue and green without distinction and that he renders it blue-green, which is a fact about the standard and not about the vision. It is noted here and not built into a claim."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the meditation of the fivefold zest (trans. Woodward 1916, p. 6-10)" ;
+    dcterms:source "Yogāvacara's Manual, the preamble (trans. Woodward 1916, p. 2-3)" .
+
+pmc:BoranPancajhanaVanna a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The five jhānas, graded by degree of light"@en, "Die fünf Vertiefungen, nach dem Grad des Lichts geordnet"@de ;
+    skos:definition "The second catalogue, given in the breathing exercise under its own question: what are the three thought-forms of the five jhānas? The ecstasy of the first is like a firefly; of the second like the halo of the moon; of the third like the colour of the medicine star; of the fourth like the halo of the sun; of the fifth like white flowers. The preamble and the access of each are stated to be like those of the fivefold zest."@en ;
+    skos:note "This is a scale and it is a scale of brightness: firefly, moon's halo, a star, sun's halo, white. The stages of the transmission's highest attainment are therefore graded by how much light the practitioner sees, with nothing else distinguishing them, and the work states no upper or lower bound at which a light would be the wrong one."@en ;
+    skos:note "It is the sentence that makes this work a counter-case to pmc:TheSignTakenForTheAttainment. That statement holds of transmissions measuring progress by inner appearances that they name the appearances as the chief obstacle to further progress and place the mark of the counterfeit in the circumstances of the experience. This work measures progress by inner appearances and by nothing else, names no obstacle, and has no counterfeit. The protocol is examinations/the-sign-and-the-counterfeit.ttl."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, breathing exercise for mental clarity (trans. Woodward 1916, p. 69)" .
+
+pmc:BoranChabbannaBuddharasmi a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The six colour devices, called the six rays of the Buddha's radiance"@en, "Die sechs Farbkunstgriffe, die sechs Strahlen des Buddha-Glanzes genannt"@de ;
+    skos:definition "In the exercise by devices the ten kasiṇas yield six colour devices, and the work names them the six rays of the Buddha's radiance: blue-green, yellow, crimson, light red or orange-madder, white, and radiant. They are practised singly and then for the six colours at one and the same time; the light device is explained by the translator as a circle of light thrown upon a wall."@en ;
+    skos:note "The naming is the point. The colours a practitioner is to induce with clay frames are identified with the rays said to have come from the Buddha's body, so the standard against which he measures what he sees is a canonical description of somebody else."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the exercise by devices (trans. Woodward 1916, p. 78-79)" .
+
+pmc:BoranDasananaVidha a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "The ten forms of knowledge, each with its simile and its element"@en, "Die zehn Erkenntnisformen, jede mit ihrem Gleichnis und ihrem Element"@de ;
+    skos:definition "The last and highest series. Knowledge of calm and insight; insight into the rise and fall of things, taught with the lute whose sound neither stays nor departs; insight into disruption, taught with rain-bubbles bursting on a tank; insight into what is to be feared, where every world and every seat of consciousness seems a source of fear as lions and tigers to a coward; insight into evil, where the aggregates appear as a forest of wild beasts, a tank of water-sprites, an armed enemy, poisoned food, a blazing house; insight of disgust, with the golden swan loath to dwell in the outcast's pit; insight arising from desire for freedom, with the fish in the net and the frog in the snake's mouth; the insight of reflection; contemplation with indifference; and contemplation of adaptation. Each is attained with a preparation spoken as impermanence, suffering, there is no soul, and each has one element appearing to the practitioner."@en ;
+    skos:note "The similes are of dangers and the dangers are the content of the insight, not hazards of the practice. That distinction was checked by search across the whole work and is recorded at pmp:BoranPericulumSearch: the word danger occurs in the manual only inside these similes and once in the translator's theosophical footnote, and nowhere as a warning to the practitioner."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the ten forms of knowledge (trans. Woodward 1916, p. 129-135)" .
+
+pmc:BoranOkasaBhante a pm:Conceptualizing ;
+    pm:fromWork pmw:YogavacarasManual ;
+    rdfs:label "Leave asked of a confessor, whose office ends before the meditation begins"@en, "Erlaubnis von einem Beichtvater erbeten, dessen Amt vor der Meditation endet"@de ;
+    skos:definition "The one second person the work names. The meditation of the fivefold zest opens with a request for pardon addressed to a bhante, to be said three times: O sir, grant pardon for the transgressions we may have done in youthful ignorance, with mind confused through lack of skill, for the sake of our guidance hereafter. The formula of request then continues without an addressee, and the editor of 1916 states that the confessor's function ends at the foot of the page, after which the recurring okāsa is probably the self-adjuring of a solitary."@en ;
+    skos:note "Entered because of what follows from it. This transmission has its practitioner enter a condition in which he cannot check whether the operation is going as it should — the eyes are closed, the attention is withdrawn, and the clock has to be audible because he cannot see it. A second person is named at the door and dismissed before the first station. Nobody stays outside to read the outcome, and the work does not say that anybody should."@en ;
+    skos:note "The living transmission said the opposite, and the difference is recorded at pmc:BoranSisyaUmmattako rather than smoothed into this node: a Sinhala informant in 1916 held that the practice must not be taught by a guru who is not fully versed in it and able to see clairvoyantly what effect each meditation is having on his pupil. That is exactly the person the manual does not name."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, the meditation of the fivefold zest, the order due (trans. Woodward 1916, p. 6-7)" .
+
+#
+# What the transmission said outside the manual, and it is a first fixation
+#
+
+pmc:BoranSisyaUmmattako a pm:Cautioning ;
+    rdfs:label "The pupil taught by a guru not fully versed went mad and died"@en, "Der Schüler, den ein nicht voll bewanderter Lehrer unterrichtete, wurde wahnsinnig und starb"@de ;
+    skos:definition "The one caution this transmission is reported to carry, and it is not in the manual. A Sinhala informant related that the last bhikkhu in Ceylon known to hold the paramparā yoga, Doratiyaveye Thera of the Hangurangketa Wihāra, still living in 1900, had received the practice from an aged guru after a test of obedience, did not practise it himself, and taught it to one of his pupils, who went mad and died; and the informant's judgement was that this would probably happen unless the guru himself were fully versed in the methods and able to see clairvoyantly exactly what effect each meditation was having on his pupil. The same informant held that nobody in Ceylon then either knew or practised the exercises."@en ;
+    pm:fromWork pmw:WoodwardManualOfAMystic ;
+    pm:cautionsAbout pmp:BoranParikamma ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by G. Sagaris de Silva, Sinhala pandit of Mahinda Buddhist College, Galle, to F. L. Woodward, principal of that college, who recorded it in his translator's prefatory note dated Galle, 7 August 1916, and printed it in English. De Silva is named; the guru and the pupil are not, and Doratiyaveye Thera is named as the intermediate holder. No date is given for the pupil's death and no place. The language of the telling is not stated and no Sinhala wording is carried in the volume, so what stands is Woodward's English. This is the first fixation of the account: no earlier written source for it is named, and the volume gives it as an oral communication."@en ;
+    pm:withinTradition pmt:BoranKammatthana ;
+    dcterms:source "Yogāvacara's Manual, translator's prefatory note (Woodward 1916, p. xviii-xix)" ;
+    skos:note "Carried with pm:fieldAttestation and not with pm:textualAttestation because the account is not in the work; it is an oral report first written down in the volume that translates the work, which is the case SPEC §10 provides the mode for. Whether the judgement about the guru is de Silva's, Woodward's or the transmission's cannot be separated in the printed sentence, and the field record says so."@en ;
+    skos:note "Its position in the holding is the finding. The manual states no caution, no danger and no condition of failure — established by reading the whole of it and searched for term by term at pmp:BoranPericulumSearch. The transmission's last living memory of itself states the gravest caution a meditation corpus in this holding carries: that the practice drove a pupil mad and killed him, and that a teacher unable to watch it clairvoyantly should not give it. The written manual and the oral lineage therefore disagree about whether the practice is dangerous, and the disagreement is not between parties but between a text and the people who last held it."@en ;
+    skos:note "Not entered as a pm:Disputing node, and the reason is a rule and not a preference: a dispute needs two sources, and what stands against this report is the manual's silence. A silence is not a source. The pair is held instead as this note plus the search node that establishes the silence over the whole work."@en .
+
+#
+# Where the operation lies on the axes
+#
+
+pmc:BoranParikammaSensoryAnchoring a pm:Situating ;
+    rdfs:label "The preparation, situated on sensory anchoring"@en, "Die Vorbereitung, auf der Sinnesbindung verortet"@de ;
+    pm:situatedNode pmp:BoranParikamma ;
+    pm:axisValue pm:withdrawnAbsorption ;
+    pm:situationGround "The work has the practitioner fix the sight on the nose-tip and then grasp that he sees it with the sight-mind rather than with the eye, and everything afterwards is an appearance arising within: images, elements, colour triads, lights. The clock is audible precisely because he cannot see it, which is the plainest evidence in the work that the eye is out of use during the station. The ordinary sense channel is therefore not the locus of the operation, and the appearances are expressly not colours seen as physical eyes see colours. The value is the withdrawn one and the placement is a reading of the work, not a term the work uses."@en ;
+    pm:attestedBy pm:compilerInference .
+
+pmc:BoranParikammaAwarenessLocus a pm:Situating ;
+    rdfs:label "The preparation, situated on where the awareness is put"@en, "Die Vorbereitung, auf dem Ort des Bewusstseins verortet"@de ;
+    pm:situatedNode pmp:BoranParikamma ;
+    pm:axisValue pm:embodiedLocus ;
+    pm:situationGround "Every station is placed somewhere in the body and the places are given in inches. The thought-forms are withdrawn from the nose-tip, fixed in the heart, then in the navel, and then each successive rapture one inch above the one before, up to a point an inch from the heart; the elements are located in the body and the thirty-two parts are gone through one by one. Where the extension ladder of the breathing exercise carries the sign out to Mount Meru and the Brahmā worlds, it brings it back to a single inch and places it in the nostril, so even the widest excursion ends in the body. Nothing in the work has the practitioner's awareness leave it."@en ;
+    pm:attestedBy pm:compilerInference .
