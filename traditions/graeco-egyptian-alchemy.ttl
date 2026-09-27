@@ -133,3 +133,58 @@ pmc:ZosimosSacerdotesNaturaliaOccultaverunt a pm:Conceptualizing ;
     pm:withinTradition pmt:GraecoEgyptianAlchemy ;
     pm:fromWork pmw:LogosTeleutaios ;
     dcterms:source "Zosime, Compte final, § 7, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 192" .
+
+#
+# The two grades, what precedes attempting them, and where the letter puts the
+# outcome
+#
+
+pmc:ZosimosDuoGradusTincturarum a pm:Conceptualizing ;
+    rdfs:label "Two grades of tinctures, and the cooked one is shorter and needs more skill"@en, "Zwei Stufen der Tinkturen, und die gekochte ist kürzer und verlangt mehr Geschick"@de ;
+    skos:definition "The comparison the letter draws between the two ways of working: there are two grades of fitting tinctures, according to whether one operates on the raw or on the cooked species. The procedure of cooking is free of a great fatigue; it needs a great skill and it is shorter, as the divine Mary has said."@en ;
+    skos:note "Three grounds are given and all three are properties of the procedure and not of whoever works it: it costs less labour, it demands more dexterity, it takes less time. Nothing is said about the fitness, the rank or the initiation of the operator, and the judgement is attributed to a named earlier authority rather than to the writer."@en ;
+    skos:note "It is also the only comparative judgement of working in what was read of this corpus, which is why it is entered although it decides nothing about the tinctures themselves."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    skos:note "The page is the page after the one that closes the prescription of the Final Reckoning, and whether this sentence still belongs to that letter was not established. The node therefore cites the page and is filed under the collective work identifier."@en ;
+    dcterms:source "Zosime, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 193" .
+
+pmp:ZosimosOpusTemptare a pm:Practicing ;
+    rdfs:label "Attempting the work in detail, as it has been set out"@en, "Das Werk im einzelnen versuchen, wie es dargelegt ist"@de ;
+    skos:definition "What the writer tells the addressee to do with the exposition he has given: this exposition gives rise to no ambiguity, but its purpose is to engage you to try whether fortune is favourable to you. And, at the same place: if you know the two grades, those of the Jews and of the others, do not fear to try, carrying out in detail all the things I have set out to you."@en ;
+    skos:note "The second half of the first sentence is damaged in the witness read: the naming of the second party to the two grades breaks off in the printed text, and this node carries the clause as far as the edition gives it and no further."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 172" .
+
+pmc:ZosimosFortunaFavens a pm:Conceptualizing ;
+    rdfs:label "Whether fortune is favourable to you"@en, "Ob das Glück dir günstig ist"@de ;
+    skos:definition "The clause in which the letter states what the attempt is for: the exposition has as its purpose to engage the addressee to try whether fortune is favourable to her. The wording admits two readings and the witness does not decide between them — that she should try, if fortune is favourable, or that the trying is itself the way of finding out whether fortune is favourable. On either reading the outcome of a single attempt is placed in fortune."@en ;
+    skos:note "This is what a run that produced nothing is assigned to in this corpus, and it is worth naming exactly because it is so cheap. Fortune is not a state of the operator, not a state of the material, not a day and not a third party; nothing establishes it in advance and nothing can be shown to have been absent. A transmission that puts its own failures there has stated a condition that no outcome can contradict."@en ;
+    skos:note "Nothing else in what was read of this corpus states a condition of failure at all. The search is at pmp:ZosimosDefectusSearch, and this node is what it returned in place of what it was looking for."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 172" .
+
+pmc:ZosimosPraesuppositaDuoGradus a pm:Presupposing ;
+    rdfs:label "Attempting the work presupposes knowing the two grades"@en, "Der Versuch des Werkes setzt die Kenntnis der zwei Stufen voraus"@de ;
+    skos:definition "The order the letter sets: if you know the two grades, do not fear to try, carrying out in detail all the things I have set out to you. The knowing is put before the attempting and is put as its condition, in a conditional clause and not as a warning."@en ;
+    pm:dependentStep pmp:ZosimosOpusTemptare ;
+    pm:priorStep pmc:ZosimosDuoGradusTincturarum ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    skos:note "Set at prescribed order and not at stated necessity, because no consequence of proceeding without the knowledge is given anywhere in what was read. The strength is the honest one: an instruction stands there, and a reader who took it for a necessity would be supplying the missing half himself."@en ;
+    dcterms:source "Zosime, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 172 und 193" .
+
+pmc:ZosimosTemporaOperationum a pm:Conceptualizing ;
+    rdfs:label "The intervals the corpus counts, in hours and in days"@en, "Die Fristen, die der Korpus zählt, in Stunden und in Tagen"@de ;
+    skos:definition "The counted intervals read in the translation of the Zosimos pieces: taking the pearl, put it to decoction with oil in an unstopped vessel, without a lid, for three hours, over a moderate fire; leave the whole for three times twenty-four hours, until the product is cooked; cook until the colour is spread through the whole mass, some for nine hours, others for two days; the time of the cooking for all products, notably when one operates on plates, is not less than nine hours; and when you want to operate so as to bring the product to yellow, leave it in the furnace for six hours."@en ;
+    skos:note "Counted, stated as a minimum in one case, and nowhere attached to a sign. The corpus says how long and does not say what is to be seen when the time is up; the two are different kinds of statement and this transmission makes only the first. Where the interval is given as a lower bound — not less than nine hours — nothing is said about the upper. The search for a sign is at pmp:ZosimosSignumSearch."@en ;
+    skos:note "The edition itself records that one of these intervals is transmitted in more than one figure: at the place that gives nine hours or two days it notes a witness reading one day and a night and another reading twelve hours. A number that the manuscripts give three ways is a number about which the corpus has no single claim, and it is entered here with that said."@en ;
+    skos:note "The piece numbers of these pages were not established, and the node therefore cites the pages of the edition alone. That is enough to find the places and not enough to say which treatise carries them; a later run that settles the numbering should carry it back here."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, französische Übersetzung, S. 114, 132, 143, 166 und 196" .
