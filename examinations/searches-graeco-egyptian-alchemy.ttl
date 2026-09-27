@@ -1,0 +1,49 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the two searches carried in the Zosimos corpus on 2026-09-27
+#
+# Both were put to the whole volume and not to a page, because this corpus is
+# reached through a full-text hit interface and that is what it is good at.
+# Both are about the two things an operative handbook is expected to carry and
+# this one does not: a sign that the work has succeeded, and a statement of
+# what a run that produced nothing is to be assigned to.
+#
+# A limit that applies to both, and it is the limit of the instrument. The
+# interface does not match without diacritics: a search for fatalite returned
+# nothing while fatalités stands on page 192 of the same volume and came back
+# through another term. Every term below was therefore searched in the accented
+# form the French of the edition uses, and a negative finding reached in an
+# unaccented form would be a statement about the index and not about the work.
+# See prima-materia#799.
+#
+
+pmp:ZosimosSignumSearch a pm:Searching ;
+    rdfs:label "Whether the Zosimos translation names a sign by which the work is known to have succeeded"@en, "Ob die Zosimos-Übersetzung ein Zeichen nennt, an dem das Gelingen des Werkes erkannt wird"@de ;
+    pm:searchedCorpus "M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888; searched over the whole volume, and read at the wording where a hit fell" ;
+    pm:searchedFor "A passage in which the corpus states what is to be seen, heard or found when an operation has succeeded: a colour reached, an appearance in the vessel, an assay with a perceptible outcome — anything that would let an operator tell a completed work from an incomplete one." ;
+    pm:searchTerms "Whole-volume search for signe, in the French of the edition. Seven hits, all of them in the apparatus to the Greek text, pages 9, 10, 12, 13, 19, 26 and 30, and every one of them about a manuscript abbreviation sign for a metal or a colour. No hit anywhere in the French translation of the Zosimos pieces, pages 111 to 197." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-27" ;
+    dcterms:date "2026-09-27" ;
+    skos:note "The finding sits beside what the same corpus does carry, and that is what makes it worth a node. The intervals are exact and repeated — three hours, three times twenty-four hours, nine hours, six hours, not less than nine hours — and they are the only thing that tells the operator when to stop. A transmission that counts the time and never names the sign has made the clock its whole criterion, and that is a fact about the transmission and not a gap in this search."@en ;
+    skos:note "What the search cannot say, and it is a real limit. It was carried in one word in one language over one livraison. A sentence of exactly the shape sought is reported to stand in the third livraison of the same edition, where the Greek has, when you see the complete goldening, then know that you have made the complete iosis; that volume was not opened in this run and that sentence was not read. If it stands there, the finding above is a statement about this volume and not about Zosimos."@en ;
+    skos:note "A second limit: the word for a sign need not be signe. The search would not have caught indice, marque, preuve, or a construction that names the appearance without naming it as a sign. The finding is as strong as the term, which is the whole reason the term is written down."@en .
+
+pmp:ZosimosDefectusSearch a pm:Searching ;
+    rdfs:label "Whether the Final Reckoning says what a run that produced nothing is to be assigned to"@en, "Ob die letzte Abrechnung sagt, worauf ein ertraglos gebliebener Durchgang zu schieben ist"@de ;
+    pm:searchedCorpus "Zosimos, the Final Reckoning and the pages around it, in the French translation in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888; read at the wording on pages 172, 190, 192 and 193, with the whole volume searched by term" ;
+    pm:searchedFor "A stated condition of failure: a state of the operator, of the material, of the day or of a third party to which the corpus assigns an operation that did not come off, or a term after which nothing more is to be expected." ;
+    pm:searchTerms "Whole-volume search for perfection, surnaturel, sacrifices, demons, essayer, Pasteur, Theosebie, marches, heures, cuisson and déchirer, all in the French of the edition; the paragraphs returned for each were read in full, and the four pages named were read through." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:ZosimosFortunaFavens ;
+    pm:searchedBy "prima-materia, 2026-09-27" ;
+    dcterms:date "2026-09-27" ;
+    skos:note "What came back is not a condition of failure but the place where the corpus puts the outcome: the exposition has as its purpose to engage the addressee to try whether fortune is favourable to her. Fortune is not a state of anybody or anything, nothing establishes it beforehand and nothing shows it to have been absent, so an operation that produced nothing has an account available to it that no outcome can contradict. That is the opposing finding, and it is stronger than the silence the search expected."@en ;
+    skos:note "Beside it stands the one thing in this corpus that does read like a condition, and it points the other way: the warning at the point of attainment, which tells the addressee to fear the natural elements of matter once she recognises that she has reached perfection. It is a condition on what follows success and not on what explains its absence. The node is pmc:ZosimosCautioInPerfectione."@en ;
+    skos:note "Not searched: the technical treatises and the commentators of the same volume, which is the larger part of it, and the Greek text facing the translation. A condition of failure in one of those would not have been caught by these terms."@en .
