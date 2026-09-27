@@ -1,0 +1,190 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Graeco-Egyptian alchemy, taken off the register at two works
+# of Zosimos
+#
+# The registry entrance of SPEC 14, and inside it the tradition whose
+# registration described something no other entry in that file describes: an
+# operation on matter reported together with dreams that interpret it. That is
+# the earliest alchemical transmission there is, it stood at corpusNamed with
+# no passage read, and the reason was the edition — the only complete one is
+# Berthelot and Ruelle of 1887 and 1888, and its French translation begins on
+# a page the usual access path of this setup does not reach.
+#
+# It was reached by a different path, and that path is the second finding of
+# the run: prima-materia#797.
+#
+# Order of the file: the tradition, the two works, then the vision and what the
+# vision says about itself, then the prescription of the Final Reckoning with
+# what it claims and the warning inside it, then the accusation the same letter
+# makes against the custodians of the art, then the two grades and what
+# precedes attempting them, then the intervals.
+#
+
+pmt:GraecoEgyptianAlchemy a pm:Tradition ;
+    rdfs:label "Graeco-Egyptian alchemy"@en, "Griechisch-ägyptische Alchemie"@de ;
+    skos:definition "The earliest alchemical transmission, in which the operation on matter is reported together with dreams that interpret it, and in which a named practitioner writes to a named woman both a procedure and an accusation against the priests of his own art."@en ;
+    skos:note "Three decisions before the first node. Route of contact: documented, and it was documented at the registration — this material stands at the head of the chain that runs through the Arabic and the Latin alchemy the holding already carries, so nothing here counts as an independent witness against them. The relation to the Egyptian temple milieu is a different question and the Final Reckoning speaks to it from inside."@en ;
+    skos:note "Edition: the French translation in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, read through the full-text hit interface of the digitisation, which returns whole paragraphs. It is textually superseded — Martelli's critical work has moved beyond it — and it is the only complete edition of the corpus there is, and it is out of copyright. Where a later editor would read otherwise, this witness says what Berthelot read."@en ;
+    skos:note "The page numbers below are the printed pages, and that had to be established rather than assumed: the interface returns a leaf index. For this volume the two coincide, verified against the scan metadata and, independently, against the printed table of contents, which puts the pieces numbered 3.-41, 3.-43, 3.-49 and 3.-51 on the pages where those headings actually stand."@en ;
+    skos:note "Number of citable passages: small, and the corpus is the reason. What survives under the name of Zosimos is a conglomerate — fragments of the Cheirokmeta, the visions, and Byzantine accretions — and Berthelot says so in his own preface, announcing the works or rather the fragments attributed to Zosimos. Twelve places are entered here, and the number of pieces the third part of the translation carries was not counted."@en ;
+    skos:note "The pieces are numbered in the edition and their numbers are not used below. The printed headings were not among the paragraphs the retrieval returned, so which numbered piece carries which of the pages read was not established; the one exception is the Final Reckoning, whose title stands in the table of contents and whose salutation was read. Everything else is filed under the collective work identifier, and a later run that reads the headings should split it."@en ;
+    skos:note "What was read at the wording: the first lesson of Sur la Vertu, pages 111 and following, at the vision of the altar and of the priest Ion; the Final Reckoning at its sections 7 and 8, pages 192 and 193, and at the two grades of tinctures, page 193; the passage about attempting, page 172; and the intervals on pages 114, 132, 143, 166 and 196. Not read: everything else in the eighty-seven pieces, including the whole of the technical treatises and the commentators, and the Greek text facing the translation."@en ;
+    skos:note "A limit of the access path, and it decides what this file may quote. One retrieval of the same interface returned the French paragraphs translated into German without saying so, while six others returned the original. Every passage a node below rests on came back in French; three paragraphs that came back in another language were treated as not read and carry nothing. See prima-materia#799."@en ;
+    pm:principalCorpus "Zosimos of Panopolis, the Visions and the authentic memoirs; M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, Paris 1887-1888" ;
+    pm:corpusWork pmw:Cheirokmeta ;
+    pm:corpusWork pmw:LogosTeleutaios ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmw:Cheirokmeta a dcterms:BibliographicResource ;
+    rdfs:label "The works transmitted under the name of Zosimos"@en, "Die unter dem Namen des Zosimos überlieferten Schriften"@de ;
+    skos:note "A collective identifier, and it says so rather than pretending to be a work. What Berthelot prints as the third part of his translation is a series of numbered pieces attributed to Zosimos; the number and the title of an individual piece were not established in this run, because the printed headings were not among the paragraphs the retrieval returned. The places entered under this identifier therefore cite the page of the edition and, where the printed paragraph carried one, its section number."@en ;
+    skos:note "The piece that carries the visions is transmitted under the title On Virtue and is the part of this corpus that is read and cited everywhere. That title is not entered as a work identifier here, because the heading itself was not read; a later run that reads it should split this identifier and carry the split back to every node below."@en .
+
+pmw:LogosTeleutaios a dcterms:BibliographicResource ;
+    rdfs:label "The Final Reckoning"@en, "Die letzte Abrechnung"@de ;
+    skos:note "The one piece of this corpus whose title was read in this run. The table of contents of the volume gives it as Le Premier Livre du Compte Final de Zosime le Thebain, and the piece itself opens, four pages before the passages entered below, with the salutation Zosime a Theosebie, salut. It is a letter, and it is the one place in what was read where the writer states a procedure, a warning and an accusation in the same breath."@en .
+
+#
+# The vision, and what the vision says about itself
+#
+
+pmc:ZosimosAraQuindecimGraduum a pm:Conceptualizing ;
+    rdfs:label "The altar in the form of a cup, with fifteen steps"@en, "Der Altar in Bechergestalt, mit fünfzehn Stufen"@de ;
+    skos:definition "The opening of the first lesson. Having said these things, the writer falls asleep and sees a sacrificer standing before him at the top of an altar in the form of a cup; the altar has fifteen steps to climb; the priest stands upon it, and a voice from above says that it has accomplished the action of descending the fifteen steps, walking towards the darkness, and the action of climbing the steps, going towards the light, that it is the sacrificer who renews it by casting off the thick nature of the body, and that, consecrated priest thus by necessity, it becomes a spirit."@en ;
+    skos:note "The number is fifteen in both directions and the two directions are named as two actions, one towards darkness and one towards light. Whatever else the passage is, it is a count with a stated sense: the descent is not the failure of the ascent but its first half."@en ;
+    skos:note "Entered as what the source says and not as what it is said to accomplish. The whole of it is spoken by a figure inside a reported dream, and the speaker is the one being operated on, not the operator. A pm:Yielding formed from this would credit the transmission with a claim it makes in the mouth of a dream."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, die Vision vom Altar, § 2, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 111" .
+
+pmc:ZosimosIonDilaniatus a pm:Conceptualizing ;
+    rdfs:label "Ion the priest, dismembered according to the rules of the combination"@en, "Der Priester Ion, zergliedert nach den Regeln der Zusammensetzung"@de ;
+    skos:definition "What the figure on the altar answers when asked who he is. He is Ion, the priest of the sanctuaries, and he suffers an intolerable violence: someone came in the morning in haste and did violence to him, running him through with a sword and dismembering him according to the rules of the combination; he took the whole skin from his head with the sword he held; he mixed the bones with the flesh and burned them with the fire of the treatment; and it is thus, by the transformation of the body, that he learned to become a spirit. As he goes on speaking and is pressed to speak further, his eyes become like blood and he vomits all his flesh; and the dreamer sees him changed into a small misshapen man, tearing himself with his own teeth, and sinking down."@en ;
+    skos:note "Two things in the wording are worth keeping apart from the famous image. The dismemberment is said to follow rules — the rules of the combination — so the violence is presented as an operation and not as an assault. And the collapse comes after the dreamer forces him to keep speaking, which puts the undoing of the figure on the questioner and not on the treatment."@en ;
+    skos:note "This is the passage on which the reputation of the corpus rests, and the corpus does nothing with it: nothing in what was read attaches a procedure, a condition or a sign to it. It is a report of a dream inside a treatise on tinctures."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, die Vision vom Altar, § 3, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 111" .
+
+#
+# The Final Reckoning: a prescription, what it claims, and the warning that
+# stands at the point of attainment
+#
+
+pmp:ZosimosSedeAdFocum a pm:Practicing ;
+    rdfs:label "Sit at your hearth, rest the body, resist the twelve fatalities"@en, "Sitze an deinem Herd, ruhe den Körper, widerstehe den zwölf Verhängnissen"@de ;
+    skos:definition "What the letter prescribes to Theosebeia in place of what the priests offer her. Do not let yourself be seduced; do not start wandering in search of God, but stay seated at your hearth, and God will come to you, who is everywhere and is not confined to the lowest place as the demons are. Rest your body, calm your passions, resist desire, pleasure, anger, grief, and the twelve fatalities of death. Directing yourself thus, you will call the divine being to you, and the divine being will come to you, who is everywhere and nowhere. Without being called, offer sacrifices — not the sacrifices that profit those men and are meant to feed them and please them, but such as drive them off and destroy them. Do these things until you have become perfect in your soul."@en ;
+    skos:note "The list of what is to be resisted is four states and then a number: desire, pleasure, anger, grief, and the twelve fatalities of death. The four are conditions a person can notice in himself; the twelve are not enumerated in what was read, and the passage gives no way of telling whether one of them is present."@en ;
+    skos:note "The counter-prescription is the interesting half. Sacrifices are not forbidden, they are redirected: the ones to offer are those that drive off and destroy the men who live by sacrifices, and the letter names an authority for them. A transmission that answers a cult by prescribing a different sacrifice is saying that the operation was never the problem."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:LogosTeleutaios ;
+    dcterms:source "Zosime, Compte final, § 8, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 192-193" .
+
+pmc:ZosimosTincturaeNaturales a pm:Conceptualizing ;
+    rdfs:label "The tinctures that are fitting, authentic and natural"@en, "Die Tinkturen, die schicklich, echt und natürlich sind"@de ;
+    skos:definition "What the letter says the prescribed conduct obtains: operating thus, you will obtain the tinctures that are fitting, authentic and natural. The same letter has already distinguished those from the colours fabricated by supernatural means, which the priests of the temples produced and sold in return for offerings."@en ;
+    skos:note "A material result made to depend on a course of conduct, and the letter states it without a bridge. Between resting the body and obtaining a tincture there is one clause, in operating thus, and nothing else: no apparatus, no substance, no interval. That is the whole of the mechanism this transmission gives at this place."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:LogosTeleutaios ;
+    dcterms:source "Zosime, Compte final, § 8, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 193" .
+
+pmc:ZosimosDisciplinaYieldsTincturas a pm:Yielding ;
+    rdfs:label "The conduct at the hearth yields the natural tinctures"@en, "Die Haltung am Herd bringt die natürlichen Tinkturen hervor"@de ;
+    pm:byPractice pmp:ZosimosSedeAdFocum ;
+    pm:yieldsCapacity pmc:ZosimosTincturaeNaturales ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:LogosTeleutaios ;
+    skos:note "The claim is the reverse of the circular ones this holding usually has to refuse. It does not say that working on matter produces a state of soul; it says that a state of soul produces a working on matter, and it names the product in the terms of the craft. What would tell against it is a tincture obtained without the conduct, and the letter says nothing about that case."@en ;
+    dcterms:source "Zosime, Compte final, § 8, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 192-193" .
+
+pmc:ZosimosCautioInPerfectione a pm:Cautioning ;
+    rdfs:label "When you know you have reached perfection, then fear the elements of matter"@en, "Wenn du erkennst, dass du zur Vollendung gelangt bist, dann fürchte die Elemente der Materie"@de ;
+    skos:definition "The warning that closes the prescription, and it is placed at its point of success: but when you recognise that you have arrived at perfection, then fear the intervention of the natural elements of matter; descending towards the Shepherd and plunging into meditation, ascend thus to your origin."@en ;
+    skos:note "The warning stands inside the prescribing passage, in the same letter, in the sentence after the one that says what the practice obtains, and it warns against the very material the practice was for. It is not supplied by a later commentator and not by an outside critic, and there is no other passage in what was read that could be taken for its source."@en ;
+    skos:note "It is also the one place in this corpus where a stated attainment is made into a danger rather than an end. What it prescribes against the danger is a descent and a meditation, and the thing descended to is named and not described; the letter has used the same name nowhere else in what was read."@en ;
+    pm:cautionsAbout pmp:ZosimosSedeAdFocum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:LogosTeleutaios ;
+    dcterms:source "Zosime, Compte final, § 8, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 193" .
+
+#
+# The accusation the same letter makes against the custodians of the art
+#
+
+pmc:ZosimosSacerdotesNaturaliaOccultaverunt a pm:Conceptualizing ;
+    rdfs:label "They hid the natural procedures because they lived on the sacrifices"@en, "Sie verbargen die natürlichen Verfahren, weil sie von den Opfern lebten"@de ;
+    skos:definition "The account the letter gives of why the working procedures of the art are not available. Those who brought the colours fabricated by supernatural means, being set aside, counselled the men of standing to act against all of us, the learned, who operate by natural actions; they did not want to be set aside by men, but to be entreated and adjured to yield what they had made, in return for offerings and sacrifices. They therefore kept hidden all the natural procedures, those which give the results without artifice."@en ;
+    skos:definition "And the letter gives the ground: it was not only out of jealousy against us, but because they were anxious for their existence and did not want to expose themselves to being beaten with rods, driven out, and dying of hunger, once they ceased to receive the offerings of the sacrifices. They hid the natural procedures and put forward their own, which were of the supernatural order; they represented to their priests that the common people would neglect the sacrifices if they no longer had recourse to the supernatural procedures; and thus, by the effect of custom, of law and of fear, their sacrifices were well attended. They no longer even carried out their lying announcements. When their sanctuaries came to be deserted and their sacrifices neglected, they still got the men who had stayed with them to give themselves to the sacrifices, flattering them with dreams and other deceits and with certain counsels. And the letter closes the passage on the addressee: they want to win you to their cause too, through their false prophet; they flatter you; being starved, they covet not only the sacrifices but your soul."@en ;
+    skos:note "This is an internal critic of an operative tradition, and what he locates the withholding in is neither ignorance nor a rule of silence but an income. The procedures that work are hidden because the ones that do not work are what the sacrifices are paid for. A transmission that says this about its own custodians is saying that the unavailability of its working part is a fact about who lives by it."@en ;
+    skos:note "Entered as one side. The priests are not heard here, and the letter is the only witness read; what it reports about their motives is its claim and not a finding of this holding. What is not in question is that the distinction between natural and supernatural procedures is the letter's own, and that it is the distinction on which the whole accusation rests."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:LogosTeleutaios ;
+    dcterms:source "Zosime, Compte final, § 7, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 192" .
+
+#
+# The two grades, what precedes attempting them, and where the letter puts the
+# outcome
+#
+
+pmc:ZosimosDuoGradusTincturarum a pm:Conceptualizing ;
+    rdfs:label "Two grades of tinctures, and the cooked one is shorter and needs more skill"@en, "Zwei Stufen der Tinkturen, und die gekochte ist kürzer und verlangt mehr Geschick"@de ;
+    skos:definition "The comparison the letter draws between the two ways of working: there are two grades of fitting tinctures, according to whether one operates on the raw or on the cooked species. The procedure of cooking is free of a great fatigue; it needs a great skill and it is shorter, as the divine Mary has said."@en ;
+    skos:note "Three grounds are given and all three are properties of the procedure and not of whoever works it: it costs less labour, it demands more dexterity, it takes less time. Nothing is said about the fitness, the rank or the initiation of the operator, and the judgement is attributed to a named earlier authority rather than to the writer."@en ;
+    skos:note "It is also the only comparative judgement of working in what was read of this corpus, which is why it is entered although it decides nothing about the tinctures themselves."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    skos:note "The page is the page after the one that closes the prescription of the Final Reckoning, and whether this sentence still belongs to that letter was not established. The node therefore cites the page and is filed under the collective work identifier."@en ;
+    dcterms:source "Zosime, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 193" .
+
+pmp:ZosimosOpusTemptare a pm:Practicing ;
+    rdfs:label "Attempting the work in detail, as it has been set out"@en, "Das Werk im einzelnen versuchen, wie es dargelegt ist"@de ;
+    skos:definition "What the writer tells the addressee to do with the exposition he has given: this exposition gives rise to no ambiguity, but its purpose is to engage you to try whether fortune is favourable to you. And, at the same place: if you know the two grades, those of the Jews and of the others, do not fear to try, carrying out in detail all the things I have set out to you."@en ;
+    skos:note "The second half of the first sentence is damaged in the witness read: the naming of the second party to the two grades breaks off in the printed text, and this node carries the clause as far as the edition gives it and no further."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 172" .
+
+pmc:ZosimosFortunaFavens a pm:Conceptualizing ;
+    rdfs:label "Whether fortune is favourable to you"@en, "Ob das Glück dir günstig ist"@de ;
+    skos:definition "The clause in which the letter states what the attempt is for: the exposition has as its purpose to engage the addressee to try whether fortune is favourable to her. The wording admits two readings and the witness does not decide between them — that she should try, if fortune is favourable, or that the trying is itself the way of finding out whether fortune is favourable. On either reading the outcome of a single attempt is placed in fortune."@en ;
+    skos:note "This is what a run that produced nothing is assigned to in this corpus, and it is worth naming exactly because it is so cheap. Fortune is not a state of the operator, not a state of the material, not a day and not a third party; nothing establishes it in advance and nothing can be shown to have been absent. A transmission that puts its own failures there has stated a condition that no outcome can contradict."@en ;
+    skos:note "Nothing else in what was read of this corpus states a condition of failure at all. The search is at pmp:ZosimosDefectusSearch, and this node is what it returned in place of what it was looking for."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 172" .
+
+pmc:ZosimosPraesuppositaDuoGradus a pm:Presupposing ;
+    rdfs:label "Attempting the work presupposes knowing the two grades"@en, "Der Versuch des Werkes setzt die Kenntnis der zwei Stufen voraus"@de ;
+    skos:definition "The order the letter sets: if you know the two grades, do not fear to try, carrying out in detail all the things I have set out to you. The knowing is put before the attempting and is put as its condition, in a conditional clause and not as a warning."@en ;
+    pm:dependentStep pmp:ZosimosOpusTemptare ;
+    pm:priorStep pmc:ZosimosDuoGradusTincturarum ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    skos:note "Set at prescribed order and not at stated necessity, because no consequence of proceeding without the knowledge is given anywhere in what was read. The strength is the honest one: an instruction stands there, and a reader who took it for a necessity would be supplying the missing half himself."@en ;
+    dcterms:source "Zosime, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 172 und 193" .
+
+pmc:ZosimosTemporaOperationum a pm:Conceptualizing ;
+    rdfs:label "The intervals the corpus counts, in hours and in days"@en, "Die Fristen, die der Korpus zählt, in Stunden und in Tagen"@de ;
+    skos:definition "The counted intervals read in the translation of the Zosimos pieces: taking the pearl, put it to decoction with oil in an unstopped vessel, without a lid, for three hours, over a moderate fire; leave the whole for three times twenty-four hours, until the product is cooked; cook until the colour is spread through the whole mass, some for nine hours, others for two days; the time of the cooking for all products, notably when one operates on plates, is not less than nine hours; and when you want to operate so as to bring the product to yellow, leave it in the furnace for six hours."@en ;
+    skos:note "Counted, stated as a minimum in one case, and nowhere attached to a sign. The corpus says how long and does not say what is to be seen when the time is up; the two are different kinds of statement and this transmission makes only the first. Where the interval is given as a lower bound — not less than nine hours — nothing is said about the upper. The search for a sign is at pmp:ZosimosSignumSearch."@en ;
+    skos:note "The edition itself records that one of these intervals is transmitted in more than one figure: at the place that gives nine hours or two days it notes a witness reading one day and a night and another reading twelve hours. A number that the manuscripts give three ways is a number about which the corpus has no single claim, and it is entered here with that said."@en ;
+    skos:note "The piece numbers of these pages were not established, and the node therefore cites the pages of the edition alone. That is enough to find the places and not enough to say which treatise carries them; a later run that settles the numbering should carry it back here."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, französische Übersetzung, S. 114, 132, 143, 166 und 196" .
