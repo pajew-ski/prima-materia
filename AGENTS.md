@@ -161,6 +161,10 @@ Die Regel dagegen ist keine Prüfung, sondern ein Schritt: **der Branch ist die 
 
 Ein ungültiger Zwischenstand auf einem `claude/`-Branch ist dabei kein Schaden — dafür ist der Branch da, und die `concurrency`-Gruppe fängt die überholten Läufe ab. Ein unbemerkter Verlust ist einer.
 
+**Und der Vorzug von `prima_repo_replace` ist keine Stilregel.** `prima_repo_write` **legt nur neue Dateien an**: auf einen Pfad, der auf dem Zielbranch schon existiert, antwortet es mit `Your request is invalid or could not be processed by the service` — ohne den Pfad zu nennen und ohne den Grund. Die Meldung liest sich wie eine Zurückweisung des Inhalts, und ein Lauf, der sie so liest, sucht den Fehler in seinem Turtle. Am 2026-09-27 durch vier Proben eingegrenzt: nicht die Größe entscheidet (elf Kilozeichen neu gingen durch, zehn Kilozeichen auf einen vorhandenen Pfad nicht), und `pm:Conceptualizing` wird nicht als die verbotene Substanzklasse `pm:Concept` gelesen. Belegt in prima-materia#799.
+
+Für eine bestehende Datei, die im Ganzen umgebaut wird, trägt das Anhängen in Stücken: ein `alt`/`neu`-Paar für Kopf und Präfixe, ein Aufruf mit `ersetzungen` für die gleichartigen kleinen Einschübe, und dann für jedes weitere Stück ein Aufruf, dessen `alt` die **letzte Zeile des vorher geschriebenen Stücks** ist und dessen `neu` diese Zeile plus das neue Stück enthält. Jedes `alt` muss im jeweiligen Zwischenstand genau einmal vorkommen; bei mehrfach vorkommenden `dcterms:source`-Zeilen ist eine Nachbarzeile mit aufzunehmen. Sieben Aufrufe für sechzig Kilozeichen, und jeder Commit ist ein lesbarer Zuwachs. `prima_repo_delete` und dann `prima_repo_write` trägt auch und ist die schlechtere Wahl: der PR-Diff sieht danach richtig aus, aber wer den einzelnen Commit liest, sieht die Änderung nicht.
+
 ## Was „gegroundet" heißt und was nicht
 
 | | |
