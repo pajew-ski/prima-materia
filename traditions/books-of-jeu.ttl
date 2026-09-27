@@ -306,3 +306,49 @@ pmc:JeuChrismaNonTraditum a pm:Conceptualizing ;
     pm:withinTradition pmt:BooksOfJeu ;
     pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 56-57 und 77, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 195 und 214" .
+
+#
+# The mystery the whole apparatus is declared insufficient without, and which
+# the surviving text never delivers
+#
+
+pmp:JeuMysteriumRemissionis a pm:Practicing ;
+    rdfs:label "The mystery of the forgiveness of sins, performed once"@en, "Das Mysterium der Sündenvergebung, einmal vollzogen"@de ;
+    skos:definition "The one operation the text counts. Every man who wishes to believe in the kingdom of light must perform the mystery of the forgiveness of sins only once; whoever receives any of these mysteries must receive it; and it is called the great mystery of the Unapproachable, which is in the treasuries of the inner of the inner, and the whole salvation of the soul. What the operation consists in is nowhere stated: no incense, no seal, no cipher and no prayer is given for it, and the promise to give its apologies, its seal, its cipher and their interpretations is repeated three times and never kept, the text breaking off before it."@en ;
+    skos:note "A count of one is a count, and it is the only one in this corpus that is not a cipher to be held in the hand. It is also the reason the omission is a finding rather than an accident of length: an operation prescribed once, called the whole salvation of the soul, and withheld, is the shape of something reserved for delivery by a person."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 58 und 69-70, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 197 und 206-207" .
+
+pmc:JeuRemissioOmniumPeccatorum a pm:Conceptualizing ;
+    rdfs:label "Every sin from childhood blotted out, and the kingdom inherited while on earth"@en, "Jede Sünde von Kindheit an ausgetilgt, und das Reich schon auf der Erde ererbt"@de ;
+    skos:definition "What the one performance is said to effect: all the sins a man has committed knowingly and unknowingly since his childhood until the present day, and all he has committed since the foundation of the world until the present day, are blotted out; he is made a pure light and taken up into the light of the lights. Those who have received it have inherited the kingdom of God already, since they are on the earth; they have a portion in the light-treasure; and they are immortal gods. When they come out of the body all the aeons scatter one after another and flee to the west to the left, until the souls reach the gates of the light-treasure and the watchers of the gates open to them."@en ;
+    skos:note "The clause that makes this a blanket and not a remission is the double reach of it: the sins of the man's own life and the sins committed since the foundation of the world, in one sentence. Nothing is exempted and no fault of any earlier rite is excluded, which is the reason the same text can make this the condition of everything else."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseite 58, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 197" .
+
+pmc:JeuRemissioYieldsPurificationem a pm:Yielding ;
+    rdfs:label "The single performance yields the blotting out of every sin"@en, "Der einmalige Vollzug bringt die Austilgung jeder Sünde hervor"@de ;
+    pm:byPractice pmp:JeuMysteriumRemissionis ;
+    pm:yieldsCapacity pmc:JeuRemissioOmniumPeccatorum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    skos:note "The practice this points at is the one the corpus does not transmit. That is not a defect of the node but its content: a yielding claim whose practice is withheld is exactly what a transmission looks like when the written apparatus is declared insufficient."@en ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseite 58, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 197" .
+
+pmc:JeuRemissioPraesupposita a pm:Presupposing ;
+    rdfs:label "Entering the light-treasure presupposes the mystery of the forgiveness of sins"@en, "Der Eingang in den Lichtschatz setzt das Mysterium der Sündenvergebung voraus"@de ;
+    skos:definition "The prerequisite the text states three times and in the strongest form it uses anywhere: whoever performs the mysteries of the five trees, the seven voices and the great name needs no further mystery of the kingdom of light except the mystery of the forgiveness of sins; when the ascending disciples reach the six great aeons they will be held fast until they receive it; and at the place of the first archon of the light they cannot enter the inner until they have received it."@en ;
+    pm:dependentStep pmc:JeuTransitusOmniumThesaurorum ;
+    pm:priorStep pmp:JeuMysteriumRemissionis ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Being held fast short of the goal, and nothing worse. The six great aeons will hold them until they receive it; the inhabitants of the place of the first archon of the light will seize them there, because those inhabitants have not received it either, so that the arrivals must perform with them the mysteries they have received; and the text adds that there is no place of chastisement in those places and that they cannot be chastised there. The stated consequence of lacking the withheld mystery is therefore detention without punishment, at a station short of the treasury."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    skos:note "The distribution of this clause is what makes it a necessity and not an order. It stands once before the rites are performed, once in the account of the soul leaving the body, and once at the last station the text reaches, and in the third place it is put as a reassurance: do not be afraid that you cannot enter, because they will only hold you. A transmission that repeats a condition at three removes and softens its consequence at the third is stating a requirement and not a sequence."@en ;
+    skos:note "It is also the place where this corpus answers a question its own apparatus raises. The disciples have by then been given the seal, the name and the cipher of every station up to the fourteenth aeon, and the text says in so many words that this is not enough. What is missing is not a further token of the same kind but the one operation for which no token is given at all. That is why this node is a witness at generalizations/the-text-and-what-is-withheld.ttl."@en ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 58, 69 und 86, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 197, 206 und 223" .
