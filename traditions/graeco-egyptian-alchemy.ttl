@@ -1,0 +1,77 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Graeco-Egyptian alchemy, taken off the register at two works
+# of Zosimos
+#
+# The registry entrance of SPEC 14, and inside it the tradition whose
+# registration described something no other entry in that file describes: an
+# operation on matter reported together with dreams that interpret it. That is
+# the earliest alchemical transmission there is, it stood at corpusNamed with
+# no passage read, and the reason was the edition — the only complete one is
+# Berthelot and Ruelle of 1887 and 1888, and its French translation begins on
+# a page the usual access path of this setup does not reach.
+#
+# It was reached by a different path, and that path is the second finding of
+# the run: prima-materia#797.
+#
+# Order of the file: the tradition, the two works, then the vision and what the
+# vision says about itself, then the prescription of the Final Reckoning with
+# what it claims and the warning inside it, then the accusation the same letter
+# makes against the custodians of the art, then the two grades and what
+# precedes attempting them, then the intervals.
+#
+
+pmt:GraecoEgyptianAlchemy a pm:Tradition ;
+    rdfs:label "Graeco-Egyptian alchemy"@en, "Griechisch-ägyptische Alchemie"@de ;
+    skos:definition "The earliest alchemical transmission, in which the operation on matter is reported together with dreams that interpret it, and in which a named practitioner writes to a named woman both a procedure and an accusation against the priests of his own art."@en ;
+    skos:note "Three decisions before the first node. Route of contact: documented, and it was documented at the registration — this material stands at the head of the chain that runs through the Arabic and the Latin alchemy the holding already carries, so nothing here counts as an independent witness against them. The relation to the Egyptian temple milieu is a different question and the Final Reckoning speaks to it from inside."@en ;
+    skos:note "Edition: the French translation in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, read through the full-text hit interface of the digitisation, which returns whole paragraphs. It is textually superseded — Martelli's critical work has moved beyond it — and it is the only complete edition of the corpus there is, and it is out of copyright. Where a later editor would read otherwise, this witness says what Berthelot read."@en ;
+    skos:note "The page numbers below are the printed pages, and that had to be established rather than assumed: the interface returns a leaf index. For this volume the two coincide, verified against the scan metadata and, independently, against the printed table of contents, which puts the pieces numbered 3.-41, 3.-43, 3.-49 and 3.-51 on the pages where those headings actually stand."@en ;
+    skos:note "Number of citable passages: small, and the corpus is the reason. What survives under the name of Zosimos is a conglomerate — fragments of the Cheirokmeta, the visions, and Byzantine accretions — and Berthelot says so in his own preface, announcing the works or rather the fragments attributed to Zosimos. Twelve places are entered here, and the number of pieces the third part of the translation carries was not counted."@en ;
+    skos:note "The pieces are numbered in the edition and their numbers are not used below. The printed headings were not among the paragraphs the retrieval returned, so which numbered piece carries which of the pages read was not established; the one exception is the Final Reckoning, whose title stands in the table of contents and whose salutation was read. Everything else is filed under the collective work identifier, and a later run that reads the headings should split it."@en ;
+    skos:note "What was read at the wording: the first lesson of Sur la Vertu, pages 111 and following, at the vision of the altar and of the priest Ion; the Final Reckoning at its sections 7 and 8, pages 192 and 193, and at the two grades of tinctures, page 193; the passage about attempting, page 172; and the intervals on pages 114, 132, 143, 166 and 196. Not read: everything else in the eighty-seven pieces, including the whole of the technical treatises and the commentators, and the Greek text facing the translation."@en ;
+    skos:note "A limit of the access path, and it decides what this file may quote. One retrieval of the same interface returned the French paragraphs translated into German without saying so, while six others returned the original. Every passage a node below rests on came back in French; three paragraphs that came back in another language were treated as not read and carry nothing. See prima-materia#799."@en ;
+    pm:principalCorpus "Zosimos of Panopolis, the Visions and the authentic memoirs; M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, Paris 1887-1888" ;
+    pm:corpusWork pmw:Cheirokmeta ;
+    pm:corpusWork pmw:LogosTeleutaios ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented .
+
+pmw:Cheirokmeta a dcterms:BibliographicResource ;
+    rdfs:label "The works transmitted under the name of Zosimos"@en, "Die unter dem Namen des Zosimos überlieferten Schriften"@de ;
+    skos:note "A collective identifier, and it says so rather than pretending to be a work. What Berthelot prints as the third part of his translation is a series of numbered pieces attributed to Zosimos; the number and the title of an individual piece were not established in this run, because the printed headings were not among the paragraphs the retrieval returned. The places entered under this identifier therefore cite the page of the edition and, where the printed paragraph carried one, its section number."@en ;
+    skos:note "The piece that carries the visions is transmitted under the title On Virtue and is the part of this corpus that is read and cited everywhere. That title is not entered as a work identifier here, because the heading itself was not read; a later run that reads it should split this identifier and carry the split back to every node below."@en .
+
+pmw:LogosTeleutaios a dcterms:BibliographicResource ;
+    rdfs:label "The Final Reckoning"@en, "Die letzte Abrechnung"@de ;
+    skos:note "The one piece of this corpus whose title was read in this run. The table of contents of the volume gives it as Le Premier Livre du Compte Final de Zosime le Thebain, and the piece itself opens, four pages before the passages entered below, with the salutation Zosime a Theosebie, salut. It is a letter, and it is the one place in what was read where the writer states a procedure, a warning and an accusation in the same breath."@en .
+
+#
+# The vision, and what the vision says about itself
+#
+
+pmc:ZosimosAraQuindecimGraduum a pm:Conceptualizing ;
+    rdfs:label "The altar in the form of a cup, with fifteen steps"@en, "Der Altar in Bechergestalt, mit fünfzehn Stufen"@de ;
+    skos:definition "The opening of the first lesson. Having said these things, the writer falls asleep and sees a sacrificer standing before him at the top of an altar in the form of a cup; the altar has fifteen steps to climb; the priest stands upon it, and a voice from above says that it has accomplished the action of descending the fifteen steps, walking towards the darkness, and the action of climbing the steps, going towards the light, that it is the sacrificer who renews it by casting off the thick nature of the body, and that, consecrated priest thus by necessity, it becomes a spirit."@en ;
+    skos:note "The number is fifteen in both directions and the two directions are named as two actions, one towards darkness and one towards light. Whatever else the passage is, it is a count with a stated sense: the descent is not the failure of the ascent but its first half."@en ;
+    skos:note "Entered as what the source says and not as what it is said to accomplish. The whole of it is spoken by a figure inside a reported dream, and the speaker is the one being operated on, not the operator. A pm:Yielding formed from this would credit the transmission with a claim it makes in the mouth of a dream."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, die Vision vom Altar, § 2, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 111" .
+
+pmc:ZosimosIonDilaniatus a pm:Conceptualizing ;
+    rdfs:label "Ion the priest, dismembered according to the rules of the combination"@en, "Der Priester Ion, zergliedert nach den Regeln der Zusammensetzung"@de ;
+    skos:definition "What the figure on the altar answers when asked who he is. He is Ion, the priest of the sanctuaries, and he suffers an intolerable violence: someone came in the morning in haste and did violence to him, running him through with a sword and dismembering him according to the rules of the combination; he took the whole skin from his head with the sword he held; he mixed the bones with the flesh and burned them with the fire of the treatment; and it is thus, by the transformation of the body, that he learned to become a spirit. As he goes on speaking and is pressed to speak further, his eyes become like blood and he vomits all his flesh; and the dreamer sees him changed into a small misshapen man, tearing himself with his own teeth, and sinking down."@en ;
+    skos:note "Two things in the wording are worth keeping apart from the famous image. The dismemberment is said to follow rules — the rules of the combination — so the violence is presented as an operation and not as an assault. And the collapse comes after the dreamer forces him to keep speaking, which puts the undoing of the figure on the questioner and not on the treatment."@en ;
+    skos:note "This is the passage on which the reputation of the corpus rests, and the corpus does nothing with it: nothing in what was read attaches a procedure, a condition or a sign to it. It is a report of a dream inside a treatise on tinctures."@en ;
+    pm:withinTradition pmt:GraecoEgyptianAlchemy ;
+    pm:fromWork pmw:Cheirokmeta ;
+    dcterms:source "Zosime, die Vision vom Altar, § 3, französische Übersetzung in M. Berthelot und Ch.-Em. Ruelle, Collection des anciens alchimistes grecs, seconde livraison, Paris 1888, S. 111" .
