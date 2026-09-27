@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -10,24 +11,40 @@
 # prima-materia — the Books of Jeu
 #
 # Opened because this is the one corpus in the ascent material that is built
-# as a procedure rather than told as a myth. What was actually read is a
-# fraction of it, and the header says so rather than the file implying more:
-# chapters 1 to 10 of the first book in the excerpt published by the Gnostic
-# Society, in the translation of Violet MacDermot. Chapters 11 to 34 are
-# summarised there as proceeding in the same fashion and are not given;
-# chapters 35 to 41 and the whole of the second book, which carries the
-# baptisms and the passage through the aeons, were not opened.
+# as a procedure rather than told as a myth. The first run read chapters 1 to
+# 10 of the first book in an online excerpt and said so; the run of
+# 2026-09-27 read the German translation of Carl Schmidt's edition of 1892
+# instead, and read the part the excerpt did not carry: the treasury passages
+# at the end of the first book, the four rites of the second, the ascent
+# through the twelve aeons, and the closing pages. What is still unread is
+# named at the tradition, and it is not little.
 #
+# The file is arranged in the order of the text and not of the classes: the
+# architecture of the treasuries first, then the passage form, then the four
+# rites in the order they are performed, then the ascent and what the text
+# says stands beyond it.
+#
+
+pmw:MegasLogosKataMysterion a dcterms:BibliographicResource ;
+    rdfs:label "The Book of the Great Discourse according to the Mystery"@en, "Das Buch vom grossen Logos kata mysterion"@de ;
+    skos:note "The title the manuscript itself carries, printed after the closing hymn of what Schmidt divided as the first book. Schmidt made two books of it and the whole of the modern literature followed him; the corpus is therefore cited as the two Books of Jeu by almost everyone who cites it. One work identifier is used here because the manuscript gives one title, and because the division is contested: Crégheur's edition of the Bruce Codex separates three tracts where Schmidt saw two books plus an introduction."@en ;
+    skos:note "Whichever division wins, the passages cited below are the same passages, and the marginal manuscript pagination Schmidt prints is what makes them findable in any of them. The decision between one identifier and three is laid out with options and a recommendation in prima-materia#798."@en .
 
 pmt:BooksOfJeu a pm:Tradition ;
     rdfs:label "The Books of Jeu"@en, "Die Bücher des Jeu"@de ;
-    skos:definition "The transmission in the Bruce Codex in which the living Jesus sets out the emanation of the treasuries of the light, each rank with its name, its character, its three watchers at the gate and its twelve emanations, and in which the knowing of a word rather than the saying of one is what is said to free the hearer from the ruler of this aeon."@en ;
-    skos:note "What was read and what was not. Chapters 1 to 10 of the first book in the excerpt of the Gnostic Society Library, MacDermot's translation. The excerpt itself states that chapters 11 to 34 proceed in the same fashion and prints them only as diagrams, and it ends before the second book. The baptisms of water, fire and the holy spirit, the anointing, and the ascent through the twelve aeons with seal and cipher are therefore not entered here and are not claimed. See prima-materia#602."@en ;
-    skos:note "A limit of the medium, not of the text, and it decides what this file can hold. The names are in the diagrams and are not transliterated into the translation: what the reader sees as an ellipsis is the operative part. Every claim about a vowel chain in this corpus is therefore, from this witness, a claim about something that was reproduced as a picture and not as text. The strings themselves need the plates of MacDermot or of Schmidt."@en ;
-    skos:note "Three decisions before the first node. Route of contact: documented and dense — the corpus is cited by name in the Pistis Sophia and stands in the same Coptic-Egyptian transmission as the ophite and hermetic material this graph already holds, so nothing here counts as an independent witness against them. Edition: MacDermot's English, read in the excerpt named on each node, with the caution above. Number of citable passages: few, and knowingly so."@en ;
+    skos:definition "The transmission in the Bruce Codex in which the living Jesus sets out the emanation of the treasuries of the light, each rank with its name, its character, its three watchers at the gate and its twelve emanations, performs four rites on the disciples, and then hands over, station by station, the seal, the name and the cipher by which each aeon of the ascent is said to be passed."@en ;
+    skos:note "What was read on 2026-09-27, in Schmidt's German translation of 1892. From the first book the treasury passages and the great name, manuscript pages 39 and 43 to 47, that is pages 179 and 183 to 186. From the second book the command of secrecy, the announcement of the rites, the ethical commands, the mystery of the forgiveness of sins, the three baptisms, the mystery against the wickedness of the archons and the recapitulation, manuscript pages 55 to 70, that is pages 194 to 208."@en ;
+    skos:note "And from the ascent the passage form at the first two aeons, the tenth to the fourteenth aeon and the closing page, manuscript pages 76 to 86, that is pages 213 to 215, 219, 220 and 223."@en ;
+    skos:note "What was not read, and it is not little: the diagram chapters of the first book, manuscript pages 5 to 34; the hymn fragment at 35 to 38; the treasury passages between 39 and 43; the ascent through the taxeis at manuscript pages 70 to 76 except its opening; the third to the ninth aeon; the appendix at 87 and 88. The nine nodes that stood here before this run were read in an online excerpt of MacDermot's English and keep that citation."@en ;
+    skos:note "A limit of the medium, not of the text, and it decides what this file can hold. The seals are drawn and not transliterated: Schmidt prints the figure and then gives its name and its interpretation as two strings, so a node can carry the two names and never the figure. Where the figure stood alone the printed page carries a blot and this file carries nothing. Every claim about a drawn seal in this corpus is, from this witness, a claim about something reproduced as a picture."@en ;
+    skos:note "Three decisions before the first node, restated because the edition changed. Route of contact: documented and dense — the corpus is cited by name in the Pistis Sophia, twice and with Enoch as its scribe, and stands in the same Coptic-Egyptian transmission as the ophite and hermetic material this graph already holds, so nothing here counts as an independent witness against them."@en ;
+    skos:note "Edition: Schmidt 1892, the German translation, read page by page in the Munich digitisation; the manuscript pagination Schmidt prints in the margin is given with every source, so that the place is findable in MacDermot's English and in Crégheur's French as well. Number of citable passages: the second book is dense and the first is mostly diagrams."@en ;
+    skos:note "The chapter numbers by which this corpus is usually cited are not in the edition read. Schmidt introduced them in 1905, in the Griechische christliche Schriftsteller volume, expressly to make citation easier; the 1892 translation has no chapters and carries the manuscript pagination in the margin instead. The sources below therefore cite the manuscript page and the page of the 1892 translation, and no chapter."@en ;
     pm:principalCorpus "The Books of Jeu and the Untitled Text in the Bruce Codex, ed. Carl Schmidt, trans. Violet MacDermot, Nag Hammadi Studies 13; Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus (1892)" ;
+    pm:corpusWork pmw:MegasLogosKataMysterion ;
     pm:coverageState pm:placesEntered ;
     pm:contactRoute pm:contactRouteDocumented ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapters 1-10 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 #
