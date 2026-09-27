@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -10,24 +11,40 @@
 # prima-materia — the Books of Jeu
 #
 # Opened because this is the one corpus in the ascent material that is built
-# as a procedure rather than told as a myth. What was actually read is a
-# fraction of it, and the header says so rather than the file implying more:
-# chapters 1 to 10 of the first book in the excerpt published by the Gnostic
-# Society, in the translation of Violet MacDermot. Chapters 11 to 34 are
-# summarised there as proceeding in the same fashion and are not given;
-# chapters 35 to 41 and the whole of the second book, which carries the
-# baptisms and the passage through the aeons, were not opened.
+# as a procedure rather than told as a myth. The first run read chapters 1 to
+# 10 of the first book in an online excerpt and said so; the run of
+# 2026-09-27 read the German translation of Carl Schmidt's edition of 1892
+# instead, and read the part the excerpt did not carry: the treasury passages
+# at the end of the first book, the four rites of the second, the ascent
+# through the twelve aeons, and the closing pages. What is still unread is
+# named at the tradition, and it is not little.
 #
+# The file is arranged in the order of the text and not of the classes: the
+# architecture of the treasuries first, then the passage form, then the four
+# rites in the order they are performed, then the ascent and what the text
+# says stands beyond it.
+#
+
+pmw:MegasLogosKataMysterion a dcterms:BibliographicResource ;
+    rdfs:label "The Book of the Great Discourse according to the Mystery"@en, "Das Buch vom grossen Logos kata mysterion"@de ;
+    skos:note "The title the manuscript itself carries, printed after the closing hymn of what Schmidt divided as the first book. Schmidt made two books of it and the whole of the modern literature followed him; the corpus is therefore cited as the two Books of Jeu by almost everyone who cites it. One work identifier is used here because the manuscript gives one title, and because the division is contested: Crégheur's edition of the Bruce Codex separates three tracts where Schmidt saw two books plus an introduction."@en ;
+    skos:note "Whichever division wins, the passages cited below are the same passages, and the marginal manuscript pagination Schmidt prints is what makes them findable in any of them. The decision between one identifier and three is laid out with options and a recommendation in prima-materia#798."@en .
 
 pmt:BooksOfJeu a pm:Tradition ;
     rdfs:label "The Books of Jeu"@en, "Die Bücher des Jeu"@de ;
-    skos:definition "The transmission in the Bruce Codex in which the living Jesus sets out the emanation of the treasuries of the light, each rank with its name, its character, its three watchers at the gate and its twelve emanations, and in which the knowing of a word rather than the saying of one is what is said to free the hearer from the ruler of this aeon."@en ;
-    skos:note "What was read and what was not. Chapters 1 to 10 of the first book in the excerpt of the Gnostic Society Library, MacDermot's translation. The excerpt itself states that chapters 11 to 34 proceed in the same fashion and prints them only as diagrams, and it ends before the second book. The baptisms of water, fire and the holy spirit, the anointing, and the ascent through the twelve aeons with seal and cipher are therefore not entered here and are not claimed. See prima-materia#602."@en ;
-    skos:note "A limit of the medium, not of the text, and it decides what this file can hold. The names are in the diagrams and are not transliterated into the translation: what the reader sees as an ellipsis is the operative part. Every claim about a vowel chain in this corpus is therefore, from this witness, a claim about something that was reproduced as a picture and not as text. The strings themselves need the plates of MacDermot or of Schmidt."@en ;
-    skos:note "Three decisions before the first node. Route of contact: documented and dense — the corpus is cited by name in the Pistis Sophia and stands in the same Coptic-Egyptian transmission as the ophite and hermetic material this graph already holds, so nothing here counts as an independent witness against them. Edition: MacDermot's English, read in the excerpt named on each node, with the caution above. Number of citable passages: few, and knowingly so."@en ;
+    skos:definition "The transmission in the Bruce Codex in which the living Jesus sets out the emanation of the treasuries of the light, each rank with its name, its character, its three watchers at the gate and its twelve emanations, performs four rites on the disciples, and then hands over, station by station, the seal, the name and the cipher by which each aeon of the ascent is said to be passed."@en ;
+    skos:note "What was read on 2026-09-27, in Schmidt's German translation of 1892. From the first book the treasury passages and the great name, manuscript pages 39 and 43 to 47, that is pages 179 and 183 to 186. From the second book the command of secrecy, the announcement of the rites, the ethical commands, the mystery of the forgiveness of sins, the three baptisms, the mystery against the wickedness of the archons and the recapitulation, manuscript pages 55 to 70, that is pages 194 to 208."@en ;
+    skos:note "And from the ascent the passage form at the first two aeons, the tenth to the fourteenth aeon and the closing page, manuscript pages 76 to 86, that is pages 213 to 215, 219, 220 and 223."@en ;
+    skos:note "What was not read, and it is not little: the diagram chapters of the first book, manuscript pages 5 to 34; the hymn fragment at 35 to 38; the treasury passages between 39 and 43; the ascent through the taxeis at manuscript pages 70 to 76 except its opening; the third to the ninth aeon; the appendix at 87 and 88. The nine nodes that stood here before this run were read in an online excerpt of MacDermot's English and keep that citation."@en ;
+    skos:note "A limit of the medium, not of the text, and it decides what this file can hold. The seals are drawn and not transliterated: Schmidt prints the figure and then gives its name and its interpretation as two strings, so a node can carry the two names and never the figure. Where the figure stood alone the printed page carries a blot and this file carries nothing. Every claim about a drawn seal in this corpus is, from this witness, a claim about something reproduced as a picture."@en ;
+    skos:note "Three decisions before the first node, restated because the edition changed. Route of contact: documented and dense — the corpus is cited by name in the Pistis Sophia, twice and with Enoch as its scribe, and stands in the same Coptic-Egyptian transmission as the ophite and hermetic material this graph already holds, so nothing here counts as an independent witness against them."@en ;
+    skos:note "Edition: Schmidt 1892, the German translation, read page by page in the Munich digitisation; the manuscript pagination Schmidt prints in the margin is given with every source, so that the place is findable in MacDermot's English and in Crégheur's French as well. Number of citable passages: the second book is dense and the first is mostly diagrams."@en ;
+    skos:note "The chapter numbers by which this corpus is usually cited are not in the edition read. Schmidt introduced them in 1905, in the Griechische christliche Schriftsteller volume, expressly to make citation easier; the 1892 translation has no chapters and carries the manuscript pagination in the margin instead. The sources below therefore cite the manuscript page and the page of the 1892 translation, and no chapter."@en ;
     pm:principalCorpus "The Books of Jeu and the Untitled Text in the Bruce Codex, ed. Carl Schmidt, trans. Violet MacDermot, Nag Hammadi Studies 13; Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus (1892)" ;
+    pm:corpusWork pmw:MegasLogosKataMysterion ;
     pm:coverageState pm:placesEntered ;
     pm:contactRoute pm:contactRouteDocumented ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapters 1-10 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 #
@@ -38,15 +55,18 @@ pmc:JeuThesauriStructura a pm:Conceptualizing ;
     rdfs:label "What each rank of the treasuries carries"@en, "Was jeder Rang der Schatzkammern trägt"@de ;
     skos:definition "The repeating unit of the account: each Jeu has a name, a character, three watchers, and twelve emanations; there are twelve ranks in each treasury, six heads on one side and six on the other turned towards each other, twelve heads in each rank and twelve in each emanation, and the ranks stand one outside the other endlessly."@en ;
     skos:note "The unit repeats without variation through the chapters that were read, and the excerpt states that it goes on repeating for the twenty-four chapters that were not. Whatever else this text is, it is an inventory, and an inventory of this shape presupposes that someone was meant to hold the entries apart."@en ;
-    skos:note "The count that circulates for this corpus, sixty treasuries, does not come from anything read here. It is reported from a hymn later in the text and is not entered."@en ;
+    skos:note "The count that circulates for this corpus, sixty treasuries, did not come from anything read when this node was written. It has since been read at two places in the text, once as the end of the survey and once inside the operative formula of the great name, and it stands at pmc:JeuNumerusThesaurorum."@en ;
     pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapters 5-10 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 pmc:JeuCustodesAdPortas a pm:Conceptualizing ;
     rdfs:label "The three watchers stand at the gate and belong to no rank"@en, "Die drei Wächter stehen am Tor und gehören zu keinem Rang"@de ;
     skos:definition "The claim that a rank is set up corresponding to the treasuries and placed as watchers at the gate, three of them standing there, and that these watchers do not belong to the ranks of the treasuries of the light."@en ;
     skos:note "The exclusion is stated and is the interesting half. A gatekeeper who is not a member of what he guards cannot be passed by belonging to it, and that is precisely the move the ophite speeches make when the passer names what he already bears. The two corpora are in the same milieu and give the gate two different logics."@en ;
+    skos:note "Read again in Schmidt's translation at the sixtieth treasury, where the number of watchers is given as nine and the rule behind it as three at each gate, each of them with a name of his own. Schmidt 1892, manuscript page 43, page 183."@en ;
     pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapters 6 and 8 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 pmc:JeuVoxEmanans a pm:Conceptualizing ;
@@ -54,6 +74,7 @@ pmc:JeuVoxEmanans a pm:Conceptualizing ;
     skos:definition "The account of how the ranks come to be: a power of the Father moves the true God and radiates within him, he gives voice, and when he had given voice there came forth this voice which is the emanation; the three lines drawn in the diagram are said to be the voices he gives out when he is commanded to sing praises to the Father, so that he brings forth emanations."@en ;
     skos:note "This is the strongest thing the excerpt carries and it is easy to lose in the diagrams. The voice does not summon the emanation and does not name it: the voice is it. A tradition that holds this cannot treat a spoken name as a key to something else, and it puts the vowel chains of this corpus in a different class from the addresses of the ophite gates before any comparison of their sounds. See prima-materia#607."@en ;
     pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapters 5-6 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 #
@@ -63,15 +84,17 @@ pmc:JeuVoxEmanans a pm:Conceptualizing ;
 pmp:JeuVerbumCognoscere a pm:Practicing ;
     rdfs:label "Knowing the word with certainty"@en, "Das Wort mit Gewissheit erkennen"@de ;
     skos:definition "What the living Jesus tells the apostles to do: to receive his word with certainty and to know it, to fulfil it, and thereby to receive the soul from the race of the understanding mind so that it ceases to be earthly and becomes understanding."@en ;
-    skos:note "No procedure is given here, and that is worth recording rather than filling: the corpus is famous for seals, ciphers and vowel chains, and the part of it that was read prescribes none of them. What it prescribes is knowing and fulfilling a word. The operative apparatus appears in the diagrams and in the second book, and neither was opened."@en ;
+    skos:note "No procedure is given here, and that was worth recording rather than filling: the part of the text this node was read from prescribes none of the seals, ciphers and vowel chains the corpus is famous for. The second book does prescribe them, in detail, and they stand below. What remains true of this passage is that the condition it states is a knowing and a fulfilling, and that the apparatus is nowhere offered as a substitute for it."@en ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapter 2 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 pmc:JeuLiberatioAbArchonte a pm:Conceptualizing ;
     rdfs:label "Being saved from the ruler of this aeon"@en, "Vor dem Archon dieses Äons gerettet werden"@de ;
     skos:definition "The outcome claimed: that the hearer is saved from the ruler of this aeon and his persecutions, to which there is no end; that the ruler will not fight with him, having found no commandment of his own in the speaker; and that the hearer is made free and becomes whole through a freedom in which there is no blemish."@en ;
     pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapter 2 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 pmc:JeuCognitioYieldsLiberatio a pm:Yielding ;
@@ -81,6 +104,7 @@ pmc:JeuCognitioYieldsLiberatio a pm:Yielding ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:BooksOfJeu ;
     skos:note "The mechanism given is not a passage and not a password. The ruler does not fight because he finds nothing of his own in the one he faces: what decides is a constitution and not a credential. That is the same reading the ophite speeches invite and never state, and here it is stated."@en ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapter 2 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 pmc:JeuHomoCaelestis a pm:Conceptualizing ;
@@ -89,6 +113,7 @@ pmc:JeuHomoCaelestis a pm:Conceptualizing ;
     skos:note "A change of what someone is, stated as such and not as an achievement or a permission. The text is asked how heaven is brought down and answers by describing a state rather than an operation, twice in the same passage."@en ;
     skos:note "The last clause resists paraphrase and is left as it stands: the ruler becomes the Midst, because it is nothing. Whether the Midst is a place, a rank or a privation is not decidable from what was read, and the corpus uses the term elsewhere in chapters that were not opened."@en ;
     pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapter 3 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 pmc:JeuKautelIgnorantiae a pm:Cautioning ;
@@ -99,6 +124,7 @@ pmc:JeuKautelIgnorantiae a pm:Cautioning ;
     pm:cautionsAbout pmp:JeuVerbumCognoscere ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapter 4 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
 
 pmc:JeuMundumCrucifigere a pm:Conceptualizing ;
@@ -106,4 +132,279 @@ pmc:JeuMundumCrucifigere a pm:Conceptualizing ;
     skos:definition "The saying with which the teaching opens and the gloss given to it: blessed is he who has crucified the world and whom the world has not crucified; and he who has crucified it is he who has found the word of the speaker and has fulfilled it according to the will of him who sent him."@en ;
     skos:note "Entered because the gloss identifies the act with a finding and a fulfilling and with nothing else — no rite, no seal, no name. In a corpus whose reputation rests entirely on its apparatus, the opening states the condition without any of it."@en ;
     pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
     dcterms:source "The First Book of Jeu, chapters 1 and 3 (trans. V. MacDermot), in the excerpt published by the Gnostic Society Library" .
+
+#
+# The first book at its end: how one treasury is passed, and the one name that
+# passes all of them. Read in Schmidt's German of 1892.
+#
+
+pmc:JeuThesaurusTransitusForma a pm:Conceptualizing ;
+    rdfs:label "The form of one treasury passage"@en, "Die Form eines Schatzkammerdurchgangs"@de ;
+    skos:definition "The unit the account repeats for each treasury it reaches: when you come to this place, seal yourself with this seal, whose name is given and drawn; while this cipher is in your hand, say this name, once at one station and three times at another; whereupon the watchers, the ranks and the curtains scatter, until you come to the place of their father, and he gives you his own name and his own seal, and you cross to the gate inside his treasury; and the watchers there see the seal of their father and scatter, because they have recognised it."@en ;
+    skos:note "The seal is not the passer's own. He is sealed with the seal of the station, and what opens the next gate is the seal the father of the station has just given him, which the watchers there recognise as their father's. The apparatus is therefore not transferable to somebody who begins in the middle: each token is handed over inside the passage, and the text says of the watchers that they scatter because they knew it."@en ;
+    skos:note "The two ciphers of these two stations are printed as Coptic-Greek letter numerals and Schmidt leaves them in that form, unlike the ciphers of the second book, which he gives as arabic numerals and several of which he marks with a question mark of his own."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das erste Buch Jeû, Handschriftenseiten 39 und 43, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 179 und 183" .
+
+pmc:JeuNumerusThesaurorum a pm:Conceptualizing ;
+    rdfs:label "Sixty treasuries, named at the two ends and counted in the invocation"@en, "Sechzig Schätze, an beiden Enden benannt und in der Anrufung gezählt"@de ;
+    skos:definition "The count the text gives for the treasuries it has surveyed: the survey is declared complete from the treasury of the true God, whose name is given, to the treasury of Kazaezo; and the formula of the great name addresses the watchers of the sixty treasuries within and without, the ranks of the treasuries, the curtains of the treasuries and the places of the streets of their whole fatherhood."@en ;
+    skos:note "The number is in the operative formula and not only in a hymn, which is what makes it citable. It is also the number against which what the manuscript actually carries is to be measured: the diagrams run to twenty-eight, the thirteenth is missing without a gap in the leaves, and the narrated passage covers only the last six or seven treasuries. Whatever the transmission claimed, the witness holds a small part of it."@en ;
+    skos:note "Two abbreviation signs stand in this sentence that Schmidt could not resolve, and he says so in a footnote. The sentence therefore gives the number sixty once and leaves a second place blank."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das erste Buch Jeû, Handschriftenseiten 43 und 47, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 183 und 186" .
+
+pmp:JeuNomenMagnum a pm:Practicing ;
+    rdfs:label "The one name that is said in every place"@en, "Der eine Name, der in jedem Ort gesagt wird"@de ;
+    skos:definition "The procedure the disciples ask for and receive: they had asked for a single name that would suffice for all the places, and were told they would be given it once they had been shown all the places. Standing in the place of the Outer, they are to name it, seal themselves with this seal, whose name is given, grasp the cipher 7856 in the hand, say that name first, then turn to the four corners of the treasury they are in, seal themselves and say its name with the cipher in the hand, then say the name once, invoking it and turning to the four corners; and then say the formula addressing the watchers of the sixty treasuries."@en ;
+    skos:note "It is expressly not the name of the Father. The disciples ask whether it is the great name of the Father who exists from the beginning, and the answer is no: it is the name of the great power that is in all places."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das erste Buch Jeû, Handschriftenseiten 45-47, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 185-186" .
+
+pmc:JeuTransitusOmniumThesaurorum a pm:Conceptualizing ;
+    rdfs:label "All the places scatter at once, from the first of them to the last"@en, "Alle Örter stieben auf einmal davon, vom ersten bis zum letzten"@de ;
+    skos:definition "What the one name is said to effect: when you say it, all the places in the treasuries scatter, from the first of them to the last, as far as the treasury of the true God; the watchers and the ranks and the curtains scatter; and in the moment in which the name and the words and the mystery are said and the speaker turns to the four corners, the watchers of the gates and the ranks of the treasuries and their curtains, which are drawn before these fathers, all scatter from within, out of all of them, from the first of them to the last."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das erste Buch Jeû, Handschriftenseiten 46-47, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 185-186" .
+
+pmc:JeuNomenMagnumYieldsTransitum a pm:Yielding ;
+    rdfs:label "Saying the one name opens every station at once"@en, "Das Sagen des einen Namens öffnet alle Stationen zugleich"@de ;
+    pm:byPractice pmp:JeuNomenMagnum ;
+    pm:yieldsCapacity pmc:JeuTransitusOmniumThesaurorum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    skos:note "The text sets this beside the station-by-station passage of pmc:JeuThesaurusTransitusForma and says nothing about the relation between them. It does not say that the one name replaces the sixty seals, and it does not say why a passer who has it would learn them. The sequence in the text runs the other way round: the disciples ask for the single name early, are told they must first be shown every place, and get it only after the whole survey."@en ;
+    dcterms:source "Das erste Buch Jeû, Handschriftenseiten 45-47, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 185-186" .
+
+#
+# The second book: what may not be passed on, to whom, and under what
+# conditions of life
+#
+
+pmp:JeuMysteriaTradere a pm:Practicing ;
+    rdfs:label "Handing the mysteries on"@en, "Die Mysterien weitergeben"@de ;
+    skos:definition "The act the text regulates before it teaches anything: the disciples are to keep the mysteries and give them to those who are worthy of them, that is, to those who have left the whole world and all its affairs and its gods and deities behind them and hold no other faith than the faith in the light after the manner of the children of the light, listening to one another and subordinating themselves to one another as children of the light."@en ;
+    skos:note "The class of permitted recipient is defined by what has been given up and by a form of conduct towards other recipients, and not by descent, office or initiation already held. That is worth recording because the same page forbids passing the mysteries to whole classes of people and names them by their cult and not by their birth."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 55-56, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 194-195" .
+
+pmc:JeuMysteriaNonTradenda a pm:Cautioning ;
+    rdfs:label "Betray them to no one, and the list of those meant"@en, "Verratet sie an niemanden, und die Liste der Gemeinten"@de ;
+    skos:definition "The command of secrecy as the text states it: keep these mysteries and betray them to no man unless he is worthy of them; not to father nor mother, not to brother nor sister nor kinsman, not for food nor drink, not for a woman, not for gold nor silver, nor for anything at all of this world, nor for the goods of this whole world; not to any woman or any man who stands in any faith in the seventy-two archons or who serves them; nor to those who serve the eighth power of the great archon; and do not tell them the place of the light and what is in it."@en ;
+    skos:note "The restriction stands inside the operative text, in the mouth of the speaker who is about to perform the rites, and it names the class of permitted recipient in the same breath at pmp:JeuMysteriaTradere. It is not a rule imposed on the text from outside, and it is not a later gloss."@en ;
+    skos:note "What it does not carry is a consequence. The passage says what must not be done and does not say what happens to the one who does it, which is why this is a caution and not a prerequisite with a stated necessity. The nearest thing to a consequence anywhere in what was read is the warning of pmc:JeuKautelIgnorantiae, and that falls on the unknowing bearer and not on the betrayer. The search is at pmp:JeuPoenaProditionisSearch."@en ;
+    pm:cautionsAbout pmp:JeuMysteriaTradere ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 55-56, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 194-195" .
+
+pmc:JeuAdversariiCruoris a pm:Conceptualizing ;
+    rdfs:label "The group that is named, described and excluded"@en, "Die Gruppe, die benannt, beschrieben und ausgeschlossen wird"@de ;
+    skos:definition "The one competing practice the text names: those who serve the eighth power of the great archon, that is, those who consume the blood of the menstruation of their uncleanness and the seed of men, saying, we possess the true knowledge and pray to the true God. The text answers that their god is evil, that he is the third power of the great archon, that his name is Taricheas son of Sabaoth Adamas, the enemy of the kingdom of heaven, and that his face is that of a swine, his teeth standing outside his mouth, with a second, lion's face behind."@en ;
+    skos:note "Entered as one side and not as a dispute, because only one side has been read. The other side is reported by a hostile outsider in Epiphanius, Panarion 26, and the two reports would have to be set beside each other at their own wordings before a pm:Disputing node could be written. What this node carries is that the transmission identifies a rival by its rite, assigns that rite a named god with a rank inside its own cosmology, and forbids passing the mysteries to its adherents."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseite 55, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 194" .
+
+pmc:JeuPraeceptaMoralia a pm:Conceptualizing ;
+    rdfs:label "What is to be laid on whoever receives the mysteries"@en, "Was dem aufzutragen ist, der die Mysterien empfängt"@de ;
+    skos:definition "The list the disciples are to impose before all things on the one to whom they give the mysteries: not to swear falsely nor to swear at all, not to fornicate, not to commit adultery, not to steal, not to covet another's goods, not to love silver nor gold, not to invoke the name of the archons nor the name of their angels for any matter, not to rob, not to curse, not to slander falsely nor to accuse; but their yes shall be yes and their no no, and in a word they shall carry out the good commandments."@en ;
+    skos:note "One item in the list is not ethical and is the reason the whole list is here: the prohibition on invoking the name of the archons or of their angels for any matter. A handbook that teaches the naming of archons at every station of an ascent forbids the naming of the same beings for any worldly purpose, and it puts that prohibition in the same list as theft and perjury."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 57-58, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 196" .
+
+#
+# The four rites that are actually performed, in the order of the text
+#
+
+pmp:JeuBaptismaAquae a pm:Practicing ;
+    rdfs:label "The baptism of the water of life"@en, "Die Taufe des Lebenswassers"@de ;
+    skos:definition "The first rite, with the whole of its apparatus as the text prescribes it. The disciples are sent up to Galilee to find a man or a woman in whom the greater part of the wickedness has died — if a man, one who holds no intercourse; if a woman, one who has ceased with the manner of women and holds no intercourse — and to receive two vessels of wine from the hands of such a person and to bring vine branches."@en ;
+    skos:definition "A sacrifice is laid out with one vessel of wine to its left and one to its right; juniper berries, kasdalanthos and nard are laid on; all the disciples are wrapped in linen garments, kynokephalon is put in their mouth, the cipher of the seven voices, 9879, and heliakon are laid in both their hands; linen cloths are spread at a place with a cup of wine on them and loaves according to the number of the disciples, olive branches are laid at the place of the offering and all are crowned with olive branches; they are sealed with a seal whose name is sazapharas and whose interpretation is thezozaz; they turn with him to the four corners of the world, each setting his feet close together, and he speaks the prayer."@en ;
+    skos:note "The condition on the wine is a condition on a third party who is not in the rite. What is required of him is a state of the body sustained over time, and the text gives two forms of it, one for each sex; it is not a purification he performs for the occasion. Nothing is said about how the disciples were to establish it."@en ;
+    skos:note "The prayer names fifteen servants of the seven light-virgins who are set over the baptism of life, and gives all fifteen names. It is the only place in what was read where a numbered class of beings is listed out in full and the list is legible from end to end."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 59-61, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 198-200" .
+
+pmp:JeuBaptismaIgnis a pm:Practicing ;
+    rdfs:label "The baptism of fire"@en, "Die Feuertaufe"@de ;
+    skos:definition "The second rite. Vine branches are brought and an incense laid on, with juniper berries, myrrh, frankincense, mastic resin, nard, kasdalanthos, terebinth and stakte; linen cloths are spread at the place of the offering with a cup of wine and loaves according to the number of the disciples; all put on linen garments and are crowned with upright peristereon, kynokephalon is put in their mouth, the cipher of the seven voices, 9879, and chrysanthemon are laid in both their hands and polygonon under their feet; they are set before the incense with their feet close together; he steps behind the incense and seals them with a seal whose name is thozaees and whose interpretation is zozazes; then he turns with them to the four corners of the world and speaks the prayer, which asks that Zorokothora Melchisedek come in secret and bring out the water of the baptism of fire of the Light-Virgin, the judge."@en ;
+    skos:note "Two things distinguish this rite from the first in the wording. The prayer asks for a sign and not for a substance to appear in a vessel, and the sealing afterwards is on the forehead, with the seal of the Light-Virgin, which is said to be what has them reckoned to the kingdom of light."@en ;
+    skos:note "The prayer also enumerates what is to be forgiven, and the list is a list of deeds and not of states: slanders, curses, false oaths, thefts, lies, false accusations, fornications, adulteries, desires, covetousness, and what they have done from childhood until the present day."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 62-65, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 200-202" .
+
+pmp:JeuBaptismaSpiritus a pm:Practicing ;
+    rdfs:label "The baptism of the holy spirit"@en, "Die Taufe des heiligen Geistes"@de ;
+    skos:definition "The third rite. The incense of the baptism of the holy spirit is laid on, with vine branches, juniper berries, kasdalanthos, the remains of saffron, mastic resin, cinnamon, myrrh, balsam and honey; two vessels of wine are set up, one to the right of the incense and one to the left, with loaves on them according to the number of the disciples; the disciples are sealed with a seal whose name is zakzoza and whose interpretation is thozonoz; they are clothed in linen garments and set before the incense while the cipher of the seven voices, 9879, is in both their hands; he calls with a loud voice, speaks the prayer, and asks for a sign in the offering. He performs the rite while they are clothed in linen and crowned with myrtle, with kynokephalon in their mouth and a single shoot of artemisia in both their hands, their feet set close together, turning to the four corners of the world."@en ;
+    skos:note "The one cipher of the three baptisms is the same at all three, 9879, and the text calls it the cipher of the seven voices. What changes from rite to rite is the incense, the wreath, the plant in the hands and under the feet, and the seal. The apparatus is therefore not a set of keys to three different places but one number carried through three operations."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 65-67, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 203-204" .
+
+pmp:JeuMysteriumContraKakian a pm:Practicing ;
+    rdfs:label "The mystery that removes the wickedness of the archons"@en, "Das Mysterium, das die Unbill der Archonten beseitigt"@de ;
+    skos:definition "The fourth rite. A censer is built on thalassia; vine branches, juniper, malabathron, a plant Schmidt could not identify, asbestos, agate and frankincense are laid on; all the disciples are wrapped in linen garments and crowned with artemisia; frankincense is put in their mouth and the cipher of the first Amen, 530, in their hand; they set their feet close together and remain before the incense. They are sealed with a seal whose true name is zezezoiazoz and whose interpretation is zozozai; then the prayer is spoken, which invokes the imperishable names of the light-treasure and asks the Father to compel Sabaoth Adamas and all his leaders to come and take their wickedness away from the disciples; and after the prayer they are sealed with the seal of the second Amen, whose true name is zachozakos and whose interpretation is zchozozo."@en ;
+    skos:note "This is the rite whose cipher is not 9879. It carries the cipher of the first Amen, and it is the only one of the four whose prayer asks the Father to compel a named archon rather than to send a power or a sign. It is also the only one of the four that is sealed twice, before the prayer and after it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 67-68, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 204-205" .
+
+pmc:JeuAthanasiaDiscipulorum a pm:Conceptualizing ;
+    rdfs:label "They became immortal and followed him into every place"@en, "Sie wurden unsterblich und folgten ihm in jeden Ort"@de ;
+    skos:definition "The outcome the text reports for the fourth rite: in the same moment in which he had sealed them with that seal, the archons took their whole wickedness away from the disciples; and when the wickedness of the archons had left them, the disciples became immortal, following him into all the places they wished to go."@en ;
+    skos:note "The one capacity in this corpus that is reported as having been conferred rather than promised, and it is reported in a single sentence with no sign attached to it. It is also the only one of the four rites whose effect the text describes as something the disciples act on themselves: they go where they wish."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 68-69, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 205-206" .
+
+pmc:JeuKakiaRemotaYieldsAthanasiam a pm:Yielding ;
+    rdfs:label "Removing the wickedness of the archons yields immortality"@en, "Die Beseitigung der Unbill der Archonten bringt Unsterblichkeit hervor"@de ;
+    pm:byPractice pmp:JeuMysteriumContraKakian ;
+    pm:yieldsCapacity pmc:JeuAthanasiaDiscipulorum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    skos:note "The claim is not circular in the way the qi claims of this holding often are: the practice is a sealing and a prayer, and what it is said to produce is a change in what the disciples can do. It is also stated without a condition of any kind, which makes it the strongest single assertion in the corpus and the one with nothing attached by which it could be missed."@en ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 67-69, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 204-206" .
+
+pmc:JeuSignaTriaPetita a pm:Conceptualizing ;
+    rdfs:label "Three signs asked for, three signs reported, and no word for their absence"@en, "Drei erbetene Zeichen, drei berichtete Zeichen, und kein Wort für ihr Ausbleiben"@de ;
+    skos:definition "The form each of the three baptisms takes at its decisive point. In the first, the prayer asks that, if the Father has heard, has had pity, has counted the disciples among the heirs of the kingdom of light, has forgiven their sins and blotted out their misdeeds, then a wonder may happen and Zorokothora come and bring the water of the baptism of life out into one of the wine vessels; and in the same moment the wonder happened and the wine to the right of the sacrifice became water."@en ;
+    skos:definition "In the second, the prayer asks, on the same condition, for a sign in the fire of the fragrant incense; and in the same moment the sign happened in the fire. In the third, it asks, on the same condition, for a sign in the offering; and in the same moment the wonder happened. In none of the three does the text say what the absence of the sign would show, or what is to be done if it does not come."@en ;
+    skos:note "The conditional is the whole point and it runs one way only. The sign is asked for as the evidence that the petition has been granted, so a sign that failed to come would report that the sins were not forgiven; the text draws that consequence nowhere, contemplates the case nowhere, and prescribes nothing for it. What it does instead is narrate the successful performance in the same passage that prescribes the rite, three times."@en ;
+    skos:note "It is also an event no party to the rite can produce at will — wine becoming water, a sign in a fire, a sign in an offering — and it is announced to the participants in advance, in the prayer they hear. That combination is what makes this passage the case which the protocol at examinations/both-sides-of-the-criterion.ttl had named as its own falsifying condition and had not found. The search behind the negative half is at pmp:JeuSignumAbsensSearch."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 61-62, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 199-200" ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 64-65, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 202" ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseite 66, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 204" .
+
+pmc:JeuChrismaNonTraditum a pm:Conceptualizing ;
+    rdfs:label "The spiritual anointing is announced once and never given"@en, "Die geistige Salbung wird einmal angekündigt und nie gegeben"@de ;
+    skos:definition "What the text promises and what it performs. The announcement lists, in one sentence, the three baptisms of water, fire and the holy spirit, then the mystery of removing the wickedness of the archons from the disciples, and then the mystery of the spiritual anointing. Four of the five are afterwards carried out and described in full. The anointing is never described, and the recapitulation, which lists what the disciples have received, names the mystery of the twelve aeons, the baptism of the water of life, the baptism of fire, the baptism of the holy spirit and the removal of the wickedness — and not the anointing."@en ;
+    skos:note "A promise that the transmission itself drops is a different thing from a lacuna, and this witness does not let the two be told apart with certainty: the manuscript is damaged in places and its end is lost. What can be said from what was read is that the announcement occurs once, that the recapitulation four leaves later lists four rites and not five, and that the missing one is the one for which no apparatus is anywhere given. The search is at pmp:JeuChrismaSearch."@en ;
+    skos:note "It also corrects the premise of the issue that sent this run at the corpus. That issue names the three baptisms and the anointing together as the precondition of the ascent; the text performs the three baptisms and, in place of the anointing, a fourth rite against the wickedness of the archons. Whoever repeats the received account of this corpus repeats a rite the corpus does not carry."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 56-57 und 77, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 195 und 214" .
+
+#
+# The mystery the whole apparatus is declared insufficient without, and which
+# the surviving text never delivers
+#
+
+pmp:JeuMysteriumRemissionis a pm:Practicing ;
+    rdfs:label "The mystery of the forgiveness of sins, performed once"@en, "Das Mysterium der Sündenvergebung, einmal vollzogen"@de ;
+    skos:definition "The one operation the text counts. Every man who wishes to believe in the kingdom of light must perform the mystery of the forgiveness of sins only once; whoever receives any of these mysteries must receive it; and it is called the great mystery of the Unapproachable, which is in the treasuries of the inner of the inner, and the whole salvation of the soul. What the operation consists in is nowhere stated: no incense, no seal, no cipher and no prayer is given for it, and the promise to give its apologies, its seal, its cipher and their interpretations is repeated three times and never kept, the text breaking off before it."@en ;
+    skos:note "A count of one is a count, and it is the only one in this corpus that is not a cipher to be held in the hand. It is also the reason the omission is a finding rather than an accident of length: an operation prescribed once, called the whole salvation of the soul, and withheld, is the shape of something reserved for delivery by a person."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 58 und 69-70, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 197 und 206-207" .
+
+pmc:JeuRemissioOmniumPeccatorum a pm:Conceptualizing ;
+    rdfs:label "Every sin from childhood blotted out, and the kingdom inherited while on earth"@en, "Jede Sünde von Kindheit an ausgetilgt, und das Reich schon auf der Erde ererbt"@de ;
+    skos:definition "What the one performance is said to effect: all the sins a man has committed knowingly and unknowingly since his childhood until the present day, and all he has committed since the foundation of the world until the present day, are blotted out; he is made a pure light and taken up into the light of the lights. Those who have received it have inherited the kingdom of God already, since they are on the earth; they have a portion in the light-treasure; and they are immortal gods. When they come out of the body all the aeons scatter one after another and flee to the west to the left, until the souls reach the gates of the light-treasure and the watchers of the gates open to them."@en ;
+    skos:note "The clause that makes this a blanket and not a remission is the double reach of it: the sins of the man's own life and the sins committed since the foundation of the world, in one sentence. Nothing is exempted and no fault of any earlier rite is excluded, which is the reason the same text can make this the condition of everything else."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseite 58, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 197" .
+
+pmc:JeuRemissioYieldsPurificationem a pm:Yielding ;
+    rdfs:label "The single performance yields the blotting out of every sin"@en, "Der einmalige Vollzug bringt die Austilgung jeder Sünde hervor"@de ;
+    pm:byPractice pmp:JeuMysteriumRemissionis ;
+    pm:yieldsCapacity pmc:JeuRemissioOmniumPeccatorum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    skos:note "The practice this points at is the one the corpus does not transmit. That is not a defect of the node but its content: a yielding claim whose practice is withheld is exactly what a transmission looks like when the written apparatus is declared insufficient."@en ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseite 58, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 197" .
+
+pmc:JeuRemissioPraesupposita a pm:Presupposing ;
+    rdfs:label "Entering the light-treasure presupposes the mystery of the forgiveness of sins"@en, "Der Eingang in den Lichtschatz setzt das Mysterium der Sündenvergebung voraus"@de ;
+    skos:definition "The prerequisite the text states three times and in the strongest form it uses anywhere: whoever performs the mysteries of the five trees, the seven voices and the great name needs no further mystery of the kingdom of light except the mystery of the forgiveness of sins; when the ascending disciples reach the six great aeons they will be held fast until they receive it; and at the place of the first archon of the light they cannot enter the inner until they have received it."@en ;
+    pm:dependentStep pmc:JeuTransitusOmniumThesaurorum ;
+    pm:priorStep pmp:JeuMysteriumRemissionis ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Being held fast short of the goal, and nothing worse. The six great aeons will hold them until they receive it; the inhabitants of the place of the first archon of the light will seize them there, because those inhabitants have not received it either, so that the arrivals must perform with them the mysteries they have received; and the text adds that there is no place of chastisement in those places and that they cannot be chastised there. The stated consequence of lacking the withheld mystery is therefore detention without punishment, at a station short of the treasury."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    skos:note "The distribution of this clause is what makes it a necessity and not an order. It stands once before the rites are performed, once in the account of the soul leaving the body, and once at the last station the text reaches, and in the third place it is put as a reassurance: do not be afraid that you cannot enter, because they will only hold you. A transmission that repeats a condition at three removes and softens its consequence at the third is stating a requirement and not a sequence."@en ;
+    skos:note "It is also the place where this corpus answers a question its own apparatus raises. The disciples have by then been given the seal, the name and the cipher of every station up to the fourteenth aeon, and the text says in so many words that this is not enough. What is missing is not a further token of the same kind but the one operation for which no token is given at all. That is why this node is a witness at generalizations/the-text-and-what-is-withheld.ttl."@en ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 58, 69 und 86, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 197, 206 und 223" .
+
+#
+# The ascent: the form of a station, and the stations that are not like the
+# others
+#
+
+pmp:JeuAscensusPerAeones a pm:Practicing ;
+    rdfs:label "The form of a station of the ascent through the aeons"@en, "Die Form einer Station des Aufstiegs durch die Äonen"@de ;
+    skos:definition "The unit the text repeats for each of the twelve aeons and beyond them. When you come out of the body and reach the aeon, and the archons of that aeon step before you — they are named — seal yourselves with this seal, whose name is given and drawn, say its name only once, grasp this cipher with both your hands; and when you have sealed yourselves with it and said its name only once, say these apologies: withdraw, and here the names of the archons of that aeon, for I invoke, and here three or four further names. When the archons of the aeon hear these names they are greatly afraid, scatter, flee to the west to the left, and you go up."@en ;
+    skos:note "Three features of the unit are worth holding apart from the names. The count is fixed and small and is stated as a count: only once, at every station, and at the tenth aeon the text says it twice in one sentence, once of the name and once of the sealing. The cipher is held and not counted with: it is grasped with both hands or laid in them. And the apology is addressed to the beings of the station by name and gives as its whole ground that the passer is invoking other names, which are not translated and not explained."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 77-78, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 215" .
+
+pmc:JeuPsephoiStationum a pm:Conceptualizing ;
+    rdfs:label "The ciphers of the stations, as the edition prints them"@en, "Die Ziffern der Stationen, wie die Ausgabe sie druckt"@de ;
+    skos:definition "The numbers the text assigns to the stations that were read, each to be grasped with the hands at its own station: 1119 at the first aeon, 2219 at the second, 4559 at the tenth, 5558 at the eleventh, 9885 at the twelfth, and 4554 at the place of the archons of the light beyond the fourteenth aeon; besides these, 9879 at all three baptisms, called the cipher of the seven voices, 530 at the mystery against the wickedness of the archons, called the cipher of the first Amen, and 7856 with the one great name of the first book."@en ;
+    skos:note "No rule relates them. They are not a series, they are not derived from the number of the station, and the text states no consequence for holding a wrong one. What it does state is where each belongs and that it is to be in the hands while the name is said."@en ;
+    skos:note "The figures are Schmidt's reading of Coptic-Greek letter numerals, and he marks several of the ones from the stations that were not read with a question mark of his own. The two ciphers of the first book he leaves untransliterated. A node that gave these numbers without saying that would be claiming a precision the witness does not have."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 77-86, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 215-223" .
+
+pmc:JeuAeonDuodecimus a pm:Conceptualizing ;
+    rdfs:label "The twelfth aeon, and the curtains drawn before the invisible God"@en, "Der zwölfte Äon, und die Vorhänge vor dem unsichtbaren Gott"@de ;
+    skos:definition "What the text places at the twelfth aeon: the invisible God, Barbelos and the unbegotten God; the invisible God alone in a place within the twelfth aeon, with curtains drawn before him; and many other gods in that aeon who are called archons in the light-treasure, the great archons who rule over all the aeons and who serve the invisible God, Barbelos and the Unbegotten. Its archons are named, sealed against, and scattered, and the text says that they scatter because the passer has received the twelve apologies of the twelve aeons."@en ;
+    skos:note "The reason given for the scattering changes here. At the earlier stations the archons scatter because they hear the names; at the twelfth the text says they scatter because the twelve apologies have been received, that is, because of a completed set and not because of the formula of that station."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 82-83, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 219-220" .
+
+pmc:JeuAeonTertiusDecimus a pm:Conceptualizing ;
+    rdfs:label "The thirteenth aeon, and the twenty-four that step forward to seize"@en, "Der dreizehnte Äon, und die vierundzwanzig, die zugreifen"@de ;
+    skos:definition "What the text places at the thirteenth aeon: the great invisible God, the great virginal spirit, and the twenty-four emanations of the invisible God. The twenty-four step before the passer in order to seize him on account of the mysteries he has received, and the text gives their imperishable names in order, the first to the twenty-fourth."@en ;
+    skos:note "The ground of the seizure is the possession of the mysteries and not their lack, and it is stated in that form twice on the same leaf. Nothing that was read says what the twenty-four do if they succeed."@en ;
+    skos:note "The list is legible for the first seventeen names and then decays: Schmidt prints the eighteenth and the last three with gaps in the letters. This node therefore records that the list has twenty-four members and does not carry them."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseiten 83-84, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 220" .
+
+pmc:JeuCustodesTacent a pm:Conceptualizing ;
+    rdfs:label "The watchers do not speak with you, they hand over"@en, "Die Wächter reden nicht mit euch, sie übergeben"@de ;
+    skos:definition "What the text says happens at the gates of the light-treasure and at every rank beyond them. The watchers of the gates see the mystery of the forgiveness of sins that the arrivals have performed, and its apologies and all its commandments, and they see the seal on their forehead and the cipher in their hands; then the nine watchers open the gates and they go in; the watchers do not speak with them, but give them their seals and their mystery; and at each further rank the rank gives its seal, its mystery and the great name, and they pass into its inner."@en ;
+    skos:note "Two things are inspected and neither is spoken. What is read off is a seal on the forehead and a number in the hands, both visible, and what the rank then does is hand over the tokens of the next stage. The passage contains no question, no answer and no test, which sets this ascent against the Hekhalot material of this holding, where a wrong answer at the sixth palace destroys the one who gives it. The division is stated at pmc:ThePassageThatPutsNoQuestion."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseite 70, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 207-208" .
+
+pmc:JeuDynamisMissa a pm:Conceptualizing ;
+    rdfs:label "A light-power is sent out behind the ascending and the treasuries withdraw"@en, "Eine Lichtkraft wird hinter den Aufsteigenden ausgesandt, und die Schätze ziehen sich zurück"@de ;
+    skos:definition "The last station of the ascent that the text reaches, and it works unlike all the others. The imperishable names are invoked so that the true God may send out a great light-power to follow the twelve, since they have received the mystery of the forgiveness of sins and are therefore not to be held back from approaching the light-treasure; the true God sends out a power whose name is given; it comes out behind the disciples and makes the light-treasures and their ranks withdraw until the disciples pass into the inner and reach the treasury of the true God, who gives them his great mystery, his great seal and his great name. He then praises and invokes the unapproachable God, who thrusts out a light-power that comes to them at the place of the true God, gives them the character of that treasury, completes them in all fullness, and makes them a rank within it."@en ;
+    skos:note "Every other station in the ascent has the passer produce something and the beings of the station withdraw. Here a power is sent out from above and behind him, and it is the power that makes the stations withdraw. The passer supplies nothing at this station, and the ground the text gives for the sending is not a token he holds but the mystery of the forgiveness of sins he is said to have received. That is the one place where the corpus makes the withheld mystery do the work the apparatus does everywhere else."@en ;
+    pm:withinTradition pmt:BooksOfJeu ;
+    pm:fromWork pmw:MegasLogosKataMysterion ;
+    dcterms:source "Das zweite Buch Jeû, Handschriftenseite 76, deutsche Übersetzung in Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, S. 213" .

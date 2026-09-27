@@ -1,0 +1,75 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches carried in the Books of Jeu on 2026-09-27
+#
+# Four searches at one corpus, put as four questions and not as one. Three of
+# them came back empty, and those three are the reason this file exists: the
+# corpus is famous for its apparatus, and what it does not carry beside the
+# apparatus is only visible to somebody who loaded the graph if the asking is
+# in the graph too.
+#
+# The fourth is the counter-search that killed a candidate generalization
+# before it was written. SPEC 16 requires that search and the holding is where
+# it runs; a refuted candidate is worth more to the next run as a recorded
+# search than as nothing.
+#
+# A limit that applies to all four: the searching was a reading of named
+# pages, page by page, and not a full-text search over the work. The corpus
+# has no searchable text on any access path this setup reaches, so the terms
+# below are the terms that were looked for while reading, and the pages named
+# are the whole of what was read. A term that occurs on a page nobody opened
+# was not found and was not looked for.
+#
+
+pmp:JeuSignumAbsensSearch a pm:Searching ;
+    rdfs:label "Whether the Books of Jeu say what the absence of the requested sign would show"@en, "Ob die Bücher des Jeu sagen, was das Ausbleiben des erbetenen Zeichens zeigen würde"@de ;
+    pm:searchedCorpus "Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, the German translation of the two books of Jeû; read at the wording over manuscript pages 39, 43 to 47, 55 to 70, and 76 to 86, that is pages 179, 183 to 186, 194 to 208, and 213 to 215, 219, 220 and 223" ;
+    pm:searchedFor "A clause anywhere in the four rites, or in the pages read around them, stating what is to be done, or what would be shown, if the sign the prayer asks for does not come: the wine that does not become water, the sign that does not appear in the fire, the sign that does not appear in the offering." ;
+    pm:searchTerms "Read at the wording; looked for in that reading: Zeichen, Wunder, nicht, wenn nicht, falls, erhöre, and any conditional construction following the three prayers. The three sign passages were read in full, from the opening of each prayer to the sentence reporting the outcome, on pages 200, 202 and 204." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-27" ;
+    dcterms:date "2026-09-27" ;
+    skos:note "The finding is the shape of the three passages and not a silence at the edge of them. Each prayer names the condition — if the Father has heard, if he has forgiven, if they are counted among the heirs — and then asks for the sign as the consequence of that condition being met. The one-sided conditional is therefore not an oversight of wording: the text has the apparatus to say what a missing sign would show, uses it to say what a present sign shows, and stops there. Three times."@en ;
+    skos:note "What the search cannot say. It was carried over the pages named and not over the whole corpus; the ascent through the taxeis at manuscript pages 70 to 76, the third to the ninth aeon, and the diagram chapters of the first book were not read. A clause of this kind in one of them would overturn the finding, and the place to look first is the end, which is lost: the text breaks off before delivering the one mystery it has three times promised."@en ;
+    skos:note "This search is what pmc:JeuSignaTriaPetita rests on, and through it the case recorded against pmc:TheCriterionNoPartyControls at examinations/both-sides-of-the-criterion.ttl."@en .
+
+pmp:JeuChrismaSearch a pm:Searching ;
+    rdfs:label "Whether the spiritual anointing is anywhere performed in the Books of Jeu"@en, "Ob die geistige Salbung in den Büchern des Jeu irgendwo vollzogen wird"@de ;
+    pm:searchedCorpus "Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, the German translation of the second book of Jeû; read at the wording over manuscript pages 55 to 70 and 76 to 78, that is pages 194 to 208 and 213 to 215" ;
+    pm:searchedFor "A passage prescribing or describing the spiritual anointing, the fifth of the five things announced at manuscript page 56: an incense, a seal, a cipher, a prayer, or a report that it was performed." ;
+    pm:searchTerms "Read at the wording; looked for in that reading: Salbe, Salbung, geistige Salbe, chrisma, and the recapitulation of the rites received, which was read in full at manuscript page 77." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-27" ;
+    dcterms:date "2026-09-27" ;
+    skos:note "One occurrence of the word in the pages read, and it is the announcement. The four rites that follow are the three baptisms and the removal of the archons' wickedness, all four described with their full apparatus; the recapitulation four leaves later lists the mystery of the twelve aeons and those four, and not the anointing. The finding stands at pmc:JeuChrismaNonTraditum."@en ;
+    skos:note "A negative finding about a damaged manuscript whose end is lost, and it is weaker for that than the shape of the passage suggests. What it establishes is that the announcement is not followed by the rite within the pages read, and that the recapitulation which is followed by the ascent does not name it. What it cannot establish is that the rite was never in the work."@en .
+
+pmp:JeuPoenaProditionisSearch a pm:Searching ;
+    rdfs:label "Whether the command of secrecy in the Books of Jeu names a consequence"@en, "Ob das Geheimhaltungsgebot der Bücher des Jeu eine Folge nennt"@de ;
+    pm:searchedCorpus "Carl Schmidt, Gnostische Schriften in koptischer Sprache aus dem Codex Brucianus, Texte und Untersuchungen VIII 1-2, Leipzig 1892, the German translation of the second book of Jeû; read at the wording over manuscript pages 55 to 58, that is pages 194 to 197" ;
+    pm:searchedFor "A stated consequence for the disciple who passes the mysteries to somebody the text excludes, or for the recipient who takes them without meeting the conditions: a penalty, a loss of the effect, a harm, a term." ;
+    pm:searchTerms "Read at the wording over the whole of the command of secrecy, the list of the excluded, the definition of the worthy recipient and the ethical commands; looked for in that reading: wehe, Gericht, Strafe, verlieren, nicht wirken, zugrunde, Verderben." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-27" ;
+    dcterms:date "2026-09-27" ;
+    skos:note "Three pages of prohibitions with nothing attached to their breach. The passage is unusually specific about whom the mysteries may not reach — it names a rival cult by its rite and its god, with the god's rank, name and face — and unusually silent about what follows from reaching them. That is why pmc:JeuMysteriaNonTradenda is a caution and not a prerequisite with a stated necessity: the wording does not carry the consequence the class would require."@en ;
+    skos:note "The nearest thing to a consequence anywhere in this corpus falls on the wrong party. The first book warns that one who bears the garment without knowing him is given over to destruction, which is a penalty on the unworthy bearer and not on whoever handed the garment over. Where a transmission of an operative text states its restriction in its own words and states no penalty, that is a fact about the restriction, and it is only countable if the asking is recorded."@en .
+
+pmp:JeuClavisUniversalisSearch a pm:Searching ;
+    rdfs:label "Whether a station-by-station ascent elsewhere in the holding also carries one item that opens all its stations"@en, "Ob ein stationsweiser Aufstieg im Bestand sonst ebenfalls ein Stück trägt, das alle seine Stationen öffnet"@de ;
+    pm:searchedCorpus "The compiled holding of prima-materia as of 2026-09-27, over the traditions that carry a graded passage: the Books of Jeu, the Pistis Sophia, the Hekhalot material, the Mithraic reports, and the Egyptian gate and arit material" ;
+    pm:searchedFor "A counter-case and a confirming case for a candidate generalization formed in this run and not written: that a transmission teaching a passage through many guarded stations, each opened by its own name, seal and number, also carries one single item said to open all of them at once. Sought were transmissions with many stations and no such item." ;
+    pm:searchTerms "Query over the compiled graph for every node with pm:withinTradition in the five traditions named, read at the label; then the definitions of pmc:PistisSophiaVestisNominum, pmc:PistisSophiaTransitusVisu, pmc:MithraicKlimaxHeptapylos, pmc:MithraicProbatioLetalis, pmc:WaterQuestionCaution and pmc:HekhalotDescentPresupposesFitness read in full." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:ThePassageThatPutsNoQuestion ;
+    pm:searchedBy "prima-materia, 2026-09-27" ;
+    dcterms:date "2026-09-27" ;
+    skos:note "The candidate was refuted at once and by two of the five. The Mithraic ladder of seven gates carries no item that opens all seven, and the Hekhalot palaces carry seals given palace by palace and no master seal. Two witnesses would have supported it — the one great name of the first book of Jeu, which is said to make the watchers and curtains of all sixty treasuries scatter, and the light-garment of the Pistis Sophia, which carries the name of every mystery and every order below — and both belong to the same transmission family, with a documented route between them. A statement resting on one family is a description of that family, and it was not written."@en ;
+    skos:note "What the same search did produce is the statement at pmc:ThePassageThatPutsNoQuestion, and it is worth more than the candidate was. The division the material actually carries is not between one key and many, but between stations that hand the passer a token and stations that put him a question: the first kind states no test and no failed case, the second states what failing costs. The counter-case that killed the first candidate is a witness for the second, which is the ordinary shape of a counter-search that was carried early enough."@en ;
+    skos:note "Not searched: anything outside this holding, and within it the traditions whose ascent material has no node yet. The holding carries some ninety corpora and the question is about the wording of transmissions, so the cheap search is the one that was run."@en .
