@@ -1,0 +1,648 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Thelemic transmission
+#
+# Order of the file: the tradition and the contact question; the works of the
+# corpus as identifiers; the demand for a written record, which is what this
+# transmission puts in front of everything else; the practices that carry a
+# stated measure; the capacities they are said to yield; the prerequisite
+# chains; the signs of success, kept apart from the failure conditions; the
+# cautions, including the ones the corpus turns against its own prescriptions;
+# and last the passages in which the same corpus withdraws the testability it
+# demanded, which is the finding this entry exists for.
+#
+# The tradition instance was registered in traditions/registry-modern.ttl and
+# is moved here now that passages have been read.
+#
+# Only the public-domain part of the corpus is opened. The instructions of the
+# Equinox, volume one, numbers one to ten, London 1909 to 1913, and the second
+# part of Book 4, Wieland 1913, are read at the wording. Magick in Theory and
+# Practice, Paris 1929, is not: the access finding stands at its work node and
+# at a search node.
+#
+
+pmt:Thelema a pm:Tradition ;
+    rdfs:label "Thelema"@en, "Thelema"@de ;
+    skos:definition "Crowley's transmission of a received book, of the discovery of one's own will as the central task, and of a practice curriculum with a demand for recorded results."@en ;
+    skos:note "Read in this run at the wording. The Equinox, volume one, numbers one to ten, London 1909 to 1913: Liber XXX Librae, Liber IX E vel Exercitiorum whole, Liber VI O vel Manus et Sagittae whole, Liber III vel Jugorum whole with its plate, Liber CCCXLI HHH whole, Liber XVI Turris vel Domus Dei whole, Liber CCVI RV vel Spiritus whole with its plate and the editorial note to it, Liber DXXXVI Batrachophrenoboocosmomachia whole, and A Syllabus of the Official Instructions of A∴A∴ Hitherto Published at number ten. Book 4, Part I: Meditation, chapters I, V, VI and VII. Not read at the wording: the second part of Book 4 beyond its preliminary matter, the whole of The Temple of Solomon the King, Liber CCCCXVIII, Liber XIII vel Graduum Montis Abiegni, Liber CCCCXII A vel Armorum, Liber CC Resh vel Helios, the Class A books, and the verse, prose and reviews that make up most of the ten numbers."@en ;
+    skos:note "Two carriers were used for the Equinox and the reading rests on both. The first is the Celephais Press and Ordo Templi Orientis re-setting of the ten numbers, which reproduces the title pages, the running heads and the original pagination and states its own provenance in the text. The second is a page scan of number one. Where a wording matters it was collated between them; Liber E I, 7 reads intelligibly prepared in both, and the reading of Liber E III, 9 on the saucer of water is identical in both. The re-setting renders the arabic nine as g throughout, so a section number taken from it alone is not to be trusted, and every section number in this file was checked against its neighbours in the sequence."@en ;
+    skos:note "Book 4, Part I was read in a text that reaches the first edition through a later one, and the nodes from it say so in the source. No scan of the Wieland print of 1912 was found; the one archive identifier offering that part returns an optical transcription in Cyrillic characters and is unusable. The part title also differs between the editions: the 1912 half-title reads Meditation, and Mysticism is the later name. A node citing Book 4 Part I Mysticism would be citing an edition that did not exist in 1912."@en ;
+    skos:note "The contact route stays documented and the reading did not move it. The route is in the corpus itself and needs no secondary literature: the course of reading at Liber E VII, 2 prescribes the Upanishads, the Bhagavadgītā, the Shiva Saṃhitā, the aphorisms of Patañjali, the Haṭhayogapradīpikā, Vivekananda's Raja Yoga, the Voice of the Silence, Lévi, the Abramelin book and the Goetia by name; Liber E III names four postures and Liber E IV the alternating nostril cycles; Liber CCVI names Pingala, Ida, Suṣumṇā and the Viśuddhi cakra; the fifth number prints a treatise by Ananda Metteyya in the same issue as Liber HHH; and the second and third numbers print the neophyte ritual of the Golden Dawn, which the fourth number's editorial defends having published. A transmission whose reading list, whose postures, whose breath vocabulary and whose ritual forms all run to corpora this holding already carries cannot be counted as an independent witness for anything they share."@en ;
+    skos:note "What the entry is for, and it is not the capacity list. This transmission is the one in the holding that makes the demand for a written record from inside itself, states a base rate against which a result is to be judged, publishes a negative assessment of a named practitioner, and then, in the same volumes, withdraws the testability it demanded. Both halves are entered. The withdrawal is not a later recantation and not the work of a critic: it stands three pages from the demand, in the same instruction."@en ;
+    pm:principalCorpus "Crowley, Liber AL vel Legis; Crowley, Magick in Theory and Practice; Crowley, The Vision and the Voice; the instructions of the A∴A∴ published in The Equinox, volume one, numbers one to ten; Crowley and Sturges, Book 4 (Liber ABA)" ;
+    pm:corpusWork pmw:LiberEVelExercitiorum, pmw:LiberOVelManusEtSagittae, pmw:LiberIIIVelJugorum, pmw:LiberHHH, pmw:LiberTurrisVelDomusDei, pmw:LiberRVVelSpiritus, pmw:LiberBatrachophrenoboocosmomachia, pmw:SyllabusInstructionumAA, pmw:LiberABA, pmw:LiberALVelLegis, pmw:LiberXXXAerum, pmw:MagickInTheoryAndPractice, pmw:LiberGraduumMontisAbiegni ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. I, in The Equinox I,1 (London, March 1909), p. 25" ;
+    pm:fromWork pmw:LiberEVelExercitiorum .
+
+#
+# The works of the corpus as identifiers. Which of them has been opened is not
+# stated here; it follows from pm:fromWork.
+#
+
+pmw:LiberEVelExercitiorum a dcterms:BibliographicResource ;
+    rdfs:label "Liber E vel Exercitiorum sub figura IX"@en, "Liber E vel Exercitiorum sub figura IX"@de ;
+    skos:note "Class B by the syllabus of the transmission, that is, no claim of textual invariance. Sections and roman chapter numbers are carried by the Equinox print and are absent from the reprint in the appendix of Magick in Theory and Practice, which makes the Equinox print the only carrier with a usable internal address."@en .
+
+pmw:LiberOVelManusEtSagittae a dcterms:BibliographicResource ;
+    rdfs:label "Liber O vel Manus et Sagittae sub figura VI"@en, "Liber O vel Manus et Sagittae sub figura VI"@de ;
+    skos:note "Class B. The syllabus says of it that its instructions are too loose to find place among the official rituals, which is the transmission's own grading of the text this file leans on most."@en .
+
+pmw:LiberIIIVelJugorum a dcterms:BibliographicResource ;
+    rdfs:label "Liber III vel Jugorum"@en, "Liber III vel Jugorum"@de ;
+    skos:note "Class D, an official ritual and instruction. Published with a photographic plate of a practitioner's forearm and a printed verdict on his performance."@en .
+
+pmw:LiberHHH a dcterms:BibliographicResource ;
+    rdfs:label "Liber HHH sub figura CCCXLI"@en, "Liber HHH sub figura CCCXLI"@de ;
+    skos:note "Class D."@en .
+
+pmw:LiberTurrisVelDomusDei a dcterms:BibliographicResource ;
+    rdfs:label "Liber Turris vel Domus Dei sub figura XVI"@en, "Liber Turris vel Domus Dei sub figura XVI"@de ;
+    skos:note "Class B."@en .
+
+pmw:LiberRVVelSpiritus a dcterms:BibliographicResource ;
+    rdfs:label "Liber RV vel Spiritus sub figura CCVI"@en, "Liber RV vel Spiritus sub figura CCVI"@de ;
+    skos:note "Class B. Published with a photographic plate and an editorial note stating why the plate was necessary."@en .
+
+pmw:LiberBatrachophrenoboocosmomachia a dcterms:BibliographicResource ;
+    rdfs:label "Liber Batrachophrenoboocosmomachia sub figura DXXXVI"@en, "Liber Batrachophrenoboocosmomachia sub figura DXXXVI"@de ;
+    skos:note "Class B."@en .
+
+pmw:SyllabusInstructionumAA a dcterms:BibliographicResource ;
+    rdfs:label "A Syllabus of the Official Instructions of A∴A∴ Hitherto Published"@en, "A Syllabus of the Official Instructions of A∴A∴ Hitherto Published"@de ;
+    skos:note "The transmission's own catalogue of its instructions, with the four classes that decide whether a text may be altered. It is the document that makes the edition of every other node in this file a necessary part of the citation."@en .
+
+pmw:LiberABA a dcterms:BibliographicResource ;
+    rdfs:label "Book 4 (Liber ABA)"@en, "Book 4 (Liber ABA)"@de ;
+    skos:note "Published in parts: Part I, Meditation, Wieland 1912, and Part II, Magick, Wieland 1913. The title page and the opening note name two authors and state that the book is not the work of the first of them but was written down from his dictation by the second and rearranged by her, and that it was read before printing by several persons of less than average intelligence so that anything unclear to them could be elucidated. A node from this work reports a redacted dictation with a third party interposed for intelligibility, not an author's text."@en .
+
+pmw:LiberALVelLegis a dcterms:BibliographicResource ;
+    rdfs:label "Liber L vel Legis sub figura CCXX"@en, "Liber L vel Legis sub figura CCXX"@de ;
+    skos:note "Class A, the only class of which the transmission claims that not so much as the style of a letter may be changed. Printed with a facsimile in the seventh number. Unopened in this holding: the received-wording question belongs to pm:Receiving and was not carried in this run."@en .
+
+pmw:LiberXXXAerum a dcterms:BibliographicResource ;
+    rdfs:label "Liber XXX Aerum vel Saeculi (The Vision and the Voice) sub figura CCCCXVIII"@en, "Liber XXX Aerum vel Saeculi (Die Vision und die Stimme) sub figura CCCCXVIII"@de ;
+    skos:note "Unopened in this holding. Printed as the supplement to the fifth number and therefore reachable; the syllabus grades it A-B and says the cries of the angels are to be regarded as accurate, which makes it the place where this transmission's claim of textual reliability is strongest and least examined."@en .
+
+pmw:MagickInTheoryAndPractice a dcterms:BibliographicResource ;
+    rdfs:label "Magick in Theory and Practice (Book 4, Part III)"@en, "Magick in Theory and Practice (Book 4, Teil III)"@de ;
+    skos:note "Unopened at the wording of its own print. The Lecram Press edition, Paris 1929, was sought and not obtained; the finding stands at a search node. What was consulted instead is an electronic edition following a later reprint, and it is used in this file for one purpose only, as the second side of a dispute about a reading."@en .
+
+pmw:LiberGraduumMontisAbiegni a dcterms:BibliographicResource ;
+    rdfs:label "Liber XIII vel Graduum Montis Abiegni"@en, "Liber XIII vel Graduum Montis Abiegni"@de ;
+    skos:note "Unopened in this holding. Printed in the third number and reachable; it carries the examination order of the whole curriculum, which is the prerequisite chain this file enters only in the fragments the other instructions state for themselves."@en .
+
+#
+# The demand this transmission puts in front of everything else
+#
+
+pmp:ThelemaScriptumRecordum a pm:Practicing ;
+    rdfs:label "The written record of every experiment"@en, "Das schriftliche Protokoll jedes Versuchs"@de ;
+    skos:altLabel "the magical record"@en ;
+    skos:definition "The practice the instruction opens and closes with. Every experiment is to be recorded in detail during or immediately after its performance; the physical and mental condition of the experimenter, the time, the place, the state of the weather and all conditions that might act on the result or be sources of error are to be noted; and the more scientific the record, the better, while the emotions are to be noted as being among the conditions."@en ;
+    skos:note "Two features make this more than an exhortation. It carries a sanction: the order will take no official notice of experiments not thus recorded. And it names a published model of the form, a diary printed in the same number of the journal, so that the standard is exhibited rather than described. The instruction returns to it at its end and calls the written record the only possible check upon error derived from the various qualities of the experimenter."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. I, §§ 1-4 and 7-9, and chap. VII, § 8, in The Equinox I,1 (London, March 1909), pp. 25 and 34; read in the Celephais Press and O.T.O. re-setting of the ten numbers and collated against a page scan of number one" .
+
+pmc:ThelemaSanctioNonNotitiae a pm:Conceptualizing ;
+    rdfs:label "What is not recorded is not noticed"@en, "Was nicht protokolliert ist, wird nicht zur Kenntnis genommen"@de ;
+    skos:definition "The sanction attached to the record: the order states that it will take no official notice of any experiments which are not properly recorded in the manner the three preceding sections set out."@en ;
+    skos:note "The rule is entered separately from the practice because it is the part that can be complied with or broken and because it is the transmission's own answer to the question this holding asks of every claim. It makes the record the condition of admissibility rather than a matter of diligence, which is the same move a protocol makes here."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. I, § 4, in The Equinox I,1 (London, March 1909), p. 25" .
+
+pmc:ThelemaClassesInstructionum a pm:Systematizing ;
+    rdfs:label "The four classes of publication, and which of them may be altered"@en, "Die vier Publikationsklassen, und welche von ihnen geändert werden darf"@de ;
+    skos:definition "The transmission's own ordering of its instructions into four classes: class A consists of books of which not so much as the style of a letter may be changed, being beyond the criticism even of the visible head of the organisation; class B of books or essays that are the result of ordinary scholarship; class C of matter to be regarded as suggestive; class D of the official rituals and instructions. Some publications are composite and belong to more than one class."@en ;
+    skos:note "This is the ordering act that governs how every other node in this file must cite. Of the instructions read here, none is class A: Liber E, Liber O, Liber Turris, Liber RV and Liber DXXXVI are class B, Liber HHH and Liber III class D. For all of them the transmission itself asserts no textual invariance, and the edition read is therefore part of the claim and not a courtesy. The one book that does claim invariance is the received one, which this run did not open."@en ;
+    skos:note "It is entered as an ordering act and not as a doctrine because the classes are a classification imposed on texts already published, and because the same document that states them lists which books fall where, with a reason in each case."@en ;
+    pm:ordersClaim pmc:ThelemaSanctioNonNotitiae ;
+    pm:compiledBy "The A∴A∴, in the syllabus signed by its three officers" ;
+    dcterms:date "1913" ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:SyllabusInstructionumAA ;
+    dcterms:source "A Syllabus of the Official Instructions of A∴A∴ Hitherto Published, in The Equinox I,10 (London, September 1913), p. 43" .
+
+#
+# The practices that carry a stated measure
+#
+
+pmp:ThelemaProbatioTarot a pm:Practicing ;
+    rdfs:label "The card test with a tabulated result"@en, "Die Kartenprobe mit tabelliertem Ergebnis"@de ;
+    skos:definition "Take a pack of seventy-eight tarot cards, shuffle, cut, draw one card, and without looking at it try to name it. Write down the card named and the actual card; repeat and tabulate the results. The easier form, guessing only the suit, is to be tried first, and all possibilities of obtaining the knowledge through sight, touch or smell are to be excluded."@en ;
+    skos:note "The exclusion clause is not a formality and the instruction says why: there was once a man whose fingertips were so sensitive that he could feel the shape and position of the pips and so judge the card correctly. A stated source of error with a stated mechanism is rare in this holding."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. II, §§ 1-4, in The Equinox I,1 (London, March 1909), pp. 26-27" .
+
+pmc:ThelemaRatioCasus a pm:Conceptualizing ;
+    rdfs:label "The stated chance rate, and the threshold above it"@en, "Die genannte Zufallsrate und die Schwelle darüber"@de ;
+    skos:definition "The instruction states the rate to be expected without any clairvoyance at all: the right card once in seventy-eight times; and, since seventy-eight cards yield twenty-two trumps and fourteen of each other suit, a correct suit roughly twice in seven times by calling trumps every time. Against that it sets the threshold at which the practitioner may be admitted for examination: the suit correctly three times in four, very few inharmonious errors, and the card named aright as many as fifteen or twenty times in seventy-eight."@en ;
+    skos:note "This is the only passage the run found anywhere in the corpus that puts a number on chance and a second number on success. Both are stated by the transmission and neither is the compiler's. It is what the testability-driven entrance of the specification is looking for, and it is here rather than in a tradition with a longer pedigree."@en ;
+    skos:note "The second of the two chance figures is also a stated strategy for beating a naive score without any faculty at all, which means the transmission had thought about the base rate rather than merely quoting one."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. II, §§ 3, 5 and 8-9, in The Equinox I,1 (London, March 1909), pp. 26-27" .
+
+pmc:ThelemaClarividentiaPhysica a pm:Conceptualizing ;
+    rdfs:label "Physical clairvoyance, as this transmission defines it"@en, "Physische Hellsicht, wie diese Überlieferung sie bestimmt"@de ;
+    skos:definition "The capacity the card test is held to measure: naming a drawn card whose face has not been seen, at a rate above the chance rate the same instruction states. The instruction's own heading for the chapter is physical clairvoyance."@en ;
+    skos:note "Defined by its measurement and by nothing else, which is why it is the one capacity in this file that a count could settle. No mechanism is offered and none is needed for the claim as stated."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. II, in The Equinox I,1 (London, March 1909), pp. 26-27" .
+
+pmc:ThelemaProbatioTarotYieldsClarividentia a pm:Yielding ;
+    rdfs:label "The card practice is said to develop the faculty it measures"@en, "Die Kartenpraxis soll das Vermögen ausbilden, das sie misst"@de ;
+    skos:definition "The instruction is written as a progression and not only as a test: as you progress, you will find that you are able to distinguish the suit correctly three times in four, and in seventy-eight experiments to name the card aright as many as fifteen or twenty times. The practice is thus held to bring about the capacity, and at the threshold the practitioner is admitted for examination and given more complex exercises."@en ;
+    skos:note "The double role is worth holding as such. A procedure that is at once the training and the measurement cannot separate an improvement in the faculty from an improvement in the procedure, and the instruction does not distinguish them. That is a property of the claim and not a defect of the reading."@en ;
+    pm:byPractice pmp:ThelemaProbatioTarot ;
+    pm:yieldsCapacity pmc:ThelemaClarividentiaPhysica ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. II, §§ 8-9, in The Equinox I,1 (London, March 1909), p. 27" .
+
+pmp:ThelemaQuattuorSedes a pm:Practicing ;
+    rdfs:label "The four postures, held with every muscle tense"@en, "Die vier Stellungen, mit jedem Muskel angespannt"@de ;
+    skos:definition "Learning to sit perfectly still with every muscle tense for long periods, in one of four named positions: the God, seated in a chair with head up, back straight, knees together, hands on knees and eyes closed; the Dragon, kneeling with the buttocks on the heels and the toes turned back; the Ibis, standing and holding the left ankle with the right hand, the free forefinger on the lips; the Thunderbolt, seated with the left heel pressing up the anus, the right foot poised on its toes and the arms stretched over the knees. No garment is worn that interferes with the posture."@en ;
+    skos:note "The duration of the practice, the severity of the pain if any, and the degree of rigidity attained are to be noted down, so the posture is one of the places where the record has something countable to hold."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. III, §§ 1-8, in The Equinox I,1 (London, March 1909), pp. 27-28" .
+
+pmc:ThelemaMensuraPatinae a pm:Conceptualizing ;
+    rdfs:label "The saucer of water as the measure of the posture"@en, "Die Untertasse Wasser als Maß der Stellung"@de ;
+    skos:definition "The stated criterion for the posture: a saucer filled to the brim with water and poised upon the head does not spill one drop during a whole hour, and no tremor can any longer be perceived in any muscle. At that point the practitioner is admitted for examination."@en ;
+    skos:note "A criterion a bystander can apply, unlike almost everything else this transmission offers as a sign, and one that fails visibly. It is entered as its own node for that reason: the posture and the measure of the posture are separable, and only the second is examinable."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. III, § 9, in The Equinox I,1 (London, March 1909), p. 28; the wording collated between the re-setting and a page scan of the number" .
+
+pmp:ThelemaPranayamaNumerata a pm:Practicing ;
+    rdfs:label "The counted breath cycles"@en, "Die gezählten Atemzyklen"@de ;
+    skos:definition "At rest in one of the postures, the right nostril closed with the thumb, breathing out slowly and completely through the left nostril while the watch marks twenty seconds, and in through the same nostril for ten, then changing hands and repeating with the other nostril, continuous for one hour. Then, when each stage is quite easy and not before, the periods rise: thirty and fifteen; out fifteen, in fifteen, held fifteen; out forty, in twenty; out twenty, in ten, held thirty."@en ;
+    skos:note "Two conditions are stated with it. Food in the stomach, even in small quantities, makes the practice very difficult; and the practitioner is never to overstrain, in particular never to get so short of breath that he is compelled to breathe out jerkily or rapidly. The second is both a caution and a failure indicator, and it is entered again as a caution below."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. IV, §§ 1-9, in The Equinox I,1 (London, March 1909), p. 29" .
+
+pmp:ThelemaDharanaNumerata a pm:Practicing ;
+    rdfs:label "Concentration with the interruptions counted"@en, "Konzentration mit gezählten Unterbrechungen"@de ;
+    skos:definition "Constraining the mind to a single simple imagined object, then to combinations, then to simple moving objects and to combinations of moving objects, with no other thought allowed to intrude. Seated in the posture, with notebook and pencil at one's side and a watch in front of one, at first for not more than ten minutes at a time; the duration, the number and nature of the intruding thoughts and the tendency of the object to depart from the course laid out for it are noted. The number of times the thought wanders is counted, on the fingers or on a string of beads."@en ;
+    skos:note "This is the practice that turns the record into an instrument. The counted unit is the break, and the count is kept while the practice runs rather than reconstructed afterwards. The later exposition states the profile expected at a given stage: an average practice of about half an hour with between ten and twenty breaks."@en ;
+    skos:note "It also supplies the one case in the holding of a break being externally observable. A footnote states that the grosser kind of break can be detected by another person, that it is accompanied by a flickering of the eyelid and can be seen by him, and that with practice he could detect even very small breaks."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. V, §§ 1-6, in The Equinox I,1 (London, March 1909), p. 30, with the counting procedure and the expected profile at Book 4 (Liber ABA), Part I: Meditation, chap. V, pp. 58-61 (first published London: Wieland & Co., 1912; read in the Celephais Press electronic edition of 2004, which follows the corrected text in Magick: Book 4 Parts I-IV, York Beach: Samuel Weiser, 1994)" .
+
+pmc:ThelemaQuinqueGeneraInterruptionum a pm:Systematizing ;
+    rdfs:label "The five classes of interruption"@en, "Die fünf Klassen der Unterbrechung"@de ;
+    skos:definition "The classification of breaks the exposition imposes on the counted unit: physical sensations, which should have been overcome by the posture; breaks dictated by events immediately preceding the meditation; breaks partaking of the nature of reverie or day-dream, which are called the most insidious; a high class of break that is an aberration of the control itself, of the form how well am I doing it; and a fifth class with no discoverable source in the mind, which may take the form of an auditory hallucination."@en ;
+    skos:note "The classification is what makes the count more than a tally: a constant total with a falling share of the first two classes is stated to be progress, so the instrument reports a direction and not only a number. That is an ordering imposed by the compiler of the exposition on the material of the earlier instruction, and it is entered as such."@en ;
+    skos:note "The fifth class carries the one piece of medical advice in the corpus: of such hallucinations it is said that they are infrequent and are recognised for what they are, and that otherwise the student had better see his doctor."@en ;
+    pm:ordersClaim pmc:ThelemaFractiCrescentesNonSuntCasus ;
+    pm:compiledBy "Frater Perdurabo and Soror Virakam, in the redacted dictation of 1911-1912" ;
+    dcterms:date "1912" ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberABA ;
+    dcterms:source "Book 4 (Liber ABA), Part I: Meditation, chap. V, pp. 59-61 (first published London: Wieland & Co., 1912; read in the Celephais Press electronic edition of 2004, which follows the corrected text in Magick: Book 4 Parts I-IV, York Beach: Samuel Weiser, 1994)" .
+
+pmp:ThelemaTriplexIugum a pm:Practicing ;
+    rdfs:label "The triple yoke on speech, action and thought"@en, "Das dreifache Joch auf Rede, Handlung und Gedanke"@de ;
+    skos:definition "Three sets of self-imposed avoidances, each to last a week or more. On speech: avoid a common word such as and, the or but; avoid a letter of the alphabet; avoid the pronouns and adjectives of the first person; and devise others. On action: avoid lifting the left arm above the waist; avoid crossing the legs. On thought: avoid a definite subject that commonly occupies much thought and is frequently stimulated by the senses or by the conversation of others; or create two personalities by a device such as changing a ring from one finger to another, the thoughts of each within limits entirely different from the other."@en ;
+    skos:note "On each occasion of being betrayed into the thing sworn to avoid, the practitioner cuts himself sharply upon the wrist or forearm with a razor, and the instruction states the reason in a sentence that makes the practice an instrument: thine arm then serveth thee both for a warning and for a record. The daily progress is also written down."@en ;
+    skos:note "The self-inflicted injury is entered because it is the operative part of the stated procedure and because the count is carried on the body. This holding reports what the instruction prescribes; it does not recommend it, and the caution the instruction itself lacks here is one of the absences worth noting about it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberIIIVelJugorum ;
+    dcterms:source "Liber III vel Jugorum, chaps. I, II and III, §§ 1-3, in The Equinox I,4 (London, September 1910), pp. 11-14" .
+
+pmc:ThelemaFidelitasEtVigilantia a pm:Conceptualizing ;
+    rdfs:label "Fidelity and vigilance, and a published failure"@en, "Treue und Wachsamkeit, und ein veröffentlichtes Scheitern"@de ;
+    skos:definition "The two criteria under which a performance of the triple yoke is judged, given in the caption to the plate that accompanies the instruction: a named practitioner after one week of avoiding the first person, of whom the caption says that his fidelity is good, his vigilance bad, and that he is not nearly good enough to pass."@en ;
+    skos:note "The single most unusual thing the run found in the whole corpus, and the reason this entry was worth making. A transmission that publishes a photograph of a practitioner's forearm together with a verdict of failure on him has exposed its own standard to inspection: the number of cuts is visible, the criteria are named, and the judgment is recorded against a person rather than described in general. Nothing else in this holding does that."@en ;
+    skos:note "The two criteria are not defined further, and the distinction between them has to be read off the case: fidelity is keeping the oath, vigilance is noticing when one has broken it. A practitioner can score well on the first and badly on the second only if the cuts record breaches he did not catch at the time, which is what the caption is reporting."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberIIIVelJugorum ;
+    dcterms:source "Liber III vel Jugorum, plate ARATUM SECURUM with its caption, in The Equinox I,4 (London, September 1910), p. 10" .
+
+pmp:ThelemaVibratioNominum a pm:Practicing ;
+    rdfs:label "The vibration of god-names"@en, "Die Vibration der Gottesnamen"@de ;
+    skos:definition "Standing with arms outstretched, breathing in deeply through the nostrils while imagining the name of the god entering with the breath; letting the name descend from the lungs through heart, solar plexus, navel and generative organs to the feet; at the moment it appears to touch the feet, advancing the left foot about twelve inches, throwing the body forward and shooting out the hands from beside the eyes, while imagining the name rushing up through the body and breathing it out through the nostrils; then withdrawing the foot and placing the forefinger on the lips. All of it done with all the force of which the practitioner is capable."@en ;
+    skos:note "It follows the assumption of god-forms, of which the same chapter says that no simple and certain test of success exists. The vibration, by contrast, is given two signs, and the two differ from each other in exactly the way this holding needs to distinguish: one is a bodily state a bystander could in principle observe, the other is stated to be perceptible only to the practitioner."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. III, §§ 3-4, in The Equinox I,2 (London, September 1909), pp. 17-18" .
+
+pmp:ThelemaAscensusInPlanis a pm:Practicing ;
+    rdfs:label "Rising on the planes"@en, "Das Steigen auf den Ebenen"@de ;
+    skos:definition "After the preliminary purifications, banishings and invocations, imagining one's own figure as enveloping the physical body or standing in front of it, transferring the seat of consciousness to that figure so that one seems to see with its eyes and hear with its ears, causing it to rise to a great height above the earth, stopping, looking about, speaking to the figures that approach and insisting on being answered. The developed form omits the stopping: the practitioner continues to rise until fatigue almost overcomes him and, whatever threatens or allures, forces his way upward until his whole being is swallowed up in fatigue and he sinks into unconsciousness, writing down soberly and accurately a record of all that has occurred on coming to himself."@en ;
+    skos:note "The instruction calls the transfer of consciousness the great difficulty of the operation and, a page later, calls the whole experiment perfectly easy to perform, adding that two or three attempts should render the student confident and even expert. Both sentences are in the same chapter."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. V, §§ 1-12, and chap. VI, §§ 1-6, in The Equinox I,2 (London, September 1909), pp. 27-30" .
+
+pmp:ThelemaProbatioPentagrammatis a pm:Practicing ;
+    rdfs:label "Testing an apparition with the pentagram"@en, "Die Prüfung einer Erscheinung mit dem Pentagramm"@de ;
+    skos:definition "During the rising, carefully testing the truth of all with whom one speaks, using the appropriate figures and signs: a hostile being may appear clothed with glory, and the appropriate pentagrams will in such a case cause him to shrivel or decay."@en ;
+    skos:note "The one operational test in the corpus with a stated outcome that could fail to occur. It is a test of the object and not of the practitioner, and its result is a change in the apparition rather than a feeling in the observer, which distinguishes it from every other sign this instruction gives. Whether the observer and the judge are the same person is not addressed, and that is the limit of it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. V, § 9, in The Equinox I,2 (London, September 1909), p. 28" .
+
+pmp:ThelemaNumerusUnoAspectu a pm:Practicing ;
+    rdfs:label "Naming a thrown number at a glance, confirmed by a second person"@en, "Eine geworfene Zahl auf einen Blick nennen, von einem Zweiten bestätigt"@de ;
+    skos:definition "Seated before a bare square table, an unknown number of small similar objects is thrown by an assistant from time to time upon the table and hastily gathered up again. The practitioner declares the number at the glance and the assistant confirms it by his count. A quarter of an hour thrice daily; the maximum number of objects is at first seven, and the maximum increases by one at each practice provided that not a single mistake is made. The practice is to continue assiduously for at least one year."@en ;
+    skos:note "The only practice in the corpus whose result is checked by another person as a matter of procedure rather than as an afterthought, and the only one whose progression is gated on an error count kept by that other person. The failure condition is stated in the same breath as the advancement rule: one mistake and the maximum does not rise."@en ;
+    skos:note "The assistant's own performance is expected to change with time — his quickness in gathering up the objects is expected to increase — which means the difficulty of the task is not held constant across the year. The instruction does not notice this."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberBatrachophrenoboocosmomachia ;
+    dcterms:source "Liber Batrachophrenoboocosmomachia sub figura DXXXVI, § 1, practice A, in The Equinox I,10 (London, September 1913), pp. 37-38" .
+
+pmp:ThelemaPranayamaInAmbulatione a pm:Practicing ;
+    rdfs:label "The breath in the walk and in the dance"@en, "Der Atem im Gang und im Tanz"@de ;
+    skos:definition "Practising the deep full breathing during walks, with a sacred sentence or a count so that the footfall beats accurately with its rhythm; beginning with an indrawing of the breath for four paces and a breathing out for four, increasing to six, eight, twelve, sixteen and twenty-four, then to the proportion four to eight, six to twelve, eight to sixteen, twelve to twenty-four; then quickening the sentence and the pace until the walk develops into a dance, and practising mental concentration during the dance."@en ;
+    skos:note "The nine practices of this instruction are written as statements to be investigated rather than as promises, and the word the text uses of its own contents is research: let him investigate the following statements, and prepare a careful record of research. That is the most nearly experimental framing anywhere in the corpus, and it is the frame in which the strongest physical claims of this transmission are made."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberRVVelSpiritus ;
+    dcterms:source "Liber RV vel Spiritus sub figura CCVI, §§ 3 and 6-8, in The Equinox I,7 (London, March 1912), pp. 61-64" .
+
+pmp:ThelemaAnnihilatioCogitationis a pm:Practicing ;
+    rdfs:label "The annihilation of thought at its point of origin"@en, "Die Vernichtung des Gedankens an seinem Entstehungspunkt"@de ;
+    skos:definition "Six points, each a separate achievement. Discovering for oneself the apparent position of the point in the brain where thoughts arise, or, if there is no such point, the position of the point where thoughts are judged; developing in oneself a will of destruction, even of annihilation, and identifying oneself with it even to the loss of oneself; letting that will watch the point vigilantly and annihilating every thought as it is perceived or judged; then inhibiting every thought in its inception; then discovering and annihilating the causes or tendencies that would otherwise end in thoughts; and last unmasking and annihilating the true cause of all."@en ;
+    skos:note "The instruction claims for this practice something it claims for no other: that any success in it is of an exceedingly high character, and that the student is less liable to illusion and self-deception in this than in almost any other that the order makes known. The claim is asserted and not argued, and no test is offered with it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberTurrisVelDomusDei ;
+    dcterms:source "Liber Turris vel Domus Dei sub figura XVI, §§ 0-9, in The Equinox I,6 (London, September 1911), pp. 11-12" .
+
+#
+# The capacities. What this transmission says is to be gained, kept apart from
+# the signs by which it says a practice has worked.
+#
+
+pmc:ThelemaCorpusLevatum a pm:Conceptualizing ;
+    rdfs:label "The body rises into the air"@en, "Der Körper steigt in die Luft"@de ;
+    skos:definition "The fourth of four stated stages of the breath practice: as a development of the state in which the body hops gently from place to place, the body rises into the air and remains there for an appreciably long period, from a second to an hour or more."@en ;
+    skos:note "The strongest physical claim in the corpus and the one stated with the widest bound. It is put as a statement to be investigated, and the conditions under which the investigation is to run include an assistant present throughout, so the claim is in principle witnessed. No case is reported anywhere in what was read."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberRVVelSpiritus ;
+    dcterms:source "Liber RV vel Spiritus sub figura CCVI, § 5 (d), in The Equinox I,7 (London, March 1912), p. 63" .
+
+pmc:ThelemaCorpusSaltans a pm:Conceptualizing ;
+    rdfs:label "The body hops from place to place without the will"@en, "Der Körper hüpft von Ort zu Ort ohne den Willen"@de ;
+    skos:definition "The third stated stage: the state of automatic rigidity develops into a state characterised by violent spasmodic movements of which the practitioner is unconscious but of whose result he is aware, the result being that the body hops gently from place to place. After the first two or three occurrences the posture is not lost, and the body is said to appear, on another theory, to have lost its weight almost completely and to be moved by an unknown force."@en ;
+    skos:note "Entered separately from the rising because the instruction numbers them separately and because they differ in what would count as a witness: a hop is observable from outside, a loss of weight is a theory about it. The instruction offers the second as an alternative description and not as an observation."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberRVVelSpiritus ;
+    dcterms:source "Liber RV vel Spiritus sub figura CCVI, § 5 (c), in The Equinox I,7 (London, March 1912), p. 62" .
+
+pmc:ThelemaSaltatioSineVoluntate a pm:Conceptualizing ;
+    rdfs:label "The dance becomes independent of the will"@en, "Der Tanz wird unabhängig vom Willen"@de ;
+    skos:definition "The first of the stated results of concentration during the dance: the dance becomes independent of the will, and phenomena similar to the four stages of the seated breath practice occur, together with certain important mental results."@en ;
+    skos:note "The instruction does not say what the important mental results are, here or elsewhere. That is the pattern of the whole instruction: the physical stages are described in detail and the mental ones are named and left."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberRVVelSpiritus ;
+    dcterms:source "Liber RV vel Spiritus sub figura CCVI, § 8, in The Equinox I,7 (London, March 1912), p. 64" .
+
+pmc:ThelemaIgnisAccensus a pm:Conceptualizing ;
+    rdfs:label "Kindling fire by the drawn figure, alleged and set aside"@en, "Feuer entzünden durch die gezogene Figur, behauptet und beiseitegelegt"@de ;
+    skos:definition "A capacity the instruction reports and immediately declines: it is alleged that some persons have attained the power of actually kindling fire by tracing the ritual figures; whether this be so or not, the power is not one to be aimed at."@en ;
+    skos:note "The one claim in the corpus that would be settled by a single trial, and the instruction's response to it is to withhold judgment and remove it from the curriculum in the same sentence. It is entered because the move is the finding: a transmission that carries a testable claim and declines to test it has told a later reader something about its own priorities."@en ;
+    skos:note "It is also the only place where the corpus reports a capacity as hearsay within itself, in the passive and without naming the persons. Under the rules of this holding that would be an encounter and not a reading, and the instruction treats it the same way."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. IV, § 2, in The Equinox I,2 (London, September 1909), p. 26" .
+
+pmc:ThelemaVisioMundiInMente a pm:Conceptualizing ;
+    rdfs:label "Holding the solar system in one mental image at its true relative size"@en, "Das Sonnensystem in einem Bild und in wahrer Größenordnung halten"@de ;
+    skos:definition "The capacity the astronomical practice aims at: a mental picture of the earth, then of the earth and moon with their relative sizes and distance, then of the planets one by one, then of the whole system with each body in its proper motion, in which the apparent size approximates to the real. The instruction states that unless the apparent size approximates to the real, the practice is wasted."@en ;
+    skos:note "A stated waste condition, which is as close as this practice comes to a failure condition, and a stated obstacle with it: the final trick of the mind is said to be a constant disappearance of the image and its reappearance on a smaller scale."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberBatrachophrenoboocosmomachia ;
+    dcterms:source "Liber Batrachophrenoboocosmomachia sub figura DXXXVI, §§ 2-3, practices B and C, in The Equinox I,10 (London, September 1913), pp. 38-40" .
+
+pmc:ThelemaPranayamaYieldsCorpusLevatum a pm:Yielding ;
+    rdfs:label "The lengthened breath cycle is said to bring the body off the ground"@en, "Der verlängerte Atemzyklus soll den Körper vom Boden heben"@de ;
+    skos:definition "The claim as the instruction makes it: the practitioner accomplished in the postures and in the breath is to master a cycle of ten, twenty, forty or sixteen, thirty-two, sixty-four and then to increase the period further, and the four stages follow in order — a sweat of a different character from that of exertion, then the ceasing of the sweat and automatic rigidity, then unconscious spasmodic movement with the body hopping, then the body rising and remaining in the air."@en ;
+    skos:note "The four stages are given as an ordered series, so the claim is not only that the last occurs but that it occurs after the other three. That makes it unusually exposed: a practitioner who reaches the second and not the third has a result the instruction did not predict, and the instruction does not say what to conclude from it."@en ;
+    pm:byPractice pmp:ThelemaPranayamaNumerata ;
+    pm:yieldsCapacity pmc:ThelemaCorpusLevatum, pmc:ThelemaCorpusSaltans ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberRVVelSpiritus ;
+    dcterms:source "Liber RV vel Spiritus sub figura CCVI, § 5 (a)-(d), in The Equinox I,7 (London, March 1912), pp. 62-63" .
+
+pmc:ThelemaDXXXVIYieldsVisioMundi a pm:Yielding ;
+    rdfs:label "The counting and picturing practices are said to yield the image of the system"@en, "Zähl- und Bildpraxis sollen das Bild des Systems hervorbringen"@de ;
+    skos:definition "The claim of the astronomical instruction: the figures of the science leave no direct impression with any precision upon the mind, and the two preparatory practices — naming a thrown number at a glance, and building a complete mental picture of oneself and one's surroundings outward to the whole field of vision — together with completed studies in astronomy, make the third practice possible."@en ;
+    pm:byPractice pmp:ThelemaNumerusUnoAspectu ;
+    pm:yieldsCapacity pmc:ThelemaVisioMundiInMente ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberBatrachophrenoboocosmomachia ;
+    dcterms:source "Liber Batrachophrenoboocosmomachia sub figura DXXXVI, §§ 0-3, in The Equinox I,10 (London, September 1913), pp. 37-40" .
+
+#
+# The prerequisite chains, with the strength the source sets and no more
+#
+
+pmc:ThelemaTurrisPraesupponitEHHH a pm:Presupposing ;
+    rdfs:label "The annihilation practice presupposes the posture and the earlier meditations"@en, "Die Vernichtungspraxis setzt Stellung und frühere Meditationen voraus"@de ;
+    skos:definition "The instruction opens with the requirement: this practice is very difficult, and the student cannot hope for much success unless he have thoroughly mastered the posture and obtained much definite success in the meditation-practices of the two earlier instructions."@en ;
+    skos:note "Entered at stated necessity because the consequence of skipping is quoted in the same sentence rather than inferred: the student cannot hope for much success. It is the only prerequisite among those read that states its own consequence, which is why the others below stand at the weaker strengths."@en ;
+    pm:dependentStep pmp:ThelemaAnnihilatioCogitationis ;
+    pm:priorStep pmp:ThelemaQuattuorSedes, pmp:ThelemaDharanaNumerata ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The student cannot hope for much success in the practice."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberTurrisVelDomusDei ;
+    dcterms:source "Liber Turris vel Domus Dei sub figura XVI, § 0, in The Equinox I,6 (London, September 1911), p. 11" .
+
+pmc:ThelemaOPraesupponitTriaPrima a pm:Presupposing ;
+    rdfs:label "The ritual instruction presupposes posture, breath and concentration"@en, "Die Ritualanweisung setzt Stellung, Atem und Konzentration voraus"@de ;
+    skos:definition "Before entering upon any of the practices of the ritual instruction, the student should be in good health and have attained a fair mastery of posture, of the regulation of the breath and of concentration."@en ;
+    skos:note "Entered at prescribed order and not at stated necessity, although the neighbouring sentence names a danger. The danger is stated of failing to remain master of what one beholds and not of skipping the three preparatory practices, and reading it as the consequence of skipping would be the compiler's inference put into the source's mouth. The distinction is the one pm:prerequisiteStrength exists to keep."@en ;
+    pm:dependentStep pmp:ThelemaVibratioNominum, pmp:ThelemaAscensusInPlanis ;
+    pm:priorStep pmp:ThelemaQuattuorSedes, pmp:ThelemaPranayamaNumerata, pmp:ThelemaDharanaNumerata ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. I, § 4, in The Equinox I,2 (London, September 1909), pp. 13-14" .
+
+pmc:ThelemaPranayamaGradusInterdicti a pm:Presupposing ;
+    rdfs:label "Each breath stage is barred until the last is easy"@en, "Jede Atemstufe ist gesperrt, bis die vorige leicht ist"@de ;
+    skos:definition "The gating clause of the breath instruction, repeated at each increase: when this is quite easy to you, increase the periods; when this is quite easy to you, but not before, change the pattern; when you can do this with perfect ease and comfort for a whole hour, go on."@en ;
+    skos:note "Prescribed order and not a necessity: the instruction gives no consequence of going faster, and the caution against overstrain that stands four sections later is a caution and not the stated outcome of skipping a stage. The two are entered separately for that reason."@en ;
+    pm:dependentStep pmp:ThelemaPranayamaNumerata ;
+    pm:priorStep pmp:ThelemaQuattuorSedes ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. IV, §§ 1-5, in The Equinox I,1 (London, March 1909), p. 29" .
+
+pmc:ThelemaDXXXVIOrdoPracticarum a pm:Presupposing ;
+    rdfs:label "The third astronomical practice comes only after the first two and the reading"@en, "Die dritte astronomische Praxis kommt erst nach den beiden ersten und der Lektüre"@de ;
+    skos:definition "These practices A and B accomplished, and his studies in astronomy completed, let him attempt this practice C. The second of them is itself introduced with the assumption that the elementary difficulties of concentration have been thoroughly conquered and that mental pictures can be prevented from altering shape, size and colour against the will."@en ;
+    pm:dependentStep pmp:ThelemaNumerusUnoAspectu ;
+    pm:priorStep pmp:ThelemaDharanaNumerata ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberBatrachophrenoboocosmomachia ;
+    dcterms:source "Liber Batrachophrenoboocosmomachia sub figura DXXXVI, §§ 2-3, in The Equinox I,10 (London, September 1913), pp. 38-39" .
+
+#
+# The signs of success, kept separate and counted separately, because they are
+# announced to the practitioner in advance and he therefore reports them
+#
+
+pmc:ThelemaSignumSedis a pm:Conceptualizing ;
+    rdfs:label "The sign of the posture: the pain forgotten and every other position uncomfortable"@en, "Das Zeichen der Stellung: der Schmerz vergessen und jede andere Stellung unbequem"@de ;
+    skos:definition "The stated sign that the posture has been mastered: it will happen one day that the pain is suddenly forgotten and the fact of the presence of the body is forgotten, and one will realise that during the whole of one's previous life the body was always on the borderland of consciousness; and further, with an indescribable feeling of relief, that not only is this position the very ideal of physical comfort but that all other conceivable positions are uncomfortable. The exposition says outright: this feeling represents success."@en ;
+    skos:note "Announced in advance and reportable only by the practitioner, which is what puts it here and not among the measures. It stands beside a criterion for the same practice that a bystander can apply — the saucer of water — and the pair is the clearest case in this holding of one transmission offering both kinds for one practice."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberABA ;
+    dcterms:source "Book 4 (Liber ABA), Part I: Meditation, chap. I, pp. 26-27 (first published London: Wieland & Co., 1912; read in the Celephais Press electronic edition of 2004, which follows the corrected text in Magick: Book 4 Parts I-IV, York Beach: Samuel Weiser, 1994)" .
+
+pmc:ThelemaSignumVibrationis a pm:Conceptualizing ;
+    rdfs:label "The signs of the vibration, one bodily and one heard only by the practitioner"@en, "Die Zeichen der Vibration, eines leiblich und eines nur vom Übenden gehört"@de ;
+    skos:definition "Two signs given for the same practice. The first: it is a sign that the student is performing it correctly when a single vibration entirely exhausts his physical strength, causes him to grow hot all over or to perspire violently, and so weakens him that he finds it difficult to remain standing. The second: it is a sign of success, though only by the student himself is it perceived, when he hears the name of the god vehemently roared forth as if by the concourse of ten thousand thunders, and it appears to him as if that great voice proceeded from the universe and not from himself."@en ;
+    skos:note "The transmission marks the difference between the two itself, in the clause though only by the student himself is it perceived. That clause is the reason this holding can keep the two kinds of sign apart in this corpus without the compiler drawing the line: here the source drew it."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. III, §§ 5-6, in The Equinox I,2 (London, September 1909), p. 17" .
+
+pmc:ThelemaSignumFlammae a pm:Conceptualizing ;
+    rdfs:label "The drawn figure appears in flame"@en, "Die gezogene Figur erscheint in Flamme"@de ;
+    skos:definition "The stated sign for the ritual figures: they should be practised until the figures drawn appear in flame, in flame so near to physical flame that it would perhaps be visible to the eyes of a bystander, were one present."@en ;
+    skos:note "The sign is stated in the conditional and the witness is absent by construction: the clause were one present is in the text. A sign formulated this way cannot be missed, because nothing was promised to anyone who could check it."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. IV, § 2, in The Equinox I,2 (London, September 1909), p. 26" .
+
+pmc:ThelemaSignumMunditiaeEtSanctitatis a pm:Conceptualizing ;
+    rdfs:label "A feeling of cleanliness and a feeling of holiness"@en, "Ein Gefühl von Reinheit und ein Gefühl von Heiligkeit"@de ;
+    skos:definition "The stated signs of the two ritual operations: success in banishing is known by a feeling of cleanliness in the atmosphere, success in invoking by a feeling of holiness. The instruction adds in the same sentence that it is unfortunate that these terms are so vague."@en ;
+    skos:note "The transmission grades its own sign as vague in the act of giving it, which is the pattern this file records at several places and the reason the withdrawal nodes below are entered as findings rather than as criticism."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. IV, § 3, in The Equinox I,2 (London, September 1909), p. 26" .
+
+pmc:ThelemaSignaScarabaeiAccipitrisLeonis a pm:Conceptualizing ;
+    rdfs:label "The beetle, the hawk and the lion: three sounds in a fixed order"@en, "Käfer, Habicht und Löwe: drei Laute in fester Folge"@de ;
+    skos:definition "The signs of the second meditation, given as a sequence bound to stages of the practice: if the meditation has been well and properly performed, then on a sudden the drone and booming of a beetle will be heard; then, as the practitioner rises with rose and gold in the east, the cry of a hawk, shrill and harsh; and at the end, standing in mid-heaven, the mighty sound that holy men have likened to the roaring of a lion."@en ;
+    skos:note "The most specific set of announced signs in the corpus, and specific in a way that matters: three distinct sounds, in a stated order, each tied to a stated stage. The conditional is the transmission's own — if thou hast well and properly performed this meditation — which makes the absence of the sound attributable to the performance and not to the claim. That is the shape this holding watches for."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberHHH ;
+    dcterms:source "Liber HHH sub figura CCCXLI, chap. II (AAA), §§ 11-13, in The Equinox I,5 (London, March 1911), p. 11" .
+
+pmc:ThelemaSignumSudorisSanguinis a pm:Conceptualizing ;
+    rdfs:label "Bathed in sweat, or in a sweat of blood"@en, "In Schweiß gebadet, oder in Blutschweiß"@de ;
+    skos:definition "The sign of the third meditation at its height: the body bathed in sweat, or it may be in sweat of blood, with a cry forced from the practitioner; and at the last the movement of the light taken up by the brain and the spine independently of his will."@en ;
+    skos:note "The independence from the will is the operative part and the one that could in principle fail to occur; the sweat of blood is offered as an alternative to ordinary sweat and so cannot be missed either way. The same section adds a clause on dying in that hour, which is entered as a caution below."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberHHH ;
+    dcterms:source "Liber HHH sub figura CCCXLI, chap. III (SSS), §§ 8-12, in The Equinox I,5 (London, March 1911), pp. 13-14" .
+
+pmc:ThelemaSignumSigillatum a pm:Conceptualizing ;
+    rdfs:label "A sign sealed against anyone who has not had it"@en, "Ein Zeichen, verschlossen für jeden, der es nicht hatte"@de ;
+    skos:definition "The four coloured crosses placed within the imagined egg, of which the instruction says: herein is silence, for he that hath rightly performed the meditation will understand the inner meaning hereof, and it shall serve as a test of himself and his fellows."@en ;
+    skos:note "A test whose criterion is withheld from everyone who has not passed it. It is entered because it is a stated test and because it is the limiting case of the kind: the transmission calls it a test of himself and his fellows, so the check is internal to the group by design, and no outsider can apply it or dispute a claim to have passed."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberHHH ;
+    dcterms:source "Liber HHH sub figura CCCXLI, chap. I (MMM), § 8, in The Equinox I,5 (London, March 1911), p. 8" .
+
+pmc:ThelemaSignumSudorisProprii a pm:Conceptualizing ;
+    rdfs:label "A sweat of a different character from that of exertion"@en, "Ein Schweiß anderer Art als der der Anstrengung"@de ;
+    skos:definition "The first of the four stated stages of the breath practice: if the breath is properly performed the body will first of all become covered with sweat, and this sweat is different in character from that customarily induced by exertion; if the practitioner rubs it thoroughly into his body he will greatly strengthen it. The second stage is stated as the ceasing of the tendency to perspire and the body becoming automatically rigid, and the instruction demands that this rigidity be described with minute accuracy."@en ;
+    skos:note "The demand to describe the rigidity with minute accuracy is the only place in the corpus where a sign is to be characterised in writing rather than merely reported, and it is the point at which the sign could in principle be compared across practitioners. Whether any such comparison was ever made is not stated."@en ;
+    skos:note "The same instruction is accompanied by a photographic plate captioned as the breath properly performed, with an editorial note stating that it has been found necessary to show this because students were trying to do it without exertion and in other ways incorrectly. The note is the only report in the corpus of practitioners having got a practice wrong as a class."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberRVVelSpiritus ;
+    dcterms:source "Liber RV vel Spiritus sub figura CCVI, § 5 (a)-(b) with the plate and the editorial note to it, in The Equinox I,7 (London, March 1912), p. 62" .
+
+pmc:ThelemaSignumSudorisDecemMinutorum a pm:Conceptualizing ;
+    rdfs:label "Ten minutes and a stated temperature"@en, "Zehn Minuten und eine genannte Temperatur"@de ;
+    skos:definition "The one quantified prediction in the breath instruction: ten minutes of such practice is ample to induce profuse sweating in any place of a temperature of seventeen degrees centigrade or over. The progress of the practitioner in acquiring depth and fullness of breath is to be tested by the respirometer."@en ;
+    skos:note "A prediction with a time, a threshold and an ambient condition, and an instrument named for the underlying quantity. It is the least exalted claim in the corpus and the most nearly checkable, and the two facts belong together."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberRVVelSpiritus ;
+    dcterms:source "Liber RV vel Spiritus sub figura CCVI, § 9, in The Equinox I,7 (London, March 1912), p. 64" .
+
+#
+# The failure conditions the transmission states, and the ones it does not
+#
+
+pmc:ThelemaErrorInharmonicus a pm:Conceptualizing ;
+    rdfs:label "The inharmonious error, and what it is said to show"@en, "Der unharmonische Fehler, und was er zeigen soll"@de ;
+    skos:definition "The stated pattern of a result that is worthless: some cards are harmonious, so that calling the five of Swords for the ten of Swords would not be a bad error, but to call the Lord of Love for the Lord of Strife would show that you were getting nothing right. The harmonies are to be thoroughly learnt from the tables of the correspondence book."@en ;
+    skos:note "This is a failure condition in the strict sense the specification asks for: a class of outcome that the claim excludes. A run at the chance rate would already be a failure by the stated numbers; a run whose errors are inharmonious is declared worthless even if the numbers were to come out. The transmission thus names two independent ways for the same practice to fail."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. II, §§ 6-7, in The Equinox I,1 (London, March 1909), pp. 26-27" .
+
+pmc:ThelemaNullumProbandumCertum a pm:Conceptualizing ;
+    rdfs:label "No simple and certain test of success exists"@en, "Es gibt keine einfache und sichere Erfolgsprobe"@de ;
+    skos:definition "The sentence the ritual instruction sets immediately after the practice of assuming a god-form: it is a matter for very great regret that no simple and certain tests of success in this practice exist."@en ;
+    skos:note "Entered as a node because it is a statement by the transmission about its own examinability and because it stands three sections from the demand for a record as the only possible check upon error. Both are in the same corpus, both are first-hand, and neither is a later retraction of the other. A reader who has only one of them has the wrong picture of this transmission."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. III, § 2, in The Equinox I,2 (London, September 1909), p. 16" .
+
+pmc:ThelemaIudiciumApudStudentem a pm:Conceptualizing ;
+    rdfs:label "The judgment of success is left to the one being judged"@en, "Das Urteil über den Erfolg liegt bei dem, über den geurteilt wird"@de ;
+    skos:definition "The instruction's disposal of the question for the verbal invocations: success in these is so subtle a matter, and its grades so delicately shaded, that it must be left to the good sense of the student to decide whether or not he should be satisfied with his result."@en ;
+    skos:note "The one passage that closes the loop. Where a sign is private, an outsider cannot check it; where the verdict is the practitioner's own, there is no verdict to check. The corpus that carries this sentence also publishes a printed verdict of failure on a named practitioner, so the transmission held both practices at once and did not reconcile them."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. IV, § 5, in The Equinox I,2 (London, September 1909), pp. 26-27" .
+
+pmc:ThelemaNemoDeficit a pm:Conceptualizing ;
+    rdfs:label "No practitioner fails; only his reading of the result can go wrong"@en, "Kein Übender scheitert; nur seine Deutung des Ergebnisses kann fehlgehen"@de ;
+    skos:definition "The clause that removes the failure condition from the procedure: there is little danger that any student, however idle or stupid, will fail to get some result, but there is great danger that he will be led astray, obsessed and overwhelmed by his results, even though it be by those which it is necessary that he should attain; and too often he mistaketh the first resting-place for the goal."@en ;
+    skos:note "The finding this entry exists for, stated in the transmission's own words. If no practitioner can fail to get a result, then no result counts against the procedure, and every miscarriage is located in the practitioner. This holding has the same shape from other transmissions and holds it as a class; here it is put as plainly as anywhere."@en ;
+    skos:note "A second clause of the same instruction pulls in the same direction by attaching the standard to the person: it is desirable that the student should never attach to any result the importance which it at first seems to possess. And the earlier instruction ties the demand itself to individual capacity — according to your powers will it be demanded of you — so that there is no level at which two practitioners are held to the same figure."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. I, § 5, in The Equinox I,2 (London, September 1909), p. 14; the clause on individual capacity at Liber E vel Exercitiorum sub figura IX, chap. VI, § 9, in The Equinox I,1 (London, March 1909), p. 32" .
+
+pmc:ThelemaFractiCrescentesNonSuntCasus a pm:Conceptualizing ;
+    rdfs:label "A worsening count is read as a sharpening instrument"@en, "Ein schlechter werdender Zählwert wird als geschärftes Instrument gelesen"@de ;
+    skos:definition "The rule the exposition lays over the counted breaks: if these breaks seem to become more frequent instead of less frequent, the student must not be discouraged, for this is partially caused by his increased accuracy of observation. The analogy offered is that the introduction of vaccination resulted in an apparent increase in the number of cases of smallpox, because people began to tell the truth about the disease instead of faking."@en ;
+    skos:note "This is the most instructive passage in the corpus for the purposes of this holding, because the reasoning is correct and the effect is nonetheless to immunise the measurement. A rising count is genuinely ambiguous between worse control and better observation. The exposition resolves the ambiguity in one direction by rule, and states no condition under which a rising count would be read the other way. The only proposed exit is that control will soon improve faster than observation and the improvement will become apparent in the record, which relocates the criterion to a later and unnamed point."@en ;
+    skos:note "Nothing in the passage is dishonest and that is the point. The self-immunising step here is a piece of good statistical reasoning applied without a stopping rule, which is harder to see than an evasion and is why it is entered as its own node."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberABA ;
+    dcterms:source "Book 4 (Liber ABA), Part I: Meditation, chap. V, pp. 58-59 (first published London: Wieland & Co., 1912; read in the Celephais Press electronic edition of 2004, which follows the corrected text in Magick: Book 4 Parts I-IV, York Beach: Samuel Weiser, 1994)" .
+
+pmc:ThelemaFacilitasEstIndiciumErroris a pm:Conceptualizing ;
+    rdfs:label "Ease is read as an error indicator"@en, "Leichtigkeit wird als Fehlerzeichen gelesen"@de ;
+    skos:definition "The rule on the other side of the same instrument: in these practices the apparent simplicity is such that the beginner is likely to wonder what all the fuss is about and perhaps to think that he is specially gifted; and anyone to whom the described difficulties do not occur need not imagine that he is meditating, since it shows merely that he is incapable of concentrating his mind in the very smallest degree."@en ;
+    skos:note "Taken with the rule on the rising count, the pair leaves no reading of the measurement that tells against the practitioner's progress: difficulty is progress, and ease is incapacity. Each rule is defensible alone; together they close the instrument. Entered as a separate node because the two passages are separate and a later reader should be able to dispute one without the other."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberABA ;
+    dcterms:source "Book 4 (Liber ABA), Part I: Meditation, chaps. I and V, pp. 26 and 56 (first published London: Wieland & Co., 1912; read in the Celephais Press electronic edition of 2004, which follows the corrected text in Magick: Book 4 Parts I-IV, York Beach: Samuel Weiser, 1994)" .
+
+pmc:ThelemaResultatumRetentum a pm:Conceptualizing ;
+    rdfs:label "The results are withheld from the instruction that promises them"@en, "Die Ergebnisse werden der Anweisung entzogen, die sie verspricht"@de ;
+    skos:definition "The closing section of the annihilation instruction: and of the difficulties of this practice and of the results that reward it, let these things be discovered by the right ingenium of the practitioner."@en ;
+    skos:note "The instruction that claims the highest character for its results is the one that states none of them. A practice whose outcome is not described cannot be reported as absent, and the sentence is entered because that consequence is structural and not a matter of tone."@en ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberTurrisVelDomusDei ;
+    dcterms:source "Liber Turris vel Domus Dei sub figura XVI, § 16, in The Equinox I,6 (London, September 1911), p. 15" .
+
+#
+# The cautions, including the ones the corpus turns against its own prescriptions
+#
+
+pmc:ThelemaCautioContraSamadhi a pm:Cautioning ;
+    rdfs:label "The attainment is to be feared and shunned"@en, "Die Erreichung ist zu fürchten und zu meiden"@de ;
+    skos:definition "The note appended to the second meditation: at any time during this meditation the concentration may bring about the absorbed state, and this is to be feared and shunned, more than any other breaking of control, for it is the most tremendous of the forces which threaten to obsess. There is also some danger of acute delirious melancholia at the first point of the meditation."@en ;
+    skos:note "The strongest self-warning found in the corpus and the one worth having in the holding. The state the whole curriculum is directed at is here classed as a breaking of control and ranked as the worst of them, inside the instruction that produces it. The third meditation of the same instruction repeats the point in its own words: lose not control of the will, let not the absorbed state be thy master herein."@en ;
+    skos:note "The named psychiatric risk is attached to a specific numbered point of the practice, which is unusual: a caution with an address can be complied with, and a caution without one cannot."@en ;
+    pm:cautionsAbout pmp:ThelemaDharanaNumerata ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberHHH ;
+    dcterms:source "Liber HHH sub figura CCCXLI, note by Fra O.M. to chap. II (AAA), and chap. III (SSS), § 6, in The Equinox I,5 (London, March 1911), pp. 12-13" .
+
+pmc:ThelemaCautioContraRealitatem a pm:Cautioning ;
+    rdfs:label "Against taking any of it for real"@en, "Gegen das Fürwirklichhalten von irgendetwas davon"@de ;
+    skos:definition "The clause the ritual instruction places before all its practices: in this book it is spoken of things that may or may not exist; it is immaterial whether these exist or not; by doing certain things certain results will follow; students are earnestly warned against attributing objective reality or philosophical validity to any of them."@en ;
+    skos:note "Two things at once, and the holding needs both. It is a caution against belief, issued from inside a transmission, and it is the sentence by which the same transmission places its own content beyond dispute: a claim that asserts nothing about what exists cannot be contradicted by anything that exists. The later exposition quotes it approvingly as the mark of an order whose members make no statement that cannot be verified in the usual manner, so the disclaimer is used there as a credential."@en ;
+    pm:cautionsAbout pmp:ThelemaAscensusInPlanis ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. I, §§ 1-2, in The Equinox I,2 (London, September 1909), p. 13; quoted approvingly at Book 4 (Liber ABA), Part I: Meditation, chap. VI, p. 64 (Celephais Press electronic edition of 2004, following Magick: Book 4 Parts I-IV, York Beach: Samuel Weiser, 1994)" .
+
+pmc:ThelemaCautioContraSuamPraescriptionem a pm:Cautioning ;
+    rdfs:label "The instruction states that its own previous experiment has little value"@en, "Die Anweisung erklärt ihren eigenen vorigen Versuch für wenig wert"@de ;
+    skos:definition "The opening of the last chapter of the ritual instruction: the previous experiment has little value and leads to few results of importance, its principal use being to familiarise the student with every kind of obstacle and every kind of delusion."@en ;
+    skos:note "A self-warning of the narrow kind the specification asks to be harvested: a text warning against what it has just prescribed. It is not a retraction — the practice is kept and re-purposed as preparation — and that is what makes it worth a node. The same instruction also calls the methods of its two closing chapters dangerous while prescribing them."@en ;
+    pm:cautionsAbout pmp:ThelemaAscensusInPlanis ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. VI, § 1, with chap. II ad fin., in The Equinox I,2 (London, September 1909), pp. 16 and 29" .
+
+pmc:ThelemaCautioDePericulis a pm:Cautioning ;
+    rdfs:label "The dangers named: fainting, obsession, loss of memory"@en, "Die genannten Gefahren: Ohnmacht, Besessenheit, Gedächtnisverlust"@de ;
+    skos:definition "The named risks of the travelling practice: it might be dangerous to go too far or stay too long, for fatigue must be avoided; the danger spoken of is that of fainting, or of obsession, or loss of memory or other mental faculty. Earlier in the same instruction: the student must remain the master of all that he beholds, hears or conceives, otherwise he will be the slave of illusion and the prey of madness."@en ;
+    pm:cautionsAbout pmp:ThelemaAscensusInPlanis ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberOVelManusEtSagittae ;
+    dcterms:source "Liber O vel Manus et Sagittae sub figura VI, chap. V, § 11, and chap. I, § 4, in The Equinox I,2 (London, September 1909), pp. 28 and 13-14" .
+
+pmc:ThelemaCautioDeNimioLabore a pm:Cautioning ;
+    rdfs:label "Against overstrain, with the bodily signs that mark it"@en, "Gegen Überanstrengung, mit den leiblichen Zeichen dafür"@de ;
+    skos:definition "Three cautions on the same risk. In the breath practice: be very careful never to overstrain your powers, especially never to get so short of breath that you are compelled to breathe out jerkily or rapidly. In the concentration practice: avoid overstrain, this is very important. In the later breath instruction: the exercises should be carefully graduated to avoid overstrain and possible damage to the lungs. In the counting practice: care must be taken to detect the first symptom of fatigue and to stop, if possible, even before it threatens, and the practised psychologist learns to recognise even minute hesitations that mark the forcing of the attention."@en ;
+    skos:note "The first of these is the only caution in the corpus that names a perceptible marker of the state it warns against — a jerky or rapid outbreath — and the last is the only one that names the marker in another person's attention. Both are therefore cautions that can be obeyed by observation rather than by resolve."@en ;
+    pm:cautionsAbout pmp:ThelemaPranayamaNumerata, pmp:ThelemaDharanaNumerata, pmp:ThelemaNumerusUnoAspectu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. IV, § 7, and chap. V, § 6, in The Equinox I,1 (London, March 1909), pp. 29-30; Liber RV vel Spiritus sub figura CCVI, § 9, in The Equinox I,7 (London, March 1912), p. 64; Liber Batrachophrenoboocosmomachia sub figura DXXXVI, § 1, in The Equinox I,10 (London, September 1913), p. 38" .
+
+pmc:ThelemaCautioContraMagistrum a pm:Cautioning ;
+    rdfs:label "Attach yourself to a master and believe him in no wise"@en, "Schließe dich einem Meister an und glaube ihm in nichts"@de ;
+    skos:definition "The instruction's closing advice and its immediate qualification: during the whole of this elementary study and practice the pupil will do wisely to seek out and attach himself to a master, one competent to correct him and advise him; and let him further remember that he must in no wise rely upon, or believe in, that master, but must rely entirely upon himself and credit nothing whatever but that which lies within his own knowledge and experience. The same instruction says earlier that the experimenter is encouraged to use his own intelligence and not to rely upon any other person or persons, however distinguished, even among ourselves."@en ;
+    skos:note "The caution that matters most for the criterion this project works by, because it is aimed at the gate of authority from inside a tradition that operates one: the words even among ourselves are in the text. It sits uneasily beside the sanction that the order will take no official notice of experiments not recorded as prescribed, and both are entered."@en ;
+    pm:cautionsAbout pmp:ThelemaScriptumRecordum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. VII, §§ 6-7, and chap. I, § 6, in The Equinox I,1 (London, March 1909), pp. 33-34 and 25" .
+
+pmc:ThelemaCautioDeMorte a pm:Cautioning ;
+    rdfs:label "The clause that covers dying in the hour of the practice"@en, "Die Klausel, die das Sterben in der Stunde der Praxis abdeckt"@de ;
+    skos:definition "The closing section of the third meditation: if in this hour thou shouldst die, is it not written, blessed are the dead that die in the Lord? The practice it closes is the one whose stated signs include a body bathed in sweat or in sweat of blood and a forced cry."@en ;
+    skos:note "It is entered as a caution because it names the outcome, and it is worth having because of what it does with it: the worst possible result of the practice is given a reading under which it is not a failure. That is the same move the clause about no student failing makes, at the other end of the scale."@en ;
+    pm:cautionsAbout pmp:ThelemaDharanaNumerata ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberHHH ;
+    dcterms:source "Liber HHH sub figura CCCXLI, chap. III (SSS), § 12, in The Equinox I,5 (London, March 1911), p. 14" .
+
+#
+# One dispute, and it is about a word
+#
+
+pmc:ThelemaDisputatioDeLectione a pm:Disputing ;
+    rdfs:label "Intelligibly or intelligently: who the record is for"@en, "Intelligibly oder intelligently: für wen das Protokoll da ist"@de ;
+    skos:definition "The two carriers of the same instruction give the requirement on the record differently. The first print reads that the written record should be intelligibly prepared so that others may benefit from its study. The reprint in the appendix of the later treatise reads intelligently prepared, and its editor notes at that place that the first print has intelligibly."@en ;
+    skos:note "Not a spelling variant. Intelligibly puts the standard outside the writer: the record must be readable by others, and the purpose clause that follows says so. Intelligently puts it inside him: the record must be well made. The first is an auditable requirement and the second is a virtue, and this holding turns on the difference. Which of the two the author intended is not decided here."@en ;
+    skos:note "The comparison rests on two carriers of the instruction and not on three. The first print was read in the re-set edition of the ten numbers and in a page scan of the number, which agree on intelligibly. The reprint was read in an electronic edition following a later American reprint, not in the Paris print of 1929, which was sought and not obtained; the finding on that attempt stands at a search node. So the dispute is established between the first print and the reprint tradition, and a collation against the 1929 print is still owed."@en ;
+    skos:note "The same reprint drops the roman chapter numbers and the section numbers of the instruction altogether, so an address of the form chapter one section seven does not exist in that carrier. That is why every node in this file cites the first print."@en ;
+    pm:disputedClaim pmp:ThelemaScriptumRecordum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. I, § 7, in The Equinox I,1 (London, March 1909), p. 25", "Liber E vel Exercitiorum, reprinted in Magick in Theory and Practice, Appendix VII, with the editor's note at that place (Ordo Templi Orientis electronic edition following the Castle Books edition, New York)" .
