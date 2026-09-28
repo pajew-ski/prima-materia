@@ -1,0 +1,78 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Thelemic run of 2026-09-28
+#
+# In a file of their own for the mechanical reason given in
+# examinations/searches-norse-seidr.ttl and in prima-materia#703: two branches
+# appending to the end of examinations/searches.ttl do not merge without a
+# hand. The register is the class and not the file.
+#
+# Five searches. Two came back with a place, one with opposing material, and
+# two report that a printing could not be obtained. The last two are findings
+# about libraries and not about the transmission, and the note at each says
+# which ways were tried before the value was set.
+#
+
+pmp:ThelemaMensuraExternaSearch a pm:Searching ;
+    rdfs:label "Whether the Thelemic corpus states a measure a person other than the practitioner can apply"@en, "Ob der thelemische Bestand ein Maß nennt, das ein anderer als der Übende anlegen kann"@de ;
+    pm:searchedCorpus "The Equinox, volume one, numbers one to ten (London 1909-1913), all ten numbers searched whole by term; the instructions among them read at the wording. Read in the Celephais Press and Ordo Templi Orientis re-setting, which reproduces the original pagination, with number one collated against a page scan of that number."@en ;
+    pm:searchedFor "A passage in which this transmission puts the judgment of a result in the hands of somebody other than the person judged: a bystander, an assistant, an examiner, an instrument, or a number fixed in advance. The testability-driven entrance of SPEC §14 looks for exactly this, and a transmission that demands a written record was the obvious place to look for it."@en ;
+    pm:searchTerms "Term search of all ten numbers, case-insensitive, for: test, tests, tested, examination, examined, admitted for, record, records, recorded, count, counted, number of, chela, bystander, witness, respirometer, instrument, measure, prove, proof, verify, verified, per cent, times in, once in. Every hit read in its place; the hits in the verse, the reviews and the fiction set aside."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:ThelemaRatioCasus, pmc:ThelemaMensuraPatinae, pmp:ThelemaNumerusUnoAspectu, pmc:ThelemaFidelitasEtVigilantia, pmc:ThelemaSignumSudorisDecemMinutorum ;
+    pm:searchedBy "prima-materia, 2026-09-28" ;
+    dcterms:date "2026-09-28" ;
+    skos:note "Five places, and they are not of one kind. A stated chance rate with a threshold above it; a saucer of water that spills or does not; a count kept by an assistant, with the advancement of the practice gated on his tally; a printed verdict of failure on a named practitioner under two named criteria; and a prediction with a time, an ambient temperature and a named instrument. Four of the five are in the earliest instructions of the series and one is in the last, so the demand is not a late addition."@en ;
+    skos:note "What the search also settled, by the absence of hits rather than by their presence: no passage anywhere in the ten numbers submits a claim of this transmission to a person outside the order. The examiner, the assistant and the instrument are all internal to it. That is a limit on the external measures the search did find, and it belongs with them."@en .
+
+pmp:ThelemaConditioDefectusSearch a pm:Searching ;
+    rdfs:label "Whether the corpus names a condition under which the procedure, rather than the practitioner, has failed"@en, "Ob der Bestand eine Bedingung nennt, unter der das Verfahren und nicht der Übende gescheitert ist"@de ;
+    pm:searchedCorpus "The Equinox, volume one, numbers one to ten (London 1909-1913), searched whole by term; and Book 4 (Liber ABA), Part I: Meditation, chapters I, V, VI and VII, read at the wording in the Celephais Press electronic edition of 2004, which follows the corrected text in Magick: Book 4 Parts I-IV, York Beach: Samuel Weiser, 1994."@en ;
+    pm:searchedFor "A passage stating what would show that a practice of this transmission does not work: a term after which a result should have arrived and has not, an outcome the claim excludes, a reading of the record under which the procedure is at fault. A transmission that counts its own failures on a string of beads was the most promising place in the holding to look for one."@en ;
+    pm:searchTerms "Term search for: fail, fails, failed, failure, in vain, useless, wasted, mistake, error, sources of error, discouraged, if he do not, unless, cannot hope, no result, nothing, wrong, incorrectly, not nearly good enough. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:ThelemaNemoDeficit, pmc:ThelemaFractiCrescentesNonSuntCasus, pmc:ThelemaFacilitasEstIndiciumErroris, pmc:ThelemaNullumProbandumCertum, pmc:ThelemaIudiciumApudStudentem, pmc:ThelemaErrorInharmonicus ;
+    pm:searchedBy "prima-materia, 2026-09-28" ;
+    dcterms:date "2026-09-28" ;
+    skos:note "The outcome is opposing material and not a find, and the distinction is the point. One genuine failure condition came back — the inharmonious error of the card test, which names a class of result the claim excludes — and everything else the search turned up runs the other way: no practitioner can fail to get some result; a rising count of interruptions is increased accuracy of observation; ease in the posture is incapacity; no simple and certain test of success exists; and where a result is subtle the practitioner decides for himself whether to be satisfied with it. Four of these five are in the same two instructions as the measures the other search found."@en ;
+    skos:note "Recorded as a search rather than left as an observation because the shape is transferable and the holding should be able to query for it. A transmission can carry a demand for measurement and a rule that makes the measurement unfalsifiable without either being a concession by the other, and neither passage reads as a retraction. Only a search that asked for the failure condition and came back with its opposite makes that visible."@en .
+
+pmp:ThelemaEditioPrincepsMCMXXIXSearch a pm:Searching ;
+    rdfs:label "Whether the Paris print of 1929 can be collated against the first print of the instruction"@en, "Ob der Pariser Druck von 1929 gegen den Erstdruck der Anweisung kollationiert werden kann"@de ;
+    pm:searchedCorpus "Crowley, Magick in Theory and Practice (Book 4, Part III), Paris: Lecram Press 1929, sought as a full text in order to collate the reprint of Liber E in its seventh appendix against the first print in The Equinox I,1."@en ;
+    pm:searchedFor "The wording of Liber E chapter I section seven in the 1929 print, and whether the section numbering of the instruction survives in it. The first print reads intelligibly prepared and a later reprint tradition reads intelligently, which changes whether the record is answerable to other people; the 1929 print stands between them in time and would decide where the change entered."@en ;
+    pm:searchTerms "Archive identifiers tried: the Wellcome Library copy dated 1929, whose full text and pdf both answer with an authorisation requirement and which is marked access-restricted; the Dover reprint of 1976, likewise restricted to lending; and an open electronic edition which states that it follows a later American reprint and carries its editor's own notes. Also tried: the HathiTrust full-text search, which answers with a refusal to automated requests."@en ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-09-28" ;
+    dcterms:date "2026-09-28" ;
+    skos:note "A property of the access route and not of the work. The 1929 print exists in libraries and is out of copyright in its place of publication; what blocks it is the rights state recorded on the digitised copies. The next ways, both untried here, are a physical copy and a library with its own full-text access. Until one of them is used, the dispute at pmc:ThelemaDisputatioDeLectione is established between the first print and the later reprint tradition and not against Crowley's own second edition."@en ;
+    skos:note "Entered as a search rather than as an issue because the gap is the kind a stranger can close: anybody holding the Paris print can settle it in one minute, and an exhibited gap can be closed by a stranger while an unexhibited one cannot."@en .
+
+pmp:ThelemaLiberABAPrimaEditioSearch a pm:Searching ;
+    rdfs:label "Whether the first part of Book 4 exists as a scan of the Wieland print of 1912"@en, "Ob der erste Teil von Book 4 als Scan des Wieland-Drucks von 1912 vorliegt"@de ;
+    pm:searchedCorpus "Crowley and Sturges, Book 4 (Liber ABA), Part I, London: Wieland & Co. 1912, sought as a scan of the first edition."@en ;
+    pm:searchedFor "A carrier of the first part that is the 1912 print itself, so that the nodes taken from it need not cite a later edition. The second part was found as a first-edition scan from a university library, dated 1913, with its errata leaf and the note signed by the second author; the first part was not."@en ;
+    pm:searchTerms "Archive identifiers tried for the first part: three separate items, of which one returns an optical transcription in Cyrillic characters throughout and is unusable at any wording, one follows a corrected text of 1994 by its own statement, and one covers the later parts only and follows an edition of 1969. The full-text file of the second part was reached under the standard path and read; no equivalent exists for the first."@en ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-09-28" ;
+    dcterms:date "2026-09-28" ;
+    skos:note "A property of the access route, and the consequence is carried in the sources rather than hidden. Every node in traditions/thelema.ttl taken from the first part names the 1912 first publication and the 2004 electronic edition following the corrected text of 1994, because that is what was read. The pagination of the first print is carried by that edition and was used for the page numbers."@en ;
+    skos:note "One consequence is a naming trap worth recording. The 1912 half-title of the part reads Meditation; Mysticism is the name of the later editions. A citation of Book 4 Part I Mysticism names an edition that did not exist in 1912, and this holding therefore cites the part as Meditation."@en .
+
+pmp:ThelemaTerminusStatutusSearch a pm:Searching ;
+    rdfs:label "Whether a Thelemic practice is bounded by a term after which the result should have come"@en, "Ob eine thelemische Praxis eine Frist trägt, nach der das Ergebnis eingetreten sein soll"@de ;
+    pm:searchedCorpus "The Equinox, volume one, numbers one to ten (London 1909-1913), searched whole by term; and Book 4 (Liber ABA), Part I, chapters I, V, VI and VII, in the edition named at the nodes."@en ;
+    pm:searchedFor "A term of the form the specification calls for: a period after which a result is to have appeared, or after which it is not to be expected. The corpus is full of durations, so the search had to separate the duration of an exercise from a term on its result."@en ;
+    pm:searchTerms "Term search for: for a whole hour, one hour, half an hour, ten minutes, a quarter of an hour, a week, a week or more, six months, one year, at least one year, three months, a year's study, after, within, until, proceed not, but not before. Every hit read in its place and sorted into duration of exercise and term on a result."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:ThelemaMensuraPatinae, pmc:ThelemaSignumSudorisDecemMinutorum, pmp:ThelemaNumerusUnoAspectu, pmc:ThelemaPranayamaGradusInterdicti ;
+    pm:searchedBy "prima-materia, 2026-09-28" ;
+    dcterms:date "2026-09-28" ;
+    skos:note "The separation was the work and the result is mixed. The corpus states many durations of exercise — an hour of breath, a week of each avoidance, a quarter of an hour thrice daily for at least one year, half an hour of concentration — and almost no term on a result. The two exceptions found are the saucer of water held for a whole hour, where the duration is itself the criterion, and the ten minutes at seventeen degrees, where a stated time produces a stated effect."@en ;
+    skos:note "The nearest thing to a term on a result is not in an instruction at all but in an editorial: the claim that in three years of the order's experience three months' work has not failed to produce at least one notable result in any man. That is a falsifiable statement with a term, and it was found and deliberately not entered as a node in this run, because it names no practice and no result and the editorial was read only at that place. It is the first thing a later run should pick up in these volumes."@en .
