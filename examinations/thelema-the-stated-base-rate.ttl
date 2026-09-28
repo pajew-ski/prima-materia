@@ -1,0 +1,56 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — three protocols on the Thelemic claims that state their own
+# measure
+#
+# Taken up because the measure is the transmission's and not the compiler's. In
+# almost everything this holding carries, a protocol has to invent the number
+# against which a claim is to be judged, and the invention is the weakest part
+# of it. Here the number is in the instruction: a chance rate, a threshold
+# above it, an error pattern that is declared worthless, and a count kept by a
+# second person. That is rare enough to be worth three protocols, and it is
+# also the reason the fourth claim of this file — that no practitioner can fail
+# — has no protocol: it excludes no outcome and there is nothing to devise.
+#
+
+pmp:ThelemaTarotRateExamination a pm:Testing ;
+    rdfs:label "Whether the card practice raises naming above the rate the instruction itself states"@en, "Ob die Kartenpraxis das Nennen über die vom Text selbst genannte Rate hebt"@de ;
+    skos:definition "A protocol on the claim that the card practice develops the faculty it measures, up to a suit called correctly three times in four and the card named aright fifteen or twenty times in seventy-eight. It is examinable without any decision by the compiler, because the instruction supplies both the chance rate and the threshold."@en ;
+    pm:tests pmc:ThelemaProbatioTarotYieldsClarividentia ;
+    pm:falsifiedBy "A practitioner who keeps the practice as the instruction prescribes it — a pack of seventy-eight, shuffled and cut, the card drawn and named before it is seen, each call and each actual card written down — under the exclusion the instruction itself demands, that is with the pack handled so that shape, position and edge of the pips cannot be felt, and whose rate over a pre-declared number of trials is not above the one-in-seventy-eight the instruction states for the full call and the two-in-seven it states for the suit called as trumps every time. The instruction admits no degree at its own threshold: at three-in-four for the suit the practitioner is to be admitted for examination, so a series at chance after the training the instruction describes refutes the claim as the instruction makes it." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passages recorded in traditions/thelema.ttl; the rate, the threshold and the exclusion are the instruction's own" ;
+    pm:protocolUpdated "2026-09-28" ;
+    skos:note "No case has been collected, and the obstacle is not the difficulty of the trial, which is an afternoon's work. It is that the instruction fuses training and measurement: the same series is the exercise and the test, so a rate at chance is open to the reading that the training was not yet complete. The instruction gives no number of trials and no date by which the threshold is to be reached, and that is the one number it withholds."@en ;
+    skos:note "The protocol therefore requires the number of trials to be declared before the series begins. Choosing it afterwards would let the outcome pick its own measure, which is the failure mode pm:claimDoesNotDiscriminate records after the fact and which is cheaper to prevent here. The same reasoning stands in examinations/notory-art-one-month.ttl and is not new; what is new is that here the threshold is not the compiler's."@en ;
+    skos:note "Two clauses of the same corpus would absorb a negative outcome if they were allowed to, and they are named so that a later reader can see whether they were: that no student however idle or stupid will fail to get some result, and that according to one's powers will it be demanded of one. Neither is part of the claim this protocol tests, and both stand at nodes of their own."@en ;
+    skos:note "Modern work bearing on forced-choice card guessing exists in quantity and none of it was read in this run, so nothing is cited under pm:evidenceFrom and the state stays at a procedure without cases. Entering a state that reports cases without having read the work would be the error AGENTS.md names: a state beyond a devised procedure presupposes the reading."@en .
+
+pmp:ThelemaCountAtAGlanceExamination a pm:Testing ;
+    rdfs:label "Whether the counting practice raises the number nameable at a glance"@en, "Ob die Zählpraxis die auf einen Blick nennbare Zahl hebt"@de ;
+    skos:definition "A protocol on the practice in which an assistant throws an unknown number of small similar objects on a bare table and gathers them up again, the practitioner declares the number at the glance, and the assistant confirms it by his count; the maximum rises by one at each session provided that not a single mistake is made, and the practice is to run at a quarter of an hour thrice daily for at least one year."@en ;
+    pm:tests pmp:ThelemaNumerusUnoAspectu ;
+    pm:falsifiedBy "A practitioner who keeps the practice at the stated cadence for the stated year, with the assistant's count recorded at every session, and whose maximum reliably named number at the end of the year is no higher than the maximum he reached in his first week; or a series in which the rise in the maximum is not distinguishable from the rise attributable to the assistant becoming quicker at gathering the objects, which the instruction expects and does not control for. The claim is a claim about an increase and a series without an increase refutes it." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passage recorded in traditions/thelema.ttl; the cadence, the error rule and the term are the instruction's own" ;
+    pm:protocolUpdated "2026-09-28" ;
+    skos:note "This is the only practice in the holding whose advancement rule is enforced by a second person in the course of the practice itself. The assistant is not a witness brought in to check a claim afterwards; he is part of the procedure, and the tally he keeps decides whether the difficulty rises. That makes the practice self-recording in a way nothing else here is."@en ;
+    skos:note "The confound is in the instruction and was not noticed by it: the quickness of the assistant in gathering up the objects is expected to increase with time, so the exposure duration is not held constant across the year. A rise in the named maximum against a falling exposure would be a stronger result than the instruction claims, and a rise against a rising exposure would be no result at all. The protocol therefore requires the exposure to be fixed or measured, which the instruction does not."@en ;
+    skos:note "No case has been collected. Unlike the card practice, this one has an established comparison outside the transmission — the ordinary limit on how many objects a person can enumerate at a glance — and a protocol that used it would be stronger than one that compared the practitioner only with himself. That literature was not read in this run and nothing is cited under pm:evidenceFrom."@en .
+
+pmp:ThelemaLevitationSequenceExamination a pm:Testing ;
+    rdfs:label "Whether the four stages of the breath practice occur, and in the stated order"@en, "Ob die vier Stufen der Atempraxis eintreten, und in der genannten Folge"@de ;
+    skos:definition "A protocol on the claim that the lengthened breath cycle brings about, in order, a sweat of a character different from that of exertion, then the ceasing of the sweat with automatic rigidity, then unconscious spasmodic movement in which the body hops gently from place to place, and last the body rising into the air and remaining there from a second to an hour or more."@en ;
+    pm:tests pmc:ThelemaPranayamaYieldsCorpusLevatum ;
+    pm:falsifiedBy "A practitioner who reaches the cycles the instruction names and holds them under the conditions the instruction names — including the assistant it requires to be present throughout — and in whom the third and fourth stages do not occur, the assistant reporting no displacement of the body from its place and no rise from the ground. The fourth stage is stated as a bodily event of stated duration in the presence of a second person, so its absence in a practitioner who has reached the stated cycles refutes the sequence as stated." ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:examinedBy "prima-materia, working from the passages recorded in traditions/thelema.ttl; the four stages, their order and the requirement of an assistant are the instruction's own" ;
+    pm:protocolUpdated "2026-09-28" ;
+    skos:note "The claim is unusually exposed for this holding and the reason is the order. A practitioner who reaches the second stage and not the third has an outcome the instruction did not predict, and the instruction says nothing about what to conclude from it. Most of what this holding carries promises an end state and leaves the route unnumbered, so that no intermediate result can be wrong."@en ;
+    skos:note "The instruction's own framing helps rather than hinders: the stages are put as statements to be investigated and the text calls what it asks for a record of research. That is the transmission inviting the protocol, and it is entered here as such."@en ;
+    skos:note "No case has been collected and the first stage is the one to start from, not the fourth. A sweat of a character different from that of exertion is a claim about a secretion and could be examined without any of the rest; the instruction even demands that the rigidity of the second stage be described with minute accuracy, which is the point at which reports from different practitioners could be compared. Nobody has compared them here."@en .
