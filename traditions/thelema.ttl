@@ -1,0 +1,116 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Thelemic transmission
+#
+# Order of the file: the tradition and the contact question; the works of the
+# corpus as identifiers; the demand for a written record, which is what this
+# transmission puts in front of everything else; the practices that carry a
+# stated measure; the capacities they are said to yield; the prerequisite
+# chains; the signs of success, kept apart from the failure conditions; the
+# cautions, including the ones the corpus turns against its own prescriptions;
+# and last the passages in which the same corpus withdraws the testability it
+# demanded, which is the finding this entry exists for.
+#
+# The tradition instance was registered in traditions/registry-modern.ttl and
+# is moved here now that passages have been read.
+#
+# Only the public-domain part of the corpus is opened. The instructions of the
+# Equinox, volume one, numbers one to ten, London 1909 to 1913, and the second
+# part of Book 4, Wieland 1913, are read at the wording. Magick in Theory and
+# Practice, Paris 1929, is not: the access finding stands at its work node and
+# at a search node.
+#
+
+pmt:Thelema a pm:Tradition ;
+    rdfs:label "Thelema"@en, "Thelema"@de ;
+    skos:definition "Crowley's transmission of a received book, of the discovery of one's own will as the central task, and of a practice curriculum with a demand for recorded results."@en ;
+    skos:note "Read in this run at the wording. The Equinox, volume one, numbers one to ten, London 1909 to 1913: Liber XXX Librae, Liber IX E vel Exercitiorum whole, Liber VI O vel Manus et Sagittae whole, Liber III vel Jugorum whole with its plate, Liber CCCXLI HHH whole, Liber XVI Turris vel Domus Dei whole, Liber CCVI RV vel Spiritus whole with its plate and the editorial note to it, Liber DXXXVI Batrachophrenoboocosmomachia whole, and A Syllabus of the Official Instructions of A∴A∴ Hitherto Published at number ten. Book 4, Part I: Meditation, chapters I, V, VI and VII. Not read at the wording: the second part of Book 4 beyond its preliminary matter, the whole of The Temple of Solomon the King, Liber CCCCXVIII, Liber XIII vel Graduum Montis Abiegni, Liber CCCCXII A vel Armorum, Liber CC Resh vel Helios, the Class A books, and the verse, prose and reviews that make up most of the ten numbers."@en ;
+    skos:note "Two carriers were used for the Equinox and the reading rests on both. The first is the Celephais Press and Ordo Templi Orientis re-setting of the ten numbers, which reproduces the title pages, the running heads and the original pagination and states its own provenance in the text. The second is a page scan of number one. Where a wording matters it was collated between them; Liber E I, 7 reads intelligibly prepared in both, and the reading of Liber E III, 9 on the saucer of water is identical in both. The re-setting renders the arabic nine as g throughout, so a section number taken from it alone is not to be trusted, and every section number in this file was checked against its neighbours in the sequence."@en ;
+    skos:note "Book 4, Part I was read in a text that reaches the first edition through a later one, and the nodes from it say so in the source. No scan of the Wieland print of 1912 was found; the one archive identifier offering that part returns an optical transcription in Cyrillic characters and is unusable. The part title also differs between the editions: the 1912 half-title reads Meditation, and Mysticism is the later name. A node citing Book 4 Part I Mysticism would be citing an edition that did not exist in 1912."@en ;
+    skos:note "The contact route stays documented and the reading did not move it. The route is in the corpus itself and needs no secondary literature: the course of reading at Liber E VII, 2 prescribes the Upanishads, the Bhagavadgītā, the Shiva Saṃhitā, the aphorisms of Patañjali, the Haṭhayogapradīpikā, Vivekananda's Raja Yoga, the Voice of the Silence, Lévi, the Abramelin book and the Goetia by name; Liber E III names four postures and Liber E IV the alternating nostril cycles; Liber CCVI names Pingala, Ida, Suṣumṇā and the Viśuddhi cakra; the fifth number prints a treatise by Ananda Metteyya in the same issue as Liber HHH; and the second and third numbers print the neophyte ritual of the Golden Dawn, which the fourth number's editorial defends having published. A transmission whose reading list, whose postures, whose breath vocabulary and whose ritual forms all run to corpora this holding already carries cannot be counted as an independent witness for anything they share."@en ;
+    skos:note "What the entry is for, and it is not the capacity list. This transmission is the one in the holding that makes the demand for a written record from inside itself, states a base rate against which a result is to be judged, publishes a negative assessment of a named practitioner, and then, in the same volumes, withdraws the testability it demanded. Both halves are entered. The withdrawal is not a later recantation and not the work of a critic: it stands three pages from the demand, in the same instruction."@en ;
+    pm:principalCorpus "Crowley, Liber AL vel Legis; Crowley, Magick in Theory and Practice; Crowley, The Vision and the Voice; the instructions of the A∴A∴ published in The Equinox, volume one, numbers one to ten; Crowley and Sturges, Book 4 (Liber ABA)" ;
+    pm:corpusWork pmw:LiberEVelExercitiorum, pmw:LiberOVelManusEtSagittae, pmw:LiberIIIVelJugorum, pmw:LiberHHH, pmw:LiberTurrisVelDomusDei, pmw:LiberRVVelSpiritus, pmw:LiberBatrachophrenoboocosmomachia, pmw:SyllabusInstructionumAA, pmw:LiberABA, pmw:LiberALVelLegis, pmw:LiberXXXAerum, pmw:MagickInTheoryAndPractice, pmw:LiberGraduumMontisAbiegni ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. I, in The Equinox I,1 (London, March 1909), p. 25" ;
+    pm:fromWork pmw:LiberEVelExercitiorum .
+
+#
+# The works of the corpus as identifiers. Which of them has been opened is not
+# stated here; it follows from pm:fromWork.
+#
+
+pmw:LiberEVelExercitiorum a dcterms:BibliographicResource ;
+    rdfs:label "Liber E vel Exercitiorum sub figura IX"@en, "Liber E vel Exercitiorum sub figura IX"@de ;
+    skos:note "Class B by the syllabus of the transmission, that is, no claim of textual invariance. Sections and roman chapter numbers are carried by the Equinox print and are absent from the reprint in the appendix of Magick in Theory and Practice, which makes the Equinox print the only carrier with a usable internal address."@en .
+
+pmw:LiberOVelManusEtSagittae a dcterms:BibliographicResource ;
+    rdfs:label "Liber O vel Manus et Sagittae sub figura VI"@en, "Liber O vel Manus et Sagittae sub figura VI"@de ;
+    skos:note "Class B. The syllabus says of it that its instructions are too loose to find place among the official rituals, which is the transmission's own grading of the text this file leans on most."@en .
+
+pmw:LiberIIIVelJugorum a dcterms:BibliographicResource ;
+    rdfs:label "Liber III vel Jugorum"@en, "Liber III vel Jugorum"@de ;
+    skos:note "Class D, an official ritual and instruction. Published with a photographic plate of a practitioner's forearm and a printed verdict on his performance."@en .
+
+pmw:LiberHHH a dcterms:BibliographicResource ;
+    rdfs:label "Liber HHH sub figura CCCXLI"@en, "Liber HHH sub figura CCCXLI"@de ;
+    skos:note "Class D."@en .
+
+pmw:LiberTurrisVelDomusDei a dcterms:BibliographicResource ;
+    rdfs:label "Liber Turris vel Domus Dei sub figura XVI"@en, "Liber Turris vel Domus Dei sub figura XVI"@de ;
+    skos:note "Class B."@en .
+
+pmw:LiberRVVelSpiritus a dcterms:BibliographicResource ;
+    rdfs:label "Liber RV vel Spiritus sub figura CCVI"@en, "Liber RV vel Spiritus sub figura CCVI"@de ;
+    skos:note "Class B. Published with a photographic plate and an editorial note stating why the plate was necessary."@en .
+
+pmw:LiberBatrachophrenoboocosmomachia a dcterms:BibliographicResource ;
+    rdfs:label "Liber Batrachophrenoboocosmomachia sub figura DXXXVI"@en, "Liber Batrachophrenoboocosmomachia sub figura DXXXVI"@de ;
+    skos:note "Class B."@en .
+
+pmw:SyllabusInstructionumAA a dcterms:BibliographicResource ;
+    rdfs:label "A Syllabus of the Official Instructions of A∴A∴ Hitherto Published"@en, "A Syllabus of the Official Instructions of A∴A∴ Hitherto Published"@de ;
+    skos:note "The transmission's own catalogue of its instructions, with the four classes that decide whether a text may be altered. It is the document that makes the edition of every other node in this file a necessary part of the citation."@en .
+
+pmw:LiberABA a dcterms:BibliographicResource ;
+    rdfs:label "Book 4 (Liber ABA)"@en, "Book 4 (Liber ABA)"@de ;
+    skos:note "Published in parts: Part I, Meditation, Wieland 1912, and Part II, Magick, Wieland 1913. The title page and the opening note name two authors and state that the book is not the work of the first of them but was written down from his dictation by the second and rearranged by her, and that it was read before printing by several persons of less than average intelligence so that anything unclear to them could be elucidated. A node from this work reports a redacted dictation with a third party interposed for intelligibility, not an author's text."@en .
+
+pmw:LiberALVelLegis a dcterms:BibliographicResource ;
+    rdfs:label "Liber L vel Legis sub figura CCXX"@en, "Liber L vel Legis sub figura CCXX"@de ;
+    skos:note "Class A, the only class of which the transmission claims that not so much as the style of a letter may be changed. Printed with a facsimile in the seventh number. Unopened in this holding: the received-wording question belongs to pm:Receiving and was not carried in this run."@en .
+
+pmw:LiberXXXAerum a dcterms:BibliographicResource ;
+    rdfs:label "Liber XXX Aerum vel Saeculi (The Vision and the Voice) sub figura CCCCXVIII"@en, "Liber XXX Aerum vel Saeculi (Die Vision und die Stimme) sub figura CCCCXVIII"@de ;
+    skos:note "Unopened in this holding. Printed as the supplement to the fifth number and therefore reachable; the syllabus grades it A-B and says the cries of the angels are to be regarded as accurate, which makes it the place where this transmission's claim of textual reliability is strongest and least examined."@en .
+
+pmw:MagickInTheoryAndPractice a dcterms:BibliographicResource ;
+    rdfs:label "Magick in Theory and Practice (Book 4, Part III)"@en, "Magick in Theory and Practice (Book 4, Teil III)"@de ;
+    skos:note "Unopened at the wording of its own print. The Lecram Press edition, Paris 1929, was sought and not obtained; the finding stands at a search node. What was consulted instead is an electronic edition following a later reprint, and it is used in this file for one purpose only, as the second side of a dispute about a reading."@en .
+
+pmw:LiberGraduumMontisAbiegni a dcterms:BibliographicResource ;
+    rdfs:label "Liber XIII vel Graduum Montis Abiegni"@en, "Liber XIII vel Graduum Montis Abiegni"@de ;
+    skos:note "Unopened in this holding. Printed in the third number and reachable; it carries the examination order of the whole curriculum, which is the prerequisite chain this file enters only in the fragments the other instructions state for themselves."@en .
+
+#
+# The demand this transmission puts in front of everything else
+#
+
+pmp:ThelemaScriptumRecordum a pm:Practicing ;
+    rdfs:label "The written record of every experiment"@en, "Das schriftliche Protokoll jedes Versuchs"@de ;
+    skos:altLabel "the magical record"@en ;
+    skos:definition "The practice the instruction opens and closes with. Every experiment is to be recorded in detail during or immediately after its performance; the physical and mental condition of the experimenter, the time, the place, the state of the weather and all conditions that might act on the result or be sources of error are to be noted; and the more scientific the record, the better, while the emotions are to be noted as being among the conditions."@en ;
+    skos:note "Two features make this more than an exhortation. It carries a sanction: the order will take no official notice of experiments not thus recorded. And it names a published model of the form, a diary printed in the same number of the journal, so that the standard is exhibited rather than described. The instruction returns to it at its end and calls the written record the only possible check upon error derived from the various qualities of the experimenter."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Thelema ;
+    pm:fromWork pmw:LiberEVelExercitiorum ;
+    dcterms:source "Liber E vel Exercitiorum sub figura IX, chap. I, §§ 1-4 and 7-9, and chap. VII, § 8, in The Equinox I,1 (London, March 1909), pp. 25 and 34; read in the Celephais Press and O.T.O. re-setting of the ten numbers and collated against a page scan of number one" .
