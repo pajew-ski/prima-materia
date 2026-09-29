@@ -114,3 +114,61 @@ pmc:IddhiPannayaPalibodha a pm:Cautioning ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Buddhaghosa, Visuddhimagga III.56, Pali PTS [97] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 113; also trans. Ñāṇamoli 1956)" .
+
+#
+# The place, and this is the strictest set of conditions in the holding
+#
+
+pmc:AttharasaSenasanaDosa a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The eighteen faults of a monastery, each with its consequence"@en, "Die achtzehn Fehler eines Klosters, jeder mit seiner Folge"@de ;
+    skos:definition "Eighteen properties that disqualify a monastery for one who is to develop concentration: largeness, newness, dilapidation, nearness to a road, a water tank, edible leaves, flowers, fruits, being sought after, nearness to a town, to timber, to arable fields, the presence of people of incompatible views, nearness to a port, to a border district, to the boundary of the realm, unsuitability, and the absence of a good friend within reach."@en ;
+    skos:note "The handbook runs each of the eighteen with the harm it does, and the harms are practical and not spiritual: in a large one the duties are left undone, so he goes late into the village, so the almsgiving is over and he gets nothing, and the omission is itself an offence of wrongdoing; in a dilapidated one the meditation subject of the man doing the repairs suffers; where there is fruit, people come, are refused, grow angry, take by force, abuse him and try to have him expelled. The seventeenth, unsuitability, is the only one stated in two ways, by objects of the other sex and by the place being occupied by non-human beings, and it is the one the handbook illustrates with a case."@en ;
+    skos:note "For most of the eighteen the handbook also states the condition under which the fault is not a fault: a large monastery is admissible where all the duties are done and no noise reaches the ear; a new one where the other monks say they will do the work; and so on. The dilapidated one is given no such release. So the list is a set of defeasible conditions, and only one of them is stated without a way out."@en ;
+    skos:note "Entered as one node and not as eighteen, and the reason is the shape of the passage and not economy. What the handbook states once is the disqualification of a place; the eighteen are the grounds it gives for it, with their consequences and their releases, and the claim a later reader would want to contest is the disqualification. The two that carry the sharpest consequence are named in pmc:SamadhiPresupposesSenasana, where they do work. Whoever wants the eighteen counted separately should reopen the chapter; the pages are named."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.2-18, Pali PTS [118]-[122] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 138-142; also trans. Ñāṇamoli 1956)" .
+
+pmc:SenasanaPancanga a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga, pmw:MajjhimaNikaya ;
+    rdfs:label "The five marks of a lodging in which the training can be done"@en, "Die fünf Merkmale einer Unterkunft, in der die Übung getan werden kann"@de ;
+    skos:definition "Against the eighteen faults the handbook sets five marks, quoted from the canon: the lodging is not too far and not too near and there is a path for going and coming; it is little frequented by day; there is little noise and clamour by night; there is little contact with gadflies, mosquitoes, wind, heat and creeping things; and the four requisites are easily obtained there and elders of experience are living in it, whom he can ask and who will explain what is unexplained, clear what is unclear and remove his doubt."@en ;
+    skos:note "The fifth mark is two conditions and the second of them is a person. That is the only one of the five a place cannot supply by itself, and it is the one the eighteenth fault names in the negative: a monastery where no good friend is to be had is reckoned a great disadvantage. So the handbook's account of a suitable place ends at a second party, and the account of the practice done in it does not."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.19, Pali PTS [122] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 142-143; also trans. Ñāṇamoli 1956)" .
+
+pmc:SamadhiPresupposesSenasana a pm:Presupposing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The training presupposes a lodging without the named faults"@en, "Die Übung setzt eine Unterkunft ohne die benannten Fehler voraus"@de ;
+    pm:dependentStep pmc:Samadhi ;
+    pm:priorStep pmc:SenasanaPancanga ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Two of the eighteen faults are stated with their consequence in the operative passage. Of a dilapidated monastery: the meditation subject of the one who makes the repairs suffers. Of a large one: the duties are left undone, and the man who then does them goes late into the village and gets nothing because the almsgiving is over, while leaving them undone is an offence of wrongdoing in its own right. Both name a cost that falls on the training itself and not on the man's standing."@en ;
+    skos:note "The strength is stated necessity and the dilapidated monastery is the reason it can be set that high. It is the one fault of the eighteen for which the handbook gives no releasing condition, and its stated consequence is the loss of the meditation subject, which is the thing the whole chapter is about."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.3, Pali PTS [119] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 139; also trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga IV.5, Pali PTS [119] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 139; also trans. Ñāṇamoli 1956)" .
+
+pmc:SattaSappaya a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The seven suitabilities, three of them tested by a probation of three days"@en, "Die sieben Zuträglichkeiten, drei davon durch eine Probe von drei Tagen geprüft"@de ;
+    skos:definition "Seven things named in a verse as to be avoided where they are unsuitable and followed where they are suitable: lodging, alms resort, speech, person, food, season and posture. The criteria are given. A lodging in which the sign does not arise, or in which the arisen sign perishes, is unsuitable; therefore in a monastery with many quarters he is to live three days in each and stay where his mind becomes collected. An alms village within one and a half kosa, to the north or the south so that he does not walk against the sun, and where food is easily had, is suitable. Of speech, the thirty-two kinds of worldly talk are unsuitable because they lead to the vanishing of the sign, and the ten permitted subjects are to be used in moderation. Of a person, one given to worldly talk is unsuitable, and he who keeps company with such a man loses what he has got, let alone finds the sign. Food, season and posture are individual, and posture likewise is settled by a probation of three days."@en ;
+    skos:note "Two things here are rare in this holding and are the reason for the node. The criterion of suitability is the behaviour of the sign, so the practitioner is told to judge his lodging and his posture by whether the practice works in them; and the judgement is given a term, three days, twice. That is a condition of failure with a clock on it, stated of the circumstances and not of the man."@en ;
+    skos:note "The one case the handbook adduces on this head is positive and carries a number: five hundred monks in the Cūḷanāga cave on Tambapaṇṇi are said to have reached sanctity there because the lodging was suitable. No case is given of a practitioner who worked through a monastery three days at a time and found no suitable quarter."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.35-41, Pali PTS [127]-[128] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 147-149; also trans. Ñāṇamoli 1956)" .
+
+pmc:AppanaPresupposesSappaya a pm:Presupposing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The absorption presupposes the seven suitabilities"@en, "Die Vertiefung setzt die sieben Zuträglichkeiten voraus"@de ;
+    pm:dependentStep pmc:FourAbsorptions ;
+    pm:priorStep pmc:SattaSappaya ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The handbook states the cost twice in the same passage and both times as an event in the practice. Of an unsuitable lodging: the sign does not arise there, or the sign that had arisen perishes. Of the thirty-two kinds of worldly talk: they lead to the vanishing of the sign. Of unsuitable company: he loses what he has already got, let alone finds the sign."@en ;
+    skos:note "The passage closes the condition from the other side as well, and that is what makes this the load-bearing prerequisite of the chapter: avoiding the seven unsuitable and following the seven suitable, the absorption arises in a short time in him who so practises and is devoted to the sign. The claim therefore has both directions in one place, which very little in this holding does."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.36-41, Pali PTS [127]-[128] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 147-149; also trans. Ñāṇamoli 1956)" .
