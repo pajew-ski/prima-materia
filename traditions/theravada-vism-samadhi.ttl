@@ -1,0 +1,74 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Theravada, the conditions under which the absorption does not arise
+#
+# A second file of one transmission and not a second transmission. pmt:Theravada
+# and pmw:Visuddhimagga are declared in traditions/theravada.ttl and are only
+# named here; no identifier is typed twice. The split is a repo convenience of
+# the kind SPEC §10 allows — the file is a unit of the repository and not of the
+# subject matter — and it was made because that file already carries six hundred
+# lines and the twelfth chapter, and a diff over two chapters of a different
+# question is easier to judge on its own.
+#
+# Chapters III and IV of the handbook, read at the wording on 2026-09-29, with
+# four passages from VI, VIII, XII and XIII that belong to the same question
+#
+# Why these two chapters and not another corpus. The examinability-driven
+# entrance of SPEC §14 asks for the transmissions that name terms, cautions and
+# conditions of failure, and the twelfth chapter of this handbook was opened for
+# that reason on 2026-09-24. What that run left standing is the layer the
+# twelfth chapter presupposes: the two chapters in which the handbook says under
+# which named conditions the absorption does not arise at all. They are the
+# densest statement of failure conditions in the holding, and none of it was
+# entered.
+#
+# Edition. Read in the English of Pe Maung Tin, The Path of Purity, Part II,
+# Pali Text Society Translation Series, pages 97 to 504, which is public domain
+# and reachable by the regular route, and in the English of Ñāṇamoli, The Path
+# of Purification, for the section numbers; every passage below was read in
+# both. The locator given first in each source is the page of the Pali Text
+# Society Pali edition, which both translations print in brackets in the running
+# text and which is therefore the one number a reader can find in either. The
+# section numbers are Ñāṇamoli's, as elsewhere in this transmission's files,
+# because Pe Maung Tin carries none.
+#
+# A citation finding about the earlier work on this handbook, recorded rather
+# than silently corrected. The Chapter XII sources entered on 2026-09-24 give
+# the Path of Purity Part II as PTS 1931. The copy read for this run carries no
+# printing year on its title page at all, and 1931 is the year of Part III,
+# which is Translation Series 21. The page ranges in those citations are correct
+# for Part II. The year is therefore not verifiable from the copy read and is
+# left out of the citations written below; whether to strike it from the earlier
+# ones is a change to merged data and is filed, not done here.
+#
+
+#
+# The ten impediments, which are the first thing the handbook asks for
+#
+
+pmc:DasaPalibodha a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The ten impediments to be severed before the training begins"@en, "Die zehn Hemmnisse, die vor dem Beginn der Übung abzuschneiden sind"@de ;
+    skos:definition "Ten things the handbook names in a mnemonic verse as impediments to be cut off by one about to develop concentration: a dwelling, a family or body of supporters, the gains that are the four requisites, a class of pupils, building work, travel, kin, illness, the books, and the supernormal powers. The list is closed and the handbook treats each in turn."@en ;
+    skos:note "The rule the handbook states immediately after the list is what makes it a finding rather than a catalogue: this is not an impediment to everyone. A dwelling impedes only the man who falls into anxiety over its repairs, or who has accumulated belongings in it, or whose mind is caught by some business connected with it; for another it is no impediment. The same qualification is made for the family, the gains, the books and the kin, each with its own criterion and most with a story attached. So nine of the ten are stated as relations between a man and a thing and not as properties of the thing, and a reader cannot establish from outside whether any of them obtains."@en ;
+    skos:note "The tenth is the exception and is entered separately at pmc:IddhiPannayaPalibodha, because it is stated as a property of the powers themselves and because the handbook devotes two later chapters to what it here tells the aspirant to cut off."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.29-30, Pali PTS [90] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 105-106; also trans. Ñāṇamoli 1956)" .
+
+pmp:PalibodhaChedana a pm:Practicing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The severing of the impediments, with a measure attached to four of them"@en, "Das Abschneiden der Hemmnisse, mit einem Maß an vier von ihnen"@de ;
+    skos:definition "The operation the handbook prescribes against each impediment, and it is graded rather than uniform. Against the gains: leave the company and wander alone where one is not known. Against the class of pupils: if they have learnt much, finish with them; if little, hand them to another teacher living not further off than a league; and only if that fails, take leave of them. Against building work: if little remains, finish it; if much and it belongs to the Order, hand it over to the Order; and if there is nobody to hand it to, leave it and go. Against illness: take medicine, and if after some days it has not been relieved, address the body in the terms the handbook gives and go on with the training."@en ;
+    skos:note "Three of the four remedies are stated with a measure — a distance of one league, a quantity of work remaining, a number of days — and the fourth with an addressee. That is unusual in this holding and is the reason the practice is entered separately from the list: an instruction with a measure in it can be followed wrongly, and one without cannot."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.43-50, Pali PTS [93]-[95] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 108-111; also trans. Ñāṇamoli 1956)" .
