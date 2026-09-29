@@ -1,0 +1,372 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Theravada, the conditions under which the absorption does not arise
+#
+# A second file of one transmission and not a second transmission. pmt:Theravada
+# and pmw:Visuddhimagga are declared in traditions/theravada.ttl and are only
+# named here; no identifier is typed twice. The split is a repo convenience of
+# the kind SPEC §10 allows — the file is a unit of the repository and not of the
+# subject matter — and it was made because that file already carries six hundred
+# lines and the twelfth chapter, and a diff over two chapters of a different
+# question is easier to judge on its own.
+#
+# The failure layer of the handbook, read at the wording on 2026-09-29
+#
+# What was read, named exactly, because SPEC §15 says that whoever has read five
+# passages of a work of four hundred pages has not harvested the work and that
+# the harvest note must name both sides. Read continuously in two translations:
+# III.29-56 the ten impediments; III.74-82 the temperaments and the causes
+# disputed; III.97-102 and III.117-122 what suits which temperament, the
+# twenty-two subjects with a counterpart sign, and the clause withdrawing the
+# table; IV.2-43 the eighteen faults, the five marks, the lesser impediments,
+# the two signs, the seven suitabilities and the tenfold skill; VI.59-63 and
+# VI.81; VIII.211-215; XII.7-12 and XII.57; XIII.100; XX.105-128. That is most
+# of chapter IV and rather less than all of chapter III, and the rest of both
+# chapters — the forty subjects listed one by one, the diagnostic marks of the
+# temperaments at III.87-93, the three sublists of IV.49-65 — was not read.
+#
+# Why these two chapters and not another corpus. The examinability-driven
+# entrance of SPEC §14 asks for the transmissions that name terms, cautions and
+# conditions of failure, and the twelfth chapter of this handbook was opened for
+# that reason on 2026-09-24. What that run left standing is the layer the
+# twelfth chapter presupposes: the two chapters in which the handbook says under
+# which named conditions the absorption does not arise at all. They are the
+# densest statement of failure conditions in the holding, and none of it was
+# entered.
+#
+# Edition. Read in the English of Pe Maung Tin, The Path of Purity, Part II,
+# Pali Text Society Translation Series, pages 97 to 504, which is public domain
+# and reachable by the regular route, and in the English of Ñāṇamoli, The Path
+# of Purification, for the section numbers; every passage below was read in
+# both. The locator given first in each source is the page of the Pali Text
+# Society Pali edition, which both translations print in brackets in the running
+# text and which is therefore the one number a reader can find in either. The
+# section numbers are Ñāṇamoli's, as elsewhere in this transmission's files,
+# because Pe Maung Tin carries none.
+#
+# A citation finding about the earlier work on this handbook, recorded rather
+# than silently corrected. The Chapter XII sources entered on 2026-09-24 give
+# the Path of Purity Part II as PTS 1931. The copy read for this run carries no
+# printing year on its title page at all, and 1931 is the year of Part III,
+# which is Translation Series 21. The page ranges in those citations are correct
+# for Part II. The year is therefore not verifiable from the copy read and is
+# left out of the citations written below; whether to strike it from the earlier
+# ones is a change to merged data and is filed, not done here.
+#
+
+#
+# The ten impediments, which are the first thing the handbook asks for
+#
+
+pmc:DasaPalibodha a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The ten impediments to be severed before the training begins"@en, "Die zehn Hemmnisse, die vor dem Beginn der Übung abzuschneiden sind"@de ;
+    skos:definition "Ten things the handbook names in a mnemonic verse as impediments to be cut off by one about to develop concentration: a dwelling, a family or body of supporters, the gains that are the four requisites, a class of pupils, building work, travel, kin, illness, the books, and the supernormal powers. The list is closed and the handbook treats each in turn."@en ;
+    skos:note "The rule the handbook states immediately after the list is what makes it a finding rather than a catalogue: this is not an impediment to everyone. A dwelling impedes only the man who falls into anxiety over its repairs, or who has accumulated belongings in it, or whose mind is caught by some business connected with it; for another it is no impediment. The same qualification is made for the family, the gains, the books and the kin, each with its own criterion and most with a story attached. So nine of the ten are stated as relations between a man and a thing and not as properties of the thing, and a reader cannot establish from outside whether any of them obtains."@en ;
+    skos:note "The tenth is the exception and is entered separately at pmc:IddhiPannayaPalibodha, because it is stated as a property of the powers themselves and because the handbook devotes two later chapters to what it here tells the aspirant to cut off."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.29-30, Pali PTS [90] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 105-106; also trans. Ñāṇamoli 1956)" .
+
+pmp:PalibodhaChedana a pm:Practicing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The severing of the impediments, with a measure attached to four of them"@en, "Das Abschneiden der Hemmnisse, mit einem Maß an vier von ihnen"@de ;
+    skos:definition "The operation the handbook prescribes against each impediment, and it is graded rather than uniform. Against the gains: leave the company and wander alone where one is not known. Against the class of pupils: if they have learnt much, finish with them; if little, hand them to another teacher living not further off than a league; and only if that fails, take leave of them. Against building work: if little remains, finish it; if much and it belongs to the Order, hand it over to the Order; and if there is nobody to hand it to, leave it and go. Against illness: take medicine, and if after some days it has not been relieved, address the body in the terms the handbook gives and go on with the training."@en ;
+    skos:note "Three of the four remedies are stated with a measure — a distance of one league, a quantity of work remaining, a number of days — and the fourth with an addressee. That is unusual in this holding and is the reason the practice is entered separately from the list: an instruction with a measure in it can be followed wrongly, and one without cannot."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.43-50, Pali PTS [93]-[95] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 108-111; also trans. Ñāṇamoli 1956)" .
+
+pmc:SamadhiPresupposesPalibodhaChedana a pm:Presupposing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The training presupposes that the impediments have been severed"@en, "Die Übung setzt voraus, dass die Hemmnisse abgeschnitten sind"@de ;
+    pm:dependentStep pmc:Samadhi ;
+    pm:priorStep pmp:PalibodhaChedana ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "For two of the ten the handbook states the cost in the operative passage. Of the gains: from sunrise to the first watch of the night there is no interval in the coming and going, and he gets no opportunity to do the duties of an ascetic. Of building work: he falls into continual anxiety over what has been done and what has not been done. The first is a loss of the time the training needs; the second is the state of mind the training is to replace."@en ;
+    skos:note "The strength is set at stated necessity on the two items that carry a consequence, and it is worth saying that the other eight do not. For those the handbook prescribes the severing and says nothing about what follows from omitting it, which under SPEC §3.5 would be a prescribed order and not a necessity. They are not entered as eight further nodes at a weaker strength, because the handbook states them as one list with one instruction; what is entered instead is the list at pmc:DasaPalibodha and the qualification that most of them are relations and not properties."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.43, Pali PTS [93] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 108; also trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga III.45, Pali PTS [94] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 109-110; also trans. Ñāṇamoli 1956)" .
+
+pmc:AbadhaPalibodhaKala a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "Illness as an impediment, with a term after which it stops being one"@en, "Krankheit als Hemmnis, mit einer Frist, nach der sie keines mehr ist"@de ;
+    skos:definition "Illness is an impediment while it is being treated. The handbook sets a term on the treatment: if the ailment has not been relieved although he has taken medicine for some days, he is to blame himself, tell his body that he is not its slave and that it has been carried through beginningless time, and go on with the training without waiting for recovery."@en ;
+    skos:note "The term is in the handbook and the length of it is not: some days is what it says. So the passage names the moment at which the practitioner is to stop treating an obstacle as an obstacle and does not say when that moment is, which leaves the decision with him and leaves nothing for a second person to check."@en ;
+    skos:note "It is entered because it is the only place in these two chapters where the handbook sets a term against its own condition rather than against the practice. Everywhere else in them the term, where there is one, is a probation of the practice: three days in a lodging, three days on a posture."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.50, Pali PTS [95] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 111; also trans. Ñāṇamoli 1956)" .
+
+pmc:GanthaPalibodhaVassani a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The books as an impediment, and the three elders who laid them down for a counted number of years"@en, "Die Bücher als Hemmnis, und die drei Ältesten, die sie eine gezählte Zahl von Jahren niederlegten"@de ;
+    skos:definition "Learning is an impediment only for the man constantly occupied with it, and the handbook illustrates the release with three cases in which a number of years is given: an elder who left off recitation for nineteen years and reached sanctity in the twentieth, an elder of Karuliyagiri who did so for eighteen, and an elder who did so for thirty."@en ;
+    skos:note "The numbers are the reason this is entered. A transmission that gives a length of time before an attainment has said something a life can be measured against, and this holding carries very little of the kind. What the three cases do not supply is the other side: no case is given of an elder who laid the books down for a counted number of years and did not reach it, and no number is named at which he should conclude anything."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.51-55, Pali PTS [96]-[97] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 111-113; also trans. Ñāṇamoli 1956)" .
+
+pmc:IddhiPannayaPalibodha a pm:Cautioning ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The powers are an impediment for insight and are broken by the slightest thing"@en, "Die Kräfte sind ein Hemmnis für die Einsicht und werden vom Geringsten gebrochen"@de ;
+    skos:definition "The tenth impediment. The supernormal powers are those of an average man; they are hard to manage, like a child lying on its back or like tender corn, and the slightest thing breaks them. They are an impediment for insight and not for concentration, since they are obtained when concentration is obtained. Therefore one who seeks insight is to cut off the impediment of the powers, and another man only the remaining nine."@en ;
+    skos:note "This is a self-warning of an unusual kind: the handbook tells the aspirant, in its third chapter, to cut off the thing to which it devotes its twelfth and thirteenth. It does not withdraw the instruction later and it does not reconcile the two places. The ground it gives here is also the ground on which the eleventh chapter counts the powers among the five benefits of developing concentration — that they are obtained through concentration — so the same fact is made the reason for pursuing them and the reason for cutting them off."@en ;
+    skos:note "What it warns against is not the exercise of the powers but the keeping of them: they are said to break at the slightest thing, and the two similes are of things that cannot be set down and left. The display of the powers is refused elsewhere and on another ground, and that stands at pmc:DisplayOfPowersRefused; the two cautions do not overlap."@en ;
+    pm:cautionsAbout pmc:Iddhividha ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.56, Pali PTS [97] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 113; also trans. Ñāṇamoli 1956)" .
+
+#
+# The place, and this is the strictest set of conditions in the holding
+#
+
+pmc:AttharasaSenasanaDosa a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The eighteen faults of a monastery, each with its consequence"@en, "Die achtzehn Fehler eines Klosters, jeder mit seiner Folge"@de ;
+    skos:definition "Eighteen properties that disqualify a monastery for one who is to develop concentration: largeness, newness, dilapidation, nearness to a road, a water tank, edible leaves, flowers, fruits, being sought after, nearness to a town, to timber, to arable fields, the presence of people of incompatible views, nearness to a port, to a border district, to the boundary of the realm, unsuitability, and the absence of a good friend within reach."@en ;
+    skos:note "The handbook runs each of the eighteen with the harm it does, and the harms are practical and not spiritual: in a large one the duties are left undone, so he goes late into the village, so the almsgiving is over and he gets nothing, and the omission is itself an offence of wrongdoing; in a dilapidated one the meditation subject of the man doing the repairs suffers; where there is fruit, people come, are refused, grow angry, take by force, abuse him and try to have him expelled. The seventeenth, unsuitability, is the only one stated in two ways, by objects of the other sex and by the place being occupied by non-human beings, and it is the one the handbook illustrates with a case."@en ;
+    skos:note "For most of the eighteen the handbook also states the condition under which the fault is not a fault: a large monastery is admissible where all the duties are done and no noise reaches the ear; a new one where the other monks say they will do the work; and so on. The dilapidated one is given no such release. So the list is a set of defeasible conditions, and only one of them is stated without a way out."@en ;
+    skos:note "Entered as one node and not as eighteen, and the reason is the shape of the passage and not economy. What the handbook states once is the disqualification of a place; the eighteen are the grounds it gives for it, with their consequences and their releases, and the claim a later reader would want to contest is the disqualification. The two that carry the sharpest consequence are named in pmc:SamadhiPresupposesSenasana, where they do work. Whoever wants the eighteen counted separately should reopen the chapter; the pages are named."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.2-18, Pali PTS [118]-[122] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 138-142; also trans. Ñāṇamoli 1956)" .
+
+pmc:SenasanaPancanga a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga, pmw:MajjhimaNikaya ;
+    rdfs:label "The five marks of a lodging in which the training can be done"@en, "Die fünf Merkmale einer Unterkunft, in der die Übung getan werden kann"@de ;
+    skos:definition "Against the eighteen faults the handbook sets five marks, quoted from the canon: the lodging is not too far and not too near and there is a path for going and coming; it is little frequented by day; there is little noise and clamour by night; there is little contact with gadflies, mosquitoes, wind, heat and creeping things; and the four requisites are easily obtained there and elders of experience are living in it, whom he can ask and who will explain what is unexplained, clear what is unclear and remove his doubt."@en ;
+    skos:note "The fifth mark is two conditions and the second of them is a person. That is the only one of the five a place cannot supply by itself, and it is the one the eighteenth fault names in the negative: a monastery where no good friend is to be had is reckoned a great disadvantage. So the handbook's account of a suitable place ends at a second party, and the account of the practice done in it does not."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.19, Pali PTS [122] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 142-143; also trans. Ñāṇamoli 1956)" .
+
+pmc:SamadhiPresupposesSenasana a pm:Presupposing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The training presupposes a lodging without the named faults"@en, "Die Übung setzt eine Unterkunft ohne die benannten Fehler voraus"@de ;
+    pm:dependentStep pmc:Samadhi ;
+    pm:priorStep pmc:SenasanaPancanga ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Two of the eighteen faults are stated with their consequence in the operative passage. Of a dilapidated monastery: the meditation subject of the one who makes the repairs suffers. Of a large one: the duties are left undone, and the man who then does them goes late into the village and gets nothing because the almsgiving is over, while leaving them undone is an offence of wrongdoing in its own right. Both name a cost that falls on the training itself and not on the man's standing."@en ;
+    skos:note "The strength is stated necessity and the dilapidated monastery is the reason it can be set that high. It is the one fault of the eighteen for which the handbook gives no releasing condition, and its stated consequence is the loss of the meditation subject, which is the thing the whole chapter is about."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.3, Pali PTS [119] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 139; also trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga IV.5, Pali PTS [119] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 139; also trans. Ñāṇamoli 1956)" .
+
+pmc:SattaSappaya a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The seven suitabilities, three of them tested by a probation of three days"@en, "Die sieben Zuträglichkeiten, drei davon durch eine Probe von drei Tagen geprüft"@de ;
+    skos:definition "Seven things named in a verse as to be avoided where they are unsuitable and followed where they are suitable: lodging, alms resort, speech, person, food, season and posture. The criteria are given. A lodging in which the sign does not arise, or in which the arisen sign perishes, is unsuitable; therefore in a monastery with many quarters he is to live three days in each and stay where his mind becomes collected. An alms village within one and a half kosa, to the north or the south so that he does not walk against the sun, and where food is easily had, is suitable. Of speech, the thirty-two kinds of worldly talk are unsuitable because they lead to the vanishing of the sign, and the ten permitted subjects are to be used in moderation. Of a person, one given to worldly talk is unsuitable, and he who keeps company with such a man loses what he has got, let alone finds the sign. Food, season and posture are individual, and posture likewise is settled by a probation of three days."@en ;
+    skos:note "Two things here are rare in this holding and are the reason for the node. The criterion of suitability is the behaviour of the sign, so the practitioner is told to judge his lodging and his posture by whether the practice works in them; and the judgement is given a term, three days, twice. That is a condition of failure with a clock on it, stated of the circumstances and not of the man."@en ;
+    skos:note "The one case the handbook adduces on this head is positive and carries a number: five hundred monks in the Cūḷanāga cave on Tambapaṇṇi are said to have reached sanctity there because the lodging was suitable. No case is given of a practitioner who worked through a monastery three days at a time and found no suitable quarter."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.35-41, Pali PTS [127]-[128] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 147-149; also trans. Ñāṇamoli 1956)" .
+
+pmc:AppanaPresupposesSappaya a pm:Presupposing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The absorption presupposes the seven suitabilities"@en, "Die Vertiefung setzt die sieben Zuträglichkeiten voraus"@de ;
+    pm:dependentStep pmc:FourAbsorptions ;
+    pm:priorStep pmc:SattaSappaya ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The handbook states the cost twice in the same passage and both times as an event in the practice. Of an unsuitable lodging: the sign does not arise there, or the sign that had arisen perishes. Of the thirty-two kinds of worldly talk: they lead to the vanishing of the sign. Of unsuitable company: he loses what he has already got, let alone finds the sign."@en ;
+    skos:note "The passage closes the condition from the other side as well, and that is what makes this the load-bearing prerequisite of the chapter: avoiding the seven unsuitable and following the seven suitable, the absorption arises in a short time in him who so practises and is devoted to the sign. The claim therefore has both directions in one place, which very little in this holding does."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.36-41, Pali PTS [127]-[128] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 147-149; also trans. Ñāṇamoli 1956)" .
+
+#
+# The two signs, which are this transmission's marks of success and are counted
+# apart from everything above for the reason SPEC §15 gives
+#
+
+pmc:UggahaNimitta a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The learning sign, and the criterion by which it is known to have arisen"@en, "Das erfasste Zeichen, und das Merkmal, an dem es als entstanden erkannt wird"@de ;
+    skos:definition "The first of the two signs. The practitioner develops the device until it comes into focus when he adverts to it with his eyes shut exactly as it does with his eyes open; at that point the learning sign is said to have been produced. Until it arises he is to develop in that way a hundred times, a thousand times, and more often still. Once it is produced he is not to sit in that place again but to return to his own quarters and go on there."@en ;
+    skos:note "The criterion is stated as something the practitioner checks on himself and nobody else can: the identity of what appears with the eyes shut and with the eyes open. The count attached to it is open at the top — a hundred, a thousand, and more often still — so no number of repetitions arrives at which he would have established anything."@en ;
+    skos:note "A sign of success and not a capacity, and it is entered and counted as one for the reason SPEC §15 gives. It is announced to the practitioner before he sits, which is exactly the condition under which a reported sign carries no base rate."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.30, Pali PTS [125] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 146; also trans. Ñāṇamoli 1956)" .
+
+pmc:PatibhagaNimitta a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The counterpart sign, a hundred times purer and without colour or shape"@en, "Das Gegenzeichen, hundertmal reiner und ohne Farbe oder Gestalt"@de ;
+    skos:definition "The second sign, arising as the hindrances are suppressed and the mind reaches access concentration. It differs from the learning sign in that any fault of the device is apparent in the learning sign and not in this one, which appears as if breaking out of it and a hundred times, a thousand times more purified, like a looking-glass disk drawn from its case, a washed mother-of-pearl dish, the moon coming out from a cloud, cranes against a thundercloud. And it has neither colour nor shape, for if it had it would be cognizable by the eye, gross, and stamped with the three characteristics; it is born only of perception in one who has obtained concentration, being a mere mode of appearance."@en ;
+    skos:note "The negative determination is the load-bearing half and the handbook does not keep to it. Chapter III counts mindfulness of breathing among the subjects that have a counterpart sign, and Chapter VIII then describes that sign as appearing to some like a star, a cluster of gems or pearls, to others rough like a cotton seed or a peg of heartwood, to others like a long cord, a wreath of flowers, a puff of smoke, a spider's web, a film of cloud, a lotus, a chariot wheel, the moon's disk or the sun's disk. The handbook marks the conflict — so some say, this however is the decision of the commentaries — and resolves it by the variety of perception, which accounts for the differences between practitioners and not for a sign having a shape at all when it was said to have none."@en ;
+    skos:note "Sign of success, counted apart. What it does for a project that collects failure conditions is worth stating: a mark that has neither colour nor shape and is born only of perception cannot be described wrongly by anyone who reports it, and the handbook supplies thirteen descriptions of it in another chapter."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.31, Pali PTS [125]-[126] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 146; also trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga VIII.214-215, Pali PTS [285] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 327-328; also trans. Ñāṇamoli 1956)" .
+
+pmc:NimittaDuvidha a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The handbook knows two signs and not three"@en, "Das Handbuch kennt zwei Zeichen und nicht drei"@de ;
+    skos:definition "Where the later Theravāda manuals and the modern accounts derived from them run a triad of preparatory, learning and counterpart sign, this handbook states two. Chapter III lists what a teacher is to expound of the earth device and names the twofold sign among nine headings; Chapter VI quotes the old commentary in the words: here the sign is twofold, the learning sign and the counterpart sign."@en ;
+    skos:note "Entered because the difference decides what can be asked of the text. A three-stage sign gives a practitioner two intermediate marks to report; a two-stage sign gives him one. Whoever brings the triad to this handbook and finds it confirmed has found the later systematisation and not this work, and the search that established the absence stands at pmp:VisuddhimaggaThirdSignSearch."@en ;
+    skos:note "The same Chapter VI passage carries a second restriction of the same kind: there is no counterpart sign in the four divine abidings and in the ten kinds of foulness, and Chapter III reckons that only twenty-two of the forty meditation subjects have one at all. So the mark by which progress is judged is not available for eighteen of the subjects the handbook teaches, and it does not say what is to serve instead."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga VI.81, Pali PTS [196] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 222; also trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga III.117-121, Pali PTS [113]-[114] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 132-134; also trans. Ñāṇamoli 1956)" .
+
+pmc:NimittaVinasa a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The loss of the sign, its named causes, and the retracing that fetches it back"@en, "Der Verlust des Zeichens, seine benannten Ursachen und das Nachgehen, das es zurückholt"@de ;
+    skos:definition "The handbook treats the loss of the sign three times and each time with a remedy. If the new concentration vanishes through some unsuitable encounter, he is to put on sandals, take a walking stick, go back to the place of the device and apprehend the sign again. The sign is to be guarded as one would guard the embryo of a world ruler: to him who guards it what he has got is not lost, and he who fails to guard it loses everything he got. And at the meditation on a corpse, where return is barred because the place is haunted by non-human beings and ranged by wild animals, or because the bloated corpse has discoloured after a day or two, he is to sit down and recollect the way of going and coming station by station — which gate, which quarter, the rock, the ant hill, the tree, the bush — until the sign appears as though set before him."@en ;
+    skos:note "The one term in the passage is a property of the material and not of the practice: a bloated corpse discolours after a day or two, and after that the sign cannot be re-apprehended at its source. The handbook says of this subject that of all the meditation subjects none is so hard to get."@en ;
+    skos:note "What the three passages have in common is that none of them ends. Every loss of the sign is met with a further operation, and the handbook nowhere names a point at which the practitioner is to conclude that the sign will not come back. The search that established that stands at pmp:VisuddhimaggaTerminusSearch."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.29, Pali PTS [124]-[125] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 145-146; also trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga IV.34, Pali PTS [126] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 147; also trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga VI.59-63, Pali PTS [188]-[189] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 215-216; also trans. Ñāṇamoli 1956)" .
+
+#
+# The recourse that begins where the prescribed course has failed
+#
+
+pmc:DasaAppanakosalla a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The tenfold skill in absorption, prescribed for the case in which the absorption does not arise"@en, "Die zehnfache Fertigkeit in der Vertiefung, verordnet für den Fall, dass die Vertiefung nicht eintritt"@de ;
+    skos:definition "A set of ten expedients the handbook introduces by naming the failure they answer. Having said that the absorption arises in a short time in him who avoids the seven unsuitable things and follows the seven suitable, it continues: but if it does not arise in spite of his practising, then he should bring to pass the tenfold skill in absorption. The ten are making the basis clean, keeping the faculties balanced, skill in the sign, exerting the mind when it should be exerted, restraining it when it should be restrained, gladdening it, looking on at it with equanimity, avoiding unconcentrated persons, keeping company with concentrated ones, and resoluteness upon the absorption."@en ;
+    skos:note "The first of the ten carries its own failure condition with a cause and a simile: when the internal basis is unclean, the hair and nails long or the body soaked with sweat, or the external basis unclean, the robe old and dirty or the lodging full of rubbish, then the knowledge arising in his consciousness is unpurified, as the light of a lamp is with an unpurified bowl, wick and oil; formations do not become evident, and the meditation subject he devotes himself to does not come to growth, increase or fulfilment."@en ;
+    skos:note "Why this is the most useful passage in the chapter for a project that collects failure conditions. It is a provision made in advance for the prescribed course not working, it is stated as the second thing to do and not as the first, and it names the failure in the plainest terms the handbook uses anywhere: it does not arise in spite of his practising. Almost nothing else in this holding admits that in the operative text."@en ;
+    skos:note "And what it does not do. The ten are themselves prescriptions, so the passage answers a failure with more operation, and the handbook names no third station. There is no sentence saying what the practitioner is to conclude if the absorption does not arise after the tenfold skill either."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.41-43, Pali PTS [128]-[129] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 149-151; also trans. Ñāṇamoli 1956)" .
+
+pmc:AdhitthanaDvikkhattum a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The resolve may be made twice, and the handbook says nothing about the second time failing"@en, "Die Entschließung darf zweimal gemacht werden, und das Handbuch sagt nichts über ein zweites Misslingen"@de ;
+    skos:definition "In the operative sequence of the twelfth chapter, if the resolve does not take effect the practitioner is to do the preliminary work again, attain, emerge and resolve a second time; for, the handbook says, it is stated in the commentary on the Saṃyutta that it is allowable to attain once, or twice. The number is closed at two and nothing is said about what follows if the second resolve also fails."@en ;
+    skos:note "Entered separately from pmp:ParikammaAdhitthana, which carries the sequence, because the count is a different kind of statement and was not in that node. It is the only closed count in the whole handbook: everywhere else the repetitions are open at the top — a hundred times, a thousand times, and more often still — so this is the one place where a number arrives after which the text allows nothing further and states no outcome."@en ;
+    skos:note "The authority cited for the ceiling is not the handbook's own. It is the commentary on the Saṃyutta, named as such, and that is the only place in the passage where a limit is grounded on an outside source rather than on the author's exposition."@en ;
+    skos:note "It bears on pmc:CountedThresholdNeverFallsDue and is not a counterexample to it; why, and what it does do to that statement, is set out at the generalization."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XII.57, Pali PTS [387] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 448; also trans. Ñāṇamoli 1956)" .
+
+#
+# Two self-warnings, each inside the passage that teaches the thing warned about
+#
+
+pmc:AnapanasatiDukkara a pm:Cautioning ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The breathing subject is declared no field for inferior persons, in the chapter that teaches it"@en, "Der Atemgegenstand wird im Kapitel, das ihn lehrt, als kein Feld für geringe Personen erklärt"@de ;
+    skos:definition "In the middle of the longest exposition the handbook gives to any single meditation subject, it says of that subject that it is heavy and hard to develop, a fit subject of attention for Buddhas, silent Buddhas and sons of the Buddhas, that it is not a small thing and not to be practised by inferior persons, and that the more it is attended to the calmer and subtler it becomes, so that strong mindfulness and understanding are required. It grounds this on a saying of its founder, that he does not declare the development of mindfulness of breathing for one who is forgetful and unknowing, and illustrates it with the needle and the instrument for boring the needle's eye."@en ;
+    skos:note "The warning stands in the prescribing passage and not in a commentary on it, and it is addressed against the practice the passage is teaching. The handbook does not withdraw the instruction; it goes on to give the sixteen steps, the counting, the connexion and the fixing."@en ;
+    skos:note "It is the second of the two places in these readings where the handbook warns against its own prescription, and the two do it differently. Of the powers it says they impede the goal; of this subject it says the aspirant is probably not equal to it. The first can be obeyed by cutting the thing off, the second cannot be obeyed at all."@en ;
+    pm:cautionsAbout pmp:Anapanasati ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga VIII.211-212, Pali PTS [284]-[285] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 326-327; also trans. Ñāṇamoli 1956)" .
+
+pmc:DibbacakkhuParipantha a pm:Cautioning ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The divine eye is a danger to the average man, and the danger is madness"@en, "Das himmlische Auge ist eine Gefahr für den gewöhnlichen Menschen, und die Gefahr ist Wahnsinn"@de ;
+    skos:definition "Immediately after describing how the divine eye comes to pass, the handbook states that it is a danger to the average man, and says why: a mass of light appears through earth, ocean and mountains wherever he resolves, he is overcome by fear as he sees fearful forms such as ogres and demons, and the outcome is that he becomes distracted in mind and mad through the absorption. Therefore, it concludes, he is not to be negligent in the matter of seeing objects."@en ;
+    skos:note "This is a stated harm to the practitioner from the exercise of the capacity the same chapter teaches, with a named mechanism and a named outcome, and this holding carries very few of those. What it does not carry is a remedy: the instruction given is to be careful, and the chapter goes on."@en ;
+    skos:note "The two translations diverge at the outcome and the divergence is the reason both are cited. Pe Maung Tin has him become distracted in mind and mad through the absorption; Ñāṇamoli has his mind distracted and his jhāna lost. The first is an injury to the man, the second a failure of the operation, and the difference decides whether this passage is a caution or a failure condition. This file keeps it as a caution on the reading of the translation read first, and names the other."@en ;
+    pm:cautionsAbout pmc:Dibbacakkhu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XIII.100, Pali PTS [429] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 497; also trans. Ñāṇamoli 1956)" .
+
+#
+# The dispute inside the failure layer, and the other side is a named work
+#
+
+pmw:Vimuttimagga a dcterms:BibliographicResource ;
+    rdfs:label "Upatissa, Vimuttimagga"@en, "Upatissa, Vimuttimagga"@de ;
+    skos:note "Declared here because one node of this file cites it and a work a node points at must have an identifier. It is deliberately NOT listed under pm:corpusWork of pmt:Theravada: the Pali original is lost, the work survives in a Chinese translation of the sixth century and in Tibetan citations, its school is disputed, and it stands in the principal corpus of the separately registered pmt:TheravadaCommentarial. That the same corpus is registered twice in this holding, once as a registration and once as the read corpus of this transmission's files, is a defect of the holding and is filed as such rather than resolved by a note."@en ;
+    skos:note "Opened on 2026-09-29 at the sixth chapter only, on temperaments, and read at the wording in the English of N. R. M. Ehara, Soma Thera and Kheminda Thera as revised by Nyanatusita, The Path of Freedom, Buddhist Publication Society, which prints the column numbers of the Taishō edition of the Chinese in the running text; the passage used is at Taishō 410a10 to 410a22. The rest of the work was not read."@en .
+
+pmc:CariyaNidanaVivada a pm:Disputing ;
+    pm:fromWork pmw:Visuddhimagga, pmw:Vimuttimagga ;
+    rdfs:label "Whether the causes of a temperament are past habit, the elements and the humours"@en, "Ob die Ursachen eines Temperaments frühere Gewohnheit, die Elemente und die Körpersäfte sind"@de ;
+    pm:disputedClaim "That a person's temperament, which decides which meditation subject can work for him, is caused by his habits in former existences, by a prominence among the four elements, and by a predominance among the bodily humours." ;
+    skos:definition "Two handbooks of the same practice give incompatible answers to the question on which the assignment of meditation subjects rests. The earlier states three causes: former habits, so that one who had abundant agreeable undertakings becomes a person of greed temperament and one reborn from an animal state a person of delusion temperament; the elements, so that the prominence of earth and water makes a person of delusion temperament, of fire and wind a person of hate temperament, and the equality of all four a person of greed temperament; and the humours, so that a predominance of phlegm makes a person of greed temperament and of wind a person of delusion temperament, with the addition that some say the reverse. The later handbook reports all three as what some say and then refutes them: not all of those who had agreeable undertakings or came from a heaven are of greed temperament, there is no such law of prominence of the elements, only two of the three roots are given in the law of humours and that determination contradicts itself in its sequence, and no cause at all is given for the temperaments of faith, intelligence and thinking; therefore, it concludes, these statements are indecisive. It then puts the commentarial doctrine of past root-cause in their place."@en ;
+    skos:note "The identification of the opponent is not this file's inference. The later handbook says only some, and the subcommentary of Dhammapāla states at that very place that some is said with reference to the Elder Upatissa, for it is put in this way by him in the Vimuttimagga. Both translations read for this run carry the identification in a note, and the passage referred to was then read in the Vimuttimagga itself and is the one paraphrased above."@en ;
+    skos:note "Why this dispute is worth more than the doctrine at issue. It is a disagreement about the cause of a failure condition, inside the layer of failure conditions, between two works of one practice — and the later one wins by an argument and not by authority: it counts the cases the rule does not cover, points out that the rule contradicts itself, and notes that it explains only half the list. That is a transmission examining one of its own explanations, and it is the kind of passage this holding is built to find."@en ;
+    skos:note "It also settles a question about counting. The two works cannot be two witnesses of anything, because the later demonstrably read the earlier, and the subcommentary names it. Whoever finds this holding agreeing with itself across the Visuddhimagga and the Vimuttimagga has found one witness and a reader of it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.80-82, Pali PTS [102]-[103] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 119-120; also trans. Ñāṇamoli 1956)", "Upatissa, Vimuttimagga, chapter 6 on temperaments, Taishō 410a10-410a22, in the English of Ehara, Soma and Kheminda as revised by Nyanatusita, The Path of Freedom, Buddhist Publication Society, pp. 116-117" .
+
+pmc:CariyaVavatthanaPariyanta a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The table of which subject suits which temperament, and the clause that takes it back"@en, "Die Tafel, welcher Gegenstand zu welchem Temperament passt, und die Klausel, die sie zurücknimmt"@de ;
+    skos:definition "The handbook assigns the forty meditation subjects to six temperaments: eleven to the person of greed temperament, eight to the person of hate temperament, mindfulness of breathing to the deluded and to the thinking temperament, the first six recollections to the faithful, four to the intelligent, and the remaining devices and the four immaterial states to all; with the further rule that a limited device suits the thinking temperament and an unlimited one the deluded. It states the exclusions positively too: a limited object of the size of a tray or a pot lid does not suit the deluded, because in a cramped space the mind falls the more into confusion; and an open lodging from which parks, groves, ponds, villages and blue-shimmering hills are seen does not suit the thinking temperament, because such a lodging is the cause of the scattering of thought. And then, in the next paragraph, it withdraws the force of the whole table: all this is said by way of direct opposition and extreme suitability, for there is no meritorious culture that does not throw off lust and the rest and that is not conducive to faith."@en ;
+    skos:note "The withdrawal is the finding and not the table. A transmission that assigns practices to persons has made a claim that could fail — this man was given this subject and it did not work — and the clause in the next paragraph removes the assignment from the reach of any such case, because every subject is then said to work against everything. The handbook supports the clause with a canonical passage and does not notice that it has cancelled its own criterion."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga III.97-102, Pali PTS [107]-[110] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, pp. 125-128; also trans. Ñāṇamoli 1956)", "Buddhaghosa, Visuddhimagga III.121-122, Pali PTS [114]-[115] (trans. Pe Maung Tin, The Path of Purity, Part II, Pali Text Society, p. 134; also trans. Ñāṇamoli 1956)" .
+
+#
+# Chapter XX.105 to 128, the ten imperfections of insight
+#
+# The holding carried this passage as one Cautioning node, pmc:ImperfectionsOfInsight
+# in traditions/theravada.ttl, citing XX.105ff. without an edition and naming the
+# ten. It was read here complete, and what the reading adds is not a further
+# instance of the same thing: it is the entry condition, the class of practitioner
+# in whom it happens, the reason the ten are called imperfections at all, and the
+# thirtyfold multiplication. The existing node is left standing and is not restated.
+#
+# This is the passage that a run of 2026-09-26 refuted a generalization against,
+# from another text of the same lineage; see the protocol at
+# examinations/the-sign-and-the-counterfeit.ttl. It is entered fully now because
+# a claim that has been broken once is the one whose wording has to be exact.
+#
+
+pmc:UpakkilesaSammaPatipannaNimittam a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The imperfection arises only in the practitioner who is going right"@en, "Die Verunreinigung entsteht nur bei dem Übenden, der richtig vorgeht"@de ;
+    skos:definition "The entry condition of the ten, stated twice and in both directions. The imperfections of insight do not arise in a noble disciple who has reached penetration of the truths, and they do not arise in persons erring in virtue, neglectful of their meditation subject and idlers. They arise only in a clansman who keeps to the right course, devotes himself continuously to his meditation subject, and is a beginner of insight."@en ;
+    skos:note "This is the finding of the passage and the reason it is entered apart from the list. The appearance is not a sign that something has gone wrong; its arising is evidence that the practitioner is on the right course, and it then ruins that course by being taken for the goal. So the transmission has constructed a mark that is at once the confirmation and the obstacle, and it says so."@en ;
+    skos:note "What it costs anybody who would test the practice by its signs. Neither the presence nor the absence of the ten tells the practitioner where he stands: present, they mean he is going right and is about to go wrong; absent, he is either an accomplished disciple or a careless one, and the transmission gives no mark distinguishing those two by this route. The mechanism by which the presence ruins the course is stated in the same passage from the Paṭisambhidā: he adverts to the illumination as a noble one's state, the distraction from that is agitation, and while his mind is seized by that agitation he does not correctly understand the appearance as impermanent, as painful, or as not-self."@en ;
+    skos:note "A sign of success and counted apart from the failure conditions of this file, for the reason SPEC §15 gives. The illumination is announced to the practitioner in advance by the very handbook that then tells him not to value it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XX.105-106, Pali PTS [633]-[634] (trans. Pe Maung Tin, The Path of Purity, Part III, Pali Text Society, pp. 771-772; also trans. Ñāṇamoli 1956)" .
+
+pmc:UpakkilesaSamathaVipassanaLabhi a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The mistake falls on the practitioner who has both calm and insight, and three elders are named"@en, "Der Irrtum trifft den Übenden, der Ruhe und Einsicht hat, und drei Älteste werden genannt"@de ;
+    skos:definition "The class in which the handbook says this imperfection usually arises, with its mechanism and with named cases. It arises generally in one who has obtained calm and insight: because the defilements discarded by the attainments do not operate in him, he produces the thought that he is a saint. The three named are Mahānāga the elder resident at Uccavālika, Mahādatta the elder resident at Haṅkanaka, and Cūḷasumana the elder resident at Cittalapabbata. The illustration that follows is the elder Dhammadinna of Talaṅkara, a saint with the analytical knowledges, who reflected on whether his own teacher Mahānāga had finished his duties as a monk, saw that he was still an average person, judged that Mahānāga would die an average person if he did not go, rose into the air by his power and put a thousand questions to him."@en ;
+    skos:note "Three names and a fourth as the one who detected them is the most specific failure report in this transmission's part of the holding: named men, named residences, and a stated diagnosis of what was wrong with them. What makes the report unusable as a check is the last step — the error was detected by another practitioner exercising a supernormal power, so the instrument that establishes the mistake is one of the capacities in question."@en ;
+    skos:note "The mechanism is a failure condition of the plainest kind and it is worth having separately from the three names: the suppression of the defilements by the attainments removes the evidence by which the practitioner would have known he was not finished. The better the calm, the fewer the marks against the conclusion."@en ;
+    skos:note "The extent of the illumination is given on a scale in the same passage and it is the only quantity in it: in one monk it lights only the seat he sits on, in another the interior of his room, in another the whole monastery, then a quarter league, half a league, one, two and three leagues, and in another it makes one continuous light from the surface of the earth up to the Brahmā world. Two elders in a double-walled room at Cittalapabbata, on a moonless overcast night, report to each other flowers of five colours on the shrine terrace and fishes and turtles in the ocean a league away. The scale is stated without any suggestion that a larger light means a better practitioner, and the handbook uses it to show variety and not rank."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XX.108-111, Pali PTS [634]-[635] (trans. Pe Maung Tin, The Path of Purity, Part III, Pali Text Society, pp. 772-773; also trans. Ñāṇamoli 1956)" .
+
+pmc:UpakkilesaTimsavidha a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "Why the ten are called imperfections, and how they become thirty"@en, "Warum die zehn Verunreinigungen heißen, und wie sie dreißig werden"@de ;
+    skos:definition "The handbook's own qualification of the word it has used, and the multiplication that follows from it. Illumination and the rest are called imperfections because they are the bases of imperfection and not because they are unprofitable; attachment alone is both an imperfection and a basis of one. As bases they are ten. They become a full thirty by the way of seizing them: he who holds that his illumination has arisen seizes a view, he who holds that the illumination is delightful seizes conceit, and he who relishes it seizes craving — three ways for each of the ten. The remedy is stated in the same terms as the fault: the skilled and wary practitioner defines the illumination by understanding as impermanent, conditioned, generated through cause and liable to cessation, or reasons that were it the self it would be right to hold it so, and thereupon reviews it as not mine, not I, not my self, and no longer wavers. What the whole operation produces is the knowledge of what is the path and what is not: the states consisting in illumination and the rest are not the path, and insight knowledge free from imperfections and keeping to its course is the path."@en ;
+    skos:note "The qualification matters for a holding that collects conditions of failure, because it withdraws the obvious reading. The ten are not faults and the handbook says so; what is a fault is one particular relation to them, and that relation is a thought the practitioner has about his own state. So the failure condition here lies neither in the practice nor in its result but in an interpretation, and the only person positioned to notice it is the one whose interpretation it is."@en ;
+    skos:note "The multiplication by three is not decoration. It says that the same appearance can be mistaken in three distinguishable ways, and it names them — view, conceit, craving. That is finer than anything else in this transmission's failure layer, and it is the place a later protocol should start if it wants to ask whether a transmission that grades its own errors also grades their remedies."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XX.124-128, Pali PTS [637]-[638] (trans. Pe Maung Tin, The Path of Purity, Part III, Pali Text Society, pp. 776-778; also trans. Ñāṇamoli 1956)" .
+
+pmc:UpakkilesaHatthiParikkha a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The elephant test: one practitioner establishes that another's attainment is not what he takes it for"@en, "Die Elefantenprobe: ein Übender stellt fest, dass die Erlangung eines anderen nicht ist, wofür er sie hält"@de ;
+    skos:definition "The test by which the error of the elder Mahānāga is established, carried out in the handbook's own narrative and not prescribed. Dhammadinna puts a thousand questions and every one is answered without a hitch; he asks when the attainment was reached and is told sixty years ago; he asks whether the elder can still use his concentration and is told it is not difficult; he has him create an elephant, and the elder creates one all white. Then he has him make the elephant come at him with ears fixed, tail stretched out, trunk thrust into its mouth and trumpeting terribly. The elder does so, sees the terrible form coming at speed, rises and begins to run. Dhammadinna catches him by the edge of the robe and asks whether there is such a thing as timidity in one purged of the cankers. The elder, knowing himself then to be an average person, asks Dhammadinna to be his protector, receives a meditation subject from him, ascends the terrace walk and reaches sanctity at the third stride."@en ;
+    skos:note "Why this belongs in a holding of failure conditions rather than among the anecdotes. It is a test of a claimed attainment with a stated criterion, an outcome in two directions, and a result that neither party controls: the flinch is involuntary, it is produced by the subject's own power turned against him, and it is visible to the person administering it. Nothing else in this transmission's part of the holding has that shape. The examination is not of a procedure but of a person, and it works."@en ;
+    skos:note "Two things limit it and both are properties of the passage. The test is administered by a practitioner who himself has the analytical knowledges and travels through the air to reach the man, so the instrument is one of the capacities under examination; and it is narrated of two named men rather than prescribed to anybody, so the handbook does not make it a procedure. The thousand questions answered without a hitch are part of the finding: the doctrinal examination the candidate passed established nothing, and the involuntary reaction established everything."@en ;
+    skos:note "It bears on pmc:TheTestOfAPersonIsRefused, which says that where a capacity is located in a person the deliberate test of it is forbidden, with the boundary clause that a trial between two practitioners is a different case. This is the second such trial in the holding beside the Sámi reindeer contest, and it differs from that one in that the two parties are not equals and the loser is corrected rather than ranked. What it does to that statement is set out at the generalization."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XX.111-112, Pali PTS [635]-[636] (trans. Pe Maung Tin, The Path of Purity, Part III, Pali Text Society, pp. 773-774; also trans. Ñāṇamoli 1956)" .
