@@ -1,0 +1,139 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Swedenborgian transmission, taken down from the register
+#
+# The instance stood in traditions/registry-western-esoteric.ttl at
+# pm:corpusNamed and is moved here now that its two principal works have been
+# read at the wording at the places that carry the question.
+#
+# Why this one out of the register, and it is the examinability-driven entrance
+# of SPEC §14 with an unusual answer. The registration said this is
+# quantitatively the largest body of first-person reports available to the
+# project and dated throughout. That was right and it is not what makes the
+# corpus worth the reading. What makes it worth the reading is that it is the
+# only transmission in this holding that describes a capacity at length, over
+# decades, with dates, and then states in as many words that no living man can
+# know whether he has it. The finding of this file is that configuration, and it
+# was established twice over: once at the passages that say so, and once by
+# searching the corpus for the criterion it would have needed and finding none.
+#
+# The second finding is a negative and it is the reason this file has no
+# pm:Practicing node. The corpus contains no operation. There is no instruction
+# by which a second person could bring the converse about, no posture, no
+# breathing exercise, no abstinence, no formula and no term; the one thing that
+# resembles a rule of practice is a prohibition, and it runs the other way —
+# break the current of your thoughts with useful occupations. This was searched
+# for across eight volumes and is recorded at pmp:SwedenborgPraxisSearch. A
+# transmission that claims a capacity and supplies no procedure is the exact
+# structural opposite of the Theravada handbook read in the same batch, and the
+# pair is worth more to the holding than either alone.
+#
+# The three decisions of SPEC §14, taken before the first node.
+#
+# The contact route is documented and the registration was right about it, but
+# the direction matters and is stated here. The route does not run into this
+# corpus from the holding; it runs out of it. Swedenborg published from 1749 and
+# died in 1772, before the magnetic literature and long before the spiritist
+# literature this holding already carries, and both of those milieux knew him.
+# So an agreement between this file and traditions/mesmerism.ttl or
+# traditions/spiritism.ttl is reception with this corpus as the earlier station,
+# and nothing here counts as an independent witness beside them. Where such an
+# agreement is used below, that is said at the node.
+#
+# Recension and edition. The Latin works were read in the English editions named
+# at each work identifier, all of them public domain and reachable by the regular
+# route. The citation form is the section number, which every edition of these
+# works prints and which does not shift between them; the page is given as well
+# where a reader of the copy actually used would want it. The Spiritual Diary is
+# the weakest link in the chain and is handled at its own identifier: the first
+# hundred and forty-eight numbers are lost and survive only as restored index
+# headings, and the standard English translation was declared a faulty
+# unrevised manuscript by its own successor editor. Every node below that rests
+# on the Diary carries which of the two it is.
+#
+# What was read, and it is a small part of a very large corpus. Heaven and Hell
+# complete in the sections on speech with spirits and angels and on the state
+# after death, numbers 234 to 258 and 425 to 460 read continuously, and the whole
+# searched; Arcana Coelestia at numbers 784, 3884 to 3886, 9438 to 9439 and
+# 10751, with the surrounding context of each; Angelic Wisdom concerning the
+# Divine Love and the Divine Wisdom at numbers 232 to 262 read continuously;
+# the Spiritual Diary, volume one, at the restored headings 3 to 8 and 148, and
+# at numbers 458, 647 and 1365 to 1370. The True Christian Religion was opened,
+# found to carry the attestation and not the cautions, and is not entered. The
+# remaining eleven volumes of the Arcana and volumes two to five of the Diary
+# were not read.
+#
+
+pmt:Swedenborgian a pm:Tradition ;
+    pm:fromWork pmw:DeCaeloEtInferno ;
+    rdfs:label "Swedenborgian transmission"@en, "Swedenborgische Überlieferung"@de ;
+    skos:definition "A transmission resting on one man's sustained reports of conversation with the dead and with angels, kept as a dated journal over decades and published as doctrine."@en ;
+    skos:note "Quantitatively the largest body of first-person reports available to the project, and dated throughout, which makes internal consistency checkable in a way most such material is not. The registration said so and the reading bears it out: two of the contradictions entered below were found by reading two of this author's own works against each other."@en ;
+    skos:note "The corpus carries no operation, and that is a property of it and not of the reading. It has capacities, prerequisites, cautions, a criterion for telling a deceiving spirit and a statement that the state cannot be known in life, and it has no instruction by which anybody could set about the thing. The search stands at pmp:SwedenborgPraxisSearch."@en ;
+    skos:note "The contact route runs out of this corpus and not into it. Swedenborg published from 1749 and died in 1772; the magnetic and spiritist literatures this holding already carries are later and knew him. An agreement between this file and either of those is reception with this corpus as the earlier station, and no pm:independentAttestation is claimed anywhere here."@en ;
+    pm:principalCorpus "Swedenborg, De caelo et inferno; Swedenborg, Diarium spirituale; Swedenborg, Arcana coelestia" ;
+    pm:corpusWork pmw:DeCaeloEtInferno, pmw:ArcanaCoelestia, pmw:DiariumSpirituale, pmw:DivinoAmoreEtSapientia ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Swedenborg, De caelo et inferno, n. 249 (Heaven and Hell, trans. Swedenborg Society, London 1885, pp. 114-115)" .
+
+pmw:DeCaeloEtInferno a dcterms:BibliographicResource ;
+    rdfs:label "Swedenborg, De caelo et inferno"@en, "Swedenborg, De caelo et inferno"@de ;
+    skos:note "Published anonymously at London in 1758 as De Coelo et ejus Mirabilibus, et de Inferno, ex Auditis et Visis. Read here in the English of the Swedenborg Society, Heaven and Hell, London 1885, and checked against the Society's edition of 1893; the numbering runs 1 to 603 and did not differ at any place read between those two and the editions of 1778, 1784 and 1883, which were also consulted for the footnotes."@en ;
+    skos:note "A textual detail that bears on citation and was seen at the wording. The author's own footnote to number 249 lists the Arcana places where speech with spirits is treated, and the two editions read give different numbers in the first of its two lists: the 1885 copy prints 734 where the second list of the same footnote prints 784. The second list, which is the one this file uses, reads 784, 9438, 10751 in both copies. Whoever follows the first list to 734 will find a passage on another subject."@en ;
+    skos:note "That the work appeared without its author's name is not a disputed attribution and is not entered as one, but it is part of the citation history and belongs here: Swedenborg published his theological works anonymously until 1768 and named himself on a title page for the first time in 1771."@en .
+
+pmw:ArcanaCoelestia a dcterms:BibliographicResource ;
+    rdfs:label "Swedenborg, Arcana coelestia"@en, "Swedenborg, Arcana coelestia"@de ;
+    skos:note "Read here in the English of the Standard Edition, Arcana Coelestia: The Heavenly Arcana, translated from the Latin and thoroughly revised and edited by John Faulkner Potts, American Swedenborg Printing and Publishing Society, New York; volumes 1, 5, 11 and 12 were opened. The numbering runs 1 to 10837 and is stable across the three English sets consulted; the bracketed subdivisions such as [2] and [3] are Potts's editorial work and not the author's, so a reference to a bracketed part is a reference to that edition."@en ;
+    skos:note "Opened at four places only and not read through: numbers 784, 3884 to 3886, 9438 to 9439 and 10751. The author's own footnotes name a further set that was not opened — 1983, 2752, 4793 and 5990 on obsession and 3894 on the suffocation of the wicked in heaven — and the nodes below that depend on them say so."@en .
+
+pmw:DiariumSpirituale a dcterms:BibliographicResource ;
+    rdfs:label "Swedenborg, Diarium spirituale"@en, "Swedenborg, Diarium spirituale"@de ;
+    skos:note "Read here in the English of George Bush and John H. Smithson, The Spiritual Diary of Emanuel Swedenborg, volume I, numbers 1 to 1538, James Speirs, London 1883. The entries are numbered in the author's own hand from the manuscript and are dated; the dates of the entries used here fall in January to March 1748."@en ;
+    skos:note "Two textual cautions, both read at the wording in this volume, and every node resting on this work carries whichever of them applies. First, the beginning is lost. The editors' footnote states that the portion from 1 to 148 inclusive is wanting in the Latin as Tafel published it, that the subsequent publication of Swedenborg's own Index Diarii proves the missing numbers stood in a separate manuscript which has not been discovered and is feared irrecoverably lost, and that the heads or subjects of nearly all of them have been restored from that Index and occupy the place of the missing text. So numbers 3 to 8 and 148, which carry most of the criteria for telling a deceiving spirit, are index headings and not the author's paragraphs."@en ;
+    skos:note "Second, the translation is disowned. The editor of the successor volume writes that on first taking Professor Bush's manuscript in hand he was struck with astonishment at the number of evident errors, some of the most elementary character and the most glaring description, that the further he advanced and the greater the care he exercised the more numerous and grave the errors he detected, and that he grew convinced Bush had never intended the manuscript to reach the printer without a further careful revision by himself. A holding that collects conditions of failure should carry the condition of failure of its own source, and this is it."@en .
+
+pmw:DivinoAmoreEtSapientia a dcterms:BibliographicResource ;
+    rdfs:label "Swedenborg, Sapientia angelica de divino amore et de divina sapientia"@en, "Swedenborg, Sapientia angelica de divino amore et de divina sapientia"@de ;
+    skos:note "First published at Amsterdam in 1763. Read here in the English of the Swedenborg Society, Angelic Wisdom concerning the Divine Love and the Divine Wisdom, London 1912, a translation based on the recommendations of the Society's revision committee. The numbering runs 1 to 432; numbers 232 to 262 were read continuously."@en .
+
+#
+# The capacity, and the state it is said to consist in
+#
+
+pmc:SwedenborgLoquelaCumSpiritibus a pm:Conceptualizing ;
+    pm:fromWork pmw:DeCaeloEtInferno, pmw:ArcanaCoelestia ;
+    rdfs:label "Speech with spirits and angels while still in the body"@en, "Rede mit Geistern und Engeln noch im Leibe"@de ;
+    skos:definition "The capacity the whole corpus rests on. A man whose interiors have been opened can speak with spirits and with angels while he lives in the world, because as to his interiors a man is a spirit and an angel and the body serves him only for activity in the natural sphere. The speech is not a local motion of sound: the angel's words fall into the man's thought and thence into words of his own language, and the man hears them as his own speech would be heard."@en ;
+    skos:note "Stated as rarely granted at the present day and as formerly common: the ancients spoke with spirits and angels frequently, and on some earths spirits appear in human form and speak with the inhabitants. The corpus therefore holds that the capacity is human and not personal, and that the present rarity is a condition of the age."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Swedenborgian ;
+    dcterms:source "Swedenborg, Arcana coelestia, n. 9438 (The Heavenly Arcana, trans. Potts, Standard Edition, vol. XI, pp. 359-360)", "Swedenborg, De caelo et inferno, n. 246, 248 (Heaven and Hell, trans. Swedenborg Society, London 1885, pp. 112-114)" .
+
+pmc:SwedenborgTresGradus a pm:Conceptualizing ;
+    pm:fromWork pmw:DivinoAmoreEtSapientia ;
+    rdfs:label "Three discrete degrees present in every man by birth, opened in succession"@en, "Drei getrennte Grade in jedem Menschen von Geburt, nacheinander geöffnet"@de ;
+    skos:definition "Three degrees of altitude, natural, spiritual and celestial, are in every man by birth and can be opened successively; as they are opened the man is in the Lord and the Lord in the man. Within each there are continuous degrees of latitude by which it increases. The natural degree comes first and grows by knowledge up to the rational; the spiritual is not opened by that means but by the spiritual love of uses, which is love towards the neighbour; and even by the truths of that love the celestial is not opened, which is opened by the celestial love of use, that is love to the Lord, defined as committing the precepts of the Word to life."@en ;
+    skos:note "The corpus says twice in one paragraph that understanding does not open the higher degree, and it is the sharpest thing in the reading for a project that collects prerequisites: the condition is not knowledge, which can be examined, but a love shown in conduct, which the same corpus then says is not felt while it is being acquired."@en ;
+    skos:note "The state is not a rank conferred by a lineage and is not an initiation. Every man has the three by birth; what is at issue is whether they open. That is why this file carries no degree structure and no admission."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Swedenborgian ;
+    dcterms:source "Swedenborg, Sapientia angelica de divino amore et de divina sapientia, n. 236-237 (Angelic Wisdom concerning the Divine Love and the Divine Wisdom, trans. Swedenborg Society, London 1912, pp. 84-85)" .
+
+pmc:SwedenborgRespiratioInterna a pm:Conceptualizing ;
+    pm:fromWork pmw:ArcanaCoelestia ;
+    rdfs:label "The internal respiration, led from within and imperceptible to man"@en, "Die innere Atmung, von innen geführt und dem Menschen nicht wahrnehmbar"@de ;
+    skos:definition "One of four general operations of heaven the author reports perceiving while in the body: it entered into the respiration of the lungs and led his breathing gently but from within, so that he had no need to draw breath or respire by any exertion of his will. The respiration of heaven, he says, is internal and for that reason imperceptible to man, and inflows by correspondence into the external respiration of the body; were a man deprived of that influx he would instantly fall down dead. The pulse in that state was about three beats to each period of respiration."@en ;
+    skos:note "Entered because this is the one place where the corpus touches the thing a reader of the modern occult literature comes to it for, and it is not what that literature made of it. There is no exercise here. The breathing is led, the will is not used, and the author states that the internal respiration cannot be perceived at all. Whoever reads this passage as a technique has read the later reception; the search for an instruction anywhere in the corpus stands at pmp:SwedenborgPraxisSearch."@en ;
+    skos:note "The author's own footnote elsewhere names the further Arcana numbers on this subject, among them 3894 on the wicked being unable to breathe in heaven and suffocating if they enter. That number was not opened and nothing here rests on it."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Swedenborgian ;
+    dcterms:source "Swedenborg, Arcana coelestia, n. 3884 (The Heavenly Arcana, trans. Potts, Standard Edition, vol. V, pp. 237-238)" .
