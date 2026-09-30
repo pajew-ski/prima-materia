@@ -644,7 +644,7 @@ Der Lebenslauf oben gilt für Behauptungen. Ein Befund über das Repo, die Ontol
 
 **Vor jedem `issue_create` mit `befund` stehen deshalb drei Fragen, in dieser Reihenfolge.** Kann dieser Lauf ihn beheben oder als Regel schreiben? Dann tut er das, im Branch des Bündels oder in einem eigenen, statt anzulegen. Steht derselbe Gegenstand schon in einem offenen Befund? Dann ein Kommentar dort und kein zweites Issue. Nennt der Body seine Abschlussbedingung? Ohne sie ist er eine Notiz, und Notizen gehören in den PR.
 
-**Der PR, der einen Befund behebt oder als Regel schreibt, schließt ihn**, mit `Closes #<n>` im Body. Das gilt auch für einen Befund aus einem früheren Lauf, dessen Gegenstand dieser Lauf zufällig mit erledigt.
+**Der PR, der einen Befund behebt oder als Regel schreibt, nennt ihn im Body, und nach dem Merge wird er geschlossen.** Das gilt auch für einen Befund aus einem früheren Lauf, dessen Gegenstand dieser Lauf zufällig mit erledigt. Auf `Closes #<n>` ist in diesem Aufbau kein Verlass: am 2026-09-30 hat GitHub an PR #815 keine der 37 Zeilen verknüpft und nach dem Merge kein Issue geschlossen, die Ursache ist nicht geklärt. Geschlossen wird deshalb ausdrücklich, und zwar vom ersten Lauf nach dem Merge nach der dritten Abschlussbedingung in `AGENTS.md`. Die Nennung im Body bleibt, weil sie am Issue einen Rückverweis auf die Begründung erzeugt.
 
 **Lücken im Werkzeugsatz sind hier nicht behebbar.** `prima_repo_*`, `issue_*` und `gh_*` werden in `pajew-ski/data` gebaut; ein Coding Agent an diesem Repo kann sie weder ändern noch prüfen, ob sie geändert wurden. In dieses Repo gehört davon nur der Umweg, als Regel in `CLAUDE.md`. Die Lücke selbst wird als Issue in `pajew-ski/data` angelegt, wo ihr Schließen einen Ort hat.
 
