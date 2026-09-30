@@ -73,7 +73,7 @@ Der Anlass ist gezählt: in einem Lauf wurden vier Werke als unerreichbar gefüh
 
 ### Die geprüften Zugangswege
 
-Der Katalog ist die Anwendung des vorigen Absatzes und steht hier, damit kein Lauf ihn ein zweites Mal erarbeitet. **Die Tabelle ist der Ort des Befunds und nicht sein Spiegel.** Wer einen Weg prüft, trägt ihn hier ein, im PR seines Bündels, und dieser PR schließt das Issue, falls eines besteht. Offen bleibt ein Werkzeugbefund nur, solange der Weg ungeklärt ist und ein benannter nächster Versuch aussteht. Die Nummern in den Klammern sind Fallnachweise, geschlossen wie offen. Lebenslauf eines Befunds in `SPEC.md` §13.
+Der Katalog ist die Anwendung des vorigen Absatzes und steht hier, damit kein Lauf ihn ein zweites Mal erarbeitet. **Die Tabelle ist der Ort des Befunds und nicht sein Spiegel.** Wer einen Weg prüft, trägt ihn hier ein, im PR seines Bündels, und nennt dort das Issue, falls eines besteht; geschlossen wird es nach dem Merge. Offen bleibt ein Werkzeugbefund nur, solange der Weg ungeklärt ist und ein benannter nächster Versuch aussteht. Die Nummern in den Klammern sind Fallnachweise, geschlossen wie offen. Lebenslauf eines Befunds in `SPEC.md` §13.
 
 | Weg | Stand |
 |---|---|
@@ -210,7 +210,7 @@ Vokabular der Labels in `CONTRIBUTING.md`, von dort übernehmen: GitHub legt ein
 
 **Jedes Issue trägt entweder `behauptung` oder `befund`.** Ein Befund über das Repo, die Ontologie, ein Werkzeug oder ein Verfahren ist keine Behauptung und bekommt kein `korpus:`-Label; er bekommt `befund` und dazu die zutreffenden Verfeinerungen `befund:werkzeug`, `befund:ontologie`, `befund:bestand`, `befund:verfahren`, die kumulieren. `is:issue is:open no:label` muss leer bleiben.
 
-**Ein Befund wird behoben oder als Regel geschrieben, bevor er angelegt wird.** Was der Lauf selbst in Ordnung bringen kann, bringt er in Ordnung; was eine Regel ist, schreibt er in diese Datei, in `CLAUDE.md` oder in `SPEC.md`, und der PR schließt das zugehörige Issue mit `Closes #<n>`. Ein Issue wird ein Befund nur, wenn er etwas braucht, was der Lauf nicht leisten kann, und dann endet sein Body mit „Erledigt, wenn". Vor dem Anlegen wird nach einem offenen Befund zum selben Gegenstand gesucht; gibt es ihn, wird kommentiert. Lücken im Werkzeugsatz gehören als Issue nach `pajew-ski/data`, hierher nur ihr Umweg. Vollständig in `SPEC.md` §13.
+**Ein Befund wird behoben oder als Regel geschrieben, bevor er angelegt wird.** Was der Lauf selbst in Ordnung bringen kann, bringt er in Ordnung; was eine Regel ist, schreibt er in diese Datei, in `CLAUDE.md` oder in `SPEC.md`, und der PR nennt das zugehörige Issue. Geschlossen wird es nach dem Merge und ausdrücklich, weil `Closes #<n>` hier nicht greift (`SPEC.md` §13). Ein Issue wird ein Befund nur, wenn er etwas braucht, was der Lauf nicht leisten kann, und dann endet sein Body mit „Erledigt, wenn". Vor dem Anlegen wird nach einem offenen Befund zum selben Gegenstand gesucht; gibt es ihn, wird kommentiert. Lücken im Werkzeugsatz gehören als Issue nach `pajew-ski/data`, hierher nur ihr Umweg. Vollständig in `SPEC.md` §13.
 
 ## Quellen
 
