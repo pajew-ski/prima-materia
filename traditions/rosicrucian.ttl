@@ -1,0 +1,100 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Rosicrucian manifestos, taken off the register
+#
+# Taken from traditions/registry-western-esoteric.ttl on the structure-driven
+# entrance of SPEC 14, and it earns the testability-driven priority of the same
+# section on its own: all three founding works state conditions of failure in
+# their operative passages, and the third states them as a graded trial with
+# published numbers. That is rarer in this holding than any capacity.
+#
+# The registration said what was expected of this corpus: a transmission whose
+# founding documents describe a body that did not exist before them, of
+# interest as a documented case of a transmission created by its own
+# announcement. The reading neither confirms nor refutes that, because the
+# question of whether the Fraternity existed is not decidable against these
+# three works, and this file enters no node on it. What the reading found
+# instead is the thing the registration could not have predicted: the third
+# work carries the clearest counter-case in this holding to two generalizations
+# that stood on six and on two witnesses. Both are examined at
+# examinations/what-the-royal-wedding-refutes.ttl and neither statement is
+# rewritten here.
+#
+# On the identifiers. The rule is the tradition plus the normalised term in the
+# language of the work. These works are German prints that carry their own
+# Latin: the tablet on the cedars is printed in Latin in the Strasbourg edition
+# of 1616, and the marginal glosses of that edition name the objects this file
+# enters — Sigillum de Nuptiis, In campis 3 Cedri 3 Templa, Tabella
+# Mercurialis, Libra aurea, Pondera, Satellites. The identifiers are taken from
+# that Latin where the edition supplies it, which is also the form the
+# secondary literature uses, and are English where it does not. No identifier
+# is formed from the English translation.
+#
+
+pmt:Rosicrucian a pm:Tradition ;
+    rdfs:label "Rosicrucian transmission"@en, "Rosenkreuzerische Überlieferung"@de ;
+    skos:definition "The transmission begun by three anonymous works printed between 1614 and 1616, which announce an order, a corpus and a set of capacities, and which state at every point of admission what befalls the applicant who is not fit for it."@en ;
+    skos:note "What kind of witness these works are, and it has to be said before any node is read. All three are anonymous, none reports a practice the writer says he carried out, and the third is narrated as a dream inside a dream. The attribution is contested in the current literature rather than settled: Lyke de Vries, Reformation, Revolution, Renovation (Leiden: Brill, 2021), calls the authorship a highly contested topic at p. 17, postpones it programmatically at p. 19, heads her third chapter Authorship in Question at p. 171, and uses the plural the authors throughout. Johann Valentin Andreae claimed only the third work, and called it a ludibrium. This file therefore enters no pm:Attributing node for any of the three: an ascription to Andreae or to the Tübingen circle is a scholarly position and belongs at a protocol or in an issue."@en ;
+    skos:note "The corpus is dated earlier than its printing and the difference matters for any claim of independence. Adam Haslmayr had the Fama in manuscript in 1610 and printed his answer to it in 1612, two years before the Fama itself; Benedictus Figulus had a copy in the same year. De Vries states both at p. 2. So the text is at latest of 1610, which puts it before every printed response to it and therefore before the reception this holding would otherwise have to discount."@en ;
+    skos:note "The contact route stays at documented and the reading did not move it. These works name their own antecedents in their own voice: the wise of Damascus and of Fez, the Book M, Theophrastus by name and with the statement that he was not of the Fraternity but had read the Book M, Adam, Moses and Solomon as holders of the same philosophy, Plato, Aristotle and Pythagoras as partial hitters of the mark. A transmission that lists its sources is not an independent witness to anything they carry, and no node here is offered for a convergence."@en ;
+    skos:note "Read at the wording on 2026-09-30, and the editions are named because they differ in a way that decides what may be cited. The Chymische Hochzeit was read complete, all seven days, in the modern reset English printed as The Chymical Wedding of Christian Rosenkreutz (archive.org identifier ChymicalWeddingOfChristianRosenkreutz), and every passage a node rests on was then checked against the German original, Chymische Hochzeit: Christiani Rosencreutz. Anno 1459 (Strasbourg: Lazarus Zetzner, 1616), read in the Internet Archive scan chymischehochzei00rose. The Fama and the Confessio were read complete in the English of Thomas Vaughan, The Fame and Confession of the Fraternity of R: C: (London, 1652), in the proofread Wikisource transcription of that print. A. E. Waite's Real History of the Rosicrucians of 1887 was deliberately not used as the witness for any node: Waite states at his chapter four that his Fama and Confessio are a searching revision of Vaughan rather than a translation, and at his chapter five that his Chymische Hochzeit is compressed by the omission of all irrelevant matter and dispensable prolixities. A compressed text cannot carry an absence."@en ;
+    skos:note "What was not read. The Allgemeine Reformation printed with the Fama in 1614, which is a translation of Boccalini and stands in front of it, was not opened. The Latin Confessio of 1615 was not compared with the German. Andreae's Vita ab ipso conscripta, which is where the word ludibrium stands, was not opened; it is named in this file only as reported by de Vries. The critical edition of the corpus, Johann Valentin Andreae, Gesammelte Schriften, vol. 3, Rosenkreuzerschriften, ed. Roland Edighoffer (Stuttgart: frommann-holzboog, 2010), with its variant apparatus and its commentary volume 3.1, was not obtained; where this file records a reading of the 1616 print it means that print and not the critical text."@en ;
+    skos:note "One consequence of the edition situation should be stated where a reader will meet it. The Chymische Hochzeit exists in three incompatible paginations — the Strasbourg print of 1616 to p. 143, the Foxcroft English of 1690 to p. 193, and the modern reset to p. 88 — so every source in this file locates by day first and by page of a named edition second. The last page of the work is a printer's note that about two leaves in quarto are missing, and the narrator's fate is therefore reported in a bracket and not by the narrator."@en ;
+    pm:principalCorpus "Fama Fraternitatis; Confessio Fraternitatis; Chymische Hochzeit Christiani Rosencreutz" ;
+    pm:corpusWork pmw:FamaFraternitatis, pmw:ConfessioFraternitatis, pmw:NuptiaeChymicae, pmw:ReformatioGeneralis ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan, The Fame and Confession of the Fraternity of R: C: (London, 1652), the six articles of agreement" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:FamaFraternitatis a dcterms:BibliographicResource ;
+    rdfs:label "Fama Fraternitatis (1614)"@en, "Fama Fraternitatis (1614)"@de ;
+    skos:note "Opened on 2026-09-30 and read complete in the English of Thomas Vaughan, London 1652. The work carries no internal division — no chapters, no numbered paragraphs — so a place in it is given by the passage and by the page of a named edition, and this file gives the passage. The German print of 1615 is available in the Internet Archive scan famafraternitati00andr and was consulted for the six articles only."@en .
+
+pmw:ConfessioFraternitatis a dcterms:BibliographicResource ;
+    rdfs:label "Confessio Fraternitatis (1615)"@en, "Confessio Fraternitatis (1615)"@de ;
+    skos:note "Opened on 2026-09-30 and read complete in the English of Thomas Vaughan, London 1652, which prints it with the preface announcing thirty-seven reasons. The work divides into fourteen capita and the division is stable across prints, so a place in it is given by caput where the passage sits in one; the Vaughan print of 1652 runs the text without caput numbers, and this file therefore locates by the passage."@en .
+
+pmw:NuptiaeChymicae a dcterms:BibliographicResource ;
+    rdfs:label "Chymische Hochzeit Christiani Rosencreutz (1616)"@en, "Chymische Hochzeit Christiani Rosencreutz (1616)"@de ;
+    skos:note "Opened on 2026-09-30 and read complete, all seven days, in a modern reset English and checked passage by passage against the Strasbourg print of 1616. It is the only one of the three works that narrates a procedure, and the only one that states what happens to those who fail at its stations. Its canonical locus is the day."@en .
+
+pmw:ReformatioGeneralis a dcterms:BibliographicResource ;
+    rdfs:label "Allgemeine Reformation der gantzen Welt (1614)"@en, "Allgemeine Reformation der gantzen Welt (1614)"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is printed in front of the Fama in the Kassel edition of 1614 and is a German translation of a chapter of Boccalini's Ragguagli di Parnaso; a run that wants to know how much of the Fama's programme is Boccalini's goes here. The Wellcome scan b28759345 of the 1781 reprint carries it with the Fama and the Confessio."@en .
+
+#
+# The capacities the Confessio promises. It puts them as a series of
+# questions — were it not excellent that — and this file enters each one as
+# its own node, because the strict completeness of SPEC 15 applies to
+# capacities and a list read as one capacity is a list nobody can count.
+#
+
+pmc:RosicrucianNonTimereFamemMorbumSenectutem a pm:Conceptualizing ;
+    rdfs:label "Not having to fear hunger, poverty, sickness or age"@en, "Hunger, Armut, Krankheit und Alter nicht mehr fürchten müssen"@de ;
+    skos:definition "The first of the capacities the Confessio names, and it names all four together: that one would not need to care nor to fear hunger, poverty, sickness and age. The work returns to it later in its own voice, saying of the man who has come so far that neither poverty nor sickness can hurt him that he must be an insatiable creature if he then gives himself to idle things."@en ;
+    skos:note "The second passage is the reason this is entered as a capacity and not as a figure of speech. A work that argues about how such a man ought then to behave has treated the state as obtained."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan, The Fame and Confession of the Fraternity of R: C: (London, 1652), the passage of the six questions, and again at the passage on the tincture of metals" .
+
+pmc:RosicrucianVitaAbInitioAdFinem a pm:Conceptualizing ;
+    rdfs:label "Living as though from the beginning of the world to its end"@en, "Leben, als hätte man von Anfang der Welt an gelebt und lebte bis an ihr Ende"@de ;
+    skos:definition "The second capacity of the same series: that one could always live so as if one had lived from the beginning of the world, and moreover as one should still live to the end of it. The work does not say whether this is length of life or knowledge of the whole span, and the two readings are not separated in the wording."@en ;
+    skos:note "The ambiguity is the reason this node says what it says and no more. The Fama elsewhere reports the founder dying at over a hundred and having never experienced disease in his body, which would support the first reading; the Confessio's own next question is about reading one book and thereby knowing all books, which would support the second. Nothing in either work decides it, and a node that decided it would be reporting a preference."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage of the six questions" .
+# ANHANG-1
