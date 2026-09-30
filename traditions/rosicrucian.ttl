@@ -171,4 +171,86 @@ pmp:RosicrucianOpusTurris a pm:Practicing ;
     pm:withinTradition pmt:Rosicrucian ;
     pm:fromWork pmw:NuptiaeChymicae ;
     dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Sixth Day, the first six storeys of the Tower of Olympus" .
-# ANHANG-2
+pmc:RosicrucianOpusTurrisYieldsImagines a pm:Yielding ;
+    rdfs:label "The work of the tower produces the two living bodies"@en, "Das Werk des Turms bringt die zwei lebenden Körper hervor"@de ;
+    pm:byPractice pmp:RosicrucianOpusTurris ;
+    pm:yieldsCapacity pmc:RosicrucianImaginesAnimatae ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "Entered as the work states it and not as the reader may wish to take it. The narrative is a first-person report of a dream, so the mode is textual attestation of what the work claims and not a first-person report of a practice; nothing in the work says that the writer performed this anywhere but in the vision."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Sixth and Seventh Days" .
+
+pmc:RosicrucianAvisVinciendaAnteCibum a pm:Cautioning ;
+    rdfs:label "Make the bird fast before feeding it"@en, "Den Vogel festmachen, ehe man ihn füttert"@de ;
+    skos:definition "A caution inside the procedure, with its consequence stated and then borne out in the same paragraph: before the hatched bird is given anything to eat it is to be made fast, otherwise it would give the workers work enough. After the first feeding it bites and scratches so that, could it have had its will upon any of them, it would have despatched him."@en ;
+    pm:cautionsAbout pmp:RosicrucianOpusTurris ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "Worth entering because of the class it belongs to and not because of the danger. The consequence is stated before the event and is then reported as having occurred, so the work supplies both the rule and the case for it; most cautions in this holding supply one or the other."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Fourth Storey of the Tower, Sixth Day" .
+
+#
+# The conditions of admission, and what the works say befalls the applicant
+# who does not meet them. This is the part the testability-driven entrance of
+# SPEC 14 was looking for.
+#
+
+pmp:RosicrucianExaminatioAnteNuptias a pm:Practicing ;
+    rdfs:label "Keeping watch and examining oneself before the wedding"@en, "Wache halten und sich selbst betrachten vor der Hochzeit"@de ;
+    skos:definition "What the invitation requires of the invited, in five lines of verse and in the imperative: keep watch, examine thyself, and bathe thoroughly. The German of 1616 runs Halt Wacht, Dich selbst betracht, Wirstu dich nit fleissig baden, die Hochzeit kan dir schaden."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "The narrator performs it as an examination of his own understanding, conduct and motives, and finds himself wanting on all three; the bathing is not reported as carried out. What the practice consists in is therefore stated by the invitation and shown by the response, and the two do not fully agree."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the First Day, the verse of the invitation" .
+
+pmc:RosicrucianQuiNimisLevis a pm:Conceptualizing ;
+    rdfs:label "Harm to him who fails here; let him beware who is too light"@en, "Schaden hat, wer hier versäumt; hüte sich, wer zu leicht ist"@de ;
+    skos:definition "The failure condition of the invitation, stated in the invitation itself and in advance of everything it invites to: if thou shouldst not bathe thoroughly, the wedding may work thy bane; bane comes to him who faileth here; let him beware who is too light. The German of 1616 reads Schad hat, wer hie verzeucht, Huet sich wer ist zu Leicht."@en ;
+    skos:note "The last line is the reason the whole of the third day is anticipated here. Too light is not a figure: on the third day the guests are put on a golden balance against seven weights, and the ones who cannot raise them are said in the same words to have been found too light. So the invitation names the criterion of a trial the invited will not see for two days, and it names it in the term the trial itself uses."@en ;
+    skos:note "This is a failure condition in the sense SPEC 15 asks for and not a caution: it states an outcome, it is prior to the operation, and the operation supplies the measurement. What it does not state is what too light means in advance of the measurement, and nothing in the work supplies that. The search stands at pmp:RosicrucianDignitasSearch."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the First Day, the verse of the invitation" .
+
+pmc:RosicrucianNuptiaePraesupponuntExaminationem a pm:Presupposing ;
+    rdfs:label "The self-examination must precede the journey"@en, "Die Selbstprüfung muss der Reise vorausgehen"@de ;
+    pm:dependentStep pmp:RosicrucianOpusTurris ;
+    pm:priorStep pmp:RosicrucianExaminatioAnteNuptias ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The wedding may work thy bane; bane comes to him who faileth here. Stated in the invitation before the journey begins, and made concrete on the third day, where those found too light are stripped, branded according to which weights they failed, hunted out with rods, whips or dogs, or punished in body and life."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "Stated necessity and not prescribed order, because the consequence is quotable and stands in the same five lines as the requirement. The dependent step is named as the work of the tower rather than as attendance at the wedding: attendance is what the weighing decides, and the work of the tower is the thing only the weighed survivors are admitted to."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the First Day, the verse of the invitation, with the sentence of the Third Day" .
+
+pmc:RosicrucianQuatuorViae a pm:Conceptualizing ;
+    rdfs:label "Four ways offered, three passable, and no way back"@en, "Vier Wege angeboten, drei begehbar, und kein Weg zurück"@de ;
+    skos:definition "The tablet on the cedars, printed in Latin in the 1616 edition, offers the traveller a choice of four ways to the royal court. The first is short but dangerous and leads into rocky places scarcely passable. The second is longer and takes him about; it is plain and easy if by help of the magnet he turns neither left nor right. The third is the royal way, which affords a joyful journey, and it has so far scarcely been allotted to one in a thousand. By the fourth no man shall reach the place, because it is a consuming way, practicable only for incorruptible bodies. Whichever he enters is the one destined for him by immutable fate, and he cannot go back in it save at great peril to life."@en ;
+    skos:note "Three things in this passage are of a kind this holding rarely gets from one place. A stated rate: the royal way has scarcely been allotted to one in a thousand, in the German of 1616 das vnter tausent ich eben der sein solte der den Koeniglichen Weg erwehlte. A way declared impassable in advance and offered anyway. And an irreversibility with a stated cost, which the narrator then tests: having entered a way by accident, he turns and finds a wind so strong against him that he concludes it would cost him his life, and goes on."@en ;
+    skos:note "The stated rate is what makes this passage examinable at all, and it is also the place to be careful. One in a thousand is said of the allotment of the third way and not of the outcome of the journey, so it is a claim about how the ways are distributed among travellers and not about how many arrive. The work gives no figure of the second kind until the third day, where it gives one for the weighing instead."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Second Day, the Latin tablet on the three cedars, Quatuor viarum optionem per nos tibi sponsus offert" .
+
+pmc:RosicrucianRedeasDumLicet a pm:Cautioning ;
+    rdfs:label "If you know yourself faulty, go home while you still can"@en, "Weisst du dich fehlerhaft, so kehre heim, solange es noch geht"@de ;
+    skos:definition "The closing sentence of the same tablet, and it is a self-warning against the thing the tablet has just invited to: but, ho, beware, you know not with how much danger you commit yourself to this way, for if you know yourself to be obnoxious by the smallest fault to the laws of our King, I beseech you, while it is still possible, to return swiftly to your house by the way you came."@en ;
+    pm:cautionsAbout pmc:RosicrucianQuatuorViae ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "The caution supplies an exit and attaches a term to it — while it is still possible — and the same tablet has already said that once a way is entered there is no going back save at peril of life. So the exit exists only before the choice, and the narrator loses it by accident rather than by decision."@en ;
+    skos:note "The standard of the fault is the smallest fault against laws the traveller has not been shown, and the judgement of whether he is guilty of one is left to him. That is the corpus's characteristic construction: the applicant is asked to apply a criterion he is not given."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Second Day, the Latin tablet on the three cedars" .
+
+pmc:RosicrucianTesseraeHospitum a pm:Conceptualizing ;
+    rdfs:label "Three gates, and at each a token the gate itself issues"@en, "Drei Tore, und an jedem ein Zeichen, das das Tor selbst ausgibt"@de ;
+    skos:definition "The graded passage into the castle. At the first gate the porter demands the letter of invitation, is satisfied by it, sells the traveller a golden token bearing S.C. for his bottle of water, and gives him besides a sealed letter to the second porter. At the second gate the second porter reads that letter, drives back a chained lion, and sells a token bearing S.M. for the traveller's salt. At the third gate the name is written in a vellum book and the true guest token is given, smaller than the others and much heavier, bearing S.P.N.; new shoes are given and the old ones are to be given away to the poor."@en ;
+    skos:note "The arrangement is the one this holding has from the ascent literature: the token of the next station is issued at the last, and the first token is the invitation, which the bridegroom sent. Nothing the traveller brought of himself opens any gate; what he gives up at each is a consumable he was carrying — water, salt — and in the third case his shoes."@en ;
+    skos:note "That is what makes the next node a counter-case rather than a detail, and it is examined at examinations/what-the-royal-wedding-refutes.ttl."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Second Day, the three gates; the tablets Procul hinc, procul ite profani and Date et dabitur vobis" .
+# ANHANG-3
