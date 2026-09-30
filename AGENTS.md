@@ -73,20 +73,24 @@ Der Anlass ist gezählt: in einem Lauf wurden vier Werke als unerreichbar gefüh
 
 ### Die geprüften Zugangswege
 
-Der Katalog ist die Anwendung des vorigen Absatzes und steht hier, damit kein Lauf ihn ein zweites Mal erarbeitet. Jeder Eintrag hat sein Issue mit `befund:werkzeug`; wer einen Weg prüft, zieht beide nach.
+Der Katalog ist die Anwendung des vorigen Absatzes und steht hier, damit kein Lauf ihn ein zweites Mal erarbeitet. **Die Tabelle ist der Ort des Befunds und nicht sein Spiegel.** Wer einen Weg prüft, trägt ihn hier ein, im PR seines Bündels, und dieser PR schließt das Issue, falls eines besteht. Offen bleibt ein Werkzeugbefund nur, solange der Weg ungeklärt ist und ein benannter nächster Versuch aussteht. Die Nummern in den Klammern sind Fallnachweise, geschlossen wie offen. Lebenslauf eines Befunds in `SPEC.md` §13.
 
 | Weg | Stand |
 |---|---|
 | archive.org, Volltextdatei `https://archive.org/download/<kennung>/<kennung>_djvu.txt` | trägt, der Regelweg (prima-materia#515, prima-materia#584) |
-| Kanseki Repository (漢籍リポジトリ), ein GitHub-Repositorium je Werk, eine Datei je juan, Grundlage im Dateikopf unter `BASEEDITION` | trägt, der Weg für die chinesischen Klassiker (prima-materia#614) |
+| Kanseki Repository (漢籍リポジトリ), ein GitHub-Repositorium je Werk, eine Datei je juan, Grundlage im Dateikopf unter `BASEEDITION` | trägt, der Weg für die chinesischen Klassiker und darüber hinaus: auch die Sammelwerke (集) liegen dort, belegt an `KR4c0045`, Han Yus Werken samt Kommentar, Grundlage WYG. Die Kennung ist nicht zu erraten; gefunden wurde sie bisher über eine Suche gegen kanripo.org (prima-materia#614, prima-materia#687). Einzelne juan können defekt sein und fremden Text tragen, belegt an `KR3e0002_011` (prima-materia#676) |
 | HathiTrust, Bände im Rechtestand `pdus` | geprüft und gesperrt: Katalogsuche und Bib-API antworten durchgehend mit `403` hinter einer Cloudflare-Abfrage, der Rechtestand war nicht zu verifizieren (prima-materia#556, prima-materia#702) |
 | archive.org, Kennung antwortet mit `503` | Sperre am Weg und keine Aussage über das Werk: für einen Band waren drei von vier naheliegenden Kennungen `503` und eine fünfte trug (prima-materia#702) |
 | archive.org, Volltextdatei antwortet mit `500` bei vollständigen Metadaten | ebenfalls Sperre am Weg, und die gefährlichere von beiden: das Item führt die Datei mit Größe, der Abruf gibt 170 Byte nginx-Fehlerseite zurück, und das sieht nach einem defekten Werk aus statt nach einer Drosselung. Eine zweite Kennung desselben Werkes trug beim ersten Versuch (prima-materia#788) |
 | archive.org, Dateiname über `https://archive.org/metadata/<kennung>` | trägt, wo das Standardschema `<kennung>_djvu.txt` mit `404` oder `503` antwortet: die Textdatei heißt dann anders und der Name ist nur den Metadaten zu entnehmen (prima-materia#700, prima-materia#702) |
 | archive.org, Volltext eines Scans mit gemischter Schrift | ein eigener Ausfall neben der Sperre: der Abruf gelingt, die Datei ist vollständig, und die OCR hat den lateinischen Satz durchgehend in Glyphen der zweiten Schrift zerlesen. Vor der Lektüre den ASCII-Buchstabenanteil je Block messen; unter etwa 0,3 ist der Scan am Wortlaut nicht zu gebrauchen. Für die Caraka-Saṃhitā trägt allein `BIUSante_47357` mit 0,66, während zwei naheliegende Kennungen bei 0,00 liegen (prima-materia#767) |
+| archive.org, Volltext einer Ausgabe mit griechischem, hebräischem oder syrischem Satz, **ASCII-Anteil nahe 1,0** | der umgekehrte Ausfall zur vorigen Zeile, und die Faustregel dort greift nicht: die OCR gibt die zweite Schrift in ähnlich aussehenden lateinischen Zeichen wieder, die Datei sieht sauber aus, und die Originalsprache fehlt vollständig. Gemessen an drei Exemplaren von Dieterich, *Eine Mithrasliturgie*, jedes mit null Zeichen in U+0370–U+03FF und U+1F00–U+1FFF. Vor der Lektüre eines Werkes mit nicht-lateinischer Schrift die Zeichen **je Unicode-Block** zählen; null heißt: Apparat und Übersetzung sind benutzbar, die Originalsprache ist auf diesem Weg nicht vorhanden (prima-materia#775) |
 | ctext.org | `403` nach dem ersten Kapitel (prima-materia#614) |
 | zh.wikisource.org, zysj.com.cn | nicht abrufbar (prima-materia#614) |
 | HAL, alle Spiegel | Proof-of-Work-Abwehr, sechs Adressformen versucht, der Browserweg noch offen (prima-materia#565) |
+| OAPEN (`library.oapen.org`) | Proof-of-Work-Abwehr (Anubis, erkennbar am Stylesheet unter `/.within.website/`), und die gefährlichere Form: die Bitstream-Adresse antwortet mit **`200` und rund 4 KB**, im Rumpf die Abwehrseite statt des Buchs. Wer nur den Statuscode prüft, hält das für einen Abruf. Größe und `<title>` prüfen. DOAB, JSTOR-OA und Project MUSE sind als Wege für dieselben Titel ungeprüft; bis dahin ist ein Open-Access-Buch über OAPEN nicht als unerreichbar zu führen, sondern der nächste Weg zu versuchen (prima-materia#814) |
+| Persée | trägt über einen Umweg: `web_fetch` und `docAsPDF` sind gesperrt (robots und Proof-of-Work), die Dokumentseite als HTML aber trägt in den Attributen `data-content-url` je Druckseite eine Adresse der Form `…/doc/page/<artikel-id>/<band>_T1_<seite>_0000`, die den OCR-Text dieser Seite liefert. Ein Abruf je Seite (prima-materia#257) |
+| Tote Adresse einer frei gestellten Datei, etwa eine Institutsseite mit `404` | trägt über den Wayback-Index: `https://web.archive.org/cdx/search/cdx?url=<adresse>&output=text&limit=20` liefert die Erfassungen, die Zeile mit richtigem MIME-Typ und `200` den Zeitstempel, und `https://web.archive.org/web/<zeitstempel>id_/<adresse>` die Datei roh. **Ohne `id_`** kommt die Rahmenseite des Archivs zurück, die wie ein Fehlschlag aussieht und keiner ist (prima-materia#730) |
 | sacred-texts.com | drosselt, HTTP-Rückleitungen unerreichbar, große PDF werden still gekürzt (prima-materia#473) |
 | archive.org, Volltextdatei antwortet mit `200` und **bricht nach den ersten Druckseiten ab** | die gefährlichste Klasse, weil sie nach einem negativen Befund aussieht: der Abruf gelingt, die Datei ist vollständig, und zurück kommt nur der vordere Teil. Belegt an `koptischgnostisc00schmuoft` (endet vor S. 257, wo der Text beginnt), an `berthelot_alchemy_2_1888_french` (endet um Blatt 15 von 199) und an `bub_gb_b33NAAAAMAAJ` (bricht auf S. 23 von 80 mitten im Satz ab). Wer darin einen Suchbegriff nicht findet, weiß etwas über die Abrufgrenze und nichts über das Werk (prima-materia#796) |
 | HTML-Leseausgaben, etwa sacred-texts.com und esotericarchives.com | geprüft und für die Wortlauternte **unbrauchbar**: der Abruf gibt eine Inhaltsangabe zurück statt des Textes, und auf eine ausdrückliche Bitte um Transkription eine Verweigerung unter Berufung auf Urheberrecht — bei Texten von 1895 und 1806. Ein Korpus, dessen einzige freie Fassung eine Leseausgabe ist, ist über diesen Aufbau nicht am Wortlaut prüfbar; das ist eine Eigenschaft des Zugangswegs und nach SPEC §15 ein Grund zurückzustellen und nicht einer, das Werk als unerreichbar zu führen (prima-materia#796) |
@@ -206,6 +210,8 @@ Vokabular der Labels in `CONTRIBUTING.md`, von dort übernehmen: GitHub legt ein
 
 **Jedes Issue trägt entweder `behauptung` oder `befund`.** Ein Befund über das Repo, die Ontologie, ein Werkzeug oder ein Verfahren ist keine Behauptung und bekommt kein `korpus:`-Label; er bekommt `befund` und dazu die zutreffenden Verfeinerungen `befund:werkzeug`, `befund:ontologie`, `befund:bestand`, `befund:verfahren`, die kumulieren. `is:issue is:open no:label` muss leer bleiben.
 
+**Ein Befund wird behoben oder als Regel geschrieben, bevor er angelegt wird.** Was der Lauf selbst in Ordnung bringen kann, bringt er in Ordnung; was eine Regel ist, schreibt er in diese Datei, in `CLAUDE.md` oder in `SPEC.md`, und der PR schließt das zugehörige Issue mit `Closes #<n>`. Ein Issue wird ein Befund nur, wenn er etwas braucht, was der Lauf nicht leisten kann, und dann endet sein Body mit „Erledigt, wenn". Vor dem Anlegen wird nach einem offenen Befund zum selben Gegenstand gesucht; gibt es ihn, wird kommentiert. Lücken im Werkzeugsatz gehören als Issue nach `pajew-ski/data`, hierher nur ihr Umweg. Vollständig in `SPEC.md` §13.
+
 ## Quellen
 
 Jede Behauptung braucht mindestens ein `dcterms:source` als Referenz auf ein Werk mit der Stelle, die sie trägt (`"Patañjali, Yogasūtra III.38"`).
@@ -222,12 +228,12 @@ Moderne Forschung betritt den Bestand ausschließlich über `pm:evidenceFrom` an
 
 Beginnt eine Sitzung mit „prima materia weiter" oder einer gleichwertigen Aufforderung, ist der vollständige Durchlauf gemeint. **Keine Rückfragen zu Schritten, die diese Datei und `SPEC.md` bereits vorschreiben.** Der Mensch prüft am Merge, nicht am Ablauf.
 
-1. Bestand lesen: Dateibaum, offene Issues, Labels, letzte PRs.
+1. Bestand lesen: Dateibaum, offene Issues, Labels, letzte PRs. Dazu die offenen Befunde, deren Gegenstand das Bündel berühren wird: wer eine Datei, einen Weg oder ein Werkzeug anfasst, über die ein Befund steht, erledigt oder kommentiert ihn im selben Lauf.
 2. Nächstes Bündel wählen. Vorrang hat der prüfbarkeitsgetriebene Eingang (SPEC §14) — die Überlieferungen, die Anzeichen, Fristen, Kautelen und Misslingensbedingungen nennen —, dann der unabhängigkeitsgetriebene, dann der Bedarf aus offenen Issues; innerhalb dessen der Knoten, der anderswo am zuverlässigsten falsch berichtet wird.
 
    **Dazu ein zweiter Strang, der keiner Frage folgt.** Neben dem Bündel aus offenen Behauptungen zieht jeder Lauf ein Werk aus dem Registrierungsstand: eine Tradition auf `pm:coverageState pm:corpusNamed`, deren Bestand dünn ist. Dieser Strang ist nicht nachrangig, sondern der einzige, der Behauptungen erzeugt, nach denen niemand gefragt hat — und nur solche können eine Kategorie liefern, die vorher niemand hatte. Was mit einer Frage gesucht wird, findet Übereinstimmungen, deren Begriff schon im Suchbegriff steckte. Die beiden Stränge laufen im Batch nebeneinander, in eigenen Branches, und keiner ersetzt den anderen.
 3. Tiefe Recherche nach SPEC §15, **beide Stufen**, mit Gegensuche. Der Schritt ist erst beendet, wenn jede Behauptung mit erreichbarem Werk am Wortlaut geprüft ist.
-4. Sofort integrieren: Knoten für vollgeprüfte Funde, Issues für alles andere.
+4. Sofort integrieren: Knoten für gelesene Funde, Issues für ungeprüfte Behauptungen. Ein Befund über Repo oder Werkzeug wird behoben oder als Regel geschrieben, bevor er ein Issue wird (`SPEC.md` §13).
 5. Issue-Kommentar mit der Abdeckung, `korpus:`-Labels kumulieren, Schließen nur bei Erschöpfung.
 6. PR öffnen, Validierung grün, dann liegen lassen. Der Mensch merged.
 7. Ohne Unterbrechung zum nächsten Bündel.
@@ -264,7 +270,7 @@ Der Grund ist derselbe wie bei prima-materia#351, eine Ebene höher: **ein Faden
 
 1. `is:issue is:open no:label` ist leer.
 2. Jeder in dieser Sitzung geöffnete PR nennt sein Issue, und jedes durch ihn erledigte Issue ist geschlossen oder trägt einen Kommentar, der sagt, was noch fehlt.
-3. Jedes Issue, dessen Gegenstand im Bestand steht, ist als `completed` geschlossen — auch wenn die Arbeit in einem früheren Lauf geschah. Ein erledigtes und offenes Issue ist teurer als ein fehlendes: es bindet Aufmerksamkeit an eine Schuld, die getilgt ist, und die abhängigen Issues führen sich weiter als blockiert.
+3. Jedes Issue, dessen Gegenstand im Bestand steht, ist als `completed` geschlossen — auch wenn die Arbeit in einem früheren Lauf geschah. Für einen Befund heißt „im Bestand" auch: in dieser Datei, in `SPEC.md`, `CLAUDE.md` oder `CONTRIBUTING.md`, in einem Test oder einem Workflow. Ein erledigtes und offenes Issue ist teurer als ein fehlendes: es bindet Aufmerksamkeit an eine Schuld, die getilgt ist, und die abhängigen Issues führen sich weiter als blockiert.
 4. Jede Recherche des Laufs hat ihre Erntenotiz, mit den nicht aufgenommenen Funden und ihrem Grund.
 5. Jede offene Entscheidung liegt als Frage mit Empfehlung vor, nicht als offene Frage.
 6. Der Lauf hat sich selbst geprüft: gegen die Regeln dieser Datei, gegen `SPEC.md`, und gegen den Kurs, den die Arbeit verfolgt.
@@ -277,13 +283,13 @@ Was der Check findet, wird nicht im Bericht erwähnt, sondern behandelt: eine ü
 
 Die dritte Bedingung ist die, die am häufigsten verletzt wird, und sie ist nicht durch Sorgfalt zu erfüllen, sondern nur durch Nachsehen: ob ein Issue erledigt ist, steht im Bestand und nicht im Issue. Am 2026-09-02 waren #23, #32 und #33 seit Tagen erledigt und offen, und drei weitere Issues führten sich deswegen als blockiert.
 
-**Jede im Lauf entstandene Hypothese wird noch im selben Lauf ein Issue, sofern sie nicht aus dem Bestand ableitbar ist.** Das gilt für den Zielbefund, für den Beifang, für jede Vermutung, die im Denken auftaucht, und für jeden Befund über das Repo oder die Werkzeuge.
+**Jede im Lauf entstandene Hypothese wird noch im selben Lauf ein Issue, sofern sie nicht aus dem Bestand ableitbar ist.** Das gilt für den Zielbefund, für den Beifang und für jede Vermutung, die im Denken auftaucht. Ein Befund über das Repo oder die Werkzeuge ist keine Hypothese und folgt seinem eigenen Lebenslauf: behoben oder als Regel geschrieben braucht er kein Issue (`SPEC.md` §13).
 
 **Der Vorbehalt ist keine Aufweichung, sondern der Filter, der den Tracker brauchbar hält.** Vor jedem `issue_create` steht die Frage: folgt das aus einem Zustand, der im Graphen steht? Eine registrierte Tradition ohne Knoten, eine ungeprüfte Verallgemeinerung, ein Prüfknoten ohne Fälle, ein Knoten ohne Achsenverortung — für all das gibt es eine Abfrage, die immer stimmt, während ein Issue nur am Tag seiner Anlage stimmt. Was nicht aus einem Zustand folgt, wird angelegt. Vollständig in `SPEC.md` §13. Eine Hypothese, die nur im Gesprächsverlauf steht, ist verloren, sobald die Sitzung endet — und der Gesprächsverlauf ist kein Speicher, sondern ein Fenster.
 
 **Anlegen statt ankündigen.** Ein Satz der Form „das sollte noch ein Issue werden" ist bereits die Arbeit, die stattdessen zu tun war. Wer ihn schreibt, hat den Aufwand des Anlegens schon aufgewendet und das Ergebnis weggeworfen.
 
-**Vollständigkeit vor Eleganz.** Lieber fünfzig knappe Issues mit Behauptung, geprüften Stellen und Labels als fünf ausformulierte und der Rest im Fließtext. Der Satz gilt für das, was tatsächlich in den Tracker gehört; er ist keine Erlaubnis, Abfragen als Issues abzuschreiben.
+**Vollständigkeit vor Eleganz.** Lieber fünfzig knappe Issues mit Behauptung, geprüften Stellen und Labels als fünf ausformulierte und der Rest im Fließtext. Der Satz gilt für Behauptungen, also für das, was tatsächlich in den Tracker gehört; er ist keine Erlaubnis, Abfragen als Issues abzuschreiben, und keine, Befunde abzulegen, die der Lauf beheben oder als Regel schreiben konnte.
 
 **Und er ist keine Erlaubnis, ein Issue anzulegen, wo ein Knoten hingehört.** Ein gelesener Fund wird eingetragen, nicht vermerkt; die Aufnahmebedingung ist die Stelle und nicht die vollständige Prüfung. Ein Issue an dieser Stelle macht aus einem gelesenen Fund eine Vermutung. Siehe den Abschnitt zur Ernte weiter oben und `SPEC.md` §15.
 
