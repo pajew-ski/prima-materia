@@ -141,6 +141,10 @@ Welche Wege tragen, steht in `AGENTS.md` unter Die geprüften Zugangswege. Hier 
 
 - **Ein grüner PR trägt ein rotes Kreuz, wenn von seinem Kopf abgezweigt wurde.** Beim gestapelten Arbeiten erbt der neue Branch anfangs den Kopf-SHA des PR darunter; das Anlegen des Refs startet einen `validate`-Lauf, der erste echte Commit bricht ihn ab, und GitHub rollt alle Check-Runs eines SHA am PR zusammen, gleich von welchem Ref sie stammen. Das Kreuz markiert nicht den defekten PR, sondern den, auf dem der nächste aufsitzt. `prima_repo_check` meldet in diesem Fall grün und hat recht; die Checks-Seite des PR zeigt den abgebrochenen Lauf mit dem fremden Branchnamen. Fall und Patch in prima-materia#352. Seit pajew-ski/data#337 löst ein Push auf `claude/**` gar keinen Lauf mehr aus, der Fall entsteht nur noch an älteren PR.
 
+- **Der Stop-Hook der Sitzung verlangt einen Commit oder Push, den dieser Arbeitsweg nie macht.** Geschrieben wird über `prima_repo_*` auf den Branch, der lokale Klon ist das Abbild (`AGENTS.md`, Abgleich vor dem PR). Die Meldung „uncommitted changes" oder „unpushed commits" ist hier kein Befund; maßgeblich ist, dass `git status --porcelain` und `git diff origin/<branch>` nach dem Abgleich leer sind. Nicht committen, nicht pushen (prima-materia#533)
+
+- **`prima_repo_write` legt nur neue Dateien an.** Auf einen vorhandenen Pfad antwortet es mit einer Meldung ohne Pfad und ohne Grund, die nach einer Zurückweisung des Inhalts aussieht; die Größe ist es nicht. Umweg und Belege in `AGENTS.md` unter Prüfung, Läufe und der Abgleich vor dem PR (prima-materia#47, prima-materia#450, prima-materia#799)
+
 ## Lizenz
 
 CC0 1.0 — Code, Ontologie und Spezifikation. Public-Domain-Dedication für maximale maschinelle Nachnutzbarkeit.

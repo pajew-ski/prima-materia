@@ -125,9 +125,14 @@ Die vier Verfeinerungen kumulieren wie die `korpus:`-Werte; ein Befund
 über eine Kollision im Bestand, gegen die ein Shape fehlt, trägt
 `befund:bestand` und `befund:ontologie`. Sie schneiden nicht nach Thema,
 sondern nach dem Zeitpunkt, zu dem man sie liest: `befund:werkzeug` **vor**
-einem Lauf, weil dort steht, welche Zugangswege tragen; `befund:ontologie`
+einem Lauf, weil dort die ungeklärten Zugangswege stehen (die geklärten
+stehen in der Tabelle in `AGENTS.md` und nicht im Tracker); `befund:ontologie`
 blockiert Konvergenzknoten; `befund:bestand` sind Schulden gegen bereits
 gemergte Daten; `befund:verfahren` ändert Anweisungen.
+
+Ein Befund ist nur offen, solange er etwas braucht, was ein Lauf nicht
+leisten kann; sein Body endet mit „Erledigt, wenn". Behoben oder als Regel
+geschrieben, schließt ihn der PR (`SPEC.md` §13).
 
 **Kein `korpus:`-Label an einem `befund`.** Die `korpus:`-Werte sind das
 Protokoll der Suchabdeckung einer Behauptung. Ein Werkzeug- oder

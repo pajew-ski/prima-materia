@@ -632,6 +632,24 @@ Die beiden Ausgänge verhalten sich dabei unsymmetrisch:
 
 Deshalb trägt jede Verwerfung, worauf sie beruht: welche Stelle widerspricht, aus welcher Tradition, und ob außer ihr etwas geprüft wurde. Ohne das kann ein späterer Leser nicht entscheiden, ob sein Fund den Befund umstößt.
 
+### Der Lebenslauf eines Befunds
+
+Der Lebenslauf oben gilt für Behauptungen. Ein Befund über das Repo, die Ontologie, ein Werkzeug oder ein Verfahren hat keinen Knoten, der ihn tragen könnte, und hatte deshalb bis zum 2026-09-30 überhaupt keinen Lebenslauf: angelegt wurde er nach der Regel, jede Beobachtung eines Laufs werde ein Issue, geschlossen wurde er nach keiner. Die Folge war zählbar. Im September 2026 standen 419 angelegten 53 geschlossene Issues gegenüber, 174 Befunde waren offen, und kein Schritt des stehenden Auftrags verbrauchte sie. Ein Teil davon war erledigt, weil sein Inhalt längst in dieser Datei, in `AGENTS.md` oder in einem Test stand; ein anderer Teil beschrieb Werkzeuge, die dieses Repo gar nicht ändern kann.
+
+**Ein Befund ist ein Auftrag und keine Ablage.** Er endet an genau einer von drei Stellen, und die ersten beiden kommen ohne Issue aus:
+
+- **Behoben.** Shape, Test, Workflow, Knoten, Korrektur einer Datei. Der Befund steht dann im Body des PR, der ihn behebt, und nirgends sonst.
+- **Als Regel geschrieben.** Eine Zeile in der Tabelle der Zugangswege in `AGENTS.md`, ein Absatz in `AGENTS.md` oder `CLAUDE.md`, ein Abschnitt in dieser Datei. Die Datei ist dann der Ort des Befunds. Ein Issue, das neben ihr offen bleibt, ist eine zweite Fassung desselben Inhalts und veraltet gegen die erste, sobald sie jemand nachschärft; es kostet jeden folgenden Lauf Aufmerksamkeit und trägt nichts, was die Datei nicht trägt. Die Nummer in einer Klammer der Datei bleibt als Fallnachweis stehen, ein geschlossenes Issue trägt ihn genauso.
+- **Offen, weil der Lauf es nicht leisten kann.** Eine Entscheidung nach §11 oder §14, ein fehlendes Exemplar nach §10, ein ungeklärter Zugangsweg mit benanntem nächstem Versuch, eine Behebung außerhalb dieses Repos. Nur dieser Fall wird ein Issue, und sein Body schließt mit **„Erledigt, wenn"** und einer Bedingung, die ein anderer Lauf prüfen kann. Ein Befund ohne diese Bedingung wird nicht angelegt.
+
+**Vor jedem `issue_create` mit `befund` stehen deshalb drei Fragen, in dieser Reihenfolge.** Kann dieser Lauf ihn beheben oder als Regel schreiben? Dann tut er das, im Branch des Bündels oder in einem eigenen, statt anzulegen. Steht derselbe Gegenstand schon in einem offenen Befund? Dann ein Kommentar dort und kein zweites Issue. Nennt der Body seine Abschlussbedingung? Ohne sie ist er eine Notiz, und Notizen gehören in den PR.
+
+**Der PR, der einen Befund behebt oder als Regel schreibt, schließt ihn**, mit `Closes #<n>` im Body. Das gilt auch für einen Befund aus einem früheren Lauf, dessen Gegenstand dieser Lauf zufällig mit erledigt.
+
+**Lücken im Werkzeugsatz sind hier nicht behebbar.** `prima_repo_*`, `issue_*` und `gh_*` werden in `pajew-ski/data` gebaut; ein Coding Agent an diesem Repo kann sie weder ändern noch prüfen, ob sie geändert wurden. In dieses Repo gehört davon nur der Umweg, als Regel in `CLAUDE.md`. Die Lücke selbst wird als Issue in `pajew-ski/data` angelegt, wo ihr Schließen einen Ort hat.
+
+**Ein Werk, das nicht zu öffnen war, ist kein Werkzeugbefund**, sondern ein offener Posten nach §10 und §15, und behält sein Issue, bis das Exemplar gelesen ist. Was es über den Zugangsweg lehrt, geht zusätzlich in die Tabelle.
+
 ### Labels
 
 Labels sind kein Zustandsduplikat — den Zustand trägt offen oder geschlossen. Sie tragen zwei Dinge: den Bündelungsschlüssel für die Recherche und das Protokoll der Suchabdeckung.
