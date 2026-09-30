@@ -1,0 +1,74 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — four searches carried in the Rosicrucian manifestos
+#
+# All four were carried on 2026-09-30 while the three works were open, over the
+# whole of each of them, and three of the four came back empty. That is the
+# point of entering them: the corpus promises six capacities, threatens a
+# graded penalty, and names neither a means nor a mark, and until these nodes
+# stood the difference between a corpus nobody had asked and a corpus that
+# answers nothing was not readable off the graph.
+#
+# One note on the terms, because it decides what a negative finding here is
+# worth. The English witnesses read for these searches are proofread
+# transcriptions and a modern reset, so a term search in them is reliable. The
+# German prints of 1615 and 1616 are Fraktur scans in which the long s is read
+# as f throughout and the superscript e is a combining mark, so a term search
+# in those returns nothing for words that are plainly there; where the German
+# was consulted the text was normalised — long s to s, the combining e to a
+# following e, the double hyphen dropped — before searching, and the note says
+# so. An unnormalised nil result in those files is a statement about the scan.
+#
+
+pmp:RosicrucianDignitasSearch a pm:Searching ;
+    rdfs:label "Whether the corpus gives any mark by which worthiness could be established before the trial"@en, "Ob das Korpus irgendein Merkmal nennt, an dem Würdigkeit vor der Probe feststellbar wäre"@de ;
+    pm:searchedCorpus "Fama Fraternitatis and Confessio Fraternitatis, complete, in the English of Thomas Vaughan, The Fame and Confession of the Fraternity of R: C: (London, 1652); Chymische Hochzeit Christiani Rosencreutz, complete, in a modern reset English checked against the Strasbourg print of 1616" ;
+    pm:searchedFor "A passage stating, in advance of an outcome, what makes an applicant worthy or unworthy, light or heavy, destined to be plagued or not. The corpus turns on the distinction at four places — the invitation's him who is too light, the seven weights, the medicine withheld from the destined, and the unworthy who cry a thousand times and are not heard — and every one of them assigns a person to a class without saying how the class is recognised. If a mark exists anywhere, all four become testable at once." ;
+    pm:searchTerms "Whole-text search of the three works for: worthy, worthiness, unworthy (fifty-one hits across the three, every one of them either an assertion that somebody is or is not worthy or the requirement that a successor be worthy, none a criterion); merit, deserve, deserved, demerit; fit, fitter, unfit; prepared, prepare; qualified; too light, lighter, heavier, weigh, weighed, weight; destinated, destined; pure-hearted, false-hearted; eyes of an eagle; token, sign, mark, character. Read continuously and not only searched: the verse of the invitation, the Latin tablet of the cedars, the virgin's address on the eve of the weighing, the whole of the weighing and the sentence, the Confessio's passage on offering the treasures freely, and the conclusions of both manifestos." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-30" ;
+    dcterms:date "2026-09-30" ;
+    skos:note "Nothing, and the corpus is unusually explicit that there is nothing. The Confessio says outright that the worthiness of those who shall be accepted is not esteemed and known by man's carefulness but by the rule of their revelation, which is a statement that no mark is to be had; the invitation names the criterion of the weighing two days before the weighing and does not say what it measures; and the one weight of seven that is identified is identified in a parenthesis about the narrator's own modesty. The nearest thing to a mark in the whole corpus is the Bible: he that taketh all his pleasures therein shall know that he prepared for himself an excellent way to come in to the Fraternity. That is a preparation and not a criterion, and it is entered nowhere as one." ;
+    skos:note "Why the gap is worth exhibiting rather than noting. Four claims of this corpus have the same shape and the same defect, and a reader who has the shape can see at once which of the corpus's promises could fail and which could not. The mark, if it is anywhere, is in the Latin Confessio of 1615, in the Allgemeine Reformation, or in Andreae's own later writings, none of which was opened; and whoever opens them closes this in an afternoon." ;
+    skos:note "Limits. Three works of four named in the corpus, two of them in one seventeenth-century English translation. The Vaughan print is a translation whose own reviser calls it prolix and careless, so a criterion stated loosely in the German could in principle be lost in it; against that, the German of 1615 was consulted at the six articles and the Latin of the cedars tablet is printed in the German 1616 edition and was read there." .
+
+pmp:RosicrucianOperandiModusSearch a pm:Searching ;
+    rdfs:label "Whether the corpus names a practice for any of the six promised capacities"@en, "Ob das Korpus für irgendeines der sechs verheissenen Vermögen eine Praxis nennt"@de ;
+    pm:searchedCorpus "Fama Fraternitatis and Confessio Fraternitatis, complete, in the English of Thomas Vaughan (London, 1652); Chymische Hochzeit Christiani Rosencreutz, complete, in a modern reset English checked against the Strasbourg print of 1616" ;
+    pm:searchedFor "For each of the six capacities the Confessio promises — freedom from fear of hunger, poverty, sickness and age; living as from the beginning of the world to its end; nothing hidden by those beyond the Ganges or in Peru; one book read and all books understood; singing that draws pearls and moves princes; foreknowing the obscurations of the Church — a passage naming what is done to obtain it: a posture, a recitation, a breath, an interval, a diet, a number, an instrument, a place." ;
+    pm:searchTerms "Whole-text search of the three works for: pray, prayer, prayers, meditate, meditation (numerous, and every hit is either the narrator praying in the narrative or the injunction to read the Bible); fast, fasting; breath, breathe; posture, kneel; recite, recitation, invoke, invocation, conjure; number, seven times, thrice; hour, midnight, dawn; abstain, diet; instrument (all hits are the founder's mathematical instruments or musical ones); operation, process, processes (all hits in the Chymische Hochzeit and all of them the work of the tower). Read continuously: the whole of the Confessio, which is where the six stand; the Fama's account of the founder's journeys and of the first four brethren; and the sixth and seventh days of the Chymische Hochzeit." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-30" ;
+    dcterms:date "2026-09-30" ;
+    skos:note "No practice for any of the six. The corpus contains exactly one procedure, the work of the seven storeys of the tower on the sixth day of the Chymische Hochzeit, and what that procedure produces is not one of the six: it produces two living bodies, and the office conferred at the end of that narrative is authority over ignorance, poverty and sickness, which is the first of the six turned into a rank rather than obtained by a method. Everything else the corpus says about how its capacities are come by is that the founder learned them from the wise of Damascus and of Fez, that they stand in a Book M he translated, and that they are given by God to whom he pleases." ;
+    skos:note "This is the gap that decides how much of this corpus this holding can ever test, and it is the reason there is one pm:Yielding node in the tradition file and not seven. A capacity with no practice cannot carry a yielding claim: there is nothing for pm:byPractice to point at, and a node that supplied one would be reporting the compiler's guess at a method as the tradition's." ;
+    skos:note "Limits. The Book M, the Rota Mundi, the Protheus, the book H, the vocabulary of Theophrastus and the parchment book I are named in the Fama as the works in which the Fraternity's content stands, and not one of them exists. So the absence found here may be an absence in the manifestos rather than in the transmission they announce — which is itself the finding, because a transmission whose method is in books nobody has is one no reader can work." .
+
+pmp:RosicrucianTerminusSearch a pm:Searching ;
+    rdfs:label "Whether the corpus names any term after which its promised reformation would have failed to come"@en, "Ob das Korpus eine Frist nennt, nach deren Ablauf die verheissene Reformation ausgeblieben wäre"@de ;
+    pm:searchedCorpus "Fama Fraternitatis and Confessio Fraternitatis, complete, in the English of Thomas Vaughan (London, 1652)" ;
+    pm:searchedFor "A date, a span of years or an event by which the general reformation of divine and human things, the opening of the door to Europe, or the obscurations of the Church and how long they shall last, could be judged not to have occurred. The Confessio itself draws the eclipse analogy, which commits it to a date and a duration, so this is the corpus's own standard and not one imposed on it." ;
+    pm:searchTerms "Whole-text search of both manifestos for: year, years (thirty-one hits: the founder's ages and journeys, the hundred years of secrecy, the hundred and twenty of the vault, the hundred years within which the world is said to be much amended, and the year 1378); 120, hundred and twenty, hundred years; how long (one hit, the eclipse passage itself); last, shall last; before her end, before the end; time, times, in short time, ere long, shortly, presently, at hand, already, begin to appear; sixth candelabrum, Miranda sextae aetatis, Lord's Sabbath. Both works were also read continuously with the question in hand." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-09-30" ;
+    dcterms:date "2026-09-30" ;
+    skos:note "Every figure in the corpus is retrospective and every prospective statement is undated. The hundred and twenty years of the vault is a term that had elapsed before the work was printed, and it is stated as fulfilled; the hundred years of secrecy is a term the Fraternity set itself and reports as expired. On the other side: the Lord's Sabbath is almost at hand, a general reformation is to come, the door to Europe already doth begin to appear, the time shall come, ere long, in short time, presently thereupon shall ensue. Not one of them carries a year, and the eclipse analogy that would require one is drawn two pages from the end of the Confessio and left there." ;
+    skos:note "The asymmetry is the finding and it is exact: the corpus dates what it says has happened and does not date what it says will. A reader who wants the falsifying case has to supply the term himself, and the Confessio has already explained in advance why he will not get one, because the manifestation waits on the especial pleasure of God." .
+
+pmp:RosicrucianPonderaSearch a pm:Searching ;
+    rdfs:label "Whether the seven weights of the balance are named anywhere"@en, "Ob die sieben Gewichte der Waage irgendwo benannt werden"@de ;
+    pm:searchedCorpus "Chymische Hochzeit Christiani Rosencreutz, complete, in a modern reset English and in the Strasbourg print of 1616" ;
+    pm:searchedFor "An identification of the seven weights against which the guests are measured on the third day. The sentence of the same day grades its punishments by which weights each guest failed — first, third and fourth; second and fifth; sixth and seventh — so the numbering is operative, and if the seven are named the trial has a stated criterion and the whole corpus changes character." ;
+    pm:searchTerms "Whole-text search of the reset English for: weight, weights (forty-one hits, read one by one); scale, scales, balance; first weight, second weight, third weight, fourth weight, fifth weight, sixth weight, seventh weight; virtue, virtues; pride, proud. The 1616 German was normalised — long s to s, combining e to following e, double hyphen dropped — and searched for: Gewicht (nineteen hits, read one by one), Wag, Wage, zu leicht (three), Pondera, Libra. The passages of the weighing, of the sentence, of the banquet and of the five articles of the seventh day were read continuously in both." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:RosicrucianSeptemPondera ;
+    pm:searchedBy "prima-materia, 2026-09-30" ;
+    dcterms:date "2026-09-30" ;
+    skos:note "One of the seven is named and six are not, and the one is named incidentally. At the banquet of the third day the narrator declines to say what his place in the order was, if perhaps it might not be interpreted as pride in him, which is expressly against the fourth weight. That is the whole identification the work makes. The search is entered as a find rather than as a gap because the find changes what the trial is: a scale with one named division is a scale, and a reader now knows that the divisions are virtues severally and that pride is the fourth of them." ;
+    skos:note "What the search also settled, and it is the reason to record the terms. The five articles sworn on the seventh day are the nearest candidate for the missing six, and the fourth of them — that the knights desire not to employ this honour to worldly pride and high authority — is about pride, as the fourth weight is. The work never says the articles are the weights, there are five of the one and seven of the other, and this holding does not assert the identification. It is the cheapest next question at this corpus and it needs the critical edition's commentary and not another reading of the print." .
