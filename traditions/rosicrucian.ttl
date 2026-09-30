@@ -1,0 +1,451 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Rosicrucian manifestos, taken off the register
+#
+# Taken from traditions/registry-western-esoteric.ttl on the structure-driven
+# entrance of SPEC 14, and it earns the testability-driven priority of the same
+# section on its own: all three founding works state conditions of failure in
+# their operative passages, and the third states them as a graded trial with
+# published numbers. That is rarer in this holding than any capacity.
+#
+# The registration said what was expected of this corpus: a transmission whose
+# founding documents describe a body that did not exist before them, of
+# interest as a documented case of a transmission created by its own
+# announcement. The reading neither confirms nor refutes that, because the
+# question of whether the Fraternity existed is not decidable against these
+# three works, and this file enters no node on it. What the reading found
+# instead is the thing the registration could not have predicted: the third
+# work carries the clearest counter-case in this holding to two generalizations
+# that stood on six and on two witnesses. Both are examined at
+# examinations/what-the-royal-wedding-refutes.ttl and neither statement is
+# rewritten here.
+#
+# On the identifiers. The rule is the tradition plus the normalised term in the
+# language of the work. These works are German prints that carry their own
+# Latin: the tablet on the cedars is printed in Latin in the Strasbourg edition
+# of 1616, and the marginal glosses of that edition name the objects this file
+# enters — Sigillum de Nuptiis, In campis 3 Cedri 3 Templa, Tabella
+# Mercurialis, Libra aurea, Pondera, Satellites. The identifiers are taken from
+# that Latin where the edition supplies it, which is also the form the
+# secondary literature uses, and are English where it does not. No identifier
+# is formed from the English translation.
+#
+
+pmt:Rosicrucian a pm:Tradition ;
+    rdfs:label "Rosicrucian transmission"@en, "Rosenkreuzerische Überlieferung"@de ;
+    skos:definition "The transmission begun by three anonymous works printed between 1614 and 1616, which announce an order, a corpus and a set of capacities, and which state at every point of admission what befalls the applicant who is not fit for it."@en ;
+    skos:note "What kind of witness these works are, and it has to be said before any node is read. All three are anonymous, none reports a practice the writer says he carried out, and the third is narrated as a dream inside a dream. The attribution is contested in the current literature rather than settled, and that it is contested is all this file asserts. The reference for the state of the question is Lyke de Vries, Reformation, Revolution, Renovation (Leiden: Brill, 2021), and the reference is second-hand: the work was not opened. Its Open Access copy at OAPEN answered every address tried with a proof-of-work challenge, one of them with a status of 200 and the challenge page in the body, and the finding is at prima-materia#814. What is reported of it — that it calls the authorship a highly contested topic, postpones the question programmatically, heads its third chapter Authorship in Question, and uses the plural the authors throughout — comes from a research report and not from the page, and the page numbers that report gave are deliberately not repeated here. No node of this file rests on de Vries: it is neither a dcterms:source nor a pm:evidenceFrom, and if it were, the reading would not be finished. Johann Valentin Andreae claimed only the third work, and called it a ludibrium. This file therefore enters no pm:Attributing node for any of the three: an ascription to Andreae or to the Tübingen circle is a scholarly position and belongs at a protocol or in an issue."@en ;
+    skos:note "The corpus is dated earlier than its printing and the difference matters for any claim of independence. Adam Haslmayr had the Fama in manuscript in 1610 and printed his answer to it in 1612, two years before the Fama itself; Benedictus Figulus had a copy in the same year. Both facts are taken from de Vries at second hand for the reason given in the note above and were not read at the page; unlike the judgement about the authorship they are not contested, and the Haslmayr print of 1612 is itself the primary witness for them, unopened here. So the text is at latest of 1610, which puts it before every printed response to it and therefore before the reception this holding would otherwise have to discount."@en ;
+    skos:note "The contact route stays at documented and the reading did not move it. These works name their own antecedents in their own voice: the wise of Damascus and of Fez, the Book M, Theophrastus by name and with the statement that he was not of the Fraternity but had read the Book M, Adam, Moses and Solomon as holders of the same philosophy, Plato, Aristotle and Pythagoras as partial hitters of the mark. A transmission that lists its sources is not an independent witness to anything they carry, and no node here is offered for a convergence."@en ;
+    skos:note "Read at the wording on 2026-09-30, and the editions are named because they differ in a way that decides what may be cited. The Chymische Hochzeit was read complete, all seven days, in the modern reset English printed as The Chymical Wedding of Christian Rosenkreutz (archive.org identifier ChymicalWeddingOfChristianRosenkreutz), and every passage a node rests on was then checked against the German original, Chymische Hochzeit: Christiani Rosencreutz. Anno 1459 (Strasbourg: Lazarus Zetzner, 1616), read in the Internet Archive scan chymischehochzei00rose. The Fama and the Confessio were read complete in the English of Thomas Vaughan, The Fame and Confession of the Fraternity of R: C: (London, 1652), in the proofread Wikisource transcription of that print. A. E. Waite's Real History of the Rosicrucians of 1887 was deliberately not used as the witness for any node: Waite states at his chapter four that his Fama and Confessio are a searching revision of Vaughan rather than a translation, and at his chapter five that his Chymische Hochzeit is compressed by the omission of all irrelevant matter and dispensable prolixities. A compressed text cannot carry an absence."@en ;
+    skos:note "What was not read. The Allgemeine Reformation printed with the Fama in 1614, which is a translation of Boccalini and stands in front of it, was not opened. The Latin Confessio of 1615 was not compared with the German. Andreae's Vita ab ipso conscripta, which is where the word ludibrium stands, was not opened; it is named in this file only as reported by de Vries. The critical edition of the corpus, Johann Valentin Andreae, Gesammelte Schriften, vol. 3, Rosenkreuzerschriften, ed. Roland Edighoffer (Stuttgart: frommann-holzboog, 2010), with its variant apparatus and its commentary volume 3.1, was not obtained; where this file records a reading of the 1616 print it means that print and not the critical text."@en ;
+    skos:note "One consequence of the edition situation should be stated where a reader will meet it. The Chymische Hochzeit exists in three incompatible paginations — the Strasbourg print of 1616 to p. 143, the Foxcroft English of 1690 to p. 193, and the modern reset to p. 88 — so every source in this file locates by day first and by page of a named edition second. The last page of the work is a printer's note that about two leaves in quarto are missing, and the narrator's fate is therefore reported in a bracket and not by the narrator."@en ;
+    pm:principalCorpus "Fama Fraternitatis; Confessio Fraternitatis; Chymische Hochzeit Christiani Rosencreutz" ;
+    pm:corpusWork pmw:FamaFraternitatis, pmw:ConfessioFraternitatis, pmw:NuptiaeChymicae, pmw:ReformatioGeneralis ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan, The Fame and Confession of the Fraternity of R: C: (London, 1652), the six articles of agreement" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:FamaFraternitatis a dcterms:BibliographicResource ;
+    rdfs:label "Fama Fraternitatis (1614)"@en, "Fama Fraternitatis (1614)"@de ;
+    skos:note "Opened on 2026-09-30 and read complete in the English of Thomas Vaughan, London 1652. The work carries no internal division — no chapters, no numbered paragraphs — so a place in it is given by the passage and by the page of a named edition, and this file gives the passage. The German print of 1615 is available in the Internet Archive scan famafraternitati00andr and was consulted for the six articles only."@en .
+
+pmw:ConfessioFraternitatis a dcterms:BibliographicResource ;
+    rdfs:label "Confessio Fraternitatis (1615)"@en, "Confessio Fraternitatis (1615)"@de ;
+    skos:note "Opened on 2026-09-30 and read complete in the English of Thomas Vaughan, London 1652, which prints it with the preface announcing thirty-seven reasons. The work divides into fourteen capita and the division is stable across prints, so a place in it is given by caput where the passage sits in one; the Vaughan print of 1652 runs the text without caput numbers, and this file therefore locates by the passage."@en .
+
+pmw:NuptiaeChymicae a dcterms:BibliographicResource ;
+    rdfs:label "Chymische Hochzeit Christiani Rosencreutz (1616)"@en, "Chymische Hochzeit Christiani Rosencreutz (1616)"@de ;
+    skos:note "Opened on 2026-09-30 and read complete, all seven days, in a modern reset English and checked passage by passage against the Strasbourg print of 1616. It is the only one of the three works that narrates a procedure, and the only one that states what happens to those who fail at its stations. Its canonical locus is the day."@en .
+
+pmw:ReformatioGeneralis a dcterms:BibliographicResource ;
+    rdfs:label "Allgemeine Reformation der gantzen Welt (1614)"@en, "Allgemeine Reformation der gantzen Welt (1614)"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is printed in front of the Fama in the Kassel edition of 1614 and is a German translation of a chapter of Boccalini's Ragguagli di Parnaso; a run that wants to know how much of the Fama's programme is Boccalini's goes here. The Wellcome scan b28759345 of the 1781 reprint carries it with the Fama and the Confessio."@en .
+
+#
+# The capacities the Confessio promises. It puts them as a series of
+# questions — were it not excellent that — and this file enters each one as
+# its own node, because the strict completeness of SPEC 15 applies to
+# capacities and a list read as one capacity is a list nobody can count.
+#
+
+pmc:RosicrucianNonTimereFamemMorbumSenectutem a pm:Conceptualizing ;
+    rdfs:label "Not having to fear hunger, poverty, sickness or age"@en, "Hunger, Armut, Krankheit und Alter nicht mehr fürchten müssen"@de ;
+    skos:definition "The first of the capacities the Confessio names, and it names all four together: that one would not need to care nor to fear hunger, poverty, sickness and age. The work returns to it later in its own voice, saying of the man who has come so far that neither poverty nor sickness can hurt him that he must be an insatiable creature if he then gives himself to idle things."@en ;
+    skos:note "The second passage is the reason this is entered as a capacity and not as a figure of speech. A work that argues about how such a man ought then to behave has treated the state as obtained."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan, The Fame and Confession of the Fraternity of R: C: (London, 1652), the passage of the six questions, and again at the passage on the tincture of metals" .
+
+pmc:RosicrucianVitaAbInitioAdFinem a pm:Conceptualizing ;
+    rdfs:label "Living as though from the beginning of the world to its end"@en, "Leben, als hätte man von Anfang der Welt an gelebt und lebte bis an ihr Ende"@de ;
+    skos:definition "The second capacity of the same series: that one could always live so as if one had lived from the beginning of the world, and moreover as one should still live to the end of it. The work does not say whether this is length of life or knowledge of the whole span, and the two readings are not separated in the wording."@en ;
+    skos:note "The ambiguity is the reason this node says what it says and no more. The Fama elsewhere reports the founder dying at over a hundred and having never experienced disease in his body, which would support the first reading; the Confessio's own next question is about reading one book and thereby knowing all books, which would support the second. Nothing in either work decides it, and a node that decided it would be reporting a preference."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage of the six questions" .
+
+pmc:RosicrucianNihilOccultumUltraGangen a pm:Conceptualizing ;
+    rdfs:label "Nothing hidden by those beyond the Ganges or in Peru"@en, "Nichts verborgen bei denen jenseits des Ganges oder in Peru"@de ;
+    skos:definition "The third capacity: that dwelling in one place, neither the people who dwell beyond the river Ganges in the Indies could hide anything, nor those who live in Peru be able to keep their counsels secret from you. The capacity is stated as knowledge of what distant persons conceal, not as sight of distant places."@en ;
+    skos:note "The distinction is worth keeping because it is the work's own. What is named is the failure of concealment and not the perception of a scene, and the two are differently testable: the first requires knowing what somebody meant to keep back, which no arrangement of a viewing can supply."@en ;
+    skos:note "No practice is named for it anywhere in the three works, which is why this node carries no pm:Yielding. The search that establishes that absence stands at pmp:RosicrucianOperandiModusSearch."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage of the six questions" .
+
+pmc:RosicrucianLiberUnusProOmnibus a pm:Conceptualizing ;
+    rdfs:label "One book read, and all books thereby understood and remembered"@en, "Ein Buch gelesen, und damit alle Bücher verstanden und behalten"@de ;
+    skos:definition "The fourth capacity: that one could read in one only book and withal by reading understand and remember all that which in all other books — those that have been, those that are now, and those that shall hereafter come out — has been, is and shall be learned and found out."@en ;
+    skos:note "The forward reach of the clause is the part that admits of no evidence and is stated anyway: books not yet written are included. It is also the clearest case in this corpus of a capacity given without any procedure, and the Fama's Book M, which the founder is said to have translated in a year, is the nearest thing to an object for it."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage of the six questions" .
+
+pmc:RosicrucianCantusQuiLapidesTrahit a pm:Conceptualizing ;
+    rdfs:label "Singing that draws pearls instead of rocks and moves princes instead of Pluto"@en, "Gesang, der Perlen statt Felsen zieht und Fürsten statt Pluto bewegt"@de ;
+    skos:definition "The fifth capacity, and the only one of the six with a named means: that one could so sing that instead of stony rocks one draws to oneself pearls and precious stones, instead of wild beasts spirits, and instead of hellish Pluto moves the mighty princes of the world."@en ;
+    skos:note "The construction is a threefold correction of the Orpheus story, and each limb replaces the object Orpheus is said to have moved with a greater one. That makes the sentence a claim about the singing and also a claim about the older account, and the work gives no term, no interval and no sign by which the singer would know it had worked."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage of the six questions" .
+
+pmc:RosicrucianPraescientiaObscurationum a pm:Conceptualizing ;
+    rdfs:label "Foreknowing the obscurations of the Church and how long they will last"@en, "Die Verfinsterungen der Kirche vorherwissen und wie lange sie dauern"@de ;
+    skos:definition "A capacity stated with its own analogy and its own ground: as the mathematician or astronomer can long before see and know the eclipses which are to come, so the Fraternity may verily foreknow and foresee the darkness or obscurations of the Church, and how long they shall last. The ground given is the characters and letters which God has imprinted in the creation and in the Bible, from which the Fraternity says it borrowed its magical writing."@en ;
+    skos:note "This is the one capacity in the corpus that states a testable form. An eclipse analogy commits the claimant to a date and a duration, and the work draws the analogy itself rather than having it drawn for it. No date and no duration is given anywhere in the three works, and the search for one is at pmp:RosicrucianTerminusSearch."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage on the characters and letters" .
+
+pmc:RosicrucianLinguaMagica a pm:Conceptualizing ;
+    rdfs:label "A made language in which the nature of all things is expressed"@en, "Eine gemachte Sprache, in der die Natur aller Dinge ausgedrückt ist"@de ;
+    skos:definition "The Fraternity states that its first four members made a magical language and writing with a large dictionary, which it says it uses daily; and the Confessio adds that the language was formed out of the characters God imprinted in the creation, that in it the nature of all things is expressed and declared, and that this is why the Fraternity is not eloquent in other languages, those being disagreeing with the languages of Adam and Enoch and hidden through the confusion of Babel."@en ;
+    skos:note "Two claims stand together here and only the second is a capacity: that such a language was made, and that it expresses the nature of what it names. The second is the one that could fail, and the failure condition the work itself supplies is its own: a language of that kind would make its speakers bad at other languages, which the Confessio offers as an explanation and which is also a prediction about them."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage on the characters and letters; with Fama Fraternitatis, the passage on the first four brethren" .
+
+pmc:RosicrucianCuratioGratis a pm:Conceptualizing ;
+    rdfs:label "Curing the sick, and for nothing"@en, "Die Kranken heilen, und zwar unentgeltlich"@de ;
+    skos:definition "The capacity the Fama states in the form of an obligation rather than a promise: the first of the six articles is that none of the brethren should profess any other thing than to cure the sick, and that gratis. The work reports one case, that the brother I. O. cured a young Earl of Norfolk of leprosy in England, and it reports as an obstacle to the first four brethren the unspeakable concourse of the sick."@en ;
+    skos:note "The reported case is the only named cure in the three works and it names a disease with a visible course, which makes it the one claim of this corpus a contemporary could in principle have checked. The work gives no date, no name for the earl, and no account of the means."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan (London, 1652), the six articles of agreement, and the passage on the death of I. O." .
+
+pmc:RosicrucianEquitesLapidisAurei a pm:Conceptualizing ;
+    rdfs:label "Set over Ignorance, Poverty and Sickness, to handle them at pleasure"@en, "Über Unwissenheit, Armut und Krankheit gesetzt, mit ihnen nach Belieben zu verfahren"@de ;
+    skos:definition "The capacity conferred at the end of the Chymische Hochzeit, at the installation of the guests as Knights of the Golden Stone: among other privileges they are set over Ignorance, Poverty and Sickness, to handle them at their pleasure. The three are the same three the Confessio's first promise names, now given as an office rather than as a condition."@en ;
+    skos:note "It is conferred by ceremony and after an oath, not by a procedure, and the work states no means by which the office is exercised. That makes it the corpus's own statement of what the whole seven days were for, and it is worth noting that the thing conferred is authority over three privations and not any of the six capacities of the Confessio."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg: Lazarus Zetzner, 1616), the Seventh Day, the installation after the five articles; read in the modern reset English and checked against the 1616 print" .
+
+pmc:RosicrucianImaginesAnimatae a pm:Conceptualizing ;
+    rdfs:label "Two small human bodies made and then given souls"@en, "Zwei kleine menschliche Körper gemacht und dann beseelt"@de ;
+    skos:definition "The one operative capacity the corpus narrates being exercised. On the seventh floor of the tower the ashes of the beheaded bird are moistened, heated, cast in two moulds, and opened as two transparent images four inches long, a male and a female, lithe and fleshy and without life; they are then fed the bird's blood drop by drop until they reach full human size, and the soul is afterwards let into each of them three times through a kindled trumpet directed at a hole in the roof."@en ;
+    skos:note "What the narrator says about the lights on the table is the reason this node is here rather than in a file of allegories. He states that the old man set the torches so that the four workers should not observe when the soul entered, that they would not have noticed it, and that he himself saw the hole open and a bright stream of fire pass down the tube because he had twice before seen the flames — and that he let his three companions keep their own belief. A text that distinguishes what the operator was allowed to see from what happened has made a claim about a procedure and not only told a story."@en ;
+    skos:note "The same passage says of the other guests that they were told they were to work in gold, which is indeed a piece of this art but not the most principal, most necessary and best, and that they were given a part of the ashes so that they should imagine the whole bird had been provided for the sake of gold. That is the Fama's parergon clause put as an event, and it stands at pmc:RosicrucianAurumParergon."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Sixth Day, the seventh storey of the Tower of Olympus" .
+
+pmp:RosicrucianOpusTurris a pm:Practicing ;
+    rdfs:label "The work of the seven storeys of the tower"@en, "Das Werk der sieben Geschosse des Turms"@de ;
+    skos:definition "The graded procedure of the sixth day, carried by the guests under the direction of an old man and a virgin: the dissolving of the beheaded bodies by water heated through a wrapped head; the drawing of the matter into a golden globe; the heating of the globe by sunlight thrown from mirrors on all sides; the cutting of the cooled globe with a pointed diamond and the finding of a white egg; the ripening of the egg in warm sand; the feeding of the hatched bird with the blood of the beheaded, through which it passes from black to white to variegated; the bath in which it loses its feathers and the blue stone the bath boils down to; the bird's own beheading at the third conjunction; and the burning of its body to ashes."@en ;
+    skos:note "The colour sequence is stated as an effect of successive feedings and not of successive heatings, which is how it is usually given in the alchemical literature, and the work names the food: the blood of the beheaded diluted with prepared water, and then perhaps the blood of another of the royal persons. The uncertainty is the narrator's and is left here as his."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Sixth Day, the first six storeys of the Tower of Olympus" .
+
+pmc:RosicrucianOpusTurrisYieldsImagines a pm:Yielding ;
+    rdfs:label "The work of the tower produces the two living bodies"@en, "Das Werk des Turms bringt die zwei lebenden Körper hervor"@de ;
+    pm:byPractice pmp:RosicrucianOpusTurris ;
+    pm:yieldsCapacity pmc:RosicrucianImaginesAnimatae ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "Entered as the work states it and not as the reader may wish to take it. The narrative is a first-person report of a dream, so the mode is textual attestation of what the work claims and not a first-person report of a practice; nothing in the work says that the writer performed this anywhere but in the vision."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Sixth and Seventh Days" .
+
+pmc:RosicrucianAvisVinciendaAnteCibum a pm:Cautioning ;
+    rdfs:label "Make the bird fast before feeding it"@en, "Den Vogel festmachen, ehe man ihn füttert"@de ;
+    skos:definition "A caution inside the procedure, with its consequence stated and then borne out in the same paragraph: before the hatched bird is given anything to eat it is to be made fast, otherwise it would give the workers work enough. After the first feeding it bites and scratches so that, could it have had its will upon any of them, it would have despatched him."@en ;
+    pm:cautionsAbout pmp:RosicrucianOpusTurris ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "Worth entering because of the class it belongs to and not because of the danger. The consequence is stated before the event and is then reported as having occurred, so the work supplies both the rule and the case for it; most cautions in this holding supply one or the other."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Fourth Storey of the Tower, Sixth Day" .
+
+#
+# The conditions of admission, and what the works say befalls the applicant
+# who does not meet them. This is the part the testability-driven entrance of
+# SPEC 14 was looking for.
+#
+
+pmp:RosicrucianExaminatioAnteNuptias a pm:Practicing ;
+    rdfs:label "Keeping watch and examining oneself before the wedding"@en, "Wache halten und sich selbst betrachten vor der Hochzeit"@de ;
+    skos:definition "What the invitation requires of the invited, in five lines of verse and in the imperative: keep watch, examine thyself, and bathe thoroughly. The German of 1616 runs Halt Wacht, Dich selbst betracht, Wirstu dich nit fleissig baden, die Hochzeit kan dir schaden."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "The narrator performs it as an examination of his own understanding, conduct and motives, and finds himself wanting on all three; the bathing is not reported as carried out. What the practice consists in is therefore stated by the invitation and shown by the response, and the two do not fully agree."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the First Day, the verse of the invitation" .
+
+pmc:RosicrucianQuiNimisLevis a pm:Conceptualizing ;
+    rdfs:label "Harm to him who fails here; let him beware who is too light"@en, "Schaden hat, wer hier versäumt; hüte sich, wer zu leicht ist"@de ;
+    skos:definition "The failure condition of the invitation, stated in the invitation itself and in advance of everything it invites to: if thou shouldst not bathe thoroughly, the wedding may work thy bane; bane comes to him who faileth here; let him beware who is too light. The German of 1616 reads Schad hat, wer hie verzeucht, Huet sich wer ist zu Leicht."@en ;
+    skos:note "The last line is the reason the whole of the third day is anticipated here. Too light is not a figure: on the third day the guests are put on a golden balance against seven weights, and the ones who cannot raise them are said in the same words to have been found too light. So the invitation names the criterion of a trial the invited will not see for two days, and it names it in the term the trial itself uses."@en ;
+    skos:note "This is a failure condition in the sense SPEC 15 asks for and not a caution: it states an outcome, it is prior to the operation, and the operation supplies the measurement. What it does not state is what too light means in advance of the measurement, and nothing in the work supplies that. The search stands at pmp:RosicrucianDignitasSearch."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the First Day, the verse of the invitation" .
+
+pmc:RosicrucianNuptiaePraesupponuntExaminationem a pm:Presupposing ;
+    rdfs:label "The self-examination must precede the journey"@en, "Die Selbstprüfung muss der Reise vorausgehen"@de ;
+    pm:dependentStep pmp:RosicrucianOpusTurris ;
+    pm:priorStep pmp:RosicrucianExaminatioAnteNuptias ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The wedding may work thy bane; bane comes to him who faileth here. Stated in the invitation before the journey begins, and made concrete on the third day, where those found too light are stripped, branded according to which weights they failed, hunted out with rods, whips or dogs, or punished in body and life."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "Stated necessity and not prescribed order, because the consequence is quotable and stands in the same five lines as the requirement. The dependent step is named as the work of the tower rather than as attendance at the wedding: attendance is what the weighing decides, and the work of the tower is the thing only the weighed survivors are admitted to."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the First Day, the verse of the invitation, with the sentence of the Third Day" .
+
+pmc:RosicrucianQuatuorViae a pm:Conceptualizing ;
+    rdfs:label "Four ways offered, three passable, and no way back"@en, "Vier Wege angeboten, drei begehbar, und kein Weg zurück"@de ;
+    skos:definition "The tablet on the cedars, printed in Latin in the 1616 edition, offers the traveller a choice of four ways to the royal court. The first is short but dangerous and leads into rocky places scarcely passable. The second is longer and takes him about; it is plain and easy if by help of the magnet he turns neither left nor right. The third is the royal way, which affords a joyful journey, and it has so far scarcely been allotted to one in a thousand. By the fourth no man shall reach the place, because it is a consuming way, practicable only for incorruptible bodies. Whichever he enters is the one destined for him by immutable fate, and he cannot go back in it save at great peril to life."@en ;
+    skos:note "Three things in this passage are of a kind this holding rarely gets from one place. A stated rate: the royal way has scarcely been allotted to one in a thousand, in the German of 1616 das vnter tausent ich eben der sein solte der den Koeniglichen Weg erwehlte. A way declared impassable in advance and offered anyway. And an irreversibility with a stated cost, which the narrator then tests: having entered a way by accident, he turns and finds a wind so strong against him that he concludes it would cost him his life, and goes on."@en ;
+    skos:note "The stated rate is what makes this passage examinable at all, and it is also the place to be careful. One in a thousand is said of the allotment of the third way and not of the outcome of the journey, so it is a claim about how the ways are distributed among travellers and not about how many arrive. The work gives no figure of the second kind until the third day, where it gives one for the weighing instead."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Second Day, the Latin tablet on the three cedars, Quatuor viarum optionem per nos tibi sponsus offert" .
+
+pmc:RosicrucianRedeasDumLicet a pm:Cautioning ;
+    rdfs:label "If you know yourself faulty, go home while you still can"@en, "Weisst du dich fehlerhaft, so kehre heim, solange es noch geht"@de ;
+    skos:definition "The closing sentence of the same tablet, and it is a self-warning against the thing the tablet has just invited to: but, ho, beware, you know not with how much danger you commit yourself to this way, for if you know yourself to be obnoxious by the smallest fault to the laws of our King, I beseech you, while it is still possible, to return swiftly to your house by the way you came."@en ;
+    pm:cautionsAbout pmc:RosicrucianQuatuorViae ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "The caution supplies an exit and attaches a term to it — while it is still possible — and the same tablet has already said that once a way is entered there is no going back save at peril of life. So the exit exists only before the choice, and the narrator loses it by accident rather than by decision."@en ;
+    skos:note "The standard of the fault is the smallest fault against laws the traveller has not been shown, and the judgement of whether he is guilty of one is left to him. That is the corpus's characteristic construction: the applicant is asked to apply a criterion he is not given."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Second Day, the Latin tablet on the three cedars" .
+
+pmc:RosicrucianTesseraeHospitum a pm:Conceptualizing ;
+    rdfs:label "Three gates, and at each a token the gate itself issues"@en, "Drei Tore, und an jedem ein Zeichen, das das Tor selbst ausgibt"@de ;
+    skos:definition "The graded passage into the castle. At the first gate the porter demands the letter of invitation, is satisfied by it, sells the traveller a golden token bearing S.C. for his bottle of water, and gives him besides a sealed letter to the second porter. At the second gate the second porter reads that letter, drives back a chained lion, and sells a token bearing S.M. for the traveller's salt. At the third gate the name is written in a vellum book and the true guest token is given, smaller than the others and much heavier, bearing S.P.N.; new shoes are given and the old ones are to be given away to the poor."@en ;
+    skos:note "The arrangement is the one this holding has from the ascent literature: the token of the next station is issued at the last, and the first token is the invitation, which the bridegroom sent. Nothing the traveller brought of himself opens any gate; what he gives up at each is a consumable he was carrying — water, salt — and in the third case his shoes."@en ;
+    skos:note "That is what makes the next node a counter-case rather than a detail, and it is examined at examinations/what-the-royal-wedding-refutes.ttl."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Second Day, the three gates; the tablets Procul hinc, procul ite profani and Date et dabitur vobis" .
+
+pmc:RosicrucianPortaAdCampanamClausa a pm:Conceptualizing ;
+    rdfs:label "The gate shuts at the bell and the porter cannot open it again"@en, "Das Tor schliesst beim Glockenschlag, und der Pförtner kann es nicht wieder öffnen"@de ;
+    skos:definition "The failure stated at the token-issuing gate. As the traveller lingers with the second porter it begins to ring in the castle, the porter tells him to run or else all the pains and labour he has hitherto undergone will serve to no purpose, and the lights above begin to be put out. He gets in beside the virgin who extinguishes them; the gate is suddenly clapped to, a part of his coat is locked out and has to be left behind, and neither he nor they who stood ready without and called at the gate could prevail with the porter to open it again. The porter then delivers the keys to the virgin, who takes them into the court."@en ;
+    skos:note "Four features of this passage decide what it is worth. The station is one that hands over its own token. The failure is at that station and not before it. It is named as having happened to persons — those who stood without and called — and not stated as a rule. And the refusal is put beyond the officiant: the porter cannot reopen, and he gives the keys away. A run that wanted a token-handing gate with a stated failure could not construct a cleaner one."@en ;
+    skos:note "A second failure at the same gates is stated in passing and is of the same kind: the first porter demands the letter of invitation, and the narrator says how glad he was to have brought it, for how easily might he have forgotten it, as it also chanced to others, as the porter himself told him. That is a reported class of applicants who came to the gate and lacked the token the transmission had supplied them."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Second Day, the second gate and the closing of it at the bell" .
+
+#
+# The weighing. A trial the transmission controls entirely, with a stated
+# criterion, a published distribution of outcomes and graded exclusion.
+#
+
+pmp:RosicrucianLibraAurea a pm:Practicing ;
+    rdfs:label "The weighing on the golden balance"@en, "Die Wägung auf der goldenen Waage"@de ;
+    skos:definition "Announced the evening before and carried out on the morning of the third day. A balance entirely of gold is hung up in the middle of the hall; on a table covered with red velvet stand seven weights, first a fairly big one, then four little ones, then two great ones, and they are said to be heavier in proportion to their bulk than any man can believe. Two hundred armoured men are divided into seven bands by the number of the weights, one man of each band taking charge of his weight and carrying a rope beside his sword. Each guest steps up in his order and the weights are put in against him one by one; he who cannot raise a weight is flung out of the scale, bound, laughed at by the bands and delivered to the band of the weight he failed."@en ;
+    skos:note "The marginal glosses of the 1616 print name the parts: Libra aurea for the balance, Pondera for the weights, Satellites for the armed men. The identifiers of this file are taken from them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Third Day, the Inquisition at the golden balance" .
+
+pmc:RosicrucianSeptemPondera a pm:Conceptualizing ;
+    rdfs:label "Seven weights, of which one is named and six are not"@en, "Sieben Gewichte, von denen eines benannt ist und sechs nicht"@de ;
+    skos:definition "What the work says the weights are. It does not say. The seven are described by size and by their disproportionate heaviness, and the sentence of the following judgement grades the punishments by which of them a guest failed, so the numbering is operative. Only one is identified, and incidentally: the narrator declines to name his own place in the order lest it be interpreted as pride in him, which he says is expressly against the fourth weight."@en ;
+    skos:note "The asymmetry is the finding. A trial whose grading is published weight by weight, and whose weights are named once out of seven and only in a parenthesis, gives its candidates a scale they cannot prepare against and gives its readers a scale they cannot reconstruct. That is the same construction as the smallest fault against unseen laws at the cedars, one level in."@en ;
+    skos:note "Various eminent virtues beyond the narrator's hopes were found in many: one could stand out this, the second another, some two, some three, four or five, but few could attain to the just perfection. So the weights measure virtues, in the plural and severally, and the work says so without saying which."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Third Day, the seven weights, with the parenthesis on the fourth weight at the banquet of the same day" .
+
+pmc:RosicrucianDistributioPonderum a pm:Conceptualizing ;
+    rdfs:label "Seven, twenty-one, thirty-five, thirty-five, twenty-one, seven, one"@en, "Sieben, einundzwanzig, fünfunddreissig, fünfunddreissig, einundzwanzig, sieben, einer"@de ;
+    skos:definition "The work publishes the outcome of its own trial as a count. Of the prisoners, those who weighed one were seven; those who weighed two, twenty-one; those who weighed three, thirty-five; those who weighed four, thirty-five; those who weighed five, twenty-one; those who weighed six, seven; and he who came to the seventh and yet could not well raise it was one only. Besides these, of them who wholly failed there were many, and of those who drew all the weights from the ground, but few. The narrator says he numbered them as they stood before him and noted them in his table-book, that among the hundred and twenty-six who weighed anything none was equal to another, and that he would name them all with each man's weight were it not as yet forbidden him."@en ;
+    skos:note "The numbers are in the 1616 print as they are in the English, and they are the binomial coefficients of seven taken one to six with the seventh case set at one. So the distribution is constructed and not counted, and the narrator's claim to have counted it stands beside a series no counting produces. The work asserts both in the same paragraph."@en ;
+    skos:note "Whatever the numbers are, they are the thing this holding has almost none of: a transmission stating how many of its candidates failed and in what proportions. Read as a report it is falsified by its own arithmetic; read as a statement of what the transmission holds about its candidates it says that most fail, that the failures are graded, and that no two candidates fail alike. The second reading is the one the nodes of this file rest on, and it does not need the numbers to be true."@en ;
+    skos:note "Two further rate statements belong beside it. After the gentry, the learned and the unlearned had passed, in each condition perhaps one, it may be two, but for the most part none, was found perfect. And of the cheaters, the most part could not abide the trial and were jerked out with whips, so that of so great a throng so few remained that the narrator says he is ashamed to reveal their number."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Third Day, the passage on the number of the prisoners, p. 52 of the 1616 print" .
+
+pmc:RosicrucianSententiaGradata a pm:Conceptualizing ;
+    rdfs:label "The sentence graded by which weights were failed"@en, "Das Urteil, abgestuft nach den versäumten Gewichten"@de ;
+    skos:definition "The judgement read out on the same day, and it is assigned by the combination of weights each guest failed. The lords and potentates keep their lives and are dismissed, expressly rejected by the Order and told never henceforth to covet an entrance so inconsiderately. Those who did not stand up to the first, third and fourth weight are stripped stark naked and so sent forth. Those found too light in the second and fifth are besides stripping branded with one, two or more brand-marks according as each was lighter or heavier. Those drawn up by the sixth or seventh and not by the rest are dealt with somewhat more graciously; and for every combination there was a certain punishment ordained, which the narrator says is too long to recount. Those who the day before separated themselves of their own accord go out at liberty without any blame. The convicted cheaters who could move none of the weights are punished in body and life, with the sword, halter, water and rods, and the execution is to be inviolably observed as an example to others."@en ;
+    skos:note "This is graded exclusion and not graded attainment, and the difference is the whole of what it costs a generalization this holding already holds. Every grade is a way of being put out of the castle: dismissed with a request never to come again, stripped, branded, hunted, drowned or hanged. Nobody who failed a weight receives a lesser rank inside the system, and the work says in the dismissal itself that the lords are rejected by this our Order."@en ;
+    skos:note "At the gate each of the dismissed lords is given out of a cup a draught of forgetfulness, so that he might have no further memory of misfortune. A trial that erases the memory of its own failures in the same passage in which it grades them is worth recording as such."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Third Day, the sentence read in the garden, p. 52 of the 1616 print" .
+
+pmc:RosicrucianVeniaSponteConfessis a pm:Conceptualizing ;
+    rdfs:label "Those who confessed their unworthiness are weighed without penalty"@en, "Die freiwillig Bekennenden werden ohne Strafe gewogen"@de ;
+    skos:definition "The waiver the same day grants, and it is granted for a declaration and not for an attainment. On the evening before the trial the guests are told that whoever does not trust himself should stand aside, that he whose conscience pricks him shall be left in the hall that day and be freed by the morrow but must come hither never again. Nine stay; they are bound with cords that none could cut and left in darkness. In the morning they are unbound and placed where they can see the scales, and after the whole Inquisition is finished a captain asks that these poor men who acknowledged their misunderstanding be set upon the scale too, without their incurring any danger of penalty, and only for recreation's sake. Most of them miscarry, and are neither laughed at nor scourged but peaceably placed on one side. The narrator outweighs all seven."@en ;
+    skos:note "Two things are waived and they are not the same. The penalty of the trial is waived for those who declared themselves unworthy, and the trial is not: they are weighed. What is not waived at all is the exclusion for those who took the offered exit and left — they go free without blame and may never return in the same fashion. So the transmission prices the admission of unworthiness at loss of the penalty and loss of the future, and charges nothing for the measurement."@en ;
+    skos:note "It also supplies the one thing a trial needs to have a failing grade at all: a control group whose outcome differs. The nine who confessed and the guests who did not were put on the same balance under different stakes, and the work reports the results of both."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Second Day, the virgin's address on the scales, and the Third Day, the weighing of the nine" .
+
+pmc:RosicrucianTrialPresupposesLibra a pm:Presupposing ;
+    rdfs:label "The weighing must be survived before the king is reached"@en, "Die Wägung muss überstanden sein, ehe der König erreicht wird"@de ;
+    pm:dependentStep pmp:RosicrucianOpusTurris ;
+    pm:priorStep pmp:RosicrucianLibraAurea ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Rejection by the Order and dismissal from the castle, graded by the combination of weights failed: dismissal with a request never to return, stripping, branding with one or more marks, hunting out with rods, whips or dogs, and for those who could raise no weight at all, punishment in body and life with the sword, halter, water and rods."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    skos:note "Stated necessity, and the consequence is not inferred from the narrative but read out as a sentence by a herald with a trumpet. The dependent step is the work of the tower for the same reason as at pmc:RosicrucianNuptiaePraesupponuntExaminationem: the survivors of the weighing are the persons who go on to perform it."@en ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Third Day, the sentence read in the garden" .
+
+#
+# The porter. A penalty that can only be discharged by another person
+# incurring it.
+#
+
+pmc:RosicrucianCustosPortae a pm:Conceptualizing ;
+    rdfs:label "The gatekeeper who is freed only when another transgresses as highly"@en, "Der Pförtner, der nur frei wird, wenn ein anderer sich gleich schwer vergeht"@de ;
+    skos:definition "The condition of the porter of the first gate, given by the king in answer to a direct question on the seventh day. He is a famous and rare astrologer, formerly in high regard, who once committed a fault against Venus and saw her in her bed of rest; the punishment imposed is that he wait at the first gate until someone releases him from it. Asked whether he may then be released, the king answers that if anyone can be found that has transgressed as highly as himself, he must take his place and the other shall be free. The narrator, who has committed the same fault, confesses it, is told that the king cannot transgress his ancient usages, is put in the porter's place with the porter's ring, and is told that no release is to be hoped for until the marriage feast of the king's future son."@en ;
+    skos:note "The structure is worth having exactly. The penalty is not remitted, not served out and not transferable at the offender's choice: it is a post that must be occupied, and it passes only when a second person commits the same offence and says so. That makes the release of one man conditional on the fall of another, inside the operative narrative and stated by the authority of the place."@en ;
+    skos:note "The porter's own supplication is the other half and is of a different kind. He asks to be present at the supper on the ground that his observations cannot lie to him — Venus has already been uncovered by one of the guests — and undertakes, if a strict enquiry should show otherwise, to remain before the gate all the days of his life. An astrologer staking his whole penalty on a prediction being confirmed is the nearest thing to a wager this corpus contains, and the work reports that he was right."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Seventh Day, the porter's supplication and the sentence upon it" .
+
+pmc:RosicrucianQuinqueArticuliEquitum a pm:Conceptualizing ;
+    rdfs:label "The five articles sworn by the Knights of the Golden Stone"@en, "Die fünf Artikel der Ritter des Goldenen Steins"@de ;
+    skos:definition "Read out by Atlas on the seventh day and sworn by the king's sceptre. That they shall at no time ascribe their order to any devil or spirit, but only to God their creator and his handmaid Nature. That they will abominate all whoredom, incontinency and uncleanness, and not defile their order with such vices. That they will through their talents be ready to assist all that are worthy and have need of them. That they desire not to employ this honour to worldly pride and high authority. That they shall not be willing to live longer than God will have them do. The narrator records that at the last article the company could not choose but laugh, and that it may well have been placed after the rest only for a conceit."@en ;
+    skos:note "The fourth article is the fourth weight by another name, and the narrator's parenthesis at the banquet — that naming his place in the order might be interpreted as pride in him, which is expressly against the fourth weight — is the only bridge the work builds between the two lists. Whether the seven weights are the articles is exactly the question the work leaves open."@en ;
+    skos:note "The reported laughter is entered because it is a judgement inside the source on one of its own rules, and the class of thing this holding loses most easily. The article laughed at is the one that cannot be broken by an act."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:NuptiaeChymicae ;
+    dcterms:source "Chymische Hochzeit Christiani Rosencreutz (Strasbourg, 1616), the Seventh Day, the five articles" .
+
+#
+# The Fama and the Confessio: the articles, the vault, and the two clauses
+# that decide what the corpus can be held to.
+#
+
+pmc:RosicrucianSexArticuli a pm:Conceptualizing ;
+    rdfs:label "The six articles the first brethren bound themselves to"@en, "Die sechs Artikel, zu denen sich die ersten Brüder verbanden"@de ;
+    skos:definition "The agreement of the eight, as the Fama states it. First, that none of them should profess any other thing than to cure the sick, and that gratis. Second, that none of the posterity should be constrained to wear one certain kind of habit, but therein to follow the custom of the country. Third, that every year upon the day C. they should meet together at the house S. Spiritus, or write the cause of his absence. Fourth, every brother should look about for a worthy person who after his decease might succeed him. Fifth, the word C. R. should be their seal, mark and character. Sixth, the Fraternity should remain secret one hundred years."@en ;
+    skos:note "Five of the six are rules of a society and the first is a rule about a capacity: it forbids the brethren to profess anything but curing, and forbids payment for that. The fourth makes each member responsible for producing his own replacement, which is how a transmission with no institution keeps going, and the third supplies the one thing a secret society can be caught out on — a fixed annual date and place."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan (London, 1652), the six articles; the German of the 1615 print consulted at the same place" .
+
+pmc:RosicrucianPostCXXAnnosPatebo a pm:Conceptualizing ;
+    rdfs:label "After a hundred and twenty years I shall open"@en, "Nach hundertzwanzig Jahren werde ich mich öffnen"@de ;
+    skos:definition "The Fama's account of the finding of the founder's tomb. A brother repairing the house of the Spirit draws out a great nail from a brass memorial table, the nail takes a stone out of the plastering with it and uncovers a hidden door, on which is written in great letters Post 120 annos patebo, with the year of the Lord under it. The vault behind it has seven sides, each five foot broad and eight foot high, is lit by an inner sun set in the centre of the ceiling, has a round altar for a tombstone, ten squares with figures and sentences on each wall, a chest behind each wall containing the brethren's books, and beneath the altar the body of the founder whole and unconsumed, holding a parchment book called I."@en ;
+    skos:note "The vault is the corpus's own demonstration and it is built as one: an inscription naming a term, a term elapsed, and a discovery at the end of it. What it demonstrates is that the founder foresaw the date of the finding, which is the only prediction of this corpus with a date attached, and the date is supplied by the same work that reports the finding."@en ;
+    skos:note "The Fama draws the consequence itself and widens it past the vault: for like as our door was after so many years wonderfully discovered, also there shall be opened a door to Europe when the wall is removed, which already doth begin to appear. The second door has no term."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan (London, 1652), the relation of the finding of the vault" .
+
+pmc:RosicrucianHoraMortisNonOstenditur a pm:Conceptualizing ;
+    rdfs:label "Their own misfortunes and hour of death are not shown to them"@en, "Ihr eigenes Unglück und ihre Sterbestunde werden ihnen nicht gezeigt"@de ;
+    skos:definition "A limit the Fama states of its own highest capacity, publicly and in the first person plural: whatever secret they have learned out of the Book M, although before their eyes they behold the image and pattern of all the world, yet there are not shown unto them their misfortunes, nor the hour of their death, the which only is known to God himself, who thereby would have them keep in a continual readiness."@en ;
+    skos:note "This is the rarest kind of statement in this holding and it should be marked as such: a transmission naming something its own method cannot do, in its own voice, with no adversary in view and no failure to explain away. It is stated in the passage on the brethren's deaths, where the Fama has just reported that the first of them died in England as brother C. long before had foretold him."@en ;
+    skos:note "The two sentences stand within a few lines of each other, and the second is the ground on which the first has to be read: one brother's death was foretold by another, and no brother's own death is shown to him. The limit is therefore on self-knowledge and not on foreknowledge, and the work does not say so — this node says which of the two the wording carries and no more."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage on the deaths of the brethren and the Book M" .
+
+pmc:RosicrucianAurumParergon a pm:Conceptualizing ;
+    rdfs:label "The making of gold is a by-product"@en, "Das Goldmachen ist ein Nebenwerk"@de ;
+    skos:definition "The Fama's judgement on the art its readers were expecting. Men of discretion nowadays hold the transmutation of metals to be the highest point and fastigium in philosophy; the Fraternity publicly testifies that the true philosophers are far of another mind, esteeming little the making of gold, which is but a parergon, for besides that they have a thousand better things. The founder's saying is quoted for it: aurum nisi quantum aurum. The philosopher does not rejoice that he can make gold, nor that the devils are obedient unto him, but that he sees the heavens open and his name written in the book of life."@en ;
+    skos:note "The Confessio does not withdraw this and does not simply repeat it either; it adds an order. The gift is in no manner to be set at naught or despised, but because it does not always bring the knowledge of nature with it, excellent wits ought not to be drawn to the tincture of metals before they be exercised well in the knowledge of nature. So the two works together demote the art and then prescribe when it may be taken up."@en ;
+    skos:note "The Chymische Hochzeit puts the same judgement as an event rather than a rule, at the seventh storey: the other artists were well pleased because they were to work in gold, which is indeed a piece of this art but not the most principal, most necessary and best, and they were given a part of the ashes so that they should imagine the whole bird had been provided for the sake of gold. The warning of the manifestos is there enacted as a deliberate deception of the practitioners who value the wrong thing."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage on the accursed gold-makings; with Confessio Fraternitatis, the passage on the tincture of metals, and Chymische Hochzeit (Strasbourg, 1616), the Sixth Day, the seventh storey" .
+
+pmc:RosicrucianAurumParergonPraecedentia a pm:Presupposing ;
+    rdfs:label "The knowledge of nature must precede the tincture of metals"@en, "Die Kenntnis der Natur muss der Metalltinktur vorausgehen"@de ;
+    pm:dependentStep pmp:RosicrucianOpusTurris ;
+    pm:priorStep pmp:RosicrucianExaminatioAnteNuptias ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    skos:note "Prescribed order and not stated necessity. The Confessio says that excellent wits ought not to be drawn to the tincture of metals before they be exercised well in the knowledge of nature, and states no consequence of the wrong order; what follows in the passage is an argument about how such a man ought then to live, which is not a consequence of skipping. The prior step is entered as the self-examination because that is the practice this corpus names for the preparation of a person, the knowledge of nature being a state and not an act."@en ;
+    skos:note "The strength is set at what the wording carries, and the weakness of the pairing is admitted: the steps named here are the nearest this corpus has to the two the sentence puts in order, and a later reader who finds a passage prescribing the knowledge of nature as an operation should replace the prior step rather than raise the strength."@en ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage on the tincture of metals" .
+
+pmc:RosicrucianLibriFictiFalsorumChymistarum a pm:Cautioning ;
+    rdfs:label "Put away the books of the false alchemists"@en, "Legt die Bücher der falschen Alchemisten weg"@de ;
+    skos:definition "The Confessio's closing admonition, and the Fama's promise that goes with it. The reader is earnestly admonished to put away, if not all, yet the most books written by false alchemists, who misuse the holy Trinity, deceive people with most strange figures and dark sentences, and cozen the simple of their money; the enemy of man's welfare mingles such books among the good seed to make the truth more difficult to be believed, truth being in herself simple, easy and naked, while falsehood is proud, haughty and coloured. The Fama promises a catalogue or register of such books to the pure-hearted, and the Chymische Hochzeit has the king promise the dismissed lords a catalogue of heretics or Index Expurgatorius and announce that he will rummage his own library and offer up the seductive writings to Vulcan, asking the lords to do the same with theirs."@en ;
+    pm:cautionsAbout pmp:RosicrucianOpusTurris ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    skos:note "A transmission that announces its own index is announcing a criterion, and all three works announce one and none supplies it. The promised catalogue is the register of what the corpus disowns, it is promised twice in the manifestos and once inside the narrative, and its absence is the reason a later reader cannot tell which of the Rosicrucian literature the Rosicrucian manifestos would have rejected."@en ;
+    skos:note "The Chymische Hochzeit has the cheaters confess that they forged false fictitious books, fooled and cheated others, and made use of ungodly deceitful figures, sparing not even the Divine Trinity — which is the Confessio's sentence put in the mouths of the condemned. The narrative therefore executes the manifestos' judgement on a class the manifestos never enumerate."@en ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the conclusion; with Fama Fraternitatis, the passage on books set forth under the name of Chymia, and Chymische Hochzeit (Strasbourg, 1616), the Third Day, the sentence" .
+
+pmc:RosicrucianMedicinaDestinatisNegata a pm:Conceptualizing ;
+    rdfs:label "The universal medicine is never obtained by those destined to be plagued"@en, "Die allgemeine Medizin erlangt nie, wer zur Plage bestimmt ist"@de ;
+    skos:definition "The Confessio's clause on its own remedy, stated in one sentence: although there be a medicine to be had which might fully cure all diseases, nevertheless those whom God hath destined to plague with diseases, and to keep them under the rod of correction, such shall never obtain any such medicine."@en ;
+    skos:note "The sentence is constructed so that no case of the medicine failing can arise. If a man is cured the medicine worked; if he is not, he was destined to be plagued, and the destination is knowable only from his not being cured. The work supplies no antecedent mark of the destined class, and the search that establishes that absence is at pmp:RosicrucianDignitasSearch."@en ;
+    skos:note "The immediately following sentence extends the same construction from the medicine to the Fraternity itself: even in such manner, although we might enrich the whole world and endue them with learning, yet shall we never be manifested and made known unto any man without the especial pleasure of God; yea, it shall be so far from him whosoever thinks to get the benefit without and against the will of God, that he shall sooner lose his life in seeking and searching for us than find us. So the seeker who does not find has the same two outcomes available to him as the sick man who is not cured, and one of them is death."@en ;
+    skos:note "The Fama states the third member of the series in the same form, and there the outcome is named: he that is false-hearted, or only greedy of riches, shall not be able in any manner of wise to hurt us, but bring himself to utter ruin and destruction; while whosoever shall earnestly and from his heart bear affection unto the Fraternity, it shall be beneficial to him in goods, body and soul. Two outcomes, assigned by a disposition of the seeker, and no way to establish the disposition except from the outcome."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the conclusion; with Fama Fraternitatis, the closing passage" .
+
+pmc:RosicrucianDignitasNonExCuraHominum a pm:Conceptualizing ;
+    rdfs:label "Worthiness is not judged by man's carefulness, and the unworthy are not heard"@en, "Würdigkeit wird nicht nach menschlicher Sorgfalt beurteilt, und die Unwürdigen werden nicht gehört"@de ;
+    skos:definition "How the Fraternity says admission is decided. The worthiness of those who shall be accepted is not esteemed and known of them by man's carefulness, but by the rule of their revelation and manifestation; wherefore if the unworthy cry and call a thousand times, or offer and present themselves a thousand times, God has so commanded their ears that they should hear none of them. And no violence or force can be done to them, for God has so compassed them about with his clouds that they can neither be seen nor known by anybody, except he had the eyes of an eagle."@en ;
+    skos:note "Taken together with the Confessio's promise that no man's uprightness and hopes shall deceive him whosoever shall make himself known to them under the seal of secrecy, this gives the applicant a procedure with no criterion and a guarantee with no failure. The unanswered applicant is the unworthy applicant by construction."@en ;
+    skos:note "The thousand of this passage is a rhetorical thousand and should not be read against the one in a thousand of the cedars, which is a distribution. They are entered in one file and are not two statements of one rate."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:ConfessioFraternitatis ;
+    dcterms:source "Confessio Fraternitatis, in the English of Thomas Vaughan (London, 1652), the passage on offering the treasures freely to all men" .
+
+pmc:RosicrucianSecretumCentumAnnorum a pm:Conceptualizing ;
+    rdfs:label "The restriction on passing it on, inside the operative text"@en, "Die Beschränkung der Weitergabe, im operativen Text selbst"@de ;
+    skos:definition "Where the three works restrict their own transmission. The Fama's sixth article binds the Fraternity to remain secret one hundred years, and its fourth makes each brother responsible for choosing a worthy successor; the brethren's burial places were to be kept secret as far as possible, and the floor of the vault is described as parted in a triangle whose contents are not manifested for fear of the abuse by the evil and ungodly world. The Chymische Hochzeit carries the restriction as a series of refusals by the narrator: the name on the trumpet he could well read but is as yet forbidden to reveal; the words above the first portal he was earnestly forbidden to relate; the names and weights of the hundred and twenty-six he would willingly give were it not as yet forbidden him; the sentence upon the prisoners none of the knights dared open his mouth about; and what the virgin did with the companions in the seventh room he cannot tell, they being most earnestly forbidden to speak of it."@en ;
+    skos:note "Two features put this beside the other transmissions of this holding that restrict their own passing on. The restriction stands inside the operative text and not in an external rule, and the class of permitted recipient is named — a worthy successor chosen by a brother, and the pure-hearted who are to receive the catalogue. What is different is the ground: the Fama gives fear of abuse by the ungodly world for the floor of the vault, and the Chymische Hochzeit gives no ground at all, only that the narrator is forbidden."@en ;
+    skos:note "The sharpest case is the library and the sepulchre of the third day, because there the restriction is enforced against a breach that had already happened. Both were shown to the narrator and his companion by a page who held the keys; a second page then came running, the keys were taken away, and the first page declared that the king would by no means permit either to be seen by any man and besought them, as they cared for his life, to reveal it to no man, he having already utterly denied it. The penalty for the disclosure falls on the page and not on the two who saw."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan (London, 1652), the six articles and the description of the vault; with Chymische Hochzeit (Strasbourg, 1616), the First, Second, Third, Sixth and Seventh Days" .
+
+pmc:RosicrucianFundatorSineMorbo a pm:Conceptualizing ;
+    rdfs:label "A founder over a hundred years old who never experienced disease"@en, "Ein Stifter von über hundert Jahren, der nie eine Krankheit erfuhr"@de ;
+    skos:definition "What the elogium in the vault claims of the founder, and it is the corpus's only claim about a body. He died aged more than a hundred, not driven by any disease — which he himself had never experienced in his body, nor suffered to infest others — but called by the spirit of God, and rendered his illuminated soul amid the embraces and last kisses of the brethren. The Confessio gives him the years: born in 1378, and a hundred and six years of life whose alterations he left to the brethren to peruse."@en ;
+    skos:note "Never experienced disease in his body and never suffered it to infest others are two claims and the second is about other people. The Fama has already reported one cure by another brother and the concourse of the sick as an obstacle to the work of the first four, so the second clause is the corpus's strongest statement about what the curing did, and it stands in a funerary inscription and not in an account of a practice."@en ;
+    skos:note "The dates are internally consistent — 1378 plus 106 is 1484, and 1484 plus 120 is 1604, ten years before the Fama was printed and six before the manuscript Haslmayr had. The vault inscription and the printing of the work are therefore not far apart on the corpus's own reckoning, which is a thing a reader should be able to see from the nodes."@en ;
+    pm:withinTradition pmt:Rosicrucian ;
+    pm:fromWork pmw:FamaFraternitatis ;
+    dcterms:source "Fama Fraternitatis, in the English of Thomas Vaughan (London, 1652), the elogium at the end of the book I; with Confessio Fraternitatis, the passage on the year 1378" .
