@@ -132,7 +132,7 @@ gemergte Daten; `befund:verfahren` ändert Anweisungen.
 
 Ein Befund ist nur offen, solange er etwas braucht, was ein Lauf nicht
 leisten kann; sein Body endet mit „Erledigt, wenn". Behoben oder als Regel
-geschrieben, schließt ihn der PR (`SPEC.md` §13).
+geschrieben, wird er nach dem Merge des PR geschlossen (`SPEC.md` §13).
 
 **Kein `korpus:`-Label an einem `befund`.** Die `korpus:`-Werte sind das
 Protokoll der Suchabdeckung einer Behauptung. Ein Werkzeug- oder
