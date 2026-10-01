@@ -1,0 +1,267 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix pmm:     <https://pajew.ski/prima-materia/materia/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia - the Aramaic incantation bowls, taken off the register
+#
+# Order of the file: the work, then the tradition; then the practices and the
+# chains among them; then the cautions and the formulae about the operation
+# itself; then the beings named and the authorities claimed; then, bowl by bowl
+# in the editor's numbering, the capacities; and last the examination nodes,
+# the witness that carries no capacity, and the ordering node.
+#
+# pmt:JewishPracticalMagic was registered in traditions/registry-west-asia.ttl
+# and stands here now that passages have been read. Its entry in that file is to
+# be replaced by a comment in the form that file already uses for
+# pmt:NavajoCeremonial and pmt:AzandeOracle; this run did not touch it, so
+# pm:RegistrationIsNotAWitnessShape and tests/test_identifier_uniqueness.py
+# both fire on the merged node until that replacement is made.
+#
+
+pmw:AramaicIncantationTextsFromNippur a dcterms:BibliographicResource ;
+    rdfs:label "Aramaic Incantation Texts from Nippur"@en, "Aramäische Beschwörungstexte aus Nippur"@de ;
+    skos:note "The edition, copied from the title page inside the full text and not from the archive's catalogue line: University of Pennsylvania, The Museum, Publications of the Babylonian Section, vol. III. Aramaic Incantation Texts from Nippur, by James A. Montgomery, Professor at the Philadelphia Divinity School and Assistant Professor at the University of Pennsylvania. Eckley Brinton Coxe Junior Fund. Philadelphia, published by the University Museum, 1913."@en ;
+    skos:note "The work is a corpus and an edition at once. Forty bowls from Nippur are published with transliteration, translation and notes as texts 1 to 40, with an inscribed human skull as text 41 and a form of the Lilith legend as text 42, whose original was no longer in the Museum when the volume was made. The Museum catalogue counted over 150 numbers of this class; the rest were fragments, too defaced, too illiterate, or not Semitic."@en ;
+    skos:note "The numbering of the texts and the line numbers inside them are Montgomery's, and the source strings below give them because they are the locus of this corpus and the one thing two independent readings would both produce. The bowls also carry their museum numbers, which the volume prints beside each text."@en ;
+    skos:note "The copy read is the Internet Archive full text of the identifier aramaicincantati00mont, digitised in 2017 with funding from the Getty Research Institute. Three further copies of the same volume were fetched and measured; this one has the best optical reading of the running heads, 202 of them in an unbroken sequence from p. 8 to p. 326, and the file runs to the last plate, plate XLI."@en ;
+    skos:note "What that copy cannot give, and it is the greater part of the volume. The Aramaic, Syriac and Mandaic of the texts is set in three non-Latin scripts, and the optical reading has rendered all three in look-alike Latin characters: the file holds 0.9925 ASCII and not one character in the Hebrew block U+0590 to U+05FF, none in Syriac U+0700 to U+074F, none in Greek. Apparatus, translation and commentary are usable at the wording; the original language is not present on this route at all. Every node below therefore cites the translation, and no node carries a term in the language of the bowls."@en ;
+    skos:note "The dating is the editor's and is a terminus ad quem only: not later than the sixth or the beginning of the seventh century, approximately 600 A. D., argued from the Cufic coins in the upper stratum of the Jewish houses at Nippur, from the absence of any name of Arabic origin among the many Persian, Jewish, Syriac Christian, Greek and probable Indian ones, and against the epigraphical datings of Chwolson, Schwab and Nöldeke, which the volume reports and rejects. Those earlier positions are modern scholarship and enter the holding only as evidence at an examination, never as a source here."@en ;
+    skos:note "Two statements of the praxis stand in the volume as the editor's report of Pognon's bowls and not as a place in a Nippur text: that the bowl used was a new one, and that the sorcerer sat upon an uncleft rock. Pognon's Inscriptions mandaites was not opened in this run, so no node below carries either; both are named in the harvest note as the next place to go."@en .
+
+#
+# The tradition, described at its new place
+#
+
+pmt:JewishPracticalMagic a pm:Tradition ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Jewish practical magic"@en, "Jüdische Praxismagie"@de ;
+    skos:definition "The operative Jewish transmission of adjurations, amulets and bowls, distinct from the speculative literature and older than it in its written witnesses."@en ;
+    skos:note "Raised from pm:corpusNamed on the first passages actually read, which are in the fourth of the four works its principal corpus names. What was read at the wording: the whole of the introduction's third part, on the purpose of the bowls, the exorcists, the clients and the incantations, and its fourth part on the age of the bowls; and the translation and commentary of every one of the forty-two texts. What was not read line by line: the three glossaries, the general index, the register of the bowls and the forty-one plates, and the two parts of the introduction on the sources hitherto published and on script and language, which were read where a question led."@en ;
+    skos:note "Of the four works the principal corpus names, one now stands opened here and one stands opened under pmt:Hekhalot in traditions/hekhalot.ttl, which is where the Ḥarba de-Moshe was read entire. The Sefer ha-Razim and the Cairo Genizah magical fragments remain unopened and are carried as no work identifier, because a work identifier without a read place would report an opening that did not happen."@en ;
+    skos:note "What this corpus is for the holding, and it is not its quantity. It is the one body of operative material the graph holds that was excavated rather than copied: the bowls were found in situ in ruined houses at Nippur, most of them upside down in the ground, so the praxis they prescribe is attested by the position of the object and not only by its text. Against that, the operator's share is the smallest in the holding. The incantation is nearly the whole of it, and the volume says so in as many words."@en ;
+    skos:note "The clientele is mixed and the magic is indifferent to it. The great majority of the client names are Persian; there are two Syriac Christian names, one Greek, probable Indian ones, and few typical Jewish ones, and the editor concludes that a Jewish-Aramaic text implies neither a Jewish exorcist nor Jewish clients. A Jewish text, a Syriac text and a Mandaic text of the same place name the same persons and families."@en ;
+    pm:principalCorpus "Sefer ha-Razim; Ḥarba de-Moshe; the Cairo Genizah magical fragments; the Aramaic incantation bowls" ;
+    pm:corpusWork pmw:AramaicIncantationTextsFromNippur ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, introduction §§ 1 and 8-15 and texts 1-42, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913)" .
+
+#
+# The praxis
+#
+
+pmp:NippurBowlInversion a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Depositing the inscribed bowl mouth downward"@en, "Die beschriftete Schale mit der Öffnung nach unten niederlegen"@de ;
+    skos:definition "The operation the whole corpus is built on: a bowl is inscribed on its inner surface with the incantation, then sunk just below the surface of the earth with its mouth downward, so that what the text has bound is held under it. One text names the vessel a press and says of itself: this press I press down upon them. Another opens by calling the bowls covers to hold in sacred angels and all evil spirits, and announces to the demons that they are bound and sealed in each one of the four corners of the house."@en ;
+    skos:note "The one operation in this holding whose performance is attested by the excavated object and not only by the text that prescribes it. Of the hundred bowls dug while the excavator was on the scene, most lay upside down in the ground; the position is photographed in his report, and bowls were also found set mouth to mouth in pairs."@en ;
+    skos:note "A second deposition is attested for other sites and not for Nippur: bowls inscribed for the cemetery, found in a graveyard. None of the Nippur bowls is so marked."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, introduction § 8, with texts 4: 1-2, 6: 1 and 9: 1, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 41-44)" .
+
+pmp:NippurFourCornerCircuit a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Setting four bowls at the four corners of the house"@en, "Vier Schalen in die vier Ecken des Hauses setzen"@de ;
+    skos:definition "The quadruple use of the vessel: four bowls carrying the same inscription for the same client are deposited at equidistant points of the dwelling, and the text declares the spirits bound and sealed in each one of the four corners of the house."@en ;
+    skos:note "Three of one such set of four are published together as texts 21, 22 and 23, all made out for one woman, and the editor takes them for three of the four of a single house. The fourth is not in the collection. The practice accounts for the duplicate inscriptions that run through the whole corpus."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, introduction § 8 with texts 4: 1-2 and 21-23, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 42 and 202-204)" .
+
+pmp:NippurNamingOfClientAndMother a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Naming the client together with the mother"@en, "Den Klienten samt seiner Mutter nennen"@de ;
+    skos:definition "The individuals a charm is to cover are specified exactly, and the specification is a name plus the name of the mother: so-and-so son or daughter of such-a-one. The father appears instead where the mother is not known."@en ;
+    skos:note "The same rule holds for the demon when the demon is to be bound: a named lilith is given her parents, and in the divorce-writ the father and mother of the liliths are named as the two parties of a writ must be. Two bowls of this collection name the father of the client rather than the mother."@en ;
+    skos:note "The editor sets the rule beside the Talmudic maxim that all repetitive incantations are in the name of the mother, beside the Mandaean use in which a person's sacred name includes the mother's, and beside the same rule in the Greek defixiones. Those parallels are his and are not entered here as places."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, introduction § 10, with texts 10: 1, 12: 1, 8: 6 and 17: 6, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 49-50)" .
+
+pmp:NippurGetAgainstDemons a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Writing the demon a writ of divorce"@en, "Dem Dämon einen Scheidebrief schreiben"@de ;
+    skos:altLabel "the magical Get"@en ;
+    skos:definition "The operation that separates a lilith from the person she lies with by divorcing her in the forms of the rabbinic divorce court. The bowl carries a divorce-writ: the date stands at its head, both parties are named with their parentage, the writ is declared to have come down from heaven and to have come from across the sea, the demon is told to take her writ, and the separation is pronounced in the words of the court, I have divorced, separated, dismissed thee."@en ;
+    skos:note "The warrant the text gives itself for divorcing a spirit is that demons do the same among themselves: I have separated thee, like the demons who write divorces for their wives, and do not return to them. Two texts put it in those words and a third repeats it."@en ;
+    skos:note "The editor states that he knows of no occurrence of this magical Get outside the bowls, and calls it the magicians' application to the unions of demons and mortals of the power of binding and loosing that the rabbis claimed. His own verdict on the logic stands in his commentary and is his: the procedure was very simple, if only the liliths were as submissive to divorce as their human sisters."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, texts 8: 7-16, 9: 3-10, 11: 7-8, 17: 1-11 and 26: 6, with the commentary to 8: 7, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 153-160 and 170-191)" .
+
+pmp:NippurPropitiousSeason a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Setting the operation in a singled-out time"@en, "Die Verrichtung in eine ausgezeichnete Zeit setzen"@de ;
+    skos:definition "The assumption of a fitting season for the exorcism, carried in a formula that singles the moment out of each larger unit in turn: this day out of all days, this month out of all months, this year out of all years, this season out of all seasons."@en ;
+    skos:note "The editor reports the same formula from the Hellenistic papyri, year out of years, month out of months, day out of days, hour out of hours, and holds the bowl form to be a reminiscence of it. He also judges the references in these texts to be quite conventional and concludes that no horoscopes were cast by these sorcerers. A named day, the first of Nisan, stands in a bowl of another collection and not in these."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 6: 5-6, with the mutilated form at 17: 1 and the commentary in introduction § 11, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 55-56 and 141)" .
+
+pmp:NippurBoundFigures a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Drawing the demon bound and hobbled on the bowl"@en, "Den Dämon gebunden und gefesselt auf die Schale zeichnen"@de ;
+    skos:definition "The figures on the bowls are part of the operation and not decoration. Most represent the demons, drawn bound and hobbled in the words the incantation uses of them; liliths are so represented; one bowl shows a demon with arms and legs manacled, with the words prohibition and permission written on either side of it and the client's name inside the body on the side of the prohibition; one shows the serpent with its tail in its mouth; and rectangular figures divided into compartments stand for the walls of protection the charm casts about the client."@en ;
+    skos:note "One bowl depicts not the demon but the operator, waving a magic bough in his hand. The editor sets it beside the branch of datepalm or tamarisk held aloft in the Babylonian rite and notes that the Assyriologist who published those texts had already pointed at this design."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, introduction § 11 on the designs, with texts 4, 8, 15 and 20, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 53-55 and 200-201)" .
+
+pmp:NippurAngelCompelledByHornAndHoney a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Kneading a shape of a horn and pouring honey on it"@en, "Eine Hornform kneten und Honig darauf gießen"@de ;
+    skos:definition "The one rubric that stands inside the wording of an incantation in this collection. In the course of adjuring the angel that descends from heaven, the text breaks off into a direction for an operation performed on a simulacrum: there being kneaded something in the shape of a horn, on which honey is poured. The adjuration then resumes and the angel so compelled is the one who will frustrate and ban the charms, curses, invocations, knockings and rites listed after it."@en ;
+    skos:note "The editor reads the line as a rubric directing an operation that compels the presence of the angel through a simulacrum and its manipulation, and sets it beside the rubrics of the Babylonian magic; he adds the query whether the sorcerer was not reciting a form he did not understand. The identity of the kneaded substance is not given."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 12: 5-9 with the commentary to 12: 5, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 173-176)" .
+
+pmp:NippurHotHerbsOnTheImage a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Sprinkling hot herbs on the image and pronouncing the name"@en, "Scharfe Kräuter auf das Bild streuen und den Namen aussprechen"@de ;
+    skos:definition "The operation of the love-charm, so far as the broken text carries it: take a named substance and hot herbs which they call sunwort, with a further plant and peppers, and the rites of love, and sprinkle them upon the person to be inflamed; and take pieces from his heart. The woman who commissions the bowl is the one who sprinkles."@en ;
+    skos:note "The editor reads a simulacrum behind it, because the heart is to be torn in pieces, and takes the herbs for a salad of hot plants expressive of the passion wanted, with the beloved's name formally pronounced over them. The text is mutilated at each of the three points where the substance is named."@en ;
+    pm:uses pmm:HotHerbsCalledSunwort ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 28: 2-5 with the commentary, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 211-214)" .
+
+pmm:HotHerbsCalledSunwort a skos:Concept ;
+    rdfs:label "The hot herbs called sunwort"@en, "Die scharfen Kräuter, die man Sonnenkraut nennt"@de ;
+    skos:note "Named in the love-charm beside a further plant and peppers. The editor's rendering of the plant-name carries his question mark, and the words on either side of it are broken."@en .
+
+pmp:NippurSpiritSentToTheBridalChamber a pm:Practicing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Sending the spirit to the bridal chamber to eat and drink"@en, "Den Geist in die Brautkammer schicken, zu essen und zu trinken"@de ;
+    skos:definition "The close of the pagan charm for a bride: the evil spirit, having been driven from the engraved seal, is directed to go to the bridal chamber and eat, and moreover to drink a libation, and then to depart from the woman."@en ;
+    skos:note "An expulsion that ends by provisioning what it expels, and the only one of its kind in what was read. The editor supposes the food and drink would in some way incapacitate the spirit's powers and sets the passage beside the book of Tobit, where Raphael performs a charm against the demon of the bridal chamber. The text is badly obscured at the point where the food is named."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 36: 6-7 with the commentary, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 237-239)" .
+
+pmc:NippurCountedSealings a pm:Conceptualizing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "The counted spells and seals of a binding"@en, "Die gezählten Sprüche und Siegel einer Bindung"@de ;
+    skos:definition "Several texts state the strength of a binding as a count. One binds with the seven spells and seals with the seven seals. One charms and seals and counterseals with the seven spells which may not be loosed and with the eight seals which may not be broken. One seals a house with three signets and counterseals it with seven seals. One presses the demons down by means of seven words, each attached to a named power, by which heaven and earth are charmed."@en ;
+    skos:note "No text read says what follows if a count falls short, and none prescribes a repetition of the operation. The counts are the measure of the binding and not a dose to be kept."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, texts 5: 2-3, 6: 7-8, 19: 4 and 23: 3, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 137-142, 196 and 202)" .
+
+pmc:NippurThreeHundredAndSixtyBroods a pm:Conceptualizing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "The three hundred and sixty broods of the lilith"@en, "Die dreihundertsechzig Bruten der Lilith"@de ;
+    skos:definition "A number the two Mandaic bowls give to what a named lilith must be charmed with: the lilith and all her broods, even the three hundred and sixty broods; and in the second bowl the lilith and all the goddesses and the three hundred and sixty tribes. Both texts then say of the same number that the operator has dismissed them from the client one after the other."@en ;
+    skos:note "The one count in this corpus that is not a count of the operator's acts but of what he is working against, and the only place where the texts say the dismissal is serial rather than simultaneous. Nothing read says how the serial dismissal is performed or how far it has got at any point."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, texts 38: 5-11 and 40: 17-22, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 243-253)" .
+
+pmc:NippurOperatorNamesHisOwnWork a pm:Conceptualizing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "What this craft calls its own work, and what it will not call it"@en, "Wie diese Kunst ihr eigenes Werk nennt und wie nicht"@de ;
+    skos:definition "The craft distinguishes the physical operation from the spoken word, as the Babylonian distinguished the work from the incantation. Of the operation it uses the root for working and serving, the same root West-Semitic uses for the service of the gods, and the exorcist speaks of his working; of the written incantation it uses a word for a bound charm and once a Persian word for a document; of the spoken word it uses words for words and a term for the invocation."@en ;
+    skos:note "The editor's further observation, which rests on his count of the vocabulary and not on a statement of the texts: the exorcist gives himself none of the technical names of the forbidden side of the art, avoids the derived noun that denotes a magical practice while using the plain noun of his own working, and his favourite term for what he does is the root for binding, exactly the Greek and Latin words for the same act. Montgomery states that these magicians will work only white magic and that their whole effort is for the salvation of their clients."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, introduction § 11, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 51-53)" .
+
+#
+# The chains: what must stand before what. Each node says at itself which
+# strength it carries and on what the strength rests.
+#
+
+pmc:NippurNamingBeforeBinding a pm:Presupposing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "The exact naming comes before the binding"@en, "Die genaue Nennung geht der Bindung voraus"@de ;
+    pm:dependentStep pmp:NippurBowlInversion ;
+    pm:priorStep pmp:NippurNamingOfClientAndMother ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    skos:note "Entered at prescribed order and not at stated necessity: every text read opens with the names and no text says what happens to a charm whose names are wrong or missing. That the individuals must be exactly specified is the editor's sentence, drawn from the invariance of the practice across forty-two texts."@en ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, introduction § 10, with the opening lines of texts 1, 10 and 12, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 49-50, 117, 163 and 173)" .
+
+pmc:NippurFourBowlsBeforeTheCircuit a pm:Presupposing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "Four deposits are wanted before the house stands in a circuit"@en, "Vier Niederlegungen gehen dem Umkreis des Hauses voraus"@de ;
+    pm:dependentStep pmp:NippurFourCornerCircuit ;
+    pm:priorStep pmp:NippurBowlInversion ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    skos:note "The text itself declares the spirits bound and sealed in each one of the four corners of the house, so the four deposits are stated and not inferred. What is the editor's is the reading of the four points as a circle of magical influence about the dwelling, and the inference that the three surviving duplicates of one client are three of such a set."@en ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 4: 1-2 with introduction § 8 and texts 21-23, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 42, 132 and 202-204)" .
+
+pmc:NippurWritFromHeavenBeforeItBindsSpirits a pm:Presupposing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "The writ comes down from heaven before it binds a spirit"@en, "Der Scheidebrief kommt vom Himmel herab, bevor er einen Geist bindet"@de ;
+    pm:dependentStep pmp:NippurGetAgainstDemons ;
+    pm:priorStep pmc:NippurWritOfHeavenlyProvenance ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    skos:note "The provenance is in the texts: a divorce-writ has come down to us from heaven, and in the next sentence of the same bowl, a divorce writ has come for you from across the sea. The reason for it is the editor's: against spiritual powers divine authority was necessary, and a writ from a foreign country had its own special forms in the law. Entered at prescribed order for that reason."@en ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, texts 8: 7 and 8: 9, 17: 10, with the commentary to 8: 7, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 153, 159 and 190)" .
+
+pmc:NippurWritOfHeavenlyProvenance a pm:Conceptualizing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "A writ that came down from heaven and from across the sea"@en, "Ein Brief, der vom Himmel und von jenseits des Meeres kam"@de ;
+    skos:definition "The authority the divorce-writ claims for itself. It is said to have come down to us from heaven and to have come for the demons from across the sea, and to have something found written in it for their advisement and their terrification; the commissioners and witnesses to it are the holy angels, and a named rabbi is at hand to seal it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 8: 7-11 with the commentary, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 153-155 and 159)" .
+
+pmc:NippurDateBeforeTheWrit a pm:Presupposing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "The date stands at the head of the writ"@en, "Das Datum steht am Kopf des Scheidebriefs"@de ;
+    pm:dependentStep pmp:NippurGetAgainstDemons ;
+    pm:priorStep pmp:NippurPropitiousSeason ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    skos:note "One divorce bowl opens with a form of date, this day above any day, years and generations of the world, and the first person then divorces. The editor notes that a date was a requisite in the legal writ and that the mutilated opening of the parallel bowl is the same formula misunderstood. The two things the holding would otherwise keep apart, the singled-out moment of the operation and the date of a legal instrument, are here the same words."@en ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 17: 1-2 with the commentary to 8: 7 and introduction § 11, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 55, 159 and 189-191)" .
+
+pmc:NippurServiceBeforeDeparture a pm:Presupposing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "The writ is served and taken before the demon goes out"@en, "Der Brief wird übergeben und genommen, bevor der Dämon ausfährt"@de ;
+    pm:dependentStep pmc:NippurDemonsDepartAndDoNotReturn ;
+    pm:priorStep pmp:NippurGetAgainstDemons ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    skos:note "The order is in the wording and runs the same way in three bowls: take thy writ, then flee from their presence; take thy divorce from the woman, and do not appear to her; hear, obey and go forth. The editor reads the sentence commanding the demon to take the writ as the one that consummates the process, which is the step a writ needs in the court it is copied from."@en ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, texts 26: 5-6, 11: 8 and 8: 10, with the commentary to 8: 7, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 155, 159, 170 and 206)" .
+
+pmc:NippurSimulacrumBeforeTheAngelActs a pm:Presupposing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "The kneaded shape comes before the angel frustrates the charms"@en, "Die geknetete Form geht dem Vereiteln der Zauber durch den Engel voraus"@de ;
+    pm:dependentStep pmc:NippurText12OffspringAndPreservation ;
+    pm:priorStep pmp:NippurAngelCompelledByHornAndHoney ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    skos:note "The order is the order of the lines: the adjuration of the descending angel, the rubric for the horn-shape and the honey, four lines on what that angel is, and then the clause saying that these will frustrate and ban the whole list of hostile powers. No consequence is stated for omitting the shape, and the text does not say who performs it."@en ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 12: 5-9, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 173-175)" .
+
+pmc:NippurCommissionBeforeExpulsion a pm:Presupposing ;
+    pm:fromWork pmw:AramaicIncantationTextsFromNippur ;
+    rdfs:label "The commission of the gods comes before the driving out"@en, "Die Beauftragung durch die Götter geht dem Austreiben voraus"@de ;
+    pm:dependentStep pmc:NippurText36BridalMotherhoodSecured ;
+    pm:priorStep pmc:NippurCommissionFromTheFiveDeities ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JewishPracticalMagic ;
+    skos:note "The clearest chain in the corpus, because the text names the transfer that licenses the act and then names the act: the lord Sames has charged me against thee, Sin has sent me, Bel has commanded me, Nannai has said to me, and Nirig has given me power to go against the evil spirit; and three lines later, because he has given me a name by which I shall drive thee forth, Evil Spirit, go from the presence of these angels. What must come first is not a purification of the operator but an authority conferred on him, and the name is part of what is conferred."@en ;
+    dcterms:source "Aramaic Incantation Texts from Nippur, text 36: 2-6, ed. and trans. J. A. Montgomery (Publications of the Babylonian Section III, Philadelphia 1913, pp. 237-238)" .
+
