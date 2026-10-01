@@ -414,6 +414,15 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Indologie und die Wissenschaftsgeschichte gehen als `pm:evidenceFrom` ein, nie
   als Quelle)
 
+- `korpus:rabbinisch` (das rabbinische Recht und seine Kommentarschicht, soweit
+  sie von Zauberei handelt: Mischna und Tosefta Sanhedrin in Danbys Übersetzung
+  von 1919, der babylonische Talmud in Goldschmidts Übersetzung, voran Synhedrin
+  67a–68a, Sabbath 61a, 67a und 75a, Berakhoth 6a, Chullin 7b, Pesahim 110–112
+  und Aboda zara 55a, dazu der jerusalemische Talmud und Sifre Deuteronomium —
+  Rodkinsons englische Übersetzung ist für diesen Gegenstand nachweislich
+  defekt und kein Beleg; die Judaistik und die Magieforschung gehen als
+  `pm:evidenceFrom` ein, nie als Quelle)
+
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
 bereits die Nachfragemeldung, und ein zweites Verzeichnis dafür wird
