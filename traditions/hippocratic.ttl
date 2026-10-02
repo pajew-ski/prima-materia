@@ -1,0 +1,188 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Hippocratic transmission, registered and entered at once
+#
+# This file exists because prima-materia#612 asked for it by name. That issue
+# holds a convergence candidate — two transmissions coupling a wounded site to
+# a counted interval of death — and it names the counter-comparandum the
+# candidate needs: Hippocrates, Aphorisms VI.18, a list of parts whose severe
+# wounding is deadly, with no interval anywhere in it. Without that list the
+# convergence would be a statement about two corpora that happen to count
+# days. With it, the thing being claimed can be stated: that the interval and
+# not the organ list is the distinguishing feature.
+#
+# Registration and working are two acts (SPEC §14), and here they fall
+# together because the passage was read before the file was written. The three
+# decisions §14 requires before a first node are therefore made here and not
+# left implicit.
+#
+# One: the contact route is documented and is not close. Galen commented on
+# these aphorisms sentence by sentence, the Arabic and Latin medicine descend
+# from the commentary, and the corpora this holding already carries in the
+# Mediterranean sphere — the Graeco-Roman witnesses, the Platonic and
+# Neoplatonic material, the hesychast literature — stand downstream of or
+# beside the same stream. A witness from here raises the number of files and
+# not the number of independent witnesses within that sphere. Against the
+# Indian and Chinese medical corpora the route is a separate and open question
+# and is held at the convergence node, not here.
+#
+# Two: the edition. What was read is the English of Francis Adams, The Genuine
+# Works of Hippocrates, vol. II, printed for the Sydenham Society, London
+# 1849, in the copy archive.org carries as b33291408_0004. It is a translation
+# and not a critical text: Littré and the Loeb were not consulted, and the
+# Greek is not present on this route at all. Every node below says so in its
+# source.
+#
+# Three: how many citable passages there are. Aphorisms, Section VI was read
+# continuously, all sixty aphorisms. Seven of them are entered. What the other
+# fifty-three are and why they are not entered stands in the harvest note at
+# prima-materia#829.
+#
+# On the identifiers, because the rule in AGENTS.md does not quite reach this
+# case. Identifiers are to be formed from the technical term in the original
+# language and expressly not from the English or German translation. The
+# original language of this corpus is Greek and the route that was available
+# does not carry it; Adams prints the Greek for a handful of terms and for
+# none of these aphorisms. The identifiers below are therefore Latin, which is
+# the form in which this corpus has been cited for a thousand years and the
+# form a second run reading the same volume would reach for. It is a worse
+# anchor than a read Greek term and a better one than an English phrase, and
+# it is recorded here rather than passed over.
+#
+# No page numbers. The body text of this scan is clean, and the digits in its
+# running heads are not: the page numbers over Section VI read 753, 759, 757,
+# 799 and 761 in that order, which is OCR noise and not a page sequence. The
+# aphorisms are cited by section and number, which is the canonical handle of
+# this work and locates the passage in any edition. The access-path finding is
+# entered in the table in AGENTS.md.
+#
+
+pmt:HippocraticMedicine a pm:Tradition ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "Hippocratic medicine"@en, "Hippokratische Medizin"@de ;
+    skos:definition "The Greek medical transmission of the collection that travels under the name of Hippocrates, taken here at the part of it that states outcomes: which conditions and injuries are said to be fatal, which signs are said to decide a case, and at what term, if any, the outcome is said to arrive."@en ;
+    skos:note "Read at the wording in this run: Aphorisms, Section VI, all sixty aphorisms, in the English of Francis Adams, vol. II, London 1849. Not read: Sections I to V and VII of the same Aphorisms, which stand in the same volume and were opened only far enough to establish where Section VI begins and ends; and the rest of the collection, among it the Prognostics, On Wounds in the Head, On the Articulations and the Epidemics, which the same two volumes carry. The works below say which of them were opened."@en ;
+    skos:note "What kind of witness this is. The Aphorisms are a list of sentences with no argument between them, assembled from the other treatises of the collection and transmitted as a set to be learnt; Adams's own preliminary discourse in volume I treats the eighth section as not belonging to the rest. A sentence here is therefore a claim that the transmission thought worth fixing in a form that could be memorised, which is a different thing from a claim it thought worth demonstrating, and nothing in this file should be read as the latter."@en ;
+    skos:note "The commentary is not the text. Adams prints Galen's remarks under most aphorisms and sometimes his own judgment on whether the sentence still holds; at VI.18 Galen is reported as saying that wounds of the brain, liver, bowels and bladder are not necessarily fatal and as citing lithotomy against the bladder. That is a later station qualifying the claim, it is reported here and not entered as a node, and the reason is that Galen was read through Adams and not opened. A run that wants the qualification as a node opens the commentary."@en ;
+    pm:principalCorpus "The Corpus Hippocraticum: the Aphorisms; the Prognostics; On Wounds in the Head; On the Articulations; the Epidemics; and the remaining treatises of the collection" ;
+    pm:corpusWork pmw:AphorismiHippocratis, pmw:PrognosticonHippocratis, pmw:DeVulneribusCapitis ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Hippocrates, Aphorisms VI.18, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:AphorismiHippocratis a dcterms:BibliographicResource ;
+    rdfs:label "Hippocrates, Aphorisms"@en, "Hippokrates, Aphorismen"@de ;
+    skos:note "Opened on 2026-10-02 at Section VI, read continuously in the English of Francis Adams, vol. II, London 1849. Sections I to V and VII were not read and stand in the same volume, so the cheapest continuation of this file is the same volume: Section VII carries the acute prognostic signs and Section V the material on women and on the seasons, and both bear on questions this holding already asks of other corpora."@en ;
+    skos:note "The Greek is not on this route. Anyone who needs the wording of a term here goes to Littré or to the Loeb, and until someone does, every node formed from this work is a node about a nineteenth-century English rendering of a Greek sentence."@en .
+
+pmw:PrognosticonHippocratis a dcterms:BibliographicResource ;
+    rdfs:label "Hippocrates, Prognostics"@en, "Hippokrates, Prognostikon"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is the treatise of the collection that sets out the signs by which an outcome is to be read in advance, and it is therefore the place to ask whether the Greek corpus anywhere attaches a term to a wound rather than to the course of a disease — the question this run put to Section VI of the Aphorisms and answered only for Section VI."@en .
+
+pmw:DeVulneribusCapitis a dcterms:BibliographicResource ;
+    rdfs:label "Hippocrates, On Wounds in the Head"@en, "Hippokrates, Über die Kopfwunden"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is the treatise that handles a wound at a named site at length, and it is the strongest candidate in this corpus for a stated interval after an injury. Until it is read, the finding that the Greek list of fatal parts carries no interval is a finding about the Aphorisms and not about the collection."@en .
+
+#
+# The list of fatal parts, which is the counter-comparandum
+#
+
+pmc:HippocratesVulneraLetalia a pm:Conceptualizing ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "The parts whose severe wounding is deadly, named without a term"@en, "Die Teile, deren schwere Verwundung tödlich ist, ohne Frist genannt"@de ;
+    skos:definition "Seven parts are named and the claim made of each is the same: a severe wound of the bladder, of the brain, of the heart, of the diaphragm, of the small intestines, of the stomach, and of the liver is deadly. The sentence gives a site and an outcome. It gives no interval, no sign by which the case is to be recognised while the outcome is pending, and no gradation among the seven."@en ;
+    skos:note "This node is in the holding for what it does not say. Two other transmissions couple a wounded site to a counted interval of death — the needling-prohibition chapter of the Suwen, with six organs and six day-counts, and the marman doctrine of the Susruta, with five classes and their terms — and the agreement between those two is worth nothing until it is known whether coupling a site to an interval is simply what a medical transmission does with a wound. Here is one that does not."@en ;
+    skos:note "And the absence is not a limit of the genre, which is why it is worth entering rather than merely noting. The same Section VI counts days twice: a man suddenly seized with pains in the head and laid down speechless dies in seven days unless fever come on, and gouty inflammation subsides in the course of forty days. This corpus can state a term. It states none for a wound."@en ;
+    skos:note "What the aphorism would need in order to fail, and it has it: a severe wound of one of these seven parts that is not deadly. Galen, as Adams reports him, says exactly that of four of the seven, and the holding keeps his qualification out of the graph because he was read through the translator and not opened."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.18, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+pmc:HippocratesIntestinumTransfixum a pm:Conceptualizing ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "A transfixed small intestine does not unite"@en, "Ein durchbohrter Dünndarm wächst nicht zusammen"@de ;
+    skos:definition "Stated of the part and not of the patient: if any of the small intestines be transfixed, it does not unite. The neighbouring aphorism says the same of a bone, a cartilage, a nerve and the slender part of the jaw, which once cut out do not grow again."@en ;
+    skos:note "Entered beside the list of fatal parts because it is the same operation at one remove. It names a site, it names an outcome, and the outcome is an absence — the wound does not close — which is a thing an observer could in principle be wrong about and no term is set for the observation."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.24, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+#
+# The two places in the section that do count days
+#
+
+pmc:HippocratesSeptemDies a pm:Conceptualizing ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "Death in seven days, unless fever come on"@en, "Tod binnen sieben Tagen, wenn nicht Fieber hinzutritt"@de ;
+    skos:definition "The one counted term in the section attached to a sudden event in a previously healthy person: persons in good health suddenly seized with pains in the head, and straightway laid down speechless and breathing with stertor, die in seven days — unless fever come on."@en ;
+    skos:note "The structure is the whole value of the node. A term is named, so a moment arrives at which the claim has either held or not; and a release is named in the same sentence, so the case in which the patient is alive on the eighth day is covered in advance if a fever appeared. The transmission put both halves in one line."@en ;
+    skos:note "It is also the reason the silence at VI.18 counts. This corpus does state intervals, and when it does it states them with an exception; what it never does in this section is state one for a wound."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.51, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+pmc:HippocratesQuadragintaDies a pm:Conceptualizing ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "The gouty inflammation subsides in forty days"@en, "Die gichtische Entzündung geht in vierzig Tagen zurück"@de ;
+    skos:definition "Stated without condition and without a remedy attached: in gouty affections, the inflammation subsides in the course of forty days."@en ;
+    skos:note "The second counted term in the section, and the cleaner of the two, because nothing is said to intervene and nothing is said to excuse a longer course. A claim of this form is settled by counting, and the aphorism offers no account of a case that runs past the fortieth day."@en ;
+    skos:note "The same section says, two aphorisms later, that gouty affections for the most part rankle in spring and in autumn, which is a second claim about the same disease on a different clock. The two are not reconciled in the text and are not reconciled here."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.49, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+pmc:HippocratesCerebrumVulneratum a pm:Conceptualizing ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "The sign that must follow a severe wound of the brain"@en, "Das Zeichen, das einer schweren Hirnwunde folgen muss"@de ;
+    skos:definition "When the brain is severely wounded, fever and vomiting of bile necessarily supervene. The claim is not about the outcome but about a sign, and it is made with a necessity: these two things follow, and not for the most part."@en ;
+    skos:note "This is the nearest the section comes to what the Suwen does at every one of its six organs, where each interval is paired with a bodily movement by which the strike is to be recognised. Here the sign stands alone, with no interval beside it, and it is stated of one of the seven parts the list of fatal wounds names."@en ;
+    skos:note "A necessity is cheap to refute and expensive to state, which is why the form is worth recording: a severely wounded brain without fever and without bilious vomiting is outside the sentence."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.50, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+#
+# Venesection, which the section touches twice
+#
+
+pmp:HippocratesVenaeSectio a pm:Practicing ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "Opening a vein"@en, "Das Öffnen einer Vene"@de ;
+    skos:definition "The operation as the section states it, which is in two sentences and no more: venesection cures dysuria, and the internal veins of the arm are the ones to open; and persons who are benefited by venesection or purging should be bled or purged in spring. No posture, no quantity, no instrument, no sign of a good opening and no list of persons who are not to be opened."@en ;
+    skos:note "Entered with the thinness showing, because the thinness is the comparison. The Susruta devotes a whole lesson of its anatomical book to this same operation — the persons unfit for it, the three times of day and year at which it may be done, the appearance of a well-pierced vein, the quantity to be taken, twenty named ways of opening a vein badly — and the Aphorisms give two lines. Whether the rest of the Hippocratic collection carries the apparatus is a question for the treatises this file names and does not open."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.36 and VI.47, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+pmc:HippocratesVenaeSectioVere a pm:Cautioning ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "Bleed and purge in spring"@en, "Im Frühjahr zur Ader und abführen"@de ;
+    skos:definition "Persons who are benefited by venesection or purging should be bled or purged in spring. The season is stated as the time of the operation and no consequence is given for operating outside it."@en ;
+    skos:note "A season without a stated penalty. The holding carries a number of claims that bind an operation to a calendar and the useful distinction among them is whether anything is said to follow from acting outside the window; here nothing is, and the node is entered at that strength rather than at a stronger one."@en ;
+    pm:cautionsAbout pmp:HippocratesVenaeSectio ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.47, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+pmp:HippocratesIncisioEtCauterium a pm:Practicing ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "Treating empyema or dropsy by incision or the cautery"@en, "Die Behandlung von Empyem oder Wassersucht durch Schnitt oder Brenneisen"@de ;
+    skos:definition "The operation the section names only in order to state the condition under which it kills: cases of empyema or dropsy treated by incision or by the cautery, so that the collected water or pus is let out. Nothing is said about where the incision is made, with what, or how much is to be taken."@en ;
+    skos:note "Entered because the caution beside it needs something to warn about and because the act is named in the text rather than supplied here. The thinness is the same thinness as at the venesection node and has the same explanation: the Aphorisms assemble sentences and leave the procedures to the treatises they were assembled from."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.27, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+pmc:HippocratesEvacuatioCeleris a pm:Cautioning ;
+    pm:fromWork pmw:AphorismiHippocratis ;
+    rdfs:label "The evacuation that kills by being quick"@en, "Die Entleerung, die durch ihre Schnelligkeit tötet"@de ;
+    skos:definition "Those cases of empyema or dropsy which are treated by incision or the cautery, if the water or the pus flow rapidly all at once, certainly prove fatal. The claim is about the manner of the operation and not about the disease: the same incision kills or does not kill according to the rate at which it empties."@en ;
+    skos:note "The sharpest caution in the section and the only one that puts the outcome on the operator's hand. It is the Greek counterpart of what the Susruta states about quantity in its lesson on venesection, where an excessive flow is forbidden and a remnant of the diseased blood is to be left standing on purpose."@en ;
+    skos:note "A second caution of the same family stands nine aphorisms earlier and is not entered separately: when a person has been cured of chronic hemorrhoids, unless one be left, there is danger of dropsy or phthisis supervening. Both sentences say that the complete removal is the dangerous one."@en ;
+    pm:cautionsAbout pmp:HippocratesIncisioEtCauterium ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, Aphorisms VI.27, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
