@@ -1,0 +1,27 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the search carried for the Jibaro run
+#
+# One search, over the holding and not over a corpus, and it was carried
+# because the Jibaro shield rule looked like something the holding did not
+# have. It turned out to be exactly that, and the node exists so that the next
+# run can count rather than guess.
+#
+
+pmp:ArtefactPenaltySearch a pm:Searching ;
+    rdfs:label "Whether any other observance in the holding is answered by the state of a made object"@en, "Ob eine andere Auflage im Bestand von dem Zustand eines gemachten Dings beantwortet wird"@de ;
+    pm:searchedCorpus "The compiled holding of prima-materia as of main at bf46350, all directories, queried over the merged graph" ;
+    pm:searchedFor "Whether the holding already carries a transmission in which a rule laid on the conduct of a practitioner has, as its stated consequence of being broken, the physical failure of an object he is making or has made — a split, a warp, a rot, a worm, an unusable result. The question matters because almost every stated consequence in this holding falls on the practitioner himself, where nobody but he can settle it, and a consequence that falls on a piece of wood is settled by looking." ;
+    pm:searchTerms "All eighty-three pm:consequenceOfSkipping literals of the merged graph, read in full, filtered for: crack, burst, warp, split, moth, rot, spoil, useless, crooked, shatter, break, broken, flaw, fail to set, fail to form, fail to harden, does not set, does not form, not form, unusable, blacken, curdle. Five matched and all five were read at their nodes. The same patterns were then run against every literal of the graph paired with a maker's vocabulary — make, forge, carve, fashion, cast, mould, smith, weave, vessel, drum, shield, blade, amulet, image — which returned eighty-two subjects, all of them inspected by name." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-02" ;
+    dcterms:date "2026-10-02" ;
+    skos:note "Nothing of the kind. Of the eighty-three stated consequences in the holding, the five that mention an object failing are all something else. The Inuit case puts crooked arms, legs, neck or back on the person who refuses the office, which is the practitioner's own body. The Maya case says the fasts were not dared to be broken for fear of evil upon the faster or upon his house, which names no object and no failure. The Inuit sewing prohibition explains a failed return by a garment sewn of new caribou skin, which is an act and not a damaged thing. The Jain case lists seven consequences and all seven are states of the practitioner. The one that comes nearest is the Christian confession test, where the bead breaking in two rather than three means the confession was not good — and that is a divinatory criterion read off an object, not the penalty of an observance."@en ;
+    skos:note "So pmc:JibaroTandaraAbstinence is the first case in the holding of a rule on the maker whose stated penalty is the condition of the made thing, and the Canelos variant beside it is the second. Two cases are not a generalization and none is written. What the next run can do is ask the question of the corpora that would most likely have it and that this holding already carries: the alchemical operations, where a batch either forms or does not; the Rasashastra chapters on the eighteen operations on mercury and their doctrine of faults; the instrument-making of the ritual handbooks. None of those was asked here."@en ;
+    skos:note "The method, with its hole named. The first pass read a single property across the whole graph, which is exhaustive for that property and blind to a consequence stated in a skos:note instead; the second pass caught those but returned eighty-two subjects of which most were about something else, and they were sorted by reading the names rather than the nodes. A consequence of this kind hidden in a note of a node whose name does not suggest it would have been missed."@en .

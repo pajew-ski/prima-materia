@@ -1,0 +1,270 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Jibaro (Shuara) transmission, worked from the register
+#
+# The structure-driven entrance of SPEC §14. pmt:Amazonian stands in
+# traditions/registry-outside-contact.ttl on pm:corpusNamed with
+# pm:contactRouteAbsent and no node pointing at it, which puts it among the
+# three entries queries/coverage-queue.rq ranks first — the only registered
+# transmissions whose witnesses could ever count as independent. Its
+# registration gives a reason for not having been opened: no corpus in its own
+# language, and what exists is transcribed song and ethnographic report,
+# "which this project cannot yet admit as a source."
+#
+# That reason is overtaken. SPEC §10 introduced pm:fieldAttestation for
+# exactly this case — where the writing down by a third party is the first
+# fixation at all — and nine entries of the same register file have left it on
+# that mode since. The register entry is the one place where the old rule is
+# still being quoted, and this file is the correction.
+#
+# Why a new name and not pmt:Amazonian taken down. pmt:Amazonian is a region
+# and not a transmission: its definition names songs that direct the effect of
+# a plant preparation and a body that can be exchanged for another, and the
+# work opened here carries neither. To put a Jibaro file under the name of the
+# lowland would claim the lowland for one people. The container entry
+# therefore stays registered and stays at zero, which is correct — one opened
+# work does not open it — and the question whether a regional container should
+# exist at all is put to the human in the pull request rather than answered
+# here.
+#
+# Three decisions before the first node, as §14 requires.
+#
+# One: the contact route is disputed, and the ground is in the work rather
+# than assumed. The corpus itself reports contact at three levels. The shield
+# wood has a Jibaro name and a Quichua name side by side; the diet rule for a
+# sick relative is reported of "the Jibaros and the Canelos Indians" together,
+# and the Canelos are Quichua-speaking and said to be in part of the same race;
+# the rules for making a shield are given twice, once for the Jibaro and once
+# for the Canelos, with the same prohibition and the same failure sign. The
+# graph already holds pmt:Andean, which is Quechua material. So a route to a
+# tradition in this holding is documented at the level of neighbourhood and
+# vocabulary, and whether this ritual complex travelled along it is not
+# established. Disputed, not absent: the same correction the Māori and Inuit
+# entries received. The tradition may not be counted as a party to a
+# convergence until the dispute stands as its own node.
+#
+# Two: the edition. Rafael Karsten, Blood Revenge, War, and Victory Feasts
+# among the Jibaro Indians of Eastern Ecuador, Smithsonian Institution, Bureau
+# of American Ethnology, Bulletin 79, Washington: Government Printing Office,
+# 1923, read in the archive.org full text bloodrevengewarv00kars. The running
+# heads run in an unbroken sequence of even pages from 2 to 94 and no page is
+# missing. The work is a United States government publication and is in the
+# public domain.
+#
+# Three: how many citable passages. Read at the wording and entered: fourteen
+# nodes from the pages named in their sources. The harvest note at
+# prima-materia#830 says what was read and what was left.
+#
+# On the identifiers. Where the work prints a Jibaro term, the identifier is
+# formed from it in Karsten's transcription — maikoa, natema, tandara, tsantsa,
+# arutama, wakani, inchi. Where it prints none for the thing being claimed, the
+# identifier is descriptive English, which is what this holding already does in
+# its other field-attested files (pmc:TheNamedManDiesWithinTenDays,
+# pmc:InuitForkSignOfSurvival). It is a worse anchor than a term and better
+# than a coined Jibaro form that no reader would recognise.
+#
+# One warning about the witness that bounds every node below. Karsten explains
+# as he reports: he gives the sweet-potato prohibition and then says the belief
+# is due to the sweet potato looking like rotten wood, and he calls the rules
+# superstitions. The explanations are his and are marked as his wherever they
+# appear; the rules and their stated consequences are the transmission's.
+#
+
+pmt:JibaroShuara a pm:Tradition ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "Jibaro (Shuara) transmission"@en, "Jibaro-Überlieferung (Shuara)"@de ;
+    skos:definition "The transmission of the Jibaro of eastern Ecuador, who call themselves Shuara, taken here at the part of it this work records: the narcotic drink by which the ancestors are seen and consulted before a killing, the observances a slayer is bound to afterwards with their stated terms and their stated penalty, and the rule that what a man eats and does passes into the thing he is making."@en ;
+    skos:note "Read at the wording in this run: the introduction and the chapters on the weapons, on the origin and conduct of the feuds, on the observances after a killing, on the washing of the blood, on the feast suamartinyu, and the second day of the tsantsa feast — printed pages 1 to 19, 34 to 37, 46 to 47 and 70 to 73. Not read: the preparation of the head trophy (pages 28 to 33), the first and third to seventh days of the tsantsa feast, the concluding remarks on the feast at page 87, and the plates. The work is 94 printed pages and roughly a third of it was read."@en ;
+    skos:note "The position of the corpus, which SPEC §10 asks for beside the gathering of each passage. The work names no informants, gives no dates of collection and reports no interpreter; its letter of transmittal is dated 1 February 1921 and bounds the gathering from above. Karsten writes throughout as someone who was present and had the Jibaro terms, and he prints three chants in the language with translation, so the wording of the transmission is carried for those and not for the rest. He is also writing after three centuries of mission and trade contact that he himself describes — firearms are received from the whites in exchange for a head trophy — so this is a corpus fixed inside contact and not before it."@en ;
+    skos:note "What this file does not do. It does not take pmt:Amazonian down from the register, it does not claim that the Jibaro material stands for the lowland, and it does not assert any convergence. Its purpose is that the first lowland South American transmission in this holding exists as something other than a registration."@en ;
+    pm:principalCorpus "No transmitted written corpus; Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79; Karsten, The Head-Hunters of Western Amazonas; Up de Graff, Head Hunters of the Amazon, as the account of an outsider" ;
+    pm:corpusWork pmw:KarstenBloodRevenge ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 1-3" .
+
+pmw:KarstenBloodRevenge a dcterms:BibliographicResource ;
+    rdfs:label "Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians"@en, "Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians"@de ;
+    skos:note "Opened on 2026-10-02 at the pages named in the nodes of this file. The remainder is reachable by the same route and the cheapest continuation: the chapters on the preparation of the head trophy and on the remaining days of the tsantsa feast carry the ceremonies whose failure the observances are said to guard against, and the concluding remarks at page 87 are where the recorder states what he thinks the feast is for."@en ;
+    skos:note "A United States government publication, archive.org bloodrevengewarv00kars, 318391 characters of full text, running heads unbroken. The Jibaro terms are carried in the recorder's transcription throughout and three chants are printed in the language."@en .
+
+#
+# The practices
+#
+
+pmp:JibaroMaikoaUmartinyu a pm:Practicing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "Drinking maikoa in the dreaming ranch"@en, "Das Trinken des maikoa in der Traumhütte"@de ;
+    skos:definition "The operation by which the ancestors are consulted before a killing. The drink called maikoa is prepared from the rind of the bush Datura arborea. The man retires to the forest, remains there three days and three nights fasting strictly, and sleeps in a small dreaming ranch called ayámdai, usually many miles from the houses. At puberty the drink is obligatory and follows the feast kusupani, which lasts three or four days; an older warrior takes it when he wants to know who his enemies are and whether he will be victorious."@en ;
+    skos:note "Two drinks are named for the same purpose and the work distinguishes them. Natema, from the stem of the vine Banisteria caapi, is also drunk for divination; maikoa, whose effects are said to be much stronger, is the particular narcotic of warriors. Asked why he drinks maikoa, a Jibaro answers: I do it in order to kill my enemies — Shuara matinyu."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 2-3 and 17" .
+
+pmp:JibaroNatemaUmartinyu a pm:Practicing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The drinking of the natema at the head-trophy feast"@en, "Das Trinken des natema beim Kopftrophäenfest"@de ;
+    skos:definition "Pieces of the stem of Banisteria caapi, a vine specially cultivated, are crushed with clubs, parted into thinner fibres and boiled in water for a couple of hours — at the trophy feast for about one hour — and tobacco water boiled at a second fire is poured in. The slayer himself has to assist, his wrist held by the officiant, so that the power he is held to carry passes into the drink; two rings of samiki bark the size of his index finger are tied to a piece of manioc stem and set on the boiling tobacco pot to catch and carry that power. All who want to dream may drink, the slayer and his wife and daughter among them. Each drinker empties a dish of a little over half a litre, goes out and vomits it, and repeats this three times; they have eaten and drunk nothing beforehand and fast strictly afterwards until they have slept and dreamed."@en ;
+    skos:note "The sequence is exact enough to repeat and the quantities are given, which is unusual in this holding for an operation of this kind. What it does not give is a term: nothing is said about how soon the dream must come or what follows if it does not."@en ;
+    skos:note "The account of what the rings are for — to catch the slayer's power and transfer it to the manioc and the tobacco pot — is the recorder's statement of the object of the ceremony and reads as his summary of what the Jibaros hold. It is reported here and not made a claim of its own."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 70-72" .
+
+pmp:JibaroTandaraMaking a pm:Practicing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "Making the shield"@en, "Das Anfertigen des Schildes"@de ;
+    skos:definition "The shield, tandara, is wrought of one single piece of a wood the Jibaros call kamaka and the Quichua-speaking Canelos lanchama, light and strong at once, and is always round. While the rough work is being done the maker partly fasts and abstains from his wives. The Canelos observance for the same work is given in full beside it: the rough work takes four days, the man works every day from early morning until noon, fasts and takes neither food nor drink through the whole forenoon, drinks manioc beer only when the day's work is finished, keeps strict silence towards everybody while working, and does not lie with his wife during the four days and nights."@en ;
+    skos:note "Entered because the rule attached to it is the most nearly falsifiable claim in the work: what is at stake is the condition of a wooden object, and the object is there to be looked at."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 6-7" .
+
+pmp:JibaroIhambratinyu a pm:Practicing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The slayer's fasting"@en, "Das Fasten des Töters"@de ;
+    skos:definition "Nothing is prescribed while the warriors prepare for the war and march to it; the fasting begins the moment an enemy has been killed. On the way home the slayers eat only boiled and mashed manioc, nauma, cooked by themselves and by no other man and still less a woman, and taken with small wooden pins and never with the fingers, the hands being polluted with blood. They may not bathe or wash in any way until they reach home, and arrive soiled with blood, as do their loin cloth and the lance and the knife. At home the diet is named: nauma, the root fruit sangu which the Quichua call mandi, the dish ambi of manioc and sangu leaves; forbidden are pork, chicken, the large wild hog unta pakki and any kind of monkey; allowed are the small peccary yankipi, the agouti kayuka, only the small forest birds taken with blowpipe and unpoisoned arrows, and only the smallest fish, sardines and the small shellfish chumakai shachma. Manioc beer is forbidden for the first two days. For the first month he may not sleep in his house and passes the nights in a small ranch on the river bank; at the end of the month he stands under a waterfall, paccha or sasa, and lets the water fall on his naked body, and may then sleep in the house but in the men's fore-room tangámasha and not with his wife. The diet and the abstinence run for two months, or among some Jibaros three."@en ;
+    skos:note "A counted observance with a counted release inside it, which is rare in this holding: the month that ends at the waterfall is a station, and the two or three months are the whole. The work records its own variation — two months or three — without resolving it, and that is the transmission's variation and not the recorder's uncertainty, since he states it as a difference between Jibaros."@en ;
+    skos:note "The restrictions after a killing inside the tribe are stated to be much milder than those after killing an enemy of a foreign tribe. What is entered here is the milder set, read at pages 19 and 34 to 35; the stricter set belongs to the chapters this run did not read."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 19 and 34-35" .
+
+#
+# What the ancestors are said to give, and the one answer that is checkable
+#
+
+pmc:JibaroArutamaSeen a pm:Conceptualizing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "Having seen the Old Ones, and what it is said to confer"@en, "Die Alten gesehen zu haben, und was es verleihen soll"@de ;
+    skos:definition "The arutama, the Old Ones, are the souls of the ancestors and appear to the drinker in the dream as jaguars, eagles, giant snakes and other wild animals, or in the lightning, the rainbow and meteors. They speak to the young man and teach him in all manly business and first of all in warlike deeds. Only the youth who has seen the arutama in the dream and has been spoken to by them can expect to become a valiant and successful warrior, to kill many enemies, and himself to secure long life. The capacity is stated with an outward mark: when he afterwards meets a jaguar, an eagle or a boa in real life he shows no fright and does not flee but challenges it with his lance, and in the fight he meets his enemy without fear."@en ;
+    skos:note "The claim has two halves and they are not equally checkable, which is why both are in the definition. Long life and success in war are settled by a career; the absence of fright before a jaguar is settled by one meeting and in front of witnesses. The transmission supplied the second itself and it is the nearer thing to a criterion."@en ;
+    skos:note "Entered as a capacity and not as a sign. The holding keeps signs of success apart because a sign announced in advance is reported by the person who wants it; this one is announced in advance too, but what is announced is a behaviour in company and not an inner event, and it is the claim rather than its confirmation."@en ;
+    skos:note "A chant in the language is printed for it, Arutama weinikama, given as I have seen the Old Ones."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 2-3 and 24" .
+
+pmc:JibaroMaikoaYieldsArutama a pm:Yielding ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The drink and the three days bring the Old Ones"@en, "Der Trank und die drei Tage bringen die Alten"@de ;
+    pm:byPractice pmp:JibaroMaikoaUmartinyu ;
+    pm:yieldsCapacity pmc:JibaroArutamaSeen ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Rafael Karsten among the Jibaro of the Pastaza, Morona and Upano-Santiago in eastern Ecuador and published by the Bureau of American Ethnology in 1923, the manuscript transmitted in February 1921. No informant is named at this place and no date of gathering is given; the account is the recorder's own and the Jibaro terms, maikoa and arutama and ayámdai, are carried in his transcription beside the English, with no continuous text in the language."@en ;
+    skos:note "Stated with a condition rather than as an effect, and the condition is the finding: if the dreams are good the arutama appear. So an operation that produces no dream, or a bad one, is covered in advance and is not a case of the drink having failed."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 2-3 and 17" .
+
+pmc:JibaroMaikoaDivination a pm:Conceptualizing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The answer before the attack, and the half of it nobody tests"@en, "Die Antwort vor dem Angriff, und die Hälfte, die niemand prüft"@de ;
+    skos:definition "Those preparing a feud never omit to consult the spirits first, and the spirits let them know whether the planned attack will succeed. After the three days and nights of fasting in the dreaming ranch the arutama speak and tell the warrior whether he will be able to kill the enemy or whether he will perhaps be killed himself. The two answers are printed as sentences: that sorcerer who has bewitched your father you will conquer and kill; or, if you make war against that sorcerer now, you will not succeed in killing him, but you will be killed yourself."@en ;
+    skos:note "This is as near a prediction as anything in this holding comes. The outcome is public, settled within days, and not in the operator's gift: either the enemy is dead or he is not. And the transmission removes one of the two answers from the reckoning in the same paragraph — in the unfavourable case the avenger desists from his plan, at least for the present, so the prediction that he would be killed is never put to the event. What remains checkable is the favourable answer alone, which is the half that gets acted on."@en ;
+    skos:note "The asymmetry is not a reproach. A man who is told he will die and attacks anyway would be testing an oracle with his life, and no transmission in this holding asks that. What makes it worth a node is that the asymmetry is structural: the answers that could fail are filtered out by the rule for acting on them, so a perfect record is what this procedure would produce whether or not it had any power."@en ;
+    skos:note "A second divination stands beside it and is of the opposite kind. When a chief or a great warrior dies, a medicine-man drinking natema establishes not only that the death was caused by witchcraft but who the wizard is, and the killing follows from that finding. Nothing in the work states how such an identification could be wrong, and the whole feud system rests on it."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 16-17" .
+
+#
+# The rule whose failure is a piece of wood
+#
+
+pmc:JibaroSoulInTheMadeObject a pm:Conceptualizing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "What a man eats and does passes into the thing he makes"@en, "Was ein Mann isst und tut, geht in das Ding über, das er macht"@de ;
+    skos:definition "The Jibaro is reported as not distinguishing his own person from the things he has made himself. Making a shield, a drum, a blowpipe or another delicate object, he has to diet and observe abstinence, because he puts something of his own person, his own soul, into the object; and his properties — the essential and habitual ones and those occasionally acquired by eating a certain food — are thereby transferred to that object. The same principle is stated of persons: when one member of a family is sick the rest have to keep the same diet, for if they eat unsuitable food it is as if the patient had eaten it and his condition would grow worse; and after a child is born the parents fast and observe abstinence for a couple of years, until the child is named."@en ;
+    skos:note "The mechanism behind the shield rule and worth having separately, because it is a general claim with several distinct consequences and because two of them are checkable in different ways. A shield is inspected; a sick relative either worsens or does not, and the rest of the family's diet is a matter of record in a household."@en ;
+    skos:note "Reported by the recorder as the Indians' own view and in his vocabulary of souls and persons, so the wording of the principle is his. What is not his are the three consequences, each of which he gives as a rule the Jibaros keep."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 13-14" .
+
+pmc:JibaroTandaraAbstinence a pm:Presupposing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The shield presupposes the fast and the continence of the man making it"@en, "Der Schild setzt das Fasten und die Enthaltsamkeit seines Verfertigers voraus"@de ;
+    pm:dependentStep pmp:JibaroTandaraMaking ;
+    pm:priorStep pmp:JibaroIhambratinyu ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Named for each prohibition separately and in terms of the object. If the maker eats the sweet potato called inchi the shield will be attacked by moth, rot and become useless. If he lies with a woman during those days the shield will burst or get crooked. For the Canelos the same work and the same three prohibitions — the forenoon fast, the strict silence, the continence through four days and nights — carry one joint consequence: if he infringes these rules the shield will get humpy or burst, or be attacked by moth."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Rafael Karsten among the Jibaro of eastern Ecuador and, for the second set of rules, among the Quichua-speaking Canelos, published by the Bureau of American Ethnology in 1923. No informant is named and no date of gathering is given; the Jibaro and Canelos names of the shield wood, kamaka and lanchama, and the Jibaro names of the shield and of the sweet potato, tandara and inchi, are carried in the recorder's transcription."@en ;
+    skos:note "The reason this node exists. Almost everything this holding carries puts the consequence of a broken rule inside the practitioner — he falls ill, he dies, the power does not come, the spirits withdraw — and none of that is settled by anyone but him. Here the consequence is the state of a wooden disc: split, warped, worm-eaten or sound. It is announced before the work begins, it arrives within days, and anybody can look. Of the material read in this run it is the only claim that would cost nothing to put to the test."@en ;
+    skos:note "What weakens it, and it should be said in the same place. All three outcomes named are the ordinary ways a piece of green tropical wood fails, so a shield that splits confirms the rule and a shield that holds confirms the observance, and nobody in the account is reported as having kept a count. The claim is testable in form and has not been tested; that is the difference this holding exists to show."@en ;
+    skos:note "The recorder adds an explanation of his own to the first prohibition — that the belief is due to the sweet potato having the same appearance as moth-eaten or rotten wood — and calls the rule a superstition. His explanation is his; the rule and its stated consequence are reported as the transmission's."@en ;
+    skos:note "The prior step named here is the slayer's fasting, which is the only other observance of the same kind in this file. The dependency the text states is on the maker's own fast and continence during the days of the work, and those days are not a practice of their own in this holding."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 6-7" .
+
+#
+# The observances after a killing, and where their failure is put
+#
+
+pmc:JibaroWakaniTakesHisLife a pm:Presupposing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The slayer's life presupposes his keeping of the fast"@en, "Das Leben des Töters setzt das Halten seines Fastens voraus"@de ;
+    pm:dependentStep pmp:JibaroIhambratinyu ;
+    pm:priorStep pmp:JibaroMaikoaUmartinyu ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "If the rules are infringed by the slayer, the soul of the killed enemy, who constantly follows him thirsting for revenge, will take his life. The same is stated of two details of the diet: the food on the way home would become impure if the slayers touched it with hands polluted with blood, and they would expose themselves to death."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Rafael Karsten among the Jibaro of eastern Ecuador and published by the Bureau of American Ethnology in 1923. No informant is named and no date of gathering is given; the names of the dishes and of the men's room, nauma, sangu, ambi, yankipi, kayuka, chumakai shachma and tangámasha, are carried in the recorder's transcription beside the English."@en ;
+    skos:note "A long observance, a counted term of two or three months, and one named penalty for the whole of it. The penalty is the death of the slayer, which arrives at no stated time and has no stated upper bound, so a slayer who breaks the diet and lives has not refuted anything: the avenging soul follows him constantly and the account sets no date by which it must have acted."@en ;
+    skos:note "Set beside pmc:JibaroTandaraAbstinence this is the contrast the two nodes exist for. Both are observances of fasting and continence; one is answered by a piece of wood within days and the other by the practitioner's eventual death. The transmission has both forms and uses the checkable one on an object and the uncheckable one on a man."@en ;
+    skos:note "The prior step named here is the maikoa drinking, because the fast begins from the killing that the divination precedes. It is the order the work gives and not a dependency of efficacy."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 19 and 34" .
+
+pmc:JibaroPrickingNotToDie a pm:Presupposing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The pricking on the evening of the killing"@en, "Das Stechen am Abend der Tötung"@de ;
+    pm:dependentStep pmp:JibaroIhambratinyu ;
+    pm:priorStep pmp:JibaroTandaraMaking ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "On the evening of the day the enemies have been killed, every warrior who took part pricks himself slightly over the whole body — arms, legs, shoulders, breast and stomach — with a pointed blowpipe arrow, and this is held to protect him against the spirit of the killed enemy. In the dream the slayer meets the spirit, who says: come, let us dance together, and his own soul answers: no, I cannot dance, for I have my body full of sores. If he has not pricked himself in the evening he will in the dream obey the exhortation to dance, and the consequence will be that the warrior soon dies. The Jibaros say that they prick themselves in order not to die."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Rafael Karsten among the Jibaro of eastern Ecuador and published by the Bureau of American Ethnology in 1923. No informant is named and no date of gathering is given; the exchange in the dream is printed in English only and the Jibaro wording is not carried at this place."@en ;
+    skos:note "Entered because the rule names the mechanism by which it works and the mechanism is a sentence the practitioner's own soul is to be able to say. The sores are not a sign of success but the means: they are what makes the refusal true. A protocol is not available — the event is a dream — but the dependency is stated with unusual precision, and the step that is left out is one an observer could see being done."@en ;
+    skos:note "The prior step named here is formal. The pricking does not depend on the making of a shield; it depends on there having been a killing, and this holding has no step for that. The dependency the node states is in the consequence clause, which is where the text puts it."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), p. 34" .
+
+#
+# The claim with a two-year term and a public outcome
+#
+
+pmc:JibaroTsantsaPlenty a pm:Conceptualizing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The increase of the swine and the fields"@en, "Die Mehrung der Schweine und der Felder"@de ;
+    skos:definition "What the head trophy is said to bring: that the domestic animals and the fields grow and develop not in a normal way but with an extraordinary force. The soul of the killed enemy, the wakáni, turned by the conjuration into the slayer's obedient slave, instructs him in his dreams how the swine and the chickens are to be fed and tended so that they grow quickly, get fat and increase, and how the plantations are to be cleaned and irrigated so that they bear abundantly; and the slayer, with the trophy round his neck, passes those instructions on to the women, whose work this normally is."@en ;
+    skos:note "The outcome named is fat pigs and a full manioc field, which is as public an outcome as this holding carries anywhere, and the term is given by the thing itself: the breeding of swine to full growth takes about two years, which is why the great feast waits that long. A claim with a two-year term and a harvest at the end of it is in principle answerable by anyone who lives in the house."@en ;
+    skos:note "And the account states both outcomes. If everything has turned out well, the swine full grown and fat and the fields abundant, the warrior begins the preparations for the proper feast; if he has been negligent in the fasting, the swine die — the wakáni biting them as a poisonous snake, or killing them otherwise — and the plantations dry away."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 46-47" .
+
+pmc:JibaroTsantsaYieldsPlenty a pm:Yielding ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "The kept fast brings the increase, and the broken one the loss"@en, "Das gehaltene Fasten bringt die Mehrung, das gebrochene den Verlust"@de ;
+    pm:byPractice pmp:JibaroIhambratinyu ;
+    pm:yieldsCapacity pmc:JibaroTsantsaPlenty ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Rafael Karsten among the Jibaro of eastern Ecuador and published by the Bureau of American Ethnology in 1923. No informant is named and no date of gathering is given; the terms tsantsa, wakáni and suamartinyu are carried in the recorder's transcription beside the English, and the account of the two outcomes is the recorder's prose."@en ;
+    skos:note "The structure in full, because it is the most complete one this run found. An operation; a term of about two years set by the growth of a pig; an outcome anyone in the household can see; a failure named as plainly as the success; and a cause assigned to the failure that is always the practitioner's negligence in the fasting, so that a bad harvest is evidence about the man and never about the trophy. The account says in as many words that it is of paramount importance that the ceremonies be carried out properly and that the slayer continue strictly to observe the rules, and that calamities are the operations of the revengeful spirit against whom sufficient precautions have not been taken."@en ;
+    skos:note "What would have to be done with it. The base rate is knowable here in a way it almost never is: pigs and manioc have ordinary rates of thriving and failing, and the claim is of an extraordinary force beyond the normal. A protocol would compare households with a trophy against households without, and the work reports no such comparison and no count."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 46-47" .
+
+#
+# The signs, kept separate and counted separately
+#
+
+pmc:JibaroNatemaOmen a pm:Conceptualizing ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "What the drinkers are told they will see"@en, "Was den Trinkern angesagt wird, dass sie es sehen werden"@de ;
+    skos:definition "The object of the drinking of the natema at the trophy feast is to ascertain whether everything will turn out favourably for the slayer — whether he will have a long life, attain material prosperity and be lucky in his undertakings. What the slayer and his relatives are to see in the dream is stated in advance: his house surrounded by large and flourishing plantations of manioc and bananas, his swine and chickens numerous and fat; and the spirit shows him the tracks of the swine and lets him hear their grunting. The drinkers are said to be benefited for their own part as well, purified of impure and disease-bringing matters and gaining strength for their work. After sleeping until the afternoon they bathe in the river, return, and tell the older Indians what dreams they have had."@en ;
+    skos:note "Held apart from the conditions of failure as SPEC §15 requires, and this one shows exactly why the separation is needed. The content of the favourable dream is announced before the drink is taken, the dreamer reports it himself afterwards to the old men, and the thing he is to see is the same thing the trophy is said to bring about. A sign in that position can only confirm."@en ;
+    skos:note "One detail makes it worse rather than better. Every drinker empties three dishes and vomits each one, so the dose that acts is unknown and uncontrolled, and a drinker who sees nothing has an explanation to hand that the account does not need to supply."@en ;
+    pm:withinTradition pmt:JibaroShuara ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 72-73" .
