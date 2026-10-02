@@ -1,0 +1,33 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the interval between the wound and the death
+#
+# The candidate was put into the tracker as prima-materia#612 with one side
+# read at the wording and the other not. Both sides are read now, and so is
+# the counter-comparandum the issue named. What the convergence can claim has
+# changed in the reading, and this file says what it claims and what it does
+# not.
+#
+# The correspondence is an assertion of the compiler and carries nothing else.
+# Neither transmission says anything about the other, and the agreement is in
+# the form of the claim and not in its content: the organs do not match, the
+# numbers do not match, and the setting does not match. Surgery and
+# traumatology on one side, the prohibitions on needling on the other.
+#
+
+pmc:TheIntervalAfterTheWound a pm:Converging ;
+    rdfs:label "The wounded site coupled to a counted interval of death"@en, "Der Verletzungsort, an eine gezählte Todesfrist gekoppelt"@de ;
+    skos:definition "Two medical transmissions do the same unusual thing with a wound: they take the site that was struck as the thing that fixes how long the dying takes, and they state the length in counted days. The needling-prohibition chapter of the Suwen gives six depots with six day-counts and pairs each with a bodily movement by which the strike is to be recognised. The sixth chapter of the Susruta's anatomical book sorts a hundred and seven marmas into five classes by the consequence of their injury and gives the two lethal classes their terms, seven days for the one and a fortnight or a month for the other. In both, the number rides on the place and not on the severity, and in both the interval is stated as doctrine rather than as a range of observations."@en ;
+    skos:note "What is not shared, and it is more than what is. The Chinese list is of six organs and is reached by the needle; the Indian list is of a hundred and seven junctions of muscle, vessel, ligament, bone and joint, and is reached by a weapon or a surgeon's knife. The Chinese chapter pairs each interval with a sign; the Indian chapter pairs each class with a physiology of fiery and lunar virtues. The Indian one adds a rule that moves a site between classes according to the depth of the wound and whether it was struck in the centre or at the edge, and the Chinese one has nothing of the kind. A convergence of the form of a claim is all this is."@en ;
+    skos:note "The counter-comparandum, which is the part of this node that was actually missing. Hippocrates, Aphorisms VI.18, names seven parts whose severe wounding is deadly — bladder, brain, heart, diaphragm, small intestines, stomach, liver — and attaches no interval to any of them, no sign, and no gradation. That matters because the same section of the same work counts days twice, at seven days for a sudden apoplectic seizure and at forty for a gouty inflammation. The Greek corpus can state a term and does not state one for a wound. So coupling a site to an interval is not simply what a medical transmission does, and the agreement between the other two is a finding rather than a genre."@en ;
+    skos:note "Where the two readings weaken the candidate as the issue stated it. The Indian terms are not as firm as a summary makes them: the translation gives one term in a parenthesis at the enumeration of the classes and a different one in the body of the verse sixteen places later, and the chapter's own shift rule lets a site be reassigned according to how it was struck. The Chinese terms are in open dispute inside their own canon, which the holding already carries: three chapters of the Suwen give three sets of numbers and the earliest reachable witness disagrees with the received text at two of six places. A convergence between two disputed interval-sets is still a convergence of form, and the form is what is claimed."@en ;
+    pm:convergingConcept pmc:SusrutaMarmabheda, pmc:CizhongWuzang ;
+    pm:independentAttestation pmt:Ayurvedic, pmt:ChineseMedicalCanon ;
+    pm:independenceGround "The ground is a date against a route and it is weaker than it looks, which is why it is stated at length rather than asserted. The needling-prohibition chapter belongs to the Suwen, whose material is placed by the specialist literature between the late Warring States and the Han; the marman doctrine belongs to a work whose composition Meulenbeld places over several centuries, beginning in the last centuries before the common era, with a redaction traditionally assigned to the third or fourth century. The documented channel between Indian and Chinese medicine runs through Buddhism from the second and third centuries and becomes effective in the Six Dynasties, which is later than the earlier end of both fixations and not later than the later end of either. So the independence holds against the documented route for the early stratum of each and is not established for the redaction of either, and neither fixation date was read at a primary source in this run — both are taken from the secondary literature and neither work's own dating was examined. A protocol on this node would have to settle the stratum before it settled anything else, and the holding's own dispute node on the Chinese intervals shows that the received text is not a single stratum."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The identifier of the counter-comparandum is pmc:HippocratesVulneraLetalia in traditions/hippocratic.ttl, and it is deliberately not named with pm:convergingConcept: it is the case that does not converge, and a property that listed it among the converging concepts would report the opposite of the finding."@en .
