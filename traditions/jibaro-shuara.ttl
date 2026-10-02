@@ -1,0 +1,99 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Jibaro (Shuara) transmission, worked from the register
+#
+# The structure-driven entrance of SPEC §14. pmt:Amazonian stands in
+# traditions/registry-outside-contact.ttl on pm:corpusNamed with
+# pm:contactRouteAbsent and no node pointing at it, which puts it among the
+# three entries queries/coverage-queue.rq ranks first — the only registered
+# transmissions whose witnesses could ever count as independent. Its
+# registration gives a reason for not having been opened: no corpus in its own
+# language, and what exists is transcribed song and ethnographic report,
+# "which this project cannot yet admit as a source."
+#
+# That reason is overtaken. SPEC §10 introduced pm:fieldAttestation for
+# exactly this case — where the writing down by a third party is the first
+# fixation at all — and nine entries of the same register file have left it on
+# that mode since. The register entry is the one place where the old rule is
+# still being quoted, and this file is the correction.
+#
+# Why a new name and not pmt:Amazonian taken down. pmt:Amazonian is a region
+# and not a transmission: its definition names songs that direct the effect of
+# a plant preparation and a body that can be exchanged for another, and the
+# work opened here carries neither. To put a Jibaro file under the name of the
+# lowland would claim the lowland for one people. The container entry
+# therefore stays registered and stays at zero, which is correct — one opened
+# work does not open it — and the question whether a regional container should
+# exist at all is put to the human in the pull request rather than answered
+# here.
+#
+# Three decisions before the first node, as §14 requires.
+#
+# One: the contact route is disputed, and the ground is in the work rather
+# than assumed. The corpus itself reports contact at three levels. The shield
+# wood has a Jibaro name and a Quichua name side by side; the diet rule for a
+# sick relative is reported of "the Jibaros and the Canelos Indians" together,
+# and the Canelos are Quichua-speaking and said to be in part of the same race;
+# the rules for making a shield are given twice, once for the Jibaro and once
+# for the Canelos, with the same prohibition and the same failure sign. The
+# graph already holds pmt:Andean, which is Quechua material. So a route to a
+# tradition in this holding is documented at the level of neighbourhood and
+# vocabulary, and whether this ritual complex travelled along it is not
+# established. Disputed, not absent: the same correction the Māori and Inuit
+# entries received. The tradition may not be counted as a party to a
+# convergence until the dispute stands as its own node.
+#
+# Two: the edition. Rafael Karsten, Blood Revenge, War, and Victory Feasts
+# among the Jibaro Indians of Eastern Ecuador, Smithsonian Institution, Bureau
+# of American Ethnology, Bulletin 79, Washington: Government Printing Office,
+# 1923, read in the archive.org full text bloodrevengewarv00kars. The running
+# heads run in an unbroken sequence of even pages from 2 to 94 and no page is
+# missing. The work is a United States government publication and is in the
+# public domain.
+#
+# Three: how many citable passages. Read at the wording and entered: fourteen
+# nodes from the pages named in their sources. The harvest note at
+# prima-materia#830 says what was read and what was left.
+#
+# On the identifiers. Where the work prints a Jibaro term, the identifier is
+# formed from it in Karsten's transcription — maikoa, natema, tandara, tsantsa,
+# arutama, wakani, inchi. Where it prints none for the thing being claimed, the
+# identifier is descriptive English, which is what this holding already does in
+# its other field-attested files (pmc:TheNamedManDiesWithinTenDays,
+# pmc:InuitForkSignOfSurvival). It is a worse anchor than a term and better
+# than a coined Jibaro form that no reader would recognise.
+#
+# One warning about the witness that bounds every node below. Karsten explains
+# as he reports: he gives the sweet-potato prohibition and then says the belief
+# is due to the sweet potato looking like rotten wood, and he calls the rules
+# superstitions. The explanations are his and are marked as his wherever they
+# appear; the rules and their stated consequences are the transmission's.
+#
+
+pmt:JibaroShuara a pm:Tradition ;
+    pm:fromWork pmw:KarstenBloodRevenge ;
+    rdfs:label "Jibaro (Shuara) transmission"@en, "Jibaro-Überlieferung (Shuara)"@de ;
+    skos:definition "The transmission of the Jibaro of eastern Ecuador, who call themselves Shuara, taken here at the part of it this work records: the narcotic drink by which the ancestors are seen and consulted before a killing, the observances a slayer is bound to afterwards with their stated terms and their stated penalty, and the rule that what a man eats and does passes into the thing he is making."@en ;
+    skos:note "Read at the wording in this run: the introduction and the chapters on the weapons, on the origin and conduct of the feuds, on the observances after a killing, on the washing of the blood, on the feast suamartinyu, and the second day of the tsantsa feast — printed pages 1 to 19, 34 to 37, 46 to 47 and 70 to 73. Not read: the preparation of the head trophy (pages 28 to 33), the first and third to seventh days of the tsantsa feast, the concluding remarks on the feast at page 87, and the plates. The work is 94 printed pages and roughly a third of it was read."@en ;
+    skos:note "The position of the corpus, which SPEC §10 asks for beside the gathering of each passage. The work names no informants, gives no dates of collection and reports no interpreter; its letter of transmittal is dated 1 February 1921 and bounds the gathering from above. Karsten writes throughout as someone who was present and had the Jibaro terms, and he prints three chants in the language with translation, so the wording of the transmission is carried for those and not for the rest. He is also writing after three centuries of mission and trade contact that he himself describes — firearms are received from the whites in exchange for a head trophy — so this is a corpus fixed inside contact and not before it."@en ;
+    skos:note "What this file does not do. It does not take pmt:Amazonian down from the register, it does not claim that the Jibaro material stands for the lowland, and it does not assert any convergence. Its purpose is that the first lowland South American transmission in this holding exists as something other than a registration."@en ;
+    pm:principalCorpus "No transmitted written corpus; Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79; Karsten, The Head-Hunters of Western Amazonas; Up de Graff, Head Hunters of the Amazon, as the account of an outsider" ;
+    pm:corpusWork pmw:KarstenBloodRevenge ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "Rafael Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin 79 (Washington: Government Printing Office, 1923), pp. 1-3" .
+
+pmw:KarstenBloodRevenge a dcterms:BibliographicResource ;
+    rdfs:label "Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians"@en, "Karsten, Blood Revenge, War, and Victory Feasts among the Jibaro Indians"@de ;
+    skos:note "Opened on 2026-10-02 at the pages named in the nodes of this file. The remainder is reachable by the same route and the cheapest continuation: the chapters on the preparation of the head trophy and on the remaining days of the tsantsa feast carry the ceremonies whose failure the observances are said to guard against, and the concluding remarks at page 87 are where the recorder states what he thinks the feast is for."@en ;
+    skos:note "A United States government publication, archive.org bloodrevengewarv00kars, 318391 characters of full text, running heads unbroken. The Jibaro terms are carried in the recorder's transcription throughout and three chants are printed in the language."@en .
+
+# ANCHOR-JIBARO-APPEND
