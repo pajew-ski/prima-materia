@@ -1,0 +1,29 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the interval rides on the classification
+#
+# Formed from three attested claims about wounds at named sites, two of which
+# give a counted term and one of which does not. It is the second statement
+# this run attempted: the first was about release clauses and the
+# counter-search over the holding refuted it before it was written, which is
+# recorded at pmp:IntervalReleaseClauseSearch rather than left out.
+#
+# The counter-search for this statement was carried in the same query and over
+# the same nine nodes, and what it found is below.
+#
+
+pmc:TheIntervalRidesOnTheClassification a pm:Generalizing ;
+    rdfs:label "The interval rides on the classification, not on the organ"@en, "Die Frist hängt an der Klassifikation, nicht am Organ"@de ;
+    pm:generalizedStatement "Where a transmission attaches a counted interval to a wound, it first sorts the wounded sites into classes by the manner of their dying and attaches the interval to the class; and where it only lists the sites whose wounding is fatal, it attaches no interval, even where the same text counts days for the course of a disease. The counted interval is therefore a property of a classification of sites and not of the sites themselves, and a transmission acquires it by classifying rather than by observing."@en ;
+    pm:generalizedFrom pmc:SusrutaMarmabheda, pmc:CizhongWuzang, pmc:HippocratesVulneraLetalia ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The three instances. The Susruta sorts a hundred and seven marmas into five classes named by what an injury to them does — kills at once, kills after a term, kills when the shaft is drawn, maims, pains — and gives the terms to the classes and not to the sites, so that the Kshipra of the foot and the Stanamula of the chest share a term by sharing a class. The Suwen's needling-prohibition chapter classifies by depot, which is a classification of the body that the canon uses everywhere, and gives each depot its day-count. The Aphorisms name seven parts in a row with one predicate between them, deadly, and the same section states a term at seven days and another at forty for two courses of disease, so the corpus counts days where it has a course to count them along and does not where it has only a list of parts."@en ;
+    skos:note "What the statement is for. The convergence between the Indian and the Chinese interval-sets is a correspondence of form and could be a coincidence of two medical traditions both being thorough. If the interval is produced by the classification, it is not a coincidence but a consequence, and the question to ask of a third transmission is not whether it counts days but whether it sorts wounded sites into kinds. That question can be put to a text in an afternoon."@en ;
+    skos:note "What would refute it, in two halves because the statement has two. A transmission that lists fatal sites without classifying them and nevertheless gives each one a counted term refutes the first half. A transmission that sorts wounded sites into classes by the manner of their dying and gives no term to any class refutes the second. Either case settles it, and both are the kind of thing a reader of a medical or a ritual-surgical corpus would meet without looking for it."@en ;
+    skos:note "The counter-search over the holding, carried before this was written and recorded at pmp:IntervalReleaseClauseSearch. Nine nodes in the holding couple a term of harm to a counted interval, and the one that refutes the statement this run first intended does not touch this one: the Kongo claim that a man whose name is called dies within ten days attaches its term to a name and not to a place on a body, so there is no classification of sites to be had and nothing to be classified. Of the rest, the bare-depot pulses of Suwen 19 are a second instance of the first half within the same canon, which makes them a strengthening of the Chinese witness and not an independent one; the ninth-day blessing of the Romanusbuechlein attaches a term to a break in a leg with no classification of sites anywhere in the booklet, which is the nearest thing in the holding to a refutation of the first half and falls short of it because a broken bone is not a wound at a site chosen from a list."@en ;
+    skos:note "The weakness, and it is the same weakness the holding's other generalizations carry. Three witnesses, of which the negative one is a translation with the Greek absent and one section of one work read; the Indian one is a translation in which the terms are stated twice and not alike; and the Chinese one stands in a dispute node of its own because three chapters of the same canon give three sets of numbers. The statement is about what transmissions do with intervals, so a disputed interval-set is still an instance; but a protocol on any of the three would have to settle the text before it settled anything else."@en ;
+    skos:note "Its relation to the other statements in this directory. It is not a case of pmc:CountedThresholdNeverFallsDue, which is about counts of repetitions of an operation and what the transmission does when the count is reached without the promised effect. Here the count is not of acts but of days, and what is promised is harm and not benefit — which is why the device that statement found is absent here and a different thing is being claimed."@en .

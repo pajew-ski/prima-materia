@@ -1,0 +1,55 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Susruta marman run
+#
+# Three searches, carried on 2026-10-02. Two are counter-searches owed by SPEC
+# §15 to the convergence candidate in prima-materia#612, and the third is the
+# counter-search §16 requires over the holding before a generalization is
+# written. The third is the one worth reading: it refuted the generalization
+# this run intended to write, before it was written, and that statement is
+# therefore not in the holding.
+#
+
+pmp:HippocraticIntervalSearch a pm:Searching ;
+    rdfs:label "Whether the Hippocratic Aphorisms attach a counted term to a wound"@en, "Ob die hippokratischen Aphorismen einer Wunde eine gezählte Frist beigeben"@de ;
+    pm:searchedCorpus "Hippocrates, Aphorisms, Section VI, all sixty aphorisms, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849, read continuously" ;
+    pm:searchedFor "Whether the Greek corpus, at the place where it lists the parts whose wounding is fatal, says anything about how long the dying takes; and, if not, whether the absence is a property of the genre or of the subject — that is, whether the same section counts days at all. The question decides what the agreement between the Indian marman classes and the Chinese depot intervals is worth, since an agreement in a thing every medical transmission does is not a finding." ;
+    pm:searchTerms "Section VI read continuously, aphorism by aphorism, in Adams's English; within it, whole-text search of the volume for: deadly, mortal, fatal, dies in, die in, death in, within, days, seventh day, forty days, interval, term. Every hit inside Section VI inspected at its place, and the two counted terms outside the wound material — VI.49 and VI.51 — read in full. The Greek was not searched and is not present on this route." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:HippocratesVulneraLetalia ;
+    pm:searchedBy "prima-materia, 2026-10-02" ;
+    dcterms:date "2026-10-02" ;
+    skos:note "The answer to both halves. The list of seven fatal parts at VI.18 carries no interval, no sign and no gradation; and the same section states a term twice, at seven days for a man suddenly seized with head pains and laid down speechless, and at forty days for a gouty inflammation. So the silence at the wound is not an incapacity of the corpus. That is the finding the convergence needed and it is the reason this search is entered as a find and not as an empty one."@en ;
+    skos:note "The one counted term the section does attach to a sudden event comes with a release in the same sentence: the patient dies in seven days unless fever come on. A later run comparing release clauses across the holding should start there rather than at the wound list."@en ;
+    skos:note "Limits, and they are not small. One section of one work of the collection, in one nineteenth-century translation, with the Greek absent. On Wounds in the Head is the treatise of this corpus that handles an injury at a named site at length and it was not opened; until it is, the finding is about the Aphorisms and not about Hippocratic medicine. Both unopened works are named as identifiers in traditions/hippocratic.ttl so that queries/unopened-works.rq shows them."@en .
+
+pmp:SusrutaMarmaLingaSearch a pm:Searching ;
+    rdfs:label "Whether the marman chapter reports a case"@en, "Ob das marman-Kapitel einen Fall berichtet"@de ;
+    pm:searchedCorpus "Susruta Samhita, Sarirasthana VI and VIII, in the English of Kaviraj Kunjalal Bhishagratna, An English Translation of the Sushruta Samhita, vol. II, Calcutta 1911, pp. 173-190 and 197-208, read continuously" ;
+    pm:searchedFor "Anywhere in the two chapters: a report of a person wounded at a named marman with a stated outcome, or a patient bled with a stated result — a case, an observation, a series, a failure, an attribution to a named physician's experience. The chapters state a hundred and seven sites with their consequences, five classes with their terms, twenty named defects of an opened vein and a quantity in palas, which is a great deal of detail about outcomes; what is at issue is whether anything behind it is reported as having been seen." ;
+    pm:searchTerms "Whole-text search of the whitespace-normalised chapters for: seen, observed, observation, experience, case of a, instance, it has been found, we have seen, reported, tested, tried, example; and for the names by which the work elsewhere credits an authority: Gayadasa, Bhoja, Vagbhata, Dallana, Jejjata, authorities, some are of opinion, several authorities. Every hit read at its place." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-02" ;
+    dcterms:date "2026-10-02" ;
+    skos:note "No case. The two chapters report no wounded person, no bled patient and no outcome observed in anyone. What the hits give instead is a dense apparatus of disagreement among authorities about the doctrine: some are of opinion that the marmas are junctions of five factors and others of fewer, and the chapter rejects the second view by an argument from bleeding joints; Gayadasa is reported on the measure of the Indravasti, on the distances to be left in an incision and as not reading one verse at all; Vagbhata is reported as placing one marman in a different class; Dallana is reported as differing from the text on which disease a vein near the temple is opened for. The transmission argues about the classification at length and never adduces a patient."@en ;
+    skos:note "This is the exhibited gap and it is of the same kind as the one this holding records for the rasayana lesson of the Caraka, which claims five times to have been tested and reports no case. The two works are the two halves of the same corpus, and in both the vocabulary of authority is rich and the vocabulary of observation is absent. That is a finding about the genre of the Indian medical handbook, and only that is claimed."@en ;
+    skos:note "Limits. Two chapters of an anatomical book. The surgical book of the same work, which stands in volume I and was not opened, is where a case would be if there were one, and the Uttaratantra is where a later station would have added one. Neither was asked."@en .
+
+pmp:IntervalReleaseClauseSearch a pm:Searching ;
+    rdfs:label "Whether every counted interval of harm in the holding carries a release clause"@en, "Ob jede gezählte Schadensfrist im Bestand eine Entlastungsklausel trägt"@de ;
+    pm:searchedCorpus "The compiled holding of prima-materia as of main at bf46350, all directories, queried over the merged graph" ;
+    pm:searchedFor "The counter-search SPEC §16 requires before a generalization is written, and the generalization it was carried for was this: that where a transmission couples an injury at a named site to a counted interval of death, it also states, in the same place, a clause that takes a case out of the interval. The question put to the holding was its negation — is there a counted interval of harm in the holding stated with no release of any kind, so that the arrival of the term without the outcome would tell against the claim and nothing in the passage covers it." ;
+    pm:searchTerms "Query over every literal of the compiled graph for a term of harm and a counted interval in the same literal: wound, wounded, strike, struck, stab, pierce, injure, cut, needle, blow, bite, bitten, poison, sting, each against in or within or after or on plus a number from one to forty plus day, days, hour, hours, month, months, fortnight, night, nights, or against the third, fifth, seventh, ninth, tenth or fortieth day. Nine nodes matched and all nine were read at their nodes." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchedBy "prima-materia, 2026-10-02" ;
+    dcterms:date "2026-10-02" ;
+    skos:note "The intended generalization is refuted and was not written. The counter-case is pmc:TheNamedManDiesWithinTenDays in traditions/kongo-nkisi.ttl: the corpus states that a man whose name is called at the felling of the tree dies, certainly within ten days, that the named one never fails to die, and that all idea of poisoning or of the death being hurried on materially is repudiated, the practitioner being possibly miles away. That is a counted interval of harm with an explicit claim of a perfect record and no clause that releases a case from it. A second, weaker counter-case stands at pmc:RomanusNonusDies in traditions/european-folk-magic.ttl, where a blessed broken leg is to be straight again by the ninth day with nothing said about the ninth day passing — though the same blessing pairs it with a term that never falls due at all."@en ;
+    skos:note "What survived the search is narrower and is in the holding as pmc:TheIntervalRidesOnTheClassification. The refuted statement was about release clauses; the surviving one is about where the interval comes from, and the Kongo case does not touch it because the site there is a name and not a place on a body."@en ;
+    skos:note "Two near misses that are not counter-cases and are recorded so that the next run does not re-read them. The bare-depot pulses of Suwen 19 give graded terms and the last of them is explicitly unbounded, one who sees people dying at the time of the overcoming phase, so the release is in the text. The dispute node on the Chinese intervals reports a strike through the diaphragm after which the patient dies within the year however well he seems to recover, which is the inverse of a release — a clause that takes an apparent recovery out of the counter-evidence — and it belongs to the same family rather than against it."@en ;
+    skos:note "The method has a known hole and it is the one this holding keeps finding: the query matched literals, so a node that states an interval in words the pattern does not cover was not reached. Nine nodes out of twenty-eight thousand triples is a thin yield for a holding this size, and the likeliest reading is that the pattern is narrow rather than that the holding carries nine."@en .
