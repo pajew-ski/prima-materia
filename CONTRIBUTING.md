@@ -277,6 +277,16 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Laman-Hefte in Kikongo, mit Laman, The Kongo, als dem daraus gemachten
   Derivat — die Kongo-Forschung von Janzen, MacGaffey und Thornton geht als
   `pm:evidenceFrom` ein, nie als Quelle)
+- `korpus:jibaro` (die verschriftlichte Überlieferung der Jibaro, die sich
+  selbst Shuara nennen: Karsten, Blood Revenge, War, and Victory Feasts among
+  the Jibaro Indians of Eastern Ecuador, Bureau of American Ethnology Bulletin
+  79, und Karsten, The Head-Hunters of Western Amazonas; Up de Graff, Head
+  Hunters of the Amazon, als Bericht eines Außenstehenden — die moderne
+  Shuar-Ethnographie und die Debatte um die arutam-Vision gehen als
+  `pm:evidenceFrom` ein, nie als Quelle. Von einem Sammellabel für das
+  südamerikanische Tiefland getrennt geführt, weil dort mehrere Überlieferungen
+  nebeneinanderstehen und ein Sammellabel eine Suchabdeckung zählen würde, die
+  nur für eine von ihnen stattgefunden hat)
 - `korpus:huangdi-neijing` (der chinesische medizinische Kanon: Suwen und
   Lingshu in der Wang-Bing-Rezension und der Song-Redaktion von 1067, das
   Nanjing, dazu die älteren Zeugen Zhenjiu jiayi jing des Huangfu Mi und
