@@ -307,4 +307,49 @@ pmc:HippocratesNonIntegrisDiebus a pm:Cautioning ;
     pm:withinTradition pmt:HippocraticMedicine ;
     dcterms:source "Hippocrates, The Book of Prognostics 20, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, p. 251; the Greek from Hippocrates, vol. II, ed. and trans. W. H. S. Jones, Loeb Classical Library 148, London 1923, p. 42" .
 
+pmc:HippocratesSignaOmniTempore a pm:Conceptualizing ;
+    pm:fromWork pmw:PrognosticonHippocratis ;
+    rdfs:label "The signs are claimed for every year, every season and any disease not named"@en, "Die Zeichen werden für jedes Jahr, jede Jahreszeit und jede nicht genannte Krankheit beansprucht"@de ;
+    skos:definition "The closing chapter extends the signs twice. In place: they are said to have held true in Libya, in Delos and in Scythia, from which it is said to be known that in the same regions many more things than these can be learned. In coverage: you should not complain because the name of any disease may happen not to be described here, for you may know all such as come to a crisis in the aforementioned times by the same symptoms."@en ;
+    skos:note "Entered because it is the sentence that removes the last way the treatise could have been caught out. A sign catalogue that names its diseases can be tested against a disease it fails on; one that covers the diseases it does not name cannot. The three places are the other half: they are named as verification and no observation from any of them is reported."@en ;
+    skos:note "The geographical claim is the only dating hook in the treatise and the reading of it is disputed. Littré reports Petersen taking Libya, Delos and Scythia as a travel record and building a biography on it, and holds the verification in those places at the time of writing to be very doubtful. Read through Littré's French and not opened at Petersen, so no node is entered for the dispute."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, The Book of Prognostics 25, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, p. 256; the Greek from Hippocrates, vol. II, ed. and trans. W. H. S. Jones, Loeb Classical Library 148, London 1923, pp. 54-55" .
+
+pmp:HippocratesUvulaeResectio a pm:Practicing ;
+    pm:fromWork pmw:PrognosticonHippocratis ;
+    rdfs:label "Cutting or scarifying the enlarged uvula"@en, "Das Abtragen oder Skarifizieren der vergrößerten Uvula"@de ;
+    skos:definition "The one operation the Prognostic prescribes with a time condition on it: the enlarged uvula is cut off or scarified, but only once it has changed in a stated way. The treatise distinguishes the variety it calls Uva, which is to be operated on when the whole of it is converted into an abscess, from the one it calls Columella, which is to be operated on when its extremity is larger and round and its upper part thinner."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, The Book of Prognostics 23, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, p. 254" .
+
+pmc:HippocratesUvulaRubraNonSecanda a pm:Cautioning ;
+    pm:fromWork pmw:PrognosticonHippocratis ;
+    rdfs:label "Not while it is red and large"@en, "Nicht, solange sie rot und groß ist"@de ;
+    skos:definition "Stated with its consequence in the same sentence: it is very dangerous to cut off or scarify enlarged uvulae while they are red and large, for inflammations and haemorrhages supervene; one should try to reduce such swellings by some other means at this season. When the change named in the same chapter has occurred, it will be safe to operate."@en ;
+    skos:note "A prohibition whose condition is a state of the part and not a date, which is the form the holding has least of. The stated consequence is specific enough to be recognised by a bystander, which is what distinguishes it from a caution that can never be seen to have been justified."@en ;
+    pm:cautionsAbout pmp:HippocratesUvulaeResectio ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, The Book of Prognostics 23, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, p. 254" .
+
+pmc:HippocratesUvulaAlvusAperienda a pm:Presupposing ;
+    pm:fromWork pmw:PrognosticonHippocratis ;
+    rdfs:label "Open the bowels before the uvula is cut, if there is time"@en, "Vor dem Schnitt an der Uvula den Leib öffnen, wenn Zeit bleibt"@de ;
+    skos:definition "The order the chapter gives and the two conditions it attaches: it will be better to open the bowels gently before proceeding to the operation, if time will permit and the patient be not in danger of being suffocated. No consequence of omitting it is stated anywhere in the treatise."@en ;
+    skos:note "Entered at the weakest strength the scale carries a consequence for, and that is the finding about it. The chapter says better and not necessary, and it names two circumstances in which the step is to be dropped; a reading that made this a necessity would be lending ancient warrant to a sequence the source left conditional. SPEC §11 names that error directly."@en ;
+    pm:dependentStep pmp:HippocratesUvulaeResectio ;
+    pm:priorStep pmp:HippocratesAlvusAperienda ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, The Book of Prognostics 23, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, p. 254" .
+
+pmp:HippocratesAlvusAperienda a pm:Practicing ;
+    pm:fromWork pmw:PrognosticonHippocratis ;
+    rdfs:label "Opening the bowels gently"@en, "Das sanfte Öffnen des Leibes"@de ;
+    skos:definition "Named in the same chapter only as a step preceding the operation on the uvula, and not described: the bowels are to be opened gently beforehand. The treatise gives neither the means nor a measure for it here, and it is entered as a node because the prerequisite claim above has to point at something that a later reader can go and look for in the rest of the collection."@en ;
+    skos:note "What was read gives this no procedure of its own. The place where this corpus does describe evacuating is the Aphorisms, Section VI, already in this file at pmp:HippocratesIncisioEtCauterium and pmc:HippocratesEvacuatioCeleris, and that is about emptying an abscess and not the bowels. A run that opens On Regimen in Acute Diseases, which stands in this same volume, should look there."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, The Book of Prognostics 23, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, p. 254" .
+
 # ANCHOR-pm833
