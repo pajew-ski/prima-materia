@@ -1,0 +1,87 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — spiritualist automatic writing, worked from its earliest layer
+#
+# The registration stood in traditions/registry-channeled.ttl from the day the
+# channelled block was registered and carried no node. It was taken off
+# pm:corpusNamed on 2026-10-03 by opening the first of the two works it names.
+# This run followed no question: no open claim pointed at this work, and the
+# reason for opening it was the registration state itself and the sentence the
+# registration put beside it — that this is the earliest layer of the block and
+# the template for all of it, a named person, a dated production, a printed
+# volume, and the claim that the author is elsewhere.
+#
+# The three decisions SPEC §14 requires before a first node, made here.
+#
+# One: the contact route. Documented, and the registration already said so.
+# What this reading adds is the direction. The work names Swedenborg in a
+# footnote and places him below itself, which is an acknowledged dependence
+# and not a suspected one; it builds its whole evidential case on animal
+# magnetism, which it calls an admitted science; and its own scribe argues
+# against the objection that the material came from the minds of the two
+# educated men in the room. The route runs from Mesmer and Swedenborg into
+# this work and from this work into everything the registry calls channelled.
+# A convergence between this corpus and any other in that block is reception
+# until somebody shows a receiver who did not know the earlier literature.
+#
+# Two: the edition. What was read is the third edition, New York, published by
+# S. S. Lyon and Wm. Fishbough, 1847, in the copy archive.org carries as
+# principlesofnatu00davi, whose title page and copyright page were read in the
+# full text and not taken from the catalogue line. The copyright page gives
+# "Stereotyped by Redfield & Savage, 13 Chambers Street, N. Y.", and the
+# pagination is therefore the same in the later editions: the same wording was
+# found at the same page in the tenth edition of 1852, the twentieth of 1855,
+# the thirty-second of 1871 and an undated thirty-fifth, checked at two places.
+# So a page number from this node is findable in whichever edition a reader
+# has. The running-head sequence of the read copy was checked for monotonicity
+# before any page number was taken from it and runs clean from 3 to 782, with
+# one single-digit slip. Pages xvi and xvii are bound or scanned twice in this
+# copy; the duplicate was compared and carries the same text.
+#
+# Three: how many citable places there are. The volume is 782 pages and the
+# whole of it was not read. Read at the wording: the title and copyright page;
+# the Scribe's Introduction, pp. iii-xxii; the Address to the World, pp. 1-4;
+# the section on animal magnetism and clairvoyance, pp. 29-57, which the
+# scribe himself names as where the claims are set out; and the astronomical
+# part of Part II at pp. 160-173. Not read: Parts I and III in their argument,
+# the cosmology between pp. 173 and 586, the theological section, and the
+# social application that fills the last two hundred pages. The harvest note
+# at prima-materia#834 says what was seen there and deliberately not taken.
+#
+
+pmt:SpiritualistAutomaticWriting a pm:Tradition ;
+    pm:fromWork pmw:DavisPrinciplesOfNature ;
+    rdfs:label "Spiritualist automatic writing"@en, "Spiritistisches automatisches Schreiben"@de ;
+    skos:definition "The nineteenth century transmission of extended texts produced by a writer who reports not composing them, and issued as scripture rather than as message. Taken here at its earliest layer, where the production is documented at length by the people who conducted it: a man put into a state by a named operator, questioned by nobody, taken down by a named scribe in the presence of three chosen witnesses, over a hundred and fifty-seven sittings."@en ;
+    skos:note "Read at the wording on 2026-10-03: Davis, The Principles of Nature, third edition, New York 1847, at the title and copyright page, the Scribe's Introduction pp. iii-xxii, the Address to the World pp. 1-4, the chapters on animal magnetism and clairvoyance pp. 29-57, and the astronomical part at pp. 160-173. Not read: the greater part of the volume, named in the file header. Not opened at all: Newbrough, Oahspe, 1882, which this registration also names and which stands below as an identifier so that queries/unopened-works.rq shows it."@en ;
+    skos:note "What kind of witness this is, and it is an unusual one for this holding. Most transmissions here are read at a place and the circumstances of their fixation are lost. This one documents its own production more fully than any other corpus in the holding: it gives the operator's name, the scribe's name, three witnesses chosen in advance and named with the reason each was chosen, a list of twenty-three further occasional witnesses with their towns, the count of sittings at a hundred and fifty-seven, the count of manuscripts carrying signatures at a hundred and forty, the number of signatures at two hundred and sixty-seven, the range of sittings any one person attended as one to seventy-three, and the number of sittings with no signature at all as seventeen. A corpus that counts its own witnesses that precisely is making a claim that can be checked, and the manuscripts are declared to be preserved."@en ;
+    skos:note "And the title page states the ambiguity the whole file turns on, in three words. The work is BY AND THROUGH Andrew Jackson Davis. Which of the two it is, the volume answers twice and differently, and the disagreement is between its author and its scribe; it stands at pmc:DavisFonsDisputatus."@en ;
+    pm:principalCorpus "Davis, The Principles of Nature, Her Divine Revelations, and a Voice to Mankind; Newbrough, Oahspe: A New Bible in the Words of Jehovih" ;
+    pm:corpusWork pmw:DavisPrinciplesOfNature, pmw:Oahspe ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Andrew Jackson Davis, The Principles of Nature, Her Divine Revelations, and a Voice to Mankind, 3rd edn., New York: published by S. S. Lyon and Wm. Fishbough, 1847, Scribe's Introduction, pp. xvii-xviii" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:DavisPrinciplesOfNature a dcterms:BibliographicResource ;
+    rdfs:label "Davis, The Principles of Nature, Her Divine Revelations, and a Voice to Mankind"@en, "Davis, Die Prinzipien der Natur, ihre göttlichen Offenbarungen"@de ;
+    skos:note "Opened on 2026-10-03 in the third edition, New York 1847, over the archive.org full text principlesofnatu00davi. The stereotype plates make the pagination common to the editions from 1847 into the eighteen-eighties, which was verified at two places against four further scans; Podmore cites the thirty-fourth edition of 1876 and his page numbers therefore hold against this copy."@en ;
+    skos:note "The cheapest continuation is the part of the same volume that was not read, and the reason to go there is named by the work itself: the scribe writes that the evidence for the claimed source will be apparent on a perusal of the whole volume and especially of pp. 33 to 57, which is read, while Podmore's attack is directed at the geological and palaeontological passages at pp. 121, 237, 242, 263, 270 and 312, which are not. A run that wants a protocol rather than more claims opens those six places."@en .
+
+pmw:Oahspe a dcterms:BibliographicResource ;
+    rdfs:label "Newbrough, Oahspe: A New Bible in the Words of Jehovih"@en, "Newbrough, Oahspe: Eine neue Bibel in den Worten Jehovihs"@de ;
+    skos:note "Named here as a work of the corpus and unopened. It is the second and later layer of this transmission and the registration names it beside the first, and the question it carries is the mirror of what the first work answers at length: the 1882 volume declines to describe its own production. Its editor's preface asks why anything should be said about how this book was written, and the familiar account of a typewriter is not in it. When and by whom that account was first published is the question for the run that opens it, and the place to look is the spiritualist press of 1883 and the prefaces of the editions from 1891."@en ;
+    skos:note "A warning for whoever opens it. The archive.org copies of this work are user uploads without catalogue metadata, and the fullest of them ends its pagination at 1132, which does not match the collation of the 1882 edition. Cite it by book, chapter and verse, which is how the work refers to itself, and not by page."@en .
+
+# ANCHOR-pm834
