@@ -190,3 +190,60 @@ pmc:HippocratesEvacuatioCeleris a pm:Cautioning ;
     pm:cautionsAbout pmp:HippocratesIncisioEtCauterium ;
     pm:withinTradition pmt:HippocraticMedicine ;
     dcterms:source "Hippocrates, Aphorisms VI.27, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. II, London: printed for the Sydenham Society, 1849" .
+
+#
+# — The Book of Prognostics, chapters 1 to 25, opened 2026-10-03 —
+#
+# Read continuously in the English of Francis Adams, vol. I, London 1849,
+# over the archive.org full text genuineworksofhi01hippuoft. Both treatises
+# of this run stand in that volume and not in the second, which is where the
+# Aphorisms are; the earlier note at pmw:AphorismiHippocratis sent a reader
+# to the wrong volume for them and is corrected above.
+#
+# The Greek is on this route for this treatise and not for the other. The
+# Loeb volume hippocrates02hippuoft carries the Prognostic with its
+# polytonic accents intact in the full text, measured at 120900 characters in
+# U+0370-U+03FF and 23617 in U+1F00-U+1FFF; the Loeb volume for the head
+# wounds, hippocrates03hippuoft, carries zero characters in either block and
+# renders the Greek in lookalike Latin letters, which is the failure class
+# AGENTS.md records at prima-materia#775. So the terms below are given in
+# Greek where the Prognostic supplies them and not at all for the other work.
+#
+# The identifiers stay Latin. The file established that convention on
+# 2026-10-02 because the Greek was not on the route, and changing it now
+# would split one corpus across two naming schemes for the sake of one
+# treatise; SPEC §11 forbids renaming coined identifiers without a
+# compelling reason and this is not one. The Greek term is carried as
+# skos:altLabel at each node where it was read, so that a run reaching for
+# the Greek first still finds the node.
+#
+# Page numbers are used. The running-head sequence over both treatises was
+# checked in this scan and is monotone from 226 to 256 and from 424 to 466,
+# with one single-digit OCR slip in it — the head over the page between 246
+# and 248 reads 217 — which is reconstructible and not noise. That is the
+# opposite of what the same translation's second volume gave at
+# b33291408_0004, where the heads over Section VI read 753, 759, 757, 799,
+# 761. The access-path finding stands in the table in AGENTS.md and this
+# measurement confirms its last sentence: the failure hangs on the copy, not
+# on the route.
+#
+
+pmc:HippocratesPronoia a pm:Conceptualizing ;
+    pm:fromWork pmw:PrognosticonHippocratis ;
+    rdfs:label "Foreknowledge, as this corpus defines the physician's business"@en, "Die Vorauskenntnis, wie dieser Korpus das Geschäft des Arztes bestimmt"@de ;
+    skos:altLabel "πρόνοια"@grc ;
+    skos:definition "The treatise opens by naming a capacity and its scope: it is an excellent thing for the physician to cultivate foreknowledge, for by foreseeing and foretelling in the presence of the sick the present, the past and the future, and by explaining the omissions the patients have been guilty of, he will the more readily be believed to know their circumstances, so that men will have confidence to entrust themselves to him. The capacity is stated as covering all three tenses and not the future alone."@en ;
+    skos:note "Entered because the corpus states the capacity before stating any sign, and states it in terms of what it produces in the patient rather than in terms of what it establishes about the disease. The sentence that follows puts the order plainly: it is impossible to make all the sick well, and this would have been better than to be able to foretell what is going to happen. The capacity is named second-best by its own treatise."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, The Book of Prognostics 1, in the English of Francis Antony Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, pp. 234-235; the Greek from Hippocrates, vol. II, ed. and trans. W. H. S. Jones, Loeb Classical Library 148, London 1923, pp. 6-8" .
+
+pmp:HippocratesPrologesis a pm:Practicing ;
+    pm:fromWork pmw:PrognosticonHippocratis ;
+    rdfs:label "Announcing beforehand who will die and who will recover"@en, "Das vorherige Ansagen, wer stirbt und wer durchkommt"@de ;
+    skos:altLabel "προλέγειν"@grc ;
+    skos:definition "The operation the treatise prescribes: having formed a judgment from the whole of the signs, the physician says in advance, in the presence of the sick and of those around, which patients will die, which will recover, and in which cases the disease will be protracted. It is performed before the outcome and in public, and the treatise gives twenty-four chapters of signs as its means."@en ;
+    skos:note "Separated from the capacity because the treatise separates them: chapter 1 says what the knowledge is for and chapter 25 says what the announcing requires, which is a judgment from the ensemble of the signs weighed against one another, together with the epidemic influx and the constitution of the season."@en ;
+    pm:withinTradition pmt:HippocraticMedicine ;
+    dcterms:source "Hippocrates, The Book of Prognostics 1 and 25, in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, pp. 234-235 and 255-256" .
+
+# ANCHOR-pm833
