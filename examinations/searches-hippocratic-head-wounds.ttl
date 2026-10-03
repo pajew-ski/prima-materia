@@ -1,0 +1,50 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Hippocratic Prognostic and head-wounds run
+#
+# Two searches, carried on 2026-10-03 in the two treatises opened that day.
+# The first continues the search of the previous run, which stands at
+# pmp:HippocraticIntervalSearch in searches-susruta-marman.ttl and whose own
+# closing note names the omission this one repairs: On Injuries of the Head
+# was not opened, and until it was, the finding about the Greek corpus was a
+# finding about one section of the Aphorisms.
+#
+# The second is a negative finding and is here because a negative finding that
+# is not exhibited is indistinguishable from a question nobody put. It is owed
+# to prima-materia#610, whose corpus labels include the Graeco-Roman one and
+# whose closing condition requires the three non-Chinese places to be read at
+# the wording. One of the three is read; this search records that these two
+# treatises are not where the Greek side of it lies, and says where it
+# probably does lie.
+#
+
+pmp:HippocraticVulnusTerminusSearch a pm:Searching ;
+    rdfs:label "Whether the Hippocratic collection attaches a counted term to a wound"@en, "Ob die hippokratische Sammlung einer Wunde eine gezählte Frist beigibt"@de ;
+    pm:searchedCorpus "Hippocrates, On Injuries of the Head, chapters 1 to 21, and The Book of Prognostics, chapters 1 to 25, both read continuously in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, pp. 445-466 and 234-256" ;
+    pm:searchedFor "Whether anywhere in these two treatises a wound at a named site is coupled to a counted number of days until death or until a crisis; and, if such a count exists, what it is indexed on. The question was left open by the run of 2026-10-02, which found the list of fatal parts in the Aphorisms carrying no interval and recorded in its own note that On Injuries of the Head was the place that would decide whether that silence belonged to the Aphorisms or to the collection." ;
+    pm:searchTerms "Both treatises read chapter by chapter in Adams's English. Within the volume, whole-text search of the two chapter ranges, after whitespace normalisation, for: deadly, mortal, fatal, dies, die, death, survive, live longer, sooner, later, shorter, interval, term, day, days, seventh, fourteenth, twenty, forty, sixty, summer, winter, spring, autumn, season. Every hit inside the two ranges read at its place. The running-head sequence of the volume was checked for monotonicity over both ranges before any page number was taken from it, and is monotone from 226 to 256 and from 424 to 466 with one single-digit slip. The Greek of the Prognostic was read alongside at the decisive clauses in the Loeb volume hippocrates02hippuoft; the Greek of the head-wounds treatise is not present in its Loeb full text at all, measured as zero characters in U+0370-U+03FF and U+1F00-U+1FFF." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:HippocratesVulnusCapitisTempusAnni ;
+    pm:searchedBy "prima-materia, 2026-10-03" ;
+    dcterms:date "2026-10-03" ;
+    skos:note "The answer is yes and it is not the yes the question was built for. The counted term exists — fever before the fourteenth day in winter and after seven days in summer, death before seven days in summer and before fourteen in winter — and it is indexed on the season. The site is graded at length in the second chapter and given no number at all, and the same chapter states in one clause that a man survives longer in winter than in summer whatever be the part of the head in which the wound is situated. So the corpus separates the two questions and answers them differently: the place orders the dying, the calendar counts it."@en ;
+    skos:note "Two further findings of the same search, both entered as nodes. The term is attached to a case the chapter defines by the surgeon's omission, not by the injury: the bone was broken and by mistake not discovered and the case neglected as if it were sound. And the sign-set is declared invariant to the age of the wound in the same chapter. A transmission that counts days and says which variables the count does not depend on is a better object for a protocol than one that merely counts."@en ;
+    skos:note "What this does not settle. Two treatises of a collection of some sixty, in one nineteenth-century English translation, with the Greek absent for the one that carries the term. The Epidemics, which stand in the same volume and were not read, are where Adams's notes report cases of trepanned children dying on the twenty-fourth and sixteenth day — numbers that fall outside the seven-and-fourteen frame of chapter 19 — and a run that wants to know whether this corpus held its own term should open them."@en .
+
+pmp:HippocraticVulnusStatusSearch a pm:Searching ;
+    rdfs:label "Whether these two treatises forbid an operation in named states of the patient"@en, "Ob diese zwei Traktate einen Eingriff in benannten Zuständen des Menschen verbieten"@de ;
+    pm:searchedCorpus "Hippocrates, On Injuries of the Head, chapters 1 to 21, and The Book of Prognostics, chapters 1 to 25, both read continuously in the English of Francis Adams, The Genuine Works of Hippocrates, vol. I, London: printed for the Sydenham Society, 1849, pp. 445-466 and 234-256" ;
+    pm:searchedFor "The catalogue of states of the person in which an operation on a vessel is forbidden — drunkenness, anger, exhaustion, having just eaten, hunger or fasting, thirst, fright, having just had intercourse, having travelled — which prima-materia#610 puts as a convergence candidate across four transmissions and which it requires to be read at the wording on the Graeco-Roman side. The question is whether these two treatises, which are the surgical and the prognostic treatise of this corpus, carry any part of it." ;
+    pm:searchTerms "Whole-text search of both chapter ranges after whitespace normalisation, case-insensitively, for: drunk, intoxicat, wine, weari, fatigue, exhaust, satiet, repletion, full meal, after eating, hunger, fasting, abstinen, thirst, fright, terror, coition, venery, sexual, journey, travel, anger, wrath, bath, vomit, purg, venesect, bleed, blood-letting, phlebotom, open a vein, season, summer, winter, spring, autumn. Every hit read at its place; the twenty-nine and twenty hits on anger are the substring in dangerous and were discarded." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-03" ;
+    dcterms:date "2026-10-03" ;
+    skos:note "Not one member of the catalogue is a condition on an operation in either treatise. Where the terms do occur they occur as something else, and the three near things are worth naming because each fails on a different word. Thirst appears four times in the Prognostic, every time as a prognostic sign of the patient's state and never as a bar to a measure. Wine appears once in the head-wounds treatise, in the prohibition on putting anything liquid on a head wound, which is a rule about the dressing and not about the patient. And the one place that does make a measure conditional on the patient's conduct is chapter 20 of the head-wounds treatise, where the purge is given only if the erysipelatous swelling be not connected with any error in the regimen — a condition on the reading of a sign, not on the permission to operate."@en ;
+    skos:note "What the two treatises do condition an operation on, so that the negative finding is readable against something. The state of the part: the uvula is not to be cut while red and large. The place: no incision at the temple, no trepan on a suture, the trepan only where the bone is thickest. The time since the wound: the three days of chapter 14. The weather: more especially if it be hot. The age of the patient: a small trepan and the greatest precautions in children. And the surgeon's own history with the case, twice. The conditions are on the site, the instrument, the calendar and the operator — and not once on a state of the person operated on."@en ;
+    skos:note "Where the Greek side of prima-materia#610 probably is, stated so that the next run does not search here again. On Regimen in Acute Diseases stands in the same volume at pp. 271-336 and is where this corpus treats baths, evacuation and the condition of the patient under which a measure is or is not applied; the Aphorisms carry the seasonal rules for venesection, two of which are already in this holding at pmc:HippocratesVenaeSectioVere. Neither was read for this question. Celsus, whom the issue names for the Graeco-Roman side, is a different corpus and is not in this holding at all."@en .
