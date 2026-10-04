@@ -13,26 +13,26 @@ Kein Eintrag dieser Tabelle ist hier ausgeführt. Wer die Regel braucht, liest s
 | Regel | Kanonische Stelle |
 |---|---|
 | Wozu das Repo da ist, Torkriterium | `SPEC.md` §0, `AGENTS.md` „Was dieses Repo ist" |
-| Die vier Sätze der Recherche | `AGENTS.md` „Die Recherche-Regel", vollständig `SPEC.md` §15 |
-| Die zwei Rechercheestufen, Erreichbarkeit, Unerreichbarkeitsgründe | `AGENTS.md` „Die Recherche hat zwei Stufen, und beide sind zu führen" |
-| Ernte am geöffneten Werk, die vier geschuldeten Arten, Erntenotiz | `AGENTS.md` ebenda, vollständig `SPEC.md` §15 |
+| Die vier Sätze der Recherche | `AGENTS.md` „Recherche", vollständig `SPEC.md` §15 |
+| Die zwei Rechercheestufen, Erreichbarkeit, Unerreichbarkeitsgründe | `AGENTS.md` „Zwei Stufen, beide Pflicht" |
+| Ernte am geöffneten Werk, die fünf geschuldeten Arten, Erntenotiz im PR | `AGENTS.md` „Ernte", vollständig `SPEC.md` §15 |
 | Die geprüften Zugangswege, gesperrte Quellen, Scanlücken | `AGENTS.md`, Abschnitt Die geprüften Zugangswege |
-| Ernteläufe koordinieren, Lease, Branchname, Bezeichnerbildung | `AGENTS.md` „Ernteläufe koordinieren" |
-| Was „gegroundet" heißt | `AGENTS.md` „Was „gegroundet" heißt und was nicht" |
+| Branch als Lease, Werkknoten für Ungeöffnetes, Bezeichnerbildung | `AGENTS.md` „Ernte" |
+| Was „gegroundet" heißt | `AGENTS.md` „Was „gegroundet" heißt" |
 | Quellenführung, Auffindbarkeit, Rezension, Vermittlungsmodus | `SPEC.md` §10, kurz `AGENTS.md` „Quellen" |
 | Evidenz ist nicht Quelle, Gegensuchpflicht | `SPEC.md` §3 Parameter 5 |
 | Behauptungsklassen, welche wofür, Bezeugungsmodi, die zwei Skalen | `SPEC.md` §3 Parameter 5 |
-| Die Kette Behauptung, Überschneidung, Verallgemeinerung, Prüfung | `SPEC.md` §16, kurz `AGENTS.md` „Die Kette, auf die alles hinausläuft" |
+| Die Kette Behauptung, Überschneidung, Verallgemeinerung, Prüfung | `SPEC.md` §16, kurz `AGENTS.md` „Die Kette" |
 | Die Bewusstseinsachsen und die Skalenfamilien | `SPEC.md` §17 |
 | Negative Befunde, Befund auf die Suche relativiert | `SPEC.md` §13 „Befunde sind auf die Suche relativiert, nicht auf den Bestand" |
-| Issues, Lebenslauf, Schließgründe, Issue-Nummer als Identität | `SPEC.md` §13, kurz `AGENTS.md` „Behauptungen liegen in Issues" |
+| Issues, Lebenslauf, Schließgründe, Issue-Nummer als Identität | `SPEC.md` §13, kurz `AGENTS.md` „Issues" |
 | Label-Vokabular | `CONTRIBUTING.md` „Label-Vokabular" |
 | Die vier Eingänge, mit denen der Korpus wächst | `SPEC.md` §14 |
 | Designprinzipien, Prozess statt Substanz, Sphoṭa, Pronomenspektrum | `SPEC.md` §3 |
 | Was der Agent nicht tun soll, verbotene Klassen, Turtle-Kommentar | `SPEC.md` §11 |
 | Fixture-Pflicht je Shape, Ordnerregel für neue Datenordner | `SPEC.md` §9 |
 | Batch statt nacheinander, ein Branch je Strang, Frage mit Empfehlung | `AGENTS.md` „Der stehende Auftrag" |
-| Prüfung vor dem PR, Abgleich Klon gegen Branch | `AGENTS.md` „Prüfung, Läufe und der Abgleich vor dem PR" |
+| Prüfung vor dem PR, Abgleich Klon gegen Branch | `AGENTS.md` „Prüfung vor dem PR" |
 | Die Sitzung trägt sich selbst, die sechs Abschlussbedingungen | `AGENTS.md` „Die Sitzung trägt sich selbst" |
 | Ausgelöste Validierung melden, nicht umformulieren | `SPEC.md` §11, `AGENTS.md` „Vor dem ersten Schreibzugriff" |
 
@@ -145,7 +145,7 @@ Welche Wege tragen, steht in `AGENTS.md` unter Die geprüften Zugangswege. Hier 
 
 - **Ein Werkzeugfehler der Form `MCP server "Exo_Tools" session expired` sagt nichts darüber, ob geschrieben wurde.** Am 2026-10-02 hat `prima_repo_replace` mit dieser Meldung geantwortet und den Commit trotzdem erzeugt; der Wiederholungsaufruf hat denselben Block ein zweites Mal angehängt, und der nächste Aufruf fiel auf, weil sein `alt` nun zweimal vorkam. Der Fehler steht also vor der Antwort und nicht vor der Schreibung. **Nach einem Sitzungsfehler nicht wiederholen, sondern erst den Branch lesen**: `git fetch` auf den Arbeitsbranch und den Zielausdruck zählen, oder `prima_repo_read` auf die Datei. Ein Anhängemuster mit einem eindeutigen Ankerkommentar — ein Stück anhängen, den Anker am Ende mitschreiben, ihn beim nächsten Stück als `alt` benutzen und am Schluss entfernen — macht die Dopplung nachträglich billig zu reparieren, weil der zweite Anker sie sofort sichtbar macht (prima-materia#829)
 
-- **`prima_repo_write` legt nur neue Dateien an.** Auf einen vorhandenen Pfad antwortet es mit einer Meldung ohne Pfad und ohne Grund, die nach einer Zurückweisung des Inhalts aussieht; die Größe ist es nicht. Umweg und Belege in `AGENTS.md` unter Prüfung, Läufe und der Abgleich vor dem PR (prima-materia#47, prima-materia#450, prima-materia#799)
+- **`prima_repo_write` legt nur neue Dateien an.** Auf einen vorhandenen Pfad antwortet es mit einer Meldung ohne Pfad und ohne Grund, die nach einer Zurückweisung des Inhalts aussieht; die Größe ist es nicht. Umweg in `AGENTS.md` unter Prüfung vor dem PR (prima-materia#47, prima-materia#450, prima-materia#799)
 
 ## Lizenz
 
