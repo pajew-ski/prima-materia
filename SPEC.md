@@ -501,7 +501,7 @@ Das Grounding im Original hat Vorrang und behält ihn. Es gibt aber Werke, die n
 
 **Der Modus ist an die Unerreichbarkeit gebunden, nicht an den Aufwand.** Er existiert, damit unerreichbares Material in seiner wahren Stärke eingehen kann, nicht damit erreichbares billig eingeht. Ein Werk, das sich herunterladen und durchsuchen lässt, ist erreichbar (SPEC §15); wer es über ein Referat zitiert, verletzt die Regel, auch wenn er den Vermittler nennt. Der Grund für die Vermittlung gehört ins Issue und ist eine Eigenschaft des Werkes.
 
-**Ein vermittelter Knoten bleibt ein offener Posten.** Er ist kein Abschluss, sondern der beste erreichbare Zwischenstand: sobald das Werk zugänglich wird, wird die Stelle nachgeprüft und der Modus auf `pm:textualAttestation` gehoben. Das zugehörige Issue bleibt offen und trägt, welches Exemplar fehlt.
+**Ein vermittelter Knoten bleibt ein offener Posten.** Er ist kein Abschluss, sondern der beste erreichbare Zwischenstand: sobald das Werk zugänglich wird, wird die Stelle nachgeprüft und der Modus auf `pm:textualAttestation` gehoben. Der Knoten trägt mit `pm:readVia` selbst, was fehlt; `queries/mediated-attestations.rq` listet die offenen Posten, ein Issue daneben entsteht nicht (§13).
 
 ### Wenn es kein Werk gibt
 
@@ -529,7 +529,7 @@ Kein neuer Bezeugungsmodus, weil keiner gebraucht wird. Was eine Konvergenz zwis
 
 **Bezeichner folgen dem Gegenstand, nicht der Formulierung.** Ein Bezeichner wird gebildet aus der Tradition und dem normalisierten Terminus in der Originalsprache; bei einem benannten Wesen aus der Namensform in der Leitumschrift der benutzten Ausgabe. Ausdrücklich nicht aus der deutschen oder englischen Übersetzung.
 
-Das ist die Bedingung, unter der parallel gearbeitet werden kann. `tests/test_identifier_uniqueness.py` meldet, wenn ein Bezeichner in zwei Dateien getypt wird — bei gleichen Bezeichnern also sofort. Bei zwei verschiedenen Bezeichnern für denselben Gegenstand meldet er nichts, und der Bestand führt still zwei Knoten für eine Sache, jeder für sich SHACL-konform. Ein Lease über Issues verhindert nur, dass zwei Agenten gleichzeitig dasselbe Werk öffnen; gegen die spätere Dopplung, gegen den abgestürzten Lauf und gegen den zweiten Bearbeiter in drei Monaten hilft allein, dass zwei unabhängige Läufe denselben Bezeichner erzeugen. Eine Übersetzung tut das nicht, ein Terminus in der Quellsprache schon.
+Das ist die Bedingung, unter der parallel gearbeitet werden kann. `tests/test_identifier_uniqueness.py` meldet, wenn ein Bezeichner in zwei Dateien getypt wird — bei gleichen Bezeichnern also sofort. Bei zwei verschiedenen Bezeichnern für denselben Gegenstand meldet er nichts, und der Bestand führt still zwei Knoten für eine Sache, jeder für sich SHACL-konform. Der Branch als Lease verhindert nur, dass zwei Agenten gleichzeitig dasselbe Werk öffnen; gegen die spätere Dopplung, gegen den abgestürzten Lauf und gegen den zweiten Bearbeiter in drei Monaten hilft allein, dass zwei unabhängige Läufe denselben Bezeichner erzeugen. Eine Übersetzung tut das nicht, ein Terminus in der Quellsprache schon.
 
 **Der Maßstab ist Auffindbarkeit, nicht Nummerierung.** Die Angabe muss so genau sein, dass ein Leser die Stelle im benannten Werk findet. Eine Nummer ist keine Bedingung, wo das Werk keine hat oder wo die Zählung zwischen Ausgaben schwankt: `"Philokalia I, Hesychios of Sinai, On Watchfulness and Holiness"` und `"John Climacus, The Ladder of Divine Ascent, steps 1-30"` sind zulässig. Schwankende Zählungen gehören in eine `skos:note`, nicht in eine Weglassung. Zitiergenauigkeit ist nicht Zitierbarkeit, und ein Befund, der an einer fehlenden Kapitelnummer scheitert, obwohl Werk und Traktat benannt sind, ist unnötig verloren.
 
@@ -575,12 +575,7 @@ Eine Datei-Ebene im Graphen, die den Kopf als Aussage trüge, wird **nicht** ein
 
 Phase 0 und Phase 1 sind geliefert. Ein frisch geklontes Repository läuft nach `pip install -r requirements.txt && python scripts/validate.py && pytest tests/` durch; wenn nicht, ist das ein Befund und die erste Aufgabe.
 
-Die Arbeit beginnt nicht mehr an einem Plan, sondern am Issue-Tracker. Dort stehen die Behauptungen, die der Korpus noch nicht beantwortet. Der Ablauf:
-
-1. Dieses Dokument vollständig lesen. Bei mehrdeutiger Spezifikation fragen, nicht raten.
-2. Offene Issues mit `behauptung` ansehen und nach `korpus:`-Label bündeln. Recherchiert wird ein Bündel, nicht ein einzelnes Issue: die Arbeit folgt dem Text, den man aufschlägt, nicht dem Abschnitt, aus dem die Behauptung stammt.
-3. Ergebnis eintragen — als Knoten, wenn eine Stelle trägt; als weiteres `korpus:`-Label am Issue, wenn dieser Korpus nichts hergibt.
-4. Validierung und Tests grün, dann PR. Der Mensch merged.
+Die Arbeit beginnt nicht an einem Plan, sondern an den Warteschlangen in `queries/` und den offenen Befunden; die Behauptungs-Issues werden je gewähltem Korpus gezogen, nicht als Ganzes gelesen. Der Ablauf steht in `AGENTS.md` „Der stehende Auftrag".
 
 ## 13. Behauptungen als Issues
 
@@ -644,17 +639,17 @@ Der Lebenslauf oben gilt für Behauptungen. Ein Befund über das Repo, die Ontol
 
 **Vor jedem `issue_create` mit `befund` stehen deshalb drei Fragen, in dieser Reihenfolge.** Kann dieser Lauf ihn beheben oder als Regel schreiben? Dann tut er das, im Branch des Bündels oder in einem eigenen, statt anzulegen. Steht derselbe Gegenstand schon in einem offenen Befund? Dann ein Kommentar dort und kein zweites Issue. Nennt der Body seine Abschlussbedingung? Ohne sie ist er eine Notiz, und Notizen gehören in den PR.
 
-**Der PR, der einen Befund behebt oder als Regel schreibt, nennt ihn im Body, und nach dem Merge wird er geschlossen.** Das gilt auch für einen Befund aus einem früheren Lauf, dessen Gegenstand dieser Lauf zufällig mit erledigt. Auf `Closes #<n>` ist in diesem Aufbau kein Verlass: am 2026-09-30 hat GitHub an PR #815 keine der 37 Zeilen verknüpft und nach dem Merge kein Issue geschlossen, die Ursache ist nicht geklärt. Geschlossen wird deshalb ausdrücklich, und zwar vom ersten Lauf nach dem Merge nach der dritten Abschlussbedingung in `AGENTS.md`. Die Nennung im Body bleibt, weil sie am Issue einen Rückverweis auf die Begründung erzeugt.
+**Der PR, der einen Befund behebt oder als Regel schreibt, nennt ihn im Body, und nach dem Merge wird er geschlossen.** Das gilt auch für einen Befund aus einem früheren Lauf, dessen Gegenstand dieser Lauf zufällig mit erledigt. Auf `Closes #<n>` ist in diesem Aufbau kein Verlass: am 2026-09-30 hat GitHub an PR #815 keine der 37 Zeilen verknüpft und nach dem Merge kein Issue geschlossen. Ob eine einzelne Zeile greift, ist ungeprüft; der nächste PR, der genau einen Befund erledigt, prüft es. Bis dahin wird ausdrücklich geschlossen, und zwar vom ersten Lauf nach dem Merge nach der dritten Abschlussbedingung in `AGENTS.md`. Die Nennung im Body bleibt, weil sie am Issue einen Rückverweis auf die Begründung erzeugt.
 
 **Lücken im Werkzeugsatz sind hier nicht behebbar.** `prima_repo_*`, `issue_*` und `gh_*` werden in `pajew-ski/data` gebaut; ein Coding Agent an diesem Repo kann sie weder ändern noch prüfen, ob sie geändert wurden. In dieses Repo gehört davon nur der Umweg, als Regel in `CLAUDE.md`. Die Lücke selbst wird als Issue in `pajew-ski/data` angelegt, wo ihr Schließen einen Ort hat.
 
-**Ein Werk, das nicht zu öffnen war, ist kein Werkzeugbefund**, sondern ein offener Posten nach §10 und §15, und behält sein Issue, bis das Exemplar gelesen ist. Was es über den Zugangsweg lehrt, geht zusätzlich in die Tabelle.
+**Ein Werk, das nicht zu öffnen war, ist kein Werkzeugbefund und kein Issue**, sondern ein Werkknoten: `pmw:`-Bezeichner an seiner Tradition über `pm:corpusWork`, ohne `pm:fromWork`, der Grund als `skos:note` am Werk. `queries/unopened-works.rq` ist die Warteschlange. Was der Versuch über den Zugangsweg lehrt, geht in die Tabelle in `AGENTS.md`.
 
 ### Labels
 
 Labels sind kein Zustandsduplikat — den Zustand trägt offen oder geschlossen. Sie tragen zwei Dinge: den Bündelungsschlüssel für die Recherche und das Protokoll der Suchabdeckung.
 
-**Das Vokabular steht kanonisch in `CONTRIBUTING.md` „Label-Vokabular", nicht hier.** Dort wird es beim Labeln gelesen, dort steht die vollständige Liste der `korpus:`-Werte, und dort standen bereits `ernte` und `in-arbeit`, die diese Tabelle nie geführt hat — zwei Fassungen desselben Vokabulars sind auseinandergelaufen, wie beim doppelt geführten Workflow-Listing in Abschnitt 7. Was hier bleibt, ist die Begründung: wofür die Labels da sind und welche Prüfungen an ihnen hängen.
+**Das Vokabular steht kanonisch in `CONTRIBUTING.md` „Label-Vokabular", nicht hier.** Dort wird es beim Labeln gelesen, und dort steht die vollständige Liste der `korpus:`-Werte; zwei Fassungen desselben Vokabulars liefen auseinander, wie beim doppelt geführten Workflow-Listing in Abschnitt 7. Was hier bleibt, ist die Begründung: wofür die Labels da sind und welche Prüfungen an ihnen hängen.
 
 **Jedes Issue trägt entweder `behauptung` oder `befund`.** Die Aufteilung stand von Anfang an in der Definition von `behauptung` — „nicht als Repo-Arbeit" —, aber die andere Hälfte hatte keinen Namen, und was keinen Namen hat, ist nicht als Menge abfragbar. Die Folge war messbar: bei der Einführung dieses Labels trugen 61 von 287 offenen Issues gar kein Label, und es waren fast genau die Repo-, Werkzeug-, Ontologie- und Verfahrensbefunde. Sie hatten stattdessen ein Ersatzvokabular in den Titeln gebildet — Werkzeugbefund, Werkzeuglücke, Werkzeugfalle, Werkzeugmechanik, Bestandsbefund, Ontologielücke —, also vier Namen für eine Klasse und keinen davon abfragbar.
 
@@ -817,7 +812,7 @@ Erzählung, Lebenslauf, Polemik und kosmologisches Gerüst sind nicht geschuldet
 
 **Vollständigkeit heißt vollständig für das Geöffnete.** Wer fünf Passagen eines Werkes von vierhundert Seiten gelesen hat, hat nicht das Werk geerntet. Die Erntenotiz nennt daher beides: was aufgenommen wurde und welche Teile ungelesen blieben. Ein Anspruch auf Erschöpfung, der nicht stattgefunden hat, ist derselbe Fehler wie eine vermutete Unerreichbarkeit, nur an der anderen Achse.
 
-**Die Erntenotiz steht im Issue, das den Lauf ausgelöst hat**, und sie nennt auch, was gesehen und bewusst nicht aufgenommen wurde, mit Grund. Das ist der wichtigere Teil: gesehen und stillschweigend fallengelassen ist von nie gesehen nicht zu unterscheiden, und ein späterer Bearbeiter kann einer Auslassung nur widersprechen, die dasteht.
+**Die Erntenotiz steht im Body des PR, der die Ernte trägt**, und sie nennt auch, was gesehen und bewusst nicht aufgenommen wurde, mit Grund. Ein Issue je Werk gibt es nicht mehr: der Branch `claude/ernte-<werk-slug>` ist der Lease, der Graph hält den Ertrag, der PR die Notiz. Das ist der wichtigere Teil: gesehen und stillschweigend fallengelassen ist von nie gesehen nicht zu unterscheiden, und ein späterer Bearbeiter kann einer Auslassung nur widersprechen, die dasteht.
 
 **Die aufgenommene Seite wird namentlich geführt, nicht in Prosa.** Die Notiz listet die geschriebenen Knoten mit ihren Bezeichnern, und sie wird aus der Lektüre geschrieben, nicht aus der fertigen Datei. Der Grund ist die Umkehrung des Satzes darüber: solange die Notiz nur erzählt, was aufgenommen wurde, ist ein Knoten, der den Weg in den Bestand nicht gefunden hat, von einem nie gesehenen weiterhin nicht zu unterscheiden — die Notiz und die Datei sagen dann beide dasselbe Nichts. Steht die Liste da, ist die Auslassung die Differenz zwischen Notiz und Branch, also zählbar und von jedem prüfbar, der beides nebeneinanderlegt. Wird sie dagegen aus der fertigen Datei abgeschrieben, prüft sie nichts, weil sie dann per Konstruktion stimmt. Der dokumentierte Fall, in dem ein am Wortlaut geprüfter Fund nur die lokale Arbeitskopie erreichte, bei grünem PR und abgeschlossenem Lauf, steht in prima-materia#351.
 
