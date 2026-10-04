@@ -68,4 +68,58 @@ pmw:TalmudBavliPesahim a dcterms:BibliographicResource ;
     skos:note "The part read is folio 110a to 112b, pages 703 to 714. The running heads run 703, 706, 708, 710, 713, 714 without going backwards; one head came back from the scan as 7111 and is an artefact of the optical reading rather than a page, and no citation here rests on it."@en ;
     skos:note "Why this edition and not the free English. The lease for this work warned that Rodkinson's English is defective for the material on sorcery at three measured places, which the search node in examinations/searches-rabbinic-sorcery-law.ttl established for tractate Sanhedrin. The German was therefore used as the text and the English was not consulted at all for this tractate, which means the comparison the first file carried for Sanhedrin has not been carried here and is not claimed."@en .
 
+#
+# Aboda zara: the cure conceded, and the cause reassigned twice
+#
+
+pmc:AbodaZaraAfflictionsSwornToTheirHour a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "The afflictions are sworn to a day and an hour, so the cure at the idol's temple proves nothing"@en, "Die Zuechtigungen sind auf Tag und Stunde vereidigt, daher beweist die Heilung im Goetzentempel nichts"@de ;
+    skos:definition "The passage the whole of this file was opened for. Zonin puts it to R. Aqiba that the two of them know there is nothing in the idol, and that they nevertheless see people go in broken and come back healed, and he asks how that comes about. R. Aqiba does not deny the observation. He answers with a parable of a trustworthy man who will not break his custom because one fool deposited without witnesses, and then applies it: when afflictions are sent upon a man they are put under oath to go only on a named day, only at a named hour, only through a named man and only by a named medicine; and when the day on which they are to go comes round and the man happens to be standing in the idol's temple, they go anyway, saying that by rights they should not, but that they will not break their oath because this fool is behaving improperly. R. Johanan's proof text is attached in the same breath: bad and faithful illnesses means bad in their mission and faithful in their oath."@en ;
+    skos:note "What makes this worth a node of its own rather than a line in the first file. The holding carries many claims that are safe against a counter-case, and it carries them because the transmission supplies an excuse for a run that produced nothing. This is the opposite operation on the opposite material: the rival's run produced something, the something is granted, and what is withdrawn is the causal connection. The mechanism offered is a coincidence in time between a cure that was going to happen and a visit that did not cause it, and it is stated as a general rule and not as a remark about one case. A modern protocol calling a reported success confounded is making the same move; the point of entering this is that the move is thirteen or fourteen centuries older than the protocol and is made by a party with everything to gain from denying the cure outright."@en ;
+    skos:note "The limit of the claim, and the transmission does not notice it. The oath fixes the day, the hour, the man and the medicine in advance, so on its own terms somebody could ask which day was named and check. Nothing in the passage says who may know the appointed day, and nothing makes the appointment retrievable, so the account is unfalsifiable in practice while sounding like a schedule. That asymmetry is the node's contribution to pmc:TheObservationAnsweredByNarrowing and is why it is not simply filed as a dispute."@en ;
+    skos:note "Not modelled as pm:Disputing. The text does not stage two sides over one claim; it stages a question and an answer, and both speakers agree on the premise that the idol is nothing. The disagreement the first file found at pmc:SanhedrinWhetherTheArtPrevailsAgainstTheDecree is of the other kind and the two should not be read as the same construction."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, the exchange of Zonin and R. Aqiba with R. Johanan on Deuteronomy 28:59, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), pp. 990-991" .
+
+pmp:AbodaZaraSlaughterForRain a pm:Practicing ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "Slaughtering a man for the idol that asked for it in a dream"@en, "Einen Menschen fuer den Goetzen schlachten, der im Traum darum bat"@de ;
+    skos:definition "The operation Raba b. Jishaq reports from his own locality, in the second person to R. Jehuda and as a present practice: there is a temple of an idol there which, when the world is in want of rain, appears to them in a dream and tells them to slaughter a man for it, and they do so. The procedure is named by its occasion, its prompting and its one act; no officiant, no formula and no time of day is given, and the report gives none because it is a question about an observed sequence and not an instruction."@en ;
+    skos:note "Entered as a practice although the transmission that reports it forbids it absolutely and on pain of death. The class says what somebody does and not whether a transmission approves; the prohibition stands at pmc:SanhedrinTheSorcererIsStoned in the first file, and the condemnation is the reason the report is credible as a report: the speaker is not advertising."@en ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, Raba b. Jishaq to R. Jehuda on the temple in their locality, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), p. 991" .
+
+pmc:AbodaZaraRainFollowsTheSlaughter a pm:Yielding ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "When they have slaughtered a man for it, rain comes"@en, "Wenn sie ihm einen Menschen geschlachtet haben, kommt Regen"@de ;
+    skos:definition "The claim Raba b. Jishaq brings to R. Jehuda, and he brings it as something that happens rather than as something taught: the idol promises rain for a human sacrifice and the rain comes. It is reported by a man of the place to a teacher as a difficulty, which is what makes it an unusual witness in this holding - an efficacy claim about a rival practice, carried into the record by somebody who holds the practice to be capital."@en ;
+    skos:note "The capacity and the practice are kept apart from the account the transmission then gives of them, which stands at pmc:AbodaZaraTheIdolatersAreTalkedOver. The sequence rain-after-slaughter is what the speaker says he sees; that God lets it happen in order to condemn them is what his teacher says about it. A node holding both would make the explanation part of the observation, and the whole interest of the passage is that the two are separable."@en ;
+    skos:note "Why pm:firstPersonReport and not pm:textualAttestation. The mode asks how the claim entered the record, and here a named man says that this is so in his own town. The written transmission of that report is the medium and not the testimony. Nothing in the passage says he watched a slaughter."@en ;
+    pm:byPractice pmp:AbodaZaraSlaughterForRain ;
+    pm:yieldsCapacity pmc:AbodaZaraRainOnDemandOfTheIdol ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, Raba b. Jishaq to R. Jehuda, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), p. 991" .
+
+pmc:AbodaZaraRainOnDemandOfTheIdol a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "Rain brought on at the demand of an idol"@en, "Regen, der auf Verlangen eines Goetzen eintritt"@de ;
+    skos:definition "The capacity the reported sequence claims: rain in a time of drought, following a slaughter the idol itself asked for in a dream. It is held as its own node because the holding counts capacities and because this one has a property the weather claims in it mostly lack - the occasion is set by the other party and not by the practitioner, so the operation cannot be run at will and cannot be repeated to order."@en ;
+    skos:note "That property is also what makes the claim cheap. Rain is demanded when the world is in want of it, which is when rain is in any case overdue, and the transmission that reports the sequence does not notice this although its own account of the matter would have been strengthened by it. The observation belongs to the compiler and is recorded here rather than put into the definition."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), p. 991" .
+
+pmc:AbodaZaraTheIdolatersAreTalkedOver a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "The effect is granted and assigned to a deliberate deception of the idolaters"@en, "Die Wirkung wird zugegeben und einer absichtlichen Taeuschung der Goetzendiener zugeschrieben"@de ;
+    skos:definition "R. Jehuda's answer to the rain, and it is the second reassignment of the same page. He does not say that the rain fails to come. He grounds it in the verse that the Lord allotted the host of heaven to all the peoples, read so that the allotting is a talking-over: God smoothed the idolaters with words in order to drive them out of the world. Resh Laqish is attached with the verse that he scorns the scorners and gives grace to the humble, and with the rule that to him who would defile himself the doors are opened and to him who would purify himself help is given. The effect is real, it is produced, and it is produced against the interest of the people it is produced for."@en ;
+    skos:note "This is the harder of the two accounts on the page and the two should be compared, which is why both are nodes. At pmc:AbodaZaraAfflictionsSwornToTheirHour the connection between the operation and the outcome is cut: the cure was coming anyway. Here the connection is left standing and its sign is reversed: the operation works and working is the punishment. The first account can be put to a test in principle, because it says the cure would have arrived without the visit; the second cannot be put to any test at all, because every outcome of the operation confirms it. A transmission that holds both has an answer for a success and an answer for a failure and needs neither to be true."@en ;
+    skos:note "What this does to the counter-transmission the first file built. There the question was whether a performance did something, and the criteria were forensic - blood and dung as the trace of a real deed, water that dissolves a transformation. Here the question is what follows from its having done something, and the transmission answers it without using any of those criteria. The two halves of the same transmission therefore stand at different distances from a test, and a reader who meets only the forensic half will overstate how far it goes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, R. Jehuda on Deuteronomy 4:19 and Resh Laqish on Proverbs 3:34, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), p. 991" .
+
 # ANKER-ANHANG-HIER
