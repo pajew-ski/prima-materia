@@ -1,0 +1,323 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia - what the rabbinic transmission does with an observed success
+#
+# Second file of pmt:RabbinicHalakhah. The first, traditions/rabbinic-halakhah.ttl,
+# read tractate Sanhedrin and found a transmission unusually rich in forensic
+# criteria and empty of conditions of failure. Its own notes named three places
+# outside that tractate as the next thing to open and said in as many words that
+# no node there rested on them. All three are opened here at the wording, and
+# the lease that held them is prima-materia#826.
+#
+# Why the three belong together although they stand in three tractates and three
+# volumes. Each of them takes up a success somebody has seen - a sick man who
+# went into an idol's temple and came out well, rain that followed a slaughter,
+# a man who died after drinking an even number, a seizure that let go when a
+# second amulet was written - and none of them meets it by denying it. What the
+# transmission does instead is reassign the cause, or restrict the claim, or
+# locate the defect in the operator. The first file could not see this, because
+# tractate Sanhedrin argues about whether the art works and never once about a
+# case anybody watched.
+#
+# Order of the file: the three works; then Aboda zara, where an observed cure is
+# conceded and reassigned twice over; then Holin, where the parallel the first
+# file guessed at turns out to say something else, and where a claim is narrowed
+# twice under counter-observation; then Pesahim, the longest of the three, which
+# carries the self-fulfilling rule, the exemptions, a case of a protection that
+# held until the man stopped attending to it, and the one thing the first file
+# searched for and did not find: an operation with a named, checkable condition
+# of failure and a stated correction.
+#
+# What is new to the holding. pmc:PesahimAmuletAgainstSixtyDemons is a condition
+# of failure of a kind this holding has been looking for since the search at
+# pmp:RabbinicDefectusSearch came back empty, and it is not of the kind the
+# twenty-two witnesses of pmc:NoFailedRunCountsAgainstTheOperation carry: the
+# defect is a wrong number in the formula, the failure is announced by a third
+# party, and a second operator with the right number succeeds. The excuse is in
+# the operator and it is for once a matter of fact.
+#
+
+#
+# The works
+#
+
+pmw:TalmudBavliAbodaZara a dcterms:BibliographicResource ;
+    rdfs:label "Babylonian Talmud, tractate Aboda zara"@en, "Babylonischer Talmud, Traktat Aboda zara"@de ;
+    skos:note "Read in the translation of Lazarus Goldschmidt, Der babylonische Talmud mit Einschluss der vollstaendigen Misnah, seventh volume, Synhedrin, Makkoth, Sebuoth, Aboda zara, Horajoth, Edijoth, Aboth, Berlin, S. Calvary und Co., 1903. The same physical volume carries tractate Sanhedrin and is the volume traditions/rabbinic-halakhah.ttl is worked from; the tractate is the work and the volume is the edition, so it is declared separately."@en ;
+    skos:note "The part read is folio 54b to 56a, pages 990 to 992 of that volume. The running heads of the tractate were checked over the whole of chapter one and the part read before anything was cited: they run 796, 799, 801, 806, 807, 809, 813, 819, 822, 827, 833, 837, 839, 842, 845, 852, 862 and on to 992 without going backwards. The check is the one AGENTS.md requires after prima-materia#829, where a scan gave the sequence 753, 759, 757, 799, 761 and a page number formed from it would have been invented."@en ;
+    skos:note "Access: the archive.org identifier is derbabylonischet07gold, full text over the regular route. The file keeps its line breaks, so the warning about the single very long line does not apply to it; the Aramaic and the German stand in two columns which the full text interleaves line by line, and a reading that does not separate them will run the two together."@en .
+
+pmw:TalmudBavliHolin a dcterms:BibliographicResource ;
+    rdfs:label "Babylonian Talmud, tractate Holin"@en, "Babylonischer Talmud, Traktat Holin"@de ;
+    skos:note "Read in the translation of Lazarus Goldschmidt, eighth volume, Zebahim, Menahoth, Holin, Leipzig, Otto Harrassowitz, 1909. The edition is copied from the title page in the full text, which names the eighth volume and the Leipzig imprint; the seventh volume of the same translation carries a different publisher and year, so the volume cannot be cited from the series alone."@en ;
+    skos:note "This is the volume the first file said it had not opened and would need, because this translator's German is the only translation of this tractate in the public domain: Rodkinson did not translate it and Soncino is not free. Access was the obstacle and not the language. The identifier derbabylonischet07gold follows the pattern derbabylonischet<NN>gold for the seventh volume and for no other; the eighth is derbabylonischet08unse, in a series of identifiers running from derbabylonischet01unse to derbabylonischet08unse which carries this whole translation. That is a finding about the way and is entered in the table of access routes in AGENTS.md, so that no later run has to search for it again."@en ;
+    skos:note "The part read is folio 7a to 7b, pages 819 to 822. The running heads over folios 6a to 9a run 819, 820, 822, 824, 826 without going backwards, so the page numbers cited are the printed ones. The tractate is spelt Holin on the title page and in the running heads, which render it HOLIN; the common English spelling is Hullin and the place is the same."@en .
+
+pmw:TalmudBavliPesahim a dcterms:BibliographicResource ;
+    rdfs:label "Babylonian Talmud, tractate Pesahim"@en, "Babylonischer Talmud, Traktat Pesahim"@de ;
+    skos:note "Read in the translation of Lazarus Goldschmidt, second volume, Erubin, Pesahim, Joma, Berlin, S. Calvary und Co., 1901, identifier derbabylonischet02unse. The edition is from the title page in the full text."@en ;
+    skos:note "The part read is folio 110a to 112b, pages 703 to 714. The running heads run 703, 706, 708, 710, 713, 714 without going backwards; one head came back from the scan as 7111 and is an artefact of the optical reading rather than a page, and no citation here rests on it."@en ;
+    skos:note "Why this edition and not the free English. The lease for this work warned that Rodkinson's English is defective for the material on sorcery at three measured places, which the search node in examinations/searches-rabbinic-sorcery-law.ttl established for tractate Sanhedrin. The German was therefore used as the text and the English was not consulted at all for this tractate, which means the comparison the first file carried for Sanhedrin has not been carried here and is not claimed."@en .
+
+#
+# Aboda zara: the cure conceded, and the cause reassigned twice
+#
+
+pmc:AbodaZaraAfflictionsSwornToTheirHour a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "The afflictions are sworn to a day and an hour, so the cure at the idol's temple proves nothing"@en, "Die Zuechtigungen sind auf Tag und Stunde vereidigt, daher beweist die Heilung im Goetzentempel nichts"@de ;
+    skos:definition "The passage the whole of this file was opened for. Zonin puts it to R. Aqiba that the two of them know there is nothing in the idol, and that they nevertheless see people go in broken and come back healed, and he asks how that comes about. R. Aqiba does not deny the observation. He answers with a parable of a trustworthy man who will not break his custom because one fool deposited without witnesses, and then applies it: when afflictions are sent upon a man they are put under oath to go only on a named day, only at a named hour, only through a named man and only by a named medicine; and when the day on which they are to go comes round and the man happens to be standing in the idol's temple, they go anyway, saying that by rights they should not, but that they will not break their oath because this fool is behaving improperly. R. Johanan's proof text is attached in the same breath: bad and faithful illnesses means bad in their mission and faithful in their oath."@en ;
+    skos:note "What makes this worth a node of its own rather than a line in the first file. The holding carries many claims that are safe against a counter-case, and it carries them because the transmission supplies an excuse for a run that produced nothing. This is the opposite operation on the opposite material: the rival's run produced something, the something is granted, and what is withdrawn is the causal connection. The mechanism offered is a coincidence in time between a cure that was going to happen and a visit that did not cause it, and it is stated as a general rule and not as a remark about one case. A modern protocol calling a reported success confounded is making the same move; the point of entering this is that the move is thirteen or fourteen centuries older than the protocol and is made by a party with everything to gain from denying the cure outright."@en ;
+    skos:note "The limit of the claim, and the transmission does not notice it. The oath fixes the day, the hour, the man and the medicine in advance, so on its own terms somebody could ask which day was named and check. Nothing in the passage says who may know the appointed day, and nothing makes the appointment retrievable, so the account is unfalsifiable in practice while sounding like a schedule. That asymmetry is the node's contribution to pmc:TheObservationAnsweredByNarrowing and is why it is not simply filed as a dispute."@en ;
+    skos:note "Not modelled as pm:Disputing. The text does not stage two sides over one claim; it stages a question and an answer, and both speakers agree on the premise that the idol is nothing. The disagreement the first file found at pmc:SanhedrinWhetherTheArtPrevailsAgainstTheDecree is of the other kind and the two should not be read as the same construction."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, the exchange of Zonin and R. Aqiba with R. Johanan on Deuteronomy 28:59, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), pp. 990-991" .
+
+pmp:AbodaZaraSlaughterForRain a pm:Practicing ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "Slaughtering a man for the idol that asked for it in a dream"@en, "Einen Menschen fuer den Goetzen schlachten, der im Traum darum bat"@de ;
+    skos:definition "The operation Raba b. Jishaq reports from his own locality, in the second person to R. Jehuda and as a present practice: there is a temple of an idol there which, when the world is in want of rain, appears to them in a dream and tells them to slaughter a man for it, and they do so. The procedure is named by its occasion, its prompting and its one act; no officiant, no formula and no time of day is given, and the report gives none because it is a question about an observed sequence and not an instruction."@en ;
+    skos:note "Entered as a practice although the transmission that reports it forbids it absolutely and on pain of death. The class says what somebody does and not whether a transmission approves; the prohibition stands at pmc:SanhedrinTheSorcererIsStoned in the first file, and the condemnation is the reason the report is credible as a report: the speaker is not advertising."@en ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, Raba b. Jishaq to R. Jehuda on the temple in their locality, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), p. 991" .
+
+pmc:AbodaZaraRainFollowsTheSlaughter a pm:Yielding ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "When they have slaughtered a man for it, rain comes"@en, "Wenn sie ihm einen Menschen geschlachtet haben, kommt Regen"@de ;
+    skos:definition "The claim Raba b. Jishaq brings to R. Jehuda, and he brings it as something that happens rather than as something taught: the idol promises rain for a human sacrifice and the rain comes. It is reported by a man of the place to a teacher as a difficulty, which is what makes it an unusual witness in this holding - an efficacy claim about a rival practice, carried into the record by somebody who holds the practice to be capital."@en ;
+    skos:note "The capacity and the practice are kept apart from the account the transmission then gives of them, which stands at pmc:AbodaZaraTheIdolatersAreTalkedOver. The sequence rain-after-slaughter is what the speaker says he sees; that God lets it happen in order to condemn them is what his teacher says about it. A node holding both would make the explanation part of the observation, and the whole interest of the passage is that the two are separable."@en ;
+    skos:note "Why pm:firstPersonReport and not pm:textualAttestation. The mode asks how the claim entered the record, and here a named man says that this is so in his own town. The written transmission of that report is the medium and not the testimony. Nothing in the passage says he watched a slaughter."@en ;
+    pm:byPractice pmp:AbodaZaraSlaughterForRain ;
+    pm:yieldsCapacity pmc:AbodaZaraRainOnDemandOfTheIdol ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, Raba b. Jishaq to R. Jehuda, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), p. 991" .
+
+pmc:AbodaZaraRainOnDemandOfTheIdol a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "Rain brought on at the demand of an idol"@en, "Regen, der auf Verlangen eines Goetzen eintritt"@de ;
+    skos:definition "The capacity the reported sequence claims: rain in a time of drought, following a slaughter the idol itself asked for in a dream. It is held as its own node because the holding counts capacities and because this one has a property the weather claims in it mostly lack - the occasion is set by the other party and not by the practitioner, so the operation cannot be run at will and cannot be repeated to order."@en ;
+    skos:note "That property is also what makes the claim cheap. Rain is demanded when the world is in want of it, which is when rain is in any case overdue, and the transmission that reports the sequence does not notice this although its own account of the matter would have been strengthened by it. The observation belongs to the compiler and is recorded here rather than put into the definition."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), p. 991" .
+
+pmc:AbodaZaraTheIdolatersAreTalkedOver a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliAbodaZara ;
+    rdfs:label "The effect is granted and assigned to a deliberate deception of the idolaters"@en, "Die Wirkung wird zugegeben und einer absichtlichen Taeuschung der Goetzendiener zugeschrieben"@de ;
+    skos:definition "R. Jehuda's answer to the rain, and it is the second reassignment of the same page. He does not say that the rain fails to come. He grounds it in the verse that the Lord allotted the host of heaven to all the peoples, read so that the allotting is a talking-over: God smoothed the idolaters with words in order to drive them out of the world. Resh Laqish is attached with the verse that he scorns the scorners and gives grace to the humble, and with the rule that to him who would defile himself the doors are opened and to him who would purify himself help is given. The effect is real, it is produced, and it is produced against the interest of the people it is produced for."@en ;
+    skos:note "This is the harder of the two accounts on the page and the two should be compared, which is why both are nodes. At pmc:AbodaZaraAfflictionsSwornToTheirHour the connection between the operation and the outcome is cut: the cure was coming anyway. Here the connection is left standing and its sign is reversed: the operation works and working is the punishment. The first account can be put to a test in principle, because it says the cure would have arrived without the visit; the second cannot be put to any test at all, because every outcome of the operation confirms it. A transmission that holds both has an answer for a success and an answer for a failure and needs neither to be true."@en ;
+    skos:note "What this does to the counter-transmission the first file built. There the question was whether a performance did something, and the criteria were forensic - blood and dung as the trace of a real deed, water that dissolves a transformation. Here the question is what follows from its having done something, and the transmission answers it without using any of those criteria. The two halves of the same transmission therefore stand at different distances from a test, and a reader who meets only the forensic half will overstate how far it goes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Aboda zara 55a, R. Jehuda on Deuteronomy 4:19 and Resh Laqish on Proverbs 3:34, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VII (Berlin: S. Calvary und Co., 1903), p. 991" .
+
+#
+# Holin: the parallel, read, and a claim narrowed twice
+#
+
+pmc:HolinTakeItYourPurposeWillNotSucceed a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliHolin ;
+    rdfs:label "Take it, your purpose will not succeed: the parallel read, and it is not a denial of efficacy"@en, "Nimm, deine Absicht gelingt dir doch nicht: die Parallele gelesen, und sie bestreitet die Wirksamkeit nicht"@de ;
+    skos:definition "The same case as at Sanhedrin 67b in the other wording. R. Hanina applies the verse that there is none beside him to sorcery as well; a woman sets about taking earth from under his feet in order to bewitch him; and here he says to her, take it, your purpose will not succeed, because it is written that there is none beside him. Sanhedrin has him say, if you can, then do it. The objection from R. Johanan's saying that the practitioners are so named because they defy the college above stands in this tractate too, and so does the answer: it was different with R. Hanina, whose merits were great."@en ;
+    skos:note "This node exists because it refutes the conjecture that was entered in its place. The note at pmc:SanhedrinNothingBesideHimEvenInSorcery reported from the secondary literature that the parallel here falls flatter and that this would be a denial of efficacy rather than a personal exception. The first half is right and the second is wrong, and the wording shows why: the flatter wording is followed by the same objection and the same resolution, so the personal exception is not a feature of the Sanhedrin wording but of the case. The lease that asked for this reading guessed the consequence and the guess did not survive the page. That is the use of the second stage of a search, and it is the third time this holding has recorded it; the first stands in prima-materia#76."@en ;
+    skos:note "What the difference in wording does change, and it is worth more than what it does not. If you can, then do it is an invitation that no outcome could disappoint, because a failure shows the speaker right and a success was invited. Take it, your purpose will not succeed is a prediction about a particular operation by a particular woman, and a bewitching that then took effect would have contradicted the man who said it. This tractate therefore carries, in one clause, the only thing in this transmission that looks like a stated condition of failure of somebody else's operation - and the discussion immediately covers the general claim with the merits of the man, so that nothing turns on whether the prediction held."@en ;
+    skos:note "A pointer the two wordings supply and neither tractate notices. Goldschmidt's note at this place refers the explanation of the word for the practitioners to the seventh volume, page 286, note 527, which is the Sanhedrin passage the first file worked from. The cross-reference is the translator's and is recorded here because it is the only thing in either place that treats the two as one discussion."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Holin 7b, R. Hanina on Deuteronomy 4:35 and the woman who took earth from beneath his feet, with the objection from R. Johanan and the answer from his merits, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VIII (Leipzig: Otto Harrassowitz, 1909), p. 822" .
+
+pmc:HolinWhiteMuleClaimNarrowedTwice a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliHolin ;
+    rdfs:label "Nobody ever asked me about a white mule's wound and lived: the claim narrowed twice under counter-observation"@en, "Nie fragte mich jemand ueber die Verwundung durch ein weisses Maultier und blieb am Leben: die Behauptung zweimal unter Gegenbeobachtung eingeschraenkt"@de ;
+    skos:definition "The most compact instance in this holding of a claim being restricted by its own transmission in answer to what people see, and it happens twice in four lines. R. Hanina says that nobody in his life ever consulted him about a wound from a white mule and stayed alive. The discussion objects: but we see that some do stay alive. The answer is to read the saying as meaning, and is healed. The discussion objects again: but we see that these heal too. The answer is that the saying speaks of mules whose feet are white at the ends. After the second narrowing the claim covers a class the objector cannot enumerate and excludes no case he can point to."@en ;
+    skos:note "Why this is a find and not a curiosity. The holding already carries this construction described from the outside, by a first-century critic who put a counter-example to a practitioner three times and was answered three times with a fresh condition; that stands at pmc:BiansuiDispute, and the note there says in as many words that a critic reporting the move is not a transmission supplying it. Here the transmission supplies it, in its own voice, in its own canonical text, with the counter-observation raised by the editorial discussion itself rather than by an opponent. The gap the holding named is closed by this passage."@en ;
+    skos:note "The shape of the two narrowings is not the same and the difference is the useful part. The first changes what the claim asserts - from dying to not healing - and so is a reinterpretation of the words. The second changes what the claim is about - from white mules to mules with white feet-ends - and so is a restriction of the subject. Both are introduced by the same formula, we see however that, and neither is marked in the text as a retreat. A later protocol counting immunising moves will need both kinds and this is the cheapest place in the holding to take them from."@en ;
+    skos:note "What was not found on the same page, and it matters for the reading. Nothing says how many cases R. Hanina had seen, nothing fixes a term after which a wound counts as healed, and nothing says who decides whether a mule's feet are white at the ends. The claim therefore has no count, no term and no adjudicator, and it was stated as an exceptionless autobiographical report. The absence is the compiler's observation and is not in the passage."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Holin 7b, R. Jehosua b. Levi on the name of the mules and R. Hanina on the wound, with the two objections and the two answers, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VIII (Leipzig: Otto Harrassowitz, 1909), p. 822" .
+
+pmp:HolinCommandingTheRiverToDivide a pm:Practicing ;
+    pm:fromWork pmw:TalmudBavliHolin ;
+    rdfs:label "Addressing a river and ordering it to divide"@en, "Einen Fluss anreden und ihn teilen lassen"@de ;
+    skos:definition "R. Pinhas b. Jair, travelling to ransom captives, meets the river Ginaj and says: Ginaj, divide your water for me, that I may pass through you. The river answers that he may or may not accomplish his errand while it certainly accomplishes its own; he replies that if it does not divide he will decree that water shall never flow through it again, and it divides. He then has it divide twice more, once for a man carrying wheat for Pesah and once for an Arab travelling with them, the second on the ground that nobody should be able to say that this is how a companion is treated."@en ;
+    skos:note "The operation is harvested because the pages were open and because a capacity passed over is something that was there to be learnt and that nobody will notice again. It is a plain address, with no preparation, no formula, no time and no instrument, and the one condition anywhere near it is in the river's objection rather than in the procedure."@en ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Holin 7a, R. Pinhas b. Jair at the river Ginaj, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VIII (Leipzig: Otto Harrassowitz, 1909), pp. 820-821" .
+
+pmc:HolinThreeTimesAgainstMosesOnce a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliHolin ;
+    rdfs:label "The count put against the count, and withdrawn"@en, "Die Zahl gegen die Zahl gestellt, und zurueckgenommen"@de ;
+    skos:definition "What the transmission does with the three dividings, and it is an argument from a count. R. Joseph says that this man is so much greater than Moses with his sixty myriads, for there it happened once and here three times. The discussion objects that perhaps here too it happened only once, and the answer concedes: rather, this man is like Moses with his sixty myriads. A comparative claim grounded on a number is put, met with a doubt about the number, and given up."@en ;
+    skos:note "Entered because the holding has very little of this. Counting is the instrument the project itself reaches for, and transmissions that count their own successes are rare in it; here one counts, is asked whether the count is right, and drops the conclusion rather than defending it. The doubt raised is not that the river did not divide but that the three requests may have been one event with three beneficiaries, which is a question about how an occurrence is individuated. That is the same question a protocol has to settle before it can count anything."@en ;
+    skos:note "It sits oddly beside pmc:HolinWhiteMuleClaimNarrowedTwice on the pages either side of it. There a claim meets a counter-observation and is narrowed until nothing bears on it; here a claim meets a doubt about its arithmetic and is withdrawn. The same editorial voice does both within two pages, so neither can be read as the transmission's settled habit."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Holin 7a, R. Joseph on the three dividings and the objection to the count, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VIII (Leipzig: Otto Harrassowitz, 1909), p. 821" .
+
+pmc:HolinTheBeastRefusesTheUntithed a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliHolin ;
+    rdfs:label "The ass that would not eat the barley, with three alternatives excluded before the conclusion"@en, "Der Esel, der die Gerste nicht frass, mit drei ausgeschlossenen Alternativen vor dem Schluss"@de ;
+    skos:definition "The criterion the same passage reports, and the one place in it where something is handled like an experiment. The ass of R. Pinhas b. Jair is given barley at an inn and will not eat it; it is sieved and the ass will not eat it; it is cleaned and the ass still will not eat it; he asks whether perhaps it has not been tithed, it is tithed, and the ass eats. The sentence drawn from it is that the poor beast is going to do the will of its maker and they are feeding it what is not tithed."@en ;
+    skos:note "Why the sequence matters more than the claim. Two ordinary accounts of a refusing animal are dirt and chaff, and both are tried and removed before the third is put; the third is then confirmed by an intervention that changes only the one thing. The holding contains a great many claimed signs and very few that are approached in this order, and the order is in the text and not supplied by the reading."@en ;
+    skos:note "What the passage will not carry, and the pages before it say so plainly. The surrounding discussion asks four times over whether the earlier story of this man eating an untithed leaf can be explained some other way - that he forgot, that he had tithed from elsewhere, that he aimed at one part and ate another - and each is met by an argument rather than by a check. So the same discussion that excludes two alternatives mechanically for the ass excludes four for the man by inference. A reader taking the barley sequence as the transmission's method will overstate it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Holin 7a, the ass of R. Pinhas b. Jair at the inn, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VIII (Leipzig: Otto Harrassowitz, 1909), p. 821" .
+
+#
+# Pesahim: the pairs, and what happens to a protection that fails
+#
+
+pmc:PesahimTheDangerOfPairs a pm:Cautioning ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "The danger of even numbers in what is eaten and drunk"@en, "Die Gefahr der Paare bei Speise und Trank"@de ;
+    skos:definition "The warning the whole of this part of the tractate turns on: an even number of cups, eggs, nuts or cucumbers exposes the person who consumed them to harm, from demons and from sorcery, and the harm reported in the cases is death. The transmission carries it as a live rule with remedies, counts, exemptions and case reports attached, and not as a saying."@en ;
+    skos:note "Held as a caution rather than as a concept because the passage is addressed to conduct throughout: it tells the reader what to do when he has lost count, what to say, whom it does not threaten and where it is not observed. The capacity it defends against is not named in the usual way; what is named is an occasion."@en ;
+    pm:cautionsAbout pmc:PesahimWhoeverHeedsIsHeeded, pmp:PesahimCounterFormulaAgainstTheSorceresses ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 110a-110b, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 703-707" .
+
+pmc:PesahimWhoeverHeedsIsHeeded a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "Whoever heeds them is heeded by them, and whoever does not is not"@en, "Wer darauf achtet, auf den achten auch jene, und wer nicht, auf den nicht"@de ;
+    skos:definition "The rule the transmission states for the danger of pairs, in its own words, as a rule: whoever attends to it, they attend to him; whoever does not attend to it, they do not attend to him; and nevertheless it is advisable to take it into account. The efficacy of the danger is thereby made to depend on whether the person believes in it, and the sentence that says so is immediately followed by advice to observe it anyway. The geographical note stands beside it: in the West they did not attend to the pairs."@en ;
+    skos:note "This is an explicitly self-fulfilling structure of efficacy, stated as such by the transmission, and the holding has little of it. What makes it unusually clean is the third clause. The first two make the danger a function of attention, which would license anyone to escape it by not attending; the third withdraws that licence without withdrawing the rule, so the reader is told both that his disregard would protect him and that he should not try it. No reason is given for the third clause."@en ;
+    skos:note "The geographical clause is the closest thing in the passage to a controlled comparison and the transmission draws nothing from it. If the danger holds only for those who attend to it, a region that does not attend to it should show no harm, and the text reports exactly such a region in one half-sentence and goes on. Whether it had any count from the West is not said. The inference is the compiler's and the observation that it is not drawn is what the node records."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 110b, the rule of attending and the note that in the West they did not attend to the pairs, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 705-706" .
+
+pmc:PesahimTheForgottenItemOfTheList a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "Two eggs, two nuts, two cucumbers and something else, and the something else was forgotten"@en, "Zwei Eier, zwei Nuesse, zwei Gurken und noch etwas, und das noch etwas ging verloren"@de ;
+    skos:definition "R. Dimi's report of what the rule of pairs rests on, with its own gap in it. Of two eggs, two nuts, two cucumbers and something else it was handed down to Moses at Sinai; and because the sages did not know what that something else was, they imposed a prohibition on all pairs on account of it. A received list of four is transmitted with its fourth member lost, and the loss is handled by extending the prohibition over everything the lost member might have been."@en ;
+    skos:note "A transmission reporting its own loss and saying what it did about it. The first file carries the other instance of the same honesty at pmc:SanhedrinThreeHundredRulesOnTheWitch, where three hundred rules on one verse are claimed and two are said to have reached the next generation. The two differ in what follows from the loss. There the loss is simply stated; here it generates law, and the law is wider than anything the lost item could have required. A rule whose scope is set by the size of a gap in its own warrant cannot be narrowed by any later finding, because the finding would only identify the fourth member and leave the other three in force."@en ;
+    skos:note "It also fixes what the exemptions at pmc:PesahimPairsExemptions are exemptions from. The underlying danger is a list of named foodstuffs in pairs; everything beyond that list is there because of the forgotten member, which is why the discussion can discharge whole classes - what human hands made, a tavern, a guest, a woman - without touching the warrant."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 110b, R. Dimi on what was handed down at Sinai, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 705-706" .
+
+pmc:PesahimPairsExemptions a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "Whom and what the pairs do not threaten"@en, "Wen und was die Paare nicht bedrohen"@de ;
+    skos:definition "The list of discharges the transmission attaches to the danger. R. Awira: with dishes and loaves pairs are not to be feared, and the rule is that what was made by human hands is exempt while what was made by heaven is not; in a tavern they are not to be feared; if one intends to drink another they are not to be feared; a guest need not fear them; a woman need not fear them, though a woman of rank must. Beside these stand the numerical discharges - ten, eight, six and four do not count as pairs - and the scope limit the discussion then puts on them: that limit holds only for the danger from demons, while sorcery is to be feared even at a large number."@en ;
+    skos:note "The structure is what the node is for. A danger is asserted, and then every class of case in which it would be easy to look for it is discharged: domestic settings, hospitality, half the population, and any number above three. What remains inside the rule is a man drinking alone at home and keeping count. The transmission is not hiding this; it is reasoning its way to it clause by clause, and each clause is given a ground."@en ;
+    skos:note "The scope limit is the sharpest part and it runs the other way. Having discharged the higher numbers, the discussion re-imposes them for sorcery, so the same count is safe against one agency and unsafe against another, with no way of telling which agency one is dealing with before the harm. The case at pmc:PesahimTheDivorcedWifesSpell is then cited as the proof of exactly that clause, which makes the case load-bearing rather than illustrative."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 110b, R. Awira on dishes and loaves and what follows, with the limitation of the numerical exemption to the danger from demons, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 706-707" .
+
+pmc:PesahimTheDivorcedWifesSpell a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "The spell that did not take while he kept count, and took when he lost it"@en, "Der Zauber, der nicht wirkte solange er zaehlte, und wirkte als er sich verzaehlte"@de ;
+    skos:definition "The case the discussion brings as proof that sorcery is to be feared even at a large number. A man divorced his wife and she married a shopkeeper. He used to go out every day and drink wine, and she wanted to bewitch him, and it did not succeed with her, because he was careful about the pairs. One day he drank a great deal and did not know how much; up to the sixteenth cup he was still clear-headed and careful, from then on he was no longer clear-headed and not careful, and he went out having drunk an even number. As he went an Arab met him and said, there goes a dead man. He then clasped a palm, the palm withered and he burst."@en ;
+    skos:note "A protection with a failure the transmission accounts for, and the account is the oldest form in the register: the protection did not fail, the man stopped applying it. The holding carries twenty-two witnesses of that construction at pmc:NoFailedRunCountsAgainstTheOperation, and this is one more, with the condition in the person protected. What it adds to the twenty-two is that the lapse is dated and quantified within the story - sixteen cups, clear-headed to that point - so the account is specific while remaining impossible to check: nobody counted for him, and the number is produced by the narrative that needs it."@en ;
+    skos:note "The structure of the case is worth separating from its content. For an unnamed length of time an operation was performed repeatedly and produced nothing, and that long run of nothing is not evidence against the operation but evidence for the protection. Then one occasion produced something and that is evidence for the operation. Both halves of the record are read as confirmations, of two different claims, and the transmission does not notice that the second reading is only available because the first was granted."@en ;
+    skos:note "The Arab who says there goes a dead man is the only outside observer in the story and he is a bystander with no part in it. The holding has an interest in such figures - see generalizations/the-unsympathetic-witness.ttl - and this one is the opposite case: he is not unsympathetic, he is uninvolved, and his sentence functions as a sign announced before the outcome rather than as a judgement after it. Whether it is meant as foreknowledge or as a remark on a very drunk man is not decidable from the wording."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 110b, the case of the divorced wife and the shopkeeper, cited for the rule that sorcery is to be feared at a large number too, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 706-707" .
+
+pmp:PesahimCounterFormulaAgainstTheSorceresses a pm:Practicing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "What to say on meeting sorceresses"@en, "Was man sagt, wenn man Zauberfrauen begegnet"@de ;
+    skos:definition "The formula Amemar reports, and he reports it from the chief of the sorceresses herself. On meeting sorceresses one says: hot dung in perforated baskets into your mouths, you sorcerous women; may your bald patch grow balder; may your breadcrumbs be blown away; may your spices fly off; may the wind carry away the fresh saffron you hold, you sorcerous women. The second half of what she told him is a statement of her own position: while they were gracious to me and I was careful I did not come among you; now that I have come among you they are not gracious to me, but I am careful."@en ;
+    skos:note "The counter-measure is credited to the opposing party, which is rare enough to be the reason for the node. The holding carries many protections against practitioners and this is one the practitioners are said to have supplied, so the transmission is reporting that the people it condemns told its own teacher how to defend himself. Whether that is a claim about an informant or a literary device is not decidable from the passage, and the node does not decide it."@en ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 110a, Amemar on what the chief of the sorceresses told him, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 704-705" .
+
+pmc:PesahimTwoWomenFacingEachOther a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "Two women sitting opposite each other are without doubt engaged in sorcery"@en, "Zwei Frauen, die sich einander zuwenden, befassen sich zweifellos mit Zauberei"@de ;
+    skos:definition "A criterion applied from outside, by a passer-by, to decide that an operation is going on. If two women sit in the street, one on one side and the other on the other, and turn their faces towards each other, they are without doubt occupied with sorcery. The remedy is graded by what is available: if there is another way, take it; if there is not and somebody else is present, the two of them take each other by the hand and pass; if nobody else is there, one says, Agrath, Azlath, Usij and Belusij are slain by arrows."@en ;
+    skos:note "The first file's finding was that this transmission supplies a criterion applied to a claimed effect from outside, by somebody who is neither the operator nor the person operated on. This is the same instrument put to a different question. There the question was whether a deed had been done and the criterion was a residue; here the question is whether a deed is being done and the criterion is a posture. The second is much weaker - two women facing each other across a street is a common sight and the sentence says without doubt - and the pair is useful because it shows the transmission using the same forensic habit at two very different strengths."@en ;
+    skos:note "Nothing in the passage says what would show that the two women were not doing it, and the remedies are graded by the bystander's circumstances rather than by any feature of the women. So the criterion decides every case the same way and the response is scaled to the observer. It belongs with pmc:HolinWhiteMuleClaimNarrowedTwice as the other end of the same transmission's range: a claim that excludes nothing, here from the start rather than after two narrowings."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 111a, the two women in the street and the three remedies, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 708-709" .
+
+pmc:PesahimFourActsEachWithAnExit a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "Four acts that forfeit a life, each with its way out"@en, "Vier Handlungen, die das Leben verwirken, jede mit ihrem Ausweg"@de ;
+    skos:definition "Resh Laqish names four things whose doer has his blood on his own head and forfeits his life: relieving oneself between a palm and a wall, passing between two palms, drinking borrowed water, and stepping over spilt water, even water his wife spilt in his presence. The discussion then attaches to each a set of conditions under which there is nothing in it: four cubits between palm and wall, or another way available; a public road separating the two palms; water borrowed by an adult rather than a child, or borrowed in town rather than in the field, or wine and beer rather than water; earth strewn on the spilt water, or spittle on it, or the sun having passed over it."@en ;
+    skos:note "Entered for its form and not its content. A danger is stated in the strongest available terms and then dismantled clause by clause by the same discussion, until what is forbidden is a narrow case reached by several coincidences. This is the third shape of the same movement on these pages - narrowing after an objection at pmc:HolinWhiteMuleClaimNarrowedTwice, discharge by class at pmc:PesahimPairsExemptions, and here exhaustive qualification of a stated penalty - and the three together are the material pmc:TheObservationAnsweredByNarrowing is formed from."@en ;
+    skos:note "The difference from the other two is that here no counter-observation is reported. Nobody says, we see however that people do this and live. The qualifications are supplied without being asked for, which makes this the weakest of the three as a witness and the reason the generalization does not rest on it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 110b-111a, Resh Laqish on the four acts, with the qualifications attached to each, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 707-708" .
+
+pmp:PesahimAmuletForSixtyDemons a pm:Practicing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "Writing an amulet for the number of demons present"@en, "Ein Amulett fuer die Zahl der anwesenden Daemonen schreiben"@de ;
+    skos:definition "The operation the passage makes a technical parameter explicit for. Having said that no fewer than sixty demons are to be found at a service-tree near a town, the discussion asks in what respect this matters, and answers: for the writing of an amulet. The amulet is written against a stated number of demons, and the number is to be the number actually present at the place where the seizure happened."@en ;
+    skos:note "The question and answer are what make this an operation rather than a piece of demonology. The count is not offered as a fact about the world for its own sake; the discussion asks what turns on it and names the procedure that the count enters as a quantity."@en ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 111b, the sixty demons of the service-tree and the question in what respect this matters, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 710-711" .
+
+pmc:PesahimAmuletAgainstSixtyDemons a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "The amulet written for one demon failed because sixty were there, and the demons said so"@en, "Das Amulett fuer einen Daemon misslang, weil sechzig da waren, und die Daemonen sagten es"@de ;
+    skos:definition "The one condition of failure in this transmission that a bystander could check, with the defect named and the correction carried out. A town official passed a service-tree near the town, sixty demons entered into him and he came into danger. He went to a scholar who did not know that sixty demons are found at such a tree, and that man wrote him an amulet against one demon. Then he heard them performing a dance and singing that the master wears a gown like a scholar but when one examines him he does not even know how to say the blessing. Afterwards a scholar came who knew that sixty demons are found at a service-tree, and wrote an amulet against sixty demons; and then he heard them call, clear your gear out of here."@en ;
+    skos:note "What this answers. The search at pmp:RabbinicDefectusSearch read seven printed pages of tractate Sanhedrin for any sentence saying what would show that one of this transmission's operations had not worked, and came back with nothing at all; its own note said the limit of the finding was that it covered one tractate, and named the proven amulet at Sabbath 61a as the next place to look. The place that answers it is here instead, three tractates away, and it answers more than was asked: the operation has a quantity, a wrong value of the quantity makes it fail, the failure is announced by the opposing party in words, and the operation performed with the right value succeeds. That is a condition of failure with a diagnosis and a repair."@en ;
+    skos:note "Why it is not simply a twenty-third witness for pmc:NoFailedRunCountsAgainstTheOperation, although it uses that register's commonest place. The excuse there is a condition in the operator which, in every one of the twenty-two witnesses, is either unestablishable in advance or unestablishable in principle - incredulity, dullness, impurity, insufficient merit, a decree about the patient. Here the condition in the operator is a matter of fact that anybody could settle by asking him: does he know how many demons are at a service-tree near a town. The failed run therefore does count against the operation as performed, and it is the performance and not the art that the failure is charged to. A bounding note to that effect is entered at the generalization rather than only here."@en ;
+    skos:note "The sign of failure is the part the holding has least of. The amulet that was wrong did not merely fail to work: the demons mocked the man who wrote it, in a song, in his hearing, and the content of the mockery is that he is unqualified. The holding's signs are overwhelmingly signs of success announced to a practitioner in advance, which he then reports; this is a sign of failure delivered by the party the operation was directed against. Nothing says what a man should conclude who hears nothing at all."@en ;
+    skos:note "What the passage does not supply, and it bounds the find. It gives no way of determining the number of demons at a place other than the rule about service-trees near towns, and the rule gives a floor and not a count - no fewer than sixty. An amulet written for sixty where there were more would be wrong by the same logic and the text does not say what then happens. So the parameter is checkable in the one case the story tells and not in general."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 111b, the town official at the service-tree and the two amulets, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 710-711" .
+
+pmp:PesahimSabririFormula a pm:Practicing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "The diminishing name said against blindness when drinking water at night"@en, "Der abnehmende Name gegen die Blendung beim Wassertrinken in der Nacht"@de ;
+    skos:definition "The remedy prescribed for a man who must drink water at night from a river or a cistern, where the danger named is blindness. If somebody else is present one says to him, N. son of N., I am thirsty, and then drinks. If nobody is present one says to oneself: my mother told me, beware of the blindness, Sabriri; and then the name is said again with its first letters dropped away one by one. Alternatives given beside it are to recite the verses in which the word voice occurs seven times, or to say a second formula of four names, or to rattle the lid on the mouth of the jug, or to throw something into the water, and then drink."@en ;
+    skos:note "Harvested because the pages were open and because the holding counts operations. Two things in it are worth a later reader's attention: the remedy is a list of five alternatives of very different kinds for one danger, any of which suffices, and the first and cheapest of them is simply to speak to another person who is awake. Goldschmidt's note at the place says that the form of the diminishing name in the editio princeps and the other old prints is a misprint, so the number of steps in the sequence is not secure in this edition."@en ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 112a, the prohibition on drinking water at night and the remedies for thirst, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 712-713" .
+
+#
+# Three further claims from the same opened pages, owed under the harvest rule
+#
+
+pmc:HolinThePiousAreGreaterAfterDeath a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliHolin ;
+    rdfs:label "The pious are greater after their death than in their life, and the proof is a corpse that stood up"@en, "Die Frommen sind nach ihrem Tod bedeutender als zu ihren Lebzeiten, und der Beweis ist ein Leichnam, der aufstand"@de ;
+    skos:definition "R. Hanina's saying, with the case the transmission attaches to it. The pious are greater after their death than in their life, because it is written that when they were about to bury a man they saw a raiding party and threw the man into Elisha's grave, and when he touched the bones he came to life again and stood on his feet. R. Papa puts to Abajje that this may have happened only so that Elijah's blessing of a double portion should be fulfilled in Elisha, that is for a reason other than the dead prophet's merit; the answer given is R. Johanan's, that Elisha had already healed Naaman of leprosy, which counts as the equivalent of death, so the double portion was discharged and the revival stands to his credit."@en ;
+    skos:note "Harvested because it is a capacity and the harvest rule holds capacities to strict completeness. It is located in the remains of a dead man rather than in a living practitioner, which is unusual in this holding, and it requires no operation at all: the contact was accidental and the man who benefited was a corpse himself. Nothing is prescribed, nothing is prepared, and nobody intends anything."@en ;
+    skos:note "The argument around it is the same instrument as at pmc:HolinThreeTimesAgainstMosesOnce and it is worth noting that it appears twice within one page. A claim is grounded on a case; the objection is that the case may have had another sufficient cause; and the answer removes that cause by accounting for it elsewhere. Here the claim survives, where two pages earlier it was given up. The two together show the editorial voice testing its own grounds and reaching opposite results, which is the reason pmc:TheObservationAnsweredByNarrowing is careful to call the narrowing a habit and not a mechanism."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Holin 7b, R. Hanina on the pious after death, with 2 Kings 13:21 and the objection of R. Papa to Abajje, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VIII (Leipzig: Otto Harrassowitz, 1909), p. 822" .
+
+pmc:HolinBloodFromTheStubbedToeAtones a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliHolin ;
+    rdfs:label "Blood from a stubbed toe atones like the blood of a burnt offering, under three conditions"@en, "Das Blut eines Stosses suehnt wie das Blut eines Brandopfers, unter drei Bedingungen"@de ;
+    skos:definition "R. Eleazar says that the blood drawn by a stubbing atones in the same way as the blood of a burnt offering. Raba attaches three conditions to it: it holds of the thumb of the right hand, and of the second stubbing rather than the first, and only where the stubbing happens on the way to a pious deed."@en ;
+    skos:note "Entered because the harvest rule owes the qualified claims of an opened page as well as its capacities, and because this is the cleanest small instance on these pages of a stated effect narrowed by conditions nobody asked for. The three conditions are of three different kinds - a part of the body, an ordinal position in a series, and the purpose of the journey - and the last cannot be established by anybody other than the man himself."@en ;
+    skos:note "It is not a witness of pmc:TheObservationAnsweredByNarrowing. No observation is put against the claim; the conditions are supplied unprompted, as at pmc:PesahimFourActsEachWithAnExit, and the generalization rests only on the cases where the transmission raises the counter-observation itself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Holin 7b, R. Eleazar on the blood of a stubbing and Raba's three conditions, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. VIII (Leipzig: Otto Harrassowitz, 1909), p. 822" .
+
+pmc:PesahimTheCountingContestToAHundredAndOne a pm:Conceptualizing ;
+    pm:fromWork pmw:TalmudBavliPesahim ;
+    rdfs:label "The counting contest that ran to a hundred and one, and the demon burst"@en, "Der Zaehlwettstreit, der bis hundertundeins lief, und der Daemon barst"@de ;
+    skos:definition "The remedy for a man who has forgotten and gone out having drunk an even number, and the one case the transmission reports of its outcome. He takes the thumb of his right hand in his left and the thumb of his left in his right and says: you and I are three. If he hears it said, you and I are four, he calls back, you and I are five; if he hears, you and I are six, he calls back, you and I are seven. The report attached is that such a case once ran up to a hundred and one, and the demon burst."@en ;
+    skos:note "The structure is a contest in which one party always holds the odd number and wins by outlasting the other, and it is the one place on these pages where an operation of this transmission has a definite perceptible outcome that somebody could have seen. The holding's register of escalating address stands at generalizations/the-stronger-address.ttl, whose statement is that a transmission meeting a non-appearance with a further and stronger address of the same kind states no term, count or sign at which the operator is to stop. This is the same escalation with the opposite ending: no term is stated here either, and one reported run terminated, with a count and a result."@en ;
+    skos:note "What makes the count worth entering rather than merely quoting. A hundred and one is odd, which is the side the human holds, so the number is not a round figure but the parity the procedure requires; and it is reported of one case rather than prescribed, so the transmission is not promising that a hundred and one will do it. A later protocol reading this as a fixed threshold would be reading a case report as an instruction."@en ;
+    skos:note "Nothing says what to do if the exchange does not terminate, and nothing says what a man should conclude who hears no answer at all. The second silence is the larger of the two: the whole remedy presupposes that he hears the other party counting."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RabbinicHalakhah ;
+    dcterms:source "Babylonian Talmud, Pesahim 110a, the remedy of the crossed thumbs and the case that ran to a hundred and one, trans. Lazarus Goldschmidt, Der babylonische Talmud, vol. II (Berlin: S. Calvary und Co., 1901), pp. 704-705" .
