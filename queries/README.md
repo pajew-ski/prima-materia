@@ -29,6 +29,7 @@ Gegen einen SPARQL-Endpunkt, der den Graphen geladen hat, unverändert.
 | `exhibited-gaps.rq` | wo wurde gesucht und nichts gefunden | §13 |
 | `unopened-works.rq` | welche Werke im Korpus einer erschlossenen Überlieferung trägt noch keine eingetragene Stelle | §14 |
 | `work-migration-backlog.rq` | welche erschlossenen Überlieferungen führen ihren Korpus noch nicht als Werkbezeichner | §14 |
+| `mediated-attestations.rq` | welche Knoten tragen ihre Stelle aus zweiter Hand und warten auf das Exemplar | §10 |
 
 ## Zwei Lesehilfen
 

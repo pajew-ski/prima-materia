@@ -1,0 +1,17 @@
+# SPEC §10, offene Posten der Vermittlung.
+# Knoten, die ihre Stelle aus zweiter Hand tragen: pm:attestedBy pm:mediatedAttestation
+# mit dem Werk, in dem gelesen wurde (pm:readVia). Jeder davon wird auf
+# pm:textualAttestation gehoben, sobald das in dcterms:source genannte Werk vorliegt.
+# Ersetzt das Issue je vermitteltem Knoten.
+
+PREFIX pm: <https://pajew.ski/prima-materia/ontology#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?node ?tradition ?source ?readVia
+WHERE {
+  ?node pm:attestedBy pm:mediatedAttestation .
+  OPTIONAL { ?node pm:withinTradition ?tradition }
+  OPTIONAL { ?node dcterms:source ?source }
+  OPTIONAL { ?node pm:readVia ?readVia }
+}
+ORDER BY ?tradition ?source
