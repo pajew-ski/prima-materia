@@ -1,0 +1,292 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia - the Taulipang transmission of the Zauberarzt
+#
+# The independence-driven entrance of SPEC §14, and the testability-driven one
+# at the same time. What this corpus supplies, and what made it worth opening
+# rather than another Eurasian handbook, is the thing the holding is shortest
+# of: named, mechanical conditions under which a capacity is destroyed, stated
+# by the transmission in advance and tied to a named substance.
+#
+# Two of them, and both are permanent. A novice who drinks the beer brewed with
+# the leaves of wolele-yeg has his whole throat burnt so that he can never sing
+# again, which ends him as a Zauberarzt, because the office is carried out by
+# singing. A finished Zauberarzt who eats piranha has the ladder to the sky cut
+# so that he can never ascend again. Neither is a caution about danger in
+# general; each names the substance, the mechanism and the capacity lost.
+#
+# Why a new tradition and not a place in an existing one. The holding carries no
+# Carib-speaking people and nothing from the Guiana shield. traditions/jibaro-
+# shuara.ttl, entered on 2026-10-02, is lowland Ecuador and Jivaroan, and its
+# own file says that putting one people under a regional name would claim the
+# region for them; the same reasoning forbids putting the Taulipang under the
+# Jibaro name or under pmt:Amazonian, which stays registered and stays at zero.
+#
+# Order of the file: the two works; the tradition with the three decisions §14
+# requires; the apprenticeship and what it claims about its own length; the sign
+# announced in advance and the criterion of release; the two conditions of
+# failure; the soul-journey and its two placements on the consciousness axes;
+# the condition that aborts a cure; the jaguar; the two reports in which a
+# practitioner checked his own result; and last the two things the spells say
+# about who may use them and why the animals are invoked.
+#
+
+#
+# The works
+#
+
+pmw:VomRoroimaZumOrinocoIII a dcterms:BibliographicResource ;
+    rdfs:label "Koch-Gruenberg, Vom Roroima zum Orinoco, volume III: Ethnographie"@en, "Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie"@de ;
+    skos:note "The edition as the title page in the full text gives it: Vom Roroima zum Orinoco, Ergebnisse einer Reise in Nordbrasilien und Venezuela in den Jahren 1911-1913, unternommen und herausgegeben im Auftrage und mit Mitteln des Baessler-Instituts in Berlin von Theodor Koch-Gruenberg, Dritter Band: Ethnographie, Verlag Strecker und Schroeder in Stuttgart, 1923."@en ;
+    skos:note "The catalogue line of the archive copy is wrong in three particulars and the title page was preferred, as SPEC section 10 requires. The catalogue gives the title as Vom Roraima, the publisher as Berlin, Dietrich Reimer (Ernest Vohsen), and the year as 1917; the file delivers Vom Roroima, Stuttgart, Strecker und Schroeder, 1923. This is the same failure the holding recorded at intellectualcult00rasm, where a catalogue line named a different volume than the file delivered."@en ;
+    skos:note "Access: identifier bub_br_1918_01011130, full text over the regular route, 1,174,957 characters. The tail is the publisher's own back matter followed by a notice of the Brasiliana Digital collection of the University of Sao Paulo, so the file ends where the book ends and is not one of the truncations the access table warns about. The running heads over the part read run 197, 198, 199, 201, 202, 203, 204, 205, 206, 207, 208, 210, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221 without going backwards, so the page numbers cited are the printed ones. The optical reading of the body text is good; the chapter headings and the table of contents are badly damaged, and the chapter was therefore located by its running heads and not by a heading."@en ;
+    skos:note "What was read at the wording: pages 194 to 221, that is the end of the chapter on the cure, the whole of the chapter on the Zauberarzt including the account of his training, and the opening of the chapter on the spells. The volume runs to some four hundred pages and the rest is not opened."@en .
+
+pmw:ZaubersprucheDerTaulipangIndianer a dcterms:BibliographicResource ;
+    rdfs:label "Koch-Gruenberg, Zaubersprueche der Taulipang-Indianer"@en, "Koch-Gruenberg, Zaubersprueche der Taulipang-Indianer"@de ;
+    skos:note "The primary publication of the spells, named by Koch-Gruenberg himself in the footnote at page 220: Zaubersprueche der Taulipang-Indianer, in Archiv fuer Anthropologie, Neue Folge, Band XIII, Heft 4, pages 371 ff., Braunschweig 1915. Declared as a work of the corpus and deliberately left unopened in this run, so that queries/unopened-works.rq reports it."@en ;
+    skos:note "Why it is not the work to prefer. The eleven spells are printed in volume III of 1923 in three parts each - the myth that leads to the spell, the original text with interlinear German, and the instruction for applying it - and the article of 1915 is the shorter publication. Which of the two carries the complete set is not established here and is the first question for whoever opens it."@en .
+
+#
+# The tradition
+#
+
+pmt:Taulipang a pm:Tradition ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "Taulipang transmission"@en, "Taulipang-Ueberlieferung"@de ;
+    skos:definition "The transmission of the Taulipang, a Carib-speaking people of the Roroima region on the border of northern Brazil and Venezuela, in which a Zauberarzt is made over ten to twenty-five years by a graded course of emetics, fasting and tobacco, receives helping spirits that arrive as rock crystals, sends his shadow up a cord or a liana while his body stays on the ground, and may be permanently unmade by two named foods."@en ;
+    skos:note "Entered at places read and not registered first, because the passages were opened in the same run in which the tradition was decided on. The three decisions SPEC section 14 requires before the first node were made and are the three notes that follow."@en ;
+    skos:note "One: the contact route, and it is undecided rather than absent, on evidence in the work itself. Against a route: the corpus is Carib, the region is the Guiana shield, the account of the training comes from two named Taulipang and carries no Christian or European element anywhere in it, and the recording is of 1911 to 1913. For a route: the same volume places a Benedictine mission on the upper Surumu with a Taulipang chief living at it and the padres' horses and cattle in the story, and the recorder's own comparative apparatus is built from nineteenth-century missionaries in the neighbouring country - Brett in British Guiana, Quandt the Moravian in Surinam, Schomburgk, Barrere, Rochefort. So contact with Christian missions is documented for the period of fixation, while no route to any magical corpus in this holding is shown. Absent would be false and documented would overstate; undecided is the honest value and it is the same correction the Azande, Nahua and Maori entries received. Until the question stands as its own node this tradition may not be counted as a party to a convergence."@en ;
+    skos:note "Two: recension and edition. Vom Roroima zum Orinoco, volume III, Stuttgart, Strecker und Schroeder, 1923, from the title page in the full text and not from the catalogue line, which is wrong. The account of the training is the recorder's German rendering of what Akuli told him orally, and the recorder says at the head of it that he gives it exactly as it was told to him; the original wording is not printed beside it. The spells are the one part of this corpus where the original is printed, and they were not read in this run."@en ;
+    skos:note "Three: the number of citable places. Fourteen, from pages 194 to 221, all read at the wording in this run. The volume runs to some four hundred pages, and the chapters on the neighbouring Schiriana, Waika and Yekuana - the last with a Zauberarzt chapter of its own at pages 380 to 388 - are not opened. Grown in places and not in names, as traditions/daoist.ttl is the model for."@en ;
+    skos:note "The lease that holds this work is prima-materia#838, and it was opened after the reading rather than before it: this run chose its work from the registration state and the witness position rather than from a standing lease. The harvest note stands at that issue."@en ;
+    skos:note "Why this transmission and not another. It was chosen under the testability-driven entrance, which SPEC section 14 ranks first: it names two conditions under which a capacity is destroyed, each tied to a named substance and a named mechanism, and that is the material a pm:falsifiedBy can be formed from. The independence-driven entrance is the second reason and the weaker one, because the route is undecided."@en ;
+    pm:principalCorpus "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923); and the same author's Zaubersprueche der Taulipang-Indianer, Archiv fuer Anthropologie, Neue Folge XIII.4 (Braunschweig, 1915)" ;
+    pm:corpusWork pmw:VomRoroimaZumOrinocoIII, pmw:ZaubersprucheDerTaulipangIndianer ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteUndecided ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 203-209" .
+
+#
+# The apprenticeship, and what it claims about its own length
+#
+
+pmp:TaulipangZauberarztApprenticeship a pm:Practicing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The making of a Zauberarzt: the graded course of emetics, fasting and tobacco"@en, "Der Werdegang des Zauberarztes: die gestufte Folge von Brechmitteln, Fasten und Tabak"@de ;
+    skos:definition "The account Akuli gave of his own training, which the recorder says he reproduces exactly as it was told to him. Preparation begins between the tenth and twelfth year under an older Zauberarzt. The boys first drink water until they bring it up again, then rest five days. Then come emetics made from the finely ground bark of named trees stirred into water, each taken daily for a whole week in a fixed order: prle-yeg, mure-yeg, dzalaura-yeg, peune-yeg, mese-yeg, maualualekalu-yeg, the cinnamon tree maipaime, the wild cashew zoloi-yeg, then the liana kozokozo which is said to cut through all the entrails so that the novices bring up much blood, then the step-shaped liana kapeyenkuma(x)pe, then the bark makalaula, then elikaua, and last ayug. They vomit into a canoe and drink from it again and again. Powdered tube-shaped cicada nests are mixed into the emetics so that the boys get a beautiful voice. Finally they drink strong tobacco brew through the mouth and very strong tobacco brew through the nose, for one day only. The master also twists two cords from his wife's hair, puts them into the boys' nostrils and draws them slowly out through the mouth until blood comes."@en ;
+    skos:note "The diet runs through the whole of it: only small birds, small fish and light kaschiri made from manioc cakes. The cakes are dried ten days in the sun; the master cuts a round hole in the middle, and the novice eats outward from the middle crumb by crumb so that the hole stays round, until it is about as wide as two hands can span. The recorder says he cannot explain this last practice and names two neighbouring usages of the same shape on other occasions, which is the right way round: the observation stands and the interpretation is marked as missing."@en ;
+    skos:note "Two things in the procedure are instruments rather than ordeals, and the transmission says so. The cicada nests are for the voice, and the voice is what the office is carried out with. The hair cord is the ladder the shadow climbs; it is the same device that gives a youth at puberty and a hunter their power, by the same method of transfer, and it is named karauali."@en ;
+    skos:note "A second and much shorter account of the same thing stands beside it from Katura: five nights of bark dissolved in water, a different mixture each night, vomiting each time, then tobacco brew, eating nothing and growing very thin, then gathering named leaves, binding them into the bundle the Zauberarzt later uses at a cure, climbing up with it, returning, and being a Zauberarzt. The recorder calls it very summary and says little can be done with it. Both are kept here in one node because they are two renderings of one procedure by two men of the same people, and the difference between ten years and five nights is a difference in the telling and not in the office."@en ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 203-208, the accounts of Akuli and Katura" .
+
+pmc:TaulipangLongerStudyStrongerShaman a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The longer the study lasts, the stronger the Zauberarzt becomes"@en, "Je laenger das Studium waehrt, desto staerker wird der Zauberarzt"@de ;
+    skos:definition "The claim the transmission makes about its own training, stated as a rule and not as encouragement. The apprenticeship lasts as a rule about ten years, sometimes sixteen to twenty, even twenty-five; and the longer the study lasts, the stronger the Zauberarzt becomes."@en ;
+    skos:note "Entered as its own node because of its form, which is rare in this holding. It is a monotonic claim relating a quantity somebody could measure - the years a man studied - to a magnitude the transmission treats as real, and it is not hedged by a threshold or a sufficiency clause. Almost every claim about attainment in this holding either names a term after which the thing is had or names no quantity at all; this one says more is more, without end."@en ;
+    skos:note "What it would take to put it to a test is also what makes it safe. Strength here is not given any mark: nothing in the passage says what a stronger Zauberarzt does that a weaker one cannot, and the one measure of competence the corpus does supply - the number of Mauari that have fallen - is a criterion for release and not for strength. So the claim is comparative without a comparand, and the node records the absence rather than supplying one."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Akuli, a named Taulipang, of his own training; recorded by Theodor Koch-Gruenberg in the Roroima region of northern Brazil between 1911 and 1913 and published by him in 1923. The language of the gathering was the recorder's German rendering of Akuli's oral account, which the recorder says at the head of the passage he gives exactly as it was told to him; the Taulipang wording is not carried beside it, and the technical terms are printed in Taulipang throughout." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 205" .
+
+pmc:TaulipangNeverOneNoviceAlone a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "Never one novice alone, and with four of them always two masters"@en, "Niemals ein Novize allein, und bei vier stets zwei Lehrmeister"@de ;
+    skos:definition "A rule about the composition of the group rather than about the operation. A Zauberarzt is never alone: he always has a companion, whom he often brings up himself, and some have three or four. It is never one novice; at least two are taught together, sometimes three, sometimes four, and with four novices there are always two masters."@en ;
+    skos:note "Entered because the holding has little of this and the ratio is stated rather than implied. What it is for is not said. Two readings are open and the passage decides neither: that the office requires a second person in the work, which the cure does, since another Zauberarzt is the one who brings the novices' souls back at pmc:TaulipangSoulRetrievedByTheMaster; or that teaching two at once is simply how it is done. The first would make the pairing part of the capacity and the second part of the schooling."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Akuli, a named Taulipang; recorded by Theodor Koch-Gruenberg in the Roroima region between 1911 and 1913, published 1923, in the recorder's German rendering of the oral account, with the Taulipang wording not carried beside it." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 205" .
+
+#
+# The sign announced in advance, and the criterion of release
+#
+
+pmc:TaulipangMauariCrystalFallsIntoThePocket a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "Each night a Mauari comes as a rock crystal and falls into the novice's pocket"@en, "Jede Nacht kommt ein Mauari als Kristallstein und faellt in die Tasche des Novizen"@de ;
+    skos:definition "The sign of attainment, announced to the novice before it happens. After five or six months of nightly singing and morning dancing, every night one Mauari comes for each novice, arriving as a rock crystal and falling into his pocket, a hunting bag of jaguar or otter skin or knitted cotton. The Mauari then passes out of the crystal into the boy's body. After a time a second comes, after a time a third, and so on, until each boy has a whole number of them."@en ;
+    skos:note "This is a sign of success of the kind SPEC section 15 says must be counted separately: it is told to the novice in advance, so he reports it, and the base rate is unknown because nobody measures the same sign in anyone who was not told to expect it. It is entered and it is not counted among the conditions of failure."@en ;
+    skos:note "Two things nevertheless make it stronger than most of its register. The crystals are real objects, found in several colours at Roroima and at the Serra das Cristaes, and the recorder says he repeatedly watched Zauberaerzte carry them about and blow tobacco smoke on them at night while murmuring formulas - so the thing that arrives is an object a bystander can see, even if its arrival is not. And the arrival is countable, which is what makes the criterion of release at pmc:TaulipangReleaseWhenManyHaveFallen possible at all."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Akuli, a named Taulipang, of his own training; recorded by Theodor Koch-Gruenberg in the Roroima region between 1911 and 1913, published 1923, in the recorder's German rendering of the oral account. The recorder adds in his own voice, in square brackets, that he several times observed the crystals in use on the journey; that part is his own observation and not Akuli's testimony." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 208" .
+
+pmc:TaulipangReleaseWhenManyHaveFallen a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The master may release the novices when many Mauari have fallen down"@en, "Der Zauberarzt darf die Novizen entlassen, wenn viele Mauari herabgefallen sind"@de ;
+    skos:definition "The criterion that ends the apprenticeship, and the whole of it: then the Zauberarzt can release the novices, when many Mauari have fallen down. The training is over and the novices are finished Zauberaerzte who can now exercise the office."@en ;
+    skos:note "A count without a number, and that is the finding. The apprenticeship is the most heavily quantified procedure in this part of the holding - a week per bark, five days of rest, ten days of drying, five or six months of singing, ten to twenty-five years in all - and the one quantity that decides whether a man is finished is left as many. Who judges that it is many is the master, and the thing judged is in the novice's body."@en ;
+    skos:note "It is therefore not a condition of failure and must not be read as one. Nothing says what happens to a novice in whom few Mauari fall, nothing fixes a term after which the master gives up, and nothing names an outcome that would end the training without the office. The search at pmp:TaulipangDefectusSearch looked for such a term and did not find one."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Akuli, a named Taulipang, of his own training; recorded by Theodor Koch-Gruenberg in the Roroima region between 1911 and 1913, published 1923, in the recorder's German rendering, with the decisive clause given in quotation marks as Akuli's own words." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 208" .
+
+#
+# The two conditions of failure, and they are why this corpus was opened
+#
+
+pmc:TaulipangWoleleLeavesBurnTheThroat a pm:Presupposing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The leaves of wolele-yeg would burn his throat so that he could never sing again"@en, "Die Blaetter von wolele-yeg wuerden ihm die Kehle verbrennen, so dass er niemals wieder singen koennte"@de ;
+    skos:definition "The sharpest of the two prohibitions of the apprenticeship. During the whole of the training the novice may drink only light kaschiri made from manioc cakes, called sa'buru, and no other kaschiri, no payua, and above all no pelakali. The last is brewed with the leaves of the plant wolele-yeg, which grows in the forest. Those leaves, the account says, would burn his whole throat, so that he could never sing again."@en ;
+    skos:note "This is a condition of failure of the kind SPEC section 15 holds to be the most valuable and the holding is shortest of, and it has every part of one. The substance is named and identified by where it grows. The mechanism is physical and stated. The loss is permanent - never again - and it is the loss of the one faculty the office is carried out with, since the Zauberarzt works by singing and the emetics of the training have powdered cicada nests mixed into them precisely to give him a beautiful voice. A man who drank it would not have performed the operation badly; he would have ceased to be able to perform it."@en ;
+    skos:note "What makes it unlike the excusing clauses of pmc:NoFailedRunCountsAgainstTheOperation, and the difference is worth stating because the two are easy to confuse. Those clauses account for a run that produced nothing, after the fact, by a condition nobody can check. This one is announced in advance, names what must not be done, and the consequence it names is observable by anybody: a man either sings or he does not. It does not excuse a failure; it predicts one."@en ;
+    skos:note "Its limit, and it is real. The claim that these leaves burn the throat is not tested here and nothing in the passage says that it ever happened to anybody. A prohibition with a stated consequence is a falsifiable claim and not a verified one, and whether this plant does what the transmission says it does is a question for a pm:Testing node that nobody has written. The identification of wolele-yeg is not given botanically in the passage, which is what a test would need first."@en ;
+    pm:dependentStep pmc:TaulipangReleaseWhenManyHaveFallen ;
+    pm:priorStep pmp:TaulipangZauberarztApprenticeship ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Diese Blaetter wuerden ihm die ganze Kehle verbrennen, so dass er niemals wieder singen koennte - these leaves would burn his whole throat, so that he could never sing again." ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Akuli, a named Taulipang, of his own training; recorded by Theodor Koch-Gruenberg in the Roroima region of northern Brazil between 1911 and 1913 and published by him in 1923, in the recorder's German rendering of the oral account, with the plant and the drink named in Taulipang. The Taulipang wording of the sentence is not carried beside it." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 208" .
+
+pmc:TaulipangPiranhaCutsTheSkyLadder a pm:Presupposing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "Piranha would cut his ladder to the sky so that he could never ascend again"@en, "Pirayafische wuerden ihm die Himmelsleiter abschneiden, so dass er nie mehr in die Hoehe steigen koennte"@de ;
+    skos:definition "The one prohibition that outlasts the training, and the transmission says so by naming everything else as released. Once his master has released him, the young Zauberarzt may again drink and eat everything except piranha, for these would cut off his ladder to the sky, so that he could never ascend again."@en ;
+    skos:note "The mechanism is stated and it is mechanical, which is what makes this worth a node rather than a line. The ladder is not a figure: it is the karauali, the cord twisted from the master's wife's hair and drawn through the novice's nostrils, which the account says serves the shadow of the Zauberarzt as a ladder to climb up by while the body stays on the earth, and the step-shaped liana kapeyenkuma(x)pe serves the same purpose. A piranha is the fish whose teeth the Taulipang use as cutting tools, which the recorder notes at the place. So the reason the fish is forbidden is that it cuts, and what it would cut is the instrument of the capacity."@en ;
+    skos:note "Why the pairing with pmc:TaulipangWoleleLeavesBurnTheThroat is the finding and not either one alone. Between them they cover both faculties the office consists of - singing and ascending - and each is destroyed by one named food by one named physical action. A transmission that can be disabled in two specified ways has told a practitioner something he could act on and an observer something he could look for, and that is a different kind of statement from a danger in general. Both are also releases in reverse: the first binds only during the training, the second only after it, so the two together say that the capacity is vulnerable at every stage and in a different way at each."@en ;
+    skos:note "The recorder's footnote widens it and should not be read as part of the claim. He notes that among some neighbouring peoples the finished practitioner is also under food prohibitions - the Galibi may not eat certain fish and game or he would lose his power, the Warrau may not eat the flesh of larger animals - and those are other peoples reported by other authors. The Taulipang claim is the one named fish and the one named mechanism."@en ;
+    pm:dependentStep pmp:TaulipangSoulLeavesByTheHairCord ;
+    pm:priorStep pmp:TaulipangZauberarztApprenticeship ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Denn diese wuerden ihm die Himmelsleiter abschneiden, so dass er nie mehr in die Hoehe steigen koennte - for these would cut off his ladder to the sky, so that he could never ascend again." ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Akuli, a named Taulipang, of his own training; recorded by Theodor Koch-Gruenberg in the Roroima region between 1911 and 1913, published 1923, in the recorder's German rendering of the oral account, with the fish identified by the recorder as Serrasalmo sp. in his own footnote. The Taulipang wording of the sentence is not carried beside it." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 209" .
+
+#
+# The soul-journey, its retrieval, and two placements on the consciousness axes
+#
+
+pmp:TaulipangSoulLeavesByTheHairCord a pm:Practicing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "Sending the shadow up the hair cord while the body stays on the earth"@en, "Den Schatten an der Haarschnur hinaufschicken, waehrend der Koerper auf der Erde bleibt"@de ;
+    skos:definition "The operation the whole training is for. Very strong tobacco brew is drunk through the nose; the practitioner loses consciousness and sleeps, and his soul leaves the body and goes to the house of the Mauari. The cord called karauali, twisted from the master's wife's hair and drawn through the nostrils during the training, serves the shadow of the Zauberarzt as a ladder to climb up by at a cure, while the body remains on the earth; the step-shaped liana kapeyenkuma(x)pe serves the same purpose and is used at the cures."@en ;
+    skos:note "Before it the novice says to his relatives: do not weep, I know what I am doing, let me be. That is the only sentence in the passage addressed to bystanders, and it is a warning about what they are about to see rather than a condition of the operation: they then lie as if dead, and only the heart still beats."@en ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 204, 207" .
+
+pmc:TaulipangSoulRetrievedByTheMaster a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The master's soul fetches the novices' souls back, and the body wakes before the soul returns"@en, "Die Seele des Lehrmeisters holt die Seelen der Novizen zurueck, und der Koerper erwacht, bevor die Seele zurueckkommt"@de ;
+    skos:definition "What the transmission makes the outcome of the soul-journey depend on. The novices lie as if dead with only the heart beating and their whole soul gone. The master orders named leaves to be bound together so that he can blow on them, that is cure them; then he begins to sing, and his own soul goes away to the house of the Mauari, where the boys' souls are dancing with the Mauari's daughters, and he brings the souls of the boys back. Before the soul comes back the body wakes; only then does the Zauberarzt arrive with the soul. Then the boys get up and speak again, and dance."@en ;
+    skos:note "The construction is the one generalizations/the-one-who-stays-outside.ttl is about, with one part of it reversed, and the difference is the reason for this node. There a transmission puts its practitioner into a condition in which he can no longer check the operation and names a second person who stays outside it and on whom the outcome depends. Here the outcome does depend on a second person, and the novices cannot come back without him - but he does not stay outside. He enters the same condition, sends his own soul after theirs, and the retrieval happens inside the state rather than from the bank. So the dependency holds and the safeguard does not: there is nobody in the hut who is awake."@en ;
+    skos:note "The one sentence that would be a check is also the one with nothing to check against. The body wakes before the soul returns, which gives an interval in which a bystander would see a waking body that the transmission says has no soul in it yet. Nothing says how long that interval is, what the body does in it, or what it would mean if the soul never arrived. The absence is recorded and not filled."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Akuli, a named Taulipang, of his own training; recorded by Theodor Koch-Gruenberg in the Roroima region between 1911 and 1913, published 1923, in the recorder's German rendering of the oral account, with the Taulipang wording not carried beside it." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 207" .
+
+pmc:SituatingTaulipangSoulJourneyLocus a pm:Situating ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The soul-journey is placed at displaced locus"@en, "Die Seelenreise wird beim verlagerten Ort verortet"@de ;
+    pm:situatedNode pmp:TaulipangSoulLeavesByTheHairCord ;
+    pm:axisValue pm:displacedLocus ;
+    pm:situationGround "The placement is as near to a quotation as this axis gets. The account says that the cord serves the shadow of the Zauberarzt as a ladder to climb up by at the cure while the body remains on the earth, and of the novices that their soul leaves the body and goes to the house of the Mauari, that they lie as if dead with only the heart beating, and that the body wakes before the soul returns. The transmission therefore locates the awareness away from the body and says where it has gone, which is the criterion this coordinate names."@en ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 204, 207" .
+
+pmc:SituatingTaulipangSoulJourneyAcquisition a pm:Situating ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The state of the soul-journey is placed at acquired by effort"@en, "Der Zustand der Seelenreise wird beim erarbeiteten Erwerb verortet"@de ;
+    pm:situatedNode pmp:TaulipangSoulLeavesByTheHairCord ;
+    pm:axisValue pm:byEffort ;
+    pm:situationGround "The transmission makes the state the end of a course of training it describes at length and quantifies - ten to twenty-five years, a week per bark, five or six months of nightly singing - and it says in as many words that the longer the study lasts the stronger the Zauberarzt becomes. It names no case of the state arriving unsought and no sign by which somebody is found to have it already. The office is also inherited in practice, the son usually learning from the father, but the inheritance is of the teaching and not of the state: where there is no son the Zauberarzt takes a boy he thinks suitable, and that boy goes through the same course."@en ;
+    pm:attestedBy pm:compilerInference ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 205, 207-208" .
+
+#
+# The condition that aborts a cure
+#
+
+pmc:TaulipangNoCureDuringRain a pm:Cautioning ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "Never during rain, and a thunderstorm breaks the cure off at once"@en, "Niemals bei Regen, und ein Gewitter bricht die Kur sofort ab"@de ;
+    skos:definition "The one circumstance the transmission lets interrupt an operation in progress. The Zauberarzt never exercises his office during rain, and if a thunderstorm suddenly breaks out while he is at work he breaks the cure off immediately and begins it again from the beginning the following night."@en ;
+    skos:note "Worth a node because of the shape and not the weather. The condition is outside both parties - neither the practitioner nor the sick man brings on a thunderstorm - and it is the only condition in the part read that is. The holding's register of conditions set outside the practitioner is generalizations/what-attainment-relieves.ttl and generalizations/the-waiver-that-runs-both-ways.ttl, and both are about requirements a transmission then releases somebody from; this is a requirement with no release named for anybody."@en ;
+    skos:note "It also supplies a resumption rule, which conditions of this kind usually do not: not later the same night, but the following night, and from the beginning. A cure may run several nights in succession in any case, so the cost of the interruption is one night and the transmission says so. Nothing is said about what the interruption does to the sick man in the meantime, and nothing names a number of interruptions after which the attempt is given up."@en ;
+    pm:cautionsAbout pmp:TaulipangSoulLeavesByTheHairCord ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Reported by Theodor Koch-Gruenberg in his own voice as the practice of the Taulipang Zauberaerzte, in the Roroima region between 1911 and 1913, published 1923; no individual speaker is named for this sentence. At the same place the recorder states what he himself witnessed: he several times listened to the conjurations of Katura, one of the most respected Zauberaerzte of the Taulipang, at Koimelemong, separated from him only by the thin leaf wall of the hut, and Katura later entrusted his magical songs to the phonograph, behaving exactly as if he had a sick man in front of him." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 195" .
+
+#
+# The jaguar, and who certifies that it happened
+#
+
+pmp:TaulipangJaguarTransformation a pm:Practicing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "Putting on the dress of the jaguar"@en, "Das Kleid des Jaguars anziehen"@de ;
+    skos:definition "The Zauberaerzte are firmly convinced that they can turn into jaguars by putting on the dress of the jaguar, kaikusa-zamatale. In doing so they turn the whole body round, so that the belly is turned upward and the back comes underneath as the belly; the hands and feet become round and armed with claws like a jaguar's feet, and turn backwards."@en ;
+    skos:note "The description is of an anatomical reversal and not of a disguise, which is why it is entered as an operation with a stated procedure rather than as a belief. What it does not carry is any preparation, any formula, any time of day, or any condition - the dress is put on and the body turns."@en ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 200-201" .
+
+pmc:TaulipangJaguarCertifiedByTheBystanders a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "He learnt of his own transformation from the others the next day, and was ashamed"@en, "Er erfuhr von seiner eigenen Verwandlung am anderen Tag von den anderen, und schaemte sich"@de ;
+    skos:definition "The claim and the case that goes with it, and the case runs the other way from almost everything in this holding. When the Zauberaerzte are very drunk they turn into jaguars without knowing it. Akuli told the recorder that he had himself turned into a jaguar at a great dance feast at Roroima, in the dance house, in front of everybody's eyes; that the people fled and barricaded the house; and that he climbed up a house post and fell down. When the people told him about it the next day, he was very ashamed."@en ;
+    skos:note "The reason this is a find. The holding's standing complaint about claimed capacities is that the transmission reserves the perception of the effect to the operator, which generalizations/the-effect-put-beyond-the-bystander.ttl collects. Here the effect is reserved to the bystanders and withheld from the operator: the man did not know it happened, everybody else saw it, and his only evidence is their testimony. A capacity whose occurrence only others can certify is in principle the easier kind to test, because the operator's expectation cannot produce the report."@en ;
+    skos:note "What the case nevertheless does not give, and it must be said because the shape is so promising. The event reported is not a jaguar: it is a very drunk man at a feast who climbed a post and fell off it, and the bystanders' flight is as consistent with his behaviour as with his shape. So the report is of an occasion rather than of a transformation, and the one witness whose account would separate the two - somebody who says what he saw rather than what it was - is not in the passage. The recorder himself attaches a parallel from an eighteenth-century missionary among the Abipones, where the practitioners threaten to turn into tigers and begin by imitating the roar, and those around them run."@en ;
+    skos:note "A second case on the same page is the recorder's and is the clearest confound explanation in this corpus. Katura reported that the Taulipang chief Dailawo had met him as a jaguar while he was fishing alone, and that he had shot arrows into its collarbone, after which Dailawo was ill for some time. The recorder writes that Katura evidently shot a real jaguar, and that because Dailawo fell ill at the same time the two were brought into connection. That reassignment is the recorder's and not the transmission's, and it is recorded here rather than in the definition for that reason."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Akuli, a named Taulipang, of himself; recorded by Theodor Koch-Gruenberg in the Roroima region between 1911 and 1913 and published 1923, in the recorder's German rendering of the oral account in reported speech, with the Taulipang wording not carried beside it. The second case named in the notes was spoken by Katura, likewise named." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 200-201" .
+
+pmc:TaulipangTheTrunkWasEmpty a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "He locked the father of the sickness in a trunk, and in the morning there was nothing in it"@en, "Er sperrte den Vater der Krankheit in einen Koffer, und am Morgen war nichts darin"@de ;
+    skos:definition "A practitioner's own report of a check he made and of what he concluded when it came back empty. In August 1911 three Taulipang died one after another of a kind of dysentery at Koimelemong. As the sickness was dying down, Katura said that he had sung in the night, that a big strong man had come whom he had wrestled with, that he had finally overcome him and locked him in a trunk - and that when he looked in the next morning, there was nothing in it. It was probably the father of the sickness, Katura said."@en ;
+    skos:note "This is the rarest thing read in this corpus and the reason it is entered on its own. A practitioner performed an operation, took a step that would verify it - he put the thing in a container he could open - and opened the container. The outcome was negative and perceptible to anybody. He did not treat it as a failure; the emptiness was taken to show what kind of being had been caught. The verification was real and was absorbed by a property assigned to the object after the fact."@en ;
+    skos:note "Where it belongs in the holding, and it does not belong in the register it most resembles. pmc:NoFailedRunCountsAgainstTheOperation is about a run that produced nothing and where the transmission sends it; here the run is said to have produced something, and what produced nothing is the check on it. That is one step further out, and the holding has nothing else of the kind: the containers and the residues it carries - the blood and dung of the rabbinic forensic test, the water that dissolves an enchantment - are all applied by somebody other than the operator. This one the operator applied to himself, in private, and reported both halves."@en ;
+    skos:note "The reading does not claim that Katura devised the check as a test. Nothing in the passage says why he looked, and a man who has locked something in a trunk may open it for any reason. What is established is that the looking happened, that it is reported by the man who did it, and that the result did not count against the catch."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Spoken by Katura, a named Taulipang and one of the most respected Zauberaerzte of his people, of himself, at Koimelemong in the Roroima region; the events are dated by the recorder to August 1911 and the telling to the time when the sickness was abating. Recorded by Theodor Koch-Gruenberg, who states that he was absent at Sao Marcos while the three deaths happened, and published by him in 1923 in his own German rendering in reported speech, with the concluding sentence given in quotation marks as Katura's words and the Taulipang wording not carried beside it." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 200" .
+
+#
+# What the spells say about who may use them, and why the animals are invoked
+#
+
+pmc:TaulipangSpellsNeedNoInitiation a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The spells can be used with success not only by the gifted but by anybody"@en, "Die Zaubersprueche koennen nicht nur von Begnadeten, sondern von jedem mit Erfolg angewandt werden"@de ;
+    skos:definition "The statement that separates this part of the corpus from the office described in the rest of it. The Taulipang have numerous spells which can be used with success not only by specially gifted people such as Zauberaerzte but by anybody, and on all sorts of occasions: against wounds, ulcers, snakebite, the sting of a ray, for and against inflammation of the throat, against pustules, intestinal worms, the vomiting and diarrhoea of newborns, to make birth harder and to make it easier, and to turn enemies into friends."@en ;
+    skos:note "Entered because of the gate criterion in SPEC section 0, which the holding is built to record: valuable is what removes a gate. Beside a ten-to-twenty-five-year apprenticeship with named emetics and two permanent disqualifications, the same transmission puts a body of operations that need no initiation, no lineage and no teacher, and says in as many words that anyone can work them successfully. The two stand in one people and one volume, so the contrast is not between transmissions but inside one."@en ;
+    skos:note "One thing works the other way and is in the same paragraph. The recorder says the spells are rarely spoken in full public but usually murmured in the intimacy of the family, and that the Indian does not readily give them up to a European, probably for fear of weakening the magic power or losing it altogether. So the operations are open to everybody in the people and withheld from outside it, and the ground given for withholding is a claim about the operation rather than about authority. The recorder then prints them anyway, which is the self-warning this corpus carries against what it itself does."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Reported by Theodor Koch-Gruenberg in his own voice of the Taulipang as a people, from the Roroima region between 1911 and 1913, published 1923; no individual speaker is named. The spells themselves are printed in the same volume with the original wording and an interlinear German rendering, and were not read in this run." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), p. 220" .
+
+pmc:TaulipangImmunityInferredFromTheAnimal a pm:Conceptualizing ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "The animal eats the harmful thing and is not harmed, therefore it must know a spell"@en, "Das Tier frisst das Schaedliche und wird nicht geschaedigt, also muss es einen Zauberspruch kennen"@de ;
+    skos:definition "The reasoning the transmission gives for which animal is invoked against which complaint, and it is an argument from an observed exception. Ulcers are held to arise from eating the large game - tapir, deer, wild pig. To drive them out the various kinds of jaguar are invoked, because the jaguars can frighten the ulcers: they eat all this game and yet do not suffer from ulcers, so they must possess a magic power, must know a spell that protects them from the bad influence of this food. The same for the otters, invoked against the diarrhoea of newborns because they live on the big fish that are forbidden to the parents of a newborn and their young come to no harm; and for the two dogs invoked against intestinal worms, because dogs often have worms without dying of them."@en ;
+    skos:note "Three instances of one inference, and the inference is from a negative instance to a concealed cause. The transmission holds an aetiology; it observes a class of eaters in which the cause is present and the effect absent; and instead of giving up the aetiology it posits in the exception a hidden agent that protects it - and then borrows that agent. The animal is functioning as a control group and the conclusion drawn from the control is a spell."@en ;
+    skos:note "Its relation to pmc:TheObservationAnsweredByNarrowing, and why it is not entered as a witness of it. That statement is about a transmission that puts an observation against its own claim and answers by restricting the claim or reassigning the cause of the observation, and this is the second kind of answer exactly. It would be the first witness from a transmission with no route to the other three, which is what that statement most needs. It is not claimed as one here for one reason: the inferential step - they must therefore know a spell - is the recorder's rendering of the Indians' reasoning and is carried by his own therefore, with his aside, as we would say, immune to it. A witness of that statement has to be a transmission saying the thing, and whether this one says it is decidable only from the spells themselves, which are printed with their original wording in the same volume and were not read in this run. That is named as the next step and not as a result."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Reported by Theodor Koch-Gruenberg in his own voice as the belief and the reasoning of the Taulipang, with the phrase wie die Indianer sagen marking the part he had from them; recorded in the Roroima region between 1911 and 1913, published 1923. No individual speaker is named. The original wording of the spells these notes introduce is printed in the same volume and was not read." ;
+    pm:withinTradition pmt:Taulipang ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 220-221" .
