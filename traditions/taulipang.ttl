@@ -1,0 +1,78 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia - the Taulipang transmission of the Zauberarzt
+#
+# The independence-driven entrance of SPEC §14, and the testability-driven one
+# at the same time. What this corpus supplies, and what made it worth opening
+# rather than another Eurasian handbook, is the thing the holding is shortest
+# of: named, mechanical conditions under which a capacity is destroyed, stated
+# by the transmission in advance and tied to a named substance.
+#
+# Two of them, and both are permanent. A novice who drinks the beer brewed with
+# the leaves of wolele-yeg has his whole throat burnt so that he can never sing
+# again, which ends him as a Zauberarzt, because the office is carried out by
+# singing. A finished Zauberarzt who eats piranha has the ladder to the sky cut
+# so that he can never ascend again. Neither is a caution about danger in
+# general; each names the substance, the mechanism and the capacity lost.
+#
+# Why a new tradition and not a place in an existing one. The holding carries no
+# Carib-speaking people and nothing from the Guiana shield. traditions/jibaro-
+# shuara.ttl, entered on 2026-10-02, is lowland Ecuador and Jivaroan, and its
+# own file says that putting one people under a regional name would claim the
+# region for them; the same reasoning forbids putting the Taulipang under the
+# Jibaro name or under pmt:Amazonian, which stays registered and stays at zero.
+#
+# Order of the file: the two works; the tradition with the three decisions §14
+# requires; the apprenticeship and what it claims about its own length; the sign
+# announced in advance and the criterion of release; the two conditions of
+# failure; the soul-journey and its two placements on the consciousness axes;
+# the condition that aborts a cure; the jaguar; the two reports in which a
+# practitioner checked his own result; and last the two things the spells say
+# about who may use them and why the animals are invoked.
+#
+
+#
+# The works
+#
+
+pmw:VomRoroimaZumOrinocoIII a dcterms:BibliographicResource ;
+    rdfs:label "Koch-Gruenberg, Vom Roroima zum Orinoco, volume III: Ethnographie"@en, "Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie"@de ;
+    skos:note "The edition as the title page in the full text gives it: Vom Roroima zum Orinoco, Ergebnisse einer Reise in Nordbrasilien und Venezuela in den Jahren 1911-1913, unternommen und herausgegeben im Auftrage und mit Mitteln des Baessler-Instituts in Berlin von Theodor Koch-Gruenberg, Dritter Band: Ethnographie, Verlag Strecker und Schroeder in Stuttgart, 1923."@en ;
+    skos:note "The catalogue line of the archive copy is wrong in three particulars and the title page was preferred, as SPEC section 10 requires. The catalogue gives the title as Vom Roraima, the publisher as Berlin, Dietrich Reimer (Ernest Vohsen), and the year as 1917; the file delivers Vom Roroima, Stuttgart, Strecker und Schroeder, 1923. This is the same failure the holding recorded at intellectualcult00rasm, where a catalogue line named a different volume than the file delivered."@en ;
+    skos:note "Access: identifier bub_br_1918_01011130, full text over the regular route, 1,174,957 characters. The tail is the publisher's own back matter followed by a notice of the Brasiliana Digital collection of the University of Sao Paulo, so the file ends where the book ends and is not one of the truncations the access table warns about. The running heads over the part read run 197, 198, 199, 201, 202, 203, 204, 205, 206, 207, 208, 210, 211, 212, 213, 215, 216, 217, 218, 219, 220, 221 without going backwards, so the page numbers cited are the printed ones. The optical reading of the body text is good; the chapter headings and the table of contents are badly damaged, and the chapter was therefore located by its running heads and not by a heading."@en ;
+    skos:note "What was read at the wording: pages 194 to 221, that is the end of the chapter on the cure, the whole of the chapter on the Zauberarzt including the account of his training, and the opening of the chapter on the spells. The volume runs to some four hundred pages and the rest is not opened."@en .
+
+pmw:ZaubersprucheDerTaulipangIndianer a dcterms:BibliographicResource ;
+    rdfs:label "Koch-Gruenberg, Zaubersprueche der Taulipang-Indianer"@en, "Koch-Gruenberg, Zaubersprueche der Taulipang-Indianer"@de ;
+    skos:note "The primary publication of the spells, named by Koch-Gruenberg himself in the footnote at page 220: Zaubersprueche der Taulipang-Indianer, in Archiv fuer Anthropologie, Neue Folge, Band XIII, Heft 4, pages 371 ff., Braunschweig 1915. Declared as a work of the corpus and deliberately left unopened in this run, so that queries/unopened-works.rq reports it."@en ;
+    skos:note "Why it is not the work to prefer. The eleven spells are printed in volume III of 1923 in three parts each - the myth that leads to the spell, the original text with interlinear German, and the instruction for applying it - and the article of 1915 is the shorter publication. Which of the two carries the complete set is not established here and is the first question for whoever opens it."@en .
+
+#
+# The tradition
+#
+
+pmt:Taulipang a pm:Tradition ;
+    pm:fromWork pmw:VomRoroimaZumOrinocoIII ;
+    rdfs:label "Taulipang transmission"@en, "Taulipang-Ueberlieferung"@de ;
+    skos:definition "The transmission of the Taulipang, a Carib-speaking people of the Roroima region on the border of northern Brazil and Venezuela, in which a Zauberarzt is made over ten to twenty-five years by a graded course of emetics, fasting and tobacco, receives helping spirits that arrive as rock crystals, sends his shadow up a cord or a liana while his body stays on the ground, and may be permanently unmade by two named foods."@en ;
+    skos:note "Entered at places read and not registered first, because the passages were opened in the same run in which the tradition was decided on. The three decisions SPEC section 14 requires before the first node were made and are the three notes that follow."@en ;
+    skos:note "One: the contact route, and it is undecided rather than absent, on evidence in the work itself. Against a route: the corpus is Carib, the region is the Guiana shield, the account of the training comes from two named Taulipang and carries no Christian or European element anywhere in it, and the recording is of 1911 to 1913. For a route: the same volume places a Benedictine mission on the upper Surumu with a Taulipang chief living at it and the padres' horses and cattle in the story, and the recorder's own comparative apparatus is built from nineteenth-century missionaries in the neighbouring country - Brett in British Guiana, Quandt the Moravian in Surinam, Schomburgk, Barrere, Rochefort. So contact with Christian missions is documented for the period of fixation, while no route to any magical corpus in this holding is shown. Absent would be false and documented would overstate; undecided is the honest value and it is the same correction the Azande, Nahua and Maori entries received. Until the question stands as its own node this tradition may not be counted as a party to a convergence."@en ;
+    skos:note "Two: recension and edition. Vom Roroima zum Orinoco, volume III, Stuttgart, Strecker und Schroeder, 1923, from the title page in the full text and not from the catalogue line, which is wrong. The account of the training is the recorder's German rendering of what Akuli told him orally, and the recorder says at the head of it that he gives it exactly as it was told to him; the original wording is not printed beside it. The spells are the one part of this corpus where the original is printed, and they were not read in this run."@en ;
+    skos:note "Three: the number of citable places. Fourteen, from pages 194 to 221, all read at the wording in this run. The volume runs to some four hundred pages, and the chapters on the neighbouring Schiriana, Waika and Yekuana - the last with a Zauberarzt chapter of its own at pages 380 to 388 - are not opened. Grown in places and not in names, as traditions/daoist.ttl is the model for."@en ;
+    skos:note "The lease that holds this work is prima-materia#838, and it was opened after the reading rather than before it: this run chose its work from the registration state and the witness position rather than from a standing lease. The harvest note stands at that issue."@en ;
+    skos:note "Why this transmission and not another. It was chosen under the testability-driven entrance, which SPEC section 14 ranks first: it names two conditions under which a capacity is destroyed, each tied to a named substance and a named mechanism, and that is the material a pm:falsifiedBy can be formed from. The independence-driven entrance is the second reason and the weaker one, because the route is undecided."@en ;
+    pm:principalCorpus "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923); and the same author's Zaubersprueche der Taulipang-Indianer, Archiv fuer Anthropologie, Neue Folge XIII.4 (Braunschweig, 1915)" ;
+    pm:corpusWork pmw:VomRoroimaZumOrinocoIII, pmw:ZaubersprucheDerTaulipangIndianer ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteUndecided ;
+    dcterms:source "Theodor Koch-Gruenberg, Vom Roroima zum Orinoco, Band III: Ethnographie (Stuttgart: Strecker und Schroeder, 1923), pp. 203-209" .
+
+# ANKER-ANHANG-HIER
