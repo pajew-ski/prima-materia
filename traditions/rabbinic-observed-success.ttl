@@ -1,0 +1,71 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia - what the rabbinic transmission does with an observed success
+#
+# Second file of pmt:RabbinicHalakhah. The first, traditions/rabbinic-halakhah.ttl,
+# read tractate Sanhedrin and found a transmission unusually rich in forensic
+# criteria and empty of conditions of failure. Its own notes named three places
+# outside that tractate as the next thing to open and said in as many words that
+# no node there rested on them. All three are opened here at the wording, and
+# the lease that held them is prima-materia#826.
+#
+# Why the three belong together although they stand in three tractates and three
+# volumes. Each of them takes up a success somebody has seen - a sick man who
+# went into an idol's temple and came out well, rain that followed a slaughter,
+# a man who died after drinking an even number, a seizure that let go when a
+# second amulet was written - and none of them meets it by denying it. What the
+# transmission does instead is reassign the cause, or restrict the claim, or
+# locate the defect in the operator. The first file could not see this, because
+# tractate Sanhedrin argues about whether the art works and never once about a
+# case anybody watched.
+#
+# Order of the file: the three works; then Aboda zara, where an observed cure is
+# conceded and reassigned twice over; then Holin, where the parallel the first
+# file guessed at turns out to say something else, and where a claim is narrowed
+# twice under counter-observation; then Pesahim, the longest of the three, which
+# carries the self-fulfilling rule, the exemptions, a case of a protection that
+# held until the man stopped attending to it, and the one thing the first file
+# searched for and did not find: an operation with a named, checkable condition
+# of failure and a stated correction.
+#
+# What is new to the holding. pmc:PesahimAmuletAgainstSixtyDemons is a condition
+# of failure of a kind this holding has been looking for since the search at
+# pmp:RabbinicDefectusSearch came back empty, and it is not of the kind the
+# twenty-two witnesses of pmc:NoFailedRunCountsAgainstTheOperation carry: the
+# defect is a wrong number in the formula, the failure is announced by a third
+# party, and a second operator with the right number succeeds. The excuse is in
+# the operator and it is for once a matter of fact.
+#
+
+#
+# The works
+#
+
+pmw:TalmudBavliAbodaZara a dcterms:BibliographicResource ;
+    rdfs:label "Babylonian Talmud, tractate Aboda zara"@en, "Babylonischer Talmud, Traktat Aboda zara"@de ;
+    skos:note "Read in the translation of Lazarus Goldschmidt, Der babylonische Talmud mit Einschluss der vollstaendigen Misnah, seventh volume, Synhedrin, Makkoth, Sebuoth, Aboda zara, Horajoth, Edijoth, Aboth, Berlin, S. Calvary und Co., 1903. The same physical volume carries tractate Sanhedrin and is the volume traditions/rabbinic-halakhah.ttl is worked from; the tractate is the work and the volume is the edition, so it is declared separately."@en ;
+    skos:note "The part read is folio 54b to 56a, pages 990 to 992 of that volume. The running heads of the tractate were checked over the whole of chapter one and the part read before anything was cited: they run 796, 799, 801, 806, 807, 809, 813, 819, 822, 827, 833, 837, 839, 842, 845, 852, 862 and on to 992 without going backwards. The check is the one AGENTS.md requires after prima-materia#829, where a scan gave the sequence 753, 759, 757, 799, 761 and a page number formed from it would have been invented."@en ;
+    skos:note "Access: the archive.org identifier is derbabylonischet07gold, full text over the regular route. The file keeps its line breaks, so the warning about the single very long line does not apply to it; the Aramaic and the German stand in two columns which the full text interleaves line by line, and a reading that does not separate them will run the two together."@en .
+
+pmw:TalmudBavliHolin a dcterms:BibliographicResource ;
+    rdfs:label "Babylonian Talmud, tractate Holin"@en, "Babylonischer Talmud, Traktat Holin"@de ;
+    skos:note "Read in the translation of Lazarus Goldschmidt, eighth volume, Zebahim, Menahoth, Holin, Leipzig, Otto Harrassowitz, 1909. The edition is copied from the title page in the full text, which names the eighth volume and the Leipzig imprint; the seventh volume of the same translation carries a different publisher and year, so the volume cannot be cited from the series alone."@en ;
+    skos:note "This is the volume the first file said it had not opened and would need, because this translator's German is the only translation of this tractate in the public domain: Rodkinson did not translate it and Soncino is not free. Access was the obstacle and not the language. The identifier derbabylonischet07gold follows the pattern derbabylonischet<NN>gold for the seventh volume and for no other; the eighth is derbabylonischet08unse, in a series of identifiers running from derbabylonischet01unse to derbabylonischet08unse which carries this whole translation. That is a finding about the way and is entered in the table of access routes in AGENTS.md, so that no later run has to search for it again."@en ;
+    skos:note "The part read is folio 7a to 7b, pages 819 to 822. The running heads over folios 6a to 9a run 819, 820, 822, 824, 826 without going backwards, so the page numbers cited are the printed ones. The tractate is spelt Holin on the title page and in the running heads, which render it HOLIN; the common English spelling is Hullin and the place is the same."@en .
+
+pmw:TalmudBavliPesahim a dcterms:BibliographicResource ;
+    rdfs:label "Babylonian Talmud, tractate Pesahim"@en, "Babylonischer Talmud, Traktat Pesahim"@de ;
+    skos:note "Read in the translation of Lazarus Goldschmidt, second volume, Erubin, Pesahim, Joma, Berlin, S. Calvary und Co., 1901, identifier derbabylonischet02unse. The edition is from the title page in the full text."@en ;
+    skos:note "The part read is folio 110a to 112b, pages 703 to 714. The running heads run 703, 706, 708, 710, 713, 714 without going backwards; one head came back from the scan as 7111 and is an artefact of the optical reading rather than a page, and no citation here rests on it."@en ;
+    skos:note "Why this edition and not the free English. The lease for this work warned that Rodkinson's English is defective for the material on sorcery at three measured places, which the search node in examinations/searches-rabbinic-sorcery-law.ttl established for tractate Sanhedrin. The German was therefore used as the text and the English was not consulted at all for this tractate, which means the comparison the first file carried for Sanhedrin has not been carried here and is not claimed."@en .
+
+# ANKER-ANHANG-HIER
