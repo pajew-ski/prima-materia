@@ -1,0 +1,162 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia - the Gabonese Bouiti transmission
+#
+# pmt:Bwiti leaves traditions/registry-outside-contact.ttl. It was registered
+# under the testability-driven entrance for one stated reason - the content of
+# the experience is announced in advance - and the reading confirms the reason
+# and adds the thing the registration could not know: the announced content is
+# also the admission criterion, and a candidate who fails to report it is told
+# that the fetish refused him and that the whole procedure begins again. That
+# is a failure condition with the penalty placed on the candidate and never on
+# the procedure, stated by the transmission itself, which is the material
+# SPEC section 15 holds the holding is shortest of.
+#
+# The second finding was not looked for and is the more useful of the two.
+# The earliest reachable monograph on the same people, published one year
+# later from a two-year expedition, names neither the root nor the society
+# anywhere in two volumes, while naming the other plant of the same
+# initiation and putting it to a wholly different use. The disagreement is
+# entered as pmc:WhatMelanIsDisputed and the searches that establish it stand
+# in examinations/searches-bwiti.ttl.
+#
+# What this file does not decide. Trilles asserts that the Fang Biéri and the
+# Fiote Bwiti are one thing of common origin, and this run follows the work
+# rather than deciding against it: the Fang material of pages 271 and 355 and
+# the Bouiti material of pages 49 to 52 stand under one tradition here because
+# the opened work puts them there. Whether they are one transmission or two is
+# the first question for whoever obtains Fernandez, and it is named at the
+# tradition. A second question this run refused to settle by itself is a Fang
+# tradition of its own: the voluntary truth-ordeal of Tessmann II, pages 241
+# and 242, was read at the wording and is not an initiation, so it does not
+# fall under the registered definition. It is carried here only inside the
+# dispute, which needs no tradition, and the registration question goes to the
+# human with a recommendation rather than being taken in a harvest run
+# (SPEC sections 11 and 14, AGENTS.md).
+#
+# Order of the file: the five works; the tradition with the three decisions;
+# the Bouiti initiation and its criterion; the two cautions; the two capacities
+# and the recorder's refusal to confirm them; the Fang mélan initiation, what
+# it is and what the eating of it is said to be; the éyèn mirror and the
+# recorder's inspection of it; the society under its third name; and last the
+# dispute about what mélan is.
+#
+
+#
+# The works
+#
+
+pmw:LeTotemismeChezLesFan a dcterms:BibliographicResource ;
+    rdfs:label "Trilles, Le Totémisme chez les Fan"@en, "Trilles, Le Totémisme chez les Fan"@de ;
+    skos:note "The edition as the title page in the full text gives it: Le Totémisme chez les Fan, par le R. P. H. Trilles, C.S.Sp., avec préface de Mgr. A. Le Roy, évêque d'Alinda, Sup. Gén. C.S.Sp., Münster i. W. 1912, Aschendorffsche Verlagsbuchhandlung, in the series Internationale Sammlung ethnologischer Monographien; the signature line at the foot of page 49 gives the series number as Bibliothèque Anthropos I/4."@en ;
+    skos:note "The title page spells the people Fan and the body of the book spells it Fân throughout. The work identifier follows the title page, as SPEC section 10 requires the edition to be the one read; the people are called Fang in the English literature and Pangwe in the German, which is why pmw:DiePangwe is a work about the same people under a third name."@en ;
+    skos:note "Access: archive.org identifier letotemismechezl00tril, full text over the regular _djvu.txt route, 1,690,570 characters. The tail is a Princeton Theological Seminary shelf stamp after the index, so the file ends where the book ends and is not one of the truncations the access table warns about. The running heads over the parts read run 49, 50, 51, 52, 53 and 271, 272 and 355, 356 without going backwards, so the pages cited are the printed ones."@en ;
+    skos:note "What was read at the wording: pages 47 and 48, the comparison of the Fang Biéri with the Fiote Bwiti; pages 49 to 52, the whole of the section Bouiti and the opening of Le Mboïo; page 271 with its first footnote; page 355 with the account of the mirror in the mvul horn. The volume runs to some five hundred pages. Not opened: the hundred and three places at which the Ngi cult is named, the chapters on the totem proper, and the Mboïo section beyond its first page."@en .
+
+pmw:AuPaysDeSetteCamaLeBouiti a dcterms:BibliographicResource ;
+    rdfs:label "Le Scao, Au pays de Sette Cama: les fétiches, le Bouiti"@en, "Le Scao, Au pays de Sette Cama: les fétiches, le Bouiti"@de ;
+    skos:note "Named by Trilles himself in the footnote at page 49: Au pays de Sette Cama, La religion des habitants. Les fétiches: le Bouiti, par le R. P. Le Scao, 1908-1909, Messager du St Esprit. The Bouiti material of pages 49 to 52 is this article, printed by Trilles in quotation marks."@en ;
+    skos:note "Not opened, and the reason is a property of the work: the Messager du Saint-Esprit is a congregational mission periodical of 1908-1909 for which no digitisation was found. Ways tried: archive.org by title and by the author name, Gallica by title and through the periodical catalogue. The article is reachable only through Trilles, which is why the nodes drawn from it carry pm:mediatedAttestation and name him with pm:readVia."@en ;
+    skos:note "Trilles warns about the vocabulary of this article himself, and the warning is worth more than the usual note on a mediator: he says the study was destined for a religious review, whence certain terms and comparisons. The words Grand Fétiche, statue and secret society in the passages below are therefore the mediator's register, and the transmission's own terms survive only where the article prints them - Bouiti, Ganga, Nzimba, Diboha, Dindimba, Likoundou."@en .
+
+pmw:BwitiEthnographyOfTheReligiousImagination a dcterms:BibliographicResource ;
+    rdfs:label "Fernandez, Bwiti: An Ethnography of the Religious Imagination in Africa"@en, "Fernandez, Bwiti: An Ethnography of the Religious Imagination in Africa"@de ;
+    skos:note "The work the registration named as principal corpus, Princeton University Press 1982, and the one that would answer the question this file leaves open about Fang and Fiote. Not opened, and the reason is a property of the work: it is in copyright and the archive copy is lending-restricted, answering 401 and 500 to the full-text route. Declared as a work of the corpus and left unopened so that queries/unopened-works.rq reports it."@en ;
+    skos:note "A copy outside the lending restriction was found and deliberately not used. A work put up without its publisher's leave is not a path to the wording in the sense of SPEC section 15 - the question the access rules ask is whether a later reader can obtain the work, and an unauthorised upload answers that question for nobody."@en .
+
+pmw:DiePangwe a dcterms:BibliographicResource ;
+    rdfs:label "Tessmann, Die Pangwe"@en, "Tessmann, Die Pangwe"@de ;
+    skos:note "The edition as the title page in the full text gives it: Die Pangwe, Völkerkundliche Monographie eines westafrikanischen Negerstammes, Ergebnisse der Lübecker Pangwe-Expedition 1907-1909 und früherer Forschungen 1904-1907, von Günter Tessmann, Verlegt bei Ernst Wasmuth A.-G., Berlin 1913, two volumes."@en ;
+    skos:note "Not a work of the Bouiti corpus, and that is the finding rather than an omission. It is a monograph on the same people from a resident expedition of two years, published one year after Trilles, and it carries no occurrence of iboga, eboga, bwiti, bouiti or bweti in either volume. It is declared here because nodes cite it, not with pm:corpusWork, because pm:corpusWork says a transmission is carried in a work and this one is not."@en ;
+    skos:note "Access: archive.org identifiers diepangwevlkerku01tess, 671,686 characters, and diepangwevlkerku02tess, 1,085,767 characters, both over the regular _djvu.txt route. Both tails are library catalogue stamps after the back matter, so neither is truncated. What was read at the wording: volume II, pages 241 and 242, the voluntary truth-ordeal; volume I at the three places that name Erythrophloeum guineense and volume II at its eight. The rest of some nine hundred printed pages is not opened, the Ngi cult of volume II among them."@en .
+
+pmw:FetichismInWestAfrica a dcterms:BibliographicResource ;
+    rdfs:label "Nassau, Fetichism in West Africa"@en, "Nassau, Fetichism in West Africa"@de ;
+    skos:note "The edition as the title page in the full text gives it: Fetichism in West Africa, Forty Years' Observation of Native Customs and Superstitions, by Robert Hamill Nassau, forty years a missionary in the Gabun district of Kongo-Francaise, New York, Charles Scribner's Sons, 1904, published October 1904."@en ;
+    skos:note "Access: archive.org identifier fetichisminwesta00nass, 961,833 characters over the regular _djvu.txt route. What was read at the wording: page 248, the enumeration of the secret societies of the Gabun region in chapter XV. The volume carries no occurrence of iboga or eboga. The rest is not opened."@en .
+
+#
+# The tradition
+#
+
+pmt:Bwiti a pm:Tradition ;
+    pm:fromWork pmw:LeTotemismeChezLesFan ;
+    rdfs:label "Bwiti"@en, "Bwiti"@de ;
+    skos:altLabel "Bouiti"@en, "Bouiti"@de ;
+    skos:definition "The Gabonese transmission of an initiation carried by a root preparation, in which the initiate is expected to meet the dead and to report the meeting. In the earliest reachable account the report is made into a mirror set in the belly of the fetish and is the criterion of admission: a candidate who does not say what is required is told that the fetish refused him, and the whole procedure begins again."@en ;
+    skos:note "Entered at places read out of pm:corpusNamed, where it stood from its registration. The registration named Fernandez 1982 as principal corpus and that work is still not opened; what was read instead is a public-domain monograph of 1912 which prints a mission article of 1908-1909 in quotation, a monograph of 1913 on the same people, and a missionary's enumeration of 1904. All three recorders are outsiders, two of them resident missionaries, and the registry file this instance leaves says in its own header that this is the condition most of its entries are in."@en ;
+    skos:note "One: the contact route, and it is undecided rather than absent. The registration entered absent, and nothing had been looked for. Against a route: the vernacular terms of the procedure are not Christian, the plant is local, the society is reported under three distinct names in three languages by three recorders who do not cite each other, and nothing in the read passages has a European antecedent. For a route: the only account of the initiation is by a Catholic missionary resident at Sette Cama, written for a religious review, and the mediator says so; the fetish house is described in the vocabulary of a church, place of honour and all; and the mirror the vision is read in is a trade mirror from the coast, which the Fang account says has everywhere replaced the mica sheets used formerly, so that the instrument of the central act is an import datable to the trade. Absent would be false and documented would overstate. Until the question stands as its own node this tradition may not be counted as a party to a convergence."@en ;
+    skos:note "Two: recension and edition. Trilles, Le Totémisme chez les Fan, Münster i. W., Aschendorffsche Verlagsbuchhandlung, 1912, from the title page in the full text. The Bouiti section is Le Scao's French, printed by Trilles with his own footnotes and his own bracketed additions, and the vernacular wording is not carried beside it; the Fang material of pages 271 and 355 is Trilles' own. No original-language text of any part of this transmission was read in this run, and none is printed in the works that were."@en ;
+    skos:note "Three: the number of citable places. Seven, carrying sixteen nodes: Trilles pages 47, 49, 51, 271 and 355, Tessmann volume II pages 241 and 242, and Nassau page 248, all read at the wording in this run. What was left unread is recorded at each work."@en ;
+    skos:note "Whether this is one transmission or two is not decided here and the decision was not this run's to take. Trilles asserts the identity - comparons le Biéri fân et le Bwiti fiot, on en verra l'identité - and derives it from a sound correspondence of r and t in Fang and from a common origin; the Fang material and the Fiote material therefore stand under one tradition in this file, following the opened work. Against the identity stands the thing the same run found: the Fang monograph of 1913 names neither Bouiti nor the root, so if the two are one transmission, the Fang branch of it is invisible in the fullest early account of the Fang. The question is the first one for whoever opens Fernandez."@en ;
+    skos:note "The lease that holds this work is the branch claude/ernte-trilles-totemisme-fan, and the harvest note stands in the body of its pull request. No issue holds it, as AGENTS.md requires of an opened work."@en ;
+    pm:principalCorpus "James W. Fernandez, Bwiti: An Ethnography of the Religious Imagination in Africa (Princeton: Princeton University Press, 1982); H. Trilles, Le Totémisme chez les Fan (Münster i. W.: Aschendorffsche Verlagsbuchhandlung, 1912), which prints Le Scao, Au pays de Sette Cama: les fétiches, le Bouiti, Messager du St Esprit, 1908-1909; and Robert Hamill Nassau, Fetichism in West Africa (New York: Charles Scribner's Sons, 1904)" ;
+    pm:corpusWork pmw:LeTotemismeChezLesFan, pmw:AuPaysDeSetteCamaLeBouiti, pmw:BwitiEthnographyOfTheReligiousImagination, pmw:FetichismInWestAfrica ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteUndecided ;
+    dcterms:source "H. Trilles, Le Totémisme chez les Fan (Münster i. W.: Aschendorffsche Verlagsbuchhandlung, 1912), pp. 49-52" .
+
+#
+# The initiation and its criterion
+#
+
+pmp:BouitiDibohaInitiation a pm:Practicing ;
+    pm:fromWork pmw:AuPaysDeSetteCamaLeBouiti ;
+    rdfs:label "Entry into the Bouiti: three days of the Diboha root, then the mirror"@en, "Eintritt in den Bouiti: drei Tage Diboha-Wurzel, dann der Spiegel"@de ;
+    skos:definition "The procedure as the article gives it. A man decided to enter the Bouiti goes to the Ganga, who fixes a date. For three days the Ganga has the postulant chew roots of a shrub called Diboha and has him drink a decoction of the same roots in repeated doses. The postulant soon grows drowsy and falls into a state of lethargy and complete absorption; he is dead drunk. A liana is then passed round his neck. Only after three days does he come a little to himself, unless he never comes back. Whoever has borne the ordeal of the Diboha more valiantly is then invited by the Ganga to look into the mirror set in the belly of the fetish."@en ;
+    skos:note "The identification of the plant is the mediator's and it contradicts the one the same transmission is known for. Trilles' footnote to the word reads: Strychnos Icaja, of the Strychneae; a dangerous poison at high dose, at low dose its effects are analogous to those of indian hemp. Tabernanthe iboga is not named here, and where Trilles does name it, at page 271, it is for the Fang mélan and not for this. Whether the Diboha of Sette Cama is iboga under a cognate name or a second plant is not decided by anything read in this run."@en ;
+    skos:note "The vernacular name is an optical reading and not a settled spelling. The full text gives Diboha twice, in the account and in the case of the boy at Koja. The confusions of b with h and of b with g are both common in this scan, and the cognate forms current in the Gabonese languages are of the shape diboga and dibuga, so the printed form may be Diboba or Diboga. The identifier follows the reading as the file delivers it; what would settle it is a printed copy, which is the same open item the holding already carries for pmp:Hanblapi."@en ;
+    skos:note "Three days is said twice and means two different things. The Ganga administers the root for three days, and the postulant returns to himself only after three further days. Nothing in the passage says what is done with him in the interval beyond the liana round the neck, and nothing says who decides that he has borne it valiantly."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "H. Trilles, Le Totémisme chez les Fan (Münster i. W.: Aschendorffsche Verlagsbuchhandlung, 1912), p. 51, where the article is printed in quotation with Trilles' own footnotes" ;
+    pm:withinTradition pmt:Bwiti ;
+    dcterms:source "Le Scao, Au pays de Sette Cama: la religion des habitants. Les fétiches: le Bouiti, Messager du St Esprit, 1908-1909, the section on the initiation" .
+
+pmc:BouitiMirrorReportDecidesAdmission a pm:Conceptualizing ;
+    pm:fromWork pmw:AuPaysDeSetteCamaLeBouiti ;
+    rdfs:label "He must see certain things and detail them; if he does not, the fetish refused him and all begins again"@en, "Er muss bestimmte Dinge sehen und einzeln nennen; andernfalls hat der Fetisch ihn abgewiesen und alles beginnt von neuem"@de ;
+    skos:definition "The criterion of admission, and the whole of it. At the moment he looks into the mirror he must see certain things and detail them to the Ganga. If he says it rightly he is received into the Bouiti; if he does not say what is required, it is that the fetish did not want to show itself to him, refused him, and everything is to begin again. What he must see is the secret of the Ganga and of the initiates."@en ;
+    skos:note "Why this node is the reason the work was opened. The criterion has the shape the holding is shortest of and the defect the holding has catalogued: the outcome is announced in advance, it is decided by one man who already knows the answer, and a negative outcome is attributed to the fetish rather than to the procedure or to the root, so that no failed run counts against either. The transmission states the excuse itself and does not leave it to be inferred."@en ;
+    skos:note "What makes it worse than the excusing clauses the holding already carries is the withholding. The content of the criterion is secret, so a candidate cannot know what he is being asked and a later reader cannot check whether the same thing was asked twice. The mediator says he could get nothing out of even the converts: they are full of reticence and seized with terror at the subject, and the accounts that do circulate - that the initiate sees sometimes a goat, sometimes an elephant - are called incoherent by the man reporting them. A criterion whose content is unobtainable is unauditable by construction, and the three animals named are the one place where its content shows at all."@en ;
+    skos:note "Tout est à recommencer is the operative clause and it is not a penalty. A candidate who fails the vision is not disqualified and not punished; the procedure is simply run again, which means the three days of the root are run again. Nothing in the passage fixes a number of attempts, and the only outcome the passage does make terminal is the one in the caution at pmc:BouitiDibohaMayNotReturn."@en ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "H. Trilles, Le Totémisme chez les Fan (Münster i. W.: Aschendorffsche Verlagsbuchhandlung, 1912), p. 51" ;
+    pm:withinTradition pmt:Bwiti ;
+    dcterms:source "Le Scao, Au pays de Sette Cama: la religion des habitants. Les fétiches: le Bouiti, Messager du St Esprit, 1908-1909, the section on the initiation" .
+
+#
+# The two cautions
+#
+
+pmc:BouitiDibohaMayNotReturn a pm:Cautioning ;
+    pm:fromWork pmw:AuPaysDeSetteCamaLeBouiti ;
+    rdfs:label "Only after three days does he come a little to himself, unless he never comes back"@en, "Erst nach drei Tagen kommt er etwas zu sich, wenn er nicht überhaupt nie zurückkommt"@de ;
+    skos:definition "The outcome the procedure names for itself: after three days the postulant comes a little to himself, à moins qu'il ne revienne jamais - unless he never comes back. The mediator gives a case from the year of writing, a boy of fourteen who was to be initiated at Koja, who drank the Diboha and lost consciousness, and who when they tried to bring him round was nothing but a corpse."@en ;
+    skos:note "The clause and the case are two different kinds of statement and the node keeps them apart. The clause is what the transmission says of its own procedure, in the same breath as the recovery; the case is the recorder's report of a death, dated to the year and placed at a named village, and it is the only outcome in these pages that anybody outside the society could have observed. Together they are the one place where this transmission names a cost it does not place on the candidate's merit."@en ;
+    skos:note "It is not a condition of failure in the sense SPEC section 15 asks for. A death ends the candidate and says nothing about whether the initiation works; what would be a condition of failure is a mark by which a living initiate could be shown not to have been received, and the criterion at pmc:BouitiMirrorReportDecidesAdmission is constructed so that no such mark exists."@en ;
+    pm:cautionsAbout pmp:BouitiDibohaInitiation ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "H. Trilles, Le Totémisme chez les Fan (Münster i. W.: Aschendorffsche Verlagsbuchhandlung, 1912), p. 51" ;
+    pm:withinTradition pmt:Bwiti ;
+    dcterms:source "Le Scao, Au pays de Sette Cama: la religion des habitants. Les fétiches: le Bouiti, Messager du St Esprit, 1908-1909, the section on the initiation" .
+
+pmc:BouitiDisclosureIsCertainDeath a pm:Cautioning ;
+    pm:fromWork pmw:AuPaysDeSetteCamaLeBouiti ;
+    rdfs:label "If they revealed anything it is certain death for them"@en, "Verrieten sie etwas, ist es der sichere Tod für sie"@de ;
+    skos:definition "The sanction that holds the secret of the criterion. The initiates and even the converts are afraid to speak of what is seen in the mirror; if they revealed anything, it is certain death for them."@en ;
+    skos:note "Entered as its own node because of what it does rather than what it threatens. This is the clause that makes the admission criterion unauditable, and it is therefore part of the mechanism of pmc:BouitiMirrorReportDecidesAdmission and not a side remark about danger. A secret enforced by a death penalty cannot be checked by the method the rest of this holding uses, which is to ask a second witness the same question."@en ;
+    skos:note "Who carries out the sanction is not said, nor whether it was ever carried out. The mediator reports the fear and not a case, which is the opposite way round from the caution at pmc:BouitiDibohaMayNotReturn, where he reports a case and the transmission supplies the clause."@en ;
+    pm:cautionsAbout pmc:BouitiMirrorReportDecidesAdmission ;
+    pm:attestedBy pm:mediatedAttestation ;
+    pm:readVia "H. Trilles, Le Totémisme chez les Fan (Münster i. W.: Aschendorffsche Verlagsbuchhandlung, 1912), p. 51" ;
+    pm:withinTradition pmt:Bwiti ;
+    dcterms:source "Le Scao, Au pays de Sette Cama: la religion des habitants. Les fétiches: le Bouiti, Messager du St Esprit, 1908-1909, the section on the initiation" .
+
