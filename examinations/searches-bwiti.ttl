@@ -1,0 +1,71 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches carried for the Bouiti run
+#
+# Four searches, and the first of them is the reason the run is worth
+# anything. The transmission is known in the modern literature under one name
+# and one plant; the two earliest reachable monographs on the peoples
+# concerned disagree about both, and until a search node said so the holding
+# could not tell a corpus nobody had asked from a corpus that had been asked
+# and had answered nothing.
+#
+# The fourth is a finding about a library and not about a transmission, and it
+# is here rather than at a work because what it establishes is that a route
+# fails, which AGENTS.md wants in its access table.
+#
+
+pmp:PangweIbogaSearch a pm:Searching ;
+    rdfs:label "Whether the fullest early monograph on the Fang names iboga or the Bouiti society"@en, "Ob die ausführlichste frühe Monographie über die Fang Iboga oder die Bouiti-Gesellschaft nennt"@de ;
+    pm:searchedCorpus "Günter Tessmann, Die Pangwe. Völkerkundliche Monographie eines westafrikanischen Negerstammes, Ergebnisse der Lübecker Pangwe-Expedition 1907-1909 und früherer Forschungen 1904-1907, two volumes (Berlin: Ernst Wasmuth A.-G., 1913), both volumes complete as full text" ;
+    pm:searchedFor "Whether the most extensive early ethnography of the Fang, from a resident expedition of two years published one year after Trilles, names the root Tabernanthe iboga or a society of the Bwiti name anywhere. The question decides whether the Fang half of the transmission entered at traditions/bwiti.ttl is attested by a second witness, and if it is not, whether that silence is a finding about the corpus or about the recorder's access." ;
+    pm:searchTerms "iboga, eboga, boga, bwiti, bouiti, bweti, mbwiri, melan, mélan, Erythro, Tabernanthe, run case-insensitively over the whole of both volumes, 671,686 and 1,085,767 characters. The vernacular spellings were chosen to cover the Fang, Mitsogo, Loango, Eshira and Mpongwe forms current in the literature; boga alone was included as the bare stem so that a prefixed form would be caught. The German transliteration conventions of the work were allowed for by searching the stem without its prefix and by checking every hit of boga by hand." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-05" ;
+    dcterms:date "2026-10-05" ;
+    skos:note "Nothing under any of the five society spellings and nothing under iboga, eboga or Tabernanthe, in either volume. The three hits for boga are all inside other words and were read. The men's cults the work does give by name over many pages are the Sso, Bokung, Elong, Schok, Ngi and Odschöe, with the Ngi named a hundred and twenty-seven times in volume II alone, and the women's cults Mawungu, Nkang and Endaluma. A transmission the holding now carries for this people under the Bwiti name is therefore absent from the fullest early account of it."@en ;
+    skos:note "Why this is a finding about the corpus and not about access, which is the distinction that decides what the silence is worth. The recorder was admitted to a great deal: he gives the cults by name and in sequence, describes the Ngi feast day by day, prints the region's plants with their Pangwe names beside their Linnean ones, and names Erythrophlœum guineense eleven times across the two volumes. A transmission missing from a work of that reach is not one its author was kept away from, or not demonstrably so, and the burden falls on whoever wants to say it was."@en ;
+    skos:note "What the search does not establish. It is a search over spellings and not over descriptions: a Fang initiation by a root preparation reported under a name none of these five terms covers would not have been caught. The one check made against that is the plant, and it points the other way - the second of the two plants Trilles names for the mélan is in this work and is prominent in it, which is why the outcome of pmp:PangweErythrophloeumSearch is opposing material rather than nothing."@en ;
+    skos:note "The gap this exhibits, in the sense of SPEC section 13: whoever can read the Fang chapters of either work in the vernacular, or can obtain Fernandez 1982, can settle in an afternoon what this holding has had to leave as a dispute. The two candidate answers are both consequential and neither is expensive to test."@en .
+
+pmp:PangweErythrophloeumSearch a pm:Searching ;
+    rdfs:label "What the same monograph does with the second plant of the mélan"@en, "Was dieselbe Monographie mit der zweiten Pflanze des mélan macht"@de ;
+    pm:searchedCorpus "Günter Tessmann, Die Pangwe, two volumes (Berlin: Ernst Wasmuth A.-G., 1913), both volumes complete as full text; the passage read at the wording is volume II, pages 241 and 242" ;
+    pm:searchedFor "Whether the plant Trilles names for the second degree of the Fang initiation, Erythrophlœum guineense, appears in the Pangwe monograph at all, and if so in what institution. The search was the counter-search to pmc:FangMelanIsTwoPlantsUnderOneName and was run because a negative result on the society name alone would have left the first recorder's claim untouched." ;
+    pm:searchTerms "Erythro, Erythrophloeum, Erythrophlœum, elun, elün, Giftbaum, Wahrheitsbeweis, Ordal, run case-insensitively over both volumes; every one of the eleven hits for the plant was read in context, and the two that stand in an institution rather than in a plant list were read at the wording with their printed page numbers taken from the running heads." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchedBy "prima-materia, 2026-10-05" ;
+    dcterms:date "2026-10-05" ;
+    skos:note "The plant is there and in a different institution. Volume I gives it twice in plant lists, as elün, the Leguminosa with the striking red bark, the poison tree, and once among the five trees whose charcoal is strong enough for iron smelting. Volume II gives it in wound and backache treatments, in a bird call, and then at pages 241 and 242 in the custom of the voluntary proof of truth, undertaken without invocation of any moral power by a person who believes himself falsely accused: he goes to an Erythrophlœum tree, strikes off some bark and chews it with water, three times, and publicly declares his innocence. The stated criterion is that in real innocence the poison is brought up again, and otherwise stays in the body and acts fatally."@en ;
+    skos:note "The opposing material is therefore not a denial but a reassignment, which is the harder case and the reason the dispute at pmc:WhatMelanIsDisputed names three readings rather than two. One recorder has the plant inside a graded initiation at its second degree; the other has it inside a judicial ordeal the accused undertakes himself, and gives neither an initiation nor a degree."@en ;
+    skos:note "The ordeal claim was read at the wording and is not entered as a node of its own, and the reason is a rule and not an omission. It is not an initiation, so it does not fall under the registered definition of pmt:Bwiti; and a Fang tradition is a new heading, which SPEC sections 11 and 14 reserve to the human. The wording is therefore carried inside the dispute so that nothing read is lost, and the registration question goes to the human with a recommendation."@en ;
+    pm:searchYieldedNode pmc:WhatMelanIsDisputed .
+
+pmp:NassauBwetiSearch a pm:Searching ;
+    rdfs:label "Whether a third recorder in a third language names the society"@en, "Ob ein dritter Aufzeichner in einer dritten Sprache die Gesellschaft nennt"@de ;
+    pm:searchedCorpus "Robert Hamill Nassau, Fetichism in West Africa: Forty Years' Observation of Native Customs and Superstitions (New York: Charles Scribner's Sons, 1904), complete as full text" ;
+    pm:searchedFor "Whether an English-language recorder of forty years' residence in the same district, citing neither French recorder, names a society of the Bwiti name, and whether he connects it with a root. The question was put because both accounts of the initiation in the holding come from Catholic missionaries of one congregation and a third name would be the first witness outside that circle." ;
+    pm:searchTerms "bweti, bwiti, bouiti, mbwiri, ombwiri, iboga, eboga, melan, run case-insensitively over the whole volume, 961,833 characters; the two hits for bweti and the twenty for mbwiri were read, and the distinction between the society and the guardian spirit Ombwiri was made at the wording and not from the spelling." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchedBy "prima-materia, 2026-10-05" ;
+    dcterms:date "2026-10-05" ;
+    skos:note "The name is there and nothing else is. Page 248 places Bweti among the Bakele in an enumeration of the governing societies of the Gabun region; the table of contents of chapter XV lists it in the same series. Of the initiation, the root, the mirror and the criterion there is nothing, and iboga and eboga do not occur in the volume. The twenty hits for mbwiri are Ombwiri, a class of spirit treated in a different chapter, and are not the society."@en ;
+    skos:note "What the find is worth, stated narrowly so that it is not later read for more. It is independent evidence that a society of this name existed in the region before 1904 and was taken for an instrument of government, by a recorder who assigns it a third people. It is no evidence about anything the initiation nodes claim. The one detailed initiation account in the book is an initiation into Malinda, and was not read in this run."@en ;
+    pm:searchYieldedNode pmc:BwetiAmongTheBakele .
+
+pmp:IbogaFirstDescriptionSearch a pm:Searching ;
+    rdfs:label "Whether the 1901 notes that first isolated the alkaloid are reachable as wording"@en, "Ob die Notizen von 1901, die das Alkaloid zuerst isolierten, im Wortlaut erreichbar sind"@de ;
+    pm:searchedCorpus "Comptes rendus hebdomadaires des séances de l'Académie des sciences, tome 133 (July to December 1901), for Dybowski and Landrin, Sur l'iboga, ses propriétés excitantes, sa composition et sur l'alcaloïde nouveau qu'il renferme, pp. 748-750; and the Bulletin mensuel de la Société linnéenne de Paris, nouvelle série, volume 2 (1889), p. 783, for Baillon's first description of Tabernanthe iboga" ;
+    pm:searchedFor "Whether the two foundational notes the initiation literature rests on can be read at the wording, so that the pharmacological character Trilles attributes to ibogaïne at page 271 can be checked against the publication he is repeating rather than taken from him. The question is not about the transmission; it is about whether a modern identification inside a field record is traceable to its source." ;
+    pm:searchTerms "iboga, ibogaine, ibogaïne, Tabernanthe, Dybowski, Landrin, Baillon, run against the Gallica full-text index of the volume and against archive.org identifiers for the series and for the Linnean bulletin; the Gallica text layer was tested by running the trivial terms Académie and science against the same volume" ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-10-05" ;
+    dcterms:date "2026-10-05" ;
+    skos:note "Neither is reachable as wording and the ways tried are these. The Académie volume is on Gallica as a public-domain digitisation, but it has no text layer: the full-text index returns nothing even for Académie and science, and the per-page OCR route answers 500 for every view of it. The series is on archive.org issue by issue for other years - fifty-three items for 1907 alone - and returns nothing at all for 1901. The Linnean bulletin volume is in the Biodiversity Heritage Library, which answers 403 to every machine request from this sandbox behind a challenge page, and no mirror of the volume was found; the article index of that library's own article service does not cover it."@en ;
+    skos:note "One substitute path was found, read, and deliberately not used for a node. The Bulletin des sciences pharmacologiques for 1905 is reachable in full and its bibliographic section reports the matter in a few lines: that Landrin isolated from the root of Tabernanthe iboga H. Bn. an alkaloid, l'ibogine, said to be physiologically a little different from the ibogaïne extracted at the same period by Haller. That is a report of two publications and not either of them, and it would at most let a later run cite the chain through a named intermediary with pm:readVia; it establishes nothing about what the 1901 notes say. It does show that the two alkaloid determinations were in dispute from the start, which is worth knowing before anybody takes the pharmacological clause of Trilles' footnote at face value."@en ;
+    skos:note "The access finding this leaves for the table in AGENTS.md: on Gallica the presence of a text layer is testable in one request, by putting a word that must occur in any volume of the kind through the full-text search service; a volume that returns nothing for such a word is a picture book, however complete its digitisation. The per-page OCR route works where the layer exists and answers 500 where it does not, and the plain text route is closed to scripts by a challenge."@en .
