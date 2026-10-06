@@ -1,0 +1,57 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the run on the Ugaritic ritual corpus,
+# 2026-10-06
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+# Three searches. One came back empty and is the most useful of the three,
+# because it establishes that an absence this holding has been counting is a
+# property of the corpus and not of the reading. One found its place. And one
+# reports the one group of this corpus that is unreachable, which is the group
+# the registration had named.
+#
+
+pmp:UgarFailureConditionSearch a pm:Searching ;
+    rdfs:label "Whether the Ugaritic ritual corpus names a condition under which a rite has not worked"@en, "Ob das ugaritische Ritualkorpus eine Bedingung nennt, unter der ein Ritus nicht gewirkt hat"@de ;
+    pm:searchedCorpus "The complete open-access critical edition of the corpus: D. Pardee, Ritual and Cult at Ugarit, Writings from the Ancient World 10, Society of Biblical Literature 2002, 314 pages, transliteration and translation with introductions and notes, read as the publisher's own posted file; its table of contents read in full, its nine sections identified, and five tablets read at the wording — RS 24.266, RS 1.002, RS 24.244, RS 24.272 and RIH 78/20."@en ;
+    pm:searchedFor "A clause anywhere in the corpus telling the operator or the beneficiary what would show that a rite had not worked, and what then follows: a term after which nothing further comes, a sign of failure, a count completed without effect, a stated remedy for a failed performance, a provision for repetition. The same question was put to the Anatolian corpus in the strand that ran beside this one and found one case there."@en ;
+    pm:searchTerms "The five tablets read paragraph by paragraph. Across the whole volume, term search over the extracted text for fail, failure, unsuccessful, in vain, repeat, repetition, again, second time, if not, otherwise, remedy, expiation of a failed, and for the editor's own vocabulary of outcome; the section headings of all nine sections read, and the divination section read through its table of contents, since that is where a sign of whether things stand well would sit in this corpus."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-06" ;
+    dcterms:date "2026-10-06" ;
+    skos:note "Nothing of the kind, and the editor's own framing is consistent with that: he states of the expiation rite that there are no indications in the texts themselves as to its frequency and that chronological data on the liturgy are not forthcoming, which is a different absence of the same kind. What the corpus supplies in place of a failure condition is an apparatus for finding out whether things stand well at all — the divination section prints liver and lung models, an astrological report and four omen manuals — and that apparatus is addressed to the question before the rite and not to the outcome after it."@en ;
+    skos:note "What the empty result is worth, and it is worth more than it looks. The holding has been counting transmissions that announce signs of success against transmissions that name conditions of failure, and the count is only meaningful if a negative is established on a read corpus rather than assumed from an unread one. This corpus is now read in its one complete open edition and contributes a zero that is a property of the corpus. It does not mean the practitioners had no way of telling; it means the texts gave them none."@en ;
+    skos:note "What was not searched, so the negative is bounded. The second substantially preserved exemplar of the expiation rite and its four fragments are not printed in this edition. The Rapiuma tablets are not in it at all, for the reason at pmp:UgarRapiumaSearch. And the corpus of letters, legal and administrative texts, which is the bulk of what Ugarit produced, is outside this edition and was not looked at; a clause of this kind would be a surprise there but is not excluded."@en .
+
+pmp:UgarProvisionSearch a pm:Searching ;
+    rdfs:label "Whether the Ugaritic corpus carries the standing provision for not knowing what is being dealt with"@en, "Ob das ugaritische Korpus die Vorsorge für das Nichtwissen führt"@de ;
+    pm:searchedCorpus "The same complete open-access edition of 2002, with the five tablets read at the wording and the expiation rite's three parallel sections read in all their repetitions."@en ;
+    pm:searchedFor "The device in generalizations/the-provision-for-not-knowing.ttl, in any of its three forms: a disjunction that names every candidate at once so that the identification need not be made, a form of words for the case of not knowing, or an apparatus of objects that answers the same encounters without a name."@en ;
+    pm:searchTerms "The disjunctive construction of the expiation rite read in all three of its sections and in all three of its enumerations; and over the volume, term search for whether, be it, whoever, whatever, unknown, and for the editor's renderings of the interrogative particle of this corpus."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:UgarHta ;
+    pm:searchedBy "prima-materia, 2026-10-06" ;
+    dcterms:date "2026-10-06" ;
+    skos:note "The first form, and the most complete instance of it read anywhere in this holding. The expiation rite enumerates, three times over and in each of its three sections, every party whose statement could have caused the sin — six foreign peoples and two of the kingdom's own underclasses and one further name — then every disposition in which it could have been committed, then both of the cultic acts in which it could have been committed. The officiant needs to know none of it."@en ;
+    skos:note "The node is entered and the generalization is not enlarged, and the reason is the same one the Anatolian strand recorded on the same day for its own candidate. One of the six witnesses already standing is the Mesopotamian exorcistic craft; this corpus names Tuttul and Mari among the seats of the deities it addresses in another of its tablets, so its contact with that material is in its own text. A witness that cannot be shown independent of a standing witness raises no count. What it could raise is the count of stations with a reworking, and that needs the added element entered first."@en ;
+    skos:note "What the two candidates of this run do establish together, which is not a count. The device appears, in the same century and in two neighbouring kingdoms that name each other, in a plague ritual that addresses an unidentified hostile deity and in an expiation that enumerates every possible accuser. Whether that is one technique twice or two inventions is exactly the question the contact route of both traditions leaves open, and both are at pm:contactRouteDisputed."@en .
+
+pmp:UgarRapiumaSearch a pm:Searching ;
+    rdfs:label "Whether a transliteration of the Rapiuma tablets is reachable"@en, "Ob eine Transliteration der Rapiuma-Tafeln erreichbar ist"@de ;
+    pm:searchedCorpus "The reachable editions of the Ugaritic corpus: the open-access critical edition of 2002 and its table of contents; the open full-text archive, by author and title for the standard corpus of alphabetic cuneiform texts of 1963 in both its text and its plate volume, for the three successive handbooks and textbooks of the language, for the 1956 collection of myths and legends, for the concordance of 1972 and for the modern volume of narrative poetry; the publisher-hosted series directory under which the 2002 edition is posted; a mirrored manual of the language with autograph hand copies; the page-image and optical-text routes of a journal archive for the editiones principes; and the project site of the edition now in preparation, with its tablet concordance."@en ;
+    pm:searchedFor "A continuous transliteration of KTU 1.20, 1.21 and 1.22, the three tablets the registration of this tradition named as the Rapiuma texts and which are one of the two reasons it was registered."@en ;
+    pm:searchTerms "Each candidate work looked for by author and title, and for every hit the archive's own metadata read before the full text was requested, because the restriction flag in that metadata predicts the authorisation error and saves the attempt. The 2002 edition's contents list checked for the three tablets by excavation siglum and by corpus number. The series directory of the posting publisher probed for a second posted volume by the filename pattern that works for the first."@en ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-10-06" ;
+    dcterms:date "2026-10-06" ;
+    skos:note "Nothing. The 2002 edition is a volume of cult and ritual and does not contain the narrative poetry, and the companion volume of the same series that does is lending-restricted; so are the 1963 corpus in both volumes, the three handbooks, the 1956 collection and the concordance. The directory of the posting publisher answers with a refusal while the single file beneath it answers normally, and the filename pattern that reaches the one volume does not reach the other. The one reachable treatment of these three tablets gives a translation with notes and no transliterated text, and the standard corpus edition of the language is not open at any address tested."@en ;
+    skos:note "Entered as the corpus being unreachable and not as nothing found, because the works exist, are named, are numbered and are closed. The distinction is the one the scale was built for: a corpus that was read and is silent and a corpus that could not be opened are opposite findings about the same gap."@en ;
+    skos:note "The two routes that remain, named so that a later run does not repeat this search. A library copy of the lending volume; or the edition project that lists these fragments in its own plan with a date of 2026. Not a further copy of the same volumes on the same archive: the restriction is on the item and not on the scan."@en .
