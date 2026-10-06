@@ -1,0 +1,208 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Ugaritic ritual and incantation corpus, taken off the
+# register
+#
+# Taken from traditions/registry-west-asia.ttl on the structure-driven entrance
+# of SPEC 14, which is the one that comes without a question and is the only
+# corrective to the holding's prägung. The queue of that entrance is
+# queries/coverage-queue.rq sorted by contact route, and the two registrations
+# above this one, the Amazonian and the Australian, are both held by an open
+# decision for the person rather than by anything a run can do
+# (prima-materia#806, prima-materia#781). This was therefore the next place.
+#
+# Nobody asked for what the reading found, which is the point of the entrance.
+# A prayer appended to a sacrificial calendar states a condition of use, a
+# prescribed act, a conditional vow, and then — in the indicative and not in
+# the optative — what the god will do. That last clause is the rarest shape in
+# this holding: a flat predictive statement with the payment owed only after
+# delivery, so that the vow is the record of whether the thing happened. And a
+# second work runs the opposite way and closes every gap by enumeration, so
+# that no source of the sin it expiates is left outside the list.
+#
+# The three decisions SPEC 14 requires before the first node:
+#
+# The contact route stays at pm:contactRouteDisputed, and the reading sharpened
+# the dispute rather than settling it; what it added is at the instance, and it
+# has a consequence for the Anatolian strand that ran beside this one. The
+# edition is one and the same throughout and is named in every source: the
+# open-access critical edition of 2002, which prints transliteration and
+# translation together and is posted by its own publisher. And the number of
+# citable places: five tablets were opened and nineteen places are entered,
+# with two further nodes placing two of them on the consciousness axes.
+#
+# The works of this corpus are tablets and have no titles. They are designated
+# in the field by their excavation siglum, which never changes, and by a number
+# in an edition's corpus numbering, which has changed three times. The pmw:
+# identifiers are therefore the excavation sigla, and the corpus number of the
+# standard edition is given at each work so that a reader coming from it finds
+# the node.
+#
+
+pmt:UgariticRitual a pm:Tradition ;
+    rdfs:label "Ugaritic and Levantine ritual"@en, "Ugaritisch-levantinisches Ritual"@de ;
+    skos:definition "Late Bronze Age Levantine ritual and incantation, including the address to the deified dead."@en ;
+    skos:note "What the reading added to the contact route, which stays disputed. This corpus states its own reach, and it states it twice. The expiation text names the parties whose statement may have caused the sin it expiates and the list is a tour of the Late Bronze Age: the Qaṭian, DDMY, the Hurrian, the Hittite, the Alashian, GBR, and then the kingdom's own oppressed and impoverished and one further name. And the serpent text commissions its messages to twelve deities and names each one's seat, from Caphtor in the west through central Anatolia and central Syria to Tuttul and Mari in upper Mesopotamia and across the Jordan. So the question is not whether this transmission was in contact with the others this holding carries. It was, and says so."@en ;
+    skos:note "The consequence of that for the counting, and it is the reason this note is at the instance and not in a comment. A convergence asserted between this tradition and the Mesopotamian or the Anatolian material may not be entered as pm:independentAttestation on the strength of distance, because the distance is not there. It needs a pm:independenceGround that addresses the named contact, and the strongest form such a ground could take here is not geography but reworking: a station that took the claim and added a term, a caution or a sign that was not in what it received. See traditions/hittite-ritual.ttl, where the Anatolian strand of the same run records the same limitation from the other side."@en ;
+    skos:note "What the editor of the open-access edition says about the dating, and it is unusually frank. The tablets are of the Late Bronze Age and the kingdom is documented from the middle of the fourteenth to the early twelfth century. But of the expiation rite he states that there are no indications in the texts themselves as to its frequency, nor, if annual, as to the moment in the year, and that comparison with the biblical day of atonement must wait until chronological data on the Ugaritic liturgy are forthcoming. The internal dating of the ritual tablets is therefore open on his own statement, and nothing in this file turns on it."@en ;
+    pm:principalCorpus "The KTU corpus, including the Rapiuma texts and the serpent incantations" ;
+    pm:corpusWork pmw:RS1002, pmw:RS24266, pmw:RS24244, pmw:RS24272, pmw:RIH7820, pmw:RS24251, pmw:RS34126, pmw:RS3348, pmw:RS2019, pmw:RS2024 ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    pm:fromWork pmw:RS24266 ;
+    dcterms:source "RS 24.266:26'-36' (KTU 1.119), the prayer appended to the sacrificial ritual, in D. Pardee, Ritual and Cult at Ugarit, Writings from the Ancient World 10, ed. T. J. Lewis, Atlanta: Society of Biblical Literature 2002, text 46, pp. 149-150" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:RS24266 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 24.266"@en, "Die Tafel RS 24.266"@de ;
+    skos:altLabel "KTU 1.119"@en ;
+    skos:note "Opened at the wording on 2026-10-06 in the critical edition that prints transliteration beside translation: D. Pardee, Ritual and Cult at Ugarit, Writings from the Ancient World 10, Society of Biblical Literature 2002, where the tablet appears twice — as text 13, among the prescriptive sacrificial rituals, and as text 46, among the prayers, for the eleven lines of its reverse that this file was opened for. The editio princeps is Herdner's of 1978."@en ;
+    skos:note "The editor prints it twice on purpose and that is itself a statement about the tablet: the obverse is a calendar of sacrifices for a named month and the last eleven lines of the reverse are a prayer with no explicit link to the sacrificial text above it. He classes those lines as a prayer appended, and notes that actual prayers are extremely rare in this corpus and that this is the clearest example. The nodes below are from the appended lines; the calendar was read and nothing from it is entered, because a list of offerings per day carries no claim this graph can hold."@en ;
+    skos:note "One place in the calendar that was read and is not entered, recorded so that a later run does not take the omission for an absence. The edition's glossary puts the purification verb of this corpus — the D-stem that it glosses as restoring to a non-cultic state — at line 23' of this tablet, three lines before the prayer begins, and a 2017 article makes that line the hinge of the whole archive by reading the officiant's function from it. The line itself was not read at the wording in this run, only the glossary entry and the article's abstract, so nothing is entered from it. It is the first place a later run should go in this work."@en .
+
+pmw:RS1002 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 1.002"@en, "Die Tafel RS 1.002"@de ;
+    skos:altLabel "KTU 1.40"@en, "CTA 32"@en ;
+    skos:note "Opened at the wording on 2026-10-06 in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 22, pp. 77-83, transliteration and translation, with the editor's introduction read in full. The editio princeps is Virolleaud's plate of 1929."@en ;
+    skos:note "The editor states three things about this work that the nodes depend on, and they bear on how much of it can be held. First, the rite is attested in an unparalleled number of exemplars for this corpus, spread over three buildings and several scribal hands, which he takes to show that the texts were not the product of a single school and that the rite was performed with some regularity. Second, the key term survives for only one of its three themes, and the expiatory character of two sections is his deduction from the occurrence of the word for sin. Third, he avoids the word atonement for it, because the Hebrew root usually so translated does not occur here. The node for the one preserved term is entered as his reading and marked as such."@en ;
+    skos:note "What was not read. The second substantially preserved exemplar of the same rite, and the four further fragments, are named in the edition and are not printed in it; the differences between performances that the editor says they show were therefore not read. The duplicate passages a 2017 article lists in three further tablets were not read either."@en .
+
+pmw:RS24244 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 24.244"@en, "Die Tafel RS 24.244"@de ;
+    skos:altLabel "KTU 1.100"@en ;
+    skos:note "Opened at the wording on 2026-10-06 in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 53, transliteration and translation of all seventy-nine lines including the left edge, with the editor's introduction read in full. The editio princeps is of 1968."@en ;
+    skos:note "The editor classes this work as para-mythological rather than incantatory, on the ground that its protagonists are divine throughout, and notes that an incantatory formula is nevertheless embedded in each of its twelve parallel sections. The places entered below are from the embedded formula, from the twelve-fold address and from the operative section at the end; what is not entered is the cosmology of the mare's parentage, which carries no claim of the kind this graph holds."@en .
+
+pmw:RS24272 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 24.272"@en, "Die Tafel RS 24.272"@de ;
+    skos:altLabel "KTU 1.124"@en ;
+    skos:note "Opened at the wording on 2026-10-06 in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 52, transliteration and translation, with the editor's introduction read in full."@en ;
+    skos:note "The work is short and almost entirely divine speech, and the editor's reading of what it is for is the reason it is here: he takes the prescription a deified ancestor gives for a sick divine child to have served as the model for human cases, and says there is no reason to doubt that the story served as a model for consulting the head of the dynasty when illness struck the young heir. That is his inference and the node says so. The identity of the figure who seeks the ruling is disputed in the literature he cites and nothing below depends on it."@en .
+
+pmw:RIH7820 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RIH 78/20"@en, "Die Tafel RIH 78/20"@de ;
+    skos:altLabel "KTU 1.169"@en ;
+    skos:note "Opened at the wording on 2026-10-06 in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 49, transliteration and translation, with the editor's introduction and his notes read. The editio princeps is Bordreuil and Caquot's in Syria 57, 1980, pp. 346-350, whose page images are reachable and whose optical transcription of the transliteration is not character-reliable; it was not used as a source."@en ;
+    skos:note "What this work is about is unsettled and the disagreement is not marginal. The edition read here titles it an incantation against male sexual dysfunction; a second reachable translation of 1998 titles it an incantation for the exorcism of a possessed adolescent; the editio princeps reads it as a promise of a god's help against tormenting demons; and a fourth treatment reads it as against sorcery by a spoken word. The author of the 1998 translation states in his own introduction to it that scholars disagree on most matters of interpretation and that his translation is provisional. Two of the places entered below do not depend on which reading is right, and the node that does says so."@en ;
+    skos:note "A convergence this work invites and that is not entered. The Anatolian ritual of Paškuwatti, read in the strand beside this one, is performed for a man who has no procreation or is not a man toward a woman, and on the reading of the edition used here this tablet treats the same complaint. Two reasons not to write the node. The contact route between the two corpora is documented and named inside this corpus, so the convergence could not carry pm:independentAttestation; and the identification of this work's subject is the open question just recorded, so the convergence would rest on a reading rather than on two wordings. A convergence is asserted and not found, and this one would be asserted on one editor's title."@en .
+
+pmw:RS24251 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 24.251"@en, "Die Tafel RS 24.251"@de ;
+    skos:altLabel "KTU 1.107"@en ;
+    skos:note "Not opened. It is printed in the same open-access edition as text 54 and is therefore as reachable as the five that were opened; the reason it was left is that this run's lease was five tablets. Its introduction was read and it matters for one node: it treats the same affliction as RS 24.244 by a different mechanism, the venom being gathered rather than diluted, and the editor asks whether its invitation to the other gods was ironic. The two mechanisms side by side would be a dispute inside one corpus and it cannot be entered as one until this tablet is read at the wording. queries/unopened-works.rq lists it."@en .
+
+pmw:RS3348 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 3.348"@en, "Die Tafel RS 3.348"@de ;
+    skos:altLabel "KTU 1.20"@en, "CTA 20"@en ;
+    skos:note "Not opened, and the reason is a property of the work and not of this run. This is the first of the three tablets the registration of this tradition named as the Rapiuma texts, and it is the one group of the corpus for which no transliteration is reachable at all. The open-access edition this file rests on is a volume of cult and ritual and does not include the narrative poetry; the one modern volume that does is lending-restricted and answers every full-text request with an authorisation error, and so is the 1963 corpus of alphabetic cuneiform texts, in both its text and its plate volume. The one further treatment read in translation only gives a translation with notes and no continuous transliterated text. The edition project that announces a fresh edition of these fragments gives 2026 as its date."@en ;
+    skos:note "What this costs the holding and why it is worth saying at the work. The registration named these texts as one of the two things this corpus was registered for, and they are the half that could not be delivered. A run that wants them has two routes and neither is a download: the lending volume through a library, or the announced new edition when it appears. queries/unopened-works.rq lists all three."@en .
+
+pmw:RS2019 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 2.[019]"@en, "Die Tafel RS 2.[019]"@de ;
+    skos:altLabel "KTU 1.21"@en, "CTA 21"@en ;
+    skos:note "Not opened, for the reason given at pmw:RS3348, which is a property of the group. The square brackets in the siglum mark a reconstructed excavation number; the tablet is the second of the three Rapiuma texts and was found with the others in the house of the high priest on the acropolis."@en .
+
+pmw:RS2024 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 2.[024]"@en, "Die Tafel RS 2.[024]"@de ;
+    skos:altLabel "KTU 1.22"@en, "CTA 22"@en ;
+    skos:note "Not opened, for the reason given at pmw:RS3348, which is a property of the group. The third of the three Rapiuma texts, from the same find-spot."@en .
+
+pmw:RS34126 a dcterms:BibliographicResource ;
+    rdfs:label "The tablet RS 34.126"@en, "Die Tafel RS 34.126"@de ;
+    skos:altLabel "KTU 1.161"@en ;
+    skos:note "Not opened. It is the best-served work of this corpus for a run that wants three independent treatments of one text: the open-access edition prints it as text 24, a second reachable translation of 1998 gives it independently, and the French editio princeps of 1982 with its autograph copy is reachable through the page-image route of a journal archive. It is therefore the warranted next place in this corpus and the one where the depth rule of SPEC 15 could actually be met. queries/unopened-works.rq lists it."@en .
+
+#
+# RS 24.266: the besieged city, the conditional vow, and the outcome stated in
+# the indicative
+#
+
+pmc:UgarGzrTgrkm a pm:Conceptualizing ;
+    rdfs:label "A strong foe at the gate, a warrior at the walls"@en, "Ein Starker am Tor, ein Krieger an den Mauern"@de ;
+    skos:definition "The condition of use the prayer states before it says what to do: when a strong one attacks your gate and a warrior your walls."@en ;
+    skos:note "Two things make this condition unlike most entry conditions in this holding. It is a public event with a date, so a reader cannot be in doubt whether the case has arisen; and the text is formally addressed to human beings in the plural, which the editor notes is rare for this corpus and rarer still in poetry. The rite is therefore given to the city rather than prescribed to an officiant."@en ;
+    pm:withinTradition pmt:UgariticRitual ;
+    pm:fromWork pmw:RS24266 ;
+    dcterms:source "RS 24.266:26'-27' (KTU 1.119), in D. Pardee, Ritual and Cult at Ugarit, WAW 10, Atlanta: Society of Biblical Literature 2002, text 46, p. 149" .
+
+pmp:UgarTsuEnkm a pm:Practicing ;
+    rdfs:label "Lifting the eyes to Baʻlu and saying the words"@en, "Die Augen zu Baʻlu erheben und die Worte sprechen"@de ;
+    skos:definition "The prescribed act: the besieged are to lift their eyes to Baʻlu and speak the address that follows, which asks him to drive the strong one from the gate and the warrior from the walls and promises what will be given if he does."@en ;
+    skos:note "The whole operation is one posture and one speech. No officiant, no material, no interval and no count, which is why this work is the one in the corpus whose claim could in principle be followed to an outcome: there is nothing in the procedure that could have been done wrongly."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:UgariticRitual ;
+    pm:fromWork pmw:RS24266 ;
+    dcterms:source "RS 24.266:27'-29' (KTU 1.119), in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 46, pp. 149-150" .
+
+pmc:UgarMdrBl a pm:Conceptualizing ;
+    rdfs:label "The vow owed after delivery and not before"@en, "Das Gelübde, das nach der Erfüllung geschuldet ist, nicht vorher"@de ;
+    skos:altLabel "mdr"@en ;
+    skos:definition "What the besieged promise, conditional on the god acting: a bull they will sanctify, a vow they will fulfil, a firstborn they will sanctify, a ḥtp-offering they will fulfil, a feast they will offer; to the sanctuary they will ascend, that path they will take."@en ;
+    skos:note "The order of the two halves is the finding. In most of what this holding carries the offering is made first and the result is hoped for; here the sacrifice is owed only if the strong one is driven off, so the payment is a record of the outcome and not a precondition of it. A city that performed the rite and was not relieved would owe nothing, and a city that paid would be saying in public that the thing had worked."@en ;
+    skos:note "What that does not amount to. The text does not say that the vow is void if the god does not act; it simply makes the protasis the condition of the whole promise. Nothing in the eleven lines says what follows if the city falls, and no other work in this corpus was found that supplies it."@en ;
+    pm:withinTradition pmt:UgariticRitual ;
+    pm:fromWork pmw:RS24266 ;
+    dcterms:source "RS 24.266:28'-34' (KTU 1.119), in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 46, p. 150" .
+
+pmc:UgarWSmBl a pm:Conceptualizing ;
+    rdfs:label "And Baʻlu will hear your prayer"@en, "Und Baʻlu wird euer Gebet hören"@de ;
+    skos:definition "The closing clause, which is not a petition but a statement: and Baʻlu will hear your prayer, he will drive the strong foe from your gate, the warrior from your walls."@en ;
+    skos:note "This is the shape the holding has least of: a flat predictive statement in the indicative, addressed to the people who are to perform the act, about an outcome a third party could observe. It is not an optative and it is not conditional on the vow; the vow was conditional on it. A transmission that says this has made itself checkable in the only way that counts — the siege is lifted or it is not — and has done so without any of the devices the rest of this holding uses to prevent that."@en ;
+    skos:note "What is preserved and what is not, because a predictive clause is worth exactly what its text is worth. The verb of hearing is restored by the editor, who marks it as a restoration, and the words for the prayer and for the two halves of the outcome are preserved, the second with a break at the end of the last line. A reader who rejects the restoration still has the two lines that state what the god will drive away from the gate and from the walls, which is the predictive part; what the restoration supplies is the hearing that introduces them."@en ;
+    pm:withinTradition pmt:UgariticRitual ;
+    pm:fromWork pmw:RS24266 ;
+    dcterms:source "RS 24.266:34'-36' (KTU 1.119), in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 46, p. 150" .
+
+pmc:UgarRS24266Yielding a pm:Yielding ;
+    rdfs:label "The prayer at the wall is said to make Baʻlu drive the besieger off"@en, "Das Gebet an der Mauer soll Baʻlu den Belagerer vertreiben lassen"@de ;
+    pm:byPractice pmp:UgarTsuEnkm ;
+    pm:yieldsCapacity pmc:UgarWSmBl ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:UgariticRitual ;
+    pm:fromWork pmw:RS24266 ;
+    dcterms:source "RS 24.266:26'-36' (KTU 1.119), in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 46, pp. 149-150" ;
+    skos:note "Entered as the claim of eleven lines and not of a corpus. The obverse of the same tablet is a sacrificial calendar for a named month and the editor states that the prayer is appended without an explicit link to it; whether the city understood the prayer to work on its own or only on top of that calendar is not said anywhere in the tablet."@en .
+
+#
+# RS 1.002: the expiation whose coverage is exhaustive by enumeration
+#
+
+pmc:UgarHta a pm:Conceptualizing ;
+    rdfs:label "The sin whose every possible source is named at once"@en, "Die Sünde, deren jede mögliche Quelle auf einmal genannt wird"@de ;
+    skos:altLabel "ḥṭʼ"@en ;
+    skos:definition "The condition the rite expiates, stated as a triple disjunction repeated in each section: whether you sin according to the statement of the Qaṭian, of DDMY, of the Hurrian, of the Hittite, of the Alashian, of GBR, of your oppressed ones, of your impoverished ones, of QRZBL; whether you sin in your anger, in your impatience, in some turpitude you should commit; whether you sin as concerns the sacrifices or as concerns the tʻ-sacrifice."@en ;
+    skos:note "Three enumerations, each closed by the construction that takes them all at once, and between them they leave nothing outside: every foreign party the kingdom dealt with and both of its own underclasses, every disposition in which an offence could be committed, and both of the cultic acts in which it could be committed. The officiant does not need to know what was done, by whom, or in what spirit. That is the device the holding records at pmc:TheProvisionForNotKnowing in its first form, a disjunction that names every candidate so that the identification need not be made, and this is the most complete instance of it read anywhere in the holding."@en ;
+    skos:note "Not entered as a witness of that claim, and the reason is the same one the Anatolian strand recorded for its own candidate on the same day. One of the six witnesses already standing is the Mesopotamian exorcistic craft, and this corpus names its contact with upper Mesopotamia in the text of another of its tablets. A witness that cannot be shown independent of an existing witness does not raise a count; what it could raise is the count of stations with a reworking, and that needs an added element entered first. The search is at pmp:UgarProvisionSearch."@en ;
+    skos:note "The other side of the same device, which is what makes it worth a node rather than a remark. A rite that covers every possible cause also covers every possible outcome: there is no case in which a later misfortune could show that the expiation had missed its object, because no object was named. The enumeration buys completeness at the price of discrimination, and it does it in the operative text and not in a commentary."@en ;
+    pm:withinTradition pmt:UgariticRitual ;
+    pm:fromWork pmw:RS1002 ;
+    dcterms:source "RS 1.002:19'-23', with the parallel sections at 28'-32' and 36'-40' (KTU 1.40), in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 22, pp. 81-83" .
+
+pmp:UgarDbhTaNkt a pm:Practicing ;
+    rdfs:label "The three sacrificial acts of the unity rite"@en, "Die drei Opferhandlungen des Einheitsritus"@de ;
+    skos:definition "The sequence each section of the rite performs after its enumeration of sins: the sacrifice is sacrificed, the tʻ-sacrifice is offered on a ram, the slaughtering is done; and the result is to be borne to the father of the sons of ʼIlu, to the Circle and the Assembly of the Sons of ʼIlu and to Tukamuna-wa-Šunama, with the animal named at the end — here is the ram, here is the donkey."@en ;
+    skos:note "The three acts stand in the same order in every section, which the editor reads as the vertical structure of the text crossing its horizontal division into paragraphs for the male and the female inhabitants. The donkey of rectitude is the one whose term survives, and the editor connects its killing to an old Amorite practice at the making of covenants."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:UgariticRitual ;
+    pm:fromWork pmw:RS1002 ;
+    dcterms:source "RS 1.002:23'-26' and 32'-35' (KTU 1.40), in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 22, pp. 82-83" .
+
+pmc:UgarMsr a pm:Conceptualizing ;
+    rdfs:label "Rectitude, the one theme whose term survives"@en, "Aufrichtigkeit, das einzige Thema, dessen Terminus erhalten ist"@de ;
+    skos:altLabel "mšr"@en ;
+    skos:definition "The quality the rite is to secure in its third pair of sections, named twice in the preserved text and assured by the slaughter of a donkey: the rectitude of the son of Ugarit, and of the daughter of Ugarit, together with the well-being of the foreigner within the walls and of the named members of the royal house."@en ;
+    skos:note "This is the only one of the rite's three themes for which the term is preserved, and the editor says so. He deduces the expiatory character of the second pair of sections from the occurrence of the word for sin in them, and the communal character of the first pair from the general sacrificial term that stands first in each paragraph. Two of the three themes the literature names for this rite are therefore his reconstruction, and the node for the sin above rests on a word that is in the text while the theme it is assigned to is not."@en ;
+    pm:withinTradition pmt:UgariticRitual ;
+    pm:fromWork pmw:RS1002 ;
+    dcterms:source "RS 1.002:26' and 35' (KTU 1.40), in Pardee, Ritual and Cult at Ugarit, WAW 10, 2002, text 22, pp. 78, 82-83" .
