@@ -105,3 +105,81 @@ pmw:Ambazzi a dcterms:BibliographicResource ;
 pmw:Anniwiyani a dcterms:BibliographicResource ;
     rdfs:label "The ritual of Anniwiyani"@en, "Das Ritual der Anniwiyani"@de ;
     skos:note "Not opened. Two treatments are reachable: the critical edition of CTH 393 as a transliteration, and the autograph with transliteration, translation, commentary and glossary in E. H. Sturtevant and G. Bechtel, A Hittite Chrestomathy, Philadelphia: Linguistic Society of America 1935, pp. 100-126. It is therefore the cheapest of the unopened works of this corpus and the one with the best apparatus; it was left for the reason that this run's lease was five works and not seven. queries/unopened-works.rq lists it."@en .
+
+#
+# Tunnawiya, CTH 409: the ritual of uncleanness, which the tablet also calls
+# the ritual of the river
+#
+
+pmc:HittPapratar a pm:Conceptualizing ;
+    rdfs:label "Uncleanness as a condition a person is placed in"@en, "Unreinheit als Zustand, in den ein Mensch gesetzt ist"@de ;
+    skos:altLabel "papratar"@en, "paprannaš"@en ;
+    skos:definition "The condition the ritual of the river is performed against: a person, man or woman, is placed in some uncleanness, or someone else has named him or her for uncleanness, or a woman's children keep dying, or they are born before term, or the sexual parts of a man or a woman are disabled in consequence of a formula of uncleanness."@en ;
+    skos:note "Five indications in one conditional sentence, and they are of two kinds. Three are states a second person could observe: children that keep dying, children born before term, parts of the body disabled. The other two are not. That a person is placed in uncleanness is the diagnosis, not the sign of it; and that someone else has named him for uncleanness makes a third party's accusation an indication in its own right, with nothing in the text by which the accusation could be checked. A transmission whose entry conditions include an accusation can be entered without a case ever having been observed, and the text supplies no step that would exclude it."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 1-6 (A. Goetze with E. H. Sturtevant, The Hittite Ritual of Tunnawi, American Oriental Series 14, New Haven 1938, pp. 4-5)" .
+
+pmp:HittSiskurPaprannas a pm:Practicing ;
+    rdfs:label "The ritual of uncleanness, called the ritual of the river"@en, "Das Unreinheitsritual, Flussritual genannt"@de ;
+    skos:altLabel "SISKUR.SISKUR paprannaš"@en ;
+    skos:definition "The procedure the Old Woman performs over the person who is experiencing uncleanness: black animals and black vessels are assembled and the patient is dressed in black and stops the ears with black wool; at nightfall the Old Woman goes to the river bank to announce the rite to its genius and takes clay from the bank and from a spring; a tent of reeds stands ready beside the river; at dawn the patient comes to the tent, and the Old Woman lifts the black sheep, the piglet, the puppy, the clay tongues, the two figures and the other prepared objects over the patient in turn, pronouncing the charm belonging to each; the figures of wax and of mutton tallow are lifted last; the clay of the bank is handed over for the cleansing of the twelve parts of the body."@en ;
+    skos:note "The sequence of charms is not in this tablet. After the clay oxen the text says that the respective charms are already put down in a tablet, and that tablet is not this one. What is recoverable here is therefore the order of acts and not the words said over most of them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 7-II 20 (Goetze–Sturtevant, AOS 14, 1938, pp. 4-13)" .
+
+pmc:HittParkunuwarUzuUr a pm:Conceptualizing ;
+    rdfs:label "The twelve parts of the body purified"@en, "Die zwölf Körperteile gereinigt"@de ;
+    skos:definition "The attainment the rite claims for the person it is performed on: the twelve parts of the body are cleansed and purified of evil uncleanness, of sorcery and of a third named affliction, and the generative faculty is re-established, so that the house is filled with sons and daughters, grandchildren and great-grandchildren."@en ;
+    skos:note "The twelve parts are counted and never listed. The number occurs four times in the tablet, in the charge to the genius of the river bank, in the Old Woman's address over the patient, in the address to the Sun-god and in the closing formula; nowhere is there an enumeration of which twelve. A claim with a count and no list cannot come out short."@en ;
+    skos:note "The closing formula is partly broken and the restoration is the editors' of 1938. What stands in the preserved text is that the twelve parts have been purified; that the generative faculty was re-established is supplied by them from the context. The node is entered with the restoration named because the whole point of the tablet's opening is procreation, and the restoration is not what carries the capacity: the fruit-tree address earlier in the same column asks in the preserved text that the patient be covered like the tree and fill the house with grandchildren and great-grandchildren."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Rs. III 32 and Rs. IV 8-13, 34-38 (Goetze–Sturtevant, AOS 14, 1938, pp. 7, 23-25)" .
+
+pmc:HittTunnawiyaYielding a pm:Yielding ;
+    rdfs:label "The ritual of the river is said to purify the twelve parts and restore procreation"@en, "Das Flussritual soll die zwölf Teile reinigen und die Fortpflanzung wiederherstellen"@de ;
+    pm:byPractice pmp:HittSiskurPaprannas ;
+    pm:yieldsCapacity pmc:HittParkunuwarUzuUr ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 1-9 with Rs. IV 34-38 (Goetze–Sturtevant, AOS 14, 1938, pp. 4-5, 25)" .
+
+pmc:HittTentSitePresupposed a pm:Presupposing ;
+    rdfs:label "The tent stands where there is no cultivation and the plough does not come"@en, "Das Zelt steht, wo kein Anbau ist und der Pflug nicht hinkommt"@de ;
+    pm:dependentStep pmp:HittSiskurPaprannas ;
+    pm:priorStep pmc:HittTentSite ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 39-42 (Goetze–Sturtevant, AOS 14, 1938, pp. 7-9)" ;
+    skos:note "The text puts the condition as a question and answers it: where do they make the tent — where there is no cultivation near by and the plough does not come, there the tent is made. It states no consequence of making it elsewhere, so the strength is prescribed order and not stated necessity. What the condition is about is not said either; the rite handles uncleanness by moving it into clay, animals and figures that are afterwards disposed of, and an uncultivated place is where such things can be left."@en .
+
+pmc:HittTentSite a pm:Conceptualizing ;
+    rdfs:label "The uncultivated place beside the river"@en, "Der unbebaute Ort am Fluss"@de ;
+    skos:definition "The site at which the reed tent for the rite is erected: beside the river, where no cultivation is near and the plough does not come."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 40-42 (Goetze–Sturtevant, AOS 14, 1938, p. 9)" .
+
+pmc:HittRiverBankAnnouncement a pm:Presupposing ;
+    rdfs:label "The genius of the river bank is told before the clay is taken"@en, "Dem Genius des Flussufers wird angesagt, bevor der Lehm genommen wird"@de ;
+    pm:dependentStep pmp:HittSiskurPaprannas ;
+    pm:priorStep pmc:HittRiverBankGenius ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 24-33 (Goetze–Sturtevant, AOS 14, 1938, pp. 5-7)" ;
+    skos:note "The Old Woman goes to the river bank at nightfall for the express purpose of announcing the rite, breaks bread, pours wine and asks the genius to take the clay into its hand and cleanse the patient with it, and only then takes the clay. The material of the rite is thus obtained by request and not simply dug; no consequence of taking it without the request is stated."@en .
+
+pmc:HittRiverBankGenius a pm:Conceptualizing ;
+    rdfs:label "The genius of the river bank"@en, "Der Genius des Flussufers"@de ;
+    skos:definition "The addressee at the bank, to whom the rite is announced with bread, tallow cake, porridge and a libation of wine before the clay is taken, and who is asked to take the clay in hand and purify the twelve parts of the patient's body with it."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 26-32 (Goetze–Sturtevant, AOS 14, 1938, pp. 5-7)" .
