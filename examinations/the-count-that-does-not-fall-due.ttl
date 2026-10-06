@@ -1,0 +1,40 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+#
+# prima-materia — the protocol on the counted threshold, opened from the head
+# of the queue in SPEC 16
+#
+# The queue of that section is the generalizations on which no protocol points,
+# ordered by the number of attested claims they are formed from and by the
+# spread of their traditions. This claim stood at three witnesses and all three
+# were Chinese, which is the worst position on the second criterion that a
+# three-witness claim can be in: an enumeration read off one language area.
+#
+# The occasion is that the Anatolian strand of the same run produced both a
+# fourth witness outside that area and a case against the claim inside the
+# tradition the witness comes from, and the second is the reason this file
+# exists. A run that had only added the witness would have strengthened a
+# claim that the same reading refutes in the next tablet.
+#
+
+pmp:CountedThresholdExamination a pm:Testing ;
+    rdfs:label "Whether a transmission that fixes a count also provides for the count running out"@en, "Ob eine Überlieferung, die eine Zahl festsetzt, auch für deren Ablauf vorsorgt"@de ;
+    skos:definition "A protocol on the claim that where a transmission fixes a number of repetitions at which a prescribed operation is to take effect, and the effect is not establishable apart from the operation itself, the same transmission provides in advance for the number being reached without the effect, either by prescribing continuation past the number or by assigning the shortfall to a nameable act of the operator. Two questions were put: whether a transmission inside the antecedent supplies no provision at all, which is the falsifying case; and whether one supplies a provision of a third kind the claim's enumeration does not carry."@en ;
+    pm:tests pmc:CountedThresholdNeverFallsDue ;
+    pm:falsifiedBy "A transmission that fixes a count at which a prescribed operation is to take effect, whose effect is not establishable apart from the operation, and that supplies no provision for the count being completed without the effect, neither by prescribing continuation nor by assigning the shortfall to an act of the operator. The condition is met, by the ritual of Ḫantitaššu, and the limitation on that case is stated below."@en ;
+    pm:examinationState pm:casesWithDeviation ;
+    pm:counterSearch pm:counterSearchFoundOpposition ;
+    pm:counterSearchNote "The search was over the five Anatolian practitioner rituals read at the wording in this run, each of which fixes at least one count, and over the whole ritual section of a machine-readable corpus of the language for the clause shapes. It asked both questions. For the first it returned a case at once, in the second work of the five. For the second it returned nothing: no Anatolian witness assigns a shortfall to a party the claim's enumeration does not already allow. Not searched: the rest of this holding, whose transmissions were read for the claim when it was written; and nothing outside it."@en ;
+    pm:counterSearchNote "The confirming witness first, because it is the one that sets the standard the deviating case is measured against. The ritual of Paškuwatti fixes three days of invocation with three entreaties a day, announces its sign as the deity appearing in the dream and sleeping with the patient, and closes with the case in which that does not happen: the practitioner keeps performing the rite. It is the clearest of the four witnesses of the claim, because the continuation is stated by the practitioner in the first person about her own practice, and not inferred from a rubric. The node is pmc:HittIssiskemiPat."@en ;
+    pm:examinedBy "prima-materia, 2026-10-06" ;
+    pm:protocolUpdated "2026-10-06" ;
+    skos:note "The deviating case, and what it is exactly. The ritual of Ḫantitaššu is performed against years that have been set in motion, which is a condition no outcome of the rite could establish, and it fixes five counts: the recitation three times, the incantation seven times, three libations at the pit and at each offering, seven days of the patient carrying the enchanted things, and the conclusion on the ninth day. It names no sign of success and no sign of failure. And it supplies nothing for the case of the counts being completed without the effect: the fourth column, which is where such a clause would stand, runs from the last offering through the disposal of the bundle and the restrictions on where and by whom the rite may be performed to the colophon, without a conditional clause of any kind. The node is pmc:HittHantitassuCounts."@en ;
+    skos:note "What this case does to the claim, stated without softening it. The claim's consequent is a disjunction of two provisions, and this transmission supplies neither. So the claim is false as a universal statement about transmissions inside its antecedent, and the honest reading of it from here on is as a recurring device rather than a rule. That is the second reading the holding has already had to adopt once, for a neighbouring claim, and it is what prima-materia#812 is about: a middle clause that enumerates forms is the part of these statements that keeps failing, and the enumeration here did not even have to be widened, because the case supplies nothing to enumerate."@en ;
+    skos:note "The limitation on the deviating case, so that it is not claimed harder than it can bear, and it is the one thing that could still save the claim. The fourth column of this ritual is preserved to the end in both exemplars and in the second version on a third manuscript, so the absence is established where it matters most. The first and second columns and the third have gaps, and a clause of this kind would be unusual but not impossible there: the recitation counts stand in the second column, and a provision attached to a count is more often beside it than at the end of the tablet. What a later run would have to do is read the gaps of the two further versions of the same ritual, CTH 395.2.2 and CTH 395.3, against the preserved text of this one."@en ;
+    skos:note "A second limitation, and it is about the reading rather than the tablet. This work has no reachable translation; the two editions that carry one are in print. The absence of a conditional clause in its fourth column was established on the critical transliteration read against the editors' own German summary of contents, which confirms the order of acts and the counts and does not translate the wording. A negative claim about a text read without a translation is weaker than a positive one, and this is a negative claim. The search is at pmp:HittSecondTranslationSearch."@en ;
+    skos:note "What the pair is worth beyond the verdict, and it is the reason the run did not simply enter the witness and move on. The two tablets come from one tradition, neither practitioner is from the other's city, the afflictions are unrelated, and the two do opposite things with a count. That is the strongest form a deviation can take, because it cannot be explained by the tradition: whatever makes a transmission provide for its own empty run, it is not something a tradition has or lacks as a whole."@en ;
+    skos:note "What was not done and should be. The three witnesses the claim was formed from are Chinese and were not re-read here; this protocol takes them as the claim's author entered them. If any of the three turns out on re-reading to supply its provision less plainly than the Anatolian witness does, the claim loses its spread as well as its universality, and the queue of SPEC 16 would then want it re-formed rather than examined. That is a reading of three nodes and not of three corpora, and it is the cheapest next step from here."@en .

@@ -1,0 +1,514 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Anatolian practitioner rituals, taken off the register
+#
+# Taken from traditions/registry-west-asia.ttl on the testability-driven
+# entrance of SPEC 14, and chosen over the other two registrations at
+# pm:contactRouteDisputed for one reason: this corpus writes its rituals down
+# in the first person of the practitioner who dictated them, and a text that
+# says I act as follows is the place where a stated condition of failure would
+# have to stand if a transmission carries one at all. The standing finding at
+# prima-materia#640 is that the holding had collected twelve announced signs of
+# success against no condition of failure.
+#
+# The corpus answered that in the sharpest form the holding has yet carried.
+# One of the five works opened names the negative outcome of its own
+# announced sign and says, in the practitioner's first person, what follows
+# from it: nothing follows, the ritual is performed again. That is a
+# Misslingensbedingung with its remedy attached, written down by the operator,
+# and it is the first witness outside the Chinese material for the claim in
+# generalizations/counted-thresholds.ttl.
+#
+# A second of the five fixes counts of the same kind and supplies no such
+# provision anywhere in its preserved end. The two stand in one tradition, and
+# the protocol that follows from the pair is in
+# examinations/the-count-that-does-not-fall-due.ttl.
+#
+# The three decisions SPEC 14 requires before the first node:
+#
+# The contact route stays at pm:contactRouteDisputed and the reading did not
+# move it; what it added is recorded at the instance. The recension and the
+# edition are named in every source and are, for four of the five works, the
+# critical editions of the Mainz Beschwörungsrituale corpus, cited by CTH
+# number, exemplar and tablet locus. And the number of citable places: the
+# corpus is numerous, the works are short, five were opened in full at the
+# wording and thirty-six places are entered from them, with three further
+# nodes placing three of them on the consciousness axes.
+#
+# Two of the thirty-six came from a second pass over the middle of the ritual
+# of Tunnawiya, which the run's first pass had skipped while claiming the work
+# as read in full. The claim was wrong, the self-check of the run caught it,
+# and the correction is in this file rather than in a note about it. What the
+# skipped half carried was the passage through two gates, the full list of what
+# the rite takes off, and a third instance of the disjunction that covers what
+# the operator does not know.
+#
+# The works of this corpus have no title. Each tablet designates itself in its
+# colophon as the word of the practitioner who dictated it, and the catalogue
+# and every edition designate them the same way. The pmw: identifiers are
+# therefore the practitioner's name in the leading transliteration of the
+# edition used, and nothing else; that rule is stated here so that a second
+# run produces the same identifier.
+#
+
+pmt:HittiteRitual a pm:Tradition ;
+    rdfs:label "Hittite and Anatolian ritual"@en, "Hethitisch-anatolisches Ritual"@de ;
+    skos:definition "Anatolian purification and substitution rituals transmitted under the names of the practitioners who dictated them, most of them women."@en ;
+    skos:note "The registration's clause that most of the practitioners are women held for four of the five works read, and the fifth is the case that shows what the clause rests on. The two manuscripts of the ritual of Ḫantitaššu disagree about it inside a single line: the exemplar made for general use writes the female determinative before the name and then the sign for man after it, while the exemplar the editors identify as made for the king writes the female determinative and then the sign for woman. The editors of the critical edition state the divergence. The clause is therefore kept as the registration wrote it, and the one case against it is entered at pmc:HittKolophonHantitassuDisputatum rather than smoothed away."@en ;
+    skos:note "What the reading added to the contact route, which stays disputed. The practitioners are named in the texts themselves as foreign to the capital, and in two directions at once: Maštigga is the woman of Kizzuwatna in her incipit and the woman of Kummanni in her colophon, which is the cult centre of that same south-eastern land; Paškuwatti is the woman of Arzawa who dwells in Parašša, and Uḫḫamuwa is the man of Arzawa, which lies to the west. Ḫantitaššu is of Ḫurma. So the corpus records its own rituals as imported from both ends of Anatolia, and that is a datum for the dispute rather than a resolution of it: it establishes that the texts present themselves as received, and leaves open whether the technique came with the name. The position that would settle it asks of each proposed Hurrian or Mesopotamian element whether it is specific, exceptional and co-occurrent with others; that position was reached in the landscape stage of this run and not read at the wording, so it is not asserted here."@en ;
+    skos:note "A second route question the reading opened and did not close, and it bears on the strand that was run beside this one. The Ugaritic expiation text RS 1.002 names the Hittite among the parties whose statement may have caused the sin it expiates. That establishes contact between the two corpora and nothing about transmission of technique; but it is enough that a convergence asserted between pmt:HittiteRitual and pmt:UgariticRitual may not be entered as pm:independentAttestation without a pm:independenceGround that addresses it. See traditions/ugaritic-ritual.ttl."@en ;
+    pm:principalCorpus "The CTH ritual corpus, including the rituals of Tunnawiya (CTH 409), Maštigga (CTH 404), Ḫantitaššu (CTH 395), Paškuwatti (CTH 406), Uḫḫamuwa (CTH 410), Ambazzi (CTH 391) and Anniwiyani (CTH 393)" ;
+    pm:corpusWork pmw:Tunnawiya, pmw:Mastigga, pmw:Hantitassu, pmw:Paskuwatti, pmw:Uhhamuwa, pmw:Ambazzi, pmw:Anniwiyani ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Vs. I 1-4 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:Tunnawiya a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Tunnawiya"@en, "Das Ritual der Tunnawiya"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the only edition that carries transliteration and translation together: A. Goetze, interpreted in cooperation with E. H. Sturtevant, The Hittite Ritual of Tunnawi, American Oriental Series 14, New Haven: American Oriental Society 1938, with its text, translation, commentary and glossary read through, and the title page read in the full text and not in the catalogue entry. The tablet is the join the edition itself states, Bo 2062 (KUB 7.53) with Bo 2589 (KUB 12.58), which in the modern form is KUB 7.53+."@en ;
+    skos:note "This work carries a title of its own, which the others do not, and it is in the colophon: the first tablet of the ritual of uncleanness and of the ritual of the river, this being the one of Tunnawiya the Old Woman, complete, written by Pikku. The identifier still follows the rule stated at the instance, because the rule has to produce one identifier for a corpus in which four of five colophons give only the name."@en ;
+    skos:note "A second philological treatment of the same tablet is reachable and was used as the check on the 1938 transliteration: the independent transliteration with interlinear glossing in the Thesaurus Linguarum Hethaeorum digitalis, hethiter.net/: TLHdig KUB 7.53+ (2021-12-31). It is not a second translation, and no second translation of this work is reachable; the only one named in the current bibliography is in print. What was read at the wording is therefore one translation beside the original, and that is less than the five points of SPEC 15 require. See prima-materia#691."@en ;
+    skos:note "The script dating of this composition is late. Of the fragments the concordance assigns to CTH 409 the great majority are catalogued as New Hittite copies, with a single Middle Hittite fragment; the tablet read here is in the late group. The composition is therefore attested essentially only in copies made long after the practitioner it names."@en .
+
+pmw:Mastigga a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Maštigga"@en, "Das Ritual der Maštigga"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the critical edition of the second version, hethiter.net/: CTH 404.1.II exemplar A, textus 2012-05-07, whose main manuscript is KBo 2.3 joined with KBo 45.191 and IBoT 4.13 and collated against KUB 12.34, KUB 15.39, KUB 12.59, IBoT 2.109, IBoT 4.12 and KUB 41.12. Forty-four paragraphs, read in order."@en ;
+    skos:note "Two translations of this same version were read beside the original and they disagree at the place this file was opened for. English: A. Goetze, Ritual against Domestic Quarrel, in J. B. Pritchard (ed.), Ancient Near Eastern Texts Relating to the Old Testament, 3rd ed. 1969, pp. 350-351, which names KBo 2.3 and the same duplicates as its text. German: F. Hrozný, Hethitische Keilschrifttexte aus Boghazköi. In Umschrift, mit Übersetzung und Kommentar, Boghazköi-Studien 3, Leipzig: J. C. Hinrichs 1919, pp. 60-89, the editio princeps of this tablet, with transliteration and translation. The disagreement is at pmc:HittKisibApiyakkuDisputatum."@en ;
+    skos:note "The composition has three versions in the catalogue, CTH 404.1.I, .II and .III, and they are not duplicates. The first is edited from KBo 39.8 and is catalogued as Middle Hittite in script; the second, read here, is the one the two reachable translations treat. A redactional history of the group was published in 2004 and is in print and was not read. Which version is prior is therefore not asserted anywhere in this file."@en .
+
+pmw:Hantitassu a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Ḫantitaššu"@en, "Das Ritual der Ḫantitaššu"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the critical edition hethiter.net/: CTH 395.1, textus 2015-06-16, both exemplars: A is KBo 11.14, a four-column tablet whose reverse fourth column is preserved with its colophon, and B is KUB 43.57 with KBo 18.174. The second version of the same ritual, hethiter.net/: CTH 395.2.1, whose single manuscript is KUB 57.79, was read in its preserved fourth column for the same places."@en ;
+    skos:note "No translation of this work is reachable. The two editions that carry one, of 1996 and of 2016, are in print. What was read beside the original is the editors' own German paragraph-by-paragraph summary of contents printed with the edition, which is a check on the structure and not a translation of the wording. Every place entered from this work therefore rests on the original read without a translation beside it, and that is stated at each node that needs it. See prima-materia#691."@en ;
+    skos:note "The editors state two things about the two exemplars that the nodes below depend on. A is a general version and B was made for the king. And in the colophon A designates Ḫantitaššu as a man while B designates her as a woman."@en .
+
+pmw:Paskuwatti a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Paškuwatti"@en, "Das Ritual der Paškuwatti"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the critical edition hethiter.net/: CTH 406 exemplar A, textus 2012-05-07 with the introduction of 2017-01-12, whose manuscripts are KUB 7.8 joined with KUB 9.27 indirectly and with KUB 7.5. The editors state that the indirect join was established by collation of the originals in 2009 and that their line numbering therefore departs from the editio princeps of 1987; the loci cited in this file are theirs."@en ;
+    skos:note "The name is the one this file had to correct. The reachable English translation, A. Goetze in Pritchard (ed.), ANET, 3rd ed. 1969, pp. 349-350, reads the practitioner's name as Pissuwattis; the critical edition and the editio princeps read fPaskuwatti. The identifier follows the leading transliteration of the edition used, as the rule at the instance requires, and the earlier form is recorded here so that a reader coming from the 1969 translation finds the node."@en ;
+    skos:note "No colophon is preserved. The name is taken from the incipit, where the text names itself as the word of Paškuwatti, woman of Arzawa, who dwells in Parašša."@en ;
+    skos:note "Script dating: the concordance catalogues the fragments of this composition as New Hittite."@en .
+
+pmw:Uhhamuwa a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Uḫḫamuwa"@en, "Das Ritual des Uḫḫamuwa"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the critical edition hethiter.net/: CTH 410, textus 2013-12-09, exemplar A, which is HT 1 (BM 108548), where the ritual runs on the obverse second column from line 17 to line 47 and is, as the editors state, completely preserved. Exemplar B, KUB 9.31, was downloaded and its divergences were not collated. A second translation was read beside the original: A. Goetze, Ritual against Pestilence, in Pritchard (ed.), ANET, 3rd ed. 1969, pp. 347-348."@en ;
+    skos:note "The editors note that all four witnesses are four-column collective tablets carrying three rituals each, those of Zarpiya, of Uḫḫamuwa and of Ašḫella. The work is therefore not a tablet but a section of one, and the places entered from it are cited as such."@en .
+
+pmw:Ambazzi a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Ambazzi"@en, "Das Ritual der Ambazzi"@de ;
+    skos:note "Not opened. The critical edition of CTH 391.1 is reachable as a transliteration and was downloaded in this run and not read; no translation of it is reachable, and the monograph that is the standard treatment of this ritual tradition is in print. This work stands here as the warranted next place in this corpus, and queries/unopened-works.rq lists it."@en .
+
+pmw:Anniwiyani a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Anniwiyani"@en, "Das Ritual der Anniwiyani"@de ;
+    skos:note "Not opened. Two treatments are reachable: the critical edition of CTH 393 as a transliteration, and the autograph with transliteration, translation, commentary and glossary in E. H. Sturtevant and G. Bechtel, A Hittite Chrestomathy, Philadelphia: Linguistic Society of America 1935, pp. 100-126. It is therefore the cheapest of the unopened works of this corpus and the one with the best apparatus; it was left for the reason that this run's lease was five works and not seven. queries/unopened-works.rq lists it."@en .
+
+#
+# Tunnawiya, CTH 409: the ritual of uncleanness, which the tablet also calls
+# the ritual of the river
+#
+
+pmc:HittPapratar a pm:Conceptualizing ;
+    rdfs:label "Uncleanness as a condition a person is placed in"@en, "Unreinheit als Zustand, in den ein Mensch gesetzt ist"@de ;
+    skos:altLabel "papratar"@en, "paprannaš"@en ;
+    skos:definition "The condition the ritual of the river is performed against: a person, man or woman, is placed in some uncleanness, or someone else has named him or her for uncleanness, or a woman's children keep dying, or they are born before term, or the sexual parts of a man or a woman are disabled in consequence of a formula of uncleanness."@en ;
+    skos:note "Five indications in one conditional sentence, and they are of two kinds. Three are states a second person could observe: children that keep dying, children born before term, parts of the body disabled. The other two are not. That a person is placed in uncleanness is the diagnosis, not the sign of it; and that someone else has named him for uncleanness makes a third party's accusation an indication in its own right, with nothing in the text by which the accusation could be checked. A transmission whose entry conditions include an accusation can be entered without a case ever having been observed, and the text supplies no step that would exclude it."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 1-6 (A. Goetze with E. H. Sturtevant, The Hittite Ritual of Tunnawi, American Oriental Series 14, New Haven 1938, pp. 4-5)" .
+
+pmp:HittSiskurPaprannas a pm:Practicing ;
+    rdfs:label "The ritual of uncleanness, called the ritual of the river"@en, "Das Unreinheitsritual, Flussritual genannt"@de ;
+    skos:altLabel "SISKUR.SISKUR paprannaš"@en ;
+    skos:definition "The procedure the Old Woman performs over the person who is experiencing uncleanness: black animals and black vessels are assembled and the patient is dressed in black and stops the ears with black wool; at nightfall the Old Woman goes to the river bank to announce the rite to its genius and takes clay from the bank and from a spring; a tent of reeds stands ready beside the river; at dawn the patient comes to the tent, and the Old Woman lifts the black sheep, the piglet, the puppy, the clay tongues, the two figures and the other prepared objects over the patient in turn, pronouncing the charm belonging to each; the figures of wax and of mutton tallow are lifted last; the blue and red wool are taken off the body and the black clothing is torn from top to bottom, the gaiters drawn off the feet and the wool taken out of the ears; an empty pot is swung over the patient and broken; the patient bathes; a temple girl combs the patient once with each of nine boxwood combs while the Old Woman declares that she is scrubbing all the limbs; the combs, the brush, the wing and the black clothing go into the river behind her, the remnants and the clay figure are thrown into the river, and the puppy and the piglet are carried to another place and burnt; two gates are then built at the tent, one of ḫatalkeššar wood covered with white wool on the upper side and one of alanza wood covered with black wool on the lower side, and the patient passes through both with a simile spoken at each and a thin loaf thrown away after each; and finally the clay of the bank and of the spring is declared to have cleansed and purified the twelve parts of the body, and the horn of a fertile cow is seized for the address to the Sun-god."@en ;
+    skos:note "The sequence of charms is not in this tablet. After the clay oxen the text says that the respective charms are already put down in a tablet, and that tablet is not this one. What is recoverable here is therefore the order of acts and not the words said over most of them."@en ;
+    skos:note "The two gates are the part of this rite that connects it to another work of the same corpus, and the connection was not looked for. The patient is made to pass under a gate and something is declared taken off him on the far side — the same construction as the reed gate of the ritual of Paškuwatti at pmp:HittMugessarUliliyassi, where a spindle and a mirror are exchanged for a bow and arrows as he comes through. Here the simile is from animals: the buck goes through you and you take off his hobble, the bull goes through you to his pasture and you take off his shackle, so take off from this sacrificer in the same way. Two practitioners from different ends of Anatolia, two unrelated afflictions, one device."@en ;
+    skos:note "The second gate works by a different argument and it is worth separating. The first says that a gate is a thing things are stripped at; the second says that this wood cleanses a thousand or ten thousand shepherds and cowherds, so let it cleanse this one too. The first is an analogy from the act, the second an appeal to a quantity nobody counted."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 7-II 20 (Goetze–Sturtevant, AOS 14, 1938, pp. 4-13)" .
+
+pmc:HittParkunuwarUzuUr a pm:Conceptualizing ;
+    rdfs:label "The twelve parts of the body purified"@en, "Die zwölf Körperteile gereinigt"@de ;
+    skos:definition "The attainment the rite claims for the person it is performed on: the twelve parts of the body are cleansed and purified, and the generative faculty is re-established, so that the house is filled with sons and daughters, grandchildren and great-grandchildren."@en ;
+    skos:note "What is taken away is a list and not one thing, and the list grows as the rite proceeds. The formulae name, across the tablet, evil uncleanness, sorcery, sin, the anger of the god or of the gods, the terror of the dead, the evil gossip of all mankind, curses, the gossip of the crowd, bad dreams, a third affliction whose term the 1938 edition leaves untranslated, and an early death. Eleven named items, and no formula carries all of them: each one names a selection. A rite whose object is an open list of this kind cannot be said to have missed its object, because the object is whatever of the list the operator named that day."@en ;
+    skos:note "The twelve parts are counted and never listed. The number occurs six times in the tablet — in the charge to the genius of the river bank, twice in the Old Woman's addresses over the patient, in the combing formula, in the address at the gate of alanza wood and in the closing formula to the Sun-god; nowhere is there an enumeration of which twelve. A claim with a count and no list cannot come out short."@en ;
+    skos:note "The closing formula is partly broken and the restoration is the editors' of 1938. What stands in the preserved text is that the twelve parts have been purified; that the generative faculty was re-established is supplied by them from the context. The node is entered with the restoration named because the whole point of the tablet's opening is procreation, and the restoration is not what carries the capacity: the fruit-tree address earlier in the same column asks in the preserved text that the patient be covered like the tree and fill the house with grandchildren and great-grandchildren."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Rs. III 32 and Rs. IV 8-13, 34-38 (Goetze–Sturtevant, AOS 14, 1938, pp. 7, 23-25)" .
+
+pmc:HittTunnawiyaYielding a pm:Yielding ;
+    rdfs:label "The ritual of the river is said to purify the twelve parts and restore procreation"@en, "Das Flussritual soll die zwölf Teile reinigen und die Fortpflanzung wiederherstellen"@de ;
+    pm:byPractice pmp:HittSiskurPaprannas ;
+    pm:yieldsCapacity pmc:HittParkunuwarUzuUr ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 1-9 with Rs. IV 34-38 (Goetze–Sturtevant, AOS 14, 1938, pp. 4-5, 25)" .
+
+pmc:HittTentSitePresupposed a pm:Presupposing ;
+    rdfs:label "The tent stands where there is no cultivation and the plough does not come"@en, "Das Zelt steht, wo kein Anbau ist und der Pflug nicht hinkommt"@de ;
+    pm:dependentStep pmp:HittSiskurPaprannas ;
+    pm:priorStep pmc:HittTentSite ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 39-42 (Goetze–Sturtevant, AOS 14, 1938, pp. 7-9)" ;
+    skos:note "The text puts the condition as a question and answers it: where do they make the tent — where there is no cultivation near by and the plough does not come, there the tent is made. It states no consequence of making it elsewhere, so the strength is prescribed order and not stated necessity. What the condition is about is not said either; the rite handles uncleanness by moving it into clay, animals and figures that are afterwards disposed of, and an uncultivated place is where such things can be left."@en .
+
+pmc:HittTentSite a pm:Conceptualizing ;
+    rdfs:label "The uncultivated place beside the river"@en, "Der unbebaute Ort am Fluss"@de ;
+    skos:definition "The site at which the reed tent for the rite is erected: beside the river, where no cultivation is near and the plough does not come."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 40-42 (Goetze–Sturtevant, AOS 14, 1938, p. 9)" .
+
+pmc:HittRiverBankAnnouncement a pm:Presupposing ;
+    rdfs:label "The genius of the river bank is told before the clay is taken"@en, "Dem Genius des Flussufers wird angesagt, bevor der Lehm genommen wird"@de ;
+    pm:dependentStep pmp:HittSiskurPaprannas ;
+    pm:priorStep pmc:HittRiverBankGenius ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 24-33 (Goetze–Sturtevant, AOS 14, 1938, pp. 5-7)" ;
+    skos:note "The Old Woman goes to the river bank at nightfall for the express purpose of announcing the rite, breaks bread, pours wine and asks the genius to take the clay into its hand and cleanse the patient with it, and only then takes the clay. The material of the rite is thus obtained by request and not simply dug; no consequence of taking it without the request is stated."@en .
+
+pmc:HittRiverBankGenius a pm:Conceptualizing ;
+    rdfs:label "The genius of the river bank"@en, "Der Genius des Flussufers"@de ;
+    skos:definition "The addressee at the bank, to whom the rite is announced with bread, tallow cake, porridge and a libation of wine before the clay is taken, and who is asked to take the clay in hand and purify the twelve parts of the patient's body with it."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Vs. I 26-32 (Goetze–Sturtevant, AOS 14, 1938, pp. 5-7)" .
+
+pmc:HittPaprahtaTriplex a pm:Conceptualizing ;
+    rdfs:label "Whether before the gods, before the dead, or before mankind"@en, "Ob vor den Göttern, vor den Toten oder vor den Menschen"@de ;
+    skos:definition "The disjunction with which the Old Woman covers the setting in which the uncleanness may have been incurred: whoever made this person dark and stiff and made him or her unclean — whether anyone made him or her unclean before the gods, or before the dead, or before mankind — for that person I am here performing the ritual of uncleanness."@en ;
+    skos:note "Three settings named at once, and between them they exhaust the places where a Hittite could have incurred anything: the gods, the dead, the living. The agent is covered by the same construction and is likewise not named. So the rite needs neither the culprit nor the occasion, and it says so in the operative formula rather than leaving the question open."@en ;
+    skos:note "This is a third candidate for the device at pmc:TheProvisionForNotKnowing, found in the same corpus as the second and in a work read in the same run, and it is the closest of the three in form to the Ugaritic one at pmc:UgarHta: a triple disjunction inside the operative speech. It is not entered as a witness of that claim, for the reason recorded at pmp:HittProvisionSearch — the independence of this tradition from the Mesopotamian witness already standing there is the open question of its own contact route."@en ;
+    skos:note "Found on a reading of the middle of this tablet that the run's first pass had skipped, and the correction is recorded in the pull request rather than only here. The locus is given by paragraph and page because the optical transcription of this copy does not carry the column and line numbers of these paragraphs reliably; the paragraph division and the page are in the printed edition."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58, Vs. II, paragraphs 18 and 19 of the edition (Goetze–Sturtevant, AOS 14, 1938, pp. 12-15)" .
+
+pmc:HittHuddakUwar a pm:Conceptualizing ;
+    rdfs:label "An early death among the things taken off at the gate"@en, "Ein früher Tod unter dem, was am Tor abgenommen wird"@de ;
+    skos:definition "The last item in the list the Old Woman has taken off the patient as he passes through the gate of ḫatalkeššar wood: evil uncleanness, sorcery, sin, the anger of the gods, curses, the gossip of the crowd, and an early death."@en ;
+    skos:note "Entered separately because it is the one item in that list that is not a condition but an outcome, and it is the only place in the five works read where a rite claims to avert death as such. It is also the item that puts a date on nothing: a death averted is never observed, and the claim has no term after which it would have come true or failed."@en ;
+    skos:note "The same tablet asks in its closing addresses for life, good health and vigour, and for the patient to be covered like a fruit tree and to fill the house with grandchildren and great-grandchildren. So the rite claims both the removal of an early death and a long and fertile life, and neither claim names a moment at which it could be checked."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Tunnawiya ;
+    dcterms:source "Ritual of Tunnawiya, CTH 409, KUB 7.53+KUB 12.58 Rs. III 39-42 (Goetze–Sturtevant, AOS 14, 1938, pp. 19-21)" .
+
+#
+# Maštigga, CTH 404.1.II: the quarrel, the substitutes, and the seal that is to
+# be opened at an event that does not occur
+#
+
+pmc:HittHalluwai a pm:Conceptualizing ;
+    rdfs:label "The quarrel between kin that the rite is performed against"@en, "Der Streit zwischen Verwandten, gegen den der Ritus gilt"@de ;
+    skos:altLabel "ḫalluwai-"@en ;
+    skos:definition "The condition named in the incipit and repeated in the colophon: a father and a son, or a husband and his wife, or a brother and a sister are to quarrel, and the practitioner sets them together again."@en ;
+    skos:note "Three pairs and no others, each one a pair within a household, and the same three in the same order at both ends of the tablet. The rite is performed on two persons at once throughout — the plural of the ritual patron is used of them in every paragraph — so the party treated is the quarrel and not either quarreller."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Vs. I 1-4 and Rs. IV 14-18 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" .
+
+pmp:HittTaksanTittanumar a pm:Practicing ;
+    rdfs:label "Setting the quarrelling pair together again"@en, "Das Wiederzusammensetzen des streitenden Paares"@de ;
+    skos:definition "The procedure performed over both quarrellers together: tongues of wax, of dough and of clay, hands of dough and figures of dough are waved over them and thrown into the hearth; salt, tallow and tissue are flattened by them with the left hand; water and dough are waved over them and they are declared clean of mouth and tongue; a white sheep, a black sheep and a piglet are presented as substitutes and the pair spit into the mouth of each; a kneading-bowl of clay with black cumin, and a second with oil and a severed thread of blue wool, are waved over them; a ḫupuwai-vessel filled with wine, oil, honey, figs, raisins, tissue, salt and tallow is poured into the hearth and broken; a further sheep is presented to the Sun-god as the scapegoat; seven stone pillars set between two fires are overturned by the pair with their feet and thrown into the fire; their fine garments and the vessel from their heads are taken off them and broken; their limbs are rubbed down with the Sun's hay; and finally they pour salted water over their heads and rinse their hands and eyes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Vs. I 5-Rs. IV 6 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" .
+
+pmc:HittMastiggaYielding a pm:Yielding ;
+    rdfs:label "The rite is said to cut off the words of the quarrel from the pair"@en, "Der Ritus soll die Worte des Streits vom Paar abschneiden"@de ;
+    pm:byPractice pmp:HittTaksanTittanumar ;
+    pm:yieldsCapacity pmc:HittHalluwai ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Vs. I 1-4 with Vs. I 26-37 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" ;
+    skos:note "What the rite is said to do is stated in the operative speeches and not in a summary: let the tongues of these days be cut off, let the words of these days be cut off; be clean henceforth of mouth and tongue. The claim is about the words that were said and not about the disposition of the two persons, and nothing in the tablet says that they will not quarrel again."@en .
+
+pmc:HittTarpalli a pm:Conceptualizing ;
+    rdfs:label "The animal that stands as substitute for the heads and bodies of the pair"@en, "Das Tier als Ersatz für Köpfe und Körper des Paares"@de ;
+    skos:altLabel "tarpalliš"@en ;
+    skos:definition "The black sheep the Old Woman lifts over the two quarrellers and declares to be the substitute of their heads and of their whole bodies, with the curses in its mouth and on its tongue; the pair then spit into its mouth, and it is cut up, dismembered and burnt on the hearth with honey and oil poured over it."@en ;
+    skos:note "The transfer is made by an act of the patients and not of the operator: the spitting is theirs. Three animals carry it in sequence in this version — a white sheep, then the black sheep, then a piglet — and the first two are both named substitute, so the substitution is not a single act but a graded series."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Vs. I 47-55 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" .
+
+pmc:HittSahturUlNepis a pm:Conceptualizing ;
+    rdfs:label "What the piglet will not see again"@en, "Was das Ferkel nicht wiedersehen wird"@de ;
+    skos:definition "The ground the Old Woman states for the piglet's efficacy: it has been fattened with grass and grain, and it will not see the sky again and will not see the other piglets again; so let the evil curses likewise not come to the two ritual patrons."@en ;
+    skos:note "The analogy runs on a fact about the animal that the operator is about to make true, and the certainty of the premise is the whole of the argument. The same structure recurs twice in this tablet: the clay does not return to the clay pit and the cumin does not turn white and cannot be used for seed a second time. In each case what guarantees the claim is an irreversibility that the operator produces."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Vs. I 56-Vs. II 2, with Vs. II 7-13 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" .
+
+pmc:HittNakkussi a pm:Conceptualizing ;
+    rdfs:label "The scapegoat that is not killed and goes to the Old Woman"@en, "Der Sündenbock, der nicht getötet wird und der Alten Frau zufällt"@de ;
+    skos:altLabel "nakkušši-"@en ;
+    skos:definition "A further sheep is driven up and called the scapegoat; the Old Woman presents it to the Sun-god as a substitute in the pair's place, with mouth and tongue, breaks a sweet loaf and pours a libation of wine; and this sheep they do not kill, but the Old Woman herself takes it."@en ;
+    skos:note "The practitioner's fee stands inside the operative text and is paid in the animal that carries the evil. It is the only one of the four animals of this rite that survives: the white sheep is buried, the black sheep is burnt, the piglet is buried, and the scapegoat is given to the Sun-god in word and to the operator in fact. The same tablet gives her the pair's fine garments a column later."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Vs. II 47'-53' with Rs. III 25 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" .
+
+pmc:HittKisibApiyakku a pm:Conceptualizing ;
+    rdfs:label "The seal to be opened only when the olden kings come back"@en, "Das Siegel, das erst zu öffnen ist, wenn die einstigen Könige wiederkommen"@de ;
+    skos:definition "The last act of the rite: the water the pair have poured over their heads and rinsed their hands and eyes with is poured into an ox horn and sealed, and the Old Woman says that when the olden kings come back and take account of the custom of the land, only then is this seal to be opened."@en ;
+    skos:note "The condition under which the rite could be undone is set at an event that the transmission nowhere expects. The clause is not a prohibition — it names a case in which the seal is to be opened — and that is what makes it worth entering: a flat prohibition would be a rule about conduct, whereas this is a stated condition of release which cannot be met, so the irreversibility is produced by the condition rather than asserted."@en ;
+    skos:note "The restrictive particle is what carries it: the adverb of place is extended by a particle that limits it to that case, and both reachable translations of the tablet agree that something is restricted to that moment and disagree about everything else. The disagreement is at pmc:HittKisibApiyakkuDisputatum, and it is the reason this node states the clause and not a reading of it."@en ;
+    skos:note "The same device, with the bundle of the rite deposited where nobody opens it again, stands in the ritual of Ḫantitaššu at pmc:HittEKisibUlKinuzi. There it is stated flatly and not as a condition; here it is a condition that does not fall due. The two are the Hittite pair for the claim in generalizations/counted-thresholds.ttl, and the counter-search that found the second is recorded at pmp:HittSealOpeningSearch."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Rs. IV 7-13 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" .
+
+pmc:HittKisibApiyakkuDisputatum a pm:Disputing ;
+    rdfs:label "Whether the olden kings come back and the seal is opened, or depart and the tablet is laid down"@en, "Ob die einstigen Könige wiederkommen und das Siegel geöffnet wird, oder fortgehen und die Tafel niedergelegt wird"@de ;
+    pm:disputedClaim pmc:HittKisibApiyakku ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "F. Hrozný, Hethitische Keilschrifttexte aus Boghazköi. In Umschrift, mit Übersetzung und Kommentar, Boghazköi-Studien 3, Leipzig: J. C. Hinrichs 1919, p. 89, on KBo 2.3 Rs. IV 10-13 with his notes 7 to 9" ;
+    dcterms:source "A. Goetze, Ritual against Domestic Quarrel, in J. B. Pritchard (ed.), Ancient Near Eastern Texts Relating to the Old Testament, 3rd ed., Princeton 1969, p. 351, on the same four lines" ;
+    skos:note "Four lines, and the two translations differ at every joint. The editio princeps of 1919 renders the kings as going away rather than returning, the sealed object as a stone tablet rather than a seal, the verb as laying down rather than opening, and the restrictive adverb as there rather than only then; its author asks in a footnote whether the paragraph is urging the Hittite kings to spread these prescriptions abroad. The 1969 translation renders the kings as returning and examining the state of the land, and the clause as a seal to be broken then and then only. The later reading is the one the subsequent literature follows, and the earlier one is not a careless reading but a different construal of a text whose vocabulary was then new."@en ;
+    skos:note "Why it is entered rather than settled by preferring the later translation. What this holding wants from the clause is whether the transmission set the undoing of its own rite beyond reach, and on the 1919 construal it did no such thing — the paragraph would then be a direction about the tablet and not about the rite's reversal. The claim at pmc:HittKisibApiyakku therefore rests on a reading, and a reader who takes the other one is entitled to strike it. That is a stronger statement of the holding's position than a node that reports only the received translation."@en ;
+    skos:note "What the original wording settles and what it does not. The words for the kings, for the sealing of the horn in the preceding paragraph and for the restrictive particle are read the same way by both; the verb of motion, the designation of the sealed thing and the verb of the last line are what the two construe differently. A third treatment that would decide between them is in print."@en .
+
+#
+# Ḫantitaššu, CTH 395.1: the shortened years, the bundle nobody moves again,
+# and the words the officiant says are not his
+#
+
+pmc:HittMuNininkantes a pm:Conceptualizing ;
+    rdfs:label "The years of a person set in motion"@en, "Die in Bewegung gesetzten Jahre eines Menschen"@de ;
+    skos:altLabel "MU.KAM.ḪI.A ninininkanteš"@en ;
+    skos:definition "The condition named in the incipit and repeated in the colophon: for a person, man or woman, the years have been set in motion, and the lord of the word performs the rite for that person."@en ;
+    skos:note "The verb is the one the editors render as disturbed and which elsewhere means to set in motion or mobilise. Nothing in the text says how the condition would be recognised, and nothing says by whom the diagnosis is made. What the rite is against is therefore stated in the terms of its own vocabulary and not in terms of anything observable."@en ;
+    skos:note "The same verb closes the rite in one of the two exemplars, and that is why the condition is worth entering under its own term rather than as shortened life. In exemplar A the bundle that has carried the affliction away is one that nobody sets in motion again; in exemplar B it is one that nobody opens again. The first reading makes the last line of the ritual answer its first in the same word."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Hantitassu ;
+    dcterms:source "Ritual of Ḫantitaššu, CTH 395.1, KBo 11.14 Vs. I 1-2 with Rs. IV 24 (critical edition, exemplar A, hethiter.net/: CTH 395.1, textus 2015-06-16)" .
+
+pmp:HittHukmaiHantitassu a pm:Practicing ;
+    rdfs:label "The nine-day rite of the lord of the word for shortened years"@en, "Der neuntägige Ritus des Herrn des Wortes bei verkürzten Jahren"@de ;
+    skos:definition "The procedure: a table is set on a roof facing the Sun-god and loaded with soldier-bread strewn with every kind of seed, a thick loaf of fine wheat, named precious stones and metals, beer-bread, malt, measured handfuls of kappi-grain, and the cut-off tip of the horn of a living plough-ox; incense of cedar, butter, honey and a fourth substance is burnt in a vessel before the table and flour and salt are strewn on it; the lord of the word recites to the Sun-god, the recitation is said three times at one place and the incantation seven times at another; at evening something is deposited in the inner chamber of a house, at night a pit is dug by the bolt-wood and a piglet is slaughtered down into it with meat, pastry and a threefold libation of wine for the olden gods; and the ritual patron carries the enchanted things for seven days, after which they are taken off, laid in his linen chest and deposited in the seal-house, the whole ending on the ninth day with a washing."@en ;
+    skos:note "Read without a translation beside it. Both editions that carry one are in print; what was read beside the original is the editors' German summary of contents, paragraph by paragraph, which confirms this order of acts and the counts. Where the summary and the transliteration do not reach, this description stops."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Hantitassu ;
+    dcterms:source "Ritual of Ḫantitaššu, CTH 395.1, KBo 11.14 Vs. I 3-Rs. IV 23 (critical edition, exemplar A, hethiter.net/: CTH 395.1, textus 2015-06-16)" .
+
+pmc:HittHantitassuCounts a pm:Presupposing ;
+    rdfs:label "The counts the rite fixes and does not provide for"@en, "Die Zahlen, die der Ritus festsetzt und für die er nichts vorsieht"@de ;
+    pm:dependentStep pmc:HittMuNininkantes ;
+    pm:priorStep pmp:HittHukmaiHantitassu ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Hantitassu ;
+    dcterms:source "Ritual of Ḫantitaššu, CTH 395.1, KBo 11.14 Vs. II 19, Vs. II 27, Rs. III 17'-18', Rs. III 24', Rs. III 35', Rs. IV 15'-23' (critical edition, exemplar A, hethiter.net/: CTH 395.1, textus 2015-06-16)" ;
+    skos:note "Five counts, all in the imperative or the indicative of prescription: the recitation three times, the incantation seven times, the libation three times in the pit and three times before each offering and once at the last, the enchanted things carried seven days, the whole concluded on the ninth. Not one of them has a clause attached for the case of the count being completed without effect, and the fourth column in which such a clause would have to stand is preserved to the end of the colophon in both exemplars. The first and second columns and the third have gaps, so the absence is established for the end of the rite and not for the whole tablet. This is the case that the protocol in examinations/the-count-that-does-not-fall-due.ttl was opened against."@en .
+
+pmc:HittEKisibUlKinuzi a pm:Conceptualizing ;
+    rdfs:label "The bundle deposited in the seal-house that nobody opens again"@en, "Das im Siegelhaus niedergelegte Bündel, das niemand wieder öffnet"@de ;
+    skos:definition "The disposal of the rite: when the seventh day comes the ritual patron takes off the things he has carried and lays them in his linen chest, which they do not open, and they put it inside the seal-house; and nobody opens it again."@en ;
+    skos:note "The two exemplars differ in the last verb, and the difference is worth keeping. The general version has nobody set it in motion again, which is the verb of the affliction in the incipit of the same tablet; the version made for the king has nobody open it again. The second version of the ritual, on a separate manuscript, has they carry it into the seal-house and nobody opens it again, and reaches the point after six days rather than nine."@en ;
+    skos:note "This is the flat form of what the ritual of Maštigga states as a condition. Here nothing is said about any case in which the thing would be opened; there the opening is provided for and fixed to the return of the olden kings. A transmission that forbids reopening leaves the rite unrepeatable and unexaminable in the same act, and that it does so twice in one corpus, in two unrelated rituals, is the finding of the counter-search at pmp:HittSealOpeningSearch."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Hantitassu ;
+    dcterms:source "Ritual of Ḫantitaššu, CTH 395.1, KBo 11.14 Rs. IV 15'-19' and KUB 43.57+KBo 18.174 Rs. IV 14'-17' (critical edition, exemplars A and B, hethiter.net/: CTH 395.1, textus 2015-06-16)" .
+
+pmc:HittNattaAmmelUddar a pm:Conceptualizing ;
+    rdfs:label "These are not my words"@en, "Dies sind nicht meine Worte"@de ;
+    skos:definition "The clause with which the officiant disclaims the incantation he has just said: these are not my words, they are the words of the Sun-god and of Kamrušepa, and they are the incantations of the son of mankind."@en ;
+    skos:note "The officiant denies authorship of the operative words at the moment of saying them. Two consequences for this holding, and the second is the one that makes the node worth more than its curiosity. First, nothing in the rite can be laid to his formulation, because the formulation is not his. Second, the clause stands immediately after the two similes that state what the rite is to achieve — the grain escaping from the grindstone, the rear wheel that does not catch the front one — so what is disclaimed is precisely the predictive part."@en ;
+    skos:note "The reading of the last line of the clause rests on a restoration from a parallel manuscript of a different version of the same ritual; the editors mark it as such. The two preceding lines, which carry the disclaimer and the two divine names, are preserved."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Hantitassu ;
+    dcterms:source "Ritual of Ḫantitaššu, CTH 395.1, KBo 11.14 Vs. II 20-26 (critical edition, exemplar A, hethiter.net/: CTH 395.1, textus 2015-06-16)" .
+
+pmc:HittUlAraEnSiskur a pm:Cautioning ;
+    rdfs:label "It is not right for the ritual patron to perform it himself"@en, "Es ist nicht recht, dass der Ritualherr ihn selbst ausführt"@de ;
+    pm:cautionsAbout pmp:HittHukmaiHantitassu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Hantitassu ;
+    dcterms:source "Ritual of Ḫantitaššu, second version, CTH 395.2.1, KUB 57.79 Rs. IV 40-42 (critical edition, hethiter.net/: CTH 395.2.1, textus 2012)" ;
+    skos:note "The clause in the second version is in two parts: the lord of the word performs this rite in another house, and for the ritual patron to perform it is not ārā. The Hittite term is the standing one for what is permitted or in order, and its negation is the corpus's own way of marking a transgression without naming a penalty. No consequence is stated here, which is why this is a caution and not a prerequisite with a stated necessity."@en ;
+    skos:note "The first version says the same thing from the other side and adds a second restriction: the lord of the word performs this rite in another's house, by himself alone; he does not perform it in the palace; and a clause follows about the king which the reading does not settle. The verb of that clause is an iterative that could be of to step or of to put, and without a translation beside the original the two cannot be decided between. What the line contains, in both exemplars of the first version, is the king, the negation and that verb; the construal is left open here deliberately."@en ;
+    skos:note "The restriction is sharpened by what the editors say about the manuscripts: exemplar B of the first version is the copy made for the king, and it is the one whose fourth column names the king as the one who prostrates, who takes the ox-gut and who has carried the enchanted things for seven days. So the royal copy makes the king the ritual patron and still carries the clause that the rite is not performed in the palace."@en .
+
+pmc:HittKolophonHantitassuDisputatum a pm:Disputing ;
+    rdfs:label "Whether Ḫantitaššu was a woman or a man"@en, "Ob Ḫantitaššu eine Frau oder ein Mann war"@de ;
+    pm:disputedClaim pmc:HittMuNininkantes ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Hantitassu ;
+    dcterms:source "Ritual of Ḫantitaššu, CTH 395.1, KBo 11.14 Rs. IV 24, colophon (critical edition, exemplar A, hethiter.net/: CTH 395.1, textus 2015-06-16)" ;
+    dcterms:source "Ritual of Ḫantitaššu, CTH 395.1, KUB 43.57+KBo 18.174 Rs. IV 23, colophon (critical edition, exemplar B, hethiter.net/: CTH 395.1, textus 2015-06-16)" ;
+    skos:note "Two colophons of one ritual, and they do not agree. The general version writes the determinative that marks a female personal name before the name and then the sign for man after it, so that the contradiction stands inside a single line of a single manuscript; the version made for the king writes the female determinative and then the sign for woman. The editors of the critical edition state the divergence in their remarks on the exemplars."@en ;
+    skos:note "Why this is more than a scribal curiosity for this holding. The registration of this tradition says its rituals are transmitted under the names of the practitioners who dictated them, most of them women, and that clause is the only general statement the graph makes about the corpus. It is supported by four of the five works read and contradicted, in one manuscript, for the fifth. The dispute is therefore about the quantity the registration asserts and not only about one person."@en ;
+    skos:note "Not decided here, and the direction of any decision would matter. A scribe who wrote the female determinative and then the masculine classifier made a slip in one of the two, and which one is the slip is the question; no reachable treatment of the problem was found, and the two editions that discuss this ritual are in print."@en .
+
+#
+# Paškuwatti, CTH 406: the announced sign, and the only stated negative
+# outcome in this corpus together with what the practitioner does about it
+#
+
+pmc:HittHassatarNuGal a pm:Conceptualizing ;
+    rdfs:label "A man who has no procreation or is not a man toward a woman"@en, "Ein Mann, der keine Nachkommenschaft hat oder einer Frau gegenüber kein Mann ist"@de ;
+    skos:altLabel "ḫaššatar NU.GÁL"@en ;
+    skos:definition "The condition named in the incipit: if some man has no ḫaššatar, or is not a man toward a woman, the practitioner offers to Uliliyašši for him and invokes her for three days."@en ;
+    skos:note "Two indications joined by or, and they are not the same thing: the absence of offspring is a fact about a household over time, and not being a man toward a woman is a fact about the man. The text puts them side by side without saying that the first is caused by the second."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Paskuwatti ;
+    dcterms:source "Ritual of Paškuwatti, CTH 406, KUB 7.8+KUB 9.27(+)KUB 7.5 Vs. I 1-5 (critical edition, exemplar A, hethiter.net/: CTH 406, Expl. A, textus 2012-05-07)" .
+
+pmp:HittMugessarUliliyassi a pm:Practicing ;
+    rdfs:label "The three-day invocation of Uliliyašši with the passage through the reed gate"@en, "Die dreitägige Anrufung der Uliliyašši mit dem Durchgang durch das Schilftor"@de ;
+    skos:definition "The procedure: rations are heaped and loaded with sweet loaves, figs, dried grapes, the god's meal, the fleece of an unblemished sheep, a jug of wine and the man's own headdress or shirt; a girl of the household carries them, the ritual patron walks behind having bathed and bathes again, and they are taken out to open country; a gate of reeds is built and a cord of red and white wool twined; a spindle and a mirror are put in the patron's hand and he passes under the gate, and as he comes out they are taken from him and a bow and arrows given to him, with the words that womanhood has been taken from him and manhood given back; the deity is then invoked three times a day, at dawn, at midday and at nightfall, for three days, with the same words and a fresh set of loaves each time; on the third day a sheep is consecrated to her and cut up before the table; and at night a bed is made for the patient in front of the table and the garment that lay on the rations is spread out, and he lies down."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Paskuwatti ;
+    dcterms:source "Ritual of Paškuwatti, CTH 406, KUB 7.8+KUB 9.27(+)KUB 7.5 Vs. I 4-Rs. IV 1 (critical edition, exemplar A, hethiter.net/: CTH 406, Expl. A, textus 2012-05-07)" .
+
+pmc:HittSaklaiLutar a pm:Conceptualizing ;
+    rdfs:label "Womanhood taken away and manhood given back"@en, "Weiblichkeit genommen und Männlichkeit zurückgegeben"@de ;
+    skos:altLabel "šaklai-"@en ;
+    skos:definition "The attainment asserted at the reed gate, in the first person and in the perfect: I have taken womanhood away from you and given manhood back to you; you have cast off the custom of a woman, take up the custom of a man."@en ;
+    skos:note "The word for what is cast off and taken up is the standing Hittite term for custom or usage, and it is the same word that stands in the sealing clause of the ritual of Maštigga, where the olden kings are to take account of the custom of the land. The transmission thus treats the man's condition as a usage rather than as a state of the body, and the exchange of the spindle and mirror for the bow and arrows is the usage being changed."@en ;
+    skos:note "The assertion is in the perfect at the moment of the act and is not conditional on anything. It is made before the three days of invocation begin and before the night of the sign, so the rite asserts its own success twice and on two different grounds: here by performance, and at the sign by observation."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Paskuwatti ;
+    dcterms:source "Ritual of Paškuwatti, CTH 406, KUB 7.8+KUB 9.27(+)KUB 7.5 Vs. I 26-29 (critical edition, exemplar A, hethiter.net/: CTH 406, Expl. A, textus 2012-05-07)" .
+
+pmc:HittPaskuwattiYielding a pm:Yielding ;
+    rdfs:label "The invocation of Uliliyašši is said to restore manhood and bring sons and daughters"@en, "Die Anrufung der Uliliyašši soll Männlichkeit zurückgeben und Söhne und Töchter bringen"@de ;
+    pm:byPractice pmp:HittMugessarUliliyassi ;
+    pm:yieldsCapacity pmc:HittSaklaiLutar ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Paskuwatti ;
+    dcterms:source "Ritual of Paškuwatti, CTH 406, KUB 7.8+KUB 9.27(+)KUB 7.5 Vs. I 26-29 with Vs. II 1-13 (critical edition, exemplar A, hethiter.net/: CTH 406, Expl. A, textus 2012-05-07)" ;
+    skos:note "The second half of the claim is in the invocation and is addressed to the deity rather than asserted of the man: come down to this man, be a wife to him for a child, assign him your handmaid, let him take his wife and beget sons and daughters for himself — and they will be your servants and your handmaids and will keep giving you rituals, thick breads, meal and libations. The payment named is the children's future service, so what the rite promises and what it charges are the same thing."@en .
+
+pmc:HittZashiyaTuekkissi a pm:Conceptualizing ;
+    rdfs:label "The announced sign: the deity seen in bodily form in the dream"@en, "Das angesagte Zeichen: die Gottheit im Traum in leiblicher Gestalt"@de ;
+    skos:altLabel "zašḫiya tuekkišši"@en ;
+    skos:definition "The sign the rite announces in advance and then looks for: the ritual patron sleeps, and if he sees the deity in bodily form in the dream, and she comes to him, and she sleeps with him; and while the practitioner invokes her for three days, he keeps telling whatever dreams he sees, whether the deity shows him her face and whether she sleeps with him."@en ;
+    skos:note "A sign of success in the strict sense, and one of the clearest in this holding, because the text states both the content of the sign and the procedure for collecting it: the patient reports every dream of the three nights and the practitioner hears them. It is also announced before the nights begin, which is the condition under which a reported sign tells nothing about the rite. The holding counts signs of success separately from conditions of failure for this reason, and this work is the one case where the same tablet carries both."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Paskuwatti ;
+    dcterms:source "Ritual of Paškuwatti, CTH 406, KUB 7.8+KUB 9.27(+)KUB 7.5 Rs. IV 1-10 (critical edition, exemplar A, hethiter.net/: CTH 406, Expl. A, textus 2012-05-07)" .
+
+pmc:HittIssiskemiPat a pm:Conceptualizing ;
+    rdfs:label "If the sign does not come, the practitioner simply keeps performing it"@en, "Kommt das Zeichen nicht, führt die Ausführende es einfach weiter aus"@de ;
+    skos:altLabel "iššiškemi-pát"@en ;
+    skos:definition "The last paragraph of the tablet: if he does not see her in bodily form, and the deity does not sleep with him in the dream, then — in the practitioner's first person and with the emphatic particle — I just keep performing it."@en ;
+    skos:note "This is a stated negative outcome of a stated sign, and it is the only one the five works read in this corpus contain. What makes it worth the whole run is the second half: the negative outcome is named and then disposed of without being allowed to count. The rite has no end at which it could have failed, because the case in which the sign does not come is answered by continuing."@en ;
+    skos:note "What is preserved and what is not, stated exactly, because the claim turns on it. The conditional frame, the words for his body and for the dream and for being with him, and the final verb with its particle are preserved. The two negations are restorations by the editors of the critical edition, supplied from the sense and marked as restorations in their text. A reader who rejects the restorations is left with a conditional paragraph whose protasis repeats the preceding paragraph's sign and whose apodosis says that the practitioner keeps performing — which carries the same consequence by a different route, since a sign already obtained would need no continuation."@en ;
+    skos:note "The device is the one examined in generalizations/counted-thresholds.ttl, where the three witnesses entered before this run are all Chinese. This is the first witness from a corpus with no plausible contact route to them, and it is the plainest of the four because the continuation is stated by the practitioner about her own practice rather than inferred from a rubric. The protocol is examinations/the-count-that-does-not-fall-due.ttl."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Paskuwatti ;
+    dcterms:source "Ritual of Paškuwatti, CTH 406, KUB 7.8+KUB 9.27(+)KUB 7.5 Rs. IV 19-21 (critical edition, exemplar A, hethiter.net/: CTH 406, Expl. A, textus 2012-05-07)" .
+
+pmc:HittHarsiyalliUlMa a pm:Presupposing ;
+    rdfs:label "If a storage vessel is available, and if not, a stone or a statue"@en, "Ist ein Vorratsgefäß vorhanden, und wenn nicht, ein Stein oder ein Bild"@de ;
+    pm:dependentStep pmp:HittMugessarUliliyassi ;
+    pm:priorStep pmc:HittZashiyaTuekkissi ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Paskuwatti ;
+    dcterms:source "Ritual of Paškuwatti, CTH 406, KUB 7.8+KUB 9.27(+)KUB 7.5 Rs. IV 11-18 (critical edition, exemplar A, hethiter.net/: CTH 406, Expl. A, textus 2012-05-07)" ;
+    skos:note "After the sign the man takes the deity as his own, and the installation is provided for in two cases: if a storage vessel is good for him he installs her in a storage vessel, and if not he installs her at a stone, or else makes a statue of her. The alternative is in the preserved text and the negation is not a restoration. And the new table that stood through the invocation becomes the deity's own."@en ;
+    skos:note "The provision is not about failure but about means, and it is entered because it shows the same hand as the last paragraph: wherever the rite could run into a case it cannot meet, this text names the case and supplies a way on. The pair of clauses, one for a missing vessel and one for a missing sign, stand eight lines apart."@en .
+
+#
+# Uḫḫamuwa, CTH 410: the plague, the unidentified cause, and the crowned ram
+#
+
+pmc:HittAkkiskittari a pm:Conceptualizing ;
+    rdfs:label "Continual dying in the land caused by a hostile deity"@en, "Anhaltendes Sterben im Land, von einer feindlichen Gottheit verursacht"@de ;
+    skos:definition "The condition named in the incipit: if there is continual dying inside the land, and if some hostile deity has brought it about, the practitioner acts as follows."@en ;
+    skos:note "Two conditions joined, and only the first is observable. That a hostile deity has caused the dying is a second condition in the grammar of the sentence and an assumption in the practice: nothing in the rite establishes it, and the whole procedure presupposes it. A transmission that makes an unverifiable second condition part of its entry has made its own non-application unprovable, since a rite that failed can always have been performed in a case where the second condition did not hold."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Uhhamuwa ;
+    dcterms:source "Ritual of Uḫḫamuwa, CTH 410, HT 1 Vs. II 17-19 (critical edition, exemplar A, hethiter.net/: CTH 410, textus 2013-12-09)" .
+
+pmp:HittUdukranzaPenniyawar a pm:Practicing ;
+    rdfs:label "Driving the crowned ram onto the enemy's road"@en, "Das Treiben des bekränzten Widders auf die Feindstraße"@de ;
+    skos:definition "The procedure: a ram is driven up, blue, red, yellow, black and white wool are twined together into a wreath and the ram is crowned with it, and the ram is driven out onto the road leading to the enemy with a speech addressed to whichever deity of the enemy land has caused the death, that the crowned ram has been driven to that deity for peace-making, and that as the strong one makes peace toward this ram, so the deity should make peace toward the land of Ḫatti and turn back to it in favour; then the crowned sheep is driven away into the enemy land. Fodder and mutton fat are brought for the deity's horses with a speech that the horses should eat and be satisfied and the chariot be greased and the deity turn to its own land and in favour to Ḫatti; and finally a he-goat is offered to the Heptad, a sheep is killed and cooked, and cheese, sour bread, a pulla-vessel, a huppar of wine, a huppar of beer and fruit are prepared for the deity of the road."@en ;
+    skos:note "Read in the original and in one translation. The translation, which is of a different manuscript of the same ritual, has the goat consecrated to the Heptad and one sheep consecrated to the Sun-god; the manuscript read here has the goat to the Heptad and the sheep killed and cooked, with no Sun-god in the clause. The divergence is of the kind a second exemplar explains and the second exemplar was not collated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Uhhamuwa ;
+    dcterms:source "Ritual of Uḫḫamuwa, CTH 410, HT 1 Vs. II 20-47 (critical edition, exemplar A, hethiter.net/: CTH 410, textus 2013-12-09)" .
+
+pmc:HittKuisDingirKurLukur a pm:Conceptualizing ;
+    rdfs:label "Whichever deity of the enemy land has caused this"@en, "Welche Gottheit des Feindlandes dies auch verursacht hat"@de ;
+    skos:definition "The addressee of the rite, named by description and not by name: whichever deity of the enemy land has brought this death about."@en ;
+    skos:note "The operation is addressed to a party the operator cannot identify, and the transmission says so in the address itself rather than treating the gap as an obstacle. That is a standing provision for proceeding without an identification, and this holding carries the device in three other forms at pmc:TheProvisionForNotKnowing. Whether this is a fourth witness of that claim is not decided here and is not asserted, for the reason in the note below."@en ;
+    skos:note "Why it is not entered there in this run. The claim about the provision for not knowing is a generalization, and a generalization may not be enlarged without the counter-search SPEC 16 requires and without the independence of the new witness being settled. The contact route of this tradition is disputed, and one of the six witnesses already standing is the Mesopotamian exorcistic craft, which is a candidate source for the Anatolian technique. Adding this witness would therefore risk counting one claim twice. The Ugaritic strand run beside this one found a second candidate of the same form and the same difficulty; both are recorded as candidates at pmp:HittProvisionSearch."@en ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Uhhamuwa ;
+    dcterms:source "Ritual of Uḫḫamuwa, CTH 410, HT 1 Vs. II 24-25 (critical edition, exemplar A, hethiter.net/: CTH 410, textus 2013-12-09)" .
+
+pmc:HittUhhamuwaYielding a pm:Yielding ;
+    rdfs:label "The crowned ram is said to turn the plague-bringing deity back in favour"@en, "Der bekränzte Widder soll die seuchenbringende Gottheit in Gnade zurückwenden"@de ;
+    pm:byPractice pmp:HittUdukranzaPenniyawar ;
+    pm:yieldsCapacity pmc:HittKuisDingirKurLukur ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HittiteRitual ;
+    pm:fromWork pmw:Uhhamuwa ;
+    dcterms:source "Ritual of Uḫḫamuwa, CTH 410, HT 1 Vs. II 24-33 (critical edition, exemplar A, hethiter.net/: CTH 410, textus 2013-12-09)" ;
+    skos:note "The claim is checkable in principle and in a way most of this holding is not: an epidemic either abates or does not. What makes it unexaminable in fact is the second entry condition at pmc:HittAkkiskittari and the unnamed addressee at pmc:HittKuisDingirKurLukur, and neither is an accident of this tablet: the first says the rite applies only where a hostile deity caused the deaths, and the second says nobody need know which."@en .
+
+#
+# Where the acts of these rituals lie on the consciousness axes
+#
+
+pmc:HittPaskuwattiSleepSituating a pm:Situating ;
+    rdfs:label "The sign of the Paškuwatti rite is taken at the sleep threshold"@en, "Das Zeichen des Paškuwatti-Ritus wird an der Schlafschwelle genommen"@de ;
+    pm:situatedNode pmc:HittZashiyaTuekkissi ;
+    pm:axisValue pm:sleepThreshold ;
+    pm:situationGround "The tablet prescribes that a bed be made for the ritual patron in front of the table with the garment that lay on the rations spread out, that he lie down and sleep, and that the sign be whatever he sees in the dream and reports on waking. The decisive state is therefore sleep, and what is wanted from it is a dream; the sign is not taken in any waking condition and is not taken in absorption."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The placement is the compiler's and the source names no coordinate. It is disputable without touching the sign itself: a reader who held that a dream in which a deity is present should sit at dreaming-within rather than at the sleep threshold would be disputing this node and not pmc:HittZashiyaTuekkissi. The ground for the threshold rather than the dream state is that what the rite arranges is the lying down and the collecting of the report, and both are at the edges of the sleep and not inside it."@en .
+
+pmc:HittPaskuwattiAgencySituating a pm:Situating ;
+    rdfs:label "The outcome of the Paškuwatti rite is placed with the deity and not with the man"@en, "Der Ausgang des Paškuwatti-Ritus liegt bei der Gottheit und nicht beim Mann"@de ;
+    pm:situatedNode pmc:HittPaskuwattiYielding ;
+    pm:axisValue pm:cededAgency ;
+    pm:situationGround "The invocation asks the deity to come down to the man, to be a wife to him for a child, to assign him her handmaid and to let him take his wife; and the sign of success is an act of the deity in the dream and not an act of the man. The man's own part is to bathe, to walk behind the rations, to pass under the gate, to lie down and to report. The source thus assigns the operative act to the deity throughout."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The ceded agency sits oddly beside pmc:HittSaklaiLutar, where the practitioner says in the first person and in the perfect that she has taken womanhood away and given manhood back. That assertion is the practitioner's own act and would be placed at own agency if it were placed separately. Two placements for one rite would be the honest result and the second is not entered, because what is being placed here is the yielding claim and not the gate ceremony."@en .
+
+pmc:HittHantitassuAgencySituating a pm:Situating ;
+    rdfs:label "The words of the Ḫantitaššu rite are placed outside the officiant"@en, "Die Worte des Ḫantitaššu-Ritus liegen außerhalb des Ausführenden"@de ;
+    pm:situatedNode pmc:HittNattaAmmelUddar ;
+    pm:axisValue pm:cededAgency ;
+    pm:situationGround "The officiant states that the words he has just spoken are not his but those of the Sun-god and of Kamrušepa. The source therefore locates the agency of the operative speech with the deities named and does so in the text of the speech itself, which is as explicit as this axis gets."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "This is the one placement in the file that the source nearly states rather than describes, and it is worth marking as the easy case. The axis asks who acts according to the presentation of the source, and here the source denies that the speaker acts. A reader could still dispute it by holding that the disclaimer is a formula of modesty and that the officiant is the agent throughout; the placement is the compiler's and carries that exposure."@en .

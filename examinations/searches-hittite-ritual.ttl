@@ -1,0 +1,73 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the run on the Anatolian practitioner
+# rituals, 2026-10-06
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+# Four searches. Two found their place, one found a second place the first was
+# not looking for, and one reports a layer of the corpus as unreachable. The
+# second is the one worth reading: it was run over the whole ritual section of
+# a machine-readable corpus of the language, and it first produced a false
+# negative that looked exactly like a finding. What caught it was a positive
+# control, and that is now a rule in AGENTS.md rather than a remark here.
+#
+
+pmp:HittFailureConditionSearch a pm:Searching ;
+    rdfs:label "Whether the practitioner rituals name a condition under which the rite has not worked"@en, "Ob die Praktikerrituale eine Bedingung nennen, unter der der Ritus nicht gewirkt hat"@de ;
+    pm:searchedCorpus "Five Anatolian practitioner rituals read in full at the wording: CTH 404.1.II (KBo 2.3+) and CTH 406 (KUB 7.8+KUB 9.27(+)KUB 7.5) and CTH 395.1 (KBo 11.14; KUB 43.57+KBo 18.174) and CTH 410 (HT 1 Vs. II 17-47) in the critical editions of the Mainz Beschwörungsrituale corpus, and CTH 409 (KUB 7.53+KUB 12.58) in Goetze and Sturtevant, American Oriental Series 14, 1938."@en ;
+    pm:searchedFor "A clause telling the operator or the patient what would show that the rite had not worked, and what then follows: an interval after which nothing more comes, a sign of failure, a count completed without effect, an outcome the rite excludes. The holding had twelve announced signs of success against no condition of failure when this run opened, and the entrance of SPEC 14 that was taken sends a run to the corpora that would carry one."@en ;
+    pm:searchTerms "Each tablet read paragraph by paragraph in the editors' numbering rather than searched by term, because four of the five are under fifty paragraphs. Where a term search was used over the transliteration it was for the negation in its two Hittite forms and the Akkadographic one, for the conditional particle, for the prohibitive, for the iterative suffix in the first person, and for the Sumerographic writings of day and of the numerals; every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:HittIssiskemiPat ;
+    pm:searchedBy "prima-materia, 2026-10-06" ;
+    dcterms:date "2026-10-06" ;
+    skos:note "One of the five names it, and the one that names it is the one that also announces a sign of success. The ritual of Paškuwatti ends with the case in which the deity is not seen in the dream and does not sleep with the patient, and says what follows: the practitioner keeps performing the rite. So the corpus does carry the thing the holding was short of, and it carries it attached to its own neutralisation."@en ;
+    skos:note "What the other four carry instead, and the shape is uniform. The ritual of Tunnawiya counts twelve parts of the body and never lists them. The ritual of Maštigga declares the words cut off and seals the washing water where it cannot be fetched back. The ritual of Ḫantitaššu fixes five counts and ends with the bundle in the seal-house that nobody opens again. The ritual of Uḫḫamuwa makes its second entry condition the action of an unidentified hostile deity. Four different ways of leaving no outcome that would come out against the rite, and not one of them is the absence of a clause: each is a clause doing that work."@en ;
+    skos:note "The negative half of this search is therefore not an empty result and should not be read as one. What the four works lack is a failure condition; what they have in its place is entered, node by node, in traditions/hittite-ritual.ttl. A later run that wants the count of transmissions without a failure condition must not add these four to it without the qualification."@en .
+
+pmp:HittSealOpeningSearch a pm:Searching ;
+    rdfs:label "Whether any other Hittite ritual seals its residue and says when it may be opened"@en, "Ob ein anderes hethitisches Ritual seinen Rückstand versiegelt und sagt, wann er geöffnet werden darf"@de ;
+    pm:searchedCorpus "The whole ritual and magic section of the Thesaurus Linguarum Hethaeorum digitalis, Beta 0.2, Müller, Prechel, Rieken and Schwemer, deposited 2025-03-07 under CC-BY, read as the deposited XML: every manuscript filed under CTH 380 to CTH 500, 66,530 tablet lines in 1,061 documents, rebuilt into transliterated lines with their tablet loci."@en ;
+    pm:searchedFor "A second instance of the device at pmc:HittKisibApiyakku: a ritual that puts something away under seal and states a condition for its being opened, or states that it is not to be opened. The question was raised by the Maštigga clause and the search was run before anything was written about it, as the counter-search rule requires."@en ;
+    pm:searchTerms "Over the rebuilt lines: the Sumerographic writing of seal with its stone determinative, the seal-house, and every spelling of the verb to open attested in the corpus in both its initial signs, together with the negation and the indefinite pronoun. Hits counted per CTH number and every hit read in its line and in its paragraph, and the paragraphs around the hits read in the critical edition where one exists."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:HittEKisibUlKinuzi ;
+    pm:searchedBy "prima-materia, 2026-10-06" ;
+    dcterms:date "2026-10-06" ;
+    skos:note "It found one, in a ritual the run had already opened for another reason, and in both of its manuscripts and in a second version on a third manuscript. The ritual of Ḫantitaššu lays the things the patient has carried for seven days into his linen chest, which they do not open, puts the chest in the seal-house, and says that nobody opens it again. So the corpus states the irreversibility twice, once as a condition that cannot be met and once flatly, in two rituals that share no practitioner, no home city and no affliction."@en ;
+    skos:note "Outside those two the verb to open occurs eleven times in the section searched and never of a seal: it opens an offering pit, a vessel, a kneading trough, a grave-pit, and in one case a door. The seal-house occurs three times more and in each case as a storeroom something is simply put into, with no clause about opening. The device is therefore not a formula of the genre but a thing two rituals do."@en ;
+    skos:note "The first run of this search returned nothing, and the nothing was false. The extractor read only the normalised transliteration attribute that the glossed files of the corpus carry; the unglossed files, which include the main manuscript of the Maštigga ritual, carry their transliteration as element content and have no such attribute, so those documents came out as lines with no words at all. The search then found no instance of a clause that was sitting in the corpus it was searching. It was caught by putting the known clause in as a positive control and seeing the control fail. The rule is now in AGENTS.md; the point for a reader here is that a negative result from a corpus of this shape is worth nothing without a control."@en .
+
+pmp:HittProvisionSearch a pm:Searching ;
+    rdfs:label "Whether the Anatolian rituals carry the standing provision for not knowing what is being dealt with"@en, "Ob die anatolischen Rituale die Vorsorge für das Nichtwissen führen"@de ;
+    pm:searchedCorpus "The five works read in full at the wording, and the same CTH 380 to CTH 500 section of the Thesaurus Linguarum Hethaeorum digitalis Beta 0.2 for the address formulae."@en ;
+    pm:searchedFor "The device in generalizations/the-provision-for-not-knowing.ttl: where a transmission makes an operation depend on identifying what is being dealt with, a standing provision for proceeding without the identification, in the form of a disjunction over the candidates, a form of words for the case of not knowing, or an apparatus that needs no name."@en ;
+    pm:searchTerms "The indefinite and relative pronouns in the address formulae of the five works, read in place; and over the rebuilt corpus lines the relative pronoun together with the word for deity and the words for the enemy land."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:HittKuisDingirKurLukur ;
+    pm:searchedBy "prima-materia, 2026-10-06" ;
+    dcterms:date "2026-10-06" ;
+    skos:note "It found the device in the plague ritual, which addresses whichever deity of the enemy land has caused the death and never names one, and it found a weaker form in the sorcery material of the same corpus where the untwining is performed in both directions so that the operator need not know which way the sorcerer twined. The node is entered; the generalization is not enlarged."@en ;
+    skos:note "A second instance in the same corpus, found on the second pass over the middle of the ritual of Tunnawiya and therefore after this search was first run: the Old Woman covers the setting of the uncleanness with a triple disjunction — whether anyone made the patient unclean before the gods, or before the dead, or before mankind — and leaves the agent under the same construction. That is the closest thing in the Anatolian material to the Ugaritic instance of the same run, and it is in the operative speech. Node pmc:HittPaprahtaTriplex. It changes nothing about the decision not to enlarge the generalization and it does strengthen the observation underneath it: within one corpus and across three unrelated rituals the device appears three times, in three different forms, which is not what a borrowed formula looks like. That is an argument about the contact route and it is not strong enough to settle it."@en ;
+    skos:note "Why the generalization was not enlarged, and this is the finding of the search rather than its by-product. One of the six witnesses already standing is the Mesopotamian exorcistic craft, and the Mesopotamian channel into the Anatolian ritual corpus is one of the live positions in the contact-route dispute of pmt:HittiteRitual. A witness whose independence of an existing witness is the open question of its own tradition cannot raise a count of witnesses. The Ugaritic strand of the same run found a second candidate of the same form in the expiation text RS 1.002 and it has the same defect, in the same direction and for the same corpus."@en ;
+    skos:note "What would settle it, named so that a later run does not repeat the search. Not more witnesses of the device: a reading of the one position in the literature that asks of each proposed borrowing whether it is specific, exceptional and co-occurrent with others. That position was reached in the landscape stage of this run and the work is in print."@en .
+
+pmp:HittSecondTranslationSearch a pm:Searching ;
+    rdfs:label "Whether a second translation is reachable for the works read without one"@en, "Ob für die ohne Übersetzung gelesenen Werke eine zweite Übersetzung erreichbar ist"@de ;
+    pm:searchedCorpus "The reachable editions and translations of CTH 409 and of CTH 395, as the bibliographies of the critical editions and the concordance of the Hittite portal name them, and the open-access full-text routes this holding uses."@en ;
+    pm:searchedFor "A second translation of the ritual of Tunnawiya beside the one of 1938, and any translation at all of the ritual of Ḫantitaššu. The depth rule of SPEC 15 asks for the primary text and at least two translations, and this run could meet it for two of the five works and not for the other three."@en ;
+    pm:searchTerms "The works named in the two critical editions as editions and translations were each looked for by author and title on the open full-text archive, on the publisher-hosted open-access collections, in the freely posted back-volumes of the series the editions appear in, and in the portal's own translation pages."@en ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-10-06" ;
+    dcterms:date "2026-10-06" ;
+    skos:note "For the ritual of Ḫantitaššu the two editions that carry a translation, of 1996 and of 2016, are in print and neither is open. For the ritual of Tunnawiya the only further translation named in the current bibliography is in print. The portal publishes a translation page for each text and for these it is an empty shell. The freely posted back-volumes of the series stop at a volume number below the two monographs that would carry the rest."@en ;
+    skos:note "What was read instead, so the shortfall is exact and not general. For the ritual of Tunnawiya: the 1938 transliteration and English translation, checked against an independent modern transliteration with interlinear glossing published under CC-BY-SA. For the ritual of Ḫantitaššu: the critical transliteration of both exemplars and the second version, checked against the editors' own German summary of contents paragraph by paragraph, which is a check on the order of acts and the counts and not on the wording. For the ritual of Paškuwatti: the critical transliteration and one English translation of 1969 that reads the practitioner's name differently."@en ;
+    skos:note "The outcome is entered as the corpus being unreachable rather than as nothing found, because the works exist, are named, and are closed. That is the distinction the scale was built for, and prima-materia#691 is the standing finding that the depth rule can be unsatisfiable; this run is a second case of it and is recorded there."@en .
