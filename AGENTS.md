@@ -145,8 +145,8 @@ Jede Behauptung trägt `dcterms:source` als Werk mit Stelle und gelesener Ausgab
 
 Der Gesprächsverlauf ist kein Speicher. Abschlussbedingungen, geprüft statt erinnert:
 
-1. `is:issue is:open no:label` ist leer.
-2. Jeder PR nennt seine Issues; jedes erledigte Issue ist geschlossen oder trägt einen Kommentar, was fehlt.
+1. `is:issue is:open -label:behauptung -label:befund` ist leer. Nicht `no:label`: das fängt nur „gar kein Label" und lässt ein Issue mit `korpus:` und sonst nichts durch, also genau den Zustand, den das Dachlabel verhindern soll (#698).
+2. Jeder PR nennt seine Issues; jedes erledigte Issue ist geschlossen oder trägt einen Kommentar, was fehlt. **Ein Lauf am strukturgetriebenen Eingang hat planmäßig kein Issue** — die Warteschlange ist der Registrierungsstand und ein Issue daneben wäre die Kopie eines Zustands, die SPEC §13 verbietet. Sein PR nennt stattdessen den Zustand des Bestands, aus dem das Bündel gewählt wurde, und der offene Rest steht als `skos:note` an dem Knoten, den er betrifft, beim Register also an der Traditionsinstanz neben `pm:coverageState`; sonst findet ihn keine Abfrage (#779).
 3. Jedes Issue, dessen Gegenstand im Bestand steht (Graph, diese Datei, `SPEC.md`, `CLAUDE.md`, `CONTRIBUTING.md`, Test, Workflow), ist als `completed` geschlossen, auch aus früheren Läufen.
 4. Jede Recherche hat ihre Erntenotiz im PR.
 5. Jede offene Entscheidung liegt als Frage mit Empfehlung vor.
