@@ -76,6 +76,8 @@ Bei beschädigter OCR ist ein Nichtfund des Fachterms kein Nachweis der Abwesenh
 
 **Ein ungeöffnetes Werk ist ein Werkknoten, kein Issue.** Es wird als `pmw:`-Knoten an seiner Tradition deklariert (`pm:corpusWork`), ohne `pm:fromWork`; der Grund der Nichtöffnung steht als `skos:note` am Werk, wo er eine Eigenschaft des Werkes ist. `queries/unopened-works.rq` ist die Warteschlange. Ein vermittelter Knoten (`pm:mediatedAttestation`) trägt mit `pm:readVia` selbst, was fehlt; `queries/mediated-attestations.rq` listet ihn.
 
+**Die Suchknoten eines Laufs stehen in einer eigenen Datei**, `examinations/searches-<korpus-slug>.ttl`, und nie durch Anhängen an `examinations/searches.ttl`. Der Grund ist mechanisch und kostet sonst einen Lauf: zwei Stränge, die an dieselbe Endposition derselben Datei anhängen, laufen nicht ohne Hand zusammen, und der stehende Auftrag verlangt zwei Stränge nebeneinander. Das Register ist die Klasse `pm:Searching` und nicht die Datei; `queries/exhibited-gaps.rq` fragt über alle (#703).
+
 **Wer eine Traditionsdatei anfasst, führt ihren Korpus im selben Lauf als Werkbezeichner** (`pm:corpusWork`, `pm:fromWork`, `pmw:`); Rückstand in `queries/work-migration-backlog.rq` (#737).
 
 **Bezeichner aus dem Gegenstand, nicht aus der Formulierung:** Tradition plus normalisierter Terminus der Originalsprache, bei Namen die Namensform der Leitumschrift der benutzten Ausgabe. Nie aus der Übersetzung. `tests/test_identifier_uniqueness.py` meldet gleiche Bezeichner in zwei Dateien, nie zwei Bezeichner für eine Sache.
