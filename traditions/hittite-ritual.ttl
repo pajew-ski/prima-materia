@@ -1,0 +1,107 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Anatolian practitioner rituals, taken off the register
+#
+# Taken from traditions/registry-west-asia.ttl on the testability-driven
+# entrance of SPEC 14, and chosen over the other two registrations at
+# pm:contactRouteDisputed for one reason: this corpus writes its rituals down
+# in the first person of the practitioner who dictated them, and a text that
+# says I act as follows is the place where a stated condition of failure would
+# have to stand if a transmission carries one at all. The standing finding at
+# prima-materia#640 is that the holding had collected twelve announced signs of
+# success against no condition of failure.
+#
+# The corpus answered that in the sharpest form the holding has yet carried.
+# One of the five works opened names the negative outcome of its own
+# announced sign and says, in the practitioner's first person, what follows
+# from it: nothing follows, the ritual is performed again. That is a
+# Misslingensbedingung with its remedy attached, written down by the operator,
+# and it is the first witness outside the Chinese material for the claim in
+# generalizations/counted-thresholds.ttl.
+#
+# A second of the five fixes counts of the same kind and supplies no such
+# provision anywhere in its preserved end. The two stand in one tradition, and
+# the protocol that follows from the pair is in
+# examinations/the-count-that-does-not-fall-due.ttl.
+#
+# The three decisions SPEC 14 requires before the first node:
+#
+# The contact route stays at pm:contactRouteDisputed and the reading did not
+# move it; what it added is recorded at the instance. The recension and the
+# edition are named in every source and are, for four of the five works, the
+# critical editions of the Mainz Beschwörungsrituale corpus, cited by CTH
+# number, exemplar and tablet locus. And the number of citable places: the
+# corpus is numerous, the works are short, five were opened in full at the
+# wording and twenty-two places are entered from them.
+#
+# The works of this corpus have no title. Each tablet designates itself in its
+# colophon as the word of the practitioner who dictated it, and the catalogue
+# and every edition designate them the same way. The pmw: identifiers are
+# therefore the practitioner's name in the leading transliteration of the
+# edition used, and nothing else; that rule is stated here so that a second
+# run produces the same identifier.
+#
+
+pmt:HittiteRitual a pm:Tradition ;
+    rdfs:label "Hittite and Anatolian ritual"@en, "Hethitisch-anatolisches Ritual"@de ;
+    skos:definition "Anatolian purification and substitution rituals transmitted under the names of the practitioners who dictated them, most of them women."@en ;
+    skos:note "The registration's clause that most of the practitioners are women held for four of the five works read, and the fifth is the case that shows what the clause rests on. The two manuscripts of the ritual of Ḫantitaššu disagree about it inside a single line: the exemplar made for general use writes the female determinative before the name and then the sign for man after it, while the exemplar the editors identify as made for the king writes the female determinative and then the sign for woman. The editors of the critical edition state the divergence. The clause is therefore kept as the registration wrote it, and the one case against it is entered at pmc:HittKolophonHantitassuDisputatum rather than smoothed away."@en ;
+    skos:note "What the reading added to the contact route, which stays disputed. The practitioners are named in the texts themselves as foreign to the capital, and in two directions at once: Maštigga is the woman of Kizzuwatna in her incipit and the woman of Kummanni in her colophon, which is the cult centre of that same south-eastern land; Paškuwatti is the woman of Arzawa who dwells in Parašša, and Uḫḫamuwa is the man of Arzawa, which lies to the west. Ḫantitaššu is of Ḫurma. So the corpus records its own rituals as imported from both ends of Anatolia, and that is a datum for the dispute rather than a resolution of it: it establishes that the texts present themselves as received, and leaves open whether the technique came with the name. The position that would settle it asks of each proposed Hurrian or Mesopotamian element whether it is specific, exceptional and co-occurrent with others; that position was reached in the landscape stage of this run and not read at the wording, so it is not asserted here."@en ;
+    skos:note "A second route question the reading opened and did not close, and it bears on the strand that was run beside this one. The Ugaritic expiation text RS 1.002 names the Hittite among the parties whose statement may have caused the sin it expiates. That establishes contact between the two corpora and nothing about transmission of technique; but it is enough that a convergence asserted between pmt:HittiteRitual and pmt:UgariticRitual may not be entered as pm:independentAttestation without a pm:independenceGround that addresses it. See traditions/ugaritic-ritual.ttl."@en ;
+    pm:principalCorpus "The CTH ritual corpus, including the rituals of Tunnawiya (CTH 409), Maštigga (CTH 404), Ḫantitaššu (CTH 395), Paškuwatti (CTH 406), Uḫḫamuwa (CTH 410), Ambazzi (CTH 391) and Anniwiyani (CTH 393)" ;
+    pm:corpusWork pmw:Tunnawiya, pmw:Mastigga, pmw:Hantitassu, pmw:Paskuwatti, pmw:Uhhamuwa, pmw:Ambazzi, pmw:Anniwiyani ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    pm:fromWork pmw:Mastigga ;
+    dcterms:source "Maštigga ritual against domestic quarrel, CTH 404.1.II, KBo 2.3+ Vs. I 1-4 (critical edition, exemplar A, hethiter.net/: CTH 404.1.II, Expl. A, textus 2012-05-07)" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:Tunnawiya a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Tunnawiya"@en, "Das Ritual der Tunnawiya"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the only edition that carries transliteration and translation together: A. Goetze, interpreted in cooperation with E. H. Sturtevant, The Hittite Ritual of Tunnawi, American Oriental Series 14, New Haven: American Oriental Society 1938, with its text, translation, commentary and glossary read through, and the title page read in the full text and not in the catalogue entry. The tablet is the join the edition itself states, Bo 2062 (KUB 7.53) with Bo 2589 (KUB 12.58), which in the modern form is KUB 7.53+."@en ;
+    skos:note "This work carries a title of its own, which the others do not, and it is in the colophon: the first tablet of the ritual of uncleanness and of the ritual of the river, this being the one of Tunnawiya the Old Woman, complete, written by Pikku. The identifier still follows the rule stated at the instance, because the rule has to produce one identifier for a corpus in which four of five colophons give only the name."@en ;
+    skos:note "A second philological treatment of the same tablet is reachable and was used as the check on the 1938 transliteration: the independent transliteration with interlinear glossing in the Thesaurus Linguarum Hethaeorum digitalis, hethiter.net/: TLHdig KUB 7.53+ (2021-12-31). It is not a second translation, and no second translation of this work is reachable; the only one named in the current bibliography is in print. What was read at the wording is therefore one translation beside the original, and that is less than the five points of SPEC 15 require. See prima-materia#691."@en ;
+    skos:note "The script dating of this composition is late. Of the fragments the concordance assigns to CTH 409 the great majority are catalogued as New Hittite copies, with a single Middle Hittite fragment; the tablet read here is in the late group. The composition is therefore attested essentially only in copies made long after the practitioner it names."@en .
+
+pmw:Mastigga a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Maštigga"@en, "Das Ritual der Maštigga"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the critical edition of the second version, hethiter.net/: CTH 404.1.II exemplar A, textus 2012-05-07, whose main manuscript is KBo 2.3 joined with KBo 45.191 and IBoT 4.13 and collated against KUB 12.34, KUB 15.39, KUB 12.59, IBoT 2.109, IBoT 4.12 and KUB 41.12. Forty-four paragraphs, read in order."@en ;
+    skos:note "Two translations of this same version were read beside the original and they disagree at the place this file was opened for. English: A. Goetze, Ritual against Domestic Quarrel, in J. B. Pritchard (ed.), Ancient Near Eastern Texts Relating to the Old Testament, 3rd ed. 1969, pp. 350-351, which names KBo 2.3 and the same duplicates as its text. German: F. Hrozný, Hethitische Keilschrifttexte aus Boghazköi. In Umschrift, mit Übersetzung und Kommentar, Boghazköi-Studien 3, Leipzig: J. C. Hinrichs 1919, pp. 60-89, the editio princeps of this tablet, with transliteration and translation. The disagreement is at pmc:HittKisibApiyakkuDisputatum."@en ;
+    skos:note "The composition has three versions in the catalogue, CTH 404.1.I, .II and .III, and they are not duplicates. The first is edited from KBo 39.8 and is catalogued as Middle Hittite in script; the second, read here, is the one the two reachable translations treat. A redactional history of the group was published in 2004 and is in print and was not read. Which version is prior is therefore not asserted anywhere in this file."@en .
+
+pmw:Hantitassu a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Ḫantitaššu"@en, "Das Ritual der Ḫantitaššu"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the critical edition hethiter.net/: CTH 395.1, textus 2015-06-16, both exemplars: A is KBo 11.14, a four-column tablet whose reverse fourth column is preserved with its colophon, and B is KUB 43.57 with KBo 18.174. The second version of the same ritual, hethiter.net/: CTH 395.2.1, whose single manuscript is KUB 57.79, was read in its preserved fourth column for the same places."@en ;
+    skos:note "No translation of this work is reachable. The two editions that carry one, of 1996 and of 2016, are in print. What was read beside the original is the editors' own German paragraph-by-paragraph summary of contents printed with the edition, which is a check on the structure and not a translation of the wording. Every place entered from this work therefore rests on the original read without a translation beside it, and that is stated at each node that needs it. See prima-materia#691."@en ;
+    skos:note "The editors state two things about the two exemplars that the nodes below depend on. A is a general version and B was made for the king. And in the colophon A designates Ḫantitaššu as a man while B designates her as a woman."@en .
+
+pmw:Paskuwatti a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Paškuwatti"@en, "Das Ritual der Paškuwatti"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the critical edition hethiter.net/: CTH 406 exemplar A, textus 2012-05-07 with the introduction of 2017-01-12, whose manuscripts are KUB 7.8 joined with KUB 9.27 indirectly and with KUB 7.5. The editors state that the indirect join was established by collation of the originals in 2009 and that their line numbering therefore departs from the editio princeps of 1987; the loci cited in this file are theirs."@en ;
+    skos:note "The name is the one this file had to correct. The reachable English translation, A. Goetze in Pritchard (ed.), ANET, 3rd ed. 1969, pp. 349-350, reads the practitioner's name as Pissuwattis; the critical edition and the editio princeps read fPaskuwatti. The identifier follows the leading transliteration of the edition used, as the rule at the instance requires, and the earlier form is recorded here so that a reader coming from the 1969 translation finds the node."@en ;
+    skos:note "No colophon is preserved. The name is taken from the incipit, where the text names itself as the word of Paškuwatti, woman of Arzawa, who dwells in Parašša."@en ;
+    skos:note "Script dating: the concordance catalogues the fragments of this composition as New Hittite."@en .
+
+pmw:Uhhamuwa a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Uḫḫamuwa"@en, "Das Ritual des Uḫḫamuwa"@de ;
+    skos:note "Opened in full at the wording on 2026-10-06 in the critical edition hethiter.net/: CTH 410, textus 2013-12-09, exemplar A, which is HT 1 (BM 108548), where the ritual runs on the obverse second column from line 17 to line 47 and is, as the editors state, completely preserved. Exemplar B, KUB 9.31, was downloaded and its divergences were not collated. A second translation was read beside the original: A. Goetze, Ritual against Pestilence, in Pritchard (ed.), ANET, 3rd ed. 1969, pp. 347-348."@en ;
+    skos:note "The editors note that all four witnesses are four-column collective tablets carrying three rituals each, those of Zarpiya, of Uḫḫamuwa and of Ašḫella. The work is therefore not a tablet but a section of one, and the places entered from it are cited as such."@en .
+
+pmw:Ambazzi a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Ambazzi"@en, "Das Ritual der Ambazzi"@de ;
+    skos:note "Not opened. The critical edition of CTH 391.1 is reachable as a transliteration and was downloaded in this run and not read; no translation of it is reachable, and the monograph that is the standard treatment of this ritual tradition is in print. This work stands here as the warranted next place in this corpus, and queries/unopened-works.rq lists it."@en .
+
+pmw:Anniwiyani a dcterms:BibliographicResource ;
+    rdfs:label "The ritual of Anniwiyani"@en, "Das Ritual der Anniwiyani"@de ;
+    skos:note "Not opened. Two treatments are reachable: the critical edition of CTH 393 as a transliteration, and the autograph with transliteration, translation, commentary and glossary in E. H. Sturtevant and G. Bechtel, A Hittite Chrestomathy, Philadelphia: Linguistic Society of America 1935, pp. 100-126. It is therefore the cheapest of the unopened works of this corpus and the one with the best apparatus; it was left for the reason that this run's lease was five works and not seven. queries/unopened-works.rq lists it."@en .
