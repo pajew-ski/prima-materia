@@ -1,0 +1,54 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the run on the Liber iuratus Honorii,
+# 2026-10-07
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+# Three searches over the two witnesses of one work. The first is the one the
+# run was sent to make and it found its place. The second is the more useful
+# of the two negatives, because what it reports absent is absent in a way that
+# a reader can act on: the work never once puts a failure on its own
+# procedure.
+#
+
+pmp:IuratusTerminusSearch a pm:Searching ;
+    rdfs:label "Whether a second work of the notory genre carries a term that can elapse and a sign of failure"@en, "Ob ein zweites Werk der Notoria-Gattung einen verstreichbaren Termin und ein Misslingenszeichen trägt"@de ;
+    pm:searchedCorpus "The Liber iuratus Honorii in two witnesses read at the wording: the sixteenth-century English translation of London, British Library, Royal MS 17 A. xlii, complete as far as it runs, in the digital edition of Joseph H. Peterson, 1998/2009, rev. 2024; and the Latin of London, British Library, Sloane MS 3854 in the critical edition of Jean-Patrice Boudet, Melanges de l'Ecole francaise de Rome. Moyen Age 114/2 (2002), pp. 851-890, read page by page over its thirty-nine edited sections."@en ;
+    pm:searchedFor "The question left open at prima-materia#640: whether the term within which an effect is to appear is a property of the Ars Notoria alone or of its genre, to be tested at the cheapest place, namely a second work of the same genre; and with it a condition under which the operator would know the thing had not worked."@en ;
+    pm:searchTerms "In the English: fast, day, days, thirteenth, moon, thrice, revealed, granted, denied, put back, mad, plagued, despair, every hit read in its chapter. In the Latin: dies, diebus, luna, lunatio, hora, terminus, repulsa, concessus, insanus, demens, amens, plaga, frustra, nihil proficiet, cavendum, and the conditional and negative particles, every hit read in its paragraph and in its folio."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:IuratusConcessusVelRepulsa, pmc:IuratusInsania, pmc:IuratusPlagaKautel ;
+    pm:searchedBy "prima-materia, 2026-10-07" ;
+    dcterms:date "2026-10-07" ;
+    skos:note "The genre carries both, and more sharply than the work that raised the question. The three days of the first purification end in a verdict delivered on a named night by an angel and stated as a pair, concessus vel repulsa, so the outcome is binary and falls due. Working the vision in deadly sin is said to leave the operator mad ever after, with a mechanism given and with an appeal to cases the author claims to have seen. Saying the orations without chastity and devotion is said to bring an open plague from God. So the answer to prima-materia#640 is that the absence it reported was a property of the seven works it had, not of this field."@en ;
+    skos:note "And the same search found the device that takes it back, which no part of the question anticipated. The chapter that states the verdict also states what is done when the verdict is a refusal: the three days again with alms for the Sunday fast, then the first moon, the second, the third, the fourth and so on to the end, and in the later prayers the petition is exchanged, from the petition for the grant to the petition for mercy. The falsifiable outcome and its neutralisation are four sentences apart. Node pmc:IuratusRepulsaIteratio."@en .
+
+pmp:IuratusFailureLocusSearch a pm:Searching ;
+    rdfs:label "Whether any clause of the work lays a failure on the art, the book or the procedure"@en, "Ob eine Klausel des Werkes einen Fehlschlag auf die Kunst, das Buch oder das Verfahren legt"@de ;
+    pm:searchedCorpus "The same two witnesses of the Liber iuratus Honorii: Royal MS 17 A. xlii in the English of the digital edition of Joseph H. Peterson, and Sloane MS 3854 in the Latin of Boudet's critical edition of 2002."@en ;
+    pm:searchedFor "A clause that attributes a failure to anything other than the operator: a defect of the art, a corrupt exemplar, a procedure that does not always work, a case the book admits it cannot deliver. The question is the counter-search to every prerequisite node of this file, since a prerequisite of stated necessity is only examinable if the source does not also leave a second explanation open."@en ;
+    pm:searchTerms "In the Latin: defectu, defectus, ars non, liber non, falsa, frustra, nihil, nulla, imperfecte, and the names of the art and the book with a negation in the same sentence. In the English: fault, defect, the art is, the book is, will not work, cannot, and the two occurrences of plague and the one of madness read in their chapters. All hits of nulla and imperfecte read in place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-07" ;
+    dcterms:date "2026-10-07" ;
+    skos:note "Nothing, and the nothing is uniform. Every failure clause in the work lands on the operator: he is unclean, he is in deadly sin, he is troubled with worldly things, he does not hold the catholic faith, he is not a Christian, or God has refused him and he must ask again. The two occurrences of nulla and the one of imperfecte are all in the passage on pagan and Jewish operators and say that their works are null, which is the same direction. The book is never once at fault in its own account."@en ;
+    skos:note "This is the exhibited gap of this run and it is worth more than a filled one. A transmission that states a visible penalty for the wrong operator and no outcome at all for the right operator who gets nothing has put its whole examinability on one side of the operator. The holding carries the shape as a generalization at generalizations/the-excuse-that-stops-at-the-officiant.ttl and at generalizations/displaced-penalties.ttl from other transmissions; this witness was not added to either, because the first work of this same tradition stands behind pmc:ArsNotoriaCrimenKautel and two works of one transmission do not count twice."@en .
+
+pmp:IuratusVisionIntervalSearch a pm:Searching ;
+    rdfs:label "Whether the work states an interval after which the vision itself has not come"@en, "Ob das Werk eine Frist nennt, nach der die Schau selbst nicht gekommen ist"@de ;
+    pm:searchedCorpus "The same two witnesses, with chapters XCVIII to CII read in full in the English of Royal MS 17 A. xlii and sections 13 to 16 of Boudet's edition read in full in the Latin of Sloane MS 3854."@en ;
+    pm:searchedFor "A number of nights, a count of attempts or a date by which the sight of the Deity is to have appeared, and a statement of what follows if it has not. The thirteen counted days are the term of the preparation; the question is whether the term of the effect is given too."@en ;
+    pm:searchTerms "The thirteenth day and the Thursday in both witnesses, then every numeral and every word for night, day, moon, hour and time in the four chapters of the operation, read in place; in the Latin dies, nox, nocte, hora, luna, usque ad, infra, post, quousque."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-07" ;
+    dcterms:date "2026-10-07" ;
+    skos:note "The counted days run up to the operation and stop there. The operator sleeps on the thirteenth day and the text goes straight from the sleep to the sight, with no interval and no provision for a sleep that gives nothing. The interval this work carries belongs to the petition and not to the vision: the verdict of pmc:IuratusConcessusVelRepulsa falls thirteen days before the operation and says whether the petition is granted, not whether the sight came."@en ;
+    skos:note "So the two negatives of this run point the same way. The work is examinable about who may operate and unexaminable about whether the operation worked, and both are stated rather than left out."@en .
