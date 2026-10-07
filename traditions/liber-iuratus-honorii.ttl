@@ -1,0 +1,275 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Liber iuratus Honorii
+#
+# The second work of the corpus of pmt:ArsNotoria, declared as an unopened
+# pmw: identifier in traditions/ars-notoria.ttl since that tradition was
+# migrated, and opened here. The tradition instance stays in that file; this
+# file carries only what the second work says.
+#
+# Why this work and not another. The prüfbarkeitsgetriebene entrance of
+# SPEC 14 has precedence among the entrances that start from a question, and
+# the question was already written down: prima-materia#640 held that seven
+# works opened in this field announced twelve signs of success and carried no
+# condition of failure, that the Ars Notoria was the only witness with a term
+# that can elapse, and that the cheapest test of whether the term is a
+# property of that work or of its genre is to open a second work of the same
+# genre and look. This is that second work. The answer is that the genre
+# carries both, and that the Ars Notoria is the weaker of the two: this work
+# names a term, names a sign, names what the sign looks like when it comes out
+# against the operator, and then names what to do so that it never counts.
+#
+# Identifiers take the stem Iuratus and not the tradition name, which is the
+# one deviation from the rule in AGENTS.md and has a mechanical reason: the
+# tradition now holds two Latin works that prescribe orationes, mundationes
+# and lunationes under the same words, and a stem from the tradition would
+# make the two works collide on the terms they share.
+#
+# The two witnesses read, and they do not cover the same chapters. The
+# sixteenth-century English of Royal MS 17 A. xlii covers the prologue, the
+# contents and chapters I to CXV and is the only witness read for chapters I
+# to III and CI to CII; the Latin of Sloane MS 3854 covers the prologue and
+# much of the operative text and is the witness for every Latin wording cited
+# here. Where both carry a passage both were read against each other, and the
+# madness clause of chapter CI is the case where that mattered: the English
+# gives it and the Latin gives it with the apparatus of three manuscripts.
+#
+
+pmp:IuratusMundacioPrima a pm:Practicing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The first purification"@en, "Die erste Reinigung"@de ;
+    skos:definition "The three-day opening of every operation of the book: on a Friday, after true penitence and confession, a fast of bread and water; before daybreak the ten orations numbered twenty-three to thirty-two said gently and intently; then a pause in which the petition is rehearsed, then the eight terms with a pause and the petition rehearsed at the end of each; the whole said again about the third hour and again about midday, after which the operator may dine. The Saturday repeats the Friday. The Sunday repeats it without the fast, with fish or flesh eaten moderately."@en ;
+    skos:note "The hour-count is the part a later reader will want: three performances a day over three days, with the petition rehearsed at the end of each of the eight terms. The book is specific about this and vague about almost nothing else in the sequence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. L (London, British Library, Royal MS 17 A. xlii, fols. 44v-45r), in the sixteenth-century English translation as printed in the digital edition of Joseph H. Peterson, 1998/2009, rev. 2024, with the Latin of the same chapter given there from Sloane MS 3854" .
+
+pmc:IuratusConcessusVelRepulsa a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The grant or the refusal, revealed in the night following"@en, "Gewährung oder Abweisung, offenbart in der folgenden Nacht"@de ;
+    skos:definition "The outcome the first purification is said to produce: after the third of the three days, when the operator has prayed three times, it is revealed to him in the night following, by an angel and in sleep, whether he will obtain his petition or not."@en ;
+    skos:note "Concessus vel repulsa, the grant or the refusal. This is the rarest shape in this holding: a stated outcome that is binary, that falls due on a named night, and that can come out against the operator. Nothing is left to the operator's reading of his own state; an angel says yes or no."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. L (Royal MS 17 A. xlii, fol. 44v; Latin of Sloane MS 3854 as given in Peterson's edition: tunc in nocte sequenti in somnis revelabitur tibi per Angelum concessus vel repulsa)" .
+
+pmc:IuratusMundacioYieldsConcessus a pm:Yielding ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The three days yield the verdict on the fourth night"@en, "Die drei Tage bringen das Urteil in der vierten Nacht"@de ;
+    pm:byPractice pmp:IuratusMundacioPrima ;
+    pm:yieldsCapacity pmc:IuratusConcessusVelRepulsa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    skos:note "The term and the sign are in one clause, which is what prima-materia#640 found missing across seven works. The Ars Notoria of the same tradition promises the sciences within one month and names nothing that would show the month had passed unfulfilled; this work promises an answer on a particular night and says what the answer is."@en ;
+    dcterms:source "Liber iuratus Honorii, cap. L (Royal MS 17 A. xlii, fol. 44v), ed. Peterson" .
+
+pmc:IuratusRepulsaIteratio a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "What is done when the refusal comes"@en, "Was geschieht, wenn die Abweisung kommt"@de ;
+    skos:definition "The provision for the refusal, in three steps. First the three days are done again as before, except that on the Sunday alms to three poor people take the place of the fast. Then the same again on the first moon, that is the Monday following, and likewise on the second, the third and the fourth, and so on to the end, that peradventure God will have mercy. And in the later prayers the petition is changed: the operator is no longer to desire that God grant his petition but only that God have mercy on him. Alongside it stands the instruction that on being put back he ought not to despair, but to confess truly, search his conscience, give alms largely, have masses said and entreat with bitter tears, for so the wise men were wont to come to their purpose."@en ;
+    skos:note "This is the node the run was looking for and it is the opposite of what the search expected. The book states a falsifiable outcome and then, in the next breath, states the procedure by which no number of refusals ever amounts to one: the sequence restarts monthly without end, and at the point where the count would begin to tell against the art the petition itself is exchanged for a petition that has no outcome. A request for mercy cannot be refused in a way anybody could observe."@en ;
+    skos:note "Held apart from the clause it would otherwise be confused with. The failure is not denied and not explained away as the operator's misreading; the refusal is accepted as a refusal. What is removed is only its cumulative force. That makes this a different device from the ones the holding carries at generalizations/no-failed-run-counts.ttl and generalizations/the-repair-without-a-sign.ttl, and whether it is the same device in a new dress is a question for a run that puts this witness against those; it is not settled here."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. L (Royal MS 17 A. xlii, fols. 45r-45v; Latin of Sloane MS 3854 as given in Peterson's edition: in orationibus latinis tunc oporteret peticionem mutare, scilicet peticione concessus in peticionem miseracionis)" .
+
+pmc:IuratusLunationes a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The days of the moon of the first purification and their counts"@en, "Die Mondtage der ersten Reinigung und ihre Zahlen"@de ;
+    skos:definition "The timetable that follows a granted petition: on the fourth, eighth, twelfth, sixteenth, twentieth, twenty-fourth, twenty-eighth and thirty-second of the moon the named orations are said once about the third hour, once about the ninth and once at evening; and a second oration is said four times on the first day of the moon, three times on the third, twice on the sixth, and in rising counts on the ninth, twelfth, fifteenth, eighteenth, twenty-first, twenty-third, twenty-sixth, twenty-ninth and thirtieth."@en ;
+    skos:note "The same device as the lunation table of the Ars Notoria at pmc:ArsNotoriaLunationes, in a second work of the same tradition and with a different set of days. Two works of one transmission fixing different days is a finding about the device and not about the days."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. LI, the first purification (Royal MS 17 A. xlii, fols. 45v-46r; Latin of Sloane MS 3854 as given in Peterson's edition)" .
+
+pmc:IuratusOctoTerminiSineLunatione a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The eight terms regard neither day nor lunation nor, of necessity, hour"@en, "Die acht Termini achten weder Tag noch Mondphase noch notwendig die Stunde"@de ;
+    skos:definition "The exemption the book grants its own calendar: for the eight terms said with the ten orations numbered twenty-three to thirty-two it is not necessary to regard the day, nor the lunation, nor of necessity the hour; they are said chiefly about the morning, about the third hour and about midday, and they are said to set right whatever a man has done amiss through his frailty, the more and the oftener the more the fault is amended."@en ;
+    skos:note "A negative witness, and it is worth keeping for that. The holding carries the claim that efficacy is bound to the calendar at generalizations/efficacy-bound-to-the-calendar.ttl, and here is a work that states the binding for one part of its own apparatus and lifts it for another, in the same chapter and with the lifting given as a reason rather than a concession. A transmission that exempts part of its own procedure is harder to read as a transmission for which the calendar carries the effect."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. CII (Royal MS 17 A. xlii, fol. 65v), and in the Latin of Sloane MS 3854, prologue and first book, section 16 of the critical edition of Jean-Patrice Boudet, Mélanges de l'École française de Rome. Moyen Âge 114/2 (2002), pp. 851-890, at p. 881" .
+
+pmp:IuratusOpusVisionis a pm:Practicing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The work of the divine vision"@en, "Das Werk der göttlichen Schau"@de ;
+    skos:definition "The operation of the second chapter of the first book, as the witness gives it. After the first purification the operator keeps himself clean and remembers God, then fasts a further twelve days on bread and water with no other refection, as he did on the earlier days, until he comes to the thirteenth day, which must be a Thursday; on that day he purges any sin he perceives in himself and receives the body of Christ. On the Thursday early in the morning he says what he said before, makes a couch of hay, strews clean sifted ashes about it and writes in them the hundred names of God; washes in cold spring water; puts on a haircloth next his skin and black clothes, sits in the choir and says the psalter with the litany and the proper prayers. Then he sleeps, and speaks no more."@en ;
+    skos:note "The thirteenth day is a Thursday and the operation is performed on it, so the whole sequence is pinned to a weekday and cannot be started on an arbitrary morning. The witness for this chapter is the English of Royal MS 17 A. xlii; the Latin of Sloane MS 3854 for the perfectio operis is in Boudet's edition and agrees on the Thursday, the ashes and the hundred names."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, capp. XCVIII-CI (Royal MS 17 A. xlii, fols. 58v-62r), ed. Peterson; the Latin of the perfectio operis in Boudet's edition of Sloane MS 3854, section 14, at p. 879" .
+
+pmc:IuratusVisioDivina a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The sight of the Deity in this body"@en, "Die Schau der Gottheit in diesem Körper"@de ;
+    skos:definition "The capacity the first book claims: that the operator shall see the celestial palace and the majesty of God in his glory, the nine orders of angels and the companies of all blessed spirits, while he lives and in this corruptible body, his spirit caught up and his body fed in the earth with angelic food."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. CI (Royal MS 17 A. xlii, fol. 64r), ed. Peterson; Latin of Sloane MS 3854 in Boudet's edition, section 15, at p. 880: Et sic fiet quod videbit celeste palatium et majestatem in gloria sua, 9 ordines angelorum et agmina spirituum beatorum" .
+
+pmc:IuratusOpusYieldsVisio a pm:Yielding ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The thirteen days and the sleep yield the sight of the Deity"@en, "Die dreizehn Tage und der Schlaf bringen die Schau der Gottheit"@de ;
+    pm:byPractice pmp:IuratusOpusVisionis ;
+    pm:yieldsCapacity pmc:IuratusVisioDivina ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    skos:note "The vision is placed in sleep and after silence, which is why it is given a placement on the sensory axis rather than left to the reader. What the text does not give is any sign by which a sleep that produced nothing would be told from one that produced the vision; the sign it does give, the grant or the refusal of pmc:IuratusConcessusVelRepulsa, falls thirteen days earlier and is about the petition, not about the sight."@en ;
+    dcterms:source "Liber iuratus Honorii, cap. CI (Royal MS 17 A. xlii, fol. 64r), ed. Peterson" .
+
+pmc:IuratusInsania a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "Mad ever after"@en, "Danach für immer wahnsinnig"@de ;
+    skos:definition "The outcome the book states for the operator who works the vision while in deadly sin: he shall be mad ever after. The mechanism is given with it. The understanding proceeds from that part of the soul which intends to see the one in whom it delights, and when through the impediment of sin it does not see him with delight, it will thereafter think of nothing else, so that as regards his body there is in him no human rationality. The text then appeals to observation: and likewise we see it in many who are made witless, in that the understanding proceeding from the soul does not reach what it wanted."@en ;
+    skos:note "This is the condition of failure prima-materia#640 reported absent across seven opened works, and it is stronger than the shape that issue was looking for. It names the breach, it names the outcome, the outcome is observable by a third party, and the text claims the observation has been made in more than one case. A procedure whose misuse is said to leave a visible mark on the operator is examinable in a way that an unfulfilled promise is not."@en ;
+    skos:note "What it does not do, and the distinction decides whether it can carry a falsifier. The madness is said to follow the breach of a condition, not the failure of the rite; it tells a reader what happens to the wrong operator and not what happens to the right one who gets nothing. The work carries no clause of the second kind. A search of both witnesses for a clause that lays any failure on the art, the book or the procedure returned nothing: every failure clause in this work lands on the operator, as pmp:IuratusFailureLocusSearch records."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. CI (Royal MS 17 A. xlii, fol. 64v), ed. Peterson; Latin of Sloane MS 3854 in Boudet's edition, section 15, at p. 880, with the apparatus of three manuscripts: Sed cavendum est operanti ne sit in peccato mortali, quia de cetero esset insanus" .
+
+pmc:IuratusPresupposesSinePeccatoMortali a pm:Presupposing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The vision presupposes freedom from deadly sin, on pain of madness"@en, "Die Schau setzt Freiheit von Todsünde voraus, bei Strafe des Wahnsinns"@de ;
+    pm:dependentStep pmc:IuratusVisioDivina ;
+    pm:priorStep pmc:IuratusInsania ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "He that shall work must beware that he be in no deadly sin, for if he be he shall be mad ever after: de cetero esset insanus, and as regards his body there will be in him no human rationality."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    skos:note "Stated necessity and not prescribed order, because the consequence is quotable and is quoted. The prior step is entered as the clause itself rather than as a state of cleanness, since what the source makes binding is the warning with its outcome and not a purification it names elsewhere."@en ;
+    dcterms:source "Liber iuratus Honorii, cap. CI (Royal MS 17 A. xlii, fol. 64v), ed. Peterson; Latin in Boudet's edition, section 15, at p. 880" .
+
+pmc:IuratusFidesCatholica a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The catholic faith as the condition of the vision"@en, "Der katholische Glaube als Bedingung der Schau"@de ;
+    skos:definition "The condition set in the form of the Athanasian creed and with its clause carried over: whoever wishes to be saved and to have the divine vision must before all things hold the catholic faith, which unless a man believe faithfully and firmly he shall perish and shall not have the divine vision."@en ;
+    skos:note "The witness is the oration the book numbers as its seventh, which takes the creed and inserts the vision into its promise and into its threat. The insertion is the claim: the book makes its own operative outcome part of what is lost by unbelief."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. XIII, oratio 7, the Athanasian creed (Royal MS 17 A. xlii; the inserted clauses noted there from Hedegard's Latin), ed. Peterson" .
+
+pmc:IuratusPresupposesFidesCatholica a pm:Presupposing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The vision presupposes the catholic faith, on pain of perishing"@en, "Die Schau setzt den katholischen Glauben voraus, bei Strafe des Verderbens"@de ;
+    pm:dependentStep pmc:IuratusVisioDivina ;
+    pm:priorStep pmc:IuratusFidesCatholica ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Which faith unless a man believe faithfully and firmly he shall perish and shall not have the divine vision."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. XIII, oratio 7 (Royal MS 17 A. xlii), ed. Peterson" .
+
+pmc:IuratusSolusChristianus a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "Only the Christian operates truly"@en, "Nur der Christ wirkt wahrhaft"@de ;
+    skos:definition "The book's division of operators into three kinds and its verdict on two of them. Pagans sacrifice to unclean aerial and earthly spirits and do not constrain them: the spirits only feign to be constrained by the words of the pagans' law, so that they keep faith with idols, and because their faith is bad their works are null. Jews cannot operate in this vision at all, having lost the gift at the coming of Christ, and their invocations do not come to effect unless they put their faith in Christ; the spirits are compelled to come by the holy names but, because the Jew is not signed with the sign of the cross and of the faith, they will not answer him truly. Therefore only the Christian can operate truly in this vision and in all the others."@en ;
+    skos:note "The argument in the middle of this passage is the part worth keeping, because it reasons from an outcome. The book quotes a prophecy that the anointing of the Jews would cease when the king of kings came, and infers that it would never have ceased if the art had had true efficacy through them. That is a transmission arguing from a historical observable against a rival's efficacy, and it is the only such argument found in either witness."@en ;
+    skos:note "It is also the clause that makes the whole first book unexaminable from outside the faith it requires. Every failure by a non-Christian operator is predicted and accounted for in advance, so no such failure can tell against the procedure. Entered as the claim of the source, with no judgement on it here."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, prologue and first book (Sloane MS 3854, fols. 114ra-114rb), sections 8 and 9 of Boudet's critical edition, at pp. 875-876: Solus igitur christianus potest in hac visione et in omnibus aliis veraciter operari" .
+
+pmc:IuratusPresupposesChristianus a pm:Presupposing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "True operation presupposes the Christian operator"@en, "Wahrhaftes Wirken setzt den christlichen Ausführenden voraus"@de ;
+    pm:dependentStep pmc:IuratusVisioDivina ;
+    pm:priorStep pmc:IuratusSolusChristianus ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Because they have a bad faith, their works are null: ideo opera eorum nulla; and the spirits, though compelled to come, will not answer truly one who is not signed with the sign of the cross and of the faith."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, sections 8-9 of Boudet's critical edition of Sloane MS 3854, at pp. 875-876" .
+
+pmc:IuratusSequestratio a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "Sequestration from worldly things, and the poor before the rich"@en, "Absonderung von den weltlichen Dingen, und die Armen vor den Reichen"@de ;
+    skos:definition "The condition on the operator's life. He is to be truly penitent and confessed, sequestered from women and from their sight, separated from evil and from sick men, his life led cleanly, his garments not foul but new or most cleanly washed, and never idle. No man troubled with worldly things can do this thing, for the soul is by earthly blindness sequestered from all godly secrets; and if he who works for a part of this science must be sequestered from worldly things, how much more he who works for the whole."@en ;
+    skos:note "Two inferences the book draws from this and neither is incidental. The first: Solomon meant by new garments the virtues, since God and the blessed angels do not care about worldly things, from which it is plain that the poor operate sooner and more truly than the rich. The second runs the other way for the angelic operation that follows, because those angels dwell with men and are clean and therefore want clean clothes. The book states both and does not reconcile them; held apart here rather than joined."@en ;
+    skos:note "The first inference is the one this project's criterion is about. A transmission that makes poverty an advantage in its own operation is removing the gate its own apparatus would otherwise set up, and it does so in the chapter that fixes the conditions rather than in a preface."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, the conditions of the divine vision (Sloane MS 3854, fol. 115vb), section 13 of Boudet's critical edition, at p. 879: Ex hoc patet quod pauperes citius et verius operantur quam divites; and cap. CI in the English of Royal MS 17 A. xlii, fol. 62r, ed. Peterson" .
+
+pmc:IuratusPresupposesSequestratio a pm:Presupposing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The vision presupposes sequestration from worldly things"@en, "Die Schau setzt Absonderung von den weltlichen Dingen voraus"@de ;
+    pm:dependentStep pmc:IuratusVisioDivina ;
+    pm:priorStep pmc:IuratusSequestratio ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "No man that is troubled with worldly things can do this thing, for the soul, by means of earthly blindness, is utterly sequestrate from all godly secrets."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. CI (Royal MS 17 A. xlii, fol. 62r), ed. Peterson" .
+
+pmc:IuratusPlagaKautel a pm:Cautioning ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "He that doth otherwise shall be openly plagued of God"@en, "Wer es anders tut, wird offen von Gott geschlagen"@de ;
+    skos:definition "The warning attached to the orations of the first purification: he that will say those prayers or such like must be chaste and clean and must say them with great devotion, and he that doth otherwise shall be openly plagued of God; for in those Greek, Hebrew and Chaldaic prayers there are the most sacred names of God and of his angels, which ought not to be spoken by man but only through the mercy of God."@en ;
+    skos:note "Openly plagued, not merely unrewarded. The warning puts a visible outcome on the wrong performance of the words, which is the second clause of this work with an observable consequence and the reason the genre comes out of prima-materia#640 better than its first witness did."@en ;
+    pm:cautionsAbout pmp:IuratusMundacioPrima ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. L (Royal MS 17 A. xlii, fol. 45v), ed. Peterson" .
+
+pmc:IuratusIuramentumKautel a pm:Cautioning ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The nine oaths on the holder of the book"@en, "Die neun Eide über den Inhaber des Buches"@de ;
+    skos:definition "The oaths the prologue says the masters swore, from which the book takes its name. That the book be given to no one until its master is at the point of death; that it be copied three times only; that it be given to no woman, nor to any man unless mature, most upright and faithful, and whose character and condition the master has known for a year; that it not be destroyed but returned to the giver or his successors; that if no sufficient man is found to receive it, the master have it buried with him in his tomb, binding his executors by the strongest oaths, or himself bury it somewhere cleanly in his lifetime and reveal the place to no one by any circumstance; that the disciples not fear to suffer death in fulfilling the master's precepts; that the holder not enquire into his master's words or deeds nor reveal to anyone that his master knows such things; that master and disciples be bound in concord and love, none revealing another's secret; and ninthly that the receiver swear and thereafter observe all of these."@en ;
+    skos:note "This is the gate the criterion of SPEC 0 names, stated by the transmission in its own operative text and in nine clauses rather than one. It stands here as a claim of the tradition and not as an instruction: the Latin has been in a critical edition since two thousand and two and the English since well before."@en ;
+    skos:note "The device is the same one the holding already carries at pmc:ArsNotoriaSecretumKautel for the first work of this tradition, and the two are not independent of each other. What this witness adds is the count, the year of acquaintance, the exclusion of women and the burial clause, which the first work does not have."@en ;
+    pm:cautionsAbout pmp:IuratusOpusVisionis ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, prologue (Sloane MS 3854, fols. 112vb-113ra), section 3 of Boudet's critical edition, at p. 872: Nos moti furore et iracundia ista fecimus juramenta" .
+
+pmc:IuratusSpiritusTerreniKautel a pm:Cautioning ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The warning against the operation the same chapter prescribes"@en, "Die Warnung gegen die Operation, die dasselbe Kapitel vorschreibt"@de ;
+    skos:definition "The clause that closes the operation on the earthly spirits, in the chapter that has just given it: a Christian never or very rarely meddles with these, nor are their counsels to be believed; and of these the pagans chiefly operate and Christians most rarely."@en ;
+    skos:note "A self-warning inside the prescription, in the strict sense: the sentence that tells the operator how to end the rite is the sentence that tells him not to perform it. The holding carries this device as a generalization from four witnesses at generalizations/self-warning-inside-the-prescription.ttl; this is a fifth place of the same shape and it has not been added there, because the first work of this same tradition is already among the four and two works of one transmission are not two witnesses."@en ;
+    pm:cautionsAbout pmp:IuratusOpusVisionis ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, fourth treatise, on the earthly angels (Sloane MS 3854, fol. 137va), section 36 of Boudet's critical edition: Et de istis nunquam vel raro christianus se intromittit, nec eorum consilia sunt credenda" .
+
+pmc:IuratusObiectioNonVidebitMe a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The objection from scripture, raised and answered by narrowing"@en, "Der Einwand aus der Schrift, erhoben und durch Verengung beantwortet"@de ;
+    skos:definition "The objection the book puts to itself immediately after the vision, and its answer. Someone will say: since the Lord says that man shall not see me and live, it follows that whoever sees God must die bodily, and therefore will not rise again until the day of judgement, since no one dies bodily twice. The answer is that it is false that anyone dies bodily in the divine vision: the spirit is caught up into heaven and the body is refreshed in the earth with angelic food. For we read of many caught up in spirit to whom many celestial secrets were revealed, and at the passion of our Lord many bodies rose again."@en ;
+    skos:note "The structure is the one the holding generalizes at generalizations/the-observation-answered-by-narrowing.ttl from three witnesses: the transmission states the counter-observation in full and then moves the claim so that the observation no longer touches it. Here the move is precise and small: the claim is narrowed from seeing God to the spirit's being caught up while the body stays alive, and the scriptural sentence is left standing."@en ;
+    skos:note "Not added to that generalization in this run. The generalization is untested and SPEC 16 requires the counter-search against the holding before it is enlarged; the search that would have to run is whether the holding carries transmissions that state a counter-observation and let it stand, and that search was not carried here."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, cap. CI (Royal MS 17 A. xlii, fol. 64r), ed. Peterson; Latin of Sloane MS 3854 in Boudet's edition, section 15, at pp. 880-881" .
+
+pmc:IuratusSpiritusNeuterBonusNeuterMalus a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "Neither good nor bad: the classification the book declines"@en, "Weder gut noch böse: die Einordnung, die das Buch verweigert"@de ;
+    skos:definition "The book's refusal to classify the spirits of the air. In the air are spirits which holy mother Church calls damned, but they themselves assert the opposite to be true, and therefore we do not wish to call them either good or bad."@en ;
+    skos:note "The refusal is reported as a refusal and not as a doctrine: the book names both parties, names that they disagree, and declines to decide. Kept as a concept of the tradition rather than as a dispute node, because one place reporting two sides is one source and a dispute in this holding carries two."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, third treatise, proem on the aerial spirits (Sloane MS 3854, fol. 132ra), section 26 of Boudet's critical edition: eos neque bonos neque malos volumus appellare" .
+
+pmc:IuratusNonagintaTriaCapitula a pm:Conceptualizing ;
+    pm:fromWork pmw:LiberIuratusHonorii ;
+    rdfs:label "The ninety-three capitula and their five works"@en, "Die dreiundneunzig Kapitel und ihre fünf Werke"@de ;
+    skos:definition "The catalogue the book puts before itself, which Honorius says he drew out of seven volumes of the magical art: ninety-three capitula, divided over five works. The first work holds six, from the composition of the seventy-two-letter name to the redemption of three souls out of purgatory, with the divine vision as its second. The second holds twenty-seven, on the heavens and their angels and on knowing things present, past and to come. The third holds fifty-four, from the constraining of spirits by words to the appearance of every pleasure, and it is the part that names invisibility, the opening of locks, the destruction of a kingdom, the curing and the giving of any sickness, and the killing of anyone. The fourth holds the freeing of prisoners, the opening of locks and prisons, hidden treasure, and the appearance of dead bodies speaking. The fifth is the exposition of the four before it."@en ;
+    skos:note "Entered as the catalogue and not as ninety-three capacities, and the reason is a property of the witnesses rather than of the run. The catalogue is read at the wording and in the Latin, so each entry is a claimed use of the art with its name; but the operative chapter is read for the first work only. For capitula seven to ninety-three the witnesses carry the title and not the procedure: the English of Royal MS 17 A. xlii breaks off in the second treatise and Boudet's edition prints the table and then the chapters he selects. A yielding node per title would claim a reading of ninety-three prescriptions that did not happen, which is the error SPEC 15 names on the other axis from prima-materia#747. The omission is named in the pull request of this harvest and is the work the next run on this witness has to do."@en ;
+    skos:note "The count itself is a finding. The oldest witnesses say ninety-three and one manuscript says ninety-two; Honorius says he preserved the flower of seven volumes and left the bark to others. So the work presents itself as a selection with a number, and the number is in the prologue rather than in a later table of contents."@en ;
+    pm:withinTradition pmt:ArsNotoria ;
+    dcterms:source "Liber iuratus Honorii, prologue and cap. II, the capitula of the five works (Sloane MS 3854, fols. 112vb-113vb), sections 3 and 4 of Boudet's critical edition, at pp. 872-874, and in the English of Royal MS 17 A. xlii, fols. 4r-5v, ed. Peterson" .
+
+pmc:IuratusSituatVisioSomnus a pm:Situating ;
+    rdfs:label "The work of the vision stands at the threshold of sleep"@en, "Das Werk der Schau steht an der Schlafschwelle"@de ;
+    pm:situatedNode pmp:IuratusOpusVisionis ;
+    pm:axisValue pm:sleepThreshold ;
+    pm:situationGround "The operation ends with the instruction to sleep and thereafter not to speak, and the vision is said to follow from that: tunc dormiat et de cetero non loquatur, et sic fiet quod videbit celeste palatium. The source describes the state as sleep entered after the whole apparatus is in place and does not name a coordinate; the placement is the compiler's."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The placement is on the threshold rather than on dreaming within, because the text puts the going to sleep and the silence as the last prescribed acts and makes the sight follow them, without saying that what is seen is seen as a dream. The grant or the refusal of pmc:IuratusConcessusVelRepulsa is said in somnis and is a different act thirteen days earlier."@en .
+
+pmc:IuratusSituatVisioAgentia a pm:Situating ;
+    rdfs:label "The vision is not compelled but prayed for"@en, "Die Schau wird nicht erzwungen, sondern erbeten"@de ;
+    pm:situatedNode pmc:IuratusVisioDivina ;
+    pm:axisValue pm:cededAgency ;
+    pm:situationGround "The source says the sight of the Deity will not be had without perfect pureness, for he will not be constrained but prayed unto and entreated: quia non est super ipsum coactio immo preces. The same book constrains spirits by words, seals and tables in its third work, so the ceding is stated for this operation specifically and not as a general stance."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Worth the placement because the contrast is inside one work: the agency is the operator's where spirits are constrained and ceded where God is asked, and a transmission that holds both is a different thing from one that holds either."@en .
