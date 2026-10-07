@@ -1,0 +1,182 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Ājīvika transmission, taken off the register
+#
+# Taken from traditions/registry-indic.ttl on the structure-driven entrance of
+# SPEC 14, the one that comes without a question and is the only corrective to
+# the holding's prägung. The queue of that entrance is
+# queries/coverage-queue.rq sorted by contact route. The two registrations
+# above this one on the absent route, the Amazonian and the Australian, are
+# both held by an open decision for the person (prima-materia#806,
+# prima-materia#781); the one on the disputed route, Bön, is held by the
+# access path, since both witnesses of the Nine Ways of Bon lie on archive.org
+# and archive.org was down for the whole of this run. This was therefore the
+# next place that a run could actually take.
+#
+# Its own registration called it the limiting case: a transmission with no
+# surviving corpus of its own, whose every claim will be an ascription by
+# hostile witnesses. That is right, and the reading sharpens it into something
+# the holding did not have.
+#
+# **This is the one transmission in the holding that can carry no pm:Yielding
+# at all.** Not because nothing has been read, but because what was read is
+# the denial of the form. The doctrine says there is no cause and no condition
+# for the purification of beings, no act of one's own and none of another's, no
+# power, no energy, no human strength and no human exertion; and that no
+# precept, vow, austerity or holy life will ripen an unripe deed or wear away
+# a ripe one. A yielding node asserts that a practice brings a capacity about.
+# Here the source asserts that nothing does. The absence of that class of node
+# in this file is therefore a finding and not a gap, and a later run must not
+# fill it.
+#
+# The three decisions SPEC 14 requires before the first node:
+#
+# The contact route stays at pm:contactRouteDocumented and the reading makes it
+# stronger than documented: the transmission is reached only through the canons
+# of the two movements that competed with it in the same decades and the same
+# region, so there is no question of independence and none is claimed. The
+# edition is one throughout and named in every source: the Mahāsaṅgīti
+# Tipiṭaka of Buddhavasse 2500 for the Pali, read against two translations.
+# And the number of citable places: three works of the opponents' canon opened
+# and a fourth cited in a note, eight places entered, two of them placed on the
+# consciousness axes.
+#
+# What this file does not do. It does not take the Jain narrative of Gosāla in
+# traditions/jain.ttl over here; that stands where it belongs, as a claim of
+# the Jain transmission about a person, read in second hand. This file holds
+# what the opponents report as the doctrine.
+#
+
+pmt:Ajivika a pm:Tradition ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "Ājīvika transmission"@en, "Ājīvika-Überlieferung"@de ;
+    skos:definition "A lost renunciant transmission teaching a fixed destiny through which every being passes, known only through the reports of its opponents."@en ;
+    skos:note "Registered as the limiting case: a tradition with no surviving corpus of its own. Whatever it yields will be an ascription by hostile witnesses and must be recorded as one. Taken off pm:corpusNamed on 2026-10-07, and the ascriptions are recorded as such: every node of this file carries pm:thirdPartyAscription and names the canon that reports it."@en ;
+    skos:note "The corpus of this transmission is the corpus of its opponents, which is why pm:corpusWork here names the Dīgha Nikāya, the Aṅguttara Nikāya, the Saṁyutta Nikāya and the Jain Viyāhapannatti. The last is unopened for this transmission: it is read in traditions/jain.ttl in second hand for the narrative of Gosāla and his fiery power, which is a claim of the Jain transmission about a person and not a report of the Ājīvika doctrine. queries/unopened-works.rq will therefore carry it, and that is accurate."@en ;
+    skos:note "The one finding that no other registered transmission in this holding can produce: the doctrine denies the form of claim this project collects. There is no cause and no condition, no agency of one's own or of another, no power and no exertion, and no austerity that shortens the round. So this file has no pm:Yielding and cannot have one, and the holding now has a registered transmission whose place in it is to stand against the rest."@en ;
+    pm:principalCorpus "No transmitted corpus; the doctrine is reported in the Buddhist and Jain canons, chiefly the Sāmaññaphalasutta of the Dīgha Nikāya, the Chaḷabhijātisutta and the Kesakambalasutta of the Aṅguttara Nikāya, the Mahādiṭṭhisutta of the Saṁyutta Nikāya and the Viyāhapannatti" ;
+    pm:corpusWork pmw:DighaNikaya, pmw:AnguttaraNikaya, pmw:SamyuttaNikaya, pmw:Viyahapannatti ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Dīgha Nikāya 2, Sāmaññaphalasutta 19-21, in the Mahāsaṅgīti Tipiṭaka Buddhavasse 2500 edition of the Pali, read with the English translation of Bhikkhu Sujato (2018) and the German of Sabbamitta" .
+
+pmw:AnguttaraNikaya a dcterms:BibliographicResource ;
+    rdfs:label "Aṅguttara Nikāya"@en, "Aṅguttara Nikāya"@de ;
+    skos:note "Declared here because this run is the first to cite it. It is a work of the Theravāda canon and not of this transmission; it stands under pm:corpusWork of pmt:Ajivika for the same reason the Dīgha Nikāya does, namely that the opponents' canon is the only corpus this transmission has. When pmt:Theravada opens it, the identifier is already minted and does not need to be invented twice."@en .
+
+pmw:SamyuttaNikaya a dcterms:BibliographicResource ;
+    rdfs:label "Saṁyutta Nikāya"@en, "Saṁyutta Nikāya"@de ;
+    skos:note "Declared here because this run is the first to cite it, and for the same reason as the Aṅguttara: it is a work of the Theravāda canon and stands under pm:corpusWork of this transmission because the opponents' canon is the only corpus this transmission has."@en .
+
+pmw:Viyahapannatti a dcterms:BibliographicResource ;
+    rdfs:label "Viyāhapannatti (Bhagavaī)"@en, "Viyāhapannatti (Bhagavaī)"@de ;
+    skos:note "Declared here for the same reason, and unopened for this transmission. traditions/jain.ttl reads its fifteenth book in second hand for the narrative of Gosāla; the doctrine reported in this file is not taken from there."@en .
+
+pmc:AjivikaNiyati a pm:Conceptualizing ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "Destiny, circumstance and nature, and the denial of every exertion"@en, "Schicksal, Umstände und Natur, und die Leugnung jeder Anstrengung"@de ;
+    skos:altLabel "niyati"@en, "niyati-saṅgati-bhāva"@en, "niyatisaṅgatibhāvapariṇatā"@en ;
+    skos:definition "The doctrine the Dīgha Nikāya puts in the mouth of Makkhali Gosāla. There is no cause and no condition for the corruption of beings: beings are corrupted without cause and without condition. There is no cause and no condition for the purification of beings: beings are purified without cause and without condition. There is no act of one's own, no act of another, no act of a person; there is no power, no energy, no human strength, no human exertion. All beings, all breathing things, all creatures, all souls are without mastery, without power, without energy, bent by destiny, by circumstance and by nature, and experience pleasure and pain in just six classes of birth."@en ;
+    skos:note "The Pali of the central phrase is niyatisaṅgatibhāvapariṇatā and the sevenfold denial that precedes it is natthi attakāre, natthi parakāre, natthi purisakāre, natthi balaṁ, natthi vīriyaṁ, natthi purisathāmo, natthi purisaparakkamo. Both translations read render the denial as covering power, energy, strength and vigour, which is the vocabulary this holding uses for what a practice is supposed to produce."@en ;
+    skos:note "Entered as the report it is. The witness is the canon of a competing movement, in a set speech that the same text puts in the mouths of five other teachers in the same form, and a modern reader cannot check it against anything the Ājīvikas wrote, because nothing they wrote survives. pm:thirdPartyAscription and not pm:textualAttestation for exactly that reason: the wording is textually attested, the doctrine is ascribed."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Ajivika ;
+    dcterms:source "Dīgha Nikāya 2, Sāmaññaphalasutta 20.2-20.6 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segments dn2:20.2-20.6), read with the translations of Bhikkhu Sujato and Sabbamitta" .
+
+pmc:AjivikaSamsarasuddhi a pm:Conceptualizing ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "Purification by running through the round"@en, "Läuterung durch das Umherwandern"@de ;
+    skos:altLabel "saṁsārasuddhi"@en ;
+    skos:definition "The end the doctrine does hold out, and the terms on which it is reached. Pleasure and pain are measured out; the round has its limit set; there is no increasing it and no diminishing it, no raising and no lowering. Fools and the wise alike, having run on and wandered through, will make an end of suffering. The running through is enumerated: one million four hundred thousand principal wombs, and six thousand, and six hundred; five hundred kinds of deed, and five, and three; a deed and a half-deed; sixty-two paths and sixty-two sub-aeons; six classes of birth and eight stages of a human life; four thousand nine hundred Ājīvaka ascetics, four thousand nine hundred wanderers, four thousand nine hundred abodes of serpents; two thousand faculties, three thousand hells, thirty-six elements of dust; seven embryos with perception, seven without, seven knotless; seven gods, seven men, seven goblins, seven lakes, seven cast-offs and seven hundred, seven precipices and seven hundred, seven dreams and seven hundred; and eight million four hundred thousand great aeons."@en ;
+    skos:note "This is the shape the holding keeps at generalizations/the-count-that-does-not-fall-due.ttl and at generalizations/counted-thresholds.ttl, in its purest form. The count is exact, the terms are enumerated to the last seven hundred dreams, and the total cannot fall due inside a life or inside any number of lives a witness could follow. A number that precise and that unreachable does the work of having no number at all, and the text says in its next sentence that nothing can shorten it."@en ;
+    skos:note "Not added to either generalization in this run. SPEC 16 requires the counter-search against the holding before a generalization is written or enlarged, and the counter-search that would have to run here is the one for transmissions that put a count on something and let it come due. It was not carried."@en ;
+    skos:note "Also the one place where the Ājīvika report concedes a goal that is reached: the end of suffering, by everyone, fools and wise alike. The ball of thread at pmc:AjivikaSuttagulaUpama is the image the text gives for it."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Ajivika ;
+    dcterms:source "Dīgha Nikāya 2, Sāmaññaphalasutta 20.7 and 20.9 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segments dn2:20.7, dn2:20.9), read with the translations of Bhikkhu Sujato and Sabbamitta" .
+
+pmc:AjivikaNaTapasaParipaka a pm:Conceptualizing ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "No austerity ripens an unripe deed"@en, "Keine Bußübung bringt eine unreife Tat zur Reife"@de ;
+    skos:definition "The clause that denies the form of claim this holding collects, in the words of the report: and therein there is no such thing as this, that by this precept or by this vow or by this austerity or by this holy life I shall ripen an unripened deed, or wear away a ripened deed by experiencing it piece by piece; it is not so."@en ;
+    skos:note "The Pali is tattha natthi imināhaṁ sīlena vā vatena vā tapena vā brahmacariyena vā aparipakkaṁ vā kammaṁ paripācessāmi, paripakkaṁ vā kammaṁ phussa phussa byantiṁ karissāmī ti hevaṁ natthi. The four named means are precept, vow, austerity and the holy life, which is the standard fourfold list of what the competing movements of the same period said did work, so the denial is pointed and not general."@en ;
+    skos:note "This is the node that makes a yielding claim impossible for this transmission, and it is why the file has none. A reader who wants the holding's one clear counter-position to every pm:Yielding in it should start here."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Ajivika ;
+    dcterms:source "Dīgha Nikāya 2, Sāmaññaphalasutta 20.8 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segment dn2:20.8), read with the translations of Bhikkhu Sujato and Sabbamitta" .
+
+pmc:AjivikaSuttagulaUpama a pm:Conceptualizing ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "The ball of thread thrown, which runs until it is unwound"@en, "Das geworfene Garnknäuel, das läuft, bis es abgewickelt ist"@de ;
+    skos:definition "The image the report gives for the fixed round: just as a ball of thread, when thrown, runs on only while it unwinds, so fools and the wise alike, having run on and wandered through, will make an end of suffering."@en ;
+    skos:note "Kept as its own node because the simile carries something the enumeration does not: the end is certain, it is reached by running out rather than by arriving, and nothing the thread does alters when it stops. That is a different claim from the bare count, and it is the part a later reader can hold against transmissions that make the end depend on the practice."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Ajivika ;
+    dcterms:source "Dīgha Nikāya 2, Sāmaññaphalasutta 20.10-20.11 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segments dn2:20.10-20.11), read with the translations of Bhikkhu Sujato and Sabbamitta" .
+
+pmc:AjivikaGosalaAttributio a pm:Attributing ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "Makkhali Gosāla taught purification by the round"@en, "Makkhali Gosāla lehrte die Läuterung durch das Umherwandern"@de ;
+    pm:ascribedCapacity pmc:AjivikaSamsarasuddhi ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Ajivika ;
+    skos:note "The ascription and its frame in one node, because the frame is the whole value of the witness. King Ajātasattu reports that he asked the bamboo-staffed ascetic Gosāla about the fruit of the ascetic life visible in the present life, and that Gosāla answered with purification by the round; and he says it was as if a man asked about a mango answered with a breadfruit, or asked about a breadfruit answered with a mango. He adds that he neither approved nor rejected what was said, and left without taking the words up."@en ;
+    skos:note "So the only witness to the doctrine reports it as an evasion of a question about results, and the question it evades is the project's own question. That is the part a later run should weigh before using this report as evidence of what the Ājīvikas held: a hostile source that frames the doctrine as a non-answer has a motive for the shape it gives it."@en ;
+    skos:note "How hostile the witness is, in its own words and from the same canon: the Kesakambalasutta calls the doctrine of the bamboo-staffed ascetic the worst of all the doctrines of the various ascetics and brahmins, as a hair blanket is the worst woven cloth, summarises it as there is no deed, no action, no energy, and says that the man has come into the world as a trap for humans, for the harm and suffering of many beings. Read in the Pali at an3.137:1.3-3.2. That is the stance of the source of every node in this file, and it is recorded here rather than at a node of its own because the verdict belongs to the Theravāda transmission and not to this one."@en ;
+    dcterms:source "Dīgha Nikāya 2, Sāmaññaphalasutta 19.1-21.7 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segments dn2:19.1-21.7), read with the translations of Bhikkhu Sujato and Sabbamitta" .
+
+pmc:AjivikaChalabhijati a pm:Conceptualizing ;
+    pm:fromWork pmw:AnguttaraNikaya ;
+    rdfs:label "The six classes of birth, with the Ājīvikas at the top"@en, "Die sechs Geburtsklassen, mit den Ājīvikas an der Spitze"@de ;
+    skos:altLabel "chaḷābhijāti"@en ;
+    skos:definition "The classification the Aṅguttara Nikāya reports: a black class of slaughterers, hunters, fishers, bandits, executioners, butchers and jailers and any others of a cruel livelihood; a blue class of mendicants whose life is thorny and any others who teach the efficacy of deed and action; a red class of the Jain ascetics who wear one cloth; a yellow class of the white-robed householders who are disciples of the naked ascetics; a white class of the Ājīvaka ascetics, male and female; and an ultimate white class consisting of Nanda Vaccha, Kisa Saṅkicca and the bamboo-staffed Gosāla."@en ;
+    skos:note "The scheme puts the transmission that denies the efficacy of deeds above the one that teaches it, and names its own three founders as the single highest class. That is a scale of attainment with persons at its top and no practice between the classes, which is consistent with the doctrine of pmc:AjivikaNaTapasaParipaka and is the only ranking this transmission is reported to have had."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Ajivika ;
+    dcterms:source "Aṅguttara Nikāya 6.57, Chaḷabhijātisutta 1.3-8.1 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segments an6.57:1.3-8.1), read with the English translation of Bhikkhu Sujato" .
+
+pmc:AjivikaChalabhijatiVivada a pm:Disputing ;
+    pm:fromWork pmw:AnguttaraNikaya ;
+    rdfs:label "Whose scheme the six classes are: the canon says both"@en, "Wessen Lehre die sechs Klassen sind: der Kanon sagt beides"@de ;
+    pm:disputedClaim pmc:AjivikaChalabhijati ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Ajivika ;
+    skos:note "The one witness to this transmission disagrees with itself about who taught what. The Dīgha Nikāya carries the six classes of birth, chaḷābhijātiyo, inside the enumeration it puts in the mouth of Makkhali Gosāla. The Aṅguttara Nikāya has Ānanda report the same six classes, named and filled out, as the scheme of Pūraṇa Kassapa, and has Gosāla appear in it as a member of its highest class rather than as its author. Both places were read in the same edition and in translation."@en ;
+    skos:note "No side is preferred here and no resolution is proposed. What the dispute establishes is a property of the witness rather than of the doctrine: the canon that is the sole source for the Ājīvika transmission attributes one of its two reported doctrines to two different teachers, so an ascription from it carries that much uncertainty before anything else is asked. The same uncertainty attaches to every node of this file."@en ;
+    skos:note "The ground on which the Aṅguttara rejects the scheme is worth recording and is not a second side of this dispute. The Buddha asks whether the whole world authorised Pūraṇa Kassapa to describe these classes, says it did not, and compares it to forcing a cut of meat on a penniless man and demanding payment: the classes were described without the consent of the ascetics and brahmins put into them. That is an objection to the procedure of classifying and not to the content of the classes, and it is the only objection of that form found in either place."@en ;
+    dcterms:source "Dīgha Nikāya 2, Sāmaññaphalasutta 20.7 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segment dn2:20.7)" ,
+        "Aṅguttara Nikāya 6.57, Chaḷabhijātisutta 1.3-9.4 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segments an6.57:1.3-9.4)" .
+
+pmc:AjivikaAnattributaDitthi a pm:Conceptualizing ;
+    pm:fromWork pmw:SamyuttaNikaya ;
+    rdfs:label "The same enumeration, fused with another teacher's doctrine and ascribed to nobody"@en, "Dieselbe Aufzählung, mit der Lehre eines anderen verschmolzen und niemandem zugeschrieben"@de ;
+    skos:definition "The third place in the same canon, and the one that unsettles the other two. The Mahādiṭṭhisutta presents, as a view that arises from grasping at form, feeling, perception, choices and consciousness, a doctrine that joins two things the Sāmaññaphalasutta keeps apart: the seven unmade bodies with the clause that one who cuts off a head takes no life, which the Sāmaññaphalasutta gives to Pakudha Kaccāyana, and the whole enumeration of wombs, aeons and dreams with the denial of austerity and the ball of thread, which it gives to Makkhali Gosāla. In the Saṁyutta the two stand as one view and no teacher is named for it."@en ;
+    skos:note "The reading was done in the Pali of all three places: the seven bodies at dn2:26.2-26.10 under the heading Pakudhakaccāyanavāda, the enumeration at dn2:20.7-20.11 under the heading Makkhaligosālavāda, and the fusion at sn24.8:1.3-1.15 under no heading of a teacher at all. The wording of the shared clauses is near identical across the places."@en ;
+    skos:note "Entered because it is the strongest statement this holding can make about the quality of its only witness to this transmission. The canon's materials for the rival doctrines circulate: the same block appears split between two named teachers in one work, fused and unattributed in another, and its six classes given to a third teacher in a third. An ascription drawn from it is therefore an ascription to a position the witness itself does not keep attached to one person, and every node of this file is to be read with that reservation."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Ajivika ;
+    dcterms:source "Saṁyutta Nikāya 24.8, Mahādiṭṭhisutta 1.3-1.15 (Mahāsaṅgīti Tipiṭaka Buddhavasse 2500; segments sn24.8:1.3-1.15), read with the English translation of Bhikkhu Sujato, against Dīgha Nikāya 2, Sāmaññaphalasutta 20.7-20.11 and 26.2-26.10 in the same edition" .
+
+pmc:AjivikaSituatAcquisitio a pm:Situating ;
+    rdfs:label "The end of suffering comes not by effort"@en, "Das Ende des Leidens kommt nicht durch Anstrengung"@de ;
+    pm:situatedNode pmc:AjivikaSamsarasuddhi ;
+    pm:axisValue pm:notByEffort ;
+    pm:situationGround "The source states the acquisition negatively and at length: there is no cause and no condition for the purification of beings, no precept or vow or austerity or holy life ripens an unripe deed, there is no increasing or diminishing of the round, and fools and the wise alike make an end of suffering by running through it. The coordinate is the compiler's; the source names no axis."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The clearest case on this axis in the holding, and worth the placement for that reason: most sources leave the acquisition to be inferred from a prescription, and this one argues for the negative value directly."@en .
+
+pmc:AjivikaSituatAgentia a pm:Situating ;
+    rdfs:label "The agency distinction is refused, not answered"@en, "Die Unterscheidung der Handlungsträgerschaft wird verweigert, nicht beantwortet"@de ;
+    pm:situatedNode pmc:AjivikaNiyati ;
+    pm:axisValue pm:agencyDeclined ;
+    pm:situationGround "The axis asks who acts according to the source, and the source denies both ends of it in one sentence: natthi attakāre, natthi parakāre, natthi purisakāre, there is no act of one's own, no act of another, no act of a person. Neither pm:ownAgency nor pm:cededAgency would be the report, and pm:agencyNotStated would be false, because the question is put and answered with a refusal of the distinction."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "This is the use the declining value was introduced for, in the terms SPEC 17 sets: a transmission that rejects the distinction itself, held apart from a source that was asked and said nothing. Before this placement the four consciousness axes carried no instance of a declining value from a transmission that argues for the refusal."@en .
