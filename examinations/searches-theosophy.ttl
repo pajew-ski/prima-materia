@@ -1,0 +1,61 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the run on the theosophical transmission,
+# 2026-10-08
+#
+# In a file of their own for the mechanical reason in prima-materia#703.
+#
+# Three searches. The first is the one this strand was chosen for: a node in
+# this holding had left a list of markers to be measured against a source
+# nobody had opened, and the measurement is a search with an outcome. The
+# second asked for a stated condition under which the practice would be shown
+# not to have worked and found the opposite of one. The third is the
+# counter-search, and it came back with opposing material from inside the same
+# work, which is the cheapest place it could have come from and the last place
+# it was expected.
+#
+
+pmp:TheosophyMarkerVerificationSearch a pm:Searching ;
+    rdfs:label "Whether the 1916 footnote agrees with the work it names as its source"@en, "Ob die Fussnote von 1916 mit dem Werk uebereinstimmt, das sie als Quelle nennt"@de ;
+    pm:searchedCorpus "C. W. Leadbeater, The Inner Life, first series, chapter Force-Centres, pp. 286-297, read complete in the Theosophical Press printing of Chicago 1922, against the footnote in F. L. Woodward, Manual of a Mystic (Pali Text Society Translation Series VI, 1916), pp. 13-15, read complete; with C. W. Leadbeater, The Chakras, chapter II, pp. 12-16, read for the counts alone." ;
+    pm:searchedFor "Whether each of the diagnostic markers that pmc:WoodwardCakkaInterpolatio in originations/boran-theosophical-insertion.ttl lists for the 1916 footnote stands in the work the footnote names as its source: the count of seven, the radiation counts, the colours, the faculties, the two assignments to the manual's own vocabulary, and the warning. That node was written to make a later presentation measurable against the markers, and nobody had opened the source." ;
+    pm:searchTerms "In the English of both works: force-centre, force-centres, chakram, chakras, spokes, petals, radiations, undulations, serpent-fire, kundalini, base of the spine, navel, solar plexus, spleen, heart, throat, between the eyebrows, top of the head, thousand-petalled, nine hundred and sixty, ninety-six, clairvoyance, clairaudient, at a distance, magnification, unbroken, continuous, lower centres, great danger, greatest of misfortunes." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:TheosophyChakrams, pmc:TheosophyPericulumKundalini, pmc:TheosophyClairaudientia, pmc:TheosophyClairvoyantia, pmc:TheosophyMagnificatio, pmc:TheosophyConscientiaContinua ;
+    pm:searchedBy "prima-materia, 2026-10-08" ;
+    dcterms:date "2026-10-08" ;
+    skos:note "Measured, and the result is mixed in a way worth having. The count of seven, the locations, the five radiation counts for the first five centres, the colours and the three faculties all stand in the named chapter, so the footnote is a faithful digest of them and the earlier node's reading of it is confirmed. The two assignments to the manual's own vocabulary, the throat centre to the element of mobility and the brow centre to the element of heat, are not in the source and were already recorded in the earlier node as the translator's own join; that part needed no correction."@en ;
+    skos:note "Two points do not stand and both were corrected in originations/boran-theosophical-insertion.ttl in the same run. First, the sixth count. The source gives ninety-six for the brow centre as its own figure, attributes the figure two to the Indian books, and says that a count of undulations of the same character as the others gives forty-eight in each half; the footnote keeps two halves and drops the ninety-six, and the earlier node's marker list turned that into a radiation count of two standing beside the others. Second, and more consequential, the warning. The source warns against three centres that Blavatsky is said to call the lower centres and that are not among its seven; the footnote turns this into a warning against the centres below the navel, which in the source are the first two of the seven that are used and the first of which is where the fire is roused."@en ;
+    skos:note "Recorded as opposing material rather than as a find, because what it opposes is this holding's own earlier reading. It does not show the 1916 footnote fabricated; it shows that the one safety statement in a Pali Text Society volume is a digest that moved its source's warning onto the steps its source prescribes. That is a sharper version of the finding the earlier node was written for and it is now checkable, because the source is open."@en ;
+    skos:note "What the search did not settle. The footnote names The Inner Life without an edition and this run read the Chicago printing of 1922, six years after the footnote; which printing the compiler had is therefore unestablished, and so is whether his wording tracked a different one. The two chapters are identical in substance to the treatment in The Chakras of 1927 on every count checked, which makes a divergent earlier printing unlikely but does not exclude it."@en .
+
+pmp:TheosophyFalsificationSearch a pm:Searching ;
+    rdfs:label "Whether the opened work names a condition under which the arousing would be shown not to have worked"@en, "Ob das geoeffnete Werk eine Bedingung nennt, unter der das Wecken als nicht gelungen erwiesen waere"@de ;
+    pm:searchedCorpus "C. W. Leadbeater, The Inner Life, first series, chapters Force-Centres, pp. 286-297, and The Serpent-Fire, pp. 298-303, both read complete in the Theosophical Press printing of Chicago 1922." ;
+    pm:searchedFor "A term after which nothing further is to be expected, a sign of a failed attempt, a stated outcome whose absence would count against the practice: anything from which a pm:falsifiedBy could be formed. This is the question of the testability-driven entrance of SPEC 14, put to a transmission chosen on the structure-driven one." ;
+    pm:searchTerms "In the English: ineffective, fail, failure, no result, over and over, again, many times, layers, degrees of force, partial, partially, temporary, exception, favouritism, incarnation, later round, due course, not yet met with any facts, by no means excellent." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:TheosophyIgnisStratificatus, pmc:TheosophyDilatioIncarnationum, pmc:TheosophyNullaExceptio ;
+    pm:searchedBy "prima-materia, 2026-10-08" ;
+    dcterms:date "2026-10-08" ;
+    skos:note "No falsifier, and the three places that stand where one would be are the reason the outcome is recorded as opposing and not as nothing. The fire is said to exist in seven layers, so that a man who exerts his will may affect one only, and when he thinks he has done the work may find it ineffective and have to do it again many times; the attainment is deferred, for most people, past the present incarnation and for the majority to a later round altogether; and the expectation of an exception is raised in advance and answered by locating the cause of a bad outcome in the practitioner's impatience. Each of the three accounts for an attempt that produced nothing, and together they leave no outcome that the practice could fail to produce."@en ;
+    skos:note "The one place where the source lets an observation count against a claim of its own is not about the practice but about the petals: the author reports the suggestion that each petal represents a moral quality, says he has met no facts confirming it, and reports persons in whom centres were in full activity though the moral development was by no means excellent. That is a stated counter-instance and it is entered at pmc:TheosophyPetalaNonMoralia. It is listed here because a search for falsifiers that reported only the three devices would miss the one thing in these chapters that behaves like evidence."@en ;
+    skos:note "What was not searched: Isis Unveiled and The Secret Doctrine, both named in the registration's principal corpus, both reachable, neither opened. A falsifier for this practice could in principle stand in either, and queries/unopened-works.rq carries them."@en .
+
+pmp:TheosophyCounterSearch a pm:Searching ;
+    rdfs:label "Whether anything in the opened work denies the centres, the faculties or the mechanism"@en, "Ob irgendetwas im geoeffneten Werk die Zentren, die Vermoegen oder den Mechanismus bestreitet"@de ;
+    pm:searchedCorpus "C. W. Leadbeater, The Inner Life, first series, chapters Force-Centres and The Serpent-Fire, pp. 286-303, read complete in the Theosophical Press printing of Chicago 1922, with C. W. Leadbeater, The Chakras, chapter II, pp. 10-16." ;
+    pm:searchedFor "The negation of the claims entered in traditions/theosophy.ttl, sought first inside the opened work as SPEC 15 requires of every claim: a passage denying the seven centres, denying a faculty attributed to one of them, or withdrawing the mechanism by which the faculties are said to arise." ;
+    pm:searchTerms "In the English: not, no facts, I have not, cannot, by no means, do not yet know, unexplained, must be made, repeated and verified, suggested, I am not able to see." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:TheosophyPetalaNonMoralia, pmc:TheosophyChakrams ;
+    pm:searchedBy "prima-materia, 2026-10-08" ;
+    dcterms:date "2026-10-08" ;
+    skos:note "Nothing denies the centres or the faculties, and two places qualify them from inside. The author declines the reading that each petal represents a moral quality, on the ground that he has met no facts confirming it and has met persons in whom the centres were active and the moral development was not; and in the second work he says the factors determining the number of spokes in a chakra are not yet known and that hundreds of observations and comparisons must be made, repeated and verified over and over again before much more can be said. Both are entered, the first as its own node and the second at pmc:TheosophyChakrams."@en ;
+    skos:note "The counter-search outside this transmission was not carried and the reason is that it would be a different strand: the claims of this file are reports of clairvoyant observation, and the material that bears against them is modern anatomy and the literature on the history of the subtle body, which enters this holding only through pm:evidenceFrom at a pm:Testing node and under the counter-search duty that SPEC 3 attaches to it. No pm:Testing node is written here, and its absence says what it should: nobody has taken up the examination."@en .
