@@ -1,0 +1,100 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Latin mystical transmission, taken off the register
+#
+# Taken from traditions/registry-mediterranean.ttl on the testability-driven
+# entrance of SPEC 14, which has precedence among the entrances that have a
+# question, and on the structure-driven one at the same time: the registration
+# stood at pm:corpusNamed in queries/coverage-queue.rq, and its own note named
+# the reason to come here first — that Teresa's dwellings and John of the
+# Cross's nights are the western material closest to a stage map with failure
+# modes, and that the failure modes are stated more plainly than the
+# attainments. The reading bears that out and sharpens it.
+#
+# What the opened block is. Subida del Monte Carmelo, Libro II, chapters XI,
+# XII, XVI, XVII, XVIII and XIX in the Spanish of the Gerardo edition, read
+# complete; and one chapter of Teresa, Moradas sextas 3, opened for the
+# counter-search and for nothing else. Everything else of the registered
+# corpus stands as an unopened work.
+#
+# The three decisions SPEC 14 requires before the first node:
+#
+# The contact route stays at pm:contactRouteDocumented, and the reading makes
+# it closer than documented rather than looser. This transmission stands
+# downstream of the material already in traditions/desert-monasticism.ttl,
+# traditions/christian-discernment.ttl and traditions/greek-pneuma-hesychasm.ttl;
+# no independence is claimed anywhere in this file, and the one place where a
+# reworking could be asserted is left unwritten and said so at
+# pmc:SubidaMagisterContagio.
+#
+# The edition. Spanish throughout, from the Gerardo de San Juan de la Cruz
+# edition of Toledo 1912 for the Subida and the Navarro Tomás edition of
+# Madrid 1910 for the Moradas, each read against two translations: the Subida
+# against the English of David Lewis revised by Zimmermann and the French of
+# the Carmelites of Paris, the Moradas against the English of the Benedictines
+# of Stanbrook revised by Zimmerman and the French of Marcelle Auclair. The
+# numbering is edition-dependent and the difference is not cosmetic: the
+# chapters this file cites as II.XI, II.XVI, II.XVII, II.XVIII and II.XIX in
+# the Gerardo text stand as II.13, II.18, II.19, II.20 and II.21 in Lewis,
+# because Gerardo carries as one chapter what Lewis divides in two. Every node
+# gives both numbers.
+#
+# The number of citable places: six chapters of one work and one of a second,
+# nineteen places entered.
+#
+# The finding this file exists for, and it is not the stage map. It is that
+# the one transmission in this holding whose registration promised stated
+# failure modes delivers something better and worse than that: a chapter that
+# argues, from four scriptural cases and two invented ones, that a prediction
+# which is true in itself may be followed by its own opposite without having
+# been false. The transmission states, in its own operative text, that its
+# communications do not divide the outcomes. See pmc:SubidaProphetiaNonDiscriminans.
+# And then the second founder of the same reform, in the same decade, makes a
+# certainty that survives every contrary outcome the third and most reliable
+# sign that a locution came from God. Both name Jonah at Nineveh, to opposite
+# ends. pmc:LatinMysticismCriterionDispute holds the pair.
+#
+
+pmt:LatinMysticism a pm:Tradition ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Latin mystical transmission"@en, "Lateinische Mystik"@de ;
+    skos:definition "The western Christian transmission of graded interior states, with criteria for telling one state from another and warnings against taking consolation for progress."@en ;
+    skos:note "Registered with the note that Teresa's dwellings and John of the Cross's nights are the western material closest to a stage map with failure modes. Taken off pm:corpusNamed on 2026-10-08 at the Subida del Monte Carmelo, with one chapter of the Moradas opened for the counter-search. The contact route is unchanged at documented: this transmission is downstream of the discernment material this holding already carries, and nothing here is offered as an independent witness."@en ;
+    skos:note "Four works of the registered corpus stand as pm:corpusWork without pm:fromWork and are therefore carried by queries/unopened-works.rq. That is accurate and not a defect of the run: the Noche oscura is the continuation of the work opened here and the Gerardo edition argues in its own introduction that it is the third and fourth parts of it, which is an editorial claim and not this holding's; Richard of St Victor, the Cloud of Unknowing and the German sermons of Eckhart were not opened."@en ;
+    pm:principalCorpus "Richard of St Victor, Benjamin Major; Meister Eckhart, German sermons; The Cloud of Unknowing; Teresa of Avila, Las Moradas; John of the Cross, Subida del Monte Carmelo and Noche oscura" ;
+    pm:corpusWork pmw:SubidaDelMonteCarmelo, pmw:MoradasDelCastilloInterior, pmw:NocheOscura, pmw:BenjaminMaior, pmw:NubesIgnorantiae, pmw:EckhartPredigten ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI (Obras del mistico doctor San Juan de la Cruz, ed. Gerardo de San Juan de la Cruz, Toledo 1912, pp. 149-152; II.13 in Lewis), read in the Spanish against the English of David Lewis rev. Zimmermann (London: Thomas Baker, 1906; fourth impression 1922) and the French of the Carmelites of Paris (Paris: Oudin, 1893)" .
+
+pmw:SubidaDelMonteCarmelo a dcterms:BibliographicResource ;
+    rdfs:label "Subida del Monte Carmelo"@en, "Subida del Monte Carmelo"@de ;
+    skos:note "The work opened by this run, in the Gerardo de San Juan de la Cruz edition, Toledo 1912. It breaks off unfinished inside its third book, and the commentary on the last six stanzas that the author announces is lost; the Gerardo introduction argues further that the Noche oscura is the third and fourth parts of this same work. Both are properties of the work and are recorded here rather than at a node, because no node of this file depends on either."@en .
+
+pmw:MoradasDelCastilloInterior a dcterms:BibliographicResource ;
+    rdfs:label "Las Moradas del castillo interior"@en, "Die Wohnungen der inneren Burg"@de ;
+    skos:note "Opened at one chapter only, Moradas sextas 3, and opened for the counter-search of pmc:SubidaVisionesVeraeFallaces rather than for its own sake. The rest is unread, so this work is not harvested and a later run opening it will find most of it standing."@en .
+
+pmw:NocheOscura a dcterms:BibliographicResource ;
+    rdfs:label "Noche oscura"@en, "Dunkle Nacht"@de ;
+    skos:note "Unopened. Named in the registration and in the same volume as the work opened here."@en .
+
+pmw:BenjaminMaior a dcterms:BibliographicResource ;
+    rdfs:label "Benjamin maior"@en, "Benjamin maior"@de ;
+    skos:note "Unopened. Richard of St Victor, named in the registration as part of the principal corpus of this transmission."@en .
+
+pmw:NubesIgnorantiae a dcterms:BibliographicResource ;
+    rdfs:label "The Cloud of Unknowing"@en, "Die Wolke des Nichtwissens"@de ;
+    skos:note "Unopened. Named in the registration. The identifier is the Latin of the title because the work is anonymous and its Middle English title is itself a translation of the phrase it takes from the Dionysian corpus."@en .
+
+pmw:EckhartPredigten a dcterms:BibliographicResource ;
+    rdfs:label "Meister Eckhart, German sermons"@en, "Meister Eckhart, deutsche Predigten"@de ;
+    skos:note "Unopened. A corpus rather than a single work, named in the registration; the identifier stands so that a later run does not mint a second one."@en .
