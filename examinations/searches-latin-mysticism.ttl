@@ -1,0 +1,62 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the run on the Latin mystical transmission,
+# 2026-10-08
+#
+# In a file of their own for the mechanical reason recorded in
+# prima-materia#703 and in AGENTS.md: two strands that append to the same end
+# of examinations/searches.ttl do not merge without a hand, and the standing
+# order requires two strands side by side.
+#
+# Three searches. The first is the counter-search that SPEC 15 requires of
+# every claim and it came back with the strongest result available, opposing
+# material inside the same transmission. The second asked the question the
+# testability-driven entrance exists to ask. The third asked whether the
+# transmission allows any of its own announced signs to count as evidence, and
+# the answer is the reason this transmission is worth more to the holding than
+# its stage map.
+#
+
+pmp:LatinMysticismCriterionSearch a pm:Searching ;
+    rdfs:label "Whether anything in the same transmission holds that a divine locution secures what it says"@en, "Ob irgendetwas in derselben Ueberlieferung haelt, dass eine goettliche Sprache verbuergt, was sie sagt"@de ;
+    pm:searchedCorpus "The two works of the registered corpus of this transmission that treat locutions and revelations as a subject: Juan de la Cruz, Subida del Monte Carmelo, Libro II, the whole run of chapters on the apprehensions of the understanding, in the Spanish of the Gerardo edition, Toledo 1912; and Teresa de Jesus, Las Moradas, the sixth dwelling places, in the Spanish of the Navarro Tomas edition, Madrid 1910, with chapter 3 read complete." ;
+    pm:searchedFor "The negation of pmc:SubidaVisionesVeraeFallaces and pmc:SubidaCausaVariabilis: a passage holding that a communication known to come from God does give security about what it says, so that non-fulfilment would count against it. The question was put to the same transmission first because that is where a counter-position would be most expensive to this holding and cheapest to find, and because SPEC 13 says a finding is relative to the search and not to the stock." ;
+    pm:searchTerms "In the Spanish: senales, certidumbre, seguridad, asegurarse, cumplirse, no se cumple, verdaderas en si, locuciones, hablas, revelaciones, profecia, enganar, antojo, imaginacion, demonio; and the name Jonas with Ninive, which is what joined the two places." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:MoradasSenalesHablas, pmc:MoradasCertitudoSuperstes, pmc:LatinMysticismCriterionDispute ;
+    pm:searchedBy "prima-materia, 2026-10-08" ;
+    dcterms:date "2026-10-08" ;
+    skos:note "Found, and in the sharpest possible place. The second founder of the same reform, writing for the same houses within about eight years, makes a certainty that no contrary outcome removes the third and most reliable sign that a locution came from God, and states its behaviour under disconfirmation in so many words: though it seem that everything goes contrary and years pass, the thought does not leave her that God will seek other means, and in the end it is done. The two positions are entered as a dispute at pmc:LatinMysticismCriterionDispute and neither is preferred."@en ;
+    skos:note "The find that made the search worth the second opening is not either position but the shared case. Both authors reach for Jonah at Nineveh, and they use him for opposite purposes: one to show that a prediction may pass its term unfulfilled without having been false, the other as what the soul is reminded of countless times when it fears the word it was given will be made false. A search that had stopped at the first work would have had the stronger half of the holding's best material on announced terms and would not have known that the same corpus contradicts it."@en ;
+    skos:note "What the search did not establish, said plainly. The Moradas were opened at one chapter and the rest of that work is unread, so this is not a survey of Teresa's position across her writings; the chapter itself refers to her Vida and to her Relaciones for cases, and neither was opened. The dispute entered here rests on one chapter against six, and a later run that opens the Vida may widen or narrow it."@en .
+
+pmp:SubidaFalsificationSearch a pm:Searching ;
+    rdfs:label "Whether the Subida names a sign by which a practitioner could tell that the transition had been made wrongly"@en, "Ob die Subida ein Zeichen nennt, an dem ein Uebender erkennen koennte, dass der Uebergang falsch vollzogen war"@de ;
+    pm:searchedCorpus "Juan de la Cruz, Subida del Monte Carmelo, Libro II, chapters XI to XIX in the Gerardo numbering, read complete in the Spanish of the Gerardo edition, Toledo 1912, against the English of Lewis rev. Zimmermann and the French of the Carmelites of Paris." ;
+    pm:searchedFor "A stated condition under which the practice this work prescribes would be shown not to have worked: a term after which nothing more comes, a mark of a state wrongly identified, a consequence of proceeding on the wrong sign. This is the question of the testability-driven entrance of SPEC 14, and this transmission was chosen for it because its registration named it as the western material with the plainest failure modes." ;
+    pm:searchTerms "In the Spanish: senal, senales, juntas, no basta, distraccion, tibieza, melancolia, humor, cerebro, corazon, embelesamiento, volver atras, perderse, errar, dano, enganar, antes de tiempo, a su tiempo." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:SubidaSenalesCautela, pmc:SubidaSenalesConiunctae ;
+    pm:searchedBy "prima-materia, 2026-10-08" ;
+    dcterms:date "2026-10-08" ;
+    skos:note "Found, and the registration was right. The work states a three-part conjunctive criterion, states that fewer than three do not suffice, and names the two states that counterfeit a partial set: distraction or lukewarmness for the first sign alone, and melancholy or a humour settled in the brain or the heart for the first and second together. It also states the consequence of acting on an incomplete set, which is to go backwards and to have lost the remote means without reaching the proximate one. That is a named misidentification with a named differential diagnosis, and it is the thing this holding most often looks for and does not find."@en ;
+    skos:note "The limit of the find, which is in the source and not a reservation of this run. The sign that does the discriminating work, the third, is said to be almost imperceptible at the beginning of the state, most subtle and delicate and as it were unfelt, and the text gives two reasons why. So the criterion is weakest exactly at the point where a practitioner would need it, and the work says so. A protocol that wanted to use this criterion would have to fix that first, and nothing in the opened block offers a way."@en ;
+    skos:note "A second limit, and it is the one that keeps the find from being a falsifier in the sense of pm:falsifiedBy. The criterion tells a practitioner whether he may leave meditation; it does not say what would show that the contemplation he entered is not happening. Nothing in the opened block states an outcome whose absence would count against the practice itself."@en .
+
+pmp:SubidaSignaUtEvidentiaSearch a pm:Searching ;
+    rdfs:label "Whether the Subida anywhere lets a vision, a locution or a fulfilment count as evidence"@en, "Ob die Subida irgendwo eine Vision, eine Sprache oder eine Erfuellung als Nachweis zaehlen laesst"@de ;
+    pm:searchedCorpus "Juan de la Cruz, Subida del Monte Carmelo, Libro II, chapters XVI to XIX in the Gerardo numbering, read complete in the Spanish of the Gerardo edition, Toledo 1912, with chapters XI to XV read for the same question." ;
+    pm:searchedFor "A passage in which the work permits an announced sign, a vision, a locution or the fulfilment of a prediction to be taken as showing that something is so. The question matters because a transmission whose signs are all withdrawn supplies no confirming evidence at all, and that is a different object for this holding than a transmission whose signs are weak." ;
+    pm:searchTerms "In the Spanish: asegurarse, asegurar, cierto, ciertas, salir verdadero, sale verdad, acierta en lo que esta por venir, probar, indicios, conocer las visiones buenas y las malas, no porque es revelacion sino porque es razon, examinar." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-08" ;
+    dcterms:date "2026-10-08" ;
+    skos:note "Nothing, and the nothing is doctrine. Every candidate the search found is a place where the work takes the evidential value away. A communication true in itself is not thereby true for us. A prediction that comes out right shows nothing, because whoever has a clear natural light can read effects from causes, and the text gives a pestilence and an earthquake as worked examples and calls the result a prophecy of the devil that comes out true. The marks by which good visions are told from bad ones are granted to be worth knowing and the soul is to be kept from the work, the care and the danger of using them. And what is said supernaturally is to be received not because it is a revelation but because it is reason, with the reason examined much more than if no revelation had occurred."@en ;
+    skos:note "So the exhibited gap here is of the useful kind. This transmission supplies, from inside its own operative text, the two things this holding usually has to supply from outside: an alternative account of a correct answer, and a rule that refuses the hearer's certainty as a ground. A later run looking for a transmission that argues against its own confirming evidence should start here, and the nodes are pmc:SubidaVeritasNonProbatOriginem and pmc:SubidaProphetiaNonDiscriminans."@en ;
+    skos:note "What was not searched: the third book of the Subida and the Noche oscura, where the treatment of the memory and the will continues and where a permission of this kind could in principle stand. Both are unopened, and pmw:NocheOscura is carried by queries/unopened-works.rq for that reason."@en .
