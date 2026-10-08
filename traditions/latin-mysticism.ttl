@@ -98,3 +98,95 @@ pmw:NubesIgnorantiae a dcterms:BibliographicResource ;
 pmw:EckhartPredigten a dcterms:BibliographicResource ;
     rdfs:label "Meister Eckhart, German sermons"@en, "Meister Eckhart, deutsche Predigten"@de ;
     skos:note "Unopened. A corpus rather than a single work, named in the registration; the identifier stands so that a later run does not mint a second one."@en .
+
+#
+# I. The transition from meditation to contemplation, and the three signs
+#
+
+pmp:SubidaMeditacionDiscursiva a pm:Practicing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Discursive meditation on imagined forms and figures"@en, "Diskursives Meditieren an vorgestellten Formen und Figuren"@de ;
+    skos:altLabel "meditacion discursiva"@en, "discurso"@en ;
+    skos:definition "The practice of drawing a knowledge and a love of God by reasoning from imagined forms, images and figures: the operation of the sensitive faculties, in which the practitioner goes from one particular to another and finds relish in it. Each such act is one act; the work is the repetition of them."@en ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI-XII (ed. Gerardo, Toledo 1912, pp. 147-157; II.13-14 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmp:SubidaAdvertenciaAmorosa a pm:Practicing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Resting in loving attention to God without acts of the faculties"@en, "Im liebenden Aufmerken auf Gott verweilen, ohne Akte der Vermögen"@de ;
+    skos:altLabel "atencion amorosa"@en, "noticia amorosa general"@en, "advertencia amorosa en paz"@en ;
+    skos:definition "The practice the text prescribes in place of the other: to stay alone with a loving attention to God, without particular consideration, in interior peace and quiet and rest, without acts or exercises of memory, understanding and will, at least without discursive ones, and to give nothing to the imagination or to its work. Where the faculties do act, it is without force and without procured reasoning, moved more by God than by the soul's own ability."@en ;
+    skos:note "The Spanish of the prescription is que aprendan a estarse con atencion y advertencia amorosa en Dios en aquella quietud, y que no se den nada por la imaginacion ni por la obra de ella."@en ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI (ed. Gerardo, Toledo 1912, pp. 148-151; II.13 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaTresSenales a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The three signs for leaving discursive meditation"@en, "Die drei Zeichen fuer das Verlassen der diskursiven Meditation"@de ;
+    skos:altLabel "tres senales"@en, "las senales que ha de ver en si el espiritual"@en ;
+    skos:definition "The signs the practitioner is to observe in himself in order to know the time at which he may leave discursive meditation. The first is to find that he can no longer meditate or work with the imagination and takes no pleasure in it as he used to, finding dryness where he used to fix the sense and draw relish. The second is that he has no inclination to put the imagination or the sense on other particular things, outward or inward: not that it does not come and go, which it does even in great recollection, but that the soul takes no pleasure in putting it there on purpose. The third and most certain is that the soul takes pleasure in being alone with a loving attention to God, without particular consideration, in interior peace and quiet and rest and without acts of the faculties."@en ;
+    skos:note "The Spanish of the heading is Las senales que ha de ver en si el espiritual para dejar la meditacion discursiva son tres. The first sign carries its own restriction in the same sentence: en tanto que hallare jugo y pudiere discurrir en la meditacion, no la ha de dejar, so long as he finds relish and can reason in meditation he is not to leave it."@en ;
+    skos:note "The chapter number is edition-dependent and both numbers are given at every node of this file. In the Gerardo text of Toledo 1912 the three signs stand at the end of Libro II, capitulo XI, pp. 150-152, with the running head LIBRO II, CAP. XI, and capitulo XII proves them; in Lewis they are chapter XIII and the proof is chapter XIV. The cause is a division and not a renumbering: what Gerardo carries as one chapter, on the imaginary and natural apprehensions and then the signs, Lewis divides into XII and XIII. The offset of two holds through the rest of the book, so Gerardo XVI, XVII, XVIII and XIX are Lewis XVIII, XIX, XX and XXI."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI (ed. Gerardo, Toledo 1912, pp. 150-152; II.13 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaSenalesConiunctae a pm:Presupposing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The three signs together, and not fewer, are required before meditation may be left"@en, "Die drei Zeichen zusammen, und nicht weniger, sind vor dem Verlassen der Meditation gefordert"@de ;
+    pm:dependentStep pmp:SubidaAdvertenciaAmorosa ;
+    pm:priorStep pmp:SubidaMeditacionDiscursiva ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Going back. The text states the necessity in both directions in one sentence: as it is fitting to leave the imaginary meditation at its time so as not to be hindered, so it is necessary not to leave it before its time, para no volver atras, in order not to go backwards. It then describes what going backwards is: the practitioner looks for the rind of discourse, does not find it because it has been taken away, so enjoys neither the substance nor the meditation, and troubles himself thinking that he is going back and losing. The apprehensions of the sensitive faculties are not a proximate means of union for the advanced, but they remain a remote means for beginners, by which the spirit is disposed and the lower temporal and secular images emptied; a practitioner who leaves them before that work is done has lost the means and not reached the end."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "The Spanish of the conjunction is Estas tres senales ha de ver en si juntas por lo menos el espiritual para atreverse seguramente a dejar el estado de meditacion y del sentido y entrar en el de contemplacion y del espiritu: all three together, at the least, before he may venture safely. The strength is pm:statedNecessity and not pm:prescribedOrder because the consequence of skipping is quoted in the source and not inferred."@en ;
+    skos:note "The prior step is the practice and not the signs, because the signs are the criterion by which the step is judged complete and not a step that is performed. pmc:SubidaSenalesCautela holds what the text says goes wrong when fewer than three are present."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI-XII (ed. Gerardo, Toledo 1912, pp. 149-157; II.13-14 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaSenalesCautela a pm:Cautioning ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Two conditions that counterfeit the signs: distraction, and a humour in the brain or the heart"@en, "Zwei Zustaende, die die Zeichen nachahmen: Zerstreuung, und ein Saft im Hirn oder im Herzen"@de ;
+    pm:cautionsAbout pmc:SubidaTresSenales ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "The caution is a differential diagnosis and it is the most useful thing in the opened block. The first sign alone is not enough, because the inability to imagine and meditate on the things of God as before may come from the practitioner's own distraction and little recollection; the mark that distinguishes the two is the second sign, since a man whose inability comes from distraction or lukewarmness at once has an appetite to put the imagination on other things and a motive for leaving. The first and the second together are not enough either, because the inability to reason joined to the absence of any appetite for other things may proceed de melancolia o de otro algun jugo de humor puesto en el cerebro o corazon, from melancholy or some other humour settled in the brain or the heart, which produce in the sense a certain soaking and suspension that make the man think of nothing and have no wish to, but stay in that savoury absorption. Against that the third sign is required, the loving knowledge and attention in peace."@en ;
+    skos:note "The caution names its own hardest case in the same place: at the beginning of the state the loving knowledge is almost imperceptible, for two reasons the text gives, so the third sign is at its weakest exactly where it has the most work to do. A practitioner in the soaking of a humour and a practitioner at the threshold of contemplation are told apart by a sign that is at that moment subtle, delicate and as it were unfelt. That is stated by the source and not inferred here."@en ;
+    skos:note "The consequence of this caution is in the note and not in a predicate, because pm:Cautioning cannot hold one; prima-materia#621 is the finding and this is a fresh case for it. Commented there in the run of 2026-10-08."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI (ed. Gerardo, Toledo 1912, pp. 151-152; II.13 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaNoticiaAmorosaGeneral a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The general loving knowledge held as a habit"@en, "Die allgemeine liebende Kenntnis als Habitus"@de ;
+    skos:altLabel "habito y sustancia de una noticia amorosa general"@en ;
+    skos:definition "The state the practice is said to produce: what the soul used to draw piecemeal by the labour of meditating into particular knowledges has become in it, by use, a habit and substance of one general loving knowledge, not distinct and not particular as before. On placing itself in prayer it drinks without labour and in sweetness, as one who has the water brought to him and need not draw it up through the conduits of past considerations and forms and figures."@en ;
+    skos:note "The text adds that God also works this in many souls without the means of those acts, or at least without many having preceded, putting them straight into contemplation and love. So the habit is claimed to arise both by repetition and without it, and the source says both in the same sentence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XII (ed. Gerardo, Toledo 1912, pp. 154-155; II.14 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaMeditacionYieldsNoticia a pm:Yielding ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Repeated acts of loving knowledge engender the habit of general loving knowledge"@en, "Wiederholte Akte liebender Kenntnis erzeugen den Habitus der allgemeinen liebenden Kenntnis"@de ;
+    pm:byPractice pmp:SubidaMeditacionDiscursiva ;
+    pm:yieldsCapacity pmc:SubidaNoticiaAmorosaGeneral ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "The mechanism is stated and is the ordinary one of habit formation: the end of meditation and reasoning on the things of God is to draw out some knowledge and love of God, each drawing is an act, and as many acts in anything come to engender a habit, so many acts of these loving knowledges come by use to be continued so far that a habit is made in the soul. The claim is therefore not that the practice produces what it is, which SPEC 11 forbids as circular, but that the repetition converts particular acts into a standing disposition."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XII (ed. Gerardo, Toledo 1912, pp. 154-155; II.14 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaSituatAnchoring a pm:Situating ;
+    rdfs:label "The loving attention is placed in withdrawn absorption"@en, "Das liebende Aufmerken liegt in abgezogener Vertiefung"@de ;
+    pm:situatedNode pmp:SubidaAdvertenciaAmorosa ;
+    pm:axisValue pm:withdrawnAbsorption ;
+    pm:situationGround "The source describes the state as being without acts or exercises of memory, understanding and will, at least without discursive ones, with the faculties at rest and not working, and with nothing given to the imagination or to its work; and it says that where they do work it is moved more by God than by the soul's own ability. The coordinate is the compiler's; the source names no axis."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Not pm:objectlessDepth. The source keeps an object throughout, namely a general and loving knowledge of God, and distinguishes that knowledge from the absence of knowledge at the very place where it warns against the soaking of a humour in which the man thinks of nothing."@en .
+
+pmc:SubidaSituatAgency a pm:Situating ;
+    rdfs:label "The agency in the loving attention is ceded"@en, "Die Handlungstraegerschaft im liebenden Aufmerken ist abgegeben"@de ;
+    pm:situatedNode pmp:SubidaAdvertenciaAmorosa ;
+    pm:axisValue pm:cededAgency ;
+    pm:situationGround "The source says of the faculties in this state that if they sometimes work, it is not with force nor with much procured reasoning but with a sweetness of love, mas movidas de Dios que de la misma habilidad del alma, moved more by God than by the soul's own ability; and that the practitioner is to learn to let himself be quieted. The coordinate is the compiler's."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The placement is worth making because the same transmission puts the step before it, at pmp:SubidaMeditacionDiscursiva, squarely on the practitioner's own labour, and the two placements together are what a stage map on this axis would consist of. Only the second is entered here; the first is not, because the source makes no statement about agency in meditation that would carry a placement rather than an inference about one."@en .
