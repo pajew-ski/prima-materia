@@ -1,0 +1,319 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Latin mystical transmission, taken off the register
+#
+# Taken from traditions/registry-mediterranean.ttl on the testability-driven
+# entrance of SPEC 14, which has precedence among the entrances that have a
+# question, and on the structure-driven one at the same time: the registration
+# stood at pm:corpusNamed in queries/coverage-queue.rq, and its own note named
+# the reason to come here first — that Teresa's dwellings and John of the
+# Cross's nights are the western material closest to a stage map with failure
+# modes, and that the failure modes are stated more plainly than the
+# attainments. The reading bears that out and sharpens it.
+#
+# What the opened block is. Subida del Monte Carmelo, Libro II, chapters XI,
+# XII, XVI, XVII, XVIII and XIX in the Spanish of the Gerardo edition, read
+# complete; and one chapter of Teresa, Moradas sextas 3, opened for the
+# counter-search and for nothing else. Everything else of the registered
+# corpus stands as an unopened work.
+#
+# The three decisions SPEC 14 requires before the first node:
+#
+# The contact route stays at pm:contactRouteDocumented, and the reading makes
+# it closer than documented rather than looser. This transmission stands
+# downstream of the material already in traditions/desert-monasticism.ttl,
+# traditions/christian-discernment.ttl and traditions/greek-pneuma-hesychasm.ttl;
+# no independence is claimed anywhere in this file, and the one place where a
+# reworking could be asserted is left unwritten and said so at
+# pmc:SubidaMagisterContagio.
+#
+# The edition. Spanish throughout, from the Gerardo de San Juan de la Cruz
+# edition of Toledo 1912 for the Subida and the Navarro Tomás edition of
+# Madrid 1910 for the Moradas, each read against two translations: the Subida
+# against the English of David Lewis revised by Zimmermann and the French of
+# the Carmelites of Paris, the Moradas against the English of the Benedictines
+# of Stanbrook revised by Zimmerman and the French of Marcelle Auclair. The
+# numbering is edition-dependent and the difference is not cosmetic: the
+# chapters this file cites as II.XI, II.XVI, II.XVII, II.XVIII and II.XIX in
+# the Gerardo text stand as II.13, II.18, II.19, II.20 and II.21 in Lewis,
+# because Gerardo carries as one chapter what Lewis divides in two. Every node
+# gives both numbers.
+#
+# The number of citable places: six chapters of one work and one of a second,
+# nineteen places entered.
+#
+# The finding this file exists for, and it is not the stage map. It is that
+# the one transmission in this holding whose registration promised stated
+# failure modes delivers something better and worse than that: a chapter that
+# argues, from four scriptural cases and two invented ones, that a prediction
+# which is true in itself may be followed by its own opposite without having
+# been false. The transmission states, in its own operative text, that its
+# communications do not divide the outcomes. See pmc:SubidaProphetiaNonDiscriminans.
+# And then the second founder of the same reform, in the same decade, makes a
+# certainty that survives every contrary outcome the third and most reliable
+# sign that a locution came from God. Both name Jonah at Nineveh, to opposite
+# ends. pmc:LatinMysticismCriterionDispute holds the pair.
+#
+
+pmt:LatinMysticism a pm:Tradition ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Latin mystical transmission"@en, "Lateinische Mystik"@de ;
+    skos:definition "The western Christian transmission of graded interior states, with criteria for telling one state from another and warnings against taking consolation for progress."@en ;
+    skos:note "Registered with the note that Teresa's dwellings and John of the Cross's nights are the western material closest to a stage map with failure modes. Taken off pm:corpusNamed on 2026-10-08 at the Subida del Monte Carmelo, with one chapter of the Moradas opened for the counter-search. The contact route is unchanged at documented: this transmission is downstream of the discernment material this holding already carries, and nothing here is offered as an independent witness."@en ;
+    skos:note "Four works of the registered corpus stand as pm:corpusWork without pm:fromWork and are therefore carried by queries/unopened-works.rq. That is accurate and not a defect of the run: the Noche oscura is the continuation of the work opened here and the Gerardo edition argues in its own introduction that it is the third and fourth parts of it, which is an editorial claim and not this holding's; Richard of St Victor, the Cloud of Unknowing and the German sermons of Eckhart were not opened."@en ;
+    pm:principalCorpus "Richard of St Victor, Benjamin Major; Meister Eckhart, German sermons; The Cloud of Unknowing; Teresa of Avila, Las Moradas; John of the Cross, Subida del Monte Carmelo and Noche oscura" ;
+    pm:corpusWork pmw:SubidaDelMonteCarmelo, pmw:MoradasDelCastilloInterior, pmw:NocheOscura, pmw:BenjaminMaior, pmw:NubesIgnorantiae, pmw:EckhartPredigten ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI (Obras del mistico doctor San Juan de la Cruz, ed. Gerardo de San Juan de la Cruz, Toledo 1912, pp. 149-152; II.13 in Lewis), read in the Spanish against the English of David Lewis rev. Zimmermann (London: Thomas Baker, 1906; fourth impression 1922) and the French of the Carmelites of Paris (Paris: Oudin, 1893)" .
+
+pmw:SubidaDelMonteCarmelo a dcterms:BibliographicResource ;
+    rdfs:label "Subida del Monte Carmelo"@en, "Subida del Monte Carmelo"@de ;
+    skos:note "The work opened by this run, in the Gerardo de San Juan de la Cruz edition, Toledo 1912. It breaks off unfinished inside its third book, and the commentary on the last six stanzas that the author announces is lost; the Gerardo introduction argues further that the Noche oscura is the third and fourth parts of this same work. Both are properties of the work and are recorded here rather than at a node, because no node of this file depends on either."@en .
+
+pmw:MoradasDelCastilloInterior a dcterms:BibliographicResource ;
+    rdfs:label "Las Moradas del castillo interior"@en, "Die Wohnungen der inneren Burg"@de ;
+    skos:note "Opened at one chapter only, Moradas sextas 3, and opened for the counter-search of pmc:SubidaVisionesVeraeFallaces rather than for its own sake. The rest is unread, so this work is not harvested and a later run opening it will find most of it standing."@en .
+
+pmw:NocheOscura a dcterms:BibliographicResource ;
+    rdfs:label "Noche oscura"@en, "Dunkle Nacht"@de ;
+    skos:note "Unopened. Named in the registration and in the same volume as the work opened here."@en .
+
+pmw:BenjaminMaior a dcterms:BibliographicResource ;
+    rdfs:label "Benjamin maior"@en, "Benjamin maior"@de ;
+    skos:note "Unopened. Richard of St Victor, named in the registration as part of the principal corpus of this transmission."@en .
+
+pmw:NubesIgnorantiae a dcterms:BibliographicResource ;
+    rdfs:label "The Cloud of Unknowing"@en, "Die Wolke des Nichtwissens"@de ;
+    skos:note "Unopened. Named in the registration. The identifier is the Latin of the title because the work is anonymous and its Middle English title is itself a translation of the phrase it takes from the Dionysian corpus."@en .
+
+pmw:EckhartPredigten a dcterms:BibliographicResource ;
+    rdfs:label "Meister Eckhart, German sermons"@en, "Meister Eckhart, deutsche Predigten"@de ;
+    skos:note "Unopened. A corpus rather than a single work, named in the registration; the identifier stands so that a later run does not mint a second one."@en .
+
+#
+# I. The transition from meditation to contemplation, and the three signs
+#
+
+pmp:SubidaMeditacionDiscursiva a pm:Practicing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Discursive meditation on imagined forms and figures"@en, "Diskursives Meditieren an vorgestellten Formen und Figuren"@de ;
+    skos:altLabel "meditacion discursiva"@en, "discurso"@en ;
+    skos:definition "The practice of drawing a knowledge and a love of God by reasoning from imagined forms, images and figures: the operation of the sensitive faculties, in which the practitioner goes from one particular to another and finds relish in it. Each such act is one act; the work is the repetition of them."@en ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI-XII (ed. Gerardo, Toledo 1912, pp. 147-157; II.13-14 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmp:SubidaAdvertenciaAmorosa a pm:Practicing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Resting in loving attention to God without acts of the faculties"@en, "Im liebenden Aufmerken auf Gott verweilen, ohne Akte der Vermögen"@de ;
+    skos:altLabel "atencion amorosa"@en, "noticia amorosa general"@en, "advertencia amorosa en paz"@en ;
+    skos:definition "The practice the text prescribes in place of the other: to stay alone with a loving attention to God, without particular consideration, in interior peace and quiet and rest, without acts or exercises of memory, understanding and will, at least without discursive ones, and to give nothing to the imagination or to its work. Where the faculties do act, it is without force and without procured reasoning, moved more by God than by the soul's own ability."@en ;
+    skos:note "The Spanish of the prescription is que aprendan a estarse con atencion y advertencia amorosa en Dios en aquella quietud, y que no se den nada por la imaginacion ni por la obra de ella."@en ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI (ed. Gerardo, Toledo 1912, pp. 148-151; II.13 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaTresSenales a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The three signs for leaving discursive meditation"@en, "Die drei Zeichen fuer das Verlassen der diskursiven Meditation"@de ;
+    skos:altLabel "tres senales"@en, "las senales que ha de ver en si el espiritual"@en ;
+    skos:definition "The signs the practitioner is to observe in himself in order to know the time at which he may leave discursive meditation. The first is to find that he can no longer meditate or work with the imagination and takes no pleasure in it as he used to, finding dryness where he used to fix the sense and draw relish. The second is that he has no inclination to put the imagination or the sense on other particular things, outward or inward: not that it does not come and go, which it does even in great recollection, but that the soul takes no pleasure in putting it there on purpose. The third and most certain is that the soul takes pleasure in being alone with a loving attention to God, without particular consideration, in interior peace and quiet and rest and without acts of the faculties."@en ;
+    skos:note "The Spanish of the heading is Las senales que ha de ver en si el espiritual para dejar la meditacion discursiva son tres. The first sign carries its own restriction in the same sentence: en tanto que hallare jugo y pudiere discurrir en la meditacion, no la ha de dejar, so long as he finds relish and can reason in meditation he is not to leave it."@en ;
+    skos:note "The chapter number is edition-dependent and both numbers are given at every node of this file. In the Gerardo text of Toledo 1912 the three signs stand at the end of Libro II, capitulo XI, pp. 150-152, with the running head LIBRO II, CAP. XI, and capitulo XII proves them; in Lewis they are chapter XIII and the proof is chapter XIV. The cause is a division and not a renumbering: what Gerardo carries as one chapter, on the imaginary and natural apprehensions and then the signs, Lewis divides into XII and XIII. The offset of two holds through the rest of the book, so Gerardo XVI, XVII, XVIII and XIX are Lewis XVIII, XIX, XX and XXI."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI (ed. Gerardo, Toledo 1912, pp. 150-152; II.13 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaSenalesConiunctae a pm:Presupposing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The three signs together, and not fewer, are required before meditation may be left"@en, "Die drei Zeichen zusammen, und nicht weniger, sind vor dem Verlassen der Meditation gefordert"@de ;
+    pm:dependentStep pmp:SubidaAdvertenciaAmorosa ;
+    pm:priorStep pmp:SubidaMeditacionDiscursiva ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Going back. The text states the necessity in both directions in one sentence: as it is fitting to leave the imaginary meditation at its time so as not to be hindered, so it is necessary not to leave it before its time, para no volver atras, in order not to go backwards. It then describes what going backwards is: the practitioner looks for the rind of discourse, does not find it because it has been taken away, so enjoys neither the substance nor the meditation, and troubles himself thinking that he is going back and losing. The apprehensions of the sensitive faculties are not a proximate means of union for the advanced, but they remain a remote means for beginners, by which the spirit is disposed and the lower temporal and secular images emptied; a practitioner who leaves them before that work is done has lost the means and not reached the end."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "The Spanish of the conjunction is Estas tres senales ha de ver en si juntas por lo menos el espiritual para atreverse seguramente a dejar el estado de meditacion y del sentido y entrar en el de contemplacion y del espiritu: all three together, at the least, before he may venture safely. The strength is pm:statedNecessity and not pm:prescribedOrder because the consequence of skipping is quoted in the source and not inferred."@en ;
+    skos:note "The prior step is the practice and not the signs, because the signs are the criterion by which the step is judged complete and not a step that is performed. pmc:SubidaSenalesCautela holds what the text says goes wrong when fewer than three are present."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI-XII (ed. Gerardo, Toledo 1912, pp. 149-157; II.13-14 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaSenalesCautela a pm:Cautioning ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Two conditions that counterfeit the signs: distraction, and a humour in the brain or the heart"@en, "Zwei Zustaende, die die Zeichen nachahmen: Zerstreuung, und ein Saft im Hirn oder im Herzen"@de ;
+    pm:cautionsAbout pmc:SubidaTresSenales ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "The caution is a differential diagnosis and it is the most useful thing in the opened block. The first sign alone is not enough, because the inability to imagine and meditate on the things of God as before may come from the practitioner's own distraction and little recollection; the mark that distinguishes the two is the second sign, since a man whose inability comes from distraction or lukewarmness at once has an appetite to put the imagination on other things and a motive for leaving. The first and the second together are not enough either, because the inability to reason joined to the absence of any appetite for other things may proceed de melancolia o de otro algun jugo de humor puesto en el cerebro o corazon, from melancholy or some other humour settled in the brain or the heart, which produce in the sense a certain soaking and suspension that make the man think of nothing and have no wish to, but stay in that savoury absorption. Against that the third sign is required, the loving knowledge and attention in peace."@en ;
+    skos:note "The caution names its own hardest case in the same place: at the beginning of the state the loving knowledge is almost imperceptible, for two reasons the text gives, so the third sign is at its weakest exactly where it has the most work to do. A practitioner in the soaking of a humour and a practitioner at the threshold of contemplation are told apart by a sign that is at that moment subtle, delicate and as it were unfelt. That is stated by the source and not inferred here."@en ;
+    skos:note "The consequence of this caution is in the note and not in a predicate, because pm:Cautioning cannot hold one; prima-materia#621 is the finding and this is a fresh case for it. Commented there in the run of 2026-10-08."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XI (ed. Gerardo, Toledo 1912, pp. 151-152; II.13 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaNoticiaAmorosaGeneral a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The general loving knowledge held as a habit"@en, "Die allgemeine liebende Kenntnis als Habitus"@de ;
+    skos:altLabel "habito y sustancia de una noticia amorosa general"@en ;
+    skos:definition "The state the practice is said to produce: what the soul used to draw piecemeal by the labour of meditating into particular knowledges has become in it, by use, a habit and substance of one general loving knowledge, not distinct and not particular as before. On placing itself in prayer it drinks without labour and in sweetness, as one who has the water brought to him and need not draw it up through the conduits of past considerations and forms and figures."@en ;
+    skos:note "The text adds that God also works this in many souls without the means of those acts, or at least without many having preceded, putting them straight into contemplation and love. So the habit is claimed to arise both by repetition and without it, and the source says both in the same sentence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XII (ed. Gerardo, Toledo 1912, pp. 154-155; II.14 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaMeditacionYieldsNoticia a pm:Yielding ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Repeated acts of loving knowledge engender the habit of general loving knowledge"@en, "Wiederholte Akte liebender Kenntnis erzeugen den Habitus der allgemeinen liebenden Kenntnis"@de ;
+    pm:byPractice pmp:SubidaMeditacionDiscursiva ;
+    pm:yieldsCapacity pmc:SubidaNoticiaAmorosaGeneral ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "The mechanism is stated and is the ordinary one of habit formation: the end of meditation and reasoning on the things of God is to draw out some knowledge and love of God, each drawing is an act, and as many acts in anything come to engender a habit, so many acts of these loving knowledges come by use to be continued so far that a habit is made in the soul. The claim is therefore not that the practice produces what it is, which SPEC 11 forbids as circular, but that the repetition converts particular acts into a standing disposition."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XII (ed. Gerardo, Toledo 1912, pp. 154-155; II.14 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaSituatAnchoring a pm:Situating ;
+    rdfs:label "The loving attention is placed in withdrawn absorption"@en, "Das liebende Aufmerken liegt in abgezogener Vertiefung"@de ;
+    pm:situatedNode pmp:SubidaAdvertenciaAmorosa ;
+    pm:axisValue pm:withdrawnAbsorption ;
+    pm:situationGround "The source describes the state as being without acts or exercises of memory, understanding and will, at least without discursive ones, with the faculties at rest and not working, and with nothing given to the imagination or to its work; and it says that where they do work it is moved more by God than by the soul's own ability. The coordinate is the compiler's; the source names no axis."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "Not pm:objectlessDepth. The source keeps an object throughout, namely a general and loving knowledge of God, and distinguishes that knowledge from the absence of knowledge at the very place where it warns against the soaking of a humour in which the man thinks of nothing."@en .
+
+pmc:SubidaSituatAgency a pm:Situating ;
+    rdfs:label "The agency in the loving attention is ceded"@en, "Die Handlungstraegerschaft im liebenden Aufmerken ist abgegeben"@de ;
+    pm:situatedNode pmp:SubidaAdvertenciaAmorosa ;
+    pm:axisValue pm:cededAgency ;
+    pm:situationGround "The source says of the faculties in this state that if they sometimes work, it is not with force nor with much procured reasoning but with a sweetness of love, mas movidas de Dios que de la misma habilidad del alma, moved more by God than by the soul's own ability; and that the practitioner is to learn to let himself be quieted. The coordinate is the compiler's."@en ;
+    pm:attestedBy pm:compilerInference ;
+    skos:note "The placement is worth making because the same transmission puts the step before it, at pmp:SubidaMeditacionDiscursiva, squarely on the practitioner's own labour, and the two placements together are what a stage map on this axis would consist of. Only the second is entered here; the first is not, because the source makes no statement about agency in meditation that would carry a placement rather than an inference about one."@en .
+
+#
+# II. Visions and locutions: the two causes on which a true communication
+# fails, and what the transmission says follows from that
+#
+
+pmc:SubidaVisionesVeraeFallaces a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Visions and locutions from God are true in themselves and not always true for us"@en, "Visionen und Sprachen von Gott sind in sich wahr und nicht immer wahr fuer uns"@de ;
+    skos:definition "The claim the chapter sets out to prove: that although the visions and locutions of God are true and always certain in themselves, they are not always so with respect to us; and that this happens for two causes. The first is our defective manner of understanding them. The second is the causes or grounds on which they rest, which are at times variable."@en ;
+    skos:note "The Spanish is Por dos cosas dijimos, que aunque las visiones y locuciones de Dios son verdaderas y siempre en si ciertas, no lo son siempre para con nosotros. La una es por nuestra defectuosa manera de entenderlas. Y la otra es por las causas o fundamentos de ellas, que a veces son variables. The edition records that the earlier printings read the second cause as threatening and as it were conditional, and that the manuscripts give variable; the editor prints variable and argues for it in a note of his own. The distinction is editorial and is recorded here because the node depends on the second cause."@en ;
+    skos:note "The first cause is argued from four scriptural cases in which a divine word did not come out as the hearers expected: the land promised to Abraham, which he never held and his descendants held four hundred years later; the promise to Jacob that God would bring him out of Egypt again, who died there; the two defeats of Israel against Benjamin after God had told them to go up and fight, with twenty-two thousand and then eighteen thousand of their own dead; and the prophecies of a temporal dominion read literally of Christ. On the third the text states the device plainly: God had not told them that they would conquer but that they should fight, and he meant by the defeats to punish a certain carelessness and presumption in them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XVII (ed. Gerardo, Toledo 1912, pp. 186-195; II.19 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaProphetiaNonDiscriminans a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "A true promise and its own opposite, stated as compatible"@en, "Eine wahre Zusage und ihr Gegenteil, als vereinbar ausgesprochen"@de ;
+    skos:definition "The two cases the text invents in order to show how far the first cause reaches. A holy man afflicted and persecuted is told by God: I will deliver thee from all thy enemies. The text says that this prophecy may be most true and that nevertheless his enemies may prevail and he may die at their hands, because God may have spoken of the true and principal deliverance and victory, which is salvation. A soul with great desires to be a martyr is told: thou shalt be a martyr, and is given great interior consolation and confidence that it will be so; the text says that it will nevertheless happen that she does not die a martyr and that the promise was true, because it will be fulfilled in what is principal and essential in it, by a prolonged martyrdom in labours whose continuance is more painful than dying."@en ;
+    skos:note "This is the node the opened block was worth opening for. The source states, of its own transmission's communications, that the announced outcome and its contrary are both compatible with the communication having been true, and it states this not as an admission under pressure but as doctrine, with two constructed examples chosen to make the point as sharply as possible. In the vocabulary of this holding that is a claim that does not divide the outcomes, said by the transmission about itself."@en ;
+    skos:note "The text draws the consequence for the bystander as well, at the Abraham case: those who saw him die without the land, having heard him say that God had promised it to him, quedaran confusos y creyendo haber sido falsa, would be left confused and believing it had been false. So the non-fulfilment is acknowledged to be indistinguishable, from outside, from falsity."@en ;
+    skos:note "And it draws the operative consequence, which is the opposite of the one a reader might expect: y si entonces obrara segun el entendia la profecia, pudiera errar mucho, and if he had then acted according to his understanding of the prophecy he might have erred greatly. The transmission therefore forbids acting on its own communications, on the ground that they do not say what they appear to say."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XVII (ed. Gerardo, Toledo 1912, pp. 193-195; II.19 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaCausaVariabilis a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The condition that is stated and the condition that is kept silent"@en, "Die genannte und die verschwiegene Bedingung"@de ;
+    skos:definition "The second cause: God often says things founded on creatures and on effects of theirs which are variable and can fail, so that the words founded on them can also fail, because when one thing depends on another, the one failing the other fails too. Threats and revelations of this kind are threatening or conditional. The text then states the part that bears on every prediction of this transmission: that God sometimes says the saying or makes the revelation and keeps the condition silent, as he did to the Ninevites, to whom he said determinately that they were to be destroyed after forty days; and that at other times he declares it, as to Jeroboam. Whether he declares it or not, there is no securing oneself in the understanding."@en ;
+    skos:note "The Spanish of the silent condition is dice el dicho o hace la revelacion, y calla la condicion algunas veces. The three cases the chapter gives are Nineveh, where the forty days passed and the city stood because the sin ceased; Ahab, where the threatened evil was moved to the days of his son because he humbled himself; and Eli, where a priesthood promised for ever was retracted because the zeal on which it was founded failed."@en ;
+    skos:note "The conclusion the chapter itself draws is the one a prediction cannot survive as evidence: no por esto es cierto cumplirse como suena, pues no es cierto el perseverar, it is not therefore certain that it will be fulfilled as it sounds, since the persevering is not certain. Any outcome whatever is thereby covered: fulfilment shows the condition held, non-fulfilment shows it failed, and the practitioner is told that he will often not know which, sino solo Dios."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XVIII (ed. Gerardo, Toledo 1912, pp. 196-200; II.20 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaIonasTerminus a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The prophet who waited out his own deadline and found it empty"@en, "Der Prophet, der seine eigene Frist abwartete und sie leer fand"@de ;
+    skos:definition "The case the text reports of a stated term that fell due and brought nothing, with the operator's own reaction. Jonah fled rather than prophesy because he knew the variety of God's sayings as men understand them and their causes, and so that they should not mock him when they did not see his prophecy fulfilled; and he waited out all forty days outside the city to see whether it would be fulfilled, and when it was not he was greatly distressed, so far as to ask God to take his life."@en ;
+    skos:note "Entered as its own node and not folded into pmc:SubidaCausaVariabilis because it is the rarest kind of material in this holding: a term named in advance, a wait carried out to the end of it, a stated non-event, and a reported reaction by the person who had announced it. The chapter cites the same prophet twice more on the cost of the office, that prophecy had become to him a reproach and a mockery all day long, and temor y lazos se nos ha hecho la profecia, fear and a snare has prophecy become to us."@en ;
+    skos:note "The same case is named by the second founder of the same reform, to the opposite end. See pmc:LatinMysticismCriterionDispute."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XVIII (ed. Gerardo, Toledo 1912, pp. 199-200; II.20 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaVeritasNonProbatOriginem a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "That a prediction comes true does not show where it came from"@en, "Dass eine Vorhersage eintrifft, zeigt nicht, woher sie kam"@de ;
+    skos:definition "The claim that the fulfilment of a supernatural communication is no evidence of its source. The text says that among the locutions and visions that are of God there are ordinarily many that are of the devil, that he goes about with the soul in the same dress and manner as God does, and that because he says many things that are true and in conformity with reason and that turn out certain, souls are easily deceived in thinking that because it comes out true and hits what is to come, it can be nothing but God. The reason given is that whoever has a clear natural light can know many things that were or will be in their causes, and the two examples are a pestilence inferred from the disposition of earth, air and the course of the sun, and an earthquake inferred from the filling of the hollows of the earth with air. The text calls such a thing a prophecy of the devil and says it comes out true."@en ;
+    skos:note "The operative rule the chapter draws from this is the sharpest methodological statement in the opened block and is quoted here because the node rests on it: of anything said supernaturally, only what is much in accordance with reason and the evangelical law is to be received, and then received no porque es revelacion, sino porque es razon, not because it is a revelation but because it is reason; and aun entonces conviene mirar y examinar aquella razon mucho mas que si no hubiese habido revelacion sobre ella, and even then the reason is to be examined much more than if there had been no revelation about it. A transmission that disarms its own confirming evidence and then raises the burden of proof where the evidence appeared is a rare thing in this holding."@en ;
+    skos:note "The text adds a second alternative explanation of a successful answer, in one clause: algunas veces responde el demonio, sometimes it is the devil who answers. Together with the layer above it the source therefore supplies two accounts of a correct answer that do not require the claimed source, and supplies them itself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XIX (ed. Gerardo, Toledo 1912, pp. 203-206; II.21 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaCautelaRevelationum a pm:Cautioning ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The warning against the supernatural channels the same work describes"@en, "Die Warnung vor den uebernatuerlichen Wegen, die dasselbe Werk beschreibt"@de ;
+    pm:cautionsAbout pmc:SubidaVisionesVeraeFallaces ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "The caution stands inside the book that classifies these apprehensions at length and describes each kind. Souls are to flee such supernatural things with prudence; wanting to know things by a supernatural way is held worse than wanting other spiritual sweetnesses; the author says he does not see how the soul that seeks them avoids sinning at least venially, however good its ends and however advanced it is, and that whoever commanded or consented to it sins too; and he calls it cosa peligrosisima, mas que se decir, a most dangerous thing, more than I can say, adding that whoever has given weight to such things will understand him by experience."@en ;
+    skos:note "The ground is not that the channels do not work. It is that they are not needed: there is natural reason, and law, and evangelical doctrine, by which a man can be sufficiently governed, and there is no difficulty or need that cannot be resolved by those means. The warning is therefore not a safety rule attached to a method but the withdrawal of the method, and the transmission that issues it is the one that holds the material it withdraws."@en ;
+    skos:note "The consequence is in this note because pm:Cautioning cannot carry one; prima-materia#621. The consequence named is that the man will err greatly and often find himself much confused, and that it is temerity to deal with God in this way."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XIX (ed. Gerardo, Toledo 1912, pp. 201-206; II.21 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaDeumNonInterrogandum a pm:Conceptualizing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "God answers, and is angered by being asked"@en, "Gott antwortet, und zuernt darueber, gefragt zu werden"@de ;
+    skos:definition "The claim that although God sometimes answers what is asked of him by a supernatural way, it is not a good procedure and he does not take pleasure in it but is displeased, and many times is angered and much offended. The reason given is that no creature may go outside the terms God has naturally ordained for its governance, and that to seek to find out and reach things by a supernatural way is to go outside the natural terms. Where God does answer, the text says it is for the weakness of the soul that wants to go that way, so that it may not be discouraged and turn back, and he gives as he finds each one, as a father gives a child the dish it asks for rather than the better one, with sadness."@en ;
+    skos:note "Three cases are given of the anger that accompanies the answer: Saul, to whom Samuel appeared and who was at once reproved by him for having set about such a thing; the Israelites, who were given the flesh they asked for and had the wrath of God come down on them with the morsels still in their mouths; and Balaam, who was told to go and met the angel with the sword on the road, who told him his way was perverse and meant to kill him."@en ;
+    skos:note "This is the shape the holding keeps at generalizations/the-stronger-address.ttl and at examinations/the-stronger-address-tested.ttl, in an unusual form: the answer is granted and the granting is itself charged against the asker. Not added to either in this run, because SPEC 16 requires the counter-search against the holding before a generalization is written or enlarged and that counter-search was not carried here."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XIX (ed. Gerardo, Toledo 1912, pp. 201-205; II.21 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+pmc:SubidaMagisterContagio a pm:Cautioning ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "The director's own inclination printed on the disciple's spirit"@en, "Die Neigung des Leiters, dem Geist des Schuelers eingepraegt"@de ;
+    pm:cautionsAbout pmc:SubidaVisionesVeraeFallaces ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "The mechanism is named and it is the one this holding watches for. If the spiritual father is inclined to the spirit of revelations so that they weigh with him, he cannot help, even without understanding it himself, printing that same taste and estimation in the spirit of his disciple; the author says he does not know how easily a fullness and an estimation of these things attaches itself to the soul, sin ser en su mano, not being in its own power, and takes its eyes off the abyss of faith. And the thing the confessor does that causes it is named: he puts the principal part of spiritual language in these visions, dandoles indicios para conocer las visiones buenas y las malas, giving them marks by which to know the good visions from the bad. The text grants that it is good to know such marks and says there is no reason to put the soul to that work, care and danger except in some pressing need."@en ;
+    skos:note "The same chapter states the confounding of the criterion as well. Souls that act or believe according to what was revealed to them thought two things beforehand: first, that it was of God, pues tanto se les asentaba, because it settled so well with them, and the author says puede ser el natural inclinado a ello el que causaba aquel asiento, it may be the nature inclined to it that caused that settling; second, that being of God it had to come out as they understood it. So the subjective mark of divine origin is said, in the source, to be producible by the practitioner's own inclination, which the director has just been described as installing."@en ;
+    skos:note "Where a pm:Reworking node would stand and why it does not. This transmission is downstream of the discernment material in traditions/christian-discernment.ttl and traditions/desert-monasticism.ttl, and the differential diagnosis at pmc:SubidaSenalesCautela and the mechanism here are additions and not copies. But pm:Reworking requires pm:reworkedClaim to point at an entered node of the transmission received from, and the received claim in question, that the marks of a true vision can be taught, is not entered anywhere in this holding. Writing it would mean opening Cassian for that place, which is a strand of its own. Until it is entered this node stands as a caution and the reworking is not asserted."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XVI (ed. Gerardo, Toledo 1912, pp. 181-185; II.18 in Lewis), read in the Spanish against Lewis 1906/1922 and the Carmelites of Paris, Oudin 1893" .
+
+#
+# III. The counter-search inside the same transmission
+#
+
+pmc:MoradasSenalesHablas a pm:Conceptualizing ;
+    pm:fromWork pmw:MoradasDelCastilloInterior ;
+    rdfs:label "The three signs by which a locution is known to be from God"@en, "Die drei Zeichen, an denen eine Sprache als von Gott erkannt wird"@de ;
+    skos:altLabel "las mas ciertas senales que se pueden tener"@en ;
+    skos:definition "The signs the second founder of the same reform gives as the most certain that can be had. The first and truest is the power and lordship the words bring with them, which is in speaking and in working: a soul in interior tribulation and darkness and dryness is told only do not grieve, and is left quiet and without grief and with great light, so that it seems to her that all the world and all the learned men gathered to give her reasons could not have taken that affliction from her. The second is a great quietness left in the soul, with devout and peaceful recollection and a disposition to the praises of God. The third is that these words do not pass from the memory for a very long time and some never, unlike the words we hear from men, and that there remains from them a very great certainty."@en ;
+    skos:note "The third sign is stated with its application to predictions, and that is the point at which it meets the other founder: ni tampoco, si son en cosas por venir, las creemos como a estas, que queda una certidumbre grandisima, nor, if they concern things to come, do we believe those as we believe these, from which there remains a most great certainty. The text also records the negative case: if they are of the imagination none of these signs is there, neither certainty nor peace nor interior joy."@en ;
+    skos:note "The same chapter sets limits that are not in dispute and are recorded so that the dispute is not read more widely than it is. Do not think that even if they are of God you will be the better for it, since he spoke much to the Pharisees; make no more account of any that does not go very much according to Scripture than if you had heard it from the devil itself; and whatever is grave, or is to be put into act, is never to be done or even entertained without the opinion of a learned, careful confessor who is a servant of God, however clearly it seems to be of God."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Teresa de Jesus, Las Moradas sextas 3 (Las moradas, ed. Tomas Navarro Tomas, Madrid: Ediciones de La Lectura, 1910, Clasicos castellanos III, pp. 168-175), read in the Spanish against the English of the Benedictines of Stanbrook rev. Zimmerman, 2nd edition 1912, Sixth Mansions chapter III, and the French of Marcelle Auclair" .
+
+pmc:MoradasCertitudoSuperstes a pm:Conceptualizing ;
+    pm:fromWork pmw:MoradasDelCastilloInterior ;
+    rdfs:label "The certainty that survives every contrary outcome"@en, "Die Gewissheit, die jeden widrigen Ausgang ueberlebt"@de ;
+    skos:definition "What the third sign is said to do when the thing does not happen. There is a security that cannot be overthrown: though it seem to her that everything goes contrary to what she understood, and years pass, the thought does not leave her that God will seek other means that men do not understand, and that in the end it has to be done, and so it is that it is done. The text adds that with however many bad outcomes there are to show that it cannot be fulfilled, and though the confessors with whom these things are treated tell the person herself that they are nonsense, there remains a spark somewhere, so alive, that it will be, that although all the other hopes are dead she could not if she wished keep that spark of security from being alive."@en ;
+    skos:note "The Spanish of the hinge is anque le parezca que vaya todo al contrario de lo que entendio, y pasan anos, no se le quita aquel pensar que Dios buscara otros medios que los hombres no entienden, mas que, en fin, se ha de hacer, y ansi es que se hace; and of the spark, queda una centella no se donde, tan viva, de que sera, anque todas las demas esperanzas esten muertas."@en ;
+    skos:note "The chapter then names the case that makes this the counter-position and not merely a strong sign: Infinitas veces se acordaba cierta persona de Jonas, profeta, sobre esto, cuando temia no habia de perderse Ninive, a certain person was reminded countless times of the prophet Jonah in this matter, when he feared that Nineveh was not to be destroyed. The reason given is a fidelity owed to the Spirit of God, in desiring that he who is the supreme truth should not be held false; and the text says the soul would grieve less at being caught in a lie of its own."@en ;
+    skos:note "What this holding should not do with the node. It is not evidence that the certainty is unfounded, and the chapter is not naive about the alternatives: it distinguishes the imagination, where none of the signs is present, and it records persons so absorbed in the prayer of quiet that they are as if asleep and think they are spoken to. The finding is narrower and is about the criterion: a sign whose stated behaviour under disconfirmation is to remain unchanged cannot be used to tell a true locution from a false one, and the source states that behaviour itself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    dcterms:source "Teresa de Jesus, Las Moradas sextas 3 (Las moradas, ed. Tomas Navarro Tomas, Madrid: Ediciones de La Lectura, 1910, Clasicos castellanos III, pp. 171-173), read in the Spanish against the English of the Benedictines of Stanbrook rev. Zimmerman, 2nd edition 1912, Sixth Mansions chapter III, and the French of Marcelle Auclair" .
+
+pmc:LatinMysticismCriterionDispute a pm:Disputing ;
+    pm:fromWork pmw:SubidaDelMonteCarmelo ;
+    rdfs:label "Whether a locution known to be from God secures what it says"@en, "Ob eine als goettlich erkannte Sprache verbuergt, was sie sagt"@de ;
+    pm:disputedClaim pmc:MoradasSenalesHablas ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinMysticism ;
+    skos:note "Two founders of one reform, writing within about eight years of one another, in the same language and for the same houses, take opposite positions on the one question that decides whether anything in this class is checkable. One says that although the words of God are always true in themselves we cannot secure ourselves in them, that they do not infallibly happen as they sound, that acting on the understanding of them may be a great error, and that nothing is to be received because it is a revelation. The other makes a certainty that no contrary outcome removes the third and most reliable sign that the words were God's, and reports that the certainty is right because in the end the word is fulfilled."@en ;
+    skos:note "The hinge is the same case on both sides, and that is what makes the pair worth more than either half. The Subida uses Nineveh to prove that a prediction with a term may pass its term and stand unfulfilled without having been false, and reports the prophet's distress at it. The Moradas names the same prophet at the same city as the thing the soul is reminded of countless times when it fears the word it was given will be made false. One reads the non-event as the normal case and the expectation as the error; the other reads the non-event as the trial and the expectation as the fidelity."@en ;
+    skos:note "No side is preferred and the dispute is not resolved. What it establishes is a property of the transmission rather than of the locutions: this transmission does not have one criterion. A later reader who takes either author for the Carmelite position on the discernment of locutions has taken half of it, and the two halves cannot both be used in one argument."@en ;
+    skos:note "The narrow point of contact, so that the dispute is not read more widely than the reading supports. Both subordinate the content to Scripture and to a learned confessor, both distinguish the imagination and the devil from God, and both warn against seeking such things. The disagreement is over the evidential standing of the hearer's own certainty about a thing to come, and over what follows when the thing does not come. On that the two statements are incompatible as they stand."@en ;
+    dcterms:source "Juan de la Cruz, Subida del Monte Carmelo II.XVII-XVIII (ed. Gerardo, Toledo 1912, pp. 186-200; II.19-20 in Lewis)" ,
+        "Teresa de Jesus, Las Moradas sextas 3 (ed. Navarro Tomas, Madrid 1910, pp. 168-175)" .
