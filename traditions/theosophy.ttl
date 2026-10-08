@@ -1,0 +1,134 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the theosophical transmission, taken off the register
+#
+# Taken from traditions/registry-modern.ttl on the structure-driven entrance
+# of SPEC 14, the one that comes without a question. The queue is
+# queries/coverage-queue.rq. This registration was chosen out of it for a
+# reason that is not thinness: the holding already carries a node that cannot
+# be checked without it.
+#
+# originations/boran-theosophical-insertion.ttl holds a 1916 footnote printed
+# inside a Pali Text Society translation of an eighteenth century Sinhala
+# meditation manual, in which the translator sets out seven centres of force
+# with their radiation counts, their colours, the faculties they confer and a
+# warning, and names his source: Mr C. W. Leadbeater's The Inner Life. That
+# node ends with a list it calls the diagnostic markers, so that a later
+# presentation can be measured against them. Nobody had opened the named
+# source. This run opened it and measured them, and the measurement is the
+# point of the strand.
+#
+# What it found, in one line each, with the nodes named:
+#
+# The counts are Leadbeater's and the footnote reproduces them: four, ten,
+# six, twelve and sixteen for the first five centres and nine hundred and
+# sixty for the seventh. pmc:TheosophyChakrams.
+#
+# The faculties are Leadbeater's too, and the footnote is faithful: the throat
+# centre for sounds at a distance, the brow centre for clairvoyance and for
+# magnifying and contracting objects, the crown centre for unbroken
+# consciousness. Each stands in the chapter the footnote names, and each is a
+# node of this file. That part of the earlier finding is confirmed and not
+# merely repeated.
+#
+# Two things do not match, and both matter.
+#
+# The sixth count. Leadbeater's own figure for the brow centre is
+# ninety-six, and he attributes the figure two to the Indian books while
+# saying that a count of undulations of the same character as the others gives
+# forty-eight in each half. The footnote drops the ninety-six and gives the
+# centre as two halves. The marker list in the earlier node reads that as a
+# radiation count of two and lists it beside the others, which neither the
+# footnote nor the named source asserts. Corrected in that file in this run.
+#
+# The warning. Leadbeater's warning is not about the centres below the navel.
+# It is about three other centres, which he says Blavatsky calls the lower
+# centres, which are not among the seven used in occult development, and whose
+# awakening he calls the greatest of misfortunes. The base of the spine and
+# the navel are the first two of his seven, and the arousing of the fire at
+# the base of the spine is in his account the means by which the rest are
+# vivified. The footnote therefore warns against the first two steps of the
+# method it is digesting. Recorded at pmc:TheosophyPericulumKundalini and
+# corrected in the earlier file.
+#
+# The three decisions SPEC 14 requires before the first node:
+#
+# The contact route stays at pm:contactRouteDocumented, and this transmission
+# is the one place in the holding where that is an understatement in the other
+# direction: it is itself the documented route for a block of registered
+# transmissions downstream of it, and the registration says so. The opened
+# chapter quotes the Hathayogapradipika by chapter and verse and names The
+# Voice of the Silence, so the receipt is in the text and not inferred; what
+# this run does not do with that is said at pmp:TheosophyKundaliniArousal.
+#
+# The edition: The Inner Life, first series, in the Theosophical Press
+# printing of Chicago 1922, read complete for the two chapters that carry the
+# material, with The Chakras read at its second chapter for the counts.
+#
+# The number of citable places: two chapters of one work and one of a second,
+# eighteen places entered.
+#
+
+pmt:Theosophy a pm:Tradition ;
+    pm:fromWork pmw:TheInnerLife ;
+    rdfs:label "Theosophy"@en, "Theosophie"@de ;
+    skos:definition "The modern transmission of root races, planes and masters, presented as the recovery of a single ancient doctrine underlying all religions."@en ;
+    skos:note "Registered with the note that the pedigree claim is the tradition's own central assertion and is contested, that it belongs in the graph as a claim about origin and not as a fact about transmission, and that much of what circulates today as the doctrine of older traditions entered general circulation here. Taken off pm:corpusNamed on 2026-10-08 at The Inner Life, with The Chakras opened at one chapter. The contact route is unchanged at documented and nothing in this file is offered as an independent witness."@en ;
+    skos:note "The registration's second sentence is confirmed in the narrow way a reading can confirm it. The seven force-centres with their radiation counts and colours, as this transmission states them, stand verbatim inside a 1916 Pali Text Society translation of a Sinhala meditation manual, attributed there to Yoga; the manual itself places five raptures in the body and knows nothing of them. The case is held at pmc:WoodwardCakkaInterpolatio in originations/boran-theosophical-insertion.ttl, which this run corrected against the source it names."@en ;
+    skos:note "Two works of the registered corpus stand as pm:corpusWork without pm:fromWork and are carried by queries/unopened-works.rq: Isis Unveiled and The Secret Doctrine. Neither was opened. The reason is the scope of the strand and not a property of the works, both of which are reachable as full text."@en ;
+    pm:principalCorpus "Blavatsky, Isis Unveiled; Blavatsky, The Secret Doctrine; Leadbeater, The Chakras" ;
+    pm:corpusWork pmw:TheInnerLife, pmw:TheChakras, pmw:IsisUnveiled, pmw:TheSecretDoctrine ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "C. W. Leadbeater, The Inner Life, first series, chapter Force-Centres, pp. 286-291 (Chicago: The Theosophical Press, 1922 printing)" .
+
+pmw:TheInnerLife a dcterms:BibliographicResource ;
+    rdfs:label "The Inner Life"@en, "The Inner Life"@de ;
+    skos:note "Theosophical talks at Adyar, published in two series. The first series carries the chapters Force-Centres, pp. 286-297, and The Serpent-Fire, pp. 298-303, which are the two chapters this run read complete. Not named in the registration's principal corpus; declared here because it is the work the 1916 footnote in originations/boran-theosophical-insertion.ttl names as its source, and because the printing read carries the chapter the footnote names. The footnote gives the title without an edition, so which printing its compiler had is not established by this run and is a property of that footnote."@en .
+
+pmw:TheChakras a dcterms:BibliographicResource ;
+    rdfs:label "The Chakras"@en, "The Chakras"@de ;
+    skos:note "Named in the registration's principal corpus. Opened at its second chapter, The Force-Centres, for one question only: whether the radiation counts are stable across the author's own works. They are, and the later work adds the author's own comment on the leap from sixteen to ninety-six and from ninety-six to nine hundred and seventy-two. The rest of the work is unread."@en .
+
+pmw:IsisUnveiled a dcterms:BibliographicResource ;
+    rdfs:label "Isis Unveiled"@en, "Isis Unveiled"@de ;
+    skos:note "Unopened. Named in the registration's principal corpus."@en .
+
+pmw:TheSecretDoctrine a dcterms:BibliographicResource ;
+    rdfs:label "The Secret Doctrine"@en, "The Secret Doctrine"@de ;
+    skos:note "Unopened. Named in the registration's principal corpus."@en .
+
+#
+# I. The seven centres, the fire, and the practice
+#
+
+pmc:TheosophyChakrams a pm:Conceptualizing ;
+    pm:fromWork pmw:TheInnerLife ;
+    rdfs:label "The seven force-centres, their radiations and their colours"@en, "Die sieben Kraftzentren, ihre Strahlen und ihre Farben"@de ;
+    skos:altLabel "chakram"@en, "force-centre"@en ;
+    skos:definition "The claim that each of the vehicles carries force-centres, points of connection at which force flows from one vehicle to another, visible in the etheric double as saucer-like depressions on its surface, a quarter of an inch beyond the outline of the denser matter and not inside the body. The centres usually employed in occult development are seven and are placed at the base of the spine, the navel, the spleen, the heart, the throat, the space between the eyebrows and the top of the head. A primary force rushes into each at right angles and radiates out again in straight lines like the spokes of a wheel, and the number of spokes determines the number of petals the centre exhibits: four at the base of the spine, ten at the navel, six at the spleen, twelve at the heart, sixteen at the throat, ninety-six at the brow in two halves of forty-eight, and nine hundred and sixty in the outer circle of the crown, which has besides a subsidiary whirlpool of its own with twelve undulations. Secondary forces sweep round each saucer at right angles to the spokes and weave themselves under and over them, and the crossing of undulations of different sizes produces the appearance the Hindu books call petals. Each centre has a predominant colour, fiery orange-red at the base, a blending of shades of red with much green at the navel, radiant and sun-like at the spleen, glowing gold at the heart, blue with a silvery gleaming at the throat, rose with much yellow in one half and purplish-blue in the other at the brow, and indescribable chromatic effects at the crown."@en ;
+    skos:note "The counts are the diagnostic markers that originations/boran-theosophical-insertion.ttl asked to have measured, and they are measured here. Five agree with the 1916 footnote exactly. The sixth does not: the source gives ninety-six as its own figure and attributes two petals to the Indian books, adding that each half is subdivided into forty-eight. The seventh agrees on nine hundred and sixty and the footnote drops the subsidiary twelve."@en ;
+    skos:note "The author states the status of the counts himself in the second work, and it is worth keeping because it is unusual in this holding. He calls the leap from sixteen to ninety-six sudden and the variation from ninety-six to nine hundred and seventy-two even more startling, says that the factors determining the number of spokes in a chakra are not yet known, and says that before more can be said hundreds of observations and comparisons must be made, repeated and verified over and over again. A transmission that reports its own figures as unexplained and in need of replication is reporting the state of its evidence and not only its doctrine."@en ;
+    skos:note "Three others are named and excluded in the same paragraph, and the exclusion is the part the 1916 footnote lost. The author says Blavatsky speaks of three other centres which she calls the lower centres, that there are schools which use these, and that the dangers connected with them are so serious that their awakening is to be considered the greatest of misfortunes. These three are not among the seven and are not located in the text. See pmc:TheosophyPericulumKundalini."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Theosophy ;
+    dcterms:source "C. W. Leadbeater, The Inner Life, first series, chapter Force-Centres, pp. 286-291 (Chicago: The Theosophical Press, 1922 printing)" ,
+        "C. W. Leadbeater, The Chakras, chapter II, The Force-Centres, pp. 12-16 (Theosophical Publishing House monograph reprint)" .
+
+pmp:TheosophyKundaliniArousal a pm:Practicing ;
+    pm:fromWork pmw:TheInnerLife ;
+    rdfs:label "Arousing the serpent-fire and sending it through the centres"@en, "Das Schlangenfeuer wecken und durch die Zentren fuehren"@de ;
+    skos:altLabel "kundalini"@en, "serpent-fire"@en, "the Fiery Power"@en ;
+    skos:definition "The procedure to which the capacities of this file are attributed. The serpent-fire sleeps in the etheric centre at the base of the spine; to bring that first centre into full activity is precisely to awaken it, and the arousing is done by a determined and long-continued effort of the will. Once aroused it is by its force that the other centres are vivified, and the course through which it ought to move is a spiral one, in an order which varies for different types of people. Its function in connection with occult development is to vivify the centres and make them available as gates of connection between the physical and the astral bodies."@en ;
+    skos:note "The operative core is withheld in the text and the withholding is stated: the author says he has specially and intentionally refrained from explaining how this arousing is to be done, or mentioning the order in which the force should be passed through the centres, because that should by no means be attempted except at the express suggestion of a Master who will watch over his pupil during the various stages of the experiment. So the work describes what the practice does, names its danger at length, and does not say how it is performed. This holding keeps that shape at generalizations/the-text-and-what-is-withheld.ttl; not added to it in this run, because SPEC 16 requires the counter-search against the holding before a generalization is enlarged and that search was not carried here."@en ;
+    skos:note "Where a pm:Reworking node belongs and why it is not written. The receipt is documented in the text itself: the practice is named kundalini in Sanskrit, it is called the Fiery Power and the World's Mother after The Voice of the Silence, and the chapter closes its warning by quoting the Hathayogapradipika iii.107, that it gives liberation to yogis and bondage to fools. pm:Reworking requires pm:reworkedClaim to point at an entered node of the transmission received from, and traditions/hathayoga.ttl carries no node for the serpent-fire; it is also not yet migrated to work identifiers, so touching it would oblige this run to migrate it, which is a strand of its own. queries/work-migration-backlog.rq carries that transmission. The verse number is the one the author gives and was not checked against the vulgate in this run; pmc:HathapradipikaRecensionDispute in traditions/hathayoga.ttl holds why that matters."@en ;
+    pm:withinTradition pmt:Theosophy ;
+    dcterms:source "C. W. Leadbeater, The Inner Life, first series, chapters Force-Centres and The Serpent-Fire, pp. 295-303 (Chicago: The Theosophical Press, 1922 printing)" .
