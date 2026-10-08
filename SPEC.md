@@ -846,6 +846,8 @@ Die Ernteregel oben ist auf ein Werk und einen Lauf geschrieben. Sie lässt sich
 4. Die Gegensuche nach 15.2.
 5. Mindestens eine Überlieferung außerhalb der Sphäre, in der die Behauptung vermutet wird — sonst entsteht nie eine unabhängige Bezeugung.
 
+**Zwei Übersetzungen werden am Übersetzer gezählt und nicht an Kennung und Jahr.** Punkt 2 ist die einzige Forderung dieser Liste, die sich erfüllen lässt, ohne erfüllt zu sein, und der Fehler ist billig zu machen: ein Volltextarchiv führt dieselbe Übersetzung unter mehreren Kennungen mit verschiedenen Jahren, weil es Drucke und keine Übersetzungen zählt. Am 2026-10-08 lagen für die Subida del Monte Carmelo zwei Digitalisate von 1906 und 1922 unter verschiedenen Kennungen; beide tragen die Übersetzung von David Lewis, und ein Lauf, der sie als zwei gezählt hätte, hätte die Regel auf dem Papier erfüllt und eine Übersetzung gelesen. Der Prüfschritt ist derselbe wie für die Ausgabe: der Übersetzer steht auf dem Titelblatt im Volltext, nie in den Katalogdaten. Wo nur ein Übersetzer erreichbar ist, wird eine Übersetzung in einer anderen Sprache genommen — die Forderung lautet zwei Übersetzungen und nicht zwei englische — und wo auch das nicht trägt, steht der Grund im Lauf und nicht die Behauptung, zwei gelesen zu haben.
+
 **Was zurückkommt, gehört ins Issue, nicht in den Kopf des Agenten:** geprüfte Korpora, verwendete Suchbegriffe samt Transliterationen, gefundene und geprüfte Stellen, das Datum. Eine Recherche, deren Abdeckung nicht nachvollziehbar ist, muss beim nächsten Zweifel vollständig wiederholt werden und war damit umsonst.
 
 ### Beifang
