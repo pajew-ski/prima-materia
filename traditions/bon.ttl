@@ -1,0 +1,252 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Bön, taken down from the register at its own wording
+#
+# The structure-driven entrance of SPEC §14. pmt:Bon stood in
+# traditions/registry-east-asian.ttl on pm:coverageState pm:corpusNamed with
+# zero nodes, and queries/coverage-queue.rq put it at the head of the queue
+# that is actually open: the two transmissions above it on the absent contact
+# route are both held by an open decision, the Amazonian by prima-materia#806
+# and the Australian by prima-materia#781, and Bön is the next, on the
+# disputed route.
+#
+# Why this work. The examinability-driven entrance has priority, and the first
+# of the Nine Ways is the one place a reading could expect conditions: it is
+# the way of the diviner and the physician, and its fourth part is diagnosis.
+# What the reading found is more than that. This transmission states, in plain
+# words and in four separate places, what makes its own procedures fail: a
+# patient cut off by his karma, an officiant whose skill is not perfected by
+# practice, an offerer who makes a mistake over the ransom items, and an
+# ordinary person who undertakes what only an accomplished Shen may. Three of
+# the four carry a consequence that is quotable, and one of them names the
+# death of the patient. Against the count in prima-materia#640 — seven opened
+# works, twelve announced signs, not one condition of failure — that is the
+# first opened work of this holding whose own text says when it does not work.
+#
+# What that costs the transmission, and the node pmc:BonLasChad says it: three
+# of the four conditions put the failure on the patient or on the operator and
+# none on the procedure. The karmic cut-off in particular is an excuse
+# available in every case that ends in death, and it is stated in the same
+# breath as the prognostic that would otherwise have been checkable.
+#
+# Order of the file: the tradition and its works, the four parts of the first
+# Way as practices, the capacities, the prerequisites with their stated
+# consequences, the cautions, and the self-claim of infallibility.
+#
+# On the citations. The scan carries the running heads with their page numbers
+# optically damaged — the sequence reads 27, a8, 29, 3, 33, 4 and is not
+# monotone — so the rule in AGENTS.md for unreadable column figures applies:
+# cite by the canonical scheme of the work and leave the page number out. The
+# canonical scheme here is the Way and the part within it, which is how
+# Snellgrove himself divides the excerpts and how a reader finds the passage in
+# any printing. Where the edition prints the folio of the Tibetan manuscript in
+# brackets beside the passage it is given as well.
+#
+
+pmt:Bon a pm:Tradition ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Bön"@en, "Bön"@de ;
+    skos:definition "The Tibetan transmission that claims descent from Zhangzhung rather than from India, with its own dzogchen cycles and its own founder."@en ;
+    skos:note "The independence claim is the point. If it holds, Bön is a witness beside Tibetan Buddhism rather than a variant of it; if it fails, the failure is one of the better documented cases of a tradition constructing its own antiquity. Either outcome is a finding."@en ;
+    skos:note "Read in this run at the wording: the gZi brjid in the Tibetan text and facing English translation of D. L. Snellgrove, 1967. Read closely and in full: the first of the Nine Ways, the Way of the Shen of Prediction, with all four of its parts. Read in part, by a search for conditions of failure carried over the whole volume and then read at every hit: the Way of the Shen of the Visual World, the Way of the Shen of Existence and the Way of the Primeval Shen. Not read: the Way of the Shen of Illusion, the Way of the Virtuous Adherers, the Way of the Great Ascetics, the Way of Pure Sound and the Supreme Way, except where the search fell in them. Not opened at all: the Zhang Zhung Nyan Gyud, which its registration names first."@en ;
+    skos:note "The contact route stays at disputed and this run did not settle it, but the reading made the question concrete rather than abstract. The excerpts are saturated with Buddhist vocabulary used without apology: the officiant is to raise his Thought towards Enlightenment before every operation, the hosts of buddhas are the refuge of the physician, the god of medicine is Vaidūrya with his eight fellows, the diseases are the molestations that Sanskrit calls kleśa, and the ways are counted as vehicles. What the run did not establish is whether the procedures travelled with the vocabulary or the vocabulary was laid over procedures already there, and no node here claims either."@en ;
+    skos:note "What kind of witness this work is. The gZi brjid is the long biography of Shenrab and is held by Bön tradition to have been dictated in the fourteenth century; Snellgrove took his excerpts from a manuscript collected at Samling in Dolpo in 1961 and prints the Tibetan with the scribe's errors marked. A transmission whose doctrinal summary is a revealed biography is not a practitioner's manual, and the difference shows: the four parts of the first Way are described in the order in which they are taught, with their items and their conditions, and never once with a case in which somebody did them."@en ;
+    pm:principalCorpus "Zhang Zhung Nyan Gyud; the Bön dzogchen cycles in the published Bön canon; gZi brjid" ;
+    pm:corpusWork pmw:GziBrjid, pmw:ZhangZhungNyanGyud ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDisputed ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:GziBrjid a dcterms:BibliographicResource ;
+    rdfs:label "gZi brjid, the long biography of Shenrab"@en, "gZi brjid, die lange Lebensbeschreibung des Shenrab"@de ;
+    skos:note "Opened on 2026-10-09 in the excerpts of D. L. Snellgrove, 1967, which give the Tibetan text of nine chapters with a facing English translation and a glossary. The excerpts are what was opened and not the work: the gZi brjid runs to twelve volumes, and the nine chapters are the doctrinal summary of the Nine Ways and not the narrative."@en .
+
+pmw:ZhangZhungNyanGyud a dcterms:BibliographicResource ;
+    rdfs:label "Zhang Zhung Nyan Gyud, the oral transmission of Zhangzhung"@en, "Zhang Zhung Nyan Gyud, die mündliche Überlieferung von Zhangzhung"@de ;
+    skos:note "Named as the first work of this corpus and unopened. The route was tested in this run and the finding is about the route and not about the work: what is freely available in full text is a transcription of oral teachings given on these texts by Yongdzin Lopon Tenzin Namdak, edited by C. and D. Ermakova, which is a commentary and therefore a work in which the text has been met and not read. A critical edition with the Tibetan was not reached."@en .
+
+#
+# The four parts of the first Way as practices
+#
+
+pmp:BonMo a pm:Practicing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Sortilege, the first and foremost of the four"@en, "Die Losbefragung, die erste und vornehmste der vier"@de ;
+    skos:definition "The first of the four parts of the Way of the Shen of Prediction, and the one the work calls foremost. On a piece of white felt as the base the operator places sprinklings of green barley, sets up the symbol of life, a bronze-tipped arrow with a turquoise ornament, marks the way of the incense with wafts of smoke, and worships with a heap of barley-flour and butter and with consecrated chang. He worships the god Phu-wer dkar-po, invokes the knot-sortilege of Ye-srid-hphrul, produces clairvoyance within himself, reflects upon a dream and effects the soothsaying of Ye-dbang-lha. He then names everything in the client's past, sets in order everything of his future, and writes down the evils and benefits to come and the length of his life."@en ;
+    skos:note "The procedure ends in a written document about a named person, which is the form in which a prognostic can be checked afterwards, and the work says in the same passage that truth and falsehood there may be but that true distinction is to be made. It does not say what is to happen if the document turns out wrong."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the first of its four parts, on sortilege, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmp:BonRtsis a pm:Practicing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "The calculation of the horoscope on the squared board"@en, "Die Berechnung des Horoskops auf dem gefelderten Brett"@de ;
+    skos:definition "The second part. On a cloth of brocade silk the squared calculating board is set with its white and black pieces; the operator worships Ye-srid lha-dbang rgyal-po, requites the goddesses of the Elements and the Time-Periods, and prays to dBang-chen bdag-po. He looks in the mystic mirror of the horoscope, works the sPar-kha sMe-ba circle, calculates the cycles of the Elements and the Time-Periods and examines the combinations by the method ju-zhag. What he is to identify is listed: the past and present state, how it comes about from major and minor causes, how events and prayers have corresponded, the ways of change in Time and the Elements and the Four Seasons, the strength and weakness of gods, demons and klung-rta, an estimate of good and bad and of the length of life, and the characteristics of increase and decrease by years, months, days and hours."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the second of its four parts, on calculation, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmp:BonGto a pm:Practicing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "The gto rites, the cure by ritual"@en, "Die gto-Riten, die Heilung durch Ritus"@de ;
+    skos:definition "The third part, a set of named rites each with its own occasion. The Awry Rite is performed when sPar-kha, the Year-Cycle, the sMe-ba sphere and the antagonistic elements are in disarray: a circle is drawn with sand of five colours, twigs with coloured wools and silk of five colours are set up, a cake of different grains and the three milk and three sweet substances are offered, the goddesses of the Elements and the Time-Periods worshipped and true expositions recited, and the disarrayed elements are thereby quietened. The Striking Rite is performed for long life and good fortune: a swastika is drawn in grain on a clean base, the implements and talismans prepared, libations and consecrated chang offered and the eight gods of Prediction and Good Fortune worshipped. The Stinging Rite, which works by knowledge of prognostic signs, is used when beings are struck with an impediment and come near to death."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the third of its four parts, on the rites, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmp:BonTsheBslu a pm:Practicing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "The life-ransom and the exchange of two equal things"@en, "Der Lebensloskauf und der Tausch zweier gleicher Dinge"@de ;
+    skos:definition "The rite within the third part that the work describes at most length. Against devils, fiends, she-demons, spirits of death, the devils that attack a man's length of days, the sprites that cause impediments and the devils that attack the life-force, the operator establishes life-ransoms, life-pledges and amulets, and pays the debts of evil with a life-ransom as payment for life. For the Exchange Rite he prepares the ritual devices and items: a figurine of the right size as ransom for the patient's body, the sky symbol, the tree symbol, the arrow, the distaff, the ritual stakes, a male and a female figure, the rock-plant mtshe and mustard-seed, a model of the house and its wealth and the things one desires. He salutes the hosts of buddhas, offers and prays for refuge, and then offers the items of ransom, explaining them truly."@en ;
+    skos:note "The work states the condition on which the exchange works and it is a condition on the items and not on the operator's state: if they are exchanged as equal things the ransom will be good, if they are transposed as equivalents they will be chosen as payment. A ransom in the wrong measure is therefore a named way for the rite to be wrong, and it is checkable by anyone who can see the figurine and the body."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the third of its four parts, on the rites, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmp:BonDpyad a pm:Practicing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Diagnosis by the channels, the urine and the appearance"@en, "Diagnose nach den Kanälen, dem Harn und dem Aussehen"@de ;
+    skos:definition "The fourth part. The physician raises his thought to the four immeasurable virtues, takes refuge in the hosts of buddhas, offers a mandala, and worships the medicine king Vaidūrya with his eight fellow buddhas. He then diagnoses the major and minor causes in everything visible, identifies the disease by the connecting channels, diagnoses from the urine what is of benefit and what of harm, and from the appearance the signs of death and the signs of cure. Having identified the disease as heat or cold, phlegm or bile or a combination, he applies the medicine, cooling, warming or equalising, as powder, pill, syrup, potion, ointment or butter-mould; treatment is of four kinds and curing of four kinds, by medicine, by bleeding and branding, and by tranquillising with method and spells. The work ends the part by requiring that the three diagnoses coincide."@en ;
+    skos:note "Let the result coincide is the only instruction in the four parts that puts one of the work's own procedures under a test: three independent readings are taken and are to agree, and a disagreement would be visible to the physician before he treats anybody. Nothing is said about what he is to do when they disagree."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the fourth of its four parts, on diagnosis, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+#
+# The capacities, and the one claim with a number on it
+#
+
+pmc:BonTsheLoGsum a pm:Conceptualizing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Although he is about to die, his death is delayed three years"@en, "Obwohl er im Sterben liegt, wird sein Tod um drei Jahre aufgeschoben"@de ;
+    skos:definition "The capacity the work claims for the life-ransom, stated with a number: although your patient is about to die, you can delay his death for the space of three years. The sentence stands at the end of the Exchange Rite, after the items have been offered and explained truly, and is followed by the remark that the patient's people will make the operator happy with offerings and fees."@en ;
+    skos:note "A term with a due date, which almost nothing in this holding has. Three years from a named rite on a named dying man is answerable by anybody who is still there, and the work neither names a sign by which the delay would be recognised at the time nor an outcome under which it would be judged not to have happened."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the third of its four parts, on the rites, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonTsheBsluYieldsLoGsum a pm:Yielding ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "The life-ransom brings the three-year delay of death"@en, "Der Lebensloskauf bringt den dreijährigen Aufschub des Todes"@de ;
+    pm:byPractice pmp:BonTsheBslu ;
+    pm:yieldsCapacity pmc:BonTsheLoGsum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the third of its four parts, on the rites, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonRtagsMtshan a pm:Conceptualizing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Diagnose from the appearance all signs of death and signs of cure"@en, "Diagnostiziere aus dem Aussehen alle Zeichen des Todes und Zeichen der Heilung"@de ;
+    skos:definition "The third of the three diagnoses of the fourth part, and the one that states both outcomes. From the connecting channels the disease is identified and from the urine what is of benefit and what of harm; from the general appearance the physician is to diagnose the signs of death and the signs of cure. The list of the four kinds of diagnosis at the head of the Way gives the same part as diagnosis of the patient's appearance to discover whether he will die or be cured."@en ;
+    skos:note "A prognostic with both sides named, on a patient, with a verdict that the next weeks settle without the physician doing anything further. It is the strongest thing in the first Way and the work takes it back in the following sentence, which is entered at pmc:BonLasChad."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the fourth of its four parts, on diagnosis, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+#
+# The four conditions of failure, which is why this work was opened
+#
+
+pmc:BonLasChad a pm:Conceptualizing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "If he is cut off by karmic effects, ritual and diagnosis are useless"@en, "Ist er durch die Wirkungen seiner Taten abgeschnitten, sind Ritus und Diagnose nutzlos"@de ;
+    skos:definition "The passage that closes the fourth part. If you are sure you see signs of death, urge him to the practice of virtue. If he is cut off by karmic effects, ritual and diagnosis are useless. If it is certain his time of death has come, even food which should nourish the body may be his life's enemy. But if it is not such a case, and he suffers from an accident or a sudden disease, you will save him by treatment and medicine."@en ;
+    skos:note "This is a condition of failure in the strict sense, and it is the first one an opened work of this holding has stated: the work names an outcome of a correctly conducted operation under which the operator is to conclude that the operation cannot work. It is also the most complete immunisation in the holding, and the two things are the same sentence. Whether a patient is cut off by his karma is decided by whether he recovers, so every death falls under the clause and no death falls outside it; the carve-out for accident and sudden disease marks the only cases in which the treatment is claimed to work at all."@en ;
+    skos:note "What it does to the prognostic beside it. pmc:BonRtagsMtshan states both sides of a criterion on a patient, which would make the first Way the examinable one; this clause means that the side that reads death is also the side on which nothing is owed. The pair belongs beside generalizations/the-provision-for-not-knowing.ttl and generalizations/no-failed-run-counts.ttl, and is not entered as a witness of either: the counter-search against the holding that SPEC §16 requires before a generalization is enlarged was not carried in this run."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the fourth of its four parts, on diagnosis, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonSmanDug a pm:Cautioning ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "You will not produce medicine, but poison, and he will die before long"@en, "Du wirst keine Medizin erzeugen, sondern Gift, und er wird bald sterben"@de ;
+    pm:cautionsAbout pmp:BonDpyad ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Bon ;
+    skos:note "The closing warning of the first Way, and it is a self-warning of the art against its own practitioner: if your skill and cleverness of method have not been perfected by practice, you will not produce medicine, but poison; you will not cure the sick man and he will die before long; so skill and cleverness of method are very important."@en ;
+    skos:note "Entered as a caution and not as a prerequisite with a stated necessity, although the consequence is quotable and is quoted. The reason is that the class cannot hold it: pm:Cautioning has no slot for the consequence of the thing it warns against, which is prima-materia#621, and a pm:Presupposing would need a prior step, while what the text requires here is not a step but a degree of accomplishment it does not measure. The consequence therefore stands in this note and is not queryable, which is the cost the open finding describes."@en ;
+    skos:note "The failure lands on the operator and the penalty lands on the patient. A transmission that says its own remedy becomes poison in unpractised hands has given an account of every death under its treatment that leaves the treatment intact, and it has done so in the sentence that also makes the strongest case for training. Both readings are in the text."@en ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), the fourth of its four parts, on diagnosis, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonGludMaNor a pm:Cautioning ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "The offerer himself must make no mistake over the ransom"@en, "Der Opfernde selbst darf sich beim Loskauf nicht irren"@de ;
+    pm:cautionsAbout pmp:BonTsheBslu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Bon ;
+    skos:note "From the Way of the Shen of the Visual World, at the portal of ransom by equal exchange. With regard to the sacred ransom and pledge of life, and the secret quittance with its outer adornment of figurines, the offerer himself must make no mistake; and so that the demons who receive the items do not make mistakes, the intention of the profound meditation must be explained by means of the exposition."@en ;
+    skos:note "Two parties can spoil the transaction and both are named: the offerer and the receiving demons. The second is the part worth keeping, because it puts a possible mistake outside the operator and still inside the rite, which is a shape this holding had not met: a failure that is nobody's fault and is forestalled by an explanation rather than by a correction."@en ;
+    dcterms:source "gZi brjid, the Way of the Shen of the Visual World (snang-gshen theg-pa), the third portal, on ransom by equal exchange, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonSoSkye a pm:Conceptualizing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Both the officiant and the deceased will fail"@en, "Beide, der Vollziehende und der Verstorbene, werden scheitern"@de ;
+    skos:definition "From the Way of the Shen of Existence, on the rites for the dead. Except for the Best of Shen, expert in knowledge and whose meditation is vast like the heavens, this ability in the affairs of living beings is no sphere of activity for ordinary people; both the officiator and the deceased will fail, and there is great danger of connecting up with evil rebirths. One who has been continuously purified from previous times and who has entered the stream of the four measureless virtues is able to benefit living beings."@en ;
+    skos:note "The third of the work's conditions of failure, and the one with the widest scope: it does not fail the rite in a particular case but withdraws the whole operation from anybody below a named level of attainment, and it attaches a penalty to the attempt that falls on the dead man as well as on the officiant. A reader who wants to know whether the rite works has first to establish that the man who performed it was a Best of Shen, which the transmission does not say how to establish."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Existence (srid-gshen theg-pa), on the rites for the dead, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+#
+# The prerequisites the work states with their consequences
+#
+
+pmc:BonByangChubSems a pm:Conceptualizing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Raising the Thought towards Enlightenment as the basic intent"@en, "Das Erheben des Gedankens zur Erleuchtung als Grundabsicht"@de ;
+    skos:definition "The condition the first Way sets before any of its four parts is begun: at the start of the process of setting to work, raise your Thought towards Enlightenment and keep compassion as your basis, with your mind intent on benefiting living beings. The same requirement is repeated at the head of the fourth part for the physician, who is to raise his thought to the four immeasurable virtues before he diagnoses."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), on setting to work, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonPresupposesByangChubSems a pm:Conceptualizing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Without the Thought of Enlightenment you will not gain the higher effects"@en, "Ohne den Gedanken der Erleuchtung erlangst du die höheren Wirkungen nicht"@de ;
+    skos:definition "The consequence the work attaches to the condition, stated as a general rule over both halves of its own system: if as a general rule both in the Bon of Cause and the Bon of Effect you do not raise your Thought towards Enlightenment as your basic intent, you will not gain anywhere the higher effects of the worldly causes; so how should one obtain the highest truth? Although one is concerned here with the Bon of Cause, keep going all the time with the Thought of Enlightenment."@en ;
+    skos:note "Entered as a concept and not as a pm:Presupposing with a stated necessity, and the reason is a limit of the source rather than of the class. The clause makes the want of the condition cost the higher effects of the operation, not the operation: the sortilege, the calculation, the rite and the diagnosis are still to be performed and are nowhere said to fail without it. A pm:Presupposing with pm:dependentStep on one of the four practices would therefore claim more than the passage says."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), on setting to work, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonSaBdag a pm:Conceptualizing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Asking the lords of the soil for the site before anything is built"@en, "Die Herren des Bodens vor jedem Bau um den Platz bitten"@de ;
+    skos:definition "The preliminary the Way of the Primeval Shen requires before the place of ritual is constructed, whichever of the Nine Ways is practised: milk-offerings and pure sacrificial cakes are given to the powerful lords of this world and they are asked for a site for the palace of the Blessed Ones."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Primeval Shen (ye-gshen theg-pa), on the preliminaries, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonPresupposesSaBdag a pm:Presupposing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "The ritual place presupposes the lords of the soil, on pain of a root-cause of evil"@en, "Der Ritualplatz setzt die Herren des Bodens voraus, bei Strafe einer Wurzel des Übels"@de ;
+    pm:dependentStep pmp:BonGto ;
+    pm:priorStep pmc:BonSaBdag ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "If you fail to give milk-offerings and pure sacrificial cakes to the powerful lords of this world, if you do not ask them for a site for your palace of the Blessed Ones, these powerful lords, the lords of the soil, the serpents and the furies are irascible, however much they may still protect the doctrine. And: if you do not know how to act methodically in this matter, a root-cause of evil and harm springs from this."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Bon ;
+    skos:note "Stated necessity and not prescribed order, because the consequence is quotable and is quoted twice within a few lines, once as the anger of the named powers and once as a root-cause of evil and harm. The dependent step is entered as the gto rites because the passage says whichever Bon way of the Nine Vehicles you practise, and the gto rites are the ones this holding has entered; the scope in the source is wider than the node claims."@en ;
+    skos:note "What makes the clause worth having is the fraction beside it. The same passage says that fertile fields, good harvests, the extent of royal power and the spread of dominion are ordained by previous actions for about half, and that the other half comes from the lords of the soil. A transmission that divides the credit in halves has said something a later reader can hold it to, and this is the only place in the excerpts where it does."@en ;
+    dcterms:source "gZi brjid, the Way of the Primeval Shen (ye-gshen theg-pa), on the preliminaries, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+#
+# The cautions of the art against its own practitioner, and the self-claim
+#
+
+pmc:BonSpangBa a pm:Cautioning ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "Avoid techniques in which you are inexperienced"@en, "Vermeide Techniken, in denen du unerfahren bist"@de ;
+    pm:cautionsAbout pmp:BonMo ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Bon ;
+    skos:note "A list of some twenty avoidances given to the diviner before the four parts are described, of which the operative ones are these: avoid unskilful precipitancy; avoid the self-esteem of thinking one knows; avoid the pride of thinking one is clever; avoid acts which do not fit the occasion; avoid ritual items which are unsuitable; avoid untruths of things unseen; avoid news of where you have not been; avoid techniques in which you are inexperienced; avoid unsuitable activities. Beside them stand social rules of a different kind, on how to meet an angry man, a flatterer and a liar."@en ;
+    skos:note "Three of the avoidances warn against the practitioner's own confidence and two against reporting what he has not seen, which makes this a self-warning of the art and not a warning about a danger in the world. It is the kind of clause SPEC §15 lists as owed, and the reason it is worth a node here rather than a line is that the transmission addresses it to the diviner before he is taught the divination."@en ;
+    dcterms:source "gZi brjid, the Way of the Shen of Prediction (phya-gshen theg-pa), on setting to work, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .
+
+pmc:BonMaNorBa a pm:Conceptualizing ;
+    pm:fromWork pmw:GziBrjid ;
+    rdfs:label "There is no mistaking the objective and no error in calculation"@en, "Es gibt kein Verfehlen des Ziels und keinen Fehler in der Berechnung"@de ;
+    skos:definition "The claim the second Way makes for the sequence of the Nine Ways at the close of its four portals: as one traverses upwards through the vehicles there is no falling back, there is no mistaking the objective and no error in calculation."@en ;
+    skos:note "Entered because it is the counter-weight to everything above it in this file and stands in the same work. The transmission that states four conditions of failure for its own procedures also states, of the order those procedures belong to, that it contains no error. The two are not in contradiction — one is about the operations, the other about the scheme — and that is the finding: what the work holds open to failure is the practice, and what it holds closed is the system."@en ;
+    pm:withinTradition pmt:Bon ;
+    dcterms:source "gZi brjid, the Way of the Shen of the Visual World (snang-gshen theg-pa), at the close of the four portals, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" .

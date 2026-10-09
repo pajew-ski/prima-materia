@@ -1,0 +1,33 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the search carried in the gZi brjid on 2026-10-09
+#
+# The file stands on its own rather than being appended to another, which is
+# the rule in AGENTS.md: two strands that append to the same end of one file do
+# not come together without a hand, and the standing order requires two strands
+# side by side.
+#
+# One search, and it is the first in this holding that came back with a place
+# rather than with an absence. The question had been put to two corpora before
+# — the demotic manual at pmp:PdmFailureConditionSearch and the Clavicula at
+# pmp:ClaviculaFailureConditionSearch — and both were empty.
+#
+
+pmp:BonFailureConditionSearch a pm:Searching ;
+    rdfs:label "Whether the gZi brjid names any outcome under which its own procedures are not to be expected to work"@en, "Ob der gZi brjid irgendeinen Ausgang nennt, unter dem von seinen eigenen Verfahren kein Erfolg zu erwarten ist"@de ;
+    pm:searchedCorpus "gZi brjid, the nine doctrinal chapters on the Nine Ways, Tibetan text and English translation entire, in D. L. Snellgrove, The Nine Ways of Bon: Excerpts from gZi-brjid, London Oriental Series 18, London: Oxford University Press, 1967" ;
+    pm:searchedFor "A passage naming a result of a correctly conducted operation under which the operator is to conclude that it did not work or cannot work: a term after which nothing further is to be expected, a state of the patient that puts the case beyond the procedure, a degree of accomplishment below which the rite is not to be attempted, or a mistake with a named consequence. This is the material a pm:falsifiedBy can be formed from out of a transmission's own mouth, and the same question was put to the demotic manual at pmp:PdmFailureConditionSearch and to the Clavicula at pmp:ClaviculaFailureConditionSearch, both without result." ;
+    pm:searchTerms "Whole-text search of the volume over a whitespace-normalised copy, the first Way then read continuously in full and every hit elsewhere read at its place. Terms with no hit: of no avail, in vain, will not succeed, does not succeed, fails, not be able, if the rite, wrongly. Terms with hits: useless (two; one is the karmic cut-off at the close of the first Way, the other is a doctrinal use in the Supreme Way), will fail (one, the officiant and the deceased in the Way of the Shen of Existence), no effect (two, both doctrinal in the Supreme Way), mistake (six; one is the offerer over the ransom items in the second Way, one is the demons who receive them, the rest are the editor on the scribe and one is the behaviour of a perfected sage being mistaken for madness), signs of death (two, both the prognostic from the appearance in the first Way), before long (one, the sick man who dies under unpractised hands), if you do not (five; two are the lords of the soil in the Way of the Primeval Shen, one is the purity clause of the Thug-khar lore, two are meditation instructions), error (nine; one is the claim that the scheme contains none, the rest are doctrinal or the editor's), omit, incorrect (the editor on the manuscript)." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:BonLasChad, pmc:BonSmanDug, pmc:BonGludMaNor, pmc:BonSoSkye, pmc:BonPresupposesSaBdag ;
+    pm:searchedBy "prima-materia, 2026-10-09" ;
+    dcterms:date "2026-10-09" ;
+    skos:note "Four conditions of failure and one prerequisite with a quotable consequence, which is more than the six works opened before this one carry between them. Their distribution is the second finding: three of the four are in the causal Ways, the ones with a client and a fee, and none is in the five Ways of the fruit. A transmission states the terms on which its operations can be judged exactly where somebody is paying for one."@en ;
+    skos:note "The third finding is what the conditions do. Of the four, three assign the failure to a person and none to the procedure: to the patient by his karma, to the operator by his unperfected skill, to the offerer by his mistake over the items. Only the fourth, the demons who receive the ransom and may themselves err, puts a possible failure outside both parties, and it is forestalled by an explanation rather than corrected. The holding's own statement of this shape is at pmc:NoFailedRunCountsAgainstTheOperation and at pmc:TheExcuseThatStopsAtTheOfficiant; neither is enlarged by this run, because the counter-search against the holding that SPEC §16 requires before a generalization is touched was not carried."@en ;
+    skos:note "Limits. One translation and one editor, and no second translation: the gZi brjid has been excerpted into a European language once, by Snellgrove in 1967, so the two-translation requirement of SPEC §15 cannot be met for this work at all and the reason is a property of the work and not of the run. The Tibetan is printed facing the English and was used to check that the terms at issue are single clauses and not the translator's expansions, but the run does not read Tibetan and says so. A stopping rule could also be phrased without any of the twenty-four terms above, and against that stands the first Way, which was read continuously and in full."@en .
