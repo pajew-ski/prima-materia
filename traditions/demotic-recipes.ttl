@@ -1,0 +1,368 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the single prescriptions of the Papyrus of London and Leiden
+# outside its divinatory half
+#
+# The tradition instance is pmt:GreekMagicalPapyri and the work is
+# pmw:PapyrusLondonLeiden; both stand elsewhere, and this file is a repository
+# unit only. The divinatory half of the same work, its conditions of purity,
+# its announced signs and its graded compulsions stand in
+# traditions/demotic-magical-papyri.ttl and are not repeated here.
+#
+# Why this file exists. The run of 2026-09-18 drew the erotica, the poisons,
+# the soporifics and the medicine of this work together into one list node,
+# pmc:PdmVirtutesCeterae, on the ground that a recipe with an ingredient list
+# and one clause of effect carries no chain of prerequisites, no caution and no
+# condition of failure. SPEC §15 withdrew that ground in the same session: a
+# recipe is a capacity, and that a recipe carries no examining layer is the
+# finding about the recipe, countable only if the recipe is there. The debt was
+# filed as prima-materia#747 and is discharged here.
+#
+# The unit of a node is one prescription, which is what SPEC §15 means by a
+# recipe. Where the work gives the same prescription twice, the node names both
+# places and says so, because the doublet is itself a finding about the
+# compilation; where two prescriptions claim one outcome, each gets its node
+# and the note says they share it.
+#
+# Order of the file: the recto in column order, then the verso in column order.
+#
+
+#
+# Recto XI to XVI: favour, the erotica of the oil and the fish, the separation,
+# the uses of the shrew-mouse, the potions, the averted superior, the prosperous
+# day
+#
+
+pmc:PdmGratiaAnteOmnes a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Praise, love and reverence before every man and before the king"@en, "Lob, Liebe und Ehrfurcht vor jedem Menschen und vor dem König"@de ;
+    skos:definition "A spell of giving favour, said over an ape of wax. An oxyrhynchus fish is put in prime lily or moringa oil with styrax, frankincense and seeds of the great-of-love plant in a metal vase; a wreath of flowers is anointed with the oil and the spell recited over it seven times before the sun in the morning, before speaking to any man on earth; the operator anoints his face with it, takes the wreath in his hand and goes among any people. The claim is that it brings him great praise among them exceedingly, and in the invocation praise, love and reverence before a named man, before the king and his host, and that the named man will do everything the operator says to him."@en ;
+    skos:note "The recipe closes with a comparative and a pedigree rather than a sign: this scribe feat is that of King Darius, there is no better than it. Neither names what a worse one lacked, which is the absence the search at pmp:PdmReworkingSearch found across the whole work."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XI/1-26, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmAmorPerPiscem a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Making a woman love a man by the fish drowned in oil"@en, "Eine Frau einen Mann lieben machen durch den in Öl getränkten Fisch"@de ;
+    skos:definition "Opobalsamum, malabathrum, kusht, a scented ingredient and merue, each one stater, are pounded with two lok of genuine oil in a clean vessel one day before the lunar period. A black fish of nine fingers, another copy says seven, is laid in the oil for two days while the formula is recited to it at dawn before leaving the house and before speaking to any man on earth; then a vine-shoot taken before it has ripened grapes, taken with the left hand and passed to the right, is carried home, the fish is hung by its tail from the vine-wood over the oil-vessel standing on a new brick until it has dripped, for three days; the fish is then embalmed with myrrh, natron and fine linen and hidden, two further days pass, and the oil is recited to for seven days. The operator anoints his phallus and his face and lies with the woman."@en ;
+    skos:note "The longest chain of conditions in the non-divinatory half of the work: a date in the lunar month, a count of days at three separate points, a hand of the operator, a brick that must be new, and two clauses of silence. Not one of them carries a stated consequence of being skipped, which is why the node carries no pm:Presupposing beside it."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XII/1-27, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmAmorPerPiscemAlter a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The second method with the black fish of nine digits"@en, "Die zweite Methode mit dem schwarzen Fisch von neun Fingern"@de ;
+    skos:definition "A second prescription for the same end, given immediately after the first. A black fish of nine digits is drowned in an ointment of roses, hung up by its head, then placed on a glass vessel with a little water of sisymbrium and a little amulet-of-Isis, pounded; the invocation is recited to it seven times for seven days opposite the rising sun. The operator anoints his head with it in the hour when he lies with any woman, and embalms and buries the fish with myrrh and natron in his chamber or a hidden place."@en ;
+    skos:note "Entered as its own node because it is a second prescription and not a variant invocation: the ingredient, the vessel, the count of days and the part anointed all differ. The outcome it claims is the one the preceding recipe claims, which is the case SPEC §15 has in view when it says a recipe is a capacity: two recipes, one effect, and the count of recipes is what measures the manual."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XII/27-31, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmSeparatioConiugum a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Separating a man from a woman and a woman from her husband"@en, "Einen Mann von einer Frau und eine Frau von ihrem Mann trennen"@de ;
+    skos:definition "Gum and myrrh with wine are made into a figure of Geb holding a was-sceptre, and the invocation calls the fury of every god and goddess on a named man and a named woman. What is asked is hatred in his heart and quarrel to his face, nagging and squabbling and fighting at all times, until he casts her out of his abode and they are separated from each other without agreeing again for ever."@en ;
+    skos:note "The only prescription of the work whose stated end is a duration without end, and the strongest case in it of an outcome that no interval can bring due: nothing is to be looked for at a named time, and nothing short of a reconciliation would count against it."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/1-10, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCaecitasPerMurem a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Blinding by the drowned shrew-mouse"@en, "Blendung durch die ertränkte Spitzmaus"@de ;
+    skos:definition "A shrew-mouse is drowned in some water and the man is made to drink of it; then he is blinded in his two eyes."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/11-12, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorsPerMuremEsam a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Death by the body of the shrew-mouse ground into food"@en, "Tod durch den in Speise geriebenen Leib der Spitzmaus"@de ;
+    skos:definition "The body of the shrew-mouse is ground with any piece of food and the man made to eat it; then he swells up and he dies."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/12-13, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmAnulusMuris a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The ring of the shrew-mouse tail, that any woman you touch gives herself"@en, "Der Ring mit dem Spitzmausschwanz, dass jede Frau, die du berührst, sich hingibt"@de ;
+    skos:definition "A living shrew-mouse is set on a Syrian pot, placed on the backbone of a donkey, its tail put in a Syrian pot or a glass, and let loose alive within the door of the woman bath; the tail is gilded and embalmed, pounded myrrh added, and put in a gold ring worn on the finger after the charms have been recited to it. Then any woman whom the operator takes hold of gives herself to him. It is done when the moon is full."@en ;
+    skos:note "A date is set and no sign is announced, so there is nothing in the prescription that a performance at full moon could fail to show."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/13-17, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmPotioMurisAmatoria a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The potion of the dried shrew-mouse and the blood of the heart-finger"@en, "Der Trank aus getrockneter Spitzmaus und dem Blut des Herzfingers"@de ;
+    skos:definition "The dried body of the shrew-mouse is pounded, a little of it mixed with a little blood of the second finger, that of the heart, of the left hand, put in a cup of wine and given to the woman to drink; then she has a passion for the operator. The work gives the prescription twice, the second time with the gall and the heart of the same animal set aside first for the two uses that follow."@en ;
+    skos:note "A doublet inside one manuscript, at two unconnected places, with the same ingredient, the same finger, the same cup and the same outcome. The verso version prefaces it by taking out the gall and the heart and putting each in a place of its own, so the three uses of the one animal stand there as a series where the recto has them as three consecutive clauses."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/17-19 and col. verso XXXII/1-9, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorsPerFelMuris a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Death at once by the gall of the shrew-mouse in wine"@en, "Tod auf der Stelle durch die Galle der Spitzmaus im Wein"@de ;
+    skos:definition "The gall of the shrew-mouse is put into a measure of wine and the man drinks it; then he dies at once. Or it is put into any piece of food. The verso gives the same with the woman as the one who drinks and the outcome she dies instantly, or put it in meat or some food; a third place, among the series of animal preparations of col. XXIV, gives the gall added to wine with the outcome left unnamed, then it does its work very much."@en ;
+    skos:note "The three places together are the clearest instance in this work of what the manual does with an outcome. Twice it is named and immediate, once it is replaced by the formula that it does its work; the operator reading the third passage cannot tell from it what is supposed to happen, and the first two show that the compiler could have said."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/19-20, col. XXIV/35-36 and col. verso XXXII/10-11, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmAnulusCordisMuris a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The gold ring with the heart of the shrew-mouse, for favour"@en, "Der Goldring mit dem Herz der Spitzmaus, für Gunst"@de ;
+    skos:definition "The heart of the shrew-mouse is put into a seal-ring of gold worn on the hand, and the operator goes anywhere; then it brings him favour, love and reverence. The verso repeats it: you put its heart in a ring of gold and put it on your hand, then it gives you great praise, love and respect."@en ;
+    skos:note "The second doublet of the same animal, and the same outcome as the wax ape of col. XI reaches by a formula and a wreath. Two prescriptions with nothing in common but the end, which is the count SPEC §15 wants kept."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/20-21 and col. verso XXXII/12-13, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorsPerAccipitrem a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Death by the hawk drowned in wine"@en, "Tod durch den im Wein ertränkten Falken"@de ;
+    skos:definition "A hawk is drowned in a measure of wine and the man made to drink it; then he dies. The same prescription stands a second time in the series of col. XXIV, there with a jar of wine and with the outcome given as then it does its work."@en ;
+    skos:note "One of five prescriptions that stand once with a named outcome at col. XIII and once at col. XXIV without one. The five are at pmc:PdmMorsPerAccipitrem, pmc:PdmMorsPerFelMuris, pmc:PdmMorsPerFelMustelae, pmc:PdmMorsPerLacertam and pmc:PdmPotioMurisAmatoria."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/21-22 and col. XXIV/33-34, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorsPerFelMustelae a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Death by the gall of the Alexandrian weasel in food"@en, "Tod durch die Galle des alexandrinischen Wiesels in der Speise"@de ;
+    skos:definition "The gall of an Alexandrian weasel is put into any food; then he dies. The same stands at col. XXIV in the series of animal preparations, with the outcome given as then it does its work, and again a little earlier in the soporific series, where it is offered as another medicament for making a man sleep."@en ;
+    skos:note "The same ingredient is offered for death and for sleep within thirteen lines, which is the limit of what the compiler distinguishes. The soporific use is entered separately at pmc:PdmSomniferumFelMustelae because the stated end is different."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/22-23 and col. XXIV/37, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorsPerLacertam a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Death by the two-tailed lizard cooked in oil"@en, "Tod durch die zweischwänzige Eidechse, in Öl gekocht"@de ;
+    skos:definition "A two-tailed lizard is put into the oil and cooked, and the man anointed with it; then he dies, the translators marking the verb as uncertain. The same prescription stands at col. XXIV with the outcome given as then it does its work, and once more in the soporific series as the bare entry another, a two-tailed lizard."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/23-24 and col. XXIV/37-39, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorbusCutisInsanabilis a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "A skin disease that shall not be healed"@en, "Eine Hautkrankheit, die nicht geheilt werden soll"@de ;
+    skos:definition "Two named lizards are cooked with oil and the man washed with them, for the stated purpose of producing a skin disease on a man and that it shall not be healed. A further clause follows for making it troublesome, with the ingredient lost in a lacuna."@en ;
+    skos:note "The only prescription in the work that states its own permanence as part of the claim, and the only one whose end is that another operation shall not take effect. The verso carries no cure for it; the healing prescriptions of the work address bites, stings, bones, blood, feet, ears, eyes and fever."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/24-25, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCaecitasPerCerevisiam a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Blinding by what is put to the eye of a man"@en, "Blendung durch das, was einem Menschen ans Auge gelegt wird"@de ;
+    skos:definition "A single clause closing the series: you put beer, the reading uncertain, to the eye of a man, then he is blinded."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIII/26, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmPotioCapillorumOccisi a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The potion of the hair of a man who died a violent death"@en, "Der Trank aus dem Haar eines gewaltsam Gestorbenen"@de ;
+    skos:definition "A shaving of the head of a man who has died a violent death, seven grains of barley buried in a grave, nine or ten measures of apple-seeds, blood of a worm of a black dog, blood of the second finger of the left hand and the operator semen are pounded together, put in a cup of wine with three uteh of the first-fruits of the vintage before anyone has tasted it, invoked over seven times and given to the woman to drink; the skin of the parasite is tied with a band of byssus to the operator left arm. What is asked is that she feel love, longing and madness, seeking him everywhere, a flame of fire in her heart in the moment of not seeing him."@en ;
+    skos:note "The invocation asks for a state in a second person that the operator cannot inspect and sets no interval. It is the longest erotic prescription of the recto and the only one whose ingredients are three times taken from the dead."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XV/1-20, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmPotioUnguis a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The second potion, of the nail-paring and the apple"@en, "Der zweite Trank, aus Nagelspan und Apfel"@de ;
+    skos:definition "Another method of doing it again: the paring of the operator nail from an apple-fruit with blood of the finger named before; the apple is pounded, the blood put on it, the whole put in the cup of wine, invoked seven times, and the woman made to drink it at the moment named."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XV/21-23, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmIraSuperiorisAversa a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Going to meet a superior who fights with you and will not parley"@en, "Vor einen Vorgesetzten treten, der mit dir streitet und nicht verhandeln will"@de ;
+    skos:definition "A spell said seven times, given first in Greek and then in its demotic translation, in which the operator declares that he is carrying the mummy of Osiris to Abydos to deposit it in Alkhah, and that if the named man deals blows at him he will cast it at him."@en ;
+    skos:note "Entered because the threat is conditional and names the condition: the operator does not claim the superior will relent but states what he will do if blows come. That is the shape of a condition of failure without being one, since what follows the condition is a further act of the operator and not an end to the operation."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XV/24-31, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmProsperitasOperis a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The invocation before Phre that what you do may succeed"@en, "Die Anrufung vor Phre, dass gelinge, was du tust"@de ;
+    skos:definition "An invocation of two names pronounced seven times before Phre in the morning, before reciting to the boy, in order that that which the operator does may succeed. It stands inside the lamp-divination of col. XVI but claims no apparition and nothing of the inquiry."@en ;
+    skos:note "The nearest thing in the work to a claim about outcomes in general, and it is unfalsifiable in the plainest way: no act is named, no interval is set, and there is no result that would not fall under it. Entered because the examinability-driven entrance of SPEC §14 needs the negative cases counted as well as the positive ones."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XVI/15-17, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmProsperitasManus a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "That everything you do shall prosper in your hand"@en, "Dass alles, was du tust, in deiner Hand gedeihe"@de ;
+    skos:definition "Another method of it again. The operator rises early from his bed on the day on which he will do it, or any day, and pronounces a named invocation before Phre three times or seven times, in order that everything which he will do shall prosper in his hand, he being pure from every abomination."@en ;
+    skos:note "The purity clause here carries no consequence of its own, unlike the one at col. XVII/26 which says in plain words that it does not succeed. Two clauses of purity in one manuscript, one with a stated consequence and one without, and the one with it belongs to the inquiry."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XVI/18-21, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+#
+# Recto XIX and XX: the healing formulae, the only prescriptions of the work
+# that name a term at which the operator looks again
+#
+
+pmc:PdmMorsusCanisPrimus a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The first formula for the bite of a dog, addressed daily until it is well"@en, "Die erste Formel für den Hundebiss, täglich gesprochen, bis er heil ist"@de ;
+    skos:definition "A spell spoken to the bite of the dog, in which the operator threatens to take the dog up to the court of the temple of Osiris if it does not extract its venom; then garlic is pounded with kmou and put on the wound, and the wound is addressed daily until it is well."@en ;
+    skos:note "Until it is well is a stopping rule of a kind the divinatory half of the work never states: the operation ends at an observable condition of the patient and not at a count of repetitions. The search at pmp:PdmFailureConditionSearch found no such clause anywhere in the inquiries."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIX/1-9, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmVenenumCordis a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Extracting the venom from the heart of a man who has been made to drink a potion"@en, "Das Gift aus dem Herzen eines Menschen ziehen, dem man einen Trank zu trinken gab"@de ;
+    skos:definition "A spell spoken over a cup of wine to which fresh rue is added, invoked seven times, and the man made to drink it in the morning before he has eaten. The invocation asks that he be healed of all poison, pus and venom which have been put to his heart, and that they be cast up."@en ;
+    skos:note "The counterpart inside the same manuscript to the erotic potions of cols. XII, XV, XXI and XXV, which are administered in a cup of wine; the manual carries both the drugging and the antidote, and the antidote names a sign, that they be cast up."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIX/10-21, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmOsInGutturePrimum a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The first formula for a bone stuck in the throat"@en, "Die erste Formel für einen im Hals steckenden Knochen"@de ;
+    skos:definition "A spell said seven times, then invocation over a little oil; the man face is put upwards and the oil poured into his mouth, the operator places finger and nail to the two muscles of his throat, makes him swallow the oil and start up suddenly, and the oil is ejected immediately; then the bone comes up with the oil."@en ;
+    skos:note "A stated outcome at a stated moment, produced by a mechanical act, and the only prescription of the work whose claimed result is visible to everyone in the room at the moment it is claimed. It belongs beside the pregnancy test at pmc:PdmProbatioGraviditatis and the assay of the stone at pmc:PdmProbatioLapidis: all three stand outside the divinatory half."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIX/21-32, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorsusCanisSecundus a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The second formula for the bite of a dog, with salt on the cleansed wound"@en, "Die zweite Formel für den Hundebiss, mit Salz auf der gereinigten Wunde"@de ;
+    skos:definition "A second spell spoken to the bite of the dog, named as the exorcism of Amen and Thriphis; the wound is cleansed, salt is pounded with an ingredient lost in a lacuna, and applied to him."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIX/32-40, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorsusCanisTertius a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The third for the bite of a dog, rue with honey"@en, "Das dritte gegen den Hundebiss, Raute mit Honig"@de ;
+    skos:definition "Another: rue is pounded with honey and applied; the spell is also said to a cup of water and the man made to drink it, the translators marking the last clause as uncertain."@en ;
+    skos:note "Three prescriptions for one injury within forty lines, which is the highest count of alternatives the work gives for anything outside the inquiry, and none of the three says what to do if the first fails."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XIX/40, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmIctusScorpionis a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The formula for the sting, licked with the tongue and oiled daily"@en, "Die Formel für den Stich, mit der Zunge geleckt und täglich geölt"@de ;
+    skos:definition "A spell spoken to the sting, in which Isis tells the young Anubis to lick the edges of the wound with his tongue and to swallow what he licks up rather than spit it on the ground. The operator licks it with his tongue while it is bleeding, immediately; thereafter he recites to a little oil seven times, puts it on the sting daily and soaks a strip of linen to lay on it. A second spell is given for the oil, said seven times, which ends twice with the question whether the oil will not make it well."@en ;
+    skos:note "The daily application has no stated end, unlike the dog-bite formula that runs until it is well. The question put to the oil, wilt thou not make it well, is the nearest the work comes to admitting that a remedy might not, and it is put to the ingredient rather than to the outcome."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XX/1-27, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmOsInGuttureSecundum a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The second formula to fetch a bone out of a throat"@en, "Die zweite Formel, einen Knochen aus dem Hals zu holen"@de ;
+    skos:definition "A spell spoken seven times to a cup of water, which the patient is made to drink; the invocation names bone of god, bone of man, bone of bird, bone of fish, bone of animal, bone of everything, and asks that what is in the belly come to the heart, what is in the heart to the mouth, and what is in the mouth to the operator hand here to-day."@en ;
+    skos:note "Unlike the formula at col. XIX/21-32 nothing mechanical is done, and the claimed result is placed in the operator hand to-day, which is an interval. The second of two prescriptions for one condition, and the one without the manual act."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XX/27-33, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+#
+# Recto XXI to XXVI: the scarab, the catalepsy of the ass head, the
+# pharmacological series of col. XXIV, the heart of a woman turned
+#
+
+pmc:PdmScarabaeusInVino a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The scarab of the cup of wine, to make a woman love a man"@en, "Der Skarabäus im Weinbecher, eine Frau einen Mann lieben machen"@de ;
+    skos:definition "A small hornless scarab with three plates on the front of its head is taken at sunrise, the operator bound with a cloth on his upper back and a strip of palm-fibre on his face, and addressed before the sun seven times; it is drowned in milk of a black cow and left till evening, spread on sand under a circular strip of cloth for four days with frankincense burnt before it, then divided down the middle with a bronze knife. The right half with the nails of the right hand and foot is cooked on a new potsherd with vine wood, pounded with nine apple-pips and the operator urine or sweat, made into a ball, put in the wine, spoken over seven times and given to the woman to drink; the left half with the nails of the left side is bound in fine linen with myrrh and saffron and bound to the operator arm."@en ;
+    skos:note "Every count in it is exact and none of them is answerable: a four-day drying, nine pips, seven addresses, two halves. The recipe divides the material between the woman and the operator, which is the construction that makes a failure attributable to either."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXI/10-20, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCataplexiaCapitisAsini a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Four days he sleeps, seven days he dies"@en, "Vier Tage, dann schläft er, sieben Tage, dann stirbt er"@de ;
+    skos:definition "A spell to inflict catalepsy. An ass head is placed between the operator feet opposite the sun in the morning and again in the evening; the right foot is anointed with set-stone of Syria and the left with clay, the hands with ass blood, and the charms uttered towards the sun in the morning and evening of four days, then he sleeps. If the operator wishes to make him die, he does it for seven days, with a thread of palm-fibre bound to his hand and a mat of wild palm-fibre to his phallus and his head. The invocation is to Typhon Set. The recipe closes very excellent."@en ;
+    skos:note "The one prescription of this work in which the count of days is the whole difference between two outcomes, and therefore the one place where the manual makes a quantity answerable: four days are to produce sleep and not death, seven death. It belongs to the witnesses of generalizations/counted-thresholds.ttl."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIII/1-8, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCataplexiaDactylorum a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "For catalepsy, flour of wild dates in wine"@en, "Gegen Starre, Mehl wilder Datteln im Wein"@de ;
+    skos:definition "For catalepsy, another: flour of wild dates beaten up with milk, with a further ingredient lost, made up together into a ball and put in the wine. The entry stands in the margin of the column, numbered separately by the editors."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/1a-5a, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMedicamentumScammoniae a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "A medicament to drug a man, tested"@en, "Ein Mittel, einen Menschen zu betäuben, erprobt"@de ;
+    skos:definition "A medicament, when you wish to drug a man, marked tested: scammony root one drachm, opium one drachm, pounded with milk, made into a ball and put into some cooked food, and he is let eat it; then he is upset."@en ;
+    skos:note "One of the six places where the work marks a recipe as tried, collected at pmc:PdmProbatumNovies. This is the only one of the six that stands over a prescription with weights, and the mark says nothing about who tried it or what followed."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/1-5, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmSomnusBiduanus a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "To make a man sleep for two days"@en, "Einen Menschen zwei Tage schlafen machen"@de ;
+    skos:definition "Another, when you wish to make a man sleep for two days: mandragora root one ounce, liquorice one ounce, hyoscyamus one ounce, ivy one ounce, pounded with a measure of wine; done carefully, four portions of each with an uteh of wine, moistened from morning to evening, clarified, and given to drink; very good."@en ;
+    skos:note "The one soporific of the series that names a duration, and therefore the one whose claim a bystander could have found false by the third day. Nothing in the entry says what a shorter sleep would mean."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/6-14, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmSomniferumQuartum a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "The fourth, apple pips pounded with flour into a cake"@en, "Das vierte, Apfelkerne mit Mehl zum Kuchen gestoßen"@de ;
+    skos:definition "Another, the fourth: pips of apple, one stater and one kite, pounded with flour and made into a cake, which the man whom the operator wishes is made to eat. No outcome is stated beyond the heading of the series."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/14-16, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmSomniferumVini a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "A medicament for making a man sleep, kept in a glass"@en, "Ein Mittel, einen Menschen schlafen zu machen, im Glas aufbewahrt"@de ;
+    skos:definition "A medicament for making a man sleep, very good: pips of apple one stater and one drachma, mandragora root four drachmas, ivy four drachmas, pounded together, fifteen uteh of wine added, put into a glass vessel and kept; when it is to be given, a little is put into a cup of wine and given to the man."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/17-22, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmSomniferumFelMustelae a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Another soporific, the gall of an Alexandrian weasel in any food"@en, "Ein weiteres Schlafmittel, die Galle eines alexandrinischen Wiesels in jeder Speise"@de ;
+    skos:definition "Another, standing in the series of soporifics: gall of an Alexandrian weasel, added to any food."@en ;
+    skos:note "The same ingredient and the same vehicle as the killing prescription at pmc:PdmMorsPerFelMustelae, under a different heading and with no quantity in either place. Entered separately because the stated end differs, and the pair is the finding."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/25-26, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmSomniferumLacertae a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Another soporific, a two-tailed lizard"@en, "Ein weiteres Schlafmittel, eine zweischwänzige Eidechse"@de ;
+    skos:definition "Another, in the same series, consisting of the words a two-tailed lizard and nothing else: no preparation, no vehicle, no quantity and no outcome of its own."@en ;
+    skos:note "The thinnest entry of the work, and it is entered for that reason. A series in which one member is a bare ingredient name shows what the compiler took to be self-evident, and the count of such entries is a measure of the manual that a list node makes unobtainable."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/26, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCataplexiaFelCerastae a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "A medicament for catalepsy, gall of cerastes and western apples"@en, "Ein Mittel gegen Starre, Hornvipergalle und westliche Äpfel"@de ;
+    skos:definition "A medicament for catalepsy: gall of cerastes, pips of western apples and herb of klo pounded together, made into a pill and put into the food. The verso repeats the same three ingredients with the same instruction, there made into a ball and put into wine and drunk."@en ;
+    skos:note "A doublet between the recto pharmacology and the drug list of the verso, with the vehicle changed from food to wine and the drinker from the victim to an unnamed subject. The two places are the reason the drug list of the verso is not a separate collection but the same material entered twice."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/27-28 and col. verso III/1-3, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmMorsSanguineCameli a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Death by camel blood with the blood of a dead man in wine"@en, "Tod durch Kamelblut mit dem Blut eines Toten im Wein"@de ;
+    skos:definition "Another: camel blood with the blood of a dead man is put into the wine and the man made to drink it; then he dies."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/29-30, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCaecitasSanguineCaprimulgi a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Blinding by night-jar blood in the eye"@en, "Blendung durch Ziegenmelkerblut im Auge"@de ;
+    skos:definition "Another: a night-jar blood is put into his eye; then he is blinded."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/31, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCaecitasSanguineVespertilionis a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Another, a bat blood, this is the manner of it again"@en, "Ein weiteres, Fledermausblut, so geht es wieder"@de ;
+    skos:definition "Another: a bat blood; this is the manner of it again. The entry gives the ingredient and refers back to the preceding prescription for the manner, so the eye and the outcome are carried over and not restated."@en ;
+    skos:note "An entry whose whole content is a substitution in the recipe before it. Entered because a prescription that works by reference is still a prescription, and because the back-reference is the mechanism by which the series grows without any of its claims being stated twice."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXIV/32, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
+
+pmc:PdmCorMulierisConversum a pm:Conceptualizing ;
+    pm:fromWork pmw:PapyrusLondonLeiden ;
+    rdfs:label "Putting the heart of a woman after a man, done in one moment"@en, "Das Herz einer Frau einem Mann nachsetzen, in einem Augenblick getan"@de ;
+    skos:definition "A method to put the heart of a woman after a man, which the work says is done in one moment and comes to pass instantly. A living swallow and a living hoopoe are anointed on their heads with lotus ointment and with blood of a male ass and blood of the tick of a black cow, a cry is uttered before the sun at its rising, their heads are cut off, the hearts taken out of the right ribs, anointed again with the same blood, put in an ass skin and laid in the sun four days; when dry they are pounded and kept in a box in the house. To use it, a shaving of a pleasure-wood is taken, the named words recited over it, and it is put in a cup of wine or beer and given to the woman. It is done on the fourteenth of the lunar month. Very excellent. Two further invocations for the same cup follow, the second marked as taken from another book."@en ;
+    skos:note "Done in one moment and comes to pass instantly is the only interval in the non-divinatory half of the work short enough to be watched, and it is the strongest claim in it for that reason. Nothing is named that would show it had not come to pass."@en ;
+    pm:withinTradition pmt:GreekMagicalPapyri ;
+    dcterms:source "Papyrus of London and Leiden (PDM xiv), col. XXV/23-37 and col. XXVI/1-18, in F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel & Co., 1904" .
