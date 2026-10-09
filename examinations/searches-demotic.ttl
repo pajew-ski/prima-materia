@@ -6,16 +6,19 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 #
-# prima-materia — four searches carried in the Papyrus of London and Leiden
+# prima-materia — five searches carried in the Papyrus of London and Leiden
 #
-# All four were carried on 2026-09-18 while the work was open, over the whole
-# translation of recto and verso, in the edition of Griffith and Thompson of
-# 1904. The digitised text separates its words with runs of two and three
+# The first four were carried on 2026-09-18 while the work was open, the fifth
+# on 2026-10-09 when it was opened again to discharge prima-materia#747, all
+# over the whole translation of recto and verso, in the edition of Griffith and
+# Thompson of 1904. The digitised text separates its words with runs of two and three
 # spaces, so a plain search for a phrase returns nothing; every count below was
 # taken over a whitespace-normalised copy with the hits rewritten back into the
 # raw text by position, which is the method AGENTS.md records for damaged
-# scans. Three of the four came back empty, and those three are the return on
-# the reading that a reader loading the graph could not otherwise have.
+# scans. Three of the first four came back empty, and those three are the return
+# on the reading that a reader loading the graph could not otherwise have. The
+# fifth is a count and not a term search, and it is the one the graph needed in
+# order to say how much of this manual is examinable at all.
 #
 
 pmp:PdmFailureConditionSearch a pm:Searching ;
@@ -63,3 +66,17 @@ pmp:PdmBothSidesSearch a pm:Searching ;
     dcterms:date "2026-09-18" ;
     skos:note "Three places in a manual of sixty-two columns, and their distribution is the finding. The pregnancy test and the assay of the stone are in the medical and pharmacological half of the verso, where nothing is being invoked; the third, the priest's inquiry at VIII/12-16, is in the divinatory half and is the only one there. Against those three stand the seven or eight announced signs of arrival at pmc:PdmSignaAdventus, none of which has a failing side, and the six escalations at pmc:PdmCompulsioNonAdventus, which make one impossible."@en ;
     skos:note "The one in the divinatory half is the reason this search was worth carrying. pmc:TheCriterionNoPartyControls asserts that where a criterion is an appearance announced to the participants beforehand, the transmission states the success side alone; here two distinct appearances are announced in advance and each is bound to one of the two answers before anything is seen. That is opposition to the second clause and is recorded at the protocol on it, pmp:BothSidesOfTheCriterionExamination, where a claim is corrected."@en .
+
+pmp:PdmPraescriptaEnumerataSearch a pm:Searching ;
+    rdfs:label "How many prescriptions this manual carries outside its divinatory half, and how many of them name a sign or a condition of failure"@en, "Wie viele Vorschriften dieses Handbuch ausserhalb seines divinatorischen Teils fuehrt und wie viele von ihnen ein Zeichen oder eine Misslingensbedingung nennen"@de ;
+    pm:searchedCorpus "Papyrus of London and Leiden (PDM xiv), recto columns IV, XI to XVI, XIX to XXI, XXIII to XXVI and verso columns II to XXXIII, in the translation of F. Ll. Griffith and H. Thompson, The Demotic Magical Papyrus of London and Leiden, vol. I, London: H. Grevel and Co., 1904. The divinatory columns were excluded because their signs and escalations were counted in the search of 2026-09-18." ;
+    pm:searchedFor "A count rather than a place: every single prescription of the non-divinatory half, read at its own column and line, and for each of them whether the work names an announced sign by which the operator would know it had worked and whether it names any outcome under which he would conclude it had not. SPEC §15 requires the two to be counted separately and over the whole holding of a work, and prima-materia#747 asked for the figures for this work once the list node was broken up." ;
+    pm:searchTerms "The whole translation of the named columns was read continuously, not searched, and each prescription entered as its own node before the count was taken; the resulting enumeration is traditions/demotic-recipes.ttl with seventy-seven nodes. The clause of outcome was then counted mechanically over a whitespace-normalised copy of the translation with the inline line numbers stripped, because the line numbers stand inside the sentences and break every phrase search: then he dies 4, then she dies 1, then he is blinded 3, then he sleeps 1, then he is upset 1, then her body falls 1, then they are separated 1 (as the clause without agreeing again for ever), shall not be healed 1, then she has a passion 2, then she feels 1, then it brings you 2, then she comes at once 1, comes to pass instantly 1, then it makes dreams 1, then the bone comes up 1, then it stops 1, then he recovers 1, then it is cured 1, then she is cured 1, and it is safe 1, then it is troublesome 1, then it does its work 4 with it does its work also 1 and it does its work very much 1." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-09" ;
+    dcterms:date "2026-10-09" ;
+    skos:note "The two counts, which are the answer prima-materia#747 asked for and which are now over the whole work and not over its divinatory part alone. Announced signs of success: seven or eight, every one of them in the divinatory half and collected at pmc:PdmSignaAdventus; in the seventy-seven prescriptions outside it, none. Conditions of failure, meaning an outcome under which the operator is to conclude that it did not work: none, in either half. What the non-divinatory half has instead is thirty-two clauses of outcome, listed in the terms above, and they are outcomes and not signs: the claim and the thing to be observed are the same event, so there is nothing for the operator to look for on the way and nothing he could see that the clause excludes."@en ;
+    skos:note "Three things the count did turn up, and they are the material the examinability-driven entrance of SPEC §14 is after. A graded threshold at pmc:PdmCataplexiaCapitisAsini, where four days of the same operation are to produce sleep and seven days death, which is the only place in the work where a quantity decides between two stated outcomes. A stopping rule at pmc:PdmMorsusCanisPrimus, where the wound is addressed daily until it is well, which is the only end set by a condition of the patient rather than by a count. And a question put at a term at pmc:PdmPodagraInterrogatio, already entered. Against them stand the four stages of pmc:PdmAquaMulierisPrima through pmc:PdmAquaMulierisQuarta, nineteen days of treatment with no criterion between any two stages."@en ;
+    skos:note "Limits. One translation, one editor, one optical transcription, and the count of prescriptions depends on where a reader cuts: five places in the work give the same prescription twice and are entered once with both loci, and five more stand once with a named outcome and once with the formula that it does its work, entered once with both. A reader who counted the doublets separately would reach eighty-seven. The cut taken here is the prescription as the work distinguishes it, and the places where it does not distinguish are named at the nodes."@en ;
+    skos:note "The fourteen entries of col. XXIV and col. verso XXX whose whole content is an ingredient and a back-reference were counted as prescriptions, because the back-reference does the work of the instruction and the manual means them to be used. Omitted with reason, and named here so that the omission is not silent: the eye-paint at col. verso XXI/4-6 and the star at col. verso XXVIII/1-2, both too damaged to carry a stated outcome, and the clause for making the skin disease troublesome at col. XIII/25, whose ingredient is lost."@en .
+
