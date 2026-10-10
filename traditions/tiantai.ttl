@@ -1,0 +1,191 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Tiantai, taken down from the register at the wording of the
+# Xiao zhiguan
+#
+# The examinability-driven entrance of SPEC §14, which has priority. pmt:Tiantai
+# stood in traditions/registry-buddhist.ttl on pm:coverageState pm:corpusNamed
+# with zero nodes, and its registration already named what this entrance looks
+# for: a systematic account of the obstacles, illnesses and demonic states that
+# arise in practice. The reading bears the registration out and goes past it.
+# This work does four things no opened work of this holding has done together:
+# it names bodily signs by which its own mis-performance is recognised before
+# anything else goes wrong; it names madness and death as consequences of its
+# own procedure wrongly used; it sets out the counterfeit of its own signs of
+# success beside the signs themselves, with a criterion; and it closes the one
+# procedure it states a guarantee for with two clauses that make the guarantee
+# unanswerable.
+#
+# Why this work and not the Mohe zhiguan. The registration names both. The
+# Xiao zhiguan is the short one, it is the author's own summary of the long one
+# for a lay reader, and it is short enough to be read through in one run, which
+# is what the harvest rule asks for and what the Mohe zhiguan in twenty juan
+# would not have allowed. It stands here as pm:corpusHarvested, the first node
+# of this holding to carry that state: the work was read from the preface to
+# the last line, and what the state claims is completeness for the work opened
+# and nothing about the corpus. The Mohe zhiguan stands as pm:corpusWork and is
+# unopened, so queries/unopened-works.rq carries it.
+#
+# On the citations. The canonical scheme is the Taishō reference, volume,
+# number, page and register, which the CBETA edition of that text carries as
+# line beacons and which a reader finds in any printing of the canon. It is
+# given as T46.1915.<page><register>. The register letter is part of the place
+# and not an addition: a Taishō page holds three of them.
+#
+# Order of the file: the tradition and its works, the practices, the capacities,
+# the prerequisites with their stated consequences, the conditions of failure,
+# the signs of success kept separate from them, and last the three clauses that
+# close the account.
+#
+
+pmt:Tiantai a pm:Tradition ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Tiantai"@en, "Tiantai"@de ;
+    skos:definition "The Chinese transmission of calming and contemplation, with a systematic account of the obstacles, illnesses and demonic states that arise in practice."@en ;
+    skos:note "Read in this run at the wording, from the preface of Yuanzhao of 1095 to the last line: Zhiyi, Xiuxi zhiguan zuochan fayao, also called Tongmeng zhiguan and Xiao zhiguan, T46 no. 1915, in the Taishō text as the CBETA edition carries it. All ten chapters were read: the five outward conditions, the reproach of the five desires, the discarding of the five coverings, the regulating of the five matters, the five expedients, the main practice, the arising of the good roots, the recognition of demonic affairs, the curing of illness and the final realization. Nothing of this work was left unread."@en ;
+    skos:note "The English of Lu Kuan Yu (Charles Luk), The Secrets of Chinese Meditation, London: Rider, 1964, chapter 4, was read beside the Chinese and used as a control on the clauses this file turns on. It is one translator and not two: the two-translation requirement of SPEC §15 is not met for this work and the reason is given at the search node in examinations/searches-tiantai.ttl."@en ;
+    skos:note "The contact route stays at documented and this run did not change it. The work quotes the Lotus Sūtra, the Mahāprajñāpāramitā treatise, the Daśabhūmika, the Awakening of Faith and a Miaosheng ding jing by name, and takes the four breath marks and the five good roots from the meditation literature it inherits; nothing here is proposed as an independent witness. What the reading did establish is that the three clauses at the end of the healing chapter are this work speaking in its own voice and not a quotation, because the quotations in it are marked and these are not."@en ;
+    skos:note "What kind of witness this work is. It is a manual written by the founder of the school for his lay elder brother, and it reads as instructions to a named beginner: it says what to do, what will go wrong, what that will feel like in the body, and what to do then. That form is the reason it carries what this holding is short of. It also means it reports no case: in the whole work there is not one instance of a person who did these things and what came of it."@en ;
+    pm:principalCorpus "Zhiyi, Mohe zhiguan; Zhiyi, Xiao zhiguan" ;
+    pm:corpusWork pmw:XiaoZhiguan, pmw:MoheZhiguan ;
+    pm:coverageState pm:corpusHarvested ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0462b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:XiaoZhiguan a dcterms:BibliographicResource ;
+    rdfs:label "Xiuxi zhiguan zuochan fayao, the small treatise on calming and contemplation"@en, "Xiuxi zhiguan zuochan fayao, die kleine Abhandlung über Ruhe und Schau"@de ;
+    skos:note "Opened and read entire on 2026-10-10 in the Taishō text, T46 no. 1915, pages 462a to 473a, as the CBETA edition of that text carries it. One juan, ten chapters, with the preface Yuanzhao of Yuhang wrote for the printing of 1095. The preface is itself a source for the work's standing: it names the four treatises on calming and contemplation of the Tiantai master and says this is the fourth of them, drawn up for the master's lay elder brother Chen Zhen as the outline of the large one."@en .
+
+pmw:MoheZhiguan a dcterms:BibliographicResource ;
+    rdfs:label "Mohe zhiguan, the great treatise on calming and contemplation"@en, "Mohe zhiguan, die große Abhandlung über Ruhe und Schau"@de ;
+    skos:note "Named first by the registration and unopened. The reason is the size and not the access: the text is reachable in the same edition as the work opened here, at T46 no. 1911 in twenty juan, and reading it is a run of its own. The Xiao zhiguan was taken first because it is the author's own summary of it and could be read through."@en .
+
+#
+# The practices
+#
+
+pmp:TiantaiZhiguan a pm:Practicing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Calming and contemplation in seated practice"@en, "Ruhe und Schau im Sitzen"@de ;
+    skos:definition "The paired procedure the work teaches. Calming is the first gate for subduing the bonds, contemplation the main instrument for cutting delusion; the work calls them the two wheels of a cart and the two wings of a bird. Seated, the practitioner takes the half or full cross-legged posture, loosens the belt, lays the left hand on the right, straightens the spine so that nose and navel face each other, expels the stale breath three times through the open mouth, closes the mouth with the tongue to the palate and the eyes just enough to cut the outer light, and sits as still as a set stone. Within one sitting the three matters of body, breath and mind are watched and corrected as each goes out of adjustment; five turns of calming and contemplation are then applied according to which fault appears, and the same five are carried into walking, standing, sitting, lying, working and speaking, and into each of the six senses."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0465c to 0469a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmp:TiantaiTiaoxi a pm:Practicing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Regulating the breath by its four marks"@en, "Die Atemregelung nach ihren vier Merkmalen"@de ;
+    skos:definition "The breath has four marks and three of them are marks of maladjustment. Wind is when the breath is audible at the nostrils in sitting. Panting is when it is silent but knotted and does not pass. Air is when it is neither audible nor knotted but not fine. Breath proper is when it is neither audible nor knotted nor coarse, passing continuously as if present and as if absent. Where one of the first three is found, three measures are prescribed: settle the mind downward, loosen the body, and think the air passing in and out through all the pores without obstruction."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0466a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmp:TiantaiChuding a pm:Practicing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The procedure for coming out of the sitting"@en, "Das Verfahren für das Herauskommen aus der Sitzung"@de ;
+    skos:definition "Before leaving the seat the mind is first released to another object, the mouth opened and the air let go with the thought of it dispersing from all the vessels at will; then the body is moved a little, then the shoulders, arms, hands, head and neck, then both feet until they are soft; then the pores are rubbed over with the hands, the hands rubbed warm and laid over both eyes, and the eyes opened after that. The seat is left only when the heat of the body has subsided."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0466b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmp:TiantaiChanhui a pm:Practicing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The repentance that clears the obstruction of broken precepts"@en, "Die Reue, die das Hindernis gebrochener Gelöbnisse beseitigt"@de ;
+    skos:definition "The procedure prescribed for the third kind of practitioner, the one who has broken precepts heavy and light. Ten things assist it: clear belief in cause and effect, the arising of grave fear, deep shame, the seeking of a method of extinction, the disclosure of the earlier offence, the cutting of the continuing mind, the raising of a mind that protects the teaching, the making of a great vow to deliver living beings, the constant recollection of the buddhas of the ten directions, and the contemplation of the offence as unborn. The place of practice is adorned, the body washed, clean clothes put on, incense burned and flowers scattered, and the confession carried on single-mindedly before the three jewels for one or three weeks, or a month, or three months, or up to a year, and it stops when extinction is reached."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0462c to 0463a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmp:TiantaiShierXi a pm:Practicing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The twelve breaths worked by visualization against named complaints"@en, "Die zwölf Atemarten, durch Vorstellung gegen benannte Leiden geführt"@de ;
+    skos:definition "Twelve breaths, all of them produced from the visualizing mind, each assigned to one complaint: the upward breath treats sinking heaviness, the downward breath empty suspension, the full breath wasting, the scorching breath swelling, the growing breath debility, the destroying breath excess, the warm breath cold, the cold breath heat, the thrusting breath stoppage and blockage, the holding breath trembling, the harmonizing breath the general disharmony of the four elements, and the supplementing breath their decline. Beside them the work gives six sounded breaths matched to the organs in a verse: he to the heart, chui to the kidneys, hu to the spleen, si to the lungs, xu when heat comes from the liver, and xi where the triple burner is congested."@en ;
+    skos:note "The work does not teach these in its own voice. Each set is introduced with a master says, the masters are unnamed, and four such opinions on healing by calming and three on healing by contemplation are set side by side without the work deciding between them. What the work adds in its own voice is the withdrawal entered at pmc:TiantaiJinshiBuchengjiu."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471c to 0472a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+#
+# The capacities
+#
+
+pmc:TiantaiSibaisibing a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The four hundred and four illnesses are removed of themselves, or brought on"@en, "Die vierhundertvier Krankheiten vergehen von selbst, oder werden hervorgebracht"@de ;
+    skos:definition "The claim the healing chapter opens with, stated in both directions in one sentence: as for the method of seated meditation, if a man is able to use the mind well, then the four hundred and four illnesses are removed of themselves; if his use of the mind misses its place, then the four hundred and four illnesses arise from it. The number is the canonical one, a hundred and one for each of the four elements."@en ;
+    skos:note "The strongest single claim of the work and the one place where it states its own failure mode in the same breath as its effect, with the same magnitude on both sides. It is answerable in principle on a named person, and the work supplies no sign by which the two directions could be told apart in advance."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiZhiguanYieldsSibaisibing a pm:Yielding ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Seated calming and contemplation removes the four hundred and four illnesses"@en, "Ruhe und Schau im Sitzen beseitigt die vierhundertvier Krankheiten"@de ;
+    pm:byPractice pmp:TiantaiZhiguan ;
+    pm:yieldsCapacity pmc:TiantaiSibaisibing ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiShierXiZhibing a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Each of the twelve breaths treats the complaint assigned to it"@en, "Jede der zwölf Atemarten behandelt das ihr zugewiesene Leiden"@de ;
+    skos:definition "The capacity ascribed to the twelve breaths, with the pairing complete as the work gives it: upward against sinking heaviness, downward against empty suspension, full against wasting, scorching against swelling, growing against debility, destroying against excess, warm against cold, cold against heat, thrusting against stoppage, holding against trembling, harmonizing against the disharmony of the four elements, supplementing against their decline. Used well, the work says of them, these breaths can treat all complaints throughout."@en ;
+    skos:note "Twelve prescriptions, each with its indication, and the harvest rule of SPEC §15 counts a prescription as a capacity and asks for strict completeness. They are entered here as one capacity with the twelve pairings complete rather than as twelve nodes, and the ground is not economy: the work does not claim them. It reports them as the opinion of an unnamed master among several it sets side by side, and three lines later it withdraws them for its own time. Twelve nodes would have recorded twelve claims of this transmission where the transmission makes none. The alternative was available and is named here so that a later reader can take it: the pairings are in the definition and nothing has to be read again to split them."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0472a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiShierXiYieldsZhibing a pm:Yielding ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The twelve breaths are reported to treat the twelve complaints"@en, "Von den zwölf Atemarten wird berichtet, sie behandelten die zwölf Leiden"@de ;
+    pm:byPractice pmp:TiantaiShierXi ;
+    pm:yieldsCapacity pmc:TiantaiShierXiZhibing ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Tiantai ;
+    skos:note "Third-party ascription and not textual attestation, because the work attributes the set to an unnamed master and does not take it up. The mode is the whole finding about these twelve: a manual that states its own failure conditions elsewhere in its own voice declines to own the one set of prescriptions in it that reads like a pharmacopoeia."@en ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0472a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiShentong a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Attaining the absorption one is able to bring forth the powers of the way"@en, "Mit der Vertiefung vermag man die Kräfte des Weges hervorzubringen"@de ;
+    skos:definition "The capacity the chapter on the five expedients holds out as the reason for valuing the absorption above the world: if one gains the absorption, one is then able to bring forth in full the undefiled knowledges, all the transcendent powers and strength of the way, to accomplish the right and equal awakening and to deliver living beings widely. At the end of the work the same thing is said of the completed middle contemplation: the six senses become pure, all the teachings of the buddhas appear before one, the recollection absorption is accomplished and one abides in the Śūraṅgama absorption, which is the absorption of the universal manifestation of bodily form."@en ;
+    skos:note "The only capacities in the work that are not healing or quiet are stated here and nowhere else, and both times as a consequence of a stage and never of an operation anyone could repeat. The work gives no sign by which either would be recognised from outside."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0466c, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text", "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0472c, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiZhiguanYieldsShentong a pm:Yielding ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Calming and contemplation brings forth the powers of the way"@en, "Ruhe und Schau bringt die Kräfte des Weges hervor"@de ;
+    pm:byPractice pmp:TiantaiZhiguan ;
+    pm:yieldsCapacity pmc:TiantaiShentong ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0466c, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiZhiguanIsWithdrawnAbsorption a pm:Situating ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The seated practice is placed at withdrawn absorption"@en, "Die Sitzpraxis liegt bei abgezogener Vertiefung"@de ;
+    pm:situatedNode pmp:TiantaiZhiguan ;
+    pm:axisValue pm:withdrawnAbsorption ;
+    pm:situationGround "The work prescribes that the eyes be closed just enough to cut off the outer light, that the body be still as a set stone, and that the mind be bound to the nose tip or the navel without a scattered thought, and it treats dullness and sleep as faults to be corrected rather than as the medium of the practice. That is the criterion this coordinate names. The placement is of the seated practice; the same work carries the five turns into walking, working and speaking, and that extension is expressly a practice in the ordinary waking channel and is not placed here."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0465c, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiZhiguanIsOwnAgency a pm:Situating ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The seated practice is placed at own agency"@en, "Die Sitzpraxis liegt bei eigener Handlungsträgerschaft"@de ;
+    pm:situatedNode pmp:TiantaiZhiguan ;
+    pm:axisValue pm:ownAgency ;
+    pm:situationGround "Every instruction of the work is addressed to the practitioner as the one who acts: he regulates, he corrects, he retains or drops, and where a power outside him appears it appears as an interference to be dismissed and never as the agent of the result. The chapter on demonic affairs makes the point for the compiler: the work refuses to let even the harm be another's doing."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+# ANKER-ERNTE-A
