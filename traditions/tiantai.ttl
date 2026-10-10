@@ -188,4 +188,211 @@ pmc:TiantaiZhiguanIsOwnAgency a pm:Situating ;
     pm:withinTradition pmt:Tiantai ;
     dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
 
-# ANKER-ERNTE-A
+#
+# The prerequisites the work states with their consequences
+#
+
+pmc:TiantaiWuyuan a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The five outward conditions to be had before the practice begins"@en, "Die fünf äußeren Bedingungen, die vor dem Beginn vorliegen müssen"@de ;
+    skos:definition "First the precepts kept pure, with the repentance procedure for the one who has broken them. Second clothing and food sufficient, in one of three measures of clothing and four of food. Third a quiet dwelling, of which three are allowed: deep mountain away from people, an ascetic retreat three or four li from the nearest settlement so that the sound of herding is gone, and a clean monastery away from lay dwellings. Fourth the cutting off of occupations, in four kinds: livelihood, social relations, crafts and skills including medicine, spells, divination and reckoning, and the business of learning, reciting and lecturing. Fifth the nearness of good friends, in three kinds: the outward protector who provides, the fellow practitioner who practises the same way, and the teacher who shows the gates of the practice inward and outward."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0462c to 0463b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiPresupposesYishi a pm:Presupposing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The practice presupposes sufficient clothing and food and freedom from occupations"@en, "Die Praxis setzt hinreichende Kleidung und Nahrung und die Freiheit von Geschäften voraus"@de ;
+    pm:dependentStep pmp:TiantaiZhiguan ;
+    pm:priorStep pmc:TiantaiWuyuan ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Of the second condition: for what reason? Without these conditions the mind is not at rest, and there is obstruction to the way. Of the fourth: for what reason? If the occupations are many, then the business of practising the way is abandoned, the mind is disordered and hard to gather in. And of too much possession under the second: if one is greedy for more and piles it up, then the mind is disordered and the way is hindered."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    skos:note "Stated necessity and not prescribed order, because the work asks its own question after each of the two conditions and answers it with the consequence of the want. The two are entered under one node because the consequence is the same sentence in different words and the prior step is the same list."@en ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0463b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiTiaoshi a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Regulating food, with the four ways it goes wrong"@en, "Die Regelung der Nahrung, mit den vier Weisen ihres Fehlgehens"@de ;
+    skos:definition "Food is taken to support the body and further the way. If it is too full, the breath is urgent and the body swollen, the hundred vessels do not pass, the mind is shut and the thought in sitting is not at rest. If it is too little, the body is weak and the mind hangs loose and the intention is not firm. Unclean food makes the consciousness dark and confused. Food that does not suit stirs an old illness and sets the four elements against one another. The work calls this the beginning of cultivating the absorption and says it is deeply to be guarded against."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0465b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiPresupposesTiaoshi a pm:Presupposing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The absorption presupposes the measure of food, on pain of a named bodily state"@en, "Die Vertiefung setzt das Maß der Nahrung voraus, bei Strafe eines benannten Körperzustands"@de ;
+    pm:dependentStep pmp:TiantaiZhiguan ;
+    pm:priorStep pmc:TiantaiTiaoshi ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "These two are both not the way to gain the absorption: if the food is too full, the breath is urgent and the body swollen, the hundred vessels do not pass, the mind is shut and the thought in sitting is not at rest; if the food is too little, the body is weak, the mind hangs loose and the intention is not firm. Food that does not suit stirs an old illness and sets the four elements against one another."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    skos:note "What makes this clause worth a node is that the consequence is in the body and not in the result. A reader who wants to know whether the practitioner had the condition can ask about the swollen belly and the urgent breath, and the answer does not depend on whether the absorption came."@en ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0465b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiPresupposesChuding a pm:Presupposing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Leaving the sitting presupposes the exit procedure, on pain of headache and stiffened joints"@en, "Das Verlassen der Sitzung setzt das Austrittsverfahren voraus, bei Strafe von Kopfschmerz und erstarrten Gelenken"@de ;
+    pm:dependentStep pmp:TiantaiZhiguan ;
+    pm:priorStep pmp:TiantaiChuding ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "If he does not do so, then although he may have gained the abiding mind in the sitting, his coming out being abrupt and hurried, the fine state has not dispersed and remains in the body, and it makes the man headache and the hundred joints of the bones stiff, as it were a wind exhaustion; and in the sittings after it he is vexed and not at rest. Therefore when the mind means to come out of the absorption, attention is needed every time."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    skos:note "The clearest falsifiable clause in the work and the one a reader could act on without believing anything else in it. The procedure is short, the omission is a single act, the consequence is named, bodily, and arrives in the same session or the next, and the work states it of every sitting and not of a special case. Nothing in this holding has stood this close to a statement that could be checked by doing the opposite twice."@en ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0466b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiPresupposesShanzhishi a pm:Presupposing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The beginner presupposes a teacher at hand, on pain of derangement and death"@en, "Der Anfänger setzt einen Lehrer in der Nähe voraus, bei Strafe von Verwirrung und Tod"@de ;
+    pm:dependentStep pmp:TiantaiZhiguan ;
+    pm:priorStep pmc:TiantaiWuyuan ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Therefore the practitioner of a beginning mind must keep near a good friend, because there are difficulties of this kind: this is the demon entering a man's mind, and it can make the practitioner's mind and spirit deranged, now glad and now grieving, and through this he falls ill and comes to death. Or it may make him gain false absorptions, false knowledge, powers and spells, so that he preaches and teaches and all believe and submit to him, and afterwards he ruins the good works of other men and destroys the true teaching."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    skos:note "The fifth of the five outward conditions is the only one whose want the work costs at the practitioner's life, and the sentence is in the chapter on demonic affairs and not in the chapter of the conditions. The second half is the more interesting one: the work describes a practitioner who acquires persuasive powers and a following, and enters that among the outcomes to be feared rather than among the capacities to be sought."@en ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+#
+# The conditions of failure, which is why this work was opened
+#
+
+pmc:TiantaiYizhiFakuang a pm:Cautioning ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Forcing the mind to abide often brings on madness"@en, "Das Erzwingen des Verweilens bringt häufig Wahnsinn hervor"@de ;
+    pm:cautionsAbout pmp:TiantaiZhiguan ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    skos:note "The clause stands immediately after the work has quoted the Awakening of Faith on gathering the scattered mind back into right recollection, and it is the work's own comment on that instruction: for one of a beginning mind in training, abiding is not yet to be had; to press it so that it abides often brings on madness. It is like the method of archery, where one hits the mark after long practice. A self-warning inside the passage prescribing the thing warned against, and the consequence is named."@en ;
+    skos:note "Entered as a caution and not as a prerequisite, because the thing to be avoided is not the omission of a step but a degree of force in performing the prescribed step, and the work gives no measure of that degree. The consequence is quotable and is quoted here; pm:Cautioning has no slot for it, which is prima-materia#621."@en ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0467a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiYongxinShisuo a pm:Cautioning ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The practice wrongly used brings on the illnesses and may cost the life"@en, "Falsch gebrauchte Praxis bringt die Krankheiten hervor und kann das Leben kosten"@de ;
+    pm:cautionsAbout pmp:TiantaiZhiguan ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    skos:note "The opening of the healing chapter, and it is addressed to the practitioner about his own operation: as the practitioner settles his mind and cultivates the way, the four elements may have an illness, and because he now uses contemplation the mind and breath beat against it and stir up the underlying illness; or at times he cannot adjust the three matters of body, mind and breath well, and transgresses inwardly or outwardly, and so there is illness. If the mind is used well the four hundred and four illnesses are removed of themselves, and if the use of the mind misses its place the four hundred and four illnesses arise from it. Once an illness is stirred, not only is there obstruction to practising the way, but the great life itself is to be feared for."@en ;
+    skos:note "This is the shape SPEC §15 calls a self-warning of a text against what it prescribes, and it is unusually complete: the work names the mechanism, the magnitude, the two directions and the worst outcome, and then devotes the longest chapter of the ten to the remedy. What it does not name is a sign by which the right use could be told from the wrong one before the illness appears."@en ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiPianxiuXieDao a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Practising one of the two alone falls into the false and the upside down"@en, "Nur eines der beiden zu üben fällt in das Falsche und Verkehrte"@de ;
+    skos:definition "The condition the work sets on its own pairing, at the head of the whole treatise: these two methods are like the two wheels of a cart and the two wings of a bird, and if they are practised one-sidedly one falls into the false and the upside down. The scripture is quoted for the two outcomes: he who cultivates the absorption and its merit one-sidedly and does not learn wisdom is called stupid, and he who learns wisdom one-sidedly and does not cultivate the absorption and its merit is called mad. The faults of madness and stupidity differ a little, but in the turning round of false views there is no difference at all."@en ;
+    skos:note "A condition of failure on the method as a whole, and the one place in the work where the two halves of the method are said to be dangerous apart. It is also the first of five places where this work puts madness at the end of a wrong performance of what it teaches. The other four are the forcing of the abiding mind at pmc:TiantaiYizhiFakuang, the clinging to a counterfeit absorption at pmc:TiantaiXieweiChan, the fright or the clinging at a demonic show at pmc:TiantaiFeiMoSuoWei, and the beginner without a teacher at pmc:TiantaiPresupposesShanzhishi, where the derangement ends in death. Beside them stands a sixth use that is not of this kind: the five hundred immortals of the Snow Mountains who heard the kiṃnara woman sing, lost their absorption and were drunk and mad, which is an exemplum from outside the practice and is not entered."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0462b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiShouFeng a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Guarding wind scatters, guarding panting knots, guarding air exhausts"@en, "Wind bewahren zerstreut, Keuchen bewahren verknotet, Luft bewahren erschöpft"@de ;
+    skos:definition "The four outcomes the work attaches to the four breath marks, one line each: to guard the wind is to scatter, to guard the panting is to knot, to guard the air is to exhaust, to guard the breath is to be settled. Where the first three marks are present in sitting it is called unadjusted, and if the practitioner then uses his mind on it, it becomes a trouble of the mind as well and the mind too is hard to settle. The mark of a regulated breath is given as a rule a practitioner can apply to himself: neither rough nor slippery."@en ;
+    skos:note "The most answerable thing in the work after the exit procedure, and of a different kind: it is a sign available before the operation has an outcome. The practitioner is told to listen for a sound at his own nostrils and to feel whether the breath knots, and the work predicts what follows from sitting on with each of the three. Three predictions, each with an antecedent anybody present could also check."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0466a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiJiKuanBing a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The disease of the tight mind and the disease of the loose mind, each by its bodily sign"@en, "Die Krankheit des straffen und die des lockeren Geistes, je an ihrem Körperzeichen"@de ;
+    skos:definition "Two faults of regulating the mind, each named with the sign by which it is known and the correction. The mark of the disease of a tight mind: from gathering the mind and applying recollection in the sitting, and entering the absorption by it, there is therefore an urgent pain upward in the chest and breast; the mind is then to be loosened and the air thought to flow downward, and the trouble heals of itself. The mark of the disease of a loose mind: the mind feels slack and scattered, the body inclines to sag, or saliva runs from the mouth, or at times there is darkness; the body is then to be drawn in and the recollection made urgent so that the mind abides in its object. Beside them stand the mark of sinking, a dark mind with the head hanging low, and the mark of floating, a drifting mind with the body not at rest."@en ;
+    skos:note "Four misadjustments, each with an outward sign, and two of the four signs are visible to a bystander: the head hanging low and the saliva at the mouth. In a holding whose usual trouble is that only the operator can say what happened, a transmission that names a sign a third person can see is the thing to keep, and this work names two without being asked for any."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0466a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiBingJiuNanYu a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Treated at once the illness is easily cured, left long it is hard to heal"@en, "Sogleich behandelt ist die Krankheit leicht zu heilen, lange gelassen schwer"@de ;
+    skos:definition "The term the work sets on its own remedy: illnesses of this kind, treated as soon as they are got, are very easily cured; if a long time passes the illness is formed, the body is weak and the illness knotted, and it is hard to heal by treatment. Three causes of illness are distinguished before the term is stated and the remedy differs by cause: the increase and decrease of the four elements and the five organs, illness made by ghosts and spirits, which calls for a strong mind with spells to assist, and illness as the recompense of deeds, which requires the cultivation of merit and repentance."@en ;
+    skos:note "A term with a direction, which is rarer in this holding than a term with a date. It does not say when the remedy stops working, only that the chance of it falls as the illness ages, and that is enough to make a late failure expected rather than a counter-instance. The three causes do a second thing of the same kind: two of them take the case out of the reach of the breath and visualization altogether."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471c, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text", "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0472a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiZhuKongLuoDi a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Abiding in the first contemplation one falls to the ground of the hearers"@en, "Verweilt man in der ersten Schau, fällt man auf den Boden der Hörer"@de ;
+    skos:definition "The failure the last chapter attaches to the first of its three contemplations: if one abides in this contemplation, one falls to the ground of the hearers and the solitary buddhas. The reason given is that the one who sees the unconditioned and enters the right position will in the end not be able to bring forth the awakening mind, this being an excess of the power of the absorption, by which the buddha nature is not seen. Of the second contemplation the same form is used with the other excess: abiding there, the power of wisdom is great, and so although the buddha nature is seen it is not seen clearly."@en ;
+    skos:note "A failure condition of a stage and not of an operation, and it has the shape the work uses everywhere: the fault is an excess of one of the two halves, and the remedy is the other half. It is worth keeping because it is a failure that only shows in what the practitioner cannot do next, which is the hardest kind for an outsider to check and the easiest for a transmission to assert."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0472b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+#
+# The signs of success, kept separate and counted separately
+#
+
+pmc:TiantaiZhongzuiMiexiang a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The marks by which the extinction of a grave offence is known"@en, "Die Merkmale, an denen das Erloschensein einer schweren Schuld erkannt wird"@de ;
+    skos:definition "The work asks its own question, how is the mark of the extinction of a grave offence known, and answers with a list: if the practitioner repents with a mind thus set, he feels of himself that body and mind are light and quick, and gets good auspicious dreams; or he sees numinous and unusual signs; or he feels the good mind opening; or in the sitting he feels the body as a cloud or a shadow, and by this gradually attains and reaches the fields of the absorptions; or understanding suddenly arises, he knows the marks of the teachings well, and grasps the sense of whatever scripture he hears, and from this joy in the teaching his mind is without grief or regret."@en ;
+    skos:note "A sign of success in the strict sense of SPEC §15, told to the practitioner in advance of the practice that is to produce it, and therefore counted apart from the conditions of failure in this file and in the harvest note. The first item is the state of the body as the practitioner himself feels it, the second is a dream, the third a vision, and none of the five is available to anybody else."@en ;
+    skos:note "The term is worth noting beside it. The confession is to be carried for one or three weeks, a month, three months or up to a year, and it stops when extinction is reached. The stopping rule is the sign, so the term is not a term: a practitioner who has not yet seen the marks has not reached the end of the procedure, and there is no length of time after which the procedure is to be called finished without them."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0463a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiChanhuiYieldsMiexiang a pm:Yielding ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The repentance procedure brings the marks of extinction and opens the absorption"@en, "Das Reueverfahren bringt die Merkmale des Erloschenseins und öffnet die Vertiefung"@de ;
+    pm:byPractice pmp:TiantaiChanhui ;
+    pm:yieldsCapacity pmc:TiantaiZhongzuiMiexiang ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0463a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiShangenFaxiang a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The five kinds of sign by which the good roots are known to arise"@en, "Die fünf Arten von Zeichen, an denen das Aufgehen der guten Wurzeln erkannt wird"@de ;
+    skos:definition "Five inward kinds, each with its own marks. In the breath kind, body and mind grow empty and still and the practitioner does not see the shape of either, and after one or two sittings or one or two days or one or two months, holding without losing or falling back, he suddenly feels body and mind move and the eight touches arise: pain, itch, cold, warmth, lightness, heaviness, roughness, smoothness, and while they arise body and mind are settled and the pleasure is beyond comparison; or he feels the breath long and short through all the pores and sees with the mind's eye the thirty-six things inside his own body as one sees beans in an opened granary. In the kind of the contemplation of the unclean he sees a corpse swell and rot, or his own bones joint by joint. In the kind of the loving mind he suddenly loves living beings and his face is constantly at peace to whomever he meets. In the kind of the contemplation of conditions understanding suddenly arises in him. In the kind of the recollection of the buddhas he remembers their merits, the body grows light and quick and he feels his own merit towering and loved by men."@en ;
+    skos:note "Counted apart from the conditions of failure. Three of the five end in a state of the practitioner that only he reports; two end in something a bystander could notice, a face at peace and a body light and quick, and one, the seeing of the thirty-six things within the body, is a claim about a hidden matter of fact that could in principle be put against an anatomy. The work makes nothing of that and does not propose it as a check."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0469b to 0469c, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiXieweiChan a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The false and counterfeit absorption, with the marks that distinguish it from the true"@en, "Die falsche und nachgemachte Vertiefung, mit den Merkmalen, die sie von der echten scheiden"@de ;
+    skos:definition "The work sets the two sides out one after the other. The marks of the false: the body itches or scratches, or is heavy as if pressed by a weight, or light as if about to fly, or as if bound, or sags and droops, or is parched with cold, or burning hot; or various strange realms are seen; or the mind is darkened; or evil thoughts arise; or thoughts scatter outward to miscellaneous good works; or there is joy and agitation; or grief and mourning; or an evil touch raises the hair of the body; or a great pleasure that stupefies. The marks of the true: none of the above occurs, and as each absorption arises the practitioner feels it answer to the settled state, empty and bright and pure, the inward mind glad, calmly happy, without covering; the good mind opens, faith and reverence increase, knowledge is clear, body and mind are soft, subtle and empty and still, the world is found wearisome, and there is no doing and no wanting, and the going in and the coming out are free. The work gives the criterion as a comparison: it is as with keeping company, where an evil man offends again and again and a good man is found fair the longer one sees him."@en ;
+    skos:note "The counterfeit of its own sign of success, set beside the sign, with a list on each side and a criterion between them, and the list of the false is the longer of the two. This is the material the holding keeps in examinations/the-sign-and-the-counterfeit.ttl, and this transmission supplies it unasked and for its own procedure."@en ;
+    skos:note "What the two lists do not do is divide the cases. Several of the false marks are bodily states that also stand in the list of the good roots at pmc:TiantaiShangenFaxiang: lightness, heaviness, cold, warmth, itch and pain are there called the eight touches and are a sign of the breath kind arising, and here they are the sign of a counterfeit. The work does not resolve it, and the criterion it does give, that the true absorption answers to the settled state and the false does not, is a judgement by the practitioner about his own condition. What the lists separate is therefore not available to anybody but him."@en ;
+    skos:note "The consequence the work attaches to mistaking them is the third of its paths to madness: if a man loves and clings to this false absorption, he answers to the ninety-five ways of ghosts and spirits, and often loses his mind and becomes deranged; and the spirits, knowing that he clings to their way, add their strength, so that he brings forth false absorptions and false knowledge, eloquence and powers, and moves the world; the ignorant who see him say he has gained the fruit of the way and all believe and submit, while his own mind is upside down. Such a man at the end of life never meets a buddha and falls back into the way of ghosts and spirits, and if in his sitting he did much evil he falls into hell."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0470a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+#
+# The clauses that close the account
+#
+
+pmc:TiantaiZheZhang a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Tell no one the benefit, and do not doubt before harm is shown"@en, "Nenne niemandem den Nutzen, und zweifle nicht, bevor Schaden erwiesen ist"@de ;
+    skos:definition "The tenth of the ten things the work requires beside the healing in the sitting, and the sentence that follows it. What is the recognition of hindrances: it means that the benefit gained is not spoken of outwardly, and that where there is not yet harm no doubt and no disparagement is to arise. If one follows these ten things, then what is treated will certainly have effect and will not be in vain."@en ;
+    skos:note "The one unconditional guarantee in the work, and it is made conditional on ten things of which the tenth forbids both the report of a success and the doubt of a failure. A practitioner who followed the ten could not have produced a counter-instance: a cure he may not mention, and a case that has not yet done him harm he may not doubt. The guarantee and the device that protects it are the same sentence, as at pmc:BonLasChad in the Bön file, and here the device is the more complete of the two because it closes both directions."@en ;
+    skos:note "The seventh of the same ten removes the term as well: what is long practice, it means that if the use of it brings no benefit at once, the days and months are not to be counted, and it is to be practised constantly and not given up. This belongs beside the holding's statement of that shape in generalizations/no-failed-run-counts.ttl, generalizations/the-rule-against-reporting-the-absence.ttl and examinations/the-count-that-does-not-fall-due.ttl, and it is not entered as a witness of any of the three: the counter-search against the holding that SPEC §16 requires before a generalization is enlarged was not carried in this run."@en ;
+    skos:note "The other eight are given here so that the ten can be counted and the two in question not read as the whole: faith that this method can cure; use, meaning constant use at the time; diligence, meaning to use it with undivided attention until a cure is got; abiding in the object, meaning a fine mind following the method thought by thought without another object; distinguishing the cause of the illness; skill in means, meaning that the breathing out and in and the directing of the mind be well accomplished and not miss what is fitting; long practice; and the knowledge of what to retain and what to drop, meaning to be diligent where there is benefit and to drop and adjust where there is harm; and the care that discerns and avoids discordant causes."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0472b, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiFeiMoSuoWei a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "The harm is suffered through the practitioner's own want of wisdom and is not the demon's doing"@en, "Der Schaden wird durch die eigene Unwissenheit des Übenden erlitten und ist nicht das Werk des Dämons"@de ;
+    skos:definition "The work's own correction of the chapter it has just written. If the demonic realms do not withdraw, no grief is to arise, and if they are seen to withdraw, no joy either. For what reason: it has never yet been seen that a man in sitting saw a demon turn into a tiger or a wolf and come to eat him, nor has it ever been seen that a demon turned into a man or a woman and became his wife or husband. When they work their illusions the foolish man does not understand, his mind gives rise to fright or to clinging, and through this his mind is disordered, he loses the absorption and becomes deranged and brings the trouble on himself. All of this is the practitioner suffering through want of wisdom, and it is not what the demon did."@en ;
+    skos:note "A transmission that has just given a bestiary of interferences by the hour of the day then says that none of them has ever been seen to do anything, and lays the whole of the damage on the practitioner. It is the most complete displacement of a failure in this holding so far, and it is more complete than the ones already entered because it does not merely move the blame but denies that the other party acts at all. The holding's statement of the shape is at generalizations/the-excuse-that-stops-at-the-officiant.ttl and generalizations/displaced-penalties.ttl; neither is enlarged by this run, for the reason given at pmc:TiantaiZheZhang."@en ;
+    skos:note "The same passage is also the strongest negative report in the work, and it is a negative report about a class of events, which SPEC §13 counts the expensive kind: it has never been seen, said of a tradition's own demonology by the man who wrote its manual. What it rests on is not stated, and the work does not say who looked."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0471a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiJinshiBuchengjiu a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "People of the present time mostly do not accomplish these visualizations"@en, "Die Menschen der Gegenwart bringen diese Vorstellungsübungen meist nicht zustande"@de ;
+    skos:definition "The withdrawal the work makes immediately after reporting the twelve breaths, the six sounded breaths and the borrowed visualizations: but the capacities of the men of the present time are shallow and dull, and making these visualizations they mostly do not accomplish them, and it is not transmitted in the world. The sentence goes on to forbid the obvious substitute: nor is one to go on from this to learn breath arts and the giving up of grain, for fear of giving rise to deviant views. Mineral and herbal medicines, where they answer to the illness, may be taken."@en ;
+    skos:note "The reason the twelve prescriptions are entered as one claim and not as twelve, and the reason that decision is defensible. The work reports them, declines to own them, says they mostly fail now, and says that the failure is in the men and not in the method. That last move is the same one as at pmc:TiantaiFeiMoSuoWei, applied to a technique instead of to a demon, and it is what keeps a set of prescriptions in a manual after the manual has stopped expecting them to work."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0472a, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
+
+pmc:TiantaiZhixinYichu a pm:Conceptualizing ;
+    pm:fromWork pmw:XiaoZhiguan ;
+    rdfs:label "Hold the mind in one place and there is nothing that is not accomplished"@en, "Halte den Geist an einem Ort, und nichts bleibt unvollbracht"@de ;
+    skos:definition "The quotation with which the work closes the chapter on the arising of the good roots, after listing the five kinds and adding that the whole range of the gates of the teaching may arise in the same way: therefore the scripture says, hold the mind in one place and there is nothing that is not accomplished."@en ;
+    skos:note "Entered because it is the counter-weight to everything in this file and stands in the same work, two chapters before the healing chapter puts the four hundred and four illnesses on both sides of the same operation. The two are not in contradiction, and that is the finding: what this transmission holds open to failure is the performance, and what it holds closed is the method."@en ;
+    pm:withinTradition pmt:Tiantai ;
+    dcterms:source "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46.1915.0469c, in Taishō shinshū daizōkyō vol. 46, Tokyo 1924-1934, read in the CBETA edition of that text" .
