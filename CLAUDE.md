@@ -108,6 +108,7 @@ Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im I
 - **Werk-Instanzen:** `pmw:`-namespace, `PascalCase`, typisiert als `dcterms:BibliographicResource`: `pmw:ClaviculaSalomonis`. Wer eine Traditionsdatei anfasst, migriert sie auf Werkbezeichner (`AGENTS.md`, `SPEC.md` §14)
 - **Materia-Instanzen:** `pmm:`-namespace, `PascalCase`, typisiert als `skos:Concept`: `pmm:LacVaccaeNigrae`. Was ein Verfahren beim Namen verlangt — Stoff, Gerät, feste Wortfolge —, verbunden über `pm:uses`. Trägt Label und höchstens eine Notiz zur Identifizierung, nie `dcterms:source`, nie `pm:withinTradition`, nie eine Behauptung (`SPEC.md` §3 Parameter 1)
 - **Identifier sind englisch.** Mehrsprachige Labels via `rdfs:label "..."@en, "..."@de`
+- **Kein Apostroph und kein Leerzeichen im präfigierten Namen.** Ein Bezeichner aus einer Umschrift mit Apostroph — `pmc:ZhaoShupingShan'eZhiShu` für 善惡之數 — ist kein gültiger Turtle-Name: der Parser liest ab dem Apostroph ein Stringliteral und meldet erst Zeilen später `newline found in string literal`, also an einer Stelle ohne Bezug zum Fehler. Die beiden TTL-Wächter im Schreibweg prüfen verbotene Substanzklassen und entfernte Präfixe und **parsen nicht**, der Fehler geht also durch `prima_repo_write` und `prima_repo_replace` hindurch und fällt erst im Prüflauf oder lokal auf. Bei Umschriften mit Apostroph oder Mittelpunkt den Laut ausschreiben (`ShanEZhiShu`, `TaiPing` für `t'ai-p'ing`); belegt am 2026-10-10 an drei Stellen in zwei Dateien
 
 ## Repositories
 
