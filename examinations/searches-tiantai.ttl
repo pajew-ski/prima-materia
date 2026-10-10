@@ -1,0 +1,65 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the three searches carried in the Xiao zhiguan on 2026-10-10
+#
+# The file stands on its own and is not appended to another, which is the rule
+# in AGENTS.md.
+#
+# Three searches and not one, because the question of SPEC §15.2 has two
+# directions and this work answers in both. The first asks whether the work
+# names outcomes under which its own procedures are not to be expected to
+# work. The second is its negation: whether the same work claims an effect
+# that no outcome could disappoint. The third asks for a case, and is the one
+# that came back empty.
+#
+# The text was read in the original. The whole work is 21995 characters of
+# Chinese without the line beacons, so the searches below were carried over a
+# copy with the beacons stripped and the newlines removed, and every hit was
+# then read at its place in the beaconed text. A term count over a text of
+# this size is not a sample; the work was also read through from the first line
+# to the last, so the counts record which clause stands where and not whether
+# anything was missed.
+#
+
+pmp:XiaoZhiguanFailureConditionSearch a pm:Searching ;
+    rdfs:label "Whether the Xiao zhiguan names any outcome under which its own procedures are not to be expected to work"@en, "Ob das Xiao zhiguan irgendeinen Ausgang nennt, unter dem von seinen eigenen Verfahren kein Erfolg zu erwarten ist"@de ;
+    pm:searchedCorpus "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46 no. 1915, pages 462a to 473a, the whole work in the Chinese of the Taishō text as the CBETA edition carries it, read entire; the English of Lu Kuan Yu (Charles Luk), The Secrets of Chinese Meditation, London: Rider, 1964, chapter 4, read beside it as a control" ;
+    pm:searchedFor "A passage naming a result of a correctly conducted operation under which the operator is to conclude that it did not work or cannot work: a term after which nothing further is to be expected, a state of the practitioner or the patient that puts the case beyond the procedure, a degree of accomplishment below which it is not to be attempted, or a mistake with a named consequence. This is the material a pm:falsifiedBy can be formed from out of a transmission's own mouth. The same question was put to the demotic manual at pmp:PdmFailureConditionSearch, to the Clavicula at pmp:ClaviculaFailureConditionSearch and to the gZi brjid at pmp:BonFailureConditionSearch." ;
+    pm:searchTerms "Chinese terms, with the number of occurrences in the whole work. 發狂 madness, two, both of a wrong performance; 失心顛狂 derangement, one; 狂亂 disorder of the spirit, one; 名之曰狂 called mad, one, of one-sided practice; 即墮邪倒 falls into the false and upside down, one; 往往發狂 often brings on madness, one; 成患致死 falls ill and comes to death, one; 大命 the great life, one; 因之發生 arise from it, one, of the four hundred and four illnesses; 非得定之道 not the way to gain the absorption, one; 無由近道 no way to come near the way, one; 有妨 there is obstruction, one; 難攝 hard to gather in, one; 頭痛 headache, three, one of them the consequence of the omitted exit procedure; 百骨節彊 the hundred joints stiff, one; 治之難愈 hard to heal by treatment, one; 墮聲聞 falls to the ground of the hearers, one; 不成就 does not accomplish, one, of the borrowed visualizations. Terms that produced nothing of this kind: 驗, 效驗, 證驗 for a verification, all nil." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:TiantaiYizhiFakuang, pmc:TiantaiYongxinShisuo, pmc:TiantaiPianxiuXieDao, pmc:TiantaiShouFeng, pmc:TiantaiJiKuanBing, pmc:TiantaiBingJiuNanYu, pmc:TiantaiZhuKongLuoDi, pmc:TiantaiPresupposesChuding, pmc:TiantaiPresupposesTiaoshi, pmc:TiantaiPresupposesShanzhishi, pmc:TiantaiPresupposesYishi ;
+    pm:searchedBy "prima-materia, 2026-10-10" ;
+    dcterms:date "2026-10-10" ;
+    skos:note "Eleven nodes, which is more than the eight works opened before this one carry between them, and the reason is the form of the work and not its doctrine: it is a manual addressed to a named beginner, and a manual that tells a beginner what to do has to tell him what will go wrong. The transmissions this holding opened earlier are revealed biographies, canonical collections and grimoires, and none of them is addressed to a learner who might come back and complain."@en ;
+    skos:note "The second finding is where the consequences land. Of the eleven, six are consequences in the practitioner's own body — a swollen belly and an urgent breath from too much food, a weak body and a loose mind from too little, a pain upward in the chest from a tight mind, saliva at the mouth from a loose one, headache and stiffened joints from an abrupt exit, and the four hundred and four illnesses from the wrong use of the mind. This holding's difficulty is almost always that only the operator can say what happened. Two of these six are visible to a bystander: the head hanging low at pmc:TiantaiJiKuanBing and the saliva at the mouth in the same node."@en ;
+    skos:note "The third finding is that the work keeps the two apart in a way the holding has not met. The failure conditions are all conditions on the performance, and the method itself is nowhere said to be able to fail; the sentence at pmc:TiantaiZhixinYichu says of the method that there is nothing it does not accomplish. A transmission that states eleven ways for its practitioner to fail and none for its procedure has said something about where it is willing to be answerable, and it has said it without being asked."@en .
+
+pmp:XiaoZhiguanUnconditionalEfficacySearch a pm:Searching ;
+    rdfs:label "Whether the same work claims an effect that no outcome could disappoint"@en, "Ob dasselbe Werk eine Wirkung behauptet, die kein Ausgang enttäuschen könnte"@de ;
+    pm:searchedCorpus "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46 no. 1915, pages 462a to 473a, the whole work in the Chinese of the Taishō text as the CBETA edition carries it, read entire" ;
+    pm:searchedFor "The negation the first search owes under SPEC §15.2, put to the same corpus rather than to another: a guarantee without a condition, a rule that forbids the report of an absence, a provision that removes the term, or a clause that assigns every failure to the practitioner so that none can fall on the procedure. The counter-search of a transmission that states its own failure conditions is not another transmission denying them but the same text taking them back." ;
+    pm:searchTerms "必定有効 will certainly have effect, one; 不虛 and not in vain, one, in the same sentence; 無事不辦 there is nothing that is not accomplished, one; 自然除差 removed of themselves, one; 不計日月 the days and months are not to be counted, one; 不向外說 not to be spoken of outwardly, one; 未損不生疑謗 where there is not yet harm no doubt and no disparagement, one; 非魔所為 it is not what the demon did, one; 未曾見 it has never been seen, two, both in the same passage; 世不流傳 it is not transmitted in the world, one; 根機淺鈍 the capacities are shallow and dull, one; 自致其患 brings the trouble on himself, one; 行人無智受患 the practitioner suffers through want of wisdom, one." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:TiantaiZheZhang, pmc:TiantaiFeiMoSuoWei, pmc:TiantaiJinshiBuchengjiu, pmc:TiantaiZhixinYichu, pmc:TiantaiSibaisibing ;
+    pm:searchedBy "prima-materia, 2026-10-10" ;
+    dcterms:date "2026-10-10" ;
+    skos:note "The counter-search found more than the question asked for. The one unconditional guarantee in the work, that what is treated will certainly have effect and not be in vain, is conditional on ten things, and the tenth of those ten forbids the report of a benefit and forbids doubt where harm is not yet shown, while the seventh removes the term. A practitioner who kept the ten could not have produced a counter-instance to the guarantee they protect. Both clauses stand at pmc:TiantaiZheZhang."@en ;
+    skos:note "Two further devices came out of the same search and they work on the other side. At pmc:TiantaiFeiMoSuoWei the work denies that the interferences it has just catalogued ever do anything and lays the whole damage on the practitioner's want of wisdom; at pmc:TiantaiJinshiBuchengjiu it says of the prescriptions it has just reported that the men of the present time are too dull to accomplish them. In both the failure is real, admitted, and assigned to a person. Nothing in this work is ever assigned to the method."@en ;
+    skos:note "The outcome is entered as opposing material found and not as a place found, although both searches read the same text and both yielded nodes. The distinction is the one the scale is for: the first search asked what the transmission concedes and the second what it withholds, and a corpus that answers yes to both is a different finding from a corpus that answers yes to one. Five of the nodes of this search and eleven of the first are disjoint sets except for pmc:TiantaiSibaisibing, which states the effect and its failure in one sentence and is therefore named by both."@en .
+
+pmp:XiaoZhiguanCaseReportSearch a pm:Searching ;
+    rdfs:label "Whether the Xiao zhiguan reports a single instance of somebody carrying out its procedures and what came of it"@en, "Ob das Xiao zhiguan einen einzigen Fall berichtet, in dem jemand seine Verfahren ausführte, und was daraus wurde"@de ;
+    pm:searchedCorpus "Zhiyi, Xiuxi zhiguan zuochan fayao (Xiao zhiguan), T46 no. 1915, pages 462a to 473a, the whole work in the Chinese of the Taishō text as the CBETA edition carries it, read entire, with the preface of Yuanzhao of 1095" ;
+    pm:searchedFor "A named or unnamed person said to have performed one of the work's procedures, with an outcome: a cure, a sign, a failure, a death. Not an exemplum from scripture and not a doctrinal illustration, but a case the author or his tradition is in a position to have witnessed. The holding is short of these everywhere, and a manual written by a teacher for a pupil is the most likely place for one to turn up." ;
+    pm:searchTerms "有人 a certain man, two, one a simile about a man in a jewel mountain without hands and one inside the denial that any man has been seen eaten by a demon; 昔有 formerly there was, nil; 嘗有 there once was, nil; 某甲 so-and-so, nil; 一人 one man, nil; 驗 verification, nil; 效驗 proof of effect, nil. The named persons in the work are Bimbisāra, Udayana, the five hundred immortals of the Snow Mountains, the novice who loved the taste of curds, the one-horned seer, Śāriputra, Kāśyapa, Śakra and Devadatta, all of them from the scriptures and all of them illustrating a desire or a fault and never a performance of the ten chapters. The preface names Chen Zhen, the lay elder brother for whom the work was drawn up, and says nothing about what he did with it." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-10" ;
+    dcterms:date "2026-10-10" ;
+    skos:note "The gap this exhibits is the one that matters most for the work's standing. The transmission that supplies this holding with its most answerable clauses supplies no case, and the absence is not an accident of the genre: the author ran a meditation community, the work names his lay brother as its addressee, and the chapter on illness says that an illness treated at once is easily cured, which is a claim about what happens to people. Somebody was there, and nothing is reported."@en ;
+    skos:note "What would close it is not a further search in this work. It is the Mohe zhiguan, which stands unopened at pmw:MoheZhiguan, the biographical literature of the school, and the Tiantai manuals that followed; a reader who owns those can say whether the school ever wrote down an outcome. The search is entered so that the next run does not repeat it here."@en .
