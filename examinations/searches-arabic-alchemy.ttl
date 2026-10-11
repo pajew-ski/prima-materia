@@ -1,0 +1,56 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the Jābirian run, 2026-10-11
+#
+# Three searches over one chapter that was read complete. All three came back
+# empty, and the file exists for that reason: the chapter states four conditions
+# with named consequences and states nothing at all about what the operator
+# would see, which is a shape, and a shape is only visible if the absences are
+# written down. The limit is the same for all three and is stated once in each
+# corpus line: one chapter of a treatise whose other five hundred pages are
+# unread, and one of two Jābirian works this holding names.
+#
+# In a file of its own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+
+pmp:JabirTakwinAlamatSearch a pm:Searching ;
+    rdfs:label "Whether the chapter on generation names any sign that the generation has begun or failed"@en, "Ob das Kapitel über die Erzeugung ein Zeichen nennt, dass die Erzeugung begonnen hat oder mißlang"@de ;
+    pm:searchedCorpus "Jābir ibn Ḥayyān, Kitāb Ikhrāj mā fī l-quwwa ilā l-fiʿl, the chapter al-qawl fī l-takwīn complete, with the chapter al-qawl fī l-mīzān before it (ed. Paul Kraus, Mukhtār rasāʾil Jābir ibn Ḥayyān, Cairo 1354 AH), read in the Arabic. Not searched: the remaining chapters of the treatise and the remaining treatises of the volume."@en ;
+    pm:searchedFor "Anything by which the operator could tell, before the end, that the generation is under way or that it has gone wrong: a change in the matter, a colour, a smell, a motion in the vessel, a term after which nothing more is to be expected, an instruction to begin again."@en ;
+    pm:searchTerms "The chapter read at the wording and the reading checked by term search of the Arabic for: علامة, علامات, دليل, يظهر, ظهر, يرى, يبصر, لون, ريح, حركة, مدة, يوم, شهر, سنة, ساعة, وقت, فإن لم, وإن لم, يفسد, الفساد, خطأ, أعاد, يعيد. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-11" ;
+    dcterms:date "2026-10-11" ;
+    skos:note "Nothing of the kind. The chapter uses the word fasād, corruption, twice, and both times it is the consequence of a condition broken and never a state the operator is told to look for: if he adds or subtracts anything in the weights there is corruption by it, and to give a thing less than its degree is of the greatest corruption. In neither place is corruption given a mark. The nearest thing to a perceptible criterion in the chapter concerns a material and not the work — of glass, the purer its substance the more effective — and it is a property of the vessel before the operation, not of the operation."@en ;
+    skos:note "What the empty result is worth, which is more than an absence usually is. The chapter is not reticent: it ranks degrees, insists on exact weight, specifies the vessel, shelters the room from wind, contradicts a received opinion about the breeze, reports and settles a disagreement among the philosophers about the water, and assigns four media to four classes of living thing. A text this specific about the doing and this silent about the seeing is making a choice, and the choice is legible only because the search is recorded."@en ;
+    skos:note "The limit, stated so that a later run can close it. The treatise itself refers the sound generation to the Kitāb al-Tajmīʿ, which stands unopened at pmw:KitabAlTajmi in the same volume of the same edition. If the signs stand anywhere in the corpus they stand there, and this search should be carried again by whoever opens it."@en .
+
+pmp:JabirTakwinWaqiaSearch a pm:Searching ;
+    rdfs:label "Whether the chapter reports a generation having been performed"@en, "Ob das Kapitel von einer durchgeführten Erzeugung berichtet"@de ;
+    pm:searchedCorpus "Kitāb Ikhrāj mā fī l-quwwa ilā l-fiʿl, the chapter on takwīn complete, with the chapter on the Balance (ed. Kraus, Mukhtār rasāʾil, Cairo 1354 AH), read in the Arabic. Not searched: the rest of the treatise and of the volume."@en ;
+    pm:searchedFor "A performed case: an operation the author says he carried out, or saw carried out, or had reported to him by a named person — the thing that distinguishes a prescription from a record. The question is put because the Jābirian corpus is widely described as reporting its own trials, and because a claim of this size with a case behind it would be a different kind of node from the same claim without one."@en ;
+    pm:searchTerms "Read at the wording and checked by search for: جربت, جرّبنا, مجرّب, رأيت, شاهدت, عملت, عملنا, فعلت, وجدت, حدّثني, أخبرني, قد كان, مرارًا, كثيرًا. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-11" ;
+    dcterms:date "2026-10-11" ;
+    skos:note "No performed case in the chapter and no first-person claim of one. The author speaks in the first person four times and every time about his own choices as a writer or a teacher, not about an operation: he says he will speak in this seventh art and cut off the discourse of this book, he says he does not choose the opinion about the breeze, he tells the reader to know it and act on it, and he closes by saying that now that we have come to what is in generation let this be the end of the speech and the end of the book. The report of a disagreement among the philosophers about the water is a report about opinions and not about outcomes: it says each of them hit the mark at a distance, and gives no case for any of the three."@en ;
+    skos:note "The one place in the chapter that could be mistaken for a trial, recorded so that it is not. Of the breeze the treatise says that it is said not to be good and that it does not choose it at all. That is a dissent and may well stand on somebody's experience, but the chapter does not say so and does not say what was observed, so it is entered as a caution at pmc:JabirNasimLaYujid and not as a reworking: this holding requires a reworking to point at the node carrying what the station added, and a preference without a reason has nothing to point at."@en ;
+    skos:note "Why the absence of a case matters for the claim and not only for the bookkeeping. The chapter's product is a living animal in a glass vessel, which is the least deniable outcome a transmission could promise; a single performed case would be the most valuable thing in it. That the chapter has none, while being minute about weights and degrees, puts the claim with the prescriptions and not with the reports, and the attestation mode at pmc:JabirTakwinMinAlMaa says so."@en .
+
+pmp:JabirTakwinInsanSearch a pm:Searching ;
+    rdfs:label "Whether the chapter restricts the generation of a human being, or says anything against it"@en, "Ob das Kapitel die Erzeugung eines Menschen einschränkt oder etwas dagegen sagt"@de ;
+    pm:searchedCorpus "Kitāb Ikhrāj mā fī l-quwwa ilā l-fiʿl, the chapter on takwīn complete (ed. Kraus, Mukhtār rasāʾil, Cairo 1354 AH), read in the Arabic. Not searched: the rest of the treatise and of the volume."@en ;
+    pm:searchedFor "A prohibition, a reservation, a warning or a scruple attached to the generation of a human being or of an innovated shape — a flying man, a two-headed thing — as against the generation of a fish or a camel: anything that treats the human case differently from the rest of the table, whether on religious, legal or prudential grounds."@en ;
+    pm:searchTerms "Read at the wording and checked by search for: الإنسان, الناس, بشر, نفس, روح, حرام, لا يجوز, لا ينبغي, يحذر, احذر, إياك, خطر, مبتدعة, ذنب, إثم, كفر, and the whole of the passage assigning the four waters. Every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-11" ;
+    dcterms:date "2026-10-11" ;
+    skos:note "Nothing. The human being stands first in the chapter's table of the four media, between good fish and the sweet-water animals, in the same grammatical construction and with no mark of any kind set against it; and the innovated shapes are mentioned while the fourth medium is being sorted, as a category the reader is assumed to know. The chapter's only normative language is about the operation — what the governor of the work must be bound by, what is the greatest corruption, what is feared of error — and it has nothing about what may or may not be made. The pious formulae the treatise carries throughout, in shāʾa Allāh and wa-bi-llāh al-tawfīq, stand at the ends of its arguments and not against any of its products."@en ;
+    skos:note "The limit is real and the question should be put again elsewhere. One chapter cannot establish that the transmission has no scruple, and the treatise read is a compendium of principles whose own chapters on religion and on the Art were not opened; the volume's first pages promise exactly that mixture, saying that the reader will find in the midst of a discourse on religion a discourse on an operation and after an operation a discourse on religion. So the search establishes that the chapter which states the capacity states no reservation about it, and no more."@en ;
+    skos:note "Why it was worth asking at all. This holding's cautions are overwhelmingly about the operator's own safety or the integrity of the work, and a capacity whose product is another person is the case in which a transmission would have a different sort of reason to hesitate. The chapter supplies the case and does not hesitate, which is a fact about the chapter and is recorded as one."@en .
