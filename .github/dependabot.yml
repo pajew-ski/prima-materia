@@ -1,0 +1,19 @@
+# Haelt Actions und Python-Abhaengigkeiten aktuell. Monatlich und gruppiert,
+# damit hoechstens ein PR je Oekosystem und Monat wartet; gemergt wird von Hand.
+# pip gehoert hinein, weil validate.yml am PR requirements.txt installiert und testet.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      python:
+        patterns: ["*"]
