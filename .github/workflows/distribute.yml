@@ -21,18 +21,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: source
 
       - name: Checkout dist
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: pajew-ski/prima-materia-dist
           path: dist
           token: ${{ secrets.DIST_REPO_TOKEN }}
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           cache: pip
