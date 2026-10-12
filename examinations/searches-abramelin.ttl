@@ -1,0 +1,53 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the run on the Book of Abramelin,
+# 2026-10-12
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+# Three searches over two recensions of one work. The first is the question the
+# testability entrance of SPEC §14 sends a run to ask, and it found its place in
+# one recension and not in the other. The second asks where the work puts a
+# session that produced nothing. The third is the count SPEC §15 requires.
+#
+
+pmp:AbramelinTerminusDesistendiSearch a pm:Searching ;
+    rdfs:label "Whether the work names a point at which the operator is to conclude that the operation will not come to its end"@en, "Ob das Werk einen Punkt nennt, an dem der Operierende schließen soll, dass die Operation nicht zu ihrem Ende kommt"@de ;
+    pm:searchedCorpus "The Book of Abramelin in two recensions read at the wording: the French of the Arsenal manuscript in the English of S. L. MacGregor Mathers, second edition, London 1900, First and Second Books complete and the heads and instructions of the thirty chapters of the Third; and the German print Köln, Peter Hammer, 1725, First Book chapters 6 to 9 and Third Book complete, pages 22 to 37 and 137 to 234."@en ;
+    pm:searchedFor "A term, a count or an observable condition stated in advance at which the operator is told to stop, or told that his course has failed or will not be granted — the question prima-materia#640 put to the genre and that pmp:IuratusTerminusSearch answered for the Liber iuratus."@en ;
+    pm:searchTerms "In the English: cease, abandon, leave off, fail, failed, not succeeded, never receive, sickness, illness, malady, hindered, accident, moons, months, end, and every occurrence of not appear, read in its chapter. In the German, over a Fraktur transcription with its usual confusions of s, f and ß: Krankheit, Kranckheit, Leibs-Krankheit, aufhören, nit fort, abstehen, ablassen, Monat, Monate, halbe Jahr, Gottes Will, nit erscheinen, nit erzeigen, every hit read in its paragraph, with the Tesseract transcription of the second copy used to check doubtful readings."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AbramelinMorbusTerminus, pmc:AbramelinMorbusSineTermino, pmc:AbramelinMorbusDisputatus, pmc:AbramelinPeccatumMortale ;
+    pm:searchedBy "prima-materia, 2026-10-12" ;
+    dcterms:date "2026-10-12" ;
+    skos:note "One place, in one recension. The German Third Book chapter 7 fixes a calendar boundary — a sickness that has not mended before the next half-year begins, or a new sickness in the second or last half-year — and tells the operator to reckon that it is not God's will that he partake this time and to go no further. The French at the same place tells him only not to abandon at once. The French has instead a permanent consequence that no observer can establish, never to receive the wisdom after a mortal sin in the six months, and that is not in the German rules."@en ;
+    skos:note "What neither recension has: a point after the convocation. The third day of the angel is called a test of how the term was spent, but no sentence in either says what follows if nothing appears on it. The French supplies the child beforehand as the remedy for exactly that failure; the German supplies nothing."@en .
+
+pmp:AbramelinFailureLocusSearch a pm:Searching ;
+    rdfs:label "Where the work puts a session that produced nothing"@en, "Wohin das Werk eine Sitzung legt, die nichts hervorbrachte"@de ;
+    pm:searchedCorpus "The same two recensions in the same extent."@en ;
+    pm:searchedFor "Every clause that accounts for an absent outcome — of the angel, of a symbol, of a spirit — and the party to which it assigns the absence: the operator, the angel, the request, God's will, a rival, the procedure."@en ;
+    pm:searchTerms "As in pmp:AbramelinTerminusDesistendiSearch, together with: refuse, disobedient, rebellious, tumult, juggler, Gaukler, ungehorsam, weigern, nit gut, and in the French the passages on the angel's nature and on the child."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AbramelinPuerVidens, pmc:AbramelinSignumNonDatum, pmc:AbramelinSpiritusContumaces, pmc:AbramelinMalumUtenti, pmc:AbramelinTraditioRestricta ;
+    pm:searchedBy "prima-materia, 2026-10-12" ;
+    dcterms:date "2026-10-12" ;
+    skos:note "Five placements and none on the procedure. The French puts the angel's non-appearance on the angel's nature and answers it with a second person who sees in the operator's place. Both put a missing symbol on the request: it was not good, ask for something else. Both put a refusing spirit first on the request, then on the spirit, to be met with stronger address. Both put a conjuration that rebounds on the operator's unfitness. The French puts a recipient's empty operation on the manner in which he received it. The sentence closest to a procedural failure is Abraham's own report that the arts he had learned before stopped working when he used the true magic, and that is read as evidence for the new art."@en .
+
+pmp:AbramelinSignaCountSearch a pm:Searching ;
+    rdfs:label "The count of signs of success against conditions of failure in the parts of the work read"@en, "Die Zählung der Gelingenszeichen gegen die Misslingensbedingungen in den gelesenen Teilen des Werkes"@de ;
+    pm:searchedCorpus "The same two recensions in the same extent."@en ;
+    pm:searchedFor "The two numbers SPEC §15 asks a harvest note to give separately: signs announced in advance by which the operator is to know that the operation has worked, and conditions stated in advance under which it has not."@en ;
+    pm:searchTerms "The terms of the two preceding searches, together with: splendour, odour, Glanz, Klarheit, Geruch, dew, sweat, Tau, Schweiß, contentment, beauty, and every passage announcing what the operator will see, read in place."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AbramelinSplendorOdor, pmc:AbramelinRosLaminae, pmc:AbramelinSignaPseudangeli, pmc:AbramelinMorbusTerminus ;
+    pm:searchedBy "prima-materia, 2026-10-12" ;
+    dcterms:date "2026-10-12" ;
+    skos:note "Signs of success: two, the splendour with the odour and the symbol as dew on the plate, both in both recensions, plus a counterfeit sign announced in the French. Conditions of failure stated in advance: in the German one, the stop rule in sickness, and it settles admission and not the working of the art; in the French none that an observer could establish. The thirty capacities of the book of symbols carry limits — days of nourishment, hours of visibility, seven coins, seven years — and not one condition under which the symbol would be found not to work."@en .
