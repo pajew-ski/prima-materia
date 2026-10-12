@@ -224,7 +224,157 @@ pmw:Heptameron a dcterms:BibliographicResource ;
     skos:note "The tradition node records that the nine days of continence were read at the wording in the Heptameron of the Turner collection of 1655, but no node names it as a source. Until one does, the work reads as unopened, which is what the graph can vouch for."@en .
 
 pmw:Abramelin a dcterms:BibliographicResource ;
-    rdfs:label "The Book of Abramelin"@en, "Das Buch Abramelin"@de .
+    rdfs:label "The Book of Abramelin"@en, "Das Buch Abramelin"@de ;
+    skos:note "Opened on 2026-10-12 in two witnesses that are not two translations of one text but two recensions, and the difference between them is the main finding of the run. The first is the French manuscript of the Bibliothèque de l'Arsenal in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, second edition, London: John M. Watkins, 1900, read in the digital setting of Benjamin Rowe of 1998, which declares itself the complete and unaltered text of that edition; three books. The second is the German print whose title page in the full text reads: Die egyptischen großen Offenbarungen, in sich begreifend die aufgefundenen Geheimnißbücher Mosis; oder des Juden Abraham von Worms Buch der wahren Praktik in der uralten göttlichen Magie und in erstaunlichen Dingen, aus einer hebräischen Pergament-Handschrift von 1387 im XVII. Jahrhundert verteutscht und wortgetreu herausgegeben, Köln am Rhein, bei Peter Hammer, 1725; four books, the second of which, a collection of operations of the mixed Kabbalah, has no counterpart in the French."@en ;
+    skos:note "Access, as a property of the uploads and not of the work. The German print lies at archive.org under two identifiers with different optical readings of the same Fraktur: uber19a019790 (ABBYY, 426,501 characters, printed page numbers legible in the running text, the one cited here) and BuchDerWahrenPraktikInDerUraltenGttlichenMagie (Tesseract, noticeably worse; used only to check a reading). The Mathers text was read from the archive.org item sacred-magic-abramelin, which carries Rowe's setting in three files. A scan of the 1900 edition was not reached: the only other free item is a pirated copy of the Dover reprint and was not used, and the Dover item of 1975 is access-restricted."@en ;
+    skos:note "What was read at the wording. French, in Mathers: the First Book complete, chapters I to XII; the Second Book complete, chapters I to XX, except the name lists of chapter XIX; the Third Book at the head of every one of its thirty chapters, together with the instructions for each chapter that the Second Book gives at the end of chapter XX. German: the First Book chapters VI to IX, pages 22 to 37; the Third Book complete, chapters I to XX, pages 137 to 234. Not read: the German First Book chapters I to V, the whole German Second Book, the German Fourth Book, and the squares of the French Third Book, which are tables of letters and assert nothing beyond their chapter heading."@en ;
+    skos:note "The structural difference, which no single node can carry. Of the three devices that make the French operation examinable or unexaminable in its own terms — the length of the term, the child who sees in the operator's place, and the stop rule in sickness — the German has a different length, no child, and a stop rule the French lacks. Each is entered below as two nodes, one per recension, as SPEC §10 requires for divergent versions, and two of them carry a dispute node beside them."@en ;
+    skos:note "Dating and ascription were not decided here and no node turns on them. The French manuscript dates itself 1458 and gives the year of Abraham's commencement as 1409; the German print dates the Hebrew original 1387. Whether the German or the French stands nearer an original, and whether there was a Hebrew original at all, is a question of the modern edition of Georg Dehn, which was not read."@en .
+
+#
+# The Book of Abramelin. Order of this block: the three practices; the two
+# terms and the dispute over them; who may operate; the illness clause in its
+# two forms and the dispute over it; the child and the claim made about his
+# memory; the clauses that say what an operation which produced nothing
+# means; the signs of success, counted apart; the restrictions on passing the
+# operation on; Abraham's own trials of other men's arts; his deeds; and last
+# the thirty capacities of the book of symbols, one node each.
+#
+
+pmp:AbramelinPraeparatio a pm:Practicing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "The preparation in retirement before the convocation"@en, "Die Vorbereitung in Zurückgezogenheit vor der Berufung"@de ;
+    skos:definition "Beginning on the first morning after Passover: prayer at the altar of a dedicated room morning and evening, later three times a day with perfume; washing, change of linen and clothing on the eve of every Sabbath; withdrawal from business, company and commerce by stages; chastity tightening by stages; no sleep by day; reading of scripture two hours a day; a fast on every Sabbath eve in the later periods. The room is to have a terrace strewn with river sand where the spirits will appear, an altar of wood hollow as a cupboard, a lamp of olive oil, a censer that is never removed, an oil of myrrh, cinnamon and galangal and a perfume of incense, storax and aloes wood."@en ;
+    skos:note "Entered as one practice because both recensions present it as one course with numbered periods. The length of the course is where they part, and that is held in two nodes of its own and not here."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abramelin, Second Book chapters VII to XII, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 7 bis 12, pp. 159-182, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+pmp:AbramelinConvocatio a pm:Practicing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "The days of consecration and convocation"@en, "Die Tage der Heiligung und Berufung"@de ;
+    skos:definition "After the term: a consecration of the operator, the altar, the vestments, the wand and the room with the oil; days of prayer in mourning dress with ashes on the head until the splendour of the angel fills the room and the angel appears and speaks; then on each of three days the convocation of the evil spirits on the terrace — the four superior princes, the eight sub-princes, then their servitors — who swear on the wand and on the symbols to appear when called and to do what the symbol bears, and the four familiar spirits who serve six hours each."@en ;
+    skos:note "The French has seven days in all, the consecration, three days of the good spirits and three of the evil; the German has four days of prayer before the angel appears and then three days of the evil spirits. The French has the angel appear first to a child; the German has him appear to the operator. These differences are entered at the nodes that turn on them."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abramelin, Second Book chapters XII to XVIII, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 12 bis 18, pp. 178-204, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+pmp:AbramelinSignorumUsus a pm:Practicing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "Working with the sworn symbols"@en, "Das Wirken mit den beschworenen Zeichen"@de ;
+    skos:definition "Once the operation is complete and the spirits have sworn on them, a symbol of the book of squares is taken in the hand, laid under the hat on the bare head, moved, snapped or touched to a person or a thing, and the spirit marked in it performs what its chapter bears; a spoken name and form suffice where nobody is present. Further symbols are obtained from the guardian angel, who writes them on a plate of silver as in drops of dew, or from the spirits, who trace them on the sand."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abramelin, Second Book chapter XX, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 20, pp. 215-221, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+#
+# The term, in two recensions, and the dispute
+#
+
+pmc:AbramelinSexLunae a pm:Presupposing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "Six moons of preparation, from Passover to Tabernacles"@en, "Sechs Monde Vorbereitung, von Pessach bis Laubhütten"@de ;
+    skos:definition "The French recension: the operation begins on the first day after Passover and ends at Tabernacles, in three periods of two moons each, the first two moons, the two second moons and the two last moons. Abraham says he continued it for six moons without omitting the slightest detail and that at their end the vision was granted; the instruction is that the guardian angel will manifest at the end of the six moons or months what suffices for the possession of the magic."@en ;
+    pm:dependentStep pmp:AbramelinConvocatio ;
+    pm:priorStep pmp:AbramelinPraeparatio ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "Entered at prescribed order and not at stated necessity because no passage read gives a consequence for shortening the term. The consequences the French attaches lie elsewhere — on a mortal sin committed during the six months, on beginning without the resolve to finish — and are entered at their own nodes. The term itself is simply the time the operation takes."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abramelin, First Book chapters VII and IX, Second Book chapters V, VII, VIII, IX and XX, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" .
+
+pmc:AbramelinOctodecimMenses a pm:Presupposing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "Eighteen months of preparation, in three half-years"@en, "Achtzehn Monate Vorbereitung, in drei halben Jahren"@de ;
+    skos:definition "The German recension: the work begins on the day after Passover; the first half-year runs to Tabernacles, the second from Tabernacles to Passover, the third and last from the day after Passover to the end of Tabernacles; the convocation follows on the next morning. The text names the whole as the eighteen months in the instruction, in the rules and in Abraham's account of his own operation, which he says he carried on to the end of the eighteen months, his eldest son being born at the beginning of the eleventh."@en ;
+    pm:dependentStep pmp:AbramelinConvocatio ;
+    pm:priorStep pmp:AbramelinPraeparatio ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "Not every element of the German is fixed by the calendar: chapter 5 says that beginning on the day after Passover is not strictly necessary nor commanded by God, but the most convenient time, because the end then falls at Tabernacles and the operator is then more reconciled with God and purer than at other times. The ground given is a state of the operator and not of the day, and the text says it may not write more clearly about it."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 5, 7, 8, 9, 13 und 20, pp. 152-153, 159-170, 182-185, 213-215, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Erstes Buch Kapitel 7, pp. 30-31, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+pmc:AbramelinTerminusDisputatus a pm:Disputing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "Whether the operation takes six months or eighteen"@en, "Ob die Operation sechs Monate oder achtzehn dauert"@de ;
+    pm:disputedClaim pmc:AbramelinSexLunae, pmc:AbramelinOctodecimMenses ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "The two recensions agree on the beginning, the day after Passover, and on the end, Tabernacles, and disagree on how many times the year turns in between: once in the French, so that six moons pass, and three times in the German, so that eighteen months pass. The divergence is not a single scribal number. The German states the eighteen months in the instruction, in the rules about blood and corpses, in the test sentence of the thirteenth chapter, and in Abraham's narrative of his own operation; the French states six moons in each of the corresponding places."@en ;
+    skos:note "Why it matters beyond the text. The operation names no sign by which an operator could tell during the course whether it is going well, so the length of the course is the only quantity in it that a reader could get wrong by reading the wrong recension; and the widely circulated English text gives the shorter figure without signalling that the German gives the longer. A protocol built on either has to say which it follows."@en ;
+    skos:note "Held as a dispute and not resolved. Resolving it would need the manuscripts behind the German, which the modern edition of Georg Dehn claims to have used and which were not opened here."@en ;
+    dcterms:source "Abramelin, Second Book chapters V, VII to IX, XIII and XX, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 5, 7, 9, 13 und 20, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+pmc:AbramelinLectioSexMensium a pm:Presupposing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "The book read and re-read for six months before the operation is begun"@en, "Das Buch sechs Monate lang gelesen und wieder gelesen, bevor die Operation begonnen wird"@de ;
+    skos:definition "The French asks that no one commence the operation unless for the space of six months beforehand he has read and re-read the book with care, considering all points in detail, and repeats it among the rules at the end: the three books are to be read an infinity of times, so that in the six months before commencing the operator is fully instructed, and a man who is not a Jew should become accustomed to the customs and ceremonies the operation demands."@en ;
+    pm:dependentStep pmp:AbramelinPraeparatio ;
+    pm:priorStep pmp:AbramelinPraeparatio ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "A second six months in the French, in front of the six moons, so that the operation as the French prescribes it takes a year from the first reading. The dependent step and the prior step are the same practice because the text makes the reading part of the preparation rather than a separate act."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abramelin, First Book chapter XII, Second Book chapter XX rule 13, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" .
+
+#
+# Who may operate
+#
+
+pmc:AbramelinAetas a pm:Cautioning ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "Not under twenty-five and not over fifty"@en, "Nicht unter fünfundzwanzig und nicht über fünfzig"@de ;
+    skos:definition "Both recensions fix the age of the operator between twenty-five and fifty and exclude hereditary disease, the French naming leprosy, the German leprosy and the falling sickness and adding a straight and unblemished body. A servant can hardly reach the end, a bondman not at all in the German. Of women only virgins are suitable, and both advise that the matter not be communicated to them. The French adds among the rules that it is impossible for one who has passed fifty to undertake the operation, after the custom of the priesthood in the ancient Jewish law."@en ;
+    pm:cautionsAbout pmp:AbramelinPraeparatio ;
+    skos:note "This is the one condition on the operator in the work that a third party can establish without his testimony. The German adds an advantage that is equally checkable and in the opposite direction: begun in the first year of marriage, as Abraham says he did, the work is very good and furthered, because that year carries a particular blessing of the Lord."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abramelin, Second Book chapter III and chapter XX rule 17, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 3, pp. 145-147, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+pmc:AbramelinPeccatumMortale a pm:Cautioning ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "A mortal sin in the six months, and the wisdom is never received"@en, "Eine Todsünde in den sechs Monaten, und die Weisheit wird nie empfangen"@de ;
+    skos:definition "The French rules: should he who performs this operation during the six months or moons commit voluntarily any mortal sin prohibited by the Tables of the Law, let him be certain that he will never receive this wisdom; and the first book makes the same the condition on which any person of any religion may effect it, provided that during the six moons he has not committed any sin against the law and commandments of God. If he has not the fixed intention of continuing, let him not commence, for God chastises with bodily maladies those who make a mock of him; he who is hindered by an unforeseen accident sins in no way."@en ;
+    pm:cautionsAbout pmp:AbramelinPraeparatio ;
+    skos:note "The consequence is permanent and cannot be observed apart from the outcome it would explain: an operator to whom nothing came can always be told afterwards that he sinned, and no observer can establish that he did not. The rule is not in the German list of rules, which runs to twenty-nine items and was read complete; the German has instead the stop rule in sickness entered at pmc:AbramelinMorbusTerminus."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abramelin, First Book chapter XII, Second Book chapter XX rules 14 and 16, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" .
+
+#
+# Sickness during the term, in two recensions, and the dispute
+#
+
+pmc:AbramelinMorbusSineTermino a pm:Conceptualizing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "Sickness during the term: continue in bed, and no limit is set"@en, "Krankheit während der Frist: im Bett fortfahren, und keine Grenze ist gesetzt"@de ;
+    skos:definition "The French: should the operator be attacked by an illness that does not permit him to go to the oratory, this need not oblige him to abandon the enterprise at once; he governs himself as best he can and performs the orations in bed, entreating God to restore his health so that he may continue. Elsewhere: a sick man can neither be clean and pure nor enjoy solitude, and in such a case it is better to cease; and he who is hindered from continuing through some unforeseen accident sins in no way."@en ;
+    skos:note "Two sentences of the same recension pull against each other — continue in bed, and better to cease — and neither fixes a point at which the one gives way to the other. The French therefore leaves the operator who falls sick without any rule that would tell him the operation has failed."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abramelin, Second Book chapter II, chapter VII and chapter XX rule 16, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" .
+
+pmc:AbramelinMorbusTerminus a pm:Conceptualizing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "Sickness that has not mended before the next half-year begins: stop, it is not God's will this time"@en, "Krankheit, die sich nicht bessert, ehe das nächste halbe Jahr anfängt: aufhören, es ist diesmal nicht Gottes Wille"@de ;
+    skos:definition "The German: if God attacks the operator with a bodily sickness during the half-year, so that he has not the strength to go to the oratory, he is not to let it stop him but to pray in bed and ask for health. But if it does not mend before the next year begins, or if a further sickness comes in the second or the last half-year, let him reckon that it is not God's will that he shall partake of his wisdom this time; let him humble himself and go no further, and ask God's pardon that it be not counted to him as presumption."@en ;
+    skos:note "This is the only clause in either recension that fixes, in advance and by a calendar boundary, a condition under which the operator is to conclude that the operation will not come to its end, and it is the only one whose triggering condition an attendant could observe — a sickness that keeps a man from the room and has not passed by a stated date. What it settles is not that the art fails but that this operator is not admitted this time; the failure is read as a verdict and not as a result. It is entered here rather than as a failure condition of the procedure for that reason."@en ;
+    skos:note "Not in the French, which at the corresponding place says only that the sick man need not abandon at once and prays in bed. The OCR of the German at the decisive words reads ehe das andere Jahr anfanget, and the sense of the sentence, which continues with the other or the last half-year, fixes the boundary at the start of the next half-year of the course."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 7, p. 166, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+pmc:AbramelinMorbusDisputatus a pm:Disputing ;
+    pm:fromWork pmw:Abramelin ;
+    rdfs:label "Whether a sickness that persists ends the operation"@en, "Ob eine anhaltende Krankheit die Operation beendet"@de ;
+    pm:disputedClaim pmc:AbramelinMorbusSineTermino, pmc:AbramelinMorbusTerminus ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "The two recensions share the first half of the clause word for word in substance — the sick man is not to abandon at once and prays in bed — and part on the second. The German adds a boundary and a verdict; the French adds nothing and elsewhere advises ceasing without saying when. The difference falls exactly on the one place where either text could tell an operator that his course has failed, and it is the reason this divergence is held as a dispute rather than as a note."@en ;
+    dcterms:source "Abramelin, Second Book chapter VII, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" ;
+    dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 7, p. 166, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+# ANKER-ABRAMELIN-1
 
 pmw:ScotDiscoverieOfWitchcraft a dcterms:BibliographicResource ;
     rdfs:label "Reginald Scot, The Discoverie of Witchcraft"@en, "Reginald Scot, The Discoverie of Witchcraft"@de .
