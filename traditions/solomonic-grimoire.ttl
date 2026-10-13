@@ -825,5 +825,118 @@ pmc:AbramelinSignaYieldVirtutes a pm:Yielding ;
     dcterms:source "Abramelin, First Book chapter VIII, Second Book chapter XX, Third Book chapters I to XXX, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" ;
     dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 20, pp. 217 und 221-233, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
 
+#
+# The Heptameron. Order of this block: the operation; the two terms before
+# it and the conditions it waives; what the book says to do when the spirits
+# do not come; the signs it announces, counted apart, and the caution they
+# carry; the command; and last the thirty-nine capacities of the seven days,
+# one node each, with the claim that binds them to the operation.
+#
+
+pmp:HeptameronOperatio a pm:Practicing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "The operation of the day within the threefold circle"@en, "Die Operation des Tages im dreifachen Kreis"@de ;
+    skos:definition "Three circles nine feet across, a hand's breadth apart; in the middle one the name of the hour, the angel of the hour and his sigil, the angel of the day and his ministers, the name of the present season, the spirits ruling that part of the season and their presidents, the head of the sign, the name of the earth and the names of Sun and Moon for that season; in the outermost the king of the air of that day and his three ministers; outside, four pentagons; in the inner circle four divine names and a cross, Alpha to the east and Omega to the west. Then the blessing of circle, perfumes and fire, the vestment and the pentacle made in the day and hour of Mercury with the Moon increasing; the procession with fire, perfume, book, vestment and the sword over which a mass of the Holy Ghost has been said; inside the circle the invocation of the angels of the seven planets from the four quarters, of the angels ruling the air that day, the conjuration of the day, and the business named."@en ;
+    skos:note "The book presents itself as an appendix for beginners: the Fourth Book before it is said to speak of ceremonies only in general, for the learned, and the elements are added so that those who have not yet tasted magical superstitions may have them ready, what is to be done every day and every hour, read out as if syllable by syllable. The circle is said to carry the greatest power, being a fortress that keeps the operator safe from evil spirits."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), pp. 66-85, from the preface to the dismissal" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 73-86, from the preface to the dismissal" .
+
+pmc:HeptameronNovemDies a pm:Presupposing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Clean and pure for nine days before the work, confessed and communicated"@en, "Neun Tage vor dem Werk rein und lauter, gebeichtet und kommuniziert"@de ;
+    skos:definition "Under the heading of the manner of working: the operator is to be clean and pure for nine days before the beginning of the work, confessed and having received communion, with the perfume of the day, holy water from a priest, a new earthen vessel full of fire, the vestment and the pentacle all duly consecrated and prepared."@en ;
+    pm:dependentStep pmp:HeptameronOperatio ;
+    pm:priorStep pmp:HeptameronOperatio ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "Entered at prescribed order and not at stated necessity because the book attaches no consequence to it, in Latin or in English, anywhere in its text. The same term in the Clavicula carries a general clause that the art will not be verified if one point is done ill (pmc:ClaviculaNovemDies); the Heptameron has no such clause, so the comparison the tradition node makes between the two holds for the length of the term and not for its weight."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), De modo operationis, p. 74" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Of the manner of working, p. 81" .
+
+pmc:HeptameronTriduum a pm:Presupposing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Three whole days of fasting, chastity and abstinence before the day of the operation"@en, "Drei ganze Tage Fasten, Keuschheit und Enthaltung vor dem Tag der Operation"@de ;
+    skos:definition "After the circle has been drawn and sprinkled: the master, purified by fasting, chastity and abstinence from all luxury for three whole days before the day of the operation, enters the circle on that day in clean garments, with pentacles, perfumes and the other necessary things."@en ;
+    pm:dependentStep pmp:HeptameronOperatio ;
+    pm:priorStep pmp:HeptameronOperatio ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "The text does not say whether the three days fall within the nine or follow them; it gives the nine for the operator and the three for the master, in two paragraphs of the same chapter. The node does not decide it."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), De modo operationis, p. 75" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Of the manner of working, p. 81" .
+
+pmc:HeptameronSiFieriPotest a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "If it can be done: the waxing Moon and the priest's vestment are waived, the nine days are not"@en, "Wenn es sein kann: zunehmender Mond und Priestergewand werden erlassen, die neun Tage nicht"@de ;
+    skos:definition "Two conditions are set with a release in the same sentence. The vestment is to be a priest's, if it can be; if it cannot be had, of clean linen. The Moon is to be increasing and even, if it can be done, and not combust. The same chapter sets the nine days of purity, the confession and communion, and the three days of fasting and chastity without any release."@en ;
+    skos:note "What the book lets go is outside the operator, the sky and a borrowed garment, and for the garment it gives a second route, clean linen; what it keeps is the operator's body and conduct. That is the division the holding carries untested at generalizations/the-waiver-that-runs-both-ways.ttl, at its lower end only: the Heptameron has no adept who is released. Its last clause, that the bodily requirement is the one named when nothing happened, this witness cannot bear, because the book accounts for no case in which nothing happened. It was not added to the generalization, since a witness entered without the counter-search of that test would be confirmation by selection."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), De veste et pentaculo, p. 73, and De modo operationis, p. 74" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Of the Garment and Pentacle, p. 79, and Of the manner of working, p. 81" .
+
+#
+# What the book says when the spirits do not come
+#
+
+pmc:HeptameronPertinaces a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "If they are obstinate and refractory, use the exorcisms that follow"@en, "Sind sie hartnäckig und widerspenstig, die folgenden Exorzismen gebrauchen"@de ;
+    skos:definition "After the conjuration assigned to the day has been read: if the spirits are obstinate and refractory and do not show themselves obedient to the conjuration of the day nor to the prayers made before, the operator is to use the conjurations and exorcisms that follow, the exorcism of the spirits of the air, the prayer to God at the four quarters, the invocation by the pentacle of Solomon, the further conjuration by the ineffable name, and the summons under the name Octinomos."@en ;
+    skos:note "Non-appearance is the one outcome the book foresees that is not the effect, and it is answered by escalation and by nothing else. There is no count of attempts, no term, and no point at which the operator is told to stop or to look for a fault in what he did; the next text after the escalation describes the visions that come when all has been rightly done. The holding records the same device, longer, at pmc:ClaviculaGradusConiurationum and, shorter, at pmc:AbramelinSpiritusContumaces."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), De modo operationis, p. 76" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Of the manner of working, p. 82" .
+
+pmc:HeptameronComminatio a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Unless they appear at once: deprived of office, place and joy and cast into fire until the last day"@en, "Wenn sie nicht sogleich erscheinen: Amt, Ort und Freude genommen und bis zum Jüngsten Tag ins Feuer verbannt"@de ;
+    skos:definition "Inside the exorcism of the spirits of the air: by the name Primeumaton, the whole host of heaven compelling, the operators curse the spirits, deprive them of every office, place and joy, and place and relegate them in the depth of the abyss into eternal fire and the lake of fire and brimstone until the last day of judgement, unless they appear at once before the circle to do the operators' will; and a ruin and eternal unquenchable fire awaits them if they do not obey."@en ;
+    skos:note "The penalty the text names for the case in which nothing appears falls on the spirits and not on the operator or the procedure, and it is one no participant could see executed."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Exorcismus spirituum aereorum, pp. 76-79" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), An Exorcisme of the Spirits of the Air, pp. 82-84" .
+
+#
+# The signs announced in advance, counted apart
+#
+
+pmc:HeptameronVisiones a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Visions, phantasms and the sound of instruments, then archers and horrible beasts, then great motions"@en, "Erscheinungen, Trugbilder und Instrumentenklang, dann Bogenschützen und schreckliche Tiere, dann große Bewegungen"@de ;
+    skos:definition "Under the heading of visions and apparitions: when all has been rightly done, there will appear infinite visions and phantasms beating organs and all kinds of musical instruments; afterwards the operator will see infinite archers with an infinite multitude of horrible beasts, arranging themselves as if to devour the companions; at the master's word they are compelled to obey and the companions will see nothing more. After the invocation by the pentacle of Solomon the operator whistles at the four angles of the world and will see immediately great motions; then the spirits come in their own form; shown the uncovered pentacle, they appear in a peaceful form and say: ask what you will, for we are ready to fulfil all your commands, because the Lord has subjected us to this."@en ;
+    skos:note "Entered under the separate count of signs of success SPEC §15 requires. Five signs, in a fixed order, all announced to the operator in the book he works from: the phantasms with music, the archers and beasts, the great motions, the spirits in their own form, the spirits in a peaceful form speaking. All of them are perceptions inside the operation, and the book provides that the companions, the only other persons present, stop seeing after the second."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Visiones et apparitiones, pp. 82-84" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Visions and apparitions, pp. 85-86" .
+
+pmc:HeptameronSociiTerror a pm:Cautioning ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "The phantasms are made to drive the companions out of the circle; let them fear nothing"@en, "Die Trugbilder sollen die Gefährten aus dem Kreis treiben; sie sollen nichts fürchten"@de ;
+    skos:definition "The text gives the purpose of the visions: they are made by the spirits so that the companions, compelled by terror, leave the circle, because the spirits can do nothing against the master. The beasts arrange themselves as if to devour the companions, and yet the companions are to fear nothing."@en ;
+    pm:cautionsAbout pmp:HeptameronOperatio ;
+    skos:note "A caution with its reason and without its consequence: the book says why the spirits terrify, and what the companions must not do, but not what happens to a companion who leaves the circle or to the operation if he does."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Visiones et apparitiones, pp. 82-83" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Visions and apparitions, p. 85" .
+
+#
+# The command, and the thirty-nine capacities of the seven days
+#
+
+pmc:HeptameronIubeQuodVis a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Command what you will, and it will be done"@en, "Befiehl, was du willst, und es wird geschehen"@de ;
+    skos:definition "When the spirits have appeared in peaceful form, the operator binds them to remain visible and affable before the circle, and not to depart without his licence until they have fulfilled his will without any deceit and truthfully; then, the text says, command what you will, and it will be done. The licence follows: in the name of the Father, the Son and the Holy Spirit, go in peace to your places, and be ready to come when called."@en ;
+    skos:note "The general capacity of the operation, stated without limit. The spirits are bound to perform without deceit, so that a deceitful performance is excluded by the binding and not foreseen as an outcome."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), pp. 84-85" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 86" .
+
+# ANCHOR-HEPTAMERON-CAPACITIES
+
 pmw:ScotDiscoverieOfWitchcraft a dcterms:BibliographicResource ;
     rdfs:label "Reginald Scot, The Discoverie of Witchcraft"@en, "Reginald Scot, The Discoverie of Witchcraft"@de .
