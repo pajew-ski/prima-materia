@@ -1,0 +1,154 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Sāṃkhya
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed with no node. What was opened is the Sāṃkhyakārikā, read
+# complete, and Gauḍapāda's commentary on it at the verses that name
+# attainments, obstacles and powers.
+#
+# Order of the file: the works; the tradition with the three decisions §14
+# requires; the two verses that judge the other means; the practice and what
+# it is said to bring; the four dispositions and their results; the fifty
+# forms of the intellectual creation, with the eight perfections one node
+# each and the curb on them; and last the eight powers of Gauḍapāda's gloss,
+# one node each, with the dispute over their number and the caution he
+# attaches to them.
+#
+
+#
+# The works
+#
+
+pmw:Samkhyakarika a dcterms:BibliographicResource ;
+    rdfs:label "Īśvarakṛṣṇa, Sāṃkhyakārikā"@en, "Īśvarakṛṣṇa, Sāṃkhyakārikā"@de ;
+    skos:note "Read complete on 2026-10-13 in two English translations by two translators, H. T. Colebrooke, Oxford 1837 (the edition as the title page in the full text gives it: The Sánkhya Káriká, or Memorial Verses on the Sánkhya Philosophy, by Íswara Krishna, translated from the Sanscrit by Henry Thomas Colebrooke, also the Bháshya or Commentary of Gaurapáda, translated and illustrated by an original comment by Horace Hayman Wilson, Oxford, printed for the Oriental Translation Fund, 1837), and John Davies, London 1881 (Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, an Exposition of the System of Kapila, London: Trübner, 1881). The Sanskrit of every verse entered was read in an unattributed Devanagari text of the seventy-two kārikās at archive.org, identifier SankhyaKarikaText, which carries no title page and is therefore not cited, and compared where the optical reading allows with the verses printed in Jibananda Vidyasagara's edition with Gauḍapāda, Calcutta, second edition."@en ;
+    skos:note "Access, as a property of the uploads: archive.org bub_gb_NNLyzf70cl8C for Colebrooke and Wilson, 408,928 characters, the English legible, the Sanskrit of the edition absent from the text layer (no character in the Devanagari block), so that the Sanskrit had to be taken from another upload; hinduphilosophys00davi for Davies; mgaz_ and ngyt_sankhyakarika-with-gaudapadabhashya-jibananda-vidyasagara-1892 for Jibananda, Devanagari legible in part with frequent misreadings; wuqh_sankhya-karika-gaudapada-bhashya-gaudapadacharya-by-ishvara-krishna-janarda for Pāṇḍeya. The catalogue lines give 1892 for Jibananda's second edition; the year is not legible on the title page in the text layer and is not taken over."@en ;
+    skos:note "The text has seventy-two verses; verse 72 calls the work seventy verses on the subjects of the whole Ṣaṣṭitantra, without its stories and without the refutation of other doctrines. Wilson notes that the copy of Gauḍapāda he used has sixty-nine verses and ends its commentary at verse 69. Nothing in this file turns on the count."@en .
+
+pmw:GaudapadaSamkhyakarikabhasya a dcterms:BibliographicResource ;
+    rdfs:label "Gauḍapāda, Sāṃkhyakārikābhāṣya"@en, "Gauḍapāda, Sāṃkhyakārikābhāṣya"@de ;
+    skos:note "Opened on 2026-10-13 at the verses that carry attainments, obstacles and powers, in Wilson's translation of 1837 and in the Sanskrit of Jibananda Vidyasagara's edition, with the passage on the eight powers read as well in Janārdanaśāstrī Pāṇḍeya's edition, Varanasi 1964, whose title page in the full text gives the editor, the publisher Bhāratīya Vidyā Prakāśan and first edition 1964. Read: the commentary on kārikās 1, 2, 23, 44 to 51, 64, 65, 67, 68 and 69. Not read: the rest, which comments on the enumeration of the principles and on the arguments for the existence of nature and of the witness."@en .
+
+pmw:Yuktidipika a dcterms:BibliographicResource ;
+    rdfs:label "Yuktidīpikā"@en, "Yuktidīpikā"@de ;
+    skos:note "The anonymous commentary the registration of this tradition named beside the kārikās. Not opened in this run. Two candidate uploads were found at archive.org and not opened: rcku_yuktidipika-the-most-important-commentary-on-the-samkhya-karika-of-isvarakr and SamkhyaKarikaAndYuktiDipika1938; whether either carries a usable text layer was not checked, so nothing is claimed about reachability."@en .
+
+#
+# The tradition
+#
+
+pmt:Samkhya a pm:Tradition ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "Sāṃkhya"@en, "Sāṃkhya"@de ;
+    skos:definition "The enumerative transmission of the evolutes of nature and of a witnessing principle distinct from them, on which the yoga of the graph already rests."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented, and the route is in the corpus. The commentary on verse 23 takes the restraints and observances that make up virtue from the Pātañjala, and Wilson's comment on verse 48 identifies the five obstructions of the kārikā with the five afflictions of the yoga school; verse 70 claims a line of teachers from Kapila through Āsuri to Pañcaśikha. Any agreement between this file and traditions/patanjala-yoga.ttl is reception with a route and counts once."@en ;
+    skos:note "Edition and recension, the second decision. The kārikās are cited in two English translations by different translators, and the Sanskrit was read in a text without a title page; the commentary is cited in Wilson's English and in Jibananda's Sanskrit. Where the two Sanskrit editions of the commentary differ on the list of the eight powers, the difference is held as a dispute, at pmc:SamkhyaGarimaDisputatus, and not smoothed."@en ;
+    skos:note "The third decision, the number of citable places: the seventy-two verses, of which fourteen carry the nodes below, and the commentary at the verses named on its work node."@en ;
+    skos:note "What the reading found that the registration did not anticipate. The kārikā names no power at all; it names lordliness, aiśvarya, as one of the eight dispositions of the intellect and says only that it brings unobstructedness. The eight powers are the commentary's, and the same commentary counts the attachment to them among the obstructions that keep the gods from release. The eight perfections the kārikā does name are not powers but routes to knowledge: reasoning, hearing, study, the removal of the three pains, the gaining of friends and giving. And the text defines its own success by the two words it uses in its first verse to fault every other means, certain and lasting, and places it at the separation from the body, after the one point at which a witness could look."@en ;
+    pm:principalCorpus "Īśvarakṛṣṇa, Sāṃkhyakārikā; Yuktidīpikā" ;
+    pm:corpusWork pmw:Samkhyakarika, pmw:GaudapadaSamkhyakarikabhasya, pmw:Yuktidipika ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 1, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 1" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 1, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 10" .
+
+#
+# The two verses that judge the other means
+#
+
+pmc:SamkhyaDrstaUpayaAnaikantika a pm:Conceptualizing ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "The visible means of removing pain do not remove it certainly or lastingly"@en, "Die sichtbaren Mittel gegen den Schmerz beseitigen ihn weder sicher noch dauerhaft"@de ;
+    skos:definition "The first verse: from the affliction of the threefold pain arises the desire to know the means of removing it; if it is said that this desire is pointless because visible means exist, it is not so, because these do not remove it with certainty and finally (naikāntātyantato 'bhāvāt). Gauḍapāda names the visible means: medicine for bodily and mental pain, the removal of what is disliked and the gaining of what is liked, protection against what comes from beings and from the weather."@en ;
+    skos:note "The criterion the text sets for any means is the pair of words aikāntika and ātyantika, certain and final. It sets the same pair on its own result at verse 68, pmc:SamkhyaKaivalya, which is where a reader can see that the work holds itself to the measure it uses on the others, and also that the result it so measures is placed where no one can check it."@en ;
+    pm:withinTradition pmt:Samkhya ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 1, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 1" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 1, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 10" ;
+    dcterms:source "Gauḍapāda, Sāṃkhyakārikābhāṣya on kārikā 1, in the translation of H. H. Wilson, in: The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, pp. 1-12" .
+
+pmc:SamkhyaAnusravikaAvisuddhi a pm:Conceptualizing ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "The revealed means is like the visible: impure, perishing and surpassed"@en, "Das offenbarte Mittel ist wie das sichtbare: unrein, vergänglich und übertroffen"@de ;
+    skos:definition "The second verse: the means heard in the Veda is like the visible one, for it is joined with impurity, decay and excess (aviśuddhi-kṣaya-atiśaya-yukta); its opposite is better, the discriminating knowledge of the manifest, the unmanifest and the knower. Gauḍapāda explains the impurity as the killing of animals in sacrifice."@en ;
+    pm:withinTradition pmt:Samkhya ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 2, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 13" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 2, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 15" .
+
+#
+# The practice and what it is said to bring
+#
+
+pmp:SamkhyaTattvabhyasa a pm:Practicing ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "The repeated study of the twenty-five principles"@en, "Die wiederholte Einübung der fünfundzwanzig Prinzipien"@de ;
+    skos:definition "Tattvābhyāsa, the repeated study of the principles, by which verse 64 says the knowledge arises: the discrimination of nature, intellect, the I-maker, the five subtle elements, the eleven organs, the five gross elements and the witness, in the order the work has set out. Gauḍapāda glosses it as the knowledge that this is nature, this is the witness, these the subtle elements, the senses and the elements."@en ;
+    skos:note "The work prescribes no posture, breath, diet, place or time for it, and no term. Of the eight perfections of verse 51, entered below, the commentary says of each of the first three, reasoning, hearing and study, that it yields the knowledge of the twenty-five principles."@en ;
+    pm:withinTradition pmt:Samkhya ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 64, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 178" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 64, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 96" ;
+    dcterms:source "Gauḍapāda, Sāṃkhyakārikābhāṣya on kārikā 64, in the translation of H. H. Wilson, in: The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, pp. 178-179" .
+
+pmc:SamkhyaKevalajnana a pm:Conceptualizing ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "The knowledge: I am not, nothing is mine, there is no I, complete, pure and alone"@en, "Das Wissen: ich bin nicht, nichts ist mein, es gibt kein Ich, vollständig, rein und allein"@de ;
+    skos:definition "Verse 64: thus, from the repeated study of the principles, arises the knowledge, I am not, nothing is mine, not I (nāsmi na me nāham), which leaves nothing over, is pure because free of error, and is alone (kevala). Gauḍapāda reads the three phrases as: I am not, that is, not the body; not mine, not my body; not I, free of the I-maker."@en ;
+    skos:note "Colebrooke has conclusive, incontrovertible, one only, and Davies complete, incontrovertible and absolute, for the three predicates of the knowledge; Wilson's comment records that the commentators read the first phrase as I do not act, so that what is denied is agency and not existence."@en ;
+    pm:withinTradition pmt:Samkhya ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 64, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 178" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 64, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 96" .
+
+pmc:SamkhyaKaivalya a pm:Conceptualizing ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "Isolation that is both certain and final, at the separation from the body"@en, "Abgeschiedenheit, sicher und endgültig zugleich, bei der Trennung vom Körper"@de ;
+    skos:definition "Verse 68: when the separation from the body has come and nature has ceased because its purpose is accomplished, the witness attains isolation (kaivalya) that is both certain and final (aikāntikam ātyantikam ubhayam). Gauḍapāda: when bodily separation is accomplished by the destruction of the effects of virtue and the rest."@en ;
+    skos:note "The two predicates are the two the first verse denied to the visible means, pmc:SamkhyaDrstaUpayaAnaikantika, and the moment is after death. What the text promises is therefore defined against the faults of other means and located where no bystander can observe whether it came."@en ;
+    pm:withinTradition pmt:Samkhya ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 68, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 186" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 68, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 99" ;
+    dcterms:source "Gauḍapāda, Sāṃkhyakārikābhāṣya on kārikā 68, in the translation of H. H. Wilson, in: The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 186" .
+
+pmc:SamkhyaTattvabhyasaYieldsKevalajnana a pm:Yielding ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "The study of the principles brings the knowledge, and the knowledge isolation"@en, "Die Einübung der Prinzipien bringt das Wissen hervor und das Wissen die Abgeschiedenheit"@de ;
+    pm:byPractice pmp:SamkhyaTattvabhyasa ;
+    pm:yieldsCapacity pmc:SamkhyaKevalajnana, pmc:SamkhyaKaivalya ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "Stated without condition of time, number or person in the kārikā. Gauḍapāda on verse 1 quotes a verse that makes the claim in its strongest form: whoever knows the twenty-five principles, in whatever order of life, with braided hair, a tuft or a shaven head, is released, there is no doubt."@en ;
+    pm:withinTradition pmt:Samkhya ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 64, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 178" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 64, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 96" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 68, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 186" .
+
+pmc:SamkhyaJnanaApavarga a pm:Presupposing ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "Release comes by knowledge, and by its contrary bondage"@en, "Befreiung kommt durch Wissen, durch sein Gegenteil Bindung"@de ;
+    skos:definition "Verse 44b: by knowledge release (jñānena cāpavargaḥ); by the reverse, bondage is held to follow (viparyayād iṣyate bandhaḥ). Verse 45 adds that dispassion without it brings absorption into nature, and Gauḍapāda that such a one is not released."@en ;
+    pm:dependentStep pmc:SamkhyaKaivalya ;
+    pm:priorStep pmc:SamkhyaKevalajnana ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "By the reverse, bondage (viparyayād iṣyate bandhaḥ, kārikā 44b); and, of dispassion without the knowledge of the principles, there is no liberation, and therefore he migrates anew (Gauḍapāda on kārikā 45)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Samkhya ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 44, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 142" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 44, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 80" ;
+    dcterms:source "Gauḍapāda, Sāṃkhyakārikābhāṣya on kārikā 45, in the translation of H. H. Wilson, in: The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, pp. 143-144" .
+
+pmc:SamkhyaDhrtasarira a pm:Conceptualizing ;
+    pm:fromWork pmw:Samkhyakarika ;
+    rdfs:label "After the knowledge the body stays, as the potter's wheel turns on"@en, "Nach dem Wissen bleibt der Körper, wie die Töpferscheibe weiterläuft"@de ;
+    skos:definition "Verse 67: when complete knowledge has been attained, virtue and the rest have ceased to be causes; yet the knower remains holding a body by the force of past impressions (saṃskāra), as a potter's wheel keeps turning from the impulse given before."@en ;
+    skos:note "The verse answers the objection a witness would raise, that the one who claims the knowledge is still alive and acting as before. It answers it by making the continued body the expected outcome, so that nothing the knower does or suffers after the knowledge can tell against it. Wilson's comment reads the verse as an apology for the human lives and deaths of Kapila and the other teachers."@en ;
+    pm:withinTradition pmt:Samkhya ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 67, in the translation of H. T. Colebrooke, The Sánkhya Káriká, Oxford: Oriental Translation Fund, 1837, p. 184" ;
+    dcterms:source "Īśvarakṛṣṇa, Sāṃkhyakārikā 67, in the translation of John Davies, Hindu Philosophy: The Sánkhya Káriká of Íswara Krishna, London: Trübner, 1881, p. 99" .
+
+# ANCHOR-SAMKHYA
