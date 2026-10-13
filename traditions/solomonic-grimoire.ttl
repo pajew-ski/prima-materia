@@ -41,6 +41,7 @@ pmt:SolomonicGrimoire a pm:Tradition ;
     skos:note "Dating and attribution. The ascription to Solomon is not held by any modern position and is contradicted by the material record: the oldest witnesses of the work are late medieval. This was not read at the wording in this run and is not entered as a node; what the run did read is a work of 1584 that rejects the ascription in terms, and that stands below as one side of the dispute. The question of a Greek antecedent — whether the Hygromanteia is the ancestor of the Latin and Italian text or a parallel branch — was not decided here and no node claims it."@en ;
     skos:note "Read in this run at the wording, all in the Mathers text: Book I chapters I, III, V, VI, VII, IX, X, XI, XII, XIII, XIV, XV, XVI, XVII; Book II chapters I, III, IV, XIII, XXI. Not read: Book I chapters II, IV, VIII, XVIII, and Book II chapters II, V to XII, XIV to XX, XXII, which carry the tables of hours, the prayers, the pentacles, the instruments and their consecrations. The chapters left unread are the apparatus; the chapters read are the ones that state what the operations do, on what terms, and what follows when they do not."@en ;
     skos:note "The Book of Abramelin was opened on 2026-10-12 from the testability entrance, in the French recension in Mathers' English and in the German print of 1725, and its nodes stand below the Clavicula with the reading stated at pmw:Abramelin. It brings into this tradition what the Clavicula lacked: a condition stated in advance under which the operator is to stop, in the German only, and a trial of a rival art with a checkable question and a negative result, in both. It also brings the clearest case in the holding of two recensions of one work disagreeing on the length of the operation, six months against eighteen."@en ;
+    skos:note "The Heptameron was opened on 2026-10-13 from the testability entrance, complete, in the Marburg Latin print and in Turner's English of 1655, and its nodes stand below the Abramelin block with the reading stated at pmw:Heptameron. It is the shortest operation of the corpus and the most explicit about its signs, and it is the only one of the four works that states no condition at all under which the operator should conclude that something went wrong: where the Clavicula has its general clause and Abramelin its stop rule in sickness in the German, the Heptameron has only the escalation."@en ;
     pm:principalCorpus "Clavicula Salomonis; Lemegeton; Heptameron; the Book of Abramelin" ;
     pm:corpusWork pmw:ClaviculaSalomonis, pmw:Lemegeton, pmw:Heptameron, pmw:Abramelin ;
     pm:coverageState pm:placesEntered ;
@@ -221,7 +222,10 @@ pmw:Lemegeton a dcterms:BibliographicResource ;
 
 pmw:Heptameron a dcterms:BibliographicResource ;
     rdfs:label "Heptameron"@en, "Heptameron"@de ;
-    skos:note "The tradition node records that the nine days of continence were read at the wording in the Heptameron of the Turner collection of 1655, but no node names it as a source. Until one does, the work reads as unopened, which is what the graph can vouch for."@en .
+    skos:note "Opened on 2026-10-13 from the testability entrance, complete, in two witnesses. The Latin is the print bound after the Liber quartus de occulta philosophia ascribed to Agrippa, whose title page in the full text reads: Henrici Cornelii Agrippae liber quartus de occulta philosophia, seu de cerimoniis magicis, cui accesserunt Elementa magica Petri de Abano philosophi, Marpurgi, with the year not legible in the text layer of the copy; the catalogue line gives 1559, which is not taken over. The English is Robert Turner's translation in Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, London 1655, read in the facsimile of Askin Publishers, London 1978, whose title page states first English edition 1655 and first facsimile edition 1978. The Latin of the Opera omnia of 1600, per Beringos fratres, volume I, was read at every passage entered and agrees with the Marburg print at each of them."@en ;
+    skos:note "Access, as a property of the uploads: archive.org, bub_gb_68zTV1lQJkMC for the Marburg print (113,383 characters, the Latin legible, running heads partly misread so that pages are given only where a head stands on the same or the neighbouring page), cu31924006718757 for the Turner facsimile, per_witchcraft-in-europe-and-america_agrippa-von-nettesh_1600_1 for the Opera. A second translation was sought and not reached: Scheible's German Magische Werke of 1855 lies at archive.org in four parts, none of which carries the Heptameron, and the French Philosophie occulte of 1727 does not contain it."@en ;
+    skos:note "Ascription and date were not decided here and no node turns on them. The ascription to Peter of Abano stands in the title of both prints, and the Fourth Book it is bound with is itself ascribed to Agrippa; neither ascription was examined in this run. The introduction to the facsimile states that the work may first have appeared at Venice in 1496; that print was not seen, and the claim is recorded here as the facsimile's and not as a date."@en ;
+    skos:note "What the reading found. The book names five signs of success in a fixed order and no sign of failure; it answers a spirit that does not come with stronger exorcisms and a threat that falls on the spirit; it attaches no consequence to its nine days and three; and it waives exactly two of its conditions, the waxing Moon and the priest's vestment, both outside the operator. Two places in Turner's English differ from both Latin prints, and in both the capacity is entered as the Latin has it, with Turner's reading in the note: Monday's secrets of persons are present and past in the Latin and present and future in the English, and Saturday's lead given at will is in the English leave given freely."@en .
 
 pmw:Abramelin a dcterms:BibliographicResource ;
     rdfs:label "The Book of Abramelin"@en, "Das Buch Abramelin"@de ;
@@ -820,6 +824,445 @@ pmc:AbramelinSignaYieldVirtutes a pm:Yielding ;
     pm:withinTradition pmt:SolomonicGrimoire ;
     dcterms:source "Abramelin, First Book chapter VIII, Second Book chapter XX, Third Book chapters I to XXX, in the English of S. L. MacGregor Mathers, The Book of the Sacred Magic of Abramelin the Mage, 2nd ed., London: John M. Watkins, 1900" ;
     dcterms:source "Abraham von Worms, Buch der wahren Praktik, Drittes Buch Kapitel 20, pp. 217 und 221-233, in: Die egyptischen großen Offenbarungen, Köln: Peter Hammer, 1725 (imprint as on the title page)" .
+
+#
+# The Heptameron. Order of this block: the operation; the two terms before
+# it and the conditions it waives; what the book says to do when the spirits
+# do not come; the signs it announces, counted apart, and the caution they
+# carry; the command; and last the thirty-nine capacities of the seven days,
+# one node each, with the claim that binds them to the operation.
+#
+
+pmp:HeptameronOperatio a pm:Practicing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "The operation of the day within the threefold circle"@en, "Die Operation des Tages im dreifachen Kreis"@de ;
+    skos:definition "Three circles nine feet across, a hand's breadth apart; in the middle one the name of the hour, the angel of the hour and his sigil, the angel of the day and his ministers, the name of the present season, the spirits ruling that part of the season and their presidents, the head of the sign, the name of the earth and the names of Sun and Moon for that season; in the outermost the king of the air of that day and his three ministers; outside, four pentagons; in the inner circle four divine names and a cross, Alpha to the east and Omega to the west. Then the blessing of circle, perfumes and fire, the vestment and the pentacle made in the day and hour of Mercury with the Moon increasing; the procession with fire, perfume, book, vestment and the sword over which a mass of the Holy Ghost has been said; inside the circle the invocation of the angels of the seven planets from the four quarters, of the angels ruling the air that day, the conjuration of the day, and the business named."@en ;
+    skos:note "The book presents itself as an appendix for beginners: the Fourth Book before it is said to speak of ceremonies only in general, for the learned, and the elements are added so that those who have not yet tasted magical superstitions may have them ready, what is to be done every day and every hour, read out as if syllable by syllable. The circle is said to carry the greatest power, being a fortress that keeps the operator safe from evil spirits."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), pp. 66-85, from the preface to the dismissal" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 73-86, from the preface to the dismissal" .
+
+pmc:HeptameronNovemDies a pm:Presupposing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Clean and pure for nine days before the work, confessed and communicated"@en, "Neun Tage vor dem Werk rein und lauter, gebeichtet und kommuniziert"@de ;
+    skos:definition "Under the heading of the manner of working: the operator is to be clean and pure for nine days before the beginning of the work, confessed and having received communion, with the perfume of the day, holy water from a priest, a new earthen vessel full of fire, the vestment and the pentacle all duly consecrated and prepared."@en ;
+    pm:dependentStep pmp:HeptameronOperatio ;
+    pm:priorStep pmp:HeptameronOperatio ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "Entered at prescribed order and not at stated necessity because the book attaches no consequence to it, in Latin or in English, anywhere in its text. The same term in the Clavicula carries a general clause that the art will not be verified if one point is done ill (pmc:ClaviculaNovemDies); the Heptameron has no such clause, so the comparison the tradition node makes between the two holds for the length of the term and not for its weight."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), De modo operationis, p. 74" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Of the manner of working, p. 81" .
+
+pmc:HeptameronTriduum a pm:Presupposing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Three whole days of fasting, chastity and abstinence before the day of the operation"@en, "Drei ganze Tage Fasten, Keuschheit und Enthaltung vor dem Tag der Operation"@de ;
+    skos:definition "After the circle has been drawn and sprinkled: the master, purified by fasting, chastity and abstinence from all luxury for three whole days before the day of the operation, enters the circle on that day in clean garments, with pentacles, perfumes and the other necessary things."@en ;
+    pm:dependentStep pmp:HeptameronOperatio ;
+    pm:priorStep pmp:HeptameronOperatio ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "The text does not say whether the three days fall within the nine or follow them; it gives the nine for the operator and the three for the master, in two paragraphs of the same chapter. The node does not decide it."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), De modo operationis, p. 75" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Of the manner of working, p. 81" .
+
+pmc:HeptameronSiFieriPotest a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "If it can be done: the waxing Moon and the priest's vestment are waived, the nine days are not"@en, "Wenn es sein kann: zunehmender Mond und Priestergewand werden erlassen, die neun Tage nicht"@de ;
+    skos:definition "Two conditions are set with a release in the same sentence. The vestment is to be a priest's, if it can be; if it cannot be had, of clean linen. The Moon is to be increasing and even, if it can be done, and not combust. The same chapter sets the nine days of purity, the confession and communion, and the three days of fasting and chastity without any release."@en ;
+    skos:note "What the book lets go is outside the operator, the sky and a borrowed garment, and for the garment it gives a second route, clean linen; what it keeps is the operator's body and conduct. That is the division the holding carries untested at generalizations/the-waiver-that-runs-both-ways.ttl, at its lower end only: the Heptameron has no adept who is released. Its last clause, that the bodily requirement is the one named when nothing happened, this witness cannot bear, because the book accounts for no case in which nothing happened. It was not added to the generalization, since a witness entered without the counter-search of that test would be confirmation by selection."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), De veste et pentaculo, p. 73, and De modo operationis, p. 74" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Of the Garment and Pentacle, p. 79, and Of the manner of working, p. 81" .
+
+#
+# What the book says when the spirits do not come
+#
+
+pmc:HeptameronPertinaces a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "If they are obstinate and refractory, use the exorcisms that follow"@en, "Sind sie hartnäckig und widerspenstig, die folgenden Exorzismen gebrauchen"@de ;
+    skos:definition "After the conjuration assigned to the day has been read: if the spirits are obstinate and refractory and do not show themselves obedient to the conjuration of the day nor to the prayers made before, the operator is to use the conjurations and exorcisms that follow, the exorcism of the spirits of the air, the prayer to God at the four quarters, the invocation by the pentacle of Solomon, the further conjuration by the ineffable name, and the summons under the name Octinomos."@en ;
+    skos:note "Non-appearance is the one outcome the book foresees that is not the effect, and it is answered by escalation and by nothing else. There is no count of attempts, no term, and no point at which the operator is told to stop or to look for a fault in what he did; the next text after the escalation describes the visions that come when all has been rightly done. The holding records the same device, longer, at pmc:ClaviculaGradusConiurationum and, shorter, at pmc:AbramelinSpiritusContumaces."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), De modo operationis, p. 76" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Of the manner of working, p. 82" .
+
+pmc:HeptameronComminatio a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Unless they appear at once: deprived of office, place and joy and cast into fire until the last day"@en, "Wenn sie nicht sogleich erscheinen: Amt, Ort und Freude genommen und bis zum Jüngsten Tag ins Feuer verbannt"@de ;
+    skos:definition "Inside the exorcism of the spirits of the air: by the name Primeumaton, the whole host of heaven compelling, the operators curse the spirits, deprive them of every office, place and joy, and place and relegate them in the depth of the abyss into eternal fire and the lake of fire and brimstone until the last day of judgement, unless they appear at once before the circle to do the operators' will; and a ruin and eternal unquenchable fire awaits them if they do not obey."@en ;
+    skos:note "The penalty the text names for the case in which nothing appears falls on the spirits and not on the operator or the procedure, and it is one no participant could see executed."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Exorcismus spirituum aereorum, pp. 76-79" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), An Exorcisme of the Spirits of the Air, pp. 82-84" .
+
+#
+# The signs announced in advance, counted apart
+#
+
+pmc:HeptameronVisiones a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Visions, phantasms and the sound of instruments, then archers and horrible beasts, then great motions"@en, "Erscheinungen, Trugbilder und Instrumentenklang, dann Bogenschützen und schreckliche Tiere, dann große Bewegungen"@de ;
+    skos:definition "Under the heading of visions and apparitions: when all has been rightly done, there will appear infinite visions and phantasms beating organs and all kinds of musical instruments; afterwards the operator will see infinite archers with an infinite multitude of horrible beasts, arranging themselves as if to devour the companions; at the master's word they are compelled to obey and the companions will see nothing more. After the invocation by the pentacle of Solomon the operator whistles at the four angles of the world and will see immediately great motions; then the spirits come in their own form; shown the uncovered pentacle, they appear in a peaceful form and say: ask what you will, for we are ready to fulfil all your commands, because the Lord has subjected us to this."@en ;
+    skos:note "Entered under the separate count of signs of success SPEC §15 requires. Five signs, in a fixed order, all announced to the operator in the book he works from: the phantasms with music, the archers and beasts, the great motions, the spirits in their own form, the spirits in a peaceful form speaking. All of them are perceptions inside the operation, and the book provides that the companions, the only other persons present, stop seeing after the second."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Visiones et apparitiones, pp. 82-84" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Visions and apparitions, pp. 85-86" .
+
+pmc:HeptameronSociiTerror a pm:Cautioning ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "The phantasms are made to drive the companions out of the circle; let them fear nothing"@en, "Die Trugbilder sollen die Gefährten aus dem Kreis treiben; sie sollen nichts fürchten"@de ;
+    skos:definition "The text gives the purpose of the visions: they are made by the spirits so that the companions, compelled by terror, leave the circle, because the spirits can do nothing against the master. The beasts arrange themselves as if to devour the companions, and yet the companions are to fear nothing."@en ;
+    pm:cautionsAbout pmp:HeptameronOperatio ;
+    skos:note "A caution with its reason and without its consequence: the book says why the spirits terrify, and what the companions must not do, but not what happens to a companion who leaves the circle or to the operation if he does."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Visiones et apparitiones, pp. 82-83" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), Visions and apparitions, p. 85" .
+
+#
+# The command, and the thirty-nine capacities of the seven days
+#
+
+pmc:HeptameronIubeQuodVis a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Command what you will, and it will be done"@en, "Befiehl, was du willst, und es wird geschehen"@de ;
+    skos:definition "When the spirits have appeared in peaceful form, the operator binds them to remain visible and affable before the circle, and not to depart without his licence until they have fulfilled his will without any deceit and truthfully; then, the text says, command what you will, and it will be done. The licence follows: in the name of the Father, the Son and the Holy Spirit, go in peace to your places, and be ready to come when called."@en ;
+    skos:note "The general capacity of the operation, stated without limit. The spirits are bound to perform without deceit, so that a deceitful performance is excluded by the binding and not foreseen as an outcome."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), pp. 84-85" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 86" .
+
+pmc:HeptameronDominicaAurum a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Gold, gems, carbuncles and riches, by the spirits of the air of Sunday"@en, "Gold, Edelsteine, Karfunkel und Reichtum, durch die Luftgeister des Sonntags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Sunday to do, spirits subject to Boreas, the north wind: aurum, gemmas, carbunculos, divitias impetrare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Dominicae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 90" .
+
+pmc:HeptameronDominicaGratia a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "Favour and benevolence, by the spirits of the air of Sunday"@en, "Gunst und Wohlwollen, durch die Luftgeister des Sonntags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Sunday to do, spirits subject to Boreas, the north wind: gratiam et benevolentiam impetrare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Dominicae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 90" .
+
+pmc:HeptameronDominicaInimicitiaeDissolutae a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To dissolve the enmities of men, by the spirits of the air of Sunday"@en, "Die Feindschaften der Menschen auflösen, durch die Luftgeister des Sonntags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Sunday to do, spirits subject to Boreas, the north wind: inimicitias hominum dissolvere."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Dominicae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 90" .
+
+pmc:HeptameronDominicaHonores a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To raise men to honours, by the spirits of the air of Sunday"@en, "Menschen Ehren verschaffen, durch die Luftgeister des Sonntags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Sunday to do, spirits subject to Boreas, the north wind: hominibus honores tribuere."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Dominicae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 90" .
+
+pmc:HeptameronDominicaInfirmitates a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To bring or take away infirmities, by the spirits of the air of Sunday"@en, "Krankheiten bringen oder wegnehmen, durch die Luftgeister des Sonntags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Sunday to do, spirits subject to Boreas, the north wind: infirmitates inferre vel auferre."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Dominicae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 90" .
+
+pmc:HeptameronLunaeArgentum a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give silver, by the spirits of the air of Monday"@en, "Silber geben, durch die Luftgeister des Montags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Monday to do, spirits subject to Zephyrus, the west wind, which is the wind of the Moon: argentum dare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Lunae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 92" .
+
+pmc:HeptameronLunaeTranslatio a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To convey things from place to place, by the spirits of the air of Monday"@en, "Dinge von Ort zu Ort bringen, durch die Luftgeister des Montags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Monday to do, spirits subject to Zephyrus, the west wind, which is the wind of the Moon: res de loco ad locum deferre."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Lunae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 92" .
+
+pmc:HeptameronLunaeEquiVeloces a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give swift horses, by the spirits of the air of Monday"@en, "Schnelle Pferde geben, durch die Luftgeister des Montags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Monday to do, spirits subject to Zephyrus, the west wind, which is the wind of the Moon: equos veloces tribuere."@en ;
+    skos:note "Turner renders this as to make horses swift, which the optical reading of the facsimile gives as wife."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Lunae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 92" .
+
+pmc:HeptameronLunaeSecreta a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To tell the secrets of persons, present and past, by the spirits of the air of Monday"@en, "Die Geheimnisse von Personen sagen, gegenwärtige und vergangene, durch die Luftgeister des Montags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Monday to do, spirits subject to Zephyrus, the west wind, which is the wind of the Moon: secreta praesentia et praeterita personarum dicere."@en ;
+    skos:note "Turner has present and future. The Latin of the Marburg print and of the Opera of 1600 both read praesentia et praeterita, and the capacity is entered as the Latin states it; the English is the one place in the Monday list where the translation claims more than the text."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Lunae" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 92" .
+
+pmc:HeptameronMartisProelia a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To cause wars, mortality, slaughter and burnings, by the spirits of the air of Tuesday"@en, "Kriege, Sterben, Morde und Brände bewirken, durch die Luftgeister des Dienstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Tuesday to do, spirits subject to Subsolanus, the east wind: proelia, mortalitates, occisiones et combustiones facere."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Martis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 94" .
+
+pmc:HeptameronMartisBisMilleMilites a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give two thousand soldiers for a time, by the spirits of the air of Tuesday"@en, "Zweitausend Soldaten auf Zeit geben, durch die Luftgeister des Dienstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Tuesday to do, spirits subject to Subsolanus, the east wind: bis mille milites dare ad tempus."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Martis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 94" .
+
+pmc:HeptameronMartisMorsSanitas a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give death, infirmity or health, by the spirits of the air of Tuesday"@en, "Tod, Krankheit oder Gesundheit geben, durch die Luftgeister des Dienstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Tuesday to do, spirits subject to Subsolanus, the east wind: mortem, infirmitatem aut sanitatem tribuere."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Martis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 94" .
+
+pmc:HeptameronMercuriiMetalla a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give all metals, by the spirits of the air of Wednesday"@en, "Alle Metalle geben, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: omnia metalla dare. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiRevelatio a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To reveal all earthly things past, present and to come, by the spirits of the air of Wednesday"@en, "Alle irdischen Dinge offenbaren, vergangene, gegenwärtige und künftige, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: omnia terrena praeterita, praesentia et futura revelare. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiIudicesPlacati a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To pacify judges, by the spirits of the air of Wednesday"@en, "Richter besänftigen, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: iudices placare. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiVictoriae a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give victories in war, by the spirits of the air of Wednesday"@en, "Siege im Krieg geben, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: victorias in proelio dare. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiScientiaeRestitutae a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To restore and teach experiments and all sciences that have been destroyed, by the spirits of the air of Wednesday"@en, "Experimente und alle verlorenen Wissenschaften wiederherstellen und lehren, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: experimenta, omnes scientias destructas reaedificare et docere. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiTransmutatioCorporum a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To change bodies mixed of elements, conditionally, one into another, by the spirits of the air of Wednesday"@en, "Aus Elementen gemischte Körper bedingt ineinander verwandeln, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: corpora ex elementis mixta conditionaliter unum in aliud transmutare. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    skos:note "The word conditionaliter stands in the text without a statement of the condition."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiInfirmitasSanitas a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give infirmities or health, by the spirits of the air of Wednesday"@en, "Krankheit oder Gesundheit geben, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: infirmitates vel sanitatem dare. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiPauperesSublimati a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To raise the poor and cast down the high, by the spirits of the air of Wednesday"@en, "Die Armen erheben und die Hohen erniedrigen, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: pauperes sublimare, sublimes deprimere. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiSpiritusLigati a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To bind or loose a spirit or spirits, by the spirits of the air of Wednesday"@en, "Einen Geist oder Geister binden oder lösen, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: spiritum vel spiritus ligare vel dissolvere. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronMercuriiSerae a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To open locks, by the spirits of the air of Wednesday"@en, "Schlösser öffnen, durch die Luftgeister des Mittwochs"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Wednesday to do, spirits subject to Africus, the south-west wind: seras aperire. The list for this day closes: such spirits have the operation of others, but not in their perfect power, only in virtue or knowledge."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Mercurii, pp. 100-101" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 96-97" .
+
+pmc:HeptameronIovisAmorMulierum a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To procure the love of women, by the spirits of the air of Thursday"@en, "Die Liebe von Frauen gewinnen, durch die Luftgeister des Donnerstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Thursday to do, spirits subject to Auster, the south wind: mulierum amorem conciliare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Iovis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 99" .
+
+pmc:HeptameronIovisLaetitia a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To make men merry and joyful, by the spirits of the air of Thursday"@en, "Menschen fröhlich und froh machen, durch die Luftgeister des Donnerstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Thursday to do, spirits subject to Auster, the south wind: laetos et gaudentes homines reddere."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Iovis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 99" .
+
+pmc:HeptameronIovisLitesPacatae a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To pacify strife, by the spirits of the air of Thursday"@en, "Streit befrieden, durch die Luftgeister des Donnerstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Thursday to do, spirits subject to Auster, the south wind: lites pacificare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Iovis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 99" .
+
+pmc:HeptameronIovisInimiciMitigati a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To appease enemies, by the spirits of the air of Thursday"@en, "Feinde besänftigen, durch die Luftgeister des Donnerstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Thursday to do, spirits subject to Auster, the south wind: inimicos mitigare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Iovis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 99" .
+
+pmc:HeptameronIovisSanareInfirmare a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To heal the sick and make the healthy sick, by the spirits of the air of Thursday"@en, "Die Kranken heilen und die Gesunden krank machen, durch die Luftgeister des Donnerstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Thursday to do, spirits subject to Auster, the south wind: sanare infirmos, sanos infirmare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Iovis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 99" .
+
+pmc:HeptameronIovisDamna a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To bring or take away losses, by the spirits of the air of Thursday"@en, "Verluste bringen oder abwenden, durch die Luftgeister des Donnerstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Thursday to do, spirits subject to Auster, the south wind: adferre vel auferre damna."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Iovis" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 99" .
+
+pmc:HeptameronVenerisArgentum a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give silver, by the spirits of the air of Friday"@en, "Silber geben, durch die Luftgeister des Freitags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Friday to do, spirits subject to Zephyrus, the west wind: dare argentum."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Veneris" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 101" .
+
+pmc:HeptameronVenerisLuxuria a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To excite men and incline them to lust, by the spirits of the air of Friday"@en, "Menschen erregen und zur Wollust geneigter machen, durch die Luftgeister des Freitags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Friday to do, spirits subject to Zephyrus, the west wind: homines excitare et procliviores reddere ad luxuriam."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Veneris" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 101" .
+
+pmc:HeptameronVenerisInimiciConcordati a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To reconcile enemies through lust, by the spirits of the air of Friday"@en, "Feinde durch Wollust versöhnen, durch die Luftgeister des Freitags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Friday to do, spirits subject to Zephyrus, the west wind: inimicos per luxuriam concordare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Veneris" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 101" .
+
+pmc:HeptameronVenerisMatrimonia a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To make marriages, by the spirits of the air of Friday"@en, "Ehen stiften, durch die Luftgeister des Freitags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Friday to do, spirits subject to Zephyrus, the west wind: matrimonia facere."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Veneris" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 101" .
+
+pmc:HeptameronVenerisAmorAllectus a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To draw men into the love of women, by the spirits of the air of Friday"@en, "Männer zur Liebe von Frauen verlocken, durch die Luftgeister des Freitags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Friday to do, spirits subject to Zephyrus, the west wind: homines in amorem mulierum allicere."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Veneris" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 101" .
+
+pmc:HeptameronVenerisInfirmitates a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give or take away infirmities, by the spirits of the air of Friday"@en, "Krankheiten geben oder wegnehmen, durch die Luftgeister des Freitags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Friday to do, spirits subject to Zephyrus, the west wind: infirmitates dare vel auferre."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Veneris" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 101" .
+
+pmc:HeptameronVenerisMotus a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To do all things that have motion, by the spirits of the air of Friday"@en, "Alle Dinge tun, die Bewegung haben, durch die Luftgeister des Freitags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Friday to do, spirits subject to Zephyrus, the west wind: omnia quae habent motum facere."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Veneris" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), p. 101" .
+
+pmc:HeptameronSaturniDiscordiae a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To sow discords, hatred and evil thoughts, by the spirits of the air of Saturday"@en, "Zwietracht, Hass und böse Gedanken säen, durch die Luftgeister des Samstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Saturday to do, spirits subject to Africus, the south-west wind: seminare discordias, odia et malas cogitationes."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Saturni" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 102-103" .
+
+pmc:HeptameronSaturniPlumbum a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To give lead at will, by the spirits of the air of Saturday"@en, "Blei nach Belieben geben, durch die Luftgeister des Samstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Saturday to do, spirits subject to Africus, the south-west wind: plumbum ad libitum dare."@en ;
+    skos:note "Turner renders this to give leave freely, a misreading of plumbum ad libitum. Both Latin prints read plumbum, and the capacity is entered as the Latin states it; the English reading would make a different and much larger claim, a licence, out of a metal, in the same series as gold on Sunday, silver on Monday and Friday and all metals on Wednesday."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Saturni" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 102-103" .
+
+pmc:HeptameronSaturniInterfectio a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To kill anyone, by the spirits of the air of Saturday"@en, "Jeden beliebigen töten, durch die Luftgeister des Samstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Saturday to do, spirits subject to Africus, the south-west wind: quemlibet interficere."@en ;
+    skos:note "Turner adds a verb, to slay and kill every one; the Latin has one."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Saturni" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 102-103" .
+
+pmc:HeptameronSaturniMutilatio a pm:Conceptualizing ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "To maim any member, by the spirits of the air of Saturday"@en, "Jedes beliebige Glied verstümmeln, durch die Luftgeister des Samstags"@de ;
+    skos:definition "Among the things the book says it is the nature of the spirits of the air of Saturday to do, spirits subject to Africus, the south-west wind: quodlibet membrum mutilare."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), Consideratio diei Saturni" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), pp. 102-103" .
+
+pmc:HeptameronOperatioYieldsVirtutes a pm:Yielding ;
+    pm:fromWork pmw:Heptameron ;
+    rdfs:label "The operation of each day brings what the spirits of the air of that day do"@en, "Die Operation jedes Tages bringt hervor, was die Luftgeister dieses Tages tun"@de ;
+    pm:byPractice pmp:HeptameronOperatio ;
+    pm:yieldsCapacity pmc:HeptameronIubeQuodVis, pmc:HeptameronDominicaAurum, pmc:HeptameronDominicaGratia, pmc:HeptameronDominicaInimicitiaeDissolutae, pmc:HeptameronDominicaHonores, pmc:HeptameronDominicaInfirmitates, pmc:HeptameronLunaeArgentum, pmc:HeptameronLunaeTranslatio, pmc:HeptameronLunaeEquiVeloces, pmc:HeptameronLunaeSecreta, pmc:HeptameronMartisProelia, pmc:HeptameronMartisBisMilleMilites, pmc:HeptameronMartisMorsSanitas, pmc:HeptameronMercuriiMetalla, pmc:HeptameronMercuriiRevelatio, pmc:HeptameronMercuriiIudicesPlacati, pmc:HeptameronMercuriiVictoriae, pmc:HeptameronMercuriiScientiaeRestitutae, pmc:HeptameronMercuriiTransmutatioCorporum, pmc:HeptameronMercuriiInfirmitasSanitas, pmc:HeptameronMercuriiPauperesSublimati, pmc:HeptameronMercuriiSpiritusLigati, pmc:HeptameronMercuriiSerae, pmc:HeptameronIovisAmorMulierum, pmc:HeptameronIovisLaetitia, pmc:HeptameronIovisLitesPacatae, pmc:HeptameronIovisInimiciMitigati, pmc:HeptameronIovisSanareInfirmare, pmc:HeptameronIovisDamna, pmc:HeptameronVenerisArgentum, pmc:HeptameronVenerisLuxuria, pmc:HeptameronVenerisInimiciConcordati, pmc:HeptameronVenerisMatrimonia, pmc:HeptameronVenerisAmorAllectus, pmc:HeptameronVenerisInfirmitates, pmc:HeptameronVenerisMotus, pmc:HeptameronSaturniDiscordiae, pmc:HeptameronSaturniPlumbum, pmc:HeptameronSaturniInterfectio, pmc:HeptameronSaturniMutilatio ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "Each day's list follows the conjuration of that day, and after it the operator is to declare his cause and business; the list is what the spirits of the air of that day by nature do, and the book does not say that the operator may ask of Sunday's spirits what belongs to Saturday's. None of the seven lists names a sign by which the operator would know that the thing asked had not come, a term within which it is to come, or a limit on how often it may be asked. Health and sickness stand on four days of the seven, Sunday, Tuesday, Wednesday and Friday, and Thursday has healing the sick and sickening the healthy; silver stands on two."@en ;
+    pm:withinTradition pmt:SolomonicGrimoire ;
+    dcterms:source "Peter of Abano (attributed), Elementa magica (Heptameron), in: Henrici Cornelii Agrippae Liber quartus de occulta philosophia, Marburg (year not legible in the text layer), the seven Considerationes of the days, pp. 86-111" ;
+    dcterms:source "Peter of Abano (attributed), Heptameron, or Magical Elements, in: Henry Cornelius Agrippa his Fourth Book of Occult Philosophy, tr. Robert Turner, London 1655 (read in the facsimile, London: Askin, 1978), the seven Considerations of the days, pp. 88-103" .
 
 pmw:ScotDiscoverieOfWitchcraft a dcterms:BibliographicResource ;
     rdfs:label "Reginald Scot, The Discoverie of Witchcraft"@en, "Reginald Scot, The Discoverie of Witchcraft"@de .
