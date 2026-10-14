@@ -1,0 +1,501 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Chan
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-buddhist.ttl with no node. What was
+# opened is the first of the three works the registration names, the Platform
+# Sūtra, in the recension of Zongbao of 1291 as the Taishō prints it, read
+# complete from the first chapter to the tenth in the Chinese; the Dunhuang
+# text, the earliest witness, was read at every passage entered here to see
+# whether the passage is in it. The two other works stay unopened and are
+# declared below.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# practices and what they are said to bring about; the powers the text
+# ascribes to Huineng; the cautions, nearly all against one way of sitting;
+# what the text says a failed practice looks like; the one act of assay and
+# the one sign; and the dispute over whether sitting is needed at all.
+#
+# Citation. Every node cites the Chinese by chapter of the Zongbao recension and
+# by the line locus of the Taishō edition, volume 48, number 2008, which is the
+# locus every edition of the canon carries; and two English translations by
+# two translators, Thomas Cleary's and that of the Buddhist Text Translation
+# Society, by page. The second prints the sutra in sections with a long
+# commentary between them, and only the sections marked as sutra were read as
+# translation.
+#
+
+#
+# The works
+#
+
+pmw:LiuzuTanjing a dcterms:BibliographicResource ;
+    rdfs:label "Liuzu dashi fabao tanjing, the Platform Sūtra of the Sixth Patriarch"@en, "Liuzu dashi fabao tanjing, das Plattform-Sūtra des Sechsten Patriarchen"@de ;
+    skos:note "Read complete on 2026-10-14 in the Chinese of the Zongbao recension, Liuzu dashi fabao tanjing, Taishō vol. 48 no. 2008, pp. 345b-365a, from the CBETA TEI file T48n2008, the ten chapters from the account of Huineng's life to the entrustment, and the appendices read for the record of the head. The Dunhuang text, Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Taishō vol. 48 no. 2007, from the CBETA file T48n2007, was read at every passage entered."@en ;
+    skos:note "Two translations, by two translators, both of the Zongbao recension: Thomas Cleary, The Sutra of Hui-neng, Grand Master of Zen (Boston: Shambhala 1998), the title page in the full text; and the Buddhist Text Translation Society, The Sixth Patriarch's Dharma Jewel Platform Sutra, with the commentary of Hsuan Hua, third edition (Burlingame: Buddhist Text Translation Society 2001), the title page in the full text. Access: archive.org, the-sutra-of-hui-neng-grand-master-of-zen-with_commentry_on_the_diamond_sutra and the-sixth-patriarchs-dharma-jewel-platform-sutra, both with a clean English text layer. Philip Yampolsky's translation of the Dunhuang text, 1967, lies at archive.org only under loan restriction and was not read."@en ;
+    skos:note "The recension is the first thing a reader of this file has to know, because it decides what may be cited as early. The Dunhuang text is a manuscript of the late eighth or ninth century and is a little over half the length of the Zongbao text. Much of what the later recension carries is not in it at all: the cases of Zhihuang's twenty years of sitting, of the assassin whose sword did no harm, of the spring struck from the ground, of the samadhi of sport and of the prophecy of the head, the phrase that stopping the mind and contemplating stillness is a sickness and not Chan, and the nine years Zhicheng studied without awakening. Where the Dunhuang text has a case, its numbers can differ: Fada there recites the Lotus Sūtra for seven years, where the Zongbao text has three thousand recitations. Each node says whether its passage is in the Dunhuang text. A node whose passage is only in the Zongbao text attests the recension of 1291 and the layer between, and not the eighth century."@en .
+
+pmw:LinjiLu a dcterms:BibliographicResource ;
+    rdfs:label "Linji lu, the Record of Linji"@en, "Linji lu, die Aufzeichnungen des Linji"@de ;
+    skos:note "Named by the registration and not opened in this run. Reachable: the Chinese stands in the CBETA TEI file T47n1985 (Zhenzhou Linji Huizhao chanshi yulu, Taishō vol. 47 no. 1985), checked on 2026-10-14 to answer with a full file. No translation was looked for."@en .
+
+pmw:BiyanLu a dcterms:BibliographicResource ;
+    rdfs:label "Biyan lu, the Blue Cliff Record"@en, "Biyan lu, die Niederschrift von der Smaragdenen Felswand"@de ;
+    skos:note "Named by the registration and not opened in this run. Reachable: the Chinese stands in the CBETA TEI file T48n2003 (Foguo Yuanwu chanshi Biyan lu, Taishō vol. 48 no. 2003), checked on 2026-10-14 to answer with a full file. No translation was looked for."@en .
+
+#
+# The tradition
+#
+
+pmt:Chan a pm:Tradition ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Chan"@en, "Chan"@de ;
+    skos:definition "The Chinese transmission holding that awakening is sudden and that the mind is not to be polished but recognised."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented, and the route is in the text. The Platform Sūtra quotes the Diamond, Vimalakīrti, Nirvāṇa, Lotus and Laṅkāvatāra sūtras and the Brahmajāla precepts by name and argues from them; it is a Chinese reading of translated Indian scripture. Its warnings against quiet sitting answer a Chinese meditation teaching it names, the East Mountain school of Hongren and Shenxiu. Any agreement between this file and the Indian or Tiantai files of this holding is reception along that route and counts once."@en ;
+    skos:note "Recension and edition, the second decision. The Zongbao recension of 1291 is read as the text and the Dunhuang text as the control, because the Zongbao text is the one the registration's later works stand on and the Dunhuang text is the one that dates a passage. The difference is large and is recorded at the work and at each node."@en ;
+    skos:note "The third decision, the number of citable places: the ten chapters, of which every chapter carries at least one node below."@en ;
+    skos:note "What the reading found that a reader would not expect from the registration's one-line definition. The text names many capacities — seeing the nature and being a buddha in that moment, the extinction of the sins of eons by a verse, the sight of Amitābha in a finger-snap, a samadhi of sport in the spiritual powers — and almost none of them carries a condition under which it would be found absent, beyond the hearer's own failure to awaken. What the text does carry, in seven places and in both recensions, is a warning against one way of sitting, and once a consequence that is no figure of speech: those who are taught to sit watching the mind and contemplating purity, without moving, grasp it and become deranged. And it reports, by name and with a count of years or recitations, six persons who practised long under other methods and did not awaken. The numbers are almost all in the later recension."@en ;
+    skos:note "Signs at the death of the master are reported at the end of the tenth chapter — a strange fragrance filling the room, a white rainbow touching the earth, the trees turning white, the birds and beasts crying, incense smoke pointing the way home, a white light from the stupa for three days. They are signs of the master's attainment told by his community and not signs a practitioner is told to look for, and they are not entered as nodes."@en ;
+    pm:principalCorpus "Platform Sūtra; Linji lu; Biyan lu" ;
+    pm:corpusWork pmw:LiuzuTanjing, pmw:LinjiLu, pmw:BiyanLu ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou, T48 no. 2008, 348a10" ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 4 Dinghui, T48 no. 2008, 352c13-353a05" .
+
+#
+# The practices and what they are said to bring about
+#
+
+pmc:ChanJianxingChengfo a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Seeing the nature and becoming a buddha, in a single moment of awakening"@en, "Die eigene Natur sehen und Buddha werden, in einem einzigen Augenblick des Erwachens"@de ;
+    skos:definition "The capacity the whole text turns on: to see one's own nature, jianxing, is directly to become a buddha, zhi liao cheng fo. Hongren tells Huineng that one who recognises his own original mind and sees his own original nature is called a hero, a teacher of gods and men, a buddha; the second chapter says that the moment before, deluded, is an ordinary man, the moment after, awakened, is a buddha; that with one awakening one reaches the stage of a buddha; and that the deluded man is a buddha the moment he awakens."@en ;
+    skos:note "The capacity is stated as sudden and as total, and it carries one claim about time that could be held against it: it happens at the words, yanxia, and not after deliberation. That is the criterion entered at pmc:ChanJiekanYan, and the text's own reports of awakening keep to it — Huineng at the line of the Diamond Sūtra, Huiming at the question about his original face, Fada, Zhicheng, Zhihuang each at a sentence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou and ch. 2 Banruo, T48 no. 2008, 349a19-a22, 350b28, 351a09 and 351a25" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 1-2, pp. 10-11 and 17-21" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 1-2" .
+
+pmp:ChanChiJingangJing a pm:Practicing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Holding and reciting the Diamond Sūtra"@en, "Das Diamant-Sūtra halten und rezitieren"@de ;
+    skos:definition "The practice the text gives twice by name. In the first chapter a stranger tells Huineng that Hongren always urges monks and laymen only to hold the Diamond Sūtra; in the second Huineng says that whoever would enter the deep realm of the dharma and the samadhi of prajñā must cultivate the practice of prajñā and hold and recite the Diamond Prajñā Sūtra."@en ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou and ch. 2 Banruo, T48 no. 2008, 348a10 and 350c10" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 1-2, pp. 6 and 19" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 1-2, pp. 56 and 131" .
+
+pmc:ChanChiJingJianxing a pm:Yielding ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Holding the Diamond Sūtra brings one to see the nature"@en, "Das Halten des Diamant-Sūtra führt dazu, die Natur zu sehen"@de ;
+    skos:definition "The claim, made twice: if one only holds the Diamond Sūtra one will oneself see the nature and directly become a buddha, as Hongren is reported to say; and whoever holds and recites the Diamond Prajñā Sūtra will see the nature, the merit of this sūtra being without measure, as Huineng says."@en ;
+    pm:byPractice pmp:ChanChiJingangJing ;
+    pm:yieldsCapacity pmc:ChanJianxingChengfo ;
+    skos:note "Both places are in the Dunhuang text. The same chapter that promises the result also says what recitation without the mind is worth, entered at pmc:ChanKounianXinbuxing: a man who recites prajñā all day without knowing the prajñā of his own nature is like one who talks about food and is not fed. The claim and its limit stand in the same chapter and were never reconciled in it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou and ch. 2 Banruo, T48 no. 2008, 348a10 and 350c10" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 337a21-a26" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 1-2, pp. 6 and 19" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 1-2, pp. 56 and 131" .
+
+pmp:ChanWuxiangChanhui a pm:Practicing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "The formless repentance and the recitation of the formless verse"@en, "Die formlose Reue und die Rezitation des formlosen Verses"@de ;
+    skos:definition "The rite of the sixth chapter. The assembly kneels; the five incenses of the self-nature are transmitted — precept, concentration, wisdom, liberation and the knowledge of liberation, each an inner state; then the formless repentance is spoken after the master three times, that in the past, the present and the coming thought one be not stained by folly, by pride and deceit, by envy, and that all such past evil karma be repented and extinguished at once and never arise again; then the four great vows, the threefold refuge in awakening, the right and the pure, and the three bodies of the buddha in one's own body. At the end Huineng gives a formless verse to be memorised and recited."@en ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 6 Chanhui, T48 no. 2008, 353b29-354c29" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 6, pp. 36-44" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 6, pp. 221-259" .
+
+pmc:ChanZuiMie a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "The sins of the three times and of accumulated eons extinguished at once"@en, "Die Sünden der drei Zeiten und angesammelter Äonen auf einmal getilgt"@de ;
+    skos:definition "The capacity claimed for the rite: the formless repentance extinguishes the sins of the three times and makes the three karmas pure; and of the formless verse, that if one can recite and hold it, at the words the delusions and sins of accumulated eons are extinguished at once."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 6 Chanhui, T48 no. 2008, 353c17 and 354c25" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 6, pp. 38 and 42-43" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 6, pp. 221-222" .
+
+pmc:ChanChanhuiMieZui a pm:Yielding ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "The formless repentance and its verse extinguish the sins of eons"@en, "Die formlose Reue und ihr Vers tilgen die Sünden von Äonen"@de ;
+    skos:definition "The claim of effect of the sixth chapter: the repentance, spoken in the three forms after the master, extinguishes the sins of the three times; the verse, recited, extinguishes at the words the sins of accumulated eons."@en ;
+    pm:byPractice pmp:ChanWuxiangChanhui ;
+    pm:yieldsCapacity pmc:ChanZuiMie ;
+    skos:note "The text attaches the condition under which the rite fails in the same chapter, and it is a condition on the hearer: ordinary people repent only of their past faults and do not vow against future ones, and so the past faults are not extinguished and new ones arise. And at the end: whoever does not awaken at these words is a thousand li away though face to face with the master. The verse with its claim of extinction is in the Dunhuang text."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 6 Chanhui, T48 no. 2008, 353c17-354a08 and 354c25-355a09" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 341a05-a09" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 6, pp. 38-43" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 6, pp. 221-259" .
+
+pmp:ChanXinjingXingShan a pm:Practicing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Purifying one's own mind and practising the ten good deeds in place of the vow of rebirth"@en, "Den eigenen Geist reinigen und die zehn guten Taten üben statt des Gelübdes der Wiedergeburt"@de ;
+    skos:definition "The practice the third chapter puts in place of the recitation of the Buddha's name with the vow to be reborn in the western land: first remove the ten evils, then the eight wrongs; in every thought see the nature and always act evenly and straightly; practise the ten good deeds. The chapter adds that this can be done at home and does not depend on the monastery, and gives the formless verse of conduct — even mind, straight action, gratitude, duty, deference, patience — to be followed."@en ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 3 Yiwen, T48 no. 2008, 352a08-c13" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 3, pp. 26-30" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 3, pp. 186-196" .
+
+pmc:ChanJianMituo a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Seeing Amitābha in a finger-snap, the western land before one's eyes"@en, "Amitābha in einem Fingerschnippen sehen, das Westland vor Augen"@de ;
+    skos:definition "The capacity claimed in the third chapter: to arrive as in a finger-snap and see Amitābha; for one who awakens to the sudden teaching of no-birth, to see the West in an instant; Huineng offers to move the West before the assembly's eyes, and the assembly, hearing him, clearly sees the nature."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 3 Yiwen, T48 no. 2008, 352a26-b13" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 3, pp. 27-28" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 3, pp. 187-188" .
+
+pmc:ChanXinjingJianMituo a pm:Yielding ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "A purified mind and the ten good deeds bring the sight of Amitābha in a finger-snap"@en, "Gereinigter Geist und zehn gute Taten bringen den Anblick Amitābhas in einem Fingerschnippen"@de ;
+    skos:definition "The claim of the third chapter: having removed the ten evils and the eight wrongs, seeing the nature in every thought and always acting evenly, one arrives as in a finger-snap and sees Amitābha; if the practitioner only does the ten good deeds, what need to vow to be reborn there."@en ;
+    pm:byPractice pmp:ChanXinjingXingShan ;
+    pm:yieldsCapacity pmc:ChanJianMituo ;
+    skos:note "The failing case is stated in the same place, and it is the only condition in the chapter that a third party could in principle check: with a mind of evil intent, even reciting the Buddha's name, one hardly arrives. The chapter turns the Pure Land claim into a claim about the practitioner's conduct and lets the conduct, and not the recitation, decide."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 3 Yiwen, T48 no. 2008, 352a26-b13" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 341b06-b14" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 3, pp. 27-28" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 3, pp. 187-188" .
+
+pmp:ChanYixingSanmei a pm:Practicing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "The samadhi of one practice and the samadhi of one mark"@en, "Das Samādhi der einen Übung und das Samādhi des einen Merkmals"@de ;
+    skos:definition "The two samadhis as the text defines them. The samadhi of one practice is to act always with one straight mind in every place, walking, standing, sitting and lying; the straight mind is the place of enlightenment and the pure land. The samadhi of one mark, added in the tenth chapter, is in every place not to dwell in marks, to have no love or hate toward them, nothing to take or reject, not to think of gain or loss, at ease, quiet, empty and plain."@en ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 4 Dinghui and ch. 10 Fuzhu, T48 no. 2008, 352c25-353a01 and 361a28-b03" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 4 and 10, pp. 31 and 75" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 10, pp. 395-397" .
+
+pmc:ChanZhongzhi a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "All-knowledge and the fruit of bodhi"@en, "Allwissen und die Frucht der Erleuchtung"@de ;
+    skos:definition "The capacity the tenth chapter names: the knowledge of all modes, zhongzhi, and bodhi as the fruit that ripens of itself, like a seed in ground that has had rain."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 10 Fuzhu, T48 no. 2008, 361a27-b09" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 10, p. 75" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 10, p. 395" .
+
+pmc:ChanSanmeiZhongzhi a pm:Yielding ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "The two samadhis bring all-knowledge, and whoever follows the master will surely attain bodhi"@en, "Die beiden Samādhis bringen Allwissen, und wer dem Meister folgt, erlangt sicher die Erleuchtung"@de ;
+    skos:definition "The claim of the tenth chapter: whoever wishes to accomplish the knowledge of all modes must attain the samadhi of one mark and the samadhi of one practice; one who has both is like ground with seeds in it that holds, nourishes and ripens its fruit; whoever receives my meaning will certainly attain bodhi, whoever follows my practice will surely realise the wondrous fruit."@en ;
+    pm:byPractice pmp:ChanYixingSanmei ;
+    pm:yieldsCapacity pmc:ChanZhongzhi ;
+    skos:note "Only in the Zongbao text; the Dunhuang text has the samadhi of one practice in its fourth section and nothing of the samadhi of one mark or of all-knowledge. The sentence ends with the word certainly, jue, and with no term, so the promise cannot fall due."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 10 Fuzhu, T48 no. 2008, 361a27-b09" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 10, p. 75" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 10, pp. 395-397" .
+
+pmp:ChanBusiShanE a pm:Practicing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Thinking neither of good nor of evil"@en, "Weder an Gutes noch an Böses denken"@de ;
+    skos:definition "The instruction given twice in the Zongbao text. To Huiming on the mountain pass: since you have come for the dharma, set aside all conditions and do not give rise to a single thought; then, not thinking of good, not thinking of evil, at just this moment, what is your original face? To the envoy Xue Jian in the ninth chapter: if you wish to know the essentials of the mind, simply do not think of anything good or evil at all."@en ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou and ch. 9 Xuanzhao, T48 no. 2008, 349b23-b29 and 360a13-a15" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 1 and 9, pp. 12-13 and 69" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 1 and 9, pp. 106 and 376" .
+
+pmc:ChanBusiRuXinti a pm:Yielding ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Thinking neither good nor evil one enters the pure substance of the mind"@en, "Wer weder an Gutes noch an Böses denkt, tritt in die reine Substanz des Geistes ein"@de ;
+    skos:definition "The claim attached to the instruction: Huiming awakens at the words; and to Xue Jian, simply do not think of good and evil and you will naturally enter the pure substance of the mind, calm and always still, its marvellous functions countless as the sands of the Ganges. Xue Jian, the chapter says, awakened suddenly."@en ;
+    pm:byPractice pmp:ChanBusiShanE ;
+    pm:yieldsCapacity pmc:ChanJianxingChengfo ;
+    skos:note "Neither place is in the Dunhuang text, which has no Huiming episode and no ninth chapter. The instruction to stop all thought of good and evil stands in tension with the warning the same recension gives in its fourth chapter, at pmc:ChanBaiwuBusi, that to think of nothing at all is a great error; the text resolves it by saying that the warning concerns the suppression of thought and the instruction the dropping of discrimination. Both are recorded and neither is preferred."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou and ch. 9 Xuanzhao, T48 no. 2008, 349b23-b29 and 360a13-a15" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 1 and 9, pp. 12-13 and 69" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 1 and 9, pp. 106 and 376" .
+
+pmc:ChanYouxiSanmei a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "The samadhi of sport in the spiritual powers, of one who sees the nature"@en, "Das Samādhi des Spiels in den übernatürlichen Kräften, bei dem, der die Natur sieht"@de ;
+    skos:definition "The capacity the eighth chapter ascribes to whoever sees the nature: free in coming and going, without stagnation or obstruction, acting as occasion requires and answering as speech requires, everywhere seeing the transformation bodies without leaving the self-nature, he attains the samadhi of sport in the sovereign spiritual powers, zizai shentong youxi sanmei; this is what is called seeing the nature."@en ;
+    skos:note "Only in the Zongbao text; the Dunhuang version of the conversation with Zhicheng ends with the refusal to set up precepts, concentration and wisdom and has no samadhi of sport. The sentence defines seeing the nature by the powers and the powers by seeing the nature, which closes the circle SPEC §11 warns against: a practice does not bring forth what it is. Entered as a capacity because the text names the powers, and with this note because it names nothing else they would do."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 8 Dunjian, T48 no. 2008, 358c24-c25" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 8, p. 62" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 8, p. 349" .
+
+#
+# The powers the later recension ascribes to Huineng himself
+#
+
+pmc:ChanHuinengTaxintong a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Huineng knows what others intend before they act"@en, "Huineng weiß, was andere vorhaben, bevor sie handeln"@de ;
+    skos:definition "The power the eighth chapter ascribes to Huineng twice. When Shenxiu's disciple Zhicheng sits unannounced in the assembly, Huineng tells the assembly that a thief of the dharma is hidden among them, and Zhicheng comes forward. When the northern school sends Zhang Xingchang to kill him, the master, by the penetration of his mind, xintong, knows of it in advance and lays ten taels of gold on his seat."@en ;
+    skos:note "Only in the Zongbao text. In the Dunhuang text Zhicheng comes forward of himself after awakening at the words, and Huineng only then asks whether he is a spy; there is no assassin. The power therefore enters the transmission between the two recensions, together with the episodes that display it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 8 Dunjian, T48 no. 2008, 358b17-b18 and 359a06" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 342b12-b16" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 8, pp. 60 and 63" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 8, pp. 341 and 354" .
+
+pmc:ChanDaoBuShang a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "The blade struck three times and did no harm"@en, "Die Klinge schlug dreimal zu und richtete nichts aus"@de ;
+    skos:definition "The invulnerability the eighth chapter reports: Huineng stretched out his neck, Zhang Xingchang swung his blade three times and none of it wounded him; the master said that a right sword is not crooked and a crooked sword is not right, that he owed him gold but not his life; the assassin fell in a faint, repented, and later became the monk Zhiche."@en ;
+    skos:note "Only in the Zongbao text. A report of a single event with named participants, not a capacity taught or promised to anyone else."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 8 Dunjian, T48 no. 2008, 359a06-a12" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 8, p. 63" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 8, pp. 354-356" .
+
+pmc:ChanZhuoXiChuQuan a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "A spring rises where the master strikes his staff into the ground"@en, "Eine Quelle steigt auf, wo der Meister seinen Stab in den Boden stößt"@de ;
+    skos:definition "The seventh chapter: wanting to wash the robe he had received and finding no good spring, Huineng went some five li behind the monastery, struck his ringed staff into the ground, and a spring came forth at his hand and filled a pool. The same chapter reports that when his pursuers set fire to the mountain he escaped by pressing himself into a rock, which still shows the marks of his knees and of the weave of his robe."@en ;
+    skos:note "Only in the Zongbao text. Both events are given with a place a visitor could go to, the pool behind the monastery and the rock called the rock of escaping danger, which is the only way a reader of the text is offered to check them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 7 Jiyuan, T48 no. 2008, 355a20-a22 and 358a13-a16" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 7, p. 60" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 7, p. 330" .
+
+pmc:ChanQuShouXuanji a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "The prophecy that five or six years after his death a man will come to take his head"@en, "Die Weissagung, fünf oder sechs Jahre nach seinem Tod werde einer kommen, seinen Kopf zu holen"@de ;
+    skos:definition "The prophecy of the tenth chapter, given when the disciples ask whether there will be trouble after his death: five or six years after my extinction a man will come to take my head; and a verse, raising a parent on the head, needing to eat by the mouth, at the trouble of Man the willows will be officials. In the same chapter he predicts that seventy years after his death two bodhisattvas will come from the east, one ordained and one lay, and build up his school."@en ;
+    skos:note "The one claim in the text that fell due on a date and that the same printed book reports on. The text itself records the precaution: after his death the disciples, remembering the prophecy, bound his neck with iron leaves and lacquered cloth before he was placed in the stupa. The record of the stupa-keeper Lingtao, printed in the appendix of the same Taishō text, reports that in the tenth year of Kaiyuan, the eighth month, a man was heard in the stupa at night and the master's neck found wounded; the thief, Zhang Jingman, had been paid by a Korean monk to take the head home for veneration, and the prefect who tried him was Liu Wutian and the magistrate Yang Kan. The names fit the verse — Man, and the willow and the poplar of the two officials — and the date does not: Huineng died in the second year of Xiantian, 713, and Kaiyuan ten is 722, nine years and not five or six."@en ;
+    skos:note "The prophecy is not in the Dunhuang text, which has no passage on the head. It was therefore written into the transmission after the event it predicts, with names that match the event and a term that misses it by three or four years. Whoever added it fitted the names and kept a number that the record beside it contradicts, and the Zongbao edition prints both."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 10 Fuzhu, T48 no. 2008, 361b20-b23 and 362b11-b12" ;
+    dcterms:source "Liuzu dashi fabao tanjing, appendix, record of the stupa-keeper Lingtao, T48 no. 2008, 364b14-c05" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 10, p. 76" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 10, p. 402" .
+
+#
+# The cautions. Seven places, one way of sitting
+#
+
+pmp:ChanKanxinGuanjing a pm:Practicing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Sitting to watch the mind and contemplate stillness, without moving or rising"@en, "Sitzen, um den Geist zu beobachten und die Stille zu betrachten, ohne sich zu regen"@de ;
+    skos:definition "The practice the text warns against, described in its own words where it does so: people who teach sitting, watching the mind and contemplating stillness, kanxin guanjing, not moving and not rising, and take this as the place to put their effort; those who take the samadhi of one practice to mean sitting constantly without moving and not letting deluded thought arise; those who sit with an empty mind thinking of nothing; and, in the eighth chapter, Shenxiu's instruction as Zhicheng reports it, to dwell the mind on contemplating stillness and to sit long without lying down."@en ;
+    skos:note "Entered as a practice of this tradition because the text describes it as taught inside the transmission it belongs to, by Hongren's eldest disciple, and because every caution below needs it as its object. The text does not say who first taught it; the Dunhuang text has kanxin kanjing, watching the mind and watching purity, where the Zongbao text has kanxin guanjing."@en ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 4 Dinghui and ch. 8 Dunjian, T48 no. 2008, 353a01-a07 and 358b21-b22" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 338b19-b26" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 4 and 8, pp. 31-32 and 60-61" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 4 and 8, pp. 207 and 341" .
+
+pmc:ChanKanxinChengDian a pm:Cautioning ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Those taught to sit watching the mind grasp it and become deranged"@en, "Wer gelehrt wird, sitzend den Geist zu beobachten, ergreift es und wird verrückt"@de ;
+    skos:definition "The caution of the fourth chapter, and the strongest consequence the text names for anything: there are people who teach others to sit watching the mind and contemplating stillness, not moving and not rising, and to put their effort there; deluded people do not understand, grasp it and become deranged, bian zhi cheng dian; there are many such who teach one another so, and so we know it is a great mistake."@en ;
+    pm:cautionsAbout pmp:ChanKanxinGuanjing ;
+    skos:note "In both recensions in nearly the same words; the Dunhuang text adds that there are some hundreds who teach this way. The two translations read the consequence differently and the difference matters for what is claimed: Cleary has grab onto this and become delusional, the Buddhist Text Translation Society become attached and go insane. The character dian is the ordinary word for madness, and the second reading is the closer; the first turns a claim about a mind into a claim about a view."@en ;
+    skos:note "A caution with a consequence a third party could observe, and the only one in the text: a practitioner gone mad is visible to others in a way that a practitioner who has not seen his nature is not. The text does not say how long, how often, or in whom."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 4 Dinghui, T48 no. 2008, 353a06-a07" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 338b24-b26" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 4, p. 32" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 4, p. 207" .
+
+pmc:ChanChangzuoTongWuqing a pm:Cautioning ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Sitting constantly without moving is to be like an insentient thing, and obstructs the Way"@en, "Ständig unbewegt zu sitzen heißt, einem fühllosen Ding gleich zu sein, und versperrt den Weg"@de ;
+    skos:definition "The caution beside it: deluded people attached to the marks of things take the samadhi of one practice to mean sitting constantly without moving and not letting deluded thought arise; whoever understands it so is the same as an insentient thing, and this is a cause that obstructs the Way; the Way must flow, the mind that dwells on things binds itself; if constant sitting were right, Vimalakīrti would not have rebuked Śāriputra for sitting quietly in the forest."@en ;
+    pm:cautionsAbout pmp:ChanKanxinGuanjing ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 4 Dinghui, T48 no. 2008, 352c29-353a05" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 338b19-b24" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 4, pp. 31-32" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 4" .
+
+pmc:ChanKongxinJingzuo a pm:Cautioning ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Sitting quietly with an empty mind falls into indifferent emptiness"@en, "Wer mit leerem Geist still sitzt, fällt in die gleichgültige Leere"@de ;
+    skos:definition "The caution of the second chapter: above all do not cling to emptiness; if you sit quietly with an empty mind you cling to an indifferent emptiness, wuji kong; and there are deluded people who sit quietly with an empty mind, thinking of nothing at all, and call themselves great — with these one cannot speak, because of their wrong view."@en ;
+    pm:cautionsAbout pmp:ChanKanxinGuanjing ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 2 Banruo, T48 no. 2008, 350a27-b10" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 339c26 and 340a02-a04" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 2, pp. 17-18" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 2, p. 118" .
+
+pmc:ChanBaiwuBusi a pm:Cautioning ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "To think of nothing at all and cut off thought is a bondage, and the thought cut off is death"@en, "An gar nichts zu denken und das Denken abzuschneiden ist eine Fessel, und der abgeschnittene Gedanke ist der Tod"@de ;
+    skos:definition "Two cautions against the suppression of thought. In the second chapter: if one thinks of nothing at all and makes thought cease, that is a bondage by dharmas and an extreme view. In the fourth: if one only thinks of nothing and removes all thought, when one thought is cut off one dies and is reborn elsewhere; that is a great error, and whoever does not understand it errs himself and misleads others."@en ;
+    pm:cautionsAbout pmp:ChanKanxinGuanjing ;
+    skos:note "The Dunhuang text has the second in a form that names the mechanism: thought must continue without break, and if one thought is cut off the dharma body leaves the physical body. Read literally both recensions state a lethal consequence of a successful suppression of thought, which is a claim about the body and not about doctrine; the translations both render it literally."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 2 Banruo and ch. 4 Dinghui, T48 no. 2008, 351b03 and 353a21-a23" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 338c06-c07 and 338c13-c15" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 2 and 4, pp. 21 and 33" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 2 and 4, pp. 151 and 211" .
+
+pmc:ChanZhuoJingJingFu a pm:Cautioning ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Fixing on purity makes a false purity and binds one by purity"@en, "Wer an der Reinheit haftet, schafft eine falsche Reinheit und wird von der Reinheit gefesselt"@de ;
+    skos:definition "The caution of the fifth chapter, on sitting meditation: in this school sitting meditation does not fix on the mind, nor on purity, nor is it immobility; the nature is pure and only covered by deluded thought; to raise the mind and fix on purity produces a delusion of purity; to set up a mark of purity and call it effort obstructs one's original nature and one is bound by purity. Deluded people may not move their bodies and yet open their mouths to speak of others' faults, and that goes against the Way."@en ;
+    pm:cautionsAbout pmp:ChanKanxinGuanjing ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 5 Zuochan, T48 no. 2008, 353b08-b18" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 338c23-339a03" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 5, p. 35" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 5, p. 218" .
+
+pmc:ChanZhuxinGuanjingShiBing a pm:Cautioning ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Dwelling the mind on contemplating stillness is a sickness and not Chan"@en, "Den Geist auf das Betrachten der Stille zu richten ist eine Krankheit und nicht Chan"@de ;
+    skos:definition "The later recension's verdict on Shenxiu's teaching as Zhicheng reports it: to dwell the mind on contemplating stillness is a sickness and not Chan, shi bing fei chan; to sit long constrains the body, and what benefit is that to the truth; with the verse, alive one sits and does not lie down, dead one lies and does not sit, a set of stinking bones, why make it a task. The same recension has Huineng judge a verse of Chan master Wolun, who boasts of cutting off a hundred thoughts, as one that, if acted on, adds bondage; and closes the tenth chapter with the instruction to be careful not to contemplate stillness and empty the mind."@en ;
+    pm:cautionsAbout pmp:ChanKanxinGuanjing ;
+    skos:note "None of the three is in the Dunhuang text, whose conversation with Zhicheng turns on precepts, concentration and wisdom and says nothing of sickness. The word sickness, bing, is therefore an addition of the later recension to an older warning, and it moves the warning from error toward illness. The Buddhist Text Translation Society renders it sickness, Cleary pathological."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 7 Jiyuan, ch. 8 Dunjian and ch. 10 Fuzhu, T48 no. 2008, 358a27-b01, 358b21-b23 and 361b11" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 7, 8 and 10, pp. 59-61 and 75" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 7, 8 and 10, pp. 335, 341 and 397" .
+
+#
+# What the text says a failed practice looks like
+#
+
+pmc:ChanKounianXinbuxing a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Reciting with the mouth while the mind does not practise: talking of food does not fill the belly"@en, "Mit dem Mund rezitieren, während der Geist nicht übt: vom Essen reden macht nicht satt"@de ;
+    skos:definition "The failure the text names first and names most often. People of the world recite prajñā all day with their mouths and do not recognize the prajñā of their own nature, as one who talks of food is not filled; speaking only of emptiness, for ten thousand kalpas one does not see the nature, and to the end there is no benefit. Recitation with the mouth while the mind does not practise is like an illusion, a phantom, dew and lightning. And of the monk Fada, who had recited the Lotus Sūtra three thousand times and was not yet free: when the mind is deluded the Lotus turns you, when it is awakened you turn the Lotus; recite the sūtra long and do not understand its meaning, and you have become its enemy."@en ;
+    skos:note "Failure here is a state of the practitioner and not of the text: the recitation is done and is done many times, and the count is given, three thousand recitations, and in the Dunhuang text seven years of reciting the Lotus with the mind still deluded. What makes it fail is that it stayed in the mouth. The text gives no outward mark by which a stranger could tell recitation with the mind from recitation without it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 2 Banruo and ch. 7 Jiyuan, T48 no. 2008, 350a16-a21, 355b11 and 355c24-c27" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 342c04-c08" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 2 and 7, pp. 16-17 and 45-47" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 2 and 7, p. 270" .
+
+pmc:ChanXiaogenBuWu a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Those of small faculties and heavy wrong views do not awaken, and a teacher outside cannot save them"@en, "Wer kleine Anlagen und schwere falsche Ansichten hat, erwacht nicht, und ein Lehrer von außen kann ihn nicht retten"@de ;
+    skos:definition "The text's account of why the teaching fails on some hearers: those of small faculties, hearing the sudden teaching, are like plants with shallow roots in a great rain, which are washed away and cannot grow; their prajñā is the same as that of the wise, but the obstruction of wrong views is heavy and the roots of affliction deep, as clouds cover the sun. And: if one's own mind is deluded, harbours false thought and is inverted, then even if a good teacher from outside instructs him, he cannot be saved."@en ;
+    skos:note "The one place where the text explains a failure by a property of the person and not by a mistake in method. It is stated in the Dunhuang text as in the later one. It closes the question rather than opening it: nothing is said by which the small faculty could be recognized before the teaching fails on it, so it can only be inferred from the failure."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 2 Banruo, T48 no. 2008, 350c21-c25 and 351a23-a24" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 340b01-b12 and 340c15" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 2, pp. 19-20" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 2" .
+
+pmc:ChanYanxiaBuWu a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Not awakening at these words: though face to face, a thousand li apart"@en, "Bei diesen Worten nicht erwachen: von Angesicht zu Angesicht und doch tausend Li entfernt"@de ;
+    skos:definition "Three statements of failure in the presence of the teaching. At the close of the third chapter: whoever practises by this sees the nature at the words, and though a thousand li from me is always beside me; whoever does not awaken at these words is a thousand li away face to face, so why take the trouble to come from far. In the second: if you only remember my words, of what use is it. In the tenth: if you go against my teaching, even if I remained in the world there would be no benefit."@en ;
+    skos:note "The first is in the Dunhuang text in nearly the same words; the second and the third were not found there. The failure is again without an outward mark, but it is tied to a moment: the words were heard and the nature was not seen."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 2 Banruo, ch. 3 Yiwen and ch. 10 Fuzhu, T48 no. 2008, 351b12-b13, 355a07-a09 and 362a29" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 342a17" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 2, 3 and 10, pp. 26, 43 and 80" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 3 and 10, pp. 258 and 422" .
+
+pmc:ChanJiuXiuBuWu a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Long practice without awakening, counted in attempts and years"@en, "Lange Übung ohne Erwachen, gezählt in Versuchen und Jahren"@de ;
+    skos:definition "The text counts how long its practitioners practised before they came to Huineng and failed in it. Shenxiu went thirteen times to the wall to present his verse and turned back each time, over four days. Fada had recited the Lotus three thousand times. Zhitong had read the Laṅkāvatāra more than a thousand times and did not understand the three bodies and four wisdoms. Zhidao had read the Nirvāṇa Sūtra for more than ten years without grasping its great meaning. Zhicheng had studied the Way under Shenxiu for nine years without awakening. Zhihuang had practised sitting in concentration for twenty years and took it for attainment. In each case the awakening follows at once on a few words of Huineng."@en ;
+    skos:note "The only counts of failed attempts in the work, and they are not the work's rule of abandonment: none of the six is told to stop; each is told he was doing the wrong thing, and the cure is a change of teacher, not a further term. The structure is that of the Summa's search for the error in the method and not that of a term after which the practice is judged. All of the counts except Fada's are absent from the Dunhuang text, which gives Fada seven years of recitation and not three thousand recitations; they belong to the later recension."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou, ch. 7 Jiyuan and ch. 8 Dunjian, T48 no. 2008, 348b18-b19, 355b11, 356a26-a27, 356c27, 357c20 and 358b26" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 342c04" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 1, 7 and 8, pp. 7-8, 45, 49, 52, 57-58 and 61" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 1 and 7, pp. 66, 270, 299 and 323-326" .
+
+#
+# The one act of assay and the one sign
+#
+
+pmc:ChanJiekanYan a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Hongren's assay by verse: whoever has seen the nature is to show it in a verse"@en, "Hongrens Probe durch den Vers: wer die Natur gesehen hat, soll es in einem Vers zeigen"@de ;
+    skos:definition "The one act in the work by which a third party decides whether another has seen the nature. Hongren tells his disciples each to compose a verse from the prajñā of his own original nature; whoever has understood the great meaning will receive robe and dharma. Of Shenxiu's verse he says in private: you have not seen the original nature, you have only reached the outside of the gate; with such understanding you will not find the supreme awakening; whoever has seen the nature must see it at the words. Of Huineng's verse, written on the wall in front of everyone, he says aloud that this too has not seen the nature, wipes it out with his shoe, and gives him robe and dharma in secret the same night."@en ;
+    skos:note "An assay with an outcome that can fall either way, given on a stated object and a stated criterion, and the failing verdict pronounced: only to the gate. But the work also records that the examiner pronounced a false verdict in public on purpose, for fear that the one who passed would be harmed; so the verdict a witness could hear and the verdict actually reached differ, and only the examiner knew which was which. The criterion that sight must be at the words, yanxia xu jian, is in the later recension only; the Dunhuang text has the verse test and both verdicts, the first as reaching only the front of the gate and the second, aloud, as this too has not yet understood."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou, T48 no. 2008, 348a28-b05, 348c07-c12 and 349a10-a12" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 337c15-c20 and 338a14" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 1, pp. 6-10" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 1" .
+
+pmc:ChanLengnuanZizhi a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Like drinking water, one knows for oneself whether it is cold or warm"@en, "Wie beim Trinken von Wasser weiß man selbst, ob es kalt oder warm ist"@de ;
+    skos:definition "The counter-principle to the assay. Huiming, awakened on the road, says he is like a man who drinks water and knows for himself whether it is cold or warm. And Huineng to the young Shenhui, who asks whether the master sees or does not see: if your mind is deluded and you do not see, ask a good teacher for the road; if it is awakened, see the nature yourself; I know my own seeing, it cannot take the place of your delusion; if you see yourself, it cannot take the place of mine; why not know and see for yourself instead of asking whether I see."@en ;
+    skos:note "The work states with the assay that the outcome is known first by the one who has it, and that one person's seeing cannot settle another's. The exchange with Shenhui is in the Dunhuang text with the same conclusion; the image of the water is in the later recension only, in the Huiming episode the Dunhuang text does not have. Together with pmc:ChanJiekanYan it means the work holds both that an examiner can tell and that only the examined can know, and never reconciles them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 1 Xingyou and ch. 8 Dunjian, T48 no. 2008, 349b29 and 359b24-b28" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 343a26-a29" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 1 and 8, pp. 13 and 66" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), chs. 1 and 8, pp. 106 and 363" .
+
+pmc:ChanKongzhongYouSheng a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "A voice in the sky announces that Zhihuang has attained the Way"@en, "Eine Stimme in der Luft verkündet, dass Zhihuang den Weg erlangt hat"@de ;
+    skos:definition "The one sign the work gives that is perceptible to others than the one who awakens. When Zhihuang, after twenty years of sitting, awakens at Huineng's words and the mind he had attained in twenty years leaves no trace, that night the gentry and common people north of the river hear a voice in the sky saying: Chan master Huang has today attained the Way."@en ;
+    skos:note "A public sign, heard by a crowd at a distance and naming the man, and therefore the most examinable report in the work; but it is a report of a past event in the later recension only, absent from the Dunhuang text, and it attaches to one case and is not offered as the general mark of awakening."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 7 Jiyuan, T48 no. 2008, 358a06-a09" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 7, p. 58" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 7, p. 326" .
+
+#
+# The dispute over sitting
+#
+
+pmc:ChanZuochanBixu a pm:Conceptualizing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "To understand the Way one must sit in meditation and practise concentration"@en, "Um den Weg zu verstehen, muss man in Meditation sitzen und Sammlung üben"@de ;
+    skos:definition "The position of the Chan masters of the capital as the envoy Xue Jian reports it: whoever would understand the Way must sit in meditation and practise concentration; that anyone has been liberated without meditative concentration has never happened."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 9 Xuanzhao, T48 no. 2008, 359c18-c20" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), ch. 9, p. 67" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 9, pp. 371-372" .
+
+pmc:ChanZuochanZhengyi a pm:Disputing ;
+    pm:fromWork pmw:LiuzuTanjing ;
+    rdfs:label "Whether sitting in meditation is necessary for liberation"@en, "Ob das Sitzen in Meditation für die Befreiung notwendig ist"@de ;
+    pm:disputedClaim pmc:ChanZuochanBixu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Chan ;
+    skos:note "Huineng's answer in the same place: the Way is awakened through the mind, how should it lie in sitting; the sūtra says whoever says the Tathāgata sits or lies walks a wrong path. The claim is a necessary condition, and the text answers it not with a case of liberation without sitting but by moving the word: in this school sitting means that no thought arises toward any outer object, and meditation that the original nature is seen and not disturbed, which is in the Dunhuang text as in the later one."@en ;
+    skos:note "Held as a dispute inside the work and not resolved by it. The work counts what Zhihuang gained in twenty years of sitting as leaving no trace, and its one case of awakening without long sitting is Huineng's own, at a line of the Diamond Sūtra heard in a market; yet it nowhere tells a hearer to stop sitting, only what sitting is to mean."@en ;
+    dcterms:source "Liuzu dashi fabao tanjing, ch. 9 Xuanzhao and ch. 5 Zuochan, T48 no. 2008, 359c18-c22 and 353b18-b23" ;
+    dcterms:source "Nanzong dunjiao zuishang dasheng mohe banruo boluomi jing, Dunhuang text, T48 no. 2007, 339a03-a08" ;
+    dcterms:source "The Sutra of Hui-neng, Grand Master of Zen, trans. Thomas Cleary (Boston: Shambhala 1998), chs. 5 and 9, pp. 35-36 and 67-68" ;
+    dcterms:source "The Sixth Patriarch's Dharma Jewel Platform Sutra, trans. Buddhist Text Translation Society, 3rd ed. (Burlingame 2001), ch. 9, pp. 372-373" .
