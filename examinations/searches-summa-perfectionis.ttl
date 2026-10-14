@@ -1,0 +1,45 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the run on the Summa perfectionis magisterii, 2026-10-14
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+
+pmp:SummaProbaOperisSearch a pm:Searching ;
+    rdfs:label "Every act in the Summa with a definite perceptible outcome, and the clause that stands beside its failing side"@en, "Jede Handlung der Summa mit bestimmtem wahrnehmbarem Ausgang, und die Klausel neben ihrer misslingenden Seite"@de ;
+    pm:searchedCorpus "Summa perfectionis magisterii, both books complete, in Richard Russell's English of 1678, The Works of Geber, ed. E. J. Holmyard (London: Dent 1928), pp. 23-197; the assay chapters, the prooemium and the medicines of the fourth book checked in the Latin of Venice: Petrus Schoeffer 1542, lib. IV; every passage entered checked in Ernst Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922)."@en ;
+    pm:searchedFor "Any act with a definite perceptible outcome by which a material, an operation in progress or the product of the operation is established to be or not to be what is wanted, and for each such act the clause beside its failing side: a repetition rule, a cause outside the procedure, a verdict on the operator, or nothing. The question of the protocol at pmc:TheTestOnTheIngredientExamination."@en ;
+    pm:searchTerms "In the English, read through: probation, proof, prove, try, tryal, examen, sign, if, if not, unless, until, again, reiterate, repeat; the whole of Book II, Part iii read complete. In the Latin, in the assay chapters: examen, probatio, signum, si, si vero, nisi, non est, fallax, sophistice, phantastice, reiterando, donec. In the German at the same places: Probe, Zeichen, wenn, nicht, trügerisch, von neuem."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:SummaDefinitioAuri, pmc:SummaProbaSublimationis, pmc:SummaProbaArgentiViviSublimati, pmc:SummaProbaFinisSublimationis, pmc:SummaExamenCineritii, pmc:SummaExamenCementi, pmc:SummaExamenIgnitionis, pmc:SummaExamenFusionis, pmc:SummaExamenVaporumAcutorum, pmc:SummaExamenExtinctionis, pmc:SummaExamenSulphuris, pmc:SummaExamenCalcinationisReductionis, pmc:SummaExamenArgentiVivi ;
+    pm:searchedBy "prima-materia, 2026-10-14" ;
+    dcterms:date "2026-10-14" ;
+    skos:note "Thirteen acts. One decides a material and carries no excuse. Three judge the operation in progress and carry a rule to do it again. Nine judge the metal the operation made and carry a verdict on the operator's work, with no rule of repetition; only the assay of ignition sends the operator back, and it sends him to search for his error and not to rework the batch. The count is entered at the protocol as the fourth counter-search."@en .
+
+pmp:SummaTerminusDesistendiSearch a pm:Searching ;
+    rdfs:label "Whether the Summa names a term, a count of attempts or a condition under which the operator should conclude that the art fails"@en, "Ob die Summa eine Frist, eine Zahl von Versuchen oder eine Bedingung nennt, unter der der Operierende schließen soll, dass die Kunst versagt"@de ;
+    pm:searchedCorpus "The same work in the same three prints, the English read complete."@en ;
+    pm:searchedFor "A term in days or years for the greater work, a number of trials after which nothing more is to be expected, an instruction to stop, or any outcome the work allows to count against the art itself rather than against the operator or his materials."@en ;
+    pm:searchTerms "In the English: days, years, time, long, leave off, abandon, cease, desist, despair, desperation, in vain, impossible, not to be found, deny; every conditional of the recapitulation and of the chapters on the third order. In the Latin at the places entered: desperatio, frustra, impossibilis, dimittere, cessare, tempus. In the German at the same places: Verzweiflung, vergeblich, unmöglich, aufgeben."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-14" ;
+    dcterms:date "2026-10-14" ;
+    skos:note "Nothing, and the nothing is over the whole work. The only terms in the Summa are the three days of the cement and the three years of the copper scales in the sand; the greater work has none. Every despair in the book belongs either to those who deny the art, answered by the charge that they left their work imperfect, or to the author, who reports lying long under the shade of despair and then finding the method, entered at pmc:SummaDesperatioAuctoris. The work's one statement about a run that never succeeds puts it in God's withholding, at pmc:SummaDeusNegatArtem."@en .
+
+pmp:SummaCorpusHumanumSearch a pm:Searching ;
+    rdfs:label "Whether the Summa claims any effect of its medicines on the human body besides the one clause on gold"@en, "Ob die Summa außer dem einen Satz über das Gold eine Wirkung ihrer Medizinen auf den menschlichen Körper behauptet"@de ;
+    pm:searchedCorpus "The same work in the same three prints, the English read complete."@en ;
+    pm:searchedFor "Any claim that the medicine, the stone or a metal heals, preserves, rejuvenates or prolongs the life of a human body, and any dose or way of taking."@en ;
+    pm:searchTerms "In the English: body of man, health, sickness, disease, life, youth, old age, heal, cure, preserve, conserve, drink, eat, take; in the Latin at the chapter on gold: medicina, corpus, iuventus, laetificans, conservans; in the German: Medizin, Körper, Jugend, Gesundheit, Krankheit."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:SummaAurumMedicinaLaetificans ;
+    pm:searchedBy "prima-materia, 2026-10-14" ;
+    dcterms:date "2026-10-14" ;
+    skos:note "One clause and no more. The word medicine is used throughout the work for what is projected on metals, and the only place where it touches a human body is the definition of gold in the first book. The bodily conditions of the artificer in the same book are requirements on the operator and not effects of the work."@en .
