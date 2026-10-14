@@ -1,0 +1,809 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Latin alchemy, the Summa perfectionis magisterii of pseudo-Geber
+#
+# A second file for pmt:LatinAlchemy, beside traditions/latin-alchemy.ttl, on the
+# precedent of the Egyptian and Theravada files: one work, read complete, kept
+# where its nodes can be read together. The tradition instance and the work
+# identifier stay in the first file.
+#
+# What was read. Both books of the Summa complete in Richard Russell's English of
+# 1678 as reprinted by Holmyard in 1928; the same text complete as Ernst
+# Darmstaedter's German of 1922 was opened at every passage entered here; and the
+# Latin of the Venice print of Petrus Schoeffer, 1542, at the passages each node
+# names in its Latin source line. Where a node has no Latin source line, the
+# Latin was not checked at that place and the node stands on the two
+# translations, which agree there unless the node says otherwise.
+#
+# Three citation schemes are in use because the three prints divide the work
+# differently. Russell has two books, the first in four parts, the second in
+# three, with chapters numbered within each part. Darmstaedter numbers the
+# chapters of both books continuously from 1 to 100. The 1542 print divides the
+# same text into four books. Every node gives the place in each print it was
+# read in, so that a reader holding any one of them can find it.
+#
+# Why this work. It was entered in the corpus unopened, on 2026-09-26, because
+# the run on the Turba found the gap it was said to fill: a catalogue of assays
+# of the metal, each with a stated criterion. That is at the wording. The work
+# states nine assays of the product of its own operation, says of each what the
+# failing outcome looks like, and attaches to the failing outcome a verdict on
+# the operator's work and not a rule of repetition. The clause that protects the
+# art itself stands elsewhere, at the opening of the first book. That
+# arrangement is the finding of the file, and it is written into the protocol of
+# pmc:TheTestOnTheIngredient in generalizations/the-test-on-the-ingredient.ttl.
+#
+
+#
+# The operations and what the work says they bring about
+#
+
+pmp:SummaMagisteriumMaius a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The greater work: the stone made volatile, fixed, dissolved and made volatile again"@en, "Das größere Werk: der Stein flüchtig gemacht, fixiert, gelöst und wieder flüchtig gemacht"@de ;
+    skos:definition "The operation of the third order as the recapitulation at the end of the second book states it in three degrees. The stone, known from its chapters, is sublimed with instance of labour until it reaches the last purity of subtlety and is made volatile; it is then fixed until it rests in the asperity of the fire; and in the third degree the fixed stone is made volatile by sublimation, the volatile fixed, the fixed dissolved, the dissolved made volatile again and the volatile fixed again, until it flows and alters into a solific and lunific body with certain completion. The chapters on the lunar and solar medicine of the third order give the same sequence in detail: the most pure substance divided from the stone and kept apart, part of it fixed, the fixed dissolved and calcined by turns four times, then the reserved part joined to this prepared earth through its least parts and sublimed until the fixed rises with the unfixed, fixed again, imbibed again, until it has easy fusion with ignition; for the solar medicine an additament of sulphur that does not burn, fixed and calcined, is sublimed with the unfixed part of the stone until both rise together and are then fixed."@en ;
+    skos:note "The work says of itself that it does not give this procedure as a continuous series. The last chapter of the second book explains that the art was dispersed over several chapters so that the evil man could not usurp it as easily as the just, and that it is hidden in the places where the work speaks most openly. The node therefore assembles the sequence from the recapitulation and the two chapters on the third order and claims no more order than those three places give."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, Operis totius in una summa recapitulatio (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 19-20, and Part iii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. E. J. Holmyard (London: Dent 1928), pp. 176-179 and 195-196" ;
+    dcterms:source "Summa perfectionis, Kap. 85, 86 und 99, in Ernst Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 86-87 und 94-95" .
+
+pmc:SummaMedicinaTertiiOrdinis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The one medicine that takes away all corruption and perfects every imperfect body and quicksilver"@en, "Die eine Medizin, die alle Verderbnis nimmt und jeden unvollkommenen Körper und das Quecksilber vollendet"@de ;
+    skos:definition "The capacity the work is written for. A medicine of the third order, projected on bodies diminished from perfection, takes away all corruption and perfects them with every difference of completion; it is one only, in a lunar and a solar form that differ by a citrine additament of fixed sulphur, and it transforms every imperfect body and every quicksilver into a most perfect lunar or solar body. The first chapter on medicines states the same capacity as the result of the author's long search: one medicine by which the hard was softened, the soft hardened, the fugitive fixed, and the foul illustrated with a splendour beyond nature, and by which he was excused from the ten medicines of the second order."@en ;
+    skos:note "The capacity is stated with a check attached that the Turba never gives: the outcome is a metal, and the third part of the second book lists nine acts by which a stranger could decide whether it is one. The nine are entered below as pmc:SummaExamenCineritii and the rest. What the capacity does not carry is any term, count of attempts or rule of abandonment."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De medicinarum triplici ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 1, 10 and 18-19, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 146-147, 161-162 and 176-177" ;
+    dcterms:source "Summa perfectionis, Kap. 67, 76 und 84-85, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 71-72, 78 und 85-87" .
+
+pmc:SummaMedicinaTertiiOrdinisExMagisterio a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The greater work brings forth the medicine of the third order"@en, "Das größere Werk bringt die Medizin dritter Ordnung hervor"@de ;
+    skos:definition "The work's central claim of effect: the stone carried through the three degrees of preparation becomes the medicine that transforms every body diminished from perfection and every quicksilver into a most perfect lunar body, and with the additament of fixed sulphur into a solar one."@en ;
+    pm:byPractice pmp:SummaMagisteriumMaius ;
+    pm:yieldsCapacity pmc:SummaMedicinaTertiiOrdinis ;
+    skos:note "The work offers the claim as its author's own outcome and not as a report from others, and says so in two places in the strongest terms it has. After the solar medicine of the third order it praises God who revealed the series of all medicines with the experience of them, which we have searched out by our own incessant labour and have seen with our eyes and handled with our hands; the Latin of 1542 reads oculo vidimus et manu tetigimus. In the first book, answering those who deny the art, it affirms the art because we have seen and touched the verity thereof. The claim of autopsy is entered at pmc:SummaVidimusEtTetigimus."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Solaris et Lunaris medicinae administratione (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 19-20, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 176-179" ;
+    dcterms:source "Summa perfectionis, Kap. 85-86, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 86-87" .
+
+pmc:SummaMultiplicatio a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "A medicine that transmutes many times its own weight, and some to infinity"@en, "Eine Medizin, die ein Vielfaches ihres Gewichts verwandelt, manche ins Unendliche"@de ;
+    skos:definition "The capacity of multiplication. From the reiteration of the third degree of preparation results a multiplication of the goodness of alteration, so that among medicines some transmute into a true solific and lunific body a stated multiple of their own weight and some to infinity; the chapter on the solar medicine of the third order says that the reiteration may be carried so far that the medicine changes quicksilver into an infinite true solific and lunific and needs nothing more than its multiplication."@en ;
+    skos:note "The three prints read here give three different series of multiples, and no two agree. The Latin of 1542 reads quaedam sui duplum, quaedam vero decuplum, quaedam vero centuplum, quaedam millesimum, et quaedam in infinitum: twice, ten times, a hundred, a thousand, infinitely. Russell's English of 1678 reads a hundredfold, two hundredfold, three hundredfold, a thousandfold, to infinity. Darmstaedter's German of 1922 reads das Siebenfache, Zehnfache, Hundertfache, Tausendfache, unbegrenzt. The node claims the form of the sentence, a graded series ending in infinity, and not any of the numbers; the Latin series is the one the node would give if it gave one."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, Operis totius in una summa recapitulatio (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 20, and Part iii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 178 and 196" ;
+    dcterms:source "Summa perfectionis, Kap. 99, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 95" .
+
+pmc:SummaMultiplicatioExReiteratione a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The reiteration of the third degree multiplies the medicine's power"@en, "Die Wiederholung des dritten Grades vervielfacht die Kraft der Medizin"@de ;
+    skos:definition "The claim that the number of times the third degree of preparation is repeated on the stone decides how many times its own weight the medicine transmutes: from the diversity of the work repeated upon the stone in its degrees results the diversity of the multiplication of the goodness of alteration."@en ;
+    pm:byPractice pmp:SummaMagisteriumMaius ;
+    pm:yieldsCapacity pmc:SummaMultiplicatio ;
+    skos:note "The sentence is followed at once by the one that closes the recapitulation: hence it may be known whether the magistery consists in perfection. The multiple is thus offered as a mark of the medicine's grade, which would make it measurable by weighing what a known quantity of medicine converts. The work does not say what a medicine that converts less than its expected multiple shows."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, Operis totius in una summa recapitulatio (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 195-196" ;
+    dcterms:source "Summa perfectionis, Kap. 99, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 95" .
+
+pmp:SummaMedicinaSecundiOrdinis a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The lunar and solar medicine of the second order"@en, "Die lunare und solare Medizin zweiter Ordnung"@de ;
+    skos:definition "The preparation of the medicine of the second order for imperfect bodies. The one matter, already known, is taken; its pure substance is divided from it, part is fixed and part kept for ceration, and the work is carried through the whole magistery until the desired fusion is reached: if it flows suddenly in hard bodies it is perfect, in soft bodies the contrary. For the solar form the parts are further subtilised by digestion and pure sulphur, fixed and dissolved, is mixed in. Hard bodies need a fire that consumes humidity in the preparation, soft bodies a fire that preserves it."@en ;
+    skos:note "The work says the medicine of the second order differs from that of the third only by the imperfection of a lesser preparation and not in essence, so this practice is the same matter carried less far than pmp:SummaMagisteriumMaius. It is entered separately because the work assigns it a capacity of its own, with a stated limit."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 14-15, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 169-173" ;
+    dcterms:source "Summa perfectionis, Kap. 80-81, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 82-84" .
+
+pmc:SummaMedicinaSecundiOrdinisVirtus a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "A medicine that perfects an imperfect body in one difference of perfection, leaving the rest"@en, "Eine Medizin, die einen unvollkommenen Körper in einer Hinsicht der Vollkommenheit vollendet und die übrigen lässt"@de ;
+    skos:definition "The capacity of the second order: projected on bodies diminished from perfection, the medicine alters them to one difference of completion and leaves the other differences of corruption; it can thicken the tenuity of soft bodies and harden them to sufficiency of ignition, attenuate the spissitude of hard bodies to sufficient swiftness of liquefaction, and cover the cloudiness of either with whiteness or redness; projected on any imperfect body it changes it into a perfect lunar body, if the known preparations have preceded, and the solar form perfects silver in a peculiar solar completion. Examples the work names for the order are the calcination of bodies, by which everything fugitive is burnt away, a medicine colouring silver perpetually yellow, and one whitening copper perpetually."@en ;
+    skos:note "The capacity carries its limit in its definition, which is uncommon. A second-order medicine is by the work's own account one that leaves a body changed in one respect and still corrupt in the others, so a stranger who found a coloured metal that failed the cupel would have found what the work says such a medicine produces, and not a refutation of it. Read against the five differences of perfection at pmc:SummaQuinqueDifferentiaePerfectionis, the order is defined by which of them it delivers."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De medicinarum triplici ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 10 and 14-15, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 161-162 and 169-173" ;
+    dcterms:source "Summa perfectionis, Kap. 76 und 80-81, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 78 und 82-84" .
+
+pmc:SummaMedicinaSecundiOrdinisEffectus a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The medicine of the second order perfects in one difference"@en, "Die Medizin zweiter Ordnung vollendet in einer Hinsicht"@de ;
+    skos:definition "The claim that the lunar medicine of the second order, projected on any imperfect body after its preparation, changes it into a perfect lunar body, and that without the preparation it leaves the body diminished but perfects it in one difference, as far as a medicine of this order can."@en ;
+    pm:byPractice pmp:SummaMedicinaSecundiOrdinis ;
+    pm:yieldsCapacity pmc:SummaMedicinaSecundiOrdinisVirtus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 15, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 171-173" ;
+    dcterms:source "Summa perfectionis, Kap. 81, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 83-84" .
+
+pmp:SummaMedicinaCoagulansArgentumVivum a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The medicine prepared from the pure substance of quicksilver to coagulate quicksilver"@en, "Die aus der reinen Substanz des Quecksilbers bereitete Medizin, die Quecksilber gerinnen lässt"@de ;
+    skos:definition "The preparation of the medicine that coagulates quicksilver. It is taken from a matter of quicksilver's own nature, its most pure substance extracted by long-continued labour of sublimation and made perfectly white for silver, or intensely citrine for gold with the admixture of a tinging thing of its own nature, and fixed against the violence of fire while remaining of the most easy liquefaction, thin as water. Before projection the quicksilver to be coagulated is washed in vinegar over a gentle fire until its earthiness turns to a clear colour mixed with white and celestine."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 16, and Book II, Part i, ch. 3, and Part ii, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 109-115, 126-128 and 173-174" ;
+    dcterms:source "Summa perfectionis, Kap. 53, 59 und 82, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 56-59, 62-63 und 84" .
+
+pmc:SummaCoagulatioInSolificum a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Quicksilver converted in a moment into a true solific or lunific body"@en, "Quecksilber im Augenblick in einen wahren solaren oder lunaren Körper verwandelt"@de ;
+    skos:definition "The capacity claimed for the medicine of coagulation: projected on washed quicksilver it adheres to it in its depth, conserves it in the fire by its own fixation until it can bear the fire, and converts it in a moment into a true solific or lunific, according to what the medicine was prepared for."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part i, ch. 3, and Part ii, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 127-128 and 173-174" ;
+    dcterms:source "Summa perfectionis, Kap. 59 und 82, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 62-63 und 84" .
+
+pmc:SummaCoagulatioExMedicina a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The medicine of coagulation turns washed quicksilver into silver or gold"@en, "Die Medizin der Gerinnung verwandelt gewaschenes Quecksilber in Silber oder Gold"@de ;
+    skos:definition "The claim, made twice: when the washing of quicksilver has reached the celestine colour, project on it the medicine of coagulation and it will be coagulated into a solific or lunific according as the medicine was prepared; and the medicine converts it into a true solific and lunific with the preparation always preceding."@en ;
+    pm:byPractice pmp:SummaMedicinaCoagulansArgentumVivum ;
+    pm:yieldsCapacity pmc:SummaCoagulatioInSolificum ;
+    skos:note "The same work states in the chapter on coagulation what this operation produces when it goes wrong, and it names the products: lead, tin, copper and iron. That is entered as a failure sign of its own at pmc:SummaCoagulatioInCorpusImperfectum."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part i, ch. 3, and Part ii, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 127-128 and 173-174" ;
+    dcterms:source "Summa perfectionis, Kap. 59 und 82, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 62-63 und 84" .
+
+#
+# The medicines of the first order. Each is a recipe with a stated effect, and the
+# work itself defines the order as one whose effect does not last
+#
+
+pmp:SummaDealbatioVeneris a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The whitening medicines of copper"@en, "Die weißenden Medizinen des Kupfers"@de ;
+    skos:definition "The work's recipes for whitening copper in the first order, given one after another in one chapter. Precipitated quicksilver and calcined copper are dissolved apart, the solutions mixed and coagulated, and the coagulate projected on copper; or quicksilver and litharge are dissolved apart, joined with the dissolved calx of the body and coagulated and projected; or quicksilver is sublimed from the body again and again until part of it remains with complete ignition, ground and imbibed with distilled vinegar, gently calcined, and the cycle repeated until much quicksilver rests in it; or quicksilver is sublimed from precipitated quicksilver until it is fixed and flows, and projected; or silver and litharge are dissolved apart and the copper whitened with them. With arsenic: arsenic is sublimed upon the calx of copper until it remains with it; or projected on silver and the whole on copper; or on dissolved litharge and silver; or melted into a lump and thrown on molten copper piece by piece. Marcasite sublimed whitens it in the same way as sublimed quicksilver."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Veneris medicinis in primo ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 11, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 162-165" ;
+    dcterms:source "Summa perfectionis, Kap. 77, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 79-81" .
+
+pmc:SummaVenusDealbata a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Copper whitened and cleansed"@en, "Kupfer geweißt und gereinigt"@de ;
+    skos:definition "The capacity the recipes claim: copper whitened and cleansed, peculiarly whitened, whitened with a curious aspect; with tutia its redness taken away and a citrine colour given, because the whitening of tutia does not suffice."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 11, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 162-165" ;
+    dcterms:source "Summa perfectionis, Kap. 77, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 79-81" .
+
+pmc:SummaDealbatioVenerisEffectus a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The whitening medicines of the first order whiten copper"@en, "Die weißenden Medizinen erster Ordnung weißen das Kupfer"@de ;
+    skos:definition "The claim attached to each of the recipes: this medicine whitens and cleanses copper; this is a good whitening of the first order; it whitens it peculiarly. The chapter adds that copper is better whitened if quicksilver is perpetuated in all the medicines, and that if the operator is not well skilled in sublimation the arsenic will not persevere in it with any alteration."@en ;
+    pm:byPractice pmp:SummaDealbatioVeneris ;
+    pm:yieldsCapacity pmc:SummaVenusDealbata ;
+    skos:note "The work's own definition of the order bounds the claim. A medicine of the first order, it says two chapters earlier, impresses an alteration that does not infer sufficient completion, so that the altered body happens to be changed and corrupted with the total evaporation of the impression; and its first example is every sublimation whitening copper or iron that does not receive fixation. The recipes are therefore entered as what they are claimed to be — whitenings — with the work's own statement that a whitening of this order fades. A copper that whitens and then turns back confirms the definition and refutes nothing; the five differences at pmc:SummaQuinqueDifferentiaePerfectionis are where a lasting claim begins."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Veneris medicinis in primo ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 10-11, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 161-165" ;
+    dcterms:source "Summa perfectionis, Kap. 76-77, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 78-81" .
+
+pmp:SummaDealbatioMartis a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The whitening medicines of iron, which make it flow"@en, "Die weißenden Medizinen des Eisens, die es fließen lassen"@de ;
+    skos:definition "The recipes for iron, which has no right fusion and must be whitened with a medicine that makes it flow, arsenic of every kind being its special fusive. Iron is joined with the medicine and washed with quicksilver until its impurity is removed and it is white and fusible; or it is made red hot with vehement ignition, arsenic thrown on it, and when it is in flux a quantity of silver cast in; or it is calcined, its soluble aluminosity washed out, cleansed arsenic sublimed from it many times until some is fixed, then imbibed with a solution of litharge, ground, gently calcined several times and reduced with the fire taught for the reduction of tin; or reduced from its calx with sublimed arsenic alone. Marcasite and tutia whiten it with the same industry."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Martis medicinis in primo ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 12, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 165-166" ;
+    dcterms:source "Summa perfectionis, Kap. 78, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 81" .
+
+pmc:SummaMarsDealbatus a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Iron made white, clean and fusible"@en, "Eisen weiß, rein und schmelzbar gemacht"@de ;
+    skos:definition "The capacity claimed: iron goes forth white, clean and fusible; joined with silver while in flux it is not separated from it by any easy artifice."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 12, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 165-166" ;
+    dcterms:source "Summa perfectionis, Kap. 78, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 81" .
+
+pmc:SummaDealbatioMartisEffectus a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The whitening medicines of iron make it white and fusible"@en, "Die weißenden Medizinen des Eisens machen es weiß und schmelzbar"@de ;
+    skos:definition "The claim attached to the recipes for iron: from this it will go forth white, clean and fusible. The chapter closes with the work's own limit on it: yet the whitening or cleansing of these is not sufficient."@en ;
+    pm:byPractice pmp:SummaDealbatioMartis ;
+    pm:yieldsCapacity pmc:SummaMarsDealbatus ;
+    skos:note "The closing sentence is the limit the order carries everywhere, stated here at the place of the recipe. It is the only chapter of the first order that ends by saying its own result is insufficient."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 12, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 165-166" ;
+    dcterms:source "Summa perfectionis, Kap. 78, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 81" .
+
+pmp:SummaCitrinatioLunae a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The medicines that colour silver yellow"@en, "Die Medizinen, die Silber gelb färben"@de ;
+    skos:definition "The four ways the work gives to colour silver citrine in the first order. Precipitated quicksilver is kept in a furnace of great ignition until it is red as cinnabar, or if it does not redden, unmortified quicksilver is sublimed with cleansed sulphur upon it twenty times; it is then dissolved, calcined and dissolved again, mixed with dissolved silver, coagulated and projected on silver in flux. By sulphur, which the work calls difficult and immensely laborious. By a solution of iron, calcined and fixed first. By vitriol or copperas, sublimed under great expression of fire, sublimed again so that part after part is fixed, warily calcined, and dissolved into a most red water that has not its peer, then given ingress into the body of silver."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 166-169" ;
+    dcterms:source "Summa perfectionis, Kap. 79, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 81-82" .
+
+pmc:SummaLunaCitrinata a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Silver coloured with a peculiar citrinity"@en, "Silber mit eigentümlicher Gelbe gefärbt"@de ;
+    skos:definition "The capacity claimed: silver coloured much with a peculiar citrinity, by medicines which, the work argues, adhere to silver because they come from its own root."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 166-169" ;
+    dcterms:source "Summa perfectionis, Kap. 79, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 81-82" .
+
+pmc:SummaCitrinatioLunaeEffectus a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The citrinating medicines colour silver yellow, and one of them badly"@en, "Die gelbenden Medizinen färben Silber gelb, und eine davon schlecht"@de ;
+    skos:definition "The claim attached to the four ways: the medicine from quicksilver will colour silver much with a peculiar citrinity, and if the precipitate was red already, no tinging additament is needed. Of the way by a solution of iron the same chapter says that what results is not a splendid bright colour but dull and livid, with a mortiferous citrinity."@en ;
+    pm:byPractice pmp:SummaCitrinatioLunae ;
+    pm:yieldsCapacity pmc:SummaLunaCitrinata ;
+    skos:note "One of the four recipes is given together with a description of its poor result, in the same breath as the good ones and without being withdrawn. It is the only recipe in the medicines of the first order whose stated outcome is a failure of the colour it aims at."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 166-169" ;
+    dcterms:source "Summa perfectionis, Kap. 79, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 81-82" .
+
+pmp:SummaLotioPlumbiCumArgentoVivo a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Lead washed with quicksilver and melted with no more than its own fire"@en, "Blei mit Quecksilber gewaschen und mit nicht mehr als seinem eigenen Feuer geschmolzen"@de ;
+    skos:definition "The operation the work uses to prove what tin is made of: lead is washed with quicksilver, and after the washing melted in a fire not exceeding the fire of its own fusion, so that part of the quicksilver remains with it. The converse is also stated: tin calcined many times and reduced with the fire convenient for its reduction, especially when calcined with great fire after its scoria has been taken off."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. III, cap. De Iovis essentia (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part i, ch. 9, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 138-141" ;
+    dcterms:source "Summa perfectionis, Kap. 65, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 68-69" .
+
+pmc:SummaPlumbumInStannum a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Lead turned into tin, and tin back into lead"@en, "Blei in Zinn verwandelt, und Zinn zurück in Blei"@de ;
+    skos:definition "The capacity stated in passing as a proof of composition: the quicksilver remaining in the washed lead gives it the crashing sound of tin and turns it into tin; and tin, by many reiterated calcinations and reductions, is turned into lead. The first book says the same of lead in its chapter on Saturn: lead is washed and by washing turned into tin, and of it, by our artifice, we easily make silver."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. II, cap. De Saturno, and lib. III, cap. De Iovis essentia (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part iii, ch. 10, and Book II, Part i, ch. 9, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 65-66 and 138-141" ;
+    dcterms:source "Summa perfectionis, Kap. 34 und 65, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 39 und 68-69" .
+
+pmc:SummaPlumbumInStannumExLotione a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Washing lead with quicksilver turns it into tin"@en, "Das Waschen des Bleis mit Quecksilber verwandelt es in Zinn"@de ;
+    skos:definition "The claim that the washing of lead with quicksilver, followed by a melting in no more than its own fire, leaves quicksilver in it that gives it the sound of tin and turns it into tin, and that tin repeatedly calcined and reduced becomes lead."@en ;
+    pm:byPractice pmp:SummaLotioPlumbiCumArgentoVivo ;
+    pm:yieldsCapacity pmc:SummaPlumbumInStannum ;
+    skos:note "Offered as a proof and not as a recipe: the work uses the transformation to establish that a fugitive substance of quicksilver is what makes tin crash, and the author adds that he has seen it with certain assurance by keeping the substances in proper instruments and in the measure of fire that divides them. Entered as a capacity anyway, because the sentence states that the operation turns one metal into another, which is the kind of claim the work exists to make."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. III, cap. De Iovis essentia (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part i, ch. 9, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 138-141" ;
+    dcterms:source "Summa perfectionis, Kap. 65, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 68-69" .
+
+pmc:SummaAurumMedicinaLaetificans a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Gold, a medicine that gladdens the body in youth"@en, "Gold, eine Medizin, die den Körper in der Jugend erfreut"@de ;
+    skos:definition "The one claim on the human body in the work, made in a single clause of the definition of gold in the first book: gold is calcined and dissolved without profit, and it is a medicine gladdening the body in youth."@en ;
+    skos:note "The clause differs between the prints and the difference is the claim. The Latin of 1542 reads est medicina laetificans in iuventute corpus: a medicine that gladdens the body in youth, and nothing about keeping it so. Russell's English reads a medicine rejoicing, and conserving the body in youth, and Darmstaedter's German eine Medizin, die erheitert und den Körper jugendlich erhält. Both translations make it a medicine of conservation, and the print read here does not. Which Latin each translator had in front of him was not established; the node claims the gladdening, which all three give, and not the conservation, which one of them lacks."@en ;
+    skos:note "No preparation, dose or way of taking is given anywhere in the two books, and no other sentence of the work returns to the body. The capacity is entered because it is stated, and it stands without a practice for the same reason."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. II, cap. De Sole (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part iii, ch. 8, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), p. 64" ;
+    dcterms:source "Summa perfectionis, Kap. 32, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 38" .
+
+pmc:SummaCuprumInAurumNatura a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Copper scales washed by mine water and baked three years in sand turn to gold"@en, "Kupferschuppen, vom Grubenwasser gewaschen und drei Jahre im Sand gebacken, werden zu Gold"@de ;
+    skos:definition "The observation the work gives as its warrant that copper may be changed into gold by artifice. In copper mines a water flows out carrying thin scales of copper, which it washes and cleanses by a long continued course; after the water ceases to flow, the scales are found with the dry sand, digested for three years by the heat of the sun, and among them the purest gold is found. The work concludes that the scales were cleansed by the water and equally digested by the sun in the dryness of the sand, and that imitating nature as far as it can, the art likewise alters — yet in this it cannot follow nature."@en ;
+    skos:note "A report of a natural transmutation offered as a model, and the only place in the two books where the work says what it would observe in nature if it were right. It has a term in years and an outcome a stranger could look for in the sand of a copper mine, and that makes it, unlike every other claim in the work, a claim about the world rather than about the operator's bench. The work does not say who saw it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. II, cap. De Sole (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part iii, ch. 8, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 63-64" ;
+    dcterms:source "Summa perfectionis, Kap. 32, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 38" .
+
+pmc:SummaVidimusEtTetigimus a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "We have seen it with our eyes and handled it with our hands"@en, "Wir haben es mit unseren Augen gesehen und mit unseren Händen berührt"@de ;
+    skos:definition "The work's claim of autopsy for its own result, made at the end of the medicines of the third order: God revealed to us the series of all medicines with the experience of them, which we have searched out by our own incessant labour and have seen with our eyes and handled with our hands, the completion sought in our magistery. The first book makes the same claim against those who deny the art: we affirm the art because we have seen and touched the verity thereof."@en ;
+    skos:note "Entered because the work's standing as a witness turns on it. The author does not report somebody else's success, as the Turba does at its one rejuvenation, and does not hand the outcome to God's showing, as the Turba does wherever a term falls due. He says he did it. The same author also says, two parts earlier, that for a long time he could not, entered at pmc:SummaDesperatioAuctoris."@en ;
+    skos:note "Darmstaedter's German drops the clause at the second place. His chapter 86 ends the praise with the medicines we sought and found through God's goodness and our diligent labour, and has nothing for seen with our eyes and handled with our hands, which the Latin of 1542 and Russell's English both carry. At the first place he keeps it, as ich habe sie gesehen und ihre Wahrheit erprobt. A reader of the German alone would find the claim of autopsy once and not twice."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Solaris et Lunaris medicinae administratione (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part ii, ch. 6, and Book II, Part ii, ch. 20, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 46-47 and 178" ;
+    dcterms:source "Summa perfectionis, Kap. 15 und 86, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 30 und 87" .
+
+#
+# The nine assays of the product, and the rules that frame them
+#
+
+pmc:SummaQuinqueDifferentiaePerfectionis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The five differences a medicine must give before a body counts as perfected"@en, "Die fünf Merkmale, die eine Medizin geben muss, bevor ein Körper als vollendet gilt"@de ;
+    skos:definition "The work's statement of what a successful projection must show, given at the head of its discourse on medicines. The imperfect body must be so cleansed of superfluous sulphureity and unclean earthiness that in fusion it is not separated from the mixture after the medicine has been projected; the medicine must illustrate and alter it into a white or citrine colour with splendent brightness; it must give it lunar or solar fusion, or the body does not abide the trials and recedes from the mixture; its alteration must be perpetuated and not vanish; and it must give the weights of perfection, for the weight of nature is one of the signs of perfection and without it the change is one in which fraud may be admitted through the error of credulity."@en ;
+    skos:note "Each of the five is stated with its failing outcome beside it — separation in fusion, a body not brightened, a body that does not abide the trial, an impression that vanishes, a weight not given — so the list is a set of criteria with two sides and not a description of success alone. The fifth names the error it guards against: the credulity of whoever would accept a coloured metal of the wrong weight."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, prooemium De medicinis sermone universali et de quinque differentiis perfectionis earum (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 8, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 158-159" ;
+    dcterms:source "Summa perfectionis, Kap. 74, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 77-78" .
+
+pmc:SummaTresOrdinesMedicinarum a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The three orders of medicines, the first defined by its fading"@en, "Die drei Ordnungen der Medizinen, die erste durch ihr Verblassen bestimmt"@de ;
+    skos:definition "The work's division of all medicines. A medicine of the first order is every preparation of minerals which, projected on bodies diminished from perfection, impresses an alteration that does not infer sufficient completion, so that the altered body happens to be changed and corrupted with the total evaporation of the impression of the medicine — every whitening sublimation of copper or iron that does not receive fixation, every additament of the colour of gold or silver set in a furnace of cementation, which changes with a mutation not durable but diminishing by exhalation. A medicine of the second order alters the body to one difference of completion and leaves the others. A medicine of the third order takes away all corruption and perfects with every difference; it is one only. The work of the first order is called the lesser, of the second the middle, of the third the greater work."@en ;
+    skos:note "The division makes the failing outcome part of a definition. A whitening that fades is not, in this work, a medicine that did not work; it is a medicine of the first order working as the first order works. The same move turns the cementation colours of the goldsmiths into the lowest rank of the art rather than into its counterfeit."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De medicinarum triplici ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 10, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 161-162" ;
+    dcterms:source "Summa perfectionis, Kap. 76, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 78" .
+
+pmc:SummaDefinitioAuri a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Nothing is true gold that does not have every difference of the definition of gold"@en, "Nichts ist wahres Gold, das nicht jedes Merkmal der Definition des Goldes hat"@de ;
+    skos:definition "The definition of gold in the first book, with the rule the work draws from it. Gold is a metallic body, citrine, heavy, mute, shining, equally digested in the bowels of the earth and very long washed with mineral water, extensible under the hammer, fusible, and sustaining the trial of the cupel and the cement; and from the definition it follows that nothing is true gold unless it has all the causes and differences of the definition of gold. Silver is defined in the next chapter as very durable in the cupel, lead, tin and copper each as refusing the cupel and the cement."@en ;
+    skos:note "The one place where the work assays a material in the plain sense: whatever is offered as gold is gold if and only if it passes, and the rule carries no excuse for a metal that fails. It precedes the assays of the operation by a whole book and is the ground they stand on, since what the operation is required to produce is defined by the same two trials."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. II, cap. De Sole (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part iii, ch. 8-12, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 63-68" ;
+    dcterms:source "Summa perfectionis, Kap. 32-36, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 38-39" .
+
+pmc:SummaExamenCineritii a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay of the cupel: the metal stays quiet and clean after the lead has gone"@en, "Die Probe der Kupelle: das Metall bleibt ruhig und rein, nachdem das Blei vergangen ist"@de ;
+    skos:definition "The first of the nine assays by which, the work says, it is known whether the projection of the art is a completion with truth. A hollow is made in a cake of sifted ashes, calx or burnt bone, strewn with powdered glass and dried; the metal to be tried is put in it under coals and blown upon until it flows, and lead is cast on it part after part with a strong blast. While the metal is agitated with the motion of strong concussion it is not pure; if the lead has vanished and the motion has not ceased it is not pure, and more lead is cast on; when it rests and is clean and clear on its surface, the fire is dispersed and water poured on, and it is found perfectly examined. Only the substance of gold and silver is permanent in this trial; lead is separated most swiftly, copper more slowly, tin holds longer than both, iron does not mix unless by vehement fire and is then not easily separated."@en ;
+    skos:note "An act with an outcome that can come out either way, the outcome perceptible to anybody at the hearth — a metal that keeps moving, or one that rests clean — and the verdict for the failing case stated in the same sentence as the act: it is not pure. No repetition of the operation is prescribed for the case and no cause outside it is named. It is the assay of a metal, applied by the work to the metal its own operation has made."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 14, De cineritii examine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 1-3, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 180-183" ;
+    dcterms:source "Summa perfectionis, Kap. 87-89, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 87-89" .
+
+pmc:SummaExamenCementi a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay of the cement: three days at red heat, and the plates come out clean or burnt"@en, "Die Probe des Zements: drei Tage in Glut, und die Plättchen kommen rein oder verbrannt heraus"@de ;
+    skos:definition "The second assay. A cement is compounded of burning, blackening and penetrating things — vitriol, sal ammoniac, flower of copper, old ground potsherd, very little or no sulphur, and man's urine — pasted on thin plates of the body to be tried; the plates are laid on an iron grate in a closed earthen vessel so that none touches another, and kept fire-hot but not melted for three days. After the third day the plates are found cleansed of all impurity if the body was perfect; if not, they are wholly corrupted and burnt in the calcination. Some heat the plates without cement and the perfect body is purified likewise, the imperfect consumed, in a longer time. Silver abides the cement most after gold, then iron, tin, copper, and lead least."@en ;
+    skos:note "A term in days, a perceptible outcome on each side, and the failing side stated without remedy. The work insists on the caution that the plates must glow and not melt, which is a condition on performing the assay correctly and not an excuse for its result."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 15, De cementi examine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 4-5, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 183-187" ;
+    dcterms:source "Summa perfectionis, Kap. 90-91, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 89-90" .
+
+pmc:SummaExamenIgnitionis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay of ignition: red heat and a celestine flame before fusion"@en, "Die Probe des Glühens: Rotglut und eine himmelblaue Flamme vor dem Schmelzen"@de ;
+    skos:definition "The third assay. A body of perfection takes ignition before it fuses, with an intense redness and with a flame of a pleasing celestine colour, before its glow reaches the whiteness of fire the eye cannot bear. If the administered bodies melt before they glow red, they are not in completion; if they are brought to glow only with labour and strong expression of fire, their administration is not true; if they give no flame of a pleasing celestine colour in their ignition, their administration is not complete. If any part of the weight, colour, beauty, ignition or the like is found diminished, the search of the artist was not sufficient, and he is to search again until he finds his error."@en ;
+    skos:note "The one assay of the nine whose failing outcome is followed by an instruction rather than a verdict alone, and the instruction is not to repeat the operation on the same batch but to search again for the error in the method. The Latin of 1542 reads reiterando igitur inquirat donec inveniat: let him inquire again until he finds. It sends the operator back to his reading and not to his furnace, and it leaves the failing metal failed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 16, De ignitionis examine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 6, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 187-188" ;
+    dcterms:source "Summa perfectionis, Kap. 92, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 90-91" .
+
+pmc:SummaExamenFusionis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay of fusion: three kinds of glow, and the perfect body flows with red heat and cools slowly"@en, "Die Probe des Schmelzens: drei Arten der Glut, und der vollkommene Körper fließt in Rotglut und kühlt langsam"@de ;
+    skos:definition "The fourth assay. Fusion with ignition is the only argument of perfection, and not with every ignition. A body that flows with a little pressure of a weak fire, without ignition or with a pallid one, is an imperfect body of diminished artifice. A body that after fusion turns suddenly black and loses its glow before it hardens is to be judged soft, one of the imperfect bodies. A body that glows only under laborious and violent fire with an altogether white and shining ray is a hard body altered, not a perfect one; and one that, taken from the fire after fusion, hardens at once while still glowing is under the nature of iron. Three ignitions are thus distinguished before liquefaction: pallid for the soft bodies, red and clear for the perfect, most white and shining for the hard."@en ;
+    skos:note "Every failing outcome is assigned to a named kind of metal, so the assay does more than reject: it says which imperfect body the product still is. No remedy is attached to any of them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 17, De fusionis examine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 7, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 188-189" ;
+    dcterms:source "Summa perfectionis, Kap. 93, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 91-92" .
+
+pmc:SummaExamenVaporumAcutorum a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay over sharp vapours: the prepared body must give a pleasing celestine bloom"@en, "Die Probe über scharfen Dämpfen: der bereitete Körper muss eine schöne himmelblaue Ausblühung geben"@de ;
+    skos:definition "The fifth assay. Bodies of perfection set over the vapours of sharp, saline and sour things bloom little or not at all, or give a most pleasant celestine flower; the purest gold does not bloom, silver and impure gold give a celestine bloom, gold's the more delightful. The work makes the same colour in prepared bodies by the goodness of quicksilver, and states the criterion: whatever prepared bodies are set over the vapours and do not create a pleasant celestine colour are not in the total completion of preparation. Iron blooms dull red or dull citrine mixed with green, copper dull green with turbid celestine, lead dull white, tin clear white and most slowly of the imperfect bodies."@en ;
+    skos:note "Darmstaedter's German inverts the criterion. The Latin of 1542 says of the bodies set over the sharp vapours that if they caelestinum non creaverint amoenitatis colorem, non sunt in perfectionis complemento totali, and Russell's English agrees: those that do not create the celestine colour are not complete. Darmstaedter's chapter 94 reads Präparierte Metalle, die in Berührung mit den scharfen Dämpfen die schöne bläuliche Farbe bekommen, sind nicht völlig präpariert — those that do get the colour are not fully prepared. A reader of the German alone would apply the assay backwards. The node follows the Latin and the English."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 18, De examine expositionis corporum super vapores acutos (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 8, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 189-190" ;
+    dcterms:source "Summa perfectionis, Kap. 94, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 92" .
+
+pmc:SummaExamenExtinctionis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay of quenching: if the colour changes or a scoria forms, the artifice of the work is fallacious"@en, "Die Probe des Ablöschens: wenn sich die Farbe ändert oder Schlacke bildet, ist das Kunstwerk trügerisch"@de ;
+    skos:definition "The sixth assay. If the glowing body quenched in a liquor does not give white for the lunar and bright citrine for the solar but changes to an alien colour, the alteration is not in completion. If on repeated glowing and quenching in waters of salts or alums it puts forth a scoria tending to blackness, or if quenched in sulphurs and glowed again much of it vanishes or it is infected with a foul blackness or it breaks under the hammer, the artifice of the work is fallacious. If after cementation with sal ammoniac, verdigris and boys' urine, glowing and quenching, it loses its proper colour entirely or makes a scoria, it remains in sophistic corruption."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 19, De extinctionis examine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 9, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 190-191" ;
+    dcterms:source "Summa perfectionis, Kap. 95, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 92-93" .
+
+pmc:SummaRegulaPonderisColoris a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The general rule: a change of weight or colour under any assay means the artist proceeded fantastically"@en, "Die allgemeine Regel: eine Änderung von Gewicht oder Farbe unter irgendeiner Probe heißt, der Künstler hat phantastisch gearbeitet"@de ;
+    skos:definition "The rule the work gives for all the assays, those stated and those to come: if among the differences of perfection the altered body changes anything of its weight or colour, the artist has not proceeded rightly but fantastically in his work, which is a thing not profitable but rather destructive. The Latin of 1542: non recte sed phantastice indagavit."@en ;
+    skos:note "This is where the work puts a failing assay, and it is worth stating exactly. The verdict falls on the batch and on the artist's way of working. It does not fall on the art, and it does not send him back to the operation with a promise that repetition will bring the outcome. A product that changes weight under the cupel is, by this rule, evidence that the operator did not do what the book says; it is not allowed to be evidence that what the book says does not work. The protection of the art is not in this sentence but at the opening of the first book, entered at pmc:SummaDeusNegatArtem."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 19, De extinctionis examine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 9, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), p. 191" ;
+    dcterms:source "Summa perfectionis, Kap. 95, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 92-93" .
+
+pmc:SummaExamenSulphuris a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay with burning sulphur: gold is not burnt, and gold and silver return from it"@en, "Die Probe mit brennendem Schwefel: Gold wird nicht verbrannt, und Gold und Silber kehren daraus zurück"@de ;
+    skos:definition "The seventh assay, by which, the work says, the difference is noted between bodies diminished from perfection prepared in a sophistical completion. Gold is not burnt by sulphur; then tin is least burnt, then silver, then lead, copper more easily, iron most easily. After the burning gold gives an intense citrine or clear red, silver black mixed with celestine, tin black with a little red, lead dull black with much red and livid, copper black mixed with livid or, with little burning, a clean violet, iron a most black dull colour. In reduction from the burning gold and silver return to their own bodies; tin and lead recede, tin wholly or for the greater part, and if preserved by gentle reduction they return as an alien body, tin as clear antimony and lead as dull antimony."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 20, De examine in mixtione sulphuris (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 10, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 191-193" ;
+    dcterms:source "Summa perfectionis, Kap. 96, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 93-94" .
+
+pmc:SummaExamenCalcinationisReductionis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay of repeated calcination and reduction: nothing of colour, weight, quantity or brightness may be lost"@en, "Die Probe wiederholter Calcination und Reduktion: nichts an Farbe, Gewicht, Menge oder Glanz darf verloren gehen"@de ;
+    skos:definition "The eighth assay. Bodies are found to be of perfection in the reiteration of calcination and reduction if they lose nothing of their colour, weight, quantity or brightness, however many times the operations are repeated; if by repeating the calcination and the reduction from the calxes altered metals of any kind lose anything of their differences of goodness, it is to be supposed that the artist has followed his investigation sophistically."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 21, De examine calcinationis et reductionis corporum (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 11, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 193-194" ;
+    dcterms:source "Summa perfectionis, Kap. 97, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 94" .
+
+pmc:SummaExamenArgentiVivi a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The assay of quicksilver: the perfect body takes it up easily"@en, "Die Probe mit Quecksilber: der vollkommene Körper nimmt es leicht auf"@de ;
+    skos:definition "The ninth assay. Bodies containing the greatest quantity of quicksilver are bodies of perfection and more amicably imbibe quicksilver, and the sign of it is the easy susception of quicksilver by a solar or lunar body; for the same reason, if an altered body does not easily receive quicksilver into its substance, it must be very remote from the completion of perfection."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. 22, De examine in facili et difficili mixtione argenti vivi (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 12, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), p. 194" ;
+    dcterms:source "Summa perfectionis, Kap. 98, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 94" .
+
+#
+# The operations the medicines are made with, as far as the cautions and assays below need them
+#
+
+pmp:SummaSublimatio a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Sublimation of the spirits in the aludel with three degrees of fire"@en, "Sublimation der Geister im Aludel mit drei Feuergraden"@de ;
+    skos:definition "The first of the eight operations of the art: the elevation of a dry thing by fire with adherence to its vessel, invented because nothing but the spirits unites with bodies and the spirits uncleansed corrupt them. Sulphur and arsenic are mixed with feces of the calx of a metal, equal in quantity to them for an unskilled artist and less for a skilled one, and sublimed in a thick glass aludel with three degrees of fire: a remiss fire until only the altered and clean part rises, a fire with ignition of the bottom to raise what of the pure essence stays in the feces, and a weakest fire to drive off the most subtle part that brings adustion. Quicksilver is sublimed from things it has no affinity with — talc, calx of egg-shells, white marble, powdered glass, prepared salt — after its wateriness has been removed by imbibition and gentle heat, and the sublimation is repeated until it is whiter than snow."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 2-8, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 73-89" ;
+    dcterms:source "Summa perfectionis, Kap. 39-45, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 42-48" .
+
+pmp:SummaCalcinatioEtReductio a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Calcination of the bodies and their reduction from the calx"@en, "Calcination der Körper und ihre Reduktion aus dem Kalk"@de ;
+    skos:definition "The operation by which the imperfect bodies are freed of their corrupting sulphureity and earthiness. Lead and tin are melted in an iron or earthen dish and the black skin drawn off until the whole is powder, lead then kept in greater fire until its calx is most yellow or red, tin until it is completely white; or salt is cast on them in fusion and stirred until they become ashes. Copper and iron are heated red hot in plates without melting. The calx is then reduced to body again, and calcination and reduction repeated until the body appears clean."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 14, and Book II, Part ii, ch. 4, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 101-107 and 152-155" ;
+    dcterms:source "Summa perfectionis, Kap. 51 und 70, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 53-55 und 74-76" .
+
+pmp:SummaCoagulatioArgentiVivi a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The coagulation of quicksilver by fire and by medicine"@en, "Die Gerinnung des Quecksilbers durch Feuer und durch Medizin"@de ;
+    skos:definition "The ways the work gives to bring quicksilver to a solid substance: by frequent precipitation with violence into the strongly heated bottom of a very long vessel, until it is totally fixed; by long and constant retention in fire in a glass with a very long neck and a round belly, its mouth open so that the humidity can leave; and by a medicine of its own nature that adheres to it in its depth before its flight, entered at pmp:SummaMedicinaCoagulansArgentumVivum."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 109-115" ;
+    dcterms:source "Summa perfectionis, Kap. 53, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 56-59" .
+
+pmp:SummaPraeparatioCorporum a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The preparation of the imperfect bodies before the medicine, in its order"@en, "Die Präparierung der unvollkommenen Körper vor der Medizin, in ihrer Ordnung"@de ;
+    skos:definition "The preparation every imperfect body needs before it can receive the medicine, in the order the work calls profitable and necessary: first all the fugitive, corrupting and adustive substance is cleansed from it, then its earthy superfluity taken away, then it is dissolved and reduced or completely washed with a lavament of quicksilver. Tin is further hardened by calcination and loses its crashing by being kept in the fire of its calcination; lead is hardened by calcination with salt and whitened by talc, marcasite and tutia; copper is prepared by sublimation with tutia or sulphur or by cleansing things; iron by sublimation with unfixed arsenic, by repeated sublimation of arsenic from it, or by fusion with lead and tutia."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. III, cap. De praeparatione Saturni et Iovis in communi (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 2-7, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 147-159" ;
+    dcterms:source "Summa perfectionis, Kap. 68-73, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 73-77" .
+
+#
+# What must be there first
+#
+
+pmc:SummaArtificisIntegritas a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "An operator with complete organs and a sound body"@en, "Ein Operierender mit vollständigen Gliedern und gesundem Körper"@de ;
+    skos:definition "The bodily condition the work requires of the artificer: organs complete and serviceable, the body not weak, sickly or feverish, not like the bodies of the leprous whose members fail, not at the last point of life or worn out by decrepit age. The art is perfected through the members as ministers of nature."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. I, cap. 2, De impedimentis ex parte corporis (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part i, ch. 2, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), p. 26" ;
+    dcterms:source "Summa perfectionis, Kap. 4, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 20" .
+
+pmc:SummaIntegritasNecessaria a pm:Presupposing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Without complete organs and a sound body nobody comes to the completion of the work by himself"@en, "Ohne vollständige Glieder und gesunden Körper kommt niemand aus sich zur Vollendung des Werkes"@de ;
+    skos:definition "The bodily impediment of the first book: if any man has not his organs complete he cannot by himself come to the completion of this work, no more than if he were blind or wanted his limbs; and a weak, sick, feverish, leprous, dying or decrepit artificer does not attain it."@en ;
+    pm:dependentStep pmp:SummaMagisteriumMaius ;
+    pm:priorStep pmc:SummaArtificisIntegritas ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "He cannot attain to the completion of the art; the artist is hindered in his intention by these natural impotencies of the body."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. I, cap. 2, De impedimentis ex parte corporis (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part i, ch. 1-2, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 25-26" ;
+    dcterms:source "Summa perfectionis, Kap. 3-4, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 20" .
+
+pmc:SummaIngeniumEtDoctrina a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Natural ingenuity together with learning in natural philosophy"@en, "Natürliche Begabung zusammen mit Gelehrsamkeit in der Naturphilosophie"@de ;
+    skos:definition "The condition of the soul the work requires: a natural ingenuity that searches and subtly scrutinises natural principles, joined to natural philosophy acquired by learning, each correcting the errors the other cannot. Excluded are the stiff-necked who can scarcely understand common speech, those whose brain full of fumes takes every fantasy for truth, those whose will moves from one opinion to its opposite without reason, those who see no truth in natural things, those who contemn the science, and those who love money and will not lay out the charges."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. I, cap. 3, De impedimentis ex parte animae (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part i, ch. 3 and 5, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 26-30" ;
+    dcterms:source "Summa perfectionis, Kap. 5 und 7, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 20-22" .
+
+pmc:SummaIngeniumNecessarium a pm:Presupposing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Without ingenuity and natural philosophy the artificer cannot attain his end, however much money he has"@en, "Ohne Begabung und Naturphilosophie erreicht der Künstler sein Ziel nicht, wie viel Geld er auch hat"@de ;
+    skos:definition "The prerequisite of the soul: he who has not a natural ingenuity searching natural principles cannot find the true root of the science; and the artificer must be skilled in natural philosophy, because however much money he has and however deep his wit, he cannot attain his end unless he has acquired it by learning. The preface states the same in degrees: he who knows not the natural principles is very remote from the art, he who knows the principles and the causes of minerals and the way of generation is but a little short of its completion."@en ;
+    pm:dependentStep pmp:SummaMagisteriumMaius ;
+    pm:priorStep pmc:SummaIngeniumEtDoctrina ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "He cannot find the true root of this most precious science; the science contemns those who contemn it and repels them from the end of the work; it does not come to the covetous."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. I, cap. 3, De impedimentis ex parte animae (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Preface and Part i, ch. 3 and 5, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 23-30" ;
+    dcterms:source "Summa perfectionis, Kap. 1, 5 und 7, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 19-22" .
+
+pmc:SummaSumptus a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Means for the necessary charges, and freedom from worldly business"@en, "Mittel für die nötigen Kosten, und Freiheit von weltlichen Geschäften"@de ;
+    skos:definition "The external condition: enough means to bear the necessary charges to the end of the work, and leisure not consumed by the cares and business of the world."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part i, ch. 4-5, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 28-31" ;
+    dcterms:source "Summa perfectionis, Kap. 6-7, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 21-22" .
+
+pmc:SummaSumptusNecessarius a pm:Presupposing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The poor and the busy are kept from the art"@en, "Die Armen und die Beschäftigten werden von der Kunst ferngehalten"@de ;
+    skos:definition "The external impediment: subtle and ingenious men, followers of nature, oppressed by extreme poverty are compelled to postpone or neglect the magistery, and those occupied wholly in secular business are withdrawn from by the science. The conclusion adds that the science agrees not well with a man poor and indigent but is rather inimical and adverse to him."@en ;
+    pm:dependentStep pmp:SummaMagisteriumMaius ;
+    pm:priorStep pmc:SummaSumptus ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The work is postponed or neglected; a man whose money is spent before the end is forced to leave it uncompleted."@en ;
+    skos:note "The same chapter says the opposite of what this might seem to license. The art can be completed for a small price, it insists, by one not ignorant of its principles, and whoever wastes his money by not minding its admonitions is to impute what he suffers to his own ignorance and presumption. So the work requires means and warns against spending them, and the case of a reader who spent and failed is assigned to him in advance."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part i, ch. 4-5, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 28-31" ;
+    dcterms:source "Summa perfectionis, Kap. 6-7, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 21-22" .
+
+pmc:SummaFecesCalcisMetallorum a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Feces of the calx of a metal mixed with the spirit to be sublimed"@en, "Fäzes vom Kalk eines Metalls, dem zu sublimierenden Geist beigemischt"@de ;
+    skos:definition "The admixture the sublimation of sulphur and arsenic requires: a fixed matter with which they best agree and mix most profoundly, best the calxes of metals, scales of iron or calcined copper, or prepared salt, which can be separated afterwards by solution."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 4, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 76-78" ;
+    dcterms:source "Summa perfectionis, Kap. 41, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 43" .
+
+pmc:SummaFecesNecessariae a pm:Presupposing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Sulphur and arsenic sublimed without feces rise whole and uncleansed"@en, "Schwefel und Arsenik ohne Fäzes sublimiert steigen ganz und ungereinigt auf"@de ;
+    skos:definition "The prerequisite of the sublimation of the spirits: they must be joined with the feces of a fixed thing with which they unite through their least parts, best a metallic calx; otherwise their whole substance ascends uncleansed, and whoever sublimed from a thing extraneous to the nature of bodies sublimed in vain and found them in no wise purified."@en ;
+    pm:dependentStep pmp:SummaSublimatio ;
+    pm:priorStep pmc:SummaFecesCalcisMetallorum ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The whole substance ascends without any cleansing; without the calxes of bodies the sublimation is not impossible but most difficult and of long tedious labour, and delay even to desperation."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 4, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 76-78" ;
+    dcterms:source "Summa perfectionis, Kap. 41, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 43" .
+
+pmc:SummaSublimatioAnteProiectionem a pm:Presupposing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The spirits must be sublimed before they are cast on bodies"@en, "Die Geister müssen sublimiert werden, bevor sie auf Körper geworfen werden"@de ;
+    skos:definition "The reason the work gives for the invention of sublimation: nothing unites with bodies but the spirits, and the spirits cast on bodies without cleansing either do not give perfect colours or totally corrupt, burn, blacken and defile them; sulphur, arsenic and marcasite totally corrupt, tutia gives imperfect colours. They are cleansed of their burning unctuosity and their earthiness by sublimation and by no other magistery."@en ;
+    pm:dependentStep pmp:SummaMagisteriumMaius ;
+    pm:priorStep pmp:SummaSublimatio ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Cast on bodies uncleansed the spirits give imperfect colours or totally corrupt, burn, blacken and defile them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 2, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 73-74" ;
+    dcterms:source "Summa perfectionis, Kap. 39, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 42" .
+
+pmc:SummaPraeparatioAnteMedicinam a pm:Presupposing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The body must be prepared before the medicine is projected on it"@en, "Der Körper muss präpariert werden, bevor die Medizin auf ihn geworfen wird"@de ;
+    skos:definition "The prerequisite of every projection: unless every superfluous sulphureity and unclean earthiness is taken away from the imperfect body, by medicine or by preparation, it is not purified so that in fusion it does not separate from the mixture after projection; and the medicine of the second order changes an imperfect body into a perfect lunar body only if the known preparations have been adhibited, and otherwise leaves it diminished."@en ;
+    pm:dependentStep pmp:SummaMedicinaSecundiOrdinis ;
+    pm:priorStep pmp:SummaPraeparatioCorporum ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The body separates from the mixture in fusion after projection, and the medicine leaves it diminished, perfected in one difference at most."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, prooemium De medicinis sermone universali (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 8 and 15, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 158 and 171-173" ;
+    dcterms:source "Summa perfectionis, Kap. 74 und 81, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 77 und 83-84" .
+
+#
+# The cautions
+#
+
+pmc:SummaCaveIgnemInSublimatione a pm:Cautioning ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Sublime sulphur and arsenic with a remiss fire, or the whole rises blackened and burnt"@en, "Schwefel und Arsenik mit gelindem Feuer sublimieren, sonst steigt das Ganze geschwärzt und verbrannt auf"@de ;
+    skos:definition "The caution of the chapter on the degrees of fire: when arsenic or sulphur is sublimed, the sublimation must be made with a remiss fire, because their most subtle parts are uniformly joined with the gross, and their whole substance would ascend without any purification, yea blackened and combust. The chapter on errors adds its consequences: many feces without a proportionally increased fire and nothing rises; few feces or none and the whole rises; a great quantity in a small furnace gets no sufficient fire, a small quantity in a great furnace is exterminated by excess of heat."@en ;
+    pm:cautionsAbout pmp:SummaSublimatio ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 3 and 6, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 74-75 and 79-81" ;
+    dcterms:source "Summa perfectionis, Kap. 40 und 43, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 42 und 45" .
+
+pmc:SummaCaveSaturnumIoveque a pm:Cautioning ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Lead reduces too easily and tin too hardly, and the operator who errs with tin concludes it cannot be done"@en, "Blei reduziert zu leicht und Zinn zu schwer, und wer beim Zinn irrt, schließt, es sei unmöglich"@de ;
+    skos:definition "The caution of the chapter on calcination. Lead is easily reduced from its calx and tin most difficultly; let the artificer not expose lead after its first pulverisation to too great a fire and so reduce the calx into body before it is perfected, but increase the fire by degrees until it is confirmed in its calx. And let him not err in tin: if a great fire is not given in its reduction it does not reduce, and if a great fire is given it does not necessarily reduce but may turn to glass, because its fugitive quicksilver flies and leaves it deprived of humidity, apt only for a vitreous fusion; so he must hasten its reduction with the speedy force of a violent fire."@en ;
+    pm:cautionsAbout pmp:SummaCalcinatioEtReductio ;
+    skos:note "A caution that names the misreading it guards against. The operator who fails with tin, the chapter says, finds it unreduced or turned to glass and thence concludes its reduction impossible. The work had already told the story of that conclusion in the second part of the first book, where those who could not reduce the calx of tin judged the art impossible."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part ii, ch. 9, and Part iv, ch. 14, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 49-51 and 103-105" ;
+    dcterms:source "Summa perfectionis, Kap. 18 und 51, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 31 und 53-54" .
+
+pmc:SummaCaveArsenicumInPulvere a pm:Cautioning ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Throw arsenic on copper in pieces and not in powder, and only if skilled in sublimation"@en, "Arsenik in Stücken und nicht als Pulver auf das Kupfer werfen, und nur wer im Sublimieren geübt ist"@de ;
+    skos:definition "Two cautions of the chapter on whitening copper. The sublimed arsenic is melted into a lump and thrown on copper piece by piece rather than in powder, because powder is more easily inflamed than a lump, vanishes more easily and is consumed before it can fall fiery hot on the body. And if the operator is not well skilled in the ways of sublimation, the arsenic will not persevere in the copper with any alteration, so the work must be repeated after the manner taught for marcasite."@en ;
+    pm:cautionsAbout pmp:SummaDealbatioVeneris ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 11-12, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 164-166" ;
+    dcterms:source "Summa perfectionis, Kap. 77-78, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 80-81" .
+
+pmc:SummaCaveInFixationeMedicinae a pm:Cautioning ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Fix the medicine with great caution, removing only so much humidity as the fusion sought requires"@en, "Die Medizin mit großer Vorsicht fixieren und nur so viel Feuchtigkeit entfernen, wie die gesuchte Schmelzbarkeit verlangt"@de ;
+    skos:definition "The caution on the preparation of the medicine: it cannot have perfect fusion unless great caution is used in its fixation, so that it softens hard bodies and hardens soft ones; the artificer must be so skilled in the administration of fire that he removes only so much humidity as suffices for perfect fusion — a gentle fire at the beginning if the medicine is to soften bodies hard of fusion, because gentle fire conserves humidity, a vehement fire if it is to harden soft bodies, because such fire consumes it."@en ;
+    pm:cautionsAbout pmp:SummaMagisteriumMaius ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 9, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 159-161" ;
+    dcterms:source "Summa perfectionis, Kap. 75, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 78" .
+
+pmc:SummaCaveFestinantiamCoagulationis a pm:Cautioning ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Haste and excessive fire are the errors of those who would coagulate quicksilver"@en, "Hast und übermäßiges Feuer sind die Fehler derer, die Quecksilber gerinnen lassen wollen"@de ;
+    skos:definition "The causes the chapter on coagulation gives for the failures it reports. The substance of quicksilver is uniform, so its wateriness cannot be removed in a short space by keeping it in a continued fire: too much haste was the cause of the first error, the operator who found it flowing again when taken from the fire. It is of a subtle substance and recedes from the fire: excessive fire is the cause of the error of those from whom it flies."@en ;
+    pm:cautionsAbout pmp:SummaCoagulatioArgentiVivi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 109-112" ;
+    dcterms:source "Summa perfectionis, Kap. 53, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 56-57" .
+
+pmc:SummaCaveIramEtProdigalitatem a pm:Cautioning ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Be slow to anger, keep your money, do not leave the work off before its end"@en, "Sei langsam zum Zorn, halte dein Geld zusammen, lass das Werk nicht vor seinem Ende liegen"@de ;
+    skos:definition "The cautions on the conduct of the artificer in the conclusion of the first part. He must be diligent and persist to the final consummation and not leave off abruptly, because from a diminished work he acquires neither knowledge nor profit but reaps desperation and damage. He must be temperate and slow to anger, lest through the force of rage he spoil and destroy his works begun. He must keep his money and not distribute it vainly, lest he not find the art and be left in misery and the desperation of poverty, or come near the end with his money spent and be forced to leave it uncompleted. He must impress on his mind all signs that appear in every decoction and search out their causes."@en ;
+    pm:cautionsAbout pmp:SummaMagisteriumMaius ;
+    skos:note "The warning against leaving the work unfinished carries a claim the rest of the book leans on: a diminished work yields no knowledge. An operator who stops halfway has, by this sentence, learned nothing about whether the procedure works, so the only informative run is a completed one. The work does not say how long completion takes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. I, cap. 5 (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part i, ch. 5, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 29-31" ;
+    dcterms:source "Summa perfectionis, Kap. 7, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 21-22" .
+
+pmc:SummaCaveNegligentiamMundationis a pm:Cautioning ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Be not negligent in cleansing quicksilver, for such as its cleansing such will be its perfection"@en, "Sei nicht nachlässig im Reinigen des Quecksilbers, denn wie seine Reinigung, so seine Vollkommenheit"@de ;
+    skos:definition "The caution of the chapter on the sublimation of quicksilver: in its preparation by sublimation be not negligent, because such as its mundation shall be, such will be its perfection in projection on any of the imperfect bodies and on its own body unprepared. Some have formed iron by it, others lead, some copper and others tin, through negligence of preparation, sometimes of the quicksilver alone, sometimes of the sulphur mixed with it."@en ;
+    pm:cautionsAbout pmp:SummaMedicinaCoagulansArgentumVivum ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 8, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 86-89" ;
+    dcterms:source "Summa perfectionis, Kap. 45, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 47-48" .
+
+#
+# The assays of the operation in progress, and the one sign
+#
+
+pmc:SummaProbaSublimationis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The sublimate must be clear, lucid and not burnt, or the work is repeated"@en, "Das Sublimat muss klar, glänzend und unverbrannt sein, sonst wird das Werk wiederholt"@de ;
+    skos:definition "The criterion of the sublimation of sulphur and arsenic: the probation of its goodness and perfection is that the sublimate be found clear and lucid and not burnt with inflammation; if it is not so found, the work must be repeated with consideration of all its intentions until the sublimate is found perfect. The fire is regulated during the work by a cotton wick put into the hole of the head: if little sublimate comes forth with it, or it is clean, the fire is too small; if much and unclean, too great; when much and clean, the proportion is found."@en ;
+    skos:note "An assay of the operation in progress, with a repetition rule on its failing side, in the form the Turba gives its two assays. It is entered beside the nine assays of the product because the contrast is the finding: where the work judges an intermediate it says do it again, and where it judges the product it says the artist did it wrong."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 5 and 7, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 78-79 and 86" ;
+    dcterms:source "Summa perfectionis, Kap. 42 und 44, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 44 und 46-47" .
+
+pmc:SummaProbaArgentiViviSublimati a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Sublimed quicksilver is proved on the fire: if it flows well enough, if not add and sublime again"@en, "Sublimiertes Quecksilber wird auf dem Feuer geprüft: fließt es gut, genug, sonst zugeben und wieder sublimieren"@de ;
+    skos:definition "The assay of the fixed part of sublimed quicksilver: prove it upon fire; if it flows well, sufficient sublimation has been administered; if not, add a small part of sublimed quicksilver and reiterate the sublimation until the end is answered; if it has a lucid and most white colour and is porous it is well sublimed, if not, not."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 8, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 87-88" ;
+    dcterms:source "Summa perfectionis, Kap. 45, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 47" .
+
+pmc:SummaProbaFinisSublimationis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "A burnt clay rod held near the matter shows whether the sublimation has ended"@en, "Ein gebrannter Tonstab nahe der Materie zeigt, ob die Sublimation beendet ist"@de ;
+    skos:definition "The test of the end of a sublimation, given for marcasite and said to serve for all things sublimed: a rod of well burnt earth with a small hole in its end is put in near the matter; if anything ascending adheres to the hole, the whole is not sublimed, if not, the sublimation is ended. For marcasite the separation of its two substances is proved by colour and flame: when all its sulphur has risen the sublimate turns most white mixed with a clear celestine colour, and what is of the nature of sulphur burns with a flame, while what rises after it neither burns nor shows any property of sulphur."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 9-10, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 89-93" ;
+    dcterms:source "Summa perfectionis, Kap. 46-47, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 48" .
+
+pmc:SummaSignumLotionisArgentiVivi a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The celestine colour of the earthiness is the sign that quicksilver is perfectly washed"@en, "Die himmelblaue Farbe des Erdigen ist das Zeichen, dass das Quecksilber vollkommen gewaschen ist"@de ;
+    skos:definition "The sign announced for the washing of quicksilver in vinegar: the washing is repeated until the colour of its earthiness is changed into a clear colour mixed with a white and celestine colour, or a most perfect celestine colour, which is a sign of perfect washing; then the medicine of coagulation is projected on it."@en ;
+    skos:note "Counted with the signs and not with the assays, for the reason SPEC §15 gives: the colour is announced to the operator in advance and the washing goes on until he sees it. It is the only sign of success in the work that does not belong to the product, and with the celestine flame of ignition and the celestine bloom over vapours it makes celestine the colour the work most often tells its operator to expect."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part i, ch. 3, and Part ii, ch. 7, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 127-128 and 159" ;
+    dcterms:source "Summa perfectionis, Kap. 59 und 73, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 62-63 und 77" .
+
+#
+# What the work says a failed run looks like
+#
+
+pmc:SummaCoagulatioInCorpusImperfectum a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Quicksilver coagulated by an impure medicine becomes lead, tin, copper or iron"@en, "Quecksilber, von einer unreinen Medizin geronnen, wird Blei, Zinn, Kupfer oder Eisen"@de ;
+    skos:definition "The failing outcomes of the coagulation of quicksilver, named in the chapter on coagulation. Kept long in a temperate fire it flows again when taken out; kept longer it becomes a white, red or citrine stone that has neither fusion nor ingress; coagulated by sulphur, arsenic or marcasite it takes the form not of a body but of quicksilver mixed with lead, because those fugitives fly with it in the fire; coagulated in projection by artificial medicines it turns into an imperfect body. From the diversity of medicines an illusion happens, so that sometimes it is made lead, sometimes tin, sometimes copper, sometimes iron, by reason of impurity; and sometimes gold or silver, which must proceed from purity."@en ;
+    skos:note "The work names five distinct failing products of one operation and gives a cause for each — haste, excessive fire, the flight of the spirits, the earthiness of their sulphur, the impurity of the medicine. Every cause is a fault in how the operator prepared or ran the work; none is a limit of the operation, and the same sentence that names the failures names the success that purity would have produced."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 109-113" ;
+    dcterms:source "Summa perfectionis, Kap. 53, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 56-58" .
+
+pmc:SummaDelusionesProiectionis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "What a projection of unprepared spirits shows: the medicine burns, vanishes or will not mix"@en, "Was eine Projektion unpräparierter Geister zeigt: die Medizin verbrennt, verfliegt oder mischt sich nicht"@de ;
+    skos:definition "The failing outcomes of projection the work reports in the second part of the first book as the delusions of those who deny the art. Sulphur only sublimed, projected on a body, burns and vanishes and leaves the body more unclean than before; arsenic cleansed of its sulphureity but still volatile adheres not stably and vanishes little by little, leaving the body as it was; spirits made fixed and earthy have only a vitreous fusion and cannot mix with bodies; unfixed spirits fixed in bodies fly from the fire in fusion or carry the bodies away with them; gold or silver melted with copper are separated again by strong fire; glass and gems have no ingress and turn the bodies into glass; tin calcined and reduced keeps its crashing and swift fusion, lead after two reductions grows softer rather than harder."@en ;
+    skos:note "The list is the most complete statement in the work of what a failed projection looks like, and it is given as other men's experience. Each case is told so that the failing outcome is visible — a stain, a disappearance, a separation in the fire — and each is answered by assigning it to an incomplete preparation: they left the work imperfect, not knowing how to complete it. The Latin closes the catalogue of those who compound at random by saying that in the two infinities of proportion and matter they err infinitely and that for these correction is impossible, his impossibilis est correctio; Russell's English reads yet in these, correction is possible. Darmstaedter's German was not checked at that sentence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. I, the chapters on the reasons of those who deny the art (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book I, Part ii, ch. 5-15, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 45-56" ;
+    dcterms:source "Summa perfectionis, Kap. 13-24, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 29-34" .
+
+#
+# Where the work puts a failure of the art, and the author's own
+#
+
+pmc:SummaDeusNegatArtem a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The art is reserved in God's will and may be denied for a sophistical work"@en, "Die Kunst ist im Willen Gottes vorbehalten und kann einem sophistischen Werk verweigert werden"@de ;
+    skos:definition "The clause at the end of the conditions of the artificer: let the artist not seek the sophistical end of his work but the true completion only, because the art is reserved in the divine will of God and is given to or withheld from whom he will; and perhaps for the punishment of a sophistical work he denies the art and thrusts the operator into the by-path of error and thence into perpetual misery. The second book repeats it at its close: the gift of God is hidden from the sons of folly by the judgement of divine providence and denied them for ever; and the art is given by God to, and withheld from, whom he will."@en ;
+    skos:note "This is the place that protects the art. The nine assays of the second book judge the product without excuse and put the failure on the artist's way of working; this clause, a whole book earlier, puts the final failure of a whole life's labour on God's withholding and gives as its likeliest reason the operator's own sophistical intent. Between the two, there is no outcome a reader of the work could reach that the work would count against itself. The arrangement is the same as the Turba's — the clause that removes the negative result — but displaced from the assay to the preface, so that the assays themselves can afford to be exact."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part i, ch. 5, and Book II, Part ii, ch. 20, and Part iii, ch. 14, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 30-31, 179 and 196-197" ;
+    dcterms:source "Summa perfectionis, Kap. 7, 86 und 100, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 22, 87 und 95" .
+
+pmc:SummaDesperatioAuctoris a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "We too could not brighten the bodies, and lay a long time under the shade of despair"@en, "Auch wir konnten die Körper nicht aufhellen und lagen lange im Schatten der Verzweiflung"@de ;
+    skos:definition "The author's report of his own failure, in the chapter on what is lacking in the imperfect bodies. Some philosophers thought the art could not be attained because the corrupting substance of the bodies cannot be removed, and we too, searching the science in our time, came to the same state: by no way of preparation could we illustrate the bodies with the completion of their brightness, but they were wholly infected and blackened; and for this we were driven to amazement and lay a long time under the shade of desperation. Returning to ourselves, the chapter goes on, we considered that nothing superfluous was to be found in them but something diminished, which must be supplied by a medicine of quicksilver."@en ;
+    skos:note "The only failure in the work told in the first person, and it is told as a stage on the way to the method, not as a result about it. The Latin of 1542 reads multi temporis spatio sub desperationis umbraculo delituimus. The reported outcome — bodies blackened instead of brightened — is the same outcome the work elsewhere assigns to other men's ignorance; here the author owns it and resolves it by changing his theory of what the bodies lack. The report thus contains a refuted method and the conclusion drawn from its refutation, which is more than the work concedes anywhere else."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. III, chapter on what is lacking in the imperfect bodies (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 3, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 149-151" ;
+    dcterms:source "Summa perfectionis, Kap. 69, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 73-74" .
+
+pmc:SummaArsDispersa a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The art dispersed over chapters so that the evil may not usurp it"@en, "Die Kunst über Kapitel verstreut, damit die Bösen sie nicht an sich reißen"@de ;
+    skos:definition "The work's account of its own form. It has not treated the science in a continued series of discourse but dispersed it in diverse chapters, because in a continued series the evil man might have usurped it as well as the just; it has concealed it in the places where it speaks most openly, not under an enigma but in plain discourse to the artist; and the son of learning may find it by the motion of his own nature and not of doctrine, while he who follows books only will attain it very slowly. The fourth chapter of the second part of the first book states the matching rule of composition: the magistery needs a speech neither occult nor wholly manifest, hidden from fools and profound to men of mean capacity."@en ;
+    skos:note "Entered because it bears on how any node of this file can be read. By its own statement the work does not give its procedure where it appears to give it, so an operator who followed the chapters as written and failed would have been told in advance that he had read them in the wrong order. That is a fourth place, after the qualifications of the artificer, the verdict of the assays and God's withholding, where the work disposes of a failure before it happens."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part ii, ch. 4, and Book II, Part iii, ch. 14, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 44-45 and 196-197" ;
+    dcterms:source "Summa perfectionis, Kap. 12 und 100, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 28-29 und 95" .
