@@ -1,0 +1,220 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Latin alchemy, the Summa perfectionis magisterii of pseudo-Geber
+#
+# A second file for pmt:LatinAlchemy, beside traditions/latin-alchemy.ttl, on the
+# precedent of the Egyptian and Theravada files: one work, read complete, kept
+# where its nodes can be read together. The tradition instance and the work
+# identifier stay in the first file.
+#
+# What was read. Both books of the Summa complete in Richard Russell's English of
+# 1678 as reprinted by Holmyard in 1928; the same text complete as Ernst
+# Darmstaedter's German of 1922 was opened at every passage entered here; and the
+# Latin of the Venice print of Petrus Schoeffer, 1542, at the passages each node
+# names in its Latin source line. Where a node has no Latin source line, the
+# Latin was not checked at that place and the node stands on the two
+# translations, which agree there unless the node says otherwise.
+#
+# Three citation schemes are in use because the three prints divide the work
+# differently. Russell has two books, the first in four parts, the second in
+# three, with chapters numbered within each part. Darmstaedter numbers the
+# chapters of both books continuously from 1 to 100. The 1542 print divides the
+# same text into four books. Every node gives the place in each print it was
+# read in, so that a reader holding any one of them can find it.
+#
+# Why this work. It was entered in the corpus unopened, on 2026-09-26, because
+# the run on the Turba found the gap it was said to fill: a catalogue of assays
+# of the metal, each with a stated criterion. That is at the wording. The work
+# states nine assays of the product of its own operation, says of each what the
+# failing outcome looks like, and attaches to the failing outcome a verdict on
+# the operator's work and not a rule of repetition. The clause that protects the
+# art itself stands elsewhere, at the opening of the first book. That
+# arrangement is the finding of the file, and it is written into the protocol of
+# pmc:TheTestOnTheIngredient in generalizations/the-test-on-the-ingredient.ttl.
+#
+
+#
+# The operations and what the work says they bring about
+#
+
+pmp:SummaMagisteriumMaius a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The greater work: the stone made volatile, fixed, dissolved and made volatile again"@en, "Das größere Werk: der Stein flüchtig gemacht, fixiert, gelöst und wieder flüchtig gemacht"@de ;
+    skos:definition "The operation of the third order as the recapitulation at the end of the second book states it in three degrees. The stone, known from its chapters, is sublimed with instance of labour until it reaches the last purity of subtlety and is made volatile; it is then fixed until it rests in the asperity of the fire; and in the third degree the fixed stone is made volatile by sublimation, the volatile fixed, the fixed dissolved, the dissolved made volatile again and the volatile fixed again, until it flows and alters into a solific and lunific body with certain completion. The chapters on the lunar and solar medicine of the third order give the same sequence in detail: the most pure substance divided from the stone and kept apart, part of it fixed, the fixed dissolved and calcined by turns four times, then the reserved part joined to this prepared earth through its least parts and sublimed until the fixed rises with the unfixed, fixed again, imbibed again, until it has easy fusion with ignition; for the solar medicine an additament of sulphur that does not burn, fixed and calcined, is sublimed with the unfixed part of the stone until both rise together and are then fixed."@en ;
+    skos:note "The work says of itself that it does not give this procedure as a continuous series. The last chapter of the second book explains that the art was dispersed over several chapters so that the evil man could not usurp it as easily as the just, and that it is hidden in the places where the work speaks most openly. The node therefore assembles the sequence from the recapitulation and the two chapters on the third order and claims no more order than those three places give."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, Operis totius in una summa recapitulatio (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 19-20, and Part iii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. E. J. Holmyard (London: Dent 1928), pp. 176-179 and 195-196" ;
+    dcterms:source "Summa perfectionis, Kap. 85, 86 und 99, in Ernst Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 86-87 und 94-95" .
+
+pmc:SummaMedicinaTertiiOrdinis a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The one medicine that takes away all corruption and perfects every imperfect body and quicksilver"@en, "Die eine Medizin, die alle Verderbnis nimmt und jeden unvollkommenen Körper und das Quecksilber vollendet"@de ;
+    skos:definition "The capacity the work is written for. A medicine of the third order, projected on bodies diminished from perfection, takes away all corruption and perfects them with every difference of completion; it is one only, in a lunar and a solar form that differ by a citrine additament of fixed sulphur, and it transforms every imperfect body and every quicksilver into a most perfect lunar or solar body. The first chapter on medicines states the same capacity as the result of the author's long search: one medicine by which the hard was softened, the soft hardened, the fugitive fixed, and the foul illustrated with a splendour beyond nature, and by which he was excused from the ten medicines of the second order."@en ;
+    skos:note "The capacity is stated with a check attached that the Turba never gives: the outcome is a metal, and the third part of the second book lists nine acts by which a stranger could decide whether it is one. The nine are entered below as pmc:SummaExamenCineritii and the rest. What the capacity does not carry is any term, count of attempts or rule of abandonment."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De medicinarum triplici ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 1, 10 and 18-19, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 146-147, 161-162 and 176-177" ;
+    dcterms:source "Summa perfectionis, Kap. 67, 76 und 84-85, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 71-72, 78 und 85-87" .
+
+pmc:SummaMedicinaTertiiOrdinisExMagisterio a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The greater work brings forth the medicine of the third order"@en, "Das größere Werk bringt die Medizin dritter Ordnung hervor"@de ;
+    skos:definition "The work's central claim of effect: the stone carried through the three degrees of preparation becomes the medicine that transforms every body diminished from perfection and every quicksilver into a most perfect lunar body, and with the additament of fixed sulphur into a solar one."@en ;
+    pm:byPractice pmp:SummaMagisteriumMaius ;
+    pm:yieldsCapacity pmc:SummaMedicinaTertiiOrdinis ;
+    skos:note "The work offers the claim as its author's own outcome and not as a report from others, and says so in two places in the strongest terms it has. After the solar medicine of the third order it praises God who revealed the series of all medicines with the experience of them, which we have searched out by our own incessant labour and have seen with our eyes and handled with our hands; the Latin of 1542 reads oculo vidimus et manu tetigimus. In the first book, answering those who deny the art, it affirms the art because we have seen and touched the verity thereof. The claim of autopsy is entered at pmc:SummaVidimusEtTetigimus."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Solaris et Lunaris medicinae administratione (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 19-20, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 176-179" ;
+    dcterms:source "Summa perfectionis, Kap. 85-86, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 86-87" .
+
+pmc:SummaMultiplicatio a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "A medicine that transmutes many times its own weight, and some to infinity"@en, "Eine Medizin, die ein Vielfaches ihres Gewichts verwandelt, manche ins Unendliche"@de ;
+    skos:definition "The capacity of multiplication. From the reiteration of the third degree of preparation results a multiplication of the goodness of alteration, so that among medicines some transmute into a true solific and lunific body a stated multiple of their own weight and some to infinity; the chapter on the solar medicine of the third order says that the reiteration may be carried so far that the medicine changes quicksilver into an infinite true solific and lunific and needs nothing more than its multiplication."@en ;
+    skos:note "The three prints read here give three different series of multiples, and no two agree. The Latin of 1542 reads quaedam sui duplum, quaedam vero decuplum, quaedam vero centuplum, quaedam millesimum, et quaedam in infinitum: twice, ten times, a hundred, a thousand, infinitely. Russell's English of 1678 reads a hundredfold, two hundredfold, three hundredfold, a thousandfold, to infinity. Darmstaedter's German of 1922 reads das Siebenfache, Zehnfache, Hundertfache, Tausendfache, unbegrenzt. The node claims the form of the sentence, a graded series ending in infinity, and not any of the numbers; the Latin series is the one the node would give if it gave one."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, Operis totius in una summa recapitulatio (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 20, and Part iii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 178 and 196" ;
+    dcterms:source "Summa perfectionis, Kap. 99, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 95" .
+
+pmc:SummaMultiplicatioExReiteratione a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The reiteration of the third degree multiplies the medicine's power"@en, "Die Wiederholung des dritten Grades vervielfacht die Kraft der Medizin"@de ;
+    skos:definition "The claim that the number of times the third degree of preparation is repeated on the stone decides how many times its own weight the medicine transmutes: from the diversity of the work repeated upon the stone in its degrees results the diversity of the multiplication of the goodness of alteration."@en ;
+    pm:byPractice pmp:SummaMagisteriumMaius ;
+    pm:yieldsCapacity pmc:SummaMultiplicatio ;
+    skos:note "The sentence is followed at once by the one that closes the recapitulation: hence it may be known whether the magistery consists in perfection. The multiple is thus offered as a mark of the medicine's grade, which would make it measurable by weighing what a known quantity of medicine converts. The work does not say what a medicine that converts less than its expected multiple shows."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, Operis totius in una summa recapitulatio (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part iii, ch. 13, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 195-196" ;
+    dcterms:source "Summa perfectionis, Kap. 99, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 95" .
+
+pmp:SummaMedicinaSecundiOrdinis a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The lunar and solar medicine of the second order"@en, "Die lunare und solare Medizin zweiter Ordnung"@de ;
+    skos:definition "The preparation of the medicine of the second order for imperfect bodies. The one matter, already known, is taken; its pure substance is divided from it, part is fixed and part kept for ceration, and the work is carried through the whole magistery until the desired fusion is reached: if it flows suddenly in hard bodies it is perfect, in soft bodies the contrary. For the solar form the parts are further subtilised by digestion and pure sulphur, fixed and dissolved, is mixed in. Hard bodies need a fire that consumes humidity in the preparation, soft bodies a fire that preserves it."@en ;
+    skos:note "The work says the medicine of the second order differs from that of the third only by the imperfection of a lesser preparation and not in essence, so this practice is the same matter carried less far than pmp:SummaMagisteriumMaius. It is entered separately because the work assigns it a capacity of its own, with a stated limit."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 14-15, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 169-173" ;
+    dcterms:source "Summa perfectionis, Kap. 80-81, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 82-84" .
+
+pmc:SummaMedicinaSecundiOrdinisVirtus a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "A medicine that perfects an imperfect body in one difference of perfection, leaving the rest"@en, "Eine Medizin, die einen unvollkommenen Körper in einer Hinsicht der Vollkommenheit vollendet und die übrigen lässt"@de ;
+    skos:definition "The capacity of the second order: projected on bodies diminished from perfection, the medicine alters them to one difference of completion and leaves the other differences of corruption; it can thicken the tenuity of soft bodies and harden them to sufficiency of ignition, attenuate the spissitude of hard bodies to sufficient swiftness of liquefaction, and cover the cloudiness of either with whiteness or redness; projected on any imperfect body it changes it into a perfect lunar body, if the known preparations have preceded, and the solar form perfects silver in a peculiar solar completion. Examples the work names for the order are the calcination of bodies, by which everything fugitive is burnt away, a medicine colouring silver perpetually yellow, and one whitening copper perpetually."@en ;
+    skos:note "The capacity carries its limit in its definition, which is uncommon. A second-order medicine is by the work's own account one that leaves a body changed in one respect and still corrupt in the others, so a stranger who found a coloured metal that failed the cupel would have found what the work says such a medicine produces, and not a refutation of it. Read against the five differences of perfection at pmc:SummaQuinqueDifferentiaePerfectionis, the order is defined by which of them it delivers."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De medicinarum triplici ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 10 and 14-15, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 161-162 and 169-173" ;
+    dcterms:source "Summa perfectionis, Kap. 76 und 80-81, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 78 und 82-84" .
+
+pmc:SummaMedicinaSecundiOrdinisEffectus a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The medicine of the second order perfects in one difference"@en, "Die Medizin zweiter Ordnung vollendet in einer Hinsicht"@de ;
+    skos:definition "The claim that the lunar medicine of the second order, projected on any imperfect body after its preparation, changes it into a perfect lunar body, and that without the preparation it leaves the body diminished but perfects it in one difference, as far as a medicine of this order can."@en ;
+    pm:byPractice pmp:SummaMedicinaSecundiOrdinis ;
+    pm:yieldsCapacity pmc:SummaMedicinaSecundiOrdinisVirtus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 15, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 171-173" ;
+    dcterms:source "Summa perfectionis, Kap. 81, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 83-84" .
+
+pmp:SummaMedicinaCoagulansArgentumVivum a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The medicine prepared from the pure substance of quicksilver to coagulate quicksilver"@en, "Die aus der reinen Substanz des Quecksilbers bereitete Medizin, die Quecksilber gerinnen lässt"@de ;
+    skos:definition "The preparation of the medicine that coagulates quicksilver. It is taken from a matter of quicksilver's own nature, its most pure substance extracted by long-continued labour of sublimation and made perfectly white for silver, or intensely citrine for gold with the admixture of a tinging thing of its own nature, and fixed against the violence of fire while remaining of the most easy liquefaction, thin as water. Before projection the quicksilver to be coagulated is washed in vinegar over a gentle fire until its earthiness turns to a clear colour mixed with white and celestine."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book I, Part iv, ch. 16, and Book II, Part i, ch. 3, and Part ii, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 109-115, 126-128 and 173-174" ;
+    dcterms:source "Summa perfectionis, Kap. 53, 59 und 82, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 56-59, 62-63 und 84" .
+
+pmc:SummaCoagulatioInSolificum a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Quicksilver converted in a moment into a true solific or lunific body"@en, "Quecksilber im Augenblick in einen wahren solaren oder lunaren Körper verwandelt"@de ;
+    skos:definition "The capacity claimed for the medicine of coagulation: projected on washed quicksilver it adheres to it in its depth, conserves it in the fire by its own fixation until it can bear the fire, and converts it in a moment into a true solific or lunific, according to what the medicine was prepared for."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part i, ch. 3, and Part ii, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 127-128 and 173-174" ;
+    dcterms:source "Summa perfectionis, Kap. 59 und 82, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 62-63 und 84" .
+
+pmc:SummaCoagulatioExMedicina a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The medicine of coagulation turns washed quicksilver into silver or gold"@en, "Die Medizin der Gerinnung verwandelt gewaschenes Quecksilber in Silber oder Gold"@de ;
+    skos:definition "The claim, made twice: when the washing of quicksilver has reached the celestine colour, project on it the medicine of coagulation and it will be coagulated into a solific or lunific according as the medicine was prepared; and the medicine converts it into a true solific and lunific with the preparation always preceding."@en ;
+    pm:byPractice pmp:SummaMedicinaCoagulansArgentumVivum ;
+    pm:yieldsCapacity pmc:SummaCoagulatioInSolificum ;
+    skos:note "The same work states in the chapter on coagulation what this operation produces when it goes wrong, and it names the products: lead, tin, copper and iron. That is entered as a failure sign of its own at pmc:SummaCoagulatioInCorpusImperfectum."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part i, ch. 3, and Part ii, ch. 16, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 127-128 and 173-174" ;
+    dcterms:source "Summa perfectionis, Kap. 59 und 82, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 62-63 und 84" .
+
+#
+# The medicines of the first order. Each is a recipe with a stated effect, and the
+# work itself defines the order as one whose effect does not last
+#
+
+pmp:SummaDealbatioVeneris a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The whitening medicines of copper"@en, "Die weißenden Medizinen des Kupfers"@de ;
+    skos:definition "The work's recipes for whitening copper in the first order, given one after another in one chapter. Precipitated quicksilver and calcined copper are dissolved apart, the solutions mixed and coagulated, and the coagulate projected on copper; or quicksilver and litharge are dissolved apart, joined with the dissolved calx of the body and coagulated and projected; or quicksilver is sublimed from the body again and again until part of it remains with complete ignition, ground and imbibed with distilled vinegar, gently calcined, and the cycle repeated until much quicksilver rests in it; or quicksilver is sublimed from precipitated quicksilver until it is fixed and flows, and projected; or silver and litharge are dissolved apart and the copper whitened with them. With arsenic: arsenic is sublimed upon the calx of copper until it remains with it; or projected on silver and the whole on copper; or on dissolved litharge and silver; or melted into a lump and thrown on molten copper piece by piece. Marcasite sublimed whitens it in the same way as sublimed quicksilver."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Veneris medicinis in primo ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 11, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 162-165" ;
+    dcterms:source "Summa perfectionis, Kap. 77, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 79-81" .
+
+pmc:SummaVenusDealbata a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Copper whitened and cleansed"@en, "Kupfer geweißt und gereinigt"@de ;
+    skos:definition "The capacity the recipes claim: copper whitened and cleansed, peculiarly whitened, whitened with a curious aspect; with tutia its redness taken away and a citrine colour given, because the whitening of tutia does not suffice."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 11, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 162-165" ;
+    dcterms:source "Summa perfectionis, Kap. 77, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 79-81" .
+
+pmc:SummaDealbatioVenerisEffectus a pm:Yielding ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The whitening medicines of the first order whiten copper"@en, "Die weißenden Medizinen erster Ordnung weißen das Kupfer"@de ;
+    skos:definition "The claim attached to each of the recipes: this medicine whitens and cleanses copper; this is a good whitening of the first order; it whitens it peculiarly. The chapter adds that copper is better whitened if quicksilver is perpetuated in all the medicines, and that if the operator is not well skilled in sublimation the arsenic will not persevere in it with any alteration."@en ;
+    pm:byPractice pmp:SummaDealbatioVeneris ;
+    pm:yieldsCapacity pmc:SummaVenusDealbata ;
+    skos:note "The work's own definition of the order bounds the claim. A medicine of the first order, it says two chapters earlier, impresses an alteration that does not infer sufficient completion, so that the altered body happens to be changed and corrupted with the total evaporation of the impression; and its first example is every sublimation whitening copper or iron that does not receive fixation. The recipes are therefore entered as what they are claimed to be — whitenings — with the work's own statement that a whitening of this order fades. A copper that whitens and then turns back confirms the definition and refutes nothing; the five differences at pmc:SummaQuinqueDifferentiaePerfectionis are where a lasting claim begins."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Veneris medicinis in primo ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 10-11, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 161-165" ;
+    dcterms:source "Summa perfectionis, Kap. 76-77, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), pp. 78-81" .
+
+pmp:SummaDealbatioMartis a pm:Practicing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "The whitening medicines of iron, which make it flow"@en, "Die weißenden Medizinen des Eisens, die es fließen lassen"@de ;
+    skos:definition "The recipes for iron, which has no right fusion and must be whitened with a medicine that makes it flow, arsenic of every kind being its special fusive. Iron is joined with the medicine and washed with quicksilver until its impurity is removed and it is white and fusible; or it is made red hot with vehement ignition, arsenic thrown on it, and when it is in flux a quantity of silver cast in; or it is calcined, its soluble aluminosity washed out, cleansed arsenic sublimed from it many times until some is fixed, then imbibed with a solution of litharge, ground, gently calcined several times and reduced with the fire taught for the reduction of tin; or reduced from its calx with sublimed arsenic alone. Marcasite and tutia whiten it with the same industry."@en ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis magisterii, lib. IV, cap. De Martis medicinis in primo ordine (Venice: Petrus Schoeffer 1542)" ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 12, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 165-166" ;
+    dcterms:source "Summa perfectionis, Kap. 78, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 81" .
+
+pmc:SummaMarsDealbatus a pm:Conceptualizing ;
+    pm:fromWork pmw:SummaPerfectionisMagisterii ;
+    rdfs:label "Iron made white, clean and fusible"@en, "Eisen weiß, rein und schmelzbar gemacht"@de ;
+    skos:definition "The capacity claimed: iron goes forth white, clean and fusible; joined with silver while in flux it is not separated from it by any easy artifice."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:LatinAlchemy ;
+    dcterms:source "Summa perfectionis, Book II, Part ii, ch. 12, in The Works of Geber, Englished by Richard Russell 1678, ed. Holmyard (London: Dent 1928), pp. 165-166" ;
+    dcterms:source "Summa perfectionis, Kap. 78, in Darmstaedter, Die Alchemie des Geber (Berlin: Springer 1922), p. 81" .
+
+#ANKER-SUMMA-PUSH
