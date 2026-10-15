@@ -1,0 +1,76 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Hasidism
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-west-asia.ttl with no node. What was
+# opened is Tzava'at ha-Rivash, the earliest printed manual of Hasidic conduct,
+# read complete in the Hebrew, all 143 sections, with two English translations
+# by two translators compared at every passage entered. The three works the
+# registration named stay unopened and are declared below; the work read is a
+# selection from the same body of teaching as the second of them.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# practices and the capacities the work says they bring about; what must come
+# first; the cautions, several with a bodily consequence; what the work says a
+# failed service looks like; the signs; and one place where the work reads its
+# own failure as a mark of nearness.
+#
+# Citation. Every node cites the Hebrew by section, in the Warsaw printing of
+# 1913, and two English translations by section: Jacob Immanuel Schochet's of
+# 1998, with the page on which the section begins, and the adaptation of Amiram
+# and Yehudah Shimon Markel of 2020, which has no pages. Schochet translates
+# from his own Hebrew edition, which is not the Warsaw text, and where the two
+# differ the node says so.
+#
+
+#
+# The works
+#
+
+pmw:TzavaatHaRivash a dcterms:BibliographicResource ;
+    rdfs:label "Tzava'at ha-Rivash, the Testament of Rabbi Israel Baal Shem"@en, "Tzava'at ha-Rivash, das Testament des Rabbi Israel Baal Schem"@de ;
+    skos:note "Read complete on 2026-10-15 in the Hebrew, sections 1 to 143, in the printing Warsaw 1913 as given in the Sefaria library from the scan of the National Library of Israel (Rosetta IE13133653), public domain. The square brackets of that printing are kept in the citations where they matter: they mark matter the printer added from parallel collections, and sections 31, 43, 90, 101 and 143 carry such brackets."@en ;
+    skos:note "Two translations by two translators. Jacob Immanuel Schochet, Tzava'at Harivash: The Testament of Rabbi Israel Baal Shem Tov, English translation with introduction, notes and commentary (Brooklyn: Kehot Publication Society 1998), the title page in the full text; access archive.org, tsavaat-harivash-testament-of-rabbi-israel-baal-shem-tov-jacob-immanuel-schochet, with a clean English text layer. Schochet follows the section division of his own Hebrew edition and joins some sections (2-3, 5-6, 7-8, 13-14, 17-19 and others) without renumbering. Amiram Markel and Yehudah Shimon Markel, The Way of the Baal Shem Tov, adapted into English (2020), as given in the Sefaria library under CC-BY; it calls itself an adaptation and was read as a translation only where its wording stays with the Hebrew. A third English version in the same library, of the YU Torah miTzion Beit Midrash, covers three sections and was not used."@en ;
+    skos:note "What the work is, and it decides how any node in this file may be counted. The title page ascribes the instructions to the Baal Shem Tov and adds rules of upright conduct from Dov Ber of Mezhirech; it calls itself found in the valise of Isaiah, head of the court of Yanov. The first edition is undated, 1792 or 1793. Schochet's introduction (pp. xi-xvi) finds every section of it, all but six, in other anthologies of the Maggid of Mezhirech's teaching — seventy-four in Likkutim Yekarim, forty-three in the Likkutei Amarim printed under the name of Menachem Mendel of Vitebsk, thirty-three in Or Torah, and others in Maggid Devarav le-Ya'akov and Or ha-Emet — and concludes that it is an edited selection from one body of manuscripts of the Maggid's circle, made from defective copies; the text names the Baal Shem Tov at nineteen sayings and the Maggid at one. He quotes Shneur Zalman of Liadi, a disciple of the Maggid, that the book is not at all the Baal Shem Tov's last will and that he decreed nothing before his death, but that its contents are gleanings of his sayings. The nodes below therefore attest the teaching of the Maggid's circle as printed about 1792, and a node says 'the Baal Shem Tov' only where the section names him."@en ;
+    skos:note "The opposition the work met is reported but not read. Schochet (p. xv, note 18) says that the anti-Hasidic tract Zemir Aritzim ve-Charvot Tzurim, printed in 1772 in the Maggid's lifetime, attacks the Hasidic emphasis on joy against melancholy in wording that shows its author had a manuscript containing section 46. The tract was not opened in this run; Schochet cites it in M. Wilensky's edition, which is not public domain."@en .
+
+pmw:ToledotYaakovYosef a dcterms:BibliographicResource ;
+    rdfs:label "Toledot Ya'akov Yosef of Jacob Joseph of Polonne"@en, "Toledot Ja'akow Josef des Jakob Josef von Polonne"@de ;
+    skos:note "Named by the registration and not opened in this run. Reachable: the Sefaria library answered on 2026-10-15 with an index of the work, title page, introduction and the weekly portions. The earliest printed Hasidic book, 1780, and the one that cites the Baal Shem Tov by name most often."@en .
+
+pmw:KeterShemTov a dcterms:BibliographicResource ;
+    rdfs:label "Keter Shem Tov, the anthology of the Baal Shem Tov's sayings compiled by Aaron of Opatów"@en, "Keter Schem Tow, die Sammlung der Aussprüche des Baal Schem Tow"@de ;
+    skos:note "Named by the registration and not harvested in this run. Reachable: the Sefaria library carries it in the printing Zolkiew 1794-95 in two parts. One passage of it was read at its place, part 1, section 184 of that printing, which Schochet cites as section 216 of the Kehot edition, because it bears on section 63 of Tzava'at ha-Rivash; it is used in the examination at examinations/the-one-who-stays-outside-tested.ttl and is not entered as a node of this file, since the work has not been opened for harvest."@en .
+
+pmw:Tanya a dcterms:BibliographicResource ;
+    rdfs:label "Likkutei Amarim, Tanya, of Shneur Zalman of Liadi"@en, "Likkutei Amarim, Tanja, des Schneur Salman von Ljadi"@de ;
+    skos:note "Named by the registration and not opened in this run. Reachable: the Sefaria library answered on 2026-10-15 with an index of the work in its five parts."@en .
+
+#
+# The tradition
+#
+
+pmt:Hasidism a pm:Tradition ;
+    pm:fromWork pmw:TzavaatHaRivash ;
+    rdfs:label "Hasidism"@en, "Chassidismus"@de ;
+    skos:definition "The eastern European transmission of devekut as a continuous attachment attainable within ordinary life, and of contemplation as its means."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented, and the route is in the text. Tzava'at ha-Rivash cites the Zohar and the Tikkunei Zohar by name, the Lurianic unifications as known from the Ari (sections 82 and 90), the Talmud and the Mishnah throughout; its seven traits are the lower sefirot and its talk of shells and sparks is the Lurianic vocabulary. Any agreement between this file and the Kabbalah, Zohar or Lurianic material of this holding is reception along that route and counts once."@en ;
+    skos:note "Recension and edition, the second decision. The Warsaw printing of 1913 is read as the text because it is the one reachable in full in the Hebrew. It is not Schochet's text, and the difference shows at section 31, where a saying of the Baal Shem Tov on the little holy spirit stands in the Warsaw printing in square brackets and is absent from Schochet's text, who gives it from Likkutim Yekarim in a note, and at section 14, where the Warsaw printing has six times the seven nations and both translations have the six nations."@en ;
+    skos:note "The third decision, the number of citable places: 143 sections, of which two are doublets (57 of 42, 113 of 51 by Schochet's count). The nodes below cite forty-odd of them."@en ;
+    skos:note "What the reading found that a reader would not expect from the registration's one-line definition. The work is a manual of attachment, and most of it is about the mind; but it carries a set of plain bodily claims — that guarding a commandment all day prevents nocturnal emission, that looking at a beautiful woman for desire causes it, that intense prayer could by nature kill, that fasting may harm the eyes, that a sick body weakens prayer, that seclusion alone is dangerous — and several recipes that promise a desire will leave on a recited formula. Against these stand more failure conditions than signs: the work says whose service fails and why five times and names three signs of success, and one of the failure conditions is a criterion a reader could apply to himself, that a service which comes and goes was never proper."@en ;
+    pm:principalCorpus "Toledot Yaakov Yosef; Keter Shem Tov; Tzava'at ha-Rivash; Shneur Zalman, Tanya" ;
+    pm:corpusWork pmw:TzavaatHaRivash, pmw:ToledotYaakovYosef, pmw:KeterShemTov, pmw:Tanya ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Tzava'at ha-Rivash, sects. 82 and 90, Hebrew text, Warsaw 1913" .
+
+# ANCHOR-HASIDISM-CONTINUES
