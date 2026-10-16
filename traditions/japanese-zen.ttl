@@ -401,4 +401,120 @@ pmc:JapaneseZenSusokuYielding a pm:Yielding ;
     dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, pp. 112-113" ;
     dcterms:source "Yasenkanna, trans. Trevor Leggett, in F. Lecut, Master Hakuin's Yasen Kanna, 2 translations (compilation, 2011), p. 18" .
 
-# ANCHOR-JZ-2
+#
+# What must come first
+#
+
+pmc:JapaneseZenKufuHoge a pm:Conceptualizing ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "Laying aside the kōan and first sleeping soundly once"@en, "Das Kōan beiseitelegen und zuerst einmal fest schlafen"@de ;
+    skos:definition "The step the preface puts before the naikan: whoever would practise this secret should for a while throw down his effort, let go of the kōan, and first of all sleep one sound sleep."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), preface pp. 14-15" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, p. 90" .
+
+pmc:JapaneseZenNaikanPresupposesHoge a pm:Presupposing ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "Naikan comes after the kōan is laid aside and after sleep"@en, "Naikan kommt, nachdem das Kōan beiseitegelegt und geschlafen ist"@de ;
+    skos:definition "The preface's order: first lay aside effort and kōan and sleep, then, before closing the eyes, the contemplation."@en ;
+    pm:dependentStep pmp:JapaneseZenNaikan ;
+    pm:priorStep pmc:JapaneseZenKufuHoge ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    skos:note "No consequence of skipping is stated. The main text contradicts the step: when the author tells the hermit he will put down Zen meditation for a while and cure himself with naikan, the hermit answers do not say that you will put down Zen meditation, because the drawing down of the heart-fire is itself true meditation, no-meditation as right meditation (pp. 26-27). One work, two speakers, two answers to whether the kōan must be dropped for the cure."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), preface pp. 14-15, main text pp. 26-27" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, pp. 90 and 109" ;
+    dcterms:source "Yasenkanna, trans. Trevor Leggett, in F. Lecut, Master Hakuin's Yasen Kanna, 2 translations (compilation, 2011), p. 15" .
+
+pmc:JapaneseZenHeiyuPresupposesNaikan a pm:Presupposing ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "Recovery from Zen sickness cannot happen without naikan"@en, "Genesung von der Zenkrankheit gibt es nicht ohne Naikan"@de ;
+    skos:definition "The hermit, twice: you have been broken by your contemplation of principle, and unless you diligently heap up the work of naikan you will never rise again, as one who falls on the ground must rise by the ground; and, after the medical theory, your illness came from the heart-fire rising, and unless you bring the heart down you will not rise even if you practise all the secrets of the three worlds."@en ;
+    pm:dependentStep pmc:JapaneseZenZenbyoHeiyu ;
+    pm:priorStep pmp:JapaneseZenNaikan ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Unless you diligently heap up the work of naikan you will never rise again; unless you bring the heart down you will not rise, even if you practise all the secrets of the three worlds." ;
+    skos:note "The same chapter excludes the rival remedies by name, needle, moxa and medicine, entered at pmc:JapaneseZenShinkyuyakuMuko: the necessity is stated against them and not only for naikan."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), pp. 20-21 and 26-27" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, pp. 100 and 109" ;
+    dcterms:source "Yasenkanna, trans. Trevor Leggett, in F. Lecut, Master Hakuin's Yasen Kanna, 2 translations (compilation, 2011), pp. 6 and 14" .
+
+#
+# The cautions
+#
+
+pmc:JapaneseZenShushiki a pm:Cautioning ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "Long life by naikan alone makes one a corpse-guarding ghost"@en, "Langes Leben allein durch Naikan macht zum leichenhütenden Geist"@de ;
+    skos:definition "The master in the preface, after three years of practice and his health restored: even if I mastered this practice and kept Peng Zu's eight hundred years, I would be only a corpse-guarding ghost clinging to blank emptiness, an old badger asleep in its old den, and would perish in the end; for who today has seen Ge Hong, Tieguai, Zhang Hua or Fei Changfang; better to rouse the four great vows and the conduct of a bodhisattva. And to the cured monks: do not think the cure of the heart enough; the further you are cured the harder you must practise."@en ;
+    pm:cautionsAbout pmp:JapaneseZenNaikan ;
+    skos:note "A self-warning of the kind SPEC §15 asks for: it stands inside the text that prescribes the practice and warns against the use the same text has just promised, long life. The argument it gives is an observation, that none of the famous long-livers can be seen today."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), preface pp. 16-17" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, pp. 92-94" .
+
+pmc:JapaneseZenTaitai a pm:Conceptualizing ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "The fear that fixing the mind in one place stagnates energy and blood, raised and refused"@en, "Die Sorge, dass das Festhalten des Geistes an einem Ort Energie und Blut stocken lässt, erhoben und abgewiesen"@de ;
+    skos:definition "The author's objection to the hermit: is the method not what Li Shicai calls leaning too far toward clearing and lowering, and if the mind is held in one place, will energy and blood not stagnate. The hermit smiles and refuses it: Li himself says fire must be made to descend and water to rise; their meeting is life and their failure to meet is death; his warning was aimed at the followers of Danxi and their excess of cooling remedies."@en ;
+    skos:note "The only caution the work raises against its own method, and it is raised in order to be answered. It names the harm, stagnation, and the work's answer does not say how a practitioner would tell stagnation from the cure."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), pp. 24-27" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, pp. 107-108" ;
+    dcterms:source "Yasenkanna, trans. Trevor Leggett, in F. Lecut, Master Hakuin's Yasen Kanna, 2 translations (compilation, 2011), pp. 13-14" .
+
+#
+# What the work says a failure looks like, and the term it sets
+#
+
+pmc:JapaneseZenRosoGaKobe a pm:Conceptualizing ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "Cured in five, seven or at most twenty-one days, or cut off the old monk's head"@en, "Geheilt in fünf, sieben oder höchstens einundzwanzig Tagen, oder man schlage dem alten Mönch den Kopf ab"@de ;
+    skos:definition "The master in the preface: practise the contemplation single-mindedly, and when five days, seven days, or two or three times seven days have passed, if the former illnesses, the five accumulations and six congestions, the depletion of energy and the wasting, are not swept away and healed, cut off this old monk's head and take it."@en ;
+    skos:note "A term with an upper bound, twenty-one days, an outcome a patient can report, and a forfeit, stated in advance. It is the strongest condition of failure this holding has met in a text prescribing a contemplation. Waddell renders the bound as no more than two or three weeks and the forfeit as this old neck of mine is yours for the taking; his note 42 traces the form to Zhaozhou's offer of his head to anyone who did not attain the Way after two or three years of sitting, so the forfeit is a Zen figure; the term is not. Leggett's column does not carry the preface. Checked against the scan of p. 16."@en ;
+    skos:note "What the work does with the term in the next sentence is entered at pmc:JapaneseZenKoNoChisoku: most recovered, at a speed that depended on their diligence. And the author's own cure, in the main text, took a little less than three years (pmc:JapaneseZenNaikanHeiyu)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), preface pp. 14-16" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, p. 92" .
+
+pmc:JapaneseZenKoNoChisoku a pm:Conceptualizing ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "The speed of the effect follows the practitioner's diligence, and most recovered"@en, "Das Tempo der Wirkung folgt dem Eifer des Übenden, und die meisten genasen"@de ;
+    skos:definition "The preface's report of the result: the monks practised in secret and each saw the marvellous effect; the speed of the effect depended on the fineness or coarseness of their practice, but the greater part recovered completely. The hermit says the same of the butter method: the swiftness or slowness of the effect depends only on the fineness or coarseness of the practitioner's work."@en ;
+    skos:note "The sentence stands immediately after the term with its forfeit, pmc:JapaneseZenRosoGaKobe, and takes from it the two things that would let it fail: whoever is slow was not diligent, and those not cured are not counted. The Japanese has taihan, the greater part. Waddell renders it almost all experienced complete recoveries, which is a stronger report than the text makes; checked against the scan of p. 16. Elsewhere the work tells of cases cured at once, tachidokoro ni (p. 17), without number."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), preface pp. 16-17, main text pp. 30-31" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, pp. 92 and 114" ;
+    dcterms:source "Yasenkanna, trans. Trevor Leggett, in F. Lecut, Master Hakuin's Yasen Kanna, 2 translations (compilation, 2011), p. 19" .
+
+pmc:JapaneseZenDojoFuchowa a pm:Conceptualizing ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "After a first awakening, movement and stillness are not in harmony"@en, "Nach einem ersten Erwachen sind Bewegung und Stille nicht im Einklang"@de ;
+    skos:definition "The sign by which the author judged his first awakening incomplete: after months of rapture, looking back over his daily life, he found the two realms of movement and stillness not at all in harmony and that he was not free in taking up or setting down; and he concluded that the ancients' twenty or thirty years were not a fabrication after all."@en ;
+    skos:note "A condition under which an attainment is to be judged not reached, stated in terms of the practitioner's daily conduct and not of an inner state, and stated by the man who had claimed the attainment. It is also the condition that led him into the overstrain of pmp:JapaneseZenKanriKado, so the work's one sign of a failed awakening is the start of its one illness."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), pp. 18-19" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, pp. 96-97" ;
+    dcterms:source "Yasenkanna, trans. Trevor Leggett, in F. Lecut, Master Hakuin's Yasen Kanna, 2 translations (compilation, 2011), p. 3" .
+
+pmc:JapaneseZenShinkyuyakuMuko a pm:Conceptualizing ;
+    pm:fromWork pmw:Yasenkanna ;
+    rdfs:label "Needle, moxa and medicine cannot cure Zen sickness, not even in the hands of Hua Tuo"@en, "Nadel, Moxa und Arznei können die Zenkrankheit nicht heilen, nicht einmal in den Händen Hua Tuos"@de ;
+    skos:definition "Stated three times: in the preface, that a practitioner whose heart-fire has risen cannot be cured by needle, moxa and medicine even by Hua Tuo, Bian Que or Cang Gong; in the main text, that the author consulted teachers and physicians far and wide and a hundred medicines had no effect; and in the hermit's diagnosis, that the illness is beyond what the three remedies can do."@en ;
+    skos:note "The failure of the rival remedies is the condition on which the claim of naikan rests, and the author's own case supplies it. It is the one statement of the work about a method failing that is backed by an account of trying it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:JapaneseZen ;
+    dcterms:source "Hakuin Ekaku, Yasenkanna, in Shaku Dokutan, ed., Hakuin zenji hōgoroku (Tokyo: Ōshima Seishindō), preface pp. 14-15, main text pp. 18-21" ;
+    dcterms:source "Hakuin's Yasenkanna, trans. Norman Waddell, The Eastern Buddhist XXXIV, 1, pp. 90, 97 and 100" ;
+    dcterms:source "Yasenkanna, trans. Trevor Leggett, in F. Lecut, Master Hakuin's Yasen Kanna, 2 translations (compilation, 2011), pp. 3 and 6" .
+
+# ANCHOR-JZ-3
