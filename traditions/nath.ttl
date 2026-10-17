@@ -1,0 +1,719 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Nāth transmission
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-indic.ttl with no node. What was opened
+# is the second work the registration names, the Gorakṣaśataka in the hundred
+# and one verses of the Poona manuscript, read complete in G. W. Briggs's
+# transliteration and translation, and checked in a second translation by a
+# second translator, Mahīdhara's Hindi in the Bombay print of the
+# Gorakṣapaddhati, whose first hundred is the same text. The two other works of
+# the registration stay unopened and are declared below.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# practices in the order of the text; the capacities; what each practice is
+# said to bring about; what must come first; the cautions; the signs.
+#
+# Citation. Briggs is cited by verse and by the page of his chapter fourteen in
+# the Motilal Banarsidass reprint of the Calcutta edition of 1938. Mahīdhara is
+# cited as Gorakṣapaddhati with his own verse number where it differs, and by
+# the printed page of the Bombay edition.
+#
+
+#
+# The works
+#
+
+pmw:Goraksasataka a dcterms:BibliographicResource ;
+    rdfs:label "Gorakṣaśataka, the Hundred of Gorakṣa"@en, "Gorakṣaśataka, die Hundert des Gorakṣa"@de ;
+    skos:note "Read complete on 2026-10-17, verses 1 to 101 and the colophon, in G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs, chapter fourteen, pp. 284-304; the title page of the upload read names the Motilal Banarsidass reprint (Delhi, Varanasi, Patna) of the first edition, Calcutta 1938, by arrangement with the YMCA Publishing House. Briggs prints a romanized Sanskrit text and an English translation with notes. His base text is P, a copy of a Bhandarkar Institute manuscript of one hundred and one verses with the commentary Bālaprabodhinī of Lakṣmīnārāyaṇa; he collates B, a Benares Sanskrit College manuscript of 157 verses plus a supplement of 41, which he finds essentially identical with the Gorakṣapaddhati, and GP, the bazaar print of the Gorakṣapaddhati with Hindi commentary (pp. 256-257). He states that the material cannot be dated, that the only datable reference is the date of Lakṣmīnārāyaṇa's commentary, which he renders as 1086 or 1886, and that the agreement which makes Gorakhnāth the author would make the work as old as the twelfth century (p. 257)."@en ;
+    skos:note "The second translation is Mahīdhara's Hindi in the Gorakṣapaddhati, read at every verse entered below where it is cited; it prints the same hundred as its first hundred, with its own Hindi gloss, and inserts after many verses further verses marked as from another work, granthāntare. The numbering runs one behind Briggs between the mahāmudrā and the yonimudrā and agrees with him from the bandhas onward. The verse that Briggs prints as 21, the supreme light seen in samādhi after which there is no coming and going, does not stand in Mahīdhara's first hundred; it is verse 15 of his second (p. 82). Which of the two placements is the older was not decided here."@en ;
+    skos:note "A third witness was read at the parallel verses only: the translation of Saccidānanda Nātha, self-published 2025, which prints the same verses under the title Vivekamārtaṇḍa, in a longer recension, in a different order and with different numbers (the year of v. 54 is its 59, the poison of v. 61 its 84, the embrace of v. 69 its 73, the old man of v. 82 its 62, the three months of v. 100 its 102). The same translator names a Gorakṣaśataka as a different work and directs the reader to a forthcoming edition of it by James Mallinson. So the title of this text is itself in question in the literature read: Briggs and the Bombay print call these verses the Gorakṣaśataka, the 2025 translator calls them the Vivekamārtaṇḍa and reserves the other title for another text. The identifier here follows the title of the witnesses opened, and pmw:Vivekamartanda is declared below as the longer recension."@en ;
+    skos:note "Translations disagree at one place that bears on a capacity. At v. 65 the Sanskrit as Briggs prints it and as the Bombay print has it lists thirst among what does not afflict the knower of the khecarī; Briggs's English drops it and has hunger and fainting. The node keeps the Sanskrit's list."@en .
+
+pmw:GoraksaPaddhati a dcterms:BibliographicResource ;
+    rdfs:label "Gorakṣapaddhati, with the Hindi bhāṣānuvāda of Mahīdhara"@en, "Gorakṣapaddhati, mit der Hindi-bhāṣānuvāda des Mahīdhara"@de ;
+    skos:note "The Bombay print of the Lakṣmīveṅkaṭeśvara Press at Kalyan for Gaṅgāviṣṇu Śrīkṛṣṇadās, archive.org in.ernet.dli.2015.345454; the colophons call the Hindi Mahīdhara's. The year 1898 is the catalogue's and was not seen on the title page. Read here as the second translation of the Gorakṣaśataka, which is its first hundred, and at two passages of its own: the grades of breath restraint in the second hundred, verse 6 of the section on prāṇāyāma (p. 80), with the parallel verse it quotes from another work after I.100 (p. 71). The rest of the second hundred, on prāṇāyāma, pratyāhāra, dhāraṇā, dhyāna, samādhi and release, was not read, and the many verses the commentary inserts from unnamed other works were seen and not entered, for the reason given at pmt:Nath."@en ;
+    skos:note "The preface (pp. 2-3) gives the commentator's reason for the work, and it bears on how this transmission meets doubt: people now take touching the nose for breath restraint and do not know the postures even by name, so how should accomplishment come; that is why unbelievers call the accomplished frauds; if they practised yoga, accomplishment would become visible and the mouths of the scoffers would be stopped."@en .
+
+pmw:Vivekamartanda a dcterms:BibliographicResource ;
+    rdfs:label "Vivekamārtaṇḍa"@en, "Vivekamārtaṇḍa"@de ;
+    skos:note "Declared as the longer recension in which the verses of pmw:Goraksasataka also stand, read only at the parallels in the 2025 translation of Saccidānanda Nātha (archive.org viveka-martanda). Its surplus verses were not read. One of them was seen in the Sanskrit only and is named so that it is not lost: after the signs of purified channels the recension continues with a verse that by its wording promises movement in the sky by a single breath (ekaśvāsanamātreṇa … gagane gatim, its v. 104). An older print, Vivekamārtaṇḍa by Viśvarūpadeva, ed. K. Sāmbaśiva Śāstrī (Trivandrum 1935), is at archive.org under tltl-vivekamartanda-by-visvarupa-deva-edited-by-k-samba and was not opened; whether it is the same text was not checked."@en .
+
+pmw:SiddhaSiddhantaPaddhati a dcterms:BibliographicResource ;
+    rdfs:label "Siddhasiddhāntapaddhati"@en, "Siddhasiddhāntapaddhati"@de ;
+    skos:note "Named first by the registration and not opened in this run. Lakṣmīnārāyaṇa's commentary on v. 13 of the Gorakṣaśataka names it as Gorakhnāth's own work, where the sixteen supports are listed (Briggs p. 287 n. 2). Uploads exist at archive.org: a scan of the edition of M. L. Gharote, siddha-siddhanta-paddhati-a-treatise-on-the-natha, with a text layer; a print of the Gorakhnath Mandir, siddha-siddhanta-paddhati-gorakh-nath-mandir; and the Oriental Research Institute Mysore edition, Kannada Series 217. None was opened."@en .
+
+pmw:Amanaska a dcterms:BibliographicResource ;
+    rdfs:label "Amanaska"@en, "Amanaska"@de ;
+    skos:note "Named by the registration and not opened in this run. An upload of a Sanskrit print with an introduction by Gopinath Kaviraj, amanaska-yoga-of-goraksha-nath-intro-by-gopinath-kaviraj-shri-yognath-swami, carries a text layer and was not opened."@en .
+
+#
+# The tradition
+#
+
+pmt:Nath a pm:Tradition ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Nāth transmission"@en, "Nāth-Überlieferung"@de ;
+    skos:definition "The lineage of Gorakhnāth, teaching a body perfected by practice and a state in which mind is said to be absent rather than concentrated."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented. Briggs states that the verses of this work are found verbatim or in substance scattered through the Haṭhayogapradīpikā (p. 253), and Mahīdhara's commentary quotes the Haṭhayogapradīpikā by name and inserts further verses from other works at nearly every section. The Haṭhayogapradīpikā is in this holding at traditions/hathayoga.ttl; an agreement between the two files on khecarī, the bandhas or the purification of the channels is reception along that route and counts once."@en ;
+    skos:note "Recension and edition, the second decision. The text is that of Briggs's P, one hundred and one verses; the Bombay print's first hundred is the same text with one verse elsewhere, and the 2025 translation of the Vivekamārtaṇḍa carries the same verses in a longer recension and another order. Every node cites P in Briggs and, where it was read, the Bombay print; notes give the Vivekamārtaṇḍa number where it was compared."@en ;
+    skos:note "The third decision, the number of citable places: a hundred and one verses on twenty-one printed pages, and the nodes below stand on thirty-eight of them. What was seen and not entered: the cosmology of the channels, centres and winds, vv. 15-41, which carries no claim of effect; the hamsa count of v. 43 and the praise of v. 45; the theory of the two drops, vv. 72-74 and 76; the grammar of oṃ, vv. 84-88; and the verses the Bombay commentary inserts from unnamed other works. Those insertions carry many claims of the same kind as the ones entered, death conquered in a fortnight by drinking the nectar, in six months by uḍḍiyāna, venom that does not act on one whose body is full of the moon's digit; they are not entered because the work they come from is not named and is in most cases recognisably the Haṭhayogapradīpikā, where they belong if anywhere. One insertion is entered because it bears on a verse of this work directly, the preparation of the tongue for khecarī."@en ;
+    skos:note "What the reading found that the registration could not have said. The work gives two terms within which an effect is promised, a year for the practitioner who keeps chastity and measure to be perfected, with the words that there is no need to deliberate about it, and three months for the channels to be purified; and it gives the signs of the second. It names no sign by which a failure could be recognised and no account of why one would happen. Its two conditions of failure are both conditions of possibility: a yogi who does not know the centres of his own body cannot be perfected, and the breath cannot be held until the channels are clean. The Hindi commentator adds, at the year, that one is not to doubt whether accomplishment comes or not."@en ;
+    pm:principalCorpus "Siddha-Siddhānta-Paddhati; Gorakṣaśataka; Amanaska" ;
+    pm:corpusWork pmw:Goraksasataka, pmw:GoraksaPaddhati, pmw:Vivekamartanda, pmw:SiddhaSiddhantaPaddhati, pmw:Amanaska ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Gorakṣaśataka vv. 1-101, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 284-304" .
+
+#
+# The practices
+#
+
+pmp:NathSadangaYoga a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The six-limbed yoga of Gorakṣa"@en, "Der sechsgliedrige Yoga des Gorakṣa"@de ;
+    skos:definition "The yoga the work teaches as a whole: posture, restraint of the breath, withdrawal of the senses, fixing, meditation and absorption, the six limbs, without the restraints and observances that Patañjali counts first."@en ;
+    skos:note "Briggs notes that the two omitted limbs are taken as mastered before haṭhayoga begins (p. 285 n. 4); the text itself says nothing about them. The Vivekamārtaṇḍa recension of 2025 lists the same six and then gives ten restraints and ten observances in the next two verses (its vv. 6-8)."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 5-7, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 285" .
+
+pmp:NathSiddhasana a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Siddhāsana, the perfect posture"@en, "Siddhāsana, die vollkommene Haltung"@de ;
+    skos:definition "One heel pressed firmly against the perineum, the other foot above the generative organ, the body held erect and unmoving, the senses held, the gaze fixed between the eyebrows; one of the two postures selected from the eighty-four that Śiva selected from the eighty-four hundred thousand."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 8-11, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 286" .
+
+pmp:NathPadmasana a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Padmāsana, the lotus posture, with the toes held crosswise"@en, "Padmāsana, die Lotoshaltung, mit über Kreuz gehaltenen Zehen"@de ;
+    skos:definition "Each foot on the opposite thigh, the great toes grasped firmly with the hands crossed behind the back, the chin on the chest, the gaze on the tip of the nose."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 12, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 287" .
+
+pmp:NathJyotirdarsana a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Knowing and seeing the light in the place of the yoni"@en, "Das Licht am Ort der yoni kennen und sehen"@de ;
+    skos:definition "Knowing the disk of light, like a jewel, on the head of the great liṅga that stands in the yoni at the centre of the four-petalled lotus of the base, in the triangle of fire below the generative organ; and seeing that supreme light, endless and shining in every direction, in samādhi."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 18-21, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 288-289" ;
+    dcterms:source "Gorakṣapaddhati II.15, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 82-83" .
+
+pmp:NathAjapaGayatri a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The ajapā gāyatrī, the hamsa that the breath recites"@en, "Die ajapā gāyatrī, das hamsa, das der Atem rezitiert"@de ;
+    skos:definition "The mantra the soul recites without reciting it: going out with the sound ha and coming in with the sound sa, hamsa, twenty-one thousand six hundred times in a day and a night. What the yogi does is resolve to recite it, saṅkalpa."@en ;
+    skos:note "Mahīdhara turns the resolve into a rite: rising before dawn, washed and seated, the practitioner dedicates the coming day's twenty-one thousand six hundred breaths in a set formula, distributed over the six centres and their deities (Gorakṣapaddhati p. 28). The verse says only that the mere resolve suffices."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 42-44, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 292-293" ;
+    dcterms:source "Gorakṣapaddhati I.42-44, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 27-28" .
+
+pmp:NathSaktiPrabodhana a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Waking the power: kuṇḍalinī driven up the central channel by breath"@en, "Das Wecken der Kraft: kuṇḍalinī durch den Atem den Mittelkanal hinaufgetrieben"@de ;
+    skos:definition "Seated in the lotus with the hands closed together and the chin pressed on the chest, meditating on her, the practitioner fills and again and again drives the lower breath upward and lets the breath go; kuṇḍalinī, coiled eightfold above the bulb with her mouth over the door of Brahman, is woken by the union of fire with mind and breath and goes up the central channel like a needle drawing a thread. Afterwards the limbs are rubbed with the sweat of the effort, and the practitioner abstains from bitter, sour and salty food and takes milk."@en ;
+    skos:note "Mahīdhara calls this the śakticālana mudrā and says it is to be practised for a long time after the breath and the lower breath have been brought under control by restraint (p. 31)."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 47-53, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 293-295" ;
+    dcterms:source "Gorakṣapaddhati I.47-53, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 29-31" .
+
+pmp:NathMahamudra a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Mahāmudrā, the great seal"@en, "Mahāmudrā, das große Siegel"@de ;
+    skos:definition "The chin on the chest, the yoni pressed long with the left heel, the extended right foot held with both hands, both sides of the belly filled with breath and held, the breath let out slowly; practised first on the left side and then on the right an equal number of times, then released. Defined as the purifying of the network of channels, the moving of moon and sun, and the drying of the body's fluids."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 58-60, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 295-296" ;
+    dcterms:source "Gorakṣapaddhati I.58-59 and I.76, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 36-37 and 43-44" .
+
+pmp:NathKhecari a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Khecarī mudrā, the tongue turned back into the hollow above the throat"@en, "Khecarī mudrā, die Zunge zurückgeschlagen in die Höhlung über dem Rachen"@de ;
+    skos:definition "The tongue turned backwards and entered into the hollow of the skull above the throat, the gaze fixed between the eyebrows; named because the mind moves in space and the tongue moves in that space."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 64 and 67, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 297-298" ;
+    dcterms:source "Gorakṣapaddhati I.63 and I.66, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 40-41" .
+
+pmp:NathYonimudra a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Yonimudrā, by which the drop that has fallen is drawn back up"@en, "Yonimudrā, durch die der gefallene Tropfen wieder hinaufgezogen wird"@de ;
+    skos:definition "Named and not described: the seal by which the power arrests the drop that has moved and reached the fire, and returns it upward."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 71, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 298" ;
+    dcterms:source "Gorakṣapaddhati I.70, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 42" .
+
+pmp:NathUddiyana a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Uḍḍiyāna bandha, the binding behind the belly below the navel"@en, "Uḍḍiyāna bandha, die Bindung hinter dem Bauch unter dem Nabel"@de ;
+    skos:definition "The binding practised at the back of the belly below the navel, named because by it the great bird flies up without rest."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 77-78, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 299" ;
+    dcterms:source "Gorakṣapaddhati I.77-78, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 49" .
+
+pmp:NathJalandhara a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Jālandhara bandha, the closing of the throat"@en, "Jālandhara bandha, das Schließen der Kehle"@de ;
+    skos:definition "The binding characterised by the contraction of the throat, which closes the network of channels and stops the water of the sky from flowing down from the head."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 79-80, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 300" ;
+    dcterms:source "Gorakṣapaddhati I.79-80, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 50-51" .
+
+pmp:NathMulabandha a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Mūlabandha, the root binding"@en, "Mūlabandha, die Wurzelbindung"@de ;
+    skos:definition "Pressing the yoni with the heel, contracting the anus and drawing the lower breath upward."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 81, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 300" ;
+    dcterms:source "Gorakṣapaddhati I.81, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 53" .
+
+pmp:NathPranavaJapa a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Repetition of oṃ in the lotus posture"@en, "Wiederholung von oṃ in der Lotoshaltung"@de ;
+    skos:definition "In the lotus posture, body and neck steady, gaze on the tip of the nose, in a secluded place, repeating the imperishable oṃ; repeating it with the voice, practising it with the body, remembering it with the mind, continually."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 83 and 88-89, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 300-301" ;
+    dcterms:source "Gorakṣapaddhati I.89, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 66" .
+
+pmp:NathPranaNirodha a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Restraint of the breath, and the gaze held between the eyebrows"@en, "Anhalten des Atems, und der Blick zwischen den Brauen gehalten"@de ;
+    skos:definition "Holding the breath in the body, because while the breath moves the drop moves and when it stops the drop stops; with the mind kept unclouded and the gaze held between the eyebrows."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 90-93, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 302" ;
+    dcterms:source "Gorakṣapaddhati I.90-93, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 66-68" .
+
+pmp:NathNadisodhana a pm:Practicing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Purifying the channels by alternate breathing with the moon and the sun"@en, "Reinigung der Kanäle durch Wechselatmung mit Mond und Sonne"@de ;
+    skos:definition "In the lotus posture, the breath drawn in through the left channel and held as long as one can, while meditating on the moon's disk white as curds, cow's milk or silver, and let out through the right; then drawn in through the right and held, while meditating on the sun's disk blazing at the navel, and let out through the left; in measure, alternately."@en ;
+    skos:note "Mahīdhara supplies the measure the verse says it has: twelve repetitions of oṃ in, sixteen held, ten out, and states that this breathing does the work of the six cleansing acts, which he calls not accepted by Yājñavalkya and others (pp. 68-70)."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 96-100, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 303-304" ;
+    dcterms:source "Gorakṣapaddhati I.96-100, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 68-70" .
+
+#
+# The capacities
+#
+
+pmc:NathMoksa a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Release, and the end of coming and going"@en, "Befreiung, und das Ende von Kommen und Gehen"@de ;
+    skos:definition "Release from transmigration, the highest state, named by the work as the end of its yoga and promised by several of its practices separately."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 4-5, 11, 21, 44 and 51, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 285-294" .
+
+pmc:NathKalavancana a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Cheating death: no fear of time"@en, "Den Tod betrügen: keine Furcht vor der Zeit"@de ;
+    skos:definition "The capacity the work names in its opening as the cheating of time, kālasya vañcanam, and repeats for several practices: the practitioner is not troubled by death, has no fear of death, or conquers it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 5, 65-66, 70, 77 and 92, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 285, 297-299 and 302" .
+
+pmc:NathRoganasa a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Destruction of diseases"@en, "Vernichtung der Krankheiten"@de ;
+    skos:definition "Freedom from disease, claimed for a posture, two seals, a binding and the purification of the channels, and in one place by name: consumption, leprosy, constipation, enlargement of the spleen, indigestion or decrepitude, and disorders of the throat."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 12, 59, 62, 65, 79 and 101, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 287, 296-297, 300 and 304" .
+
+pmc:NathVisaJarana a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Deadly poison digested like nectar"@en, "Tödliches Gift wie Nektar verdaut"@de ;
+    skos:definition "For the practitioner there is no wholesome or unwholesome food, all tastes are tasteless, and even terrible poison, eaten, is digested as if it were nectar."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 61, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 296" ;
+    dcterms:source "Gorakṣapaddhati I.60, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 36-37" .
+
+pmc:NathSarvasiddhi a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "All accomplishments"@en, "Alle Vollendungen"@de ;
+    skos:definition "Every kind of accomplishment, siddhi, for men; Mahīdhara glosses the great accomplishments as the eight beginning with becoming minute, aṇimā."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 63, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 297" ;
+    dcterms:source "Gorakṣapaddhati I.62, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 37-40" .
+
+pmc:NathAnidraAksudha a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Without sleep, hunger, thirst or fainting"@en, "Ohne Schlaf, Hunger, Durst oder Ohnmacht"@de ;
+    skos:definition "Neither disease nor death, nor sleep, nor hunger and thirst, nor fainting for the one who knows the khecarī; he is not troubled by grief."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 65-66, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 297" ;
+    dcterms:source "Gorakṣapaddhati I.64-65, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 40-41" .
+
+pmc:NathAlepa a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Not smeared by deeds or by sin"@en, "Nicht beschmiert von Taten oder von Sünde"@de ;
+    skos:definition "Not stained by the fruits of deeds, not smeared by sin as the lotus leaf is not wetted by water, and freed from all demerit."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 44, 66 and 89, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 293, 297 and 301" .
+
+pmc:NathBinduAksarana a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The drop does not fall, even in a woman's embrace"@en, "Der Tropfen fällt nicht, selbst in der Umarmung einer Frau"@de ;
+    skos:definition "The semen, the drop on which the body is founded, does not fall for one who has sealed the hollow above the throat with khecarī, even when he is embraced by a woman; and as long as the drop stays in the body there is no fear of death."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 68-70, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 298" ;
+    dcterms:source "Gorakṣapaddhati I.67-69, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 41-42" .
+
+pmc:NathBinduPratyavartana a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The drop that has fallen to the fire goes back up"@en, "Der zum Feuer gefallene Tropfen steigt wieder auf"@de ;
+    skos:definition "Even if the drop has moved and reached the fire, it is arrested and goes back upward."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 71, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 298" ;
+    dcterms:source "Gorakṣapaddhati I.70, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 42" .
+
+pmc:NathDivyaVapus a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "A divine body"@en, "Ein göttlicher Leib"@de ;
+    skos:definition "When the red drop, driven by the breath through the moving of the power, becomes one with the white, the body becomes divine; Mahīdhara glosses that fire does not burn it nor a weapon cut it."@en ;
+    skos:note "Briggs gives the same gloss in a note, without saying whose it is (p. 299 n. 3). The verse says only divine, divyam."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 75, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 299" ;
+    dcterms:source "Gorakṣapaddhati I.74, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 43" .
+
+pmc:NathVrddhaYuva a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Even an old man becomes young, and urine and faeces decrease"@en, "Selbst ein alter Mann wird jung, und Harn und Kot nehmen ab"@de ;
+    skos:definition "From the union of the upper and lower breath, urine and faeces decrease and even an old man becomes young."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 82, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 300" ;
+    dcterms:source "Gorakṣapaddhati I.82, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 53" .
+
+pmc:NathAtulaBodha a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Unequalled knowledge at the waking of the power"@en, "Unvergleichliches Erkennen beim Wecken der Kraft"@de ;
+    skos:definition "At the moment of letting the breath go, the practitioner attains unequalled knowledge through the waking of the power; Mahīdhara: unbounded knowledge."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 52, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 294" ;
+    dcterms:source "Gorakṣapaddhati I.52, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 31" .
+
+pmc:NathSiddhatva a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Perfected in the practice"@en, "In der Übung vollendet"@de ;
+    skos:definition "Being siddha, accomplished; Mahīdhara: able to raise kuṇḍalinī whenever one wishes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 54, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 295" ;
+    dcterms:source "Gorakṣapaddhati I.54, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 31-32" .
+
+pmc:NathNadisuddhi a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Purified channels, and with them the power to hold the breath"@en, "Gereinigte Kanäle, und mit ihnen die Fähigkeit, den Atem zu halten"@de ;
+    skos:definition "The whole network of channels, full of impurities, purified; then the yogi becomes able to restrain the breath."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 95 and 100, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 303-304" ;
+    dcterms:source "Gorakṣapaddhati I.95 and I.100, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 68-70" .
+
+#
+# What the practices are said to bring about
+#
+
+pmc:NathSadangaYogaMoksa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The yoga is a ladder to release"@en, "Der Yoga ist eine Leiter zur Befreiung"@de ;
+    skos:definition "Gorakṣa proclaims the hundred for the benefit of yogis, by knowing which the highest state surely comes about; this, by which the mind turns from enjoyment and clings to the supreme self, is a ladder to release."@en ;
+    pm:byPractice pmp:NathSadangaYoga ;
+    pm:yieldsCapacity pmc:NathMoksa ;
+    skos:note "Briggs records that B reads by the knowledge of this all good fortunes are attained, and that Lakṣmīnārāyaṇa takes the highest state as liberation in life (p. 285 nn. 1-2)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 4-5, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 285" .
+
+pmc:NathSadangaYogaKalavancana a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The yoga is a cheating of death"@en, "Der Yoga ist ein Betrug am Tod"@de ;
+    skos:definition "The same verse: this is a cheating of time, of death."@en ;
+    pm:byPractice pmp:NathSadangaYoga ;
+    pm:yieldsCapacity pmc:NathKalavancana ;
+    skos:note "Compared in the Vivekamārtaṇḍa translation of 2025 (its v. 4), which has the same words, the deception of time."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 5, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 285" .
+
+pmc:NathSiddhasanaMoksa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The perfect posture opens the door of release"@en, "Die vollkommene Haltung öffnet die Tür der Befreiung"@de ;
+    skos:definition "This posture, the opener of the door of release, is called the perfect posture."@en ;
+    pm:byPractice pmp:NathSiddhasana ;
+    pm:yieldsCapacity pmc:NathMoksa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 11, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 286" .
+
+pmc:NathPadmasanaRoganasa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The lotus posture destroys diseases"@en, "Die Lotoshaltung vernichtet Krankheiten"@de ;
+    skos:definition "This posture, the destroyer of diseases, is called the lotus posture."@en ;
+    pm:byPractice pmp:NathPadmasana ;
+    pm:yieldsCapacity pmc:NathRoganasa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 12, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 287" .
+
+pmc:NathJyotirdarsanaMoksa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Who has seen the light in samādhi does not come and go again"@en, "Wer das Licht in samādhi gesehen hat, kommt und geht nicht mehr"@de ;
+    skos:definition "Who knows the disk of light on the head of the liṅga is a yogi; and when that supreme light, endless and facing every way, has been seen in samādhi, in the great yoga, there is no more coming and going."@en ;
+    pm:byPractice pmp:NathJyotirdarsana ;
+    pm:yieldsCapacity pmc:NathMoksa ;
+    skos:note "In Briggs's P the verse stands in the first hundred, among the centres; in the Bombay Gorakṣapaddhati it stands in the second hundred, in the section on samādhi, where Mahīdhara adds that action no longer stains (II.15, pp. 82-83). The 2025 Vivekamārtaṇḍa has it at its v. 23, among the centres, as P does."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 19 and 21, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 289" ;
+    dcterms:source "Gorakṣapaddhati II.15, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 82-83" .
+
+pmc:NathAjapaGayatriMoksa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The ajapā gāyatrī gives release, and its mere resolve frees from all sin"@en, "Die ajapā gāyatrī gibt Befreiung, und ihr bloßer Vorsatz befreit von aller Sünde"@de ;
+    skos:definition "The gāyatrī called ajapā gives release to yogis; by the mere resolve to recite it one is freed from all demerit; no knowledge, recitation or insight like it has been or will be."@en ;
+    pm:byPractice pmp:NathAjapaGayatri ;
+    pm:yieldsCapacity pmc:NathMoksa ;
+    skos:note "The practice is one the body performs without the practitioner; what the text makes the practitioner's own is the resolve. The freedom from sin it promises is entered with the other claims of that capacity at pmc:NathAlepa; it stands on the same verse."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 44-45, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 293" ;
+    dcterms:source "Gorakṣapaddhati I.44-45, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 27-28" .
+
+pmc:NathSaktiPrabodhanaBodha a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Waking the power gives unequalled knowledge"@en, "Das Wecken der Kraft gibt unvergleichliches Erkennen"@de ;
+    skos:definition "The practitioner attains, at the time of letting the breath go, unequalled knowledge through the waking of the power; and kuṇḍalinī opens the door of release as a key opens a door by force."@en ;
+    pm:byPractice pmp:NathSaktiPrabodhana ;
+    pm:yieldsCapacity pmc:NathAtulaBodha ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 51-52, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 294" ;
+    dcterms:source "Gorakṣapaddhati I.51-52, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 31" .
+
+pmc:NathSaktiPrabodhanaSiddhatva a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "After a year he will be perfected: there is no need to deliberate about it"@en, "Nach einem Jahr wird er vollendet sein: darüber ist nicht nachzudenken"@de ;
+    skos:definition "Chaste, eating little, renouncing, given to yoga, after a year he becomes perfected; nātra kāryā vicāraṇā, one is not to deliberate about this. Mahīdhara, of the waking of the power: after one year there arises the ability to raise kuṇḍalinī whenever one wishes; one is not to doubt whether accomplishment comes or not, by practice it certainly comes."@en ;
+    pm:byPractice pmp:NathSaktiPrabodhana ;
+    pm:yieldsCapacity pmc:NathSiddhatva ;
+    skos:note "A term, and with it the only failure the work makes countable: a practitioner who has kept the stated conditions for a year and is not perfected. What perfected means is not said in the verse; Mahīdhara fixes it as raising kuṇḍalinī at will, which is a report of the practitioner and not a sign a bystander sees. The formula against deliberating stands in the verse, the explicit refusal of doubt in the commentary. The 2025 translation (its v. 59) renders becomes accomplished within a year, in this fact there is no need for further consideration."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 54, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 295" ;
+    dcterms:source "Gorakṣapaddhati I.54, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 31-32" .
+
+pmc:NathMahamudraRoganasa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The great seal destroys diseases, named"@en, "Das große Siegel vernichtet benannte Krankheiten"@de ;
+    skos:definition "The great seal is said to destroy the diseases of men; his diseases, consumption, leprosy, constipation, enlargement of the spleen, indigestion or decrepitude, go to destruction who practises it."@en ;
+    pm:byPractice pmp:NathMahamudra ;
+    pm:yieldsCapacity pmc:NathRoganasa ;
+    skos:note "The one claim of the work that names diseases a physician could diagnose. Briggs reads jīrṇa as decrepitude, Mahīdhara as indigestion, ajīrṇa; Mahīdhara's list adds fever, urinary disease and disease of the belly."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 59 and 62, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 296" ;
+    dcterms:source "Gorakṣapaddhati I.58 and I.61, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 36-37" .
+
+pmc:NathMahamudraVisaJarana a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The great seal makes poison digest like nectar"@en, "Das große Siegel lässt Gift wie Nektar verdauen"@de ;
+    skos:definition "For one who practises the great seal there is no wholesome or unwholesome; even terrible poison, eaten, is digested like nectar."@en ;
+    pm:byPractice pmp:NathMahamudra ;
+    pm:yieldsCapacity pmc:NathVisaJarana ;
+    skos:note "Mahīdhara makes the claim conditional on the practice having become firm, and names as the poison the incompatible mixture of ghee and honey in equal parts. The 2025 translator reads the poison as a figure for the downward forces; the verse does not."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 61, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 296" ;
+    dcterms:source "Gorakṣapaddhati I.60, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 36-37" .
+
+pmc:NathMahamudraSarvasiddhi a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The great seal secures all accomplishments"@en, "Das große Siegel sichert alle Vollendungen"@de ;
+    skos:definition "This great seal has been described, which secures all kinds of accomplishment for men."@en ;
+    pm:byPractice pmp:NathMahamudra ;
+    pm:yieldsCapacity pmc:NathSarvasiddhi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 63, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 297" ;
+    dcterms:source "Gorakṣapaddhati I.62, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 37-40" .
+
+pmc:NathKhecariKalavancana a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Khecarī: no death, and not troubled by time"@en, "Khecarī: kein Tod, und nicht von der Zeit bedrängt"@de ;
+    skos:definition "Neither disease nor death for the one who knows the khecarī; he is not troubled by time, by death."@en ;
+    pm:byPractice pmp:NathKhecari ;
+    pm:yieldsCapacity pmc:NathKalavancana ;
+    skos:note "Mahīdhara makes the knower one who practises for a long time by the cutting, milking and pulling taught by the guru (p. 40); see pmc:NathKhecariPresupposesChedana."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 65-66, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 297" ;
+    dcterms:source "Gorakṣapaddhati I.64-65, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 40-41" .
+
+pmc:NathKhecariAnidra a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Khecarī: no sleep, hunger, thirst or fainting"@en, "Khecarī: kein Schlaf, Hunger, Durst oder Ohnmacht"@de ;
+    skos:definition "For the one who knows the khecarī there is no sleep, no hunger and thirst, no fainting, and he is not afflicted by grief."@en ;
+    pm:byPractice pmp:NathKhecari ;
+    pm:yieldsCapacity pmc:NathAnidraAksudha ;
+    skos:note "Of all the claims of the work this one is the most directly observable by a bystander, since sleep and eating are. It carries no term."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 65-66, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 297" ;
+    dcterms:source "Gorakṣapaddhati I.64-65, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 40-41" .
+
+pmc:NathKhecariAlepa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Khecarī: not bound by the fruits of deeds"@en, "Khecarī: nicht gebunden durch die Früchte der Taten"@de ;
+    skos:definition "He is not smeared, not bound, by the fruits of deeds who knows the khecarī."@en ;
+    pm:byPractice pmp:NathKhecari ;
+    pm:yieldsCapacity pmc:NathAlepa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 66, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 297" ;
+    dcterms:source "Gorakṣapaddhati I.65, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 40-41" .
+
+pmc:NathKhecariBindu a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Khecarī keeps the drop from falling, even in an embrace"@en, "Khecarī hält den Tropfen vom Fallen ab, selbst in einer Umarmung"@de ;
+    skos:definition "By whom the hollow above the throat is sealed with khecarī, his drop does not fall even when he is embraced by a woman; as long as the seal is held the drop does not go down."@en ;
+    pm:byPractice pmp:NathKhecari ;
+    pm:yieldsCapacity pmc:NathBinduAksarana ;
+    skos:note "Mahīdhara adds that the mind of such a yogi does not waver in the embrace (p. 41). The verse says the drop does not fall and says nothing of the mind."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 69-70, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 298" ;
+    dcterms:source "Gorakṣapaddhati I.68-69, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 41-42" .
+
+pmc:NathYonimudraBindu a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The yonimudrā returns the fallen drop upward"@en, "Die yonimudrā führt den gefallenen Tropfen nach oben zurück"@de ;
+    skos:definition "Even if the drop has moved and reached the fire, it goes straight back up, arrested by the power through the yonimudrā."@en ;
+    pm:byPractice pmp:NathYonimudra ;
+    pm:yieldsCapacity pmc:NathBinduPratyavartana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 71, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 298" ;
+    dcterms:source "Gorakṣapaddhati I.70, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 42" .
+
+pmc:NathSaktiPrabodhanaDivyaVapus a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Moving the power unites the two drops and makes the body divine"@en, "Das Bewegen der Kraft vereint die beiden Tropfen und macht den Leib göttlich"@de ;
+    skos:definition "When by the breath, through the moving of the power, the red drop is driven up and becomes one with the white, the body becomes divine."@en ;
+    pm:byPractice pmp:NathSaktiPrabodhana ;
+    pm:yieldsCapacity pmc:NathDivyaVapus ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 75, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 299" ;
+    dcterms:source "Gorakṣapaddhati I.74, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 43" .
+
+pmc:NathUddiyanaKalavancana a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Uḍḍiyāna is the lion to the elephant of death"@en, "Uḍḍiyāna ist der Löwe für den Elefanten des Todes"@de ;
+    skos:definition "Because by it the great bird flies up without rest, it is uḍḍiyāna, the lion to the elephant of death."@en ;
+    pm:byPractice pmp:NathUddiyana ;
+    pm:yieldsCapacity pmc:NathKalavancana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 77, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 299" ;
+    dcterms:source "Gorakṣapaddhati I.77, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 49" .
+
+pmc:NathJalandharaRoganasa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Jālandhara destroys the disorders of the throat"@en, "Jālandhara vernichtet die Leiden der Kehle"@de ;
+    skos:definition "Because it binds the network of channels and stops the water of the sky from going down, the jālandhara binding destroys the host of disorders of the throat; when it is made, the nectar does not fall into the fire and the breath is not disturbed."@en ;
+    pm:byPractice pmp:NathJalandhara ;
+    pm:yieldsCapacity pmc:NathRoganasa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 79-80, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 300" ;
+    dcterms:source "Gorakṣapaddhati I.79-80, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 50-51" .
+
+pmc:NathMulabandhaYuva a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Constant mūlabandha makes even an old man young"@en, "Ständiger mūlabandha macht selbst einen alten Mann jung"@de ;
+    skos:definition "From the union of the two breaths and the decrease of urine and faeces, even an old man becomes young by constant practice of the root binding."@en ;
+    pm:byPractice pmp:NathMulabandha ;
+    pm:yieldsCapacity pmc:NathVrddhaYuva ;
+    skos:note "The decrease of urine and faeces is the one bodily consequence in the work that could be measured without the practitioner's report. Compared in the 2025 Vivekamārtaṇḍa translation (its v. 62), which renders cessation of urine and faeces."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 82, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 300" ;
+    dcterms:source "Gorakṣapaddhati I.82, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 53" .
+
+pmc:NathPranavaJapaAlepa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Whether pure or impure, who recites oṃ is not smeared by sin"@en, "Ob rein oder unrein, wer oṃ rezitiert, wird von Sünde nicht beschmiert"@de ;
+    skos:definition "Whether pure or impure, one who always recites oṃ is not smeared by sin, as the lotus leaf is not by water."@en ;
+    pm:byPractice pmp:NathPranavaJapa ;
+    pm:yieldsCapacity pmc:NathAlepa ;
+    skos:note "A waiver of the condition of purity at the point of practice, stated in the operative text. Mahīdhara narrows it to the practitioner who has given up outer purity for inner and understands the meaning of the syllable (p. 66), and elsewhere restricts the full oṃ to Brahmins and gives Kṣatriyas and Vaiśyas the one-syllable mantra (p. 79)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 89, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 301" ;
+    dcterms:source "Gorakṣapaddhati I.89, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 66" .
+
+pmc:NathPranaNirodhaKalavancana a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "While the breath is held and the gaze between the brows, there is no fear of death"@en, "Solange der Atem gehalten ist und der Blick zwischen den Brauen, gibt es keine Todesfurcht"@de ;
+    skos:definition "As long as the breath stays in the body the soul does not depart, and its departure is death; as long as the breath is held, the mind unclouded and the gaze between the eyebrows, what fear of death is there; therefore Brahmā, yogis and sages are intent on breath restraint from fear of death."@en ;
+    pm:byPractice pmp:NathPranaNirodha ;
+    pm:yieldsCapacity pmc:NathKalavancana ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 91-93, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 302" ;
+    dcterms:source "Gorakṣapaddhati I.91-93, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 67-68" .
+
+pmc:NathNadisodhanaNadisuddhi a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The channels are purified after three months"@en, "Die Kanäle sind nach drei Monaten gereinigt"@de ;
+    skos:definition "For the self-controlled who meditate on the two disks of sun and moon by this method, the network of channels becomes pure after three months."@en ;
+    pm:byPractice pmp:NathNadisodhana ;
+    pm:yieldsCapacity pmc:NathNadisuddhi ;
+    skos:note "The second term of the work, and the one with signs attached: what purified channels bring about is stated in the next verse and entered at pmc:NathNadisuddhiLaksana. The Sanskrit says māsatrayād ūrdhvataḥ, from three months onward, which Briggs renders after and the 2025 translation (its v. 102) after three months; neither makes it within."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 100, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 303-304" ;
+    dcterms:source "Gorakṣapaddhati I.100, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 69-70" .
+
+pmc:NathNadisodhanaRoganasa a pm:Yielding ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Purifying the channels makes one diseaseless"@en, "Die Reinigung der Kanäle macht krankheitsfrei"@de ;
+    skos:definition "From the purification of the channels arises freedom from disease, with the holding of breath at will, the kindling of the fire and the manifestation of the inner sound."@en ;
+    pm:byPractice pmp:NathNadisodhana ;
+    pm:yieldsCapacity pmc:NathRoganasa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 101, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 304" ;
+    dcterms:source "Gorakṣapaddhati I.101, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 72" .
+
+#
+# What must come first
+#
+
+pmc:NathSiddhiPresupposesDehajnana a pm:Presupposing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Perfection cannot come to a yogi who does not know the centres of his own body"@en, "Vollendung kann nicht kommen zu einem Yogi, der die Zentren seines eigenen Körpers nicht kennt"@de ;
+    skos:definition "How can yogis who do not know the six centres, the sixteen supports, the three hundred thousand channels and the five spaces in their own body be perfected; how can those be perfected who do not know their own body as a house of one pillar and nine doors with five presiding deities."@en ;
+    pm:dependentStep pmc:NathSiddhatva ;
+    pm:priorStep pmp:NathJyotirdarsana ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Yogis who do not know the six centres, the sixteen supports, the channels and the five spaces in their own body, and their body as a house of one pillar and nine doors, are not perfected: the text asks how they could be." ;
+    skos:note "The prior step is knowledge of the body's map, of which the light in the place of the yoni is the part the work makes a practice of; the necessity is stated as a rhetorical question, twice. It is a condition of failure that cannot be checked from outside, because whether the practitioner knows the centres is decided by the practitioner."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 13-14, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 287" .
+
+pmc:NathPranaNirodhaPresupposesNadisuddhi a pm:Presupposing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The breath cannot be held until the channels are purified"@en, "Der Atem kann nicht gehalten werden, bevor die Kanäle gereinigt sind"@de ;
+    skos:definition "When the whole network of channels, full of impurities, is purified, then indeed the yogi becomes capable of restraining the breath. Mahīdhara: then the capacity arises, otherwise not."@en ;
+    pm:dependentStep pmp:NathPranaNirodha ;
+    pm:priorStep pmc:NathNadisuddhi ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Mahīdhara on Gorakṣapaddhati I.95: the capacity to hold the breath for the practice of yoga arises when the channels are purified, anyathā nahīṃ, otherwise not." ;
+    skos:note "The verse gives only then indeed, tadaiva; the consequence in words is the Hindi commentator's. The holding has the same order from the Haṭhayogapradīpikā at pmc:SuccessPresupposesNadiPurification, which is reception along the documented route and counts once."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 95, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 303" ;
+    dcterms:source "Gorakṣapaddhati I.95, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 68" .
+
+pmc:NathSiddhatvaPresupposesBrahmacarya a pm:Presupposing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Perfection after a year is promised to the chaste, the moderate and the renouncing"@en, "Vollendung nach einem Jahr ist den Keuschen, Maßvollen und Entsagenden versprochen"@de ;
+    skos:definition "The year's promise is made to one who is chaste, eats little, renounces and is given to yoga; moderate eating is defined as soft and sweet food taken with enjoyment, leaving a fourth of the stomach empty."@en ;
+    pm:dependentStep pmc:NathSiddhatva ;
+    pm:priorStep pmp:NathSaktiPrabodhana ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    skos:note "No consequence of failing in the conditions is stated. They are the conditions under which the term of a year runs, and they are the place where a failure after a year would be put: a practitioner not perfected in a year can always be found not to have been chaste or moderate enough. The text does not do this; the structure allows it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka vv. 54-55, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 295" ;
+    dcterms:source "Gorakṣapaddhati I.54-55, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 31-32" .
+
+pmp:NathJihvaChedana a pm:Practicing ;
+    pm:fromWork pmw:GoraksaPaddhati ;
+    rdfs:label "Preparing the tongue for khecarī: cutting, moving and milking"@en, "Vorbereitung der Zunge für die khecarī: Schneiden, Bewegen und Melken"@de ;
+    skos:definition "The preparation Mahīdhara inserts after the khecarī verses from another work, unnamed: by cutting, moving and milking the tongue is lengthened until it touches the eyebrows outside; with a sharp, smooth, clean blade like a leaf of the snuhī plant the cord under the tongue is cut by a hair's breadth, rubbed with rock salt and myrobalan powder, and cut again by a hair's breadth after seven days, and so for six months, after which the binding at the root of the tongue is gone."@en ;
+    skos:note "Mahīdhara corrects the inserted verse on one point: salt is forbidden to the yogi and catechu is to be used instead (p. 44)."@en ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣapaddhati, insertion after I.76 vv. 1-4, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 44-45" .
+
+pmc:NathKhecariPresupposesChedana a pm:Presupposing ;
+    pm:fromWork pmw:GoraksaPaddhati ;
+    rdfs:label "Khecarī comes after six months of preparing the tongue"@en, "Khecarī kommt nach sechs Monaten der Vorbereitung der Zunge"@de ;
+    skos:definition "Mahīdhara's gloss on the khecarī verse of the work makes its knower one who practises for a long time by the cutting, milking and pulling taught by the guru; the inserted verses set the preparation at six months before the tongue can enter the hollow."@en ;
+    pm:dependentStep pmp:NathKhecari ;
+    pm:priorStep pmp:NathJihvaChedana ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    skos:note "The Gorakṣaśataka itself says nothing of a preparation; Briggs reports the same from the commentary to GP (p. 298 n. 2). No consequence of omitting it is stated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣapaddhati, gloss on I.64 and insertion after I.76 vv. 1-4, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 40 and 44-45" .
+
+#
+# The cautions
+#
+
+pmc:NathKundaliniBandhana a pm:Cautioning ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The same power gives release to yogis and bondage to fools"@en, "Dieselbe Kraft gibt den Yogis Befreiung und den Toren Bindung"@de ;
+    skos:definition "Kuṇḍalinī, coiled eightfold above the bulb, is said to give release to yogis and bondage to the foolish; Mahīdhara: to the ignorant she gives birth and death again and again."@en ;
+    pm:cautionsAbout pmp:NathSaktiPrabodhana ;
+    skos:note "The caution names no sign by which a practitioner would know he is among the foolish, and no outcome of the practice that would show it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 56, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 295" ;
+    dcterms:source "Gorakṣapaddhati I.56, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), pp. 32-33" .
+
+pmc:NathMahamudraGopaniyata a pm:Cautioning ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The great seal is to be kept secret by every effort and not given to just anyone"@en, "Das große Siegel ist mit aller Mühe geheim zu halten und nicht jedem beliebigen zu geben"@de ;
+    skos:definition "The restriction the work puts on passing on the great seal: it is to be kept secret by every effort and not to be given to anyone at all. Mahīdhara gives the ground and the excluded: it is to be kept hidden because published it becomes powerless, sāmarthyahīn; it is not to be given to the unqualified, the unfit, the deceitful or the hypocritical."@en ;
+    pm:cautionsAbout pmp:NathMahamudra ;
+    skos:note "A rule of secrecy about the method and not about the outcome. The verse names no ground; the ground in the Hindi is the second kind of ground found by the protocol at examinations/the-restriction-on-passing-it-on-tested.ttl, that publication destroys the effect, and it is given in a printed book addressed, by its own preface, to everyone."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 63, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 297" ;
+    dcterms:source "Gorakṣapaddhati I.62 with gloss, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 37" .
+
+#
+# The signs
+#
+
+pmc:NathNadisuddhiLaksana a pm:Conceptualizing ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "The four marks of purified channels: breath held at will, the fire kindled, the inner sound heard, health"@en, "Die vier Merkmale gereinigter Kanäle: Atem nach Belieben gehalten, das Feuer entfacht, der innere Laut gehört, Gesundheit"@de ;
+    skos:definition "From the cleansing of the channels arise holding of the breath as one wishes, the kindling of the digestive fire, the manifestation of the inner sound, and freedom from disease."@en ;
+    skos:note "Signs announced in advance and counted apart from the conditions of failure, SPEC §15. Of the four, the inner sound is reported only by the practitioner; the holding of the breath and the appetite could be observed. Briggs adds in a note the sequence of sounds heard, loud and then minute, without saying from which text (p. 304 n. 2); it is not in the verse."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣaśataka v. 101, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), p. 304" ;
+    dcterms:source "Gorakṣapaddhati I.101, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 72" .
+
+pmc:NathPranayamaTrividhaLaksana a pm:Conceptualizing ;
+    pm:fromWork pmw:GoraksaPaddhati ;
+    rdfs:label "Sweat in the lowest breath restraint, trembling in the middle, rising in the highest"@en, "Schweiß im niedrigsten Atemanhalten, Zittern im mittleren, Aufsteigen im höchsten"@de ;
+    skos:definition "The three grades of breath restraint by their measure in repetitions of oṃ, twelve, twenty-four and thirty-six on the in-breath, and the sign of each: in the lowest sweat, in the middle trembling, in the highest the yogi rises, uttiṣṭhati; Mahīdhara: the seat of the perineum lifts. The verse he quotes after I.100 from another work gives the same three with the highest as reaching the place, sthānam āpnoti, and adds that the sweat is to be rubbed into the limbs."@en ;
+    skos:note "The Gorakṣaśataka does not carry these signs; its v. 53 has only the rubbing in of the sweat. Briggs reports Lakṣmīnārāyaṇa's commentary on P as giving the same three grades with the highest one in which the yogi floats in the air (p. 296 n. 2); that commentary was read only in his note. Signs announced in advance, and the third is the only one in this transmission that a bystander could see and the practitioner could not produce by reporting it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Nath ;
+    dcterms:source "Gorakṣapaddhati II, prāṇāyāma v. 6, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 80" ;
+    dcterms:source "Gorakṣapaddhati, insertion after I.100 vv. 2-3, with the Hindi bhāṣānuvāda of Mahīdhara (Kalyan-Bombay: Lakṣmīveṅkaṭeśvara Press), p. 71" .
