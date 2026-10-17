@@ -1,0 +1,78 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Nāth transmission
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-indic.ttl with no node. What was opened
+# is the second work the registration names, the Gorakṣaśataka in the hundred
+# and one verses of the Poona manuscript, read complete in G. W. Briggs's
+# transliteration and translation, and checked in a second translation by a
+# second translator, Mahīdhara's Hindi in the Bombay print of the
+# Gorakṣapaddhati, whose first hundred is the same text. The two other works of
+# the registration stay unopened and are declared below.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# practices in the order of the text; the capacities; what each practice is
+# said to bring about; what must come first; the cautions; the signs.
+#
+# Citation. Briggs is cited by verse and by the page of his chapter fourteen in
+# the Motilal Banarsidass reprint of the Calcutta edition of 1938. Mahīdhara is
+# cited as Gorakṣapaddhati with his own verse number where it differs, and by
+# the printed page of the Bombay edition.
+#
+
+#
+# The works
+#
+
+pmw:Goraksasataka a dcterms:BibliographicResource ;
+    rdfs:label "Gorakṣaśataka, the Hundred of Gorakṣa"@en, "Gorakṣaśataka, die Hundert des Gorakṣa"@de ;
+    skos:note "Read complete on 2026-10-17, verses 1 to 101 and the colophon, in G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs, chapter fourteen, pp. 284-304; the title page of the upload read names the Motilal Banarsidass reprint (Delhi, Varanasi, Patna) of the first edition, Calcutta 1938, by arrangement with the YMCA Publishing House. Briggs prints a romanized Sanskrit text and an English translation with notes. His base text is P, a copy of a Bhandarkar Institute manuscript of one hundred and one verses with the commentary Bālaprabodhinī of Lakṣmīnārāyaṇa; he collates B, a Benares Sanskrit College manuscript of 157 verses plus a supplement of 41, which he finds essentially identical with the Gorakṣapaddhati, and GP, the bazaar print of the Gorakṣapaddhati with Hindi commentary (pp. 256-257). He states that the material cannot be dated, that the only datable reference is the date of Lakṣmīnārāyaṇa's commentary, which he renders as 1086 or 1886, and that the agreement which makes Gorakhnāth the author would make the work as old as the twelfth century (p. 257)."@en ;
+    skos:note "The second translation is Mahīdhara's Hindi in the Gorakṣapaddhati, read at every verse entered below where it is cited; it prints the same hundred as its first hundred, with its own Hindi gloss, and inserts after many verses further verses marked as from another work, granthāntare. The numbering runs one behind Briggs between the mahāmudrā and the yonimudrā and agrees with him from the bandhas onward. The verse that Briggs prints as 21, the supreme light seen in samādhi after which there is no coming and going, does not stand in Mahīdhara's first hundred; it is verse 15 of his second (p. 82). Which of the two placements is the older was not decided here."@en ;
+    skos:note "A third witness was read at the parallel verses only: the translation of Saccidānanda Nātha, self-published 2025, which prints the same verses under the title Vivekamārtaṇḍa, in a longer recension, in a different order and with different numbers (the year of v. 54 is its 59, the poison of v. 61 its 84, the embrace of v. 69 its 73, the old man of v. 82 its 62, the three months of v. 100 its 102). The same translator names a Gorakṣaśataka as a different work and directs the reader to a forthcoming edition of it by James Mallinson. So the title of this text is itself in question in the literature read: Briggs and the Bombay print call these verses the Gorakṣaśataka, the 2025 translator calls them the Vivekamārtaṇḍa and reserves the other title for another text. The identifier here follows the title of the witnesses opened, and pmw:Vivekamartanda is declared below as the longer recension."@en ;
+    skos:note "Translations disagree at one place that bears on a capacity. At v. 65 the Sanskrit as Briggs prints it and as the Bombay print has it lists thirst among what does not afflict the knower of the khecarī; Briggs's English drops it and has hunger and fainting. The node keeps the Sanskrit's list."@en .
+
+pmw:GoraksaPaddhati a dcterms:BibliographicResource ;
+    rdfs:label "Gorakṣapaddhati, with the Hindi bhāṣānuvāda of Mahīdhara"@en, "Gorakṣapaddhati, mit der Hindi-bhāṣānuvāda des Mahīdhara"@de ;
+    skos:note "The Bombay print of the Lakṣmīveṅkaṭeśvara Press at Kalyan for Gaṅgāviṣṇu Śrīkṛṣṇadās, archive.org in.ernet.dli.2015.345454; the colophons call the Hindi Mahīdhara's. The year 1898 is the catalogue's and was not seen on the title page. Read here as the second translation of the Gorakṣaśataka, which is its first hundred, and at two passages of its own: the grades of breath restraint in the second hundred, verse 6 of the section on prāṇāyāma (p. 80), with the parallel verse it quotes from another work after I.100 (p. 71). The rest of the second hundred, on prāṇāyāma, pratyāhāra, dhāraṇā, dhyāna, samādhi and release, was not read, and the many verses the commentary inserts from unnamed other works were seen and not entered, for the reason given at pmt:Nath."@en ;
+    skos:note "The preface (pp. 2-3) gives the commentator's reason for the work, and it bears on how this transmission meets doubt: people now take touching the nose for breath restraint and do not know the postures even by name, so how should accomplishment come; that is why unbelievers call the accomplished frauds; if they practised yoga, accomplishment would become visible and the mouths of the scoffers would be stopped."@en .
+
+pmw:Vivekamartanda a dcterms:BibliographicResource ;
+    rdfs:label "Vivekamārtaṇḍa"@en, "Vivekamārtaṇḍa"@de ;
+    skos:note "Declared as the longer recension in which the verses of pmw:Goraksasataka also stand, read only at the parallels in the 2025 translation of Saccidānanda Nātha (archive.org viveka-martanda). Its surplus verses were not read. One of them was seen in the Sanskrit only and is named so that it is not lost: after the signs of purified channels the recension continues with a verse that by its wording promises movement in the sky by a single breath (ekaśvāsanamātreṇa … gagane gatim, its v. 104). An older print, Vivekamārtaṇḍa by Viśvarūpadeva, ed. K. Sāmbaśiva Śāstrī (Trivandrum 1935), is at archive.org under tltl-vivekamartanda-by-visvarupa-deva-edited-by-k-samba and was not opened; whether it is the same text was not checked."@en .
+
+pmw:SiddhaSiddhantaPaddhati a dcterms:BibliographicResource ;
+    rdfs:label "Siddhasiddhāntapaddhati"@en, "Siddhasiddhāntapaddhati"@de ;
+    skos:note "Named first by the registration and not opened in this run. Lakṣmīnārāyaṇa's commentary on v. 13 of the Gorakṣaśataka names it as Gorakhnāth's own work, where the sixteen supports are listed (Briggs p. 287 n. 2). Uploads exist at archive.org: a scan of the edition of M. L. Gharote, siddha-siddhanta-paddhati-a-treatise-on-the-natha, with a text layer; a print of the Gorakhnath Mandir, siddha-siddhanta-paddhati-gorakh-nath-mandir; and the Oriental Research Institute Mysore edition, Kannada Series 217. None was opened."@en .
+
+pmw:Amanaska a dcterms:BibliographicResource ;
+    rdfs:label "Amanaska"@en, "Amanaska"@de ;
+    skos:note "Named by the registration and not opened in this run. An upload of a Sanskrit print with an introduction by Gopinath Kaviraj, amanaska-yoga-of-goraksha-nath-intro-by-gopinath-kaviraj-shri-yognath-swami, carries a text layer and was not opened."@en .
+
+#
+# The tradition
+#
+
+pmt:Nath a pm:Tradition ;
+    pm:fromWork pmw:Goraksasataka ;
+    rdfs:label "Nāth transmission"@en, "Nāth-Überlieferung"@de ;
+    skos:definition "The lineage of Gorakhnāth, teaching a body perfected by practice and a state in which mind is said to be absent rather than concentrated."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented. Briggs states that the verses of this work are found verbatim or in substance scattered through the Haṭhayogapradīpikā (p. 253), and Mahīdhara's commentary quotes the Haṭhayogapradīpikā by name and inserts further verses from other works at nearly every section. The Haṭhayogapradīpikā is in this holding at traditions/hathayoga.ttl; an agreement between the two files on khecarī, the bandhas or the purification of the channels is reception along that route and counts once."@en ;
+    skos:note "Recension and edition, the second decision. The text is that of Briggs's P, one hundred and one verses; the Bombay print's first hundred is the same text with one verse elsewhere, and the 2025 translation of the Vivekamārtaṇḍa carries the same verses in a longer recension and another order. Every node cites P in Briggs and, where it was read, the Bombay print; notes give the Vivekamārtaṇḍa number where it was compared."@en ;
+    skos:note "The third decision, the number of citable places: a hundred and one verses on twenty-one printed pages, and the nodes below stand on thirty-eight of them. What was seen and not entered: the cosmology of the channels, centres and winds, vv. 15-41, which carries no claim of effect; the hamsa count of v. 43 and the praise of v. 45; the theory of the two drops, vv. 72-74 and 76; the grammar of oṃ, vv. 84-88; and the verses the Bombay commentary inserts from unnamed other works. Those insertions carry many claims of the same kind as the ones entered, death conquered in a fortnight by drinking the nectar, in six months by uḍḍiyāna, venom that does not act on one whose body is full of the moon's digit; they are not entered because the work they come from is not named and is in most cases recognisably the Haṭhayogapradīpikā, where they belong if anywhere. One insertion is entered because it bears on a verse of this work directly, the preparation of the tongue for khecarī."@en ;
+    skos:note "What the reading found that the registration could not have said. The work gives two terms within which an effect is promised, a year for the practitioner who keeps chastity and measure to be perfected, with the words that there is no need to deliberate about it, and three months for the channels to be purified; and it gives the signs of the second. It names no sign by which a failure could be recognised and no account of why one would happen. Its two conditions of failure are both conditions of possibility: a yogi who does not know the centres of his own body cannot be perfected, and the breath cannot be held until the channels are clean. The Hindi commentator adds, at the year, that one is not to doubt whether accomplishment comes or not."@en ;
+    pm:principalCorpus "Siddha-Siddhānta-Paddhati; Gorakṣaśataka; Amanaska" ;
+    pm:corpusWork pmw:Goraksasataka, pmw:GoraksaPaddhati, pmw:Vivekamartanda, pmw:SiddhaSiddhantaPaddhati, pmw:Amanaska ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Gorakṣaśataka vv. 1-101, ed. and trans. G. W. Briggs, Gorakhnāth and the Kānphaṭa Yogīs (Calcutta 1938; reprint Delhi: Motilal Banarsidass), pp. 284-304" .
+
+# ANKER-NATH
