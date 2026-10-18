@@ -1,0 +1,50 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia - the searches of the run on Whiffen, The North-West Amazons,
+# 2026-10-18
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+# Three searches over the five chapters read. The first is the one the opening
+# was for and came back empty in the way that matters: the work gives three
+# accounts of failure and no condition of failure.
+#
+
+pmp:WitotoBoroFailureConditionSearch a pm:Searching ;
+    rdfs:label "Whether the opened chapters state in advance a sign that an operation has not worked"@en, "Ob die geöffneten Kapitel im Voraus ein Zeichen nennen, dass eine Operation nicht gewirkt hat"@de ;
+    pm:searchedCorpus "Thomas Whiffen, The North-West Amazons (London: Constable, 1915), in the archive full text northwestamazons00whif; chapters X, XI, XIII, XIV and XVII, pp. 138-158, 168-189 and 218-235, read through in place."@en ;
+    pm:searchedFor "A condition named before the event under which a cure, a divination, the liana drink, the tiger excursion or any other operation of the medicine-man is to be known not to have worked: a term after which nothing more is to be expected, a sign that the spirit was not expelled, a symptom that shows the verdict wrong, or a rule that a medicine-man who fails so many times is no longer one."@en ;
+    pm:searchTerms "Term search of the chapters for: fail, fails, failed, failure, in vain, vain, no effect, not cure, cannot cure, beyond his power, could not, die, dies, died, death, transgress, blame, rival, wrong, mistake, ambiguous; every hit read in its place and assigned to the voice it stands in, the recorder's or the reported."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-18" ;
+    dcterms:date "2026-10-18" ;
+    skos:note "No condition is named in advance anywhere in the part read. What the hits find instead are three accounts given after the event, and each puts the failure somewhere other than the operation: a cure that fails is laid on a rival who outmanoeuvred the medicine-man (pp. 180-181, pmc:WitotoBoroFailureLaidOnTheRival); a madness that the exorcism does not expel was sent by a colleague with greater gifts, and the madman is killed (p. 169, pmc:WitotoBoroMadnessBeyondTheDoctor); a patient who dies in the clearing died because someone, perhaps unknowingly, spoke to him or passed him (p. 187, pmc:WitotoBoroSomeoneHasTransgressed). The recorder adds two devices in his own voice that close the remaining gap: hopeless patients are poisoned so that the verdict comes true (pp. 168-169), and verdicts are framed ambiguously so that any outcome fits (p. 187)."@en ;
+    skos:note "The count the harvest owes, stated here so that it cannot be summed: conditions of failure stated in advance, none; signs of success, three (the object drawn from the flesh, the noise as the measure of potency, the tiger tooth). One prohibition outside the medicine-man's office has a stated, testable consequence - never shoot a poisonous snake with the blowpipe or all one's poison is destroyed (p. 234) - and is the nearest the part read comes to a condition of failure; it bears on a hunter's poison and is entered as a warning."@en .
+
+pmp:WitotoBoroStatedTermSearch a pm:Searching ;
+    rdfs:label "Whether any operation of the medicine-man is given a term within which its outcome is to appear"@en, "Ob irgendeine Operation des Medizinmannes eine Frist erhält, in der ihr Ausgang eintreten soll"@de ;
+    pm:searchedCorpus "Thomas Whiffen, The North-West Amazons (London: Constable, 1915), the same chapters and the same reading."@en ;
+    pm:searchedFor "A number of days, nights, sessions or months attached to a cure, to the training, to the liana drink and its foretelling, or to the tiger form, after which the outcome would be readable."@en ;
+    pm:searchTerms "Term search for: day, days, night, nights, week, weeks, month, months, year, years, until, till, after, next morning, the next day, eight days, three to six weeks; every hit read in its place."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-18" ;
+    dcterms:date "2026-10-18" ;
+    skos:note "The terms the chapters do carry belong to the household and not to the office: the father's abstention lasts until the child's navel is healed, three to six weeks among some tribes (p. 152); the child is named after eight days (p. 153); the patient in the clearing is left for one night and questioned the next day (pp. 169, 187). The last is the only term attached to an operation, and it fixes when the dreams are told, not when the sickness is to have gone. The training of the medicine-man is given no length at all, and the one session the recorder watched ended the next morning, which is a report of a case and not a rule."@en .
+
+pmp:WitotoBoroTigerKilledSearch a pm:Searching ;
+    rdfs:label "Whether the work anywhere reports a medicine-man in tiger form being killed"@en, "Ob das Werk irgendwo berichtet, dass ein Medizinmann in Tigergestalt getötet wird"@de ;
+    pm:searchedCorpus "Thomas Whiffen, The North-West Amazons (London: Constable, 1915), the same chapters and the same reading, with chapter XVII on the jaguar and the anaconda read in place."@en ;
+    pm:searchedFor "The counter-place to the claim at p. 182 that an ordinary tiger may be killed and a medicine-man in tiger form may not: any account of a tiger that is also a medicine-man being hunted, wounded or killed, and what is said of the outcome."@en ;
+    pm:searchTerms "Term search for: tiger, tigers, jaguar, skin, killed, kill, hunt, hunted, feast, revenge, medicine-man in tiger, tiger form, tiger family, rival; every hit in chapters XIV and XVII read in its place."@en ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:WitotoBoroTigerShapeCannotBeKilled ;
+    pm:searchedBy "prima-materia, 2026-10-18" ;
+    dcterms:date "2026-10-18" ;
+    skos:note "Found at p. 232: when a man is killed or a child lost, the medicine-man discovers that it was probably the spirit of a hostile medicine-man in tiger form; the tribe hunts the tiger, eats it at a feast of revenge, and the skin goes to the medicine-man whose magic triumphed over his rival's. Both places are kept at the node, with the two readings they allow. The counter-search outside this work, for the tiger body of the medicine-man among the peoples north of the Japura, is carried in the Koch-Gruenberg run and not here."@en .
