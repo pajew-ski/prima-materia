@@ -1,0 +1,98 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia - the Witoto and Boro transmission of the Issa-Japura interfluve
+#
+# The structure-driven entrance of SPEC section 14, opened from the head of
+# queries/coverage-queue.rq. The head is pmt:Amazonian, and why this file is not
+# filed under that name is said at the instance below and on the register entry
+# itself; the short form is that the register entry names a region and this
+# work records peoples.
+#
+# Order of the file: the work; the tradition with the three decisions; the
+# making of a medicine-man and the one qualification that is stated as
+# necessary; the operations and what each is said to bring about; the tiger and
+# the two places where the work says incompatible things about it; the
+# warnings; the accounts of failure, which are the reason this corpus is worth
+# having and which name no condition of failure in advance; the signs; and the
+# one session the recorder watched.
+#
+# On the identifiers. The work prints almost no terms of the languages for the
+# things claimed, so the identifiers are descriptive English after the
+# precedent of traditions/jibaro-shuara.ttl and traditions/taulipang.ttl.
+#
+
+#
+# The work
+#
+
+pmw:WhiffenNorthWestAmazons a dcterms:BibliographicResource ;
+    rdfs:label "Whiffen, The North-West Amazons"@en, "Whiffen, The North-West Amazons"@de ;
+    skos:note "The edition as the title page in the full text gives it: The North-West Amazons, Notes of Some Months Spent among Cannibal Tribes, by Thomas Whiffen, F.R.G.S., F.R.A.I., Captain H.P. (14th Hussars), London, Constable and Company Ltd., 1915. The preface is signed London, 1914."@en ;
+    skos:note "Access: identifier northwestamazons00whif, full text over the regular route, 792,250 characters. Five further copies of the same printing lie under other identifiers (northwestamazon00whifgoog, northwestamazon01whifgoog, northwestamazon02whifgoog, cu31924021096783, northwestamazons00whif_0) and were not needed. The running heads over the chapters read are printed as THE NORTH-WEST AMAZONS with the page number and run without going backwards; the first page of each chapter carries its number at the foot. The optical reading is good; a few page numbers are read as i8o, i8i and the like and were checked against the sequence."@en ;
+    skos:note "What was read at the wording: chapter X on drinks, drugs and poisons (pp. 138-145), chapter XI on birth, childhood and initiation (pp. 146-158), chapter XIII on sickness and death (pp. 168-177), chapter XIV on the medicine-man (pp. 178-189), and chapter XVII on the magico-religious system (pp. 218-235). Not read: the introduction and chapters II to IX, XII, XV, XVI and XVIII to XX, the appendices and the plates. The book runs to about three hundred pages, so roughly a quarter was read, and it is the quarter in which the medicine-man, the sick and the spirits stand."@en ;
+    skos:note "The recorder's apparatus is not his testimony and is not taken as such anywhere in this file. Almost every page carries footnotes comparing what he reports with Spruce, Wallace, Bates, im Thurn, Koch-Gruenberg, Spencer and Gillen and others, and in two places a paragraph of the body text is itself a comparison. What is entered here is what he says he saw or was told among the tribes he names; where a sentence is his own conjecture he marks it as such, and it is marked here too."@en .
+
+#
+# The tradition
+#
+
+pmt:WitotoBoro a pm:Tradition ;
+    pm:fromWork pmw:WhiffenNorthWestAmazons ;
+    rdfs:label "Witoto and Boro transmission of the Issa-Japura interfluve"@en, "Überlieferung der Witoto und Boro zwischen Issa und Japurá"@de ;
+    skos:definition "The transmission of the Witoto, Boro, Andoke, Okaina, Muenane and neighbouring peoples between the Issa (Putumayo) and the Japura, taken here at the part the opened work records: a medicine-man chosen by hairiness and taught by his predecessor, who heals by breath and suction, sees by a liana drink, holds a jaguar skin by which he goes out as a tiger in life and returns as one after death, and divines the enemy behind every misfortune."@en ;
+    skos:note "Entered at places read and not registered first, because the passages were opened in the same run in which the tradition was decided on. The three decisions SPEC section 14 requires before the first node were made and are the three notes that follow."@en ;
+    skos:note "One: the contact route is undecided, and the ground is in the work. Against a route to any corpus in this holding: the recorder travelled where he says white men had scarcely gone before, the Boro and Andoke keep away from strangers, he finds no Christian symbol in their designs, and he says the Boro are the least influenced from outside. For a route: the work itself describes the rubber trade along the Issa and Igara-Parana, a Witoto woman married to a white man, trade in poison between tribes, and a story of the Good Spirit's visit to earth that the recorder himself suspects may be a version of the Christian one, with Jesuits on the Rio Negro from 1668 and on the Napo. Absent would be false and documented would overstate. Until the question stands as its own node this tradition may not be counted as a party to a convergence."@en ;
+    skos:note "Two: the edition is the London first printing of 1915 named on the work node, read in the archive full text. It is an English account by a traveller and not a translation of a text; there is no original to set beside it and no second translation is possible, so the requirement of two translations in SPEC section 15 does not apply to this corpus and is not claimed as met."@en ;
+    skos:note "Three: the number of citable places. Forty nodes below, all from pages read at the wording in this run, in five chapters of one book."@en ;
+    skos:note "The position of the corpus, which SPEC section 10 asks for beside the gathering of each passage. Some months of 1908 and 1909, according to the preface. No informant is named anywhere in the part read except as a Boro, a Muenane, or a great and noted medicine-man of the district; no interpreter is named; the language of gathering is not stated. The recorder says how he gathered: a bit here, a trifle there, a note from a chance remark, because every Indian answers I do not know to a white man asking about his beliefs and the medicine-men treat any inquirer as a rival. He also says he tried to provoke the medicine-men into a rival display by feigning magical gifts of his own, which means the gathering was not neutral and some of what was said to him was said to a competitor."@en ;
+    skos:note "Why a new name and not pmt:Amazonian taken down. The register entry pmt:Amazonian names a region and defines it by two things: songs that direct the effect of a plant preparation, and a body that can be exchanged for another. This work carries the second and not the first; the songs it reports are dance songs whose words, it says, have no meaning, and it records no song addressed to a drink. To file the Issa-Japura peoples under the name of the lowland would claim the lowland for them, which is the reasoning traditions/jibaro-shuara.ttl gave for the same choice. The register entry therefore stays at corpus named, with its reason corrected at the entry itself."@en ;
+    pm:principalCorpus "No transmitted written corpus; Thomas Whiffen, The North-West Amazons (London: Constable, 1915); the Witoto material in Konrad Theodor Preuss, Religion und Mythologie der Uitoto (Göttingen, 1921-1923)" ;
+    pm:corpusWork pmw:WhiffenNorthWestAmazons ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteUndecided ;
+    dcterms:source "Thomas Whiffen, The North-West Amazons (London: Constable, 1915), preface and pp. 186, 222-223" .
+
+#
+# The making of a medicine-man
+#
+
+pmp:WitotoBoroMedicineManTraining a pm:Practicing ;
+    pm:fromWork pmw:WhiffenNorthWestAmazons ;
+    rdfs:label "The making of a medicine-man: succession by the hairiest son and teaching by the predecessor"@en, "Der Werdegang des Medizinmannes: Nachfolge des haarigsten Sohnes und Unterweisung durch den Vorgänger"@de ;
+    skos:definition "To a certain extent the office is hereditary: the eldest son succeeds his father if he is fit, or more exactly the hairiest of his sons, since hairiness weighs far more than birth order. Often the medicine-man keeps a small boy with him, his son or an adopted one, who is also credited with magical gifts, and the chosen youths receive the secrets and are trained to carry on the magic of their predecessors. Part of the initiation consists of passing sticks up through the nostril and out at the back of the head, which the recorder calls clumsy conjuring that only the trust of the onlookers saves from detection. If the medicine-man has no hairy son, a hairy child is chosen and educated for the post."@en ;
+    skos:note "Of ordeals in the initiation the recorder says he received no information and cites Waterton for them elsewhere; that comparison is his and not part of this node."@en ;
+    pm:withinTradition pmt:WitotoBoro ;
+    dcterms:source "Thomas Whiffen, The North-West Amazons (London: Constable, 1915), pp. 181-182" .
+
+pmc:WitotoBoroHairyCandidate a pm:Conceptualizing ;
+    pm:fromWork pmw:WhiffenNorthWestAmazons ;
+    rdfs:label "The candidate who is hairy, in a people that depilates"@en, "Der behaarte Kandidat, in einem Volk, das sich enthaart"@de ;
+    skos:definition "The qualification the transmission sets for the office. All men depilate because they dislike resembling hairy monkeys, but the medicine-man does not, and among the Andoke depilation is strictly forbidden to him; he is the only man in the tribe with hair on his face, and hairiness is a necessary qualification for any man or youth who wishes to attain the position."@en ;
+    skos:note "Why it is entered. It is the one qualification for the office the part read states as necessary, it is visible to anyone, and it is the opposite of what the people otherwise practise, so it marks the medicine-man as different in his body before he does anything. The recorder suggests a connection with the tiger the medicine-man becomes and says only that there may possibly be one; that suggestion is his."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Reported by Thomas Whiffen in his own voice as the rule among the tribes between the Issa and the Apaporis, with the Andoke prohibition named separately, from travel in 1908 and 1909, published London 1915. No speaker is named; the language of gathering is not stated; no wording in any language of the region is carried." ;
+    pm:withinTradition pmt:WitotoBoro ;
+    dcterms:source "Thomas Whiffen, The North-West Amazons (London: Constable, 1915), pp. 181-182" .
+
+pmc:WitotoBoroHairinessBeforeOffice a pm:Presupposing ;
+    pm:fromWork pmw:WhiffenNorthWestAmazons ;
+    rdfs:label "Without hairiness, no office"@en, "Ohne Behaarung kein Amt"@de ;
+    skos:definition "Hairiness is a necessary qualification for any man or youth who wishes to attain the position of medicine-man; the training is given to the hairy son, or to a hairy child chosen for it."@en ;
+    skos:note "Set at prescribed order and not at stated necessity, although the passage uses the word necessary. SPEC section 3 reserves stated necessity for a requirement with a citable consequence of skipping it, and the passage names none: nothing says what becomes of a smooth-faced man who is trained anyway, because by the rule he is not trained."@en ;
+    pm:dependentStep pmp:WitotoBoroMedicineManTraining ;
+    pm:priorStep pmc:WitotoBoroHairyCandidate ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Reported by Thomas Whiffen in his own voice as the rule among the tribes between the Issa and the Apaporis, from travel in 1908 and 1909, published London 1915. No speaker is named; the language of gathering is not stated; no wording in any language of the region is carried." ;
+    pm:withinTradition pmt:WitotoBoro ;
+    dcterms:source "Thomas Whiffen, The North-West Amazons (London: Constable, 1915), p. 182" .
+
+# ANKER-WITOTO-BORO
