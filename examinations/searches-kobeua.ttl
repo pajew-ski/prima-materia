@@ -1,0 +1,35 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia - the searches of the run on Koch-Gruenberg, Zwei Jahre unter
+# den Indianern II, 2026-10-18
+#
+# In a file of their own for the mechanical reason recorded at
+# examinations/searches-jain.ttl and in prima-materia#703.
+#
+
+pmp:KobeuaJaguarPractitionerSearch a pm:Searching ;
+    rdfs:label "Whether a people north of the Japura gives the practitioner a jaguar body, as Whiffen reports south of it"@en, "Ob ein Volk nördlich des Japurá dem Praktiker einen Jaguarkörper gibt, wie Whiffen es südlich davon berichtet"@de ;
+    pm:searchedCorpus "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern, Reisen in Nordwest-Brasilien 1903/1905, volumes I and II (Stuttgart: Strecker und Schröder, 1909-1910), in the archive full texts of both volumes; every hit read in its place, and volume II chapter VI read through at pages 150 to 157."@en ;
+    pm:searchedFor "The counter-search outside the sphere for pmc:WitotoBoroTigerForm in traditions/witoto-boro.ttl: an account, gathered by a different recorder among a different people, of a medicine-man who turns into a jaguar, keeps a jaguar skin, or becomes a jaguar after death - or of a people who deny it."@en ;
+    pm:searchTerms "Jaguar searched in both volumes and every hit within four hundred characters of Zauberarzt, Zauberärzt, Paye, Payé or verwandel read in place: 36 hits for Jaguar in volume I, none near those terms; 42 in volume II, nine of them near those terms, all in chapter VI."@en ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:KobeuaOldPayeBecomesJaguar ;
+    pm:searchedBy "prima-materia, 2026-10-18" ;
+    dcterms:date "2026-10-18" ;
+    skos:note "Found among the Kobeua of the Cuduiary at volume II, page 155, and the agreement is in particulars: the skin kept hidden and not worn, the excursions in which the practitioner kills, the return to human form, the jaguar after death, and a rule tying the practitioner's sexual conduct to the birth of a jaguar child (pmc:KobeuaBadPayeBegetsAJaguar). The search found no denial. Volume I, which covers the Siusi and the Tukano, gives no jaguar practitioner near any of the search terms, which is a statement about those chapters' wording and not about those peoples."@en .
+
+pmp:KobeuaFailureConditionSearch a pm:Searching ;
+    rdfs:label "Whether the Kobeua passage states a sign that the making or the cure has not worked"@en, "Ob die Kobéua-Stelle ein Zeichen nennt, dass die Einweihung oder die Kur nicht gewirkt hat"@de ;
+    pm:searchedCorpus "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), chapter VI, pages 150 to 157, read through in place."@en ;
+    pm:searchedFor "A condition named in advance under which the vulture stones, the month of fasting, the cure with the rattle or the questioning of the dead soul is to be known to have failed; or a report of a candidate, a patient or a verdict that did fail."@en ;
+    pm:searchTerms "Read through; term check for: nicht, kein, vergeblich, stirbt, tot, Fehl, misslingt, böse, schlecht, heilen, gesund."@en ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-18" ;
+    dcterms:date "2026-10-18" ;
+    skos:note "None. The only consequences the passage states fall on the bad Paye of another people, on the survivors who keep the goods of the dead, and on the household the dead soul names. The one cure the recorder watched is reported without its outcome. Conditions of failure stated in advance: none; signs of success: none named either."@en .
