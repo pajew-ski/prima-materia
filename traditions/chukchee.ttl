@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -18,9 +19,10 @@
 # ethnographic literature names a participant there whose office is to answer.
 #
 # The passage was found and read, and so the tradition is entered rather than
-# left as an address in an issue. Only what the search opened stands here:
-# three pages of one work. Everything else the corpus holds is unread and the
-# coverage state says so.
+# left as an address in an issue. Only what the searches opened stands here:
+# three pages of one work in the first run, and two further stretches of the
+# same chapter in the second. Everything else the corpus holds is unread and
+# the coverage state says so.
 #
 # There is no written corpus and the recorder's fixation is the first there
 # was, so the mode is pm:fieldAttestation and not pm:mediatedAttestation. The
@@ -28,9 +30,11 @@
 #
 
 pmt:ChukcheeShamanism a pm:Tradition ;
+    pm:fromWork pmw:TheChukchee ;
+    pm:corpusWork pmw:TheChukchee ;
     rdfs:label "Chukchee shamanic transmission"@en, "Tschuktschische Schamanenüberlieferung"@de ;
     skos:definition "The northeastern Siberian transmission of a performance held in a closed and darkened sleeping-room, in which the practitioner drums and sings without words until the spirits appear, and in which a second person present answers him."@en ;
-    skos:note "Registered and worked in the same act, which SPEC §14 allows and which is stated here rather than glossed over: a registration claims only that the transmission exists and where it lies, and this file goes past that for three pages and no further."@en ;
+    skos:note "Registered and worked in the same act, which SPEC §14 allows and which is stated here rather than glossed over: a registration claims only that the transmission exists and where it lies, and this file goes past that for some twenty-five pages of one chapter and one page of another, and no further."@en ;
     skos:note "The contact route is entered as documented and toward one transmission this graph already holds. The recorder states that the use of unmixed tobacco as a stimulant before the performance is copied from the Tungus shamans, and pmt:SiberianShamanism is the Tungus file. That is a route in the material and not a geographical guess; it does not touch the North Atlantic question, for which no route of any kind is known in either direction."@en ;
     skos:note "The lie of the corpus. One recorder, working in the field of the Jesup North Pacific Expedition around the turn of the twentieth century among the Reindeer and the Maritime Chukchee, publishing in English with the Chukchee terms in his own transcription and with a separate volume of texts in the language. He is the first fixation in writing of what he reports, which is what makes him a witness here and not a secondary summary; what he is not is a chorus, and a second recorder would be worth more than a second reading of him."@en ;
     pm:principalCorpus "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Jesup North Pacific Expedition vol. 7), Leiden and New York 1904-1909; Bogoras, Chukchee Materials" ;
@@ -39,6 +43,7 @@ pmt:ChukcheeShamanism a pm:Tradition ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 433-435" .
 
 pmp:ChukcheeShamanisticPerformance a pm:Practicing ;
+    pm:fromWork pmw:TheChukchee ;
     rdfs:label "The performance in the closed inner room"@en, "Der Vollzug im geschlossenen Innenraum"@de ;
     skos:definition "The proceeding after the evening meal: the kettles and trays are carried out, everyone who wishes to be present enters the inner room, which is closed for the night; the practitioner sits at the master's place by the back wall with free space left around him, goes over the drum and tightens its head, strips to the waist and often takes off shoes and stockings; the light is put out, and he beats the drum and sings tunes without words, at first low and then filling the room, using the drum to change the place his voice appears to come from, until after a quarter of an hour or more the spirits first appear."@en ;
     pm:attestedBy pm:fieldAttestation ;
@@ -48,6 +53,7 @@ pmp:ChukcheeShamanisticPerformance a pm:Practicing ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 433-434" .
 
 pmc:ChukcheeAnsweringCalls a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
     rdfs:label "The answering calls and the one who gives them"@en, "Die Antwortrufe und der, der sie gibt"@de ;
     skos:definition "The exclamations a listener throws in from time to time during the performance — an interjection of wonder, of course, certainly — for which the transmission has a word of its own, to give answering calls, and a participle naming the one who gives them."@en ;
     skos:note "The Chukchee word is given twice on the page and the digitised copy used here damages it in both places, once as oTitkek for the verb and once as ocitkedm for the participle. The secondary literature reads the participle ocitkolin. What the reading here rests on is the English gloss, which is unambiguous, and not on the transcription."@en ;
@@ -55,6 +61,7 @@ pmc:ChukcheeAnsweringCalls a pm:Conceptualizing ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 434" .
 
 pmc:ChukcheePresupposesAnsweringCalls a pm:Presupposing ;
+    pm:fromWork pmw:TheChukchee ;
     rdfs:label "The performance presupposes someone who answers"@en, "Der Vollzug setzt einen voraus, der antwortet"@de ;
     pm:dependentStep pmp:ChukcheeShamanisticPerformance ;
     pm:priorStep pmc:ChukcheeAnsweringCalls ;
@@ -68,9 +75,176 @@ pmc:ChukcheePresupposesAnsweringCalls a pm:Presupposing ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 434" .
 
 pmc:ChukcheeColdWaterEndsInspiration a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
     rdfs:label "Cold water on the head ends the inspiration"@en, "Kaltes Wasser auf den Kopf beendet die Eingebung"@de ;
     skos:definition "The stated means of breaking off the state: the application of cold water to the head of a practitioner in the very heat of his performance would suddenly bring his inspiration to an end, and at ceremonials his neighbours may sprinkle him for that purpose when he practises too long or seems excited to a dangerous pitch."@en ;
     skos:note "Entered because it is a failing condition of the rarest kind: one that a bystander can bring about deliberately, in the middle of the act, with a stated and immediate effect. Most conditions in this holding are set before the act and can only be observed afterwards."@en ;
     skos:note "The recorder marks his own distance at this one place: he was told this, where the surrounding paragraphs report what he saw. The node keeps the difference rather than levelling it into the rest of the account."@en ;
     pm:withinTradition pmt:ChukcheeShamanism ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 433" .
+
+#
+# The second opening, 2026-10-18. The chapter on shamanism was read again at
+# pp. 415-423 and 435-447 for the protocol at
+# examinations/the-effect-put-beyond-the-bystander-tested.ttl, which asked
+# whether this transmission keeps its operations from a stranger's sight or
+# shows them. Everything read in those pages that falls under the kinds a
+# harvest owes is entered below; what was seen and left is named in the
+# pull request.
+#
+
+pmw:TheChukchee a dcterms:BibliographicResource ;
+    rdfs:label "Waldemar Bogoras, The Chukchee"@en, "Waldemar Bogoras, The Chukchee"@de ;
+    skos:note "Memoir of the American Museum of Natural History vol. VII, the seventh volume of the publications of the Jesup North Pacific Expedition, in three parts, Leiden and New York 1904-1909. Read in a facsimile reprint whose text layer carries the memoir's own running heads and signature lines, so the page numbers cited in this file are the memoir's. Opened in the chapter on shamanism: pp. 433-435 in the first run, pp. 415-423 and 435-447 on 2026-10-18. Unread: the rest of the chapter, pp. 413-414, 424-432 and 448 onward, the chapters on religion and on ceremonials except p. 301, and the separate volume of Chukchee Materials, which carries the texts in the language."@en .
+
+pmc:ChukcheeBirthDestroysInspiration a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "What belongs to a birth destroys the shamanic power"@en, "Was zu einer Geburt gehört, zerstört die schamanische Kraft"@de ;
+    skos:definition "The bearing of children is held adverse to the inspiration, so that a young woman of considerable power may lose the greater part of it after her first child and recover it only some years later, with the end of her period of bearing. Any material object connected with a birth, of animals or of people, is held harmful to the power in men as well: the grass that served as bedding for a woman in labour need only be rubbed on the forehead of a young man gathering inspiration while he sleeps, and he comes back to ordinary life. A woman practitioner complained to the recorder that her mother-in-law, seeing she would become a great one, had given her the amniotic fluid of a bitch to drink, which injured her and put the dog's soul into hers."@en ;
+    skos:note "A condition that destroys the capacity and that a third person can bring about deliberately, without the practitioner's knowledge, with a stated effect. It is the second such condition in this file beside cold water on the head, and the more severe: the water ends a performance, the bedding grass ends an apprenticeship."@en ;
+    skos:note "The same paragraph says that women may become skilled in nearly every branch of the practice except the ventriloquistic art, which is held entirely beyond their reach. That is a statement about who can perform a technique and is not entered as a node of its own."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the rule is given as what the Chukchee hold, without a named speaker, and the case of the amniotic fluid as the complaint of a named woman practitioner, whose name the copy used damages, told to the recorder, with the full account referred to his volume of texts."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 415" .
+
+pmc:ChukcheeShamanShunsStrangers a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "Before strangers the practitioner shows little, and a sneer ends it"@en, "Vor Fremden zeigt der Vollzieher wenig, und ein Spott beendet es"@de ;
+    skos:definition "The practitioner is called bashful, meaning sensitive to the slightest change in the people about him. He is diffident in acting before strangers, especially soon after his initiation; one of great power refuses to show his skill among strangers and yields only after much solicitation, and even then as a rule does not show all of it. The least doubt or sneer makes him break off the performance and withdraw. His spirits are called fleeting in the same sense: before too many strange visitors they are shy of appearing, and when they come they try to slip away. When the recorder induced a practitioner to perform in his own house, the spirits refused for a long time, walked around outside knocking on the walls, and once inside kept to the corners away from those present."@en ;
+    skos:note "Two statements of this holding meet here. It is the condition named in pmc:TheUnsympatheticWitnessAsStatedCauseOfFailure, stated before any session rather than after a failed one; and it is a condition on how much of an operation a stranger is allowed to see, which is the question of pmc:TheEffectPutBeyondTheBystander. The transmission does not withdraw the performance from strangers. It reduces it before them, by its own account, and gives the reduction as a property of the performer and of his spirits."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the characterisation is the recorder's, carrying the Chukchee words for bashful and fleeting in his transcription, and the case of the séance in his house is his own observation."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 416" .
+
+pmc:ChukcheeBrightEyesSeeSpirits a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "The bright eyes that see spirits in the dark"@en, "Die hellen Augen, die Geister im Dunkeln sehen"@de ;
+    skos:definition "The capacity ascribed to the practitioner's eyes: they are said to be very bright, niké'raqén in the recorder's transcription, and this is said to give him the power to see spirits even in the dark. Those destined for the office are said to be recognisable in their teens by a gaze that in conversation is not turned on the listener but fixed on something beyond him."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; given as what the Chukchee say, without a named speaker, with the Chukchee word in the recorder's transcription."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 415-416" .
+
+pmc:ChukcheeHardToKill a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "The practitioner is hard to kill"@en, "Der Vollzieher ist schwer zu töten"@de ;
+    skos:definition "Apart from the displeasure of his spirits, a practitioner is said to be resistant to death and difficult to kill even when overcome by enemies. Three accounts written down from native speech give the shape: a man whose throat was cut and who was stabbed toward the heart rose again, his wounds healing at once, until his killers cut out and pierced his eyes, cut up his body and his heart and buried the pieces in separate places lest he revive; a girl able to stab herself in performance could not be killed by a stab from behind, and her attacker could only cut the tendons of her arms and legs; and a man left ill in the smallpox of 1884 was expected to survive because he was a practitioner."@en ;
+    skos:note "The same page says the opposite of a practitioner in another relation: the slightest disobedience to his spirits brings his life to an end, and practitioners are said to be even softer to die than ordinary people. The two are given together and the recorder does not reconcile them. The resistance is reported in murder accounts, which are also accounts of the resistance being overcome."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the general statement is given as what is said, the three cases as native accounts written down verbatim and printed in English with references to his volume of texts, pp. 19, 32 and 40, which were not read."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 417-418" .
+
+pmc:ChukcheeRefusedCallKills a pm:Cautioning ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "A call refused is more dangerous than a call accepted"@en, "Ein verweigerter Ruf ist gefährlicher als ein angenommener"@de ;
+    skos:definition "Parents who protest against the call coming to their child do so in vain, because rejecting the spirits is held much more dangerous than accepting them: a young man thwarted in his call will either sicken and soon die, or the spirits will lead him away from his home to follow the vocation elsewhere. Giving up the practice at a mature age, after some years of it, is entirely permitted and does not anger the spirits; the recorder met several who said they had been great practitioners and had stopped, giving illness, age, weariness of their spirits or a decrease of power as the reason."@en ;
+    skos:note "The danger is placed at the beginning and not at the end, and that is what makes it a stated condition rather than a general menace: the same spirits that kill a refusing novice let an old practitioner go. The recorder's own account of the stopping is that most cases were a recovery from the nervous state that had made the person fit for the call, and the node keeps that apart from what he was told."@en ;
+    pm:cautionsAbout "Refusing the call to inspiration in youth" ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; given as the Chukchee view without a named speaker, with the reasons for stopping from several practitioners the recorder met, who are not named at this place."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 419" .
+
+pmc:ChukcheePowerCannotBeHidden a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "While the inspiration lasts, the power must be practised and cannot be hidden"@en, "Solange die Eingebung währt, muss die Kraft geübt werden und kann nicht verborgen werden"@de ;
+    skos:definition "While the practitioner is in possession of the inspiration he must practise and cannot hide his power; otherwise it shows itself as a bloody sweat or as a fit of violent madness like epilepsy. A practitioner named Tei'ñet told the recorder that his father put the drum in his hands when he did not want to obey the call, and that for years afterwards he was so bashful that on the days of ceremonials he fled from the camp and hid, lest his relatives bring him back to show the assembled people his newly acquired and growing skill."@en ;
+    skos:note "This is the inverse of the clause collected at pmc:TheEffectPutBeyondTheBystander under making the effect depend on being kept from the public. Here the concealment of the power is what fails and is punished, and the occasion on which it is due to be shown is the ceremonial before the assembled people. The same transmission keeps its séance in the dark and its spirits from a stranger's touch, so the two are not alternatives of transmissions but of occasions within one."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the rule is given without a named speaker, the case from a named practitioner, Tei'ñet, of the country near the Wolverene River, who told it of himself."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 419-420" .
+
+pmc:ChukcheeWolfTransformation a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "Turning into one's own spirit, the wolf, after turning the foe into a reindeer"@en, "Sich in den eigenen Geist, den Wolf, verwandeln, nachdem man den Feind in ein Rentier verwandelt hat"@de ;
+    skos:definition "The practitioner Scratching-Woman explained that when he wished to take vengeance on a foe he transformed himself into the wolf that was one of his spirits, having first turned the other party into a reindeer, and was then certain of victory. The recorder adds that the idea that practitioners may not only send their spirits to a place but turn themselves into any of them appears in many tales. The same practitioner named the uses of other spirits of his: a mouse that travels very fast underground on errands requiring haste, a raven that devours the germs of disease, and a leather bucket from a bone-breaking set which he once sent to overtake a wounded buck and trap its head."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras in the field of the Jesup North Pacific Expedition and published in English 1904-1909; spoken by a named practitioner, Scratching-Woman, during a séance held at the recorder's request in the recorder's house, of which he made a phonographic record; the parallel from the tales is the recorder's, with reference to his volume of texts."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 436-437" .
+
+pmc:ChukcheeDrumMendedSign a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "The broken drum is mended by the spirit's breath, and a drum not mended foretells the worse"@en, "Die zerbrochene Trommel wird vom Atem des Geistes geheilt, und eine nicht geheilte kündigt das Schlimmere an"@de ;
+    skos:definition "The practitioner often declares to the first spirit that enters that the sound of his drum is bad or even that its cover is broken, which is confirmed by a few dull strokes, and the spirit must mend it by breathing on it. This is done especially in magic medicine. When the drum is mended the practitioner tells the patient it is a good sign, and says that if the spirit had not been able to mend it, it would forebode a bad turn in the disease."@en ;
+    skos:note "A sign with both of its outcomes named in advance, which is rare in this holding, and both halves are produced by the operator: he declares the damage, strikes the dull strokes, and is the one who would hear the drum sound whole again, in a dark room. The success half and the failure half are counted separately, as SPEC §15 requires; the failure half is a stated prognosis and so a candidate for a pm:falsifiedBy, but no case of a drum left unmended is reported."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the recorder's account of a recurring part of the performance as he attended it, with the practitioner's explanation to the patient reported in indirect speech."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 437" .
+
+pmc:ChukcheeManifestationsInTheDark a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "Things thrown and the room lifted, in the dark, to raise a doubter's respect"@en, "Geworfene Dinge und das gehobene Zelt, im Dunkeln, um die Achtung eines Zweiflers zu heben"@de ;
+    skos:definition "The tricks of the dark séance as the recorder saw them several times in his presence. The spirits scratch from outside at the walls of the sleeping-room; a spirit tugs at the skin in the middle of the room so hard that things on it fly about, so that the housemates remove kettles and dishes beforehand; an invisible hand seizes the sleeping-room by its top and shakes it or lifts it, letting in the twilight of the outer tent for a moment, which is possible only in the movable tent of the Reindeer people; and invisible hands toss lumps of snow, spill cold water and urine, and throw blocks of wood or stones at some risk to the listeners. The spirits asked the recorder through the practitioners whether he was afraid, and when his answer did not satisfy them they tried to increase his respect by such material manifestations."@en ;
+    skos:note "Material effects, produced in the presence of a stranger and addressed to his doubt, which is the shape the falsifier of pmc:TheEffectPutBeyondTheBystander asks for first; and produced in the dark, under a ban on touching, which is the shape that statement says will accompany such an operation. The recorder's own judgment is that the tricks cannot be carried out without human assistants, that the room is so small he could almost touch the performer, and that the warning against inquisitiveness was therefore necessary. That judgment is his and is kept out of the definition."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the recorder's own account of séances he attended, without a named practitioner at this place."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 438-439" .
+
+pmc:ChukcheeSpiritsNotToBeTouched a pm:Cautioning ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "The listeners may not touch the spirits"@en, "Die Zuhörer dürfen die Geister nicht berühren"@de ;
+    skos:definition "The audience is strictly forbidden to make any attempt whatever to touch the spirits. They resent any such intrusion and retaliate either on the practitioner, whom they may kill on the spot, or on the trespassing listener, who risks a broken head or a knife thrust through his ribs in the dark. The recorder received warnings of this kind at almost every performance, and some practitioners laid a bare knife within their own reach as an additional warning."@en ;
+    skos:note "Entered as a caution and as a witness of a device the statement at pmc:TheEffectPutBeyondTheBystander did not name before this protocol: the effect is shown, and shown to a stranger, under a condition that excludes the one check a stranger in the room could make. It is stated as a property of the spirits and not as a precaution of the performer, and it stands with the darkness at pmc:ChukcheeNoSeparateVoicesByDaylight."@en ;
+    pm:cautionsAbout pmp:ChukcheeShamanisticPerformance ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the rule as it was put to the recorder by the practitioners at the performances he attended, without a named speaker."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 439" .
+
+pmc:ChukcheePredictionOfTheParting a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "Two predictions with a stated content, one of them reported fulfilled"@en, "Zwei Vorhersagen mit benanntem Inhalt, eine davon als erfüllt berichtet"@de ;
+    skos:definition "The magical advice of the second part of the séance, as given in the recorder's presence. The soothsaying practitioner Galmu'urgin predicted to the master of the tent that many wild reindeer would come to his house the next fall, that one buck would stop on the right of the entrance attracted by a doe of dark-grey hair, and that it must be killed with an arrow of flat rhomboid point to secure the killing of the rest; and he told the master's brother that before the fall he and his companion would part company and no longer look at each other with clear eyes. The recorder adds that this second prediction was fulfilled much earlier than the time named. In the same séance a female spirit of another practitioner told a man defeated in wrestling that his adversary had used incantations, and told a hunter that the bears were offended by his hunting one in its den and that he was in danger of losing his endurance in walking."@en ;
+    skos:note "A prediction about the future with a content another person could check, made before witnesses, and the recorder reports its outcome. He reports only one of the two outcomes; whether the reindeer came, and whether the buck stood where it was said to, is not stated, and a protocol would have to count the unreported one as unknown and not as a success."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the predictions of named practitioners, Galmu'urgin and Tilu'wgi, heard by the recorder at a séance and given in direct speech in his English, with the fulfilment as his own report."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 439-440" .
+
+pmc:ChukcheeNoSeparateVoicesByDaylight a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "The separate voices come only in the dark"@en, "Die getrennten Stimmen kommen nur im Dunkeln"@de ;
+    skos:definition "The spirits a practitioner calls are said to come only in the darkness, and the ventriloquistic art is not practised in the outer tent by daylight. The recorder heard one or two practitioners boast that they could call separate voices in the outer tent and that some of them spoke out of the fire of the hearth, and says they were never able to make good these pretensions; one practitioner, since dead, was said to have done it, but the voices of his calling were heard all the time very near his knees and he had to stoop to talk with them. The usual performance with its advice is carried on in the inner room with the light put out."@en ;
+    skos:note "A condition stated as a property of the spirits, and the one that decides what a stranger can establish: the class of effect the séance offers, voices placed apart from the performer, is offered only where the stranger cannot see where the performer is. The boast and the failed attempt are reported side by side, which makes this the one place in the file where the transmission's claim to show an effect in the light was put to the light and did not come off."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the darkness as a property of the spirits given as what is said, the boasts and their failure as the recorder's own observation, the dead practitioner's case as hearsay he reports as such."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 301", "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 441" .
+
+pmc:ChukcheeContestOfPractitioners a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "Where several practitioners are present, each must show his ability"@en, "Wo mehrere Vollzieher anwesend sind, muss jeder sein Können zeigen"@de ;
+    skos:definition "At the thanksgiving ceremonial and many others the day performance in the outer tent ends at night in the inner room with the usual séance. Whenever several practitioners are present a contest takes place in both the outer and the inner tent: those present must show their ability one by one, and at the end they receive presents from the host according to their apparent skill and presumed power. The folk-tales are full of such contests, some said to last for months; the ones the recorder witnessed did not differ from the usual séance except that several took their turn."@en ;
+    skos:note "The occasion on which this transmission shows its operations to people who are not the client, and it is a rule and not a display: the practitioners must show, and are paid by a judge who rates what he saw. The rating is of apparent skill, which the recorder's word marks as a judgment of appearance; it is still a judgment made by a third party on what was performed before him."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the rule of the contest given as the custom, and the recorder's comparison with the contests he witnessed as his own observation."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 443" .
+
+pmc:ChukcheeSelfStabbing a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "Stabbing oneself with impunity, the commonest feat, done in the light"@en, "Sich ungestraft selbst durchstechen, das häufigste Kunststück, im Hellen ausgeführt"@de ;
+    skos:definition "Besides the tricks of the dark séance, practitioners perform others in the light, in the sleeping-room or in the outer tent and even by day. The commonest is stabbing oneself: the recorder saw practitioners two or three times pretend to thrust a knife through their own breast with the fur shirt on, and says the knife had room to slide under the arm in the folds of the garment. In tales and accounts stabbing oneself with a knife is one of the most common achievements of the art, so generally practised that spectators are said to give it little importance, and a wooden knife is said often to be used. The practitioner Scratching-Woman explained that he beat the drum to heat the knife and to warm his body to a degree at which stabbing becomes harmless, and that the stab with the shirt on needs no heating."@en ;
+    skos:note "A feat on the body, performed before onlookers in the light, offered as part of the office and named in the transmission's own accounts as a thing a practitioner can do. It is the shape the falsifier of pmc:TheEffectPutBeyondTheBystander names as the first place to put its question, and here it has no clause reserving the effect to anybody. What it has instead is a standing judgment of the audience: the feat is so common that people give it little weight."@en ;
+    skos:note "The recorder places beside it the feats of an Asiatic Eskimo woman practitioner at Indian Point, Ü'puñe, who wrung a stream of small pebbles from a large one under his eyes with her arms and hands bare, repeated it at once when he asked, and appeared to open her son's abdomen with a knife and close it again, which he explains by seal blood melted from snow in her mouth and a trained fold of the boy's skin. Those are not Chukchee and are not entered for this tradition; the holding has no registration for the Asiatic Eskimo transmission."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras among the Reindeer and Maritime Chukchee in the field of the Jesup North Pacific Expedition and published in English 1904-1909; the feats in the light as his own observation, the commonness of the feat as what the tales and accounts say, and the explanation of the heating as told to him by a named practitioner, Scratching-Woman."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 443-446" .
+
+pmc:ChukcheeProofForbiddenByASpirit a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
+    rdfs:label "The stab offered as proof, forbidden at the last drumming by a spirit owed a reindeer"@en, "Der als Beweis angebotene Stich, beim letzten Trommeln von einem Geist verboten, dem ein Rentier geschuldet war"@de ;
+    skos:definition "Scratching-Woman offered to stab himself on the bare body before the recorder and made him give a new keen knife for it, which was afterwards to become his own for magic medicine. The women of his household protested throughout, reproaching the recorder with wanting to shorten the practitioner's life, because such feats, even when they end without immediate harm, are held highly destructive to his vital forces. When he was almost ready and beat the drum for the last time, a separate voice claiming to be a female spirit of his acquaintance declared that he owed her the sacrifice of a reindeer promised a year before and forbade any feats until the debt was paid; it being summer and the herds away until the fall, the stabbing was put out of the question. Not wishing the recorder to think he was merely boasting, the practitioner showed him two deep scars on his abdomen, one said to be from the knife and one from a rifle bullet in a feat of the same kind."@en ;
+    skos:note "The proof is offered to a doubter, prepared to the point of the last drumming, and withdrawn by a voice of the performance itself, with a cause that lies outside the operator and cannot be cleared for months. That is the shape this holding collects as an account of a session that produced nothing, moved forward to before the session: the account arrives in time to prevent the session. The scars are what is offered in its place, which is evidence of a past wound and not of its harmlessness."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Waldemar Bogoras in the field of the Jesup North Pacific Expedition and published in English 1904-1909; his own account of a feat offered to him, with a named practitioner, Scratching-Woman, the protest of the women of his household and the speech of the separate voice reported in indirect speech."@en ;
+    pm:withinTradition pmt:ChukcheeShamanism ;
+    dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 446" .
