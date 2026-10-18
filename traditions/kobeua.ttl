@@ -1,0 +1,213 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia - the Kobeua transmission of the Cuduiary and the upper
+# Caiary-Uaupes
+#
+# Opened as the counter-search outside the sphere for the run on Whiffen's
+# North-West Amazons (traditions/witoto-boro.ttl), which reports that the
+# medicine-man between the Issa and the Japura goes out as a tiger and returns
+# as one after death. The search went to the nearest independently gathered
+# account north of the Japura and found the same complex at the wording, which
+# under AGENTS.md makes it a node and not an issue. One work, its own lease and
+# its own pull request.
+#
+# Order of the file: the work; the tradition with the three decisions; the
+# making of a Zauberarzt; the jaguar; the poison and the soul that names the
+# guilty; the cure the recorder watched and the rattle; the falcon; the goods of
+# the dead.
+#
+# On the identifiers. Where the work prints a Kobeua term for the thing claimed
+# (dupa, ihia), it is named in the definition; the identifiers themselves are
+# descriptive English, as in the neighbouring lowland files.
+#
+
+#
+# The work
+#
+
+pmw:ZweiJahreUnterDenIndianernII a dcterms:BibliographicResource ;
+    rdfs:label "Koch-Gruenberg, Zwei Jahre unter den Indianern, volume II"@en, "Koch-Grünberg, Zwei Jahre unter den Indianern, Band II"@de ;
+    skos:note "The edition as the title page in the full text gives it: Zwei Jahre unter den Indianern, Reisen in Nordwest-Brasilien 1903/1905, von Dr. Theodor Koch-Grünberg, Zweiter Band, mit 218 Abbildungen, 10 Tafeln in Lichtdruck und vier Karten nach Originalaufnahmen des Verfassers, verlegt im Jahre 1910 bei Strecker und Schröder in Stuttgart. The archive catalogue line gives 1909; the title page was preferred, as SPEC section 10 requires. The copy is from the library of José Mindlin."@en ;
+    skos:note "Access: identifier zwei-jahre-unter-den-indianern-t-koch-grunberg-band-2-1909-45000030641, full text over the regular route, 816,250 characters; the file name is that of the upload and not the identifier, as the access table warns, and the first request was answered with 500 and the second, fifteen seconds later, delivered the file. The running page numbers survive only intermittently in the text layer: 151 and 157 stand at the heads of their pages and the five pages between were counted by their page ends, each closed by its footnotes or a figure caption, which gives 152 to 156 without a gap. The page numbers cited are counted in that way and could be off by one if a page end was misread; the chapter and section make every place findable regardless."@en ;
+    skos:note "What was read at the wording: chapter VI, Unter den Kobeua, the passage from the burial of the dead to the forest demons, printed pages 150 to 157. Not read: the rest of the volume, some 560 printed pages, including the Kobeua myths that follow and the chapters on the mask dances; and the first volume, which the passage refers to for the cure on the Aiary."@en .
+
+#
+# The tradition
+#
+
+pmt:Kobeua a pm:Tradition ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "Kobeua transmission"@en, "Kobéua-Überlieferung"@de ;
+    skos:definition "The transmission of the Kobeua (Cubeo), a people of the Cuduiary and the upper Caiary-Uaupes in north-western Brazil speaking a language of the Betoya family, taken here at the part the opened work records: a Zauberarzt made by an elder who conjures vulture stones into his head, who heals, who becomes a jaguar in old age and remains one after death, and who learns from the soul of a poisoned man who poisoned him."@en ;
+    skos:note "Entered at places read and not registered first, because the passage was opened in the same run in which the tradition was decided on. The three decisions SPEC section 14 requires before the first node follow."@en ;
+    skos:note "One: the contact route is undecided. The part read itself shows the Zauberarzt's title given in the colonial lingua franca, Paye as the lingoa geral says, so contact with the mission and trade language is documented for the time of fixation; and the volume's second chapter is a history of the missions of the Caiary-Uaupes, which this run did not read. No route to any magical corpus in this holding is shown. The neighbouring transmission between the Issa and the Japura entered in the same run, pmt:WitotoBoro, reports the same jaguar complex; the two are peoples of one region with intertribal trade described in both works, so whatever their agreement is, it is not an independent attestation, and no convergence is asserted here."@en ;
+    skos:note "Two: the edition is volume II of 1910 named on the work node. The account of the Zauberarzt is the recorder's German, with some sentences set in quotation marks as what he was told and the Kobeua terms given; the Kobeua wording is not carried. There is no second translation of a text because there is no text; the requirement of two translations does not apply and is not claimed as met."@en ;
+    skos:note "Three: the number of citable places. Fourteen nodes below, from pages 150 to 157 read at the wording."@en ;
+    skos:note "The position of the corpus. Gathered by Theodor Koch-Grünberg among the Kobeua on the Cuduiary in 1904 or 1905, within the journey of 1903 to 1905, and published in 1910. The informants named in the part read are the Tuschaua of Namocoliba for the bone feast, Ola on the journey up the Cuduiary, and Uali for the drawings of the demons; the Zauberarzt passage names no informant. The recorder says he tried long and in vain before he could buy a single rattle, which bounds what a stranger was told."@en ;
+    pm:principalCorpus "No transmitted written corpus; Theodor Koch-Grünberg, Zwei Jahre unter den Indianern, Reisen in Nordwest-Brasilien 1903/1905, volume II (Stuttgart: Strecker und Schröder, 1910); Irving Goldman, The Cubeo: Indians of the Northwest Amazon (1963)" ;
+    pm:corpusWork pmw:ZweiJahreUnterDenIndianernII ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteUndecided ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), pp. 154-155" .
+
+#
+# The making of a Zauberarzt
+#
+
+pmp:KobeuaDupaInitiation a pm:Practicing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "The making of a Zauberarzt: the vulture stones conjured into the head, and the month of manioc"@en, "Der Werdegang des Zauberarztes: die Geiersteinchen in den Kopf gezaubert, und der Monat Maniok"@de ;
+    skos:definition "Only with the help of an older Zauberarzt can the office be attained. The elder fetches from a high mountain dupa, small white magic stones that the great vulture amaka has passed in the natural way, and conjures them through the candidate's nose into his head, where they eat the whole brain and the eyes; brain and eyes become dupa and remain so, the rest of the body does not. For a whole month the candidate may then eat only manioc food and must not lie with his wife; then he may eat small fish again, acara and trahira, then aracu and larger fish, and at last the flesh of warm-blooded animals. After the fast he is a Zauberarzt, Paye in the lingoa geral, and can heal sicknesses."@en ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), pp. 154-155" .
+
+pmc:KobeuaPayeHeals a pm:Conceptualizing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "After the fast he can heal sicknesses"@en, "Nach dem Fasten kann er Krankheiten heilen"@de ;
+    skos:definition "The capacity the making confers, stated as its result: after the fast the candidate is a Zauberarzt and as such can heal sicknesses."@en ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), p. 155" .
+
+pmc:KobeuaInitiationYieldsHealing a pm:Yielding ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "The stones and the fast make a healer"@en, "Die Steinchen und das Fasten machen einen Heiler"@de ;
+    pm:byPractice pmp:KobeuaDupaInitiation ;
+    pm:yieldsCapacity pmc:KobeuaPayeHeals ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Theodor Koch-Grünberg among the Kobeua of the Cuduiary in 1904 or 1905 and published in 1910. No informant is named for the passage; it is the recorder's German with the Kobeua terms dupa and amaka given and two clauses set in quotation marks as what he was told; the Kobeua wording is not carried." ;
+    skos:note "No sign is named by which the stones would be known not to have taken, and no candidate is reported who fasted and could not heal. The month is a term for the diet and not for the outcome."@en ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), pp. 154-155" .
+
+pmc:KobeuaOnlyThroughAnElder a pm:Presupposing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "Only with the help of an older Zauberarzt"@en, "Nur mit Hilfe eines älteren Zauberarztes"@de ;
+    skos:definition "Only with the help of an older Zauberarzt can one attain this office."@en ;
+    skos:note "Set at prescribed order: the sentence is exclusive in form but names no consequence of attempting it otherwise, and SPEC section 3 reserves stated necessity for a requirement with a citable consequence."@en ;
+    pm:dependentStep pmc:KobeuaPayeHeals ;
+    pm:priorStep pmp:KobeuaDupaInitiation ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Theodor Koch-Grünberg among the Kobeua of the Cuduiary in 1904 or 1905 and published in 1910, in the recorder's German; no informant named; the Kobeua wording is not carried." ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), pp. 154-155" .
+
+#
+# The jaguar
+#
+
+pmc:KobeuaOldPayeBecomesJaguar a pm:Conceptualizing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "The Zauberarzt grown old becomes a jaguar, and his soul stays one after death"@en, "Der alt gewordene Zauberarzt wird ein Jaguar, und seine Seele bleibt einer nach dem Tod"@de ;
+    skos:definition "When a Zauberarzt grows so old that he can only walk with difficulty, he becomes a jaguar: from time to time he goes into the forest, turns into a jaguar there and kills and eats deer, agouti and other animals, but men too; then he comes back out of the forest and becomes a man again. He keeps the jaguar skin in his sleeping corner above his hammock under the rafters. When a Zauberarzt dies his jaguar skin is buried with him, but his soul does not pass into the beyond; it roams the forest for ever as a very evil jaguar."@en ;
+    skos:note "The counter-search for traditions/witoto-boro.ttl ends here, and what it found is agreement in particulars and not only in the idea. In both accounts the practitioner holds a jaguar skin, keeps it hidden and does not wear it, goes out in jaguar form and kills, returns to human form, and becomes a jaguar after death. The Kobeua account adds two things the other lacks - the transformation comes with old age, and the skin goes into the grave while the soul stays in the forest - and lacks the claim that the practitioner in jaguar form cannot be killed. The recorder notes in his own voice that in Kobeua and most other Betoya languages the words for jaguar and for Zauberarzt are the same (Kobeua yaui, Uanana yaido, Tukano yai); that observation is his and is not part of the claim."@en ;
+    skos:note "No convergence node is written. The two peoples are neighbours in one trading region and both works describe intertribal exchange, so the route is not absent, and the Issa-Japura recorder had read Koch-Grünberg and cites him by page elsewhere in his book; agreement under those conditions counts the same claim twice unless the independence is grounded, which it is not."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Theodor Koch-Grünberg among the Kobeua of the Cuduiary in 1904 or 1905 and published in 1910. No informant is named; the recorder's German, with three clauses set in quotation marks as what he was told (the skin over the hammock, the skin buried, the very evil jaguar); the Kobeua wording is not carried." ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), p. 155" .
+
+pmc:KobeuaBadPayeBegetsAJaguar a pm:Cautioning ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "If a bad Paye gets a woman with child he dies, and she bears a jaguar"@en, "Schwängert ein böser Paye ein Weib, so stirbt er, und sie gebiert einen Jaguar"@de ;
+    skos:definition "The young Zauberarzt of Namocoliba was by the judgement of his tribesmen a good Paye; among the Kobeua there were only good Paye, but many bad ones among the Molaua up the Ti-Igarape. If a bad Paye gets a woman with child, he dies; the woman bears a jaguar that runs into the forest, grows very evil and eats animals and men. A good Paye can catch it and tie it to a tree in the forest, so that it can do no more harm and stays tame as a dog."@en ;
+    skos:note "The neighbour of the Issa-Japura rule that a medicine-man must have no connection with women while making his medicines or the child will be a tiger cub (pmc:WitotoBoroNoWomanWhileMakingMedicine). Here the consequence is double and falls on both: the practitioner dies and the child is a jaguar. It is assigned to the bad practitioner of another people, so within the Kobeua it can only be observed of strangers."@en ;
+    pm:cautionsAbout pmp:KobeuaDupaInitiation ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Theodor Koch-Grünberg among the Kobeua of Namocoliba on the Cuduiary in 1904 or 1905 and published in 1910. No informant is named; the recorder's German, with the last clause set in quotation marks as what he was told; the Kobeua wording is not carried." ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), p. 155" .
+
+#
+# The poison and the soul that names the guilty
+#
+
+pmc:KobeuaDeadSoulNamesThePoisoner a pm:Conceptualizing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "The Zauberarzt speaks with the soul of the poisoned man, and it names the guilty"@en, "Der Zauberarzt spricht mit der Seele des Vergifteten, und sie nennt den Schuldigen"@de ;
+    skos:definition "Bad men make people sick by giving them poison. The enemy goes up a mountain and fetches the magic poison Marakaimbara, which the Kobeua call ihia and which looks like tapioca meal; he does not touch it with his hands but pushes it with a little stick onto a leaf, tips it onto another leaf, folds and ties it. At a dance he secretly pierces the bundle with a little stick and lets the contents run into his opponent's gourd of kaschiri; the man drinks and falls sick. If he dies, the Zauberarzt speaks with the soul of the dead, which names the guilty one to him; then the relatives fall upon the house of the murderer, kill all its inhabitants, men, women and children, as far as they do not escape, and burn the house."@en ;
+    skos:note "A divination whose verdict is executed against a household that was not consulted, as at pmc:WitotoBoroDreamNamesTheEnemy in the neighbouring transmission. The verdict here has a speaker who cannot be questioned by anyone but the Zauberarzt, and its consequence is the destruction of the house it names. No case and no named Zauberarzt is given."@en ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Theodor Koch-Grünberg among the Kobeua of the Cuduiary in 1904 or 1905 and published in 1910. No informant is named; the recorder's German with the Kobeua name of the poison given; the Kobeua wording is not carried." ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), pp. 155-156" .
+
+#
+# The cure the recorder watched, and the rattle
+#
+
+pmp:KobeuaRattleSmoke a pm:Practicing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "Smoke blown into the perforated rattle and shaken out over the sick"@en, "Rauch in die durchlöcherte Rassel geblasen und über den Kranken geschüttelt"@de ;
+    skos:definition "The rattle has the main part in the cure, and the Zauberarzt parts with it under no circumstances, ascribing to it a mysterious power. Its gourd, rubbed with the healing carayuru red and incised with marks whose meaning the recorder could not learn, is pierced in several places; at the conjuration the Zauberarzt blows the narcotising tobacco smoke through the holes into the gourd, and by swinging the rattle to and fro lets it escape again over the sick man or the objects to be disenchanted. The fee is carayuru, capsicum, pots, hammocks or a bow, never arrows."@en ;
+    skos:note "The recorder says he obtained a rattle only after long vain efforts, from a very old Paye on the Caiary who did not have far to go to the jaguar, and that whenever he later showed it to a Paye on the Cuduiary the man broke out in displeased astonishment at the unconscionable trade. That reaction is the nearest the passage comes to a statement of what the rattle is worth to its owner."@en ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), pp. 156-157" .
+
+pmc:KobeuaFeverCureWithoutOutcome a pm:Conceptualizing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "The cure at Namocoliba: a woman with fever, half an hour of conjuration, and no outcome reported"@en, "Die Kur in Namocoliba: eine Frau mit Fieber, eine halbe Stunde Beschwörung, und kein Ausgang berichtet"@de ;
+    skos:definition "When a young woman at Namocoliba fell sick with fever, the Paye disenchanted all her small belongings too, which he had laid in a flat basket, blowing tobacco smoke over them and stroking the matter of the sickness away with his right hand and blowing it into the air. He took his duty very exactly, and after a violent cure of the woman lasting over half an hour he withdrew exhausted into his hammock, where he went on groaning, belching and spitting for some time."@en ;
+    skos:note "Kept for what it does not say. The recorder watched the cure and reports the practitioner's exhaustion and not the patient's course; whether the woman recovered is not stated at this place. The one session watched in the neighbouring transmission (pmc:WitotoBoroOkainaFeverCure) is reported with an outcome and this one without, and a reader counting cases should count this as a session and not as a result."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), p. 156" .
+
+#
+# The falcon
+#
+
+pmp:KobeuaFalconEyeFluid a pm:Practicing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "The fluid of the red-billed falcon's eyes dripped into the hunter's own"@en, "Die Flüssigkeit der Augen des rotschnäbligen Falken in die eigenen Augen des Jägers geträufelt"@de ;
+    skos:definition "There is a small falcon with a red beak that keeps mostly to the plantations and is said to see so sharply that it can make out even a worm on the ground from a great height. When a Kobeua kills one, he pierces its eyes and drips the fluid in them into his own eyes."@en ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), p. 154" .
+
+pmc:KobeuaSharperSightInTheHunt a pm:Conceptualizing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "Sharper sight in the hunt"@en, "Schärferes Sehen auf der Jagd"@de ;
+    skos:definition "What the falcon's eye fluid is for: to see more sharply when hunting."@en ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), p. 154" .
+
+pmc:KobeuaFalconYieldsSight a pm:Yielding ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "The falcon's eyes give the falcon's sight"@en, "Die Augen des Falken geben das Sehen des Falken"@de ;
+    pm:byPractice pmp:KobeuaFalconEyeFluid ;
+    pm:yieldsCapacity pmc:KobeuaSharperSightInTheHunt ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Theodor Koch-Grünberg among the Kobeua of the Cuduiary in 1904 or 1905 and published in 1910, as a usage of the Kobeua; no informant named; the recorder's German; the Kobeua wording is not carried." ;
+    skos:note "A recipe in the sense of SPEC section 15: one named substance, one act, one stated effect, nothing else. The recorder files it under the transfer of qualities from animal to man, which he says also shows in the food rules before and after birth; that classification is his. Of the five kinds the harvest owes it supplies one and no condition of failure."@en ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), p. 154" .
+
+#
+# The goods of the dead
+#
+
+pmp:KobeuaBurialInTheHouse a pm:Practicing ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "The night of lament and the burial in the canoe inside the house"@en, "Die Nacht der Totenklage und das Begräbnis im Kanu im Haus"@de ;
+    skos:definition "When a Kobeua dies, the men squat through the following night on one side of the hammock holding the body and the women on the other, and hold the lament. Next morning the dead is buried in his canoe in the middle of the house, his feather ornament laid on his breast and given into the grave; his goods are burnt or broken on the grave; the relatives may eat nothing until the body is in the ground, and a bath ends the fast. The loud lament is held at the grave for five days, morning, noon and evening, and the feast of the dead follows on the ninth day."@en ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), pp. 150-151" .
+
+pmc:KobeuaGoodsOfTheDeadDestroyed a pm:Cautioning ;
+    pm:fromWork pmw:ZweiJahreUnterDenIndianernII ;
+    rdfs:label "Burn the dead man's goods and break the dead woman's pots, or the soul comes back to punish"@en, "Die Habe des Toten verbrennen und die Töpfe der Toten zerschlagen, sonst kehrt die Seele zurück und straft"@de ;
+    skos:definition "On the closed grave of a man his bow and arrows, his fish traps and other gear are burnt, on a woman's her baskets and sieves, and her pots are broken and the sherds thrown into the forest, so that nothing of the dead person's property remains behind and the soul is not forced to come back to claim its belongings and punish the survivors for their carelessness or greed."@en ;
+    skos:note "A warning with its consequence stated as the reason for the rule, and the same rule is reported by the neighbouring recorder for the Kuretu-language group south of the Japura (pots broken so that the soul does not return to ask for them). It concerns the dead and not an operation of the Zauberarzt."@en ;
+    pm:cautionsAbout pmp:KobeuaBurialInTheHouse ;
+    pm:attestedBy pm:fieldAttestation ;
+    pm:fieldRecord "Recorded by Theodor Koch-Grünberg among the Kobeua of the Cuduiary in 1904 or 1905 and published in 1910, in the recorder's German; no informant named; the Kobeua wording is not carried." ;
+    pm:withinTradition pmt:Kobeua ;
+    dcterms:source "Theodor Koch-Grünberg, Zwei Jahre unter den Indianern II (Stuttgart: Strecker und Schröder, 1910), pp. 150-151" .
