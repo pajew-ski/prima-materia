@@ -129,7 +129,7 @@ Vollständig in `SPEC.md` §13. Der Tracker hält Behauptungen ohne gelesene Ste
 
 **Vor jedem `issue_create`: folgt das aus einem Zustand im Graphen?** Dann ist es eine Abfrage und kein Issue. Registrierte Tradition ohne Knoten, ungeöffnetes Werk, ungeprüfte Verallgemeinerung, vermittelter Knoten, Prüfknoten ohne Fälle, Knoten ohne Verortung: alles in `queries/`.
 
-**Ein Befund wird behoben oder als Regel geschrieben, bevor er ein Issue wird.** Nur was der Lauf nicht leisten kann, wird eines, und sein Body endet mit „Erledigt, wenn". Vor dem Anlegen nach einem offenen Befund zum selben Gegenstand suchen. Lücken im Werkzeugsatz gehören nach `pajew-ski/data`. Der PR, der einen Befund erledigt, nennt ihn; geschlossen wird ausdrücklich nach dem Merge, bis `Closes #<n>` an einem PR mit einer einzigen Zeile belegt ist (#815 hat mit 37 Zeilen nicht geschlossen).
+**Ein Befund wird behoben oder als Regel geschrieben, bevor er ein Issue wird.** Nur was der Lauf nicht leisten kann, wird eines, und sein Body endet mit „Erledigt, wenn". Vor dem Anlegen nach einem offenen Befund zum selben Gegenstand suchen. Lücken im Werkzeugsatz gehören nach `pajew-ski/data`. Der PR, der einen Befund erledigt, nennt ihn mit `Closes #<n>` als eigener Zeile. Eine Zeile greift (#873 schloss #712 beim Merge), siebenunddreißig griffen nicht (#815); bei mehreren prüft der erste Lauf nach dem Merge und schließt den Rest ausdrücklich (SPEC §13).
 
 **Behauptungen werden je Korpus gezogen, nicht als Liste gelesen.** `korpus:`-Labels kumulieren und sind der Nachweis der Suchabdeckung; was eine Recherche ergab, steht im Issue.
 
