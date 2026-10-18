@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -18,9 +19,10 @@
 # ethnographic literature names a participant there whose office is to answer.
 #
 # The passage was found and read, and so the tradition is entered rather than
-# left as an address in an issue. Only what the search opened stands here:
-# three pages of one work. Everything else the corpus holds is unread and the
-# coverage state says so.
+# left as an address in an issue. Only what the searches opened stands here:
+# three pages of one work in the first run, and two further stretches of the
+# same chapter in the second. Everything else the corpus holds is unread and
+# the coverage state says so.
 #
 # There is no written corpus and the recorder's fixation is the first there
 # was, so the mode is pm:fieldAttestation and not pm:mediatedAttestation. The
@@ -28,9 +30,11 @@
 #
 
 pmt:ChukcheeShamanism a pm:Tradition ;
+    pm:fromWork pmw:TheChukchee ;
+    pm:corpusWork pmw:TheChukchee ;
     rdfs:label "Chukchee shamanic transmission"@en, "Tschuktschische Schamanenüberlieferung"@de ;
     skos:definition "The northeastern Siberian transmission of a performance held in a closed and darkened sleeping-room, in which the practitioner drums and sings without words until the spirits appear, and in which a second person present answers him."@en ;
-    skos:note "Registered and worked in the same act, which SPEC §14 allows and which is stated here rather than glossed over: a registration claims only that the transmission exists and where it lies, and this file goes past that for three pages and no further."@en ;
+    skos:note "Registered and worked in the same act, which SPEC §14 allows and which is stated here rather than glossed over: a registration claims only that the transmission exists and where it lies, and this file goes past that for some twenty-five pages of one chapter and one page of another, and no further."@en ;
     skos:note "The contact route is entered as documented and toward one transmission this graph already holds. The recorder states that the use of unmixed tobacco as a stimulant before the performance is copied from the Tungus shamans, and pmt:SiberianShamanism is the Tungus file. That is a route in the material and not a geographical guess; it does not touch the North Atlantic question, for which no route of any kind is known in either direction."@en ;
     skos:note "The lie of the corpus. One recorder, working in the field of the Jesup North Pacific Expedition around the turn of the twentieth century among the Reindeer and the Maritime Chukchee, publishing in English with the Chukchee terms in his own transcription and with a separate volume of texts in the language. He is the first fixation in writing of what he reports, which is what makes him a witness here and not a secondary summary; what he is not is a chorus, and a second recorder would be worth more than a second reading of him."@en ;
     pm:principalCorpus "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Jesup North Pacific Expedition vol. 7), Leiden and New York 1904-1909; Bogoras, Chukchee Materials" ;
@@ -39,6 +43,7 @@ pmt:ChukcheeShamanism a pm:Tradition ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 433-435" .
 
 pmp:ChukcheeShamanisticPerformance a pm:Practicing ;
+    pm:fromWork pmw:TheChukchee ;
     rdfs:label "The performance in the closed inner room"@en, "Der Vollzug im geschlossenen Innenraum"@de ;
     skos:definition "The proceeding after the evening meal: the kettles and trays are carried out, everyone who wishes to be present enters the inner room, which is closed for the night; the practitioner sits at the master's place by the back wall with free space left around him, goes over the drum and tightens its head, strips to the waist and often takes off shoes and stockings; the light is put out, and he beats the drum and sings tunes without words, at first low and then filling the room, using the drum to change the place his voice appears to come from, until after a quarter of an hour or more the spirits first appear."@en ;
     pm:attestedBy pm:fieldAttestation ;
@@ -48,6 +53,7 @@ pmp:ChukcheeShamanisticPerformance a pm:Practicing ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), pp. 433-434" .
 
 pmc:ChukcheeAnsweringCalls a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
     rdfs:label "The answering calls and the one who gives them"@en, "Die Antwortrufe und der, der sie gibt"@de ;
     skos:definition "The exclamations a listener throws in from time to time during the performance — an interjection of wonder, of course, certainly — for which the transmission has a word of its own, to give answering calls, and a participle naming the one who gives them."@en ;
     skos:note "The Chukchee word is given twice on the page and the digitised copy used here damages it in both places, once as oTitkek for the verb and once as ocitkedm for the participle. The secondary literature reads the participle ocitkolin. What the reading here rests on is the English gloss, which is unambiguous, and not on the transcription."@en ;
@@ -55,6 +61,7 @@ pmc:ChukcheeAnsweringCalls a pm:Conceptualizing ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 434" .
 
 pmc:ChukcheePresupposesAnsweringCalls a pm:Presupposing ;
+    pm:fromWork pmw:TheChukchee ;
     rdfs:label "The performance presupposes someone who answers"@en, "Der Vollzug setzt einen voraus, der antwortet"@de ;
     pm:dependentStep pmp:ChukcheeShamanisticPerformance ;
     pm:priorStep pmc:ChukcheeAnsweringCalls ;
@@ -68,6 +75,7 @@ pmc:ChukcheePresupposesAnsweringCalls a pm:Presupposing ;
     dcterms:source "Waldemar Bogoras, The Chukchee, Memoir of the American Museum of Natural History vol. VII (Leiden: E. J. Brill, 1904-1909), p. 434" .
 
 pmc:ChukcheeColdWaterEndsInspiration a pm:Conceptualizing ;
+    pm:fromWork pmw:TheChukchee ;
     rdfs:label "Cold water on the head ends the inspiration"@en, "Kaltes Wasser auf den Kopf beendet die Eingebung"@de ;
     skos:definition "The stated means of breaking off the state: the application of cold water to the head of a practitioner in the very heat of his performance would suddenly bring his inspiration to an end, and at ceremonials his neighbours may sprinkle him for that purpose when he practises too long or seems excited to a dangerous pitch."@en ;
     skos:note "Entered because it is a failing condition of the rarest kind: one that a bystander can bring about deliberately, in the middle of the act, with a stated and immediate effect. Most conditions in this holding are set before the act and can only be observed afterwards."@en ;
