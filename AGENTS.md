@@ -31,6 +31,7 @@ Die Tabelle ist der Ort des Befunds. Wer einen Weg prüft, trägt ihn hier ein, 
 | Weg | Stand |
 |---|---|
 | archive.org, `https://archive.org/download/<kennung>/<kennung>_djvu.txt` | Regelweg (#515, #584). Zeilenumbrüche fehlen, nach Zeichenbereich schneiden. Seitenzahl aus dem laufenden Kolumnentitel bilden (#546). Ausgabe vom Titelblatt im Volltext, nie aus den Katalogdaten (#153) |
+| archive.org, `download/` mit `curl` | antwortet mit `302` und **leerem Körper** auf einen Datenknoten (`dn<n>.<region>.archive.org`); `curl` ohne `-L` schreibt 0 Byte und endet mit Exit 0, also eine leere Datei ohne Fehlermeldung, die wie ein leerer Textlayer aussieht. `-L` setzen oder `urllib` nehmen, das der Weiterleitung folgt; vor jedem Nichtfund die Bytezahl prüfen (2026-10-19) |
 | archive.org, Dateiname über `https://archive.org/metadata/<kennung>` | trägt, wo `_djvu.txt` mit 404 oder 503 antwortet (#700, #702) |
 | archive.org, `503` auf eine Kennung | Sperre am Weg; andere Kennung desselben Werkes versuchen (#702) |
 | archive.org, `503` auf **jede** Kennung, Körper 11832 Byte mit `<title>Internet Archive: Temporarily Offline</title>`, dazu `web.archive.org` ohne Antwort | Gesamtausfall des Archivs, keine Sperre an einer Kennung. Die Zeile darüber ist dann der falsche Zug und kostet den Lauf: eine zweite Kennung antwortet genauso. Erst Körpergröße und `<title>` prüfen, dann den Strang auf einen Weg ohne archive.org legen oder, wo keiner trägt, den Strang nicht als unerreichbares Werk führen, weil die Sperre am Weg hängt und nicht am Werk (2026-10-07) |
