@@ -22,8 +22,8 @@ pmt:GraecoRoman a pm:Tradition ;
     rdfs:label "Graeco-Roman testimony"@en, "Griechisch-römisches Zeugnis"@de ;
     skos:definition "The transmission of Greek and Latin historiographical and doxographical reports of extraordinary capacities, and of the argumentative literature that disputes them."@en ;
     skos:note "Edition finding, prima-materia#45. For every citation in this file the edition or translation the passage was read from is not recoverable, and it is left unstated rather than guessed. The book and chapter numbers are stable across the modern critical editions, which is why the loss is smaller here than elsewhere; it is still a loss, because it is unknown whether the passages were read in the original or in translation."@en ;
-    pm:principalCorpus "Herodotus, Histories; Tacitus, Historiae; Suetonius, Divus Vespasianus; Pliny, Naturalis Historia; Cicero, De divinatione" ;
-    pm:corpusWork pmw:HerodotiHistoriai, pmw:TacitiHistoriae, pmw:DivusVespasianus, pmw:NaturalisHistoria, pmw:DeDivinatione ;
+    pm:principalCorpus "Herodotus, Histories; Tacitus, Historiae; Suetonius, Divus Vespasianus; Pliny, Naturalis Historia; Cicero, De divinatione; Artemidorus, Onirocriticon" ;
+    pm:corpusWork pmw:HerodotiHistoriai, pmw:TacitiHistoriae, pmw:DivusVespasianus, pmw:NaturalisHistoria, pmw:DeDivinatione, pmw:ArtemidoriOnirocriticon ;
     dcterms:source "Herodotus, Histories IV.13-16" .
 
 #
@@ -134,3 +134,39 @@ pmc:CiceroNullaTabulaObservationum a pm:Conceptualizing ;
     skos:note "It has a counterpart in a corpus that could not have known it, and the pairing is the reason this node is separate. The rasāyana lesson of the Caraka states five times that its combinations are well tested by experience and reports no case; here a critic names the same gap in somebody else's practice and draws the consequence the Indian handbook does not draw about its own. Two corpora, one shape, and only one of them is looking at itself. See pmp:AyurvedaRasayanaPariksaSearch."@en ;
     pm:withinTradition pmt:GraecoRoman ;
     dcterms:source "Cicero, De divinatione II.46-47, in the English of C. D. Yonge, The Treatises of M. T. Cicero, London: Bohn 1878, pp. 240-241" .
+
+#
+# The interpreter of dreams on whom to believe
+#
+# Opened on 2026-10-19 for the protocol at
+# examinations/procedure-judged-by-its-own-working-tested.ttl, which looked
+# outside the holding for a transmission comparing procedures of one kind for
+# how well they work. The chapter compares the arts of divination and gives
+# its ground in one clause that names both the arts and the men who work them.
+# A practitioner's manual and not a historian's report, which is a third kind
+# of witness in this file beside the reports and Cicero's argument.
+#
+
+pmw:ArtemidoriOnirocriticon a dcterms:BibliographicResource ;
+    rdfs:label "Artemidorus of Daldis, Onirocriticon"@en, "Artemidor von Daldis, Onirokritikon"@de ;
+    skos:note "Opened at book II, chapter 69, in three versions. The Greek in the recension of Rudolf Hercher, Artemidori Daldiani Onirocriticon libri V ex recensione Rudolphi Hercheri, Lipsiae in aedibus B. G. Teubneri, as the title page in the full text gives it, read through a text layer that renders the Latin capitals of the title page in Greek letters; the year line is not legible there and the catalogue's 1864 is not used; identifier bub_gb_r8pJOYtS4W4C, pp. 161-162, where the Greek is uneven in the text layer and was read together with the apparatus beneath it. The German of Friedrich S. Krauss, Artemidoros aus Daldis, Symbolik der Träume (Wien, Pest, Leipzig: A. Hartleben, 1881), identifier BIUSante_55615, pp. 188-190. The Latin of Ianus Cornarius, De somniorum interpretatione libri quinque, printed at Basel by Hieronymus Froben and Nicolaus Episcopius in September 1539 as the colophon in the full text gives it, identifier desomnioruminter00arte, book II, chapter LXXIIII, which is Hercher's II.69. Two translators, Krauss and Cornarius, in two languages."@en ;
+    skos:note "Not read: the rest of the five books. Seen and not entered: the end of the preceding chapter on dreams of flying, which gives correspondences between dream and outcome and none of the kinds the harvest owes. The Teubner edition of Roger Pack (1963) was located, identifier artemidori-daldiani-onirocriticon-1-5-1963-by-roger-pack, and its text layer carries no character of the Greek block among 549,139 letters, the Greek having been read into Latin letters, so it was not used."@en .
+
+pmc:ArtemidorusAxiopistoi a pm:Conceptualizing ;
+    pm:fromWork pmw:ArtemidoriOnirocriticon ;
+    rdfs:label "Whose words in a dream are to be believed, and why"@en, "Wessen Worten im Traum zu glauben ist, und warum"@de ;
+    skos:definition "The order of the trustworthy, whose words in a dream are to be believed and followed. First the gods, for lying is alien to gods; then priests, for they have the same honour among men as the gods; then kings and rulers, for what rules has the power of a god; then parents and teachers, for they are like gods, the one bringing us into life and the other teaching how to use it; then the diviners, but only those who are not cheats. Further the dead, for liars deceive from hope or from fear and the dead neither hope nor fear; children, for they do not yet know how to lie; the very old, for trustworthiness is shown by age; and the irrational animals. All other men lie, whatever they say, except those whose trustworthiness is evident and men of tried conduct; actors and chorus singers are unreliable to all by reason of their parts, and so are sophists, the poor, the galli and eunuchs, the last of whom signify false hopes even when they say nothing."@en ;
+    skos:note "A rule for reading dreams and not a procedure of its own, entered because it is the frame in which the comparison of the arts at pmc:ArtemidorusManteisMeApateones stands, and because its grounds are all properties of persons: their rank, their likeness to the gods, their want of a motive to lie, their age, their parts on a stage. Where the chapter ranks speakers it grounds the ranking in the speaker; where it ranks the arts the speakers practise it grounds the ranking in the art and in the speaker together."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Artemidorus, Onirocriticon II.69, in the Greek of R. Hercher (Leipzig: Teubner), pp. 161-162", "Artemidorus, Onirocriticon II.69, in the German of F. S. Krauss, Symbolik der Träume (Wien, Pest, Leipzig: A. Hartleben, 1881), pp. 188-190", "Artemidorus, De somniorum interpretatione II.74 (Hercher's II.69), in the Latin of Ianus Cornarius (Basel: Froben and Episcopius, 1539)" .
+
+pmc:ArtemidorusManteisMeApateones a pm:Conceptualizing ;
+    pm:fromWork pmw:ArtemidoriOnirocriticon ;
+    rdfs:label "Only the diviners who are not cheats: the true arts and the false"@en, "Nur die Seher, die keine Betrüger sind: die wahren Künste und die falschen"@de ;
+    skos:definition "Among the trustworthy are the diviners, but of the diviners only those who are not cheats. Whatever Pythagoreans, physiognomists, dice-diviners, cheese-diviners, sieve-diviners, readers of the form, readers of the hand, basin-diviners and necromancers say is all to be held false and without foundation; for their arts are of that kind, and they themselves know not the least of divination itself, but by sorcery and deceit strip those who fall in with them. What remains as alone true is what is said by sacrificers, bird-diviners, star-gazers, observers of portents, dream-interpreters and liver-diviners; on the mathematicians who cast nativities the author defers judgement to a later place."@en ;
+    skos:note "Two grounds in one clause, joined in the Greek by καὶ γὰρ ... καί: αἱ τέχναι αὐτῶν εἰσι τοιαῦται, their arts are of that kind, and αὐτῆς μὲν μαντικῆς οὐδὲ βραχὺ ἴσασι, γοητεύοντες δὲ καὶ ἀπατῶντες, they know nothing of divination itself and practise sorcery and deceit. Krauss keeps both (denn ihre Künste sind von der Art, und sie besitzen von der eigentlichen Mantik nicht die geringste Kenntniss, sondern ziehen durch Betrug und Schwindel ... aus), and so does Cornarius (nam ipsorum artes tales sunt, atque ipsi ne minimum quidem vaticinationis sciunt, verum praestigiis illudentes et defraudantes obvenientes exuunt). The first ground is not explained: nothing is said about what in the arts makes them false."@en ;
+    skos:note "The comparison is between procedures of one kind for whether they work, nine against six, and its ground is the procedure and the person together. The author counts his own art among the six. Cornarius's Latin has four of the six true arts, the bird-diviners, the star-gazers, the dream-interpreters and the liver-diviners, where Hercher's Greek and Krauss have six; the difference does not touch the ground."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GraecoRoman ;
+    dcterms:source "Artemidorus, Onirocriticon II.69, in the Greek of R. Hercher (Leipzig: Teubner), p. 161 lines 20-27 and p. 162 lines 1-2", "Artemidorus, Onirocriticon II.69, in the German of F. S. Krauss, Symbolik der Träume (Wien, Pest, Leipzig: A. Hartleben, 1881), pp. 188-189", "Artemidorus, De somniorum interpretatione II.74 (Hercher's II.69), in the Latin of Ianus Cornarius (Basel: Froben and Episcopius, 1539)" .

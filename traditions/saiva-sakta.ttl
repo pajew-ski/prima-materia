@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -15,22 +16,70 @@
 # tradition instance below, where it survives compilation. See
 # prima-materia#24.
 #
+# Migrated to work identifiers on 2026-10-19, in the run that examined
+# pmc:ProcedureJudgedByItsOwnWorking and reopened the Mahānirvāṇa Tantra at
+# X.200-204; AGENTS.md requires the migration of anyone who touches a tradition
+# file. The two orderings held here without pm:withinTradition, the
+# seven-centre mapping and Wilson's naming, are not works of this corpus and
+# carry no pm:fromWork.
+#
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:Vijnanabhairava a dcterms:BibliographicResource ;
+    rdfs:label "Vijñānabhairava"@en, "Vijñānabhairava"@de ;
+    skos:note "Opened at verses 28-29, 50-51 and 56-57 in the Sanskrit, in the verse numbering of Dyczkowski and the current editions. The edition the verses were read in is not otherwise recoverable; see prima-materia#45."@en .
+
+pmw:MalinivijayottaraTantra a dcterms:BibliographicResource ;
+    rdfs:label "Mālinīvijayottaratantra"@en, "Mālinīvijayottaratantra"@de ;
+    skos:note "Cited at chapter VIII and once without a chapter. The edition is not recoverable and is left unstated rather than guessed; the passages are to be reopened. See prima-materia#45."@en .
+
+pmw:Tantraloka a dcterms:BibliographicResource ;
+    rdfs:label "Abhinavagupta, Tantrāloka"@en, "Abhinavagupta, Tantrāloka"@de ;
+    skos:note "Cited at chapters XIII and XV. The edition is not recoverable and the chapter divisions of the Kashmirian exegesis are edition-dependent; see prima-materia#45."@en .
+
+pmw:Tantrasara a dcterms:BibliographicResource ;
+    rdfs:label "Abhinavagupta, Tantrasāra"@en, "Abhinavagupta, Tantrasāra"@de ;
+    skos:note "Cited at chapter XI. The edition is not recoverable; see prima-materia#45."@en .
+
+pmw:KularnavaTantra a dcterms:BibliographicResource ;
+    rdfs:label "Kulārṇava Tantra"@en, "Kulārṇava Tantra"@de ;
+    skos:note "Opened at the verses giving the order of superiority of the ācāras, in the text with English translation by Ram Kumar Rai, Varanasi 1999; chapter and verse are not recoverable from the copy read. The rest of the work is unread."@en .
+
+pmw:KalikaPurana a dcterms:BibliographicResource ;
+    rdfs:label "Kālikāpurāṇa"@en, "Kālikāpurāṇa"@de ;
+    skos:note "Opened in the chapters on the worship of Tripurā, at the verses named on each node, in the text, introduction and English translation of B. N. Shastri, part III, Nag Publishers, Delhi 1991. The chapter numbering is not recoverable from the copy read."@en .
+
+pmw:MahanirvanaTantra a dcterms:BibliographicResource ;
+    rdfs:label "Mahānirvāṇa Tantra"@en, "Mahānirvāṇa Tantra"@de ;
+    skos:note "Read by earlier runs at I.50-61 and IV.19-20 in the English of Arthur Avalon, Tantra of the Great Liberation (London: Luzac & Co., 1913). Reopened on 2026-10-19 at X.200-204 in three versions: Avalon's English, p. 260, read in the copy dli.csl.5754, which lacks its title page and whose running heads and pagination are those of the 1913 edition, the title page of which was read in the copy india.history.resource.110781; the Sanskrit with the commentary of Hariharānanda Nātha Bhāratī, edited by Jīvānanda Vidyāsāgara (Calcutta, 1884, as the title page in the full text gives it), daśamollāsa, pp. 286-287; and a second English translation, printed as The Mahanirvana Tantram, the Tantra treating of the final emancipation, in the copy dli.bengal.10689.11353, whose title page is not in the scan, so that the translator is not named here and the catalogue is not used for it. Its wording differs throughout from Avalon's and it spells Koula and Veera, so it is a second translation and not a second copy of the first."@en ;
+    skos:note "Not read: the rest of the work in this run, including the fourteenth chapter, which an earlier run had cited for the claim at pmc:KaulaAboveTheOtherWays; the verse it gave there, XIV.203, says of the tantra itself that it is the only means for the acquirement of the knowledge of Brahman (Avalon, p. 358), and the claim stands at X.203."@en .
+
+pmw:Satcakranirupana a dcterms:BibliographicResource ;
+    rdfs:label "Pūrṇānanda, Ṣaṭcakranirūpaṇa"@en, "Pūrṇānanda, Ṣaṭcakranirūpaṇa"@de ;
+    skos:note "Cited without place. The edition is not recoverable and is left unstated rather than guessed; see prima-materia#45."@en .
 
 pmt:SaivaSakta a pm:Tradition ;
+    pm:fromWork pmw:Satcakranirupana ;
     rdfs:label "Śaiva and Śākta tantra"@en, "Śaiva- und Śākta-Tantra"@de ;
     skos:definition "The transmission of the Śaiva and Śākta tantric corpus and its Kashmirian exegesis."@en ;
     skos:note "A caution governs everything read out of this tradition. What is old is a set of subtle centres carrying seed syllables, and the older tantras vary in how many they count. The fixed system of seven centres with spectral colours and assigned psychological qualities belongs to the twentieth century and to no tantra; it is held in this file as pmc:SevenCentreQualityMapping so that it is available as what it is, and it must not be read back into the material it was built on."@en ;
     pm:principalCorpus "Vijñānabhairava; Mālinīvijayottaratantra; Abhinavagupta, Tantrāloka and Tantrasāra; Kulārṇava Tantra; Kālikāpurāṇa; Mahānirvāṇa Tantra; Pūrṇānanda, Ṣaṭcakranirūpaṇa" ;
+    pm:corpusWork pmw:Vijnanabhairava, pmw:MalinivijayottaraTantra, pmw:Tantraloka, pmw:Tantrasara, pmw:KularnavaTantra, pmw:KalikaPurana, pmw:MahanirvanaTantra, pmw:Satcakranirupana ;
     skos:note "Edition finding, prima-materia#45. The Vijñānabhairava citations name the numbering they were read in. For the Ṣaṭcakranirūpaṇa, the Tantrāloka, the Tantrasāra and the Mālinīvijayottaratantra the edition is not recoverable and is left unstated rather than guessed; those passages are to be reopened, and the chapter divisions of the Kashmirian exegesis are edition-dependent."@en ;
     dcterms:source "Pūrṇānanda, Ṣaṭcakranirūpaṇa (1577)" .
 
 pmc:Kundalini a pm:Conceptualizing ;
+    pm:fromWork pmw:Satcakranirupana ;
     rdfs:label "Kuṇḍalinī"@en, "Kuṇḍalinī"@de ;
     skos:definition "A power held to rest coiled at the base of the subtle body and to rise through it when roused."@en ;
     pm:withinTradition pmt:SaivaSakta ;
     dcterms:source "Pūrṇānanda, Ṣaṭcakranirūpaṇa (1577)" .
 
 pmc:Cakra a pm:Conceptualizing ;
+    pm:fromWork pmw:Satcakranirupana ;
     rdfs:label "Cakra"@en, "Cakra"@de ;
     skos:definition "A centre of the subtle body, described in the source with its seed syllables and its position along the central channel."@en ;
     skos:note "The count varies across the older tantras, which give four, five or six. The tradition does not assign the centres the psychological qualities that modern presentations attach to them."@en ;
@@ -38,6 +87,7 @@ pmc:Cakra a pm:Conceptualizing ;
     dcterms:source "Pūrṇānanda, Ṣaṭcakranirūpaṇa (1577)" .
 
 pmc:Saktipata a pm:Conceptualizing ;
+    pm:fromWork pmw:Tantraloka, pmw:Tantrasara, pmw:MalinivijayottaraTantra ;
     rdfs:label "Descent of power"@en, "Herabkunft der Kraft"@de ;
     skos:definition "The transfer of power from one who has it to one who does not, graded in the Kashmirian exegesis into nine degrees."@en ;
     skos:note "The sources give transfer by glance, by touch and by word. The specifically manual modality of the modern draft is not attested here."@en ;
@@ -45,6 +95,7 @@ pmc:Saktipata a pm:Conceptualizing ;
     dcterms:source "Abhinavagupta, Tantrāloka XIII", "Abhinavagupta, Tantrasāra XI", "Mālinīvijayottaratantra" .
 
 pmp:SaktipataTransmission a pm:Practicing ;
+    pm:fromWork pmw:Tantraloka, pmw:Tantrasara ;
     rdfs:label "Conferring the descent of power"@en, "Übertragung der Herabkunft der Kraft"@de ;
     skos:definition "The initiatory act by which the descent of power is conferred."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -60,12 +111,14 @@ pmp:SaktipataTransmission a pm:Practicing ;
 #
 
 pmc:Diksa a pm:Conceptualizing ;
+    pm:fromWork pmw:MalinivijayottaraTantra, pmw:Tantraloka ;
     rdfs:label "Initiation"@en, "Initiation"@de ;
     skos:definition "The rite by which a person is admitted to the practice, set out in the tantra and reproduced with commentary in the Kashmirian exegesis."@en ;
     pm:withinTradition pmt:SaivaSakta ;
     dcterms:source "Mālinīvijayottaratantra VIII", "Abhinavagupta, Tantrāloka XV" .
 
 pmc:PracticePresupposesInitiation a pm:Presupposing ;
+    pm:fromWork pmw:MalinivijayottaraTantra, pmw:Tantraloka ;
     rdfs:label "The practice presupposes initiation"@en, "Die Praxis setzt die Initiation voraus"@de ;
     pm:dependentStep pmp:SaktipataTransmission ;
     pm:priorStep pmc:Diksa ;
@@ -75,6 +128,7 @@ pmc:PracticePresupposesInitiation a pm:Presupposing ;
     dcterms:source "Mālinīvijayottaratantra VIII", "Abhinavagupta, Tantrāloka XV" .
 
 pmc:InitiationPresupposesSaktipata a pm:Presupposing ;
+    pm:fromWork pmw:Tantraloka, pmw:Tantrasara ;
     rdfs:label "Initiation presupposes the descent of power"@en, "Die Initiation setzt die Herabkunft der Kraft voraus"@de ;
     pm:dependentStep pmc:Diksa ;
     pm:priorStep pmc:Saktipata ;
@@ -110,6 +164,7 @@ pmc:RightAndLeftHandNomenclature a pm:Systematizing ;
     dcterms:source "H. H. Wilson, Sketch of the Religious Sects of the Hindus, Asiatic Researches XVII (Calcutta 1832), the sections headed Dakshinas, or Bhaktas and Vamis, or Vamacharis" .
 
 pmc:AcaraLadder a pm:Conceptualizing ;
+    pm:fromWork pmw:KularnavaTantra ;
     rdfs:label "The ascending order of the ācāras"@en, "Die aufsteigende Ordnung der ācāras"@de ;
     skos:definition "A graded order of ways of practice in which each is declared superior to the one before: the Veda above all others, the Vaiṣṇava above the Veda, the Śaiva above the Vaiṣṇava, the Dakṣiṇa above the Śaiva, the Vāma above the Dakṣiṇa, the Siddhānta above the Vāma, the Kaula above the Siddhānta, and nothing above the Kaula."@en ;
     skos:note "This is the passage Wilson translates in 1832 without naming a place in the work, and on which pmc:RightAndLeftHandNomenclature rests. It is now located in an edition, so the order is a claim of the tantra and no longer only a claim of its reporter."@en ;
@@ -127,6 +182,7 @@ pmc:AcaraLadder a pm:Conceptualizing ;
 #
 
 pmc:BhavaClassification a pm:Conceptualizing ;
+    pm:fromWork pmw:MahanirvanaTantra ;
     rdfs:label "The three dispositions: paśu, vīra, divya"@en, "Die drei Dispositionen: paśu, vīra, divya"@de ;
     skos:definition "A division of practitioners into three kinds, the bound, the heroic and the divine, which governs the rites a person is competent for. The source describes the divine as all but a god, pure of heart, alike towards opposites and unattached, and the bound as one who must gather his own offerings and who may neither look at a Śūdra nor think of a woman."@en ;
     skos:note "This is the tradition's own answer to the question why one person takes one way and another another: not by choosing, but by what he is held competent for. The text presses the point polemically — it argues that if the bound disposition cannot exist in this age, the divine cannot either, and that only the heroic rites bear visible fruit. A record that reports the two paths as a choice between camps reports the later Western reading and not this one. See prima-materia#54."@en ;
@@ -134,6 +190,7 @@ pmc:BhavaClassification a pm:Conceptualizing ;
     dcterms:source "Mahānirvāṇa Tantra I.50-57 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)", "Mahānirvāṇa Tantra IV.19-20 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)" .
 
 pmc:Panchatattva a pm:Conceptualizing ;
+    pm:fromWork pmw:MahanirvanaTantra ;
     rdfs:label "The five tattvas of the heroic rite"@en, "Die fünf Tattvas des heroischen Ritus"@de ;
     skos:definition "The five elements of the rite belonging to heroic practice, named in the source as wine, meat, fish, parched grain, and the union of man and woman."@en ;
     skos:note "The fourth element is parched grain and not a ritual gesture. Wilson renders the same list in 1832 with mudrā glossed as gesticulations of the fingers and maithuna as women; the divergence is his and not the text's, and it matters because grain makes that element a food where a gesture would make it an act. Recorded so that the current gloss can be checked against a verse instead of against another summary. See prima-materia#53."@en ;
@@ -142,13 +199,17 @@ pmc:Panchatattva a pm:Conceptualizing ;
     dcterms:source "Mahānirvāṇa Tantra I.58-59 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)", "Mahānirvāṇa Tantra I.61 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)" .
 
 pmc:KaulaAboveTheOtherWays a pm:Conceptualizing ;
+    pm:fromWork pmw:MahanirvanaTantra ;
     rdfs:label "Kaula worship as the way that succeeds in this age"@en, "Die kaulische Verehrung als der in diesem Zeitalter tragende Weg"@de ;
-    skos:definition "The claim that in the present age success is attained by Kaula worship alone, and that the mantra received from a Kaula brings knowledge of Brahman, where the mantra received from one of the lower dispositions reproduces that disposition in the receiver."@en ;
+    skos:definition "The claim that in the present age success is attained by Kaula worship alone, and that the mantra received from a Kaula brings knowledge of Brahman, where the mantra received from one of the lower dispositions reproduces that disposition in the receiver. At X.200-203, in Avalon's words: it is good for a Shakta to have a Guru who is a Shakta, for a Shaiva a Shaiva, for a Vaishnava a Vaishnava, for a Saura a Saura, and a Gaṇapatya for a Gaṇapatya, but a Kaula is excellent as Guru in the case of all, therefore the wise one should with all his soul be initiated by a Kaula; those who worship the Kaulas with the Pancha-tattva and with heart uplifted cause the salvation of their ancestors; and the man who has obtained the mantra from the mouth of a Pashu is of a certainty a Pashu, he who has obtained it from a Vira is a Vira, and he who obtains it from a Kaula knows the Brahman."@en ;
     skos:note "Kaula is set above the other ways here, not beside them. That is the same order Wilson translates from a passage he ascribes to the Kulārṇava, in which the left hand stands above the right and Kaula above all — an order the Western pair of names keeps while reversing its valuation. Two witnesses, one of them located by chapter and verse in a named translation and one not; the second is still to be found. See prima-materia#56."@en ;
+    skos:note "The second source this node carried until 2026-10-19 was Mahānirvāṇa Tantra XIV.203 in Avalon. That verse says of the tantra itself that it is the only means for the acquirement of the knowledge of Brahman (p. 358); the claim about the mantra and its giver stands at X.203 (p. 260), and was read there in Avalon, in the Sanskrit of the Calcutta edition of 1884, paśo ... labdhamantraḥ paśur eva na saṃśayaḥ, vīrāl labdhamanur vīraḥ kaulād bhavati brahmavit, where the word between paśo and labdhamantraḥ is garbled in the text layer and is what Avalon renders from the mouth of; the rest is normalised from a text layer that loses vowel signs and reads vorāj for vīrāl, and in a second English translation, which has he that obtains his initiation from a Pasu becomes himself a Pasu, he that receives his mantra from a Veera becomes a Veera, and he that receives it from a Kaula becomes a true knower of the Brahma. The three agree; the second translation has initiation where Avalon has mantra in the first clause, the Sanskrit has the mantra."@en ;
+    skos:note "What the verse does that matters beyond this file. It compares one procedure, receiving the mantra, by its outcome in the receiver, and it grounds the difference in the disposition of the giver and in nothing the giver does: the same act passes on what the giver is. It is the counter-case found by the protocol at examinations/procedure-judged-by-its-own-working-tested.ttl."@en ;
     pm:withinTradition pmt:SaivaSakta ;
-    dcterms:source "Mahānirvāṇa Tantra IV.20 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)", "Mahānirvāṇa Tantra XIV.203 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)" .
+    dcterms:source "Mahānirvāṇa Tantra IV.20 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)", "Mahānirvāṇa Tantra X.200-203 (trans. A. Avalon, Tantra of the Great Liberation, London: Luzac & Co., 1913, p. 260)", "Mahānirvāṇatantra X.200-203, with the commentary of Hariharānanda Nātha Bhāratī, ed. Jīvānanda Vidyāsāgara (Calcutta, 1884), pp. 286-287", "Mahānirvāṇa Tantra X.200-203, in the English translation printed as The Mahanirvana Tantram, the Tantra treating of the final emancipation (translator not named in the scanned copy), chapter X" .
 
 pmc:KalikapuranaLeftAndRightMethods a pm:Conceptualizing ;
+    pm:fromWork pmw:KalikaPurana ;
     rdfs:label "The right and left hand methods as the purāṇa states them"@en, "Die rechts- und linkshändige Methode, wie das Purāṇa sie angibt"@de ;
     skos:definition "A pair of methods of worship announced by the text as the orthodox and the heterodox, and closed by it as the right and left hand methods of worshipping the goddess. The text defines both terms itself. Worship performed strictly by the prescribed rules, with the five sacrifices that repay the debts to sages, gods, ancestors, men and the elements, is called the state of dakṣiṇa, and it is so called because the worshipper becomes humble towards gods and ancestors and the goddess is favourably disposed towards him. Vāmā is the goddess who, when worshipped, takes the share of the sacrifice for herself before all other gods, and one who worships in that method should himself be a vāma, whether or not he performs the five sacrifices. Which method applies is often decided by the deity rather than by the worshipper: Bhairava, who says he assumed his form for the sake of meat, wine and intercourse at will, is to be worshipped in the left hand method always; the left images of Sūrya and Gaṇeśa likewise; and the text keeps the five great brahmanical sacrifices standing alongside."@en ;
     skos:note "This is the passage the project had been unable to produce, and it changes the state of the question rather than settling it. A pre-colonial Indian text does announce a two-way division in these terms, so the sharpest form of the claim that the pair is an entirely Victorian imposition does not hold. What the text does not supply is the thing the Western pair carries: there is no moral polarity between the two, no camp a person joins, and no criterion of union against self-deification. The division sorts deities and rites, not practitioners."@en ;
@@ -158,6 +219,7 @@ pmc:KalikapuranaLeftAndRightMethods a pm:Conceptualizing ;
     dcterms:source "Kālikāpurāṇa, at the announcement of the orthodox and heterodox (right and left hand) methods following the yonimudrā verses (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)", "Kālikāpurāṇa, at the verses on the Bhairava image (204-205a) and on the left images of Sūrya and Gaṇeśa (212-218) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)", "Kālikāpurāṇa, at the closing statement of the Tripurā-kavaca chapter that the left hand and right hand methods of worshipping the goddess have now been stated (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
 
 pmp:VamaWorship a pm:Practicing ;
+    pm:fromWork pmw:KalikaPurana ;
     rdfs:label "Worship in the heterodox method"@en, "Verehrung in der heterodoxen Methode"@de ;
     skos:definition "The rite performed as vāma: the worshipper takes the position of one whose goddess claims the share of the offering before all other gods, and performs the worship in that method whether or not he also performs the five sacrifices."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -165,6 +227,7 @@ pmp:VamaWorship a pm:Practicing ;
     dcterms:source "Kālikāpurāṇa, at the verses defining vāmā and prescribing that the worshipper be a vāma while worshipping in that method (130-131) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
 
 pmc:WorldlyPowersOfTheLeftHandRite a pm:Conceptualizing ;
+    pm:fromWork pmw:KalikaPurana ;
     rdfs:label "The worldly powers the heterodox rite is said to confer"@en, "Die weltlichen Vermögen, die der heterodoxe Ritus verleihen soll"@de ;
     skos:definition "A set of capacities named as the fruit of the rite: happiness and prosperity, standing everywhere, a body resembling Madana, the subduing of kings together with their kingdoms and subjects, the drawing of all women, the subduing of lions, tigers, hyenas, bhūtas, pretas and piśācas, and movement everywhere like the wind."@en ;
     skos:note "Held as one set and not split into eight nodes, because the source gives them as a single list in one place and attaches no separate condition to any of them. Splitting would make the graph report eight claims where the text makes one."@en ;
@@ -173,6 +236,7 @@ pmc:WorldlyPowersOfTheLeftHandRite a pm:Conceptualizing ;
     dcterms:source "Kālikāpurāṇa, at the verses on the fruits of the rite (135b-138a) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
 
 pmc:VamaWorshipYieldsWorldlyPowers a pm:Yielding ;
+    pm:fromWork pmw:KalikaPurana ;
     rdfs:label "The heterodox rite brings about the worldly powers"@en, "Der heterodoxe Ritus bringt die weltlichen Vermögen hervor"@de ;
     pm:byPractice pmp:VamaWorship ;
     pm:yieldsCapacity pmc:WorldlyPowersOfTheLeftHandRite ;
@@ -182,6 +246,7 @@ pmc:VamaWorshipYieldsWorldlyPowers a pm:Yielding ;
     dcterms:source "Kālikāpurāṇa, at the verses on the fruits of the rite (135b-138a) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
 
 pmc:HeterodoxWorshipNeverClearsTheDebt a pm:Cautioning ;
+    pm:fromWork pmw:KalikaPurana ;
     rdfs:label "The heterodox method never clears the debt"@en, "Die heterodoxe Methode tilgt die Schuld nie"@de ;
     skos:definition "The warning that because the goddess takes for herself the share offered to others, worship performed in the heterodox method never results in clearing the debt to ancestors, sages, gods and the human race; and that one who becomes an expert in the tripurā practice attains liberation only after a very long time and is reborn on this earth again and again, having been visited by the sin arising from the uncleared debt."@en ;
     skos:note "A failure condition of the kind this project looks for, and an unusually exact one: the source states the price of its own path, names the mechanism, and says what remains unattained. It does not warn against the rite. It says what the rite costs, which is the harder thing for a tradition to write down about itself."@en ;
@@ -192,6 +257,7 @@ pmc:HeterodoxWorshipNeverClearsTheDebt a pm:Cautioning ;
     dcterms:source "Kālikāpurāṇa, at the verses stating that heterodox worship never clears the debt (132-133a) and that liberation comes only after a very long time with repeated rebirth (133b-135a) (text, introduction and translation in English by B. N. Shastri, part III, Nag Publishers, Delhi 1991)" .
 
 pmc:BothMethodsReachSiddhiForKamakhya a pm:Conceptualizing ;
+    pm:fromWork pmw:KalikaPurana ;
     rdfs:label "For Kāmeśvarī and Kāmākhyā either method attains the power"@en, "Für Kāmeśvarī und Kāmākhyā erreicht jede der beiden Methoden die Kraft"@de ;
     skos:definition "The claim that the goddesses Kāmeśvarī and Kāmākhyā may be worshipped at will following either the orthodox or the heterodox method, and that the doer attains siddhi doing it either way."@en ;
     skos:note "The passage that most directly rules out reading the pair as two camps. The choice is left to the worshipper, both methods reach the same attainment, and the text sees no need to rank them. Whatever the division does in this work, it does not sort people into parties and it does not make one method the true one."@en ;
@@ -210,6 +276,7 @@ pmc:BothMethodsReachSiddhiForKamakhya a pm:Conceptualizing ;
 #
 
 pmc:Dvadasanta a pm:Conceptualizing ;
+    pm:fromWork pmw:Vijnanabhairava ;
     rdfs:label "The end of the twelve"@en, "Das Ende der Zwölf"@de ;
     skos:definition "A limit named as the end of twelve, at which the mind or the risen power comes to rest. The verses give the number and leave the unit unstated."@en ;
     skos:note "Two things this node deliberately does not say. It does not fix the unit: the base text says end-of-twelve, and the reading that makes this twelve finger-breadths from the tip of the nose belongs to the commentarial layer, not to the verse. And it does not fix the place: the exegesis of Lakṣmaṇjoo counts several such limits in the body, at the crown, the brows, the throat, the base of the heart and the navel, and the verse that follows says outright that it may be reached in any manner and in any place. Nothing here yields a fixed radius. See prima-materia#38."@en ;
@@ -218,6 +285,7 @@ pmc:Dvadasanta a pm:Conceptualizing ;
     dcterms:source "Vijñānabhairava 50 (Sanskrit; verse numbering of Dyczkowski and the current editions)", "Vijñānabhairava 51 (Sanskrit; verse numbering of Dyczkowski and the current editions)", "Vijñānabhairava 28 (Sanskrit; verse numbering of Dyczkowski and the current editions)" .
 
 pmc:AscentThroughEachCentre a pm:Conceptualizing ;
+    pm:fromWork pmw:Vijnanabhairava ;
     rdfs:label "The ascent that passes through every centre in one movement"@en, "Der Aufstieg, der in einer Bewegung jedes Zentrum durchläuft"@de ;
     skos:definition "The power is imagined rising in the form of lightning, at each centre in turn and step by step, upward as far as three fists, and at the end of that ascent stands the great awakening."@en ;
     skos:note "The two phrases that carry this are praticakram, at each centre, and kramāt kramam, step by step. Recorded because it settles two questions at once. It gives a body measure in the base text, three fists for the upward reach, where a modern draft gives an arm's length; and it makes the passage through several centres a single exercise, where the same draft allows one centre per session and calls a change of centre a break. See prima-materia#38 and prima-materia#40."@en ;
@@ -225,6 +293,7 @@ pmc:AscentThroughEachCentre a pm:Conceptualizing ;
     dcterms:source "Vijñānabhairava 29 (Sanskrit; verse numbering of Dyczkowski and the current editions)", "Vijñānabhairava 28 (Sanskrit; verse numbering of Dyczkowski and the current editions)" .
 
 pmc:WorldPathTraversal a pm:Conceptualizing ;
+    pm:fromWork pmw:Vijnanabhairava ;
     rdfs:label "The traversal of the path of worlds"@en, "Die Durchquerung des Weltenpfads"@de ;
     skos:definition "The whole is contemplated in the form of the path of worlds and the other paths, in sequence, in its coarse, subtle and supreme condition, until the mind dissolves; and the same method carried to the limits of the universe is said to bring the great awakening."@en ;
     skos:note "This is the old form of the claim that attention placed in a centre opens an assigned layer. The layers here are worlds, bhuvana, and they belong to a cosmology written into the body, not to a list of psychological qualities. The distance between the two is the whole point of the mapping node above. See prima-materia#39."@en ;
@@ -232,6 +301,7 @@ pmc:WorldPathTraversal a pm:Conceptualizing ;
     dcterms:source "Vijñānabhairava 56 (Sanskrit; verse numbering of Dyczkowski and the current editions)", "Vijñānabhairava 57 (Sanskrit; verse numbering of Dyczkowski and the current editions)" .
 
 pmc:TraversalPresupposesSequence a pm:Presupposing ;
+    pm:fromWork pmw:Vijnanabhairava ;
     rdfs:label "The traversal presupposes that its stations are taken in order"@en, "Die Durchquerung setzt voraus, dass ihre Stationen der Reihe nach genommen werden"@de ;
     pm:dependentStep pmc:WorldPathTraversal ;
     pm:priorStep pmc:AscentThroughEachCentre ;
