@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -13,7 +14,10 @@
 # Order of the file: the tradition, then the chant and the condition its
 # efficacy is said to stand under, then the guard the tradition itself puts
 # against that condition, then the house of the hula with its conduct, its
-# cleansing and its graduation. The instance was registered in
+# cleansing and its graduation, then the possession by an akua noho and the
+# tests the doubters put to it, opened on 2026-10-19 as the Hawaiian side of the
+# dispute in traditions/huna.ttl; then the kuni and the necromancy chapter of
+# the same work, which decide prima-materia#481. The instance was registered in
 # traditions/registry-outside-contact.ttl and is moved here now that passages
 # have been read. The identifier said cosmogony until 2026-09-04 while the file
 # carries chant mastery and hula, and was corrected to pmt:HawaiianRitual under
@@ -21,10 +25,30 @@
 # the instance below, where it survives compilation.
 #
 
+#
+# The works
+#
+
+pmw:BeckwithKumulipo a dcterms:BibliographicResource ;
+    rdfs:label "Beckwith, The Kumulipo"@en, "Beckwith, The Kumulipo"@de ;
+    skos:note "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951). Declared on 2026-10-19 when the file was migrated to work identifiers; the places read are those named at the tradition."@en .
+
+pmw:UnwrittenLiteratureOfHawaii a dcterms:BibliographicResource ;
+    rdfs:label "Emerson, Unwritten Literature of Hawaii"@en, "Emerson, Unwritten Literature of Hawaii"@de ;
+    skos:note "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909). Declared on 2026-10-19 when the file was migrated to work identifiers."@en .
+
+pmw:MooleloHawaii a dcterms:BibliographicResource ;
+    rdfs:label "Malo, Hawaiian Antiquities (Moolelo Hawaii)"@en, "Malo, Hawaiian Antiquities (Moolelo Hawaii)"@de ;
+    skos:note "The edition as the title page in the full text gives it: Hawaiian Antiquities (Moolelo Hawaii) by David Malo, translated from the Hawaiian by Dr. N. B. Emerson, Honolulu, Hawaiian Islands, 1898; Honolulu, Hawaiian Gazette Co., Ltd., 1903. Read in the archive.org full text under hawaiianantiquit00malouoft, 917,896 bytes, an optical text layer with the printed page numbers surviving at the page breaks; chapter XXXII begins on p. 155 and its notes run to p. 158."@en ;
+    skos:note "Two layers, kept apart at every node: Malo's text in Emerson's English, written about 1840 by a Hawaiian born about 1793 who had become a Christian teacher, and Emerson's numbered notes, written for the edition of 1898. The Hawaiian text of Malo was not reached: no copy of it was found at archive.org, where only the five scans of this translation lie, so the requirement of a second translation is not met and is not claimed; Emerson gives the Hawaiian terms in parentheses at the places that carry them."@en ;
+    skos:note "The chapter numbers cited at every node of this work are not Malo's. Malo's manuscript has fifty-one chapters; the sixty-seven of this edition and its English title go back to an earlier translator whom Jeffrey Lyon identifies as Lorrin Andrews, and Emerson took the division over. The numbering of the Langlas and Lyon edition of 2020 was not reached. The source-critical finding, including Lyon's judgement that Emerson often paraphrases, stands at prima-materia#484 and was not read at the wording in this run; it is why every node here keeps Malo's text and Emerson's notes apart."@en .
+
 pmt:HawaiianRitual a pm:Tradition ;
     rdfs:label "Hawaiian transmission"@en, "Hawaiische Überlieferung"@de ;
-    skos:definition "The Hawaiian transmission of a chanted genealogy of the world, of the mastery of chanting as an office with a stated condition of failure, and of the house of the hula with its conduct, its cleansing and its graduation."@en ;
-    skos:note "Registered at corpus named until this file was written, and moved here on the first passages actually read. What was read at the wording: Beckwith's Kumulipo, chapters one, three and seven; Emerson's Unwritten Literature of Hawaii, chapters two, four and five. Not opened: Malo's chapters on necromancy and on the kuni rite, the Fornander volume on the order of sorcery, Kamakau's newspaper series, and Pukui's article of 1949 which Beckwith cites for the chanting rule. The reasons and the paths tried stand in the issues named in the harvest note of prima-materia#470."@en ;
+    skos:definition "The Hawaiian transmission of a chanted genealogy of the world, of the mastery of chanting as an office with a stated condition of failure, and of the house of the hula with its conduct, its cleansing and its graduation; and, in Malo's account, of spirits set by a priest to dwell in a person or a dead man's bones, with the tests the doubters put to them."@en ;
+    pm:fromWork pmw:BeckwithKumulipo ;
+    pm:corpusWork pmw:BeckwithKumulipo, pmw:UnwrittenLiteratureOfHawaii, pmw:MooleloHawaii ;
+    skos:note "Registered at corpus named until this file was written, and moved here on the first passages actually read. What was read at the wording: Beckwith's Kumulipo, chapters one, three and seven; Emerson's Unwritten Literature of Hawaii, chapters two, four and five; and, on 2026-10-19, Malo's Hawaiian Antiquities in Emerson's translation, chapters XXVIII on kuni, XXXI on necromancy and XXXII on obsession, with Emerson's notes to them. Not opened: the rest of Malo, the Fornander volume on the order of sorcery, Kamakau's newspaper series, and Pukui's article of 1949 which Beckwith cites for the chanting rule. The reasons and the paths tried stand in the issues named in the harvest note of prima-materia#470."@en ;
     skos:note "Coined as pmt:HawaiianCosmogony and renamed to pmt:HawaiianRitual on 2026-09-04 under prima-materia#471. The old identifier was written for the Kumulipo alone, and the reading widened the tradition, not the transmission: the file carries the mastery of chanting and the house of the hula, and a query that trusted the name would have taken a transmission of rite and office for a cosmogony. Renaming a coined identifier needs a compelling reason, and the reason here is that the name asserted something about the subject matter that the holdings contradict. The rename was carried in one pass, which is what SPEC §11 requires; nothing outside this repository is known to have referred to the old name."@en ;
     skos:note "The contact route is entered as documented and no longer as absent, and it is documented twice over. First against the Maori transmission this graph already holds: both descend from one East Polynesian dispersal, dated archaeologically to the thirteenth century, so a correspondence between them is common inheritance and not two witnesses. Second against the Christian material: the mission arrives in 1820, the seminary at Lahainaluna is founded in 1831, and every work read here was written or printed after that by men trained in that school or by their successors. Absent was true of the islands before contact and false of the corpus this graph can cite."@en ;
     pm:principalCorpus "The Kumulipo in the Hawaiian text with Beckwith's edition; Malo, Moolelo Hawaii, in the Emerson translation and in the Langlas and Lyon edition; Emerson, Unwritten Literature of Hawaii; the Fornander Collection of Hawaiian Antiquities and Folk-Lore; Kamakau's series in Ke Au Okoa" ;
@@ -38,6 +62,7 @@ pmt:HawaiianRitual a pm:Tradition ;
 #
 
 pmc:HawaiianChantExactness a pm:Conceptualizing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "The chant rendered without breath, mistake or hesitation"@en, "Der Gesang ohne Atemzug, Fehler und Zögern"@de ;
     skos:definition "The delivery a master of song is held to owe: no breath taken before the close of a phrase, no mistake, and no hesitation in pronouncing a word. The three are named together and on the same footing, so that pausing counts as failing rather than as taking care. The manner reported beside it is a tone almost on one note with every word enunciated distinctly."@en ;
     skos:note "Beckwith gives the rule in her own voice and names her authorities for it: Kamakau for the manner of delivery, and Pukui's article of 1949 for the practice. Neither was opened in this run; the article is behind a paywall and the newspaper series was not reachable. The node therefore stands on Beckwith and says so."@en ;
@@ -45,12 +70,14 @@ pmc:HawaiianChantExactness a pm:Conceptualizing ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, pp. 35-36" .
 
 pmc:HawaiianChantWelfare a pm:Conceptualizing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "The good fortune of the person or family the chant honours"@en, "Das Wohlergehen der besungenen Person oder Familie"@de ;
     skos:definition "What the correct rendering is held to secure. The transmission places the outcome not with the reciter but with the party the chant is made for, which is the unusual part of this witness."@en ;
     pm:withinTradition pmt:HawaiianRitual ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, p. 35" .
 
 pmc:HawaiianWelfarePresupposesExactChanting a pm:Presupposing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "The good fortune of the honoured family presupposes a chant without fault"@en, "Das Wohlergehen der besungenen Familie setzt den fehlerlosen Gesang voraus"@de ;
     pm:dependentStep pmc:HawaiianChantWelfare ;
     pm:priorStep pmc:HawaiianChantExactness ;
@@ -62,6 +89,7 @@ pmc:HawaiianWelfarePresupposesExactChanting a pm:Presupposing ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, p. 35" .
 
 pmp:HawaiianRedundantMemorising a pm:Practicing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "Memorising a chant with more than one reciter"@en, "Das Auswendiglernen eines Gesangs durch mehrere Rezitatoren"@de ;
     skos:definition "The guard the transmission puts against its own condition of failure. A master of song usually gathered two or more of his fellows to edit and to memorise the lines, and genealogies in particular had to be memorised by more than one reciter."@en ;
     skos:note "Worth holding separately from the rule it answers, and for a reason that goes beyond this tradition. A transmission that names a failure condition and stops has stated a threat; one that names the failure condition and then builds a redundancy against it has treated its own rule as a real risk and acted on it. The second is evidence about the practice that the first is not, and the graph has very few instances of it."@en ;
@@ -70,6 +98,7 @@ pmp:HawaiianRedundantMemorising a pm:Practicing ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, p. 35" .
 
 pmc:Kumulipo a pm:Conceptualizing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "Kumulipo"@en, "Kumulipo"@de ;
     skos:definition "The chant the transmission names as an ancient prayer for the dedication of a high chief: a birth chant that establishes rank by reciting a descent that runs from the beginning of the world to the living. What it is held to accomplish is therefore a standing, not a cure or a protection."@en ;
     skos:note "The prose note prefixed to the chant makes two datable claims beside the genealogical ones: that the chant was recited to Alapai-wahine at Koko on Oahu while Keeaumoku lay dying, and that it is the chant Puou recited to Cook at the heiau of Hikiau at Kealakekua. Those are historical assertions and not claims of efficacy, and they are the only part of the text that an outside record could meet or miss."@en ;
@@ -82,6 +111,7 @@ pmc:Kumulipo a pm:Conceptualizing ;
 #
 
 pmc:HalauConduct a pm:Conceptualizing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "The conduct required of the hula company"@en, "Die von der Hula-Schar geforderte Führung"@de ;
     skos:definition "Five requirements, given together: to maintain the greatest propriety of demeanour, to suppress all rudeness of speech and manner, to abstain from all carnal indulgence, to deny themselves specified articles of food, and above all to avoid contact with a corpse."@en ;
     skos:note "The list mixes conditions of different kinds without marking the difference, and the mixture is itself the finding. Propriety and rudeness are matters of judgement and could be argued about; contact with a corpse is an event that either happened or did not. A rule set in which only some members are decidable is the ordinary case in this collection, and it is what makes a transmission look stricter than it is testable."@en ;
@@ -89,6 +119,7 @@ pmc:HalauConduct a pm:Conceptualizing ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter II, p. 15" .
 
 pmp:Huikala a pm:Practicing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "Huikala"@en, "Huikala"@de ;
     skos:definition "The cleansing by which a member defiled through contact with a corpse is restored to the company: the teacher offers prayer, sprinkles the offender with sea water and turmeric, and orders a bath in the sea, after which the person is clean. A wilful transgression is not covered by it and is restored only after penitence and confession."@en ;
     skos:note "The distinction between accidental defilement and wilful breach is drawn by the transmission itself and drawn at the point where it matters: the rite removes the first and does not touch the second. A restoration procedure that admits it cannot cover every case is rarer in this collection than one that claims to cover all."@en ;
@@ -97,6 +128,7 @@ pmp:Huikala a pm:Practicing ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter II, p. 15" .
 
 pmp:Kuahu a pm:Practicing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "The consecration of the kuahu"@en, "Die Weihe des Kuahu"@de ;
     skos:definition "The setting up and consecration of the hula altar. The plants that may decorate it are a fixed short list held acceptable to the goddess, among them maile, ieie, lehua, ohia, ferns, hau, breadfruit, the native banana, ti and ilima; the recorder marks non-native flowers as repugnant to the tradition. During the consecration the voice of prayer must continue to be heard until the work is entirely accomplished, and the teacher may repeat a prayer or begin another to keep it so."@en ;
     skos:note "The condition here is on continuity and not on wording: what must not happen is a silence, and the teacher is expressly free to change the prayer in order to avoid one. That is the opposite of the exactness rule this same tradition sets for the chanted genealogy, and the two stand side by side in one transmission. The graph should not read either as the tradition's general doctrine about speech."@en ;
@@ -105,6 +137,7 @@ pmp:Kuahu a pm:Practicing ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter II, pp. 19-21" .
 
 pmp:Ailolo a pm:Practicing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "Ailolo"@en, "Ailolo"@de ;
     skos:definition "The graduation rite of the hula school, named after the brain of the victim that is eaten in it. The offering is a black suckling without spot or blemish; the parts consumed are the snout, the ear-tips, the tail, the feet and portions of the vital organs, above all the brain. Two foods are shut out of the feast, the cooked taro leaf and the drupe of the pandanus. In the days before it no pupil may leave the house except under the most stringent necessity, then only with the head muffled so as not to be recognised, and may hold no conversation whatever outside."@en ;
     skos:note "The rite decides admission: the glossary of the same work defines ailolo as a critical ceremonial sacrifice whose conditions must be met before a novice can be admitted as a practitioner. What the passages read do not give is a way of failing it that is stated in advance, which is why no protocol node stands beside this one."@en ;
@@ -113,6 +146,7 @@ pmp:Ailolo a pm:Practicing ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter V, pp. 31-35, and the glossary, s.v. ai-lolo" .
 
 pmc:HawaiianKoCaution a pm:Cautioning ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "Sugar cane is forbidden to the hula company"@en, "Zuckerrohr ist der Hula-Schar verboten"@de ;
     skos:definition "A prohibition the teacher justifies in a sentence that turns on the word itself: if one indulged in sugar cane his work as a practitioner would amount to nothing, aohe e ko ana kana mau hana, his work will not be accomplished. The recorder adds a practical ground beside it, that chewing the stalk roughens the voice."@en ;
     skos:note "Two grounds for one rule, and they are of different kinds: one is a pun and the other is a physical effect on a singer's instrument. The transmission gives both without ranking them. Where a rule carries a homophonic justification, the graph should not read the justification as the reason the rule exists."@en ;
@@ -122,12 +156,14 @@ pmc:HawaiianKoCaution a pm:Cautioning ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter IV, p. 30" .
 
 pmc:HulaKnowledgeRetained a pm:Conceptualizing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "The songs and the training stay with the pupil"@en, "Die Gesänge und die Schulung bleiben beim Schüler"@de ;
     skos:definition "What the school promises the pupil who keeps his vows: that memory will be strong and that the training, the knowledge and the songs will stay."@en ;
     pm:withinTradition pmt:HawaiianRitual ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter V, p. 34" .
 
 pmc:HulaRetentionPresupposesKeptVows a pm:Presupposing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "Keeping the songs presupposes keeping the vows"@en, "Das Behalten der Gesänge setzt das Halten der Gelübde voraus"@de ;
     pm:dependentStep pmc:HulaKnowledgeRetained ;
     pm:priorStep pmc:HalauConduct ;
@@ -137,3 +173,196 @@ pmc:HulaRetentionPresupposesKeptVows a pm:Presupposing ;
     pm:withinTradition pmt:HawaiianRitual ;
     skos:note "A memory sanction is a rare shape and it is nearly self-confirming, which is worth marking here rather than discovering later. A pupil who forgets is by that fact convicted of having been heedless, and a pupil who remembers proves the rule; no outcome is excluded. The claim is therefore weaker than it sounds even though the consequence is quotable."@en ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter V, p. 34" .
+
+#
+# Possession by an akua noho, and the tests the doubters put to it
+#
+
+pmp:HawaiianHoonohonohoAkua a pm:Practicing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Hoonohonoho akua: a spirit set to dwell in a person or in a dead man's bones"@en, "Hoonohonoho akua: ein Geist dazu gebracht, in einem Menschen oder den Knochen eines Toten zu wohnen"@de ;
+    skos:definition "A spirit that enters a person and gives forth utterances is called an akua noho, because it takes possession of the individual. If after death a man's bones were set in position with an idol and his spirit came and made its residence with the bones, that also was an akua noho, though specifically termed an unihipili or an aumakua. Emerson's note to the chapter says the active agent was the priest: it was he who put the spirit into the human body or the bundle of bones by his incantations and hoomanamana, and fed it with offerings and flattery until it had grown powerful; he would rather call the practice hoonohonoho akua."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXII, sections 1-2, p. 155, with Emerson's note 1, p. 157" .
+
+pmc:HawaiianAkuaNohoUtterances a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Some akua noho uttered predictions that proved true, and others were mere liars"@en, "Manche akua noho sprachen Vorhersagen, die eintrafen, andere waren bloße Lügner"@de ;
+    skos:definition "Many deities took possession of people and made utterances through them, Pua and Kapo, Kiha-wahine, Keawe-nui-kauo-hilo, Hia, Keolo-ewa, Pele and Hiiaka among them. The offices of the akua noho were numerous; some were known to have uttered predictions that proved true, so that confidence was inspired in them; others were mere liars, termed poo-huna-i-ke-aouli, tricksters, heads in the clouds. Malo says in his own voice that what they said was not true, that some were deceived and not everyone, and that the whole thing was a piece of nonsense."@en ;
+    skos:note "The transmission's own record of a mixed outcome. It does not explain the hits by one kind of spirit and the misses by another, as the modern work in traditions/huna.ttl does for the spirits of the séance room (pmc:HunaIsolatedLowSelfExplainsFailedPredictions); it names the hits and the liars side by side and leaves both to the hearer. Malo's verdict of nonsense is that of a convert writing for the mission, which Emerson's notes to other chapters say plainly, and it is kept as his and not as the tradition's."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXII, sections 3-5 and 12, pp. 155-156" .
+
+pmc:HawaiianAkuaNohoAfflictions a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The possessing deity swells the belly, stops the bowels or bleeds the head of its keeper"@en, "Die besitzende Gottheit lässt den Bauch schwellen, verschließt die Eingeweide oder lässt den Kopf ihres Hüters bluten"@de ;
+    skos:definition "Most people were terrified when Pua and Kapo took possession of them as their keepers, because the obsession brought a swelling of the abdomen, opu-ohao, which was a fatal disease, and many deaths from obstruction of the bowels, pani, were firmly believed to be their work. Hiiaka caused haemorrhage from the head of the keeper she took. Sometimes these deities played tricks when they took up residence in anyone, uttering a call so that the voice seemed to come from the roof of the house. The deities named in the chapter are all female, Emerson notes."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXII, sections 10-11, p. 156, with Emerson's note 5, p. 158" .
+
+pmc:HawaiianHoonohonohoForAffection a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The affections of a man or a woman gained by setting a spirit to dwell"@en, "Die Zuneigung eines Mannes oder einer Frau gewonnen, indem man einen Geist wohnen lässt"@de ;
+    skos:definition "It is said that some practised the art of hoonohonoho akua in order to gain the affections of some man or woman. The practice was of hoary antiquity and a means of obtaining enormous influence in Hawaii."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXII, sections 17-18, p. 157" .
+
+pmc:HawaiianHoonohonohoYieldsAffection a pm:Yielding ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Setting a spirit to dwell gains the affection sought"@en, "Einen Geist wohnen lassen gewinnt die gesuchte Zuneigung"@de ;
+    pm:byPractice pmp:HawaiianHoonohonohoAkua ;
+    pm:yieldsCapacity pmc:HawaiianHoonohonohoForAffection ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "Reported at second hand by Malo, it is said, and in one sentence; no procedure is given beyond the general one of the chapter."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXII, section 17, p. 157" .
+
+pmc:HawaiianAkuaNohoTestedByTheBundle a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The doubters' tests: the gesture under the robe, and the question what is wrapped in this bundle"@en, "Die Proben der Zweifler: die Geste unter dem Umhang, und die Frage, was in diesem Bündel eingewickelt ist"@de ;
+    skos:definition "Faith in the akua noho was not very general, and many took no stock in them. Sometimes the sceptical asked puzzling questions of the akua noho while making insulting gestures under cover of their tapa robe, such as the thumb thrust between the fingers or the cheek swelled out with the tongue: if the akua noho, that is the priest, perceived their insolence they allowed that he was a god of power, mana; if he failed to detect them they ridiculed him. Others would wrap some article closely in tapa and ask the akua noho what is this that is wrapped up in this bundle; if he failed to guess correctly the sceptic had the laugh on him."@en ;
+    skos:note "Two tests devised by laymen inside the transmission, each with a criterion fixed before the answer and a hidden target the respondent could not see: a gesture concealed under a robe, an object concealed in cloth. Both are scored both ways, a hit conceding power and a miss earning ridicule, and the second is in form the sealed-object test of the séance rooms. The holding has few tests of this kind that a transmission records of itself, and none from this region; the modern work that claims to report the Hawaiian secret records none of them (searches in examinations/searches-huna.ttl)."@en ;
+    skos:note "What the chapter does not give is a count. It says the sceptic had the laugh when the guess failed and the priest was held a god of power when it succeeded, and then that perhaps a majority of the people believed these akua noho utter frauds, which is a verdict and not a tally (pmc:HawaiianAkuaNohoHeldFraudByMany)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXII, sections 13-14, pp. 156-157" .
+
+pmc:HawaiianAkuaNohoHeldFraudByMany a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Perhaps a majority held the akua noho utter frauds, and some who practised the art were stoned"@en, "Vielleicht eine Mehrheit hielt die akua noho für bloßen Betrug, und manche, die die Kunst übten, wurden gesteinigt"@de ;
+    skos:definition "There was a large number, perhaps a majority of the people, who believed that these akua noho were utter frauds, while those who had faith in them were a minority; the consequence was that some who practised the art of obsession, hoonohonoho akua, were sometimes stoned to death, cruelly persecuted and compelled to flee. The keepers of the shark gods daubed themselves with turmeric or ochre in salt water, muffled their heads and squeaked in a falsetto to terrify people, and the keepers of the Pele deities dressed their hair to stand out, reddened their eyes and went begging under the threat that Pele would devour whoever refused. Emerson's note qualifies it: there were probably very few Hawaiians in ancient times who did not look with awe on the manifestations, whatever their misgivings as to all their pretensions."@en ;
+    skos:note "Two voices on one point, and they do not agree. Malo, the convert, gives a majority of doubters with a consequence attached, the stoning; Emerson, the editor, reduces it to misgivings under general awe. Neither gives a ground for his estimate. Both are kept, and the node is not a dispute because both stand in one edition and the second is a gloss on the first."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXII, sections 6-8 and 15-16, pp. 155-157, with Emerson's note 6, p. 158" .
+
+pmc:HawaiianUnihipiliKeeperDiesOfNeglect a pm:Cautioning ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "When the offerings to an unihipili cease its power ends, and its neglected keeper is likely to die of its vengeance"@en, "Hören die Opfer an ein unihipili auf, endet seine Macht, und seinem vernachlässigenden Hüter droht der Tod durch seine Rache"@de ;
+    skos:definition "Emerson's note: the unihipili was purely an artificial deity, or devil rather, the work of the priest or worshipper, created by the miraculous effect of his prayers and sacrifices; it was induced by incantation to take up residence in an image, a dead body or a bundle of bones and endowed with malignant power, mana, as a result of them. The same person might have two or more at once, so that if one oracle was dumb he might get voice from another. When the worship and offerings ceased, its power and its subservience to its keeper came to an end; but such neglect was likely to result in the keeper's death from the vengeance of the offended unihipili."@en ;
+    skos:note "The editor's gloss and not Malo's text, and entered as such. It carries the rule a keeper could observe and the consequence he would fear, and it also carries the device of the spare oracle, a second unihipili kept against the silence of the first, which Emerson gives for the aumakua too: the priest kept a supply of herbs already blessed in case his aumakua should fail him at a critical moment. A transmission that keeps a reserve against the failure of its own deity has treated the failure as a real risk, as pmp:HawaiianRedundantMemorising does for the chant."@en ;
+    pm:cautionsAbout pmp:HawaiianHoonohonohoAkua ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), Emerson's note 2 to chapter XXXII, pp. 157-158" .
+
+#
+# The kuni: the ceremony that turns the death prayer back on its sender
+#
+
+pmp:HawaiianKuni a pm:Practicing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Kuni: the dead man's liver burned in fowls and dogs to seek out the one who prayed him to death"@en, "Kuni: die Leber des Toten in Hühnern und Hunden verbrannt, um den zu suchen, der ihn totgebetet hat"@de ;
+    skos:definition "When a rich, distinguished or greatly beloved person died it was very often said he had been prayed to death, anaana, from envy of his property or hatred of his distinction, and the ceremony of kuni was performed on the body. The friend brought a pig to the kahuna kuni and offered it to Uli in the heavens to purchase the death of the one who prayed his friend to death, laying the funeral on Uli, Maka-ku-koae and Ka-alae-a-Hina. At the house a stone wrapped in pinkish tapa was set before the kahuna with the dead man's head close to it; he recited the pule hui over a cluster of kukui nuts and a gourd, that the aumakua invokes death on him who anaanaed this one and turns his incantation back on himself, and struck them on the stone so that they scattered. A large fireplace was built, wreathed with auhuhu and gourds and flagged at the corners; two men opened the body, cut the liver small and stuffed it into fowls and dogs as maunu, bait, and each was thrown into the fire with the call, here comes such a one, seeking the one who caused his death. The kahuna prayed with great fervour until sunset without eating or drinking, the prayer ending only when the offerings were ashes; the ashes and the appurtenances were thrown into a spout-hole in the sea and the fireplace buried. Next morning a boy and a girl walked naked about it while he prayed, and then he named the one who had prayed the dead man to death. Forty dogs and twice as many fowls were the ordinary sacrifice; for a chief, four hundred dogs."@en ;
+    skos:note "Emerson's note to the chapter: the subject is kuni and not anaana, and he has substituted kuni for anaana in the title and where needed in the text, since a kahuna anaana would not avenge the work of his own craft. The chapter numbering is not Malo's (prima-materia#484, at pmw:MooleloHawaii)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 1-3 and 10-22, pp. 135-139, with Emerson's note 1, p. 139" .
+
+pmc:HawaiianKuniPigDivination a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The released pig shows where the guilt lies: rooting, left, right, behind, snout raised, or standing before the man"@en, "Das freigelassene Schwein zeigt, wo die Schuld liegt: wühlend, links, rechts, hinten, Rüssel gehoben, oder vor dem Mann stehend"@de ;
+    skos:definition "The kahuna let the offered pig go and watched where it moved. If it rooted in the earth, the one who had prayed the man to death was himself doomed and would soon die. If it went to the left of the kahuna, the death was caused by the wife's relatives; to the right, by the younger brother's people; behind him, by some outside party; if it raised its snout, the death was chargeable to some chief; if it came and stood before the man who brought it, the responsibility lay with his table-companions. After the kukui nuts were struck on the stone, the direction in which they flew again pointed out the locality of those who caused the death."@en ;
+    skos:note "A divination whose every outcome names a party: the six movements of the pig are all answers, and none of them says that no one prayed the dead man to death. The only answer that is not an accusation, the rooting, is the one that promises the sorcerer's death outright, and the report the friend carries back to the family is that answer, whatever the pig did (section 8)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 4-8 and 13, pp. 136-137" .
+
+pmc:HawaiianKuniKillsTheSorcerer a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The one who prayed the dead man to death will soon die himself, of swelling, dropsy, bloody flux, vomiting of blood or a broken back"@en, "Der den Toten totgebetet hat, wird bald selbst sterben, an Schwellung, Wassersucht, blutigem Fluss, Blutbrechen oder gebrochenem Rücken"@de ;
+    skos:definition "When the ceremony was complete the kahuna said: I have seen the wraith, kahoaka, of him who anaanaed this man coming this way, his head down, his eyes closed, as good as dead, and it will not be long before this one also shall die. The death to which I consign him is a swelling, a dropsy, a bloody flux, a vomiting of blood, a broken back; take note of this. The friends of the dead rejoiced greatly on hearing that the one who had prayed their friend to death was himself soon to die."@en ;
+    pm:falsifiedBy "The person the kahuna named at the close of the ceremony living on beyond a stated term, or dying of a cause outside the five he listed. The prediction names a person and five causes, so it would be decidable if a term were fixed; it fixes none beyond it will not be long, and the transmission counts confirmation otherwise (pmc:HawaiianKuniAnyDeathConfirms)." ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 8-9 and 22-24, pp. 136-139" .
+
+pmc:HawaiianKuniYieldsTheSorcerersDeath a pm:Yielding ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The kuni turns the death prayer back and kills its sender"@en, "Das Kuni wendet das Todesgebet zurück und tötet seinen Sender"@de ;
+    pm:byPractice pmp:HawaiianKuni ;
+    pm:yieldsCapacity pmc:HawaiianKuniKillsTheSorcerer ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "The Hawaiian counterpart of what the modern work in traditions/huna.ttl reports Brigham doing on Mauna Loa (pmc:HunaTurningBackYieldsRestoration), and it differs at the point that matters. Brigham's turning back is done for a living victim and is said to have saved him; the kuni is done over a corpse and saves no one. Its whole outcome is the sorcerer's death, which is the one outcome in the field a bystander could check, and the transmission records how it was checked (pmc:HawaiianKuniAnyDeathConfirms)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 11 and 22-24, pp. 137-139" .
+
+pmc:HawaiianKuniAnyDeathConfirms a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "If after this anyone died of one of the diseases the kahuna named, he was in great demand and feared for his power"@en, "Starb danach irgendjemand an einer der genannten Krankheiten, war der Kahuna sehr gefragt und wegen seiner Macht gefürchtet"@de ;
+    skos:definition "After the body was buried and another kahuna had performed the purification, the kahuna kuni received his pay, and it was large. If after this anyone died of one of the diseases mentioned by the kahuna, the kahuna in question would be in great demand and at the same time much feared for his power, mana. The number of chiefs that were prayed to death was about the same as of the common people."@en ;
+    skos:note "How the transmission scored the ceremony, and it is the clearest instance in the holding of a criterion that cannot fail. The kahuna named one person and five causes of death; the reputation followed if anyone at all died of any of the five, with no term set, and all five are common causes of death. The naming at the close of the ceremony would have made the prediction decidable; the scoring rule throws that away. Malo states it flatly as what happened, without remark, and in the same breath gives the one count the chapter has, that chiefs and commoners were prayed to death in about equal numbers, which is a count of ascriptions and not of deaths."@en ;
+    skos:note "It decides the claim of prima-materia#481 at the wording: the counter-procedure against the death prayer does not heal the sick but is said to kill the author of the spell, and it does so by burning a part of the victim's corpse, the liver, in the offerings as bait. Emerson's note widens the bait: it might be a shred of clothing, a bit of hair, a nail or any exuviae of the body."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 25-26, p. 139, with Emerson's note 8, p. 140" .
+
+pmc:HawaiianKuniDissectorsDefiled a pm:Cautioning ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The two men who opened the body were utterly defiled and could not touch food"@en, "Die beiden Männer, die den Leichnam öffneten, waren gänzlich verunreinigt und durften keine Speise berühren"@de ;
+    skos:definition "The two men who dissected the dead body were utterly defiled and were therefore not permitted to touch food with their hands, so that others had to feed them."@en ;
+    pm:cautionsAbout pmp:HawaiianKuni ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, section 16, p. 137" .
+
+#
+# Necromancy: the seen wraith, the atonement, and those who see spirits
+#
+
+pmp:HawaiianKilokiloUhane a pm:Practicing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Kilokilo uhane: the seer reports a person's wraith seen in a vision or dream and warns him of his death"@en, "Kilokilo uhane: der Seher meldet die Erscheinung eines Menschen, gesehen in Schau oder Traum, und warnt ihn vor seinem Tod"@de ;
+    skos:definition "The kahuna kilokilo would announce that the wraith or astral body of a certain person had appeared to him in spectral form, in a sudden apparition, a vision by day or a dream by night, call on the person and state the case: today at noon I saw your wraith, naked, tongue hanging out, eyes staring; you rushed at me and clubbed me senseless. Your aumakua is wroth with you; perhaps he has found you out and is rushing you on. Now is the time to make peace with me, while your soul still tarries at the resting place of Puu-ku-akahi, before it reaches the brink of Ku-a-ke-ahu, where there is no pardon, and plunges into Ka-paa-heo, the place of endless misery."@en ;
+    skos:note "Malo opens the chapter with his verdict: a superstitious ceremony very much practised, in which barefaced lying and deceit were combined with shrewd conjecture, and the principal extorted wealth by terrorising. Emerson notes that everlasting death in section 7 seems an imported thought and that Malo's new theology may have crept in. The chapter numbering is not Malo's (prima-materia#484)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 1-8, pp. 150-151, with Emerson's note 1, p. 153" .
+
+pmp:HawaiianKalaAtonement a pm:Practicing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Kala: the atonement by the lit fire, the oven of named fishes, a white dog and a white fowl, and the prayer for forgiveness"@en, "Kala: die Sühne durch das entfachte Feuer, den Ofen benannter Fische, einen weißen Hund und ein weißes Huhn, und das Gebet um Vergebung"@de ;
+    skos:definition "Alarmed, the man consented to have the kahuna perform the kala, atonement. He was to procure the fishes kala, weke, the octopus hee, maomao and palani, a white dog, a white fowl, awa and ten sheets of tapa to cover the oven. The priest kept up the incantation as long as the fire-sticks were being rubbed and ended it only when the fire was lit; the food was laid in the oven and covered with the tapa; when it was cooked he stood and repeated the pule kala, O Ku the forgiving, O Lono who grants pardon, undo the knot of our sins at Ahuena; then the man and the whole assembly ate. A chief who found himself the victim of kilokilo did the same."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 8-13, pp. 151-152" .
+
+pmc:HawaiianKalaSparesTheLife a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "I declare the fire a good one; your sins are condoned and your life is spared, you will not die"@en, "Ich erkläre das Feuer für gut; deine Sünden sind vergeben und dein Leben ist verschont, du wirst nicht sterben"@de ;
+    skos:definition "After the meal the kahuna said: I declare the fire a good one, consequently your sins are condoned, and your life is spared, you will not die. Then he received his pay."@en ;
+    skos:note "The structure the chapter describes is closed at both ends by the same man: he sees the omen of death, prescribes the atonement, judges the fire, and declares the danger past. A death after the atonement would contradict the declaration; nothing in the chapter says what was said if one came, and Malo's frame, extortion by terror, makes the declaration the product sold."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, section 13, p. 152" .
+
+pmc:HawaiianKalaYieldsPardon a pm:Yielding ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The atonement averts the death the wraith foretold"@en, "Die Sühne wendet den Tod ab, den die Erscheinung ankündigte"@de ;
+    pm:byPractice pmp:HawaiianKalaAtonement ;
+    pm:yieldsCapacity pmc:HawaiianKalaSparesTheLife ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 8-13, pp. 151-152" .
+
+pmc:HawaiianMakaulaSeizesSpirits a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The makaula sees a spirit, seizes and squeezes it, and feeds it in food so that others see it"@en, "Der makaula sieht einen Geist, packt und erdrückt ihn und gibt ihn in Speise, damit andere ihn sehen"@de ;
+    skos:definition "The makaula, prophet, was reputed able to see a spirit, seize it and hold it in his hand and squeeze it to death, and to discern the ghost of any person, even one whose body was buried in the most secret place. He made a spirit visible by catching it with his hands, put it into food and fed it to others; anyone who ate of that food would see the spirit of that person, dead or living. The makaula did not deal so extortionately with his patrons as the kilokilo uhane. The spirits of living people were called oio when many, kakaola when single; the spirit of one already dead was kino-wailua."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 15-17, p. 152" .
+
+pmc:HawaiianKaulaForetellsAKingsDeath a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The kaula, forewarned by Kane-nui-akea, foretells the death of a king or the overthrow of a government"@en, "Der kaula, von Kane-nui-akea vorgewarnt, sagt den Tod eines Königs oder den Sturz einer Regierung voraus"@de ;
+    skos:definition "The kaula, prophets or foretellers of future events, were supposed to have more power than any other class of kahunas; it was said that Kane-nui-akea forewarned them of such important events as the death of a king or the overthrow of a government, and these prophecies were called wanana. They were an eccentric class who lived apart in desert places and did not associate with people, their thoughts much taken up with the deity. Emerson's note gives two oracles: one ascribed to Kapihe of Kona in the time of Kalaniopuu, that which is above shall be brought down, that which is below lifted up, the islands shall be united, the walls shall stand upright; and one of a prophet of Waianae in the time of Kahahana, of which he says the meaning is not apparent, like an utterance of the Delphic oracle."@en ;
+    skos:note "The two oracles stand in an editor's note of 1898, after the islands were united, and the one that can be read as fulfilled is the one whose wording names the outcome. The note does not say when or by whom either was first written down, so the order of utterance and fulfilment cannot be checked here."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 18-19, pp. 152-153, with Emerson's note 5, p. 154" .
+
+pmc:HawaiianHewahewaAreNotTheMad a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Those in trance or ecstasy perceive spirits like prophets, and are told from the mad by their conduct"@en, "Wer in Trance oder Ekstase ist, nimmt Geister wahr wie die Propheten, und wird von den Irren an seinem Betragen unterschieden"@de ;
+    skos:definition "People in delirium, frenzy, trance or ecstasy, hewahewa, were thought to be inspired and to perceive the souls or spirits of men as the kaula and makaula did, and their utterances were taken for prophecies. It was different with crazy folk, pupule, and maniacs, hehena: they were not like prophets, for they ate filth and exposed themselves indecently, which those in exaltation, prophets and soothsayers did not do."@en ;
+    skos:note "A criterion the transmission sets for telling an inspired state from madness, and it is one a bystander can apply: conduct, not the content of what is said. It decides who is to be listened to and says nothing on whether what they say comes true."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, section 20, p. 153" .
+
+pmc:HawaiianAumakuaConductsTheWanderingSoul a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "A soul at variance with its aumakua through a fault is led to the resting place, and brought back to the body if reconciled"@en, "Eine Seele, durch eine Verfehlung mit ihrem aumakua entzweit, wird zum Rastort geführt und, wenn versöhnt, in den Leib zurückgebracht"@de ;
+    skos:definition "Emerson's note to the necromancy chapter: if, on account of some fault or sin, hala, the wandering soul, uhane hele, became at variance with its aumakua, the aumakua would conduct it to the resting place of souls called Puu-ku-akahi, where reconciliation and pardon were still possible, and if this were obtained the aumakua conducted it back to the body and restored it to the joys of earth. Souls frequently wandered away from the body during sleep or unconsciousness. If reconciliation was not made it travelled on to Ku-a-ke-ahu, the brink of the nether world, and plunged into Ka-paa-heo, a land of twilight and shades under the sway of Milu. In Malo's own text the seer tells the man that his aumakua is wroth with him and may have found him out."@en ;
+    skos:note "The nearest the Hawaiian sources read come to the reading in traditions/huna.ttl, and it is entered because the dispute there would be reported unfairly without it. Here too the aumakua stands in a relation to a living person, attends his soul in sleep, and is offended by his fault, and the offence blocks his way until reconciliation; that is the shape of pmc:HunaBlockedPathMeansIllness. What differs is the bearer: the aumakua is an ancestral god outside the person, one of several a man might have, and not a part of his own self."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, section 6, p. 151, and Emerson's note 2, pp. 153-154" .
