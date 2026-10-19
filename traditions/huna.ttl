@@ -1,0 +1,257 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia - Huna, taken down from the register
+#
+# Registered in traditions/registry-modern.ttl and moved here now that its one
+# named work has been opened. Strand of the structure-driven entrance (SPEC
+# section 14): the tradition stood on pm:corpusNamed with a documented contact
+# route, and no question pointed at it.
+#
+# Why this one out of the register, and it is an examinability argument. The
+# work is a modern author's report written to prove that a system works, and it
+# says in so many words how it chose its cases: it prints the dreams that came
+# true and omits the rest, and it has heard of no failure of the wind prayer.
+# A transmission that states its own selection rule is worth more to the
+# examination layer than one that hides it, and this one also names, at length,
+# where a failure is to be put: in a complex of guilt in the low self of the
+# operator or of the patient.
+#
+# Order of the file: the work; the tradition with the three decisions; the
+# claim on which the whole construction rests, that two Hawaiian words name the
+# selves of the living; fire; the force; the death prayer; the future; healing;
+# the complex and where failure is put; the rebuilt future; weather; the daily
+# practice. The dispute over the two words stands at the end of the file, and
+# the Hawaiian side of it in traditions/hawaiian.ttl.
+#
+# On the identifiers. The work prints Hawaiian terms for some of what it claims
+# (mana, aka, aumakua, unihipili, uhane, kala, anana). Where it does, the term
+# is named in the definition; the identifiers are descriptive English, because
+# the work's Hawaiian is itself what is disputed and an identifier built from it
+# would assert the reading.
+#
+
+#
+# The work
+#
+
+pmw:SecretScienceBehindMiracles a dcterms:BibliographicResource ;
+    rdfs:label "Long, The Secret Science Behind Miracles"@en, "Long, The Secret Science Behind Miracles"@de ;
+    skos:note "The edition as the title page in the full text gives it: The Secret Science Behind Miracles, by Max Freedom Long, author of Recovering the Ancient Magic, Kosmon Press, Los Angeles 6, California, 2208 West 11th St., with the year given in brackets as 1948. The text says in chapter XIX that it was written in 1947."@en ;
+    skos:note "Access: the full text at archive.org under the identifier the-secret-science-behind-miracles-unveiling-the-huna-tradition-of-the-ancient-p, 590,627 bytes; the file name is that of the upload and not the identifier, and the request is redirected, so the regular route needs the metadata name and a client that follows the redirect. The text is a clean transcription, not an optical text layer, and carries no printed page numbers; places are cited by chapter and by the case numbers the work itself gives. The transcription prints chapter XV twice, word for word, and carries chapter XXI without its chapter heading, inside the text of chapter XX, under the title the contents give it. The DeVorss printing of 1954 under secretsciencebeh00long is access-restricted and answers 401 on the full text; it was not compared."@en ;
+    skos:note "What was read at the wording: in chapter I the passage on the dictionary of 1865 and the root translation of unihipili and uhane; chapters II, III, IV, X, XI, XV, XVIII, XIX and XXII entire; and chapter XXI. Not read: the rest of chapter I, chapters V to IX, XII to XIV, XVI, XVII, XX and the appendix of Hawaiian words, about half the book; read only at single sentences found by term search are chapters V, VII, IX, XII, XVI and XVII, and no node stands on them."@en .
+
+#
+# The tradition
+#
+
+pmt:Huna a pm:Tradition ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "Huna"@en, "Huna"@de ;
+    skos:definition "An early twentieth century system of three selves and directed vital force, presented as the secret teaching of Hawaiian priests."@en ;
+    skos:note "Constructed by an outsider from theosophical and New Thought material and rejected by Hawaiian scholars as a representation of anything Hawaiian. Registered as the transmission it actually is, so that the ascription can be entered as false without the material vanishing from the record."@en ;
+    skos:note "Moved from traditions/registry-modern.ttl on the first places read. The three decisions SPEC section 14 requires before the first node follow."@en ;
+    skos:note "One: the contact route stays documented, and the work documents it itself, which is unusual. It names the sources its system was put together from or checked against: William Tufts Brigham as teacher and informant; J. W. Dunne for the dream method; Nandor Fodor's Encyclopaedia of Psychic Science as the source of most cases; Dresser's Quimby Manuscripts for Quimby; Baron Eugene Ferson's classes in Honolulu for the accumulation of force; Freud for the complex; Theosophy, Christian Science, New Thought, Unity and the Oahspe Bible as neighbours it measures itself against. The holding carries pmt:NewThought on the same Quimby volume, so what this work says of Quimby is reception and is not entered here."@en ;
+    skos:note "Two: the edition is the Kosmon Press printing named on the work node. The work is written in English by its author and has no original in another language, so the requirement of two translations does not apply and is not claimed as met. The Hawaiian words it builds on are a different matter, and the two sources read against them, a dictionary of 1865 and Malo's account in Emerson's translation, are named at the dispute at the end of this file."@en ;
+    skos:note "Three: the number of citable places. Ninety-one nodes below, all from the chapters read at the wording, and the dispute at the end."@en ;
+    skos:note "What kind of witness this is, so that no node is read as more than it is. The work is a single modern author's report. Almost every case in it reaches the reader through that author: some are his own experience, some are the first-person account of his teacher Brigham as he says he took it down soon afterwards in Brigham's words as nearly as he could, and some are told to him by third persons. Nothing in it is a text of the Hawaiian priests it ascribes the system to; it says itself that their language was never written until modern times and that the secret was handed down only from father to son. The attestation mode of each node says which of the three it stands on."@en ;
+    pm:principalCorpus "Long, The Secret Science Behind Miracles" ;
+    pm:corpusWork pmw:SecretScienceBehindMiracles ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter I, the passage on the dictionary of 1865" .
+
+#
+# The claim the construction rests on
+#
+
+pmc:HunaUnihipiliIsTheLowSelf a pm:Conceptualizing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "Unihipili and uhane name the subconscious and the conscious spirit of a living man, found by translating the roots"@en, "Unihipili und uhane benennen den unterbewussten und den bewussten Geist eines lebenden Menschen, gefunden durch Übersetzung der Wurzeln"@de ;
+    skos:definition "The author reasons that the priests must have had names for the elements of their magic, that the missionaries who made the dictionary did not know the magic and so translated those names wrongly, and that a translation of the short roots of which Hawaiian words are built will give the original meaning. He takes the two words for the two souls everyone in Hawaii agreed the priests had taught, unihipili and uhane, and reads their roots: u, to grieve; hane, to talk; uhi, to cover; pili, to adhere and serve; nihi, to do things secretly and carefully and to fear offending the gods. From these he concludes that unihipili is the subconscious, an animal-like spirit that remembers, handles the vital force and refuses to obey when it fears the gods, and uhane the conscious, talking spirit. In chapter IV the pair is stated as doctrine: the subconscious (unihipili) can remember but has only the reasoning of a dog or horse, the conscious (uhane) cannot remember but has inductive reason and hypnotic will."@en ;
+    skos:note "The work prints, immediately before the root translation, the dictionary entry it overrides, and the entry says something else: the leg and arm bones of a person; one name of the class of gods called akuanoho, aumakua being another; the departed spirits of deceased persons. The author explains the difference by saying the missionaries had been given conflicting information. The dispute is entered at pmc:WhetherUnihipiliNamesASelfOfTheLiving."@en ;
+    skos:note "The method is the thing to keep. A root reading of this kind can find in any word whatever its reader is looking for, and the author says he was looking for three things his teacher had told him to watch for, a consciousness, a force and a substance, and that he found the first two before the year was out and the third six years later. That is a description of a search that ends when it has found what it was told to find."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter I, the passage on the dictionary of 1865, and chapter IV, the opening section" .
+
+pmc:HunaAumakuaIsTheHighSelf a pm:Conceptualizing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "Aumakua names a third, superconscious self of each person, a parental pair to which all prayer goes"@en, "Aumakua benennt ein drittes, überbewusstes Selbst jedes Menschen, ein Elternpaar, an das alles Gebet geht"@de ;
+    skos:definition "Above man the priests attended only to the level directly above, the superconscious part of mind, called by several names of which the favourite was Aumakua, translated older, parental, utterly trustworthy spirit. As it takes two to be a parent it was a male and female pair; all prayers and rites were addressed to it, it was loved and not worshipped, received no sacrifice and laid no command. It is the consciousness that gives fire-immunity, works with the vital force mana and acts through the shadowy substance aka."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the opening section" .
+
+#
+# Fire
+#
+
+pmp:HunaFireWalkUnderProtection a pm:Practicing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The walk over the cooling lava flow under the protection of three priests"@en, "Der Gang über den erkaltenden Lavastrom unter dem Schutz dreier Priester"@de ;
+    skos:definition "Brigham's account of walking a lava overflow on Hawaii with three priests who had promised to let him walk under their protection. When rocks thrown on the surface showed it would bear their weight, the priests tied about three ti leaves to each bare foot, chanted in an archaic Hawaiian with mentions of legendary history and praise of the gods, and one of them beat the shimmering surface with a bunch of ti leaves; the oldest crossed first, about a hundred and fifty feet, and Brigham, who had refused to take off his boots, was shoved after him. The priests told him he must take off boots and socks because the goddess Pele had not agreed to keep boots from burning."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter II, case 1" .
+
+pmc:HunaFireImmunity a pm:Conceptualizing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The feet do not burn on red-hot lava, and what was not covered burns"@en, "Die Füße verbrennen nicht auf rotglühender Lava, und was nicht gedeckt war, verbrennt"@de ;
+    skos:definition "The capacity the work calls fire-immunity through magic: in Brigham's walk the soles of his boots curled, burned and came off, his socks burned at the edges, and there was not a blister on his feet, not even where he had beaten out the fire in the socks; none of the priests had a blister though their ti leaves had long burned away. He felt intense heat on face and body and almost none in his feet. The protection is said to cover the walker's flesh and not his leather, which is the reason the priests gave for the boots."@en ;
+    skos:note "Brigham's own control as the work reports it: twice afterwards at Kilauea he touched cooler lava with a finger, and with a stick, to test the theory of an insulating crust, and burned himself both times. The work treats this as excluding the physical explanation; it is a test of the crust and not of the walk."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter II, case 1 with its comment" .
+
+pmc:HunaFireWalkYieldsImmunity a pm:Yielding ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The walk under protection keeps the feet from burning"@en, "Der Gang unter Schutz bewahrt die Füße vor dem Verbrennen"@de ;
+    pm:byPractice pmp:HunaFireWalkUnderProtection ;
+    pm:yieldsCapacity pmc:HunaFireImmunity ;
+    pm:attestedBy pm:firstPersonReport ;
+    skos:note "Brigham's account in the first person, as the author says he recorded it in his notes shortly after hearing it and reproduced in Brigham's own words and expressions as nearly as he could. No date of the walk is given. It is the only case of the chapter that a participant reports of his own body; the Tahitian, Burmese and Igorot cases of the same chapter are observers' reports and stand at the nodes below or are not entered."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter II, case 1" .
+
+pmc:HunaGlanceAsideBlisters a pm:Cautioning ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The one foot lifted when attention broke was the one that blistered"@en, "Der eine Fuß, der gehoben wurde, als die Aufmerksamkeit riss, war der mit der Blase"@de ;
+    skos:definition "From a lecture by John G. Hill on a Tahitian fire walk, as the work reports it: a young white man, said to be something of a mystic, who held that his God would protect him as the brown men's magic protected them, crossed the stones barefoot behind the magician with a set face, as if holding his faith ready; a dog-fight broke out beside the pit, he glanced aside and lifted one foot suddenly, then set his face again and went on. That foot was found to have a large blister on the sole."@en ;
+    skos:note "A condition of failure with the failure attached: a break in attention during the walk, and a burn at the one place in time it broke. The lecturer is said to have vouched for the data and made no comment on it; the reading is the author's, who sets it beside the head magician's invitation to guests to cross under his protection and the white guest whose feet and shoes were unharmed and whose face was burned."@en ;
+    pm:cautionsAbout pmp:HunaFireWalkUnderProtection ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter II, case 3" .
+
+pmc:HunaTheBurnIsReadAsGuilt a pm:Cautioning ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The walker who burns is judged guilty or not pure enough"@en, "Wer verbrennt, gilt als schuldig oder nicht rein genug"@de ;
+    skos:definition "Two cases of the chapter in which the burn is a verdict on the walker. In Tahiti a native forced to walk the hot stones as an ordeal of guilt or innocence was badly burned, and the people decided he was guilty despite his denials and had not merited the protection of the goddess of the skies. At a temple of Agni in Burma, as the Englishman who filmed it told the author, the priests said their god kept the feet of the pure and holy from burning and those not pure enough got burned; he counted forty-three candidates and said only three got burned; one feeble old man fell and was dead before the attendants dragged him out. The author comments that some were not yet good magicians and announces a point on the nature of purification from sin in relation to the ability to perform fire-magic."@en ;
+    skos:note "Where the failure is put. In both cases the outcome is read back into the walker, so that a burn does not count against the protection but for the guilt. The work's own frame is the same and is stated later as doctrine: what blocks the higher magic is a complex of guilt in the low self (pmc:HunaNoComplexBeforeHealing). The next case the chapter gives, Igorot descendants of head-hunters walking safely, is introduced by the author as showing that killing is no bar, which he does not reconcile with the purity rule here."@en ;
+    pm:cautionsAbout pmp:HunaFireWalkUnderProtection ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter II, cases 3 and 4 with the comment on case 4" .
+
+#
+# The force
+#
+
+pmp:HunaChargingTheThrowingStick a pm:Practicing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "A heavy stick charged with bodily force by an effort of mind and thrown at the enemy"@en, "Ein schwerer Stab, durch eine Anstrengung des Geistes mit Körperkraft geladen und auf den Feind geworfen"@de ;
+    skos:definition "The old practice of holding heavy wooden sticks in the hands and by an effort of mind causing bodily electricity to enter and charge the stick heavily. In battle the priests stood in the rear lines, charged large sticks and threw them at one of the enemy."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaChargedStickStuns a pm:Conceptualizing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The charged stick knocks even the strongest warrior unconscious"@en, "Der geladene Stab schlägt selbst den stärksten Krieger bewusstlos"@de ;
+    skos:definition "On contact with the charged sticks even the strongest warriors were often made unconscious. Brigham is said to have tested such sticks and found them capable of what seemed an electric shock of a peculiar kind, which numbed the limb touched and made the head swim."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaChargedStickYieldsStunning a pm:Yielding ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The charged stick stuns"@en, "Der geladene Stab betäubt"@de ;
+    pm:byPractice pmp:HunaChargingTheThrowingStick ;
+    pm:yieldsCapacity pmc:HunaChargedStickStuns ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    skos:note "Ascribed to the priests of former times by the author, with Brigham's test of the sticks reported in one sentence and without its conditions. The author adds in his own voice that an element of hypnotic suggestion must not be overlooked in such performances."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmp:HunaSurchargeByMentalCommand a pm:Practicing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "A surcharge of force accumulated by a mental command and drawn out of another by the hands"@en, "Eine Überladung an Kraft, durch einen geistigen Befehl gesammelt und mit den Händen aus einem anderen gezogen"@de ;
+    skos:definition "Ferson's method as taught in his Honolulu classes and adopted by the work: the pupil gives himself the mental command to accumulate a surcharge of force; when satisfied it is there, he places his hands on the shoulders of an uncharged pupil and draws them slowly away. In the work's final chapter the same method is recommended for building up an increased charge to be laid on another with thoughts of healing."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7, and chapter XXII" .
+
+pmc:HunaOneSidedPull a pm:Conceptualizing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The charged body pulls the less charged one and feels no pull itself"@en, "Der geladene Körper zieht den weniger geladenen und spürt selbst keinen Zug"@de ;
+    skos:definition "If the surcharge was sufficient, the uncharged pupil was pulled strongly after the withdrawn hands and the charged one felt no pull. The author saw Ferson charge a folding chair so that a sensitive young woman walking past was almost violently pulled down onto it, and pull the same woman towards a ten-inch cement wall from its other side so that two men had to hold her, while he stood erect and did not sway. The rule the work draws: the object with the heavier charge pulls the less charged to it, regardless of size or weight, and feels no reaction."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaSurchargeYieldsPull a pm:Yielding ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The accumulated surcharge pulls another body"@en, "Die gesammelte Überladung zieht einen anderen Körper"@de ;
+    pm:byPractice pmp:HunaSurchargeByMentalCommand ;
+    pm:yieldsCapacity pmc:HunaOneSidedPull ;
+    pm:attestedBy pm:firstPersonReport ;
+    skos:note "The author reports the chair and the wall as things he saw, and the dog as a thing he did; the subjects in the first two were Ferson's pupils, the one he calls the most sensitive in the class among them. The class itself, the work says, discussed whether suggestion played a part, which is what led to the test on the dog (pmc:HunaTheDogTestAgainstSuggestion)."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaTheDogTestAgainstSuggestion a pm:Conceptualizing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The pull tried on a dog, because dogs are not known to be suggestible"@en, "Der Zug an einem Hund erprobt, weil Hunde nicht als suggestibel gelten"@de ;
+    skos:definition "To test the pull without the possible implication of suggestion, the author and the owner of a small bull terrier went through the exercise of accumulating force and placed their charged hands on the rump of the dog, which was made to stand with its head pointed away. Both are said to have drawn the dog backwards several inches despite its clawing at the rug, and to have felt no pull on their own hands or bodies."@en ;
+    skos:note "A control the practitioners built themselves, against the one alternative they named, and reported with its result. What it does not exclude is the hand: the charged hands rested on the dog's rump and were withdrawn, and the measure was how far the dog moved backwards after them. No count of trials is given, and no trial in which the dog did not move."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmp:HunaLayingOnHandsWithCommand a pm:Practicing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "Hands laid on the sick with a willed and spoken command that the force enter and strengthen them"@en, "Hände auf den Kranken gelegt mit dem gewollten und gesprochenen Befehl, die Kraft möge eintreten und ihn stärken"@de ;
+    skos:definition "Laying the hands on the sick and making a willed command that one's force enter them and strengthen them; the will accompanied by the spoken word forms a suggestion."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaAnyHealthyPersonCanHelpTheSick a pm:Conceptualizing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "Almost any healthy person can help the sick in this way"@en, "Fast jeder gesunde Mensch kann so dem Kranken helfen"@de ;
+    skos:definition "The author's conviction from his own observation and study of natural healers: almost any healthy person can help the sick by laying hands on them with the willed command, and the suggestion so formed may be highly effective."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaLayingOnHandsYieldsHelp a pm:Yielding ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "The hands with the command help the sick"@en, "Die Hände mit dem Befehl helfen dem Kranken"@de ;
+    pm:byPractice pmp:HunaLayingOnHandsWithCommand ;
+    pm:yieldsCapacity pmc:HunaAnyHealthyPersonCanHelpTheSick ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "No case is given at the place; the sentence is a generalisation from observation in the author's voice. Note what it is not: it is not ascribed to the priests, and the word may in the sentence leaves the outcome open."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaWillBreathingRunners a pm:Attributing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "Messengers whose speed and endurance came from will and breathing"@en, "Läufer, deren Schnelligkeit und Ausdauer aus Willen und Atem kamen"@de ;
+    skos:definition "In Hawaii, as in Tibet according to a recent book, a combination of will and breathing was used to gain magical aid in running long distances: specially trained messengers of the high chiefs, whose speed and endurance surpassed by far that of men not able to use this magic."@en ;
+    pm:ascribedCapacity pmc:HunaRunnersSpeedAndEndurance ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaRunnersSpeedAndEndurance a pm:Conceptualizing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "Speed and endurance in running long distances beyond what others reach"@en, "Schnelligkeit und Ausdauer im Langstreckenlauf über das von anderen Erreichte hinaus"@de ;
+    skos:definition "The capacity ascribed to the trained messengers: speed and endurance far surpassing men without the magic."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmp:HunaBerberStoneInvocation a pm:Practicing ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "A hen's blood on the face of a stone in a pit, and an invocation to the spirit in it"@en, "Hühnerblut auf der Fläche eines Steins in einer Grube, und eine Anrufung an den Geist darin"@de ;
+    skos:definition "W. R. Stewart's account, as the work reports it, of a night rite shown him by his Berber teacher Lucchi, whom the work counts a kahuna: steps cut into a hillside under doors like cellar doors led to a rock; by torchlight a hen was killed, its blood let fall on the face of the stone and an invocation spoken to the spirit supposed to reside in it; the hen dropped before the stone rose in the air and pressed against it, and Stewart, stepping close with his torch, felt a powerful magnetic pull that almost jerked him against the rock."@en ;
+    skos:note "The work counts the Berber teacher of Stewart among the kahunas, which is its own thesis that the same secret was kept in Polynesia and North Africa, stated in chapter I. The node records the rite as the work carries it and asserts nothing about Berber practice."@en ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+pmc:HunaStandBackUntilTheHenIsAbsorbed a pm:Cautioning ;
+    pm:fromWork pmw:SecretScienceBehindMiracles ;
+    rdfs:label "Every dealing with such spirits follows the ritual exactly; he should have stood back until the hen was spent"@en, "Jeder Umgang mit solchen Geistern folgt genau dem Ritual; er hätte zurückbleiben sollen, bis die Henne aufgezehrt war"@de ;
+    skos:definition "Lucchi stated that all dealings with such spirits must follow a carefully observed ritual and that any change in it might cause trouble. Stewart had changed the course of the rite by stepping close to the rock at the wrong time; he should have stood back until all the life force in the hen had been absorbed by the spirit, which needed it to comply with the requests of the invocation, after which the hen would have dropped. Lucchi pulled him back and insisted that they leave."@en ;
+    pm:cautionsAbout pmp:HunaBerberStoneInvocation ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Huna ;
+    dcterms:source "Max Freedom Long, The Secret Science Behind Miracles (Los Angeles: Kosmon Press, 1948), chapter III, the comment on case 7" .
+
+# @@HUNA-ANCHOR@@
