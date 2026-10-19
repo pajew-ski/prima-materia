@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -15,12 +16,58 @@
 # tradition instance below, where it survives compilation. See
 # prima-materia#24.
 #
+# Migrated to work identifiers on 2026-10-19, in the run that examined
+# pmc:ProcedureJudgedByItsOwnWorking and reopened the Mahānirvāṇa Tantra at
+# X.200-204; AGENTS.md requires the migration of anyone who touches a tradition
+# file. The two orderings held here without pm:withinTradition, the
+# seven-centre mapping and Wilson's naming, are not works of this corpus and
+# carry no pm:fromWork.
+#
+
+#
+# The works of this corpus as identifiers
+#
+
+pmw:Vijnanabhairava a dcterms:BibliographicResource ;
+    rdfs:label "Vijñānabhairava"@en, "Vijñānabhairava"@de ;
+    skos:note "Opened at verses 28-29, 50-51 and 56-57 in the Sanskrit, in the verse numbering of Dyczkowski and the current editions. The edition the verses were read in is not otherwise recoverable; see prima-materia#45."@en .
+
+pmw:MalinivijayottaraTantra a dcterms:BibliographicResource ;
+    rdfs:label "Mālinīvijayottaratantra"@en, "Mālinīvijayottaratantra"@de ;
+    skos:note "Cited at chapter VIII and once without a chapter. The edition is not recoverable and is left unstated rather than guessed; the passages are to be reopened. See prima-materia#45."@en .
+
+pmw:Tantraloka a dcterms:BibliographicResource ;
+    rdfs:label "Abhinavagupta, Tantrāloka"@en, "Abhinavagupta, Tantrāloka"@de ;
+    skos:note "Cited at chapters XIII and XV. The edition is not recoverable and the chapter divisions of the Kashmirian exegesis are edition-dependent; see prima-materia#45."@en .
+
+pmw:Tantrasara a dcterms:BibliographicResource ;
+    rdfs:label "Abhinavagupta, Tantrasāra"@en, "Abhinavagupta, Tantrasāra"@de ;
+    skos:note "Cited at chapter XI. The edition is not recoverable; see prima-materia#45."@en .
+
+pmw:KularnavaTantra a dcterms:BibliographicResource ;
+    rdfs:label "Kulārṇava Tantra"@en, "Kulārṇava Tantra"@de ;
+    skos:note "Opened at the verses giving the order of superiority of the ācāras, in the text with English translation by Ram Kumar Rai, Varanasi 1999; chapter and verse are not recoverable from the copy read. The rest of the work is unread."@en .
+
+pmw:KalikaPurana a dcterms:BibliographicResource ;
+    rdfs:label "Kālikāpurāṇa"@en, "Kālikāpurāṇa"@de ;
+    skos:note "Opened in the chapters on the worship of Tripurā, at the verses named on each node, in the text, introduction and English translation of B. N. Shastri, part III, Nag Publishers, Delhi 1991. The chapter numbering is not recoverable from the copy read."@en .
+
+pmw:MahanirvanaTantra a dcterms:BibliographicResource ;
+    rdfs:label "Mahānirvāṇa Tantra"@en, "Mahānirvāṇa Tantra"@de ;
+    skos:note "Read by earlier runs at I.50-61 and IV.19-20 in the English of Arthur Avalon, Tantra of the Great Liberation (London: Luzac & Co., 1913). Reopened on 2026-10-19 at X.200-204 in three versions: Avalon's English, p. 260, read in the copy dli.csl.5754, which lacks its title page and whose running heads and pagination are those of the 1913 edition, the title page of which was read in the copy india.history.resource.110781; the Sanskrit with the commentary of Hariharānanda Nātha Bhāratī, edited by Jīvānanda Vidyāsāgara (Calcutta, 1884, as the title page in the full text gives it), daśamollāsa, pp. 286-287; and a second English translation, printed as The Mahanirvana Tantram, the Tantra treating of the final emancipation, in the copy dli.bengal.10689.11353, whose title page is not in the scan, so that the translator is not named here and the catalogue is not used for it. Its wording differs throughout from Avalon's and it spells Koula and Veera, so it is a second translation and not a second copy of the first."@en ;
+    skos:note "Not read: the rest of the work in this run, including the fourteenth chapter, which an earlier run had cited for the claim at pmc:KaulaAboveTheOtherWays; the verse it gave there, XIV.203, says of the tantra itself that it is the only means for the acquirement of the knowledge of Brahman (Avalon, p. 358), and the claim stands at X.203."@en .
+
+pmw:Satcakranirupana a dcterms:BibliographicResource ;
+    rdfs:label "Pūrṇānanda, Ṣaṭcakranirūpaṇa"@en, "Pūrṇānanda, Ṣaṭcakranirūpaṇa"@de ;
+    skos:note "Cited without place. The edition is not recoverable and is left unstated rather than guessed; see prima-materia#45."@en .
 
 pmt:SaivaSakta a pm:Tradition ;
+    pm:fromWork pmw:Satcakranirupana ;
     rdfs:label "Śaiva and Śākta tantra"@en, "Śaiva- und Śākta-Tantra"@de ;
     skos:definition "The transmission of the Śaiva and Śākta tantric corpus and its Kashmirian exegesis."@en ;
     skos:note "A caution governs everything read out of this tradition. What is old is a set of subtle centres carrying seed syllables, and the older tantras vary in how many they count. The fixed system of seven centres with spectral colours and assigned psychological qualities belongs to the twentieth century and to no tantra; it is held in this file as pmc:SevenCentreQualityMapping so that it is available as what it is, and it must not be read back into the material it was built on."@en ;
     pm:principalCorpus "Vijñānabhairava; Mālinīvijayottaratantra; Abhinavagupta, Tantrāloka and Tantrasāra; Kulārṇava Tantra; Kālikāpurāṇa; Mahānirvāṇa Tantra; Pūrṇānanda, Ṣaṭcakranirūpaṇa" ;
+    pm:corpusWork pmw:Vijnanabhairava, pmw:MalinivijayottaraTantra, pmw:Tantraloka, pmw:Tantrasara, pmw:KularnavaTantra, pmw:KalikaPurana, pmw:MahanirvanaTantra, pmw:Satcakranirupana ;
     skos:note "Edition finding, prima-materia#45. The Vijñānabhairava citations name the numbering they were read in. For the Ṣaṭcakranirūpaṇa, the Tantrāloka, the Tantrasāra and the Mālinīvijayottaratantra the edition is not recoverable and is left unstated rather than guessed; those passages are to be reopened, and the chapter divisions of the Kashmirian exegesis are edition-dependent."@en ;
     dcterms:source "Pūrṇānanda, Ṣaṭcakranirūpaṇa (1577)" .
 
@@ -152,11 +199,14 @@ pmc:Panchatattva a pm:Conceptualizing ;
     dcterms:source "Mahānirvāṇa Tantra I.58-59 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)", "Mahānirvāṇa Tantra I.61 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)" .
 
 pmc:KaulaAboveTheOtherWays a pm:Conceptualizing ;
+    pm:fromWork pmw:MahanirvanaTantra ;
     rdfs:label "Kaula worship as the way that succeeds in this age"@en, "Die kaulische Verehrung als der in diesem Zeitalter tragende Weg"@de ;
-    skos:definition "The claim that in the present age success is attained by Kaula worship alone, and that the mantra received from a Kaula brings knowledge of Brahman, where the mantra received from one of the lower dispositions reproduces that disposition in the receiver."@en ;
+    skos:definition "The claim that in the present age success is attained by Kaula worship alone, and that the mantra received from a Kaula brings knowledge of Brahman, where the mantra received from one of the lower dispositions reproduces that disposition in the receiver. At X.200-203, in Avalon's words: it is good for a Shakta to have a Guru who is a Shakta, for a Shaiva a Shaiva, for a Vaishnava a Vaishnava, for a Saura a Saura, and a Gaṇapatya for a Gaṇapatya, but a Kaula is excellent as Guru in the case of all, therefore the wise one should with all his soul be initiated by a Kaula; those who worship the Kaulas with the Pancha-tattva and with heart uplifted cause the salvation of their ancestors; and the man who has obtained the mantra from the mouth of a Pashu is of a certainty a Pashu, he who has obtained it from a Vira is a Vira, and he who obtains it from a Kaula knows the Brahman."@en ;
     skos:note "Kaula is set above the other ways here, not beside them. That is the same order Wilson translates from a passage he ascribes to the Kulārṇava, in which the left hand stands above the right and Kaula above all — an order the Western pair of names keeps while reversing its valuation. Two witnesses, one of them located by chapter and verse in a named translation and one not; the second is still to be found. See prima-materia#56."@en ;
+    skos:note "The second source this node carried until 2026-10-19 was Mahānirvāṇa Tantra XIV.203 in Avalon. That verse says of the tantra itself that it is the only means for the acquirement of the knowledge of Brahman (p. 358); the claim about the mantra and its giver stands at X.203 (p. 260), and was read there in Avalon, in the Sanskrit of the Calcutta edition of 1884, paśo ... labdhamantraḥ paśur eva na saṃśayaḥ, vīrāl labdhamanur vīraḥ kaulād bhavati brahmavit, where the word between paśo and labdhamantraḥ is garbled in the text layer and is what Avalon renders from the mouth of; the rest is normalised from a text layer that loses vowel signs and reads vorāj for vīrāl, and in a second English translation, which has he that obtains his initiation from a Pasu becomes himself a Pasu, he that receives his mantra from a Veera becomes a Veera, and he that receives it from a Kaula becomes a true knower of the Brahma. The three agree; the second translation has initiation where Avalon has mantra in the first clause, the Sanskrit has the mantra."@en ;
+    skos:note "What the verse does that matters beyond this file. It compares one procedure, receiving the mantra, by its outcome in the receiver, and it grounds the difference in the disposition of the giver and in nothing the giver does: the same act passes on what the giver is. It is the counter-case found by the protocol at examinations/procedure-judged-by-its-own-working-tested.ttl."@en ;
     pm:withinTradition pmt:SaivaSakta ;
-    dcterms:source "Mahānirvāṇa Tantra IV.20 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)", "Mahānirvāṇa Tantra XIV.203 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)" .
+    dcterms:source "Mahānirvāṇa Tantra IV.20 (trans. A. Avalon, Tantra of the Great Liberation, London 1913)", "Mahānirvāṇa Tantra X.200-203 (trans. A. Avalon, Tantra of the Great Liberation, London: Luzac & Co., 1913, p. 260)", "Mahānirvāṇatantra X.200-203, with the commentary of Hariharānanda Nātha Bhāratī, ed. Jīvānanda Vidyāsāgara (Calcutta, 1884), pp. 286-287", "Mahānirvāṇa Tantra X.200-203, in the English translation printed as The Mahanirvana Tantram, the Tantra treating of the final emancipation (translator not named in the scanned copy), chapter X" .
 
 pmc:KalikapuranaLeftAndRightMethods a pm:Conceptualizing ;
     pm:fromWork pmw:KalikaPurana ;
