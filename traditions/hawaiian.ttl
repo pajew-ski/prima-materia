@@ -243,3 +243,126 @@ pmc:HawaiianUnihipiliKeeperDiesOfNeglect a pm:Cautioning ;
     pm:attestedBy pm:textualAttestation ;
     pm:withinTradition pmt:HawaiianRitual ;
     dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), Emerson's note 2 to chapter XXXII, pp. 157-158" .
+
+#
+# The kuni: the ceremony that turns the death prayer back on its sender
+#
+
+pmp:HawaiianKuni a pm:Practicing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Kuni: the dead man's liver burned in fowls and dogs to seek out the one who prayed him to death"@en, "Kuni: die Leber des Toten in Hühnern und Hunden verbrannt, um den zu suchen, der ihn totgebetet hat"@de ;
+    skos:definition "When a rich, distinguished or greatly beloved person died it was very often said he had been prayed to death, anaana, from envy of his property or hatred of his distinction, and the ceremony of kuni was performed on the body. The friend brought a pig to the kahuna kuni and offered it to Uli in the heavens to purchase the death of the one who prayed his friend to death, laying the funeral on Uli, Maka-ku-koae and Ka-alae-a-Hina. At the house a stone wrapped in pinkish tapa was set before the kahuna with the dead man's head close to it; he recited the pule hui over a cluster of kukui nuts and a gourd, that the aumakua invokes death on him who anaanaed this one and turns his incantation back on himself, and struck them on the stone so that they scattered. A large fireplace was built, wreathed with auhuhu and gourds and flagged at the corners; two men opened the body, cut the liver small and stuffed it into fowls and dogs as maunu, bait, and each was thrown into the fire with the call, here comes such a one, seeking the one who caused his death. The kahuna prayed with great fervour until sunset without eating or drinking, the prayer ending only when the offerings were ashes; the ashes and the appurtenances were thrown into a spout-hole in the sea and the fireplace buried. Next morning a boy and a girl walked naked about it while he prayed, and then he named the one who had prayed the dead man to death. Forty dogs and twice as many fowls were the ordinary sacrifice; for a chief, four hundred dogs."@en ;
+    skos:note "Emerson's note to the chapter: the subject is kuni and not anaana, and he has substituted kuni for anaana in the title and where needed in the text, since a kahuna anaana would not avenge the work of his own craft. The chapter numbering is not Malo's (prima-materia#484, at pmw:MooleloHawaii)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 1-3 and 10-22, pp. 135-139, with Emerson's note 1, p. 139" .
+
+pmc:HawaiianKuniPigDivination a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The released pig shows where the guilt lies: rooting, left, right, behind, snout raised, or standing before the man"@en, "Das freigelassene Schwein zeigt, wo die Schuld liegt: wühlend, links, rechts, hinten, Rüssel gehoben, oder vor dem Mann stehend"@de ;
+    skos:definition "The kahuna let the offered pig go and watched where it moved. If it rooted in the earth, the one who had prayed the man to death was himself doomed and would soon die. If it went to the left of the kahuna, the death was caused by the wife's relatives; to the right, by the younger brother's people; behind him, by some outside party; if it raised its snout, the death was chargeable to some chief; if it came and stood before the man who brought it, the responsibility lay with his table-companions. After the kukui nuts were struck on the stone, the direction in which they flew again pointed out the locality of those who caused the death."@en ;
+    skos:note "A divination whose every outcome names a party: the six movements of the pig are all answers, and none of them says that no one prayed the dead man to death. The only answer that is not an accusation, the rooting, is the one that promises the sorcerer's death outright, and the report the friend carries back to the family is that answer, whatever the pig did (section 8)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 4-8 and 13, pp. 136-137" .
+
+pmc:HawaiianKuniKillsTheSorcerer a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The one who prayed the dead man to death will soon die himself, of swelling, dropsy, bloody flux, vomiting of blood or a broken back"@en, "Der den Toten totgebetet hat, wird bald selbst sterben, an Schwellung, Wassersucht, blutigem Fluss, Blutbrechen oder gebrochenem Rücken"@de ;
+    skos:definition "When the ceremony was complete the kahuna said: I have seen the wraith, kahoaka, of him who anaanaed this man coming this way, his head down, his eyes closed, as good as dead, and it will not be long before this one also shall die. The death to which I consign him is a swelling, a dropsy, a bloody flux, a vomiting of blood, a broken back; take note of this. The friends of the dead rejoiced greatly on hearing that the one who had prayed their friend to death was himself soon to die."@en ;
+    pm:falsifiedBy "The person the kahuna named at the close of the ceremony living on beyond a stated term, or dying of a cause outside the five he listed. The prediction names a person and five causes, so it would be decidable if a term were fixed; it fixes none beyond it will not be long, and the transmission counts confirmation otherwise (pmc:HawaiianKuniAnyDeathConfirms)." ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 8-9 and 22-24, pp. 136-139" .
+
+pmc:HawaiianKuniYieldsTheSorcerersDeath a pm:Yielding ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The kuni turns the death prayer back and kills its sender"@en, "Das Kuni wendet das Todesgebet zurück und tötet seinen Sender"@de ;
+    pm:byPractice pmp:HawaiianKuni ;
+    pm:yieldsCapacity pmc:HawaiianKuniKillsTheSorcerer ;
+    pm:attestedBy pm:textualAttestation ;
+    skos:note "The Hawaiian counterpart of what the modern work in traditions/huna.ttl reports Brigham doing on Mauna Loa (pmc:HunaTurningBackYieldsRestoration), and it differs at the point that matters. Brigham's turning back is done for a living victim and is said to have saved him; the kuni is done over a corpse and saves no one. Its whole outcome is the sorcerer's death, which is the one outcome in the field a bystander could check, and the transmission records how it was checked (pmc:HawaiianKuniAnyDeathConfirms)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 11 and 22-24, pp. 137-139" .
+
+pmc:HawaiianKuniAnyDeathConfirms a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "If after this anyone died of one of the diseases the kahuna named, he was in great demand and feared for his power"@en, "Starb danach irgendjemand an einer der genannten Krankheiten, war der Kahuna sehr gefragt und wegen seiner Macht gefürchtet"@de ;
+    skos:definition "After the body was buried and another kahuna had performed the purification, the kahuna kuni received his pay, and it was large. If after this anyone died of one of the diseases mentioned by the kahuna, the kahuna in question would be in great demand and at the same time much feared for his power, mana. The number of chiefs that were prayed to death was about the same as of the common people."@en ;
+    skos:note "How the transmission scored the ceremony, and it is the clearest instance in the holding of a criterion that cannot fail. The kahuna named one person and five causes of death; the reputation followed if anyone at all died of any of the five, with no term set, and all five are common causes of death. The naming at the close of the ceremony would have made the prediction decidable; the scoring rule throws that away. Malo states it flatly as what happened, without remark, and in the same breath gives the one count the chapter has, that chiefs and commoners were prayed to death in about equal numbers, which is a count of ascriptions and not of deaths."@en ;
+    skos:note "It decides the claim of prima-materia#481 at the wording: the counter-procedure against the death prayer does not heal the sick but is said to kill the author of the spell, and it does so by burning a part of the victim's corpse, the liver, in the offerings as bait. Emerson's note widens the bait: it might be a shred of clothing, a bit of hair, a nail or any exuviae of the body."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, sections 25-26, p. 139, with Emerson's note 8, p. 140" .
+
+pmc:HawaiianKuniDissectorsDefiled a pm:Cautioning ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The two men who opened the body were utterly defiled and could not touch food"@en, "Die beiden Männer, die den Leichnam öffneten, waren gänzlich verunreinigt und durften keine Speise berühren"@de ;
+    skos:definition "The two men who dissected the dead body were utterly defiled and were therefore not permitted to touch food with their hands, so that others had to feed them."@en ;
+    pm:cautionsAbout pmp:HawaiianKuni ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXVIII, section 16, p. 137" .
+
+#
+# Necromancy: the seen wraith, the atonement, and those who see spirits
+#
+
+pmp:HawaiianKilokiloUhane a pm:Practicing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Kilokilo uhane: the seer reports a person's wraith seen in a vision or dream and warns him of his death"@en, "Kilokilo uhane: der Seher meldet die Erscheinung eines Menschen, gesehen in Schau oder Traum, und warnt ihn vor seinem Tod"@de ;
+    skos:definition "The kahuna kilokilo would announce that the wraith or astral body of a certain person had appeared to him in spectral form, in a sudden apparition, a vision by day or a dream by night, call on the person and state the case: today at noon I saw your wraith, naked, tongue hanging out, eyes staring; you rushed at me and clubbed me senseless. Your aumakua is wroth with you; perhaps he has found you out and is rushing you on. Now is the time to make peace with me, while your soul still tarries at the resting place of Puu-ku-akahi, before it reaches the brink of Ku-a-ke-ahu, where there is no pardon, and plunges into Ka-paa-heo, the place of endless misery."@en ;
+    skos:note "Malo opens the chapter with his verdict: a superstitious ceremony very much practised, in which barefaced lying and deceit were combined with shrewd conjecture, and the principal extorted wealth by terrorising. Emerson notes that everlasting death in section 7 seems an imported thought and that Malo's new theology may have crept in. The chapter numbering is not Malo's (prima-materia#484)."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 1-8, pp. 150-151, with Emerson's note 1, p. 153" .
+
+pmp:HawaiianKalaAtonement a pm:Practicing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Kala: the atonement by the lit fire, the oven of named fishes, a white dog and a white fowl, and the prayer for forgiveness"@en, "Kala: die Sühne durch das entfachte Feuer, den Ofen benannter Fische, einen weißen Hund und ein weißes Huhn, und das Gebet um Vergebung"@de ;
+    skos:definition "Alarmed, the man consented to have the kahuna perform the kala, atonement. He was to procure the fishes kala, weke, the octopus hee, maomao and palani, a white dog, a white fowl, awa and ten sheets of tapa to cover the oven. The priest kept up the incantation as long as the fire-sticks were being rubbed and ended it only when the fire was lit; the food was laid in the oven and covered with the tapa; when it was cooked he stood and repeated the pule kala, O Ku the forgiving, O Lono who grants pardon, undo the knot of our sins at Ahuena; then the man and the whole assembly ate. A chief who found himself the victim of kilokilo did the same."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 8-13, pp. 151-152" .
+
+pmc:HawaiianKalaSparesTheLife a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "I declare the fire a good one; your sins are condoned and your life is spared, you will not die"@en, "Ich erkläre das Feuer für gut; deine Sünden sind vergeben und dein Leben ist verschont, du wirst nicht sterben"@de ;
+    skos:definition "After the meal the kahuna said: I declare the fire a good one, consequently your sins are condoned, and your life is spared, you will not die. Then he received his pay."@en ;
+    skos:note "The structure the chapter describes is closed at both ends by the same man: he sees the omen of death, prescribes the atonement, judges the fire, and declares the danger past. A death after the atonement would contradict the declaration; nothing in the chapter says what was said if one came, and Malo's frame, extortion by terror, makes the declaration the product sold."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, section 13, p. 152" .
+
+pmc:HawaiianKalaYieldsPardon a pm:Yielding ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The atonement averts the death the wraith foretold"@en, "Die Sühne wendet den Tod ab, den die Erscheinung ankündigte"@de ;
+    pm:byPractice pmp:HawaiianKalaAtonement ;
+    pm:yieldsCapacity pmc:HawaiianKalaSparesTheLife ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 8-13, pp. 151-152" .
+
+pmc:HawaiianMakaulaSeizesSpirits a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The makaula sees a spirit, seizes and squeezes it, and feeds it in food so that others see it"@en, "Der makaula sieht einen Geist, packt und erdrückt ihn und gibt ihn in Speise, damit andere ihn sehen"@de ;
+    skos:definition "The makaula, prophet, was reputed able to see a spirit, seize it and hold it in his hand and squeeze it to death, and to discern the ghost of any person, even one whose body was buried in the most secret place. He made a spirit visible by catching it with his hands, put it into food and fed it to others; anyone who ate of that food would see the spirit of that person, dead or living. The makaula did not deal so extortionately with his patrons as the kilokilo uhane. The spirits of living people were called oio when many, kakaola when single; the spirit of one already dead was kino-wailua."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 15-17, p. 152" .
+
+pmc:HawaiianKaulaForetellsAKingsDeath a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "The kaula, forewarned by Kane-nui-akea, foretells the death of a king or the overthrow of a government"@en, "Der kaula, von Kane-nui-akea vorgewarnt, sagt den Tod eines Königs oder den Sturz einer Regierung voraus"@de ;
+    skos:definition "The kaula, prophets or foretellers of future events, were supposed to have more power than any other class of kahunas; it was said that Kane-nui-akea forewarned them of such important events as the death of a king or the overthrow of a government, and these prophecies were called wanana. They were an eccentric class who lived apart in desert places and did not associate with people, their thoughts much taken up with the deity. Emerson's note gives two oracles: one ascribed to Kapihe of Kona in the time of Kalaniopuu, that which is above shall be brought down, that which is below lifted up, the islands shall be united, the walls shall stand upright; and one of a prophet of Waianae in the time of Kahahana, of which he says the meaning is not apparent, like an utterance of the Delphic oracle."@en ;
+    skos:note "The two oracles stand in an editor's note of 1898, after the islands were united, and the one that can be read as fulfilled is the one whose wording names the outcome. The note does not say when or by whom either was first written down, so the order of utterance and fulfilment cannot be checked here."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, sections 18-19, pp. 152-153, with Emerson's note 5, p. 154" .
+
+pmc:HawaiianHewahewaAreNotTheMad a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "Those in trance or ecstasy perceive spirits like prophets, and are told from the mad by their conduct"@en, "Wer in Trance oder Ekstase ist, nimmt Geister wahr wie die Propheten, und wird von den Irren an seinem Betragen unterschieden"@de ;
+    skos:definition "People in delirium, frenzy, trance or ecstasy, hewahewa, were thought to be inspired and to perceive the souls or spirits of men as the kaula and makaula did, and their utterances were taken for prophecies. It was different with crazy folk, pupule, and maniacs, hehena: they were not like prophets, for they ate filth and exposed themselves indecently, which those in exaltation, prophets and soothsayers did not do."@en ;
+    skos:note "A criterion the transmission sets for telling an inspired state from madness, and it is one a bystander can apply: conduct, not the content of what is said. It decides who is to be listened to and says nothing on whether what they say comes true."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, section 20, p. 153" .
+
+pmc:HawaiianAumakuaConductsTheWanderingSoul a pm:Conceptualizing ;
+    pm:fromWork pmw:MooleloHawaii ;
+    rdfs:label "A soul at variance with its aumakua through a fault is led to the resting place, and brought back to the body if reconciled"@en, "Eine Seele, durch eine Verfehlung mit ihrem aumakua entzweit, wird zum Rastort geführt und, wenn versöhnt, in den Leib zurückgebracht"@de ;
+    skos:definition "Emerson's note to the necromancy chapter: if, on account of some fault or sin, hala, the wandering soul, uhane hele, became at variance with its aumakua, the aumakua would conduct it to the resting place of souls called Puu-ku-akahi, where reconciliation and pardon were still possible, and if this were obtained the aumakua conducted it back to the body and restored it to the joys of earth. Souls frequently wandered away from the body during sleep or unconsciousness. If reconciliation was not made it travelled on to Ku-a-ke-ahu, the brink of the nether world, and plunged into Ka-paa-heo, a land of twilight and shades under the sway of Milu. In Malo's own text the seer tells the man that his aumakua is wroth with him and may have found him out."@en ;
+    skos:note "The nearest the Hawaiian sources read come to the reading in traditions/huna.ttl, and it is entered because the dispute there would be reported unfairly without it. Here too the aumakua stands in a relation to a living person, attends his soul in sleep, and is offended by his fault, and the offence blocks his way until reconciliation; that is the shape of pmc:HunaBlockedPathMeansIllness. What differs is the bearer: the aumakua is an ancestral god outside the person, one of several a man might have, and not a part of his own self."@en ;
+    pm:withinTradition pmt:HawaiianRitual ;
+    dcterms:source "David Malo, Hawaiian Antiquities (Moolelo Hawaii), translated by N. B. Emerson (Honolulu: Hawaiian Gazette Co., 1903), chapter XXXI, section 6, p. 151, and Emerson's note 2, pp. 153-154" .
