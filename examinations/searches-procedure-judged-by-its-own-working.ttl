@@ -1,0 +1,44 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the protocol on the procedure judged by its
+# own working
+#
+# Two corpora were put the same question: where a transmission compares
+# procedures of one kind for how well they work, what does it give as the
+# ground, the procedure or the persons who work it. The first was reopened
+# because the scan of the holding found a node whose wording named a person as
+# the ground and whose locus did not hold; the second was opened as the place
+# outside the holding where such a comparison was most likely to be argued.
+# The protocol itself is at
+# examinations/procedure-judged-by-its-own-working-tested.ttl.
+#
+
+pmp:ProcedureJudgedMahanirvanaSearch a pm:Searching ;
+    rdfs:label "Whether the tantra that ranks the givers of the mantra grounds the ranking in the givers"@en, "Ob das Tantra, das die Geber des Mantras ordnet, die Ordnung in den Gebern begründet"@de ;
+    pm:searchedCorpus "Mahānirvāṇa Tantra X.198-205 and XIV.167-211, in the English of Arthur Avalon, Tantra of the Great Liberation (London: Luzac & Co., 1913), pp. 260-261 and 355-359; X.198-207 in the Sanskrit with the commentary of Hariharānanda Nātha Bhāratī, ed. Jīvānanda Vidyāsāgara (Calcutta, 1884), pp. 286-287; and X.197-205 in the English translation printed as The Mahanirvana Tantram, the Tantra treating of the final emancipation, whose translator the scanned copy does not name" ;
+    pm:searchedFor "Whether the claim at pmc:KaulaAboveTheOtherWays, that the mantra received from a Kaula brings knowledge of Brahman and the mantra from a lower disposition reproduces that disposition, stands at the verse the node cited, and whether the passage that carries it grounds the difference in the procedure of initiation or in the giver." ;
+    pm:searchTerms "XIV.203 was read first in Avalon and found to concern the tantra itself. The claim was then located in Avalon by initiated by, received from and from the mouth of; in the second English translation by Pasu, Veera and Koula; and in the Sanskrit by pairs of paśu, vīra and kaula within a few lines, which found the verse once in the daśamollāsa. The ten verses around it were read in all three." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:KaulaAboveTheOtherWays ;
+    pm:searchedBy "prima-materia, 2026-10-19" ;
+    dcterms:date "2026-10-19" ;
+    skos:note "The node's wording held and its locus did not: the claim is X.203 and not XIV.203. The passage states the choice of a preceptor by sect, a Kaula as good for all, and then the outcome of receiving the mantra by the disposition of the one it is received from. Nothing the giver does is named; the disposition passes."@en ;
+    skos:note "The limit of the search. The copy of Avalon read at X has no title page and was matched to the 1913 edition by its running heads and pagination; the Sanskrit text layer drops vowel signs, so the verse was read through Avalon's rendering; the commentary on the verse was located and not read."@en .
+
+pmp:ProcedureJudgedArtemidorusSearch a pm:Searching ;
+    rdfs:label "Whether the dream book that sorts the diviners grounds the sorting in the arts or in the men"@en, "Ob das Traumbuch, das die Seher sortiert, die Sortierung in den Künsten oder in den Männern begründet"@de ;
+    pm:searchedCorpus "Artemidorus, Onirocriticon II.68-70, in the Greek of R. Hercher (Leipzig: Teubner), pp. 160-162; in the German of F. S. Krauss, Symbolik der Träume (Wien, Pest, Leipzig: A. Hartleben, 1881), pp. 187-190; and in the Latin of Ianus Cornarius, De somniorum interpretatione libri quinque (Basel: Froben and Episcopius, 1539), book II, chapters LXXIII-LXXV" ;
+    pm:searchedFor "Whether a practitioner's manual of divination compares the arts of divination for whether they tell the truth, and whether the ground it gives is a property of the arts or of the persons who practise them." ;
+    pm:searchTerms "The chapter was located in Krauss by Pythagoreer, Physiognomen and Gaukler; in the Greek through Hercher's index at ἀστραγαλομάντεις 161, 21 and then read from ἀξιοπίστων to the end of the chapter, after a search of the stripped text for κοσκινομαντ, γοητευ and φυσιογνωμ had failed because the text layer confuses letters; in the Latin by Pythagorici and cribrorum. Each was read continuously from the end of the chapter on flying to the start of the chapter on the length of a generation." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:ArtemidorusManteisMeApateones, pmc:ArtemidorusAxiopistoi ;
+    pm:searchedBy "prima-materia, 2026-10-19" ;
+    dcterms:date "2026-10-19" ;
+    skos:note "The comparison is there and its ground names both: the false arts are false because the arts are of that kind and because their practitioners know nothing of divination and deceive. The surrounding ranking of trustworthy speakers grounds every step in a property of the speaker."@en ;
+    skos:note "The limit of the search. One chapter of five books. Artemidorus's own preface and the places where he defends dream interpretation against its critics, which would say what in an art makes it true, were not opened."@en .
