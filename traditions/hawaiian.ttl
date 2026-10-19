@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -13,7 +14,9 @@
 # Order of the file: the tradition, then the chant and the condition its
 # efficacy is said to stand under, then the guard the tradition itself puts
 # against that condition, then the house of the hula with its conduct, its
-# cleansing and its graduation. The instance was registered in
+# cleansing and its graduation, then the possession by an akua noho and the
+# tests the doubters put to it, opened on 2026-10-19 as the Hawaiian side of the
+# dispute in traditions/huna.ttl. The instance was registered in
 # traditions/registry-outside-contact.ttl and is moved here now that passages
 # have been read. The identifier said cosmogony until 2026-09-04 while the file
 # carries chant mastery and hula, and was corrected to pmt:HawaiianRitual under
@@ -21,10 +24,29 @@
 # the instance below, where it survives compilation.
 #
 
+#
+# The works
+#
+
+pmw:BeckwithKumulipo a dcterms:BibliographicResource ;
+    rdfs:label "Beckwith, The Kumulipo"@en, "Beckwith, The Kumulipo"@de ;
+    skos:note "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951). Declared on 2026-10-19 when the file was migrated to work identifiers; the places read are those named at the tradition."@en .
+
+pmw:UnwrittenLiteratureOfHawaii a dcterms:BibliographicResource ;
+    rdfs:label "Emerson, Unwritten Literature of Hawaii"@en, "Emerson, Unwritten Literature of Hawaii"@de ;
+    skos:note "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909). Declared on 2026-10-19 when the file was migrated to work identifiers."@en .
+
+pmw:MooleloHawaii a dcterms:BibliographicResource ;
+    rdfs:label "Malo, Hawaiian Antiquities (Moolelo Hawaii)"@en, "Malo, Hawaiian Antiquities (Moolelo Hawaii)"@de ;
+    skos:note "The edition as the title page in the full text gives it: Hawaiian Antiquities (Moolelo Hawaii) by David Malo, translated from the Hawaiian by Dr. N. B. Emerson, Honolulu, Hawaiian Islands, 1898; Honolulu, Hawaiian Gazette Co., Ltd., 1903. Read in the archive.org full text under hawaiianantiquit00malouoft, 917,896 bytes, an optical text layer with the printed page numbers surviving at the page breaks; chapter XXXII begins on p. 155 and its notes run to p. 158."@en ;
+    skos:note "Two layers, kept apart at every node: Malo's text in Emerson's English, written about 1840 by a Hawaiian born about 1793 who had become a Christian teacher, and Emerson's numbered notes, written for the edition of 1898. The Hawaiian text of Malo was not reached: no copy of it was found at archive.org, where only the five scans of this translation lie, so the requirement of a second translation is not met and is not claimed; Emerson gives the Hawaiian terms in parentheses at the places that carry them."@en .
+
 pmt:HawaiianRitual a pm:Tradition ;
     rdfs:label "Hawaiian transmission"@en, "Hawaiische Überlieferung"@de ;
-    skos:definition "The Hawaiian transmission of a chanted genealogy of the world, of the mastery of chanting as an office with a stated condition of failure, and of the house of the hula with its conduct, its cleansing and its graduation."@en ;
-    skos:note "Registered at corpus named until this file was written, and moved here on the first passages actually read. What was read at the wording: Beckwith's Kumulipo, chapters one, three and seven; Emerson's Unwritten Literature of Hawaii, chapters two, four and five. Not opened: Malo's chapters on necromancy and on the kuni rite, the Fornander volume on the order of sorcery, Kamakau's newspaper series, and Pukui's article of 1949 which Beckwith cites for the chanting rule. The reasons and the paths tried stand in the issues named in the harvest note of prima-materia#470."@en ;
+    skos:definition "The Hawaiian transmission of a chanted genealogy of the world, of the mastery of chanting as an office with a stated condition of failure, and of the house of the hula with its conduct, its cleansing and its graduation; and, in Malo's account, of spirits set by a priest to dwell in a person or a dead man's bones, with the tests the doubters put to them."@en ;
+    pm:fromWork pmw:BeckwithKumulipo ;
+    pm:corpusWork pmw:BeckwithKumulipo, pmw:UnwrittenLiteratureOfHawaii, pmw:MooleloHawaii ;
+    skos:note "Registered at corpus named until this file was written, and moved here on the first passages actually read. What was read at the wording: Beckwith's Kumulipo, chapters one, three and seven; Emerson's Unwritten Literature of Hawaii, chapters two, four and five; and, on 2026-10-19, Malo's Hawaiian Antiquities in Emerson's translation, chapter XXXII on obsession with Emerson's notes to it. Not opened: Malo's chapters on necromancy and on the kuni rite, the Fornander volume on the order of sorcery, Kamakau's newspaper series, and Pukui's article of 1949 which Beckwith cites for the chanting rule. The reasons and the paths tried stand in the issues named in the harvest note of prima-materia#470."@en ;
     skos:note "Coined as pmt:HawaiianCosmogony and renamed to pmt:HawaiianRitual on 2026-09-04 under prima-materia#471. The old identifier was written for the Kumulipo alone, and the reading widened the tradition, not the transmission: the file carries the mastery of chanting and the house of the hula, and a query that trusted the name would have taken a transmission of rite and office for a cosmogony. Renaming a coined identifier needs a compelling reason, and the reason here is that the name asserted something about the subject matter that the holdings contradict. The rename was carried in one pass, which is what SPEC §11 requires; nothing outside this repository is known to have referred to the old name."@en ;
     skos:note "The contact route is entered as documented and no longer as absent, and it is documented twice over. First against the Maori transmission this graph already holds: both descend from one East Polynesian dispersal, dated archaeologically to the thirteenth century, so a correspondence between them is common inheritance and not two witnesses. Second against the Christian material: the mission arrives in 1820, the seminary at Lahainaluna is founded in 1831, and every work read here was written or printed after that by men trained in that school or by their successors. Absent was true of the islands before contact and false of the corpus this graph can cite."@en ;
     pm:principalCorpus "The Kumulipo in the Hawaiian text with Beckwith's edition; Malo, Moolelo Hawaii, in the Emerson translation and in the Langlas and Lyon edition; Emerson, Unwritten Literature of Hawaii; the Fornander Collection of Hawaiian Antiquities and Folk-Lore; Kamakau's series in Ke Au Okoa" ;
@@ -38,6 +60,7 @@ pmt:HawaiianRitual a pm:Tradition ;
 #
 
 pmc:HawaiianChantExactness a pm:Conceptualizing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "The chant rendered without breath, mistake or hesitation"@en, "Der Gesang ohne Atemzug, Fehler und Zögern"@de ;
     skos:definition "The delivery a master of song is held to owe: no breath taken before the close of a phrase, no mistake, and no hesitation in pronouncing a word. The three are named together and on the same footing, so that pausing counts as failing rather than as taking care. The manner reported beside it is a tone almost on one note with every word enunciated distinctly."@en ;
     skos:note "Beckwith gives the rule in her own voice and names her authorities for it: Kamakau for the manner of delivery, and Pukui's article of 1949 for the practice. Neither was opened in this run; the article is behind a paywall and the newspaper series was not reachable. The node therefore stands on Beckwith and says so."@en ;
@@ -45,12 +68,14 @@ pmc:HawaiianChantExactness a pm:Conceptualizing ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, pp. 35-36" .
 
 pmc:HawaiianChantWelfare a pm:Conceptualizing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "The good fortune of the person or family the chant honours"@en, "Das Wohlergehen der besungenen Person oder Familie"@de ;
     skos:definition "What the correct rendering is held to secure. The transmission places the outcome not with the reciter but with the party the chant is made for, which is the unusual part of this witness."@en ;
     pm:withinTradition pmt:HawaiianRitual ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, p. 35" .
 
 pmc:HawaiianWelfarePresupposesExactChanting a pm:Presupposing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "The good fortune of the honoured family presupposes a chant without fault"@en, "Das Wohlergehen der besungenen Familie setzt den fehlerlosen Gesang voraus"@de ;
     pm:dependentStep pmc:HawaiianChantWelfare ;
     pm:priorStep pmc:HawaiianChantExactness ;
@@ -62,6 +87,7 @@ pmc:HawaiianWelfarePresupposesExactChanting a pm:Presupposing ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, p. 35" .
 
 pmp:HawaiianRedundantMemorising a pm:Practicing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "Memorising a chant with more than one reciter"@en, "Das Auswendiglernen eines Gesangs durch mehrere Rezitatoren"@de ;
     skos:definition "The guard the transmission puts against its own condition of failure. A master of song usually gathered two or more of his fellows to edit and to memorise the lines, and genealogies in particular had to be memorised by more than one reciter."@en ;
     skos:note "Worth holding separately from the rule it answers, and for a reason that goes beyond this tradition. A transmission that names a failure condition and stops has stated a threat; one that names the failure condition and then builds a redundancy against it has treated its own rule as a real risk and acted on it. The second is evidence about the practice that the first is not, and the graph has very few instances of it."@en ;
@@ -70,6 +96,7 @@ pmp:HawaiianRedundantMemorising a pm:Practicing ;
     dcterms:source "Martha Warren Beckwith, The Kumulipo: A Hawaiian Creation Chant (Chicago: University of Chicago Press, 1951), chapter 7, p. 35" .
 
 pmc:Kumulipo a pm:Conceptualizing ;
+    pm:fromWork pmw:BeckwithKumulipo ;
     rdfs:label "Kumulipo"@en, "Kumulipo"@de ;
     skos:definition "The chant the transmission names as an ancient prayer for the dedication of a high chief: a birth chant that establishes rank by reciting a descent that runs from the beginning of the world to the living. What it is held to accomplish is therefore a standing, not a cure or a protection."@en ;
     skos:note "The prose note prefixed to the chant makes two datable claims beside the genealogical ones: that the chant was recited to Alapai-wahine at Koko on Oahu while Keeaumoku lay dying, and that it is the chant Puou recited to Cook at the heiau of Hikiau at Kealakekua. Those are historical assertions and not claims of efficacy, and they are the only part of the text that an outside record could meet or miss."@en ;
@@ -82,6 +109,7 @@ pmc:Kumulipo a pm:Conceptualizing ;
 #
 
 pmc:HalauConduct a pm:Conceptualizing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "The conduct required of the hula company"@en, "Die von der Hula-Schar geforderte Führung"@de ;
     skos:definition "Five requirements, given together: to maintain the greatest propriety of demeanour, to suppress all rudeness of speech and manner, to abstain from all carnal indulgence, to deny themselves specified articles of food, and above all to avoid contact with a corpse."@en ;
     skos:note "The list mixes conditions of different kinds without marking the difference, and the mixture is itself the finding. Propriety and rudeness are matters of judgement and could be argued about; contact with a corpse is an event that either happened or did not. A rule set in which only some members are decidable is the ordinary case in this collection, and it is what makes a transmission look stricter than it is testable."@en ;
@@ -89,6 +117,7 @@ pmc:HalauConduct a pm:Conceptualizing ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter II, p. 15" .
 
 pmp:Huikala a pm:Practicing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "Huikala"@en, "Huikala"@de ;
     skos:definition "The cleansing by which a member defiled through contact with a corpse is restored to the company: the teacher offers prayer, sprinkles the offender with sea water and turmeric, and orders a bath in the sea, after which the person is clean. A wilful transgression is not covered by it and is restored only after penitence and confession."@en ;
     skos:note "The distinction between accidental defilement and wilful breach is drawn by the transmission itself and drawn at the point where it matters: the rite removes the first and does not touch the second. A restoration procedure that admits it cannot cover every case is rarer in this collection than one that claims to cover all."@en ;
@@ -97,6 +126,7 @@ pmp:Huikala a pm:Practicing ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter II, p. 15" .
 
 pmp:Kuahu a pm:Practicing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "The consecration of the kuahu"@en, "Die Weihe des Kuahu"@de ;
     skos:definition "The setting up and consecration of the hula altar. The plants that may decorate it are a fixed short list held acceptable to the goddess, among them maile, ieie, lehua, ohia, ferns, hau, breadfruit, the native banana, ti and ilima; the recorder marks non-native flowers as repugnant to the tradition. During the consecration the voice of prayer must continue to be heard until the work is entirely accomplished, and the teacher may repeat a prayer or begin another to keep it so."@en ;
     skos:note "The condition here is on continuity and not on wording: what must not happen is a silence, and the teacher is expressly free to change the prayer in order to avoid one. That is the opposite of the exactness rule this same tradition sets for the chanted genealogy, and the two stand side by side in one transmission. The graph should not read either as the tradition's general doctrine about speech."@en ;
@@ -105,6 +135,7 @@ pmp:Kuahu a pm:Practicing ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter II, pp. 19-21" .
 
 pmp:Ailolo a pm:Practicing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "Ailolo"@en, "Ailolo"@de ;
     skos:definition "The graduation rite of the hula school, named after the brain of the victim that is eaten in it. The offering is a black suckling without spot or blemish; the parts consumed are the snout, the ear-tips, the tail, the feet and portions of the vital organs, above all the brain. Two foods are shut out of the feast, the cooked taro leaf and the drupe of the pandanus. In the days before it no pupil may leave the house except under the most stringent necessity, then only with the head muffled so as not to be recognised, and may hold no conversation whatever outside."@en ;
     skos:note "The rite decides admission: the glossary of the same work defines ailolo as a critical ceremonial sacrifice whose conditions must be met before a novice can be admitted as a practitioner. What the passages read do not give is a way of failing it that is stated in advance, which is why no protocol node stands beside this one."@en ;
@@ -113,6 +144,7 @@ pmp:Ailolo a pm:Practicing ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter V, pp. 31-35, and the glossary, s.v. ai-lolo" .
 
 pmc:HawaiianKoCaution a pm:Cautioning ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "Sugar cane is forbidden to the hula company"@en, "Zuckerrohr ist der Hula-Schar verboten"@de ;
     skos:definition "A prohibition the teacher justifies in a sentence that turns on the word itself: if one indulged in sugar cane his work as a practitioner would amount to nothing, aohe e ko ana kana mau hana, his work will not be accomplished. The recorder adds a practical ground beside it, that chewing the stalk roughens the voice."@en ;
     skos:note "Two grounds for one rule, and they are of different kinds: one is a pun and the other is a physical effect on a singer's instrument. The transmission gives both without ranking them. Where a rule carries a homophonic justification, the graph should not read the justification as the reason the rule exists."@en ;
@@ -122,12 +154,14 @@ pmc:HawaiianKoCaution a pm:Cautioning ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter IV, p. 30" .
 
 pmc:HulaKnowledgeRetained a pm:Conceptualizing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "The songs and the training stay with the pupil"@en, "Die Gesänge und die Schulung bleiben beim Schüler"@de ;
     skos:definition "What the school promises the pupil who keeps his vows: that memory will be strong and that the training, the knowledge and the songs will stay."@en ;
     pm:withinTradition pmt:HawaiianRitual ;
     dcterms:source "Nathaniel B. Emerson, Unwritten Literature of Hawaii: The Sacred Songs of the Hula, Bureau of American Ethnology Bulletin 38 (Washington: Government Printing Office, 1909), chapter V, p. 34" .
 
 pmc:HulaRetentionPresupposesKeptVows a pm:Presupposing ;
+    pm:fromWork pmw:UnwrittenLiteratureOfHawaii ;
     rdfs:label "Keeping the songs presupposes keeping the vows"@en, "Das Behalten der Gesänge setzt das Halten der Gelübde voraus"@de ;
     pm:dependentStep pmc:HulaKnowledgeRetained ;
     pm:priorStep pmc:HalauConduct ;
