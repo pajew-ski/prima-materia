@@ -1,0 +1,390 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Syriac asceticism
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-mediterranean.ttl with no node. What
+# was opened is the first of the three works the registration names, the
+# First Part of Isaac of Nineveh in Bedjan's Syriac, and not the whole of it:
+# five of its eighty-two discourses were read complete — XIX on revelations,
+# XXXV the long treatise in questions and answers, XXXVI on the ways Satan
+# makes war, LX against asking for signs, LXX on judging one's degree by the
+# states of the mind — chosen because a search of the whole translation for
+# signs, tokens, tears, miracles and terms put most of the passages that could
+# carry a sign or a failure there. The other seventy-seven discourses are
+# unread and the work node says so.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# practices and what they are said to bring about; the states the text gives
+# as reachable and the signs it gives of them; the prerequisites; the
+# conditions under which the text says the practice does not work; the
+# cautions; the powers it reports and tells the reader not to ask for.
+#
+# Citation. Every node cites the Syriac by discourse and page of Bedjan, the
+# page numbers Wensinck prints in his margin and the Syriac file prints in its
+# running heads; and two translations by two translators: A. J. Wensinck's
+# from Bedjan's Syriac, by page, and the Holy Transfiguration Monastery's from
+# the Greek and the Syriac, by homily and page. The two number the discourses
+# differently, because the second follows the order of the Greek version: XXXV
+# is its Homily 37, XXXVI its Homilies 38 and 39, LX its Homily 60, LXX its
+# Homily 68.
+#
+
+#
+# The works
+#
+
+pmw:IsaacNinevehFirstPart a dcterms:BibliographicResource ;
+    rdfs:label "Isaac of Nineveh, the First Part, the Ascetical Homilies"@en, "Isaak von Ninive, der Erste Teil, die asketischen Reden"@de ;
+    skos:note "Read on 2026-10-20 in the Syriac of Paul Bedjan's edition of the First Part, Mar Isaacus Ninivita, De perfectione religiosa (1909), from archive.org 212102178MarIsaacusNinivitaDePerfectioneReligiosa, a vocalised Syriac text layer of 456613 Syriac letters against none Latin, searched after the vowel points were stripped. The Latin title page is not in the text layer; that this is Bedjan's text rests on its running heads, which carry the discourse number and the page, and on those pages agreeing passage for passage with the Bedjan pages Wensinck prints in his margin. The Syriac was read at the two passages on tears, XXXV pp. 245-247, at the angel of light, XXXVI p. 277, at LX pp. 421-423 and at LXX p. 488, where the translations divide; the other passages entered rest on the two translations and on Bedjan's pagination as Wensinck prints it, and XIX was not compared."@en ;
+    skos:note "Two translations by two translators. A. J. Wensinck, Mystic Treatises by Isaac of Nineveh, translated from Bedjan's Syriac text (Verhandelingen der Koninklijke Akademie van Wetenschappen te Amsterdam, Afdeeling Letterkunde, Nieuwe Reeks XXIII.1, Amsterdam), archive.org isaac_of_nineveh_mystical_treatises; the title page in the text layer reads 1933 by OCR and the running footer of the volume reads 1922, so the year is not settled from the text and is given in the citations without one. The Holy Transfiguration Monastery, The Ascetical Homilies of Saint Isaac the Syrian, revised second edition, translated from the Greek and Syriac (Boston: Holy Transfiguration Monastery, 2020), archive.org the-ascetical-homilies-of-saint-isaac-the-syrian-holy-transfiguration-monastery, the title page in the full text. Sebastian Brock's The Wisdom of St Isaac of Nineveh (Piscataway: Gorgias 2006) was also opened; it is a short anthology and contains none of the passages entered here."@en ;
+    skos:note "Read complete: discourses XIX, XXXV, XXXVI, LXX in Wensinck, and LX in Wensinck to p. 284 and in the Holy Transfiguration translation to p. 434. Unread: the other seventy-seven discourses of the First Part, among them LI on prayer and LXIV on the many varying states, which by their headings bear on what the registration names. The Second Part, which Bedjan does not print, was not looked for."@en .
+
+pmw:JohnOfDalyathaLetters a dcterms:BibliographicResource ;
+    rdfs:label "John of Dalyatha, Letters"@en, "Johannes von Dalyatha, Briefe"@de ;
+    skos:note "Named by the registration and not opened in this run, and no access was looked for."@en .
+
+pmw:EvagriusKephalaiaGnosticaSyriac a dcterms:BibliographicResource ;
+    rdfs:label "Evagrius, Kephalaia Gnostica in the Syriac recension"@en, "Evagrius, Kephalaia Gnostica in der syrischen Rezension"@de ;
+    skos:note "Named by the registration and not opened in this run, and no access was looked for."@en .
+
+#
+# The tradition
+#
+
+pmt:SyriacAsceticism a pm:Tradition ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Syriac ascetic transmission"@en, "Syrische Askese"@de ;
+    skos:definition "The East Syriac transmission of solitary prayer, of the stages of stillness and of the wonder held to interrupt prayer rather than complete it."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented, and the route is in the text. Isaac cites Basil, Diodore and Theodore of Mopsuestia by name, Socrates and Rufinus for a story, and the sayings of the Egyptian fathers by their cases, and his own text travelled the other way: the second translation is made from the Greek version, and its front matter quotes twentieth-century Athonite hesychasts on that Greek Isaac. Any agreement between this file and traditions/desert-monasticism.ttl, traditions/christian-discernment.ttl or traditions/greek-pneuma-hesychasm.ttl is reception along that route and counts once."@en ;
+    skos:note "Recension and edition, the second decision. Bedjan's Syriac of the First Part is the text, because it is the only form of the work in its own language that is reachable and because both translations stand on it; the Greek order of the homilies is kept only as the numbering of the second translation."@en ;
+    skos:note "The third decision, the number of citable places: five discourses read complete, and every node below cites one of them."@en ;
+    skos:note "What the reading found that the registration's one-line definition does not say. The text is dense with signs and almost all of them are signs the practitioner reads on himself: tears that come without compulsion, seeing every man as good, a heart that grows hot at the thought of God. Two are of another kind. The second order of tears is said to make the body fat and to change the face, which a second person could see; and the text states plainly the conditions under which the labours do not work — bodily labour without solitude, consolation taken from men, a cold beginning, the love of ease. What the five discourses do not contain is a term in days after which an absence would count against the practice; the one place that comes nearest, the vigil that does not tarry in giving its goods, is read as a term by one translator and not by the other."@en ;
+    pm:principalCorpus "Isaac of Nineveh, Ascetical Homilies; John of Dalyatha, Letters; Evagrius, Kephalaia Gnostica in the Syriac recension" ;
+    pm:corpusWork pmw:IsaacNinevehFirstPart, pmw:JohnOfDalyathaLetters, pmw:EvagriusKephalaiaGnosticaSyriac ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, in Mar Isaacus Ninivita, De perfectione religiosa, ed. Paul Bedjan (1909), pp. 226-269" .
+
+#
+# The practices and what they are said to bring about
+#
+
+pmp:SyriacSawma a pm:Practicing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Fasting as the beginning of the strife"@en, "Fasten als Beginn des Kampfes"@de ;
+    skos:definition "The practice the treatise in questions and answers puts first: every strife against sin and its desires is preceded by fasting, after it comes standing through the night, and the beginning of the whole way is fasting with strict keeping of the hours of service and the crucifixion of the body through the night against sleep."@en ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 239-240" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 160-161" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 298" .
+
+pmc:SyriacReghtaDatslutha a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "The desire for converse with God and wakefulness through the night"@en, "Das Verlangen nach dem Umgang mit Gott und Wachheit durch die Nacht"@de ;
+    skos:definition "The state the treatise says follows on fasting: the mind desires intercourse with God, the fasting body cannot lie the whole night on its bed, the empty body does not tire in the struggle against sleep, and though the senses are weak the mind is awake in supplication."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), p. 240" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), p. 161" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 298" .
+
+pmc:SyriacSawmaYieldsReghta a pm:Yielding ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Fasting brings the desire of prayer and wakefulness"@en, "Fasten bringt das Verlangen nach Gebet und Wachheit"@de ;
+    skos:definition "As the delight of light belongs to sound eyes, so the desire of prayer follows fasting kept with discernment; as soon as a man begins to fast his mind desires intercourse with God, for fasting naturally excites vigilance, by night as by day."@en ;
+    pm:byPractice pmp:SyriacSawma ;
+    pm:yieldsCapacity pmc:SyriacReghtaDatslutha ;
+    skos:note "The claim is stated as immediate and as natural, in both translations, and not as a grace, which makes it one of the few claims of the treatise a reader could hold against his own night. The same page adds the qualification on which it hangs: with discernment. Fasting without it is not covered by the claim."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 239-240" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), p. 161" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 298" .
+
+pmp:SyriacShahraWaQeryana a pm:Practicing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Continual vigil with reading and frequent prostrations between"@en, "Beständige Nachtwache mit Lesung und häufigen Niederwerfungen dazwischen"@de ;
+    skos:definition "The practice the discourse on judging one's degree prescribes for one in whom the states it lists have not appeared: continual vigil with recitation, and frequent kneelings performed in between, kept in solitude with the mind not bound by any thing or any man."@en ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, LXX, ed. Bedjan (1909), p. 488" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), p. 327" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 68, pp. 479-480" .
+
+pmc:SyriacHadutaKasyta a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "The hidden joy, the rapture and the delight in the whole body"@en, "Die verborgene Freude, die Entrückung und die Wonne im ganzen Leib"@de ;
+    skos:definition "The states the discourse asks the reader to look for in himself: whether the mind is snatched away without his will by immaterial emotions towards what it may not tell the senses; whether a joy blazes up that silences the tongue; whether an enjoyment flows from the heart that envelops the whole being in rapture without his perceiving it; whether the whole body is sometimes possessed by a delight no tongue can say, so that all earthly things seem ashes. The first comes at prayer, at recitation or in long meditation; the second usually without these, at chance work and above all at night between sleeping and waking."@en ;
+    skos:note "The text says these states leave through the neglect of those who had them and do not return for a long time. It is a statement about loss and not a test of presence: nothing in it says how one who never had them would tell."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, LXX, ed. Bedjan (1909), pp. 486-487" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 326-327" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 68, pp. 478-479" .
+
+pmc:SyriacShahraYieldsHaduta a pm:Yielding ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Vigil with reading and prostrations does not tarry in giving these goods"@en, "Nachtwache mit Lesung und Niederwerfungen säumt nicht, diese Güter zu geben"@de ;
+    skos:definition "Continual vigil with recitation and frequent kneelings between will give these goods to the diligent; those who found them found them by these works, and those who will find them will find them by the same."@en ;
+    pm:byPractice pmp:SyriacShahraWaQeryana ;
+    pm:yieldsCapacity pmc:SyriacHadutaKasyta ;
+    skos:note "The one place in the five discourses that comes near a term, and the two translations divide on it. The Syriac says that the vigil does not tarry in time, lā mettawhīn zabnā, before it gives these goods. The Holy Transfiguration Monastery renders it will not be long in conferring them, which promises a short interval; Wensinck renders it will not fail one day to give, which promises the result and names no interval. Neither reading gives a number, so neither yields a term after which absence would count against the practice; the first makes a delay of years harder to reconcile with the claim than the second."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, LXX, ed. Bedjan (1909), p. 488" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), p. 327" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 68, p. 479" .
+
+#
+# The states the text gives as reachable, and its signs of them
+#
+
+pmc:SyriacMawhabtaDadmaa a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "The gift of tears as the sign that the hidden fruits have begun"@en, "Die Gabe der Tränen als Zeichen, dass die verborgenen Früchte begonnen haben"@de ;
+    skos:definition "Asked for the true marks and undoubted signs that the hidden fruits of a man's labour are beginning to show in the soul, the teacher answers: when he is found worthy of the gift of tears, flowing abundantly and without compulsion, mšarḥāʾīt w-d-lā ʿṣēn. Tears are the boundary between the bodily and the spiritual state; until a man has them his labour is still in the outward man; when he crosses into what lies beyond visible nature the tears come at once, and at the height they are so constant that he drinks them with his food. The more the mind returns to this world the fewer the tears, and the mind wholly in the world is wholly without them, and that is the sign that it is enveloped by the passions."@en ;
+    skos:note "A sign of success with its negative stated beside it, which the corpus rarely does: the absence of tears is offered as a sign, not merely as a lack. Both are read on oneself, and the text tells the practitioner in advance what he is to find; it is the kind of sign SPEC §15 says to count apart from the conditions of failure."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 245-246" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 164-165" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 302" .
+
+pmc:SyriacTartenTaksaDadmaa a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Two orders of tears, and the second changes the face"@en, "Zwei Ordnungen der Tränen, und die zweite verändert das Gesicht"@de ;
+    skos:definition "The text distinguishes tears that burn from tears that fatten. Tears of grief and distress over sins dry the body and make it burn, and often one feels the marrow injured by them; a man must enter this order first. Through it the gate opens to the second order, which carries the sign of the receiving of mercy: tears from insight, which flow of themselves without compulsion, make the body fat, anoint it, and change the aspect of the face, ḥezwā d-parṣūpā meštaḥlap; the body takes from them a kind of nourishment and joy spreads over the face."@en ;
+    skos:note "The only sign in the five discourses that a second person could see: a face changed and a body grown fuller during a period of weeping, against a body dried and lean under the first order. The text offers it as a distinction known to one who has had both, and not as a test another applies; it states no time and no measure."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 246-247" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), p. 165" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, pp. 302-303" .
+
+pmc:SyriacDakyutaDalba a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Purity of heart, and its token: every man seen as good"@en, "Reinheit des Herzens und ihr Kennzeichen: jeder Mensch als gut gesehen"@de ;
+    skos:definition "Asked what the token of purity of heart is and when a man shall know that his heart has come to purity, the teacher answers: when he sees all men in a good light and none appears to him unclean or defiled. Purity itself is the forgetting of the kinds of knowledge nature found in the world, and its limit is the return to the original simplicity of nature in the way of a child. The text says this is reachable and gives two cases: a father who repeatedly asked his disciple whether he had eaten, and an old ascetic who did not know whether he had kept the fast before the Eucharist and was brought to it by his disciples like a little boy."@en ;
+    skos:note "A sign read on oneself, and of a peculiar logical kind: it is the absence of a judgment about others. The two cases, by contrast, are reported from outside — the disciples saw the forgetting — but they report the forgetting, not the purity, and the text supplies the connection."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 251-252" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 168-169" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 305" .
+
+pmc:SyriacTsluthaAmmineta a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Constant prayer, continuing in eating, working and sleep"@en, "Beständiges Gebet, das im Essen, Arbeiten und Schlafen fortgeht"@de ;
+    skos:definition "The acme of all the labours of asceticism, by which a man knows he has reached the summit of his course: he is found worthy of constant prayer. When the Spirit dwells in a man he does not cease to pray, because the Spirit prays in him; neither asleep nor awake is prayer cut off from his soul, but when he eats, drinks, lies down, works, or is immersed in sleep, the perfumes of prayer breathe in his soul of themselves, and he no longer has prayer at fixed times but always."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 260-261" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), p. 174" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 311" .
+
+pmc:SyriacTsluthaRuhanayta a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Spiritual prayer, granted to one in ten thousand, and ecstasy at the posture of prayer"@en, "Geistiges Gebet, einem unter zehntausend gewährt, und Entrückung in der Haltung des Gebets"@de ;
+    skos:definition "Spiritual prayer is the motions of the soul partaking of the Holy Spirit through exact purity; one man in ten thousand is found worthy of it. It does not pray: the soul perceives the things of the world beyond, and it is inner sight and no longer supplication; it starts from prayer, and those who have it need neither long prayer nor the order of frequent service, but keep the fixed hours standing. The cases given: Antony at the prayer of the ninth hour perceived his mind taken up, and another saint stood four days in ecstasy with outspread hands; and many others were found in the posture of prayer when the gift came."@en ;
+    skos:note "The text puts a frequency on the state, one in ten thousand, which is a claim about a population and the only number of its kind in the five discourses. The four days of ecstasy standing is reported of an unnamed saint and is a case, not a rule."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 261-262" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 174-175" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 312" .
+
+pmc:SyriacHubbaGmira a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "The complete love of God, and how one who has it is certain of it"@en, "Die vollkommene Liebe zu Gott, und woran der, der sie hat, ihrer gewiss ist"@de ;
+    skos:definition "The perfection of all spiritual fruits is to be found worthy of the complete love of God, and the text gives the certainty: every time the thought of God stirs in his spirit the heart grows hot with love at once and the eyes shed many tears; he is never found without tears, because never without the recollection of God, so that even in sleep he speaks with Him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 262-263" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 175-176" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 313" .
+
+pmc:SyriacHzwanaWaGelyana a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Visions and revelations granted to solitaries in the desert"@en, "Gesichte und Offenbarungen, die Einsiedlern in der Wüste gewährt werden"@de ;
+    skos:definition "The capacity the treatise describes as granted and not attained: voices of help, symbolic figures, apparitions face to face with speech and questions, holy hosts appearing to the worthy; usually to the very simple, to the holy and perfect, and to those who have fled the world naked into the desert, without help from anything visible and in peril of death from hunger or illness. Vision comes in likenesses, asleep or awake, so that the one who sees often does not know which; revelation of what is grasped by the intellect comes through purity and belongs only to the perfect."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 248-251" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 166-168" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, pp. 304-305" .
+
+#
+# The prerequisites
+#
+
+pmc:SyriacShelyaBeforeShayna a pm:Presupposing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Peace from the passions presupposes solitude, and labour alone does not reach it"@en, "Frieden von den Leidenschaften setzt Einsamkeit voraus, und Mühe allein erreicht ihn nicht"@de ;
+    skos:definition "Labours give apathy, mortify the limbs and give rest from thoughts only when they are joined to solitude, when the outward senses rest from turbulence and have been given for some time to the service of wisdom; until a man refrains from meeting his fellows and gathers himself in, he will not know his passions; solitude, the text says after Basil, is the beginning of the purification of the soul."@en ;
+    pm:dependentStep pmc:SyriacDakyutaDalba ;
+    pm:priorStep pmp:SyriacSawma ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Many perform the labours and do not perceive rest from the passions nor peace from thoughts; the labours guard against being overcome by desire and against harm from demons, but they do not give the soul peace. A heart defiled every day by contact with things cannot be purified, as a tree watered every day does not dry at the root."@en ;
+    skos:note "The prior step named here is the fasting and vigil of the same treatise as kept in solitude; the text makes solitude, and not the labour, the condition, and gives the failure of the labour without it as its reason."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 243-245" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 163-164" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 301" .
+
+pmc:SyriacDmaaQadmayeBeforeTenyane a pm:Presupposing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "The burning tears come before the tears of mercy"@en, "Die brennenden Tränen kommen vor den Tränen der Barmherzigkeit"@de ;
+    skos:definition "A man will necessarily enter the order of burning tears first, and through them the gate to the second order is opened."@en ;
+    pm:dependentStep pmc:SyriacTartenTaksaDadmaa ;
+    pm:priorStep pmc:SyriacMawhabtaDadmaa ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    skos:note "Set as prescribed order and not as stated necessity, although the text says necessarily: it says nothing about what follows if the first order is passed over, and SPEC requires that a necessity carry its consequence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), p. 246" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), p. 165" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, pp. 302-303" .
+
+pmc:SyriacMawhabtaBeforeTslutha a pm:Presupposing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Constant prayer presupposes the gift of the Comforter"@en, "Beständiges Gebet setzt die Gabe des Trösters voraus"@de ;
+    skos:definition "If a man has not received in truth the gift of the Comforter, it is not possible for him to accomplish constant prayer in quiet; and for spiritual prayer, a man is found worthy of it when he has put off outward and inward sin by keeping the commandments, which come before this state."@en ;
+    pm:dependentStep pmc:SyriacTsluthaAmmineta ;
+    pm:priorStep pmc:SyriacDakyutaDalba ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    skos:note "The prior step entered is purity, which the treatise names as the condition of spiritual prayer; the gift of the Comforter itself is not a step a practitioner takes and has no node. Prescribed order, because the text states the dependence and no consequence of passing over it beyond the dependence itself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 260-262" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 174-175" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, pp. 311-312" .
+
+#
+# The conditions under which the text says it does not work
+#
+
+pmc:SyriacBuyaaMenBnaynasha a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Consolation from men withholds the consolation of visions"@en, "Trost von Menschen hält den Trost der Gesichte fern"@de ;
+    skos:definition "Asked why visions are granted to some and withheld from others who have laboured more, the teacher gives two causes: first purity or impurity of heart; second, that as long as a man receives consolation from his fellow men or from any visible thing such consolations do not happen to him. The case: a recluse who often tasted the consolations of grace sought them as usual when he came near the inhabited world and did not find them; he asked whether grace had left him because of his episcopal rank and was told no, but there was the desert and God provided for you, here is the inhabited world and men provide for you. It is impossible, the text concludes, to share in visible and in spiritual consolation at once."@en ;
+    skos:note "A condition of absence with a stated cause, and a sharp one: the same man, the same practice, the place changed, and the consolation gone. It explains an absence without blaming the practice, which is the form the corpus usually takes, but it does so by naming an outward condition that a second person could check — whether the man lives among others and is provided for by them — rather than an inward one he alone could know. The Holy Transfiguration Monastery reads the answer to the bishop from the Greek and notes that the Syriac differs; Wensinck has the Syriac."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 249-250" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 166-167" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 304" .
+
+pmc:SyriacRpyutaBShuraya a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "A cold beginning and contempt of fasting lose the fight from the start"@en, "Ein kalter Anfang und Verachtung des Fastens verlieren den Kampf von Beginn an"@de ;
+    skos:definition "Two statements of failure fixed at the beginning. He who despises fasting is weak in the other works, and he who from the beginning shows a sign of relaxation gives his adversary the victory and will leave the battle without it, entering in cold instead of in heat. And of the weak-willed who engage the battle of the Lord with a cold heart and hesitating: God lets Satan oppress them without helping them, and when he presses them a little they take to flight."@en ;
+    skos:note "Failure ascribed to the operator, and placed at a point in time that can be named, the beginning; the text does not say how a cold beginning would be told from a hot one except by its result, so the condition is stated and the test of it is circular."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 241-242; XXXVI, p. 271" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 162 and 181" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, p. 300, and Homily 38, pp. 319-320" .
+
+pmc:SyriacShbiqutaMenAlaha a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "The withdrawal of help, and how the defeated perceive it in themselves"@en, "Der Entzug der Hilfe, und woran die Besiegten ihn an sich bemerken"@de ;
+    skos:definition "The text names the causes on which God's help withdraws and Satan may approach: relaxation of the will and distraction; doubt; the love of comfort, which it calls a cause of withdrawal; and presumption, when a man ascribes his strength to his own mind. Withdrawal for a time without any of these is training, as a teacher lets a boy sink a little before lifting him. And it gives the sign by which the defeated know it: at the time of battle they find in themselves that they lack their usual strength; their defeat gives them comfort, the hardships they used to master seem hard to bear, and the emotions of zeal that used to stir their nature with a fiery heat are not found in them."@en ;
+    skos:note "The nearest the five discourses come to a sign of failure the practitioner is told to look for, and it is a real one: the absence of the heat that was there before, with the comfort of giving way in its place. It is read on oneself, against one's own earlier state, and the practice given with it is the daily comparison of one's fervour with the zeal of the beginning."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXVI, ed. Bedjan (1909), pp. 272-276 and 281" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 182-184 and 187" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 39, pp. 322-324 and 327" .
+
+pmc:SyriacAmlaSriqa a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "If these states have not begun, all the labour and solitude are vain"@en, "Wenn diese Zustände nicht begonnen haben, sind alle Mühe und Einsamkeit vergeblich"@de ;
+    skos:definition "After listing the states the reader is to look for in himself, the discourse says: if these things, to a greater or lesser extent, have not begun to show themselves in your soul, your labours and troubles and all your solitude are vain efforts; and even if miracles were wrought by your hands and you raised the dead, it would be nothing against their absence."@en ;
+    skos:note "A condition of failure stated in the work's own voice and against its own practice: the labour is judged by whether these states appear, and an absence counts against it. What it lacks is the term — to a greater or lesser extent, and no time — so it does not yet fix when the absence becomes a verdict. The same sentence ranks the raising of the dead below the inner states, which is entered as a power at pmc:SyriacTedmrata."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, LXX, ed. Bedjan (1909), p. 488" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), p. 327" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 68, p. 479" .
+
+#
+# The cautions
+#
+
+pmc:SyriacMalakNuhra a pm:Cautioning ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "The adversary gives information in sleep and takes the likeness of an angel of light"@en, "Der Widersacher gibt im Schlaf Auskunft und nimmt die Gestalt eines Engels des Lichts an"@de ;
+    skos:definition "When Satan cannot overcome a man helped by God, he advances his betrayal under the appearance of divine revelations: during sleep he imparts information, and in waking he assumes the likeness of an angel of light, b-malʾak nuhrā; should a man surrender to it even a little he falls. Failing that he shows images of beautiful women, clothed or naked, to those too far from any woman to meet one, and images of gold and hidden treasure, and sometimes shows these things in reality."@en ;
+    pm:cautionsAbout pmc:SyriacHzwanaWaGelyana ;
+    skos:note "The caution stands two discourses after the passage that grants visions to the solitary, and it gives no criterion by which the counterfeit is to be told from the true; the remedy is to keep the thoughts under control and to fix the heart on heaven. The text claims of the adversary a power, to show treasure in reality, and makes it part of the warning."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXVI, ed. Bedjan (1909), pp. 277-279" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 184-186" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 39, pp. 324-326" .
+
+pmc:SyriacGelyanaLawYidaata a pm:Cautioning ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "A revelation is not knowledge of God, and many who had one knew God as children"@en, "Eine Offenbarung ist keine Erkenntnis Gottes, und viele, die eine hatten, kannten Gott wie Kinder"@de ;
+    skos:definition "Revelation and divine action differ from truth and knowledge: a revelation shows indications and signs according to human strength and is not the exact truth, and nothing about God's nature or will can be learnt from it. It is therefore not necessary that one to whom a revelation is given knows the truth about God; many to whom such things were imparted knew God as children only."@en ;
+    pm:cautionsAbout pmc:SyriacHzwanaWaGelyana ;
+    skos:note "Read in Wensinck's translation of discourse XIX only; the discourse was not found in the Holy Transfiguration translation by its heading and the Syriac was not compared. One translation and no comparison: a weaker node than the others in this file, and entered because the passage was read."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), XIX, pp. 105-109, at p. 109, translating Bedjan pp. 155-161" .
+
+pmc:SyriacAtwataDlaAnanqe a pm:Cautioning ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Asking without necessity for signs to be wrought through oneself is the work of a mocking demon"@en, "Ohne Not darum zu bitten, dass Zeichen durch einen selbst geschehen, ist das Werk eines spottenden Dämons"@de ;
+    skos:definition "Discourse LX: God does not show his power by a perceptible sign without necessity, lest what is meant to help become powerless or harmful. He who without necessity begs God that wonders and powers happen through himself is tempted by the scornful demon in his heart, a boaster and sick in heart; to tempt God without necessity is apostasy from watchfulness; and if he is heard he is led into something worse. The truly righteous do not ask for signs and turn away from those given them, before men and in private."@en ;
+    pm:cautionsAbout pmc:SyriacTedmrata ;
+    skos:note "The caution says that the request can be granted and that being granted is the greater harm; it does not say the powers are unreal. The consequence it names — being led into something more serious — is not specified further in the discourse."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, LX, ed. Bedjan (1909), pp. 420-422" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 281-282" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 60, pp. 431-432" .
+
+#
+# The powers the text reports, and tells the reader not to ask for
+#
+
+pmc:SyriacTedmrata a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Foreknowledge of visitors, guidance through the air and transport in a moment"@en, "Vorwissen um Besucher, Führung durch die Luft und Versetzung in einem Augenblick"@de ;
+    skos:definition "The powers discourse LX reports of the fathers while telling the reader not to seek them: a saint who, because of his serenity, was given to know beforehand when anyone would visit him, and who prayed and had others pray that the gift be taken away; Ammon, lost in the desert on his way to Antony, who asked only that God not let his creature perish and on waking saw the hand of a man hanging in the sky above him that led him until it stood still over Antony's cave; and Macarius, too tired to walk on with his baskets to Scete, who asked for nothing and was taken up at once and set down where he wished to go, he and his baskets. Discourse LXX adds as a supposition the working of miracles and the raising of the dead, and ranks them below the inner states."@en ;
+    skos:note "Reported of named and unnamed fathers from the sayings of the desert, which the Holy Transfiguration translation traces to Budge's Paradise of the Holy Fathers; they are past cases told by Isaac, not powers he says the reader will acquire, and every one is framed as given without being asked for. The renunciation of the foreknowledge is the only instance in the five discourses of a power laid down by prayer."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, LX, ed. Bedjan (1909), pp. 421-422; LXX, p. 488" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 282-283 and 327" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 60, pp. 432-433, and Homily 68, p. 479" .
+
+pmc:SyriacHaylaDlaRgesha a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "A force apart from nature that takes the pain out of torture"@en, "Eine Kraft außerhalb der Natur, die der Folter den Schmerz nimmt"@de ;
+    skos:definition "The treatise argues that God's care, and not the practitioner's strength, is what lets him prevail, and gives as proof that one who could not bear a thorn under his nail bears the iron combs in all his members without suffering in the natural way, which is not possible unless some force apart from nature is sent to him and mitigates the tortures. The case, from Socrates' church history after Rufinus: Theodore of Antioch, combed over his whole body under Julian and released for dead, told Rufinus long after that he had felt the pain only very slightly, because a young man stood by him wiping off the sweat and strengthening him, so that the time of torture was a delight."@en ;
+    skos:note "A capacity ascribed to the helped and not acquired by practice, and reported at third hand: Isaac from Socrates, Socrates from Rufinus, Rufinus from Theodore. The treatise draws a caution from it at once — those who forget that the strength was given fall, and lose it in the twinkling of an eye — which is the form of pmc:SyriacShbiqutaMenAlaha."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Isaac of Nineveh, First Part, XXXV, ed. Bedjan (1909), pp. 264-266" ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), pp. 176-177" ;
+    dcterms:source "The Ascetical Homilies of Saint Isaac the Syrian, trans. Holy Transfiguration Monastery, rev. 2nd ed. (Boston 2020), Homily 37, pp. 314-315" .
+
+pmc:SyriacGelyanaDaRhiqata a pm:Conceptualizing ;
+    pm:fromWork pmw:IsaacNinevehFirstPart ;
+    rdfs:label "Revelation of things hidden or far away at the time they happen"@en, "Offenbarung verborgener oder ferner Dinge zur Zeit ihres Geschehens"@de ;
+    skos:definition "Among the six kinds of revelation scripture is said to name, the first, through the senses and by means of the elements, includes the wondrous things that happen every day in the whole world, whose causes and details the saints gain in revelations, and works, deeds and things hidden or far away that are revealed to some at the time they actually occur."@en ;
+    skos:note "Given as a kind within a classification, without a case and without a practice that leads to it; read in Wensinck's translation of XIX only, with the same limits as pmc:SyriacGelyanaLawYidaata. It bears on the claim tested in examinations/distant-perception-against-a-control.ttl and is not linked to that test here: it names no voluntary state and no procedure."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:SyriacAsceticism ;
+    dcterms:source "Mystic Treatises by Isaac of Nineveh, trans. A. J. Wensinck (Amsterdam), XIX, p. 106, translating Bedjan p. 156" .
