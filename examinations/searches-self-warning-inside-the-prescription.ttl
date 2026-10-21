@@ -1,0 +1,42 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the protocol on the warning inside the
+# prescription
+#
+# Two works were opened for the two cases the holding could not settle at the
+# node: whether the tantric caution the statement rests on is a late addition,
+# and whether the restriction on gold-making the compilation of 1926 prints
+# stands in the classical work of the same transmission. The protocol itself is
+# at examinations/self-warning-inside-the-prescription-tested.ttl.
+#
+
+pmp:SelfWarningKularnavaSearch a pm:Searching ;
+    rdfs:label "Whether another tantra of the Kaula line warns against taking the substances of the rite for pleasure, and where"@en, "Ob ein anderes Tantra der Kaula-Linie davor warnt, die Substanzen des Ritus um des Genusses willen zu nehmen, und wo"@de ;
+    pm:searchedCorpus "Kulārṇava Tantra, in the Sanskrit and English of Ram Kumar Rai (Varanasi: Prachya Prakashan, 1983) and in the Sanskrit of the edition of Tārānātha Vidyāratna with Arthur Avalon's introduction (Delhi: Motilal Banarsidass, reprint), ullāsa 2, verses 106-138 read continuously in Rai's printing and verses 107-121 in Vidyāratna's" ;
+    pm:searchedFor "Whether a work of the same tradition other than the Mahānirvāṇa carries the caution recorded at pmc:Panchatattva — that the substances of the heroic rite are taken up for their pleasure — and whether it stands in the passage that commends them or in a separate admonition." ;
+    pm:searchTerms "मद्यपान (madyapāna), पामराः (pāmarāḥ), वृथा पान (vṛthā pāna), सुरापान (surāpāna), in the Devanagari of both printings; drinking, drunkard, enjoyment, sensual, in Rai's English. Counts in Rai's printing: madyapāna 3, pāmarāḥ 2, vṛthā pāna 2, surāpāna 2, drunkard 1; in Vidyāratna's: madyapāna 6, pāmarāḥ 3, vṛthā pāna 2, surāpāna 3. The hits in ullāsa 2 were read at their place; the others were counted and not followed." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:KularnavaMadyapanaMatrena ;
+    pm:searchedBy "prima-materia, 2026-10-21" ;
+    dcterms:date "2026-10-21" ;
+    skos:note "The caution stands at 2.117-123 and is closed at 2.134-135, around the verse that sets wine and flesh as of the greatest fruit for the Kaula (2.124) and the verses that name the great wine as fit; prescription and warning are in one stretch of some twenty verses and in one speaker. The Vidyāratna printing's text layer carries Devanagari only, its Latin pages are read into Devanagari glyph by glyph; its edition was taken from the Devanagari title page."@en ;
+    skos:note "The limit of the search. Only the second ullāsa was read, and of it only this stretch; the remaining ullāsas were not opened, and a caution of the same shape there would add a place and not a transmission."@en .
+
+pmp:SelfWarningRasarnavaSearch a pm:Searching ;
+    rdfs:label "Whether the classical work of the mercurial transmission warns against making gold for gain"@en, "Ob das klassische Werk der Quecksilberüberlieferung davor warnt, Gold um des Gewinns willen zu machen"@de ;
+    pm:searchedCorpus "Rasārṇava, in the Sanskrit of the Bibliotheca Indica edition of Ray and Kaviratna (Calcutta 1910), the whole text layer of the archive.org scan, every hit of the counted terms read at its place" ;
+    pm:searchedFor "Whether the work that prescribes the piercing of metals carries a restriction of the kind the compilation of 1926 prints at pmc:RasaSvarnakaranaNisedha — that gold is to be made only for bare subsistence — or any other warning against valuing the metallic art for gain." ;
+    pm:searchTerms "लोभ (lobha) 17, दारिद्र (dāridrya) 4, धातुवाद (dhātuvāda) 1, वित्त (vitta) 3, धनार्थ (dhanārtha) 0, धनलोभ (dhanalobha) 0, प्रत्यय (pratyaya) 2, यथा लोहे (yathā lohe) 3, in the Devanagari of the whole text layer. धन (dhana) alone was tried and dropped: the hits inspected were the syllables inside śodhana, and the remaining hits were not followed." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:RasarnavaJaraDaridryaNasana ;
+    pm:searchedBy "prima-materia, 2026-10-21" ;
+    dcterms:date "2026-10-21" ;
+    skos:note "What the hits are. Of the seventeen for greed, two require the teacher of the science to be free of greed and deceit (2.2 and 2.7), one counts greed among the things that carry off knowledge once it has arisen (2.122), and the rest fall in the editors' apparatus or inside other compounds. The four for poverty are the end of poverty as a fruit of mercury, at 12.278 and twice at 15.16-17, and at 18.54 a bodily mark of the assisting woman that always brings poverty, for which she is to be avoided. The one for the metallic art assigns men of a stated build to it (2.11). The three for wealth are the festival of mercury held according to one's means (2.127), the great expense of the editors' manuscripts in their closing verses, and the apparatus. Three times the work says the mercury acts on metal as it acts on the body."@en ;
+    skos:note "So the work places greed in the teacher and in the loss of knowledge, and it offers the end of poverty as a fruit; it does not warn the operator against making gold for gain. The answer is opposing in the sense of this holding's scale: the restriction the compilation prints is absent here, and the place found says the contrary."@en ;
+    skos:note "The limit of the search, and it is the one that decides how far the finding carries. It is a term search over a transcription that damages compounds, with paṭalas 3 to 17 otherwise unread; a restriction phrased without any of these words would not have been found. Two places were seen and not entered as nodes: 2.122, because the last quarter of the verse is not securely legible in the text layer, and 2.2 and 2.7, because a requirement on the teacher's character is already carried for this tradition at pmc:RasaAmrtapaniDagdhapani from the compilation."@en .
