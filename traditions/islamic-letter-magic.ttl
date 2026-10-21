@@ -1,0 +1,127 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — Islamic letter and name magic, entered at the Ghāyat al-Ḥakīm
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-west-asia.ttl with no node. What was
+# opened is the second of the two works the registration names, the Ghāyat
+# al-Ḥakīm, and of it the prologue and the whole of the first of its four
+# books, seven chapters. Books II to IV are unread and the work node says so.
+# The first work the registration names, the Šams al-maʿārif, is unopened.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# dispute over the ascription; the practices; the recipes of I.5 in the order
+# of the chapter; the spoken formulas; the prerequisites; the conditions of
+# failure; the cautions; the one yielding of I.6. The twenty-eight lunar
+# mansions of I.4 are recipes of the same work and stand in
+# traditions/islamic-letter-magic-mansions.ttl.
+#
+# Citation. Every node cites the Arabic of Ritter's edition by book, chapter
+# and the heading of the passage, without a page: the scan on archive.org
+# holds two printed pages to a leaf and the page numerals are not recoverable
+# from the text layer. The heading is the locus a reader finds. Every node
+# also cites Hashem Atallah's English by page and the Latin version in
+# David Pingree's edition by book and chapter: two translations by two
+# translators, one modern from the Arabic and one of the thirteenth century.
+#
+
+#
+# The works
+#
+
+pmw:GhayatAlHakim a dcterms:BibliographicResource ;
+    rdfs:label "Ghāyat al-Ḥakīm (Picatrix)"@en, "Ghāyat al-Ḥakīm, Das Ziel des Weisen (Picatrix)"@de ;
+    skos:note "Read on 2026-10-21 in the Arabic of Hellmut Ritter's edition, archive.org picatrix-ghayat-al-hakim-al-majriti, a text layer of 469714 Arabic letters against none Latin outside the critical apparatus, which Ritter prints under the text in Arabic and Latin and which the OCR has run into the text lines. The title page in the text layer names the work as ascribed to Maslama al-Majrīṭī and the printer as J. J. Augustin of Glückstadt and Hamburg; the series and year, Studien der Bibliothek Warburg 12, 1933, are from J. B. Trapp's foreword to Pingree's edition, read in its full text, and not from the title page, whose date line the OCR has destroyed. Page numbers of the edition are not given in any citation: the scan holds two printed pages to a leaf, and the numerals in the text layer are not monotonic and cannot be told from Ritter's line numbers. Pingree prints Ritter's pages in his margin; that concordance was not used for the citations because the OCR of the margins does not keep their position."@en ;
+    skos:note "Two translations by two translators. Hashem Atallah, Picatrix, Ghayat al-Hakim, The Goal of the Wise, translated from the Arabic, vol. I, archive.org picatrix_20190508; the title page in the text layer names the translator and the volume and carries no imprint, so the publisher and year are not given. The Latin version, made by way of a Castilian translation that its own prologue dates to 1256 under Alfonso X, in David Pingree's critical edition, Picatrix, The Latin Version of the Ghayat al-Hakim (Studies of the Warburg Institute 39, London: The Warburg Institute, 1986), archive.org picatrix_101, title page in the text layer. The Latin is a recension and not a rendering line for line: it reorders, drops and adds talismans in I.5 and adds sentences in I.4. It is cited as the second translation where its chapter carries the same passage: for the mansions, the conditions, the formulas and six talismans compared at the wording, for the other talismans of I.5 at the heading only, and not at all for ten talismans of I.5 that have no Latin counterpart under a matching heading, which say so in a note. The German translation of Ritter and Plessner (1962) was looked for under its own title and under both names and is not on archive.org."@en ;
+    skos:note "Read complete: the prologue and the seven chapters of Book I, in Atallah's English throughout and in the Arabic at every passage entered; the Latin at I.4 and at the close of I.6 complete, and of I.5 the headings of all its talismans and the wording of the fish, scorpion, sting, loving-numbers, stone and melancholy talismans, the conditions and the formulas. Unread: Books II, III and IV, about four fifths of the work, which by their headings carry the planetary stones and images, the spirits of the planets with their prayers and fumigations, the Sabian and Nabataean rites, the perfect nature, and the counsels of the closing chapter. The prologue's own plan says the fourth book holds the magical tricks reckoned the best kind of magic."@en ;
+    skos:note "A finding about the second translation that bears on any use of it. In at least three places of Book I Atallah renders a reading of Ritter's apparatus and not of his text, or joins the two: the eleventh mansion, where his list is text and variant together; the scorpion talisman, where the text has the scorpions keep away for forty-five miles and his English has forty-five days over a distance of one mile, which is the apparatus; and the twenty-fourth mansion, where al-ṣināʿa, the Art, becomes a trade. The Latin agrees with Ritter's text in all three. A node that rests on Atallah alone, at any place of this work, is therefore weaker than its citation looks."@en .
+
+pmw:ShamsAlMaarifAlKubra a dcterms:BibliographicResource ;
+    rdfs:label "Šams al-maʿārif al-kubrā, ascribed to al-Būnī"@en, "Šams al-maʿārif al-kubrā, al-Būnī zugeschrieben"@de ;
+    skos:note "Named by the registration and not opened in this run. Several Arabic prints and manuscript scans are listed on archive.org under the title, among them kotobati_202402 and 20240630_20240630_2116; none was downloaded, so the work is not unreachable but unopened, and the next run that takes this tradition should take it. The registration's own note makes the contested ascription to al-Būnī the first node this work should carry."@en .
+
+#
+# The tradition
+#
+
+pmt:IslamicLetterMagic a pm:Tradition ;
+    pm:fromWork pmw:GhayatAlHakim ;
+    rdfs:label "Islamic letter and name magic"@en, "Islamische Buchstaben- und Namensmagie"@de ;
+    skos:definition "The operative transmission of the science of letters and of the divine names, with squares, talismans and hours of working."@en ;
+    skos:note "The ascription of the best known handbook to al-Būnī is contested, and the corpus grew after him under his name. The dispute is the first node this tradition should carry."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented, and the route is in the text and runs both ways. The Ghāya names its own sources: the books of the Indians for the twenty-eight mansions, the Greek sages for their way with the planets, Plato's Timaeus and a Book of Aphorisms, a treatise ascribed to Aristotle, Ptolemy's Fruit, Thābit ibn Qurra's treatise on talismans, and a letter of Muḥammad ibn Mūsā al-Khwārizmī. Outward, the Latin version made for Alfonso X carried it into Europe, and Agrippa's De occulta philosophia names Picatrix among its sources (traditions/renaissance-magic.ttl). An agreement between this file and the Indian, Greek or Latin files of the holding is reception along that route and counts once."@en ;
+    skos:note "Recension and edition, the second decision. Ritter's Arabic is the text, because it is the work in its own language, critically edited, and reachable; the Latin is a later station with its own additions and is entered only as the second translation, never as the text."@en ;
+    skos:note "The third decision, the number of citable places: Book I read complete, sixty-four recipes, five prerequisites, three cautions, two conditions of failure besides those stated inside recipes, and one yielding, every node citing a passage of Book I."@en ;
+    skos:note "What the reading found that the registration does not say, and it bears on the registration itself. The registration defines this tradition by the science of letters and the divine names, with squares; the first book of the Ghāya has none of that. It is astral talismanic magic: images made at elected times, buried, carried or worn, with spoken formulas. Letters occur once, as the twenty-eight letters matched to the twenty-eight mansions in the account of man as the small world, and names once, in a warning ascribed to Aristotle that some divine names bring the spirits down fast enough to kill. Whether the Šams al-maʿārif and the Ghāya belong to one transmission is therefore an open question about the registration and not settled by this run; the Šams is unopened."@en ;
+    skos:note "Two counts, kept apart as SPEC §15 asks, for the book read. Signs of success announced to the practitioner: none; the book promises outcomes, and twice that one will see wonders, but names nothing the practitioner is to watch for. Conditions of failure: four — a talisman made outside its proper ratios receives no spirit and is like a dead body; an ascendant crooked in rising or looked on by a malefic spoils the work or makes it hard; the Art attempted while the Moon is in the twenty-fourth mansion is spoiled and not completed; and nothing of the work is completed without the maker's gathered resolve. Two recipes carry a claim that they were tried, the second fishing talisman on the word of al-Khwārizmī and the talisman for the stone with the words this is tried, and no recipe carries a term in days."@en ;
+    pm:principalCorpus "The Šams al-maʿārif corpus ascribed to al-Būnī; Ghāyat al-Ḥakīm" ;
+    pm:corpusWork pmw:GhayatAlHakim, pmw:ShamsAlMaarifAlKubra ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Ghāyat al-Ḥakīm, prologue and Book I, ed. H. Ritter (1933)" .
+
+#
+# The ascription
+#
+
+pmc:GhayaNisbaIlaMaslama a pm:Conceptualizing ;
+    pm:fromWork pmw:GhayatAlHakim ;
+    rdfs:label "The Arabic transmission ascribes the work to Maslama al-Majrīṭī, and the work dates itself"@en, "Die arabische Überlieferung schreibt das Werk Maslama al-Majrīṭī zu, und das Werk datiert sich selbst"@de ;
+    skos:definition "The title page of Ritter's edition names the work The Goal of the Wise and the More Deserving of the Two Results to Come First and ascribes it, with the word mansūb, to Maslama al-Majrīṭī. The prologue, in the author's voice, says he began the book in the year 343 on finishing an earlier book, The Rank of the Wise, and completed it at the end of the year 348, and that he divided it into four books as he had divided the earlier one."@en ;
+    skos:note "The prologue names the earlier book and two dates and does not name its author. The ascription is the editor's title and the manuscripts', not a sentence of the work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:IslamicLetterMagic ;
+    dcterms:source "Ghāyat al-Ḥakīm title page and prologue, ed. H. Ritter (1933)" ;
+    dcterms:source "Picatrix (Ghayat al-Hakim), The Goal of the Wise, trans. Hashem Atallah, vol. I, pp. 1-2" .
+
+pmc:GhayaNisbaDisputed a pm:Disputing ;
+    pm:fromWork pmw:GhayatAlHakim ;
+    rdfs:label "Whether the Ghāya is the work of Maslama al-Majrīṭī or of a compiler named Picatrix"@en, "Ob die Ghāya das Werk Maslama al-Majrīṭīs ist oder eines Kompilators namens Picatrix"@de ;
+    skos:definition "The two transmissions of the work name two authors. The Arabic, in Ritter's edition, ascribes it to Maslama al-Majrīṭī. The Latin version, in the translators' prologue and again in the incipit of the text, says that the wise philosopher Picatrix compiled the book out of two hundred books and more of philosophy and named it with his own name. The Latin prologue dates the Castilian translation to 1256, 1568 of Alexander, 1295 of Caesar and 655 of the Arabs."@en ;
+    skos:note "What the two sides do and do not dispute. Neither denies that the book is a compilation; the Arabic author says himself that he gathered what the philosophers concealed, and the Latin says it was compiled from two hundred books. The dispute is over the name at its head. In the introduction to the Latin edition Pingree calls the author pseudo-al-Majrīṭī, says in his first note that he is not convinced by Sezgin's argument that the author is a different Majrīṭī, Abū Maslama Muḥammad ibn Ibrāhīm, confused early with the famous Maslama ibn Aḥmad, and in his third that he is not convinced by any identification of Picatrix, the Arabic Buqrāṭīs, with a Greek author. Sezgin's work was not opened and is reported here as Pingree reports it. Pingree's introduction is modern scholarship and is cited in this note and not as a source of the node; the two sources are the two transmissions."@en ;
+    skos:note "What would settle part of it from within the text: the dates of the prologue, 343 to 348 of the hijra, stand in the work and can be held against the life of any candidate. This run did not look up the dates of either Majrīṭī in a work it opened and enters none."@en ;
+    pm:disputedClaim pmc:GhayaNisbaIlaMaslama ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:IslamicLetterMagic ;
+    dcterms:source "Ghāyat al-Ḥakīm, title page and prologue, ed. H. Ritter (1933)", "Picatrix Latinus, prologue and incipit of Book I, ed. D. Pingree (London: Warburg Institute, 1986), pp. 1-2" .
+
+#
+# The practices
+#
+
+pmp:GhayaSinaatAlTilasm a pm:Practicing ;
+    pm:fromWork pmw:GhayatAlHakim ;
+    rdfs:label "Making a talisman at an elected configuration of the heavens"@en, "Ein Talisman zu einer gewählten Konstellation anfertigen"@de ;
+    skos:definition "The practice the first book teaches throughout: an image, a figure or a plate is made, engraved or cast while the Moon, the ascendant, the hour and the aspects stand as the purpose requires; two images are often made and joined in an embrace; the work is accompanied by fumigation and by spoken words fitted to the purpose; and the talisman is buried at a named place, carried, worn as a ring or given to drink. The book defines the talisman by reversing its name, ṭilasm into musallaṭ, the overpowering: a spirit in a body that compels by numerical ratios and astral secrets placed in bodies at fitting times."@en ;
+    pm:withinTradition pmt:IslamicLetterMagic ;
+    dcterms:source "Ghāyat al-Ḥakīm I.2 and I.4-5, ed. H. Ritter (1933)" ;
+    dcterms:source "Picatrix (Ghayat al-Hakim), The Goal of the Wise, trans. Hashem Atallah, vol. I, pp. 11-13, 19-47" ;
+    dcterms:source "Picatrix Latinus I.2 and I.4-5, ed. D. Pingree (London: Warburg Institute, 1986)" .
+
+pmp:GhayaIstinzalAlRuhaniyya a pm:Practicing ;
+    pm:fromWork pmw:GhayatAlHakim ;
+    rdfs:label "Drawing down the spirituality of a planet by divine names"@en, "Die Geistigkeit eines Planeten durch göttliche Namen herabziehen"@de ;
+    skos:definition "The practice named in the saying the chapter ascribes to Aristotle: the best of what a talisman is impressed with is the action of the seven planets, the highest and most lasting being one a benefic faces, which helps bring its spirituality down from the sphere to the earth; and among the divine names there are some by which the spiritualities are made to descend."@en ;
+    pm:withinTradition pmt:IslamicLetterMagic ;
+    dcterms:source "Ghāyat al-Ḥakīm I.5, the sayings of Aristotle, ed. H. Ritter (1933)" ;
+    dcterms:source "Picatrix (Ghayat al-Hakim), The Goal of the Wise, trans. Hashem Atallah, vol. I, pp. 44-45" ;
+    dcterms:source "Picatrix Latinus I.5, Aristoteles, ed. D. Pingree (London: Warburg Institute, 1986)" .
+
+pmp:GhayaFadilaWaNaqa a pm:Practicing ;
+    pm:fromWork pmw:GhayatAlHakim ;
+    rdfs:label "Being virtuous and pure of mind and body from defilement"@en, "Tugendhaft und an Sinn und Leib rein von Befleckung sein"@de ;
+    skos:definition "The condition the sixth chapter sets for one who wants to know in truth the ranks of the human form it has just described: let him be virtuous, clean of mind and body from defilements."@en ;
+    pm:withinTradition pmt:IslamicLetterMagic ;
+    dcterms:source "Ghāyat al-Ḥakīm I.6, the close of the chapter, ed. H. Ritter (1933)" ;
+    dcterms:source "Picatrix (Ghayat al-Hakim), The Goal of the Wise, trans. Hashem Atallah, vol. I, p. 57" ;
+    dcterms:source "Picatrix Latinus I.6, ed. D. Pingree (London: Warburg Institute, 1986)" .
+
+# ANKER-GHAYA-1
