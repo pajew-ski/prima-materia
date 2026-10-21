@@ -431,6 +431,25 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   defekt und kein Beleg; die Judaistik und die Magieforschung gehen als
   `pm:evidenceFrom` ein, nie als Quelle)
 
+- `korpus:typhonisch` (Kenneth Grant: die neun Bände der Typhonian Trilogies
+  1972 bis 2002, Images and Oracles of Austin Osman Spare, Remembering
+  Aleister Crowley, Zos Speaks!, die Carfax Monographs, das Manifest der New
+  Isis Lodge 1955 und The LAM Statement 1987, dazu die Starfire-Jahrgänge —
+  von `korpus:thelema` getrennt geführt, weil dort Crowley steht und dieser
+  Korpus eine eigene Nachfolgelinie mit eigener Kontaktbehauptung ist; Bogdan,
+  Josiffe, Levenda und Evans gehen als `pm:evidenceFrom` ein, nie als Quelle)
+
+- `korpus:exo-psychologie` (Timothy Leary und Robert Anton Wilson: Starseed
+  1973, Neurologic 1973, Exo-Psychology 1977, Cosmic Trigger I 1977,
+  Prometheus Rising 1983 — das Achtschaltkreismodell und seine Fassung des
+  Nervensystems als Empfänger; Erik Davis geht als `pm:evidenceFrom` ein,
+  nie als Quelle)
+
+- `korpus:chaosmagie` (Spare, The Book of Pleasure; Carroll, Liber Null and
+  Psychonaut, Liber Kaos, Psybermagick, The Apophenion; Hine, Dukes, Fries
+  und die Publikationen der Illuminates of Thanateros — die Religions- und
+  Esoterikforschung dazu geht als `pm:evidenceFrom` ein, nie als Quelle)
+
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
 bereits die Nachfragemeldung, und ein zweites Verzeichnis dafür wird

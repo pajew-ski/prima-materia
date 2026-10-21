@@ -1,0 +1,78 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the exo-psychological transmission of Leary and Wilson
+#
+# Order of the file: the tradition and the contact question; the works as
+# identifiers; the two claims that carry the neurological receiver model;
+# and the reworking by which this transmission took over the Typhonian
+# Sirius claim and added that model to it. The file exists because the
+# model is credited elsewhere to Kenneth Grant, and the place where it is
+# actually stated is here.
+#
+
+pmt:ExoPsychology a pm:Tradition ;
+    rdfs:label "Exo-psychology (Leary and Wilson)"@en, "Exo-Psychologie (Leary und Wilson)"@de ;
+    skos:definition "The transmission of Timothy Leary's eight-circuit model of the nervous system and of Robert Anton Wilson's working of it: a reading of the nervous system as an instrument to be dialled and tuned, of DNA as a message from a higher intelligence, and of contact with that intelligence as the next evolutionary stage, carried in pamphlets and books from 1973 onward."@en ;
+    skos:note "Read in this run at the wording. Starseed: A Psi Phy Comet Tale, Transmitted from Folsom Prison (San Francisco: Level Press, 1973), the pamphlet whole, in the full-text layer of a library scan at the open scan archive. Cosmic Trigger I: Final Secret of the Illuminati (first published Berkeley: And/Or Press, 1977), read in the full-text layer of a scan of the re-edition carrying the preface written in Dublin in 1986, whose table of contents gives the pagination cited; the forewords, the prologue and the chapters named at the nodes were read, the rest searched by term. Exo-Psychology (Los Angeles: Starseed/Peace Press, 1977) was reached as a full text and searched by term only; Neurologic (1973) and Prometheus Rising (1983) were located and not opened."@en ;
+    skos:note "The contact route is documented from inside the corpus: Cosmic Trigger quotes The Magical Revival and Aleister Crowley and the Hidden God by title and reports Grant's accounts of Crowley's contacts with higher intelligences as the source of what it calls the extraterrestrial theory. Whatever this transmission shares with the Typhonian one is reception, and what it added is held at the reworking node below."@en ;
+    pm:principalCorpus "Leary, Starseed; Leary, Neurologic; Leary, Exo-Psychology; Wilson, Cosmic Trigger I; Wilson, Prometheus Rising" ;
+    pm:corpusWork pmw:Starseed, pmw:Neurologic, pmw:ExoPsychologyManual, pmw:CosmicTriggerI, pmw:PrometheusRising ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Leary, Starseed: A Psi Phy Comet Tale (San Francisco: Level Press, 1973), pp. 19-20; read in the full-text layer of a library scan" ;
+    pm:fromWork pmw:Starseed .
+
+pmw:Starseed a dcterms:BibliographicResource ;
+    rdfs:label "Starseed: A Psi Phy Comet Tale"@en, "Starseed: A Psi Phy Comet Tale"@de ;
+    skos:note "Twenty-four pages, published for Joanna Leary by Level Press, San Francisco, 1973, written in Folsom Prison on the occasion of the comet Kohoutek. Opened whole in this run."@en .
+
+pmw:Neurologic a dcterms:BibliographicResource ;
+    rdfs:label "Neurologic"@en, "Neurologic"@de ;
+    skos:note "Timothy and Joanna Leary, 1973, the first statement of the circuit model in seven circuits. Reachable as a full text at the open scan archive under two identifiers, one of them lending-restricted; not opened in this run."@en .
+
+pmw:ExoPsychologyManual a dcterms:BibliographicResource ;
+    rdfs:label "Exo-Psychology: A Manual on the Use of the Human Nervous System According to the Instructions of the Manufacturers"@en, "Exo-Psychology"@de ;
+    skos:note "Los Angeles: Starseed/Peace Press, 1977; reissued as Info-Psychology, 1987. The eight-circuit model with the seventh and eighth circuits as contact. Reachable as a full text; searched by term only in this run, not harvested."@en .
+
+pmw:CosmicTriggerI a dcterms:BibliographicResource ;
+    rdfs:label "Cosmic Trigger I: Final Secret of the Illuminati"@en, "Cosmic Trigger I: Final Secret of the Illuminati"@de ;
+    skos:note "Berkeley: And/Or Press, 1977, with forewords by Leary; Pocket Books shortly after; re-edited with a new preface written in Dublin in 1986, the edition whose pagination is cited at the nodes. Opened in this run at the forewords, the prologue and the chapters on Sirius."@en .
+
+pmw:PrometheusRising a dcterms:BibliographicResource ;
+    rdfs:label "Prometheus Rising"@en, "Prometheus Rising"@de ;
+    skos:note "Phoenix: Falcon, 1983. The exposition of the eight circuits with exercises. Reachable as a full text at the open scan archive; not opened in this run."@en .
+
+pmc:ExoPsychologyTestamentumInCellulis a pm:Conceptualizing ;
+    rdfs:label "A higher intelligence has written its testament in our cells, decipherable by the nervous system"@en, "Eine höhere Intelligenz hat ihr Testament in unsere Zellen geschrieben, entzifferbar durch das Nervensystem"@de ;
+    skos:definition "The pamphlet's closing offer: the comet can be a reminder that this planet is a brief stepping stone in the voyage of life across the galaxies; that the higher intelligence has already established itself on earth, has written its testament within our cells, decipherable by our nervous system; and that it is about time to mutate. Earlier the pamphlet names the first signal from extraterrestrial life as a nucleic acid molecule found on a meteorite, reported in a book on outer space in the prison library."@en ;
+    skos:note "The earliest wording found in this run in which the nervous system is the organ that reads a message of non-human origin. It is a neurological claim with a genetic carrier, and the sender is placed inside the cell rather than in the sky; the antenna image belongs to the next work and not to this one."@en ;
+    pm:withinTradition pmt:ExoPsychology ;
+    pm:fromWork pmw:Starseed ;
+    dcterms:source "Leary, Starseed: A Psi Phy Comet Tale (San Francisco: Level Press, 1973), pp. 19-20, with the meteorite passage at the opening pages; read in the full-text layer of a library scan" .
+
+pmc:ExoPsychologyNervorumReceptio a pm:Conceptualizing ;
+    rdfs:label "The nervous system dialled and tuned, picking up signals and contacting higher intelligences"@en, "Das Nervensystem eingestellt und abgestimmt, Signale aufnehmend und höhere Intelligenzen kontaktierend"@de ;
+    skos:definition "Three statements of one model. In the forewords, the book and its author are placed in a chain of alchemists and intelligence agents who learned to dial and tune their own nervous systems and, through internal biochemical experiments, to converse with their own DNA and decipher the genetic code. In the prologue, every model the book will discuss is summed into two meta-models, the first of which is that it is all done by our own nervous systems, whose brains, as they advance toward higher intelligence, can increasingly affect the universe and contact other higher intelligences. In a later chapter, two authors' reading of the same material is explained by the rule that different nervous systems picking up the same signals organise them into different tunnel-realities."@en ;
+    skos:note "This is the neurological receiver model in the wording the outside reception attributes to Kenneth Grant. It stands here with the nervous system named in each of the three passages, and the author of the first of them is Leary, not Grant. The book holds the model beside its alternative, that the signals come from outside, and declines to choose between them in the preface of 1986, which calls such models working tools at certain stages."@en ;
+    pm:withinTradition pmt:ExoPsychology ;
+    pm:fromWork pmw:CosmicTriggerI ;
+    dcterms:source "Wilson, Cosmic Trigger I: Final Secret of the Illuminati (Berkeley: And/Or Press, 1977), the forewords by Leary dated Los Angeles, summer 1977; the prologue, Thinking About the Unthinkable, at the passage on the two meta-models; and the passage on Grimstad and Downard in Part One, which refers back to the quotation of Grant at p. 87; read in the full-text layer of a scan of the re-edition with the preface of 1986" .
+
+pmc:ExoPsychologyReworkingSirius a pm:Reworking ;
+    rdfs:label "Cosmic Trigger takes over the Typhonian Sirius claim and adds a receiver and a date"@en, "Cosmic Trigger übernimmt die typhonische Sirius-Behauptung und fügt einen Empfänger und ein Datum hinzu"@de ;
+    skos:definition "The book quotes The Magical Revival for the Phoenix as Crowley's secret name and for Sirius as the chief star of the constellation of the Phoenix, reports that Grant repeatedly links Crowley with Sirius and seems to hint that the holy guardian angel of Crowleyan practice is a denizen of Sirius, and asks a surviving associate of Crowley about the extraterrestrial theory which Grant implies in his accounts of Crowley's contacts with higher intelligences. To this it adds two things the source does not contain: the neurological reading, by which the author's own Sirius messages of 1973 and 1974 are an event in his nervous system under a ritual, and the dating, stated twice, that Grant was the first to link Crowley and Sirius, in 1973."@en ;
+    skos:note "Entered as a reworking and not as a convergence, because the chain is printed on the page: the book names the two volumes it took the claim from. What the station added is the part the later reception carries back onto Grant: the receiver in the nervous system. The dating it added is wrong by a year, The Magical Revival being of 1972 and the Weiser edition the book cites being of 1973, and whether anyone linked Crowley and Sirius before 1972 was not searched in this run."@en ;
+    pm:reworkedClaim pmc:TyphonianSiriusCor ;
+    pm:receivedFrom pmt:TyphonianTradition ;
+    pm:addedElement pmc:ExoPsychologyNervorumReceptio ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ExoPsychology ;
+    pm:fromWork pmw:CosmicTriggerI ;
+    dcterms:source "Wilson, Cosmic Trigger I: Final Secret of the Illuminati (Berkeley: And/Or Press, 1977), Part One, chap. Sirius Rising, pp. 79-87, chap. Mystery Babalon, at the conversation with Grady McMurtry, and the chapter following The footsteps of the Illuminati, p. 142 ff., at the passage on Williamson's contact of 1953; Part Two, chap. The Sirius Evidence, p. 184 ff.; read in the full-text layer of a scan of the re-edition with the preface of 1986" .

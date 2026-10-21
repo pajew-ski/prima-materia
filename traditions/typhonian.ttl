@@ -1,0 +1,218 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Typhonian transmission of Kenneth Grant
+#
+# Order of the file: the tradition and the contact question; the works of the
+# corpus as identifiers, opened and unopened; the claims about contact with
+# non-human intelligence, which are what this transmission is known for; the
+# claims about the receiving organ, which are what the entry was opened to
+# settle; one practice with its capacity and its caution; and a note on the
+# claim the file was opened against, which is held in prima-materia#888 and
+# not here.
+#
+# Opened out of order: not from the registry, but against a circulating
+# sentence that credits Grant with a neurological receiver model. The file
+# therefore enters the transmission at the places that sentence touches and
+# at the harvest the open text yielded beside them; it does not claim the
+# corpus is harvested.
+#
+
+pmt:TyphonianTradition a pm:Tradition ;
+    rdfs:label "Typhonian tradition (Kenneth Grant)"@en, "Typhonische Tradition (Kenneth Grant)"@de ;
+    skos:definition "Grant's transmission of Thelema as the modern station of a Draconian or Typhonian current, read through tantric sexual magick, the nightside of the kabbalistic tree and contact with intelligences outside the earth, carried in nine volumes published between 1972 and 2002 and in the working of a lodge founded in 1955."@en ;
+    skos:note "Read in this run at the wording. The Magical Revival (first published London: Frederick Muller, 1972), read in a full-text layer at the open scan archive of a reprint whose errata note calls it a direct reprint of the 1972 first edition with that edition's pagination; the imprint of the reprint is not in the text layer. The carrier marks only every second page break, so pages from it are given as the two-page span the marker allows. The Weiser edition of 1973 lies in the same archive under a lending restriction and was not read. Outside the Circles of Time (London: Frederick Muller, 1980), read in a full-text layer of the first edition with its running heads, which carry the page. Of both works the chapters named at the nodes were read; the rest of each was searched by term only, as the search nodes in examinations/searches-typhonian.ttl state."@en ;
+    skos:note "Searched by term only and not harvested: Cults of the Shadow (1975), Nightside of Eden (1977, in the Skoob edition of 1994), Outer Gateways (1994), Beyond the Mauve Zone (1999) and The Ninth Arch (2002), each reachable as a full text. They stand as work identifiers below without pm:fromWork, and queries/unopened-works.rq carries them. The reason is scope, not the works: this file was opened against one sentence, and the harvest of five further volumes is a run of its own."@en ;
+    skos:note "The contact route is documented from inside the corpus and needs no secondary literature. The Magical Revival likens Aiwaz to the Dhyan Chohans that used Blavatsky as a channel, credits the correspondence between chakras and endocrine glands to Dion Fortune and quotes her for the only receiver image in the book, reads the kalas out of the tantras, and names Crowley, Spare, Fortune, Achad and Lovecraft as its sources throughout. Outside the Circles of Time cites The Secret Doctrine by page. An agreement between this transmission and Thelema, Theosophy or the tantric material is therefore reception and counts for no convergence."@en ;
+    skos:note "What the entry is for. The transmission is cited outside as the origin of the idea that the nervous system is an antenna for extraterrestrial forces. The wording found runs otherwise: the receiving organ is the astral consciousness, the psycho-sensory apparatus, the chakras in extra-physical dimensions, and the artist as a sensitive machine; the nervous system is named as what mind exists independently of. The claim and its negation stand at the nodes below, and the sentence that occasioned the file is held at prima-materia#888."@en ;
+    pm:principalCorpus "Grant, The Magical Revival; Grant, Aleister Crowley and the Hidden God; Grant, Cults of the Shadow; Grant, Nightside of Eden; Grant, Outside the Circles of Time; Grant, Hecate's Fountain; Grant, Outer Gateways; Grant, Beyond the Mauve Zone; Grant, The Ninth Arch; Grant, Images and Oracles of Austin Osman Spare; Grant, Remembering Aleister Crowley; Kenneth and Steffi Grant, Zos Speaks!; Kenneth and Steffi Grant, the Carfax Monographs (Hidden Lore); Grant, Manifesto of New Isis Lodge; Grant, The LAM Statement" ;
+    pm:corpusWork pmw:MagicalRevival, pmw:AleisterCrowleyAndTheHiddenGod, pmw:CultsOfTheShadow, pmw:NightsideOfEden, pmw:OutsideTheCirclesOfTime, pmw:HecatesFountain, pmw:OuterGateways, pmw:BeyondTheMauveZone, pmw:TheNinthArch, pmw:ImagesAndOraclesOfAustinOsmanSpare, pmw:RememberingAleisterCrowley, pmw:ZosSpeaks, pmw:HiddenLoreCarfaxMonographs, pmw:ManifestoOfNewIsisLodge, pmw:LamStatement ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Grant, The Magical Revival (London: Frederick Muller, 1972), chap. 1, Return of the Phoenix, pp. 6-7 with n. 3; read in a full-text layer of the reprint named at this instance" ;
+    pm:fromWork pmw:MagicalRevival .
+
+#
+# The works of the corpus as identifiers. Which of them has been opened
+# follows from pm:fromWork, not from this list.
+#
+
+pmw:MagicalRevival a dcterms:BibliographicResource ;
+    rdfs:label "The Magical Revival"@en, "The Magical Revival"@de ;
+    skos:note "First of the Typhonian Trilogies. London: Frederick Muller, 1972; New York: Weiser, 1973; London: Skoob, 1992, with an errata list; London: Starfire, 2010. Opened in this run."@en .
+
+pmw:AleisterCrowleyAndTheHiddenGod a dcterms:BibliographicResource ;
+    rdfs:label "Aleister Crowley and the Hidden God"@en, "Aleister Crowley and the Hidden God"@de ;
+    skos:note "Second of the Typhonian Trilogies. London: Frederick Muller, 1973. Unopened: no full text of any edition was found at the open scan archive on 2026-10-21, a search by title and author returning nothing. The work is in copyright and in print from Starfire; the gap is a property of the work's availability and not of the access route."@en .
+
+pmw:CultsOfTheShadow a dcterms:BibliographicResource ;
+    rdfs:label "Cults of the Shadow"@en, "Cults of the Shadow"@de ;
+    skos:note "Third of the Typhonian Trilogies. London: Frederick Muller, 1975; the full text read by term in this run carries that imprint. Reachable, searched by term for the question of prima-materia#888 only, not harvested. Expected there from a review: the lodge as a gate in space through which extraterrestrial energies enter."@en .
+
+pmw:NightsideOfEden a dcterms:BibliographicResource ;
+    rdfs:label "Nightside of Eden"@en, "Nightside of Eden"@de ;
+    skos:note "First of the second trilogy. London: Frederick Muller, 1977; the full text read by term in this run is the Skoob edition, London 1994. Reachable, searched by term only, not harvested. Carries the twenty-two tunnels of Set in its second part."@en .
+
+pmw:OutsideTheCirclesOfTime a dcterms:BibliographicResource ;
+    rdfs:label "Outside the Circles of Time"@en, "Outside the Circles of Time"@de ;
+    skos:note "Second of the second trilogy. London: Frederick Muller, 1980; Starfire, 2008. Opened in this run at the chapter Nuclear Art and the New Gnosis and at three further places; the rest searched by term."@en .
+
+pmw:HecatesFountain a dcterms:BibliographicResource ;
+    rdfs:label "Hecate's Fountain"@en, "Hecate's Fountain"@de ;
+    skos:note "Third of the second trilogy. London: Skoob, 1992; Starfire, 2014. Unopened: no full text found at the open scan archive on 2026-10-21. In copyright and in print."@en .
+
+pmw:OuterGateways a dcterms:BibliographicResource ;
+    rdfs:label "Outer Gateways"@en, "Outer Gateways"@de ;
+    skos:note "First of the third trilogy. London: Skoob, 1994. Reachable, searched by term only, not harvested. Its text layer carries the highest count of the term UFO in the corpus, ninety-five occurrences, and the channelled Wisdom of S'lba."@en .
+
+pmw:BeyondTheMauveZone a dcterms:BibliographicResource ;
+    rdfs:label "Beyond the Mauve Zone"@en, "Beyond the Mauve Zone"@de ;
+    skos:note "Second of the third trilogy. London: Starfire, 1999. Reachable, searched by term only, not harvested; the text layer is of poor optical quality and a wording taken from it would need the scan beside it."@en .
+
+pmw:TheNinthArch a dcterms:BibliographicResource ;
+    rdfs:label "The Ninth Arch"@en, "The Ninth Arch"@de ;
+    skos:note "Third of the third trilogy. London: Starfire, 2002, an edition of one thousand copies. Reachable, searched by term only, not harvested. Comprises the Book of the Spider with Grant's commentary."@en .
+
+pmw:ImagesAndOraclesOfAustinOsmanSpare a dcterms:BibliographicResource ;
+    rdfs:label "Images and Oracles of Austin Osman Spare"@en, "Images and Oracles of Austin Osman Spare"@de ;
+    skos:note "London: Frederick Muller, 1975; Fulgur, 2003. Unopened: no full text found at the open scan archive on 2026-10-21. Carries the Zos Kia material of the transmission, which the file traditions/registry-modern.ttl lists under chaos magic as Spare's own book."@en .
+
+pmw:RememberingAleisterCrowley a dcterms:BibliographicResource ;
+    rdfs:label "Remembering Aleister Crowley"@en, "Remembering Aleister Crowley"@de ;
+    skos:note "London: Skoob, 1991. Unopened: no full text found at the open scan archive on 2026-10-21. Letters of 1944 to 1947; the place to test what Grant reports Crowley as having said to him."@en .
+
+pmw:ZosSpeaks a dcterms:BibliographicResource ;
+    rdfs:label "Zos Speaks! Encounters with Austin Osman Spare"@en, "Zos Speaks! Encounters with Austin Osman Spare"@de ;
+    skos:note "Kenneth and Steffi Grant. London: Fulgur, 1998. Unopened: no full text found at the open scan archive on 2026-10-21."@en .
+
+pmw:HiddenLoreCarfaxMonographs a dcterms:BibliographicResource ;
+    rdfs:label "Hidden Lore: the Carfax Monographs"@en, "Hidden Lore: die Carfax Monographs"@de ;
+    skos:note "Kenneth and Steffi Grant. Ten monographs printed privately 1959 to 1963 in a hundred copies each; collected as Hidden Lore, London: Skoob, 1989, and later by Fulgur. Unopened: the one scan found at the open scan archive on 2026-10-21 is dated 1996 and stands under a lending restriction."@en .
+
+pmw:ManifestoOfNewIsisLodge a dcterms:BibliographicResource ;
+    rdfs:label "Manifesto of New Isis Lodge O.T.O."@en, "Manifest der New Isis Lodge O.T.O."@de ;
+    skos:note "London, privately printed, 1955. Unopened: known in this run only through a quotation in the secondary literature, which under SPEC section 10 is no source. The founding of the lodge for receiving transmissions from a transplutonic planet is attested at the wording in Outside the Circles of Time and entered there."@en .
+
+pmw:LamStatement a dcterms:BibliographicResource ;
+    rdfs:label "The LAM Statement"@en, "The LAM Statement"@de ;
+    skos:note "Grant, dated to the spring equinox of 1987, printed in Starfire, volume I, number 3. Unopened: a transcription circulates online whose status is unclear, and no print was reached. Expected there: Lam as the focus of an extra-terrestrial and perhaps trans-plutonic energy."@en .
+
+#
+# Contact with non-human intelligence, which is what this transmission is
+# known for and what the file was opened against
+#
+
+pmc:TyphonianAiwazPraeterhumanus a pm:Conceptualizing ;
+    rdfs:label "Aiwaz as a praeterhuman intelligence, likened to Blavatsky's planetary spirits"@en, "Aiwaz als praeterhumane Intelligenz, Blavatskys Planetengeistern gleichgestellt"@de ;
+    skos:definition "The claim with which the first volume opens: the Book of the Law was received in Cairo in 1904 from a praeterhuman intelligence named Aiwaz, messenger of a god once worshipped as Set. A footnote adds that, to appreciate the nature of Aiwaz, it is not too misleading to think of this daemon as similar to the Dhyan Chohans or planetary spirits that used Blavatsky and others as a channel of intercourse with humanity."@en ;
+    skos:note "The footnote is the contact route stated by the transmission itself, and it decides where the receiver idea of this corpus comes from: not from a nervous system but from the theosophical mahatma letter, which the author names as the nearest analogy on the page where his own claim begins."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:MagicalRevival ;
+    dcterms:source "Grant, The Magical Revival (London: Frederick Muller, 1972), chap. 1, Return of the Phoenix, pp. 6-7 with n. 3; read in a full-text layer of the reprint named at the tradition instance" .
+
+pmc:TyphonianCommunioExtraterrestris a pm:Conceptualizing ;
+    rdfs:label "Willed congress with extraterrestrial entities as the next stage of evolution"@en, "Gewollter Verkehr mit außerirdischen Wesen als nächste Stufe der Evolution"@de ;
+    skos:definition "The capacity the transmission puts at the end of its first volume: through ritual Crowley grew in communion with extraterrestrial intelligences, and the next stage in the advancement of evolution on this planet will be achieved by a willed congress with extraterrestrial entities, of which Aiwaz is the immediate messenger to humanity. The key to it is said to lie in the formula of electrochemical and stellar vibrations represented by Babalon and the Beast."@en ;
+    skos:note "Entered as a capacity and not as a yielding, because the practice that yields it is named only as a formula and not as a procedure in these pages. The sexual-magical procedure the transmission attaches to it stands eight years later in Outside the Circles of Time and is entered there as pmp:TyphonianRitusStellaris."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:MagicalRevival ;
+    dcterms:source "Grant, The Magical Revival (London: Frederick Muller, 1972), chap. 1, Return of the Phoenix, pp. 18-19, and chap. 13, Conclusion, pp. 210-211; read in a full-text layer of the reprint named at the tradition instance" .
+
+pmc:TyphonianSiriusCor a pm:Conceptualizing ;
+    rdfs:label "The heart of the Thelemic current is the star Sirius, and a lodge was founded to receive from beyond Pluto"@en, "Das Herz des thelemischen Stroms ist der Stern Sirius, und eine Loge wurde gegründet, um von jenseits Plutos zu empfangen"@de ;
+    skos:definition "Crowley is said to have identified the heart of the Thelemic current with one particular star, in occult tradition the sun behind the sun, the hidden god, Sirius or Sothis. The second work adds, in a footnote, that New Isis Lodge was established by the author in 1955 for the purpose of receiving transmissions from the transplutonic planet Isis, functioned for exactly seven years, and that the star or soul of Nu Isis is the Dog Star."@en ;
+    skos:note "This is the claim that Cosmic Trigger takes over in 1977 and dates to 1973; the first volume is of 1972. What the later station adds stands at pmc:ExoPsychologyReworkingSirius in traditions/exo-psychology.ttl."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:MagicalRevival, pmw:OutsideTheCirclesOfTime ;
+    dcterms:source "Grant, The Magical Revival (London: Frederick Muller, 1972), chap. 3, Dark Dynasties, pp. 48-51; read in a full-text layer of the reprint named at the tradition instance", "Grant, Outside the Circles of Time (London: Frederick Muller, 1980), p. 111 with its note on Nu Isis Lodge; read in a full-text layer of the first edition" .
+
+pmc:TyphonianUfologiaSubiectiva a pm:Conceptualizing ;
+    rdfs:label "The little green men of ufology exist at profoundly subjective levels and are no less real for it"@en, "Die kleinen grünen Männchen der Ufologie existieren auf tief subjektiven Ebenen und sind darum nicht weniger wirklich"@de ;
+    skos:definition "The fey folk of mediaeval magicians and the little green men of what the work calls so-called ufology are held to be the same class of being. That not all people see them is taken to suggest that they exist at profoundly subjective levels of consciousness, and the work adds that this does not make them less real than entities occupying mundane space. Elsewhere it reports that UFOs are said to earth here from outside the waking and the dream state."@en ;
+    skos:note "The node that keeps the transmission's own position in view: the outside reception reads Grant as an author of extraterrestrial contact, and in his wording the contact is located in consciousness and its reality asserted on that footing. The statement that the UFO flap after Hiroshima may be an investigation by extra-mundane intelligences is reported in the same chapter as the view of various writers and not as the author's."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:OutsideTheCirclesOfTime ;
+    dcterms:source "Grant, Outside the Circles of Time (London: Frederick Muller, 1980), pp. 55-56, and p. 81 in the chapter The False Order of the True Paths; read in a full-text layer of the first edition" .
+
+#
+# The receiving organ, which is the question the file was opened to settle
+#
+
+pmc:TyphonianAntennaeReceptivae a pm:Conceptualizing ;
+    rdfs:label "The astral consciousness receives cosmic currents; the artist is a sensitive machine with receptive antennae"@en, "Das astrale Bewusstsein empfängt kosmische Ströme; der Künstler ist eine empfindliche Maschine mit empfangenden Antennen"@de ;
+    skos:definition "The theme of the second work as the work states it: the Great Work consists in tracing to its source the creative inspiration that emanates from beyond the veil of the abyss, which involves the idea that the astral consciousness of man is capable of receiving currents of cosmic energy that permeate the aura of the earth. Whether such intrusion proceeds from actual entities in outer space is called problematical, since outer space may be another form of inner space; what is called certain is that extremely sensitive machines, and the artist is such a machine, receive the most tenuous impressions from this region through their receptive antennae, and that this receptivity is made possible only by a systematic derangement or reorganisation of the senses. Later in the same work the subtle antennae of the tree, glossed as our psycho-sensory apparatus, are to be cultivated by each individual so that they respond to the slightest vibration from other times, spaces and dimensions."@en ;
+    skos:note "This is the nearest wording in the corpus to the sentence that credits Grant with a nervous-system antenna, and it is entered so that the distance can be measured on the page. The antennae belong to the astral consciousness, to the artist as machine, and to the tree as a gloss on the psycho-sensory apparatus; the sender is left open between outer and inner space in the same sentence; and the nervous system is not named. A third passage of the same work calls the tunnels of the nightside the ganglia of an occult nervous system, with the adjective doing the work."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:OutsideTheCirclesOfTime ;
+    dcterms:source "Grant, Outside the Circles of Time (London: Frederick Muller, 1980), chap. Nuclear Art and the New Gnosis, pp. 41-42, with p. 116 and p. 165; read in a full-text layer of the first edition" .
+
+pmc:TyphonianReceptorFortuneCitatus a pm:Conceptualizing ;
+    rdfs:label "The third-eye chakra as the crystals of a wireless receiving set, in a sentence quoted from Dion Fortune"@en, "Das Chakra des dritten Auges als die Kristalle eines Funkempfängers, in einem Satz aus Dion Fortune"@de ;
+    skos:definition "The only receiver image in the first volume. Inside a quotation from Fortune's Aspects of Occultism, the ajna chakra is said to consist of particles of very fine substance resembling sand or the crystals in a wireless receiving set, and the affinity between the secretions of the endocrine glands and the vibrations of the subtle chakras is said to form the basis of a sexual magick that uses these vibrations in a way unknown to science. The volume introduces the correspondence between chakras and endocrine glands in Fortune's name, twice."@en ;
+    skos:note "Entered because the image is attributed and quoted, which settles who is speaking: the receiver set belongs to Fortune on the page, and the transmission adopts it by quotation and not in its own voice. A reception link to the Golden Dawn lineage, and one more reason the contact route of this file is documented."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:MagicalRevival ;
+    dcterms:source "Grant, The Magical Revival (London: Frederick Muller, 1972), chap. 2, Metaphysical Bases of Sexual Magick, pp. 36-37, quoting Dion Fortune, Aspects of Occultism; read in a full-text layer of the reprint named at the tradition instance" .
+
+pmc:TyphonianChakraExtraPhysica a pm:Conceptualizing ;
+    rdfs:label "The chakras exist in extra-physical dimensions and do not respond to physical investigation"@en, "Die Chakren existieren in außerphysischen Dimensionen und sind physischer Untersuchung nicht zugänglich"@de ;
+    skos:definition "The subtle centres along the spinal canal are said to approximate to regions of the endocrine system, a correspondence credited to Dion Fortune; but it is not to be supposed that the chakras respond to physical investigation, any more than the mind can be found by brain surgery. They exist as realities in extra-physical dimensions and are as real on their own plane as dreams are on theirs."@en ;
+    skos:note "The first of two passages in the volume that place the receiving organ outside physiology. A reading that makes the nervous system the organ of this transmission has to read past this sentence, which stands in the chapter that lays the metaphysical basis for everything else in the book."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:MagicalRevival ;
+    dcterms:source "Grant, The Magical Revival (London: Frederick Muller, 1972), chap. 2, Metaphysical Bases of Sexual Magick, pp. 41-42; read in a full-text layer of the reprint named at the tradition instance" .
+
+pmc:TyphonianMensSineNervis a pm:Conceptualizing ;
+    rdfs:label "Mind exists independently of brain or nervous structure, and the Book of the Law is said to prove it"@en, "Geist existiert unabhängig von Hirn und Nervenstruktur, und das Book of the Law soll es beweisen"@de ;
+    skos:definition "No universe exists outside consciousness, and the Book of the Law is said to prove beyond doubt that mind can and does exist independently of brain or nervous structure. The same volume makes Frater Achad the living proof that the book was communicated by a praeterhuman intelligence, demonstrating that consciousness manifests independently of cerebral and nervous structure in man."@en ;
+    skos:note "The second passage, and the sharper one: the nervous system is named here precisely as the thing the transmission's central claim is independent of. The proof offered is the existence of a disciple, which is a proof of the kind this holding marks and does not weigh."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:MagicalRevival ;
+    dcterms:source "Grant, The Magical Revival (London: Frederick Muller, 1972), chap. 6, Barbarous Names of Evocation, pp. 102-103, with the passage on Achad in chap. 2, pp. 32-33; read in a full-text layer of the reprint named at the tradition instance" .
+
+#
+# One practice with its capacity and its caution
+#
+
+pmp:TyphonianRitusStellaris a pm:Practicing ;
+    rdfs:label "The rite that draws a star-force into a dreaming priestess before a mirror"@en, "Der Ritus, der eine Sternkraft in eine träumende Priesterin vor einem Spiegel zieht"@de ;
+    skos:definition "A magical sleep is induced in the priestess by a method of sexual sorcery the work assigns to the eighth degree of the O.T.O. She dreams and receives the influx from the stars; in a mirror above her the star-form of the entity the magician seeks to contact should appear, at first shadowy and indistinct; the invocations that lend it substance are then vibrated; at the climax of the dream, as the woman also climaxes, the entity awakens and descends from the mirror as the force of which it is the image descends from the star and possesses her; the priest then withdraws. The star is called the hole in space through which the energies pour."@en ;
+    skos:note "The one procedure in the pages read that gives a sequence of steps with a stated sign, the appearance in the mirror. The sign is private to the participants and announced in advance, so it is held as a sign and not as a measure, by the rule in the Thelemic file. The work adds that the rite occurs at astral or dream levels and that the artist undergoes the same congress without being aware of it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:OutsideTheCirclesOfTime ;
+    dcterms:source "Grant, Outside the Circles of Time (London: Frederick Muller, 1980), chap. Nuclear Art and the New Gnosis, pp. 39-40; read in a full-text layer of the first edition" .
+
+pmc:TyphonianFiliusStellaris a pm:Conceptualizing ;
+    rdfs:label "The starchild, an amalgam of extraterrestrial and human elements"@en, "Das Sternkind, eine Verbindung außerirdischer und menschlicher Elemente"@de ;
+    skos:definition "The child that results from the union in the rite is said to be an amalgam of extraterrestrial and human elements, and a footnote distinguishes it from the moonchild by its cause: a starchild is the result of actual congress with a non-human entity that is the vehicle of a transcosmic influence. The same pages extend the capacity to art: the artist brings to birth an eidolon of alien consciousness, a school forms around it and becomes a machine transmitting the influence outward until the planet is impregnated with alien vibrations, and the work dates one such interpenetration to the reception of the Book of the Law."@en ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:OutsideTheCirclesOfTime ;
+    dcterms:source "Grant, Outside the Circles of Time (London: Frederick Muller, 1980), chap. Nuclear Art and the New Gnosis, pp. 39-40 with the note on the starchild; read in a full-text layer of the first edition" .
+
+pmc:TyphonianRitusStellarisYieldsFilium a pm:Yielding ;
+    rdfs:label "The star rite is said to yield the starchild"@en, "Der Sternritus soll das Sternkind hervorbringen"@de ;
+    skos:definition "The claim as the work makes it: the child that results from the union of the possessed priestess and the priest is the amalgam of extraterrestrial and human elements, and the mechanism is said to be essentially that which produces a moonchild, with the one difference that the congress here is with a non-human entity."@en ;
+    pm:byPractice pmp:TyphonianRitusStellaris ;
+    pm:yieldsCapacity pmc:TyphonianFiliusStellaris ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:OutsideTheCirclesOfTime ;
+    dcterms:source "Grant, Outside the Circles of Time (London: Frederick Muller, 1980), chap. Nuclear Art and the New Gnosis, pp. 39-40 with the note on the starchild; read in a full-text layer of the first edition" .
+
+pmc:TyphonianCautioDeSpatiorumNotis a pm:Cautioning ;
+    rdfs:label "Do not confound the space-marks, or you open yourself to obsession"@en, "Verwechsle die Raummarken nicht, sonst öffnest du dich der Besessenheit"@de ;
+    skos:definition "The caution set at the head of the rite, with a verse of the received book cited for it: the priest should not confound the space-marks, which the work glosses as the stars, the vehicles of the kalas, or he will open himself to obsession."@en ;
+    skos:note "A caution with a named failure, obsession, and a named cause, the wrong star. It is the only failure condition in the pages read, and it falls on the operator and not on the procedure, which is the shape this holding records as the commonest."@en ;
+    pm:cautionsAbout pmp:TyphonianRitusStellaris ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:TyphonianTradition ;
+    pm:fromWork pmw:OutsideTheCirclesOfTime ;
+    dcterms:source "Grant, Outside the Circles of Time (London: Frederick Muller, 1980), chap. Nuclear Art and the New Gnosis, p. 39, citing Liber AL I.52; read in a full-text layer of the first edition" .

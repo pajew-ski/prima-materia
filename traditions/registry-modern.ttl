@@ -1,7 +1,9 @@
 @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 
 #
 # prima-materia — registered transmissions: young traditions
@@ -77,9 +79,23 @@ pmt:ChaosMagic a pm:Tradition ;
     rdfs:label "Chaos magic"@en, "Chaosmagie"@de ;
     skos:definition "The late twentieth century transmission treating belief as a tool to be adopted and discarded, and holding that the symbolic system employed is arbitrary if the technique is sound."@en ;
     skos:note "The claim that content is interchangeable and only technique carries effect is directly examinable, and if it held it would reorganise every convergence question the project asks."@en ;
-    pm:principalCorpus "Spare, The Book of Pleasure; Carroll, Liber Null and Psychonaut" ;
+    skos:note "Three works of Carroll were reached as full texts on 2026-10-21 and searched by term for one question only, whether any of them maps a receiver model onto neural microtubules (prima-materia#888); none does, and the search stands at pmp:TyphonianMicrotubulusSearch. Nothing was read at the wording for the holding, so the state stays at corpus named; the works stand as identifiers below so that queries/unopened-works.rq shows them."@en ;
+    pm:principalCorpus "Spare, The Book of Pleasure; Carroll, Liber Null and Psychonaut; Carroll, Liber Kaos; Carroll, The Apophenion" ;
+    pm:corpusWork pmw:LiberNullAndPsychonaut, pmw:LiberKaos, pmw:TheApophenion ;
     pm:coverageState pm:corpusNamed ;
     pm:contactRoute pm:contactRouteDocumented .
+
+pmw:LiberNullAndPsychonaut a dcterms:BibliographicResource ;
+    rdfs:label "Liber Null and Psychonaut"@en, "Liber Null and Psychonaut"@de ;
+    skos:note "Carroll. York Beach: Samuel Weiser, 1987, two earlier booklets in one volume. Reachable as a full text; searched by term only, not opened."@en .
+
+pmw:LiberKaos a dcterms:BibliographicResource ;
+    rdfs:label "Liber Kaos"@en, "Liber Kaos"@de ;
+    skos:note "Carroll. York Beach: Weiser, 1992; the full text reached is the revised and expanded Weiser edition of 2023, so a wording taken from it would be the later text. Searched by term only, not opened."@en .
+
+pmw:TheApophenion a dcterms:BibliographicResource ;
+    rdfs:label "The Apophenion: A Chaos Magic Paradigm"@en, "The Apophenion"@de ;
+    skos:note "Carroll, 2008. The one work of the three that engages quantum physics at length and names Penrose, for time and not for microtubules. Reachable as a full text; searched by term only, not opened."@en .
 
 # pmt:Anthroposophy has left this file. The book of the schooling has been read
 # at the wording and the instance now stands in traditions/anthroposophy.ttl at
