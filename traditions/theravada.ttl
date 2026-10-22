@@ -39,7 +39,7 @@ pmw:Visuddhimagga a dcterms:BibliographicResource ;
 
 pmw:DighaNikaya a dcterms:BibliographicResource ;
     rdfs:label "Dīgha Nikāya"@en, "Dīgha Nikāya"@de ;
-    skos:note "Opened at suttas 1, 2 and 11. For sutta 1 the edition is recoverable, because the Mahāsīla was read at the wording in this run: T. W. Rhys Davids, Dialogues of the Buddha, Part I, Sacred Books of the Buddhists vol. II, London 1899, pp. 16-26. For suttas 2 and 11 the edition is not recoverable and prima-materia#45 records that."@en .
+    skos:note "Opened at suttas 1, 2, 11 and 22. For sutta 22 the closing section 22 was read on 2026-10-22 in the Pali of the Mahāsaṅgīti edition as published by SuttaCentral, in the English of Bhikkhu Sujato published there, and in T. W. Rhys Davids and C. A. F. Rhys Davids, Dialogues of the Buddha, Part II, Sacred Books of the Buddhists vol. III, London 1910, pp. 346-347; the rest of that sutta was not read. For sutta 1 the edition is recoverable, because the Mahāsīla was read at the wording in this run: T. W. Rhys Davids, Dialogues of the Buddha, Part I, Sacred Books of the Buddhists vol. II, London 1899, pp. 16-26. For suttas 2 and 11 the edition is not recoverable and prima-materia#45 records that."@en .
 
 pmw:MajjhimaNikaya a dcterms:BibliographicResource ;
     rdfs:label "Majjhima Nikāya"@en, "Majjhima Nikāya"@de ;
@@ -650,3 +650,48 @@ pmc:IddhiAdhigamaVivada a pm:Disputing ;
     pm:attestedBy pm:compilerInference ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Buddhaghosa, Visuddhimagga XII.1-12 (trans. Pe Maung Tin, The Path of Purity, Part II, PTS Translation Series 17, pp. 432-436; also trans. Ñāṇamoli 1956)", "Anāgatavaṃsa, recension B of Minayeff's edition, Journal of the Pali Text Society 1886, pp. 33-34, in the English of Henry Clarke Warren, Buddhism in Translations, Harvard University Press 1896, §102, pp. 482-483" .
+
+#
+# Two passages read on 2026-10-22 for the modern vipassanā run
+#
+# Entered because the run opened them at the wording and SPEC §15 enters what
+# was read in the pass in which it was read: the knowledge of reflection, to
+# establish what traditions/modern-vipassana.ttl adds to it, and the closing
+# term of the Satipaṭṭhāna Sutta, because the discourse there carries a term
+# of the same shape.
+#
+
+pmc:PatisankhanupassanaNana a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The knowledge of contemplation of reflection: the three characteristics attributed in order to contrive the means of deliverance"@en, "Die Kenntnis der Betrachtung der Wiederbesinnung: die drei Merkmale zugeschrieben, um das Mittel der Befreiung zu ersinnen"@de ;
+    skos:definition "The seventh of the insight knowledges of the handbook's twenty-first chapter. Desiring deliverance from the whole field of formations, the meditator discerns the same formations again and attributes the three characteristics to them, seeing them as impermanent because non-continuous, temporary, limited by rise and fall; as painful because continuously oppressed, hard to bear, a disease, a dart; as foul, the characteristic ancillary to pain; and as not-self because alien, empty, ownerless. He does so to contrive the means to deliverance, as the man who seized a snake for a fish swings it round his head to weaken it before flinging it away. The Paṭisambhidāmagga is quoted for knowledge arising after reflecting on the sign, on occurrence, and on both."@en ;
+    skos:note "What the passage does not contain, which is the reason it was read. In neither translation does the knowledge of reflection carry a bodily sensation, a pain, a difficulty with posture or an instruction about the body; its marks are entirely in the manner of seeing. The modern station that takes it over adds all three, and the addition is entered at pmc:VipassanaPatisankhaReworking. The nearest thing in the chapter is its opening, XXI.3-4, where the characteristic of pain is said to be concealed by the postures until they are exposed by attention to continuous oppression; that is a doctrine about how pain is seen, not a mark of this stage."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga XXI.47-52, Pali PTS [651]-[653] (trans. Ñāṇamoli, The Path of Purification, 4th ed., Kandy: Buddhist Publication Society, 2010, pp. 679-681; trans. Pe Maung Tin, The Path of Purity, Part III, Pali Text Society, pp. 796-798)" .
+
+pmp:Satipatthana a pm:Practicing ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "The four establishings of mindfulness"@en, "Die vier Vergegenwärtigungen der Achtsamkeit"@de ;
+    skos:definition "Contemplating the body in the body, feelings in feelings, mind in mind and principles in principles, as the Mahāsatipaṭṭhāna Sutta sets them out; named in its closing section as the practice to which the term applies."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Dīgha Nikāya 22.22, Pali in the Mahāsaṅgīti edition as published by SuttaCentral (trans. Bhikkhu Sujato, SuttaCentral 2018; trans. T. W. and C. A. F. Rhys Davids, Dialogues of the Buddha, Part II, London 1910, pp. 346-347)" .
+
+pmc:AnnaVaAnagamita a pm:Conceptualizing ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "Final knowledge in this life, or non-return if a residue remains"@en, "Endgültiges Wissen in diesem Leben, oder Nichtwiederkehr, wenn ein Rest bleibt"@de ;
+    skos:definition "The pair of outcomes the closing section of the Mahāsatipaṭṭhāna Sutta promises, one of which is to be expected: final knowledge (aññā) in this very life, or, if there is a residue of clinging, the state of the non-returner (anāgāmitā)."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Dīgha Nikāya 22.22, Pali in the Mahāsaṅgīti edition as published by SuttaCentral (trans. Bhikkhu Sujato, SuttaCentral 2018; trans. T. W. and C. A. F. Rhys Davids, Dialogues of the Buddha, Part II, London 1910, pp. 346-347)" .
+
+pmc:SatipatthanaSattahaPhala a pm:Yielding ;
+    pm:fromWork pmw:DighaNikaya ;
+    rdfs:label "Whoever develops the four establishings for seven years, or down to seven days, may expect final knowledge or non-return"@en, "Wer die vier Vergegenwärtigungen sieben Jahre, oder bis hinab zu sieben Tagen, entfaltet, kann endgültiges Wissen oder Nichtwiederkehr erwarten"@de ;
+    skos:definition "Whoever develops these four establishings of mindfulness in this way for seven years can expect one of two fruits, final knowledge in this life or, with a residue, non-return. Let alone seven years: six, five, four, three, two, one year; let alone one year: seven months down to one month and half a month; let alone half a month: seven days. That, the sutta closes, is why it was said at the beginning that this is the one way to the purification of beings and the realization of Nibbāna."@en ;
+    skos:note "A term stated without a condition of failure, and the scale is the point. It descends from seven years to seven days for the same outcome and names no mark by which one who has practised for the term and not reached it would be told why. Rhys Davids' English skips the seven months that the Pali and Sujato have."@en ;
+    skos:note "The modern discourse at pmc:VipassanaSallakkhanaYieldsSotapatti states a scale of the same shape, from a month to seven days, for a lesser outcome, the first path, with the seven days reserved for a selected few; it does not cite this section at that place, and no reworking is asserted."@en ;
+    pm:byPractice pmp:Satipatthana ;
+    pm:yieldsCapacity pmc:AnnaVaAnagamita ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Dīgha Nikāya 22.22, Pali in the Mahāsaṅgīti edition as published by SuttaCentral (trans. Bhikkhu Sujato, SuttaCentral 2018; trans. T. W. and C. A. F. Rhys Davids, Dialogues of the Buddha, Part II, London 1910, pp. 346-347)" .

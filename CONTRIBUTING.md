@@ -450,6 +450,15 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   und die Publikationen der Illuminates of Thanateros — die Religions- und
   Esoterikforschung dazu geht als `pm:evidenceFrom` ein, nie als Quelle)
 
+- `korpus:vipassana-modern` (die birmanische Reformbewegung der
+  Einsichtsmeditation: Mahāsi Sayādaw, Visuddhiñāṇakathā in Nyanaponikas
+  zweisprachiger Ausgabe Kandy 1965, die Unterweisung in der Grundübung und
+  Practical Insight Meditation, Rangoon 1979, das birmanische Handbuch der
+  Einsicht von 1944; Ledi Sayādaw, die Dīpanī-Handbücher; U Ba Khin und
+  Goenka — von `korpus:theravada` getrennt geführt, weil dort Kanon und
+  Kommentar stehen und hier eine junge Übertragung mit eigenen Gründern; die
+  Buddhismusforschung geht als `pm:evidenceFrom` ein, nie als Quelle)
+
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
 bereits die Nachfragemeldung, und ein zweites Verzeichnis dafür wird

@@ -1,0 +1,68 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the searches of the modern vipassanā run of 2026-10-22
+#
+# In a file of their own for the mechanical reason given in prima-materia#703.
+# Five searches: the two counts SPEC §15 asks for, the term and its failure,
+# the counter-search for harm, the handbook passage the reworking rests on,
+# and the second translation of the treatise.
+#
+
+pmp:VipassanaSignsFailureSearch a pm:Searching ;
+    rdfs:label "Signs of success against conditions of failure in three works of Mahāsi Sayādaw"@en, "Gelingenszeichen gegen Misslingensbedingungen in drei Werken Mahāsi Sayādaws"@de ;
+    pm:searchedCorpus "Mahāsi Sayādaw, The Progress of Insight (Visuddhiñāṇakathā), trans. Nyanaponika (Kandy 1965), English pp. 1-32 and Pali pp. 39-58; The Satipatthana Vipassana Meditation, trans. U Pe Thin (Rangoon 1979), pp. 1-34; Practical Insight Meditation, trans. U Pe Thin and Myanaung U Tin (Rangoon 1979), pp. 9-64; all three read continuously" ;
+    pm:searchedFor "The two numbers SPEC §15 asks a harvest note to give separately: signs announced in advance by which the meditator is to know that a stage has come, and conditions stated in advance under which the practice has not worked or will not." ;
+    pm:searchTerms "Read continuously, not searched by term. Checked afterwards by term in the English for fail, failure, not able, cannot, unable, retrogress, fall back, standstill, perfection, paramita, short of perfection, immature: fail and failure seven hits across the three, perfection or paramita sixteen, cannot thirty-eight; every hit for fail, perfection and standstill read in place." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:VipassanaSamadhiAparipunna, pmc:VipassanaIndriyaAparipakka, pmc:VipassanaParamiAparipunna, pmc:VipassanaIriyapathaKhanti, pmc:VipassanaKalaparicchedaUparimagga ;
+    pm:searchedBy "prima-materia, 2026-10-22" ;
+    dcterms:date "2026-10-22" ;
+    skos:note "Nineteen signs and five conditions of failure, listed at the tradition instance. Of the five, three have no mark apart from the outcome they explain — concentration short of perfection, faculties unripe, perfections undeveloped — and two can be observed by the practitioner before the outcome: whether he changed his posture at every pain, and whether he fixed a period before striving for a higher path. Every sign but one is announced in the work the meditator is given; the exception is the firm posture during fruition, which another person can see."@en .
+
+pmp:VipassanaTermSearch a pm:Searching ;
+    rdfs:label "Whether the works state a term for the first path, and what they say when it passes"@en, "Ob die Werke eine Frist für den ersten Pfad nennen, und was sie sagen, wenn sie verstreicht"@de ;
+    pm:searchedCorpus "The three works of pmp:VipassanaSignsFailureSearch, by term in the English and, for the treatise, in the Pali" ;
+    pm:searchedFor "A term in days, months or hours within which the practice is said to yield the path or a stage, and, as its negation, any statement of what follows for a meditator who has practised for the term without the result." ;
+    pm:searchTerms "English: day, days, month, months, hour, hours, minute, minutes, week, year. Counts: the treatise days five, months none, hours eight, minutes three; the discourse days fifteen, months three, hours eight, minutes three; Practical Insight Meditation days ten, months one, hours fourteen, minutes none. Pali of the treatise: ghaṭikā nine, minita four, divasa one, ekāha one, dvīha one. Every hit read in place." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:VipassanaSallakkhanaYieldsSotapatti, pmc:VipassanaParamiAparipunna, pmc:VipassanaUparimaggaBhavana, pmc:VipassanaSankharupekkhaNana ;
+    pm:searchedBy "prima-materia, 2026-10-22" ;
+    dcterms:date "2026-10-22" ;
+    skos:note "One term for the first path, in the discourse on the basic practice: a month, twenty days or fifteen, and seven for a selected few. No statement in that discourse of what follows when it passes. The account of a meditator who does not arrive stands in the other English work, in two forms, the perfections not developed and the faculties not mature, and neither refers to the term. The treatise states durations for stages and states, not for the path: two or three ghaṭikā for equanimity, a day or an hour for regaining it at a higher path, one, two or three days within which the next path does not come while the faculties are unripe."@en .
+
+pmp:VipassanaHarmSearch a pm:Searching ;
+    rdfs:label "Whether the works name a harm the practice can do to the practitioner, or a sign at which to stop"@en, "Ob die Werke einen Schaden nennen, den die Übung dem Übenden tun kann, oder ein Zeichen, bei dem aufzuhören ist"@de ;
+    pm:searchedCorpus "The three works of pmp:VipassanaSignsFailureSearch, read continuously and searched by term in the English" ;
+    pm:searchedFor "A stated harm, danger, illness or derangement that the practice can cause, and any instruction to stop or to seek help on a stated sign; the negation being an assurance that the states produced are harmless." ;
+    pm:searchTerms "harm, danger, dangerous, disease, ill, illness, unwell, mad, madness, insane, derange, frighten, frightening, alarm, stop, cease, discontinue. Counts: harm two, both in the second and third works, one of them about welfare work; danger and dangerous two, neither about the practice; disease ten, of which two are about the practice and both deny that its sensations are disease, one makes posture hide pain from people who think pain comes only with a dangerous disease, and the rest name disease among the ills of existence or in the wish of loving-kindness; mad, madness, insane and derange none; stop, cease and discontinue with their forms fifty-six, of which none is an instruction to stop the practice for the practitioner's sake. Every hit read in place." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:VipassanaNaAbadha, pmc:VipassanaBhayaAsallakkhanaCautela ;
+    pm:searchedBy "prima-materia, 2026-10-22" ;
+    dcterms:date "2026-10-22" ;
+    skos:note "What came back tells against the question as put: the works assure that no harm follows, three times, and name only two states that can go wrong, frightening visions at the outset and a fear not associated with insight if the noticing lapses; both are answered with practice and neither with a point at which to stop. Practical Insight Meditation twice tells the meditator to break off: if the body's swaying increases in spite of noting, to lean against a wall or lie down for a while and then go on; and if at dissolution he sees poorly or feels giddy, to relax and stop contemplating, giving as the reason that he lacks the power of cognition, not that something is wrong."@en .
+
+pmp:VismPatisankhaBodilySearch a pm:Searching ;
+    rdfs:label "Whether the handbook attaches a bodily mark or an instruction about the body to the knowledge of reflection"@en, "Ob das Handbuch der Kenntnis der Wiederbesinnung ein körperliches Zeichen oder eine Anweisung über den Körper beigibt"@de ;
+    pm:searchedCorpus "Buddhaghosa, Visuddhimagga XXI, read at XXI.3-4 and XXI.44-54 in the English of Ñāṇamoli, The Path of Purification, 4th ed. (Kandy: BPS, 2010), pp. 666-667 and 678-682, and at XXI.45-52 in Pe Maung Tin, The Path of Purity, Part III, pp. 796-798; the whole chapter searched by term in Ñāṇamoli's English" ;
+    pm:searchedFor "Whether the handbook's knowledge of contemplation of reflection, the stage the modern treatise names paṭisaṅkhā, carries the pains, the restlessness of posture and the instruction to stay still that the modern treatise attaches to it." ;
+    pm:searchTerms "In the whole of chapter XXI in Ñāṇamoli's English: pain and painful seventy-three, posture eight, feeling eight, bodily none, restless none, hour none, day none. The eight hits for posture all stand at XXI.3-4 and its note, on the postures concealing the characteristic of pain; the hits for pain at XXI.47-52 are the characteristic attributed, not a sensation." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-22" ;
+    dcterms:date "2026-10-22" ;
+    skos:note "The stage was read and entered at pmc:PatisankhanupassanaNana; the absence in it is what licenses pmc:VipassanaPatisankhaReworking. The limit: the subcommentary, the Paramatthamañjūsā, was not read, and a bodily mark standing there and not in the handbook would make the addition the subcommentary's and the modern station a copier."@en .
+
+pmp:VisuddhinanaKathaTranslationSearch a pm:Searching ;
+    rdfs:label "Whether a second translation of the Visuddhiñāṇakathā is reachable"@en, "Ob eine zweite Übersetzung der Visuddhiñāṇakathā erreichbar ist"@de ;
+    pm:searchedCorpus "archive.org, advanced search over titles and creators" ;
+    pm:searchedFor "A translation of Mahāsi Sayādaw's Pali treatise by a translator other than Nyanaponika, in any language, so that the rule of two translations could be met by translations and not by the original." ;
+    pm:searchTerms "progress of insight AND mahasi; mahasi sayadaw progress of insight; visuddhinana katha; visuddhi nana katha; mahasi sayadaw" ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-22" ;
+    dcterms:date "2026-10-22" ;
+    skos:note "Only the 1965 bilingual print came back; the Vietnamese items under the author's name are other works. Other libraries and the BPS online edition were not searched. The rule was met by reading the author's own Pali at every entered place."@en .
