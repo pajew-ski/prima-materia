@@ -155,7 +155,7 @@ Jede Behauptung trägt `dcterms:source` als Werk mit Stelle und gelesener Ausgab
 6. **PR öffnen** bei `gruen`, Erntenotiz im Body, liegen lassen.
 7. Ohne Unterbrechung zum nächsten Bündel.
 
-**Im Batch, nicht nacheinander.** Je unabhängiger Strang ein Branch von `main` und ein PR. Gestapelt nur bei Dateiüberschneidung, mit `base` auf den Branch darunter; wird die Überschneidung erst bei der Lektüre sichtbar, wird der spätere Strang auf den Kopf des früheren gesetzt (#475, #744). Nach dem Merge des unteren dessen Branch löschen, sonst zielt der obere weiter auf ihn.
+**Im Batch, nicht nacheinander, aber nach Budget und nicht nach Breite.** Je unabhängiger Strang ein Branch von `main` und ein PR. Höchstens vier Teilagenten gleichzeitig, jeder Strang bis zum PR, bevor der nächste anfängt; eine Ernte über mehrere Werke geht Werk für Werk, und was über rund eine Million Tokens hochgerechnet ist, läuft in Tranchen über geplante Aufgaben oder Sitzungen. Die Regel samt Hochrechnung vor dem Ausfächern steht in `pajew-ski/config`, `CLAUDE.md`, Laufende Regeln; Fall: rund vierzig gleichzeitige Teilläufe sprengten am 2026-10-22 das Sitzungslimit, ohne dass ein Werk den Graphen erreichte (#893). Gestapelt nur bei Dateiüberschneidung, mit `base` auf den Branch darunter; wird die Überschneidung erst bei der Lektüre sichtbar, wird der spätere Strang auf den Kopf des früheren gesetzt (#475, #744). Nach dem Merge des unteren dessen Branch löschen, sonst zielt der obere weiter auf ihn.
 
 **Jede Frage an den Menschen trägt ihre Empfehlung**, auch bei Entscheidungen nach §11 und §14: Optionen, Kosten, empfohlene Option mit Grund.
 
