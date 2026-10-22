@@ -1,0 +1,120 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the modern vipassanā movement, entered at three works of
+# Mahāsi Sayādaw
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-modern.ttl with no node. The
+# registration names Mahāsi's Manual of Insight and Ledi Sayādaw's manuals.
+# What was opened is Mahāsi: the Pali treatise Visuddhiñāṇakathā in the
+# bilingual Kandy print of 1965, read complete in the English and at every
+# entered place in the Pali; the recorded discourse on the basic practice in
+# U Pe Thin's English, read complete; and Practical Insight Meditation, which
+# its own preface says is the English of chapter V of the Burmese Manual of
+# Insight, read complete. The other chapters of the Manual and the whole of
+# Ledi are unopened and the work nodes say so.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# practices; the stages in the order of the treatise; the prerequisites; the
+# term; the conditions of failure; the cautions; the reworking.
+#
+# Citation. The treatise is cited by the page of Nyanaponika's English and
+# by the page of the Pali text printed in the same volume (pp. 39-58). The
+# printed page numbers stand at the foot of the page; the scan repeats page
+# 21 once, and the text layer loses the numerals of pages 1, 5, 8, 11, 13,
+# 19 and 25, which were restored from the sequence. The two English
+# discourses are cited by the page of the Rangoon print.
+#
+
+#
+# The works
+#
+
+pmw:VisuddhinanaKatha a dcterms:BibliographicResource ;
+    rdfs:label "Mahāsi Sayādaw, Visuddhiñāṇakathā (The Progress of Insight)"@en, "Mahāsi Sayādaw, Visuddhiñāṇakathā (Der Fortschritt der Einsicht)"@de ;
+    skos:note "Read on 2026-10-22 in The Progress of Insight through the Stages of Purification, a modern Pali treatise on Buddhist Satipatthana meditation by the Venerable Mahasi Sayadaw, English translation with notes by Nyanaponika Thera, with the original Pali text (Kandy: The Forest Hermitage, 1965), title page in the text layer of archive.org the-progress-of-insight-1965-pali-english-bilingual-version-mahasi-sayadaw.pdf. The English, pp. 1-26, was read complete with the translator's notes, pp. 27-32, and the short biography, pp. 34-35; the Pali, pp. 39-58, was read complete and compared at every place entered. The colophon in both languages says the author wrote the work in Burmese and rendered it into Pali himself; the English gives the date of composition as 22 May 1950. The Burmese version was not looked for."@en ;
+    skos:note "One translator. No second translation of the treatise was found on archive.org under the English title, under Visuddhiñāṇakathā or under the author's name, and the later BPS reprints carry the same Nyanaponika text. The rule of two translations is met here by reading the author's own Pali at every place, which is the original and not a translation; where Nyanaponika departs from it, the node says so. The departures that matter are units of time: the Pali counts in minita and ghaṭikā, and Nyanaponika renders ghaṭikā as hour throughout, which fits the Burmese usage the author writes from, and once prints six minutes where the Pali has five."@en .
+
+pmw:SatipatthanaVipassanaMeditation a dcterms:BibliographicResource ;
+    rdfs:label "Mahāsi Sayādaw, The Satipatthana Vipassana Meditation (the discourse on the basic practice)"@en, "Mahāsi Sayādaw, The Satipatthana Vipassana Meditation (die Unterweisung in der Grundübung)"@de ;
+    skos:note "Read complete on 2026-10-22 in The Satipatthana Vipassana Meditation: A Basic Buddhist Mindfulness Exercise, by the Venerable Mahasi Sayadaw (Rangoon: Department of Religious Affairs, 1979; first reprint 1996, second reprint 2003), pp. 1-34, title page in the text layer of archive.org TheSatipatthanaVipassanaMeditation, which binds it with Practical Insight Meditation. The introduction says that the discourse was given daily from December 1949 to each batch of meditators arriving at the centre in Rangoon, recorded on tape on 27 July 1951 and played daily thereafter, printed in Burmese in 1954, and translated by the late U Pe Thin. Only the English was read; the Burmese was not looked for. The text layer drops the numerals of pages 1 to 9, which were counted from page 10."@en .
+
+pmw:PracticalInsightMeditation a dcterms:BibliographicResource ;
+    rdfs:label "Mahāsi Sayādaw, Practical Insight Meditation (chapter V of the Manual of Insight)"@en, "Mahāsi Sayādaw, Practical Insight Meditation (Kapitel V des Handbuchs der Einsicht)"@de ;
+    skos:note "Read complete on 2026-10-22 in Practical Insight Meditation, by the Venerable Mahasi Sayadaw (Rangoon: Department of Religious Affairs, 1979), the preface, parts I and II, the notes and the appendix, pp. 9-64, in the same scan as the discourse on the basic practice. The author's preface, dated 1 October 1970, says that the book is the English of chapter V of his Burmese treatise on insight meditation in two volumes, completed in 1944: its first fourteen pages translated by U Pe Thin in 1954 and revised by Mary McCollum, pages 15 to 51 translated by Myanaung U Tin, and the whole put into final shape by Nyanaponika. It also says that chapter V alone was written in common language without references to the texts. Two translators and one reviser stand behind one text, so the node citing it names one translation and not two."@en .
+
+pmw:VipassanaShuniKyan a dcterms:BibliographicResource ;
+    rdfs:label "Mahāsi Sayādaw, the Burmese treatise on insight meditation (Manual of Insight), two volumes, 1944"@en, "Mahāsi Sayādaw, die birmanische Abhandlung über die Einsichtsmeditation (Handbuch der Einsicht), zwei Bände, 1944"@de ;
+    skos:note "The work the registration names. Of it, chapter V was read in English as pmw:PracticalInsightMeditation. The other chapters, which the author's preface says carry the references to the Pali texts, commentaries and subcommentaries, are unopened: the Burmese is in a language the run does not read, and an English translation of the whole under the title Manual of Insight was not found on archive.org, where that title belongs to Ledi Sayādaw's Vipassanā Dīpanī. Whether a full English translation is reachable elsewhere was not searched."@en .
+
+pmw:LediManualsOfBuddhism a dcterms:BibliographicResource ;
+    rdfs:label "Ledi Sayādaw, the Manuals of Buddhism (dīpanī)"@en, "Ledi Sayādaw, die Handbücher des Buddhismus (dīpanī)"@de ;
+    skos:note "Named by the registration and not opened in this run. Reachable: archive.org carries the English collection as athemanualsofbuddhismmahatheraledisayadaw_87_o and LediSayadawManualOfBuddhism, and the Vipassanā Dīpanī in U Ñāṇa's English as the-manual-of-insight (BPS Wheel 31/32). Ledi is the earlier station of the movement and the place to ask whether the bare-insight route and the marks of the stages entered here from Mahāsi already stand a generation before him."@en .
+
+#
+# The tradition
+#
+
+pmt:ModernVipassana a pm:Tradition ;
+    pm:fromWork pmw:VisuddhinanaKatha, pmw:SatipatthanaVipassanaMeditation, pmw:PracticalInsightMeditation ;
+    rdfs:label "Modern vipassanā movement"@en, "Moderne Vipassanā-Bewegung"@de ;
+    skos:definition "The twentieth century Burmese reform transmission of insight practice as a lay technique detachable from monastic life, taught in fixed courses."@en ;
+    skos:note "Registered separately from the canon and the commentaries because it is a distinct transmission with its own founders and manuals, and because its relation to the older material, in particular its treatment of absorption, is contested inside the tradition itself."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented, and the route is printed in the works. The treatise takes the seven purifications of Buddhaghosa's handbook as its frame, names its knowledges with the handbook's names, and quotes the handbook, its great subcommentary, the Paṭisambhidāmagga, the Kathāvatthu and Majjhima commentaries and the Milindapañha at the places it needs them; the biography names the author's teacher, U Nārada of Thaton, the first Mingun Jetavan Sayādaw. Everything here that agrees with traditions/theravada.ttl and traditions/theravada-vism-samadhi.ttl is reception along that route and counts once. What the station added is entered as a pm:Reworking where the received claim stands as a node."@en ;
+    skos:note "Recension and edition, the second decision. For the treatise the text is the author's own Pali, printed with Nyanaponika's English in 1965; the English is cited for the page a reader finds and the Pali for the wording. For the two discourses only the English of the Rangoon print of 1979 was read, so every node from them rests on one translation, and the author's own words in Burmese were not seen."@en ;
+    skos:note "The third decision, the number of citable places: three works read complete; six practices; nineteen stages and states in the order of the treatise; four further states the prerequisites point at; seven prerequisites; one yielding with a term and the outcome it names; three conditions of failure entered as their own nodes and two more among the prerequisites; five cautions; two statements about the practitioner's body; and one reworking, each at a page."@en ;
+    skos:note "Two counts, kept apart as SPEC §15 asks. Signs of success announced to the practitioner in advance, across the three works: nineteen — the many painful feelings and the mental images of a dagoba, a monk or a cloud at the knowledge of conditionality; the light, the rapture that lifts the body, the tranquillity, the happiness, the faith, the balanced energy and the equanimity of the early knowledge of arising and passing away; the vanishing of shape and the feeling of having lost the insight at dissolution; the fear, the insipidity and the disgust; the pains and the unwillingness to keep a posture at desire for deliverance; the severe pains and the restlessness at re-observation; their absence and the unforced noting for two or three hours at equanimity; the two or three acts of noting in rapid succession before the path; the flood of faith and rapture for one or two hours after it; the sitting posture that stays firm during fruition; the thrill or chill through the back; and the sounds that startle. Conditions of failure stated in advance: five — concentration short of perfection, under which equanimity only repeats and fruition does not come (pmc:VipassanaSamadhiAparipunna); faculties not mature, under which the higher path does not come in one, two or three days (pmc:VipassanaIndriyaAparipakka); perfections not developed, under which the progress stops at equanimity (pmc:VipassanaParamiAparipunna); the posture changed whenever a pain arises, under which concentration and with it the path are not had (pmc:VipassanaIriyapathaKhanti); and a striving for a higher path without a fixed period, under which the lower fruition cannot be re-entered (pmc:VipassanaKalaparicchedaUparimagga). Each of the five names a condition the practitioner cannot inspect except by the outcome it is to explain, which is the finding about the count."@en ;
+    pm:principalCorpus "Mahāsi Sayādaw, Manual of Insight; Ledi Sayādaw, the Manuals of Buddhism" ;
+    pm:corpusWork pmw:VisuddhinanaKatha, pmw:SatipatthanaVipassanaMeditation, pmw:PracticalInsightMeditation, pmw:VipassanaShuniKyan, pmw:LediManualsOfBuddhism ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Mahāsi Sayādaw, The Progress of Insight (Visuddhiñāṇakathā), trans. Nyanaponika Thera, with the Pali text (Kandy: The Forest Hermitage, 1965)" .
+
+#
+# The practices
+#
+
+pmp:VipassanaSallakkhana a pm:Practicing ;
+    pm:fromWork pmw:VisuddhinanaKatha, pmw:SatipatthanaVipassanaMeditation, pmw:PracticalInsightMeditation ;
+    rdfs:label "Noting (sallakkhaṇa): marking each bodily and mental process at the six doors as it occurs"@en, "Bemerken (sallakkhaṇa): jeden körperlichen und geistigen Vorgang an den sechs Toren im Auftreten markieren"@de ;
+    skos:definition "The one practice of the three works, of which every other entry here is a stage or a condition. The meditator notices, according to their specific and general characteristics, the bodily and mental processes that become evident at the six sense doors, and since that is at first impossible he begins with what is distinct: the touch of the sitting posture, noted as sitting, touching, and the rise and fall of the abdomen. Whatever arises in between — a thought, a feeling, an adjustment of the body — is noticed and the attention returns to the basic object. The discourses spell the method out to the swallowing of saliva, the lifting of a cup and each morsel of a meal, and require it from waking to falling asleep without relaxation."@en ;
+    skos:note "Nyanaponika's note gives the Pali sallakkhaṇa, from sallakkheti, to mark clearly, and says that noticing is the same as the bare attention of his own book. The treatise says of its knowledges that they come from simple noticing and not from reasoning, and returns to the point at almost every stage: the reflection that arises between acts of noticing is itself to be noticed and not followed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ModernVipassana ;
+    dcterms:source "Mahāsi Sayādaw, The Progress of Insight (Visuddhiñāṇakathā), trans. Nyanaponika Thera, with the Pali text (Kandy: The Forest Hermitage, 1965), pp. 1-3 and n. 15 at p. 28; Pali text pp. 39-40", "Mahāsi Sayādaw, The Satipatthana Vipassana Meditation, trans. U Pe Thin (Rangoon: Department of Religious Affairs, 1979), pp. 1-34", "Mahāsi Sayādaw, Practical Insight Meditation, trans. U Pe Thin and Myanaung U Tin (Rangoon: Department of Religious Affairs, 1979), pp. 11-24" .
+
+pmp:VipassanaUdaraUnnamanaOnamana a pm:Practicing ;
+    pm:fromWork pmw:VisuddhinanaKatha, pmw:SatipatthanaVipassanaMeditation, pmw:PracticalInsightMeditation ;
+    rdfs:label "The rising and falling of the abdomen as the basic object"@en, "Das Heben und Senken der Bauchdecke als Grundgegenstand"@de ;
+    skos:definition "The basic object of the method. While sitting, the meditator keeps the mind (not the eyes) on the abdomen and notes each upward movement as rising and each downward one as falling, as it occurs, without changing the natural breath and without repeating the words aloud; if the movement is not clear, both hands are placed on the abdomen. The treatise reads the movement as the wind element in its three aspects of stiffening, vibrating and pushing and pulling, and calls it the basic object of mindfulness in this practice."@en ;
+    skos:note "The translator's note to the treatise says that this attention to the abdomen was introduced into the methodical practice of insight by the author himself, and allows the breath of the traditional mindfulness of breathing in its place. The appendix to Practical Insight Meditation spends its pages defending the object against the objection that the texts do not name it, by placing the movement under the wind element, the corporeality group, the tactile object and the truth of suffering. A practice whose author has to argue that it is in the canon is one the canon does not name, which is the reason this node carries the translator's note."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ModernVipassana ;
+    dcterms:source "Mahāsi Sayādaw, The Progress of Insight (Visuddhiñāṇakathā), trans. Nyanaponika Thera, with the Pali text (Kandy: The Forest Hermitage, 1965), pp. 2-3 and n. 4 at p. 27; Pali text pp. 39-40", "Mahāsi Sayādaw, The Satipatthana Vipassana Meditation, trans. U Pe Thin (Rangoon: Department of Religious Affairs, 1979), pp. 13-15", "Mahāsi Sayādaw, Practical Insight Meditation, trans. U Pe Thin and Myanaung U Tin (Rangoon: Department of Religious Affairs, 1979), pp. 12-13 and appendix pp. 58-60" .
+
+pmp:VipassanaCankamana a pm:Practicing ;
+    pm:fromWork pmw:SatipatthanaVipassanaMeditation, pmw:PracticalInsightMeditation ;
+    rdfs:label "Walking noted in one, two and three sections"@en, "Gehen, in einem, zwei und drei Abschnitten bemerkt"@de ;
+    skos:definition "Walking is noted as right step, left step or walking, walking when quick, and when slow in two sections, lifting, putting, and after two or three days in three, lifting, pushing, putting. The next step is not to begin until the first has ended. All movements are to be made slowly, as by a weak sick man or a man with lumbago, so that mindfulness can keep pace; the meditator is to behave as if blind and deaf."@en ;
+    skos:note "The discourse sets a schedule here and nowhere else in the basic practice: two sections for the first two or three days, then three."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ModernVipassana ;
+    dcterms:source "Mahāsi Sayādaw, The Satipatthana Vipassana Meditation, trans. U Pe Thin (Rangoon: Department of Religious Affairs, 1979), pp. 22-25", "Mahāsi Sayādaw, Practical Insight Meditation, trans. U Pe Thin and Myanaung U Tin (Rangoon: Department of Religious Affairs, 1979), pp. 17-18" .
+
+pmp:VipassanaPhalasamapattiAdhitthana a pm:Practicing ;
+    pm:fromWork pmw:VisuddhinanaKatha, pmw:PracticalInsightMeditation ;
+    rdfs:label "Resolving on the attainment of fruition: how soon, how often and for how long"@en, "Entschluss zur Erreichung der Frucht: wie bald, wie oft und wie lange"@de ;
+    skos:definition "After the first path the meditator sets his mind on re-entering fruition, on entering it quickly and on abiding in it a long time, making the resolve before he begins to notice. The noticing then runs again from the knowledge of arising and passing away to equanimity, and with practice reaches equanimity after four or five acts of noticing. The same device of a resolve fixed in advance is used to review the knowledges one by one for a set time, and to set a period during which the meditator renounces the lower fruition in order to strive for a higher path."@en ;
+    skos:note "The resolve is the one instrument in the three works by which the practitioner states an outcome before it occurs and then sees whether it occurs, and the works use it so: a stated duration that the fruition is said to keep, a stated knowledge that is said to stay for the stated time and give way to the next when it expires. That is the place where a protocol on this transmission would start."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ModernVipassana ;
+    dcterms:source "Mahāsi Sayādaw, The Progress of Insight (Visuddhiñāṇakathā), trans. Nyanaponika Thera, with the Pali text (Kandy: The Forest Hermitage, 1965), p. 24; Pali text p. 56", "Mahāsi Sayādaw, Practical Insight Meditation, trans. U Pe Thin and Myanaung U Tin (Rangoon: Department of Religious Affairs, 1979), pp. 46-50" .
+# ANKER-W1
