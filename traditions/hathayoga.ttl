@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -15,26 +16,49 @@
 # prerequisites in the base layer rather than leaving them to commentary.
 #
 
+#
+# The works
+#
+
+pmw:Hathapradipika a dcterms:BibliographicResource ;
+    rdfs:label "Svātmārāma, Haṭhayogapradīpikā"@en, "Svātmārāma, Haṭhayogapradīpikā"@de ;
+    skos:note "Every node of this file entered before 2026-10-22 cites the Sanskrit vulgate in the numbering of Sinh's translation and was read there; those citations are left as they stand. The nodes entered on 2026-10-22 were read in the Sanskrit of the Bombay printing with Brahmānanda's commentary, archive.org dli.ernet.429198, a text layer of 226402 Devanagari characters against none Latin. Its title page is not legible in the text layer; the colophon at the end of the commentary is, and gives the printing: at Bombay, in the Tattvavivecaka press, printed for Tukārām Tātyā, in Śaka 1814 and Vikrama 1949, on the tenth of the dark half of Māgha. The running heads of the Sanskrit are not monotonic in the text layer, so the Sanskrit is cited by chapter and verse without page."@en ;
+    skos:note "Two translations by two translators, both read at every verse entered on 2026-10-22 except III.84-85, which Iyangar omits. Pancham Sinh, The Hatha Yoga Pradipika, translated into English (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama), archive.org dli.csl.7087, title page in the text layer, year not legible there. Srinivasa Iyangar, Hatha-yoga-pradipika of Svatmarama Svamin, Part I, third edition (Adyar: Theosophical Publishing House, 1949; first edition 1893, second 1933), archive.org in.ernet.dli.2015.90055, title page in the text layer; it translates the verses and carries much of the Jyotsnā in its notes without always saying which sentence is the commentary's. Sinh numbers the first chapter from verse 17 two higher than the Bombay printing and Iyangar."@en ;
+    skos:note "Read on 2026-10-22: I.11-17, I.56-64, II.10-14 and III.83-85, continuously, in the Sanskrit with the commentary and in both translations; besides that, a whole-text term search of the Sanskrit for the hermitage and for the terms of absence and incapacity (pmp:WaiverHathapradipikaMathaSearch). The earlier nodes rest on the verses they cite, and no record says how much of the work around them was read; chapter IV carries no node of this file."@en .
+
+pmw:HathapradipikaJyotsna a dcterms:BibliographicResource ;
+    rdfs:label "Brahmānanda, Jyotsnā, commentary on the Haṭhayogapradīpikā"@en, "Brahmānanda, Jyotsnā, Kommentar zur Haṭhayogapradīpikā"@de ;
+    skos:note "Read on 2026-10-22 at the verses named under pmw:Hathapradipika, in the same Bombay printing, which names the commentary and its author in the colophons of the chapters. A later station of the same transmission and held as a work of its own, so that a release the commentary spells out is never read as the verse's. It states its own rule for the base text at I.12: verses of the Pradīpikā that it does not explain are to be taken as interpolated."@en .
+
+#
+# The tradition
+#
+
 pmt:Hathayoga a pm:Tradition ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Haṭhayoga"@en, "Haṭhayoga"@de ;
     skos:definition "The transmission of the Haṭhayogapradīpikā of Svātmārāma and the manuals around it."@en ;
     skos:note "Edition finding, prima-materia#45. Every verse cited in this file was read in the Sanskrit of the widely circulated vulgate, in the recension that the 1915 edition and translation of Sinh carries, and each citation now says so. The critical edition drawn from the manuscript tradition numbers differently in places; pmc:HathapradipikaRecensionDispute holds what is at issue."@en ;
     pm:principalCorpus "Svātmārāma, Haṭhayogapradīpikā" ;
+    pm:corpusWork pmw:Hathapradipika, pmw:HathapradipikaJyotsna ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:Asana a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Posture"@en, "Sitzhaltung"@de ;
     skos:definition "The seat, treated in the first chapter as the first limb of the practice."@en ;
     pm:withinTradition pmt:Hathayoga ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā I (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:NadiPurification a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Purification of the channels"@en, "Reinigung der Kanäle"@de ;
     skos:definition "The clearing of impurity from the channels, at which the breath practice is said to aim, and whose accomplishment the text says shows outwardly in the body."@en ;
     pm:withinTradition pmt:Hathayoga ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.6 (Sanskrit vulgate; Sinh 1915)", "Svātmārāma, Haṭhayogapradīpikā II.19-20 (Sanskrit vulgate; Sinh 1915)" .
 
 pmp:HathaPranayama a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Breath regulation in Haṭhayoga"@en, "Atemregulierung im Haṭhayoga"@de ;
     skos:definition "The breath practice of the second chapter, directed at the clearing of the central channel."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -42,6 +66,7 @@ pmp:HathaPranayama a pm:Practicing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:PranayamaPresupposesAsana a pm:Presupposing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Breath regulation presupposes firmness in posture"@en, "Atemregulierung setzt Festigkeit in der Haltung voraus"@de ;
     pm:dependentStep pmp:HathaPranayama ;
     pm:priorStep pmc:Asana ;
@@ -52,6 +77,7 @@ pmc:PranayamaPresupposesAsana a pm:Presupposing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.1 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:SuccessPresupposesNadiPurification a pm:Presupposing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Success in the practice presupposes purification of the channels"@en, "Erfolg der Praxis setzt die Reinigung der Kanäle voraus"@de ;
     pm:dependentStep pmp:HathaPranayama ;
     pm:priorStep pmc:NadiPurification ;
@@ -62,6 +88,7 @@ pmc:SuccessPresupposesNadiPurification a pm:Presupposing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.6 (Sanskrit vulgate; Sinh 1915)", "Svātmārāma, Haṭhayogapradīpikā II.19-20 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:HathaChapterOrder a pm:Presupposing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The manual orders posture, breath, seal and absorption"@en, "Das Handbuch ordnet Haltung, Atem, Siegel und Versenkung"@de ;
     pm:dependentStep pmc:NadiPurification ;
     pm:priorStep pmc:Asana ;
@@ -76,6 +103,7 @@ pmc:HathaChapterOrder a pm:Presupposing ;
 #
 
 pmc:HathapradipikaRecensionDispute a pm:Disputing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The text and the verse numbering of the manual are edition-dependent"@en, "Textbestand und Verszählung des Handbuchs hängen von der Ausgabe ab"@de ;
     skos:definition "A disagreement among editors about what belongs to the manual and how its verses are numbered. The widely circulated editions descend from single manuscripts and differ in the count and extent of their chapters; a critical edition drawn from more than two hundred manuscripts, with the oldest dated 1496, settles neither question in favour of the numbering that most citations use."@en ;
     skos:note "Held as a node because every citation in this file carries a verse number, and a number is only as stable as the recension it comes from. The numbering used throughout this file follows the widely circulated vulgate text; a reader working from the critical edition may find the same passage under a different number. Naming the manual without naming the edition conceals that anything is at issue."@en ;
@@ -88,6 +116,7 @@ pmc:HathapradipikaRecensionDispute a pm:Disputing ;
 #
 
 pmp:Ujjayi a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Ujjāyī"@en, "Ujjāyī"@de ;
     skos:definition "A retention in which the mouth is held closed and the breath is drawn through both nostrils so that it grazes the throat and sounds as it passes."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -95,6 +124,7 @@ pmp:Ujjayi a pm:Practicing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.51-53 (Sanskrit vulgate; Sinh 1915)" .
 
 pmp:Sitkari a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Sītkārī"@en, "Sītkārī"@de ;
     skos:definition "A retention in which the breath is drawn in through the mouth with the tongue between the lips, producing a hissing sound, and is not let out the same way."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -102,6 +132,7 @@ pmp:Sitkari a pm:Practicing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.54-56 (Sanskrit vulgate; Sinh 1915)" .
 
 pmp:Sitali a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Śītalī"@en, "Śītalī"@de ;
     skos:definition "A retention in which the breath is drawn in over the tongue, protruded past the lips, and released through the nostrils."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -109,12 +140,14 @@ pmp:Sitali a pm:Practicing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.57-58 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:CoolingAndQuenching a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Cooling and the quenching of hunger and thirst"@en, "Kühlung und das Stillen von Hunger und Durst"@de ;
     skos:definition "The state ascribed to the cooling retention: fever, bile, hunger, thirst and the effect of poisons are said to be put down."@en ;
     pm:withinTradition pmt:Hathayoga ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.58 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:SitaliYieldsCooling a pm:Yielding ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Inhalation over the tongue yields cooling"@en, "Die Einatmung über die Zunge bringt Kühlung hervor"@de ;
     pm:byPractice pmp:Sitali ;
     pm:yieldsCapacity pmc:CoolingAndQuenching ;
@@ -124,6 +157,7 @@ pmc:SitaliYieldsCooling a pm:Yielding ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.57-58 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:ForcedBreathCaution a pm:Cautioning ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Breath forced rather than tamed by degrees kills the practitioner"@en, "Ein erzwungener statt allmählich gezähmter Atem tötet den Übenden"@de ;
     skos:definition "A warning that the breath is to be mastered by degrees as a lion, an elephant or a tiger is mastered, and that it destroys the one who proceeds otherwise; performed wrongly, the practice is said to generate the very ailments it removes when performed rightly."@en ;
     pm:cautionsAbout pmp:HathaPranayama ;
@@ -137,12 +171,14 @@ pmc:ForcedBreathCaution a pm:Cautioning ;
 #
 
 pmc:KevalaKumbhaka a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Retention alone"@en, "Alleiniges Anhalten"@de ;
     skos:definition "Retention held at will without the filling and the emptying that ordinarily frame it. The manual calls it the accomplished form of the practice and says nothing in the three worlds is beyond one who holds it."@en ;
     pm:withinTradition pmt:Hathayoga ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.71-74 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:KevalaPresupposesSahita a pm:Presupposing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Retention alone presupposes retention with filling and emptying"@en, "Das alleinige Anhalten setzt das Anhalten mit Füllen und Leeren voraus"@de ;
     pm:dependentStep pmc:KevalaKumbhaka ;
     pm:priorStep pmp:HathaPranayama ;
@@ -153,6 +189,7 @@ pmc:KevalaPresupposesSahita a pm:Presupposing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.72 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:OpposedDirectionsOfPranaAndApana a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The two winds are driven in opposite directions at once"@en, "Die beiden Winde werden zugleich in entgegengesetzte Richtungen getrieben"@de ;
     skos:definition "The apāna is raised from below while the prāṇa is pressed down from the throat, and the two are brought together in the region of the navel."@en ;
     skos:note "The manual assigns direction to the two winds, not to the two phases of breathing. Both directions run in the same operation and against each other, so a scheme that reads inhalation as upward and exhalation as downward, or the reverse, has no purchase here. See prima-materia#27 and prima-materia#28."@en ;
@@ -164,12 +201,14 @@ pmc:OpposedDirectionsOfPranaAndApana a pm:Conceptualizing ;
 #
 
 pmc:ErectTrunkInSwastikasana a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The straight trunk as the mark of a seat"@en, "Der gerade Rumpf als Merkmal einer Sitzhaltung"@de ;
     skos:definition "A seat defined by sitting evenly with the body straight; the straightness is part of what the posture is, not a separate instruction."@en ;
     pm:withinTradition pmt:Hathayoga ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.21 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:ChinToChestInTheChiefSeats a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The chin pressed to the chest in the two seats the manual prefers"@en, "Das an die Brust gedrückte Kinn in den beiden bevorzugten Sitzhaltungen"@de ;
     skos:definition "In the two seats the manual singles out as chief, the chin is set firmly against the chest and the gaze is fixed between the brows or at the tip of the nose."@en ;
     skos:note "This is the counterweight to any claim that the manual requires an erect spine throughout. The seats it recommends most warmly close the neck rather than extend it, and the same posture chapter has the tongue set against the roots of the upper teeth while the wind is drawn upward. Uprightness of the trunk is attested; uprightness carried through the neck and head is contradicted in the same work. See prima-materia#29."@en ;
@@ -177,6 +216,7 @@ pmc:ChinToChestInTheChiefSeats a pm:Conceptualizing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.37 (Sanskrit vulgate; Sinh 1915)", "Svātmārāma, Haṭhayogapradīpikā I.46 (Sanskrit vulgate; Sinh 1915)", "Svātmārāma, Haṭhayogapradīpikā I.48 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:BhastrikaPresupposesLevelNeckAndTrunk a pm:Presupposing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The bellows breath presupposes neck and trunk held level"@en, "Der Blasebalgatem setzt einen gerade gehaltenen Hals und Rumpf voraus"@de ;
     pm:dependentStep pmp:HathaPranayama ;
     pm:priorStep pmc:ErectTrunkInSwastikasana ;
@@ -191,6 +231,7 @@ pmc:BhastrikaPresupposesLevelNeckAndTrunk a pm:Presupposing ;
 #
 
 pmp:Mulabandha a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The root seal"@en, "Das Wurzelsiegel"@de ;
     skos:definition "A seal made by pressing the perineum with the heel and contracting the anus, by which the downward wind is drawn upward."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -198,6 +239,7 @@ pmp:Mulabandha a pm:Practicing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.61-63 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:ApanaForcedAgainstItsCourse a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The downward wind driven upward by force"@en, "Der abwärts gerichtete Wind wird mit Gewalt aufwärts getrieben"@de ;
     skos:definition "The wind whose course is downward is said to be made to go upward by force; the manual states the natural course and the reversal in the same verse."@en ;
     skos:note "This is the direct reversal of any scheme that assigns downward carriage to an operation in the lower abdomen. The manual has the abdominal operation carry upward, and has the operation at the throat press the other wind down. Both assignments are the opposite of the one the modern draft makes. See prima-materia#28."@en ;
@@ -205,12 +247,14 @@ pmc:ApanaForcedAgainstItsCourse a pm:Conceptualizing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.62 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:KindledInnerFire a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The kindled inner fire"@en, "Das entfachte innere Feuer"@de ;
     skos:definition "A heat said to arise when the raised wind reaches the region of fire, lengthening its flame, until the sleeping power is warmed through and straightens."@en ;
     pm:withinTradition pmt:Hathayoga ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.66-68 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:MulabandhaYieldsInnerFire a pm:Yielding ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The root seal yields the kindled inner fire"@en, "Das Wurzelsiegel bringt das entfachte innere Feuer hervor"@de ;
     pm:byPractice pmp:Mulabandha ;
     pm:yieldsCapacity pmc:KindledInnerFire ;
@@ -220,6 +264,7 @@ pmc:MulabandhaYieldsInnerFire a pm:Yielding ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.66-68 (Sanskrit vulgate; Sinh 1915)" .
 
 pmp:Khecari a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Khecarī"@en, "Khecarī"@de ;
     skos:definition "A seal in which the tongue is turned back and set above the palate while the gaze rests between the brows; the manual describes a months-long preparation of the tongue before the position can be held."@en ;
     pm:attestedBy pm:textualAttestation ;
@@ -227,12 +272,14 @@ pmp:Khecari a pm:Practicing ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.32-33 (Sanskrit vulgate; Sinh 1915)", "Svātmārāma, Haṭhayogapradīpikā III.37 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:RetentionOfTheDescendingNectar a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The retention of the descending nectar"@en, "Das Zurückhalten des herabfließenden Nektars"@de ;
     skos:definition "The stopping of a fluid held to fall from above and to be consumed below, whose loss the manual makes responsible for ageing and death."@en ;
     pm:withinTradition pmt:Hathayoga ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.51-52 (Sanskrit vulgate; Sinh 1915)", "Svātmārāma, Haṭhayogapradīpikā III.77 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:KhecariYieldsRetention a pm:Yielding ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The tongue set above the palate yields the retention of the nectar"@en, "Die über den Gaumen gelegte Zunge bringt das Zurückhalten des Nektars hervor"@de ;
     pm:byPractice pmp:Khecari ;
     pm:yieldsCapacity pmc:RetentionOfTheDescendingNectar ;
@@ -246,6 +293,7 @@ pmc:KhecariYieldsRetention a pm:Yielding ;
 #
 
 pmc:SixteenSupports a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "The sixteen supports"@en, "Die sechzehn Stützen"@de ;
     skos:definition "A set of sixteen named stations of the body, called supports, which the seal at the throat is said to bind; the manual names the number in a compound and treats the binding of all sixteen as one operation."@en ;
     skos:note "Recorded because the number is the whole of the finding. A modern draft gives thirteen segments as the path along which the force is led; sixteen is what the base text names here, and other works of the wider corpus give eighteen. The count therefore varies across the transmission, which means there is no single path to be had, and a scheme that presents one number as the path has chosen a branch without saying so. The other witnesses to the sixteen and the eighteen have not been read at their wording and are not entered here. See prima-materia#35."@en ;
@@ -257,6 +305,7 @@ pmc:SixteenSupports a pm:Conceptualizing ;
 #
 
 pmc:KevalaKumbhakaIsByEffort a pm:Situating ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Retention alone is attained by effort"@en, "Das alleinige Anhalten wird durch Anstrengung erlangt"@de ;
     pm:situatedNode pmc:KevalaKumbhaka ;
     pm:axisValue pm:byEffort ;
@@ -265,6 +314,7 @@ pmc:KevalaKumbhakaIsByEffort a pm:Situating ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.72-73 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:KevalaKumbhakaHoldsOwnAgency a pm:Situating ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Retention alone holds its own agency"@en, "Das alleinige Anhalten behält die eigene Trägerschaft"@de ;
     pm:situatedNode pmc:KevalaKumbhaka ;
     pm:axisValue pm:ownAgency ;
@@ -273,6 +323,7 @@ pmc:KevalaKumbhakaHoldsOwnAgency a pm:Situating ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.74 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:KevalaKumbhakaLocusNotStated a pm:Situating ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Retention alone states no locus"@en, "Das alleinige Anhalten gibt keinen Ort an"@de ;
     pm:situatedNode pmc:KevalaKumbhaka ;
     pm:axisValue pm:locusNotStated ;
@@ -281,9 +332,329 @@ pmc:KevalaKumbhakaLocusNotStated a pm:Situating ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.71-74 (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:KevalaKumbhakaIsWithdrawnAbsorption a pm:Situating ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Retention alone is placed at withdrawn absorption"@en, "Das alleinige Anhalten liegt bei abgezogener Vertiefung"@de ;
     pm:situatedNode pmc:KevalaKumbhaka ;
     pm:axisValue pm:withdrawnAbsorption ;
     pm:situationGround "Retention held at will without the filling and the emptying that ordinarily frame it. A suspension of the breath held as the accomplished form of the practice is the case this coordinate names by its own definition; the practitioner is awake and the ordinary sensory traffic has stopped being the point."@en ;
     pm:attestedBy pm:compilerInference ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.71-74 (Sanskrit vulgate; Sinh 1915)" .
+
+#
+# Opened again on 2026-10-22 for the examination of
+# pmc:TheWaiverRunsBothWays and pmc:AttainmentRelievesOnlyTheOutwardCondition
+# (examinations/the-waiver-runs-both-ways-tested.ttl). Read continuously in the
+# Sanskrit with Brahmānanda's Jyotsnā: I.11-17, I.56-64, II.10-14, and III.83-85, which a
+# term search for the setting aside of rules reached; the rest
+# of the work by whole-text term search only. Everything read in those four
+# stretches that falls under the five kinds SPEC §15 owes is entered below,
+# whether or not it bears on the examination.
+#
+# Citation. Verse numbers are those of the Bombay printing with the Jyotsnā,
+# which Iyangar's translation follows in the chapters read. Sinh's
+# translation numbers the second chapter alike, the third at vajrolī one
+# lower, and the first chapter from verse 17 on two higher, because it numbers the two verses on the restraints and observances
+# that the Bombay printing sets in quotation marks; each citation gives his
+# number as well. The Sanskrit is cited without page: the running heads of the
+# text layer are not monotonic.
+#
+
+pmc:HathaGopya a pm:Cautioning ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "The knowledge of haṭha is to be kept secret: kept secret it has force, made known it has none"@en, "Das Wissen vom Haṭha ist geheim zu halten: geheim hat es Kraft, bekannt gemacht keine"@de ;
+    skos:definition "The yogi who wants accomplishment is to keep the knowledge of haṭha supremely secret, for kept secret it is potent and made known it is impotent. The Jyotsnā gloss adds the qualifications of the one to whom it may be given, from Yājñavalkya and other authorities: with senses conquered, calm, free of attachment, keeping the restraints and observances, devoted to his teacher; and that it is not to be given to one who wears only the dress."@en ;
+    skos:note "A sanction on the practice and not on the person: what disclosure costs is the force of the knowledge itself. The book that says so is a manual in four chapters written out for readers, and Iyangar draws the consequence in his note to the verse, that the decisive processes must then be learned from a teacher and that whoever practises from the book alone will come to harm; the note is his and not the verse's."@en ;
+    pm:cautionsAbout pmp:HathaAbhyasakrama ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.11, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.11" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.11, p. 5" .
+
+pmc:HathaYogamatha a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "The hermitage of the haṭha yogi: a place built for the purpose, in a country of a stated kind"@en, "Die Klause des Haṭha-Yogin: ein eigens gebauter Ort in einem Land bestimmter Art"@de ;
+    skos:definition "The practitioner is to stay alone in a small hermitage, in a well-governed and righteous country with plentiful alms and free of disturbance, with no rock, fire or water within a bow's length. The hermitage has a small door, no window, hole or pit, is neither too high nor too long, is well smeared with cow-dung and free of insects, and has outside it a pavilion, a raised platform and a well, the whole enclosed by a wall; seated there and free of every care, he is to practise yoga in the way the teacher has shown."@en ;
+    skos:note "The one requirement of the manual that is fixed outside the practitioner in the way a built place is, and the one the examination asked about first. Neither the verse nor Brahmānanda's gloss releases anybody from it: the gloss explains each feature by its use — the righteous country for suitable food, the solitude against quarrels, the hut against cold and heat — and quotes the Nandikeśvara Purāṇa for further features. A whole-text search of the Sanskrit for the terms of absence and incapacity found no release of the hermitage anywhere in the work (pmp:WaiverHathapradipikaMathaSearch)."@en ;
+    skos:note "The gloss on I.12 says that a half-verse some copies carry with the hermitage verse, on success through suitable food and recreation, was put in by someone else and is not explained, and states its rule: verses of the Pradīpikā that it does not explain are all to be taken as interpolated. The two verses on the ten restraints and ten observances, which the Bombay printing sets in quotation marks after I.16 and which Sinh numbers 17 and 18, are not explained by it and are interpolations by that rule."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.12-14, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.12-14" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.12-14, pp. 6-7" .
+
+pmc:HathaSadbhirYogoVinasyati a pm:Cautioning ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Yoga is destroyed by six things, the holding to vows among them"@en, "Der Yoga wird durch sechs Dinge zerstört, das Festhalten an Gelübden darunter"@de ;
+    skos:definition "Overeating, exertion, much talk, the holding to vows, the company of people and restlessness: by these six yoga is destroyed. The Jyotsnā names the vows: bathing in cold water in the morning, eating at night, living on fruit and the like."@en ;
+    skos:note "Counted among the conditions of failure of the stretch read, and it is the one the manual names for a practice that comes to nothing: every item on it is a state or an act of the practitioner, none a place, a day or a material. The fourth item turns against the ascetic rule itself. A manual that lists the keeping of vows among the things that destroy the practice has drawn its line between its own regimen and the regimens of others, and the morning bath and the fast return at I.61 as things the beginner is to avoid."@en ;
+    pm:cautionsAbout pmp:HathaAbhyasakrama ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.15, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.15" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.15, p. 9" .
+
+pmc:HathaSadbhirYogahPrasidhyati a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Yoga succeeds by six things"@en, "Der Yoga gelingt durch sechs Dinge"@de ;
+    skos:definition "By zeal, daring, steadfastness, knowledge of the truth, firm conviction and the abandoning of company: by these six yoga succeeds. The Jyotsnā glosses daring as setting to work without first weighing whether the thing can be done, steadfastness as the untiring certainty that it will succeed within his lifetime, and conviction as faith in the words of the scriptures and the teacher."@en ;
+    skos:note "The counterpart of the six destroyers in the next verse and stated in the same form: dispositions of the practitioner, nothing outside him. No sign is attached by which the practitioner could tell that he has them."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.16, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.16" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.16, p. 9" .
+
+pmp:HathaAbhyasakrama a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "The course of haṭha practice: posture, retention, seal, attention to the inner sound"@en, "Der Übungsgang des Haṭha: Haltung, Anhalten, Siegel, Lauschen auf den inneren Klang"@de ;
+    skos:definition "The order of practice the first chapter closes on: posture, the various retentions, the practice called seal, and then attention to the inner sound, with the purification of the channels and the breath practices of the seals before them; the Jyotsnā calls the last the sequence of practice in haṭha."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.56-57, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.58-59" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.56-57, pp. 24-25" .
+
+pmc:HathaSiddhi a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Accomplishment in haṭha"@en, "Vollendung im Haṭha"@de ;
+    skos:definition "Being accomplished, siddha, in haṭha, which the first chapter promises after a year to the practitioner who keeps its conditions. The verse does not say what the accomplished one can do; the Jyotsnā glosses siddha as accomplished in haṭha, siddhahaṭha, and says the verse states the limit of time for it."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.57, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" .
+
+pmc:HathaAbdadUrdhvamSiddhi a pm:Yielding ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "After a year he becomes accomplished; there is no room for doubt"@en, "Nach einem Jahr wird er vollendet; daran ist nicht zu zweifeln"@de ;
+    skos:definition "The yogi who is continent, keeps the measured diet, renounces and is devoted to yoga, and follows the course of practice to the attention to the inner sound, becomes accomplished after a year, and no deliberation is to be had about it. The Jyotsnā: after a year, varṣād ūrdhvam, he becomes accomplished in haṭha; the doubt whether it will be so or not is not to be raised; this is certain."@en ;
+    skos:note "A term. It is stated with four conditions on the practitioner and a word of certainty, and it names no sign by which the accomplishment at the end of the year would be known and no consequence if it does not come; a practitioner in whom nothing has happened after a year is left, by this verse, with the four conditions to examine in himself."@en ;
+    skos:note "The two translations read the term differently, and only one of them as the Sanskrit has it. Abdād ūrdhvam is after or beyond a year, and the commentary says the same. Iyangar renders within more than a year; Sinh renders gains success, no doubt, within a year, which turns a floor into a ceiling. A reader working from Sinh alone would take the verse to promise accomplishment before a year is out."@en ;
+    pm:byPractice pmp:HathaAbhyasakrama ;
+    pm:yieldsCapacity pmc:HathaSiddhi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.57, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.59" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.57, pp. 24-25" .
+
+pmc:HathaBrahmacarya a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Continence, as the first condition of the year's term"@en, "Enthaltsamkeit als erste Bedingung der Jahresfrist"@de ;
+    skos:definition "Continence, brahmacarya, named first among the four conditions under which the course of practice brings accomplishment after a year. The verse does not define it; the Jyotsnā glosses the word as one possessed of continence, and the third verse after it tells the practitioner to avoid women at the beginning."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.57, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" .
+
+pmc:HathaMitahara a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "The measured diet: food smooth and sweet, a quarter of the stomach left empty, eaten to please Śiva"@en, "Die bemessene Kost: glatte und süße Speise, ein Viertel des Magens leer gelassen, gegessen Śiva zu gefallen"@de ;
+    skos:definition "The measured diet is food that is smooth and sweet, leaving a fourth part empty, and eaten for the pleasing of Śiva. The Jyotsnā gives the proportion from another authority: two parts of the stomach filled with food, one with water, and the fourth left for the movement of the air."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.58, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.60" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.58, p. 25" .
+
+pmc:HathaSiddhiPresupposesBrahmacarya a pm:Presupposing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Accomplishment after a year presupposes continence"@en, "Die Vollendung nach einem Jahr setzt Enthaltsamkeit voraus"@de ;
+    pm:dependentStep pmc:HathaSiddhi ;
+    pm:priorStep pmc:HathaBrahmacarya ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "Set at prescribed order. The verse names continence as a property of the practitioner to whom the term is promised and states nothing about one who lacks it; no consequence of the want is cited anywhere in the stretch read."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.57, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.57, pp. 24-25" .
+
+pmc:HathaSiddhiPresupposesMitahara a pm:Presupposing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Accomplishment after a year presupposes the measured diet"@en, "Die Vollendung nach einem Jahr setzt die bemessene Kost voraus"@de ;
+    pm:dependentStep pmc:HathaSiddhi ;
+    pm:priorStep pmc:HathaMitahara ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    skos:note "Set at prescribed order for the same reason as the condition of continence beside it. The breath chapter opens by requiring the measured diet before the breath practice (pmc:PranayamaPresupposesAsana), and the second chapter lifts the stricter diet of the first period once the practice is firm (pmc:HathaKsirajyaNiyamaDrdhabhyase); the measured diet itself is not lifted in either place."@en ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.57-58, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.57-58, pp. 24-25" .
+
+pmc:HathaApathya a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "What is unwholesome to the yogi"@en, "Was dem Yogin unzuträglich ist"@de ;
+    skos:definition "Pungent, sour, sharp, salty and hot things, green leaves, sour gruel, oil, sesame and mustard, liquor, fish, the meat of goats and the like, curds, buttermilk, horse-gram, jujube, oil-cake, asafoetida and garlic are declared unwholesome; and food heated again after it has cooled, dry food, food too salty or sour, coarse grain and burning vegetables are to be avoided. The Jyotsnā adds onion and intoxicants under the word and the rest, and quotes Dattātreya and the Skanda Purāṇa against salt."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.59-60, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.61-62" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.59-60, pp. 25-26" .
+
+pmc:HathaAdauVarjana a pm:Cautioning ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "At the beginning he is to avoid fire, women and the road"@en, "Am Anfang meide er Feuer, Frauen und den Weg"@de ;
+    skos:definition "At the beginning one is to practise avoidance of attending on fire, on women and on the road. So Gorakṣa says: one is to avoid the neighbourhood of bad men, fire, women and the road, the morning bath, fasting and whatever torments the body."@en ;
+    skos:note "The word that decides the verse is at the beginning, ādau, and the base text carries it; the Gorakṣa verse it quotes does not. Iyangar translates it, he should avoid in the beginning. Sinh drops it: fire, women, travelling, etc., should be avoided — and in that English the verse is a standing prohibition and not a rule for the first period. Read in Sinh, the release in the commentary would look like an addition to the text; read in the Sanskrit, it spells out a limit the text set."@en ;
+    skos:note "Fasting and the morning bath stand in the same list, among the things to be avoided, as they stand at I.15 among the things that destroy the practice. The Jyotsnā gives the reasons for the beginner: the morning bath brings on disorders of cold and fasting brings on bile."@en ;
+    pm:cautionsAbout pmp:HathaAbhyasakrama ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.61, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.62-63" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.61, pp. 26-27" .
+
+pmc:JyotsnaSiddheAbhyaseKadacit a pm:Conceptualizing ;
+    pm:fromWork pmw:HathapradipikaJyotsna ;
+    rdfs:label "Once the practice is accomplished, now and then: the fire in the cold, the householder's own wife in her season, the road on pilgrimage"@en, "Ist die Übung vollendet, dann und wann: das Feuer in der Kälte, dem Hausvater die eigene Frau zu ihrer Zeit, der Weg auf der Pilgerfahrt"@de ;
+    skos:definition "The commentary on I.61: attending on fire, union with women and travel on pilgrimage and the like are to be avoided at the beginning, in the period of practice; but once the practice is accomplished, now and then, warming at the fire in the cold, the going of a householder to his own wife in her season, and walking on the road on a pilgrimage are not forbidden, which the word at the beginning indicates."@en ;
+    skos:note "A release from a requirement on the practitioner's conduct, granted on the ground of his attainment, and given as the meaning of a word in the base text and not as the commentator's own allowance. It is the case the examination at examinations/the-waiver-runs-both-ways-tested.ttl was looking for and did not expect to find: continence, the one requirement of the year's term that bears on the body most directly, is the one the commentary lifts for the accomplished, while the hermitage is lifted for nobody."@en ;
+    skos:note "Iyangar translates the gloss into his note to the verse, with one qualification moved: he may optionally have recourse to these, provided that he is a householder. In the Sanskrit the householder is named for the wife only."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Brahmānanda, Jyotsnā on Haṭhayogapradīpikā I.61, Sanskrit (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.61, note, pp. 26-27" .
+
+pmc:HathaPathya a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "What is wholesome to the yogi"@en, "Was dem Yogin zuträglich ist"@de ;
+    skos:definition "Wheat, rice, barley, sixty-day rice and other clean grain, milk, ghee, raw sugar, butter, sugar-candy and honey, dry ginger, the snake-gourd and the five greens, mung and other pulses, and pure water are wholesome to the best of yogis. The yogi is to take food that is nourishing, sweet, smooth, of the cow, strengthening to the elements of the body, pleasing to the mind and fit."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.62-63, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.64-65" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.62-63, pp. 27-28" .
+
+pmc:JyotsnaGavyalabheMahisa a pm:Conceptualizing ;
+    pm:fromWork pmw:HathapradipikaJyotsna ;
+    rdfs:label "Where the produce of the cow is not to be had, that of the buffalo"@en, "Wo das vom Rind nicht zu haben ist, das vom Büffel"@de ;
+    skos:definition "The commentary on I.63 glosses of the cow as joined with cow's milk, ghee and the like, and adds: where the produce of the cow is not obtained, buffalo's milk and the like is to be taken."@en ;
+    skos:note "A second route for the practitioner who cannot meet a requirement on material, given in the commentary and not in the verse. Iyangar carries it into his note: he can use buffalo's milk if he cannot get pure cow's milk."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Brahmānanda, Jyotsnā on Haṭhayogapradīpikā I.63, Sanskrit (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.63, note, pp. 27-28" .
+
+pmc:HathaVayoArogyaAnapeksa a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Young, old or very old, sick or weak, by practice he attains accomplishment"@en, "Jung, alt oder sehr alt, krank oder schwach, durch Übung erlangt er die Vollendung"@de ;
+    skos:definition "Whether young, old or very old, sick or weak, one who is untiring attains accomplishment in all the yogas by practice. The Jyotsnā: for the practitioner of yoga there is no requirement as to age, health and the like."@en ;
+    skos:note "Not a release from a requirement, because the manual sets none on age or health; it is the statement that there is none. It stands two verses after the diet and the avoidances, which are required of the same old and sick practitioner, so that the work opens itself to the weak without lightening any of its conditions on conduct for them."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā I.64, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), I.66" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), I.64, p. 28" .
+
+pmc:HathaNadiSuddhiMasatrayat a pm:Yielding ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "By alternate breathing the channels are clean after three months"@en, "Durch wechselndes Atmen sind die Kanäle nach drei Monaten rein"@de ;
+    skos:definition "Drawing the breath in through the left channel and, after retaining it, letting it out through the right, then in through the right and out through the left, the practitioner who keeps the restraints and practises in this way continually has the whole set of his channels clean after three months."@en ;
+    skos:note "A term with a floor and not a ceiling: māsatrayād ūrdhvataḥ, after three months. Sinh renders after 3 months and over and Iyangar in not less than three months, and both keep it a floor. The signs by which the cleaning is known stand in the verses after the stretch read and are entered at pmc:NadiPurification from II.19-20."@en ;
+    pm:byPractice pmp:HathaPranayama ;
+    pm:yieldsCapacity pmc:NadiPurification ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.10, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), II.10" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), II.10, p. 31" .
+
+pmc:HathaCaturvaraKumbhaka a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Retentions at four times of day: morning, midday, evening and midnight, up to eighty"@en, "Anhalten zu vier Tageszeiten: morgens, mittags, abends und um Mitternacht, bis zu achtzig"@de ;
+    skos:definition "In the morning, at midday, in the evening and at midnight one is to practise the retentions, slowly increasing them to eighty, four times a day. The Jyotsnā fixes each time by its span and counts the total: eighty at each of four times make three hundred and twenty a day."@en ;
+    skos:note "A requirement on the hour, which is the kind the examination calls fixed outside the practitioner. The verse releases nobody from it; the release is in the commentary, at pmc:JyotsnaTrisandhyamAsaktasya, and it runs to the one who cannot meet it."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.11, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), II.11" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), II.11, p. 31" .
+
+pmc:JyotsnaTrisandhyamAsaktasya a pm:Conceptualizing ;
+    pm:fromWork pmw:HathapradipikaJyotsna ;
+    rdfs:label "If unable at midnight, at the three junctures: the tradition of the school"@en, "Wer es um Mitternacht nicht vermag, zu den drei Übergängen: die Lehrüberlieferung"@de ;
+    skos:definition "The commentary on II.11: if one is unable to do it at midnight, the retentions are to be done at the three junctures of the day; such is the tradition, sampradāya. Done four times they come to three hundred and twenty a day, done three times to two hundred and forty."@en ;
+    skos:note "A second route to the same practice for the practitioner who cannot meet a requirement on the hour, with the count reduced and nothing said about a reduced result. The commentary ascribes it to the tradition of the school and not to itself. Iyangar's note renders the incapacity as inconvenience: as it might be inconvenient to practise at midnight, it might amount to 240 ordinarily."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Brahmānanda, Jyotsnā on Haṭhayogapradīpikā II.11, Sanskrit (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), II.11, note, p. 31" .
+
+pmc:HathaSvedaKampaSthana a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "In the lowest retention sweat, in the middle trembling, in the highest the place is reached"@en, "Im niedrigsten Anhalten Schweiß, im mittleren Zittern, im höchsten wird der Ort erreicht"@de ;
+    skos:definition "In the lowest retention there is sweat, in the middle trembling, in the highest one reaches the place, and then one is to bind the breath. The Jyotsnā: the lowest is to be inferred from the sweat, the middle from the trembling, the highest from the reaching of the place, which it names as the brahmarandhra."@en ;
+    skos:note "Signs of success, counted apart from the conditions of failure: three, in a fixed order, each announced in advance, and the first two with a high base rate in anybody who holds his breath under strain. The Jyotsnā turns them into the means of grading a retention, so that the sign is not reported after the practice but used to classify it."@en ;
+    skos:note "The translations part at the third sign. Sthānam āpnoti is reaches the place, and the commentary names the place. Iyangar: the prāṇa goes into the brahmarandhra. Sinh: in the last stage one obtains steadiness — a state of the practitioner where the Sanskrit has a location. The same three grades stand in the Nāth corpus at the Gorakṣapaddhati, where the third is that the yogi rises (traditions/nath.ttl); the work quoted as Gorakṣa in the commentary here gives the measures of the three grades."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.12, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), II.12" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), II.12, pp. 31-32" .
+
+pmc:JyotsnaBrahmarandhraKalaparimana a pm:Conceptualizing ;
+    pm:fromWork pmw:HathapradipikaJyotsna ;
+    rdfs:label "Withdrawal, fixation, meditation and absorption measured by how long the breath stays in the crown"@en, "Rückzug, Festhalten, Meditation und Versenkung gemessen daran, wie lange der Atem im Scheitel bleibt"@de ;
+    skos:definition "The commentary on II.12, closing its reckoning of the measures of retention: when the retention has become steady for its full measure the breath goes to the brahmarandhra; when it stays there twenty-five palas, that is withdrawal; five ghaṭikās, fixation; sixty ghaṭikās, meditation; twelve days, absorption. It quotes the Skanda Purāṇa for the same ladder counted in multiples of twelve."@en ;
+    skos:note "The four upper limbs defined by a duration, which is the most measurable form a contemplative grade can be given. What is timed, the stay of the breath in the crown, cannot be timed by anyone but the practitioner, and a stay of twelve days is not said to be accompanied by anything an attendant would see."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Brahmānanda, Jyotsnā on Haṭhayogapradīpikā II.12, Sanskrit (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), II.12, note, p. 32" .
+
+pmp:HathaSvedaMardana a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Rubbing the body with the sweat of the practice"@en, "Das Einreiben des Körpers mit dem Schweiß der Übung"@de ;
+    skos:definition "The body is to be rubbed with the water born of the exertion; the Jyotsnā: with the sweat of the practice of retention, as one rubs in oil."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.13, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" .
+
+pmc:HathaGatraDrdhataLaghuta a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Firmness and lightness of the body"@en, "Festigkeit und Leichtigkeit des Körpers"@de ;
+    skos:definition "Firmness of the limbs and lightness, which the Jyotsnā glosses as the absence of sluggishness."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.13, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" .
+
+pmc:HathaSvedaMardanaYieldsDrdhata a pm:Yielding ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Rubbing in the sweat gives the body firmness and lightness"@en, "Das Einreiben des Schweißes gibt dem Körper Festigkeit und Leichtigkeit"@de ;
+    skos:definition "By the rubbing with the sweat born of the exertion, firmness and lightness of the body arise."@en ;
+    pm:byPractice pmp:HathaSvedaMardana ;
+    pm:yieldsCapacity pmc:HathaGatraDrdhataLaghuta ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.13, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), II.13" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), II.13, p. 32" .
+
+pmc:HathaKsirajyaNiyamaDrdhabhyase a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Milk and ghee in the first period of practice; once the practice is firm, no such rule"@en, "Milch und Ghee in der ersten Zeit der Übung; ist die Übung gefestigt, keine solche Regel"@de ;
+    skos:definition "In the first period of practice food of milk and ghee is prescribed; then, when the practice has become firm, there is no holding to such a rule. The Jyotsnā: the verse states the rules on milk and the like for the first and for the later practice; the practice is firm when the retention alone, kevala kumbhaka, is accomplished."@en ;
+    skos:note "A release from a requirement on the practitioner's body, a rule of diet, granted in the base text and on the ground of an attainment the commentary names. It is the plainest case in the holding of the kind pmc:AttainmentRelievesOnlyTheOutwardCondition says does not occur, and the case its own falsifying note describes word for word: an experienced practitioner relieved of a dietary rule on the ground of his attainment, stated as the lifting of a rule the same text imposes on beginners."@en ;
+    skos:note "The ground has the same shape as the ground the statement's own witness gives. The Key of Solomon calls its exact days and hours extremely necessary for beginners and not necessary for adepts; this verse calls milk and ghee the food of the first period and not a rule once the practice is firm. If the second is read as a rule written for a class of beginners from the outset and not as a release, the first must be read the same way, and the statement loses its witness with its counter-case. Sinh: during the first stage of practice the food consisting of milk and ghee is wholesome; when the practice becomes established, no such restriction is necessary. Iyangar: when he has advanced he need not observe such restrictions."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā II.14, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), II.14" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), II.14, pp. 32-33" .
+
+pmp:HathaVajroli a pm:Practicing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Vajrolī: drawing upward after union, by man or woman"@en, "Vajrolī: das Hinaufziehen nach der Vereinigung, durch Mann oder Frau"@de ;
+    skos:definition "The seal named vajrolī: after union, the man or the woman is to practise slowly and well the drawing upward, and so obtains success in vajrolī. The Jyotsnā: the drawing up of the drop through the contraction of the organ, after union with a woman."@en ;
+    skos:note "Iyangar translates the verse that announces the seal and omits the twenty verses after it, which describe it and the two seals that follow, as obscene, and his note to III.43 holds that these seals are to be understood as inner processes; Sinh translates them. The node is entered from the Sanskrit and from Sinh."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.83-85, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), III.82-84" .
+
+pmc:HathaVajroliVastudvaya a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Two things vajrolī needs, hard for anyone to get: milk, and a woman who does as he wills"@en, "Zwei Dinge braucht die Vajrolī, für jeden schwer zu haben: Milch und eine Frau, die seinem Willen folgt"@de ;
+    skos:definition "For vajrolī two things are stated that are hard for anyone to obtain: one is milk, the other a woman under his control. The Jyotsnā: hard to obtain for a man without wealth; the milk is for drinking after the practice, to restore the strength of the organ, and not, as some say, for drawing up during the practice."@en ;
+    skos:note "A requirement fixed outside the practitioner, a material and a second person, which the verse itself calls hard to come by; neither the verse nor the commentary gives a route to the one who cannot obtain them."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.84, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), III.83" .
+
+pmc:HathaAnimadiSiddhi a pm:Conceptualizing ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "The accomplishments beginning with minuteness"@en, "Die Vollendungen, beginnend mit der Winzigkeit"@de ;
+    skos:definition "The accomplishments, siddhi, of which the practitioner of vajrolī is said to become a vessel; the Jyotsnā names them as those beginning with aṇimā, becoming minute."@en ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.83, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" .
+
+pmc:HathaVajroliNiyamairVina a pm:Yielding ;
+    pm:fromWork pmw:Hathapradipika ;
+    rdfs:label "Even living as he wills, without the rules of yoga, who knows vajrolī is a vessel of the accomplishments"@en, "Auch wer nach eigenem Willen lebt, ohne die Regeln des Yoga, ist ein Gefäß der Vollendungen, wenn er die Vajrolī kennt"@de ;
+    skos:definition "Even one who lives according to his own will, without the rules stated in yoga, if he knows vajrolī, that yogi is a vessel of the accomplishments. The Jyotsnā: knows it by his own experience; without the rules stated in the science of yoga, continence and the rest; living by his own wish, even engaged in worldly dealings; he becomes a vessel of the accomplishments beginning with aṇimā."@en ;
+    skos:note "The third release in the work from a requirement on the practitioner's conduct, and the broadest. II.14 lifts a rule of diet once the practice is firm and I.61 limits the avoidance of women to the beginning; this verse sets aside the rules of yoga as such, and the commentary names continence first among them, for the one who has the technique at his own experience. It stands in the base text and introduces the seal; the commentary says the verse states the fruit first in order to make the reader take it up."@en ;
+    skos:note "The two translations part on the ground of the release. Sinh: even if one who lives a wayward life, without observing any rules of Yoga, but performs Vajroli, deserves success and is a Yogi. Iyangar: if any one, though living an ordinary life, without observing the Yama and Niyama, as laid down by the Yoga, practises the Vajroli Mudra, he becomes the repository of the Siddhis. The Sanskrit says knows, vijānāti, and the commentary reads it as knowing by experience; both translations say performs or practises, which makes the release depend on doing the seal rather than on having it."@en ;
+    pm:byPractice pmp:HathaVajroli ;
+    pm:yieldsCapacity pmc:HathaAnimadiSiddhi ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Hathayoga ;
+    dcterms:source "Svātmārāma, Haṭhayogapradīpikā III.83, Sanskrit with the Jyotsnā of Brahmānanda (Bombay: Tattvavivecaka Press, printed for Tukārām Tātyā, Śaka 1814)" ;
+    dcterms:source "Svātmārāma, The Hatha Yoga Pradipika, trans. Pancham Sinh (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama; year not legible in the text layer), III.82" ;
+    dcterms:source "Svātmārāma, Hatha-yoga-pradipika, trans. Srinivasa Iyangar, 3rd ed. (Adyar: Theosophical Publishing House, 1949; first ed. 1893), III.83, pp. 67-68" .
