@@ -2,6 +2,7 @@
 @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
 @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
 @prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -15,11 +16,31 @@
 # prerequisites in the base layer rather than leaving them to commentary.
 #
 
+#
+# The works
+#
+
+pmw:Hathapradipika a dcterms:BibliographicResource ;
+    rdfs:label "Svātmārāma, Haṭhayogapradīpikā"@en, "Svātmārāma, Haṭhayogapradīpikā"@de ;
+    skos:note "Every node of this file entered before 2026-10-22 cites the Sanskrit vulgate in the numbering of Sinh's translation and was read there; those citations are left as they stand. The nodes entered on 2026-10-22 were read in the Sanskrit of the Bombay printing with Brahmānanda's commentary, archive.org dli.ernet.429198, a text layer of 226402 Devanagari characters against none Latin. Its title page is not legible in the text layer; the colophon at the end of the commentary is, and gives the printing: at Bombay, in the Tattvavivecaka press, printed for Tukārām Tātyā, in Śaka 1814 and Vikrama 1949, on the tenth of the dark half of Māgha. The running heads of the Sanskrit are not monotonic in the text layer, so the Sanskrit is cited by chapter and verse without page."@en ;
+    skos:note "Two translations by two translators, both read at every verse entered on 2026-10-22 except III.84-85, which Iyangar omits. Pancham Sinh, The Hatha Yoga Pradipika, translated into English (Allahabad: Sudhindra Nath Vasu, Bhuvaneshwari Ashrama), archive.org dli.csl.7087, title page in the text layer, year not legible there. Srinivasa Iyangar, Hatha-yoga-pradipika of Svatmarama Svamin, Part I, third edition (Adyar: Theosophical Publishing House, 1949; first edition 1893, second 1933), archive.org in.ernet.dli.2015.90055, title page in the text layer; it translates the verses and carries much of the Jyotsnā in its notes without always saying which sentence is the commentary's. Sinh numbers the first chapter from verse 17 two higher than the Bombay printing and Iyangar."@en ;
+    skos:note "Read on 2026-10-22: I.11-17, I.56-64, II.10-14 and III.83-85, continuously, in the Sanskrit with the commentary and in both translations; besides that, a whole-text term search of the Sanskrit for the hermitage and for the terms of absence and incapacity (pmp:WaiverHathapradipikaMathaSearch). The earlier nodes rest on the verses they cite, and no record says how much of the work around them was read; chapter IV carries no node of this file."@en .
+
+pmw:HathapradipikaJyotsna a dcterms:BibliographicResource ;
+    rdfs:label "Brahmānanda, Jyotsnā, commentary on the Haṭhayogapradīpikā"@en, "Brahmānanda, Jyotsnā, Kommentar zur Haṭhayogapradīpikā"@de ;
+    skos:note "Read on 2026-10-22 at the verses named under pmw:Hathapradipika, in the same Bombay printing, which names the commentary and its author in the colophons of the chapters. A later station of the same transmission and held as a work of its own, so that a release the commentary spells out is never read as the verse's. It states its own rule for the base text at I.12: verses of the Pradīpikā that it does not explain are to be taken as interpolated."@en .
+
+#
+# The tradition
+#
+
 pmt:Hathayoga a pm:Tradition ;
+    pm:fromWork pmw:Hathapradipika ;
     rdfs:label "Haṭhayoga"@en, "Haṭhayoga"@de ;
     skos:definition "The transmission of the Haṭhayogapradīpikā of Svātmārāma and the manuals around it."@en ;
     skos:note "Edition finding, prima-materia#45. Every verse cited in this file was read in the Sanskrit of the widely circulated vulgate, in the recension that the 1915 edition and translation of Sinh carries, and each citation now says so. The critical edition drawn from the manuscript tradition numbers differently in places; pmc:HathapradipikaRecensionDispute holds what is at issue."@en ;
     pm:principalCorpus "Svātmārāma, Haṭhayogapradīpikā" ;
+    pm:corpusWork pmw:Hathapradipika, pmw:HathapradipikaJyotsna ;
     dcterms:source "Svātmārāma, Haṭhayogapradīpikā (Sanskrit vulgate; Sinh 1915)" .
 
 pmc:Asana a pm:Conceptualizing ;
