@@ -834,6 +834,8 @@ Die Ernteregel oben ist auf ein Werk und einen Lauf geschrieben. Sie lässt sich
 
 **Häufigkeit ist erst gegen den Nenner lesbar.** Wie oft eine Behauptung über die Traditionen hinweg auftaucht, misst zunächst die Werkauswahl des Laufs. Aussagekräftig wird die Zahl gegen die registrierten Traditionen und ihren `pm:coverageState`: ohne diesen Bezug meldet ein Lauf seine eigene Abdeckung als Struktur. Das ist derselbe Fehler wie eine Konvergenz aus Ähnlichkeitssuche, nur eine Ebene höher.
 
+**Das Budget steht vor dem Ausfächern, und gesichert ist nur, was den Graphen erreicht hat.** Ein Teillauf über eine Einheit von 170.000 Zeichen kostet je Durchgang gemessen 100.000 bis 200.000 Tokens; eine Ernte über Dutzende Werke liegt damit in Millionen, und die Sitzungslimits gelten für das Konto, nicht je Teillauf. Deshalb läuft eine solche Ernte Werk für Werk und nicht Einheit für Einheit über alle Werke zugleich: höchstens vier Teilläufe gleichzeitig, das Werk bis zum PR, dann das nächste, und was über rund eine Million Tokens hochgerechnet ist, in Tranchen über geplante Aufgaben oder Sitzungen. Die Breite ist der teure Fehler, weil sie alle Werke gleichzeitig halb fertig hält: am 2026-10-22 verbrauchten rund vierzig gleichzeitige Teilläufe das Sitzungslimit in etwa einer Stunde, und kein Werk erreichte den Graphen (prima-materia#893). Die allgemeine Regel steht in `pajew-ski/config`, `CLAUDE.md`.
+
 **Nebenertrag, der in den Bestand gehört.** Ein durchgeerntetes Werk macht `unbelegt` billiger. Der Schließgrund verlangt sonst eine erschöpfende Suche; innerhalb eines vollständig durchgegangenen Werkes ist Abwesenheit belegbar statt behauptet, und das `korpus:`-Label trägt diesen Unterschied.
 
 ### Tiefe
