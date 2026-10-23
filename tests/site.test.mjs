@@ -213,6 +213,24 @@ test("a prefix that names no filter is part of what was typed", () => {
   assert.deepEqual(query.terms, ["chapter", "xii"]);
 });
 
+test("tradition:<local name> means that transmission, not every label with the word", () => {
+  const index = buildIndex({
+    meta: FIXTURE.meta,
+    nodes: [
+      node("pmt:Hermetic", "tradition", ["pm:Tradition"], "Hermetic transmission"),
+      node("pmt:GoldenDawn", "tradition", ["pm:Tradition"], "Hermetic Order of the Golden Dawn"),
+      node("pmc:Poimandres", "instance", ["pm:Conceptualizing"], "Poimandres"),
+      node("pmc:Tattva", "instance", ["pm:Conceptualizing"], "Tattva"),
+    ],
+    edges: [
+      edge("pmc:Poimandres", "withinTradition", "pmt:Hermetic"),
+      edge("pmc:Tattva", "withinTradition", "pmt:GoldenDawn"),
+    ],
+  });
+  assert.deepEqual(ids(search(index, "tradition:Hermetic")).sort(), ["pmc:Poimandres", "pmt:Hermetic"]);
+  assert.deepEqual(ids(search(index, "tradition:golden dawn")).sort(), ["pmc:Tattva", "pmt:GoldenDawn"]);
+});
+
 test("filters match whole words, so type:Testing is not Attesting", () => {
   assert.deepEqual(ids(search(fixtureIndex, "type:Yielding")), ["pmc:AnapanasatiYieldsPiti"]);
   assert.deepEqual(ids(search(fixtureIndex, "kind:tradition")).sort(), [

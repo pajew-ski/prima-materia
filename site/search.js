@@ -219,6 +219,12 @@ export function buildIndex(data) {
     averageLength,
     adjacency,
     kinds: [...new Set(data.nodes.map((node) => node.kind))].sort(),
+    // The folded local names of the transmissions, so that tradition:Hermetic,
+    // which is what the tables write, means pmt:Hermetic and not every
+    // transmission with the word in its label (Hermetic Order of the Golden Dawn).
+    traditionNames: new Set(
+      data.nodes.filter((node) => node.kind === "tradition").map((node) => fold(local(node.id))),
+    ),
   };
   index.associations = buildAssociations(index);
   return index;
@@ -384,6 +390,9 @@ function matchesFilter(doc, filter, index) {
     case "kind":
       return fold(doc.node.kind).startsWith(filter.value);
     case "tradition":
+      if (index.traditionNames?.has(filter.value)) {
+        return doc.traditions.some((id) => fold(local(id)) === filter.value);
+      }
       return doc.traditions.some(names);
     case "type":
     case "class":
