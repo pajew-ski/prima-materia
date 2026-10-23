@@ -1,0 +1,88 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — the Hermetic Order of the Golden Dawn, entered at the
+# Flying Rolls
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-modern.ttl with no node. The work
+# opened is the set of Flying Rolls, the instructional papers circulated to the
+# Adepti of the Second Order, as Francis King printed them with R. A. Gilbert's
+# appendix of the rolls King could not trace. Every roll the volume prints was
+# read; what the volume prints besides the rolls was not harvested, and the
+# work node says which parts those are.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# practices; the capacities and states; the prerequisites; the yieldings; the
+# tests of a vision and the conditions of failure; the protocols; the
+# cautions; the dispute; the names.
+#
+# Citation. Each node names the roll, its author as printed with the
+# editor's identification of the motto, and the page of the 1987 Destiny
+# Books print. Page numbers are taken from the running heads and folios of
+# the text layer, which run without gap to p. 288.
+#
+
+#
+# The works
+#
+
+pmw:GoldenDawnFlyingRolls a dcterms:BibliographicResource ;
+    rdfs:label "The Flying Rolls of the Hermetic Order of the Golden Dawn, in Francis King (ed.), Astral Projection, Ritual Magic and Alchemy"@en, "Die Flying Rolls des Hermetic Order of the Golden Dawn, in Francis King (Hg.), Astral Projection, Ritual Magic and Alchemy"@de ;
+    skos:note "Read on 2026-10-23 in Astral Projection, Ritual Magic and Alchemy: Golden Dawn Material by S. L. MacGregor Mathers and Others, edited and introduced by Francis King, additional material by R. A. Gilbert (Rochester, Vermont: Destiny Books, 1987; the imprint page says first published London: Spearman, 1971), title page and imprint in the text layer of archive.org FrancisKing-AstralProjectionRitualMagicAndAlchemyGoldenDawnMaterial. The 1971 Spearman print (archive.org astralprojection0000math) is lending-restricted and its text layer answers 401; a second upload of the same 1987 print (astral-projection-ritual-magic-and-alchemy-golden-dawn-material-by-s.l.-macgrego) carries the same title page and was not needed. The text layer has 495364 bytes, an ASCII letter ratio of 1.0 and folios running without gap to p. 288."@en ;
+    skos:note "Read complete: every Flying Roll the volume prints. In the body, Flying Rolls V, I part II, II parts I to III, VI (pp. 47-61), IV, XI, XXV, XXX, XXVI, XXXIII (pp. 71-101), XVI, XVIII, XIX (pp. 105-121), XV, X (pp. 125-140), XX, XXI (pp. 145-159), XIII, XXVII (pp. 163-173) and VII (pp. 179-191); in Appendix C the Stella Matutina rewriting of Flying Roll XXV (pp. 265-268); in Appendix D the rolls Gilbert found in Colonel Colvile's copies of 1898, XXII, XXIV, XXVIII, XXIX, XXXI, XXXII, III and VIII (pp. 270-285); and King's exegetical note on the rolls in Appendix A (pp. 257-260), used for the authors and dates of issue. Not harvested, because they are not Flying Rolls or are the editors' own text: the foreword and King's four-part introduction (pp. 9-43), his prefatory notes to Parts Two, Five, Seven and Eight (pp. 65-69, 143-144, 177, 195), the Cromlech Temple papers of Parts Eight and Nine (pp. 195-256), which a schismatic side order produced after 1900, King's Appendix B on the Enochian system (pp. 261-263), Gilbert's introduction to Appendix D, read for provenance only, and Gilbert's Catalogue of Flying Rolls in Appendix E (pp. 286-288)."@en ;
+    skos:note "Not printed in this volume and therefore not read: Flying Rolls IX, XII, XIV, XVII, XXIII, XXXV and XXXVI and three of the seven visions of XXXIII, which King's Appendix A says Regardie had already printed and gives the places for; and the administrative first part of Flying Roll I. The contents page lists the roll at p. 93 as XXXVI, while the part title, the running head and Appendix A give XXVI, a supplement to XII on planets and tattvas; it is cited here as XXVI. Appendix A had listed XXII, XXIV, XXVIII, XXIX, XXXI and XXXII as untraced; Appendix D prints them, so the appendix is superseded inside the same volume. A web compilation under the title The Flying Rolls on archive.org (w.-wynn-westcott-the-flying-rolls) carries no imprint and was not used."@en .
+
+pmw:GoldenDawnCipherManuscript a dcterms:BibliographicResource ;
+    rdfs:label "The Cipher Manuscript of the Golden Dawn"@en, "Das Chiffrenmanuskript des Golden Dawn"@de ;
+    skos:note "Named by the registration and not opened in this run. An archive.org search on the title words returned nothing on 2026-10-23; other archives and printed transcriptions were not searched. The Flying Rolls read here do not cite it by that name; Flying Roll XVI quotes the history section of the 5=6 ritual instead."@en .
+
+pmw:GoldenDawnKnowledgeLectures a dcterms:BibliographicResource ;
+    rdfs:label "The Knowledge Lectures of the Outer Order of the Golden Dawn"@en, "Die Wissensvorträge des Äußeren Ordens des Golden Dawn"@de ;
+    skos:note "Named by the registration and not opened in this run. They are printed in Regardie's collection (pmw:RegardieGoldenDawn); an archive.org search on the title words alone returned nothing. Flying Roll XVIII refers to the knowledge in the first lecture and Flying Roll XIX to the brief outlines of geomancy and astrology in the lectures of the First Order, so the lectures stand under the rolls as their prior course."@en .
+
+pmw:RegardieGoldenDawn a dcterms:BibliographicResource ;
+    rdfs:label "Israel Regardie, The Golden Dawn (four volumes, Chicago: Aries Press, 1937-1940)"@en, "Israel Regardie, The Golden Dawn (vier Bände, Chicago: Aries Press, 1937-1940)"@de ;
+    skos:note "Named by the registration and not opened in this run. Reachable: archive.org carries volumes I to III of the first edition as IsraelRegardie-thegoldenDawn-vol1-1937, IsraelRegardie-TheGoldenDawn-Vol2-1938 and IsraelRegardie-TheGoldenDawn-Vol3-1939, and later one-volume editions under several identifiers; a fourth volume of the first edition was not seen in the first page of results. King's Appendix A places in it the Flying Rolls this volume omits — IX in vol. I, XVII in vol. II, XXXV in vol. III, XII, XIV, XXIII, XXXVI and three visions of XXXIII in vol. IV — so it is the next work to open for the rolls, and the place to compare XXV and XXXVI on skrying with what is entered here."@en .
+
+#
+# The tradition
+#
+
+pmt:GoldenDawn a pm:Tradition ;
+    pm:fromWork pmw:GoldenDawnFlyingRolls ;
+    rdfs:label "Hermetic Order of the Golden Dawn"@en, "Hermetic Order of the Golden Dawn"@de ;
+    skos:definition "The late Victorian transmission that welded kabbalistic, grimoire and Egyptian material into a graded initiatory curriculum with examinations."@en ;
+    skos:note "The syncretism is documented in its own papers, which makes it the best available record of how a modern system is assembled from older parts and then presented as one."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented, and the route is printed in the rolls themselves. They take the power of thought forms by name from the esoteric Theosophists (kriyā śakti, Flying Roll V, p. 51), the sixth and seventh senses from Theosophy (XIX, p. 117), the magnetic aura from Blavatsky (XXII, p. 274), and recommend the Voice of the Silence and Light on the Path (XV, p. 128); they quote Lévi on the will (II, p. 57), use the odic fluid of the mesmerists (V, pp. 48-50, with the editor's note), cite the Bhagavadgītā, the Gnostic Achamoth, the Edda, the Sepher Yetzirah, the Fama and Confessio Fraternitatis, Agrippa, Barrett and Peter of Abano for the Theban letters (XXXII, p. 284), Lilly for horary astrology (XXIV, p. 277), and Bulwer Lytton's Zanoni (XXI, p. 156). Whatever here agrees with traditions/theosophy.ttl, traditions/mesmerism.ttl or the grimoire and kabbalistic holdings is reception along a printed route and counts once; traditions/thelema.ttl and traditions/typhonian.ttl stand downstream of this one."@en ;
+    skos:note "Recension and edition, the second decision. The rolls exist only in copies, and the volume read is a selection: King printed the rolls Regardie had not, from copies he does not describe, and Gilbert added in 1987 the rolls King could not trace, from copies made in 1898 by Colonel Sir Henry Colvile and others and bound by Waite. Appendix C shows that the schismatic Stella Matutina rewrote at least one roll, so a roll in another collection is not to be assumed identical with the text cited here. Every node cites the 1987 Destiny Books print, the only print that could be read; the 1971 Spearman print is lending-restricted."@en ;
+    skos:note "The third decision, the number of citable places, counted from the reading: twenty-eight rolls read, Flying Roll XXV in two versions; twenty-one practices; twenty-one capacities and six states the prerequisites point at; five nodes on the testing of a vision; ten further conditions of failure as their own nodes; sixteen prerequisites; nineteen yieldings; three protocols; fourteen cautions; one dispute; and five names, each at a page."@en ;
+    skos:note "Two counts, kept apart as SPEC §15 asks. Signs of success named in the rolls, across all of them: twenty-four. From Flying Roll V, five: the exhaustion after a visitor that stopped at once and for good; the sick woman who grew stronger and whose mediumistic experiences ceased; the injurious effects that never returned; the fascination that ceased within months; the profane phrase driven off though not destroyed. From IV, two: the sense of change like a faint at the onset of the vision; the influx of courage in place of the expected death. From XI, five: the flashes of radiance from a tablet in flashing colours; the exhaustion felt as charge passes into a telesma; the reversal of left and right in the mirror vision; the solidity, relief and bird's-eye view of true projection; the symbol that grows until the seer seems to pass into it, or the scene opening like a drawn curtain. From XXV and its Stella Matutina version, four: the abstract idea followed by the bodily feeling and the sound of the element; the grey mist on which the symbol stands; the laws of the astral country that the seer cannot make or unmake; the seer's own figure seen, then looked out of. From XIX, three: the finer gradations of light and dark in the vault; the definite sound sent for a definite purpose; the magnet felt with closed eyes and its poles told apart. From XXXIII, two: the vision unaltered by Tau; the god strengthened by the tests. From XXVII, one: the response that answers an invocation. From XXI, one: the divine vision that almost blinds at the rare moment of contact. From XXIV, one: the recovery that came two days after the date predicted from the horary figure. Conditions of failure, stated as what shows that it did not work and why: thirteen — the deliberate experiment of the will that fails because curiosity divides it (pmc:GoldenDawnDividedWill); the wandering mind under which no beginner sees (pmc:GoldenDawnWanderingMind); the vision that changes or vanishes under Tau and so was memory (pmc:GoldenDawnMemoryFalsification); the figure that cowers before the letter and so was deceptive (pmc:GoldenDawnTestingByDivineNames, read at its negative outcome); the seer who believes he has gone elsewhere and is among the images of his own aura (pmc:GoldenDawnOwnAura); the complex symbol formed when several work in concert (pmc:GoldenDawnComplexSymbol); the symbol that carries its maker's influence or a hidden uncleanness (pmc:GoldenDawnForeignSymbol); the self-hypnotisation that yields hysterical visions (pmc:GoldenDawnSelfHypnotisation); the colour that comes out wrong in the nature opposed to one's own (pmc:GoldenDawnThoughtSelfishness); the correspondence not carried to the last detail (pmc:GoldenDawnIncompleteCorrespondence); the work talked about, or told to the person it is done for (pmc:GoldenDawnBrokenSecrecy); the transmutation attempted by chemistry alone, or published, or sought for gain (pmc:GoldenDawnChemistryAlone); and the unsuitable state of mind, entered as a prerequisite (pmc:GoldenDawnVisionPresupposesCalm). Beside the count stand two reported failures with a cause given: the woman who drifted back into passive mediumship and died (V), and the horary judgements that other choices of house would have produced and that the outcome refuted (XXIV)."@en ;
+    skos:note "Open after this run, as the place a later run starts: the rolls that are in Regardie and not in this volume, the cipher manuscript and the knowledge lectures (see the work nodes); the pedigree the rolls assert, which Flying Roll XVI states by quoting the 5=6 ritual, an order existing from time immemorial and brought to Europe by C.R., born 1378 and dead 1484, together with the claim that the Fama carries a deliberate blind (pp. 105-108). The pedigree is not entered as an origination because no work standing at its beginning was read in this run."@en ;
+    pm:principalCorpus "The cipher manuscripts and knowledge lectures; Regardie, The Golden Dawn; the Flying Rolls, in Francis King (ed.), Astral Projection, Ritual Magic and Alchemy" ;
+    pm:corpusWork pmw:GoldenDawnFlyingRolls, pmw:GoldenDawnCipherManuscript, pmw:GoldenDawnKnowledgeLectures, pmw:RegardieGoldenDawn ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "The Flying Rolls, in Francis King (ed.), Astral Projection, Ritual Magic and Alchemy, additional material by R. A. Gilbert (Rochester, Vermont: Destiny Books, 1987)" .
+
+#
+# The practices
+#
+
+pmp:GoldenDawnMagicalProjection a pm:Practicing ;
+    pm:fromWork pmw:GoldenDawnFlyingRolls ;
+    rdfs:label "Magical projection: an image made by the imagination, vitalised and directed by the will"@en, "Magische Projektion: ein von der Vorstellungskraft gebildetes Bild, vom Willen belebt und gelenkt"@de ;
+    skos:definition "The base operation of the first part of the rolls. To imagine is to create a form on the astral or a higher plane, as objective to beings there as the earth is to us. The will alone sends out an undirected current and the imagination alone makes an image that does nothing; the two together, the image made first and the will then using it, give the effect. Westcott's supplement separates this imagination, an orderly and intended process, from fancy, and gives it the Theosophical name kriyā śakti; Bullock's Theurgia adds that every thought takes form, that elementals join such forms and give them a life of their own, and that the force of a thought is proportionate to the intensity of the volition behind it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:GoldenDawn ;
+    dcterms:source "Flying Roll V, Some Thoughts on the Imagination, by Resurgam (E. W. Berridge), with supplementary remarks by N.O.M. (W. Wynn Westcott), in Francis King (ed.), Astral Projection, Ritual Magic and Alchemy (Rochester, Vermont: Destiny Books, 1987), pp. 47 and 51-52", "Flying Roll XXVII, The Principia of Theurgia, by L.O. (P. W. Bullock), ibid., p. 169" .
+
+# CONTINUED-1
