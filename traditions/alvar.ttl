@@ -1,0 +1,329 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — the Ālvār transmission, entered at the Tiruvāymoḻi
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-indic.ttl with no node. The work opened
+# is Nammāḻvār's Tiruvāymoḻi, read whole in one English translation, at the
+# hundred terminal stanzas and at every harvested place in the Tamil and in a
+# second translation.
+#
+# Order of the file: the works; the tradition with the three decisions; the
+# practices; the capacities named in the body of the work; the yieldings from
+# the body; the chains; the cautions; the conditions of failure; the signs of
+# success; the protocols; the receiving; the capacities named in the terminal
+# stanzas; and last the ninety-three yieldings of the terminal stanzas, decad
+# by decad.
+#
+# Identifiers: Alvar plus the Tamil term in the transliteration of the
+# Madras Tamil Lexicon without diacritics. The yieldings of the terminal
+# stanzas are named AlvarTvm plus centum and decad plus Payan, the fruit.
+#
+
+pmw:AlvarTiruvaymoli a dcterms:BibliographicResource ;
+    rdfs:label "Tiruvāymoḻi"@en, "Tiruvāymoḻi"@de ;
+    skos:note "Nammāḻvār, also Caṭakōpaṉ and Māṟaṉ of Kurukūr: a hundred decads of eleven stanzas, one of thirteen, 1102 in all, the fourth part of the Nālāyira Divya Prabandham. The locus used throughout is centum, decad and stanza, which all three texts read here print."@en ;
+    skos:note "The Tamil read is the Project Madurai edition, pāsurams 2791 to 3342 of the Nālāyira Divya Prabandham in two files, prepared by K. Kalyanasundaram and first put up in 1998; it gives every stanza with its locus. It does not name the printed edition it was keyed from. Two faults of this text were met: decad 8.10 carries the loci of 9.9 in its later stanzas, and three stanzas of 2.6 and 4.10 lack a locus; every place cited from those decads was located by sequence and content."@en ;
+    skos:note "The first translation is Srirama Bharati and Sowbhagya Lakshmi, The Tiruvaimoli of Nammalvar Rendered in English, Tyaga Bharati Music Education Mission, Melkote 1987, taken from the title page of the Internet Archive full text of the identifier tiruvaimoliofnammalvarrenderedinenglishsriramabharatisowbhagyalakshmi1987ocr. It was read whole. The scan lacks pages 21 to 23, which carry decad 2.1 and the end of 1.10; the errata of the edition confirm the decad is printed there."@en ;
+    skos:note "The second translation is S. Satyamurthi Ayyangar, Tiruvaymoli English Glossary, four volumes, Ananthacharya Indological Research Institute Series V, Bombay 1981, taken from the title page of the Internet Archive full text of the identifier tiruvaymolienglishglossarysatyamurthiayyangargwalior4volumes1981ocr. It prints every stanza in transliteration, a verse translation and notes drawn from the medieval commentaries. It was read at every place harvested and at all hundred terminal stanzas; seven of those it could not be located for, because the verse markers of its text layer are misread, and the nodes say so. Its two thousand pages of notes were not read through."@en ;
+    skos:note "The dating is not settled by any of the three texts and is not settled here. The 1987 translation reports that historians place Nammāḻvār around the seventh century and that tradition places his birth at the beginning of the Kali age; the 1981 introduction places the Ālvārs between the sixth and the ninth century. Both say that the work was recovered and set to music by Nāthamuni."@en .
+
+pmw:AlvarNalayiraDivyaPrabandham a dcterms:BibliographicResource ;
+    rdfs:label "Nālāyira Divya Prabandham"@en, "Nālāyira Divya Prabandham"@de ;
+    skos:note "The four thousand stanzas of the twelve Ālvārs, of which the Tiruvāymoḻi is one part and is declared separately. The rest, the works of the other eleven poets and Nammāḻvār's three shorter works, was not opened in this run. It is reachable: the Tamil stands in the same Project Madurai series as the Tiruvāymoḻi, and the translation of Srirama Bharati printed in 2000 as The Sacred Book of Four Thousand lies at the Internet Archive under thesacredbookoffourthousand01nalayiradivyaprabandhamsriramabharati2000 with a text layer."@en .
+
+#
+# The tradition, described at its new place
+#
+
+pmt:Alvar a pm:Tradition ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    rdfs:label "Ālvār transmission"@en, "Ālvār-Überlieferung"@de ;
+    skos:definition "The Tamil devotional transmission of the twelve Ālvār, in which the relation to the deity is sung in the first person and the states it passes through are named."@en ;
+    skos:note "Raised from pm:corpusNamed on the first passages actually read. What was read at the wording: the whole of the Tiruvāymoḻi in the translation of 1987, all but the one decad its scan lacks; the hundred terminal stanzas in the Tamil and in both translations; and every place a node below cites, in all three. What was not read: Nammāḻvār's other three works and the rest of the Nālāyira Divya Prabandham, and the notes of the 1981 translation beyond the places cited."@en ;
+    skos:note "The first of the three decisions SPEC §14 asks for, the contact route, stays at documented. The Tiruvāymoḻi carries the Viṣṇu and Kṛṣṇa lore of the Sanskrit Purāṇas and the epics throughout, names the Vedas as its measure, and is the source of the later Śrīvaiṣṇava commentary that both translations lean on. It therefore counts as no independent witness against the Indian holding, and every agreement between it and a Vaiṣṇava or Vedāntic node elsewhere in the graph is reception until shown otherwise."@en ;
+    skos:note "The second decision, recension and edition: the Tamil of the Project Madurai edition, read against two English translations by different translators, Srirama Bharati with Sowbhagya Lakshmi and S. Satyamurthi Ayyangar, counted at the translator on the title page. Where they divide, the node records both and the Tamil, and enters on the reading the Tamil supports."@en ;
+    skos:note "The third decision, the number of citable places: 1102 stanzas, of which the hundred terminal stanzas carry the work's promises of fruit and ninety-three of them name one. The work is a single poet's sequence and not a manual: it states few procedures, many fruits, and almost no means of telling whether a fruit came. The count of this file is therefore weighted to the terminal stanzas by the text and not by the harvest."@en ;
+    skos:note "What the harvest found, in counts. Six conditions of failure, two of them stated against the work's own practice (worship that is outward, 9.10.7, and calling that is not answered, 4.7) and one stated as the doubt that would follow if the lord did not come (8.1.3), the other three against rival practices; two signs of success, both announced in advance and both read by the tradition's own people; one self-warning to poets about the act the work itself is. Against those, ninety-three promises of fruit for reciting a decad, of which one waives every condition (7.9.11) and none names a sign by which the reciter would know it had come."@en ;
+    skos:note "Open, and the next place to go: the states the work names and does not prescribe, the symptoms of separation in decads 2.4, 4.2, 4.4, 5.4, 5.5, 6.5, 7.2 and 9.9, the girl who speaks as the lord in 5.6, and the visions of 7.7 and 8.5, were read and not entered, because they are states undergone and not capacities, cautions, conditions or signs; they are the material the registration named and a harvest of states would take them up. The other works of the corpus are open at pmw:AlvarNalayiraDivyaPrabandham, and the Śrīvaiṣṇava transmission that reads them is registered as pmt:Srivaisnava."@en ;
+    pm:principalCorpus "Nālāyira Divya Prabandham, in particular the Tiruvāymoḻi of Nammāḻvār" ;
+    pm:corpusWork pmw:AlvarTiruvaymoli, pmw:AlvarNalayiraDivyaPrabandham ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 1.1-10.10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+#
+# The practices, the capacities of the body of the work and their yieldings
+#
+
+pmp:AlvarIppattu a pm:Practicing ;
+    rdfs:label "Mastering a decad of the Tiruvāymoḻi: reciting, learning or singing its ten stanzas"@en, "Das Beherrschen einer Dekade der Tiruvāymoḻi: ihre zehn Strophen rezitieren, lernen oder singen"@de ;
+    skos:altLabel "ippattum vallār"@en ;
+    skos:definition "Reciting, learning or singing the ten stanzas of one decad of the Tiruvāymoḻi, which the eleventh stanza of the decad names as the act its fruit follows from."@en ;
+    skos:note "The terminal stanza of nearly every decad names this act as the condition of its fruit, with a small set of verbs that the two translations render variously as reciting, chanting, learning, mastering and singing: vallār (those able in them), ōtuvār, kaṟpār, pāṭuvār, uraippār, ēttuvār. Some stanzas add a manner, and the manners are entered at the yieldings that carry them: with melody, with love, with insight, daily, by night and by day, until the lisp is gone, with the mind set on it, fully, without abating."@en ;
+    skos:note "Of the hundred terminal stanzas, ninety-three name a fruit for the one who masters the decad and seven do not: 1.2.11 and 1.8.11 say only that the decad is the poet's considered word, 2.3.11 and 9.10.11 bid the hearers sing and dance it, 10.6.11 says that it is sweet to the ears of the celestials, 10.7.11 assigns it to the hill of Tirumāliruñcōlai, and 10.3.11 ends in a phrase, avaṟṟiṉ cārvē, that one translation renders as the benefit the speaking cowherdess attained and the other was not located for."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 1.1.11 and the terminal stanzas of all hundred decads (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarTirunamam a pm:Practicing ;
+    rdfs:label "Uttering the names of the lord"@en, "Das Aussprechen der Namen des Herrn"@de ;
+    skos:altLabel "tirunāmam"@en ;
+    skos:definition "Saying the lord's names, one or many, aloud or in meditation: Kēcavaṉ, Nāraṇaṉ, Mātavaṉ and the others of the twelve, or the one name nāraṇam that 10.5.1 calls the holy name to be meditated upon."@en ;
+    skos:note "Decad 2.7 is built on the twelve names, each stanza beginning with the name that ended the last, and the speaker reports what each name did for him. Decad 10.5 makes one name the mantra, nāraṇam, and 10.2 promises that the obstacles end when Kēcavā is said and that the messengers of death do not come near."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 2.7.1-13, 10.2.1, 10.2.10 and 10.5.1-10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarSankuCakkaramEnral a pm:Practicing ;
+    rdfs:label "Saying conch and discus into the ears of the girl stricken by the god"@en, "Muschel und Diskus in die Ohren des vom Gott ergriffenen Mädchens sagen"@de ;
+    skos:altLabel "caṅku cakkaram eṉṟu ival kēṭka"@en ;
+    skos:definition "The treatment the friend prescribes in decad 4.6 for the girl whose malady is the god himself: to say the words conch and discus clearly so that she hears them, to recite the names of the lord, and to put on her the white dust and the dust of the feet of his devotees."@en ;
+    skos:note "Prescribed in the one decad of the work that sets two treatments of the same malady against each other. The friend speaks, the mothers are the ones who have called in the diviner and her rite, and the girl does not speak at all. With the saying of the words go, in the same decad, the recitation of the lord's names, the smearing of white dust and of the dust of the devotees' feet, and praise in company with those who know the Veda."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 4.6.2-10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarVeriyattu a pm:Practicing ;
+    rdfs:label "The possession dance and offerings for the minor deity, which the work rejects"@en, "Der Besessenheitstanz und die Gaben für die niedere Gottheit, die das Werk verwirft"@de ;
+    skos:altLabel "aṇaṅku āṭutal, veṟi"@en ;
+    skos:definition "The treatment the mothers have called in for the stricken girl in decad 4.6: a diviner woman whose word they follow, offerings of flesh and toddy, black and red food laid on an altar, a goat sacrificed, and the women dancing as though possessed and shaking their shoulders to loud music."@en ;
+    skos:note "Recorded because the work records it, as the treatment the mothers reach for first, and because it is the practice against which the decad states a condition of failure. The decad does not name the deity; both translations say only that it is a minor one, and the commentary of 1981 calls the diviner the votary of a deity of a very low order. Who the deity was and how the rite was performed elsewhere is not in this work and is not entered here."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 4.6.3-9 and 4.6.11 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarPatiAtutal a pm:Practicing ;
+    rdfs:label "Singing and dancing the lord's praise in public without shame"@en, "Das schamlose öffentliche Singen und Tanzen zum Lob des Herrn"@de ;
+    skos:altLabel "pāṭi āṭi"@en ;
+    skos:definition "Singing the lord's glory at the top of one's voice, leaping and dancing, touching the earth with the head, going through the streets and being called mad, with pride and shame given up."@en ;
+    skos:note "Decad 3.5 commands it and threatens those who do not do it; decad 2.6 reports it in the first person as what destroyed the speaker's karma."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 2.6.4-6 and 3.5.1-10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarValamVarutal a pm:Practicing ;
+    rdfs:label "Going round the lord's shrine"@en, "Das Umschreiten des Heiligtums des Herrn"@de ;
+    skos:altLabel "valam ceytal"@en ;
+    skos:definition "Circumambulating the temple of the lord, at Tiruvāṟaṉviḷai in 7.10 and at Tirumōkūr in 10.1."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 7.10.8 and 10.1.5-7 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarKataittalaiCiykkal a pm:Practicing ;
+    rdfs:label "Sweeping the threshold of the lord's temple"@en, "Das Fegen der Schwelle des Tempels"@de ;
+    skos:altLabel "kaṭaittalai cīykkal"@en ;
+    skos:definition "Cleaning the door-step of the temple at Anantapuram."@en ;
+    skos:note "The lowest act of service the work names, and the claim attached to it is that even this undoes the deeds that bind: kaṭaittalai cīykkap peṟṟāl kaṭuviṉai kaḷaiyalāmē."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 10.2.7 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarArccanai a pm:Practicing ;
+    rdfs:label "Worshipping the lord with flowers, water, lamp and incense"@en, "Die Verehrung des Herrn mit Blumen, Wasser, Lampe und Weihrauch"@de ;
+    skos:altLabel "pū, nīr, cuṭar, tīpam"@en ;
+    skos:definition "Daily worship at the lord's feet with fresh unfading flowers, water, sandal paste, lamp and incense."@en ;
+    skos:note "The work prescribes this worship and in other places sets it aside: 4.3 offers the heart as sandal paste and the poem as garland instead of flowers, and 9.3.9 calls worship with flowers and water, lamp and incense superfluous. The superfluity is not a prohibition, and the prescriptions of 9.10 and 10.2 stand beside it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 3.3.7, 4.3.1-7, 9.3.9, 9.10.1-10, 10.2.4-10 and 10.5.4-5 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarTontu a pm:Practicing ;
+    rdfs:label "Serving the lord's devotees"@en, "Der Dienst an den Verehrern des Herrn"@de ;
+    skos:altLabel "toṇṭu, aṭiyār aṭimai"@en ;
+    skos:definition "Bonded service to the devotees of the lord and to their servants, down the chain of servants."@en ;
+    skos:note "Decads 3.7 and 8.10 put the devotee's devotee above the lord as the object of service, and 3.7.9 says that a devotee of the lowest birth is the speaker's master if he is the lord's."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 3.7.1-10 and 8.10.1-10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarMatalUrtal a pm:Practicing ;
+    rdfs:label "Riding the palm-stem horse"@en, "Das Reiten des Palmstängelpferdes"@de ;
+    skos:altLabel "maṭal ūrtal"@en ;
+    skos:definition "The rejected lover's public act, announced by the speaker of 5.3: to mount the stalk of the palmyra and ride it through every street, inviting the world's slander, so as to shame the lover into coming."@en ;
+    skos:note "Entered as a named practice and as nothing more: the work announces it as a resolve and does not report it carried out, and no fruit is named for it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 5.3.9-10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarKayamCerral a pm:Practicing ;
+    rdfs:label "Conquering the five senses and mortifying the body"@en, "Die fünf Sinne besiegen und den Leib abtöten"@de ;
+    skos:altLabel "aimpulaṉ veṉṟu kāyam ceṟṟal"@en ;
+    skos:definition "The ascetic's path as the work describes it: cutting off every attachment, conquering the five senses and wasting the body until weeds grow on it."@en ;
+    skos:note "A rival path, entered so that the work's condition of failure against it has an object; see pmc:AlvarCuvarkkamMilvar."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 4.1.9 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmp:AlvarNani a pm:Practicing ;
+    rdfs:label "Contemplating the self apart from all else"@en, "Die Betrachtung des Selbst, abgelöst von allem anderen"@de ;
+    skos:altLabel "ñāṉi"@en ;
+    skos:definition "The path of the knower (ñāṉi) who has given up everything and contemplates the self with sharpened understanding, and attains the enjoyment of the self."@en ;
+    skos:note "A rival path, entered so that the work's conditions of failure against it have an object; see pmc:AlvarCirukaNinaivu. The work never names it with the Sanskrit term of the later commentary. Satyamurthi's notes do, and they are commentary and not the stanza."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 4.1.10, 6.9.10 and 8.8.9 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarEmarEzhuPirappu a pm:Conceptualizing ;
+    rdfs:label "Saving one's kin of seven births before and after"@en, "Die Rettung der eigenen Sippe über sieben Geburten davor und danach"@de ;
+    skos:altLabel "emar kīḻ mēl ēḻ eḻu piṟappum"@en ;
+    skos:definition "The salvation of those connected with the devotee for seven generations above and below: they become devotees of Kēcavaṉ and are kept from the endless hell."@en ;
+    skos:note "Claimed twice and both times in the first person and after the fact, not as a promise: the kin are said to have become devotees and to have been spared hell because the speaker sang and named."@en ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 2.6.7 and 2.7.1 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarKurranTamar a pm:Conceptualizing ;
+    rdfs:label "Keeping death's messengers away"@en, "Die Boten des Todes fernhalten"@de ;
+    skos:altLabel "kūṟṟiṉ tamarkaḷum kuṟukakillār"@en ;
+    skos:definition "The messengers of Yama, who do cruel deeds, do not come near those who say Kēcavā."@en ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 10.2.1 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarAnankuTirttal a pm:Conceptualizing ;
+    rdfs:label "The cure of the malady sent by the god"@en, "Die Heilung der vom Gott gesandten Krankheit"@de ;
+    skos:altLabel "aṇaṅku, nōy"@en ;
+    skos:definition "The recovery of the girl whose sickness is love for the lord: she will recover at once, her fever will subside, and she will rise and dance in worship."@en ;
+    skos:note "The malady is diagnosed in the same decad as the work of the supreme god and not of a minor one, and the cure is said to come only from him; the claim therefore makes the diagnosis and the cure one statement, which is what the test at pmc:AlvarAnankuTest has to separate."@en ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 4.6.1-2, 4.6.5 and 4.6.10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarTiyaiTaluvi a pm:Conceptualizing ;
+    rdfs:label "Embracing fire without being burnt"@en, "Feuer umarmen, ohne zu verbrennen"@de ;
+    skos:altLabel "cem tīyait taḻuvi mey vēvāḷ"@en ;
+    skos:definition "The daughter of decad 4.4 clasps the red fire, calls it Accutaṉ, and her body is not burnt."@en ;
+    skos:note "A capacity reported of a person in a state and not acquired by a practice: the mother lists it among the strange deeds of a daughter whom the lord has seized, and no practice in the work is said to produce it. Entered because strict completeness for capacities requires it, and kept apart from the yieldings because it has no pm:byPractice to carry."@en ;
+    skos:note "The two translations divide on the verb. Satyamurthi Ayyangar renders the girl as clasping the blistering flame and remaining unhurt; Bharati renders her as fondling the red fire unhurt. Both carry the absence of burning, which is the Tamil mey vēvāḷ, her body does not burn."@en ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 4.4.3 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarTirunamamEmarYielding a pm:Yielding ;
+    rdfs:label "Uttering the names is said to save the speaker's kin of seven births"@en, "Das Aussprechen der Namen soll die Sippe über sieben Geburten retten"@de ;
+    pm:byPractice pmp:AlvarTirunamam ;
+    pm:yieldsCapacity pmc:AlvarEmarEzhuPirappu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 2.7.1 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarPatiAtutalEmarYielding a pm:Yielding ;
+    rdfs:label "Constant thought, song and dance are said to have saved the speaker's kin from hell"@en, "Stetes Denken, Singen und Tanzen sollen die Sippe vor der Hölle bewahrt haben"@de ;
+    skos:note "Reported in the first person: the speaker thought of the lord constantly and sang and danced, his ageless karma was destroyed, his sickness cured, and his kin of seven generations kept from hell."@en ;
+    pm:byPractice pmp:AlvarPatiAtutal ;
+    pm:yieldsCapacity pmc:AlvarEmarEzhuPirappu, pmc:AlvarVinaiTirtal, pmc:AlvarNoyAruttal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 2.6.4-7 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarTirunamamKurranYielding a pm:Yielding ;
+    rdfs:label "Saying Kēcavā is said to end every obstacle and keep death's messengers away"@en, "Kēcavā zu sagen soll jedes Hindernis beenden und die Boten des Todes fernhalten"@de ;
+    pm:byPractice pmp:AlvarTirunamam ;
+    pm:yieldsCapacity pmc:AlvarKurranTamar, pmc:AlvarTuyarIlamai ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 10.2.1 and 10.2.10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarTirunamamVinaiYielding a pm:Yielding ;
+    rdfs:label "Uttering and singing the names is said to end karma past and to come"@en, "Das Aussprechen und Singen der Namen soll vergangenes und künftiges Karma beenden"@de ;
+    skos:note "3.3.6 is the strongest form: to say namas to the lord of Vēṅkaṭam is enough, and the deeds past and to come are ended. Bharati renders it as serving him even only by lip; Satyamurthi Ayyangar as the inclination for selfless service, which shall burn down past sins and those yet to come."@en ;
+    pm:byPractice pmp:AlvarTirunamam ;
+    pm:yieldsCapacity pmc:AlvarVinaiTirtal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 2.7.3-9, 3.3.6 and 10.5.7-10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarTirunamamViduYielding a pm:Yielding ;
+    rdfs:label "Meditating on the name nāraṇam and singing it daily is said to give release"@en, "Die Betrachtung des Namens nāraṇam und sein tägliches Singen sollen Befreiung geben"@de ;
+    pm:byPractice pmp:AlvarTirunamam ;
+    pm:yieldsCapacity pmc:AlvarVidu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 10.5.1-5 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarSankuCakkaramYielding a pm:Yielding ;
+    rdfs:label "Saying conch and discus into her ears is said to cure the girl at once"@en, "Muschel und Diskus in ihre Ohren zu sagen soll das Mädchen sofort heilen"@de ;
+    skos:note "Both translations carry the immediacy: if you will say conch and discus so that she hears, she will recover, see (Bharati: she will immediately recover, just see; Satyamurthi Ayyangar: you will then see it does her real good). The Tamil has naṉṟē il peṟum itu kāṇmiṉē."@en ;
+    pm:byPractice pmp:AlvarSankuCakkaramEnral ;
+    pm:yieldsCapacity pmc:AlvarAnankuTirttal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 4.6.2, 4.6.5-6 and 4.6.10 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarValamVarutalYielding a pm:Yielding ;
+    rdfs:label "Going round the shrine is said to end the woes and the evil deeds"@en, "Das Umschreiten des Heiligtums soll Leid und böse Taten beenden"@de ;
+    skos:note "10.1.7 adds a term: the woes will be gone quickly (kaṭitu), once we go round it."@en ;
+    pm:byPractice pmp:AlvarValamVarutal ;
+    pm:yieldsCapacity pmc:AlvarTuyarIlamai, pmc:AlvarVinaiTirtal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 7.10.8 and 10.1.7 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarKataittalaiYielding a pm:Yielding ;
+    rdfs:label "Sweeping the temple threshold is said to undo the cruel deeds"@en, "Das Fegen der Tempelschwelle soll die grausamen Taten aufheben"@de ;
+    pm:byPractice pmp:AlvarKataittalaiCiykkal ;
+    pm:yieldsCapacity pmc:AlvarVinaiTirtal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 10.2.7 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarArccanaiNoyYielding a pm:Yielding ;
+    rdfs:label "Worship of the feet is said to keep disease away and end birth"@en, "Die Verehrung der Füße soll Krankheit fernhalten und die Geburt beenden"@de ;
+    skos:note "Satyamurthi Ayyangar's note at 10.4.7 reads the disease as saṃsāra; the Tamil has piṇi, sickness, and piṟavi keṭuttu, ending birth, as two things."@en ;
+    pm:byPractice pmp:AlvarArccanai ;
+    pm:yieldsCapacity pmc:AlvarNoyAruttal, pmc:AlvarPiravaamai ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 9.10.9 and 10.4.7 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarArccanaiViduYielding a pm:Yielding ;
+    rdfs:label "Worship with flowers, water and lamp is said to give release"@en, "Die Verehrung mit Blumen, Wasser und Lampe soll Befreiung geben"@de ;
+    pm:byPractice pmp:AlvarArccanai ;
+    pm:yieldsCapacity pmc:AlvarVidu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 3.3.7 and 10.5.5 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; trans. S. Satyamurthi Ayyangar, Bombay 1981)" .
+
+pmc:AlvarTontuVinaiYielding a pm:Yielding ;
+    rdfs:label "Resolving to serve is said to have ended the speaker's evil deeds at once"@en, "Der Entschluss zu dienen soll die bösen Taten des Sprechers sofort beendet haben"@de ;
+    skos:note "First person, and with a turn the translations soften: the Tamil says the speaker thought of serving as a pretence (aṭimai ceyvēṉ pōl ... vañcittu), and still every evil path ceased. Bharati: I only thought I would serve the lord, lo, my evil karmas disappeared instantly. The 1981 translation of this stanza was not located."@en ;
+    pm:byPractice pmp:AlvarTontu ;
+    pm:yieldsCapacity pmc:AlvarVinaiTirtal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Alvar ;
+    pm:fromWork pmw:AlvarTiruvaymoli ;
+    dcterms:source "Nammāḻvār, Tiruvāymoḻi 8.10.1 (Tamil, Project Madurai ed.; trans. Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987; the Tamil of this decad read at its first stanza, which the Project Madurai text numbers 9.9)" .
+
+# ANCHOR-ALVAR-HARVEST
