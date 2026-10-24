@@ -45,7 +45,9 @@ def corpus(tmp_path_factory) -> Path:
 @requires_node
 def test_site_modules(corpus: Path) -> None:
     result = subprocess.run(
-        [NODE, "--test", str(SUITE)],
+        # The reporter is pinned because the markers below are TAP: node's default
+        # reporter changed to spec on the ubuntu-26.04 runner (24.10.2026).
+        [NODE, "--test", "--test-reporter=tap", str(SUITE)],
         cwd=REPO_ROOT,
         env={**os.environ, "PRIMA_MATERIA_DATA": str(corpus)},
         capture_output=True,
