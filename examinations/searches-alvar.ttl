@@ -1,0 +1,48 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — three searches carried in the Tiruvāymoḻi
+#
+# All three were carried on 2026-10-24 while the work was open, over the
+# whole of the translation of 1987 and the hundred terminal stanzas in the
+# Tamil and in the translation of 1981. The nodes they found stand in
+# traditions/alvar.ttl.
+#
+
+pmp:AlvarRecitationFailureSearch a pm:Searching ;
+    rdfs:label "Whether the Tiruvāymoḻi states a condition under which reciting a decad fails"@en, "Ob die Tiruvāymoḻi eine Bedingung nennt, unter der das Rezitieren einer Dekade misslingt"@de ;
+    pm:searchedCorpus "Nammāḻvār, Tiruvāymoḻi, the hundred terminal stanzas in the Tamil of the Project Madurai edition and in the English of S. Satyamurthi Ayyangar, Bombay 1981, and the whole work in the English of Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987" ;
+    pm:searchedFor "A stanza that names a reciter of a decad for whom the promised fruit did not follow, a term after which it would no longer come, an error in the recitation that undoes it, or a sign by which the reciter would know it had not come. Ninety-three of the hundred terminal stanzas promise a fruit, and none of them is otherwise exposed to failure." ;
+    pm:searchTerms "Every terminal stanza read in all three texts where located, ninety-three of a hundred in the 1981 translation. Searched in addition over the 1987 translation for: fail (six hits, none about a recitation; one is 8.2.5, where great seers thought of him through the ages and failed), in vain (one), not attain (one, 5.1.5), no fruit (none), will not (nine), unless, until (none), lest (one); and over the Tamil for aṉṟi (twenty), allāl (nine) and vīṭillai (one, 4.1.10). The Tamil illaiyēl occurs only in sandhi with the word before it and a plain search returns nothing for it; it was found by reading 4.1.10 and 7.1.7." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-24" ;
+    dcterms:date "2026-10-24" ;
+    skos:note "No terminal stanza states a condition of failure for its own recitation. What they carry instead are conditions of manner: with melody, with love, with insight, daily, by night and by day, until the lisp is gone, fully, without abating, with the mind set on it. A manner is not a condition of failure unless the text says what happens without it, and none does; one stanza, 7.9.11, waives every manner and says the decad gives joy however it is sung."@en ;
+    skos:note "The conditions of failure the work does state lie in its body and concern worship, calling and rival paths, not the recitation of its own decads: pmc:AlvarPurameTozuvar, pmc:AlvarKanaVarai, pmc:AlvarTeruvar, pmc:AlvarCuvarkkamMilvar, pmc:AlvarCirukaNinaivu and pmc:AlvarAnankuPerukum. The limit of the search is the 1981 translation, which was not located for seven terminal stanzas, and its notes, which were not read through and may state conditions the stanzas do not."@en .
+
+pmp:AlvarSuccessSignSearch a pm:Searching ;
+    rdfs:label "Whether the Tiruvāymoḻi names a sign by which the lord's favour is known"@en, "Ob die Tiruvāymoḻi ein Zeichen nennt, an dem die Gunst des Herrn erkannt wird"@de ;
+    pm:searchedCorpus "Nammāḻvār, Tiruvāymoḻi, the whole work in the English of Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987, with the places found read in the Tamil of the Project Madurai edition and in the English of S. Satyamurthi Ayyangar, Bombay 1981" ;
+    pm:searchedFor "A perceptible mark, announced or reported, by which the work says that the lord's favour has been received or that a practice has taken: a light, a scent, a colour, a sound, a bodily change." ;
+    pm:searchTerms "The 1987 translation read whole, and searched for: sign (one), proof (two), mark (five), fragrance (nine), wafts (two), smell (five), scent (none), glow (two), tears (thirty-two). Tamil searched for kamaḻ (eleven) and nāṟum (one). The Tamil aṭaiyāḷam of 8.9.6 is split across a word boundary in the Project Madurai text and a plain search returns nothing for it; it was found by reading the stanza." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AlvarAtaiyalam, pmc:AlvarTulavamKamalum ;
+    pm:searchedBy "prima-materia, 2026-10-24" ;
+    dcterms:date "2026-10-24" ;
+    skos:note "Two signs, the one the work itself calls aṭaiyāḷam and the scent of tulasi, read by mothers in two decads and reported by the speaker of one. Seen and not counted as signs: the tears that rise at hearing a name (1.10, 2.4, 5.10) and the radiance seen in the heart (8.5.5), because the work does not offer them as marks that a favour has been received but as states of longing or vision."@en .
+
+pmp:AlvarDiseaseCounterSearch a pm:Searching ;
+    rdfs:label "Whether the disease the Tiruvāymoḻi promises to cure is read as disease"@en, "Ob die Krankheit, deren Heilung die Tiruvāymoḻi verspricht, als Krankheit gelesen wird"@de ;
+    pm:searchedCorpus "Nammāḻvār, Tiruvāymoḻi 1.7.11, 4.6, 9.7.11, 9.10.9 and 10.4.7, in the Tamil of the Project Madurai edition and in the English of Srirama Bharati and Sowbhagya Lakshmi, Melkote 1987, and of S. Satyamurthi Ayyangar, Bombay 1981, with the notes of the latter where located" ;
+    pm:searchedFor "The counter-reading of the promises of cure: whether the second translation or its commentary takes nōy and piṇi as bodily sickness or as something no reciter could be found still to have." ;
+    pm:searchTerms "nōy, piṇi, aṇaṅku in the Tamil; disease, sickness, ill, malady, saṃsāra, Samsara in both translations at the five places, and in the notes of the 1981 translation where they were located." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchYieldedNode pmc:AlvarNoyTest ;
+    pm:searchedBy "prima-materia, 2026-10-24" ;
+    dcterms:date "2026-10-24" ;
+    skos:note "The 1981 commentary reads the disease of 10.4.7 as the dreadful disease of saṃsāra and turns several fruits of the terminal stanzas into spiritual goods (poverty as poverty of love for God at 6.2.11, the damsels as devotees at 5.8.11). The 1987 translation keeps disease and sickness. The Tamil has the ordinary words. The opposing reading is a commentator's and stands at the protocol, where it makes the claim harder to fail; it is not a second witness of the tradition."@en .
