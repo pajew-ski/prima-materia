@@ -1,0 +1,369 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — chaos magic: Carroll, Liber Null and Psychonaut
+#
+# The harvest of one work of the corpus of pmt:ChaosMagic, kept apart from
+# traditions/chaos-magic.ttl, which declares the tradition and the work
+# (pmw:LiberNullAndPsychonaut) and carries its reading notes and harvest counts.
+# Harvested complete under prima-materia#893 with two independent extraction
+# passes per part and a reading of the whole text: first Liber Null, then
+# Psychonaut, each in the order of the work. Edition: York Beach, Samuel
+# Weiser, 1987, fifth printing of 1997, cited by page from the running heads.
+#
+
+#
+# Liber Null (Carroll), harvested complete under prima-materia#893, in the order
+# of the work: front matter, Liber MMM, the initiate syllabuses Liber LUX and
+# Liber NOX, the Millenium, Liber AOM. Within each part the nodes follow the text.
+#
+
+pmc:ChaosMagicHealthCautela a pm:Cautioning ;
+    rdfs:label "The rituals and exercises are for readers in good health only"@en, "Die Rituale und Übungen nur für Leser bei guter Gesundheit"@de ;
+    skos:definition "The author's note says the book contains powerful rituals and that its rituals and exercises should be performed only by readers in good health; anyone with heart disease, epilepsy or any chronic disease is asked not to use the material at all, and author and publisher decline responsibility for misuse and for whatever may occur."@en ;
+    skos:note "The warning is directed at the whole of the material, so it points at the work rather than at one practice. The note gives no reason beyond the power of the rituals; the strain named elsewhere, near-unconsciousness in the death posture, pain, fasting, sleeplessness, drugs, is what it covers."@en ;
+    pm:cautionsAbout pmw:LiberNullAndPsychonaut ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Author's Note, front matter (unpaginated); read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicAlteredStatesOfConsciousness a pm:Conceptualizing ;
+    rdfs:label "Altered states of consciousness as the key to magical ability, developed without any symbolic system but reality"@en, "Veränderte Bewusstseinszustände als Schlüssel zur magischen Fähigkeit, entwickelt ohne ein anderes Symbolsystem als die Wirklichkeit"@de ;
+    skos:definition "The two themes the introduction names for the whole book: altered states of consciousness unlock one's magical abilities, and these abilities can be developed with no symbolic system except reality itself. Magic in the order is called intensely practical, personal and experimental, and half the book is said to be given to the black arts, since an inclination toward the darker side of magic is as good a starting point as any."@en ;
+    skos:note "The introduction names the order's ancestry as the Zos Kia Cultus and the A.'.A.'.; Diagram 1 traces a survival of the magical tradition through Egyptian, Templar, Hermetic, alchemical, Rosicrucian, Goetic, Masonic, Illuminati, Golden Dawn and Ordo Templi Orientis lines to Spare. That is the work's own account of its descent, a reception statement, and it is kept here and not as a claim of transmission."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Introduction, p. 7; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicIOTGrades a pm:Conceptualizing ;
+    rdfs:label "The order without formal hierarchy: students, initiates, adepts and masters"@en, "Der Orden ohne formale Hierarchie: Schüler, Initiaten, Adepten und Meister"@de ;
+    skos:definition "The secrets of magic are called universal and practical, and those who realise and practise them are said to have achieved mastership; masters inspire adepts to found orders that bring others to mastership, and the mysteries are said to be preservable only by constant revelation. The order takes its name from Eros and Thanatos, sex and death, the positive and negative methods of reaching magical consciousness, illumination being the inspiration, enlightenment and liberation that success with them brings. Its stated purpose is to help decide the form of the embryonic fifth aeon by spreading magical knowledge to individuals. It has no formal hierarchy, only a division of activity by ability: students strengthen their will against their own minds and explore self-change in dream and magic; initiates acquaint themselves with all forms of attainment, perfect one, and help aspirants; adepts seek perfection in all aspects of magical power, wisdom and liberation; masters pursue the aims of the order as they see fit. The book itself is laid out by the same steps, Liber MMM for the student in the fourth degree, Liber LUX and Liber NOX for the initiate in the third, Liber AOM for the adept in the second."@en ;
+    skos:note "The mastership reached by realising and practising the secrets of magic is stated as attainable but given no procedure here; the procedures stand in the syllabuses, and the last step to the degree of master is integral reincarnation (pmc:ChaosMagicIntegralReincarnation)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, The Order and the Quest, pp. 9-10; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, title page of Liber Null and Contents, front matter (unpaginated); read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicErosNaming a pm:Naming ;
+    rdfs:label "Eros, god of sex, one of the two gods the order is named from"@en, "Eros, Gott der Sexualität, einer der beiden Götter, nach denen der Orden benannt ist"@de ;
+    skos:definition "Eros is named as the god of sex, from whom with Thanatos the order takes its name; sex is said to stand for the positive method of attaining magical consciousness."@en ;
+    pm:nameForm "Eros" ;
+    pm:nameRole "god" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, The Order and the Quest, p. 9; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicThanatosNaming a pm:Naming ;
+    rdfs:label "Thanatos, god of death, the other god of the order's name"@en, "Thanatos, Gott des Todes, der andere Gott im Namen des Ordens"@de ;
+    skos:definition "Thanatos is named as the god of death, from whom with Eros the order takes its name; death is said to stand for the negative method of attaining magical consciousness, and the Rites of Thanateros of Liber NOX carry the name."@en ;
+    pm:nameForm "Thanatos" ;
+    pm:nameRole "god" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, The Order and the Quest, p. 9; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber NOX, Ecstasy, p. 68; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicMagicalTrance a pm:Conceptualizing ;
+    rdfs:label "Magical trance: concentration built up in stages until the mind enters a trance-like condition"@en, "Magische Trance: stufenweise aufgebaute Konzentration, bis der Geist in einen tranceartigen Zustand eintritt"@de ;
+    skos:definition "To work magic effectively the ability to concentrate attention must be built up until the mind can enter a trance-like condition. The stages are fixed: absolute motionlessness of the body, regulation of the breathing, stopping of thoughts, then concentration on sound, on objects and on mental images. The abilities are called highly abnormal and usually inaccessible to human consciousness, demanding inhuman concentration, with great rewards. Liber MMM, of which this is the first part, also covers personal metamorphosis and the basic techniques of magic."@en ;
+    skos:note "Condition of failure, stated: the three methods of attaining magical trance will yield results only if pursued with the most fanatical and morbid determination. The determination is not measured, so any absence of result can be assigned to its lack."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, p. 14; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Image Concentration, p. 16; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, introduction, p. 13; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicMotionlessness a pm:Practicing ;
+    rdfs:label "Motionlessness: holding a comfortable posture without blinking or moving, five minutes at least and fifteen before going on"@en, "Bewegungslosigkeit: eine bequeme Haltung ohne Blinzeln oder Bewegung halten, mindestens fünf Minuten und fünfzehn, bevor es weitergeht"@de ;
+    skos:definition "The body is arranged in any comfortable position and held as long as possible, without blinking or moving tongue, fingers or any part; the mind is not let run on trains of thought but observes itself passively. A position that seemed comfortable may become agonising, and the student is to persist. Time is set aside daily, and every chance of inactivity used; results go into the diary. Less than five minutes is not to satisfy; when fifteen have been achieved the student proceeds to breathing."@en ;
+    skos:note "Condition of failure: less than five minutes is named as an unsatisfactory result. Sign of success: fifteen minutes of stillness completes the stage. Both are durations the student can time, which makes this the most checkable stage of the syllabus."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Motionlessness, p. 14; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicBreathing a pm:Practicing ;
+    rdfs:label "Breathing: slower and deeper with the whole capacity of the lungs, the attention wholly on the cycle for thirty minutes"@en, "Atmung: langsamer und tiefer mit dem ganzen Lungenraum, die Aufmerksamkeit dreißig Minuten ganz beim Zyklus"@de ;
+    skos:definition "Staying as motionless as possible the student deliberately makes the breathing slower and deeper, using the whole capacity of the lungs without undue effort or strain; the lungs may be held empty or full between breaths to lengthen the cycle. The important thing is that the mind directs its complete attention to the breath cycle. When this can be done for thirty minutes the student proceeds to not-thinking."@en ;
+    skos:note "Sign of success: thirty minutes of complete attention on the breath completes the stage."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Breathing, p. 14; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicHealthFromStillness a pm:Conceptualizing ;
+    rdfs:label "Possibly improved health from motionlessness and breathing"@en, "Möglicherweise bessere Gesundheit aus Bewegungslosigkeit und Atmung"@de ;
+    skos:definition "The exercises of motionlessness and breathing are said possibly to improve health, while having no other intrinsic value than as a preparation for not-thinking."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Not-Thinking, p. 14; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicMotionlessnessYieldsHealth a pm:Yielding ;
+    rdfs:label "Motionlessness and breathing are said possibly to improve health"@en, "Bewegungslosigkeit und Atmung sollen möglicherweise die Gesundheit bessern"@de ;
+    skos:definition "The work allows that the first two exercises may improve health, and denies them any other value of their own."@en ;
+    skos:note "The breathing exercise makes the same claim in the same sentence; one yielding is entered for the pair."@en ;
+    pm:byPractice pmp:ChaosMagicMotionlessness ;
+    pm:yieldsCapacity pmc:ChaosMagicHealthFromStillness ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Not-Thinking, p. 14; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicNotThinking a pm:Practicing ;
+    rdfs:label "Not-thinking: withdrawing the mind from every arising thought and lengthening the periods of quiescence"@en, "Nicht-Denken: den Geist von jedem aufsteigenden Gedanken abziehen und die Zeiten der Stille verlängern"@de ;
+    skos:definition "While motionless and breathing deeply, the student withdraws the mind from any thought that arises. The attempt is said inevitably to reveal the mind as a raging tempest, so that only the greatest determination wins a few seconds of silence, which already counts as a triumph. The aim is complete vigilance over the arising of thoughts and ever longer periods of total quiescence; the exercise is practised at set times and whenever inactivity offers, and recorded in the diary."@en ;
+    skos:note "Sign of success, as the work states it: even a few seconds of mental silence is called a triumph."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Not-Thinking, pp. 14-15; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicNotThinkingYieldsMagicalTrance a pm:Yielding ;
+    rdfs:label "Not-thinking is the beginning of the magical trance"@en, "Das Nicht-Denken ist der Anfang der magischen Trance"@de ;
+    skos:definition "Not-thinking is called the beginnings of the magical trance condition, for which motionlessness and breathing are only preparation."@en ;
+    pm:byPractice pmp:ChaosMagicNotThinking ;
+    pm:yieldsCapacity pmc:ChaosMagicMagicalTrance ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Not-Thinking, p. 14; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicMotionlessnessBeforeBreathing a pm:Presupposing ;
+    rdfs:label "Fifteen minutes of motionlessness before breathing, thirty minutes of breathing before not-thinking"@en, "Fünfzehn Minuten Bewegungslosigkeit vor der Atmung, dreißig Minuten Atmung vor dem Nicht-Denken"@de ;
+    skos:definition "The stages are to be taken in order, each opened by a stated duration in the one before: fifteen minutes of motionlessness before the regulation of breathing, thirty minutes of attentive breathing before not-thinking."@en ;
+    skos:note "The second step of the chain, breathing before not-thinking, is carried in the same node because the work states both thresholds in the same way: as the point at which to proceed, with no consequence of proceeding early."@en ;
+    pm:dependentStep pmp:ChaosMagicBreathing ;
+    pm:priorStep pmp:ChaosMagicMotionlessness ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Motionlessness, p. 14; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Breathing, p. 14; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicLustOfResult a pm:Conceptualizing ;
+    rdfs:label "Magic as change in conformity with will, and lust of result as what short-circuits it"@en, "Magie als Veränderung in Übereinstimmung mit dem Willen, und die Gier nach Ergebnis als das, was sie kurzschließt"@de ;
+    skos:definition "Magic is defined as the science and art of causing change to occur in conformity with will, and the will is said to become magically effective only when the mind is focused and not interfering with it. The mind must first discipline itself to focus its whole attention on some meaningless phenomenon: if concentration is aimed at a desire, the effect is short-circuited by lust of result, and egotistical identification, fear of failure and the reciprocal desire not to achieve desire, arising from our dual nature, destroy the result. Subjects for concentration are therefore chosen without spiritual, egotistical, intellectual, emotional or useful significance."@en ;
+    skos:note "Condition of failure with its mechanism: concentration aimed at an object of desire fails through lust of result. It is the work's explanation for failure throughout; the sigil (pmp:ChaosMagicSigilConstruction) is its answer to it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, The Magical Trances, p. 15; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicObjectConcentration a pm:Practicing ;
+    rdfs:label "Object concentration: a fixed, unwavering dead stare at a meaningless object, held for hours"@en, "Objektkonzentration: ein starrer, unbeweglicher toter Blick auf einen bedeutungslosen Gegenstand, stundenlang gehalten"@de ;
+    skos:definition "Any object will do, a mark on a wall, something in the distance, a star. To hold it with an absolutely fixed gaze for more than a few moments is called extraordinarily difficult, yet it must be persisted in for hours at a time, every attempt of the eye to distort the object and every attempt of the mind to think of something else being resisted. The ability must be developed on meaningless objects."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Object Concentration, p. 15; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicFixedDeadStare a pm:Conceptualizing ;
+    rdfs:label "The fixed dead stare of wizards, from which the legend of the evil eye derives"@en, "Der starre tote Blick der Zauberer, aus dem die Legende vom bösen Blick stammt"@de ;
+    skos:definition "The legend of the evil eye is said to derive from the ability of wizards and sorcerers to give a fixed dead stare, an ability that can be practised against any object."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Object Concentration, p. 15; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicExtractingOccultSecrets a pm:Conceptualizing ;
+    rdfs:label "Extracting occult secrets from things by the fixed gaze"@en, "Okkulte Geheimnisse aus den Dingen durch den starren Blick herausziehen"@de ;
+    skos:definition "Eventually, the work says, it becomes possible to extract occult secrets from things by the technique of the fixed gaze."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Object Concentration, p. 15; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicObjectConcentrationYieldsDeadStare a pm:Yielding ;
+    rdfs:label "Object concentration is said to develop the fixed dead stare"@en, "Die Objektkonzentration soll den starren toten Blick ausbilden"@de ;
+    skos:definition "The ability to give a fixed dead stare is practised against any object, and object concentration is its exercise."@en ;
+    pm:byPractice pmp:ChaosMagicObjectConcentration ;
+    pm:yieldsCapacity pmc:ChaosMagicFixedDeadStare ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Object Concentration, p. 15; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicObjectConcentrationYieldsOccultSecrets a pm:Yielding ;
+    rdfs:label "Object concentration is said eventually to extract occult secrets from things"@en, "Die Objektkonzentration soll schließlich okkulte Geheimnisse aus den Dingen ziehen"@de ;
+    skos:definition "Eventually it is possible to extract occult secrets from things by this technique."@en ;
+    pm:byPractice pmp:ChaosMagicObjectConcentration ;
+    pm:yieldsCapacity pmc:ChaosMagicExtractingOccultSecrets ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Object Concentration, p. 15; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicMeaninglessObjectsFirst a pm:Presupposing ;
+    rdfs:label "The fixed gaze is developed on meaningless objects before it is turned to secrets"@en, "Der starre Blick wird an bedeutungslosen Gegenständen entwickelt, bevor er sich Geheimnissen zuwendet"@de ;
+    skos:definition "The ability to extract occult secrets from things must be developed by working with meaningless objects."@en ;
+    pm:dependentStep pmc:ChaosMagicObjectConcentrationYieldsOccultSecrets ;
+    pm:priorStep pmp:ChaosMagicObjectConcentration ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Object Concentration, p. 15; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicSoundConcentration a pm:Practicing ;
+    rdfs:label "Sound concentration: one chosen sound repeated in the mind to block all other thought"@en, "Klangkonzentration: ein gewählter Laut im Geist wiederholt, um alle anderen Gedanken zu sperren"@de ;
+    skos:definition "A simple sound of one or more syllables is chosen, the book's examples being Aum or Om, Abrahadabra, Yod He Vau He, Aum Mani Padme Hum, Zazas Zazas and Nasatanada Zazas, and repeated over and over in the mind to block all other thoughts; however inappropriate the choice seems, the student must persist with it."@en ;
+    skos:note "Signs of success, called encouraging: the sound comes to seem to repeat itself automatically, and may occur in sleep."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Sound Concentration, pp. 15-16; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicVerbalMindControl a pm:Conceptualizing ;
+    rdfs:label "Magical control of the part of the mind where verbal thought arises, the key to words of power"@en, "Magische Herrschaft über den Teil des Geistes, in dem sprachliches Denken entsteht, der Schlüssel zu Machtworten"@de ;
+    skos:definition "The part of the mind in which verbal thoughts arise is said to be brought under magical control by concentration on imagined sounds, and this control is called the key to words of power and certain forms of spell casting."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Sound Concentration, pp. 15-16; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSoundConcentrationYieldsVerbalControl a pm:Yielding ;
+    rdfs:label "Sound concentration is said to bring verbal thought under magical control"@en, "Die Klangkonzentration soll das sprachliche Denken unter magische Herrschaft bringen"@de ;
+    skos:definition "Concentration on mentally imagined sounds brings the verbal part of the mind under magical control and is the key to words of power and some spell casting."@en ;
+    pm:byPractice pmp:ChaosMagicSoundConcentration ;
+    pm:yieldsCapacity pmc:ChaosMagicVerbalMindControl ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Sound Concentration, pp. 15-16; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicImageConcentration a pm:Practicing ;
+    rdfs:label "Image concentration: a simple shape held undistorted in the mind's eye, at first with closed eyes"@en, "Bildkonzentration: eine einfache Form unverzerrt vor dem inneren Auge gehalten, zunächst mit geschlossenen Augen"@de ;
+    skos:definition "A simple shape, triangle, circle, square, cross or crescent, is chosen and held in the mind's eye without distortion for as long as possible; only the most determined efforts make it persist. At first the image is sought with closed eyes; with practice it can be projected onto any blank surface. Each day's formal work and extra opportunities are recorded, and no page of the diary is to be left blank."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Image Concentration, p. 16; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicPictorialMindControl a pm:Conceptualizing ;
+    rdfs:label "Magical control of pictorial thought, and the projected image as the basis of sigils and thought forms"@en, "Magische Herrschaft über das bildhafte Denken, und das projizierte Bild als Grundlage von Sigillen und Gedankenformen"@de ;
+    skos:definition "The part of the mind in which pictorial thoughts arise is said to be brought under magical control by image concentration, the imagined form coming with practice to be projectable onto any blank surface; the technique is called the basis of casting sigils and of creating independent thought forms."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Image Concentration, p. 16; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicImageConcentrationYieldsPictorialControl a pm:Yielding ;
+    rdfs:label "Image concentration is said to bring pictorial thought under magical control"@en, "Die Bildkonzentration soll das bildhafte Denken unter magische Herrschaft bringen"@de ;
+    skos:definition "Holding the shape without distortion brings the pictorial part of the mind under magical control and lets the form be projected onto a blank surface."@en ;
+    pm:byPractice pmp:ChaosMagicImageConcentration ;
+    pm:yieldsCapacity pmc:ChaosMagicPictorialMindControl ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Image Concentration, p. 16; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicMagicalDiary a pm:Practicing ;
+    rdfs:label "The magical diary: a full page a day, recording time, duration and degree of success of every practice"@en, "Das magische Tagebuch: eine ganze Seite am Tag, mit Zeit, Dauer und Grad des Erfolgs jeder Übung"@de ;
+    skos:definition "The magical diary is called the magician's most essential and powerful tool, large enough for a full page each day. The student records the time, duration and degree of success of any practice and notes environmental factors favourable or not; every day's formal work is recorded and no page left blank; all works of metamorphosis go into it; and significant successes in dreaming are transferred to it from the separate dream record. Though one may come to fear the sight of it, a properly kept record is called the surest guarantor of success in the work of Liber MMM, as a work of reference by which to evaluate progress and as a goad to further effort."@en ;
+    skos:note "The claim that the record guarantees success is entered here and not as a yielding: the success it guarantees is that of the whole syllabus and not a capacity of its own. The diary records degree of success per practice, which gives it, unlike the record in some later works, a column in which a failure can be written."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, introduction, p. 13; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Mind Control, Image Concentration, p. 16; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, p. 18; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Dreaming, p. 23; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicMMMBeforeInitiate a pm:Presupposing ;
+    rdfs:label "Success with the student's techniques is a prerequisite for real progress in the initiate syllabus"@en, "Erfolg mit den Techniken des Schülers ist Voraussetzung für echten Fortschritt im Lehrplan des Initiaten"@de ;
+    skos:definition "Success with the techniques of Liber MMM, magical trance, metamorphosis and the basic techniques of magic, is called a prerequisite for any real progress with the initiate syllabus of the third degree."@en ;
+    pm:dependentStep pmc:ChaosMagicInitiateSyllabuses ;
+    pm:priorStep pmc:ChaosMagicMagicalTrance ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Without success in the studentship techniques there is no real progress with the initiate syllabus." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, introduction, p. 13; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicMetamorphosis a pm:Conceptualizing ;
+    rdfs:label "Metamorphosis: willed restructuring of the mind toward the True Will, and the duality every virtue brings"@en, "Metamorphose: gewollte Umgestaltung des Geistes auf den Wahren Willen hin, und die Dualität, die jede Tugend mit sich bringt"@de ;
+    skos:definition "The transmutation of the mind to magical consciousness, often called the Great Work, is said to lead eventually to the discovery of the True Will; even a slight ability to change oneself is valued above any power over the external universe. Every attempt to reorganise the mind involves a duality between the present and the preferred condition, so no virtue, spontaneity, joy, pious pride, grace or omnipotence, can be cultivated without more conventionality, sorrow, guilt, sin and impotence. High magic accepts the dualistic condition and seeks to achieve any arbitrary perceptual perspective at will. Two states are given as objectives, Laughter/Laughter and Non-attachment/Non-disinterest, the first as an antidote to the imbalance and possible madness of the magical trance, the second as a specific against obsession with the magical practices; they are attained by ongoing meditation, entering into the spirit of the condition whenever possible and thinking about it at other times, until a strong new mental habit is set up."@en ;
+    skos:note "The work sets itself against religions, which it says are founded on the fallacy that one can or ought to have one pole of a duality without the other. Entered at the claim rather than as a dispute: no religious text is cited."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, pp. 16-17; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicArbitraryPerspective a pm:Conceptualizing ;
+    rdfs:label "Achieving any arbitrary perceptual perspective at will"@en, "Jede beliebige Wahrnehmungsperspektive nach Willen einnehmen"@de ;
+    skos:definition "The aim set for high magic: not to choose between the bitter and the sweet of life but to achieve any arbitrary perceptual perspective at will."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, p. 17; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicLaughterMeditation a pm:Practicing ;
+    rdfs:label "Laughter/Laughter: seeking laughter in what delights, what is neutral, and what is horrific"@en, "Lachen/Lachen: das Lachen suchen im Erfreulichen, im Gleichgültigen und im Grauenhaften"@de ;
+    skos:definition "Laughter is called the highest emotion, containing all others from ecstasy to grief and having no opposite, crying being an underdeveloped form of it; it is the only tenable attitude in a universe that is a joke played upon itself. The student seeks the emotion of laughter at what delights and amuses, at whatever is neutral or meaningless, and even at what is horrific and revolting; though forced at first, one can learn to smile inwardly at all things. The Alphabet of Desire returns to it as the amoral cultivation of laughter, and the ecstasy of the death posture closes with laughter evoked at everything."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, p. 17; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber NOX, The Alphabet of Desire, pp. 83-84; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicInwardLaughter a pm:Conceptualizing ;
+    rdfs:label "Smiling inwardly at all things, the antidote to the imbalance of the magical trance"@en, "Innerlich über alles lächeln, das Gegenmittel gegen das Ungleichgewicht der magischen Trance"@de ;
+    skos:definition "The condition the first meditation aims at: seeing the joke of the universe played out even in neutral and ghastly events and smiling inwardly at all things; it is given as the antidote to the imbalance and possible madness of the magical trance."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, p. 17; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicLaughterMeditationYieldsInwardLaughter a pm:Yielding ;
+    rdfs:label "Ongoing meditation on laughter is said to set up the habit of inward laughter"@en, "Fortgesetzte Meditation über das Lachen soll die Gewohnheit des inneren Lachens einrichten"@de ;
+    skos:definition "By entering into the spirit of laughter whenever possible and thinking of it at other times, a strong new mental habit is said to be established; though forced at first, the smile at all things can be learned."@en ;
+    pm:byPractice pmp:ChaosMagicLaughterMeditation ;
+    pm:yieldsCapacity pmc:ChaosMagicInwardLaughter ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, p. 17; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicNonAttachmentMeditation a pm:Practicing ;
+    rdfs:label "Non-attachment/Non-disinterest: touching one's reality more lightly without losing interest in it"@en, "Nicht-Anhaften/Nicht-Desinteresse: die eigene Wirklichkeit leichter berühren, ohne das Interesse an ihr zu verlieren"@de ;
+    skos:definition "The second meditation. Attachment, and aversion as its other face, to any attribute of oneself, personality, ambitions, relationships or sensory experiences proves limiting; yet it is fatal to lose interest in these things, which are one's symbolic system or magical reality. One tries to touch the sensitive parts of one's reality more lightly, to deny the spoiling hand of grasping desire and boredom, by the same ongoing meditation as for laughter."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, pp. 17-18; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicNonAttachment a pm:Conceptualizing ;
+    rdfs:label "Acting without lust of result: doing a thing purely for its own sake with single-pointed awareness"@en, "Handeln ohne Gier nach Ergebnis: etwas rein um seiner selbst willen tun, mit einspitziger Aufmerksamkeit"@de ;
+    skos:definition "Non-attachment/Non-disinterest is said best to describe the magical condition of acting without lust of result. Deciding on something and doing it purely for its own sake is called very difficult for humans, yet precisely this is required to execute magical acts: only single-pointed awareness will do, and it gives enough freedom to act magically. It is the specific against obsession with the magical practices. Liber NOX returns to it: the wizard who knows nothing to be more important than anything else is free to act as though it mattered, and acting without lust of result achieves his will."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, pp. 17-18; read in a full-text layer whose running heads carry the page", "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber NOX, Transmogrification, pp. 66-67; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicNonAttachmentMeditationYieldsNonAttachment a pm:Yielding ;
+    rdfs:label "Ongoing meditation is said to give the freedom to act without lust of result"@en, "Fortgesetzte Meditation soll die Freiheit geben, ohne Gier nach Ergebnis zu handeln"@de ;
+    skos:definition "Touching one's reality more lightly denies grasping desire and boredom their hold, and thereby, the work says, one may gain enough freedom to act magically."@en ;
+    pm:byPractice pmp:ChaosMagicNonAttachmentMeditation ;
+    pm:yieldsCapacity pmc:ChaosMagicNonAttachment ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, pp. 17-18; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicTranceMadnessCautela a pm:Cautioning ;
+    rdfs:label "The magical trance carries imbalance and possible madness, and the magical practices obsession"@en, "Die magische Trance birgt Ungleichgewicht und möglichen Wahnsinn, die magischen Praktiken Besessenheit"@de ;
+    skos:definition "The two meditations of metamorphosis are chosen against two named dangers: the imbalance and possible madness of the magical trance, against which laughter is the antidote, and obsession with the magical practices of the following section, against which non-attachment is the specific."@en ;
+    pm:cautionsAbout pmc:ChaosMagicMagicalTrance ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberNullAndPsychonaut ;
+    dcterms:source "Carroll, Liber Null and Psychonaut (York Beach: Samuel Weiser, 1987; fifth printing, 1997), Liber Null, Liber MMM, Metamorphosis, p. 17; read in a full-text layer whose running heads carry the page" .
+
+# @@ANKER-01@@
