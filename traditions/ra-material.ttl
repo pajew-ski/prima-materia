@@ -1,0 +1,224 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — the Ra material, entered at The Law of One, Book I
+#
+# Opened from the structure-driven entrance of SPEC §14: pmt:RaMaterial was
+# registered at pm:corpusNamed in traditions/registry-channeled.ttl with no
+# node. The registration names the five books and the L/L Research session
+# transcripts. What was opened is Book I, The Ra Material, in the L/L
+# Research print of 1984: the introduction by Elkins, Rueckert and McCarty,
+# the photographs and their captions, and sessions 1 to 26 (January 15 to
+# February 17, 1981), read complete in a full-text layer of that edition.
+# Books II to V are unopened and the work nodes say so.
+#
+# Order of the file: the works; the tradition with the three decisions; then
+# the harvest in the order of the work, the introduction and sessions 1 to 8
+# first, sessions 9 to 26 after, each session under its own heading.
+#
+# Citation. The questions are not numbered in this edition; nodes cite
+# session, date and page. Page numbers stand at the foot of each page in the
+# layer; missing and misread numerals were placed by sequence.
+#
+# Who speaks. A claim made by Ra is the work's claim. The introduction is by
+# Elkins, Rueckert and McCarty and quotes earlier messages the group received
+# from other contacts, chiefly one called Hatonn; their account of their own
+# procedure and of earlier experiments is entered with the speaker named in
+# the definition. A statement made only by the Questioner is entered only as a
+# report of the group's own procedure or observation.
+#
+# Identifiers. Where the same term of the teaching is entered from both halves
+# of the book, the node from sessions 9 to 26 carries the number of the session
+# it starts from (pmc:RaHarvest and pmc:RaHarvestSession10): one doctrine, two
+# places.
+#
+
+#
+# The works
+#
+
+pmw:TheRaMaterialBookOne a dcterms:BibliographicResource ;
+    rdfs:label "The Law of One, Book I: The Ra Material"@en, "Das Gesetz des Einen, Buch I: Das Ra-Material"@de ;
+    skos:note "Read complete on 2026-10-25 in The Law of One: Book I, The Ra Material, by Ra, An Humble Messenger of the Law of One, copyright 1984 by James Allen McCarty, Don Elkins and Carla Rueckert (Louisville: L/L Research), title page and copyright page in the full-text layer of archive.org the-ra-material-an-ancient-astronaut-speaks-by-don-elkins-james-allen-mc-carty-c, 500400 characters, ASCII letter share 1.0. The introduction (pp. 4-51), the photographs with their captions (pp. 52-68) and sessions 1 to 26 (pp. 70-233) were read complete in two halves, the introduction with sessions 1 to 8 and sessions 9 to 26, each by one reader writing the nodes from the wording. The library scan of the Donning print of 1984 (ramaterialancien00rasp) is lending-restricted and was not used."@en ;
+    skos:note "The layer drops or misreads a number of page numerals, which were placed by sequence; the dates of sessions 9 and 10 read 'January tj' and are taken as January 27 from the sessions on either side; the text of footnote 3 on p. 232 is not in the layer. No stretch of running text is missing."@en ;
+    skos:note "The book is the transcript of tape recordings of question and answer, and English is its original language, so the rule of two translations does not apply."@en .
+
+pmw:TheLawOfOneBookTwo a dcterms:BibliographicResource ;
+    rdfs:label "The Law of One, Book II"@en, "Das Gesetz des Einen, Buch II"@de ;
+    skos:note "Sessions 27 to 50. Reachable: archive.org the-ra-material-the-law-of-one-v-1-5-don-elkins-carla-rueckert carries Books I to V in one full-text layer of about two million characters, without an imprint read. Not opened in this run, which took Book I complete instead of five books in part."@en .
+
+pmw:TheLawOfOneBookThree a dcterms:BibliographicResource ;
+    rdfs:label "The Law of One, Book III"@en, "Das Gesetz des Einen, Buch III"@de ;
+    skos:note "Sessions 51 to 75. Reachable in the same full-text layer as Book II; not opened in this run."@en .
+
+pmw:TheLawOfOneBookFour a dcterms:BibliographicResource ;
+    rdfs:label "The Law of One, Book IV"@en, "Das Gesetz des Einen, Buch IV"@de ;
+    skos:note "Sessions 76 to 100. Reachable in the same full-text layer as Book II; not opened in this run. The registration places the examinable claims in the conditions of contact and the instrument's decline, which Books III to V carry at length."@en .
+
+pmw:TheLawOfOneBookFive a dcterms:BibliographicResource ;
+    rdfs:label "The Law of One, Book V: Personal Material"@en, "Das Gesetz des Einen, Buch V: Persönliches Material"@de ;
+    skos:note "The fragments withheld from Books I to IV, with commentary by Rueckert and McCarty. Reachable in the same full-text layer as Book II; not opened in this run."@en .
+
+#
+# The tradition
+#
+
+pmt:RaMaterial a pm:Tradition ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    rdfs:label "The Ra material"@en, "Das Ra-Material"@de ;
+    skos:definition "The transmission of one hundred and six sessions received between 1981 and 1984 by a group of three working in fixed roles, teaching a cosmology of densities, a choice between service to others and service to self, and a harvest at the close of a cycle."@en ;
+    skos:note "The best documented reception in the block. Questioner, instrument and scribe are named, the sessions are numbered and dated, the working conditions are described including the instrument's physical decline, and the transmission continued under a different contact after this one ended. The cosmological claims are largely undecidable; the claims about the conditions of contact and about what the work cost the instrument are not, and that is where an examination would begin."@en ;
+    skos:note "Contact route, the first of the three decisions SPEC §14 requires, kept at documented, and the route is printed in the work. The introduction describes nineteen years of the group's meditation and channelling before Ra, after the method of an earlier contactee group, with messages from a contact called Hatonn of the same Confederation that Ra names; Elkins sets his account in the physics of Dewey Larson; and when the Questioner reads out Oahspe's figure of fifty-one per cent service to others for harvest, Ra calls it correct. Agreement of this material with the contactee literature, with Theosophy or with Oahspe is reception along that route and counts once."@en ;
+    skos:note "Recension and edition, the second decision: Book I in the L/L Research print of 1984, the transcript the group itself published, cited by session, date and page. The tapes and the later relistened transcripts of L/L Research were not compared; where a later edition corrects a word, the node does not know it."@en ;
+    skos:note "The third decision, the number of citable places: Book I read complete, 368 nodes in the order of the work, 187 from the introduction and sessions 1 to 8 and 181 from sessions 9 to 26, each at a session and page."@en ;
+    skos:note "Two counts, kept apart as SPEC §15 asks. Signs of success: twenty, eleven of them from the introduction (the reception of the group's channels, the bending of metal, psychic surgery, meditation) and nine from Ra (among them a life span near nine hundred years as the mark of a harmonious people, the feeling of being awakened in a wanderer, hope and friendly feeling as the marks of a positive contact). Conditions of failure: sixty-one. Twelve set a deadline, threshold or count: the 51 and 5 per cent of harvest, the 25,000-year cycle that strikes like a clock, an approximate harvest in 2011, life spans falling from 900 to 35-40 years, misalignments of the instrument's articles by 3, 1.4, 0.5 and 0.2 degrees, two sessions a day found too wearing. Forty-one name an outcome someone could notice. Where the failure is put: on the instrument thirteen times, on the hearer's free will ten, on the seeker's own orientation and practice and on the researcher's attitude most of the rest, on the Questioner's questions once, and never on discord in the group."@en ;
+    skos:note "The finding the count carries. Three of the introduction's conditions of failure announce in advance that the phenomena will not appear under examination: desire for proof, rigorous controls and the analysis of specimens are each said to dampen or annul the effect (pmc:RaProofNullResults, pmc:RaRigorousControlsDampen, pmc:RaSpecimenAnalysisCaution). Ra's own observable failures in sessions 1 to 8 lie almost wholly on the instrument's body and the arrangement of the room, which is the examinable layer the registration pointed at. And the one disagreement inside the book is of that kind: Ra says the instrument can sustain two sessions a day, the introduction reports that two a day proved much too wearing (pmc:RaTwoSessionsDispute)."@en ;
+    pm:principalCorpus "Elkins, Rueckert and McCarty, The Law of One, Books I to V; the L/L Research session transcripts" ;
+    pm:corpusWork pmw:TheRaMaterialBookOne, pmw:TheLawOfOneBookTwo, pmw:TheLawOfOneBookThree, pmw:TheLawOfOneBookFour, pmw:TheLawOfOneBookFive ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 4-51; read in a full-text layer of that edition" .
+
+
+#
+# Introduction (Elkins, Rueckert, McCarty), pp. 4-51
+#
+
+pmc:RaContactReceiving a pm:Receiving ;
+    rdfs:label "The work's claim that its wording is Ra's, spoken through Carla Rueckert in trance"@en, "Die Behauptung des Werkes, sein Wortlaut sei der Ras, gesprochen durch Carla Rueckert in Trance"@de ;
+    skos:definition "The claim the book makes about its own authorship. Elkins calls it an exact transcript from tape recordings of twenty-six sessions of an experiment designed to communicate with an extraterrestrial being, the race called Ra, by what he prefers to call tuned trance telepathy. The prefatory note to the sessions says the group began receiving a communication from the social memory complex Ra on January 15, 1981, and that the pages contain an exact transcript of the first twenty-six sessions, edited only to remove some personal material."@en ;
+    skos:note "This node records the claim, not its truth. The title page names Ra as author, an humble messenger of the Law of One, and the copyright holders as McCarty, Elkins and Rueckert; the source lines here name the edition a reader can obtain. Rueckert says she does not know how the trance occurs, and Elkins classes her state as telepathic reception in the trance state."@en ;
+    pm:receivedBy "Carla L. Rueckert, the instrument, in trance; questions asked by Don Elkins, the questioner; transcription by James Allen McCarty" ;
+    pm:claimedSpeaker "Ra, which calls itself a social memory complex of those who are of the Law of One and an humble messenger of the Law of One; called by Elkins a sixth-density social memory complex" ;
+    pm:receptionCircumstance "The contact began on January 15, 1981, three weeks after McCarty joined the group and a few days after Rueckert's first experience of trance, two sittings to contact a deceased friend. It came while she was working with an advanced meditation student, Leonard Cecil; she challenged the entity in the name of Christ, it remained, and she went almost immediately into trance. Before each session the group decided the night before, gave the instrument a half-hour back massage, meditated, performed a ritual of protection and cleansing of the room, laid her prone under a white blanket with her eyes covered and hooked up three tape recorder microphones below her chin; Elkins aligned the table bearing Bible, candle, incense and chalice of water with her head, and Elkins and McCarty walked the Circle of One. McCarty says she departs her physical body and Ra uses it to make the words; she has no memory of the session; Elkins calls her name until she responds. McCarty transcribed the tapes. The questions were prepared by all three and asked by Elkins." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 4-5; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 47-51; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), prefatory note to the sessions, p. 69; read in a full-text layer of that edition" .
+
+pmp:RaTunedTranceTelepathy a pm:Practicing ;
+    rdfs:label "Tuned trance telepathy: Elkins's name for the group's method of contact"@en, "Abgestimmte Trance-Telepathie: Elkins' Name für die Kontaktmethode der Gruppe"@de ;
+    skos:definition "Elkins says the research group uses what he prefers to call tuned trance telepathy to communicate with an extraterrestrial race called Ra, in English because Ra knows it. Rueckert reports that Elkins, though he finds her trance similar to others he has observed, calls it telepathic reception in the trance state, and that neither she nor the others know how to aid her beyond a certain point in achieving it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 5; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 49; read in a full-text layer of that edition" .
+
+pmc:RaHoaxCaution a pm:Cautioning ;
+    rdfs:label "Extreme caution before concluding: hoaxes and garbage data in paranormal research"@en, "Äußerste Vorsicht vor Schlüssen: Schwindel und Datenmüll in der paranormalen Forschung"@de ;
+    skos:definition "Elkins, after almost thirty years of research in so-called paranormal phenomena, recommends extreme caution in reaching a conclusion. Where it is possible to make money, gain notoriety or have fun by perpetrating a hoax, someone usually does it; paranormal and psychic areas are therefore prime targets for the trickster, and the careful researcher usually has to observe copious amounts of garbage data to find a possible imbedded gem of truth, especially in Philippine psychic surgery and in spirit communication in general. He says the book is not a treatise of his opinion, that his opinion may change at any time, and that only time will tell the accuracy of his best guess."@en ;
+    skos:note "A caution the editors direct at their own field, including the channelling the book consists of."@en ;
+    pm:cautionsAbout pmp:RaTunedTranceTelepathy ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 4-5; read in a full-text layer of that edition" .
+
+pmp:RaVocalChanneling a pm:Practicing ;
+    rdfs:label "Vocal channelling: speaking the thoughts that come and analysing only afterwards"@en, "Stimmliches Channeln: die kommenden Gedanken aussprechen und erst danach prüfen"@de ;
+    skos:definition "The group sat meditating according to instructions in material Harold Price had brought from a Detroit group, which gave the means of generating further material from the same source without physical contact. Through the Detroit contactee Walter Rogers the group was instructed to refrain from analysis, to speak the thoughts, and to analyze the communication only after it had been completed. Rueckert describes her own practice as conscious channelling, using her free will to clothe telepathic concepts in her own language; in free will channelling one can choose to stop, and the channel never knows in advance what the next concept will be."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 6; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 48-49; read in a full-text layer of that edition" .
+
+pmc:RaTelepathicReception a pm:Conceptualizing ;
+    rdfs:label "Reception of transmissions by telepathic contact"@en, "Empfang von Übermittlungen durch telepathischen Kontakt"@de ;
+    skos:definition "The ability to receive transmissions, that is, to produce information by telepathic contact with a source held to be extraterrestrial, which the introduction reports for the members of Elkins's experimental group from 1962 and for receivers trained in later meetings. Hatonn, quoted in the introduction, says that those who receive the passed-on information will themselves be able to reach a state of thinking sufficiently in tune with the Confederation's vibrations to receive its contact, so that the process is self-generating."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 6; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 8; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 22-23; read in a full-text layer of that edition" .
+
+pmc:RaVocalChannelingYieldsReception a pm:Yielding ;
+    rdfs:label "Speaking the thoughts without analysis yields reception within a month for half the group"@en, "Das Aussprechen der Gedanken ohne Prüfung bringt binnen eines Monats der halben Gruppe den Empfang"@de ;
+    skos:definition "After the night the group was told to speak its thoughts, a month had not gone by before half the group had begun to produce information, and within a year all in the group except Rueckert were able to receive transmissions."@en ;
+    skos:note "Counted as a sign of success: half the group producing information within a month and all but one receiving within a year, a count the introduction gives itself."@en ;
+    pm:byPractice pmp:RaVocalChanneling ;
+    pm:yieldsCapacity pmc:RaTelepathicReception ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 6; read in a full-text layer of that edition" .
+
+pmc:RaFearOfImproperWords a pm:Cautioning ;
+    rdfs:label "Fear of not speaking the proper words blocks the instrument and slows the speech"@en, "Die Furcht, nicht die rechten Worte zu sprechen, blockiert das Instrument und verlangsamt die Rede"@de ;
+    skos:definition "For the first six months, sitting meditating according to the instructions, everyone in the group except Rueckert made only strange noises with their mouths, guttural clicks, slurps and tongue flops. The visiting contactee was then told by telepathic impression that the members were being used as instruments of communication but were all blocked through fear that they would not be speaking the proper words. After the block was lifted the speech was slow and difficult at first, because each receiver wanted a precise impression of each and every word and in many cases wanted to be completely controlled for fear of making an error in transmission."@en ;
+    skos:note "Counted as a condition of failure: the fear of the wrong word is named as the block, and the wish for complete control as the cause of the slow speech; the outcomes, noises without words and then slow speech, are observable, and the failure is put on the instruments."@en ;
+    pm:cautionsAbout pmp:RaVocalChanneling ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 6; read in a full-text layer of that edition" .
+
+pmc:RaProofNullResults a pm:Cautioning ;
+    rdfs:label "A desire for proof leads to null results and voided experiments"@en, "Ein Verlangen nach Beweis führt zu Nullergebnissen und ungültigen Versuchen"@de ;
+    skos:definition "Rueckert says Elkins counts her great gullibility among her assets as a research associate: she takes things at face value and analyzes only afterwards, and she calls this a vital factor in obtaining good results in paranormal research. A desire for proof will inevitably lead to null results and voided experiments. An open mind, one willing to be gullible, leads to a subjective and personal certainty which does not equal proof, as it cannot be systematically reproduced in others; she calls this subjective knowing a central part of the spiritual evolution Ra speaks of."@en ;
+    skos:note "Counted as a condition of failure: the researcher's desire for proof is named as what produces null results; the outcome is observable, the cause is an attitude of the researcher. The same passage warns the reader that the certainty it offers is not proof."@en ;
+    pm:cautionsAbout pmp:RaTunedTranceTelepathy ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 7; read in a full-text layer of that edition" .
+
+pmc:RaMaterializationMediumship a pm:Conceptualizing ;
+    rdfs:label "Materialization of spirits in a seance"@en, "Materialisation von Geistern in einer Séance"@de ;
+    skos:definition "Rueckert reports four demonstrations by the Spiritualist minister James Tingley in Toledo in 1971, whose concrete-block meeting place Elkins had examined inside and out and found without gadgets: ghost-like figures seen clearly, Elkins seeing even the strands of hair; a solid ghost known as Sister, whom Elkins later linked to his mother; and a Master who made the room grow very cold, touched Rueckert hard enough to bruise her arm so that she would know he was real, walked through the two of them, blessed the room, and pooled down on the floor and was gone. Elkins had sought such a materialization, one he himself could believe, because he thought seance materializations might be of the same nature as those of UFOs."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 7-8; read in a full-text layer of that edition" .
+
+pmp:RaDailyMentalTuning a pm:Practicing ;
+    rdfs:label "Daily meetings for intensive mental tuning"@en, "Tägliche Treffen zur intensiven geistigen Abstimmung"@de ;
+    skos:definition "From 1974, after twelve years of listening, Elkins had Rueckert take up channelling seriously, and the two began a series of daily meetings designed to work intensively on her mental tuning; others from the Sunday night meditations joined them. During these intensive meditations the group began keeping the tape recorder going whenever a session started."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 8; read in a full-text layer of that edition" .
+
+pmc:RaDailyMentalTuningYieldsReception a pm:Yielding ;
+    rdfs:label "Daily intensive meditation yields about a dozen new receivers in three months"@en, "Tägliche intensive Meditation bringt in drei Monaten etwa ein Dutzend neue Empfänger hervor"@de ;
+    skos:definition "Within three months of the daily meetings the group generated about a dozen new telepathic receivers."@en ;
+    skos:note "Counted as a sign of success: about a dozen new receivers within three months."@en ;
+    pm:byPractice pmp:RaDailyMentalTuning ;
+    pm:yieldsCapacity pmc:RaTelepathicReception ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 8; read in a full-text layer of that edition" .
+
+pmp:RaHypnoticRegression a pm:Practicing ;
+    rdfs:label "Regressive hypnosis: age regression, lost time and previous lives"@en, "Regressive Hypnose: Altersregression, verlorene Zeit und frühere Leben"@de ;
+    skos:definition "Regressive hypnosis as the group used it: Elkins's more than two hundred age regressions probing past the birth experience; the regression of UFO witnesses to recover the time they could not account for, after a lengthy induction to the proper state of concentration; and the separate regression of four subjects to a life on another planet, questioned by Elkins and the hypnotist Lawrence Allison."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 5; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 10-11; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 36-42; read in a full-text layer of that edition" .
+
+pmc:RaPastLifeRecall a pm:Conceptualizing ;
+    rdfs:label "Recall under hypnosis of lost time and of previous incarnations"@en, "Erinnerung unter Hypnose an verlorene Zeit und frühere Inkarnationen"@de ;
+    skos:definition "Recall under hypnosis of what the conscious mind does not hold. The introduction reports a nineteen-year-old who recovered thirty-eight lost minutes as an examination aboard a craft by three machine-like beings; Elkins's early investigations, which seemed to indicate that reincarnation was a probability and that incarnations contain situations and lessons more easily understood in the light of previous incarnations; and three women and one man who, separately regressed, gave independent and dovetailing accounts of one community on another planet, a temple, wordless communication and a life of study and meditation, the man adding technical detail."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 10-11; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, p. 19; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 36-42; read in a full-text layer of that edition" .
+
+pmc:RaHypnoticRegressionYieldsRecall a pm:Yielding ;
+    rdfs:label "Regressive hypnosis yields recall of lost time and previous lives"@en, "Regressive Hypnose bringt die Erinnerung an verlorene Zeit und frühere Leben hervor"@de ;
+    skos:definition "The witness who wished to find his lost time was moved back under hypnosis to the moment beneath the craft and found himself inside it; the four subjects regressed to the other planet described its clothing, its temple, its music and its manner of speaking without words, and the man was brought through his death there and paused between incarnations to say why he had come to Earth: to help the people who are lost."@en ;
+    pm:byPractice pmp:RaHypnoticRegression ;
+    pm:yieldsCapacity pmc:RaPastLifeRecall ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:RaMaterial ;
+    pm:fromWork pmw:TheRaMaterialBookOne ;
+    dcterms:source "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 10-11; read in a full-text layer of that edition", "The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), Introduction, pp. 36-42; read in a full-text layer of that edition" .
+
+# @@ANKER-RA-MATERIAL@@
