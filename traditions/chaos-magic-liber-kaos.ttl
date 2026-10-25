@@ -1,0 +1,198 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — chaos magic: Carroll, Liber Kaos
+#
+# The harvest of one work of the corpus of pmt:ChaosMagic, kept apart from
+# traditions/chaos-magic.ttl, which declares the tradition and the work
+# (pmw:LiberKaos) and carries its reading notes and harvest counts.
+# Harvested complete under prima-materia#893 with two independent extraction
+# passes per part and a reading of the whole text: first Part 1, Liber Kaos
+# (Principia Magica, Aeonics, Principia Chaotica), then Part 2, the
+# Psychonomicon, and the four appendices (Liber KKK, the Gnostic Pentagram
+# Ritual, Chaos Monasticism, Liber Pactionis), each in the order of the work.
+# Edition: Boston and York Beach, Weiser Books, first published 1992, printing
+# of 2003, cited by page from the running heads. Signs of success and
+# conditions of failure carry a note beginning "Counted as a sign of success:"
+# or "Counted as a condition of failure:".
+#
+
+#
+# Front matter and the plan of Part 1
+#
+
+pmc:ChaosMagicDifficultTheoryCautela a pm:Cautioning ;
+    rdfs:label "The theory of Liber Kaos remains difficult and is meant to dissuade the casual reader"@en, "Die Theorie des Liber Kaos bleibt schwierig und soll den bloß neugierigen Leser abhalten"@de ;
+    skos:definition "The introduction divides the book into three parts: Liber Kaos, an exegesis of magical theory; the Psychonomicon, an extended meditation on ritual and spell objectives and design for a variety of forms of magic; and extensive appendices on practical magic and the Pact. Although every attempt has been made to present the theory in the simplest terms, the first part is said to remain difficult, and the author hopes it will dissuade the mere casual reader from proceeding further into the book."@en ;
+    skos:note "A self-warning of the work about its own first part, so it points at the work. The three-part plan is kept here and not as a node of its own."@en ;
+    pm:cautionsAbout pmw:LiberKaos ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Introduction, front matter (unpaginated); read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicMagicalEngineering a pm:Conceptualizing ;
+    rdfs:label "The book as a contribution to the principles of magical engineering"@en, "Das Buch als Beitrag zu den Grundsätzen magischer Ingenieurskunst"@de ;
+    skos:definition "If all of humanity's books on engineering were suddenly to de-materialize, serious problems would result within days, whereas the disappearance of all books on psychology would make very little difference except to psychologists, who would count it a blessing. The author states his intention that the book be a contribution to the principles of magical engineering."@en ;
+    skos:note "The introduction is signed Frater Stokastikos 127, 0° Supreme Magus IOT Pact, Our Pestilence Pope Pete I of Chaos. The signature is the author's magical name and grade and is not entered as a naming; the Pact is the subject of the appendices of part 2."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Introduction, front matter (unpaginated); read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicPrincipiaMagica a pm:Conceptualizing ;
+    rdfs:label "Principia Magica: a theory claimed to make magic a quantifiable discipline of probability engineering"@en, "Principia Magica: eine Theorie, die die Magie zu einer quantifizierbaren Disziplin der Wahrscheinlichkeitstechnik machen soll"@de ;
+    skos:definition "Part 1 proceeds from Principia Magica, an exegesis of magical theory from cosmology through metaphysics to the equations describing parapsychology, to Aeonics and to Principia Chaotica, the rationale or perhaps the irrationale of Chaos Magic in the pandemonaeon. Principia Magica has three parts: Fiat Nox, a brief account of relativity and quantum physics and a quantum-based cosmogenesis arguing that magic is both a necessary consequence of the structure of this universe and an essential component of it; Quantum Metaphysics, the action of the magical component of reality and the principles by which the magician can manipulate its workings to his or her advantage, with a radical reinterpretation of traditional lore and a new technique, retroactive enchantment; and The Equations of Magic, three formulae for the necessary ingredients of any spell or ritual designed to have parapsychological effect, which describe how to do magic, by implication how to reduce the chances of failure, and how effective an act of magic is likely to be. The paradigm is said, probably for the first time, to elevate magic from a hit and miss art explained by vague ad-hoc hypotheses to a potentially objective and quantifiable discipline with its own formulae for probability engineering. An understanding of it is not a prerequisite for the practical magic of the other sections; a theoretical paradigm is said to suggest possibilities to be explored and to imply limitations to be investigated and perhaps transcended."@en ;
+    skos:note "The work states expressly that the theory is not a prerequisite of the practice; no presupposing is entered for it, since the sentence denies the dependence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, part title, unpaginated; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, introduction, p. 3; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, introduction, p. 4; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, introduction, p. 4; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicPhysicsChallengeCautela a pm:Cautioning ;
+    rdfs:label "Without physics and mathematics parts of Principia Magica are challenging; perseverance is recommended"@en, "Ohne Physik und Mathematik sind Teile der Principia Magica eine Herausforderung; Ausdauer wird empfohlen"@de ;
+    skos:definition "Magicians without some knowledge of physics and mathematics may find parts of Principia Magica rather challenging; perseverance is nevertheless recommended, for the paradigm is said to be a self-consistent metaphysic."@en ;
+    pm:cautionsAbout pmc:ChaosMagicPrincipiaMagica ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, introduction, p. 4; read in a full-text layer whose running heads carry the page" .
+
+#
+# Liber Kaos, ch. 1 Principia Magica: Fiat Nox and Bootstrapping the Serpent
+#
+
+pmc:ChaosMagicChaosMagicTheory a pm:Conceptualizing ;
+    rdfs:label "Chaos Magic Theory: wave functions as etheric patterns in a shadow time orthogonal to ordinary time"@en, "Chaos-Magie-Theorie: Wellenfunktionen als ätherische Muster in einer Schattenzeit senkrecht zur gewöhnlichen Zeit"@de ;
+    skos:definition "Relativity, a refinement of the Newtonian clockwork, describes continuous, causal and deterministic particles and fields; quantum theory describes matter as waves of probability, divisible only into minimum pieces, with discontinuous processes and instantaneous signals; applied together they yield paradoxes such as a single quantum with two equally probable histories. Wave functions behave as though they were real things and affect complex macroscopic events as well. The CMT (Chaos Magic Theory) paradigm states that wave functions are a mathematical description of etheric patterns, that this ether is a form of information exchange between material events over the minimum quantum of time, the Planck time, and that the etheric dimension is orthogonal to the ordinary (pseudo) time of relativity; Figure 1 gives the five dimensions of CMT, three of space, one of ordinary pseudo time and one of shadow time. Quantum and relativistic theory are integrated at the small expense of assuming that wave functions consist of something real, so the CMT universe is the intersection of the classical realm of space, time, mass and energy and the quantum realm of probabilistic ether patterns in shadow time."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Fiat Nox, p. 5; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Fiat Nox, p. 6; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Fiat Nox, p. 7; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Fiat Nox, p. 8; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicFiatNox a pm:Conceptualizing ;
+    rdfs:label "Fiat nox: the universe phenomenizes from the void as a closed loop of space and time"@en, "Fiat nox: das Universum phänomenisiert aus der Leere als geschlossene Schleife von Raum und Zeit"@de ;
+    skos:definition "Against the big bang of the relativistic description, a quantum description locates the origin of the universe in a vacuum fluctuation governed by the relations of allowable energy and time, and of mass and light-speed, to Planck's constant; the mass and energy of the universe must cancel to zero, kinetic against potential, inertial against gravitational, and space and time are finite but unbounded, the singularities being artifacts of relativistic theory (Table 1). This universe is the inside of a black hole; space and time are like serpents biting their own tails, every point of space-time having the same apparent history of about fifteen billion years, and it is pointless to ask when or where it began, outside it being a non-temporal, non-spatial, pre-geometric void. The big bang is called not crazy enough to be true, fundamental particles may be very small black holes, and the quantum description is said to accord with a magical view of the universe, circular time and an acausal basis, as the relativistic one fits religious scenarios with definite beginnings and endings. The cold start of the quantum description is called fiat nox, against the fiat lux the Christians seem to approve; entropy is a medium-scale concept that sets no linear time frame for the universe."@en ;
+    skos:note "Cosmological frame, entered because the work derives from it that magic is a necessary component of this universe. No dispute node is entered for the rejection of the big bang and of the Grand Unified Theory programme, since no opposing text is cited."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 9; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 11; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 13; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 14; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 17; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicFiveSerpents a pm:Conceptualizing ;
+    rdfs:label "The five serpents of space, time, mass, energy and ether within the serpent of the Chaos-Void"@en, "Die fünf Schlangen von Raum, Zeit, Masse, Energie und Äther in der Schlange der Chaos-Leere"@de ;
+    skos:definition "A quantum-magical universe can be mythically visualized as five serpents of space, time, mass, energy and ether biting their tails or giving birth to themselves out of their own mouths, the whole surrounded by the serpent of the Chaos-Void. The Ether serpent represents the non-local organizing force of this universe, which keeps physical laws more or less uniform at all points of space and time, and is also the medium of magic; it is analogous to the morphic field which selects and preserves negentropic forms. The serpents of mass and energy represent the old 0 = 2 equation of dualistic mysticism, more accurately 0 = 1 - 1, so both vacuum fluctuation equations can be written 0 = 1 - (1 - 1). The original phenomenization outside time is a void fluctuation rather than a vacuum fluctuation, and there may be other universes inside their own black holes with their own light-speeds, particles, forces and laws."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 15; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 15; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicInterUniverseCommunication a pm:Conceptualizing ;
+    rdfs:label "Communication with other universes only by a morphic resonance that might be induced as telepathy"@en, "Verständigung mit anderen Universen nur durch eine morphische Resonanz, die sich als Telepathie herbeiführen ließe"@de ;
+    skos:definition "No form of communication with other universes seems possible unless their ether serpents resemble ours sufficiently to allow some sort of morphic resonance, which might possibly be induced to manifest, for example, as telepathy. A smaller universe phenomenizing within ours is exceedingly remote but non-zero; we could enter such sub-universes but their inhabitants could not leave, and the same one-way rule would hold if ours had phenomenized inside a larger one."@en ;
+    skos:note "Entered as a capacity because the work names the condition under which it might be induced; it gives no procedure. The abrupt change in light-speed or sudden occlusion of galaxies by which a sub-universe would be known is a sign of a natural event, not of an operation, and is not counted."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 16; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Bootstrapping the Serpent, p. 16; read in a full-text layer whose running heads carry the page" .
+
+#
+# Liber Kaos, ch. 1 Principia Magica: Quantum Metaphysics
+#
+
+pmc:ChaosMagicThreeMagicalPhilosophies a pm:Conceptualizing ;
+    rdfs:label "Animism, spiritism and Chaos Magic Theory, the three known magical philosophies"@en, "Animismus, Spiritismus und Chaos-Magie-Theorie, die drei bekannten magischen Philosophien"@de ;
+    skos:definition "Two of the three known magical philosophies, animism and spiritism, are very ancient, and admixtures of them make up the shamanism of pre-pagan cultures; the third, Chaos Magic Theory, is embryonic and the first real alternative since shamanic times, all intervening magical philosophies being restatements of or extrapolations from the animist or spiritist paradigms. The more complex theories of animism shade into spiritism, and the more complex forms of spiritism mutate toward a position more religious than magical, paganism, in which spirits become gods whose main function is to provide handles for manipulating psychological qualities; paganism is where magical theory ceased to develop. The doctrine of signatures and Kabbalistic correspondence are called intellectual superstructures on dubious extrapolations from animist principles, and the Golden Dawn the ultimate in syncretic metaphysical confusion, attempting to be animist, spiritist, pagan and monotheist at once. For actual magic, practical sorcery and parapsychology, the spiritist or preferably the animist paradigm is required; elements of both have been integrated with new scientific and psychological discoveries into something simpler, more powerful and elegant, CMT."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 18; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 20; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 21; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicMana a pm:Conceptualizing ;
+    rdfs:label "Mana: the transferable vital principle, the power and quality of a phenomenon"@en, "Mana: das übertragbare Lebensprinzip, Kraft und Eigenschaft einer Erscheinung"@de ;
+    skos:definition "Animism holds that all phenomena, not only plants and animals, are alive in some sense, and the animist magician works with the vital principle in every phenomenon, called mana in parts of Oceania, which represents both the power and the quality of a human, animal, plant, stone or other natural object or event and is directly transferable between phenomena. In some animist systems mana is simply a property like weight or volume, neither antecedent to the phenomenon nor surviving its destruction; in others it precedes the physical form and causes it, which leads to theories of the origin of mana and its survival, shading into spiritism. In the magical paradigm of the Aeonics chapter, ether is said to be more or less equivalent to mana."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 18; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 18; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 19; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 2 Aeonics, p. 55; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicManaTransfer a pm:Practicing ;
+    rdfs:label "Mana transfer: carrying, ingesting or visualizing a thing, or using a part of it, to take on its powers"@en, "Mana-Übertragung: ein Ding tragen, einnehmen oder vorstellen oder einen Teil davon gebrauchen, um seine Kräfte anzunehmen"@de ;
+    skos:definition "Because mana is directly transferable, animist magicians may carry or ingest certain things to add their powers and qualities to their own, or seek to absorb the qualities of the mana in such things to gain divinatory knowledge. In many animist systems the powers and qualities of mana are also transferable by imaginative visualization or by ritual enchantment, through which the mana of a phenomenon can be used in its absence; a mere part of the phenomenon, or something once part of it, can also be used, such as the claws of an eagle or someone's personal possessions."@en ;
+    skos:note "Reported of animist magicians; the work then names the animist paradigm as the preferable one for actual magic."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 18; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 19; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicAcquiredPowersAndQualities a pm:Conceptualizing ;
+    rdfs:label "Taking on the powers and qualities of a thing"@en, "Die Kräfte und Eigenschaften eines Dinges annehmen"@de ;
+    skos:definition "The powers and qualities of a phenomenon, its mana, added to the magician's own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 18; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicManaTransferYieldsAcquiredPowers a pm:Yielding ;
+    rdfs:label "Carrying or ingesting things adds their powers and qualities to the magician's"@en, "Das Tragen oder Einnehmen von Dingen fügt ihre Kräfte und Eigenschaften denen des Magiers hinzu"@de ;
+    skos:definition "Animist magicians are said to carry or ingest certain things, or to use them by visualization, ritual or a part of them, to add their powers and qualities to their own."@en ;
+    pm:byPractice pmp:ChaosMagicManaTransfer ;
+    pm:yieldsCapacity pmc:ChaosMagicAcquiredPowersAndQualities ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 18; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicManaTransferYieldsDivination a pm:Yielding ;
+    rdfs:label "Absorbing the qualities of the mana in things gives divinatory knowledge"@en, "Das Aufnehmen der Eigenschaften des Mana in Dingen gibt divinatorisches Wissen"@de ;
+    skos:definition "Animist magicians may seek to absorb the qualities of the mana in things to give divinatory knowledge."@en ;
+    pm:byPractice pmp:ChaosMagicManaTransfer ;
+    pm:yieldsCapacity pmc:ChaosMagicDivinationKaos ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 18; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicSpiritistPetition a pm:Practicing ;
+    rdfs:label "Spiritist practice: petition, bargaining, argument and threats addressed to the spirits of things"@en, "Spiritistische Praxis: Bitte, Handel, Argument und Drohung an die Geister der Dinge"@de ;
+    skos:definition "In full-blown spiritism all things are endowed with a spirit capable of thought, memory and emotion and are thus responsive to petition, bargaining, argument and even threats; such activities make up the bulk of spiritist magical practice. Spiritism is called a projection of human psychology onto all phenomena in an attempt to control or communicate with them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 19; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSpiritistInfluence a pm:Conceptualizing ;
+    rdfs:label "Moving a thing through its spirit by petition, bargain, argument or threat"@en, "Ein Ding durch seinen Geist mit Bitte, Handel, Argument oder Drohung bewegen"@de ;
+    skos:definition "The responsiveness of things, through their spirits, to petition, bargaining, argument and threats, by which spiritism seeks to control or communicate with the phenomena of the world."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 19; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSpiritistPetitionYieldsInfluence a pm:Yielding ;
+    rdfs:label "Petition, bargaining, argument and threats move the spirits of things"@en, "Bitte, Handel, Argument und Drohung bewegen die Geister der Dinge"@de ;
+    skos:definition "Things endowed with spirits are said to be responsive to petition, bargaining, argument and even threats, which make up the bulk of spiritist practice."@en ;
+    skos:note "The work reports the spiritist claim and itself calls spiritism a projection of human psychology; the yielding records what the passage says spiritism holds."@en ;
+    pm:byPractice pmp:ChaosMagicSpiritistPetition ;
+    pm:yieldsCapacity pmc:ChaosMagicSpiritistInfluence ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 19; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicParadigmShifting a pm:Practicing ;
+    rdfs:label "Changing paradigms as readily as one's clothing, knowing that one does so"@en, "Paradigmen so leicht wechseln wie die Kleidung, im Wissen, dass man es tut"@de ;
+    skos:definition "There is said to be undoubtedly some value in being able to change paradigms as readily as one's clothing, so long as one realizes one is doing so. All theories have their uses: paganism is a superb instrument for exploring and adjusting one's various different selves, and even monotheism has a use for those who want just one of their selves to hypertrophy and dominate the others; for actual magic the spiritist or preferably the animist paradigm is required."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 20; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Liber Kaos, ch. 1 Principia Magica, Quantum Metaphysics, p. 20; read in a full-text layer whose running heads carry the page" .
+
+# @@ANKER-LIBER-KAOS@@
