@@ -3201,4 +3201,265 @@ pmc:ChaosMagicKKKTrainingYieldsHighMagic a pm:Yielding ;
     pm:fromWork pmw:LiberKaos ;
     dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, p. 161; read in a full-text layer whose running heads carry the page" .
 
+pmc:ChaosMagicKKKLevelsInOrder a pm:Presupposing ;
+    rdfs:label "All five conjurations of a level before the next: sorcery, shamanic, ritual, astral, high"@en, "Alle fünf Beschwörungen einer Ebene vor der nächsten: Zauberei, schamanisch, rituell, astral, hoch"@de ;
+    skos:definition "The five conjurations on each level may be attempted in any order, but all five should be completed before beginning the next level; the sorcery level is to be done thoroughly, being the foundation on which the higher levels rest, and ritual magic combines the abilities of the sorcery and shamanic levels."@en ;
+    skos:note "The node carries the chain of the five levels in order, each dependent level following the one before it; it is prescribed order, since no consequence of skipping a level is stated beyond calling sorcery the foundation."@en ;
+    pm:dependentStep pmc:ChaosMagicShamanicLevel, pmc:ChaosMagicRitualLevel, pmc:ChaosMagicAstralLevel, pmc:ChaosMagicHighMagic ;
+    pm:priorStep pmc:ChaosMagicSorceryLevel, pmc:ChaosMagicShamanicLevel, pmc:ChaosMagicRitualLevel, pmc:ChaosMagicAstralLevel ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, p. 159; read in a full-text layer whose running heads carry the page", "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, p. 161; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicGPRAroundConjurations a pm:Presupposing ;
+    rdfs:label "The Gnostic Pentagram Ritual as prelude and ending to the first fifteen conjurations"@en, "Das Gnostische Pentagrammritual als Vorspiel und Abschluss der ersten fünfzehn Beschwörungen"@de ;
+    skos:definition "During the operation the magician may need to defend against the results of his or her own mistakes and hostile psychic influences and to replenish health and psychic forces; the Gnostic Pentagram Ritual may be used freely for these purposes and particularly as a prelude and an ending to each of the first fifteen conjurations."@en ;
+    pm:dependentStep pmc:ChaosMagicSorceryLevel, pmc:ChaosMagicShamanicLevel, pmc:ChaosMagicRitualLevel ;
+    pm:priorStep pmp:ChaosMagicGnosticPentagramRitual ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, The Gnostic Pentagram Ritual, p. 162; read in a full-text layer whose running heads carry the page" .
+
+#
+# Liber KKK, sorcery level, conjurations one to five (pp. 163-167).
+#
+
+pmp:ChaosMagicSorceryEvocation a pm:Practicing ;
+    rdfs:label "Conjuration one, sorcery evocation: a hand-made fetish treated as a living being"@en, "Erste Beschwörung, Evokation der Zauberei: ein handgemachter Fetisch, wie ein lebendes Wesen behandelt"@de ;
+    skos:definition "The magician makes with his or her own hands a physical representation of a fetish entity by carving, moulding or assembly, usually shaped like a living or chimerical being whose form suggests its function, and called a homunculus if vaguely humanoid. It may contain parts of the magician's body or be anointed with blood or sexual fluids. The magician treats it as a living being, speaking his or her will to it, commanding it to exert its influence in the magician's favour and carrying it on critical errands. Some make two fetishes, one to implement will, one to bring knowledge and information."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration One, Sorcery Evocation, pp. 163-164; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicFetishPowers a pm:Conceptualizing ;
+    rdfs:label "A fetish that attracts success, repels misfortune and holds power"@en, "Ein Fetisch, der Erfolg anzieht, Unglück abwehrt und Kraft speichert"@de ;
+    skos:definition "The functions of the fetish entity: in general to attract success, to protect by repelling misfortune and to act as a reservoir of power, or, with a second fetish, to bring knowledge and information."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration One, Sorcery Evocation, p. 164; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSorceryEvocationYields a pm:Yielding ;
+    rdfs:label "The fetish entity is said to attract success, repel misfortune and store power"@en, "Das Fetischwesen soll Erfolg anziehen, Unglück abwehren und Kraft speichern"@de ;
+    skos:definition "The made and commanded fetish is given the functions of attracting success, protecting by repelling misfortune and acting as a reservoir of power, and a second one of bringing knowledge."@en ;
+    pm:byPractice pmp:ChaosMagicSorceryEvocation ;
+    pm:yieldsCapacity pmc:ChaosMagicFetishPowers ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration One, Sorcery Evocation, p. 164; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicHomunculusNaming a pm:Naming ;
+    rdfs:label "Homunculus, the fetish entity of vaguely humanoid shape"@en, "Homunculus, das Fetischwesen von entfernt menschlicher Gestalt"@de ;
+    skos:definition "A fetish entity made in the first conjuration is known as a homunculus if it is vaguely humanoid in shape."@en ;
+    pm:nameForm "homunculus" ;
+    pm:nameRole "manufactured fetish entity of vaguely humanoid shape" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration One, Sorcery Evocation, p. 164; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicSorceryDivination a pm:Practicing ;
+    rdfs:label "Conjuration two, sorcery divination: a simple model of the universe cast for trends and questions"@en, "Zweite Beschwörung, Divination der Zauberei: ein einfaches Modell des Universums für Tendenzen und Fragen geworfen"@de ;
+    skos:definition "The magician prepares a simple model of the universe as a divinatory tool: rune sticks or stones are most excellent, occidental geomancy sticks simpler, while tarot or I Ching may prove too complex for the later shamanic work unless abbreviated. Divination is done both for general trends and for specific questions; the elements of the tool are treated as directly related to the parts of reality they represent, and sortilege as a mirror of the process by which reality takes its decisions. It is pitched at a frequency and complexity that allows the answers to be remembered, and preferably for phenomena likely to confirm or negate the divination within a relatively short time."@en ;
+    skos:note "The instruction to divine for what will be confirmed or negated soon, and to keep the answers memorable, sets up the comparison of prediction and outcome. The work does not say what is to follow from a negated divination, so it is not counted as a condition of failure."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Two, Sorcery Divination, pp. 164-165; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSorceryDivinationYields a pm:Yielding ;
+    rdfs:label "The divinatory model is said to answer for trends and specific questions"@en, "Das divinatorische Modell soll über Tendenzen und bestimmte Fragen Auskunft geben"@de ;
+    skos:definition "Sortilege with a simple model of the universe, regarded as a mirror of reality's decisions, is the means of divining general trends and answers to specific questions."@en ;
+    pm:byPractice pmp:ChaosMagicSorceryDivination ;
+    pm:yieldsCapacity pmc:ChaosMagicPsychicKnowledgeFromSubconscious ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Two, Sorcery Divination, pp. 164-165; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicSorceryEnchantment a pm:Practicing ;
+    rdfs:label "Conjuration three, sorcery enchantment: physical representations of will made with the magical weapon"@en, "Dritte Beschwörung, Verzauberung der Zauberei: physische Darstellungen des Willens, mit der magischen Waffe gefertigt"@de ;
+    skos:definition "Chief among the instruments is a single special tool or weapon of enchantment, a small pointed wand or a knife, also used to trace the pentagrams of the Gnostic Pentagram Ritual; a fist-sized piece of modelling clay may be the only other instrument. The magician makes physical representations of will and desire, using the weapon where possible to make or manipulate them, performing one or several such conjurations a week, and aiming to influence events before nature has made up her mind."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Three, Sorcery Enchantment, p. 165; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicImprobableEventsCaution a pm:Cautioning ;
+    rdfs:label "Not too great a strain on nature: no conjuring for highly improbable events"@en, "Der Natur nicht zu viel zumuten: nicht für höchst unwahrscheinliche Ereignisse beschwören"@de ;
+    skos:definition "The magician should not put too great a strain on nature by conjuring for highly improbable events, and should aim to influence events before nature has made up her mind."@en ;
+    pm:cautionsAbout pmp:ChaosMagicSorceryEnchantment ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Three, Sorcery Enchantment, p. 165; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSorceryEnchantmentYields a pm:Yielding ;
+    rdfs:label "Sorcery enchantment is the imposition of will on reality through physical representations"@en, "Verzauberung der Zauberei ist das Auferlegen des Willens auf die Wirklichkeit durch physische Darstellungen"@de ;
+    skos:definition "Representations of will and desire made and manipulated with the magical weapon are given as the means of imposing will on events not yet decided."@en ;
+    pm:byPractice pmp:ChaosMagicSorceryEnchantment ;
+    pm:yieldsCapacity pmc:ChaosMagicEffectiveEnchantment ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Three, Sorcery Enchantment, p. 165; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicSorceryInvocation a pm:Practicing ;
+    rdfs:label "Conjuration four, sorcery invocation: radical change of behaviour by altering the environment"@en, "Vierte Beschwörung, Invokation der Zauberei: radikale Verhaltensänderung durch veränderte Umgebung"@de ;
+    skos:definition "The aim is radical change of behaviour by temporarily altering the environment, without limit to the variation of experience arranged: after careful research one might depart in disguise to a strange place and play out a completely new social role, or equip temple and self so as to experience being an ancient Egyptian god for a time. The magician tests to the limit the ability to create arbitrary change by modifying environment and behaviour."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Four, Sorcery Invocation, p. 166; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicArbitraryChangeByEnvironment a pm:Conceptualizing ;
+    rdfs:label "Arbitrary change of behaviour by modifying environment and conduct"@en, "Beliebige Verhaltensänderung durch veränderte Umgebung und veränderte Lebensführung"@de ;
+    skos:definition "Radical, arbitrary changes in behaviour created by temporarily altering the environment and one's conduct."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Four, Sorcery Invocation, p. 166; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSorceryInvocationYields a pm:Yielding ;
+    rdfs:label "An altered environment and role are said to create radical changes of behaviour"@en, "Eine veränderte Umgebung und Rolle sollen radikale Verhaltensänderungen bewirken"@de ;
+    skos:definition "Disguise, a new social role or a temple equipped to be a god are given as means of radical behavioural change."@en ;
+    pm:byPractice pmp:ChaosMagicSorceryInvocation ;
+    pm:yieldsCapacity pmc:ChaosMagicArbitraryChangeByEnvironment ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Four, Sorcery Invocation, p. 166; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicSorceryIllumination a pm:Practicing ;
+    rdfs:label "Conjuration five, sorcery illumination: the lamp over which oaths and resolutions are proclaimed"@en, "Fünfte Beschwörung, Erleuchtung der Zauberei: die Lampe, über der Eide und Vorsätze verkündet werden"@de ;
+    skos:definition "The magician aims for self-improvement in some precisely defined way; grandiose plans for spiritual enlightenment are abandoned in favour of identifying and overcoming obvious weaknesses and increasing existing strengths. An object representing the quest as a whole, technically a lamp, though it may be anything from a ring to a mandala, is made or acquired, and oaths and resolutions are proclaimed over it and may be marked onto its design. Supplementary acts of invocation, enchantment, divination and even evocation may be needed, and it is not unusual to destroy and rebuild the lamp during the work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Five, Sorcery Illumination, pp. 166-167; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSelfImprovement a pm:Conceptualizing ;
+    rdfs:label "Precisely defined self-improvement: weaknesses overcome, strengths increased"@en, "Genau bestimmte Selbstverbesserung: Schwächen überwunden, Stärken gemehrt"@de ;
+    skos:definition "Self-improvement in a precisely defined and specific way, by overcoming obvious weaknesses and increasing existing strengths, the aim of the illumination conjurations."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Five, Sorcery Illumination, p. 166; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSorceryIlluminationYields a pm:Yielding ;
+    rdfs:label "Oaths over the lamp are the means of precisely defined self-improvement"@en, "Eide über der Lampe sind das Mittel genau bestimmter Selbstverbesserung"@de ;
+    skos:definition "The lamp, the oaths and resolutions proclaimed over it and the supplementary acts are given as the means of self-improvement in illumination."@en ;
+    pm:byPractice pmp:ChaosMagicSorceryIllumination ;
+    pm:yieldsCapacity pmc:ChaosMagicSelfImprovement ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Five, Sorcery Illumination, pp. 166-167; read in a full-text layer whose running heads carry the page" .
+
+#
+# Liber KKK, shamanic level, conjurations six to ten (pp. 167-172).
+#
+
+pmc:ChaosMagicShamanicVision a pm:Conceptualizing ;
+    rdfs:label "Shamanic magic: connecting mental imagery with phenomena, visions in symbolic language"@en, "Schamanische Magie: Bilder des Geistes mit Erscheinungen verbinden, Visionen in symbolischer Sprache"@de ;
+    skos:definition "Shamanic magic depends on altered states in which active visualisation and passive vision seeking occur most easily; the easiest and safest are half-sleep, dream and light trance from quiet meditation, though any gnosis may be used. It is better to deepen trance by concentrating on visualisation and vision than by extreme gnosis beforehand. The magician seeks to discover and establish connections between mental imagery and phenomena in the world. Visions often speak in symbolic language, diseases appearing as insects or loathsome animals, fears or desires as spirits; the shaman deals with them as the images in which they present themselves, banishing or invoking them by force of visualisation and interpreting their physical meaning. The work tends to become idiosyncratic and free-form, exploring the magician's symbol-synthesising faculties."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Shamanic Level Magic, pp. 167-168; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicEcstaticPracticesInitialCaution a pm:Cautioning ;
+    rdfs:label "In initial shamanic exercises, avoid dangerous ecstatic practices that can lead to loss of control"@en, "In den ersten schamanischen Übungen gefährliche ekstatische Praktiken meiden, die zum Kontrollverlust führen können"@de ;
+    skos:definition "In initial exercises it is wise to avoid certain dangerous and ecstatic practices which can lead to a loss of control."@en ;
+    pm:cautionsAbout pmc:ChaosMagicShamanicLevel ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Shamanic Level Magic, p. 167; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicShamanicEvocation a pm:Practicing ;
+    rdfs:label "Conjuration six, shamanic evocation: a visioned entity projected to do one's bidding"@en, "Sechste Beschwörung, schamanische Evokation: ein geschautes Wesen, ausgesandt, den eigenen Willen zu tun"@de ;
+    skos:definition "The magician strives to establish a vision of an entity projected to do his or her bidding, often the visualised form of the sorcery fetish. Entities encourage desired events to materialise or seek out information where situations are too complex for simple spells or divinations; they act as semi-intelligent spells with limited independence. The magician builds an increasing rapport with the entities conjured by imagination until they begin to have real effect upon the world; some of the best work with them is done by interacting with them in dreams."@en ;
+    skos:note "Counted as a sign of success: rapport is built with the imagined entities until they begin to have real effect upon the world."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Six, Shamanic Evocation, p. 168; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicSemiIntelligentSpells a pm:Conceptualizing ;
+    rdfs:label "Entities as semi-intelligent spells for situations too complex for simple spells"@en, "Wesen als halbintelligente Zauber für Lagen, die für einfache Zauber zu verwickelt sind"@de ;
+    skos:definition "Desired events encouraged to materialise and information sought out by entities acting as semi-intelligent spells, where situations are too complex for simple spells or divinations."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Six, Shamanic Evocation, p. 168; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicShamanicEvocationYields a pm:Yielding ;
+    rdfs:label "Visioned entities are said to come to have real effect on the world"@en, "Geschaute Wesen sollen wirkliche Wirkung auf die Welt gewinnen"@de ;
+    skos:definition "Rapport built with imagined entities is said to bring them to real effect upon the world, encouraging events and seeking information."@en ;
+    pm:byPractice pmp:ChaosMagicShamanicEvocation ;
+    pm:yieldsCapacity pmc:ChaosMagicSemiIntelligentSpells ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Six, Shamanic Evocation, p. 168; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicVisionQuest a pm:Practicing ;
+    rdfs:label "Conjuration seven, shamanic divination: the vision quest for an answer sensed in any way"@en, "Siebte Beschwörung, schamanische Divination: die Visionssuche nach einer auf jede Weise empfundenen Antwort"@de ;
+    skos:definition "Divination in shamanic magic is a vision quest for answers to particular questions, the answer sensed in any way, hallucinatory voices, tactile sensation or other. The magician concentrates on the question while entering dream, half-sleep or trance and then lets images, voices or sensations arise; the vision may be wholly free-form and interpreted later, or structured by looking for special symbols, particularly those of the sorcery divination."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Seven, Shamanic Divination, p. 169; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicVisionQuestYields a pm:Yielding ;
+    rdfs:label "The vision quest is said to give answers to particular questions"@en, "Die Visionssuche soll Antworten auf bestimmte Fragen geben"@de ;
+    skos:definition "A question held while entering trance is said to be answered by the flow of images, voices and sensations that arises."@en ;
+    pm:byPractice pmp:ChaosMagicVisionQuest ;
+    pm:yieldsCapacity pmc:ChaosMagicPsychicKnowledgeFromSubconscious ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Seven, Shamanic Divination, p. 169; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicShamanicEnchantment a pm:Practicing ;
+    rdfs:label "Conjuration eight, shamanic enchantment: spirit travel to the target and visualised enactment of the desire"@en, "Achte Beschwörung, schamanische Verzauberung: Geistreise zum Ziel und vorgestellte Ausführung des Wunsches"@de ;
+    skos:definition "In trance the magician summons an image of the target and visualises the desire coming to pass, often travelling in the spirit vision to the person or situation and enacting in imagination the change of situation or behaviour. Symbolic or distorted elements are generally banished by greater concentration; if persistent they may reveal knowledge of the target or of one's relation to it, and if a person repeatedly appears with an aura or animal form, or a situation has a characteristic vibration or feel, it is often best to work the visualisation directly on that."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Eight, Shamanic Enchantment, pp. 169-170; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicShamanicEnchantmentYields a pm:Yielding ;
+    rdfs:label "Visualised enactment in trance is said to impress the will on the world, often succeeding through the target's visioned form"@en, "Vorgestellte Ausführung in Trance soll den Willen der Welt aufprägen, oft erfolgreich über die geschaute Gestalt des Ziels"@de ;
+    skos:definition "Shamanic enchantment is said to impress will upon the world by direct or symbolic visualisation of the desire, and working on a target's visioned aura, animal form or feel is said often to succeed."@en ;
+    pm:byPractice pmp:ChaosMagicShamanicEnchantment ;
+    pm:yieldsCapacity pmc:ChaosMagicEffectiveEnchantment ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Eight, Shamanic Enchantment, pp. 169-170; read in a full-text layer whose running heads carry the page" .
+
+pmp:ChaosMagicAtavisticInvocation a pm:Practicing ;
+    rdfs:label "Conjuration nine, shamanic invocation: possession by an animal atavism"@en, "Neunte Beschwörung, schamanische Invokation: Besessenheit durch einen tierischen Atavismus"@de ;
+    skos:definition "The magician draws knowledge and power from atavisms, normally animal ones. Explanations offered: the genetic code holds much unused information of evolutionary history; the brain grew by accretion and its older parts share circuits with other animals; some think the psychic part of humans is built from the psychic debris of past beings, others that the collective psyches of animal species are telepathically available. The animal is chosen personally, from childhood affinity, a suggestive characteristic, growing intuition or sudden revelation. The magician visualises himself or herself in animal form in trance, even projects in astral travel as the animal, and acts out its behaviour physically in a suitable environment."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Nine, Shamanic Invocation, pp. 170-171; read in a full-text layer whose running heads carry the page" .
+
+pmc:ChaosMagicAtavisticKnowledgeAndPower a pm:Conceptualizing ;
+    rdfs:label "Split consciousness in which the atavism is interrogated and lends its powers"@en, "Gespaltenes Bewusstsein, in dem der Atavismus befragt wird und seine Kräfte leiht"@de ;
+    skos:definition "With practice, varying degrees of split consciousness in which the magician can interrogate the atavism on matters it understands and ask it to provide such of its powers as the physical or etheric body can support."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:LiberKaos ;
+    dcterms:source "Carroll, Liber Kaos (Boston and York Beach: Weiser Books; first published 1992, printing of 2003), Appendix 1, Liber KKK, Conjuration Nine, Shamanic Invocation, p. 171; read in a full-text layer whose running heads carry the page" .
+
 # @@ANKER-LIBER-KAOS@@
