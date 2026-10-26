@@ -1,0 +1,311 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — chaos magic: Carroll, PsyberMagick
+#
+# The harvest of one work of the corpus of pmt:ChaosMagic, kept apart from
+# traditions/chaos-magic.ttl, which declares the tradition and the work
+# (pmw:PsyberMagick) and carries its reading notes and harvest counts.
+# Harvested complete under prima-materia#893 with two independent extraction
+# passes over the whole text, a comparison of the two by offset and word
+# overlap, and a check at the text of every item the second pass found and
+# the first did not. Sixty chapters of text and commentary, in the order of
+# the work. Edition: New Falcon Publications, ISBN 1-56184-092-0, from the
+# back cover in the full-text layer; the upload carries no title or copyright
+# page, so no year is printed in it. Cited by chapter and printed page, the
+# text of each chapter on the even page and its commentary on the odd page
+# after it. Signs of success and conditions of failure carry a note
+# beginning "Counted as a sign of success:" or "Counted as a condition of
+# failure:".
+#
+
+
+#
+# Introduction, Why Magick?, Ourselfs
+#
+
+pmc:ChaosMagicPsyberIpsissimusThesis a pm:Conceptualizing ;
+    rdfs:label "PsyberMagick as the Ipsissimus thesis of Frater Stokastikos: a terse catalogue of notes, provocations, spells and rituals"@en, "PsyberMagick als Ipsissimus-These des Frater Stokastikos: ein knapper Katalog von Notizen, Provokationen, Zaubern und Ritualen"@de ;
+    skos:definition "The book introduces itself as the Ipsissimus thesis of Frater Stokastikos, written by our selfs, and abandons conventional literary format for a terse and abrupt catalogue of notes, observations, provocations, spells and rituals to challenge an aspiring magus. In celebration of the discovery of six dimensions, and in respect for Crowley who pioneered the format of text and commentary, the art and science of the magus is spelled Magick. The volume marks the beginning of a period of silence and the author's retirement from the roles of Magus and Pontiff of Chaos."@en ;
+    skos:note "The six dimensions are the three of space and three of time of the fifth equation and of the Phenomenization and Spinwarp chapters."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 1 Psybermagick, Introduction, text, p. 8; read in a full-text layer with printed page numbers", "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 1 Psybermagick, Introduction, commentary, p. 9; read in a full-text layer with printed page numbers" .
+
+pmp:ChaosMagicPsyberRecognizingTheOtherSelves a pm:Practicing ;
+    rdfs:label "Recognizing the existence of one's other seven selves"@en, "Die Existenz der eigenen sieben anderen Selbste anerkennen"@de ;
+    skos:definition "The author wandered the world for a decade and more as an 'I' seeking the secret magick of being; upon the realization of the Legion of our Doing clarity dawned. One does not have to sell one's soul to succeed with off-white magick; one merely has to recognize the existence of one's other seven."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 1 Psybermagick, Introduction, commentary, p. 9; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberWorldlyMastery a pm:Conceptualizing ;
+    rdfs:label "Mastery of the Temple, wealth, honours and power"@en, "Meisterschaft des Tempels, Reichtum, Ehren und Macht"@de ;
+    skos:definition "Mastery of the Temple, wealth, honours and power, said to follow more or less effortlessly once the plurality of selves was realized."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 1 Psybermagick, Introduction, commentary, p. 9; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberOtherSelvesYieldWorldlyMastery a pm:Yielding ;
+    rdfs:label "Realizing the Legion of one's doing yields mastery, wealth, honours and power"@en, "Die Erkenntnis der Legion des eigenen Tuns bringt Meisterschaft, Reichtum, Ehren und Macht"@de ;
+    skos:definition "Upon the realization of the Legion of our Doing, mastery of the Temple, wealth, honours and power followed more or less effortlessly; success with off-white magick merely requires recognizing one's other seven selves."@en ;
+    skos:note "The author's report from his own case, counted apart from signs of success; the work gives no mark by which the result is told from a career that would have come anyway."@en ;
+    pm:byPractice pmp:ChaosMagicPsyberRecognizingTheOtherSelves ;
+    pm:yieldsCapacity pmc:ChaosMagicPsyberWorldlyMastery ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 1 Psybermagick, Introduction, commentary, p. 9; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberMagickAsHubris a pm:Conceptualizing ;
+    rdfs:label "Magicians as those who create their own powers, gratifications, identities and explanations"@en, "Magier als die, die ihre eigenen Kräfte, Befriedigungen, Identitäten und Erklärungen schaffen"@de ;
+    skos:definition "Incarnate among semi-intelligent apes trading gratifications, power, identity and answers, and contemptuous of the recommended gratifications and parochial gods on sale, some attempt to create their own powers, gratifications, identities and explanations and call themselfs magicians; hubris accounts for the best of it. As nothing has any meaning other than that we choose to give it, belief and meaning must be invested in something or the game abandoned."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 2 Why Magick?, Irrationale, text, p. 10; read in a full-text layer with printed page numbers", "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 2 Why Magick?, Irrationale, commentary, p. 11; read in a full-text layer with printed page numbers" .
+
+pmp:ChaosMagicPsyberBeliefInTheImpossible a pm:Practicing ;
+    rdfs:label "Believing in one's ability to accomplish the impossible, and choosing beliefs for capability rather than facts"@en, "An die eigene Fähigkeit glauben, das Unmögliche zu vollbringen, und Glaubenssätze nach Vermögen statt nach Tatsachen wählen"@de ;
+    skos:definition "Magicians consider it worthwhile to believe in their ability to accomplish the impossible, even if they only succeed at this occasionally. In selecting beliefs one should go for maximum entertainment value and capability enhancement regardless of the so-called facts, for if a human really wants something, statistics count for nothing; the author attributes much of his success to a generous contempt for the apparent facts."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 2 Why Magick?, Irrationale, text, p. 10; read in a full-text layer with printed page numbers", "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 2 Why Magick?, Irrationale, commentary, p. 11; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberIncreasingCapabilities a pm:Conceptualizing ;
+    rdfs:label "Increasing capabilities"@en, "Zunehmende Fähigkeiten"@de ;
+    skos:definition "Capabilities that increase with the belief in them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 2 Why Magick?, Irrationale, text, p. 10; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberBeliefYieldsCapabilities a pm:Yielding ;
+    rdfs:label "Belief in one's capabilities self-evidently leads to increasing capabilities"@en, "Glaube an die eigenen Fähigkeiten führt offenkundig zu zunehmenden Fähigkeiten"@de ;
+    skos:definition "Belief in one's capabilities is said self-evidently to lead to increasing capabilities; magicians therefore believe in their ability to accomplish the impossible, even if they only succeed occasionally."@en ;
+    skos:note "The work concedes in the same sentence that the impossible succeeds only occasionally, and sets no rate by which occasionally would count as failure."@en ;
+    pm:byPractice pmp:ChaosMagicPsyberBeliefInTheImpossible ;
+    pm:yieldsCapacity pmc:ChaosMagicPsyberIncreasingCapabilities ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 2 Why Magick?, Irrationale, text, p. 10; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberMultimind a pm:Conceptualizing ;
+    rdfs:label "The multimind: the self as a legion of selfs"@en, "Der Vielgeist: das Selbst als Legion von Selbsten"@de ;
+    skos:definition "The disintegration or fragmentation of the self in the contemporary world is celebrated; the belief in a single self is said to stem from monotheisms having a single god. To consider oneself an individual in the sense of indivisible is not to have lived. Humans spend so much time at the temples of Venus, Luna, Bacchus and Mars trying to escape their workaday Solar selfs in pursuit of love, sex, intoxication and violent entertainments."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 3 Ourselfs, Multimind, text, p. 12; read in a full-text layer with printed page numbers" .
+
+pmp:ChaosMagicPsyberAllowingEachSelfItsGoals a pm:Practicing ;
+    rdfs:label "Allowing each self a shot at its goals in life"@en, "Jedem Selbst eine Chance auf seine Lebensziele geben"@de ;
+    skos:definition "The selfs must allow each self a shot at its goals in life; playing the various roles in extremis."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 3 Ourselfs, Multimind, text, p. 12; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberFulfilmentAndSanity a pm:Conceptualizing ;
+    rdfs:label "Fulfilment while remaining sane"@en, "Erfüllung bei erhaltener geistiger Gesundheit"@de ;
+    skos:definition "A sense of fulfilment in life together with remaining sane."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 3 Ourselfs, Multimind, text, p. 12; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberEachSelfBeforeFulfilment a pm:Presupposing ;
+    rdfs:label "Each self must have a shot at its goals if one wishes fulfilment and sanity"@en, "Jedes Selbst muss eine Chance auf seine Ziele haben, wenn man Erfüllung und Gesundheit will"@de ;
+    skos:definition "The selfs must allow each self a shot at its goals in life if one wishes to achieve any sense of fulfilment and remain sane."@en ;
+    pm:dependentStep pmc:ChaosMagicPsyberFulfilmentAndSanity ;
+    pm:priorStep pmp:ChaosMagicPsyberAllowingEachSelfItsGoals ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Without it no sense of fulfilment is achieved and sanity is not kept." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 3 Ourselfs, Multimind, text, p. 12; read in a full-text layer with printed page numbers" .
+
+pmp:ChaosMagicPsyberChaoticGrammar a pm:Practicing ;
+    rdfs:label "Chaotic grammar: 'we' instead of 'I', and no concepts of being"@en, "Chaotische Grammatik: ‚wir‘ statt ‚ich‘ und keine Begriffe des Seins"@de ;
+    skos:definition "Standard Chaotic grammar avoids all concepts of being and uses we instead of I, in recognition of the legionary nature of the personal multimind; the book is written so throughout, with the forms ourselfs and themselfs."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 3 Ourselfs, Multimind, text, p. 12; read in a full-text layer with printed page numbers" .
+
+
+#
+# Magick I-X
+#
+
+pmc:ChaosMagicPsyberStokastikossLaw a pm:Conceptualizing ;
+    rdfs:label "Stokastikos's Law: sufficiently advanced magick is indistinguishable from science"@en, "Stokastikos' Gesetz: hinreichend fortgeschrittene Magick ist von Wissenschaft nicht zu unterscheiden"@de ;
+    skos:definition "Any sufficiently advanced form of magick will appear indistinguishable from science; the footnote says Arthur C. Clarke coined the statement in its obverse form. The following ten chapters augment the technical procedures and general theory of Liber Null and Psychonaut and Liber Kaos."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 4 Magick I, Science & Magick, text, p. 14; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberCoincidenceEngineering a pm:Conceptualizing ;
+    rdfs:label "Science as the engineering of highly probable coincidences, magick of less probable ones"@en, "Wissenschaft als Technik hochwahrscheinlicher Koinzidenzen, Magick als die weniger wahrscheinlicher"@de ;
+    skos:definition "Language structures impose causality as a mode of perception, but causality does not rule this universe: humans label events they associate frequently as causal and those associated only occasionally as coincidence. Science is the study and engineering of highly probable coincidences, such as apples falling when dropped, magick of less probable ones, such as trees dropping apples when asked. Everything works by magick; science is a small domain of it where coincidences have a relatively high probability. Half of the skill in magick consists of identifying probabilities worth enhancing."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 4 Magick I, Science & Magick, commentary, p. 15; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberImaginedAttack a pm:Conceptualizing ;
+    rdfs:label "Imagined magickal attack creates far more casualties than actual attack"@en, "Eingebildeter magischer Angriff fordert weit mehr Opfer als tatsächlicher"@de ;
+    skos:definition "The magickian is told to remember and use the fact that imagined magickal attack creates far more casualties than actual magickal attack."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 5 Magick II, Magickal Attack, text, p. 16; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberDiviningAttackCautela a pm:Cautioning ;
+    rdfs:label "Do not divine the nature of a real magickal attack: it increases vulnerability"@en, "Die Natur eines wirklichen magischen Angriffs nicht erforschen: es erhöht die Verwundbarkeit"@de ;
+    skos:definition "Do not risk trying to divine the nature of a real magickal attack, for this will increase your vulnerability to it."@en ;
+    pm:cautionsAbout pmp:ChaosMagicPsyberDefenceByEvocation ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 5 Magick II, Magickal Attack, text, p. 16; read in a full-text layer with printed page numbers" .
+
+pmp:ChaosMagicPsyberDefenceByEvocation a pm:Practicing ;
+    rdfs:label "Defend by evocation: a general-purpose servitor, cybermorph or eidolon"@en, "Verteidigung durch Evokation: ein Diener, Cybermorph oder Eidolon für allgemeine Zwecke"@de ;
+    skos:definition "For defence evoke or create a general purpose servitor, cybermorph or eidolon. Astral mirrors and shields are dismissed as naive procedures of little other than psychological value."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 5 Magick II, Magickal Attack, text, p. 16; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberDefenceAgainstAttack a pm:Conceptualizing ;
+    rdfs:label "Defence against magickal attack"@en, "Abwehr magischer Angriffe"@de ;
+    skos:definition "Defence against a real magickal attack."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 5 Magick II, Magickal Attack, text, p. 16; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberEvocationYieldsDefence a pm:Yielding ;
+    rdfs:label "An evoked or created servitor defends against magickal attack"@en, "Ein evozierter oder geschaffener Diener verteidigt gegen magischen Angriff"@de ;
+    skos:definition "Against magickal attack, a general purpose servitor, cybermorph or eidolon is to be evoked or created for defence; the slogan of the chapter is attack by enchantment, defend by evocation."@en ;
+    pm:byPractice pmp:ChaosMagicPsyberDefenceByEvocation ;
+    pm:yieldsCapacity pmc:ChaosMagicPsyberDefenceAgainstAttack ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 5 Magick II, Magickal Attack, text, p. 16; read in a full-text layer with printed page numbers" .
+
+pmp:ChaosMagicPsyberAttackByEnchantment a pm:Practicing ;
+    rdfs:label "Attack by enchantment: ensigilized enchantments tailored to highly specific effects"@en, "Angriff durch Verzauberung: besiegelte Verzauberungen, auf ganz bestimmte Wirkungen zugeschnitten"@de ;
+    skos:definition "Attack or counterattack vigorously with properly ensigilized enchantments tailored to create highly specific effects: the bullet rather than the grenade. Do unto others as they would do unto you, but do it first. Signed Field Magus Stokastikos, as a secret revealed after retirement from active service."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 5 Magick II, Magickal Attack, text, p. 16; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberHarmToAnEnemy a pm:Conceptualizing ;
+    rdfs:label "Harm to an enemy or an offending force by magick"@en, "Schaden an einem Feind oder einer feindlichen Kraft durch Magick"@de ;
+    skos:definition "A specific effect against an enemy, an offending force or a target of black magick."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 5 Magick II, Magickal Attack, text, p. 16; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberEnchantmentYieldsHarm a pm:Yielding ;
+    rdfs:label "Ensigilized enchantments create highly specific effects against an attacker"@en, "Besiegelte Verzauberungen erzeugen ganz bestimmte Wirkungen gegen einen Angreifer"@de ;
+    skos:definition "Properly ensigilized enchantments are tailored to create highly specific effects in attack or counterattack."@en ;
+    pm:byPractice pmp:ChaosMagicPsyberAttackByEnchantment ;
+    pm:yieldsCapacity pmc:ChaosMagicPsyberHarmToAnEnemy ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 5 Magick II, Magickal Attack, text, p. 16; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberWandOverCup a pm:Conceptualizing ;
+    rdfs:label "Wand or cup: a fifth of spells working is real power"@en, "Stab oder Kelch: wirkt ein Fünftel der Zauber, ist das wirkliche Macht"@de ;
+    skos:definition "If only one fifth of your spells work you have real power. Spells cast well in advance can take advantage of the copious chaos in the interim. If in doubt, always attempt to force the hand of chance."@en ;
+    skos:note "Counted as a sign of success: a rate, one spell in five working, set as the mark of real power. The work names no base rate against which a working spell is told from a coincidence, though chapter 4 defines magick as the engineering of less probable coincidences."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 6 Magick III, Wand or Cup?, commentary, p. 19; read in a full-text layer with printed page numbers", "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 12 Magick IX, Null Path Divinations, commentary, p. 31; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberDivinationFifthCautela a pm:Cautioning ;
+    rdfs:label "A fifth of divinations working is a serious disability; chaos reduces divination to a shambles"@en, "Wirkt ein Fünftel der Divinationen, ist das eine ernste Behinderung; Chaos macht die Divination zunichte"@de ;
+    skos:definition "If only one fifth of your divinations work you have a serious disability. The chaos that serves spells cast well in advance will tend to reduce divination to a shambles."@en ;
+    skos:note "Counted as a condition of failure: a rate, one divination in five correct, named as a serious disability. The threshold is countable; the work does not say what rate would count as adequate."@en ;
+    pm:cautionsAbout pmc:ChaosMagicPsyberNullPathDivination ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 6 Magick III, Wand or Cup?, commentary, p. 19; read in a full-text layer with printed page numbers" .
+
+pmp:ChaosMagicPsyberEnchantingWellInAdvance a pm:Practicing ;
+    rdfs:label "Enchanting well in advance: enchant long"@en, "Lange im Voraus verzaubern: lang verzaubern"@de ;
+    skos:definition "Spells cast well in advance take advantage of the copious chaos in the interim. As the probability circle of imaginary time grows with time, tomorrow holding a million possibilities and the day after about three million: enchant long."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 6 Magick III, Wand or Cup?, commentary, p. 19; read in a full-text layer with printed page numbers", "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 11 Magick VIII, Null Path Enchantments, commentary, p. 29; read in a full-text layer with printed page numbers" .
+
+pmp:ChaosMagicPsyberInvestNotSacrifice a pm:Practicing ;
+    rdfs:label "Don't sacrifice, invest: sacrifice only what gets in the way of desire"@en, "Nicht opfern, investieren: nur opfern, was dem Begehren im Weg steht"@de ;
+    skos:definition "By sacrifice the religious attempt to invest in spiritual agencies; magicians invest directly in themselfs, cutting out the middleman. Sacrifice only those things which get in the way of desire, not the thing itself. If you want money, sacrifice it only on opportunities which will make money, and treat money as a major God, its capricious and awesome power rivalling that of love and war."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 7 Magick IV, Sacrifice, text, p. 20; read in a full-text layer with printed page numbers", "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 7 Magick IV, Sacrifice, commentary, p. 21; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberWealth a pm:Conceptualizing ;
+    rdfs:label "Wealth"@en, "Reichtum"@de ;
+    skos:definition "Money conjured or kept."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 7 Magick IV, Sacrifice, commentary, p. 21; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberInvestmentYieldsWealth a pm:Yielding ;
+    rdfs:label "Sacrificing money only on opportunities that make money brings money"@en, "Geld nur für Gelegenheiten opfern, die Geld bringen, bringt Geld"@de ;
+    skos:definition "If you want money, then sacrifice it only on opportunities which will make money."@en ;
+    pm:byPractice pmp:ChaosMagicPsyberInvestNotSacrifice ;
+    pm:yieldsCapacity pmc:ChaosMagicPsyberWealth ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 7 Magick IV, Sacrifice, commentary, p. 21; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberInsultingMoneyCautela a pm:Cautioning ;
+    rdfs:label "Never insult money or gamble unless you want to banish it"@en, "Geld nie beleidigen oder verspielen, es sei denn, man will es bannen"@de ;
+    skos:definition "Some neophytes imagine they can conjure wealth by burning bank notes to the gods. Never insult money or blaspheme it by gambling, unless you want to banish it."@en ;
+    skos:note "The caution carries its own operation: insulting money or gambling banishes it. Entered here and not as a practice of its own, since the work gives it only as the reverse of the advice."@en ;
+    skos:note "Counted as a condition of failure: burning bank notes to the gods as a conjuration of wealth is named as a neophyte's error, an observable act; the failure is put on the operator."@en ;
+    pm:cautionsAbout pmp:ChaosMagicPsyberInvestNotSacrifice ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 7 Magick IV, Sacrifice, commentary, p. 21; read in a full-text layer with printed page numbers" .
+
+pmc:ChaosMagicPsyberMoneyAsGod a pm:Conceptualizing ;
+    rdfs:label "Money as a vast intelligent organism living in nearly every brain"@en, "Geld als riesiger intelligenter Organismus, der in fast jedem Gehirn lebt"@de ;
+    skos:definition "Money acts as a vast, intelligent organism which lives by occupying part of the brain of nearly everyone on this planet, and seems far more awake at this moment than many gods; it is to be treated as a major God."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:ChaosMagic ;
+    pm:fromWork pmw:PsyberMagick ;
+    dcterms:source "Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0), ch. 7 Magick IV, Sacrifice, commentary, p. 21; read in a full-text layer with printed page numbers" .
+
+# @@weiter@@
