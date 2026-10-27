@@ -116,7 +116,7 @@ python scripts/validate.py && python -m pytest tests/ -q
 
 **Der Branch ist die Quelle, der Klon das Abbild.** Vor dem PR `git fetch`; `git status --porcelain` und `git diff origin/<branch>` müssen leer sein, sonst ist das Bündel offen (#351).
 
-**`prima_repo_write` legt nur an**; auf einen vorhandenen Pfad antwortet es mit einer Meldung ohne Pfad und Grund (#799). Bestehende Dateien ändert `prima_repo_replace`; große Umbauten stückweise anhängen, `alt` ist die letzte Zeile des vorigen Stücks. Nach `session expired` erst den Branch lesen, dann wiederholen (#829).
+**`prima_repo_write` legt nur an**; auf einen vorhandenen Pfad antwortet es mit einer Meldung ohne Pfad und Grund (#799). Bestehende Dateien ändert `prima_repo_replace`. **Eine ganze Datei, die lokal gebaut und geprüft ist, geht über `prima_repo_upload`** (config#305): das Werkzeug nimmt Pfad, Branch, SHA-256 und Bytezahl, die Datei schickt die Shell mit `curl --data-binary` an die einmalige Adresse, ein Commit, legt an oder ersetzt ganz, bis 15 MB, ohne dass der Inhalt durch das Modell geht. Am 2026-10-27 trugen so 224 KB und 588 KB je in einem Commit, Prüfsumme gehalten; dieselbe Übertragung in Stücken hatte bei Liber Null rund 670k Tokens gekostet. Danach `git diff origin/<branch>` gegen die lokale Datei. Stückweises Anhängen über `prima_repo_replace` (`alt` ist die letzte Zeile des vorigen Stücks) bleibt der Weg, wo keine Shell die Adresse erreicht. Nach `session expired` erst den Branch lesen, dann wiederholen (#829).
 
 ## Was „gegroundet" heißt
 
