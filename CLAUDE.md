@@ -146,7 +146,7 @@ Welche Wege tragen, steht in `AGENTS.md` unter Die geprüften Zugangswege. Hier 
 
 - **Ein Werkzeugfehler der Form `MCP server "Exo_Tools" session expired` sagt nichts darüber, ob geschrieben wurde.** Am 2026-10-02 hat `prima_repo_replace` mit dieser Meldung geantwortet und den Commit trotzdem erzeugt; der Wiederholungsaufruf hat denselben Block ein zweites Mal angehängt, und der nächste Aufruf fiel auf, weil sein `alt` nun zweimal vorkam. Der Fehler steht also vor der Antwort und nicht vor der Schreibung. **Nach einem Sitzungsfehler nicht wiederholen, sondern erst den Branch lesen**: `git fetch` auf den Arbeitsbranch und den Zielausdruck zählen, oder `prima_repo_read` auf die Datei. Ein Anhängemuster mit einem eindeutigen Ankerkommentar — ein Stück anhängen, den Anker am Ende mitschreiben, ihn beim nächsten Stück als `alt` benutzen und am Schluss entfernen — macht die Dopplung nachträglich billig zu reparieren, weil der zweite Anker sie sofort sichtbar macht (prima-materia#829)
 
-- **`prima_repo_write` legt nur neue Dateien an.** Auf einen vorhandenen Pfad antwortet es mit einer Meldung ohne Pfad und ohne Grund, die nach einer Zurückweisung des Inhalts aussieht; die Größe ist es nicht. Umweg in `AGENTS.md` unter Prüfung vor dem PR (prima-materia#47, prima-materia#450, prima-materia#799)
+- **`prima_repo_write` legt nur neue Dateien an.** Auf einen vorhandenen Pfad antwortet es mit einer Meldung ohne Pfad und ohne Grund, die nach einer Zurückweisung des Inhalts aussieht; die Größe ist es nicht. Umweg in `AGENTS.md` unter Prüfung vor dem PR, für ganze Dateien `prima_repo_upload` (prima-materia#47, prima-materia#450, prima-materia#799, config#305)
 
 ## Lizenz
 
