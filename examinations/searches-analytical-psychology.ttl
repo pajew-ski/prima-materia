@@ -1,0 +1,44 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — three searches carried in the Septem Sermones ad Mortuos
+#
+# All three were carried on 2026-10-28 while the work was open. The nodes they
+# found stand in traditions/analytical-psychology.ttl.
+#
+
+pmp:AnalyticalPsychologyFailureSearch a pm:Searching ;
+    rdfs:label "Whether the Septem Sermones state a condition under which a practice fails"@en, "Ob die Septem Sermones eine Bedingung nennen, unter der eine Praxis misslingt"@de ;
+    pm:searchedCorpus "C. G. Jung, Septem Sermones ad Mortuos, Sermo I-VII, whole, in the English of H. G. Baynes (Memories, Dreams, Reflections, rev. ed., Vintage Books, Appendix V) and the Portuguese of Rodolfo Oliveira (Oficinas TK, 2016), and in the German of the Prüfungen recension of the Red Book, German edition ed. Sonu Shamdasani, pp. 514-541" ;
+    pm:searchedFor "A passage that names an outcome by which a practice the work prescribes or rejects would be seen not to have worked, and the reason given for it: a null result, an opposite result, a term after which nothing comes." ;
+    pm:searchTerms "All seven addresses read whole in all three texts. Counted in addition over the Baynes text: fail (none), vain (none), unless (none), profit (one), avail (two), serve (one), nothing (twenty), not (thirty-eight, read at each); over the Portuguese: fracass (none), em vão (none), inútil (three); over the German: umsonst (none), vergeblich (none), lohnt (four), nützt (one). The German count includes the commentary of Philemon, which is not part of the print." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AnalyticalPsychologyGegensatzpaarErfassen, pmc:AnalyticalPsychologyVerschiedenheitDenken, pmc:AnalyticalPsychologyGebetNichtsDazu ;
+    pm:searchedBy "prima-materia, 2026-10-28" ;
+    dcterms:date "2026-10-28" ;
+    skos:note "Three conditions of failure, two in the first address and one in the fourth. None is stated against the prayer to the star that the seventh address prescribes; the only condition attached to that prayer is a proviso without a consequence, entered as pmc:AnalyticalPsychologyAugenAbwendenPresupposed. Consequences of omitting the work's central act, distinguishing, are entered as chains and cautions and not counted here, because they name what follows from not doing it and not how doing it could be seen to fail."@en .
+
+pmp:AnalyticalPsychologySuccessSignSearch a pm:Searching ;
+    rdfs:label "Whether the Septem Sermones name a sign by which a hearer knows a practice has taken"@en, "Ob die Septem Sermones ein Zeichen nennen, an dem der Hörer erkennt, dass eine Praxis gewirkt hat"@de ;
+    pm:searchedCorpus "C. G. Jung, Septem Sermones ad Mortuos, Sermo I-VII, whole, in the English of H. G. Baynes (Memories, Dreams, Reflections, rev. ed., Vintage Books, Appendix V) and the Portuguese of Rodolfo Oliveira (Oficinas TK, 2016), and in the German of the Prüfungen recension of the Red Book, German edition ed. Sonu Shamdasani, pp. 514-541" ;
+    pm:searchedFor "A perceptible mark, announced or reported, by which the work says that distinguishing, prayer, communion or singleness has taken effect: a light seen, a warmth felt, a change in the body or in the world." ;
+    pm:searchTerms "All seven addresses read whole. Counted over the Baynes text: sign (four, all in the phrases name and sign of distinctiveness and under the sign of the Mother or the Phallos), mark (none), token (none), light (eleven), shine (one), warmth (one); over the Portuguese: sinal (two), signo (two), luz (nine), brilh (three); over the German: Zeichen (four), Licht (twenty-four), leucht (three)." ;
+    pm:searchOutcome pm:searchFoundNothing ;
+    pm:searchedBy "prima-materia, 2026-10-28" ;
+    dcterms:date "2026-10-28" ;
+    skos:note "No sign of success. Seen and not counted: the light of the star that prayer increases and that shines when the greater world grows cold (Sermo VII), because the address states it of the star and does not offer it to the one praying as something to perceive; and the warmth of communion and the light of singleness (Sermo V), because they are what those states are said to give and not marks by which one would know the right measure had been kept. The work's silence here stands against three conditions of failure, which is the reverse of the usual proportion in the holding."@en .
+
+pmp:AnalyticalPsychologyPrintGermanSearch a pm:Searching ;
+    rdfs:label "Whether the German wording of the 1916 print of the Septem Sermones is reachable"@en, "Ob der deutsche Wortlaut des Drucks der Septem Sermones von 1916 erreichbar ist"@de ;
+    pm:searchedCorpus "The Internet Archive, its catalogue and metadata, for carriers of the German text of C. G. Jung, Septem Sermones ad Mortuos, and of Jung, Erinnerungen, Träume, Gedanken, ed. Aniela Jaffé (1962), whose English edition says in its Appendix V that Jung consented to print the addresses in the memoir" ;
+    pm:searchedFor "An open full text carrying the German wording of the privately printed Septem Sermones, so that the two translations could be read against the print and not against the Red Book recension." ;
+    pm:searchTerms "Title searches for septem sermones, sermones ad mortuos, seven sermons to the dead, Belehrungen der Toten, erinnerungen träume gedanken, rote buch with creator jung; a creator search for Jung restricted to German. Found: erinnerungentr00jung (German, 1962) and viisermonesadmor0000jung (Baynes, 1967), both access-restricted in their metadata; memoriesdreamsre0000jung_o1c5, access-restricted; the German Red Book under c.-g.-jung-liber-novum-das-rote-buch-text-ganz-pdf, open, which carries the recension and not the print." ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-10-28" ;
+    dcterms:date "2026-10-28" ;
+    skos:note "A finding about the uploads at one archive and not about the work: the German print exists in the 1962 memoir and is held there behind a lending restriction. Not tried: other digitisation projects, which for a work whose author died in 1961 are unlikely to hold an open German text before the term of protection ends. What the recension supplies in its place, and where it differs from the print by the editor's account, is stated at pmw:AnalyticalPsychologySeptemSermones."@en .
