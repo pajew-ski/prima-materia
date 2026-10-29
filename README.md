@@ -15,8 +15,9 @@ Purum** project operates.
 The ontology models **processes instead of substances** (gerund-form classes),
 holds every claim as a node with its provenance, places the state of
 awareness behind a claim on the awareness axes, and lets a meaning that no single
-claim carries arise from several read together, in generalizations and
-convergences — following Bhartṛhari's Sphoṭa principle.
+claim carries arise from several read together, in generalizations,
+convergences and the series a source hands down whole — following
+Bhartṛhari's Sphoṭa principle.
 
 ## Website
 
