@@ -20,7 +20,7 @@ Praktische Folge für die Priorisierung: der wertvollste Knoten ist nicht der, d
 
 Das Projekt ist Teil einer übergeordneten Architektur — es ist die Basis, aus der die Methoden des **Opus Purum** (separates Projekt) extrahiert werden. Die Richtung läuft vom Entwurf über die Zerlegung und das Grounding zu dem, was übrig bleibt, und erst von dort zur Methode. Der Graph ist deshalb nicht die *undifferenzierte Ursubstanz*, als die frühere Fassungen dieses Dokuments ihn beschrieben haben. Die Ursubstanz ist der ungeprüfte Entwurf; dies hier ist die Probe auf seinen Gehalt.
 
-Die ontologische Besonderheit: prima-materia folgt einem **bewusstsein-ersten** Designprinzip (Consciousness-First Ontology). Die Klassen modellieren Prozesse statt Substanzen, die Triples werden in `AwarenessContext`-named-graphs eingebettet, und semantische Bedeutung emergiert aus Subgraph-Clustern (Sphoṭa-Prinzip), nicht aus isolierten Knoten.
+Die ontologische Besonderheit: prima-materia folgt einem **bewusstsein-ersten** Designprinzip (Consciousness-First Ontology). Die Klassen modellieren Prozesse statt Substanzen, Behauptungen sind Knoten mit Herkunft, der Bewusstseinszustand hinter einer Angabe ist eine Verortung auf den Bewusstseinsachsen (Abschnitt 3, Parameter 2), und eine Bedeutung, die keine einzelne Behauptung trägt, entsteht aus mehreren zusammen, in Verallgemeinerung und Konvergenz (Sphoṭa-Prinzip, Abschnitt 3, Parameter 3).
 
 ## 1. Repository-Struktur
 
@@ -34,7 +34,7 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 ├── SPEC.md                      # Dieses Dokument
 ├── CLAUDE.md                    # Agent-Instruktionen (Kurzform von SPEC.md)
 ├── ontology/
-│   ├── core.ttl                 # Meta-Ontologie (pm:Process, pm:MeaningCluster, etc.)
+│   ├── core.ttl                 # Meta-Ontologie (pm:Process und die Grundprozesse)
 │   ├── consciousness.ttl        # die vier Bewusstseinsachsen (siehe Abschnitt 3, Parameter 2)
 │   ├── provenance.ttl           # Behauptungs- und Prüfklassen (siehe Abschnitt 3.5)
 │   ├── coverage.ttl             # Abdeckungs- und Kontaktweg-Skalen
@@ -228,13 +228,20 @@ Die vierte und die fünfte Achse standen zunächst als eine, `pm:StatePersistenc
 
 Die vollständige named-graph-Implementierung aus Phase 2 ist **gestrichen** und nicht weiter aufgeschoben. Ein Vorhaben, das seit Phase 1 unberührt lag, während die Klasse, für die es gebraucht wurde, im Bestand tot war, ist keine Planung.
 
-### Parameter 3: Sphoṭa — Bedeutung in Subgraph-Clustern
+### Parameter 3: Sphoṭa — Bedeutung aus mehreren Behauptungen
 
-**Die Umsetzung ist gestrichen; die Lesart bleibt.** `pm:MeaningCluster` und `pm:hasClusterMember` standen hier von Phase 0 an, und bis zu ihrer Entfernung war kein Knoten des Bestands Mitglied eines Clusters. Der Zweck war die Einbettung als Vektor; solange es keine Einbettung gibt, hielt die Klasse nichts und erklärte eine Absicht.
+Bhartṛhari: die Bedeutung liegt im ganzen Satz, nicht in den Lauten, die ihn tragen; die Laute machen sie nur offenbar. Übertragen auf den Graphen: nicht jede Bedeutung, die der Bestand trägt, steht in einer einzelnen Behauptung. Manche geht erst auf, wenn mehrere zusammen gelesen werden, und keine von ihnen sagt sie.
 
-Der Satz, dass ein einzelnes Tripel keine vollständige Bedeutung trägt, ist damit nicht zurückgenommen. Zurückgenommen ist die Behauptung, dieser Graph löse ihn ein. Wird ein erster Cluster tatsächlich gebildet, kommen Klasse und Prädikat mit ihm zurück und nicht vorher; die Kandidaten, die dieses Dokument selbst nennt, sind das Aeonensystem und die Vertiefungsreihe. Siehe prima-materia#436.
+**Umgesetzt ist das in zwei Klassen**, und sie sind die Umsetzung dieses Parameters:
 
-Was von dem Prinzip im Bestand tatsächlich arbeitet, steht in Parameter 5: eine Behauptung wird als Knoten gehalten und nicht als Kante, weil erst der Knoten mit seinen Angaben die Einheit ist, an der sich etwas bestreiten lässt.
+- `pm:Generalizing` bildet aus mindestens zwei bezeugten Behauptungen eine Aussage, die keine Quelle macht. `pm:generalizedFrom` nennt die Glieder, `pm:generalizedStatement` den Satz, der erst aus ihnen aufgeht (Abschnitt 16).
+- `pm:Converging` hält eine Entsprechung über Traditionen als Lesart des Bearbeiters. `pm:convergingConcept` nennt die Glieder, Übertragungsweg und unabhängige Bezeugung sagen, wie die Entsprechung zustande kam.
+
+Beide sind begrenzte Teilgraphen mit benannten Gliedern, deren Bedeutung keines der Glieder trägt, und beide tragen ihre eigene Herkunft: eine Ableitung oder eine Lesart, nie eine Quelle. Darin liegt der Gedanke, und darin wird er bestreitbar: wer den Schritt bezweifelt, geht zu den Gliedern zurück. Parameter 5 ist die Voraussetzung dafür, weil erst eine Behauptung als Knoten ein Glied sein kann.
+
+**Gestrichen ist die erste Umsetzung.** `pm:MeaningCluster` und `pm:hasClusterMember` standen von Phase 0 an, sollten Cluster für eine Einbettung als Vektor halten, die es nicht gibt, und hatten bis zu ihrer Entfernung kein Mitglied (#436). Ihre Rückkehr an ein erstes Mitglied zu binden, war falsch: kein Arbeitsschritt erzeugte eines, und die Lesart lag damit still, während Verallgemeinerung und Konvergenz sie längst einlösten.
+
+**Offen ist der Fall innerhalb einer Tradition:** eine Reihe, die die Quelle selbst als Ganzes überliefert und deren Glieder ihren Sinn erst aus der Ordnung haben, etwa das Aeonensystem oder die Vertiefungsreihe. `pm:Systematizing` trägt ihn nicht, weil es eine Ordnung des Bearbeiters hält und keine, die die Quelle trägt (#913).
 
 ### Parameter 4: Inklusiv-/Exklusiv-Pronominalstruktur
 
