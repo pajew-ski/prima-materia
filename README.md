@@ -13,9 +13,10 @@ is the *undifferentiated primordial substance* on which the separate **Opus
 Purum** project operates.
 
 The ontology models **processes instead of substances** (gerund-form classes),
-embeds triples in `AwarenessContext` named graphs, and treats bounded
-subgraphs (`MeaningCluster`) as the fundamental units of meaning — following
-Bhartṛhari's Sphoṭa principle.
+holds every claim as a node with its provenance, places the state of
+awareness behind a claim on the awareness axes, and lets a meaning that no single
+claim carries arise from several read together, in generalizations and
+convergences — following Bhartṛhari's Sphoṭa principle.
 
 ## Website
 
