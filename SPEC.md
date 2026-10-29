@@ -20,7 +20,7 @@ Praktische Folge für die Priorisierung: der wertvollste Knoten ist nicht der, d
 
 Das Projekt ist Teil einer übergeordneten Architektur — es ist die Basis, aus der die Methoden des **Opus Purum** (separates Projekt) extrahiert werden. Die Richtung läuft vom Entwurf über die Zerlegung und das Grounding zu dem, was übrig bleibt, und erst von dort zur Methode. Der Graph ist deshalb nicht die *undifferenzierte Ursubstanz*, als die frühere Fassungen dieses Dokuments ihn beschrieben haben. Die Ursubstanz ist der ungeprüfte Entwurf; dies hier ist die Probe auf seinen Gehalt.
 
-Die ontologische Besonderheit: prima-materia folgt einem **bewusstsein-ersten** Designprinzip (Consciousness-First Ontology). Die Klassen modellieren Prozesse statt Substanzen, Behauptungen sind Knoten mit Herkunft, der Bewusstseinszustand hinter einer Angabe ist eine Verortung auf den Bewusstseinsachsen (Abschnitt 3, Parameter 2), und eine Bedeutung, die keine einzelne Behauptung trägt, entsteht aus mehreren zusammen, in Verallgemeinerung und Konvergenz (Sphoṭa-Prinzip, Abschnitt 3, Parameter 3).
+Die ontologische Besonderheit: prima-materia folgt einem **bewusstsein-ersten** Designprinzip (Consciousness-First Ontology). Die Klassen modellieren Prozesse statt Substanzen, Behauptungen sind Knoten mit Herkunft, der Bewusstseinszustand hinter einer Angabe ist eine Verortung auf den Bewusstseinsachsen (Abschnitt 3, Parameter 2), und eine Bedeutung, die keine einzelne Behauptung trägt, entsteht aus mehreren zusammen, in Verallgemeinerung, Konvergenz und überlieferter Reihe (Sphoṭa-Prinzip, Abschnitt 3, Parameter 3).
 
 ## 1. Repository-Struktur
 
@@ -232,16 +232,17 @@ Die vollständige named-graph-Implementierung aus Phase 2 ist **gestrichen** und
 
 Bhartṛhari: die Bedeutung liegt im ganzen Satz, nicht in den Lauten, die ihn tragen; die Laute machen sie nur offenbar. Übertragen auf den Graphen: nicht jede Bedeutung, die der Bestand trägt, steht in einer einzelnen Behauptung. Manche geht erst auf, wenn mehrere zusammen gelesen werden, und keine von ihnen sagt sie.
 
-**Umgesetzt ist das in zwei Klassen**, und sie sind die Umsetzung dieses Parameters:
+**Umgesetzt ist das in drei Klassen**, und sie sind die Umsetzung dieses Parameters:
 
 - `pm:Generalizing` bildet aus mindestens zwei bezeugten Behauptungen eine Aussage, die keine Quelle macht. `pm:generalizedFrom` nennt die Glieder, `pm:generalizedStatement` den Satz, der erst aus ihnen aufgeht (Abschnitt 16).
 - `pm:Converging` hält eine Entsprechung über Traditionen als Lesart des Bearbeiters. `pm:convergingConcept` nennt die Glieder, Übertragungsweg und unabhängige Bezeugung sagen, wie die Entsprechung zustande kam.
+- `pm:Sequencing` hält eine Reihe, die eine Quelle innerhalb einer Tradition selbst als Ganzes überliefert und deren Glieder ihren Sinn erst aus ihrer Stelle haben. Die Glieder stehen als `rdf:_1`, `rdf:_2` und weiter am Knoten, `pm:seriesStatement` sagt, was die Ordnung sagt und kein Glied allein (#913).
 
-Beide sind begrenzte Teilgraphen mit benannten Gliedern, deren Bedeutung keines der Glieder trägt, und beide tragen ihre eigene Herkunft: eine Ableitung oder eine Lesart, nie eine Quelle. Darin liegt der Gedanke, und darin wird er bestreitbar: wer den Schritt bezweifelt, geht zu den Gliedern zurück. Parameter 5 ist die Voraussetzung dafür, weil erst eine Behauptung als Knoten ein Glied sein kann.
+Alle drei sind begrenzte Teilgraphen mit benannten Gliedern, deren Bedeutung keines der Glieder trägt, und alle drei tragen ihre eigene Herkunft: die ersten beiden eine Ableitung oder eine Lesart, nie eine Quelle; die Reihe eine Quelle, nie `pm:compilerInference`, weil eine Ordnung des Bearbeiters `pm:Systematizing` ist. Darin liegt der Gedanke, und darin wird er bestreitbar: wer den Schritt bezweifelt, geht zu den Gliedern zurück. Parameter 5 ist die Voraussetzung dafür, weil erst eine Behauptung als Knoten ein Glied sein kann.
 
 **Gestrichen ist die erste Umsetzung.** `pm:MeaningCluster` und `pm:hasClusterMember` standen von Phase 0 an, sollten Cluster für eine Einbettung als Vektor halten, die es nicht gibt, und hatten bis zu ihrer Entfernung kein Mitglied (#436). Ihre Rückkehr an ein erstes Mitglied zu binden, war falsch: kein Arbeitsschritt erzeugte eines, und die Lesart lag damit still, während Verallgemeinerung und Konvergenz sie längst einlösten.
 
-**Offen ist der Fall innerhalb einer Tradition:** eine Reihe, die die Quelle selbst als Ganzes überliefert und deren Glieder ihren Sinn erst aus der Ordnung haben, etwa das Aeonensystem oder die Vertiefungsreihe. `pm:Systematizing` trägt ihn nicht, weil es eine Ordnung des Bearbeiters hält und keine, die die Quelle trägt (#913).
+**Die Reihe ist kein Paar von Voraussetzungen.** `pm:Presupposing` sagt von zwei Schritten, dass einer ohne den anderen nicht erreicht wird; eine Reihe kann streng geordnet sein, ohne dass ein Glied für unerreichbar erklärt wird, und ihr Sinn ist die ganze Ordnung. Drei Glieder sind die Untergrenze, weil zwei in Folge eine Voraussetzung sind oder nichts. Das erste Mitglied ist die Vertiefungsreihe nach dem Visuddhimagga (`pmc:JhanaSeries`). Die Rückkehr hängt diesmal nicht an einem ersten Mitglied, sondern an einem Arbeitsschritt: die Ernte schuldet die Reihe mit den Voraussetzungsketten (Abschnitt 15), und `queries/series-candidates.rq` fragt nach Ketten aus Voraussetzungsknoten, die noch keine Reihe als Glieder führt.
 
 ### Parameter 4: Inklusiv-/Exklusiv-Pronominalstruktur
 
@@ -262,6 +263,7 @@ Der Graph hält Behauptungen mit Herkunft. Eine Behauptung, die ihre Quelle, ihr
 | `pm:Attributing` | „X lehrte Y" | `pm:ascribedCapacity`, `pm:attestedBy` (nie `pm:compilerInference`) |
 | `pm:Yielding` | „Praxis P bringt Vermögen C hervor" | `pm:byPractice`, `pm:yieldsCapacity`, `pm:attestedBy` |
 | `pm:Presupposing` | „B ist ohne A nicht zu erreichen" | `pm:dependentStep`, `pm:priorStep`, `pm:prerequisiteStrength`, `pm:attestedBy` |
+| `pm:Sequencing` | „A, B, C bilden eine Reihe, und jedes hat seinen Sinn aus seiner Stelle" | `rdf:_1` bis mindestens `rdf:_3`, `pm:seriesStatement`, `pm:attestedBy` (nie `pm:compilerInference`), genau eine `pm:withinTradition` |
 | `pm:Cautioning` | „Hütet euch vor C" | `pm:cautionsAbout` |
 | `pm:Systematizing` | eine nachträglich hergestellte Ordnung | `pm:compiledBy`, `dcterms:date` |
 | `pm:Disputing` | zwei Seiten streiten über eine Behauptung | `pm:disputedClaim`, **mindestens zwei** Quellen, `pm:attestedBy` |
@@ -810,7 +812,7 @@ Ein Werk, das für eine Behauptung geöffnet wurde, wird nicht für diese eine B
   **Ein Rezept ist ein Vermögen, auch wenn es nichts weiter trägt.** Ein Handbuch, das fünfzig Vorschriften mit Zutatenliste und einem Wirkungssatz führt — bringe diese Frau zu diesem Mann, blende diesen Menschen, heile diesen Biss —, behauptet fünfzig Vermögen, und die strenge Vollständigkeit gilt für sie. Dass ein solches Rezept keine Voraussetzungskette, keine Kautel und keine Misslingensbedingung trägt, ist **kein** Grund, es wegzulassen: es ist der Befund über das Rezept, und er ist nur zählbar, wenn das Rezept dasteht. Am 2026-09-18 wurden aus diesem Grund die Erotika, Gifte und Heilrezepte eines geöffneten Handbuchs zu einem einzigen Listenknoten zusammengezogen; das war Ökonomie in der Gestalt einer Regel, und diese Fassung nimmt sie zurück. Was ein solcher Knoten spart, ist der Aufwand des Eintragens; was er kostet, ist die Möglichkeit, je zu zählen, wie viele Behauptungen eines Korpus prüfbar sind und wie viele nicht.
 
   Der Aufwand ist dabei kleiner, als er aussieht, seit Abschnitt 3 Parameter 1 die Zutaten als Bezeichner führt: was fünfzig Rezepte gemeinsam haben, steht fünfzigmal als `pm:uses` auf denselben Knoten und nicht fünfzigmal als Prosa.
-- **Voraussetzungsketten** — was vor etwas anderem da sein muss, damit es überhaupt eintreten kann. Sie sind der Teil, den Zusammenfassungen zuerst verlieren, und der Teil, an dem eine Praxis scheitert.
+- **Voraussetzungsketten** — was vor etwas anderem da sein muss, damit es überhaupt eintreten kann. Sie sind der Teil, den Zusammenfassungen zuerst verlieren, und der Teil, an dem eine Praxis scheitert. Überliefert die Quelle eine Kette als ein Ganzes, dessen Glieder ihren Sinn aus der Stelle haben, wird sie zusätzlich ein `pm:Sequencing` (Abschnitt 3, Parameter 3).
 - **Warnungen und Kautelen** — besonders die, die ihre eigene Verkennung mitnennen, und die Selbstwarnungen eines Textes gegen das, was er vorschreibt.
 - **Misslingensbedingungen** — was der Text als Anzeichen dafür nennt, dass es *nicht* gewirkt hat, und woran das liegt: eine Frist, nach der nichts mehr kommt, ein Fehlschlag beim dritten Versuch, eine unvollständige Reinigung. Nur daraus wird ein `pm:falsifiedBy`, weil nur das einen Ausgang ausschließt.
 - **Gelingenszeichen** — was der Text als Anzeichen des Gelingens nennt: ein Licht, eine Wärme, eine Erscheinung. Ebenfalls geschuldet, aber **getrennt zu führen und getrennt zu zählen.** Ein Gelingenszeichen wird dem Übenden vorher angesagt, also berichtet er es, und die Basisrate ist unbekannt, weil niemand dasselbe Zeichen ohne die Ansage misst. Als Prüfmaterial gelesen erzeugt es lauter Bestätigungen — genau die Lage, die `pm:claimDoesNotDiscriminate` nachträglich meldet und die hier billiger zu verhindern ist.
