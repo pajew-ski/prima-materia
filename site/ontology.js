@@ -40,8 +40,8 @@ function graphStyle() {
       selector: "node",
       style: {
         shape: (n) => KINDS[n.data("kind")].shape,
-        width: 21,
-        height: 21,
+        width: 16,
+        height: 16,
         "background-color": bg,
         "border-width": 1,
         "border-color": muted,
@@ -50,7 +50,7 @@ function graphStyle() {
         "font-size": 10,
         color: muted,
         "text-valign": "bottom",
-        "text-margin-y": 5,
+        "text-margin-y": 4,
         "text-wrap": "wrap",
         "text-max-width": 68,
         // Some arrangements pack three hundred terms tightly enough that every
@@ -62,7 +62,7 @@ function graphStyle() {
     },
     {
       selector: 'node[kind = "root"]',
-      style: { width: 34, height: 34, "background-color": text, "border-color": text },
+      style: { width: 32, height: 32, "background-color": text, "border-color": text },
     },
     // Landmarks: the terms that name a region of the drawing — a sector in the
     // tradition view, a block in the claim-form view. Their labels are set
@@ -97,7 +97,7 @@ function graphStyle() {
         "border-width": 2,
         color: text,
         "background-color": bg,
-        "font-size": 13,
+        "font-size": 14,
         "text-max-width": 110,
       },
     },
@@ -209,7 +209,7 @@ const cy =
         layout: {
           name: "preset",
           positions: positionsFor(DEFAULT_VIEW, data, graphContext),
-          padding: 34,
+          padding: 32,
           fit: true,
         },
         // The floor must sit below the fit zoom of the smallest phones (~0.11 on
@@ -308,9 +308,9 @@ function setView(id, { rememberUrl = true } = {}) {
     // The force layout is seeded from the ring positions rather than started at
     // random, so the same corpus settles the same way twice and a cluster a
     // reader noticed once can be found again.
-    cy.layout({ name: "preset", positions, padding: 34, fit: !view.layout, animate: false }).run();
-    if (view.layout) cy.layout({ ...view.layout, padding: 34, fit: true }).run();
-    else cy.fit(undefined, 34);
+    cy.layout({ name: "preset", positions, padding: 32, fit: !view.layout, animate: false }).run();
+    if (view.layout) cy.layout({ ...view.layout, padding: 32, fit: true }).run();
+    else cy.fit(undefined, 32);
   }
   if (rememberUrl) syncUrl();
 }
@@ -677,7 +677,7 @@ function select(id, { keepFocus = false } = {}) {
   const node = cy.$id(id);
   if (node.empty()) return;
   node.select();
-  cy.animate({ center: { eles: node } }, { duration: 233 });
+  cy.animate({ center: { eles: node } }, { duration: 256 });
   if (keepFocus) input.focus();
 }
 
@@ -721,7 +721,7 @@ new ResizeObserver(() => {
   resizeTimer = setTimeout(() => {
     if (!cy || canvas.hidden) return;
     cy.resize();
-    cy.fit(undefined, 34);
+    cy.fit(undefined, 32);
   }, 120);
 }).observe(canvas);
 

@@ -11,7 +11,7 @@
 // coordinates. Cytoscape fits them to the canvas, so the numbers only have to
 // be right relative to each other, and nothing in this file touches the DOM.
 
-// Model-space spacing. A node is 21 units across and its label wraps at 68, so
+// Model-space spacing. A node is 16 units across and its label wraps at 68, so
 // anything under about forty units of separation puts two labels on top of
 // each other at fitted zoom.
 const ITEM_GAP = 46;
