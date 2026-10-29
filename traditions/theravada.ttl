@@ -249,6 +249,73 @@ pmc:FourAbsorptions a pm:Conceptualizing ;
     pm:withinTradition pmt:Theravada ;
     dcterms:source "Dīgha Nikāya 2, Sāmaññaphala Sutta (trans. Ṭhānissaro Bhikkhu)", "Buddhaghosa, Visuddhimagga IV (trans. Ñāṇamoli 1956)" .
 
+#
+# The series of absorptions
+#
+# Read on 2026-10-29 at Visuddhimagga IV.79-197 in the edition named in the
+# sources. The handbook defines each absorption by the factors it abandons and
+# the factors it possesses, and every count after the first is a count against
+# the one before. No member says what the order says; that is the case SPEC §3,
+# Parameter 3 calls Sphoṭa within a tradition (#913).
+#
+
+pmc:FirstJhana a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The first absorption"@en, "Die erste Vertiefung"@de ;
+    skos:definition "The absorption accompanied by applied and sustained thought, with happiness and bliss born of seclusion. The handbook says it abandons five factors, the five hindrances, and possesses five."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.79 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)", "Buddhaghosa, Visuddhimagga IV.104 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)" .
+
+pmc:SecondJhana a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The second absorption"@en, "Die zweite Vertiefung"@de ;
+    skos:definition "The absorption entered with the stilling of applied and sustained thought, with internal confidence and singleness of mind, and happiness and bliss born of concentration. The handbook says it abandons two factors, applied and sustained thought, and possesses three: happiness, bliss and unification of mind."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.139 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)", "Buddhaghosa, Visuddhimagga IV.149-150 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)" .
+
+pmc:ThirdJhana a pm:Conceptualizing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The third absorption"@en, "Die dritte Vertiefung"@de ;
+    skos:definition "The absorption entered with the fading away of happiness, dwelling in equanimity, mindful and fully aware, feeling bliss with the body. The handbook says it abandons one factor, happiness, and possesses two: bliss and unification of mind."@en ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.153 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)", "Buddhaghosa, Visuddhimagga IV.178-179 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)" .
+
+pmc:JhanaSeries a pm:Sequencing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The absorptions as one series"@en, "Die Vertiefungen als eine Reihe"@de ;
+    rdf:_1 pmc:FirstJhana ;
+    rdf:_2 pmc:SecondJhana ;
+    rdf:_3 pmc:ThirdJhana ;
+    rdf:_4 pmc:FourthJhana ;
+    pm:seriesStatement "Each absorption is what remains when one more factor of the one before it has been let go: the first abandons the five hindrances, the second applied and sustained thought, the third happiness, the fourth joy. The handbook gives every stage after the first as a count of what it abandons and what it still possesses, so that a stage named alone says less than its place says." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    skos:note "The handbook marks this as the fourfold reckoning (IV.197) and gives a fivefold one beside it, in which the stilling of applied and of sustained thought are two steps. The order is the same in both; the count of places differs, and this node holds the fourfold one."@en ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.79 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)", "Buddhaghosa, Visuddhimagga IV.139 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)", "Buddhaghosa, Visuddhimagga IV.153 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)", "Buddhaghosa, Visuddhimagga IV.183 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)", "Buddhaghosa, Visuddhimagga IV.197 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)" .
+
+pmc:SecondJhanaPresupposesMasteryOfFirst a pm:Presupposing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "The second absorption presupposes mastery of the first"@en, "Die zweite Vertiefung setzt die Beherrschung der ersten voraus"@de ;
+    pm:dependentStep pmc:SecondJhana ;
+    pm:priorStep pmc:FirstJhana ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "One who reaches for the higher absorption before the first has become familiar falls away from the first and fails to reach the second; the handbook quotes the simile of the mountain cow that lifts her hind foot before placing her forefoot and ends between the two, and concludes that mastery in five ways must be acquired with respect to the first absorption first of all." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.129-131 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)" .
+
+pmc:JhanaPresupposesAbandoningTheHindrancesInTheHandbook a pm:Presupposing ;
+    pm:fromWork pmw:Visuddhimagga ;
+    rdfs:label "Absorption presupposes the abandoning of the hindrances, in the handbook"@en, "Die Vertiefung setzt das Aufgeben der Hemmnisse voraus, im Handbuch"@de ;
+    pm:dependentStep pmc:FirstJhana ;
+    pm:priorStep pmc:FiveHindrances ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "No absorption arises until the five hindrances have been abandoned; the handbook calls them for that reason the factors of abandoning." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Theravada ;
+    skos:note "Stronger than pmc:JhanaPresupposesAbandoningTheHindrances, which records the discourse; the discourse sets the order without the consequence, the handbook states it."@en ;
+    dcterms:source "Buddhaghosa, Visuddhimagga IV.104 (trans. Ñāṇamoli, 4th ed., BPS Kandy 2010)" .
+
 pmc:JhanaPresupposesAbandoningTheHindrances a pm:Presupposing ;
     pm:fromWork pmw:DighaNikaya ;
     rdfs:label "Absorption presupposes the abandoning of the hindrances"@en, "Die Vertiefung setzt das Aufgeben der Hemmnisse voraus"@de ;
