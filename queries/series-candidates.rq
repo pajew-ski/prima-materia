@@ -1,0 +1,29 @@
+# SPEC §3, Parameter 3; #913.
+# Kandidaten für eine Reihe, die die Quelle selbst überliefert: drei Schritte einer
+# Tradition, die zwei Voraussetzungsknoten zu einer Kette verbinden (A vor B, B vor C),
+# und die noch kein pm:Sequencing gemeinsam als Glieder führt.
+#
+# Ein Treffer ist eine Frage an die Quelle, kein Befund: überliefert sie die Kette
+# als ein geordnetes Ganzes, dessen Glieder ihren Sinn aus der Stelle haben, wird sie
+# ein pm:Sequencing; ordnet sie nur paarweise, bleibt es bei den Voraussetzungsknoten.
+
+PREFIX pm: <https://pajew.ski/prima-materia/ontology#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?tradition ?first ?middle ?last
+WHERE {
+  ?p1 a pm:Presupposing ;
+      pm:priorStep ?first ;
+      pm:dependentStep ?middle ;
+      pm:withinTradition ?tradition .
+  ?p2 a pm:Presupposing ;
+      pm:priorStep ?middle ;
+      pm:dependentStep ?last ;
+      pm:withinTradition ?tradition .
+  FILTER(?first != ?middle && ?middle != ?last && ?first != ?last)
+  FILTER NOT EXISTS {
+    ?series a pm:Sequencing ; ?m1 ?first ; ?m2 ?middle ; ?m3 ?last .
+    FILTER(STRSTARTS(STR(?m1), STR(rdf:_)) && STRSTARTS(STR(?m2), STR(rdf:_)) && STRSTARTS(STR(?m3), STR(rdf:_)))
+  }
+}
+ORDER BY ?tradition ?first ?middle ?last
