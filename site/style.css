@@ -1,8 +1,11 @@
-/* Design tokens.
-   Color is strictly achromatic: oklch with chroma 0 cannot tint, light and
-   dark share one scale. Geometry derives from φ: the spacing ladder is the
-   Fibonacci sequence, the type scale is powers of φ, layout splits at φ:1. */
-
+/* albedo: Anfang */
+/* Design tokens (albedo). Color is strictly achromatic: oklch with chroma 0
+   cannot tint, light and dark share one scale and flip with
+   prefers-color-scheme. Geometry derives from 2: spacing steps are powers of
+   two, type sizes are 2^(k/2) rem, line height is √2, the same growth as the
+   Krystal Flower. Hue exists only as a data channel:
+   oklch(var(--hue-l) var(--hue-c) H), lightness and chroma fixed per scheme,
+   the angle free. */
 :root {
   color-scheme: light dark;
   --bg: oklch(98% 0 0);
@@ -10,28 +13,30 @@
   --border: oklch(85% 0 0);
   --text: oklch(15% 0 0);
   --text-muted: oklch(40% 0 0);
+  --hue-l: 45%;
+  --hue-c: 0.11;
 
-  --space-1: 5px;
-  --space-2: 8px;
-  --space-3: 13px;
-  --space-4: 21px;
-  --space-5: 34px;
-  --space-6: 55px;
-  --space-7: 89px;
-  --space-8: 144px;
-  --radius-sm: var(--space-1);
-  --radius-md: var(--space-2);
-  --radius-lg: var(--space-3);
+  --step-2: 4px;
+  --step-3: 8px;
+  --step-4: 16px;
+  --step-5: 32px;
+  --step-6: 64px;
+  --step-7: 128px;
+  --radius-sm: var(--step-2);
+  --radius-md: var(--step-3);
+  --radius-lg: var(--step-4);
 
-  --text-sm: 0.875rem;     /* 14px, captions; deliberately not 1/φ, legibility floor */
-  --text-base: 1rem;       /* browser default, respects user zoom */
-  --text-lg: 1.618rem;     /* φ¹ */
-  --text-xl: 2.618rem;     /* φ² */
-  --text-2xl: 4.236rem;    /* φ³ */
+  --type-sm: 0.875rem;     /* 14px, captions; 1 - 2^-3, legibility floor */
+  --type-0: 1rem;          /* browser default, respects user zoom */
+  --type-1: 1.414rem;      /* 2^(1/2) */
+  --type-2: 2rem;          /* 2^1 */
+  --type-3: 2.828rem;      /* 2^(3/2) */
+  --type-4: 4rem;          /* 2^2 */
+  --leading: 1.414;        /* √2 */
 
   font-family: system-ui, sans-serif;
-  font-size: var(--text-base);
-  line-height: 1.618;
+  font-size: var(--type-0);
+  line-height: var(--leading);
   background: var(--bg);
   color: var(--text);
 }
@@ -39,21 +44,23 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: oklch(15% 0 0);
-    --surface: oklch(20% 0 0);
-    --border: oklch(30% 0 0);
+    --surface: oklch(23% 0 0);
+    --border: oklch(32% 0 0);
     --text: oklch(95% 0 0);
     --text-muted: oklch(70% 0 0);
+    --hue-l: 75%;
   }
 }
+/* albedo: Ende */
 
 body {
   margin: 0;
 }
 
 .shell {
-  max-width: 987px;
+  max-width: 1024px;
   margin: 0 auto;
-  padding: 0 var(--space-4);
+  padding: 0 var(--step-4);
 }
 
 a {
@@ -74,47 +81,47 @@ code {
 /* Hero */
 
 .hero {
-  padding-block: var(--space-8) var(--space-6);
+  padding-block: var(--step-7) var(--step-6);
 }
 
 .hero h1 {
   margin: 0;
-  font-size: clamp(var(--text-xl), 9vw, var(--text-2xl));
+  font-size: clamp(var(--type-3), 9vw, var(--type-4));
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1;
 }
 
 .hero p {
-  margin: var(--space-4) 0 0;
-  max-width: 34rem;
+  margin: var(--step-4) 0 0;
+  max-width: 32rem;
   color: var(--text-muted);
 }
 
 /* Sections */
 
 main section {
-  margin: 0 0 var(--space-7);
+  margin: 0 0 var(--step-6);
 }
 
 main h2 {
-  margin: 0 0 var(--space-4);
-  font-size: var(--text-lg);
+  margin: 0 0 var(--step-4);
+  font-size: var(--type-1);
   font-weight: 600;
   line-height: 1.2;
 }
 
 main section > p {
-  margin: 0 0 var(--space-3);
-  max-width: 42rem;
+  margin: 0 0 var(--step-4);
+  max-width: 32rem;
 }
 
 .caption {
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
-/* Graph: canvas and detail panel split at φ:1. The canvas fills a share of the
+/* Graph: canvas and detail panel split at √2:1, the half step of base 2. The canvas fills a share of the
    viewport height so the graph scales up on large screens instead of sitting in
    a fixed strip; the panel matches that height and scrolls its own overflow.
    Portrait stacks them (see the orientation query below). */
@@ -126,15 +133,15 @@ main section > p {
      wrapper size would feed back into the track, locking the canvas at the
      old width (misaligned with the panel, or wider than the viewport). */
   display: grid;
-  grid-template-columns: minmax(0, 1.618fr) minmax(0, 1fr);
-  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1.414fr) minmax(0, 1fr);
+  gap: var(--step-4);
   align-items: stretch;
 }
 
 /* The stage carries the height; the canvas and the matrix each fill it, so
    switching between a drawing and a table never resizes the page around it. */
 .stage {
-  height: clamp(340px, 62vh, 700px);
+  height: clamp(340px, 71vh, 700px);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -151,88 +158,88 @@ main section > p {
 /* What the stage says when the drawing could not be loaded. */
 .stage-note {
   margin: 0;
-  padding: var(--space-4);
+  padding: var(--step-4);
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 .panel {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  min-height: var(--space-8);
-  max-height: clamp(340px, 62vh, 700px);
+  padding: var(--step-4);
+  min-height: var(--step-7);
+  max-height: clamp(340px, 71vh, 700px);
   overflow-y: auto;
 }
 
 .panel-type {
   margin: 0;
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .panel h3 {
-  margin: var(--space-1) 0 var(--space-2);
-  font-size: var(--text-base);
+  margin: var(--step-2) 0 var(--step-3);
+  font-size: var(--type-0);
   font-weight: 600;
   word-break: break-word;
 }
 
 .panel h4 {
-  margin: var(--space-3) 0 var(--space-2);
+  margin: var(--step-4) 0 var(--step-3);
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   font-weight: 400;
 }
 
 .panel p {
-  margin: 0 0 var(--space-2);
-  font-size: var(--text-sm);
+  margin: 0 0 var(--step-3);
+  font-size: var(--type-sm);
 }
 
 .panel ul {
   margin: 0;
-  padding-left: var(--space-4);
+  padding-left: var(--step-4);
 }
 
 .panel li {
-  margin-bottom: var(--space-1);
-  font-size: var(--text-sm);
+  margin-bottom: var(--step-2);
+  font-size: var(--type-sm);
 }
 
 .panel-empty {
   margin: 0;
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 /* What the graph states about a term beyond defining it, each value under the
    name of the property stating it. The property name is set like the panel's
    own headings so the value reads as the content it is. */
 .statements {
-  margin: var(--space-3) 0 0;
+  margin: var(--step-4) 0 0;
 }
 
 .statements dt {
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   cursor: help;
 }
 
 .statements dd {
-  margin: 0 0 var(--space-2);
-  font-size: var(--text-sm);
+  margin: 0 0 var(--step-3);
+  font-size: var(--type-sm);
 }
 
 /* The CURIE is the term's real name; the label is the reading of it. Setting
    the identifier in monospace keeps the two apart at a glance. */
 .panel-id {
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--step-4);
   color: var(--text-muted);
   font-family: ui-monospace, monospace;
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   word-break: break-all;
 }
 
@@ -248,17 +255,17 @@ main section > p {
 .edge-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
+  gap: var(--step-3);
 }
 
 .edge-chip {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: none;
-  padding: var(--space-1) var(--space-2);
+  padding: var(--step-2) var(--step-3);
   color: var(--text);
   font: inherit;
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   cursor: pointer;
 }
 
@@ -274,10 +281,10 @@ main section > p {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-2) var(--space-4);
-  margin-top: var(--space-3);
+  gap: var(--step-3) var(--step-4);
+  margin-top: var(--step-4);
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 /* display:flex on the class would otherwise beat the user agent's rule for the
@@ -289,7 +296,7 @@ main section > p {
 .legend span {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--step-3);
 }
 
 .legend svg {
@@ -300,17 +307,17 @@ main section > p {
    below it, so the descriptions line up without a table. */
 
 .artefacts {
-  margin: 0 0 var(--space-3);
+  margin: 0 0 var(--step-4);
   padding: 0;
   list-style: none;
-  max-width: 42rem;
+  max-width: 32rem;
 }
 
 .artefacts li {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-1) var(--space-3);
-  padding: var(--space-2) 0;
+  gap: var(--step-2) var(--step-4);
+  padding: var(--step-3) 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -320,13 +327,13 @@ main section > p {
 
 .artefacts a {
   font-family: ui-monospace, monospace;
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   min-width: 21ch;
 }
 
 .artefacts span {
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 /* Toolbar: one line to ask a question, one line to choose the arrangement. */
@@ -334,19 +341,19 @@ main section > p {
 .toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
+  gap: var(--step-3) var(--step-4);
   align-items: center;
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--step-3);
 }
 
 .search {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--step-3);
   flex: 1 1 21rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 0 var(--space-2);
+  padding: 0 var(--step-3);
   background: var(--bg);
 }
 
@@ -359,10 +366,10 @@ main section > p {
   min-width: 0;
   border: 0;
   background: none;
-  padding: var(--space-2) 0;
+  padding: var(--step-3) 0;
   color: var(--text);
   font: inherit;
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 #query:focus {
@@ -377,14 +384,14 @@ main section > p {
 
 .search-status {
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   white-space: nowrap;
 }
 
 .search-clear {
   border: 0;
   background: none;
-  padding: 0 var(--space-1);
+  padding: 0 var(--step-2);
   color: var(--text-muted);
   font: inherit;
   line-height: 1;
@@ -394,17 +401,17 @@ main section > p {
 .views {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-1);
+  gap: var(--step-2);
 }
 
 .view-button {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: none;
-  padding: var(--space-1) var(--space-2);
+  padding: var(--step-2) var(--step-3);
   color: var(--text-muted);
   font: inherit;
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   cursor: pointer;
 }
 
@@ -422,10 +429,10 @@ main section > p {
 /* The question each arrangement answers. It changes with the view, because the
    view is a question and not a decoration. */
 .view-note {
-  margin: 0 0 var(--space-3);
-  max-width: 42rem;
+  margin: 0 0 var(--step-4);
+  max-width: 32rem;
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 /* Results */
@@ -433,8 +440,8 @@ main section > p {
 .results {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-  margin-top: var(--space-2);
+  gap: var(--step-2);
+  margin-top: var(--step-3);
 }
 
 .result {
@@ -442,7 +449,7 @@ main section > p {
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   background: none;
-  padding: var(--space-2);
+  padding: var(--step-3);
   color: inherit;
   font: inherit;
   text-align: left;
@@ -459,17 +466,17 @@ main section > p {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: var(--space-1) var(--space-2);
+  gap: var(--step-2) var(--step-3);
 }
 
 .result-label {
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   font-weight: 600;
 }
 
 .result-kind {
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.7rem;
@@ -484,9 +491,9 @@ main section > p {
 }
 
 .result-snippet {
-  margin: var(--space-1) 0 0;
+  margin: var(--step-2) 0 0;
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 .result-snippet mark {
@@ -497,7 +504,7 @@ main section > p {
 
 /* How the result was reached, in the same words the engine used to reach it. */
 .result-why {
-  margin: var(--space-1) 0 0;
+  margin: var(--step-2) 0 0;
   color: var(--text-muted);
   font-size: 0.75rem;
   font-style: italic;
@@ -507,8 +514,8 @@ main section > p {
    one result to the next, not the number itself. */
 .result-score {
   position: absolute;
-  left: var(--space-2);
-  right: var(--space-2);
+  left: var(--step-3);
+  right: var(--step-3);
   bottom: 0;
   height: 1px;
   background: linear-gradient(
@@ -521,10 +528,10 @@ main section > p {
 .panel-back {
   border: 0;
   background: none;
-  padding: 0 0 var(--space-2);
+  padding: 0 0 var(--step-3);
   color: var(--text-muted);
   font: inherit;
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   cursor: pointer;
 }
 
@@ -537,22 +544,22 @@ main section > p {
 .hints {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
-  margin-top: var(--space-3);
+  gap: var(--step-2);
+  margin-top: var(--step-4);
 }
 
 .hint {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: var(--space-1) var(--space-2);
+  gap: var(--step-2) var(--step-3);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: none;
-  padding: var(--space-1) var(--space-2);
+  padding: var(--step-2) var(--step-3);
   color: var(--text-muted);
   font: inherit;
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   text-align: left;
   cursor: pointer;
 }
@@ -574,21 +581,21 @@ main section > p {
 .matrix-box {
   height: 100%;
   overflow: auto;
-  padding: var(--space-3);
+  padding: var(--step-4);
 }
 
 .matrix {
   border-collapse: separate;
   border-spacing: 2px;
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 .matrix caption {
   caption-side: top;
-  max-width: 42rem;
-  padding-bottom: var(--space-3);
+  max-width: 32rem;
+  padding-bottom: var(--step-4);
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
   text-align: left;
 }
 
@@ -602,27 +609,27 @@ main section > p {
      times the width of the page. */
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  padding: var(--space-1) 0;
+  padding: var(--step-2) 0;
   vertical-align: bottom;
   white-space: nowrap;
 }
 
 .matrix tbody th {
   position: relative;
-  padding-right: var(--space-2);
+  padding-right: var(--step-3);
   white-space: nowrap;
 }
 
 .matrix-count {
   color: var(--text-muted);
   font-size: 0.7rem;
-  margin-block-start: var(--space-1);
+  margin-block-start: var(--step-2);
 }
 
 .matrix-cell {
   position: relative;
-  width: var(--space-5);
-  height: var(--space-4);
+  width: var(--step-5);
+  height: var(--step-4);
   border-radius: 2px;
   text-align: center;
   font-variant-numeric: tabular-nums;
@@ -637,7 +644,7 @@ main section > p {
 
 .matrix-total {
   color: var(--text-muted);
-  padding-left: var(--space-2);
+  padding-left: var(--step-3);
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -677,14 +684,14 @@ main section > p {
 
 footer {
   border-top: 1px solid var(--border);
-  padding: var(--space-5) 0 var(--space-6);
+  padding: var(--step-5) 0 var(--step-6);
   color: var(--text-muted);
-  font-size: var(--text-sm);
+  font-size: var(--type-sm);
 }
 
 @media (max-width: 800px) {
   .hero {
-    padding-block-start: var(--space-7);
+    padding-block-start: var(--step-6);
   }
 }
 
@@ -697,14 +704,14 @@ footer {
    aspect-ratio because WebKit mis-sizes an empty grid item that carries an
    aspect-ratio, collapsing the canvas to nothing on phones and tablets in
    portrait; a height derived from 100vw needs no interop luck. The cap is the
-   shell's max content width (987px − 2·21px padding), so the box stops growing
+   shell's max content width (1024px − 2·16px padding), so the box stops growing
    exactly when the column does. */
 @media (orientation: portrait), (max-width: 800px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
   }
   .stage {
-    height: min(calc(100vw - 2 * var(--space-4)), 945px);
+    height: min(calc(100vw - 2 * var(--step-4)), 992px);
   }
   .panel {
     max-height: none;
