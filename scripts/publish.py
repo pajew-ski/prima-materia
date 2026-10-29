@@ -247,6 +247,13 @@ def build_data(graph: Graph) -> dict:
         for source, target in graph.subject_objects(predicate):
             add(source, curie(predicate).split(":", 1)[-1], target)
 
+    # A series (pm:Sequencing) holds its members as rdf:_1, rdf:_2 …, which are
+    # not pm: properties; the edge is named by the place.
+    member = str(RDF) + "_"
+    for source, predicate, target in graph:
+        if str(predicate).startswith(member):
+            add(source, "seriesMember" + str(predicate)[len(member):], target)
+
     return {
         "meta": {
             "title": "prima-materia",

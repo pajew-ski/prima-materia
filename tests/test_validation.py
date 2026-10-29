@@ -604,6 +604,61 @@ def test_prescribed_order_may_omit_the_consequence() -> None:
     assert conforms, f"An order that states no consequence must conform.\n{report}"
 
 
+_SERIES = """
+    @prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+    @prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+    @prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+    @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix dcterms: <http://purl.org/dc/terms/> .
+
+    pmc:Series a pm:Sequencing ;
+        rdf:_1 pmc:First ;
+        rdf:_2 pmc:Second ;
+        rdf:_3 pmc:Third ;
+        pm:seriesStatement "Each stage lets go of something the one before it still holds." ;
+        pm:attestedBy pm:textualAttestation ;
+        pm:withinTradition pmt:Somewhere ;
+        dcterms:source "Some work, some passage" .
+"""
+
+
+def test_series_handed_down_by_its_source_is_accepted() -> None:
+    conforms, report = _validate(_SERIES)
+    assert conforms, f"A series with three members, a statement and a source must conform.\n{report}"
+
+
+def test_series_of_two_is_rejected() -> None:
+    # Two members in order are a prerequisite claim or nothing; the meaning a
+    # series carries is the whole order, which two places do not yet make.
+    conforms, report = _validate(_SERIES.replace("rdf:_3 pmc:Third ;", ""))
+    assert not conforms, "A series with two members must fail."
+    assert "at least three members" in report
+
+
+def test_series_without_statement_is_rejected() -> None:
+    offending = _SERIES.replace(
+        'pm:seriesStatement "Each stage lets go of something the one before it still holds." ;', ""
+    )
+    conforms, report = _validate(offending)
+    assert not conforms, "A series that does not say what its order means must fail."
+    assert "no member says alone" in report
+
+
+def test_series_made_by_the_compiler_is_rejected() -> None:
+    # The order is the source's; one the compiler made is a systematization.
+    offending = _SERIES.replace("pm:textualAttestation", "pm:compilerInference")
+    conforms, report = _validate(offending)
+    assert not conforms, "A series attested by compiler inference must fail."
+    assert "pm:Systematizing" in report
+
+
+def test_series_across_traditions_is_rejected() -> None:
+    offending = _SERIES.replace("pmt:Somewhere ;", "pmt:Somewhere, pmt:Elsewhere ;")
+    conforms, report = _validate(offending)
+    assert not conforms, "A series in two traditions must fail."
+    assert "exactly one tradition" in report
+
+
 def test_dispute_with_one_source_is_rejected() -> None:
     # A disagreement reported from one side only is a position. Admitting it
     # as a dispute would let the record settle the matter by which side it

@@ -159,6 +159,14 @@ def test_structural_edges_are_derived() -> None:
     assert ("pm:withinTradition", "range", "pm:Tradition") in edges
 
 
+def test_series_members_become_edges_named_by_their_place() -> None:
+    # rdf:_n is no pm: object property, and without this the series would
+    # stand on the site as a node with nothing attached to it.
+    edges = {(e["source"], e["rel"], e["target"]) for e in _data()["edges"]}
+    assert ("pmc:JhanaSeries", "seriesMember1", "pmc:FirstJhana") in edges
+    assert ("pmc:JhanaSeries", "seriesMember4", "pmc:FourthJhana") in edges
+
+
 def test_property_signature_keeps_targets_outside_the_graph() -> None:
     # xsd:date is vocabulary, not a node the graph draws; the panel still has
     # to be able to state the range of pm:protocolUpdated. The witness used to

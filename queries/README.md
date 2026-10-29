@@ -30,6 +30,7 @@ Gegen einen SPARQL-Endpunkt, der den Graphen geladen hat, unverändert.
 | `unopened-works.rq` | welche Werke im Korpus einer erschlossenen Überlieferung trägt noch keine eingetragene Stelle | §14 |
 | `work-migration-backlog.rq` | welche erschlossenen Überlieferungen führen ihren Korpus noch nicht als Werkbezeichner | §14 |
 | `mediated-attestations.rq` | welche Knoten tragen ihre Stelle aus zweiter Hand und warten auf das Exemplar | §10 |
+| `series-candidates.rq` | welche Ketten aus Voraussetzungsknoten einer Tradition führt noch keine Reihe (`pm:Sequencing`) als Glieder; am 2026-10-29 152 Tripel in 22 Traditionen, überlappend, weil eine lange Kette viele Tripel bildet | §3 Parameter 3 |
 
 ## Zwei Lesehilfen
 

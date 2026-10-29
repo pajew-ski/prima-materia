@@ -548,6 +548,29 @@ pm:generalizedFrom a owl:ObjectProperty ;
     skos:note "Two is a floor and not a target. How many attested claims a generalization rests on, and how far apart their traditions stand, are the numbers that make one worth examining before another — the same distinction pm:Converging draws between many witnesses on one cable and many on three."@en .
 
 #
+# A series the source itself hands down
+#
+# SPEC §3, Parameter 3 (Sphoṭa) within one tradition. pm:Generalizing and
+# pm:Converging hold a meaning that arises from several claims across sources
+# and traditions, and they carry a derivation or a reading. What they could not
+# hold is a series a source transmits as a whole, whose members have their sense
+# only from their place in it. pm:Systematizing could not hold it either: its
+# order is the compiler's, and this one is the source's (#913).
+#
+
+pm:Sequencing a owl:Class ;
+    rdfs:subClassOf pm:Process ;
+    rdfs:label "Sequencing"@en, "Reihen"@de ;
+    skos:definition "The claim, made within a tradition, that a series of steps, states or stations forms one ordered whole, and that each member has its sense from its place in it."@en ;
+    skos:note "The members are held as rdf:_1, rdf:_2 and so on, the container membership properties of RDF, on the node itself. The position is then the datum and not a copy of it: a second property naming the members beside an ordering literal would let the two drift apart, and a list built of blank nodes is used nowhere else in this record and would not survive the cut into parts."@en ;
+    skos:note "Distinct from pm:Presupposing, which says of two steps that one is not reached without the other. A series can be strictly ordered without any member being declared unreachable, and the meaning it carries is the whole order rather than any one pair of it. Distinct from pm:Systematizing in who made the order: a list a modern editor drew up is a systematization, however old its members."@en .
+
+pm:seriesStatement a owl:DatatypeProperty ;
+    rdfs:label "series statement"@en, "Aussage der Reihe"@de ;
+    rdfs:domain pm:Sequencing ;
+    skos:definition "What the order says that no member says alone: the principle by which the source steps from one member to the next."@en .
+
+#
 # The search that found nothing
 #
 # The record could say how far a corpus had been opened (pm:CoverageState) and
