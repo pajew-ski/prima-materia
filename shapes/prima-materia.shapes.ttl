@@ -711,6 +711,70 @@ pm:GeneralizationRestsOnAttestedNodesShape a sh:NodeShape ;
     ] .
 
 #
+# A series the source hands down (SPEC §3, Parameter 3; #913). Three members
+# at least, because two in order is a pm:Presupposing or nothing. The order is
+# the source's, so the node carries a source, one tradition and a mode of entry
+# that is not the compiler's; an order the compiler made is pm:Systematizing.
+# shortcut: only places 1 to 3 are checked; a gap further on (rdf:_5 without
+# rdf:_4) passes, upgrade to a SPARQL constraint once a series runs past four.
+#
+pm:SequencingShape a sh:NodeShape ;
+    sh:targetClass pm:Sequencing ;
+    sh:property [
+        sh:path rdf:_1 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "A series needs at least three members, held as rdf:_1, rdf:_2 and rdf:_3 onward, one node at each place."
+    ] ;
+    sh:property [
+        sh:path rdf:_2 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "A series needs at least three members, held as rdf:_1, rdf:_2 and rdf:_3 onward, one node at each place."
+    ] ;
+    sh:property [
+        sh:path rdf:_3 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "A series needs at least three members, held as rdf:_1, rdf:_2 and rdf:_3 onward, one node at each place."
+    ] ;
+    sh:property [
+        sh:path pm:seriesStatement ;
+        sh:minCount 1 ;
+        sh:message "Every series must state what its order says that no member says alone."
+    ] ;
+    sh:property [
+        sh:path pm:attestedBy ;
+        sh:minCount 1 ;
+        sh:message "Every series must declare how it entered the record."
+    ] ;
+    sh:property [
+        sh:path dcterms:source ;
+        sh:minCount 1 ;
+        sh:message "Every series requires at least one dcterms:source: the passage that hands the order down."
+    ] ;
+    sh:property [
+        sh:path pm:withinTradition ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A series belongs to exactly one tradition. A correspondence of series across traditions is a pm:Converging."
+    ] .
+
+pm:SequencingIsNotTheCompilersShape a sh:NodeShape ;
+    sh:targetClass pm:Sequencing ;
+    sh:not [
+        a sh:NodeShape ;
+        sh:property [
+            sh:path pm:attestedBy ;
+            sh:hasValue pm:compilerInference
+        ]
+    ] ;
+    sh:message "A series attested by pm:compilerInference is an order the compiler made. It belongs under pm:Systematizing, with his name and the date." .
+
+#
 # A naming carries the full burden of a claim, because it is one: a work says
 # that this being is called this and is of this kind. The two properties
 # beyond the usual four are what make the node comparable at all — a form
