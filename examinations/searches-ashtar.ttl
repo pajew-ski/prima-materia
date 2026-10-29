@@ -1,0 +1,68 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — five searches carried for the Ashtar transmission
+#
+# All five were carried on 2026-10-29: the first and the fifth over the
+# Internet Archive before a work was chosen, the other three in I Rode a
+# Flying Saucer! while it was open. The nodes they found stand in
+# traditions/ashtar.ttl.
+#
+
+pmp:AshtarTransmissionCorpusLandscapeSearch a pm:Searching ;
+    rdfs:label "Which works of the Ashtar corpus are reachable as full text"@en, "Welche Werke des Ashtar-Korpus als Volltext erreichbar sind"@de ;
+    pm:searchedCorpus "The Internet Archive, its advanced search and item metadata, for the works of George W. Van Tassel and the Ministry and College of Universal Wisdom, and for published collections of Ashtar messages" ;
+    pm:searchedFor "An open full text, not access-restricted, with a usable text layer, for each work the registration names, so that one could be read whole." ;
+    pm:searchTerms "creator:(tassel); title:(flying saucer) AND tassel; title:(\"council of seven lights\"); title:(\"council of the seven lights\"); \"ministry of universal wisdom\"; title:(proceedings) AND universal wisdom; title:(interplanetary) AND tassel; title:(van tassel) AND title:(giant rock); ashtar; title:(ashtar); title:(contactees). Found and measured by metadata and text layer: I Rode a Flying Saucer! under three identifiers (60609 to 66082 characters, ASCII letter share 1.0, none restricted); The Council of Seven Lights, 1958 (198052 characters, 1.0); When Stars Look Down, 1976, under two identifiers; Universal Wisdom: Identified and Acknowledged, a compilation of the Proceedings of the College of Universal Wisdom, partly hand-lettered; Mensagens Cósmicas Ashtar of Paulo Fernandes, Portuguese; Interplanetary News Digest vol. 1, nos. 1-2, not checked for authorship." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AshtarTransmissionAshtarReceiving ;
+    pm:searchedBy "prima-materia, 2026-10-29" ;
+    dcterms:date "2026-10-29" ;
+    skos:note "The corpus is reachable in its Van Tassel core: the first collection, the book of 1958 and a late compilation lie open with clean text layers. I Rode a Flying Saucer! was chosen as the first printed collection and the one in which Ashtar first speaks, and read whole. What each unopened work offers, and why it was not opened, stands at its work node."@en .
+
+pmp:AshtarTransmissionFailureSearch a pm:Searching ;
+    rdfs:label "Whether I Rode a Flying Saucer! states conditions under which its messages fail"@en, "Ob I Rode a Flying Saucer! Bedingungen nennt, unter denen seine Botschaften scheitern"@de ;
+    pm:searchedCorpus "George W. Van Tassel, I Rode a Flying Saucer! The Mystery of the Flying Saucers Revealed, second edition, revised and enlarged (Los Angeles: New Age Publishing Co., 1952), whole, in two printings" ;
+    pm:searchedFor "A passage that names an outcome by which a message, a practice or a forecast would be seen not to have worked: a forecast with a date or a term and an outcome in the public world, a null result, a fulfilment the work itself says did not come." ;
+    pm:searchTerms "The whole work read from the author's note to the conclusion. Counted in addition over the text layer of the New Age printing, publisher's advertisements excluded: every dated heading (52), shall (34) and will (54), read at each in the messages, watch and its forms (5), prepare and its forms (7), month and months (10), week and weeks (5), immediate and its forms (7), fail and its forms (5), not yet (1), verif (7), proof (3), coincidence (2); over the later printing, error and errors (2), both in the author's note, which the New Age printing does not carry." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AshtarTransmissionLeektowPrediction, pmc:AshtarTransmissionKerrullPrediction, pmc:AshtarTransmissionToltaPrediction, pmc:AshtarTransmissionAtomicWarfarePrediction, pmc:AshtarTransmissionThirtyDaysPrediction, pmc:AshtarTransmissionHydrogenProjectsPrediction, pmc:AshtarTransmissionTrappingAvailsNaught, pmc:AshtarTransmissionReceptionErrorsCaution ;
+    pm:searchedBy "prima-materia, 2026-10-29" ;
+    dcterms:date "2026-10-29" ;
+    skos:note "Twenty-six conditions of failure, twenty-five of them forecasts with a public outcome and one a null outcome for the authorities' attempts on the ships; the yielded nodes listed are a sample, all twenty-six stand in traditions/ashtar.ttl with the note that counts them. None is stated against a practice of the group: no message says how attunement, the ray or joining hands could be seen to have failed. One forecast the author himself reports as unfulfilled, Leektow's; the author's note of the later printing warns that events will show errors in the receptions, and the message of 14 November 1952 meets the announced hydrogen bomb by calling the report partly false."@en .
+
+pmp:AshtarTransmissionSuccessSignSearch a pm:Searching ;
+    rdfs:label "Whether I Rode a Flying Saucer! names signs by which the group knew a message or a ray had taken"@en, "Ob I Rode a Flying Saucer! Zeichen nennt, an denen die Gruppe erkannte, dass eine Botschaft oder ein Strahl gewirkt hatte"@de ;
+    pm:searchedCorpus "George W. Van Tassel, I Rode a Flying Saucer! The Mystery of the Flying Saucers Revealed, second edition, revised and enlarged (Los Angeles: New Age Publishing Co., 1952), whole, in two printings" ;
+    pm:searchedFor "A perceptible mark, announced or reported, that a ray, a beam or a forecast had taken effect: a sensation in the body, a light seen, an event in the world named as fulfilment." ;
+    pm:searchTerms "The whole work read. Counted over the text layer of the New Age printing: felt and feel with its forms (5), sensation (2), warm (1), light (52, read where bodily or seen), witnessed and seen (12), verif (7), proof (3), explains itself and self-explanatory (3)." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:AshtarTransmissionWarmFluidSign, pmc:AshtarTransmissionSubstanceFeelingSign, pmc:AshtarTransmissionStreaksSign, pmc:AshtarTransmissionLetterSign, pmc:AshtarTransmissionTehachapiSign, pmc:AshtarTransmissionDallasSign ;
+    pm:searchedBy "prima-materia, 2026-10-29" ;
+    dcterms:date "2026-10-29" ;
+    skos:note "Twelve signs: three in the group (warm fluid under a ray, the feeling of a beam when joining hands, two streaks going out at once) and nine fulfilments of forecasts, eight claimed by the author in his commentary and one by Ashtar; the yielded nodes listed are a sample. Seen and not counted: the author's remark after several messages that the message explains itself, which claims no outcome; and the promise that a sky-watcher who sees no saucer will find other things revealed, entered as a yielding because it names no mark."@en .
+
+pmp:AshtarTransmissionCounterSearch a pm:Searching ;
+    rdfs:label "Whether the reachable record contradicts the Van Tassel receptions"@en, "Ob die erreichbare Überlieferung den Empfängen Van Tassels widerspricht"@de ;
+    pm:searchedCorpus "I Rode a Flying Saucer!, second edition, 1952, whole, for its own admissions; The Law of One, Book I: The Ra Material (Louisville: L/L Research, 1984), session 14, as already entered at pmc:RaGeorgeVanTasselNaming; the Internet Archive for secondary literature on the contactees" ;
+    pm:searchedFor "A passage that tells against the claim that the messages came from beings of Schare: an admission of error in the work, another received corpus denying or qualifying the contact, a historical or critical study of Van Tassel." ;
+    pm:searchTerms "In the work: error and errors (2, later printing only), coloured (3), not yet (1), false (1), misinformation (1), coincidence (2). At the Internet Archive: title:(contactees); creator:(tassel); title:(van tassel) AND title:(giant rock). Found: Nick Redfern, Contactees: A History of Alien-Human Interaction (2010), under contacteeshistor0000redf, access-restricted in its metadata; no other study." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchedBy "prima-materia, 2026-10-29" ;
+    dcterms:date "2026-10-29" ;
+    skos:note "Opposing material found in two places, neither of them a study. In the work itself: the publisher's note that the messages take the colour of the receiver's speech, the author's note of the later printing conceding errors in the receptions, and the author's remark that Leektow's forecast has not come true. In another received corpus: the Ra material says the man it calls George, Van Tassel in the questioner's words, received from the Confederation and from Orion and lost the first through a change in his own mind, so that the Orion use of him discredited the source; that is testimony of a later corpus that knew this one, and it is not entered here as a dispute because it judges the receiver's later work and not a message of this book. The only critical study found is restricted at the archive; not tried: other libraries and the folklore and sociology literature on the contactee movement, which would enter at a protocol through pm:evidenceFrom."@en .
+
+pmp:AshtarTransmissionLaterCollectionsSearch a pm:Searching ;
+    rdfs:label "Whether later published Ashtar message collections are reachable"@en, "Ob spätere veröffentlichte Sammlungen von Ashtar-Botschaften erreichbar sind"@de ;
+    pm:searchedCorpus "The Internet Archive, advanced search and item metadata, for Ashtar message collections outside Van Tassel" ;
+    pm:searchedFor "An open full text of a published Ashtar collection by another receiver, above all Tuella's Project: World Evacuation, to set a second receiver beside the first." ;
+    pm:searchTerms "tuella; title:(\"project world evacuation\"); ashtar; title:(ashtar); ashtar sheran (as returned by the general search). Found: Paulo Fernandes, Mensagens Cósmicas Ashtar, open, Portuguese; for Tuella nothing, the search returning only unrelated items." ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-10-29" ;
+    dcterms:date "2026-10-29" ;
+    skos:note "A finding about one archive and one name, not about the works: Tuella's collections were not found there under the title or the pen name, and other digitisation projects were not tried. Fernandes's collection of the Brazilian line is reachable and stands at its work node; its relation to the Van Tassel line, under the name form Ashtar Sheran, is not established by anything read in this run."@en .
