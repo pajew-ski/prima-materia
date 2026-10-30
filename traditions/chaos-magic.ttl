@@ -23,9 +23,10 @@
 # traditions/chaos-magic-liber-kaos.ttl, that of Carroll, PsyberMagick, in
 # traditions/chaos-magic-psybermagick.ttl, that of Carroll, The Apophenion,
 # in traditions/chaos-magic-apophenion.ttl, that of Carroll, The Octavo, in
-# traditions/chaos-magic-octavo.ttl, and that of Hine, Condensed Chaos, in
-# traditions/chaos-magic-condensed-chaos.ttl; the works and their notes stay
-# here.
+# traditions/chaos-magic-octavo.ttl, that of Hine, Condensed Chaos, in
+# traditions/chaos-magic-condensed-chaos.ttl, and that of Hine, Oven-Ready
+# Chaos, in traditions/chaos-magic-oven-ready-chaos.ttl; the works and their
+# notes stay here.
 #
 # Opened out of order, against the second clause of the sentence held at
 # prima-materia#888, which credits chaos magicians with mapping a receiver
@@ -33,7 +34,8 @@
 # of the brain and no microtubule; the searches stand in
 # examinations/searches-chaos-magic.ttl. Of the corpus, The Book of Results,
 # Liber Null and Psychonaut, Liber Kaos, PsyberMagick, The Apophenion, The
-# Octavo and Condensed Chaos are harvested; the other works are not.
+# Octavo, Condensed Chaos and Oven-Ready Chaos are harvested; the other works
+# are not.
 #
 
 pmt:ChaosMagic a pm:Tradition ;
@@ -48,7 +50,8 @@ pmt:ChaosMagic a pm:Tradition ;
     skos:note "Read complete on 2026-10-26: Carroll, PsyberMagick (New Falcon Publications, ISBN 1-56184-092-0, imprint from the back cover), cited by chapter and printed page; harvested under prima-materia#893 with two independent extraction passes over the whole text, no stretch of running text missing from the layer."@en ;
     skos:note "Read complete on 2026-10-27: Carroll, The Apophenion (Mandrake of Oxford, 2008, first edition), cited by chapter and printed page; harvested under prima-materia#893 with two independent extraction passes per part, no stretch of running text missing from the layer."@en ;
     pm:principalCorpus "Spare, The Book of Pleasure; Carroll, Liber Null and Psychonaut; Carroll, Liber Kaos; Carroll, PsyberMagick; Carroll, The Apophenion; Carroll, The Octavo; Hine, Condensed Chaos; Hine, Prime Chaos" ;
-    pm:corpusWork pmw:LiberNullAndPsychonaut, pmw:LiberKaos, pmw:PsyberMagick, pmw:TheApophenion, pmw:TheOctavo, pmw:CondensedChaos, pmw:PrimeChaos, pmw:TheBookOfResults ;
+    skos:note "Read complete on 2026-10-30: Hine, Oven-Ready Chaos, version 1.4, the on-line edition of the text of 1992, cited by section heading for want of pages; harvested under prima-materia#893 with two independent extraction passes, and every item compared with the harvest of Condensed Chaos, which grew out of it."@en ;
+    pm:corpusWork pmw:LiberNullAndPsychonaut, pmw:LiberKaos, pmw:PsyberMagick, pmw:TheApophenion, pmw:TheOctavo, pmw:CondensedChaos, pmw:OvenReadyChaos, pmw:PrimeChaos, pmw:TheBookOfResults ;
     pm:coverageState pm:placesEntered ;
     pm:contactRoute pm:contactRouteDocumented ;
     dcterms:source "Carroll, The Apophenion: A Chaos Magic Paradigm (Mandrake of Oxford, 2008), chap. 5, Metadynamics, part 3, pp. 79-81; read in a full-text layer of the first edition" ;
@@ -92,6 +95,12 @@ pmw:CondensedChaos a dcterms:BibliographicResource ;
     skos:note "Hine, with a foreword by Peter J. Carroll. Tempe: New Falcon, copyright 1995; the copyright page of the copy read names the first edition of 1995 and its second printing of 1996. Searched by term only on 2026-10-22; opened and read complete on 2026-10-29."@en ;
     skos:note "Read complete on 2026-10-29 in the full-text layer of the open scan archive (condensed-chaos-phil-hine, 409152 characters), pages from the running heads, which alternate the title on odd and the author on even pages; harvested under prima-materia#893 with two independent extraction passes per part, front matter, foreword and chapters 1-3 as the first, chapters 4-6 as the second, chapters 7-10 with the further reading and the notice of the Illuminates of Thanateros as the third. No stretch of running text is missing; two running heads are misread and were fixed by sequence (pp. 91, 171), and the figures of chapter 6 (servitor sigils, a sigil circuit, a flowchart) survive only as their captions and surrounding prose. The harvest is in traditions/chaos-magic-condensed-chaos.ttl. Where Hine reports another author (Spare, Carroll, the Lesser Key of Solomon, Lucian, Dion Fortune, Richardson) the node holds his ascription and the named work is not read through him. Not entered: back cover, publisher's list, copyright page, acknowledgements and contents; the history of the movement and the biography of Crowley and of the author; cultural and New Age polemic; illustrations already carried by an entered node; the further reading list and the order's postal address."@en ;
     skos:note "Harvest counts: twenty-three signs of success and thirty-seven conditions of failure. None of the failures sets a deadline after which a working counts as failed; the one dated end is the date to which the operator himself tied a servitor, and the only rate words are usually and never. Thirty-two put the cause on the operator, one on the operator with chance beside him, one on the method (love spells aimed at a particular person), one on the targeted entity, one on the subject's assimilation and expectations rather than the substance taken, and one on nothing named, a mismatch measured against the stated intent. The signs of success are judged by the operator alone with one exception, trouble reported by a target's associates that stops when stolen property is returned, which is hearsay from the target's circle; one sign, the result arriving once the intent has gone latent, has no deadline, so any later event can be read as it."@en .
+
+pmw:OvenReadyChaos a dcterms:BibliographicResource ;
+    rdfs:label "Oven-Ready Chaos"@en, "Oven-Ready Chaos"@de ;
+    skos:note "Hine. The text says it was first published by Chaos International Publications in 1992 as a limited edition of 300 under the title Condensed Chaos, and renamed for its on-line versions so as not to be confused with the New Falcon book of 1995 (pmw:CondensedChaos), which grew out of it; the main text is signed March 1992. The copy read is version 1.4, typeset by the author, with two appendices added, converted to the TealDOC format by Yiri T. Kohl; the readme of the conversion is dated 14 June 2000. A French translation of version 1.2 by Lysianne (2009, Chaos prêt-à-cuire, archive.org 16329504ChaosPretACuirePhilHine, page numbers in its layer) was the entry in the table of prima-materia#893 and is not the text harvested: the English original lies open under archive.org tucows_72598_oven_ready_chaos."@en ;
+    skos:note "Read complete on 2026-10-30 from the archive.org item tucows_72598_oven_ready_chaos (ovenreadychaos.zip, two PalmDOC files decoded and joined, 93523 characters after the markup was removed, no replacement characters, the order of the sections checked against the contents and the join of the two files read across). The text has no pages and is cited by section heading and item number. Harvested under prima-materia#893 with two independent extraction passes: A 288 records, B 221, B without counterpart 4 (one added, one covered, two not owed: the history of sigilisation and a passage of cultural polemic). Every item was then compared with the nodes of traditions/chaos-magic-condensed-chaos.ttl: 139 records carry a claim that a node of 1995 already carries (105 distinct nodes) and are not entered twice; 132 are new and 12 differ in form from the 1995 node, each of those carrying a note beginning Differs from; 5 were dropped. The harvest, 144 nodes, is in traditions/chaos-magic-oven-ready-chaos.ttl. Not entered: dedication, thanks, contents, the history of the movement and of its magazines, the cultural polemic of The conditioned reflex beyond its caution, the further reading list and the addresses."@en ;
+    skos:note "Harvest counts: of eleven signs of success in the text two are entered here, the other nine (a result arriving once the intent has gone latent, and Coxhead's eight marks of illumination) already stand in the 1995 nodes; of eight conditions of failure two are entered, one putting the cause on the entities of a traditional system when spiral pentagrams are used inside it, one on the operator whose psychographs fall short, and six already stand in the 1995 nodes. None sets a deadline after which a working counts as failed, and the only rate words are usually and generally."@en .
 
 pmw:PrimeChaos a dcterms:BibliographicResource ;
     rdfs:label "Prime Chaos: Adventures in Chaos Magic"@en, "Prime Chaos"@de ;
