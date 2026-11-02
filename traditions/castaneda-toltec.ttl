@@ -1,0 +1,1578 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — Castaneda's Toltec transmission, entered at The Teachings of Don Juan
+#
+# Opened from the structure-driven entrance of SPEC §14: registered at
+# pm:corpusNamed in traditions/registry-modern.ttl with no node; the
+# tradition instance moves here, as for pmt:AshtarTransmission.
+#
+# Order of the file: the works; the tradition; the receiving; the namings;
+# the practices; the capacities and other concepts; the yieldings; the
+# chains; the series; the cautions; the conditions of failure; the signs of
+# success; the author's own orderings; the protocol.
+#
+# Identifiers: CastanedaToltec plus the Spanish term where the work gives one
+# (Sitio, YerbaDelDiablo, Humito, Escogido, MaizPinto, Diablero), otherwise a
+# short English term for what the work describes, since the work is English.
+#
+
+pmw:CastanedaToltecTeachingsOfDonJuan a dcterms:BibliographicResource ;
+    rdfs:label "The Teachings of Don Juan: A Yaqui Way of Knowledge"@en, "The Teachings of Don Juan: A Yaqui Way of Knowledge"@de ;
+    skos:note "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge, first published by the University of California Press in 1968; the copyright page of the text layer read gives copyright 1968 by the Regents of the University of California and carries the work as the first part of an omnibus with A Separate Reality and Tales of Power, specially created in 1995 for the Quality Paperback Book Club, New York. Read whole, foreword by Walter Goldschmidt to Appendix B, from the Internet Archive full text of the identifier the-teachings-of-don-juan-a-separate-reality-tales-of-power (1598678 characters for the omnibus, the first 476267 of them this work, ASCII letter share 1.0, not access-restricted). Page numbers are the folios of that volume: Introduction 1, Part One 11, Part Two 141, Appendixes 181; folios misread by the OCR (2 for 3, 99 for 95, 15 for 115, 152 for 132, 199 for 139, 7 for 77 and 141) were set by the running sequence, and pages 19-21 carry no legible folio and are cited as such. Whether the omnibus keeps the pagination of the 1968 edition was not checked."@en ;
+    skos:note "Other carriers seen on 2026-11-02: nine scans of separate editions (1968 to 1998) under identifiers beginning teachingsofdonju and two under bwb_, all access-restricted; and an untitled ebook transcription under don-juan-1-castaneda-carlos-the-teachings-of-don-juan-a-yaqui-way-of-knowledge, open, 473713 characters, which has no copyright page and no page numbers and was used for neither citation nor edition. The work is in English; the rule of two translations has no object here."@en .
+
+pmw:CastanedaToltecArtOfDreaming a dcterms:BibliographicResource ;
+    rdfs:label "The Art of Dreaming"@en, "The Art of Dreaming"@de ;
+    skos:note "Carlos Castaneda, The Art of Dreaming (1993), the second work the registration names. Not opened in this run. At the Internet Archive on 2026-11-02 the scans artofdreaming0000cast, artofdreaming00cast, artofdreaming0000cast_b9r9, artofdreaming0000carl, bwb_S0-DNM-407 and 6u0xn6zrsxm7x2y1sbyogf7rxdqbexqtajmemdzi were access-restricted; an upload 10_20230524_20230524 titled Castaneda Carlos - The Art of Dreaming is not restricted but lists no text or PDF file, so it was not usable as a text layer. Not tried: other digitisation projects, a Spanish edition (El arte de ensoñar)."@en .
+
+pmt:CastanedaToltec a pm:Tradition ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    rdfs:label "Castaneda's Toltec transmission"@en, "Castanedas toltekische Überlieferung"@de ;
+    skos:definition "The transmission of a body of practice concerning attention, dreaming and the assemblage point, presented as the teaching of a Yaqui man of knowledge."@en ;
+    skos:note "The fieldwork is not credible and the informant is not attestable, and the practices are nonetheless transmitted today by people who follow them. Both facts belong in the graph, which is why the tradition is registered rather than dismissed."@en ;
+    skos:note "Raised from pm:corpusNamed on the first work actually read: the whole of The Teachings of Don Juan, foreword, introduction, the dated field notes of Part One, the structural analysis of Part Two and both appendixes. Not read: The Art of Dreaming, which stands at its work node with the reason. The vocabulary the registration definition names, the assemblage point and dreaming, does not occur in this first book; what it carries is the man of knowledge, the two allies, Mescalito and the four enemies."@en ;
+    skos:note "The first of the three decisions SPEC §14 asks for, the contact route, stays at documented. The work names its own routes: the Introduction says don Juan lived until 1940 in the centre and south of Mexico and that his knowledge may be the product of many influences; it names the three plants and says their uses were known before contact with Europeans; Part One sets a peyote meeting among Indians of Chihuahua and a mitote led by a peyote leader; and the book was written as a dissertation-track work in the anthropology of the University of California, which brought the literature of peyote and datura use to the writer's desk. Agreement between this work and any peyote, datura or mushroom tradition in the holding is reception along those routes until shown otherwise, and counts once."@en ;
+    skos:note "The second decision, recension and edition: the text of 1968 as carried in the 1995 omnibus, the only open carrier with a copyright page and page numbers. The third, the number of citable places: one work of 196 pages, 11 chapters of field notes dated 23 June 1961 to 29 October 1965 and an analysis that reorders them, cited by page and date of entry."@en ;
+    skos:note "How the claims are attested in this file. The work presents nearly all of its teaching as the speech of a man the reader cannot question, so the wording of don Juan is entered as the work's text (pm:textualAttestation) and the claim that he spoke it stands once, as pm:CastanedaToltecDonJuanReceiving. What the writer reports of his own perceptions is pm:firstPersonReport; what villagers say of diableros in the Introduction is pm:thirdPartyAscription; the orderings of Part Two are the writer's and stand as pm:Systematizing with pm:compilerInference. pm:fieldAttestation was not used: it would grant the passage the standing of a taken-down testimony, which is the matter in dispute."@en ;
+    skos:note "What the harvest found, in counts. Twenty-nine practices, four of them the stages of becoming a crow and about a dozen of them recipes or fixed procedures; thirty-six capacities and further concepts; seventeen yieldings; nine chains, five of them stated necessities with the consequence of skipping; three series ordered by the source; four orderings by the author; twenty-eight cautions; eighteen conditions of failure, four of them the defeats by the four enemies; and eleven signs of success. Against the signs stand the work's own admissions: the author says his intermittent method prevented the training from succeeding (pmc:CastanedaToltecIntermittentApprenticeship), and at the close he believes he has succumbed to the first enemy (pmc:CastanedaToltecAuthorDefeatedByFear)."@en ;
+    skos:note "Open, and the next place to go: The Art of Dreaming, whose scans were all access-restricted on 2026-11-02; a Spanish edition and other digitisation projects were not tried. The dispute over the fieldwork is entered as a note at the receiving and not as pm:Disputing, because the critical side is modern research and enters the graph only at pm:evidenceFrom; Richard de Mille, ed., The Don Juan Papers (1980), was read at pp. 9-11 and 119-120 only."@en ;
+    pm:principalCorpus "Castaneda, The Teachings of Don Juan; Castaneda, The Art of Dreaming" ;
+    pm:corpusWork pmw:CastanedaToltecTeachingsOfDonJuan, pmw:CastanedaToltecArtOfDreaming ;
+    pm:coverageState pm:placesEntered ;
+    pm:contactRoute pm:contactRouteDocumented ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction to Appendix B, pp. 1-196; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The receiving
+#
+
+pmc:CastanedaToltecDonJuanReceiving a pm:Receiving ;
+    rdfs:label "The work's claim that its teachings are the words of don Juan"@en, "Die Behauptung des Werkes, seine Lehren seien die Worte don Juans"@de ;
+    skos:definition "The book prints, under dates from 1961 to 1965, conversations in which a man it calls don Juan teaches the writer, and presents his sayings in quotation as his own words."@en ;
+    skos:note "This node records the claim, not its truth. The citation names Castaneda because that is what a reader can obtain."@en ;
+    skos:note "Contested, and the contest is not entered as pm:Disputing because its critical side is modern research, which enters the graph only at pm:evidenceFrom (SPEC §3 Parameter 5). Read at the wording on 2026-11-02: Richard de Mille, ed., The Don Juan Papers: Further Castaneda Controversies (Santa Barbara: Ross-Erikson, 1980, second printing 1981), pp. 119-120, which sets the foreword's claim of ethnography and early acceptances as an authentic report against Wasson, Basso, La Barre and de Mille's own Castaneda's Journey (1976), which judged the books fiction. Of de Mille nothing else was read but the opening pages 9-11; Castaneda's Journey and The Don Juan Papers under their library scans are access-restricted."@en ;
+    pm:receivedBy "Carlos Castaneda, who says he studied anthropology at the Los Angeles campus of the University of California and served as don Juan's apprentice from June 1961 to September 1965" ;
+    pm:claimedSpeaker "Don Juan, an old Yaqui Indian from Sonora, born, by his own account, in 1891 in the American Southwest, who called his teacher a benefactor and a diablero and never named him or the place of his learning" ;
+    pm:receptionCircumstance "By the Introduction, pp. 4-10: early conversations were noted covertly and reconstructed from memory afterwards; from the apprenticeship on, don Juan let him write openly, under protest, but refused photographs and tape recordings; the visits were intermittent, a few days at a time, longer in the summers of 1961 to 1964; the descriptions of states of nonordinary reality were written several days after each, the conversations immediately after; long exchanges of questions and answers were condensed, and dialogue judged to add nothing was deleted; the notes were arranged to fit the narrative and are not always in chronological order. No record of the conversations other than the printed text is mentioned." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, pp. 1-10; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The namings
+#
+
+pmc:CastanedaToltecMescalitoNaming a pm:Naming ;
+    rdfs:label "Mescalito"@en, "Mescalito"@de ;
+    skos:definition "The name don Juan wants used instead of peyote for the power in the cactus: a unique power, not an ally, that cannot be tamed, shows itself in whatever shape to those who barely know it and in human shape or as light to those it has accepted, and teaches how one ought to live."@en ;
+    skos:note "Don Juan corrects the writer for calling it peyote; Mescalito is said to give its true name only to the man it accepts, to be used only to call it, and the writer says he received that name (p. 108) without printing it."@en ;
+    pm:nameForm "Mescalito" ;
+    pm:nameRole "power contained in the peyote cactus and identical with it; protector and teacher, outside oneself, without a rule" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 19-21, 26-27, 32-33 and 61-63, entries of 25 June and 6 August 1961, 20 August 1961, 24 December 1961 to 14 April 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecYerbaDelDiabloNaming a pm:Naming ;
+    rdfs:label "yerba del diablo"@en, "yerba del diablo"@de ;
+    skos:definition "The devil's weed, the ally of don Juan's benefactor: a power in the Datura plant, spoken of as a woman, which gives men power too soon and is tamed through its root. Don Juan calls the name only temporary and says its other names are kept for calling it in great need."@en ;
+    pm:nameForm "yerba del diablo" ;
+    pm:nameRole "ally contained in the Datura plant; possessive, violent, woman-like, a giver of power" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 33 and 35-36, entries of 20 and 23 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecHumitoNaming a pm:Naming ;
+    rdfs:label "humito"@en, "humito"@de ;
+    skos:definition "The little smoke, don Juan's ally: the smoke of diviners, spoken of as male, said to have the purest heart, to require strength of heart, to make no slaves, and to take away the body of its follower."@en ;
+    pm:nameForm "humito" ;
+    pm:nameRole "ally contained in the smoke of a mixture made with a mushroom; don Juan's own ally" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 33, 45-46 and 119, entries of 20 August and 23 November 1961 and 31 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecAnuhctalNaming a pm:Naming ;
+    rdfs:label "Anuhctal"@en, "Anuhctal"@de ;
+    skos:definition "A name don Juan calls out in the peyote valley, first heard by the writer as Abuhtol, when a buzzing like a bull-roarer is heard; the work gives no gloss."@en ;
+    pm:nameForm "Anuhctal" ;
+    pm:nameRole "presence announced by don Juan with a roaring sound before Mescalito appears; not explained in the work" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 67-69, entry of 6 July 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecLaCatalinaNaming a pm:Naming ;
+    rdfs:label "la Catalina"@en, "la Catalina"@de ;
+    skos:definition "A witch living near don Juan whom he blames for a fall that hurt his ankle; she is said to have come into his house as a blackbird."@en ;
+    pm:nameForm "la Catalina" ;
+    pm:nameRole "a woman sorcerer who takes the form of a blackbird (chanate) and seeks don Juan's death" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 45, entry of 23 November 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecHelperNaming a pm:Naming ;
+    rdfs:label "helper"@en, "helper"@de ;
+    skos:definition "What assists a diablero: a spirit beyond the crack between the worlds, easier to get than an ally, which may kill a man who asks it and teach him while he is dead."@en ;
+    pm:nameForm "helper" ;
+    pm:nameRole "spirit dwelling beyond the world of living men which helps a diablero bring sickness, pain and death; distinct from an ally" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 137-138, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The practices
+#
+
+pmp:CastanedaToltecFindingTheSitio a pm:Practicing ;
+    rdfs:label "Finding one's spot (sitio)"@en, "Den eigenen Platz (sitio) finden"@de ;
+    skos:definition "Searching a floor for the one place where one is at one's best, by trying every place and looking with the eyes held off the point in front, until a change of colour at the edge of sight marks a good place and another a bad one."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 14-18, entry of 25 June 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecPeyoteIngestion a pm:Practicing ;
+    rdfs:label "Taking Mescalito (chewing peyote buttons)"@en, "Mescalito nehmen (Peyote-Knöpfe kauen)"@de ;
+    skos:definition "Chewing dried peyote buttons one after another, offered by someone other than the teacher, rinsing the mouth with tequila or water without swallowing, and eating dried fruit and meat between them; in the field the button is rubbed, sung over and taken with a cry."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 21-23 and 66-67, entries of 7 August 1961 and 6 July 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecMitote a pm:Practicing ;
+    rdfs:label "The mitote, a four-night peyote ceremony"@en, "Der Mitote, eine viernächtige Peyote-Zeremonie"@de ;
+    skos:definition "A peyote rite of peyoteros and apprentices under a leader, four nights of singing and taking buttons, with water and a token ritual food given by women in the day; it closes as every man sings his own song."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 105-106, entry of 12 September 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecPeyoteGathering a pm:Practicing ;
+    rdfs:label "Gathering Mescalito"@en, "Mescalito sammeln"@de ;
+    skos:definition "Collecting peyote only as the plants come in one's way and never pointing at them: the teacher cuts each top level with the ground and dusts the cut with sulphur, the helper receives it with both hands into a bag that must not touch the ground."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 64-65 and 71-72, entry of 6 July 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecCarryingMescalito a pm:Practicing ;
+    rdfs:label "Keeping Mescalito about one"@en, "Mescalito bei sich tragen"@de ;
+    skos:definition "Carrying the protector in a small bag fastened under the arm or hung from the neck."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 61, entry of 24 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecCallingMescalito a pm:Practicing ;
+    rdfs:label "Calling the protector by his songs and name"@en, "Den Beschützer mit seinen Liedern und seinem Namen rufen"@de ;
+    skos:definition "Using the songs the protector himself has taught, together with the name he has given, to call him, aloud or silently; never the songs of another man."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 73 and 109-110, entries of 3 July 1962 and 10 September 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecCornWitchcraft a pm:Practicing ;
+    rdfs:label "Corn witchcraft with maiz-pinto"@en, "Maiskorn-Hexerei mit maíz-pinto"@de ;
+    skos:definition "Setting one of a pair of red-streaked kernels inside the new bud of a yellow flower where the victim walks or stays; when he touches it the kernel's power passes into him, and the spent kernel is best swept into the brush for a bird."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, pp. 8-9; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecSuckingTheKernel a pm:Practicing ;
+    rdfs:label "Sucking out the kernel"@en, "Das Korn heraussaugen"@de ;
+    skos:definition "The only cure for a man struck by a power kernel: a brujo sucks it out of his body."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, p. 9; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecDaturaDigging a pm:Practicing ;
+    rdfs:label "Digging the devil's weed"@en, "Das Teufelskraut ausgraben"@de ;
+    skos:definition "Uncovering a Datura root with a dry branch of paloverde, the one tree said to agree with the plant, and never with a shovel; male and female plants are told apart by where the root forks."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 37-38, entry of 3 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecFirstPortionPotion a pm:Practicing ;
+    rdfs:label "Drinking the root's first portion"@en, "Den ersten Teil der Wurzel nehmen"@de ;
+    skos:definition "A piece of root measured by the span of the teacher's hand is mashed in a bag while chanting, soaked overnight in the night air, squeezed out and leached in the sun several times until a spoonful of starch is left, which is dissolved in a water of fruits and flowers and drunk."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 39-41, entries of 6 and 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecReplantingTheShoot a pm:Practicing ;
+    rdfs:label "Replanting the shoot of the devil's weed"@en, "Den Spross des Teufelskrauts einpflanzen"@de ;
+    skos:definition "Planting the remaining half of the first portion, by hand, near water, at a place of one's own liking that nobody knows; burying the boiled mash two paces to the southeast, smashing and burying the pot elsewhere, and circling the shoot four times touching it with the needle of one's image, thrusting deep the last time."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 52-54, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecProtectionImage a pm:Practicing ;
+    rdfs:label "Making the image of protection"@en, "Das Schutzbild anfertigen"@de ;
+    skos:definition "Carving a small figure of a man from a dried forked female root, binding it with agave fibre and piercing it with an agave thorn, boiling it in a mash of male and female root, fourteen leaves, fourteen flowers and seedpods, glue and the learner's blood, and drying it in the sun to be kept in a pouch."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 49-52, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecLizardSorcery a pm:Practicing ;
+    rdfs:label "The sorcery of the lizards"@en, "Die Zauberei der Eidechsen"@de ;
+    skos:definition "Divining with the second portion: two lizards from around one's own plant, befriended beforehand, are caught; the mouth of one and the eyes of the other are sewn shut with agave fibre; the first, coated in a paste of seeds and weevils, is sent to see, its direction read as an omen; the second, tied to the shoulder, is rubbed with the paste against the right temple, the paste spread on both temples, and its voice listened to while the root potion is drunk."@en ;
+    skos:note "The entry of 21 April 1963 reports the session of 16-17 April; the instructions stand on pp. 79-81 and 85-86."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 76-86, entries of 21, 18 and 19 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecEatingTheLizards a pm:Practicing ;
+    rdfs:label "Eating the two lizards"@en, "Die beiden Eidechsen essen"@de ;
+    skos:definition "Returning to one's plant the next late afternoon, calling the two lizards that helped, and if both are found eating them on the spot."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 85-86, entry of 19 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecTestingTheDevilsWeed a pm:Practicing ;
+    rdfs:label "Testing the devil's weed"@en, "Das Teufelskraut prüfen"@de ;
+    skos:definition "Performing a further lizard sorcery alone before committing oneself wholly to her path, to learn her feelings toward oneself, and stopping if one feels one should not go on."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 87, entry of 27 June 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecFlyingUnguent a pm:Practicing ;
+    rdfs:label "The second portion as an unguent for flight"@en, "Der zweite Teil als Salbe zum Fliegen"@de ;
+    skos:definition "Drinking the leached root of the second portion and rubbing oneself, naked, with a paste of Datura parts, seeds and weevils whipped with lard, best wild-boar intestinal fat, divided in five parts for the left sole, the inner left leg, the genitals, the inner right leg and the right sole."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 87-91, entries of 29 June and 6 July 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecSmokeMixturePreparation a pm:Practicing ;
+    rdfs:label "Preparing the smoke mixture"@en, "Die Rauchmischung bereiten"@de ;
+    skos:definition "Gathering the leaf tips and flowers of a bush on All Souls' Day and drying them hidden in the shade, letting three flowers mould in closed pots, carrying the right small mushrooms shredded in a gourd, sealing all for a year, then grinding equal parts and adding four parts of mushroom to one of the rest; a yearly cycle."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 54-56 and 95-96, entries of 27 January 1962 and 23 December 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecBefriendingThePipe a pm:Practicing ;
+    rdfs:label "Getting to know the pipe"@en, "Sich mit der Pfeife vertraut machen"@de ;
+    skos:definition "Being handed the teacher's pipe on each visit, touching it briefly with both hands, later carrying it in a pocket or the shirt and finally putting it to the mouth, slowly, until the bond is made and one may smoke."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 47 and 95, entries of 23 November 1961 and 23 December 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecSmokingTheMixture a pm:Practicing ;
+    rdfs:label "Smoking the little smoke"@en, "Den kleinen Rauch rauchen"@de ;
+    skos:definition "Filling the pipe from the bag worn at the neck, lighting it with a small coal, and drawing in the smoke and the unburnt mushroom dust together until the body goes numb; the teacher stays with the smoker and brings him back."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 96-100 and 119-121, entries of 31 December 1963 and 27 January 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecStrongQuietLife a pm:Practicing ;
+    rdfs:label "Leading a hard, quiet life"@en, "Ein hartes, stilles Leben führen"@de ;
+    skos:definition "The way of living asked of whoever would learn the smoke, before and after each smoking."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 46, 103 and 127, entries of 23 November 1961, 28 January 1964 and 10 April 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecBecomingACrow a pm:Practicing ;
+    rdfs:label "Becoming a crow"@en, "Zur Krähe werden"@de ;
+    skos:definition "Under the smoke, when only the head remains, following the teacher's commands to grow a crow's legs, tail and wings, shrink the head by winking, grow a beak and see sideways, and then being tossed into the air to fly."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 121-122, entry of 7 February 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecAskingThePathQuestion a pm:Practicing ;
+    rdfs:label "Asking of a path whether it has heart"@en, "Fragen, ob ein Weg Herz hat"@de ;
+    skos:definition "Looking at every path closely, trying it as often as needed, and then asking oneself alone whether it has a heart, with the decision to stay or leave free of fear and ambition."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 76 and 117-118, entries of 28 January 1963 and 28 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecFightingForm a pm:Practicing ;
+    rdfs:label "The fighting form"@en, "Die Kampfform"@de ;
+    skos:definition "A posture held on one's good spot against an attacker: slapping the right calf and thigh and stamping the left foot, facing the attacker; otherwise sitting cross-legged and silent on the spot."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 132-133, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecHurlingWithWarCry a pm:Practicing ;
+    rdfs:label "Hurling with the war cry"@en, "Werfen mit dem Kriegsschrei"@de ;
+    skos:definition "The last defence: hurling a power object, or a small rock held against the palm with the thumb, with a yell that is held back until one is filled with power rising from the good spot."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 132-133, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecCrossingTheCrack a pm:Practicing ;
+    rdfs:label "Crossing the crack between the worlds"@en, "Den Riss zwischen den Welten durchqueren"@de ;
+    skos:definition "Wishing for the other world alone, without power or man, until the body is ready, slipping through the crack when it opens, walking through the wind to a plateau, breaking the skin between the worlds with a yell, and asking a helper there to teach and make one a diablero."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 137-138, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecCrowLegs a pm:Practicing ;
+    rdfs:label "Growing a crow's legs"@en, "Krähenbeine wachsen lassen"@de ;
+    skos:definition "In becoming a crow, the legs are felt coming out of the chin."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 121-122, entry of 7 February 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecCrowTailAndWings a pm:Practicing ;
+    rdfs:label "Growing a crow's tail and wings"@en, "Krähenschwanz und -flügel wachsen lassen"@de ;
+    skos:definition "In becoming a crow, the tail comes out of the neck and is spread like a fan, and the wings come out of the cheekbones and are stretched as long as possible and flapped until real."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 122, entry of 7 February 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecCrowHead a pm:Practicing ;
+    rdfs:label "Shrinking the head to a crow's"@en, "Den Kopf auf Krähengröße verkleinern"@de ;
+    skos:definition "In becoming a crow, the heavy top of the head is reduced by winking, one wink at a time, until one can hop freely."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 122, entry of 7 February 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmp:CastanedaToltecCrowEyes a pm:Practicing ;
+    rdfs:label "Learning to see like a crow"@en, "Sehen lernen wie eine Krähe"@de ;
+    skos:definition "The last and hardest change before flight: a beak grows between the eyes and one learns to look sideways with one eye, shifting to the other by shaking the beak down."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 122, entry of 7 February 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The capacities and other concepts
+#
+
+pmc:CastanedaToltecDiableroTransformation a pm:Conceptualizing ;
+    rdfs:label "A diablero turns himself into an animal"@en, "Ein Diablero verwandelt sich in ein Tier"@de ;
+    skos:definition "What people of Sonora tell the writer of the diablero, a sorcerer of evil who can take the shape of a dog, a coyote, a bird or any creature; one woman dog was said to have died at the same moment as her shot animal form."@en ;
+    skos:note "Ascribed by three named villagers, two of whom deny that diableros exist now; don Juan called his own benefactor a diablero."@en ;
+    pm:attestedBy pm:thirdPartyAscription ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, pp. 1-4; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPowerObjects a pm:Conceptualizing ;
+    rdfs:label "Power objects"@en, "Machtgegenstände"@de ;
+    skos:definition "Objects such as maiz-pinto, crystals and feathers which hold power according to their owner; tools of death made to be hurled, with no power to teach, needed only by a man without an ally."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, pp. 7-9; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecKernelKilling a pm:Conceptualizing ;
+    rdfs:label "Killing by a power kernel"@en, "Töten durch ein Machtkorn"@de ;
+    skos:definition "Each of a brujo's forty-eight red-streaked kernels can kill a man by sinking into his chest or bowels."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, p. 9; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSitioStrength a pm:Conceptualizing ;
+    rdfs:label "Strength from one's own spot"@en, "Kraft aus dem eigenen Platz"@de ;
+    skos:definition "Sitting on one's spot gives superior strength and restores spent energy; while rooted there nothing can do one bodily harm and one can push off anything harmful."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 18 and 34, entries of 25 June and 20 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMescalitoCounsel a pm:Conceptualizing ;
+    rdfs:label "Mescalito advises and teaches how to live"@en, "Mescalito berät und lehrt die rechte Lebensweise"@de ;
+    skos:definition "The protector answers any question put to him, shows on his hand, on rocks or trees or before one how to live, and speaks to each differently and not in words."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 27, 33, 61 and 111-112, entries of 5 August 1961 to 11 September 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMescalitoProtection a pm:Conceptualizing ;
+    rdfs:label "Mescalito's protection"@en, "Der Schutz Mescalitos"@de ;
+    skos:definition "Kept about one, the protector sees that nothing bad happens to the bearer."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 61, entry of 24 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecReceivingSongs a pm:Conceptualizing ;
+    rdfs:label "Being taught songs by Mescalito"@en, "Von Mescalito Lieder gelehrt bekommen"@de ;
+    skos:definition "Asking the protector aloud for a song during the ceremony and hearing in one's ears a long Spanish song, then a second, which one learns and sings; the writer felt renewed by them."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 106-107, entry of 12 September 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecAllyBeyondBoundaries a pm:Conceptualizing ;
+    rdfs:label "An ally carries a man beyond himself"@en, "Ein Verbündeter trägt den Menschen über sich hinaus"@de ;
+    skos:definition "An ally is a power one brings into one's life to help, advise and strengthen one's acts; it takes a man past his own limits to give him power, and shows him what no human could explain to him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 32-33, entry of 20 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecRootHead a pm:Conceptualizing ;
+    rdfs:label "The root, the head through which the weed is conquered"@en, "Die Wurzel, der Kopf, durch den das Kraut bezwungen wird"@de ;
+    skos:definition "The first and most important of the four heads of the devil's weed, through which her power is mastered; its portions, taken one by one, each teach a different form of power."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 35 and 42, entries of 23 August and 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecDaturaHealing a pm:Conceptualizing ;
+    rdfs:label "Stem and leaves cure illness"@en, "Stängel und Blätter heilen Krankheit"@de ;
+    skos:definition "The second head of the devil's weed, stem and leaves, cures maladies and, rightly used, is a gift to mankind; Indians use leaves and flowers to rub themselves and for boils."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 35 and 44, entries of 23 August and 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecDaturaFlowers a pm:Conceptualizing ;
+    rdfs:label "The flowers madden, subdue or kill"@en, "Die Blüten machen wahnsinnig, gefügig oder töten"@de ;
+    skos:definition "The third head of the devil's weed, the flowers, is used to drive people mad, make them obedient or kill them; the weed's own man never takes them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 35-36, entry of 23 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSoberHead a pm:Conceptualizing ;
+    rdfs:label "The seeds, the sober head"@en, "Die Samen, der nüchterne Kopf"@de ;
+    skos:definition "The fourth and strongest head, the seeds, the only part said to strengthen the heart; their secrets were unravelled by men of old, according to tales, and by none don Juan knew."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 36, entry of 23 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecVigorOfFirstPortion a pm:Conceptualizing ;
+    rdfs:label "The vigor of the first portion"@en, "Die Kraft des ersten Teils"@de ;
+    skos:definition "Diluted, the first portion serves every matter of manhood: it gives back vigor to the old, lets the young endure fatigue and hunger, gives women passion, and serves the man who would kill another."@en ;
+    skos:note "The writer reports the next day a strange vigor, a lightness and strength of the whole body and the feeling he could demolish a wall (pp. 42-43)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 42, entry of 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPermanentPower a pm:Conceptualizing ;
+    rdfs:label "The seat of permanent power four yards down"@en, "Der Sitz dauernder Macht vier Ellen tief"@de ;
+    skos:definition "The weed's power grows stronger and more dangerous the deeper the root; at four yards one finds power without end, reached by very few in the past and by nobody now."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 44, entry of 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPhenomenalStrength a pm:Conceptualizing ;
+    rdfs:label "Phenomenal strength from the weed"@en, "Außerordentliche Kraft durch das Kraut"@de ;
+    skos:definition "Don Juan says that in his youth the weed let him kill a man with one blow of his arm, toss boulders twenty men could not budge, and leap high enough to cut the top leaves off the tallest trees, and that it only frightened Indians."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 44, entry of 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecBecomingABird a pm:Conceptualizing ;
+    rdfs:label "One able to take a bird's shape"@en, "Ein Mensch, der zum Vogel werden kann"@de ;
+    skos:definition "Don Juan calls himself a crow and his enemy la Catalina a blackbird, men and women able to take a bird's shape; larger or smaller forms, a lion or a bear, a cricket, lizard or ant, are possible but more dangerous."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 45 and 121-129, entries of 23 November 1961 to 10 April 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSmokeAnswers a pm:Conceptualizing ;
+    rdfs:label "The smoke answers any question"@en, "Der Rauch beantwortet jede Frage"@de ;
+    skos:definition "The smoke tells whatever one wants to know about any matter and gives the means to act on it; once a man has entered its domain, all other powers obey him, and it resolves questions by letting him into unimaginable worlds without hurting him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 45-47, entry of 23 November 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecBodilessness a pm:Conceptualizing ;
+    rdfs:label "The smoke takes the body away"@en, "Der Rauch nimmt den Körper weg"@de ;
+    skos:definition "The ally of the smoke, which never shows itself, removes the body of its follower and makes him light as air, free to turn into anything and to go into and through walls and beings."@en ;
+    skos:note "The writer reports sinking into a wall and passing through a pole (pp. 97-99); the analysis records a fifth specific purpose, movement through objects and beings, discussed only briefly (p. 162)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 100-102, entries of 31 and 28 December 1963 and 28 January 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecCallingTheAlly a pm:Conceptualizing ;
+    rdfs:label "Going to the ally without smoking"@en, "Ohne zu rauchen zum Verbündeten gehen"@de ;
+    skos:definition "One whose ally the smoke has become no longer needs to smoke and goes to it freely anywhere and at any time; at an advanced stage meetings with an ally may come by an act of will alone."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 96, entry of 24 December 1963; Part Two, pp. 157-158; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecDivination a pm:Conceptualizing ;
+    rdfs:label "Divining with the lizards"@en, "Wahrsagen mit den Eidechsen"@de ;
+    skos:definition "By the lizards one can learn of persons one does not ordinarily see, of lost objects and of unseen places; the vision is to be heard more than watched, the voice of the lizard on the shoulder describing what her sister saw."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 79 and 84-85, entries of 21 and 18 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSeeingTheUnknown a pm:Conceptualizing ;
+    rdfs:label "Seeing the unknown for ever"@en, "Für immer das Unbekannte sehen"@de ;
+    skos:definition "Whoever eats the two lizards that helped him is given for ever the power of seeing what is unknown and need never catch lizards again, because they live inside him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 85, entry of 19 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecBodilyFlight a pm:Conceptualizing ;
+    rdfs:label "Bodily flight with the second portion"@en, "Leibliches Fliegen mit dem zweiten Teil"@de ;
+    skos:definition "The second portion is used to fly: a sorcerer flies hundreds of miles to watch events anywhere, or strikes his enemies far away with a deadly blow, and moves a thousand miles in a second; the weed teaches how to turn and where to land, near one's own plants."@en ;
+    skos:note "Asked whether his body flew, don Juan answers that one under the weed flies as such, and that one chained to a rock would fly holding the rock (p. 94)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 75 and 92-94, entries of 27 January and 5 July 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecCrowSight a pm:Conceptualizing ;
+    rdfs:label "Seeing as a crow sees"@en, "Sehen, wie eine Krähe sieht"@de ;
+    skos:definition "Seen as a crow sees, dark birds look white, white pigeons pink or blue, gulls yellow; living things move inside with their own light, so a crow sees what is dying, what is about to burst and must be avoided, and what moves rightly and is to be sought."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 125 and 128-129, entries of 23 March and 10 April 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecCrowOmens a pm:Conceptualizing ;
+    rdfs:label "The crows as emissaries of fate"@en, "Die Krähen als Boten des Schicksals"@de ;
+    skos:definition "Once a man has become a crow, crows tell him every turn of his fate by their flight, set against the compass of his first meeting with them; three silvery crows calling above his head late in the day mean his death and that he becomes a crow."@en ;
+    skos:note "A forecast with a stated circumstance: the writer's emissaries are said never to come in the morning, don Juan's always to come in the morning. Don Juan rejects his benefactor's claim that one could turn them black again by shouting."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 126-127, entry of 4 April 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecNightVision a pm:Conceptualizing ;
+    rdfs:label "Seeing in the dark under Mescalito"@en, "Im Dunkeln sehen unter Mescalito"@de ;
+    skos:definition "The writer reports that at midnight in the peyote field he saw every pebble and across the valley, the light swelling and fading with each beat of his heart."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 68, entry of 6 July 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSeeingWithEyesClosed a pm:Conceptualizing ;
+    rdfs:label "Seeing the same with eyes closed"@en, "Mit geschlossenen Augen dasselbe sehen"@de ;
+    skos:definition "In the second night of the mitote the writer saw the men before him equally with his eyes shut or open."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 106, entry of 12 September 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPlantStability a pm:Conceptualizing ;
+    rdfs:label "Steadiness before one's own plant"@en, "Festigkeit vor der eigenen Pflanze"@de ;
+    skos:definition "Sitting before his own Datura plant gave the writer an unusual emotional stability and power to concentrate."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 113, entry of 28 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecImageProtection a pm:Conceptualizing ;
+    rdfs:label "The protection of the image"@en, "Der Schutz des Bildes"@de ;
+    skos:definition "The carved and boiled root figure is a protection for its owner alone, whose power lasts as long as nobody else remembers having seen it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 49, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecReinforcedHeart a pm:Conceptualizing ;
+    rdfs:label "The smoke strengthens the heart"@en, "Der Rauch stärkt das Herz"@de ;
+    skos:definition "The smoke asks for strength of the heart and reinforces it; it is constant, makes no prisoners and, by the analysis, brings emotional stability, balance and ecstasy to those inclined to contemplation."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 119, entry of 31 December 1964; Part Two, p. 154; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecWarCryDirection a pm:Conceptualizing ;
+    rdfs:label "The war cry directs the throw"@en, "Der Kriegsschrei lenkt den Wurf"@de ;
+    skos:definition "A yell launched from the good spot when one is full of power drives a hurled object to its mark; once begun it stays with a man for life."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 132-133, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSoulLoss a pm:Conceptualizing ;
+    rdfs:label "Loss of soul"@en, "Seelenverlust"@de ;
+    skos:definition "A bewitched man whose soul a diablero has caught is carried off by sounds, a river or, for the writer, airplanes; the thief may keep a strong-willed soul in a pouch until a fight in which he wins all or loses all."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 131-132 and 138-139, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecBecomingADiablero a pm:Conceptualizing ;
+    rdfs:label "Being killed and taught by a helper"@en, "Von einem Helfer getötet und belehrt werden"@de ;
+    skos:definition "Beyond the crack a man asks a helper to make him a diablero; if it agrees it kills him on the spot and teaches him while he is dead, and he comes back changed, bound to return ever farther."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 138, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecManOfKnowledge a pm:Conceptualizing ;
+    rdfs:label "Man of knowledge"@en, "Mensch des Wissens"@de ;
+    skos:definition "One who has followed truly the hardships of learning and gone to the limit of his strength into the secrets of knowledge and power, which anyone may try; he is one only for a brief moment, after defeating his four natural enemies."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 56-57 and 60, entries of 8 and 15 April 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecEscogido a pm:Conceptualizing ;
+    rdfs:label "The chosen man (escogido)"@en, "Der Auserwählte (escogido)"@de ;
+    skos:definition "The apprentice pointed out to the teacher by a power through an omen or an extraordinary deed; only to him are the secrets passed."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 30-31, entry of 17 August 1961; Part Two, p. 145; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecUnbendingIntent a pm:Conceptualizing ;
+    rdfs:label "Unbending intent"@en, "Unbeugsame Absicht"@de ;
+    skos:definition "The one hidden requirement of an apprentice, a will that keeps him within the bounds of what is taught; with it feelings no longer hinder him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 56 and 79, entries of 27 January 1962 and 21 April 1963; Part Two, pp. 145-146; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecFourRequisites a pm:Conceptualizing ;
+    rdfs:label "Going to knowledge as to war"@en, "Zum Wissen gehen wie in den Krieg"@de ;
+    skos:definition "The words of the benefactor: one goes to knowledge awake, afraid, respectful and fully assured, and a man who has met these four has no mistakes to answer for and loses only a battle if he fails."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 32, entry of 20 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The four natural enemies, members of a series and each a condition of failure
+#
+
+pmc:CastanedaToltecFear a pm:Conceptualizing ;
+    rdfs:label "Fear, the first enemy"@en, "Furcht, der erste Feind"@de ;
+    skos:definition "The first natural enemy, met when learning proves unlike what was imagined. A man who flees it is not harmed but never learns and ends a bully or a harmless frightened man; one who, fully afraid, still takes the next step and the next finds it suddenly gone for life, replaced by clarity."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 57-60, entry of 15 April 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecClarity a pm:Conceptualizing ;
+    rdfs:label "Clarity, the second enemy"@en, "Klarheit, der zweite Feind"@de ;
+    skos:definition "The clarity that dispels fear and blinds: it removes all self-doubt, so the man rushes or waits at the wrong time. Yielding to it leaves a light-hearted fighter or a clown, clear for life but no longer learning; defying it, using it only to see and taking it as almost a mistake, turns it into true power."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 57-60, entry of 15 April 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPower a pm:Conceptualizing ;
+    rdfs:label "Power, the third enemy"@en, "Macht, der dritte Feind"@de ;
+    skos:definition "The strongest enemy, which a man meets when his ally obeys him and his wish is the rule. Giving in makes him cruel and capricious, and he dies without knowing how to use his power; he defeats it by seeing that the power is never his and by holding himself in check."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 57-60, entry of 15 April 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecOldAge a pm:Conceptualizing ;
+    rdfs:label "Old age, the fourth enemy"@en, "Alter, der vierte Feind"@de ;
+    skos:definition "The cruellest enemy, which can only be fought off and never wholly defeated: the longing to lie down and rest. Giving in to it leaves a feeble old creature; shaking off the tiredness and living one's fate through makes one a man of knowledge for the moment one holds it off."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    skos:note "Defeat by any of the four is final, and only the man who gives up trying counts as defeated (p. 59)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 57-60, entry of 15 April 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The other conditions of failure
+#
+
+pmc:CastanedaToltecIntermittentApprenticeship a pm:Conceptualizing ;
+    rdfs:label "The intermittent apprenticeship prevented success"@en, "Die unterbrochene Lehrzeit verhinderte den Erfolg"@de ;
+    skos:definition "The writer judges that seeing his teacher only for a few days at a time kept the full commitment he needed from coming and so prevented the training from succeeding, though it let him keep a critical distance."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated. Applied by the writer to his own training."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, p. 5; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecAuthorDefeatedByFear a pm:Conceptualizing ;
+    rdfs:label "The writer believes he succumbed to the first enemy"@en, "Der Verfasser glaubt, dem ersten Feind erlegen zu sein"@de ;
+    skos:definition "After the last event of September 1965 the writer stopped seeking lessons and says he believes fear has beaten him; in Part Two he adds that he is not and never will be prepared for the rigours of the training."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated. The work reports its own outcome by the measure it sets out."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 140; Part Two, p. 179; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecKernelTerm a pm:Conceptualizing ;
+    rdfs:label "Death within three months"@en, "Tod binnen drei Monaten"@de ;
+    skos:definition "A man struck by a power kernel falls ill and dies within three months of its entry unless the brujo who tends him is stronger than the one who bewitched him."@en ;
+    skos:note "Counted as a condition of failure: a stated term after which the witchcraft has either worked or not."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, p. 9; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMescalitoRejection a pm:Conceptualizing ;
+    rdfs:label "Mescalito rejects"@en, "Mescalito weist ab"@de ;
+    skos:definition "Mescalito takes a man or throws him away, Indian or not, and nothing can be done to make him like one; to one he does not accept he appears monstrous and full of wrath, and those who seek him for profit without work meet horror; the analysis adds that he is incompatible with a questionable character."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 21, 26, 72 and 74, entries of 7 August 1961 and 3 July 1962; Part Two, p. 165; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSeeingBlack a pm:Conceptualizing ;
+    rdfs:label "Seeing black after the first portion"@en, "Schwarz sehen nach dem ersten Teil"@de ;
+    skos:definition "Who sees black after the first portion is unfit for the devil's weed, vomits his entrails green and black and is sick a long time; the analysis reads this test as discomfort against well-being, a sign of no affinity."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 41, entry of 10 September 1961; Part Two, p. 160; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecShootDies a pm:Conceptualizing ;
+    rdfs:label "The replanted shoot dies"@en, "Der eingepflanzte Spross stirbt"@de ;
+    skos:definition "If the replanted shoot dies, the weed does not want the man, he must leave her alone, and he will have no power over her."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 53, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecBrokenThorn a pm:Conceptualizing ;
+    rdfs:label "The thorn breaks inside the shoot"@en, "Der Dorn bricht im Spross ab"@de ;
+    skos:definition "If the point of the image breaks off in the shoot at the final thrust, the man is finished and the root is useless to him."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 54, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecLizardDirection a pm:Conceptualizing ;
+    rdfs:label "The lizard runs the wrong way"@en, "Die Eidechse läuft in die falsche Richtung"@de ;
+    skos:definition "If the sent lizard goes opposite to one's good fortune the sorcery will fail; if she goes north, away from one, it will be terribly hard and may kill, and one should quit, losing the power to command lizards."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 80, entry of 21 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecLizardDeath a pm:Conceptualizing ;
+    rdfs:label "A lizard dies"@en, "Eine Eidechse stirbt"@de ;
+    skos:definition "If the sewn-mouthed lizard dies the sorcery has no sense, the lizards have withdrawn their friendship and one gives up the weed for two years or more; if the other dies before the start one gives her up for good, and if on the shoulder after the start one must go on into madness, seeing nonsense without direction, the weed pushing one away."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 86 and 117, entries of 19 April 1963 and 26 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecUnsteadyQuestion a pm:Conceptualizing ;
+    rdfs:label "An unsteady question"@en, "Eine unstete Frage"@de ;
+    skos:definition "The lizards take every thought as a question and are never wrong, so a vision got with a wandering mind cannot be taken seriously, because nobody knows what it answers; a question about people breaks off the sorcery."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 84-85, entry of 18 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecForeheadNoReturn a pm:Conceptualizing ;
+    rdfs:label "No return from the forehead"@en, "Keine Rückkehr von der Stirn"@de ;
+    skos:definition "A man who is not a great brujo and rubs the paste on the middle of his forehead never comes back from the journey, or is gone for months and must be tended by others."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    skos:note "The writer did it by mistake and returned; don Juan reads this as strength or the weed's liking, and the analysis records it as the one exception to the rule (p. 156)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 116, entry of 24 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMadDream a pm:Conceptualizing ;
+    rdfs:label "Only a mad dream unless remembered"@en, "Nur ein irrer Traum, wenn nicht erinnert"@de ;
+    skos:definition "What was seen as a crow means nothing and stays a mad dream unless it is remembered correctly."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 125, entry of 23 March 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMovingFromTheSpot a pm:Conceptualizing ;
+    rdfs:label "Leaving the spot in the fight for the soul"@en, "Den Platz im Kampf um die Seele verlassen"@de ;
+    skos:definition "Had the writer moved one inch from his spot during the night of the impersonation, the diablera would have struck him like a thunderbolt, kept his soul, and he would have wasted away."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 139, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPathWithoutHeart a pm:Conceptualizing ;
+    rdfs:label "A path without heart"@en, "Ein Weg ohne Herz"@de ;
+    skos:definition "A path without heart weakens a man, makes him curse his life and is never enjoyable; when he finally sees he is on one, it is ready to kill him and few can stop to leave it."@en ;
+    skos:note "Counted as a condition of failure: it names the outcome by which a learner is seen to have been defeated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 76 and 118, entries of 28 January 1963 and 28 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The signs of success
+#
+
+pmc:CastanedaToltecPeripheralColours a pm:Conceptualizing ;
+    rdfs:label "Colours at the edge of sight mark the spot"@en, "Farben am Rand des Blickfelds bezeichnen den Platz"@de ;
+    skos:definition "Rolling over the porch with his eyes held off the point in front, the writer saw the edge of his field of vision turn greenish yellow, then purple at one place and verdigris at another; don Juan said the colours are the way to find such places anywhere."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 16-18, entry of 25 June 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMescalitoPlaying a pm:Conceptualizing ;
+    rdfs:label "Mescalito playing with the learner"@en, "Mescalito spielt mit dem Lernenden"@de ;
+    skos:definition "Don Juan reads the writer's play with the dog under peyote as an omen: Mescalito pointing him out as the chosen man."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 30-31, entry of 17 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSunnyDayOmen a pm:Conceptualizing ;
+    rdfs:label "A sunny day after the soaking"@en, "Ein sonniger Tag nach dem Einweichen"@de ;
+    skos:definition "A clear, hot day after the root has soaked in the night air is an excellent omen that the devil's weed likes the learner."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 40, 78 and 89, entries of 10 September 1961, 21 April and 6 July 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSeeingRed a pm:Conceptualizing ;
+    rdfs:label "Seeing red after the first portion"@en, "Rot sehen nach dem ersten Teil"@de ;
+    skos:definition "Who sees red after the first portion does not vomit, takes pleasure from the root and is strong and violent of nature, which the weed likes."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 41, entry of 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecShootSeeds a pm:Conceptualizing ;
+    rdfs:label "The shoot seeds"@en, "Der Spross trägt Samen"@de ;
+    skos:definition "When the first seeds of the replanted shoot bud, it is certain that the weed wants the man and he may count himself ready for learning."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 53, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMescalitoAsLight a pm:Conceptualizing ;
+    rdfs:label "Mescalito shown as a light"@en, "Mescalito zeigt sich als Licht"@de ;
+    skos:definition "To one fully accepted Mescalito appears constant, in human shape or as light; don Juan says the writer's acceptance was shown by seeing him as a light twice."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 63, 74 and 110, entries of 14 April 1962, 3 July 1962 and 10 September 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecLizardDirectionGood a pm:Conceptualizing ;
+    rdfs:label "The lizard runs toward good fortune"@en, "Die Eidechse läuft zum Glück hin"@de ;
+    skos:definition "A sent lizard that runs in the direction of one's good fortune promises an easy success, one that runs toward one, south, more than ordinary luck; the writer's lizard ran northeast, read as good but difficult."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 80 and 114, entries of 21 April 1963 and 28 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSmokeClarifies a pm:Conceptualizing ;
+    rdfs:label "Each puff makes things more precise"@en, "Jeder Zug macht die Dinge genauer"@de ;
+    skos:definition "Under the smoke everything is terrifying and confused at first, each further puff makes it more precise, and the world suddenly opens: then the smoke is one's ally."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 46-47, entry of 23 November 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecReadyToWink a pm:Conceptualizing ;
+    rdfs:label "Being able to wink"@en, "Zwinkern können"@de ;
+    skos:definition "In becoming a crow, being able to wink means one is ready to go on."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 121, entry of 7 February 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecReadyForTheCrack a pm:Conceptualizing ;
+    rdfs:label "The body is ready for the crack"@en, "Der Körper ist bereit für den Riss"@de ;
+    skos:definition "The moment for crossing is announced by long trembling of arms and legs and hard vomiting, with sleeplessness and loss of appetite; when the fits go on without stopping the crack appears like a great door; a strong-willed man then journeys briefly, a weak one long and at risk."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 138, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecFindingTheStone a pm:Conceptualizing ;
+    rdfs:label "Finding the hurled stone"@en, "Den geworfenen Stein finden"@de ;
+    skos:definition "Finding the rock hurled at the impersonator would make it certain that the affair was over; it was searched for three hours and not found."@en ;
+    skos:note "Counted as a sign of success and not as a condition of failure: it is announced or read as confirmation, and nothing in the work says what would have counted against it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 139, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The yieldings
+#
+
+pmc:CastanedaToltecSitioYielding a pm:Yielding ;
+    rdfs:label "Finding one's spot is said to give strength and safety there"@en, "Das Finden des eigenen Platzes soll dort Kraft und Sicherheit geben"@de ;
+    pm:byPractice pmp:CastanedaToltecFindingTheSitio ;
+    pm:yieldsCapacity pmc:CastanedaToltecSitioStrength ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 18 and 34, entries of 25 June and 20 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPeyoteYielding a pm:Yielding ;
+    rdfs:label "Taking Mescalito is said to bring his counsel on how to live"@en, "Mescalito zu nehmen soll seinen Rat über das rechte Leben bringen"@de ;
+    skos:note "Don Juan reads the scene the writer saw in Mescalito's hand as the answer to a question (p. 73)."@en ;
+    pm:byPractice pmp:CastanedaToltecPeyoteIngestion ;
+    pm:yieldsCapacity pmc:CastanedaToltecMescalitoCounsel ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 27, 33 and 72-73, entries of 5 August 1961, 20 August 1961 and 3 July 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMitoteYielding a pm:Yielding ;
+    rdfs:label "Asking in the mitote is said to bring one's own songs"@en, "Das Bitten im Mitote soll eigene Lieder bringen"@de ;
+    pm:byPractice pmp:CastanedaToltecMitote ;
+    pm:yieldsCapacity pmc:CastanedaToltecReceivingSongs ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 106-107, entry of 12 September 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecCarryingMescalitoYielding a pm:Yielding ;
+    rdfs:label "Carrying Mescalito is said to keep harm away"@en, "Mescalito bei sich zu tragen soll Unheil fernhalten"@de ;
+    pm:byPractice pmp:CastanedaToltecCarryingMescalito ;
+    pm:yieldsCapacity pmc:CastanedaToltecMescalitoProtection ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 61, entry of 24 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecCornWitchcraftYielding a pm:Yielding ;
+    rdfs:label "Corn witchcraft is said to kill"@en, "Maiskorn-Hexerei soll töten"@de ;
+    pm:byPractice pmp:CastanedaToltecCornWitchcraft ;
+    pm:yieldsCapacity pmc:CastanedaToltecKernelKilling ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, p. 9; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecFirstPortionYielding a pm:Yielding ;
+    rdfs:label "The first portion is said to give vigor, endurance and passion"@en, "Der erste Teil soll Kraft, Ausdauer und Leidenschaft geben"@de ;
+    pm:byPractice pmp:CastanedaToltecFirstPortionPotion ;
+    pm:yieldsCapacity pmc:CastanedaToltecVigorOfFirstPortion ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 42, entry of 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecImageYielding a pm:Yielding ;
+    rdfs:label "Making the image is said to give a protection"@en, "Das Anfertigen des Bildes soll einen Schutz geben"@de ;
+    pm:byPractice pmp:CastanedaToltecProtectionImage ;
+    pm:yieldsCapacity pmc:CastanedaToltecImageProtection ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 49, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecLizardYielding a pm:Yielding ;
+    rdfs:label "Divining is said to follow from the sorcery of the lizards"@en, "Die Zauberei der Eidechsen soll wahrsagen"@de ;
+    skos:note "The writer reports seeing a young man deface books and pack them in crates, after asking who stole books from a reading room (pp. 82-83); the work never says the answer was checked."@en ;
+    pm:byPractice pmp:CastanedaToltecLizardSorcery ;
+    pm:yieldsCapacity pmc:CastanedaToltecDivination ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 79-80 and 84-85, entries of 21 and 18 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecEatingLizardsYielding a pm:Yielding ;
+    rdfs:label "Eating the lizards is said to give for ever the sight of the unknown"@en, "Das Essen der Eidechsen soll für immer die Sicht des Unbekannten geben"@de ;
+    pm:byPractice pmp:CastanedaToltecEatingTheLizards ;
+    pm:yieldsCapacity pmc:CastanedaToltecSeeingTheUnknown ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 85, entry of 19 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecUnguentYielding a pm:Yielding ;
+    rdfs:label "The unguent of the second portion is said to give flight"@en, "Die Salbe des zweiten Teils soll Flug geben"@de ;
+    skos:note "The writer reports soaring over dark mountains, steering with his head, and waking naked half a mile from the house near don Juan's plants (pp. 91-92)."@en ;
+    pm:byPractice pmp:CastanedaToltecFlyingUnguent ;
+    pm:yieldsCapacity pmc:CastanedaToltecBodilyFlight ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 91-94, entry of 6 July 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSmokeYielding a pm:Yielding ;
+    rdfs:label "Smoking is said to take away the body and answer any question"@en, "Das Rauchen soll den Körper wegnehmen und jede Frage beantworten"@de ;
+    pm:byPractice pmp:CastanedaToltecSmokingTheMixture ;
+    pm:yieldsCapacity pmc:CastanedaToltecBodilessness, pmc:CastanedaToltecSmokeAnswers ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 46-47 and 101-102, entries of 23 November 1961 and 28 December 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSmokeHeartYielding a pm:Yielding ;
+    rdfs:label "The smoke is said to strengthen the heart"@en, "Der Rauch soll das Herz stärken"@de ;
+    pm:byPractice pmp:CastanedaToltecSmokingTheMixture ;
+    pm:yieldsCapacity pmc:CastanedaToltecReinforcedHeart ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 119, entry of 31 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSmokeAllyYielding a pm:Yielding ;
+    rdfs:label "Taking the smoke as ally is said to free one from smoking"@en, "Den Rauch zum Verbündeten zu machen soll vom Rauchen befreien"@de ;
+    pm:byPractice pmp:CastanedaToltecSmokingTheMixture ;
+    pm:yieldsCapacity pmc:CastanedaToltecCallingTheAlly ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 96, entry of 24 December 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecCrowYielding a pm:Yielding ;
+    rdfs:label "Becoming a crow is said to give a crow's sight and its omens"@en, "Zur Krähe zu werden soll Krähensicht und ihre Vorzeichen geben"@de ;
+    pm:byPractice pmp:CastanedaToltecBecomingACrow ;
+    pm:yieldsCapacity pmc:CastanedaToltecCrowSight, pmc:CastanedaToltecCrowOmens ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 125-129, entries of 23 March to 10 April 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecWarCryYielding a pm:Yielding ;
+    rdfs:label "The war cry from the spot is said to guide the throw"@en, "Der Kriegsschrei vom Platz soll den Wurf lenken"@de ;
+    skos:note "The writer reports that his yell steered his aim and that the figure staggered away (p. 136)."@en ;
+    pm:byPractice pmp:CastanedaToltecHurlingWithWarCry ;
+    pm:yieldsCapacity pmc:CastanedaToltecWarCryDirection ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 132-133 and 136, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecCrackYielding a pm:Yielding ;
+    rdfs:label "Crossing the crack is said to make a diablero"@en, "Das Durchqueren des Risses soll zum Diablero machen"@de ;
+    pm:byPractice pmp:CastanedaToltecCrossingTheCrack ;
+    pm:yieldsCapacity pmc:CastanedaToltecBecomingADiablero ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 137-138, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecWeedPowerYielding a pm:Yielding ;
+    rdfs:label "The deep root is said to give phenomenal strength and permanent power"@en, "Die tiefe Wurzel soll außerordentliche Kraft und dauernde Macht geben"@de ;
+    skos:note "The practice named is the taking of the root by portions, of which only the first is described; the deeper portions are said to be for the brujo alone."@en ;
+    pm:byPractice pmp:CastanedaToltecFirstPortionPotion ;
+    pm:yieldsCapacity pmc:CastanedaToltecPhenomenalStrength, pmc:CastanedaToltecPermanentPower ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 42-44, entry of 10 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The chains
+#
+
+pmc:CastanedaToltecSitioPresupposed a pm:Presupposing ;
+    rdfs:label "Finding one's spot before learning about Mescalito"@en, "Den eigenen Platz finden, bevor man über Mescalito lernt"@de ;
+    pm:dependentStep pmp:CastanedaToltecPeyoteIngestion ;
+    pm:priorStep pmp:CastanedaToltecFindingTheSitio ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Unless the riddle of the spot is solved, the teacher will have nothing to say and the learner may as well leave; to quit is never to learn." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 15-17, entry of 25 June 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecIntentPresupposed a pm:Presupposing ;
+    rdfs:label "Intent beyond reproach before the smoke"@en, "Tadellose Absicht vor dem Rauch"@de ;
+    pm:dependentStep pmp:CastanedaToltecSmokingTheMixture ;
+    pm:priorStep pmc:CastanedaToltecUnbendingIntent ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Without intending and willing his return the smoker is not let back by the smoke, and without willing to remember what he saw it is only fog in his mind." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 56, entry of 27 January 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecStrongLifePresupposed a pm:Presupposing ;
+    rdfs:label "A strong life before and after the smoke"@en, "Ein starkes Leben vor und nach dem Rauch"@de ;
+    pm:dependentStep pmp:CastanedaToltecSmokingTheMixture ;
+    pm:priorStep pmp:CastanedaToltecStrongQuietLife ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The smoke can be matched only with strength; without it a man's life is shattered to bits." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 46 and 103, entries of 23 November 1961 and 28 January 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecStayingOnSpotPresupposed a pm:Presupposing ;
+    rdfs:label "Staying on the spot to win the fight for the soul"@en, "Auf dem Platz bleiben, um den Kampf um die Seele zu gewinnen"@de ;
+    pm:dependentStep pmp:CastanedaToltecFightingForm ;
+    pm:priorStep pmp:CastanedaToltecFindingTheSitio ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Had he moved one inch from it he would have been struck down like a thunderbolt, his soul kept, and he would have wasted away." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 133 and 139, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecRequisitesPresupposed a pm:Presupposing ;
+    rdfs:label "The four requisites before going to knowledge"@en, "Die vier Erfordernisse, bevor man zum Wissen geht"@de ;
+    pm:dependentStep pmc:CastanedaToltecManOfKnowledge ;
+    pm:priorStep pmc:CastanedaToltecFourRequisites ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Any other way of going to knowledge or to war is an error, and the one who commits it will come to regret his steps." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 32, entry of 20 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecShootSeedsPresupposed a pm:Presupposing ;
+    rdfs:label "The shoot must seed before the taming"@en, "Der Spross muss Samen tragen vor der Zähmung"@de ;
+    skos:note "Don Juan says the learner may count himself ready only when the plant has seeded; the second portion is taught once the bush has seeded a year later. No consequence of skipping is named."@en ;
+    pm:dependentStep pmp:CastanedaToltecLizardSorcery ;
+    pm:priorStep pmp:CastanedaToltecReplantingTheShoot ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 42 and 53, entries of 10 September and 26 December 1961; Part One, p. 75, entry of 27 January 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSecondPortionPresupposed a pm:Presupposing ;
+    rdfs:label "The second portion twenty times before the third"@en, "Der zweite Teil zwanzigmal vor dem dritten"@de ;
+    skos:note "The second portion must be mastered and taken at least twenty times before the third step; the work does not name the third step, and the flight it calls a use of the second portion is entered here as the further step the text reaches."@en ;
+    pm:dependentStep pmc:CastanedaToltecBodilyFlight ;
+    pm:priorStep pmp:CastanedaToltecLizardSorcery ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 75, entry of 27 January 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPipeBondPresupposed a pm:Presupposing ;
+    rdfs:label "The bond with the pipe before smoking"@en, "Die Verbindung mit der Pfeife vor dem Rauchen"@de ;
+    skos:note "When the friendship with the pipe is made one will smoke from it; liking the pipe is said to help one be unafraid. No consequence of skipping is named, though the writer says he was made to smoke before he felt ready (p. 96)."@en ;
+    pm:dependentStep pmp:CastanedaToltecSmokingTheMixture ;
+    pm:priorStep pmp:CastanedaToltecBefriendingThePipe ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 47, entry of 23 November 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecEscogidoPresupposed a pm:Presupposing ;
+    rdfs:label "Being chosen before the secrets"@en, "Auserwählt sein vor den Geheimnissen"@de ;
+    skos:note "Don Juan says he could reveal his secrets to nobody until he found his chosen man."@en ;
+    pm:dependentStep pmc:CastanedaToltecManOfKnowledge ;
+    pm:priorStep pmc:CastanedaToltecEscogido ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 30-31, entry of 17 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The series
+#
+
+pmc:CastanedaToltecFourEnemies a pm:Sequencing ;
+    rdfs:label "The four natural enemies of the man of knowledge"@en, "Die vier natürlichen Feinde eines Menschen des Wissens"@de ;
+    skos:definition "Four enemies, fear first, then clarity, power and finally old age, the enemies a learner meets in that order on the way to becoming a man of knowledge."@en ;
+    skos:note "Ordered by don Juan himself; the analysis of Part Two repeats the order as the renewal of the quest (p. 150). No consequence of skipping an enemy is named, because none can be skipped, so no pm:Presupposing pairs are entered."@en ;
+    rdf:_1 pmc:CastanedaToltecFear ;
+    rdf:_2 pmc:CastanedaToltecClarity ;
+    rdf:_3 pmc:CastanedaToltecPower ;
+    rdf:_4 pmc:CastanedaToltecOldAge ;
+    pm:seriesStatement "Each enemy is met only through victory over the one before it: clarity is what replaces vanquished fear, power is what clarity becomes when defied, and old age comes at the end of learning when power is held in check; the man of knowledge exists only in the moment the last is fought off." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 57-60, entry of 15 April 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecFourHeads a pm:Sequencing ;
+    rdfs:label "The four heads of the devil's weed"@en, "Die vier Köpfe des Teufelskrauts"@de ;
+    skos:definition "Root, stem and leaves, flowers, seeds: the four parts of the Datura plant as don Juan orders their learning."@en ;
+    skos:note "No consequence of skipping a head is named. The weed's own man takes only root and seeds, stem and leaves only in his own illness, flowers never."@en ;
+    rdf:_1 pmc:CastanedaToltecRootHead ;
+    rdf:_2 pmc:CastanedaToltecDaturaHealing ;
+    rdf:_3 pmc:CastanedaToltecDaturaFlowers ;
+    rdf:_4 pmc:CastanedaToltecSoberHead ;
+    pm:seriesStatement "Whoever makes the weed his ally must learn the heads in this order, from the root through which her power is conquered to the seeds, the strongest and the only one that strengthens the heart, which the weed seeks to keep him from by killing him first." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 35-36, entry of 23 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecCrowStages a pm:Sequencing ;
+    rdfs:label "The stages of becoming a crow"@en, "Die Stufen der Verwandlung in eine Krähe"@de ;
+    skos:definition "Legs, then tail and wings, then the shrinking of the head, then the crow's eyes, before the flight."@en ;
+    skos:note "Ordered by don Juan's commands under the smoke as the writer recalls them. The analysis takes the whole as hypnotic suggestion (p. 162). No consequence of skipping is named except that short wings will not fly."@en ;
+    rdf:_1 pmp:CastanedaToltecCrowLegs ;
+    rdf:_2 pmp:CastanedaToltecCrowTailAndWings ;
+    rdf:_3 pmp:CastanedaToltecCrowHead ;
+    rdf:_4 pmp:CastanedaToltecCrowEyes ;
+    pm:seriesStatement "Each change is commanded only after the one before: the learner is not yet solid until the tail grows, cannot fly while the head is large, and the sight of the crow is the last change before he can be tossed into the air." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 121-122, entry of 7 February 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The cautions
+#
+
+pmc:CastanedaToltecKernelCureCaution a pm:Cautioning ;
+    rdfs:label "The kernel kills the curer who cannot repel it"@en, "Das Korn tötet den Heiler, der es nicht abwehren kann"@de ;
+    skos:definition "Few brujos dare to suck out a kernel, because one not strong enough to repel it takes it into himself and dies instead."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecSuckingTheKernel ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, p. 9; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPowerObjectsCaution a pm:Cautioning ;
+    rdfs:label "Power objects are toys beside an ally"@en, "Machtgegenstände sind Spielzeug neben einem Verbündeten"@de ;
+    skos:definition "Whoever takes such tools for supreme is a fool; next to an ally they are children's toys and pursuing them wastes time."@en ;
+    pm:cautionsAbout pmc:CastanedaToltecPowerObjects ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Introduction, p. 9; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecEnemySpotCaution a pm:Cautioning ;
+    rdfs:label "The enemy spot weakens and can kill"@en, "Der feindliche Platz schwächt und kann töten"@de ;
+    skos:definition "Beside the good spot lies its opposite, called the enemy, which weakens a man and may even cause his death; the writer felt terror there."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecFindingTheSitio ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 17-18, entry of 25 June 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecWeedDistortsCaution a pm:Cautioning ;
+    rdfs:label "The devil's weed distorts men"@en, "Das Teufelskraut verzerrt die Menschen"@de ;
+    skos:definition "She gives a taste of power before the heart is strong, makes men domineering, unpredictable and weak in their strength, keeps those who want power and rids herself of those who cannot handle it, and makes them her slaves; the price can be overcome but not avoided."@en ;
+    skos:note "A self-warning of the teacher against the ally he teaches. The analysis adds that ritual is the only protection against her unpredictability, never enough, and that her user must wait for favourable omens (p. 155)."@en ;
+    pm:cautionsAbout pmc:CastanedaToltecYerbaDelDiabloNaming ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 35, 41 and 43, entries of 23 August and 10 September 1961; Part Two, pp. 152-153; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecWeedKillsCaution a pm:Cautioning ;
+    rdfs:label "The weed kills her protégés early"@en, "Das Kraut tötet seine Schützlinge früh"@de ;
+    skos:definition "She is hard with those she favours and seeks to kill them quickly, usually before they reach the secrets of the seeds; she nearly killed don Juan each time he used her."@en ;
+    pm:cautionsAbout pmc:CastanedaToltecYerbaDelDiabloNaming ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 36 and 75, entries of 23 August 1961 and 28 January 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecNameCaution a pm:Cautioning ;
+    rdfs:label "Names are for calling in need"@en, "Namen sind zum Rufen in der Not"@de ;
+    skos:definition "The other names of the weed, and Mescalito's name, are not to be spoken in talk; a name is kept for calling the power in moments of great need, which come sooner or later."@en ;
+    pm:cautionsAbout pmc:CastanedaToltecYerbaDelDiabloNaming ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 36 and 73, entries of 23 August 1961 and 3 July 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecShovelCaution a pm:Cautioning ;
+    rdfs:label "A shovel spoils the root"@en, "Eine Schaufel verdirbt die Wurzel"@de ;
+    skos:definition "A root cut with a shovel or other foreign tool will not grow for its owner when replanted."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecDaturaDigging ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 37-38, entry of 3 September 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPipeCaution a pm:Cautioning ;
+    rdfs:label "A mishandled pipe destroys its keepers"@en, "Eine falsch gehandhabte Pfeife vernichtet ihre Hüter"@de ;
+    skos:definition "A mistake in passing the pipe makes it burst or shatter and would be the end of teacher and learner; it must never be knocked, never held with sweaty hands, used only alone and seen by nobody, and its keeper dies if it is lost or broken."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecBefriendingThePipe ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 46, 48 and 95, entries of 23 November 1961 and 23 December 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMixtureCaution a pm:Cautioning ;
+    rdfs:label "The wrong mushroom kills"@en, "Der falsche Pilz tötet"@de ;
+    skos:definition "The mixture is deadly poisonous to all but the smoke's own protégé and cannot be made without a teacher; mushrooms of the wrong kind harm man and pipe, and some men have died of the foul smoke."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecSmokeMixturePreparation ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 46 and 55, entries of 23 November 1961 and 27 January 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecImageSeenCaution a pm:Cautioning ;
+    rdfs:label "The image must not be seen"@en, "Das Bild darf nicht gesehen werden"@de ;
+    skos:definition "The protection is weakened for as long as anyone who has seen it remembers it."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecProtectionImage ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 49, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecShootSecretCaution a pm:Cautioning ;
+    rdfs:label "Nobody may know where the shoot grows"@en, "Niemand darf wissen, wo der Spross wächst"@de ;
+    skos:definition "A stranger who sees the place could cripple or kill the owner through the shoot, so he must take it and flee if followed; not even the teacher may know."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecReplantingTheShoot ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 53, entry of 26 December 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMescalitoHorrorCaution a pm:Cautioning ;
+    rdfs:label "Mescalito is horror to those he dislikes"@en, "Mescalito ist Grauen für die, die er nicht mag"@de ;
+    skos:definition "The kind protector cannot be mocked; toward those he dislikes he can be sheer horror."@en ;
+    pm:cautionsAbout pmc:CastanedaToltecMescalitoNaming ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 62, entry of 30 January 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecBagCaution a pm:Cautioning ;
+    rdfs:label "The bag of Mescalito must not touch the ground"@en, "Der Beutel mit Mescalito darf den Boden nicht berühren"@de ;
+    skos:definition "If the bags of gathered buttons touch the ground or a bush, Mescalito will never again let himself be taken by that man; nor may one point at a plant."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecPeyoteGathering ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 64-65 and 71-72, entry of 6 July 1962; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSongsCaution a pm:Cautioning ;
+    rdfs:label "Never another man's songs"@en, "Niemals die Lieder eines anderen"@de ;
+    skos:definition "One must never imitate another man's songs or ask after them; whoever sings someone else's songs without knowing their sense is a phony."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecCallingMescalito ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 73 and 110, entries of 3 July 1962 and 10 September 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecPersonalQuestionCaution a pm:Cautioning ;
+    rdfs:label "No personal questions to the lizards at first"@en, "Anfangs keine persönlichen Fragen an die Eidechsen"@de ;
+    skos:definition "The first questions must not concern oneself or people one knows; the longing to touch or speak to them stops the lizard and breaks the sorcery, and one must know much more before seeing things of one's own."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecLizardSorcery ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 80 and 85, entries of 21 and 18 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecHasteCaution a pm:Cautioning ;
+    rdfs:label "Haste in the lizard sorcery hurts"@en, "Eile bei der Eidechsenzauberei schadet"@de ;
+    skos:definition "Acting too fast and without deliberation in the dance and the steps brings harm; the paste is a power of unknown kind and must be handled with respect."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecLizardSorcery ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 81, entry of 21 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecForeheadCaution a pm:Cautioning ;
+    rdfs:label "Never the paste on the forehead"@en, "Niemals die Paste auf die Stirn"@de ;
+    skos:definition "The paste must be kept off the middle of the forehead, which belongs to the great brujos alone."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecLizardSorcery ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 79-80 and 114-116, entries of 21 April 1963 and 24 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecLizardsInsideCaution a pm:Cautioning ;
+    rdfs:label "Lizards inside bind one to the weed"@en, "Eidechsen im Inneren binden an das Kraut"@de ;
+    skos:definition "If the lizards come to live inside, the weed never lets one go; one spends one's life grooming her and is cut off from all else, so not finding them is better and leaves one free."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecEatingTheLizards ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 85-86, entry of 19 April 1963; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecWeedTrapCaution a pm:Cautioning ;
+    rdfs:label "The weed's trap is to seem the only path"@en, "Die Falle des Krauts ist, als einziger Weg zu erscheinen"@de ;
+    skos:definition "Like a flattering woman she sets traps, gives a feeling of power and makes one believe hers is the only way; one must not take her with passion, and must choose free of fear and ambition, for the smoke blinds with fear and the weed with ambition."@en ;
+    skos:note "Spoken in the first person as a warning (I warn you), twice."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecAskingThePathQuestion ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 76 and 117-118, entries of 28 January 1963 and 28 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecGuideCaution a pm:Cautioning ;
+    rdfs:label "The smoke without a guide kills"@en, "Der Rauch ohne Führer tötet"@de ;
+    skos:definition "Handing the smoke to just anyone, with no guide, would be to kill him, because nobody would bring him back."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecSmokingTheMixture ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 102, entry of 28 January 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecMirrorCaution a pm:Cautioning ;
+    rdfs:label "No mirror or camera under the smoke"@en, "Kein Spiegel und keine Kamera unter dem Rauch"@de ;
+    skos:definition "Looking at oneself in a mirror while under the smoke would probably kill one with fright, and a camera might turn the smoke against one; one learns how a man looks only when giving the smoke to another."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecSmokingTheMixture ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 104, entry of 28 January 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSecretsCaution a pm:Cautioning ;
+    rdfs:label "Three secrets of the smoke are never told"@en, "Drei Geheimnisse des Rauchs werden nie verraten"@de ;
+    skos:definition "The making of the mixture, the way of moving about and the way back are never to be revealed; other matters of the smoke may be told."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecSmokingTheMixture ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 104, entry of 28 January 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecFormsCaution a pm:Cautioning ;
+    rdfs:label "Large and small forms are dangerous"@en, "Große und kleine Gestalten sind gefährlich"@de ;
+    skos:definition "A lion or bear costs too much energy and draws notice; a cricket, lizard or ant is preyed upon; the crow is safe because nobody minds it."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecBecomingACrow ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 129, entry of 10 April 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecRiverCaution a pm:Cautioning ;
+    rdfs:label "Running water can carry off the soul-lost"@en, "Fließendes Wasser kann den Seelenlosen fortreißen"@de ;
+    skos:definition "The noise of a stream or a river can catch one bewitched and robbed of his soul and bear him off to die."@en ;
+    pm:cautionsAbout pmc:CastanedaToltecSoulLoss ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 132, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecHurlCaution a pm:Cautioning ;
+    rdfs:label "Hurl only when life is at stake"@en, "Nur werfen, wenn das Leben auf dem Spiel steht"@de ;
+    skos:definition "The form is for extreme crisis only and the throw only in plain danger of death; the war cry stays for life and must be right from the first, so it is not used at random."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecHurlingWithWarCry ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 132, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecHelperCaution a pm:Cautioning ;
+    rdfs:label "Beware a female helper and going too far"@en, "Hüte dich vor einer weiblichen Helferin und davor, zu weit zu gehen"@de ;
+    skos:definition "One should seek a helper who is male, so as not to fall prey to a diablera who makes one suffer; and one who returns is bound to go back ever farther from the entrance until one day he cannot return."@en ;
+    pm:cautionsAbout pmp:CastanedaToltecCrossingTheCrack ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 138, entry of 29 October 1965; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecKnowledgeHarmCaution a pm:Cautioning ;
+    rdfs:label "Some knowledge harms the unready"@en, "Manches Wissen schadet dem Unbereiten"@de ;
+    skos:definition "Certain knowledge is too strong for the learner's strength and talk of it would only harm him; learning by conversation is waste."@en ;
+    pm:cautionsAbout pmc:CastanedaToltecManOfKnowledge ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, p. 34, entry of 20 August 1961; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecRuleCaution a pm:Cautioning ;
+    rdfs:label "Breaking the rule is usually fatal"@en, "Die Regel zu brechen ist meist tödlich"@de ;
+    skos:definition "The rule of an ally is fixed and cannot be added to; departing from it usually kills, and any attempt to change it is deadly; only the ally may, from affinity, hold back the effect."@en ;
+    skos:note "Stated in the analysis as don Juan's inference from the writer's error with the forehead."@en ;
+    pm:cautionsAbout pmc:CastanedaToltecAllyBeyondBoundaries ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part Two, pp. 156-157; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The author's own orderings
+#
+
+pmc:CastanedaToltecStructuralAnalysis a pm:Systematizing ;
+    rdfs:label "The structural analysis: four units and a conceptual order"@en, "Die Strukturanalyse: vier Einheiten und eine begriffliche Ordnung"@de ;
+    skos:definition "The writer orders the teachings as an operative order of four units, each modifying the one before: the man of knowledge; his ally; the ally's rule; and the rule's corroboration by special consensus given by the teacher; beneath it a conceptual order which the apprentice either adopts in good faith or only fallaciously, failure being abandonment under any of the four enemies."@en ;
+    skos:note "The writer says the order of the four units is free of his own classifying devices but that the components of each are not, and that the meanings are rendered as he understood them (p. 143). The teacher never stated this order; it is the writer's."@en ;
+    pm:compiledBy "Carlos Castaneda, in Part Two and the appendixes of the work" ;
+    dcterms:date "1968"^^xsd:gYear ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part Two, pp. 143-144 and 173-179; Appendix B, pp. 193-196; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSevenThemes a pm:Systematizing ;
+    rdfs:label "The seven themes of the man of knowledge"@en, "Die sieben Themen des Menschen des Wissens"@de ;
+    skos:definition "Learning, unbending intent (frugality, judgment, no freedom to innovate), clarity of mind (freedom to choose a path, knowing the purpose, being fluid), strenuous labor (the drama of exertion, efficacy, meeting challenge), the warrior (respect, fear, wakefulness, self-confidence), the unceasing process (renewal, impermanence, the path with heart), and having an ally."@en ;
+    pm:compiledBy "Carlos Castaneda, in Part Two and the appendixes of the work" ;
+    dcterms:date "1968"^^xsd:gYear ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part Two, pp. 144-150; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecSixPurposes a pm:Systematizing ;
+    rdfs:label "The six specific purposes of the allies' rules"@en, "Die sechs besonderen Zwecke der Regeln der Verbündeten"@de ;
+    skos:definition "Testing, divination and bodily flight with the Datura ally, by ingestion and by ingestion with absorption through the skin; testing, movement through objects and beings, and movement in an alternate form with the mushroom ally, by ingestion and inhalation; set in the order the teacher presented them."@en ;
+    skos:note "The writer says flight was not corroborated in depth and movement through things only discussed; he holds that the crow technique included hypnotic suggestion besides the smoke (p. 162)."@en ;
+    pm:compiledBy "Carlos Castaneda, in Part Two and the appendixes of the work" ;
+    dcterms:date "1968"^^xsd:gYear ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part Two, pp. 160-163; Appendix B, p. 195; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+pmc:CastanedaToltecManipulationOfCues a pm:Systematizing ;
+    rdfs:label "The teacher's direction of the states by cues and emphasis"@en, "Die Lenkung der Zustände durch Hinweise und Betonung"@de ;
+    skos:definition "The writer explains the coloured spots of the first night and the impersonation of the last as special states of ordinary reality produced by don Juan through cues about the surroundings and about his own behaviour, and the course of all states as directed by the teacher's positive, negative and withheld emphasis in the retelling, so that the states progress toward the specific, toward a wider range and toward practical use."@en ;
+    skos:note "This is the work's own naturalising reading of two events that Part One reports as the finding of a spot of power and the attack of a diablera; it stands beside them and is not reconciled with them by the writer."@en ;
+    pm:compiledBy "Carlos Castaneda, in Part Two and the appendixes of the work" ;
+    dcterms:date "1968"^^xsd:gYear ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:CastanedaToltec ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part Two, pp. 164-173; Appendix A, pp. 181-191; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
+#
+# The protocol
+#
+
+pmc:CastanedaToltecLizardDivinationTest a pm:Testing ;
+    pm:fromWork pmw:CastanedaToltecTeachingsOfDonJuan ;
+    rdfs:label "Divination by the lizards"@en, "Wahrsagen durch die Eidechsen"@de ;
+    skos:definition "The claim that the sorcery of the lizards shows the answer to a question about an absent person, a lost object or an unseen place."@en ;
+    skos:note "The work gives the case and not its check: asked who stole books from a reading room, the writer sees a young man deface books and pack them in crates, and in the second sorcery a young man with papers; neither answer is said to have been compared with what happened. It also gives the escapes in advance: a wandering thought gets an answer to an unknown question, and a personal question breaks off the sorcery. A protocol must therefore fix the question, its wording and the means of checking before the sorcery, and record every attempt."@en ;
+    pm:tests pmc:CastanedaToltecLizardYielding ;
+    pm:examinationState pm:procedureWithoutCases ;
+    pm:falsifiedBy "Answers to fixed questions about matters unknown to the diviner, recorded before the facts are established, match the established facts no more often than guessed answers to the same questions." ;
+    pm:examinedBy "prima-materia, protocol stated from the witness; no case series has been collected" ;
+    pm:protocolUpdated "2026-11-02"^^xsd:date ;
+    dcterms:source "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (copyright 1968 by the Regents of the University of California), Part One, pp. 79-85 and 114-116, entries of 18 to 21 April 1963 and of 24 and 28 December 1964; read in the full-text layer of the omnibus The Teachings of Don Juan, A Separate Reality, Tales of Power (New York: Quality Paperback Book Club, 1995), whose first part carries the work on pp. 1-196" .
+
