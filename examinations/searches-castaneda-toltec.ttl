@@ -1,0 +1,68 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+#
+# prima-materia — five searches carried for Castaneda's Toltec transmission
+#
+# All five were carried on 2026-11-02: the first, the fourth and the fifth
+# over the Internet Archive, the second and third in The Teachings of Don Juan
+# while it was open. The nodes they found stand in
+# traditions/castaneda-toltec.ttl.
+#
+
+pmp:CastanedaToltecCorpusLandscapeSearch a pm:Searching ;
+    rdfs:label "Which carriers of The Teachings of Don Juan are reachable as full text"@en, "Welche Träger von The Teachings of Don Juan als Volltext erreichbar sind"@de ;
+    pm:searchedCorpus "The Internet Archive, its advanced search and item metadata, for The Teachings of Don Juan: A Yaqui Way of Knowledge and The Art of Dreaming" ;
+    pm:searchedFor "An open full text, not access-restricted, with a usable text layer, a copyright page and page numbers, for the work the registration names first." ;
+    pm:searchTerms "title:(teachings don juan); title:(teachings of don juan); title:(yaqui way of knowledge); castaneda AND (don juan) AND mediatype:texts; creator:(castaneda) AND mediatype:texts; title:(art of dreaming) AND castaneda. Found: eleven scans of separate editions 1968-1998 (teachingsofdonju1968cast, teachingsofdonju00cast, teachingsofdonju00castrich, teachingsofdonju00simo, teachingsofdonj00cast, teachingsofdonju0000cast, teachingsofdonju0000carl and variants, bwb_S0-ALE-340, bwb_S0-ECB-916), all access-restricted, one checked to answer 401; an ebook transcription without copyright page or page numbers (don-juan-1-castaneda-carlos-the-teachings-of-don-juan-a-yaqui-way-of-knowledge, 473713 characters); and the open omnibus the-teachings-of-don-juan-a-separate-reality-tales-of-power (1598678 characters, ASCII letter share 1.0) with copyright page and running folios. All carriers of The Art of Dreaming with a text layer were restricted." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:CastanedaToltecDonJuanReceiving ;
+    pm:searchedBy "prima-materia, 2026-11-02" ;
+    dcterms:date "2026-11-02" ;
+    skos:note "The omnibus of 1995 was chosen because it is the only open carrier that gives the edition on a copyright page in the text layer and page numbers by which a reader can find a passage; the work was read whole in it. Whether its pagination matches the 1968 edition was not checked against a restricted scan."@en .
+
+pmp:CastanedaToltecFailureSearch a pm:Searching ;
+    rdfs:label "Whether The Teachings of Don Juan states conditions under which its practices fail"@en, "Ob The Teachings of Don Juan Bedingungen nennt, unter denen seine Praktiken scheitern"@de ;
+    pm:searchedCorpus "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (1968), whole, in the Quality Paperback Book Club omnibus (New York, 1995), pp. 1-196" ;
+    pm:searchedFor "A passage that names an outcome by which a practice is seen not to have worked: a bad sign after a potion, a plant or animal that dies, a direction that forbids going on, a term after which an effect has not come, a defeat by which a learner is known to have failed." ;
+    pm:searchTerms "The whole work read in sequence, and a second pass over every sentence of the text layer, hyphenation joined and whitespace folded, containing must, have to, never, warn, danger, die or kill, omen, sign or indication, if he, you, one or a man, capable of or power to, only way, unless or otherwise (608 sentences). Counts over the folded text layer: omen and omens 11, sign 3, indication 4, warn 12, danger 12, die, died and death 37, kill 30, fail 15, defeat 27, unless 6, otherwise 6, enemy and enemies 48." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:CastanedaToltecFear, pmc:CastanedaToltecClarity, pmc:CastanedaToltecPower, pmc:CastanedaToltecOldAge, pmc:CastanedaToltecSeeingBlack, pmc:CastanedaToltecShootDies, pmc:CastanedaToltecLizardDirection, pmc:CastanedaToltecLizardDeath, pmc:CastanedaToltecKernelTerm, pmc:CastanedaToltecIntermittentApprenticeship, pmc:CastanedaToltecAuthorDefeatedByFear ;
+    pm:searchedBy "prima-materia, 2026-11-02" ;
+    dcterms:date "2026-11-02" ;
+    skos:note "Eighteen conditions of failure; the yielded nodes listed are a sample, all eighteen stand in traditions/castaneda-toltec.ttl with the note that counts them. Unlike a forecast corpus, most of them are stated against the learner's own practice: the colour seen after the root, the death of the shoot or of a lizard, the lizard's direction, the enemies. The work applies one of its conditions to its own writer, who closes by saying he believes he succumbed to the first enemy."@en .
+
+pmp:CastanedaToltecSuccessSignSearch a pm:Searching ;
+    rdfs:label "Whether The Teachings of Don Juan names signs of success"@en, "Ob The Teachings of Don Juan Gelingenszeichen nennt"@de ;
+    pm:searchedCorpus "Carlos Castaneda, The Teachings of Don Juan: A Yaqui Way of Knowledge (1968), whole, in the Quality Paperback Book Club omnibus (New York, 1995), pp. 1-196" ;
+    pm:searchedFor "A perceptible mark, announced or read afterwards, that a step had taken: an omen in the weather or in an animal, a colour seen, a form in which a power appears, a bodily sign of readiness." ;
+    pm:searchTerms "The whole work read; the same 608-sentence second pass as the failure search, read for omen, sign, indication, good and bad, liked and wants, accepted, ready." ;
+    pm:searchOutcome pm:searchFoundPlace ;
+    pm:searchYieldedNode pmc:CastanedaToltecPeripheralColours, pmc:CastanedaToltecMescalitoPlaying, pmc:CastanedaToltecSunnyDayOmen, pmc:CastanedaToltecSeeingRed, pmc:CastanedaToltecShootSeeds, pmc:CastanedaToltecMescalitoAsLight, pmc:CastanedaToltecLizardDirectionGood, pmc:CastanedaToltecSmokeClarifies, pmc:CastanedaToltecReadyToWink, pmc:CastanedaToltecReadyForTheCrack, pmc:CastanedaToltecFindingTheStone ;
+    pm:searchedBy "prima-materia, 2026-11-02" ;
+    dcterms:date "2026-11-02" ;
+    skos:note "Eleven signs against eighteen conditions of failure. Several signs are paired with a condition in the same breath (red against black, seeds against a dead shoot, a lizard's good direction against its bad one), which makes this one of the few works in the holding where the sign and its negation are announced together. Seen and not counted: the lightening of the peyote bags after leaving Mescalito's ground, which the work reads as the end of his reluctance and not as a success."@en .
+
+pmp:CastanedaToltecCounterSearch a pm:Searching ;
+    rdfs:label "Whether the reachable record contradicts the claim that don Juan taught what the work reports"@en, "Ob die erreichbare Überlieferung der Behauptung widerspricht, don Juan habe gelehrt, was das Werk berichtet"@de ;
+    pm:searchedCorpus "The Teachings of Don Juan (1968), whole, for its own admissions; the Internet Archive for the critical literature, above all Richard de Mille" ;
+    pm:searchedFor "A passage that tells against the claim that the teachings were received from a Yaqui man of knowledge in fieldwork from 1961 to 1965: an admission in the work, a study of its authenticity." ;
+    pm:searchTerms "In the work: the Introduction on method (pp. 4-10), the analysis on rendering meaning (p. 143), and the analysis's account of cues and suggestion (pp. 162-167). At the Internet Archive: creator:(de mille) AND castaneda; title:(castaneda's journey); title:(don juan papers). Found: de Mille, Castaneda's Journey (1976), two scans, both access-restricted; The Don Juan Papers (1980), four library scans access-restricted and one open upload, the-don-juan-papers (1277541 characters, ASCII letter share 1.0, second printing 1981 by its copyright page), read at pp. 9-11 and 119-120." ;
+    pm:searchOutcome pm:searchFoundOpposing ;
+    pm:searchedBy "prima-materia, 2026-11-02" ;
+    dcterms:date "2026-11-02" ;
+    skos:note "Opposing material in two places. In the work itself: the writer says the meanings are rendered as he understood them and cannot duplicate what don Juan said (p. 143), condensed and deleted dialogue (p. 10), and in the analysis explains two of the reported events as produced by the teacher through cues and suggestion. In the critical literature: The Don Juan Papers, pp. 119-120, lists anthropologists who took the book as an authentic report, among them Spicer, Douglas and the foreword's Goldschmidt, against Wasson, Basso, Ochoa, Hsu and La Barre, who judged it imagined or pseudo-ethnography, and de Mille's own book of 1976, which held it fiction. Entered as a note at pmc:CastanedaToltecDonJuanReceiving and not as pm:Disputing: the critical side is research and enters only at pm:evidenceFrom on a protocol, and nothing of de Mille beyond these pages was read."@en .
+
+pmp:CastanedaToltecArtOfDreamingSearch a pm:Searching ;
+    rdfs:label "Whether The Art of Dreaming is reachable as full text"@en, "Ob The Art of Dreaming als Volltext erreichbar ist"@de ;
+    pm:searchedCorpus "The Internet Archive, advanced search and item metadata, for Carlos Castaneda, The Art of Dreaming (1993)" ;
+    pm:searchedFor "An open full text of the second work the registration names." ;
+    pm:searchTerms "title:(art of dreaming) AND castaneda (7 items). artofdreaming0000cast, artofdreaming00cast, artofdreaming0000cast_b9r9, artofdreaming0000carl, bwb_S0-DNM-407 and 6u0xn6zrsxm7x2y1sbyogf7rxdqbexqtajmemdzi access-restricted; 10_20230524_20230524 open but without any text or PDF file in its metadata." ;
+    pm:searchOutcome pm:corpusUnreachable ;
+    pm:searchedBy "prima-materia, 2026-11-02" ;
+    dcterms:date "2026-11-02" ;
+    skos:note "A finding about one archive on one day, not about the work. Not tried: other digitisation projects and the Spanish edition, El arte de ensoñar."@en .
