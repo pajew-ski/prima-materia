@@ -1,0 +1,2147 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — Kabbalah: Ashlag, Haqdama le-Sefer ha-Zohar
+#
+# The harvest of one work of the corpus of pmt:Kabbalah, kept apart from
+# traditions/kabbalah.ttl, which declares the tradition and the work
+# (pmw:HaqdamaLeSeferHaZohar); the edition read, the two Hebrew witnesses,
+# the translations and the counts of the harvest stand as notes on the work
+# there. Nodes follow the author's sections, 1 to 71 (Hebrew letters alef to
+# ayin-alef), each at the section that carries it.
+#
+# The Petiḥa le-Ḥokhmat ha-Qabbala by the same author is harvested in
+# traditions/kabbalah-petiha.ttl. The same assertion by the same author is not
+# entered twice: every record of this harvest was compared with the nodes of
+# that file, and where a Petiḥa node carries the claim no node is written here
+# (the mapping is kept with the harvest note); links into such claims point at
+# the Petiḥa nodes. A node stands here when the Haqdama carries a claim no
+# Petiḥa node carries, or when it states a claim in a different form; such a
+# node carries a note beginning "Differs from" that names the Petiḥa node and
+# the difference.
+#
+# Harvested under prima-materia#924 with two independent extraction passes
+# over the Hebrew, reconciled by offset and word overlap, then integrated by a
+# reader of the whole text. Identifiers are pmc:KabbalahAshlag or
+# pmp:KabbalahAshlag plus the Hebrew term in ASCII transliteration. Signs of
+# success, conditions of failure and capacities carry a note beginning
+# "Counted as".
+#
+
+
+#
+# §2
+#
+
+pmc:KabbalahAshlagHaqiraBeMaasavLoBeAtzmuto a pm:Cautioning ;
+    rdfs:label "Inquiry permitted into His deeds, barred from His essence"@en, "Forschung an Seinen Werken erlaubt, an Seinem Wesen verwehrt"@de ;
+    skos:definition "Before the inquiries begin, the author rules out any inquiry into the Creator's own essence, which no thought grasps, and allows, indeed requires, inquiry only into His works."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagIyunBeSofHaMaase ;
+    skos:note "Hebrew term in the text: עצמותו של הבורא (ʿatzmuto shel ha-boreʾ)."@en ;
+    skos:note "Grounded on 1 Chr 28:9 and a line of the Song of Unity for the fifth day; the caution sets the limit of the method of §§4-5."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §2 (ב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §4
+#
+
+pmc:KabbalahAshlagTakhlitHaBeriaSofHaMaase a pm:Conceptualizing ;
+    rdfs:label "Nothing is understood mid-way, only from its end"@en, "Nichts wird mitten im Werk verstanden, nur von seinem Ende her"@de ;
+    skos:definition "Since no sane agent acts without an aim, and a thing in the middle of its making cannot be judged, the questions about creation are to be answered from its final purpose; the author restates it with the folk saying against showing a fool an unfinished job."@en ;
+    skos:note "Hebrew term in the text: תכלית הבריאה (takhlit ha-beriʾa)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§4 (ד), 5 (ה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMitHakkemimAzivatHaBeria a pm:Conceptualizing ;
+    rdfs:label "Against those who hold the Creator left the world to itself"@en, "Gegen die Meinung, der Schöpfer habe die Welt sich selbst überlassen"@de ;
+    skos:definition "Some clever ones who cast off Torah say that the Creator made reality and then abandoned it as too lowly to be watched over; the author answers that a perfect maker cannot turn out a contemptible work, so any defect charged to us falls on the maker, and that such talk only shows want of understanding."@en ;
+    skos:note "Hebrew term in the text: מתחכמים פורקי עול (mitḥakkemim porqei ʿol)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    skos:note "The author supports it with the anecdote of Taanit 20a, the ugly man who sent R. Elazar to complain to his Maker."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §4 (ד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §5
+#
+
+pmc:KabbalahAshlagBeriotTovotVeNaalot a pm:Conceptualizing ;
+    rdfs:label "We are in truth good and exalted creatures"@en, "Wir sind in Wahrheit gute und erhabene Geschöpfe"@de ;
+    skos:definition "Sound reason obliges us, against what appears on the surface, to hold ourselves good and lofty without limit, as befits the perfect craftsman, since every defect one might impute to our bodies ends by falling on Him who planted all our tendencies and knew their outcome."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §5 (ה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagIyunBeSofHaMaase a pm:Practicing ;
+    rdfs:label "Reasoning from the end of the act"@en, "Schließen vom Ende des Werkes her"@de ;
+    skos:definition "Method of the work: when a question about creation seems insoluble, turn the attention to the final purpose of the act, derive what that purpose requires, and read the present defects as stations toward it."@en ;
+    skos:note "An interpretive procedure and not a spiritual exercise; entered because the text prescribes it as the way to resolve its questions."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §5 (ה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHavanatHaSheelot a pm:Conceptualizing ;
+    rdfs:label "Understanding of the opening questions"@en, "Verständnis der Eingangsfragen"@de ;
+    skos:definition "The text promises that by looking at the end of the act one will understand everything, that is resolve its five questions and six inquiries."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §5 (ה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagIyunBeSofHaMaaseHavanatHaSheelot a pm:Yielding ;
+    rdfs:label "Looking at the end yields understanding"@en, "Der Blick auf das Ende bringt Verständnis"@de ;
+    skos:definition "Fixing attention on the end of the act is said to make all the questions understandable."@en ;
+    pm:byPractice pmp:KabbalahAshlagIyunBeSofHaMaase ;
+    pm:yieldsCapacity pmc:KabbalahAshlagHavanatHaSheelot ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §5 (ה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §8
+#
+
+pmc:KabbalahAshlagHeleqElohaMimaal a pm:Naming ;
+    rdfs:label "The soul as a portion of God from above"@en, "Die Seele als Teil Gottes von oben"@de ;
+    skos:definition "The kabbalists' saying that a person's soul is a divine portion from above is read thus: the light the soul holds comes from His essence existence-from-existence and does not differ from it; only the vessel, the will to receive, is a change of form, and that change cuts it off as a part from the whole, as an axe cuts a stone from a mountain."@en ;
+    pm:nameForm "ḥeleq Eloah mi-maʿal" ;
+    pm:nameRole "the soul as a part separated from the whole by change of form" ;
+    skos:note "Hebrew term in the text: חלק אלוה ממעל (ḥeleq Eloah mi-maʿal)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagPerudHaRatzonLeQabbel (Petiḥa, §13): the Petiḥa states that the receptive will separates the creature from the Emanator; the Haqdama states it as the reading of a received saying about the soul, with the image of the axe and the stone and the distinction that the light received is not separated at all, only the vessel."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§2 (ב), 8 (ח), 9 (ט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §9
+#
+
+pmc:KabbalahAshlagHitbonenHeitevMaqomGavoha a pm:Cautioning ;
+    rdfs:label "Contemplate well: the place is too high to say more"@en, "Gut betrachten: der Ort ist zu hoch für mehr"@de ;
+    skos:definition "Having said how the soul is separated, the author stops and bids the reader reflect carefully by himself, since one cannot expand further at so lofty a point."@en ;
+    pm:cautionsAbout pmc:KabbalahAshlagHeleqElohaMimaal ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §9 (ט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §10
+#
+
+pmc:KabbalahAshlagShteiMaarakhotABYA a pm:Systematizing ;
+    rdfs:label "Two opposed systems of four worlds, holy and impure"@en, "Zwei entgegengesetzte Systeme von vier Welten, heilig und unrein"@de ;
+    skos:definition "To mend the separation lying on the vessel of the souls, He created every world and split them into a pair of systems facing each other: four worlds Atzilut, Beria, Yetzira, Assiya of holiness, into which the will to bestow was set and from which self-directed receiving was taken away, and four worlds of impurity, which were given that will and are thereby parted from the Creator; had the great will stayed in the souls in its first form they would have stayed parted from Him for ever."@en ;
+    pm:compiledBy "Yehuda Leib Ashlag, in the Haqdama le-Sefer ha-Zohar" ;
+    dcterms:date "2019"^^xsd:gYear ;
+    skos:note "Hebrew term in the text: ד' עולמות אבי\"ע דקדושה / דטומאה (ABYA de-qedusha / de-tumʾa)."@en ;
+    skos:note "The ordering is the author's: he arranges the material he expounds; the date is that of the edition read."@en ;
+    skos:note "Grounded on Eccl 7:14; for the removal of the will to receive from the holy worlds the text refers to the Petiḥa, §§14-19."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §10 (י), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §11
+#
+
+pmc:KabbalahAshlagZmanQilqulVeTiqqun a pm:Conceptualizing ;
+    rdfs:label "This world: place of body and soul, time of spoiling and mending"@en, "Diese Welt: Ort von Körper und Seele, Zeit von Verderben und Berichtigung"@de ;
+    skos:definition "The worlds cascaded down to this physical world, a place where body and soul exist and a time of spoiling and correction; the body, the will to receive for itself, passes through the impure system and stays bound under it until the age of thirteen, which is the time of spoiling."@en ;
+    skos:note "Hebrew term in the text: זמן קלקול ותיקון (zeman qilqul ve-tiqqun)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §11 (יא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagNefeshQedosha a pm:Conceptualizing ;
+    rdfs:label "A holy nefesh drawn into the body"@en, "Eine heilige Nefesch, in den Körper gezogen"@de ;
+    skos:definition "By the commandments done with bestowing intent one draws a holy nefesh from its root in the Thought of Creation; it passes through the holy worlds and clothes itself in the body, and is thereafter sustained by the holy worlds in the measure of its size."@en ;
+    skos:note "Hebrew term in the text: נפש קדושה (nefesh qedosha)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§11 (יא), 25 (כה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMitzvotLeHashpiaNefeshQedosha a pm:Yielding ;
+    rdfs:label "Commandments for the Maker's sake yield a holy nefesh"@en, "Gebote um des Schöpfers willen bringen eine heilige Nefesch"@de ;
+    skos:definition "Engaging in the commandments from thirteen on in order to give contentment to the Maker is said to draw down a holy nefesh into the body, while it purifies the will to receive step by step."@en ;
+    pm:byPractice pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:yieldsCapacity pmc:KabbalahAshlagNefeshQedosha ;
+    skos:note "The purifying of the will that the same passage names is carried by pmc:KabbalahAshlagTorahUMitzvotHipukhHaQabbala of the Petiḥa; this node holds only the new step, the nefesh."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§11 (יא), 25 (כה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMadregotDeQedushaMesayyot a pm:Conceptualizing ;
+    rdfs:label "Degrees of holiness that help turn the will"@en, "Stufen der Heiligkeit, die das Umwenden des Willens unterstützen"@de ;
+    skos:definition "Going on, one acquires degrees of holiness from the Thought of Creation in the Infinite, and these in turn help a person bring his whole will to receive into receiving only for the Maker's contentment."@en ;
+    skos:note "Hebrew term in the text: מדרגות דקדושה (madregot di-qedusha)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §11 (יא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTiqqunPresupposesYudGimelShanim a pm:Presupposing ;
+    rdfs:label "Thirteen years under the impure system before the time of correction"@en, "Dreizehn Jahre unter dem unreinen System vor der Zeit der Berichtigung"@de ;
+    skos:definition "The body stays bound under the impure system until thirteen; the correction by the commandments done for the Maker begins from then on."@en ;
+    pm:dependentStep pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:priorStep pmc:KabbalahAshlagZmanQilqulVeTiqqun ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    skos:note "The text sets the age and says nothing of what follows from beginning earlier; hence prescribed order."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §11 (יא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagQabbalaKeHashpaaKiddushin a pm:Conceptualizing ;
+    rdfs:label "Receiving to please the giver counts as giving: the betrothal rule"@en, "Empfangen, um den Gebenden zu erfreuen, gilt als Geben: die Verlobungsregel"@de ;
+    skos:definition "Receiving so as to please the giver counts as pure bestowal; the author shows it by the Talmudic rule that when an important man accepts a gift from a woman and speaks the formula, she is betrothed, since his acceptance is itself a gift to her."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagQabbalaAlMenatLeHashpia (Petiḥa, §18): the Petiḥa derives receiving for the sake of bestowal from the parable of host and guest and the force of refusal in the vessel; the Haqdama states it of a human act and proves it from Kiddushin 7a, without the screen."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §11 (יא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §12
+#
+
+pmc:KabbalahAshlagGmarHaTiqqunHaNeshamot a pm:Conceptualizing ;
+    rdfs:label "End of correction of the souls: the Other Side removed, death swallowed"@en, "Ende der Berichtigung der Seelen: die andere Seite beseitigt, der Tod verschlungen"@de ;
+    skos:definition "When by Torah and commandments the souls have made the will to receive take the shape of the will to bestow, they can receive all the good of the Thought of Creation together with strong adhesion; the impure Other Side, no longer needed, is then purged from the earth and death is swallowed up for ever. All the work is given over six thousand years to the world and over seventy years of life to each person, only to bring them to this end."@en ;
+    skos:note "Hebrew term in the text: גמר התיקון (gemar ha-tiqqun)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagDevekutGmuraImHaOr (Petiḥa, §57) and pmc:KabbalahAshlagGmarHaTiqqun (Petiḥa, §32): the Petiḥa names the final correction as phase four become a vessel in full adhesion with the light; the Haqdama names it of the souls and adds the removal of the Other Side, the end of death, and the span of six thousand and of seventy years."@en ;
+    skos:note "The text gives the span as the time allotted and names no consequence of overrunning it, so it is not counted as a condition of failure."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §12 (יב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHitHavutHaQelippotLeTiqqun a pm:Conceptualizing ;
+    rdfs:label "The impure system had to arise so that there is something to correct"@en, "Das unreine System musste entstehen, damit es etwas zu berichtigen gibt"@de ;
+    skos:definition "The husks had to come forth from holiness so that through them bodies with a spoiled will to receive could be drawn, to be corrected later by Torah and commandments; without them we could never correct that will, since no one mends what is not in him."@en ;
+    skos:note "Hebrew term in the text: מתקן מה שאין בו (metaqqen ma she-ein bo)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§12 (יב), 15 (טו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §13
+#
+
+pmc:KabbalahAshlagHuUShmoEhad a pm:Conceptualizing ;
+    rdfs:label "In the Infinite all is complete at once: He and His Name one"@en, "Im Unendlichen ist alles auf einmal vollendet: Er und Sein Name eins"@de ;
+    skos:definition "His thought needs no tool of action, so the moment He thought of creating the souls all souls and worlds came forth filled with all the delight intended and with the final perfection of the end of correction, since in His eternity future and present are one; hence the separating form of the will to receive never appeared there, and the souls were in equivalence of form, which the sages call He and His Name being one before the world was made."@en ;
+    skos:note "Hebrew term in the text: הוא ושמו אחד (hu u-shemo eḥad)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §13 (יג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagEinSof a pm:Naming ;
+    rdfs:label "Ein Sof, the Infinite"@en, "Ejn Sof, das Unendliche"@de ;
+    skos:definition "The Infinite, blessed be He, for whose unity there is no word, is named as the place where the creative Thought and the souls' first state stand, already bearing the form they will have at the end of correction."@en ;
+    pm:nameForm "Ein Sof barukh hu" ;
+    pm:nameRole "seat of the Thought of Creation and of the souls' first state" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §13 (יג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §14
+#
+
+pmc:KabbalahAshlagShloshaMatzavotHaNeshamot a pm:Sequencing ;
+    rdfs:label "Three states of the souls"@en, "Drei Zustände der Seelen"@de ;
+    skos:definition "The souls have in general three states, which the author numbers and from then on calls by number: their being in the Infinite in the Thought of Creation, their being divided into body and soul in the six thousand years with the work of Torah and commandments, and the end of correction after the resurrection."@en ;
+    rdf:_1 pmc:KabbalahAshlagMatzavAlef ;
+    rdf:_2 pmc:KabbalahAshlagMatzavBet ;
+    rdf:_3 pmc:KabbalahAshlagMatzavGimel ;
+    pm:seriesStatement "The three states come in a fixed order and each is what it is through the others: the first already holds the form of the third, the second is the work through which the third comes about, and the third is the second's labour completed in the body as well, so that the souls receive for themselves while adhering." ;
+    skos:note "Hebrew term in the text: ג' מצבי הנשמות (shelosha matzavei ha-neshamot)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §14 (יד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMatzavAlef a pm:Conceptualizing ;
+    rdfs:label "First state: the souls in the Infinite"@en, "Erster Zustand: die Seelen im Unendlichen"@de ;
+    skos:definition "The souls' being in the Infinite within the Thought of Creation, where they already have the future form of the end of correction."@en ;
+    skos:note "Hebrew term in the text: מצב א' (matzav alef)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §14 (יד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMatzavBet a pm:Conceptualizing ;
+    rdfs:label "Second state: the six thousand years"@en, "Zweiter Zustand: die sechstausend Jahre"@de ;
+    skos:definition "The souls divided by the two systems into body and soul and given the work of Torah and commandments to turn their will to receive into the will to bestow; in this time no correction reaches the bodies, only the souls, which must expel all receiving for themselves."@en ;
+    skos:note "Hebrew term in the text: מצב ב' (matzav bet)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §14 (יד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMatzavGimel a pm:Conceptualizing ;
+    rdfs:label "Third state: end of correction after the resurrection"@en, "Dritter Zustand: Ende der Berichtigung nach der Auferstehung"@de ;
+    skos:definition "Correction reaches the bodies too: receiving itself, the form of the body, takes on the form of pure bestowal, so that the souls are fit to receive for themselves all the delight of the Thought of Creation and still hold strong adhesion, since they receive only to please their Maker."@en ;
+    skos:note "Hebrew term in the text: מצב ג' (matzav gimel)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§14 (יד), 26 (כו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagGanEdenPresupposesRiqqavonHaGuf a pm:Presupposing ;
+    rdfs:label "The body wholly decayed before the soul enjoys the Garden"@en, "Der Körper ganz verwest, bevor die Seele den Garten genießt"@de ;
+    skos:definition "In the second state not even a righteous soul, once departed, can delight in Eden before its body has wholly rotted in the dust."@en ;
+    pm:dependentStep pmc:KabbalahAshlagGufBenTemutaNefeshNitzhit ;
+    pm:priorStep pmc:KabbalahAshlagQelipatHaGufKala ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "As long as anything of the body remains, the soul is unable to ascend to Eden." ;
+    skos:note "The text gives the rule at §3 as the Zohar's (Teruma) and holds it at §14 as its own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§3 (ג), 14 (יד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §15
+#
+
+pmc:KabbalahAshlagShloshaMatzavotMehayvim a pm:Conceptualizing ;
+    rdfs:label "The three states require one another absolutely"@en, "Die drei Zustände bedingen einander unbedingt"@de ;
+    skos:definition "If anything of one state could be cancelled, all would be: the perfection of the first exists only because the third is present to His eternity; the second holds all the work the third requires; and the first itself requires that the two opposed systems unfold in the second, so that a spoiled body can exist and be corrected. Hence there is no puzzle how the impure system came from the first state; the first demands it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§15 (טו), 16 (טז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMatzavGimelPresupposesMatzavBet a pm:Presupposing ;
+    rdfs:label "State three requires the whole of state two"@en, "Der dritte Zustand setzt den ganzen zweiten voraus"@de ;
+    skos:definition "The third state, the turning of receiving into bestowal, cannot come about if anything were taken from the second, where the whole work of spoiling and correction and the drawing of the soul's degrees takes place."@en ;
+    pm:dependentStep pmc:KabbalahAshlagMatzavGimel ;
+    pm:priorStep pmc:KabbalahAshlagMatzavBet ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Were anything of the second state cancelled, the third state could not exist." ;
+    skos:note "Written by the integrator from the second pass (record 64 of pass B); the first pass held it only inside the concept pmc:KabbalahAshlagShloshaMatzavotMehayvim."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §15 (טו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §16
+#
+
+pmc:KabbalahAshlagShneiDerakhimBehira a pm:Conceptualizing ;
+    rdfs:label "Two paths to the third state; choice only between them"@en, "Zwei Wege zum dritten Zustand; Wahl nur zwischen ihnen"@de ;
+    skos:definition "God prepared in the second state two paths that lead to the third, keeping Torah and commandments and the path of suffering; the end is fixed by the first state, so free choice lies only in which path, not in whether."@en ;
+    skos:note "Hebrew term in the text: דרך תורה / דרך יסורין (derekh tora / derekh yissurin)."@en ;
+    skos:note "Supported by Sanhedrin 97b (a king like Haman) and 98a on Isa 60:22."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §16 (טז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagDerekhYissurin a pm:Conceptualizing ;
+    rdfs:label "The path of suffering scours the body and compels the turning"@en, "Der Weg der Leiden reinigt den Körper und erzwingt die Umkehr"@de ;
+    skos:definition "Afflictions by themselves scour the body and in the end force a person to turn his will to receive into the will to bestow and cleave to Him, against his will and over a long time; the punishments of souls in Gehinnom belong to this path. The sufferings of the world are disclosures set before us to push us to throw off the body's bad husk."@en ;
+    skos:note "Entered as a concept and not as a practice: the text describes the path as undergone, not as something one is told to do."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§16 (טז), 19 (יט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAhishennaTiqqun a pm:Conceptualizing ;
+    rdfs:label "Hastening the correction"@en, "Beschleunigung der Berichtigung"@de ;
+    skos:definition "If one merits by the first path, keeping Torah and commandments, the correction is hastened, and one needs neither the hard and bitter afflictions nor the long time they would take."@en ;
+    skos:note "Hebrew term in the text: אחישנה (aḥishenna)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §16 (טז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTorahUMitzvotAhishenna a pm:Yielding ;
+    rdfs:label "Torah and commandments hasten the correction"@en, "Tora und Gebote beschleunigen die Berichtigung"@de ;
+    skos:definition "Keeping Torah and commandments is said to hasten the correction, after the reading of Isa 60:22 as 'if they merit, I will hasten it'."@en ;
+    pm:byPractice pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:yieldsCapacity pmc:KabbalahAshlagAhishennaTiqqun ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §16 (טז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagBeIttahBeYissurin a pm:Conceptualizing ;
+    rdfs:label "Without merit, correction only in its time through suffering"@en, "Ohne Verdienst Berichtigung erst zu ihrer Zeit durch Leiden"@de ;
+    skos:definition "If one does not merit by the first path, the correction comes only when sufferings have completed it, against one's will and after long time."@en ;
+    skos:note "Hebrew term in the text: בעתה (be-ʿitta)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagAhishennaTiqqun fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §16 (טז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §17
+#
+
+pmc:KabbalahAshlagHaGufHaAmiti a pm:Conceptualizing ;
+    rdfs:label "The present body is not our true body"@en, "Der jetzige Körper ist nicht unser wahrer Körper"@de ;
+    skos:definition "This body with its trifling possessions is only a husk; the true, eternal and perfect body already stands in the Infinite in the first state with the form of the third, and the husk is given only for the work and for the time needed to annul it, so it does not blemish us."@en ;
+    skos:note "Hebrew term in the text: הגוף האמיתי (ha-guf ha-amitti)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §17 (יז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §18
+#
+
+pmc:KabbalahAshlagQelipatHaGufKala a pm:Conceptualizing ;
+    rdfs:label "Eternal creatures: the husk of the body must perish"@en, "Ewige Geschöpfe: die Hülle des Körpers muss vergehen"@de ;
+    skos:definition "We came forth as eternal creatures, and this very eternity demands that the bodily husk, given only for the work, should pass away; were it to last, we would stay parted from the Life of lives for ever."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§18 (יח), 24 (כד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaAdamMerkazHaBeria a pm:Conceptualizing ;
+    rdfs:label "Man as the centre of creation"@en, "Der Mensch als Mitte der Schöpfung"@de ;
+    skos:definition "Man is the centre of all creation; the other creatures have no account of their own except in so far as they help bring him to his perfection, and so they rise and fall with him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§3 (ג), 18 (יח), 39 (לט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §19
+#
+
+pmc:KabbalahAshlagYissurinGiluyHaHezeq a pm:Conceptualizing ;
+    rdfs:label "Suffering discloses the harm of the self-directed will"@en, "Leiden enthüllen den Schaden des selbstbezogenen Willens"@de ;
+    skos:definition "All suffering rests only on the husk of the body and teaches that the will to receive for oneself was created only to be wiped out and turned into the will to bestow; the sufferings are disclosures of its nothingness and of the harm lying on it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §19 (יט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHashpaaLeHaverimBaKlal a pm:Conceptualizing ;
+    rdfs:label "Were all to give only to their fellows, worry and harm would end"@en, "Gäben alle nur ihren Nächsten, endeten Sorge und Schaden"@de ;
+    skos:definition "If all people agreed together to abolish the will to receive for themselves and wished only to give to their fellows, every worry and every harm would vanish from the earth and each would be sure of a whole and healthy life, having a whole world caring for him; while each has only the will for himself, worries, sufferings, wars and slaughter follow and weaken the body with illness."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "The state is put conditionally, as what would follow if all agreed; the text prescribes no procedure for bringing it about."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §19 (יט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHashpaaLaMaqomPresupposesHashpaaLeHavero a pm:Presupposing ;
+    rdfs:label "Commandments toward the fellow precede those toward God"@en, "Gebote gegenüber dem Nächsten gehen denen gegenüber Gott voran"@de ;
+    skos:definition "The commandments between a person and his fellow come before those between a person and God, because giving to the fellow brings one to give to God."@en ;
+    pm:dependentStep pmc:KabbalahAshlagHashpaaLaMaqom ;
+    pm:priorStep pmp:KabbalahAshlagHashpaaLeHavero ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §19 (יט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagHashpaaLeHavero a pm:Practicing ;
+    rdfs:label "Giving to one's fellow"@en, "Geben an den Nächsten"@de ;
+    skos:definition "Keep the commandments between person and fellow, bestowing on the other person."@en ;
+    skos:note "Hebrew term in the text: מצוות שבין אדם לחברו (mitzvot she-bein adam le-ḥavero)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §19 (יט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHashpaaLaMaqom a pm:Conceptualizing ;
+    rdfs:label "Bestowing toward God"@en, "Geben gegenüber Gott"@de ;
+    skos:definition "The ability to give to the Omnipresent, which giving to one's fellow brings about."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §19 (יט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHashpaaLeHaveroLaMaqom a pm:Yielding ;
+    rdfs:label "Giving to the fellow leads to giving to God"@en, "Geben an den Nächsten führt zum Geben an Gott"@de ;
+    skos:definition "Giving to one's fellow is said to bring a person to give to God."@en ;
+    pm:byPractice pmp:KabbalahAshlagHashpaaLeHavero ;
+    pm:yieldsCapacity pmc:KabbalahAshlagHashpaaLaMaqom ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §19 (יט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §20
+#
+
+pmc:KabbalahAshlagMahutenuRatzonLeQabbelNitzhi a pm:Conceptualizing ;
+    rdfs:label "Our essence: the will to receive in its eternal form"@en, "Unser Wesen: der Wille zu empfangen in seiner ewigen Form"@de ;
+    skos:definition "Answer to the first question: our essence, like that of every particular of reality, is the will to receive, not as it now is for oneself but in the form it has in the first state, receiving to give contentment to the Maker; that we still lack time is no defect, since what is sure to be collected counts as collected, and the body bound to be burnt counts as burnt already."@en ;
+    skos:note "Hebrew term in the text: מחוסר זמן (meḥussar zeman)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §20 (כ), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagNefeshRatzonLeHashpiaNitzhit a pm:Conceptualizing ;
+    rdfs:label "The nefesh in the body: a will to bestow, eternal"@en, "Die Nefesch im Körper: ein Wille zu geben, ewig"@de ;
+    skos:definition "The nefesh clothed in the body is likewise only will, but a will to bestow, drawn from the four holy worlds; being in equivalence of form with the Life of lives it lasts for ever and does not change. Its bestowing form comes from the clothing of reflected light it receives from the upper worlds; in itself it too is a will to receive."@en ;
+    skos:note "Hebrew term in the text: נפש (nefesh)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagYeridatHaNefeshLaGuf (Petiḥa, §10): the Petiḥa holds the light clothed in the body to be drawn from His essence and diminished on its way down until its root is hidden; the Haqdama holds the nefesh to be a will to bestow from the holy worlds, eternal by equivalence of form, and refers for its clothing of reflected light to the Petiḥa, §§14-16 and 19."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§20 (כ), 21 (כא), 23 (כג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §21
+#
+
+pmc:KabbalahAshlagNefeshKeHomerSikhli a pm:Conceptualizing ;
+    rdfs:label "Against the philosophers: the soul is not intellect"@en, "Gegen die Philosophen: die Seele ist nicht Intellekt"@de ;
+    skos:definition "The philosophers hold the soul's essence to be intellectual matter that grows from what it comprehends, and its survival after death to depend wholly on how much it has comprehended; the author says this is not the view of Torah and the heart does not accept it, since anyone who has sought to acquire intellect feels it as a possession and not as the possessor; the soul's eternity lies in its essence, the will to bestow, and what it comprehends is its reward."@en ;
+    skos:note "Hebrew term in the text: חומר שכלי (ḥomer sikhli)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§21 (כא), 24 (כד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAlYasurLibkha a pm:Cautioning ;
+    rdfs:label "Let your heart not turn after the philosophers' view of the soul"@en, "Dein Herz wende sich nicht der Ansicht der Philosophen über die Seele zu"@de ;
+    skos:definition "The reader is warned not to let his heart incline to the doctrine that the soul is intellect."@en ;
+    pm:cautionsAbout pmc:KabbalahAshlagNefeshKeHomerSikhli ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §21 (כא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagRatzonMolidTzrakhimMahshavot a pm:Conceptualizing ;
+    rdfs:label "Will begets needs, needs beget thoughts"@en, "Wille zeugt Bedürfnisse, Bedürfnisse zeugen Gedanken"@de ;
+    skos:definition "All the matter of the new creation, spiritual and physical, is will to receive, and beings can be told apart only by their will: the will in each begets needs, and the needs beget thoughts and knowledge in the measure needed to obtain them."@en ;
+    skos:note "Hebrew term in the text: הרצון מוליד צרכים (ha-ratzon molid tzrakhim)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §21 (כא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §22
+#
+
+pmc:KabbalahAshlagShloshaMineiRetzonot a pm:Systematizing ;
+    rdfs:label "Three kinds of desire: animal, human, intellectual"@en, "Drei Arten des Begehrens: tierisch, menschlich, geistig"@de ;
+    skos:definition "The author sorts the wills of people: those bounded by animal lusts, whose intellect only serves them and is in effect an animal intellect; those ruled chiefly by human lusts such as honour and dominion over others; and those ruled chiefly by the wish to receive knowledge. The three are mixed in each person in different proportions, and from this come all the differences between people."@en ;
+    pm:compiledBy "Yehuda Leib Ashlag, in the Haqdama le-Sefer ha-Zohar" ;
+    dcterms:date "2019"^^xsd:gYear ;
+    skos:note "Hebrew term in the text: תאוות בהמיות / אנושיות (taʾavot behemiyyot / enoshiyyot)."@en ;
+    skos:note "The ordering is the author's: he arranges the material he expounds; the date is that of the edition read."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §22 (כב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §23
+#
+
+pmc:KabbalahAshlagNefeshMolidaMahshevotLeHashpia a pm:Conceptualizing ;
+    rdfs:label "The soul in the body begets thoughts of bestowing"@en, "Die Seele im Körper zeugt Gedanken des Gebens"@de ;
+    skos:definition "Once clothed in the body, the soul, which is a will to give contentment to its Maker, begets in the person needs, thoughts and understanding to fulfil that will in the full measure of its size."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §23 (כג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §24
+#
+
+pmc:KabbalahAshlagGufBenTemutaNefeshNitzhit a pm:Conceptualizing ;
+    rdfs:label "The body mortal, the soul and its gains eternal"@en, "Der Körper sterblich, die Seele und ihr Erwerb ewig"@de ;
+    skos:definition "The body, being only will to receive for itself and made only to be wiped out, is mortal with all it owns, like a passing shadow; the soul, being will to bestow, which already stands in the first state and will in the third, is eternal with all it has acquired, and the loss of the spoiled body only strengthens it, so that it can then rise to the Garden of Eden."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §24 (כד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §25
+#
+
+pmc:KabbalahAshlagTehiyatHaMetimMehuyevet a pm:Conceptualizing ;
+    rdfs:label "The Thought of Creation requires the resurrection of the body"@en, "Der Schöpfungsgedanke verlangt die Auferstehung des Körpers"@de ;
+    skos:definition "Since great delight requires a great will to receive, and the excessive will was not corrected in the six thousand years but perished with the body, it must rise again in its full size with all its defects, or the Thought of Creation would go unfulfilled; then the work begins anew to bring it to receive only in order to give, gaining both room for all the delight and equivalence of form."@en ;
+    skos:note "Hebrew term in the text: תחיית המתים (teḥiyyat ha-metim)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§25 (כה), 26 (כו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §27
+#
+
+pmc:KabbalahAshlagNaRaNHaYBeShlilatHaRatzon a pm:Conceptualizing ;
+    rdfs:label "The soul's degrees NRNHY attained by negating the will"@en, "Die Seelenstufen NRNHJ, erlangt durch Verneinen des Willens"@de ;
+    skos:definition "Through work in negating the excessive will to receive one attains the wondrous degrees of the soul, nefesh, ruach, neshama, haya, yehida, which stand in the will to bestow and clothe a person degree by degree in the measure that his will is purified."@en ;
+    skos:note "Hebrew term in the text: נרנח\"י (NaRaNḤaY)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagNaRaNHaYDeTzaddiqim (Petiḥa, §168): the Petiḥa has the righteous receive neshama, haya and yehida through the three ascents of the worlds by raising MaN; the Haqdama has every person attain all five by the purifying of his own will in the work of Torah and commandments."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§27 (כז), 31 (לא), 32 (לב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTehiyaPresupposesNaRaNHaY a pm:Presupposing ;
+    rdfs:label "Resurrection only after bestowal and all soul degrees are attained"@en, "Auferstehung erst nach Erlangen des Gebens und aller Seelenstufen"@de ;
+    skos:definition "The resurrection can only come near the end of correction, after the excessive will has been negated and all the soul's degrees acquired; only then can the body be revived with its whole will without harming us."@en ;
+    pm:dependentStep pmc:KabbalahAshlagTehiyatHaMetimMehuyevet ;
+    pm:priorStep pmc:KabbalahAshlagNaRaNHaYBeShlilatHaRatzon ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Revived earlier, the excessive will to receive would harm us and part us from adhesion." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §27 (כז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagHasaratMiddaRaaVeHanhagataBaEmtzai a pm:Practicing ;
+    rdfs:label "Removing a bad trait to the extreme, then taking it back in the middle way"@en, "Eine schlechte Eigenschaft bis zum Äußersten ablegen, dann im Mittelweg zurücknehmen"@de ;
+    skos:definition "For any single bad trait one wishes to be rid of: first remove it entirely, to the farthest end, so that nothing of it is left; afterwards take it back and conduct it in the middle way."@en ;
+    skos:note "The text calls this the custom with every bad trait and uses it to explain why the body is revived only after the will has been negated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §27 (כז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagDerekhHaEmtzait a pm:Conceptualizing ;
+    rdfs:label "Conducting a former bad trait in the middle way"@en, "Eine frühere schlechte Eigenschaft im Mittelweg führen"@de ;
+    skos:definition "The ability to use a trait that was bad in the desired, balanced manner."@en ;
+    skos:note "Hebrew term in the text: דרך האמצעית (derekh ha-emtzaʿit)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §27 (כז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagDerekhHaEmtzaitPresupposesHasaraGmura a pm:Presupposing ;
+    rdfs:label "Full removal of the trait before its moderate use"@en, "Vollständiges Ablegen der Eigenschaft vor ihrem maßvollen Gebrauch"@de ;
+    skos:definition "As long as a trait has not been removed in full, it cannot be conducted in the desired middle way at all."@en ;
+    pm:dependentStep pmc:KabbalahAshlagDerekhHaEmtzait ;
+    pm:priorStep pmp:KabbalahAshlagHasaratMiddaRaaVeHanhagataBaEmtzai ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Without first removing it wholly, the trait cannot be governed in the middle way." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §27 (כז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHasaratMiddaRaaDerekhHaEmtzait a pm:Yielding ;
+    rdfs:label "Uprooting the trait yields its mastery"@en, "Das Ausreißen der Eigenschaft bringt ihre Beherrschung"@de ;
+    skos:definition "Removing a trait completely is said to make it possible afterwards to take it back in the middle way."@en ;
+    pm:byPractice pmp:KabbalahAshlagHasaratMiddaRaaVeHanhagataBaEmtzai ;
+    pm:yieldsCapacity pmc:KabbalahAshlagDerekhHaEmtzait ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §27 (כז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §28
+#
+
+pmc:KabbalahAshlagMetimBeMumam a pm:Conceptualizing ;
+    rdfs:label "The dead rise with their defects, then are healed"@en, "Die Toten erstehen mit ihren Makeln und werden dann geheilt"@de ;
+    skos:definition "The sages' saying is read so: first the body rises as the unbounded will to receive that grew under the impure worlds before any of it was purified, which is its defect; then new work brings that will into the form of bestowal and it is healed, having gained equivalence of form."@en ;
+    skos:note "Hebrew term in the text: עתידים המתים להחיות במומם (ʿatidim ha-metim le-haḥayot be-mumam)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§3 (ג), 28 (כח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagAvodaAharTehiyatHaMetim a pm:Practicing ;
+    rdfs:label "The work after the resurrection"@en, "Die Arbeit nach der Auferstehung"@de ;
+    skos:definition "After the resurrection begin the work anew: bring the whole revived excessive will to receive into receiving in the form of bestowal. The text calls it the fourth division of the work."@en ;
+    skos:note "Hebrew term in the text: חלוקה ד' (ḥaluqa dalet)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§28 (כח), 32 (לב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagRefuatHaGufHaMeHuyah a pm:Conceptualizing ;
+    rdfs:label "Healing of the revived body"@en, "Heilung des wiedererweckten Körpers"@de ;
+    skos:definition "The revived body is healed when its whole will to receive stands in the form of bestowal, having gained equivalence of form."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §28 (כח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAvodaAharTehiyaRefua a pm:Yielding ;
+    rdfs:label "The new work heals the revived body"@en, "Die neue Arbeit heilt den wiedererweckten Körper"@de ;
+    skos:definition "Bringing the revived will into the form of bestowal is said to heal it."@en ;
+    pm:byPractice pmp:KabbalahAshlagAvodaAharTehiyatHaMetim ;
+    pm:yieldsCapacity pmc:KabbalahAshlagRefuatHaGufHaMeHuyah ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §28 (כח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShelloYomruAherHu a pm:Conceptualizing ;
+    rdfs:label "'Lest they say it is another': the revived will must be the same in size"@en, "„Damit man nicht sage, es sei ein anderer“: der erweckte Wille muss gleich groß sein"@de ;
+    skos:definition "The revived body may not be another: were its will to receive even slightly less than in the Thought of Creation it would count as wholly another and be unfit for all the good it already receives in the first state."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §28 (כח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §29
+#
+
+pmc:KabbalahAshlagArbaHaluqotHaAvoda a pm:Sequencing ;
+    rdfs:label "Four divisions of the work in the seventy years"@en, "Vier Abteilungen der Arbeit in den siebzig Jahren"@de ;
+    skos:definition "Our work in our seventy years divides into four, in order: acquiring the excessive spoiled will under the impure worlds; from thirteen, the point in the heart and the spiritual will to receive, which brings to lishma; the work for its own sake, which purifies the will and receives NRNHY; and the work after the resurrection, which turns the revived will into bestowal."@en ;
+    rdf:_1 pmc:KabbalahAshlagHaluqaAlef ;
+    rdf:_2 pmc:KabbalahAshlagHaluqaBet ;
+    rdf:_3 pmc:KabbalahAshlagHaluqaGimelLishma ;
+    rdf:_4 pmp:KabbalahAshlagAvodaAharTehiyatHaMetim ;
+    pm:seriesStatement "The four divisions follow one another and each supplies what the next works on: the first gathers the whole spoiled will that is the material, the second adds its spiritual magnitude and leads to lishma, the third purifies it and draws the soul's degrees, and only the fourth turns the will itself, returned at its worst, into bestowal." ;
+    skos:note "Hebrew term in the text: ד' חלוקות (arbaʿ ḥaluqot)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§29 (כט), 30 (ל), 31 (לא), 32 (לב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaluqaAlef a pm:Conceptualizing ;
+    rdfs:label "Division one: acquiring the spoiled will"@en, "Erste Abteilung: den verdorbenen Willen erwerben"@de ;
+    skos:definition "For no less than thirteen years one must be a chariot for the impure husks, whose lights keep widening the will to receive, so that one who wanted a hundred wants two hundred and then four hundred; their role is to supply all the material one must later work on and correct."@en ;
+    skos:note "Hebrew term in the text: חלוקה א' (ḥaluqa alef)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §29 (כט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTiqqunPresupposesRatzonMequlqal a pm:Presupposing ;
+    rdfs:label "The spoiled will possessed before it can be corrected"@en, "Den verdorbenen Willen besitzen, bevor er berichtigt werden kann"@de ;
+    skos:definition "Without first having the excessive, spoiled will to receive under the impure worlds we could not correct it at all, since no one corrects what he does not have; hence at least thirteen years under the husks."@en ;
+    pm:dependentStep pmc:KabbalahAshlagHaluqaBet ;
+    pm:priorStep pmc:KabbalahAshlagHaluqaAlef ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Lacking the spoiled will, there would be nothing to correct and the correction could never take place." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§12 (יב), 15 (טו), 29 (כט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHatziTaavatoBeYado a pm:Conceptualizing ;
+    rdfs:label "Unchecked, the will widens until death"@en, "Ungezügelt wächst der Wille bis zum Tod"@de ;
+    skos:definition "If one does not prevail by Torah and commandments to purify the will and turn it to bestowal, the will to receive keeps widening through all one's years, until one dies with not even half one's desire in hand."@en ;
+    skos:note "Hebrew term in the text: וחצי תאוותו בידו (ve-ḥatzi taʾavato be-yado)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagQabbalaAlMenatLeHashpia fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §29 (כט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §30
+#
+
+pmc:KabbalahAshlagHaluqaBet a pm:Conceptualizing ;
+    rdfs:label "Division two: the point in the heart and the spiritual will"@en, "Zweite Abteilung: der Punkt im Herzen und der geistige Wille"@de ;
+    skos:definition "From thirteen the point in the heart is given strength and one enters the domain of the holy worlds in the measure of one's engagement in Torah; the main task is to acquire and enlarge the spiritual will to receive. This degree brings to lishma and therefore counts as holiness."@en ;
+    skos:note "Hebrew term in the text: חלוקה ב' (ḥaluqa bet)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§30 (ל), 31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagRatzonLeQabbelRuhani a pm:Conceptualizing ;
+    rdfs:label "The spiritual will to receive: the full magnitude of the will"@en, "Der geistige Wille zu empfangen: die volle Größe des Willens"@de ;
+    skos:definition "Before thirteen the will craves only the wealth and honour of this passing world; in the second division one acquires a will to swallow for one's own pleasure all the good of the everlasting coming world, and only in this spiritual will is the will to receive completed in its true greatness."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Written by the integrator from the second pass (record 123 of pass B); the first pass held it only inside pmc:KabbalahAshlagHaluqaBet."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §30 (ל), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagNequdaShebaLev a pm:Naming ;
+    rdfs:label "The point in the heart"@en, "Der Punkt im Herzen"@de ;
+    skos:definition "The last aspect, the hinder part, of the holy nefesh, which a person has from birth clothed in the will to receive in his heart, is called a point because of its smallness; it begins to awaken only after thirteen."@en ;
+    pm:nameForm "ha-nequda she-ba-lev" ;
+    pm:nameRole "hinder part of the holy nefesh, seed of the soul in the heart" ;
+    skos:note "Hebrew term in the text: נקודה שבלב (nequda she-ba-lev)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§30 (ל), 43 (מג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §31
+#
+
+pmc:KabbalahAshlagAluqaGehinnom a pm:Naming ;
+    rdfs:label "The leech of Proverbs as Gehinnom"@en, "Der Blutegel der Sprüche als Gehinnom"@de ;
+    skos:definition "After the Tikkunim on Prov 30:15, the leech is Gehinnom, and the wicked caught in it bark like dogs, demanding riches here and riches in the world to come; the author reads it as the spiritual will to receive of the second division."@en ;
+    pm:nameForm "ʿaluqa" ;
+    pm:nameRole "image of the will to receive swollen to the world to come" ;
+    skos:note "Hebrew term in the text: עלוקה (ʿaluqa)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagShelloLishma a pm:Practicing ;
+    rdfs:label "Torah and commandments not for their own sake"@en, "Tora und Gebote nicht um ihrer selbst willen"@de ;
+    skos:definition "Engage in Torah and commandments at all times even without the motive of their own sake, since from not for its sake one comes to for its sake (Pesachim 50b)."@en ;
+    skos:note "Hebrew term in the text: שלא לשמה (she-lo li-shmah)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§31 (לא), 44 (מד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagLishmaHashraatHaShekhina a pm:Conceptualizing ;
+    rdfs:label "Coming to lishma and the indwelling of the Shekhina"@en, "Zu Lischma gelangen und das Einwohnen der Schechina"@de ;
+    skos:definition "The second division is the degree that brings one to engage for its own sake: the holy maidservant serves her mistress, the Shekhina, and brings one to merit her dwelling."@en ;
+    skos:note "Hebrew term in the text: לשמה / השראת השכינה (li-shmah / hashraʾat ha-shekhina)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShelloLishmaLishma a pm:Yielding ;
+    rdfs:label "Not for its sake leads to for its sake"@en, "Nicht um ihrer selbst willen führt zu um ihrer selbst willen"@de ;
+    skos:definition "Engaging not for its own sake is said to bring one to engage for its own sake and to the indwelling of the Shekhina."@en ;
+    pm:byPractice pmp:KabbalahAshlagShelloLishma ;
+    pm:yieldsCapacity pmc:KabbalahAshlagLishmaHashraatHaShekhina ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShifhaDeQedushaVeShifhaTmea a pm:Naming ;
+    rdfs:label "The holy and the impure maidservant"@en, "Die heilige und die unreine Magd"@de ;
+    skos:definition "The second division is called the holy maidservant who serves the Shekhina; opposite her stands the impure maidservant, whose task is to confuse a person so that not for its sake will not bring him to for its sake, and of whom Prov 30:23 says that she inherits her mistress."@en ;
+    pm:nameForm "shifḥa di-qedusha, shifḥa ha-temeʾa" ;
+    pm:nameRole "the helping and the hindering power of the second division" ;
+    skos:note "Hebrew term in the text: שפחה דקדושה / שפחה הטמאה (shifḥa di-qedusha / shifḥa ha-temeʾa)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPahHaShifhaHaTmea a pm:Conceptualizing ;
+    rdfs:label "Caught in the snare of the impure maidservant"@en, "Gefangen in der Schlinge der unreinen Magd"@de ;
+    skos:definition "If one does not exert oneself and does not come to lishma, the impure maidservant's snare catches one, and she will not let one come near the Shekhina."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagLishmaHashraatHaShekhina fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKolHaAmtzaimLishma a pm:Cautioning ;
+    rdfs:label "Every fitting means must be used to come to lishma"@en, "Alle geeigneten Mittel sind aufzubieten, um zu Lischma zu gelangen"@de ;
+    skos:definition "A self-warning about the method of not for its sake: it does not lead to for its sake of itself; one must do everything suitable to arrive there."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagShelloLishma ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAhavatHashemBeTaavaGedola a pm:Conceptualizing ;
+    rdfs:label "Falling in love with God with great desire"@en, "Sich mit großer Begierde in Gott verlieben"@de ;
+    skos:definition "The final degree of the second division: one falls in love with the Holy One with great longing, like a man whose lust never leaves his eyes day or night; this brings him to receive the five degrees NRNHY of the third division, which is 'desire fulfilled is a tree of life'."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagBeZokhriBoEinoManiahLiShon a pm:Conceptualizing ;
+    rdfs:label "Sign of the final degree: longing that will not let one sleep"@en, "Zeichen der letzten Stufe: Sehnsucht, die nicht schlafen lässt"@de ;
+    skos:definition "The final degree of the second division is marked by a longing for God that never leaves one's eyes day or night, in the words of the liturgical poet, when I remember Him He does not let me sleep."@en ;
+    skos:note "Counted as a sign of success: the text announces it as the mark of completion."@en ;
+    skos:note "The sign is inward and announced in advance in the words of a penitential poem; the text gives no mark by which it could be told from the longing it describes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagEtzHaHayyimHameshMadregot a pm:Naming ;
+    rdfs:label "The tree of life as the five degrees of the soul"@en, "Der Baum des Lebens als die fünf Stufen der Seele"@de ;
+    skos:definition "The five degrees of the soul are the tree of life whose course is five hundred years, each degree a hundred."@en ;
+    pm:nameForm "ʿetz ha-ḥayyim" ;
+    pm:nameRole "the five degrees NRNHY" ;
+    skos:note "Hebrew term in the text: עץ החיים (ʿetz ha-ḥayyim)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §31 (לא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §32
+#
+
+pmc:KabbalahAshlagHaluqaGimelLishma a pm:Conceptualizing ;
+    rdfs:label "Division three: the work for its own sake"@en, "Dritte Abteilung: die Arbeit um ihrer selbst willen"@de ;
+    skos:definition "The work in Torah and commandments for its own sake, to bestow and not to receive reward, which purifies the will to receive for oneself and turns it into a will to bestow; in the measure of that purity one becomes fit for the soul's five parts."@en ;
+    skos:note "Hebrew term in the text: חלוקה ג' (ḥaluqa gimel)."@en ;
+    skos:note "The practice of this division is the Petiḥa's pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia, which carries the same instruction; no second practice node is written."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §32 (לב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagLishmaNaRaNHaY a pm:Yielding ;
+    rdfs:label "Work for its own sake yields NRNHY by degrees"@en, "Arbeit um ihrer selbst willen bringt NRNHJ stufenweise"@de ;
+    skos:definition "In proportion as the will is purified one becomes fit to receive the soul's five parts; once wholly bestowing, they extend from the Infinite through the holy worlds and clothe one degree by degree."@en ;
+    pm:byPractice pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:yieldsCapacity pmc:KabbalahAshlagNaRaNHaYBeShlilatHaRatzon ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §32 (לב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHitlabshutPresupposesHashvaatHaTzura a pm:Presupposing ;
+    rdfs:label "NRNHY cannot clothe while the will to receive rules"@en, "NRNHJ kleiden sich nicht ein, solange der Wille zu empfangen herrscht"@de ;
+    skos:definition "The degrees of the soul stand in the will to bestow and cannot clothe the body while the will to receive rules it, being opposite or even only different in form, since clothing and equivalence of form go together."@en ;
+    pm:dependentStep pmc:KabbalahAshlagNaRaNHaYBeShlilatHaRatzon ;
+    pm:priorStep pmc:KabbalahAshlagQabbalaAlMenatLeHashpia ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "While the will to receive governs, the degrees of the soul do not clothe the person." ;
+    skos:note "The prior step is the Petiḥa's node for receiving in order to bestow, which carries the turned will."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §32 (לב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaluqaDaletBeHayyim a pm:Conceptualizing ;
+    rdfs:label "The fourth division given to a chosen few in this life"@en, "Die vierte Abteilung einigen Erwählten schon im Leben gegeben"@de ;
+    skos:definition "Some exceptional individuals are said to be given the work of the fourth division while still living in this world."@en ;
+    skos:note "Hebrew term in the text: יחידי סגולה (yeḥidei segula)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §32 (לב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §33
+#
+
+pmc:KabbalahAshlagShaashuimAvVeVenoHaHaviv a pm:Conceptualizing ;
+    rdfs:label "His delight is in being felt as the giver, as a father with a dear son"@en, "Seine Freude liegt darin, als Gebender gefühlt zu werden, wie ein Vater mit dem lieben Sohn"@de ;
+    skos:definition "The Maker's contentment in delighting His creatures is in the measure that they feel Him as the one who gives, like a father playing with a beloved son who recognises his greatness while he shows him all the treasures prepared for him (Jer 31:19); for this delight with the complete ones it was worth creating all the worlds."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §33 (לג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHakkaratHaMashpia a pm:Conceptualizing ;
+    rdfs:label "Feeling Him and knowing His greatness, as a cherished child"@en, "Ihn fühlen und Seine Größe erkennen, wie ein geliebtes Kind"@de ;
+    skos:definition "The complete ones merit to feel the Creator and to recognise His greatness in all the ways He prepared for them, until they stand with Him as a dear son with his father."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Written by the integrator from the second pass (record 142 of pass B); the first pass held it only inside pmc:KabbalahAshlagShaashuimAvVeVenoHaHaviv."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §33 (לג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §34
+#
+
+pmc:KabbalahAshlagDomemTzomeahHaiMedaber a pm:Sequencing ;
+    rdfs:label "Four degrees of the will to receive: still, vegetative, animal, speaking"@en, "Vier Stufen des Willens zu empfangen: unbelebt, pflanzlich, tierisch, sprechend"@de ;
+    skos:definition "God brings His creatures to their exalted degree through four degrees that develop one out of the other, still, vegetative, animal and speaking; they are four phases of the will to receive into which every world divides."@en ;
+    rdf:_1 pmc:KabbalahAshlagDomem ;
+    rdf:_2 pmc:KabbalahAshlagTzomeah ;
+    rdf:_3 pmc:KabbalahAshlagHai ;
+    rdf:_4 pmc:KabbalahAshlagMedaber ;
+    pm:seriesStatement "The four degrees develop one from the other in a fixed order, each a larger measure of the will to receive than the last: general motion only, then motion and growth of each individual, then free feeling of each individual, then feeling of others; the fourth, which is the aim, can appear only through the three before it." ;
+    skos:note "Hebrew term in the text: דומם צומח חי מדבר (domem tzomeaḥ ḥai medabber)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§34 (לד), 35 (לה), 36 (לו), 37 (לז), 38 (לח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §35
+#
+
+pmc:KabbalahAshlagDomem a pm:Conceptualizing ;
+    rdfs:label "The still, phase one"@en, "Das Unbelebte, Stufe eins"@de ;
+    skos:definition "Where the will to receive first shows itself in this world: a general force of motion for the whole kind, and no motion visible in its individuals, the will being too small to rule over particulars."@en ;
+    skos:note "Hebrew term in the text: דומם (domem)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §35 (לה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §36
+#
+
+pmc:KabbalahAshlagTzomeah a pm:Conceptualizing ;
+    rdfs:label "The vegetative, phase two"@en, "Das Pflanzliche, Stufe zwei"@de ;
+    skos:definition "A larger will that rules each individual: each moves of itself, spreads, turns toward the sunrise, takes in food and drink and casts out waste, yet has no free feeling of its own."@en ;
+    skos:note "Hebrew term in the text: צומח (tzomeaḥ)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §36 (לו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §37
+#
+
+pmc:KabbalahAshlagHai a pm:Conceptualizing ;
+    rdfs:label "The animal, phase three"@en, "Das Tierische, Stufe drei"@de ;
+    skos:definition "The will now begets in each individual a free feeling and a life of its own, unlike its fellow's, but no feeling of others: it cannot grieve at another's pain or rejoice at his joy."@en ;
+    skos:note "Hebrew term in the text: חי (ḥai)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §37 (לז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §38
+#
+
+pmc:KabbalahAshlagMedaber a pm:Conceptualizing ;
+    rdfs:label "The speaking, phase four: the human"@en, "Das Sprechende, Stufe vier: der Mensch"@de ;
+    skos:definition "The will in its complete final measure, which also makes a person feel others; the distance from the animal is like that of one creature to all of reality, since he lacks whatever others have, is filled with envy, wants two hundred where he has a hundred, and would swallow the whole world."@en ;
+    skos:note "Hebrew term in the text: מדבר (medabber)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §38 (לח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMedaberPresupposesShloshBehinot a pm:Presupposing ;
+    rdfs:label "Phase four only through the three phases before it"@en, "Stufe vier nur durch die drei Stufen davor"@de ;
+    skos:definition "Though the aim is the fourth phase of the will to receive, it cannot be revealed at once but develops by way of the three that precede it, slowly, until it is complete in its form."@en ;
+    pm:dependentStep pmc:KabbalahAshlagMedaber ;
+    pm:priorStep pmc:KabbalahAshlagHai ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The fourth phase cannot appear at one stroke without the three before it." ;
+    skos:note "Written by the integrator from the second pass (record 145 of pass B) and the first pass's series record; the pair stands for the series, whose source names this consequence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §34 (לד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §39
+#
+
+pmc:KabbalahAshlagRaqHaAdamMeqabbelHaTakhlit a pm:Conceptualizing ;
+    rdfs:label "Only the human can receive the purpose of creation"@en, "Nur der Mensch kann den Zweck der Schöpfung empfangen"@de ;
+    skos:definition "The purpose does not apply to the still, to the great bodies such as earth, moon and sun however bright, to plants or to animals, which lack feeling of others even of their own kind; only humans, having that preparation, after the work that turns their will, receive the degrees NRNHY prepared in the upper worlds and become fit for the purpose of creation."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §39 (לט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §40
+#
+
+pmc:KabbalahAshlagTolaatBeTznon a pm:Conceptualizing ;
+    rdfs:label "Against philosophers who deny man is the centre: the worm in the radish"@en, "Gegen Philosophen, die den Menschen als Mitte leugnen: der Wurm im Rettich"@de ;
+    skos:definition "Some philosophers cannot accept that lowly man is the centre of creation; the author likens them to a worm born inside a radish that takes God's whole world to be as bitter, dark and small as its radish until it breaks the peel and sees a great bright world; those sunk in the husk of their will who never tried Torah's remedies must indeed conclude their own emptiness."@en ;
+    skos:note "Hebrew term in the text: התולעת שנולדה תוך הצנון (ha-tolaʿat she-nolda tokh ha-tznon)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §40 (מ), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPeqihatEinayimLeMadregotHaHokhma a pm:Conceptualizing ;
+    rdfs:label "Eyes opened to oneself and to the degrees of wisdom"@en, "Augen geöffnet für sich selbst und die Stufen der Weisheit"@de ;
+    skos:definition "On breaking the husk of the inborn will and receiving the will to bestow, one's eyes would at once open to see and attain oneself and all the degrees of wisdom, understanding and clear knowledge prepared in the spiritual worlds."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Put conditionally: what would happen if one engaged with due purity."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §40 (מ), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTavlinimPeqihatEinayim a pm:Yielding ;
+    rdfs:label "The special spices break the husk and open the eyes"@en, "Die besonderen Gewürze brechen die Hülle und öffnen die Augen"@de ;
+    skos:definition "Torah and practical commandments done to please the Maker with fitting purity, called the special spices, are said to split the hard husk of the will to receive and open the eyes to the spiritual degrees."@en ;
+    pm:byPractice pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:yieldsCapacity pmc:KabbalahAshlagPeqihatEinayimLeMadregotHaHokhma ;
+    skos:note "Hebrew term in the text: התבלינים המיוחדים (ha-tavlinim ha-meyuḥadim)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §40 (מ), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMeshuqqaimBeQelipatHaRatzon a pm:Conceptualizing ;
+    rdfs:label "Those who never tried the remedies see only their own emptiness"@en, "Wer die Heilmittel nie versuchte, sieht nur die eigene Leere"@de ;
+    skos:definition "Those sunk in the husk they were born in, who did not try Torah and practical commandments, must conclude their emptiness and cannot conceive that creation was made for them."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagPeqihatEinayimLeMadregotHaHokhma fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §40 (מ), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagOreahTov a pm:Conceptualizing ;
+    rdfs:label "The good guest's word: all was made for me"@en, "Das Wort des guten Gastes: alles wurde für mich gemacht"@de ;
+    skos:definition "One who has broken the husk would then say of himself what the sages put in the mouth of the good guest (Berakhot 58a), that all the trouble the host took was only for him."@en ;
+    skos:note "Counted as a sign of success: the text announces it as the mark of completion."@en ;
+    skos:note "Put conditionally and announced in advance; it is a recognition one reports of oneself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §40 (מ), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §41
+#
+
+pmc:KabbalahAshlagHameshOlamot a pm:Sequencing ;
+    rdfs:label "Five worlds from Adam Kadmon to Assiya"@en, "Fünf Welten von Adam Kadmon bis Assija"@de ;
+    skos:definition "All the worlds divide in general into five, numbered by the author: Adam Kadmon, Atzilut, Beria, Yetzira, Assiya, each with endless particulars; they are the five sefirot Keter, Hokhma, Bina, Tiferet, Malkhut, clothe the lights Yehida, Haya, Neshama, Ruach, Nefesh, and are contained in the Name, Adam Kadmon in the yod's tip, of which we have no grasp and therefore do not speak, and the four worlds in its four letters."@en ;
+    rdf:_1 pmc:KabbalahAshlagAdamQadmon ;
+    rdf:_2 pmc:KabbalahAshlagOlamHaAtzilut ;
+    rdf:_3 pmc:KabbalahAshlagOlamHaBeria ;
+    rdf:_4 pmc:KabbalahAshlagOlamHaYetzira ;
+    rdf:_5 pmc:KabbalahAshlagOlamHaAsiyaNefesh ;
+    pm:seriesStatement "The five worlds are ordered from the one nearest the Infinite to this world, and the place of each fixes its sefira, its light and its letter of the Name: first Keter, yehida and the yod's tip, last Malkhut, nefesh and the lower he." ;
+    skos:note "Hebrew term in the text: א\"ק ואבי\"ע (AK ve-ABYA)."@en ;
+    skos:note "The members are the nodes of the Petiḥa harvest for the same worlds; the Haqdama adds no claim about any one world that those nodes do not carry, only their order and their correspondences."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagArbaOtiyotHavaya (Petiḥa, §3): the Petiḥa sets four phases against the four letters of the Name; the Haqdama sets five worlds against the letters and the tip of the yod, and against the five lights."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §41 (מא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §42
+#
+
+pmc:KabbalahAshlagDTzHMRuhaniyim a pm:Systematizing ;
+    rdfs:label "Spiritual still, vegetative, animal and speaking in each world"@en, "Geistiges Unbelebtes, Pflanzliches, Tierisches, Sprechendes in jeder Welt"@de ;
+    skos:definition "Besides its five sefirot, which are the Godliness of that world, every world holds four spiritual kinds: human souls are its speaking, angels its animal, the garments its vegetative and the palaces its still. They clothe one another, the souls over the sefirot, the angels over the souls, the garments over the angels, the palaces around them all, and the lower three are there only for the human soul's service and good."@en ;
+    pm:compiledBy "Yehuda Leib Ashlag, in the Haqdama le-Sefer ha-Zohar" ;
+    dcterms:date "2019"^^xsd:gYear ;
+    skos:note "Hebrew term in the text: נשמות / מלאכים / לבושים / היכלות (neshamot / malʾakhim / levushim / heikhalot)."@en ;
+    skos:note "The ordering is the author's: he arranges the material he expounds; the date is that of the edition read."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §42 (מב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMalakhim a pm:Naming ;
+    rdfs:label "Angels as the animal level of each spiritual world"@en, "Engel als die tierische Stufe jeder geistigen Welt"@de ;
+    skos:definition "The angels are held to be the animal level in each spiritual world, clothing the human souls and existing to serve them."@en ;
+    pm:nameForm "malʾakhim" ;
+    pm:nameRole "the animal level of a spiritual world, serving the human soul" ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §42 (מב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §43
+#
+
+pmc:KabbalahAshlagKolHaNohegBaKlalNohegBaPerat a pm:Conceptualizing ;
+    rdfs:label "What holds of the whole holds of every part, down to one person"@en, "Was vom Ganzen gilt, gilt von jedem Teil, bis zum einzelnen Menschen"@de ;
+    skos:definition "Whatever holds in reality as a whole holds in each world and in its smallest part: this world's still, vegetative, animal and speaking stand against Malkhut, Tiferet, Bina and Hokhma with Keter as their root, and even one person holds the four as four parts of his will to receive, in which the point of the holy nefesh is clothed."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagKlalUFeratShavim (Petiḥa, §180): the Petiḥa applies the rule to the five worlds within each partzuf; the Haqdama applies it to the four kinds still, vegetative, animal and speaking and to the four parts of one person's will."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §43 (מג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §44
+#
+
+pmp:KabbalahAshlagMitzvotBliKavvana a pm:Practicing ;
+    rdfs:label "Torah and commandments from thirteen, even without intention"@en, "Tora und Gebote ab dreizehn, auch ohne Absicht"@de ;
+    skos:definition "After thirteen, engage in Torah and commandments even without intention, without the love and fear fit for serving the King, even not for their own sake; the point in the heart then begins to grow and act."@en ;
+    skos:note "Hebrew term in the text: מצוות אינן צריכות כוונה (mitzvot einan tzerikhot kavvana)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §44 (מד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTaryagEivareiHaNequda a pm:Conceptualizing ;
+    rdfs:label "Building the 613 organs of the point in the heart"@en, "Aufbau der 613 Glieder des Punktes im Herzen"@de ;
+    skos:definition "In the measure that the still part of the will is purified, one builds the 613 organs of the point in the heart, the still of the holy nefesh."@en ;
+    skos:note "Hebrew term in the text: תרי\"ג אברים (taryag evarim)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §44 (מד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMitzvotBliKavvanaTaharatHaDomem a pm:Yielding ;
+    rdfs:label "Deeds without intention purify the still part only"@en, "Taten ohne Absicht reinigen nur den unbelebten Teil"@de ;
+    skos:definition "Deeds done without intention are said to be able to purify the will, though only at its first degree, the still."@en ;
+    pm:byPractice pmp:KabbalahAshlagMitzvotBliKavvana ;
+    pm:yieldsCapacity pmc:KabbalahAshlagTaryagEivareiHaNequda ;
+    skos:note "The limit, only the still, is the text's own bound on what the practice can do."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §44 (מד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagTaryagMitzvotBeMaase a pm:Practicing ;
+    rdfs:label "Keeping the 613 commandments in deed"@en, "Die 613 Gebote in der Tat halten"@de ;
+    skos:definition "Perform all 613 commandments in deed: the 248 positive commandments build the 248 spiritual organs and the 365 prohibitions the 365 sinews of the point in the heart."@en ;
+    skos:note "Hebrew term in the text: רמ\"ח / שס\"ה (ramaḥ / shasah)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §44 (מד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPartzufHaNefeshDeAsiya a pm:Conceptualizing ;
+    rdfs:label "A complete partzuf of nefesh clothing Malkhut of Assiya"@en, "Ein vollständiger Parzuf der Nefesch, der Malchut von Assija bekleidet"@de ;
+    skos:definition "The point becomes a complete partzuf of holy nefesh, which rises and clothes the sefira Malkhut of spiritual Assiya; the spiritual still, vegetative and animal there serve it in the measure that it comprehends them, and the comprehension becomes its spiritual food, so that it grows until it draws the light of Malkhut of Assiya in full. This light of nefesh is called the still of holiness of Assiya: like the physical still it acts as one encompassing light, its 613 differences not discernible."@en ;
+    skos:note "Hebrew term in the text: פרצוף הנפש / דומם דקדושה (partzuf ha-nefesh / domem di-qedusha)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§44 (מד), 45 (מה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTaryagMitzvotPartzufHaNefesh a pm:Yielding ;
+    rdfs:label "The 613 commandments in deed yield the partzuf of nefesh"@en, "Die 613 Gebote in der Tat bringen den Parzuf der Nefesch"@de ;
+    skos:definition "Completing all 613 commandments in deed is said to complete the organs of the point in the heart into a partzuf of nefesh."@en ;
+    pm:byPractice pmp:KabbalahAshlagTaryagMitzvotBeMaase ;
+    pm:yieldsCapacity pmc:KabbalahAshlagPartzufHaNefeshDeAsiya ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §44 (מד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagOrHaNefeshMeirBaGuf a pm:Conceptualizing ;
+    rdfs:label "The light of Malkhut of Assiya shining in the body"@en, "Das Licht der Malchut von Assija leuchtet im Körper"@de ;
+    skos:definition "The completed partzuf of nefesh draws the light of Malkhut of Assiya in its due fullness and shines it into the person's body, and that light helps him add effort in Torah and commandments."@en ;
+    skos:note "Counted as a sign of success: the text announces it as the mark of completion."@en ;
+    skos:note "Announced as the outcome of completing the nefesh; the text gives no mark by which the shining is to be recognised."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §44 (מד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagNequdaMeHaMadregaHaElyona a pm:Conceptualizing ;
+    rdfs:label "Every new degree carries a point of the one above"@en, "Jede Stufe geboren mit einem Punkt der höheren Stufe"@de ;
+    skos:definition "As a point of nefesh is born with the body, so with each partzuf that is born a point of the next degree, the last aspect of the higher light, clothes its interior; this is the whole link from lower to upper, and by virtue of that point a degree becomes able to rise to the one above."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagAhorayimDeElyonBeTahton (Petiḥa, §77): the Petiḥa has the back vessels of each upper degree fallen into the degree below; the Haqdama has the last aspect of the next higher light born inside each new degree of a person's soul as the means of its ascent."@en ;
+    skos:note "The author breaks off here and does not expand."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §44 (מד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §45
+#
+
+pmc:KabbalahAshlagNaRaNHaYDeAsiya a pm:Sequencing ;
+    rdfs:label "The ladder NRNHY within Assiya"@en, "Die Leiter NRNHJ innerhalb von Assija"@de ;
+    skos:definition "Within Assiya the author orders five partzufim of the soul: nefesh by the purified still, clothing Malkhut; ruach by the purified vegetative, clothing Tiferet; neshama by the purified animal, clothing Bina; haya by the purified speaking, clothing Hokhma; and the light of the Infinite clothed in the last, called yehida."@en ;
+    rdf:_1 pmc:KabbalahAshlagPartzufHaNefeshDeAsiya ;
+    rdf:_2 pmc:KabbalahAshlagPartzufHaRuahDeAsiya ;
+    rdf:_3 pmc:KabbalahAshlagPartzufHaNeshamaDeAsiya ;
+    rdf:_4 pmc:KabbalahAshlagPartzufHaHayaDeAsiya ;
+    rdf:_5 pmc:KabbalahAshlagOrHaYehidaDeAsiya ;
+    pm:seriesStatement "Each partzuf of the soul in Assiya grows from a point of itself born inside the one beneath and is built by purifying the next part of the will, so the ladder can be climbed only in its order, and each rung's light is to the one below as a kind of life is to the kind beneath it." ;
+    skos:note "Differs from pmc:KabbalahAshlagOrotNaRaNHaY (Petiḥa, §24): the Petiḥa orders the five lights by their entry into the vessels of a partzuf as the vessels grow; the Haqdama orders five partzufim of a person's soul by the parts of his will he purifies and the practices that purify them."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§45 (מה), 47 (מז), 48 (מח), 49 (מט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §46
+#
+
+pmc:KabbalahAshlagOrotElohutKelimKisuyim a pm:Conceptualizing ;
+    rdfs:label "Lights wholly divine; the vessels of BYA cover and measure them"@en, "Lichter ganz göttlich; die Gefäße von BJA verhüllen und bemessen sie"@de ;
+    skos:definition "The sefirot are Godliness without change from the top of Keter of Adam Kadmon to the end of Malkhut of Assiya, yet differ toward the receivers: they divide into lights and vessels, the light being complete Godliness, while the vessels of Beria, Yetzira and Assiya are coverings that hide the Infinite's light and measure it, so each receives only by his purity. The one light is named NRNHY by the vessels, Malkhut, the thickest cover, passing nefesh, Tiferet ruach, Bina neshama and Hokhma, the purest, haya."@en ;
+    skos:note "Hebrew term in the text: אורות וכלים (orot ve-khelim)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §46 (מו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §47
+#
+
+pmp:KabbalahAshlagMitzvotBeKavvanaRetzuya a pm:Practicing ;
+    rdfs:label "Torah and commandments with the desired intention"@en, "Tora und Gebote mit der gewünschten Absicht"@de ;
+    skos:definition "Strengthen yourself to engage in Torah and commandments with the desired intention; by the 248 positive commandments with intention the point of ruach spreads into its 248 organs, by the 365 prohibitions into its 365 sinews."@en ;
+    skos:note "Hebrew term in the text: בכוונה הרצויה (be-khavvana ha-retzuya)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§47 (מז), 56 (נו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPartzufHaRuahDeAsiya a pm:Conceptualizing ;
+    rdfs:label "A partzuf of ruach clothing Tiferet of Assiya"@en, "Ein Parzuf des Ruach, der Tiferet von Assija bekleidet"@de ;
+    skos:definition "Purifying the vegetative part of the will builds the point of ruach into a partzuf that rises to clothe Tiferet of spiritual Assiya and receives the light of ruach; it is called the vegetative of holiness and shines in its own way in each of its 613 organs, and with it a point of neshama emerges."@en ;
+    skos:note "Hebrew term in the text: פרצוף הרוח / צומח דקדושה (partzuf ha-ruaḥ / tzomeaḥ di-qedusha)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §47 (מז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKavvanaPartzufHaRuah a pm:Yielding ;
+    rdfs:label "Commandments with intention build the partzuf of ruach"@en, "Gebote mit Absicht bauen den Parzuf des Ruach"@de ;
+    skos:definition "Commandments done with the desired intention are said to purify the vegetative part and build the partzuf of ruach."@en ;
+    pm:byPractice pmp:KabbalahAshlagMitzvotBeKavvanaRetzuya ;
+    pm:yieldsCapacity pmc:KabbalahAshlagPartzufHaRuahDeAsiya ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §47 (מז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §48
+#
+
+pmp:KabbalahAshlagSodotHaToraTaameiMitzvot a pm:Practicing ;
+    rdfs:label "Studying the Torah's secrets and the commandments' reasons"@en, "Studium der Geheimnisse der Tora und der Gründe der Gebote"@de ;
+    skos:definition "Occupy yourself with the Torah's secrets and with the commandments' reasons, which purifies the animal part of the will to receive."@en ;
+    skos:note "Hebrew term in the text: סודות התורה / טעמי מצוות (sodot ha-tora / taʿamei mitzvot)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§48 (מח), 56 (נו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPartzufHaNeshamaDeAsiya a pm:Conceptualizing ;
+    rdfs:label "A partzuf of neshama clothing Bina of Assiya"@en, "Ein Parzuf der Neschama, der Bina von Assija bekleidet"@de ;
+    skos:definition "The point of neshama is built in its 248 organs and 365 sinews into a partzuf that clothes Bina of Assiya and receives the light of neshama; called the animal of holiness, it gives each of its 613 organs a free feeling of its own, so that they are like 613 partzufim, and a point of haya emerges with it."@en ;
+    skos:note "Hebrew term in the text: פרצוף הנשמה / חי דקדושה (partzuf ha-neshama / ḥai di-qedusha)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §48 (מח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagSodotHaToraPartzufHaNeshama a pm:Yielding ;
+    rdfs:label "The secrets of Torah build the partzuf of neshama"@en, "Die Geheimnisse der Tora bauen den Parzuf der Neschama"@de ;
+    skos:definition "Studying the Torah's secrets and the commandments' reasons is said to purify the animal part and build the partzuf of neshama."@en ;
+    pm:byPractice pmp:KabbalahAshlagSodotHaToraTaameiMitzvot ;
+    pm:yieldsCapacity pmc:KabbalahAshlagPartzufHaNeshamaDeAsiya ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §48 (מח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §49
+#
+
+pmp:KabbalahAshlagMitzvaAlPiKavvanaAmitit a pm:Practicing ;
+    rdfs:label "Doing each commandment by its true intention"@en, "Jedes Gebot nach seiner wahren Absicht tun"@de ;
+    skos:definition "Having merited neshama, perform each commandment by the true intention in it, each organ of the partzuf of neshama lighting the ways of the commandments that belong to it; by those lights purify the speaking part of the will."@en ;
+    skos:note "Hebrew term in the text: כוונה אמיתית (kavvana amittit)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §49 (מט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPartzufHaHayaDeAsiya a pm:Conceptualizing ;
+    rdfs:label "A partzuf of haya clothing Hokhma of Assiya"@en, "Ein Parzuf der Chaja, der Chochma von Assija bekleidet"@de ;
+    skos:definition "The point of haya is built into a partzuf that clothes Hokhma of Assiya, a vessel of boundless purity, and receives the great light of haya, also called soul of the soul; called the speaking of holiness, it gains the feeling of others, exceeding the spiritual still, vegetative and animal as man exceeds them in the body."@en ;
+    skos:note "Hebrew term in the text: נשמה לנשמה / מדבר דקדושה (neshama li-neshama / medabber di-qedusha)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §49 (מט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHayaPresupposesNeshama a pm:Presupposing ;
+    rdfs:label "Neshama before haya: the true intention opens only after neshama"@en, "Neschama vor Chaja: die wahre Absicht öffnet sich erst nach Neschama"@de ;
+    skos:definition "Only after one has merited the light of neshama does the door open to perform each commandment by its true intention and so to build haya."@en ;
+    pm:dependentStep pmc:KabbalahAshlagPartzufHaHayaDeAsiya ;
+    pm:priorStep pmc:KabbalahAshlagPartzufHaNeshamaDeAsiya ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §49 (מט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagOrHaYehidaDeAsiya a pm:Conceptualizing ;
+    rdfs:label "The light of yehida"@en, "Das Licht der Jechida"@de ;
+    skos:definition "The light of the Infinite clothed in the partzuf of haya bears the name light of yehida."@en ;
+    skos:note "Hebrew term in the text: אור יחידה (or yeḥida)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §49 (מט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKavvanaAmititPartzufHaHaya a pm:Yielding ;
+    rdfs:label "Commandments by their true intention build the partzuf of haya"@en, "Gebote nach ihrer wahren Absicht bauen den Parzuf der Chaja"@de ;
+    skos:definition "By the great lights of neshama one purifies the speaking part of the will and builds the partzuf of haya."@en ;
+    pm:byPractice pmp:KabbalahAshlagMitzvaAlPiKavvanaAmitit ;
+    pm:yieldsCapacity pmc:KabbalahAshlagPartzufHaHayaDeAsiya ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §49 (מט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §50
+#
+
+pmc:KabbalahAshlagNaRaNHaYDeNefesh a pm:Conceptualizing ;
+    rdfs:label "The NRNHY of Assiya are only the NRNHY of nefesh"@en, "Die NRNHJ von Assija sind nur die NRNHJ der Nefesch"@de ;
+    skos:definition "The five lights received from Assiya are only five portions of nefesh light; ruach is truly only in Yetzira, neshama only in Beria, haya only in Atzilut and yehida only in Adam Kadmon, each world holding five parts of its own light."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §50 (נ), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §51
+#
+
+pmc:KabbalahAshlagTeshuvaBiQviutMuhletet a pm:Conceptualizing ;
+    rdfs:label "Repentance accepted only when fixed for good"@en, "Umkehr nur angenommen, wenn sie endgültig feststeht"@de ;
+    skos:definition "Repentance and purification count only when fixed for good, so that the Knower of secrets testifies that one will not return to folly (after Maimonides, Laws of Repentance 2:2); the purifying of the still part must be of this kind for one to rise into spiritual Assiya."@en ;
+    skos:note "Hebrew term in the text: שלא ישוב לכסלו עוד (she-lo yashuv le-khislo ʿod)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagAliyaLeAsiyaBiQviut fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §51 (נא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAliyaLeAsiyaBiQviut a pm:Conceptualizing ;
+    rdfs:label "Permanent standing in spiritual Assiya"@en, "Bleibender Stand in der geistigen Assija"@de ;
+    skos:definition "With the still part of the will purified permanently one rises into spiritual Assiya and has equivalence of form with that whole world, since all of Assiya in its five sefirot is only Malkhut, which answers to the still alone."@en ;
+    skos:note "Hebrew term in the text: קביעות (qeviʿut)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §51 (נא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAliyaLeAsiyaPresupposesTaharaQevua a pm:Presupposing ;
+    rdfs:label "Permanent purification of the still before rising to Assiya"@en, "Bleibende Reinigung des Unbelebten vor dem Aufstieg nach Assija"@de ;
+    skos:definition "To rise into spiritual Assiya and clothe its Malkhut the still part must be purified for good, so that one will not return to folly."@en ;
+    pm:dependentStep pmc:KabbalahAshlagAliyaLeAsiyaBiQviut ;
+    pm:priorStep pmc:KabbalahAshlagTaryagEivareiHaNequda ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "A purification not fixed for good is not accepted and gives no standing in that world." ;
+    skos:note "The prior step is the purifying of the still part (§44) at the permanence §51 demands."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §51 (נא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagOrotShelaBiQviut a pm:Conceptualizing ;
+    rdfs:label "Higher lights of Assiya received without permanence"@en, "Höhere Lichter von Assija ohne Beständigkeit empfangen"@de ;
+    skos:definition "Having purified only the still permanently, one can still receive ruach, neshama and haya from Tiferet, Bina and Hokhma of Assiya if the other three parts are purified even impermanently, since each sefira of Assiya receives from its counterpart in the higher worlds."@en ;
+    skos:note "Hebrew term in the text: שלא בקביעות (she-lo bi-qviʿut)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §51 (נא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAvedatHaOrotBeHitorerutHaRatzon a pm:Conceptualizing ;
+    rdfs:label "A reawakened part of the will loses those lights at once"@en, "Ein wiedererwachter Teil des Willens verliert diese Lichter sofort"@de ;
+    skos:definition "Lights held without permanence are lost immediately when one of the three parts of the will to receive is roused again."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagOrotShelaBiQviut fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §51 (נא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAliyaBiQviutBaOlamot a pm:Sequencing ;
+    rdfs:label "Permanent ascent through the worlds, part by part of the will"@en, "Bleibender Aufstieg durch die Welten, Teil um Teil des Willens"@de ;
+    skos:definition "Purifying each part of the will permanently gives equivalence of form with a whole world: the still with Assiya, the vegetative with Yetzira up to ruach, the animal with Beria up to neshama, the speaking with Atzilut up to haya, and beyond it the light of the Infinite and yehida; at every stage the next lights can be had, but not for good."@en ;
+    rdf:_1 pmc:KabbalahAshlagAliyaLeAsiyaBiQviut ;
+    rdf:_2 pmc:KabbalahAshlagAliyaLeYetziraBiQviut ;
+    rdf:_3 pmc:KabbalahAshlagAliyaLeBeriaBiQviut ;
+    rdf:_4 pmc:KabbalahAshlagAliyaLeAtzilutBiQviut ;
+    pm:seriesStatement "The permanent ascents go world by world in the order of the parts of the will, still, vegetative, animal, speaking, and a world is entered for good only when the part answering to it is purified for good; the lights of the next world may be held before, but only impermanently." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§51 (נא), 52 (נב), 53 (נג), 54 (נד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §52
+#
+
+pmc:KabbalahAshlagAliyaLeYetziraBiQviut a pm:Conceptualizing ;
+    rdfs:label "Permanent ascent to Yetzira, up to ruach"@en, "Bleibender Aufstieg nach Jezira, bis zum Ruach"@de ;
+    skos:definition "Having purified the vegetative part permanently one rises for good to Yetzira up to the degree of ruach, and can attain there neshama and haya of ruach, but only impermanently."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §52 (נב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §53
+#
+
+pmc:KabbalahAshlagAliyaLeBeriaBiQviut a pm:Conceptualizing ;
+    rdfs:label "Permanent ascent to Beria, up to neshama"@en, "Bleibender Aufstieg nach Beria, bis zur Neschama"@de ;
+    skos:definition "Having purified the animal part and turned it to bestowal so that the Knower of secrets testifies, one is in equivalence of form with Beria and receives the light of neshama there for good; by purifying the speaking part one can rise to its Hokhma and receive haya there, though not permanently."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §53 (נג), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §54
+#
+
+pmc:KabbalahAshlagAliyaLeAtzilutBiQviut a pm:Conceptualizing ;
+    rdfs:label "Permanent ascent to Atzilut, haya; then yehida"@en, "Bleibender Aufstieg nach Azilut, Chaja; dann Jechida"@de ;
+    skos:definition "Purifying the speaking part permanently gives equivalence of form with Atzilut and the light of haya for good; meriting further, one attains the light of the Infinite and yehida clothed in haya. The author does not expand."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §54 (נד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §55
+#
+
+pmc:KabbalahAshlagNahatRuahPresupposesSiyyuaHaOlamot a pm:Presupposing ;
+    rdfs:label "Contentment to the Maker only with the help of all the worlds"@en, "Freude für den Schöpfer nur mit Hilfe aller Welten"@de ;
+    skos:definition "Answering why man needs the upper worlds: he cannot come to give contentment to his Maker except through the help of all of them, since by purifying he attains the lights NRNHY, and each degree's lights help his further purification until he reaches the delight that is the aim of the Thought of Creation."@en ;
+    pm:dependentStep pmc:KabbalahAshlagGmarHaTiqqunHaNeshamot ;
+    pm:priorStep pmc:KabbalahAshlagNaRaNHaYBeShlilatHaRatzon ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Without the help of the soul's degrees, the purity the Thought of Creation requires cannot be reached." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§41 (מא), 55 (נה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaBaLetaherMesayyin a pm:Conceptualizing ;
+    rdfs:label "One who comes to purify is helped, with a holy soul"@en, "Wer kommt, sich zu reinigen, dem wird geholfen, mit einer heiligen Seele"@de ;
+    skos:definition "Each degree attained gives lights that help a person in his purifying, so that he ascends degree by degree; the author reads the Zohar (Noah) that the help is a holy soul."@en ;
+    skos:note "Hebrew term in the text: הבא לטהר מסייעין אותו (ha-ba le-taher mesayyeʿin oto)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §55 (נה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §56
+#
+
+pmc:KabbalahAshlagOrHaDomemPresupposesArbaHelqeiHaAvoda a pm:Presupposing ;
+    rdfs:label "All four parts of the work needed even for the smallest light"@en, "Alle vier Teile der Arbeit selbst für das kleinste Licht nötig"@de ;
+    skos:definition "Even the still of spiritual Assiya holds five aspects NRNHY, so even its light cannot be attained except through all four parts of the work; no one of Israel may exempt himself, each by his measure, from commandments with intention for ruach and from the Torah's secrets and the commandments' reasons for neshama."@en ;
+    pm:dependentStep pmc:KabbalahAshlagPartzufHaNefeshDeAsiya ;
+    pm:priorStep pmp:KabbalahAshlagSodotHaToraTaameiMitzvot ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Without them not even the smallest light of holiness can be complete." ;
+    skos:note "The prior step named is the study of the secrets; the text names commandments with intention (pmp:KabbalahAshlagMitzvotBeKavvanaRetzuya) beside it in the same sentence."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §56 (נו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagEinAdamPoterAtzmo a pm:Cautioning ;
+    rdfs:label "No one may exempt himself from the secrets of Torah"@en, "Niemand darf sich von den Geheimnissen der Tora ausnehmen"@de ;
+    skos:definition "Each person must engage in all the parts by his measure, the secrets of Torah included; none may exempt himself."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagSodotHaToraTaameiMitzvot ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §56 (נו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §57
+#
+
+pmc:KabbalahAshlagHaYavshutVeHaHashekhut a pm:Conceptualizing ;
+    rdfs:label "The dryness and darkness of this generation"@en, "Die Dürre und Finsternis dieser Generation"@de ;
+    skos:definition "The dryness and darkness found in this generation, unheard of before, come from even the servants of God having withdrawn from the secrets of Torah; as a file of a thousand blind men falls into the pit without the one sighted man at its head, the whole generation stumbles. The author says his grief keeps him from saying more."@en ;
+    skos:note "Hebrew term in the text: היבשות והחשכות (ha-yavshut ve-ha-ḥashekhut)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagAlefSumimPiqeahEhad fails or is lost."@en ;
+    skos:note "The parable is Maimonides'; the text names him and not the place."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §57 (נז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAlefSumimPiqeahEhad a pm:Conceptualizing ;
+    rdfs:label "If the servants of God studied the interior, the generation would follow"@en, "Studierten die Diener Gottes das Innere, folgte die Generation"@de ;
+    skos:definition "Had at least the servants of God engaged in the interior of the Torah and drawn complete light from the Infinite, the whole generation would follow them and walk its way securely."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Put conditionally, of the generation and not of one person."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §57 (נז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §58
+#
+
+pmc:KabbalahAshlagPesselUDmut a pm:Cautioning ;
+    rdfs:label "The fear that corporeal parables lead to idol and image"@en, "Die Furcht, körperliche Gleichnisse führten zu Bild und Gestalt"@de ;
+    skos:definition "With faith diminished, in general and in the sages in particular, and with the books of Kabbalah and the Zohar full of bodily parables, fear fell on everyone that the loss would outweigh the gain, being close to stumbling into idol and image; the author reports this caution as the main cause of the neglect and answers it by his commentary."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagEsekBeSeferHaZohar ;
+    skos:note "Hebrew term in the text: פסל ודמות (pessel u-dmut)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §58 (נח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaSulam a pm:Naming ;
+    rdfs:label "Ha-Sulam, the Ladder: the author's commentary on the Zohar"@en, "Ha-Sulam, die Leiter: der Kommentar des Autors zum Sohar"@de ;
+    skos:definition "Having explained the writings of the Ari and now the Zohar, showing the spiritual meaning of each thing as free of every bodily image, above place and time, so that all of Israel may study the Zohar, the author calls the commentary the Ladder: one who has an upper room full of good lacks only a ladder to climb."@en ;
+    pm:nameForm "ha-Sulam" ;
+    pm:nameRole "the author's commentary, a ladder into the Zohar" ;
+    skos:note "Hebrew term in the text: הסולם (ha-sulam)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §58 (נח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagLimudHaZoharBeHaSulam a pm:Practicing ;
+    rdfs:label "Studying the Zohar through the Sulam"@en, "Den Sohar mit dem Sulam studieren"@de ;
+    skos:definition "Study the Zohar with the Ladder commentary, which removes bodily imagery, as a way and entrance into the text of the Zohar itself."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §58 (נח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHistaklutBeZoharGufeih a pm:Conceptualizing ;
+    rdfs:label "Rising into the Zohar itself and being warmed by its light"@en, "In den Sohar selbst aufsteigen und sich an seinem Licht wärmen"@de ;
+    skos:definition "By the commentary any person is said to be able to climb, go deep and look into the Zohar itself, and all the house of Israel to warm themselves in its holy light."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §58 (נח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagLimudBeHaSulamHistaklutBeZohar a pm:Yielding ;
+    rdfs:label "Study with the Sulam opens the Zohar itself"@en, "Studium mit dem Sulam öffnet den Sohar selbst"@de ;
+    skos:definition "Studying with the commentary is said to give anyone a way to rise and look into the Zohar itself."@en ;
+    pm:byPractice pmp:KabbalahAshlagLimudHaZoharBeHaSulam ;
+    pm:yieldsCapacity pmc:KabbalahAshlagHistaklutBeZoharGufeih ;
+    skos:note "Written by the integrator; both passes recorded practice and capacity, neither the yielding the sentence states."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §58 (נח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaSulamEinoMatara a pm:Cautioning ;
+    rdfs:label "The ladder is not an end in itself"@en, "Die Leiter ist kein Ziel in sich"@de ;
+    skos:definition "A self-warning about the author's own commentary: one who rests on the rungs and does not enter the upper room has not fulfilled the aim; the commentary is only a way in, since no expression has yet been created to explain the Zohar's words to their end."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagLimudHaZoharBeHaSulam ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §58 (נח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMenuhaBeShlaveiHaSulam a pm:Conceptualizing ;
+    rdfs:label "Resting on the rungs: the aim not fulfilled"@en, "Auf den Sprossen verweilen: das Ziel nicht erreicht"@de ;
+    skos:definition "If one stays on the rungs of the commentary and does not go into the Zohar itself, the author's intention is not completed."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagHistaklutBeZoharGufeih fails or is lost."@en ;
+    skos:note "Written by the integrator from the second pass (record 231 of pass B); the first pass held the sentence only as the caution pmc:KabbalahAshlagHaSulamEinoMatara."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §58 (נח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §59
+#
+
+pmc:KabbalahAshlagMehabberSeferHaZohar a pm:Conceptualizing ;
+    rdfs:label "Authorship of the Zohar: Rashbi against Moses de Leon"@en, "Verfasserschaft des Sohar: Raschbi gegen Mose de León"@de ;
+    skos:definition "All who understand the Zohar agree that the Tanna R. Shimon bar Yohai composed it; some far from this wisdom, relying on tales made up by its opponents, give it to Moses de Leon or his contemporaries. The author declines to investigate: by its content its author cannot rank below Rashbi; were it de Leon, he would rank him above all the Tannaim; he would find a prophet more fitting still, and Moses receiving it at Sinai most fitting of all."@en ;
+    skos:note "Hebrew term in the text: רשב\"י / ר' משה די ליאון (Rashbi / R. Moshe de Leon)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    skos:note "The text claims no other speaker for its own words; the hypothesis of Sinai concerns the Zohar, so no pm:Receiving is written."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§59 (נט), 60 (ס), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §61
+#
+
+pmc:KabbalahAshlagShitaAlfeiShnei a pm:Sequencing ;
+    rdfs:label "The six thousand years as one partzuf: chaos, Torah, Messiah"@en, "Die sechstausend Jahre als ein Parzuf: Tohu, Tora, Messias"@de ;
+    skos:definition "The world over its six thousand years is like one partzuf with head, middle and end, HBD, HGT, NHY; after Sanhedrin 97a the author names the thirds two thousand of chaos, two thousand of Torah and two thousand of messianic days."@en ;
+    rdf:_1 pmc:KabbalahAshlagBeAlpayimTohu ;
+    rdf:_2 pmc:KabbalahAshlagBeAlpayimTora ;
+    rdf:_3 pmc:KabbalahAshlagBeAlpayimYemotHaMashiah ;
+    pm:seriesStatement "The three millennia pairs follow the growth of the world's partzuf: vessels grow from the top while lights enter from the bottom, so the head-time had only nefesh, the middle received ruach, and only the last, with the lower vessels, receives neshama, the greatest light." ;
+    skos:note "Hebrew term in the text: תהו / תורה / ימות המשיח (tohu / tora / yemot ha-mashiaḥ)."@en ;
+    skos:note "The rule that vessels and lights stand in inverse order, on which the series rests, is carried by the Petiḥa's pmc:KabbalahAshlagErekhHafkhiOrotVeKelim."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §61 (סא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagBeAlpayimTohu a pm:Conceptualizing ;
+    rdfs:label "Two thousand years of chaos"@en, "Zweitausend Jahre Tohu"@de ;
+    skos:definition "The head, HBD, of the world's partzuf: very few lights, a head without body, only nefesh."@en ;
+    skos:note "Hebrew term in the text: תהו (tohu)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §61 (סא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagBeAlpayimTora a pm:Conceptualizing ;
+    rdfs:label "Two thousand years of Torah"@en, "Zweitausend Jahre Tora"@de ;
+    skos:definition "The HGT of the vessels: the light of ruach, the inner meaning of Torah, came down and clothed the world."@en ;
+    skos:note "Hebrew term in the text: תורה (tora)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §61 (סא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagBeAlpayimYemotHaMashiah a pm:Conceptualizing ;
+    rdfs:label "The last two thousand years: the days of the Messiah"@en, "Die letzten zweitausend Jahre: die Tage des Messias"@de ;
+    skos:definition "The NHYM of the vessels: the greatest light, neshama, clothes the world."@en ;
+    skos:note "Hebrew term in the text: ימות המשיח (yemot ha-mashiaḥ)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §61 (סא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §62
+#
+
+pmc:KabbalahAshlagHasadimMegulimMiHaze a pm:Conceptualizing ;
+    rdfs:label "Wisdom hidden until the vessels below the chest"@en, "Weisheit verborgen bis zu den Gefäßen unter der Brust"@de ;
+    skos:definition "In every partzuf the lights are covered from HBD and HGT down to the chest and shine as revealed hasadim, the illumination of upper wisdom, only below it; therefore the wisdom of the Zohar and of Kabbalah was covered until the last two thousand years."@en ;
+    skos:note "Hebrew term in the text: חסדים המגולים (ḥasadim ha-megulim)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §62 (סב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaAri a pm:Naming ;
+    rdfs:label "R. Isaac Luria, the Ari"@en, "R. Jizchak Luria, der Ari"@de ;
+    skos:definition "Held to be the divine soul prepared to receive the great light of upper wisdom, revealed near the completion of the vessels below the chest; he disclosed the principles of the Zohar and of Kabbalah beyond all who came before him, but since the vessels were not yet complete at his death in 5332 his words stayed with a few who had no leave to reveal them."@en ;
+    pm:nameForm "R. Yitzḥaq Luria, ha-Ari" ;
+    pm:nameRole "revealer of the principles of the Zohar and of Kabbalah" ;
+    skos:note "Hebrew term in the text: האריז\"ל (ha-Ari zal)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§61 (סא), 62 (סב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaReshutLegalot a pm:Conceptualizing ;
+    rdfs:label "Leave now given to reveal the Zohar step by step"@en, "Erlaubnis jetzt gegeben, den Sohar Schritt für Schritt zu enthüllen"@de ;
+    skos:definition "Now, near the close of the last two thousand years, leave is given to reveal the words of the Ari and of the Zohar in a large measure, and from this generation on they will be disclosed ever more, until the full measure God desires."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §62 (סב), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §63
+#
+
+pmc:KabbalahAshlagDorotRishonimVeAharonim a pm:Conceptualizing ;
+    rdfs:label "Earlier generations higher in essence, later ones complete the vessels"@en, "Frühere Generationen höher im Wesen, spätere vollenden die Gefäße"@de ;
+    skos:definition "Since the purest is sorted out first in every partzuf, the souls of the opening two millennia stood immeasurably higher yet could not receive a full light for lack of the lower parts; the souls of our generation, the lowest in essence, complete the vessels of the world and of all souls, and only through them can the upper lights appear. So earlier generations excel in the essence of the soul, later ones in the wisdom of Torah, as Rav Papa and Abaye show."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagKolHaZakhNivrarTehila (Petiḥa, §138): the Petiḥa applies the rule that the purer is sorted first to the fixed mohin of Atzilut; the Haqdama applies it to the generations of souls and draws from it the late revelation of the wisdom."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§63 (סג), 64 (סד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §64
+#
+
+pmc:KabbalahAshlagNisaLeRishonim a pm:Conceptualizing ;
+    rdfs:label "Miracles for the early ones: rain when one shoe was taken off"@en, "Wunder für die Früheren: Regen beim Ausziehen eines Schuhs"@de ;
+    skos:definition "The Talmud the author quotes reports that when Rav Yehuda took off one shoe to fast for drought, rain came at once, while later generations who study all six orders afflict themselves and cry out unheard; Abaye ascribes the difference to the early ones' giving their lives for the sanctification of the Name."@en ;
+    skos:note "Hebrew term in the text: ניסא (nisa)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Quoted from Berakhot 20a; the author draws from it only the rank of the generations."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §64 (סד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagMesiratNefeshAlQedushatHaShem a pm:Practicing ;
+    rdfs:label "Giving one's life for the sanctification of the Name"@en, "Das Leben hingeben für die Heiligung des Namens"@de ;
+    skos:definition "Give oneself over for the holiness of God's Name, as Abaye says the early generations did."@en ;
+    skos:note "Hebrew term in the text: מסירות נפש על קדושת השם (mesirut nefesh ʿal qedushat ha-shem)."@en ;
+    skos:note "Quoted from Berakhot 20a; the Haqdama does not prescribe it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §64 (סד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMesiratNefeshNisa a pm:Yielding ;
+    rdfs:label "Self-sacrifice for the Name yields miracles"@en, "Hingabe für den Namen bringt Wunder"@de ;
+    skos:definition "Readiness to give one's life for the Name is given as the reason miracles happened to the early ones."@en ;
+    pm:byPractice pmp:KabbalahAshlagMesiratNefeshAlQedushatHaShem ;
+    pm:yieldsCapacity pmc:KabbalahAshlagNisaLeRishonim ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §64 (סד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMetzaarinNafshinVeLeitDeMashgah a pm:Conceptualizing ;
+    rdfs:label "Afflicting oneself and crying out without being heeded"@en, "Sich kasteien und schreien, ohne erhört zu werden"@de ;
+    skos:definition "The later ones who learn all six orders, fast and cry out in prayer are not answered, because they do not give their lives for the Name."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagNisaLeRishonim fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §64 (סד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMiyadBaHaGeshem a pm:Conceptualizing ;
+    rdfs:label "The rain came at once"@en, "Der Regen kam sofort"@de ;
+    skos:definition "The mark of efficacy reported for Rav Yehuda: as soon as he began the drought fast by taking off a shoe, rain came."@en ;
+    skos:note "Counted as a sign of success: the text announces it as the mark of completion."@en ;
+    skos:note "Reported from the Talmud of a past case, not announced to a practitioner; it is the one sign of this work that is outward."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §64 (סד), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §65
+#
+
+pmc:KabbalahAshlagLoLahaloqAlHaRishonim a pm:Cautioning ;
+    rdfs:label "Not to dispute the early sages in the revealed Torah"@en, "Den Früheren in der offenbaren Tora nicht widersprechen"@de ;
+    skos:definition "It remains forbidden to dispute the earlier sages in the revealed Torah, since the practical part of the commandments comes from the vessels of the sefirot, in which the upper grow first, so the early ones were more complete in deed, while the secrets and reasons come from the lights, in which the later are more complete."@en ;
+    pm:cautionsAbout pmc:KabbalahAshlagDorotRishonimVeAharonim ;
+    skos:note "Hebrew term in the text: תורת הנגלה (torat ha-nigle)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §65 (סה), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §66
+#
+
+pmc:KabbalahAshlagPenimiyutVeHitzoniyut a pm:Systematizing ;
+    rdfs:label "Interior and exterior at every level"@en, "Inneres und Äußeres auf jeder Ebene"@de ;
+    skos:definition "In everything there is interior and exterior: in the world Israel inner and the seventy nations outer; within Israel the complete servants of God inner and the others outer; within the nations their pious inner and the coarse destroyers outer; among the servants of God those who grasp the inner Torah's soul inner and those in its practical part only outer; in each person of Israel the point in the heart, the Israel in him, inner and the body, the nations in him, outer, which when it cleaves to the inner is like a righteous convert."@en ;
+    pm:compiledBy "Yehuda Leib Ashlag, in the Haqdama le-Sefer ha-Zohar" ;
+    dcterms:date "2019"^^xsd:gYear ;
+    skos:note "Hebrew term in the text: פנימיות וחיצוניות (penimiyyut ve-ḥitzoniyyut)."@en ;
+    skos:note "The ordering is the author's: he arranges the material he expounds; the date is that of the edition read."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §66 (סו), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §67
+#
+
+pmp:KabbalahAshlagTorateikhaQeva a pm:Practicing ;
+    rdfs:label "Torah as fixed, work as occasional"@en, "Mache deine Tora fest und deine Arbeit gelegentlich"@de ;
+    skos:definition "Give most of one's toil to enlarging and raising the interior, the Israel in oneself, for the soul's benefit, and only the necessary minimum to the body's needs (Avot 1)."@en ;
+    skos:note "Hebrew term in the text: עשה תורתך קבע (ʿase toratekha qevaʿ)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §67 (סז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAliyatYisraelBaOlam a pm:Conceptualizing ;
+    rdfs:label "Israel raised in the world and acknowledged by the nations"@en, "Israel in der Welt erhoben und von den Völkern anerkannt"@de ;
+    skos:definition "By honouring his interior above his exterior an individual is said to cause, in the interior and exterior of the whole world, Israel to rise ever higher and the nations to recognise and value them, until the prophecies of their return home are fulfilled."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§67 (סז), 69 (סט), 71 (עא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTorateikhaQevaAliyatYisrael a pm:Yielding ;
+    rdfs:label "Raising one's interior raises Israel in the world"@en, "Das eigene Innere erheben erhebt Israel in der Welt"@de ;
+    skos:definition "An individual who gives most of his toil to his interior is said thereby to cause Israel to rise in the whole world and the nations to acknowledge their worth."@en ;
+    pm:byPractice pmp:KabbalahAshlagTorateikhaQeva ;
+    pm:yieldsCapacity pmc:KabbalahAshlagAliyatYisraelBaOlam ;
+    skos:note "Written by the integrator from the second pass (record 249 of pass B); the first pass linked practice and capacity without the yielding."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §67 (סז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHagbaratHaHitzoniyut a pm:Conceptualizing ;
+    rdfs:label "Exalting the exterior brings Israel down"@en, "Das Äußere erhöhen bringt Israel zu Fall"@de ;
+    skos:definition "If the individual raises his exterior, the nations in him, above the Israel in him, he causes the nations to rise in the world, overpower Israel and humble them to the dust (Deut 28:43)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagAliyatYisraelBaOlam fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §67 (סז), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §68
+#
+
+pmc:KabbalahAshlagKlalUFeratKiShteiTipot a pm:Conceptualizing ;
+    rdfs:label "Whole and part alike as two drops of water"@en, "Ganzes und Teil gleich wie zwei Wassertropfen"@de ;
+    skos:definition "It is a law that does not pass that whole and part are alike as two drops of water; the parts make the whole, which is revealed only after its parts and according to them, so the deed of one person by its measure lowers or raises the whole."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagKlalUFeratShavim (Petiḥa, §180): the Petiḥa states the likeness of whole and part of the worlds and partzufim; the Haqdama turns it into a law of causation from one person's deeds to the whole people and world."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §68 (סח), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagEsekBeSeferHaZohar a pm:Practicing ;
+    rdfs:label "Study of the Zohar and of the wisdom of truth"@en, "Beschäftigung mit dem Buch Sohar und der Weisheit der Wahrheit"@de ;
+    skos:definition "Occupy yourself with the Book of the Zohar and with the wisdom of truth."@en ;
+    skos:note "Hebrew term in the text: חכמת האמת (ḥokhmat ha-emet)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§68 (סח), 69 (סט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagYetziaMinHaGalutBeRahamim a pm:Conceptualizing ;
+    rdfs:label "Leaving exile in mercy through the Zohar"@en, "Auszug aus dem Exil in Erbarmen durch den Sohar"@de ;
+    skos:definition "By occupying themselves with the Zohar and with the wisdom of truth, Israel will merit to leave exile for complete redemption, as the Tikkunei Zohar (end of Tikkun 6) and the Zohar (Naso) say; the author explains it by the law of interior and exterior."@en ;
+    skos:note "Hebrew term in the text: יפקון מן גלותא ברחמי (yifqun min galuta be-raḥamei)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§68 (סח), 71 (עא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §69
+#
+
+pmp:KabbalahAshlagHagbaratPenimiyutHaTora a pm:Practicing ;
+    rdfs:label "Raising the interior of the Torah above its exterior"@en, "Das Innere der Tora über ihr Äußeres erheben"@de ;
+    skos:definition "Increase one's toil in the Torah's interior and hidden matters above its exterior; the remnant are to take this on with all their soul from now on and give the inner Torah its due place."@en ;
+    skos:note "Hebrew term in the text: פנימיות התורה (penimiyyut ha-tora)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§69 (סט), 71 (עא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPenimiyutHaToraAliyatYisrael a pm:Yielding ;
+    rdfs:label "Toil in the inner Torah raises Israel among the nations"@en, "Mühe um die innere Tora erhebt Israel unter den Völkern"@de ;
+    skos:definition "In the measure one increases toil in the Torah's interior, the interior of the world, Israel, is said to rise above its exterior until all the nations acknowledge them (Isa 14:2; 49:22)."@en ;
+    pm:byPractice pmp:KabbalahAshlagHagbaratPenimiyutHaTora ;
+    pm:yieldsCapacity pmc:KabbalahAshlagAliyatYisraelBaOlam ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §69 (סט), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagLimudHaZoharGeula a pm:Yielding ;
+    rdfs:label "Zohar study and the inner Torah bring redemption"@en, "Sohar-Studium und innere Tora bringen Erlösung"@de ;
+    skos:definition "The redemption of Israel and all their rising are said to hang on studying the Zohar and on the Torah's interior; through Rashbi's composition they will leave exile in mercy."@en ;
+    pm:byPractice pmp:KabbalahAshlagEsekBeSeferHaZohar ;
+    pm:yieldsCapacity pmc:KabbalahAshlagYetziaMinHaGalutBeRahamim ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§68 (סח), 69 (סט), 71 (עא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHashpalatPenimiyutHaTora a pm:Conceptualizing ;
+    rdfs:label "Belittling the inner Torah brings degradation and destruction"@en, "Geringschätzung der inneren Tora bringt Erniedrigung und Zerstörung"@de ;
+    skos:definition "Whoever lowers the interior of the Torah below its practical part, or spares it only an odd hour of his time, as though it were superfluous, causes Israel to be lowered and despised as superfluous, and even within the nations the destroyers to prevail over the pious, bringing the ruin and slaughter this generation saw. In such a generation every exterior overpowers every interior, each by its kind: the unlearned of Israel the great in Torah, the destroyers of the nations their pious, the nations Israel."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagAliyatYisraelBaOlam fails or is lost."@en ;
+    skos:note "The text applies it at §71 to the destruction of the Jews of Poland and Lithuania."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §§69 (סט), 71 (עא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §70
+#
+
+pmc:KabbalahAshlagShekhinta a pm:Naming ;
+    rdfs:label "The Shekhina as the totality of the souls of Israel"@en, "Die Schechina als Gesamtheit der Seelen Israels"@de ;
+    skos:definition "In the Tikkunim passage a voice knocks in every heart of Israel to pray for raising the holy Shekhina, which is the totality of the souls of all Israel; she answers that she has no strength to lift herself from the dust."@en ;
+    pm:nameForm "Shekhinta, ha-Shekhina ha-qedosha" ;
+    pm:nameRole "the totality of the souls of Israel" ;
+    skos:note "Hebrew term in the text: שכינתא (shekhinta)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §70 (ע), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMitzvotBliDaatLeGarmayhu a pm:Conceptualizing ;
+    rdfs:label "Commandments without knowledge and kindness done for oneself"@en, "Gebote ohne Erkenntnis und Güte um seiner selbst willen"@de ;
+    skos:definition "After the Tikkunim (Tikkun 30): all flesh is like beasts eating grass, doing the commandments without understanding, and whatever kindness they show is for their own sake; even those who toil in Torah do it for their bodily benefit, without the intention of giving contentment to the Maker; then the spirit of the Messiah departs from the world and does not return."@en ;
+    skos:note "Hebrew term in the text: לגרמייהו עבדין (le-garmayhu ʿavdin)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagYetziaMinHaGalutBeRahamim fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §70 (ע), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagRuhaDeMashiah a pm:Naming ;
+    rdfs:label "The spirit of the Messiah"@en, "Der Geist des Messias"@de ;
+    skos:definition "The spirit meant to bring Israel out of every distress into complete redemption and fill the earth with knowledge of God; it departs and does not shine in the world because of those who make the Torah dry."@en ;
+    pm:nameForm "ruḥa di-mshiaḥ" ;
+    pm:nameRole "redeeming spirit that departs when the Torah is made dry" ;
+    skos:note "Hebrew term in the text: רוחא דמשיח (ruḥa di-mshiaḥ)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §70 (ע), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagToraYevesha a pm:Cautioning ;
+    rdfs:label "Woe to those who make the Torah dry"@en, "Wehe denen, die die Tora trocken machen"@de ;
+    skos:definition "After the Tikkunim, explained by the author: woe to those who keep only to the Torah's practical side and refuse the effort of grasping Kabbalah, the Torah's hidden meanings and why the commandments are given; they drive the spirit of the Messiah from the world and cause poverty, sword, plunder, killing and destruction."@en ;
+    pm:cautionsAbout pmc:KabbalahAshlagHashpalatPenimiyutHaTora ;
+    skos:note "Hebrew term in the text: אורייתא יבשה (oraita yevesha)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §70 (ע), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# §71
+#
+
+pmc:KabbalahAshlagMiddatHaDinBaTzaddiqimTehila a pm:Conceptualizing ;
+    rdfs:label "Judgment strikes the best first"@en, "Das Gericht trifft die Besten zuerst"@de ;
+    skos:definition "By the sages' rule that it begins only with the righteous, the measure of judgment struck precisely the best among us; of the glory of the Jews of Poland and Lithuania only the remnant in the Holy Land is left, and on them alone it now lies to mend the grave fault."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §71 (עא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHagbaratPenimiyutoAtzmo a pm:Conceptualizing ;
+    rdfs:label "Each raising his own interior, the soul's needs over the body's"@en, "Jeder erhebt sein eigenes Inneres, die Bedürfnisse der Seele über die des Körpers"@de ;
+    skos:definition "If the remnant raise the inner Torah to its due place, each will merit to raise the Israel in him, the needs of the soul, over the nations in him, the needs of the body; the force reaches all Israel, the unlearned heeding the great, the pious of the nations subduing their destroyers, and all nations acknowledging Israel."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §71 (עא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPenimiyutHaToraPenimiyutoAtzmo a pm:Yielding ;
+    rdfs:label "Raising the inner Torah lets each raise his own interior"@en, "Die innere Tora erheben lässt jeden sein eigenes Inneres erheben"@de ;
+    skos:definition "Giving the inner Torah its due place is said to let each of the remnant raise the needs of his soul above those of his body."@en ;
+    pm:byPractice pmp:KabbalahAshlagHagbaratPenimiyutHaTora ;
+    pm:yieldsCapacity pmc:KabbalahAshlagHagbaratPenimiyutoAtzmo ;
+    skos:note "Written by the integrator from the second pass (record 269 of pass B); the first pass linked practice and capacity without the yielding."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:HaqdamaLeSeferHaZohar ;
+    dcterms:source "Ashlag, Haqdama le-Sefer ha-Zohar, §71 (עא), Hebrew text of the Sefaria library, version Baal HaSulam's Introduction to Zohar, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
