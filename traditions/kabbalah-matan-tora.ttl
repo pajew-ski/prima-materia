@@ -1,0 +1,1696 @@
+@prefix pm:      <https://pajew.ski/prima-materia/ontology#> .
+@prefix pmt:     <https://pajew.ski/prima-materia/traditions/> .
+@prefix pmc:     <https://pajew.ski/prima-materia/concepts/> .
+@prefix pmp:     <https://pajew.ski/prima-materia/practices/> .
+@prefix pmw:     <https://pajew.ski/prima-materia/works/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+#
+# prima-materia — Kabbalah: Ashlag, the essays Matan Tora, Ha-Arvut and
+# Ha-Shalom of Kuntres Matan Torah
+#
+# The harvest of one work of the corpus of pmt:Kabbalah, kept apart from
+# traditions/kabbalah.ttl, which declares the tradition and the work
+# (pmw:MatanToraHaArvutHaShalom); the edition read, the witness, the
+# translations and the counts of the harvest stand as notes on the work there.
+# Three essays are read, each cited by its own name and by the author's section
+# letters: Matan Tora, sections 1 to 16 (alef to tet-zayin); Ha-Arvut, which
+# continues that numbering, sections 17 to 29 (yod-zayin to kaf-tet); and
+# Ha-Shalom, with its own numbering, sections 1 to 20 (alef to kaf). The nodes
+# follow the essays in that order and, within each, the section that carries
+# them.
+#
+# The Petiḥa le-Ḥokhmat ha-Qabbala, the Haqdama le-Sefer ha-Zohar and the
+# Haqdama le-Talmud Eser ha-Sefirot by the same author are harvested in
+# traditions/kabbalah-petiha.ttl, kabbalah-haqdama-zohar.ttl and
+# kabbalah-haqdama-tes.ttl. Every record of this harvest was compared with the
+# nodes of those files; where a node there carries the claim, no node is
+# written here and links point at it; where this work states such a claim in a
+# different form, the node carries a note beginning "Differs from".
+#
+# Harvested under prima-materia#924 with two independent extraction passes
+# over the Hebrew, reconciled by offset and word overlap, then integrated by a
+# reader of the whole text. Identifiers are pmc:KabbalahAshlag or
+# pmp:KabbalahAshlag plus the Hebrew term in ASCII transliteration. Signs of
+# success, conditions of failure and capacities carry a note beginning
+# "Counted as".
+#
+
+
+#
+# Matan Tora §1
+#
+
+pmc:KabbalahAshlagKlalGadolBaTora a pm:Conceptualizing ;
+    rdfs:label "Love of the neighbour as the great rule of the Torah"@en, "Nächstenliebe als große Regel der Tora"@de ;
+    skos:definition "Rabbi Akiva's saying and Hillel's answer to the convert are read as one claim: the remaining 612 commandments, those between man and God included, are nothing but the particulars and the preparation of loving the neighbour, one commandment, which the whole Torah has as its last end."@en ;
+    skos:note "Hebrew term in the text: כלל גדול בתורה; ואידך פירושא הוא, זיל גמור (kelal gadol ba-Tora; ve-idakh perusha hu, zil gemor)."@en ;
+    skos:note "The author raises it as a puzzle at §§1-2, since the commandments between man and God are the bulk of the Torah, and answers it at §15, after the purpose of the commandments has been set out."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§1 (א), 2 (ב), 15 (טו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagRabbiAqiva a pm:Naming ;
+    rdfs:label "Rabbi Akiva"@en, "Rabbi Akiba"@de ;
+    skos:definition "Rabbi Akiva is held to be the author of the great rule of love of the neighbour and of the mishna of the pledge and the net, which he left closed in a parable because of its depth."@en ;
+    pm:nameForm "Rabbi Aqiva" ;
+    pm:nameRole "the Tanna whose sayings the essays expound: the great rule of the Torah and the mishna of the pledge" ;
+    skos:note "Hebrew term in the text: רבי עקיבא."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §1 (א), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)", "Ashlag, Ha-Shalom, §11 (יא), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §2
+#
+
+pmc:KabbalahAshlagHillelHaNasi a pm:Naming ;
+    rdfs:label "Hillel the Nasi"@en, "Hillel der Nasi"@de ;
+    skos:definition "Hillel is held to have given the convert the whole Torah on one foot as love of the fellow, choosing it over love of God because its goal comes closer and shows itself sooner."@en ;
+    pm:nameForm "Hillel ha-Nasi" ;
+    pm:nameRole "the sage whose answer to the convert defines the whole Torah as love of the fellow" ;
+    skos:note "Hebrew term in the text: הלל הנשיא."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§2 (ב), 15 (טו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §3
+#
+
+pmp:KabbalahAshlagAhavatHaZulatKeKhamokha a pm:Practicing ;
+    rdfs:label "Love of the neighbour at its full measure"@en, "Nächstenliebe in vollem Maß"@de ;
+    skos:definition "Read by the author from the Tosafot on the Hebrew slave: to watch over the needs of every member of the people no less than over one's own, and if one has a single chair or cushion and the fellow lacks one, to hand it to him and sit on the ground oneself; the same holds for every need one has and he lacks."@en ;
+    skos:note "Hebrew term in the text: ואהבת לרעך כמוך; כי טוב לו עמך (ve-ahavta le-reakha kamokha; ki tov lo immakh)."@en ;
+    skos:note "The author reads the Tosafot (Kiddushin 20a, after the Jerusalem Talmud) and interprets them; the claim is his and is entered as attested by this work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§3 (ג), 4 (ד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMinHaNimnaot a pm:Conceptualizing ;
+    rdfs:label "The full measure impossible for the single person"@en, "Das volle Maß für den Einzelnen unmöglich"@de ;
+    skos:definition "Since the Torah speaks with exactness and not by exaggeration, \"as yourself\" binds to the full measure; but few can meet even their own needs in a working day, let alone those of the whole people, so for a single person the commandment cannot be kept."@en ;
+    skos:note "Hebrew term in the text: מן הנמנעות (min ha-nimnaot); לא תוסיף ולא תגרע."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagAhavatHaZulatKeKhamokha fails or is lost."@en ;
+    skos:note "The author answers at §16: the commandment passes from the impossible to the possible in a whole nation that has consented, entered as pmc:KabbalahAshlagAhavatHaZulatPresupposesUmaShlema."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§3 (ג), 4 (ד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §4
+#
+
+pmc:KabbalahAshlagMiddatSedom a pm:Conceptualizing ;
+    rdfs:label "Keeping the one chair, or withholding it"@en, "Den einen Stuhl behalten oder vorenthalten"@de ;
+    skos:definition "Whoever sits on the only chair while his fellow has none transgresses the positive commandment, since he does not fill his fellow's need as his own; whoever neither sits on it nor gives it acts with the wickedness of Sodom."@en ;
+    skos:note "Hebrew term in the text: מידת סדום (middat Sedom)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagAhavatHaZulatKeKhamokha fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §4 (ד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §6
+#
+
+pmc:KabbalahAshlagHaBore a pm:Naming ;
+    rdfs:label "The Creator as the root of all creatures"@en, "Der Schöpfer als Wurzel aller Geschöpfe"@de ;
+    skos:definition "The Creator is held to act never without an aim, to be the root of every creature, to be at rest and without motion, to hold wisdom, strength and wealth, and to receive from no one, being the one who gives to all."@en ;
+    pm:nameForm "ha-Bore" ;
+    pm:nameRole "the root of all creatures, wholly a giver who receives nothing, and the one whose aim creation serves" ;
+    skos:note "Hebrew term in the text: הבורא ית׳; השורש (ha-Bore; ha-shoresh)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§6 (ו), 9 (ט), 10 (י), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagEinPoelBliTakhlit a pm:Conceptualizing ;
+    rdfs:label "No agent without an aim"@en, "Kein Handelnder ohne Ziel"@de ;
+    skos:definition "A first principle of reason: none acts without an aim except the lowest of men and infants; hence the Creator does nothing small or great without one, and the sages teach that the world was made only for the keeping of Torah and commandments."@en ;
+    skos:note "Hebrew term in the text: מושכל ראשון הוא שאין לך פועל בלי תכלית (muskal rishon)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagTakhlitHaBeriaSofHaMaase (Haqdama le-Sefer ha-Zohar, §§4-5): there the same first principle leads to judging creation only from its end; here it leads to the sages' saying that the world was made for Torah and commandments, from which the essay goes on to ask what their aim is."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagLehodiaElohutoLeZulato a pm:Conceptualizing ;
+    rdfs:label "Making His divinity known to another"@en, "Seine Göttlichkeit einem anderen kundtun"@de ;
+    skos:definition "After the early authorities, the Creator's intention from the moment of creation is to make His divinity known to a creature; this knowledge reaches the creature as His pleasant abundance growing toward the intended measure, by which the lowly rise in true recognition."@en ;
+    skos:note "Hebrew term in the text: להודיע את אלוקותו לזולתו (lehodia et Elohuto le-zulato)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagMahshevetHaBeria (Petiha, §1): there the purpose of creation is to give delight to the creatures; here it is to make His divinity known, and the delight is the form in which that knowledge arrives, growing until the creature cleaves to Him."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagUleDovqaVo a pm:Conceptualizing ;
+    rdfs:label "Cleaving to Him: the final perfection"@en, "Ihm anhaften: die letzte Vollendung"@de ;
+    skos:definition "The end to which the lowly creature is said to rise rung by rung: to become a chariot for Him and cleave to Him, a perfection so high that Torah and prophecy say not one word of it, called by the sages \"no eye has seen\"."@en ;
+    skos:note "Hebrew term in the text: דבקות; ולדבקה בו; עין לא ראתה אלהים זולתך (devekut; u-le-dovqa vo)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagDevekutGmuraImHaOr (Petiha, §57): there adhesion is phase four receiving the upper light without disparity of form, the final correction of the worlds; here it is the end of the single creature's ascent through Torah and commandments, which the author defines at §11 as the branches coming to equal their root."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§6 (ו), 11 (יא), 14 (יד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAyinLoRaata a pm:Cautioning ;
+    rdfs:label "Torah and prophecy keep silent on the end"@en, "Tora und Prophetie schweigen über das Ende"@de ;
+    skos:definition "Because of its height, Torah and prophecy are said to have guarded themselves from saying even one word of the final perfection; all the prophets spoke only of the days of the Messiah, and the author too declines to say more."@en ;
+    pm:cautionsAbout pmc:KabbalahAshlagUleDovqaVo ;
+    skos:note "Hebrew term in the text: ואין כאן מקומו להאריך (ve-ein kan meqomo le-haarikh)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMaasimBaToraDevekut a pm:Yielding ;
+    rdfs:label "Torah and commandments yield cleaving"@en, "Tora und Gebote ergeben das Anhaften"@de ;
+    skos:definition "By keeping Torah and commandments the lowly creatures are said to go up rung by rung, developing, until they merit to cleave to their Creator."@en ;
+    pm:byPractice pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:yieldsCapacity pmc:KabbalahAshlagUleDovqaVo ;
+    skos:note "Differs from pmc:KabbalahAshlagTorahUMitzvotHipukhHaQabbala (Petiha, §57): there the same practice inverts the receiving force of phase four into bestowal and so to adhesion with the light; here it is an ascent of the creature by degrees to the final perfection that no prophet describes."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §7
+#
+
+pmc:KabbalahAshlagMeabbedTzurato a pm:Cautioning ;
+    rdfs:label "Living from another's toil debases"@en, "Vom Mühen eines anderen leben erniedrigt"@de ;
+    skos:definition "Whoever eats and enjoys what another laboured for is said to fear looking at his face and to grow ever more debased, until he loses his human form."@en ;
+    pm:cautionsAbout pmc:KabbalahAshlagBahitLeIstakkulei ;
+    skos:note "Hebrew term in the text: מאבד צורתו האנושית (meabbed tzurato ha-enoshit)."@en ;
+    skos:note "The answer of the sages of the Zohar that this warning glosses, that the Creator left the creature room to earn its own exaltation, is carried by pmc:KabbalahAshlagBahitLeIstakkulei (Histaklut Penimit, ch. 1, para 6) and is not written again."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §7 (ז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §8
+#
+
+pmc:KabbalahAshlagBushaVeiSavlanut a pm:Conceptualizing ;
+    rdfs:label "Two laws from the rich man's gifts"@en, "Zwei Gesetze aus den Gaben des Reichen"@de ;
+    skos:definition "From the parable of a rich man who heaps daily growing gifts on a man from the market, who would rather have earned them himself, two natural laws follow: whoever receives a free gift feels shame and impatience toward the giver, and therefore no one can ever fill all his fellow's wishes, since he cannot give him the form of a thing he acquired himself."@en ;
+    skos:note "Hebrew term in the text: בושה ואי סבלנות; קניין עצמי (busha ve-i savlanut; qinyan atzmi)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagMashalHaAshir (Histaklut Penimit, ch. 4, paras 4-5): there the parable shows that the shame arises from the receiver's own nature and only indirectly from the giver; here it yields a second law, that no one can wholly satisfy another, and that only the Creator, by labour in Torah and commandments, can give a good as one's own acquisition."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §8 (ח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKinyanAtzmenu a pm:Conceptualizing ;
+    rdfs:label "The good as one's own acquisition"@en, "Das Gute als eigener Erwerb"@de ;
+    skos:definition "Through labour in Torah and commandments all the good that comes from Him, all that is held in cleaving to Him, is said to come as a thing earned by one's own hands, so that one feels oneself its owner; without this there is no taste of perfection."@en ;
+    skos:note "Hebrew term in the text: בבחינת בעלים; קניין עצמינו (bivhinat baalim; qinyan atzmenu)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagShuvEinaBahit (Histaklut Penimit, ch. 4, para 5): there the soul cleansed of the will to receive is no longer ashamed before the giver; here the remedy for the shame is labour, by which the received good becomes one's own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §8 (ח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagYegiaBaToraKinyanAtzmenu a pm:Yielding ;
+    rdfs:label "Labour in Torah yields the good as one's own"@en, "Mühe in der Tora ergibt das Gute als Eigenes"@de ;
+    skos:definition "The Creator is said to have prepared labour in Torah and commandments so that the creature produces its own exaltation and feels itself the owner of the good it receives."@en ;
+    pm:byPractice pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:yieldsCapacity pmc:KabbalahAshlagKinyanAtzmenu ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §8 (ח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §10
+#
+
+pmc:KabbalahAshlagTaanugBeHashpaa a pm:Conceptualizing ;
+    rdfs:label "Shame in receiving, sweetness in giving"@en, "Scham beim Empfangen, Süße beim Geben"@de ;
+    skos:definition "Since receiving a favour has no place in the Creator, from whom would He receive, receiving kindness is felt as shameful and hateful; since He gives to all, every act of giving to another is felt as a soft pleasure."@en ;
+    skos:note "Hebrew term in the text: קבלת טובה; השפעה (qabbalat tova; hashpaa)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagMashalHaAshir (Histaklut Penimit, ch. 4, paras 4-5): there the shame of receiving is traced to the form absent from the receiver's root; here the same root law also makes giving sweet, which the essay uses to show why the aim is bestowal."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §10 (י), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §11
+#
+
+pmc:KabbalahAshlagHashvaatHaAnafimLeShorsham a pm:Conceptualizing ;
+    rdfs:label "Cleaving as the branches equalling the root"@en, "Anhaften als Angleichung der Zweige an die Wurzel"@de ;
+    skos:definition "All the exaltation and cleaving promised through Torah and commandments is nothing but the equalling of the branches to their root; pleasure is equivalence of form with one's Maker, what is absent from the root becomes unbearable or a real pain, and all our hope hangs on the measure in which our form equals His."@en ;
+    skos:note "Hebrew term in the text: השוואת הצורה (hashvaat ha-tzura)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagDevekutHashvaatHaTzura (Petiha, §5): there equivalence of form is adhesion; here it is in addition the whole source of pleasure and pain, so that delight follows of itself from the likeness."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §11 (יא), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §12
+#
+
+pmc:KabbalahAshlagAyirPereAdamYivvaled a pm:Conceptualizing ;
+    rdfs:label "Born a wild ass: wholly self-love"@en, "Als Wildesel geboren: ganz Eigenliebe"@de ;
+    skos:definition "Coming out of the bosom of creation, man is in the utmost filth and lowliness, which means a great self-love stamped into him, all his motions turning on himself without a spark of giving; he stands at the opposite end from the root, which is all giving and no receiving."@en ;
+    skos:note "Hebrew term in the text: עיר פרא אדם יולד; אהבה עצמית (ayir pere adam yivvaled; ahava atzmit)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagPerudHaRatzonLeQabbel (Petiha, §13): there the receptive will separates the creature from the Emanator by opposite form; here that distance is the starting point of a human life, the newborn at the lowest point, from which education and the commandments lead upward."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §12 (יב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShiurimHelqiyimShelHashpaa a pm:Conceptualizing ;
+    rdfs:label "Partial measures of giving from one's surroundings"@en, "Teilmaße des Gebens aus der Umgebung"@de ;
+    skos:definition "As a child grows, he is said to take on from his surroundings partial measures of giving to others, and how much depends on the degree of development that his surroundings have reached."@en ;
+    skos:note "Hebrew term in the text: שיעורים חלקיים של השפעה (shiurim helqiyim shel hashpaa)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §12 (יב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagHinukhShelloLishma a pm:Practicing ;
+    rdfs:label "Educating in Torah not for its own sake"@en, "Erziehung in der Tora nicht um ihrer selbst willen"@de ;
+    skos:definition "Training the young to keep Torah and commandments out of self-love, for reward here and in the world to come, because there is no other way to accustom him; the way of doing it for the Maker alone is kept from him until he has grown."@en ;
+    skos:note "Hebrew term in the text: שלא לשמה (shelo lishma)."@en ;
+    skos:note "Differs from pmp:KabbalahAshlagShelloLishma (Haqdama le-Sefer ha-Zohar, §§31, 44): there everyone is to engage at all times even without the motive of its own sake; here engagement not for its own sake is the education of the young, the only way they can be habituated."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §12 (יב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagEinMegalinLishmaLeNashimUQetanim a pm:Cautioning ;
+    rdfs:label "Lishma not disclosed to the young"@en, "Lischma den Jungen nicht enthüllt"@de ;
+    skos:definition "After Maimonides, work for its own sake is not disclosed to women and children, who could not bear it; only when they grow and gain understanding are they taught it."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    skos:note "Hebrew term in the text: כי לא יוכלו שאתו (ki lo yukhlu seeto)."@en ;
+    skos:note "The author cites Maimonides, Hilkhot Teshuva 10:5, and draws on it again at Ha-Arvut §29 for the fear Moses might have had; the claim is entered as attested by this work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §12 (יב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)", "Ashlag, Ha-Arvut, §29 (כט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagLishmaPresupposesHinukhShelloLishma a pm:Presupposing ;
+    rdfs:label "First habit not for its own sake, then lishma"@en, "Erst Gewöhnung nicht um ihrer selbst willen, dann lischma"@de ;
+    skos:definition "The way of doing the commandments only to give contentment to one's Maker is shown only after one has been habituated not for its own sake and has grown in understanding; \"from not for its own sake one comes to for its own sake\"."@en ;
+    pm:dependentStep pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:priorStep pmp:KabbalahAshlagHinukhShelloLishma ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "One cannot be accustomed in any other way, and the young to whom it is shown before they grow could not bear it." ;
+    skos:note "That engagement not for its own sake leads to engagement for its own sake (Pesachim 50b) is carried as a yielding by pmc:KabbalahAshlagShelloLishmaLishma (Haqdama le-Sefer ha-Zohar, §31); this node holds only the order of education and its stated reason."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §12 (יב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagSegulatHaLishma a pm:Conceptualizing ;
+    rdfs:label "The natural virtue of engagement for its own sake"@en, "Die natürliche Kraft des Tuns um seiner selbst willen"@de ;
+    skos:definition "Engagement in Torah and commandments for their own sake is said to have a natural virtue known to the Giver of the Torah, who says He created the evil inclination and created Torah as its spice; by it the creature climbs the rungs of exaltation."@en ;
+    skos:note "Hebrew term in the text: סגולה הטבעית; בראתי יצר הרע, בראתי לו תורה תבלין (segula ha-tivit; Tora tavlin)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagToraTavlin (Haqdama le-Talmud Eser ha-Sefirot, §§17-18): there the spice shows that no sinner is forced and the failure is his own; here the spice is a natural virtue of engagement for its own sake that lifts the creature until no self-love is left."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §12 (יב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTevaSheni a pm:Conceptualizing ;
+    rdfs:label "Second nature: love of others"@en, "Zweite Natur: Liebe zum Anderen"@de ;
+    skos:definition "The creature loses every spark of self-love and does all his motions only to give, so that even the necessities he receives flow toward giving; leaving the bosom of created nature slowly, he acquires a second nature, love of others."@en ;
+    skos:note "Hebrew term in the text: טבע שני (teva sheni); כדי שיוכל להשפיע."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§12 (יב), 13 (יג), 15 (טו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagLishmaTevaSheni a pm:Yielding ;
+    rdfs:label "Engagement for its own sake yields second nature"@en, "Tun um seiner selbst willen ergibt zweite Natur"@de ;
+    skos:definition "Habituating oneself to keep Torah and commandments to give contentment to one's Maker is said to lead slowly out of created nature to the second nature, love of others, by the natural virtue of that engagement."@en ;
+    pm:byPractice pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:yieldsCapacity pmc:KabbalahAshlagTevaSheni ;
+    skos:note "Differs from pmc:KabbalahAshlagTorahUMitzvotHipukhHaQabbala (Petiha, §57): there the same practice inverts the receiving force of phase four; here it yields a second nature named love of others, the whole aim of the commandments between man and his fellow."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§12 (יב), 13 (יג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMeAhavaAtzmitLeDevekut a pm:Sequencing ;
+    rdfs:label "From birth in self-love to cleaving"@en, "Von der Geburt in Eigenliebe zum Anhaften"@de ;
+    skos:definition "Six stages in the order the source gives them: birth in self-love; partial giving taken from the surroundings; education not for its own sake; engagement for its own sake once grown; the second nature of love of others; cleaving."@en ;
+    rdf:_1 pmc:KabbalahAshlagAyirPereAdamYivvaled ;
+    rdf:_2 pmc:KabbalahAshlagShiurimHelqiyimShelHashpaa ;
+    rdf:_3 pmp:KabbalahAshlagHinukhShelloLishma ;
+    rdf:_4 pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    rdf:_5 pmc:KabbalahAshlagTevaSheni ;
+    rdf:_6 pmc:KabbalahAshlagUleDovqaVo ;
+    pm:seriesStatement "The source sets a single human development: born at the farthest point from the root, a person takes partial giving from his surroundings, is educated for reward, is shown in maturity how to work for the Maker, acquires by that work a second nature of love of others, and then at once cleaves to Him. Each place has its sense from the distance to the root it marks." ;
+    skos:note "The source names consequences for two of the steps, entered as pmc:KabbalahAshlagLishmaPresupposesHinukhShelloLishma and pmc:KabbalahAshlagTevaSheniPresupposesLishma; the step from second nature to cleaving is entered as pmc:KabbalahAshlagDevekutPresupposesTevaSheni."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§12 (יב), 13 (יג), 14 (יד), 15 (טו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §13
+#
+
+pmc:KabbalahAshlagShneiHalaqimBaTora a pm:Systematizing ;
+    rdfs:label "The Torah's two parts"@en, "Die zwei Teile der Tora"@de ;
+    skos:definition "The author divides the Torah into commandments between man and God and commandments between man and his fellow, and holds that both aim at one thing, bringing the creature to cleaving, and that done for their own sake their practical side is one as well."@en ;
+    pm:compiledBy "Yehuda Leib Ashlag, in the essay Matan Tora" ;
+    dcterms:date "1931"^^xsd:gYear ;
+    skos:note "Hebrew term in the text: בין אדם למקום; בין אדם לחברו (bein adam la-maqom; bein adam le-havero)."@en ;
+    skos:note "The ordering is the author's; the date is the first year of the composition as Sefaria's index gives it (1931-1935), since the edition read (2019) is not the date of the act."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §13 (יג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagEinHefreshBeinShneiHaHalaqim a pm:Conceptualizing ;
+    rdfs:label "No felt difference between the two loves"@en, "Kein gefühlter Unterschied zwischen den zwei Lieben"@de ;
+    skos:definition "Whoever acts for its own sake, with no admixture of self-love and no gain for himself, is said to feel no difference whether he works for love of his fellow or for love of God; the author says this is seen with both eyes."@en ;
+    skos:note "Counted as a sign of success: the text announces it as the mark that engagement for its own sake has been reached."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§13 (יג), 14 (יד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagOrHozerShelGemul a pm:Conceptualizing ;
+    rdfs:label "Every act for another rides on a returning reward"@en, "Jede Tat für andere trägt einen rückkehrenden Lohn"@de ;
+    skos:definition "A natural law: whatever is outside one's own body seems empty and unreal, and every motion made for another is carried by a returning light, some recompense that will come back to serve oneself; such deeds are judged by their end, like wages paid later, and are not love of others."@en ;
+    skos:note "Hebrew term in the text: אור (תענוג) חוזר (or hozer); נידונים על שם סופם."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §13 (יג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagLeGarmayhuHuDeAvdin a pm:Conceptualizing ;
+    rdfs:label "Worship for reward never rises above nature"@en, "Dienst um Lohn erhebt sich nie über die Natur"@de ;
+    skos:definition "After the Tikkunei Zohar on the nations, whatever kindness they do they do for themselves: where there is no engagement for its own sake and all service of one's god is for reward here and hereafter, it stays self-love, and no act ever goes beyond one's own body by which one could rise a hair above nature."@en ;
+    skos:note "Hebrew term in the text: כל חסד דעבדין לגרמייהו הוא דעבדין; כחוט השערה ממעל לקרקע הטבע."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagTevaSheni fails or is lost."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagMitzvotBliDaatLeGarmayhu (Haqdama le-Sefer ha-Zohar, §70): there the Tikkunim (Tikkun 30) speak of all flesh doing commandments without understanding and of the departure of the spirit of the Messiah; here the Tikkunei Zohar 22a on the nations ground a law of nature, that kindness for a return can never become love of others."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §13 (יג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTevaSheniPresupposesLishma a pm:Presupposing ;
+    rdfs:label "Only those who keep Torah for its own sake reach love of others"@en, "Nur wer die Tora um ihrer selbst willen hält, erreicht Liebe zum Anderen"@de ;
+    skos:definition "Pure love of others is outside nature, so only those who keep Torah and commandments to give contentment to their Maker are fit for it; those whose service is for reward stay within self-love."@en ;
+    pm:dependentStep pmc:KabbalahAshlagTevaSheni ;
+    pm:priorStep pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Service done for reward and success remains self-love and never lifts one even a hair above the ground of nature." ;
+    skos:note "Written by the integrator from the reading of §13 (יג). The second pass held it as a prerequisite; the first held only its negative side, entered as pmc:KabbalahAshlagLeGarmayhuHuDeAvdin."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §13 (יג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §14
+#
+
+pmc:KabbalahAshlagReiqaniLeVliMusag a pm:Conceptualizing ;
+    rdfs:label "Before completion every act for another feels empty"@en, "Vor der Vollendung fühlt sich jede Tat für andere leer an"@de ;
+    skos:definition "Before one is perfected in engagement for its own sake, every act for another, for God or for people, is necessarily felt as empty and meaningless; only by great labour does one rise slowly to the second nature."@en ;
+    skos:note "Hebrew term in the text: ריקנית לבלי מושג (reiqanit le-veli musag)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §14 (יד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagDevekutPresupposesTevaSheni a pm:Presupposing ;
+    rdfs:label "Second nature before cleaving"@en, "Zweite Natur vor dem Anhaften"@de ;
+    skos:definition "Through great labour one rises slowly to the second nature, and then at once merits the final aim, cleaving to Him."@en ;
+    pm:dependentStep pmc:KabbalahAshlagUleDovqaVo ;
+    pm:priorStep pmc:KabbalahAshlagTevaSheni ;
+    pm:prerequisiteStrength pm:prescribedOrder ;
+    skos:note "The text sets the order and says nothing of what follows from skipping it; hence prescribed order."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§14 (יד), 15 (טו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagBeinAdamLeHaveroMesugalYoter a pm:Conceptualizing ;
+    rdfs:label "The commandments toward the fellow as the surer means"@en, "Die Gebote zum Nächsten als das sicherere Mittel"@de ;
+    skos:definition "Reason holds that the commandments between man and his fellow is the more apt to bring one to the aim: the service toward God is fixed and has no one to demand it, so one grows used to it; the service toward the fellow is unfixed, guarded from error, and those who make demands surround one on every side. For this reason Hillel gave the convert love of the fellow and not love of God."@en ;
+    skos:note "Hebrew term in the text: התובעים מסבבים אותו; שמורה מטעויות (ha-tovim mesabbevim oto; shemura mi-tauyot)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagHashpaaLaMaqomPresupposesHashpaaLeHavero (Haqdama le-Sefer ha-Zohar, §19): there the commandments toward the fellow come first because giving to the fellow brings one to give to God; here they are the surer and quicker means because they are unfixed, guarded from error and have claimants, while for one still in nature the two loves do not differ."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §§14 (יד), 15 (טו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMehamatHergel a pm:Cautioning ;
+    rdfs:label "What is done by habit no longer helps"@en, "Was aus Gewohnheit geschieht, nützt nicht mehr"@de ;
+    skos:definition "Whatever one does out of habit is said to be no longer able to bring any benefit, and the fixed service toward God is the one most easily done so."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    skos:note "Hebrew term in the text: כל שעושה מחמת הרגל (mehamat hergel)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §14 (יד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Matan Tora §16
+#
+
+pmp:KabbalahAshlagQabbalatHaArvut a pm:Practicing ;
+    rdfs:label "Accepting the mutual guarantee"@en, "Annahme der gegenseitigen Bürgschaft"@de ;
+    skos:definition "Steps as the source gives them: a whole nation is gathered; each member is asked whether he takes on love of the fellow at its full measure, to care and work for every member no less than nature makes him care for himself; each consents with heart and soul, saying \"we will do and we will hear\"; each then leaves his own affairs and stands guard that no fellow lacks anything."@en ;
+    skos:note "Hebrew term in the text: ערבות; ערבים זה לזה; נעשה ונשמע (arvut; arevim ze la-ze; naase ve-nishma)."@en ;
+    skos:note "Matan Tora §16 describes the act; Ha-Arvut §17 names it the guarantee by which all Israel became guarantors for one another."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)", "Ashlag, Ha-Arvut, §17 (יז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMufneMiShmiratQiyyumo a pm:Conceptualizing ;
+    rdfs:label "Freed from guarding one's own existence"@en, "Frei von der Sorge um das eigene Bestehen"@de ;
+    skos:definition "When six hundred thousand faithful lovers stand guard over one's needs, a member no longer has to worry about his own existence; freed of that care he can keep love of the fellow easily under all its strict conditions and give whatever he has to whoever needs it."@en ;
+    skos:note "Hebrew term in the text: מופנה לגמרי משמירת קיומו עצמו (mufne le-gamre mi-shmirat qiyyumo atzmo)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)", "Ashlag, Ha-Arvut, §17 (יז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagArvutMufneMiDeagot a pm:Yielding ;
+    rdfs:label "The guarantee yields freedom from care for oneself"@en, "Die Bürgschaft ergibt Freiheit von der Sorge um sich"@de ;
+    skos:definition "Through the general guarantee each member of the nation is said to be released from every worry about his bodily needs, knowing that a whole nation stands ready to care for him."@en ;
+    pm:byPractice pmp:KabbalahAshlagQabbalatHaArvut ;
+    pm:yieldsCapacity pmc:KabbalahAshlagMufneMiShmiratQiyyumo ;
+    skos:note "Differs from pmc:KabbalahAshlagHashpaaLeHaverimBaKlal (Haqdama le-Sefer ha-Zohar, §19): there, if all people agreed to give only to their fellows, every worry and harm would vanish from the earth; here the agreement is the consent of one nation of six hundred thousand at Sinai, and the freedom it gives is what makes the commandment of love possible at all."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)", "Ashlag, Ha-Arvut, §17 (יז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAhavatHaZulatPresupposesUmaShlema a pm:Presupposing ;
+    rdfs:label "A whole consenting nation before the Torah"@en, "Ein ganzes zustimmendes Volk vor der Tora"@de ;
+    skos:definition "The commandment that is the axis of the Torah cannot be kept by individuals, only with the prior consent of a whole nation; therefore the Torah waited until the exodus, when the people were asked and consented, and was given at once."@en ;
+    pm:dependentStep pmp:KabbalahAshlagAhavatHaZulatKeKhamokha ;
+    pm:priorStep pmp:KabbalahAshlagQabbalatHaArvut ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "A few people cannot so much as start the interpersonal commandments at the measure of loving the neighbour; for that reason the patriarchs did not receive the Torah." ;
+    skos:note "Ha-Arvut §25 restates the claim of Matan Tora §16 and asks where the Torah shows that the people were asked; the answer at §§26-27 is entered as pmc:KabbalahAshlagHatzaaVeHaskama."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)", "Ashlag, Ha-Arvut, §§17 (יז), 25 (כה), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagYehidimBaAretz a pm:Conceptualizing ;
+    rdfs:label "Too few to begin: the patriarchs alone in the land"@en, "Zu wenige zum Beginnen: die Väter allein im Land"@de ;
+    skos:definition "Before they grew into a whole nation, and all the more in the patriarchs' days, when they were lone individuals in the land, they were not fit to keep the Torah as intended, since a small number cannot even begin the commandments between man and his fellow."@en ;
+    skos:note "Hebrew term in the text: שהיו רק יחידים בארץ."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagAhavatHaZulatKeKhamokha fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Matan Tora, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §17
+#
+
+pmc:KabbalahAshlagKolHaOlamNikhnasimBaArvut a pm:Conceptualizing ;
+    rdfs:label "The guarantee extended to the whole world"@en, "Die Bürgschaft auf die ganze Welt ausgedehnt"@de ;
+    skos:definition "Rabbi Elazar be-Rabbi Shimon holds that the world and the single person are judged by the majority, so that each act tips oneself and the whole world; the author holds that he does not dispute the sages who confine the guarantee to Israel: they speak of the present, he of the future correction of the whole world."@en ;
+    skos:note "Hebrew term in the text: העולם נידון אחר רובו; לא פליגי (ha-olam nidon ahar rubbo; lo pligei)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own. Both sayings are quoted from the Talmud (Kiddushin 40b; Sanhedrin 27b) and reconciled by the author; the reconciliation is his and is entered as attested by this work."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagTannaQammaVeRabbiElazar (Haqdama le-Talmud Eser ha-Sefirot, §§111-121): there Rabbi Elazar's addition speaks of the fourth measure of love, which needs the whole world tipped; here it speaks of the guarantee entered by the whole world at the end of its correction."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§17 (יז), 19 (יט), 21 (כא), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagUmaBifneiAtzma a pm:Conceptualizing ;
+    rdfs:label "A nation with its needs in its own hands"@en, "Ein Volk mit seinen Bedürfnissen in eigener Hand"@de ;
+    skos:definition "The state reached at the exodus: a nation in its own right, all of whose needs lie in its own hands and depend on no one outside it."@en ;
+    skos:note "Hebrew term in the text: לאומה בפני עצמה, בלתי תלויים על אחרים (le-uma bifnei atzma, bilti teluyim al aherim)."@en ;
+    skos:note "Written by the integrator from the reading of §17 (יז). The first pass named no prior step for the prerequisite that rests on it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §17 (יז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagArvutPresupposesAtzmaut a pm:Presupposing ;
+    rdfs:label "Independence before the guarantee"@en, "Unabhängigkeit vor der Bürgschaft"@de ;
+    skos:definition "The giving of the Torah had to wait until the people left Egypt and became a nation whose needs were in its own hands; only then were they fit to accept the guarantee."@en ;
+    pm:dependentStep pmp:KabbalahAshlagQabbalatHaArvut ;
+    pm:priorStep pmc:KabbalahAshlagUmaBifneiAtzma ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "The share of their needs held by self-loving strangers stays unsecured for every one of Israel, so that each remains troubled with his own cares and cannot even begin the commandment." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §17 (יז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMutradBeDeagotav a pm:Conceptualizing ;
+    rdfs:label "Troubled with one's own cares, love cannot begin"@en, "Mit eigenen Sorgen beladen, kann die Liebe nicht beginnen"@de ;
+    skos:definition "While Israel was mingled with the Egyptians, part of its needs lay with strangers full of self-love and could not be secured by fellow members; as long as a person is troubled with his own cares he is not fit even to begin loving his neighbour."@en ;
+    skos:note "Hebrew term in the text: כל עוד שהיחיד מוטרד בדאגותיו עצמו."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagAhavatHaZulatKeKhamokha fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §17 (יז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMiYetziatMitzrayimLeMatanTora a pm:Sequencing ;
+    rdfs:label "From a nation of its own to the given Torah"@en, "Vom eigenen Volk zur gegebenen Tora"@de ;
+    skos:definition "Three stages in the order the source gives them: a nation with its needs in its own hands; the guarantee accepted by all; the Torah given and love of the neighbour made possible."@en ;
+    rdf:_1 pmc:KabbalahAshlagUmaBifneiAtzma ;
+    rdf:_2 pmp:KabbalahAshlagQabbalatHaArvut ;
+    rdf:_3 pmp:KabbalahAshlagAhavatHaZulatKeKhamokha ;
+    pm:seriesStatement "The source sets the order in one sentence: the giving of the Torah had to wait until the exodus made them a nation in their own right; then they were fit to accept the guarantee; then the Torah was given. Without the first the second has no secure ground, without the second the third cannot begin." ;
+    skos:note "Written by the integrator from the reading of §17 (יז)."@en ;
+    skos:note "The source names a consequence of skipping each of the first two places, entered as pmc:KabbalahAshlagArvutPresupposesAtzmaut and pmc:KabbalahAshlagAhavatHaZulatPresupposesUmaShlema."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §17 (יז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPorqeiHaOl a pm:Conceptualizing ;
+    rdfs:label "A few who return to self-love hold back the whole people"@en, "Wenige, die zur Eigenliebe zurückkehren, halten das ganze Volk zurück"@de ;
+    skos:definition "Even after the Torah was received, if a few break faith and return to self-love, the share of needs in their hands forces every one of Israel to care for himself again, and love of others becomes impossible for all; like the passenger who bores a hole under his own seat, those who throw off the yoke build an iron wall that keeps the others from even beginning."@en ;
+    skos:note "Hebrew term in the text: פורקי העול; גדר של ברזל; קודר תחתיו (porqei ha-ol; geder shel barzel)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagQabbalatHaArvut fails or is lost."@en ;
+    skos:note "The guarantee works from the side of keeping and from the side of negation (§17): kept, all can keep the Torah to give contentment to their Maker; refused by a part, the rest stay sunk. The ship parable is the Tanna's (Vayikra Rabba 4:6), read by the author."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§17 (יז), 18 (יח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagRabbiElazarBeRabbiShimon a pm:Naming ;
+    rdfs:label "Rabbi Elazar be-Rabbi Shimon"@en, "Rabbi Elasar, Sohn des Rabbi Schimon"@de ;
+    skos:definition "Rabbi Elazar is held to teach that the guarantee reaches the whole world and that each single deed tips oneself and the world, speaking of the correction of the whole world still to come."@en ;
+    pm:nameForm "Rabbi Elazar be-Rabbi Shimon" ;
+    pm:nameRole "the Tanna whose saying extends the guarantee to the whole world" ;
+    skos:note "Hebrew term in the text: רבי אלעזר בנו של רשב״י."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§17 (יז), 19 (יט), 21 (כא), 22 (כב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §19
+#
+
+pmc:KabbalahAshlagAvot a pm:Naming ;
+    rdfs:label "The holy patriarchs Abraham, Isaac and Jacob"@en, "Die heiligen Väter Abraham, Isaak und Jakob"@de ;
+    skos:definition "The patriarchs are held to have kept the whole Torah before it was given, attaining its spiritual side from cleaving by the height of their souls, and their bodily purification and greatness of soul to have worked on their descendants until each of that generation said \"we will do and we will hear\"."@en ;
+    pm:nameForm "Avraham, Yitzhaq ve-Yaaqov" ;
+    pm:nameRole "the holy fathers whose merit and purification made their descendants fit for the Torah" ;
+    skos:note "Hebrew term in the text: אבותינו הק׳ אברהם יצחק ויעקב; האבות קיימו כל התורה עוד בטרם שניתנה."@en ;
+    skos:note "The author reads the saying of Yoma 28b and interprets it; the reading is entered as attested by this work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§19 (יט), 20 (כ), 23 (כג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagRuhaniyutaShelHaTora a pm:Conceptualizing ;
+    rdfs:label "The spiritual Torah without the ladder of deeds"@en, "Die geistige Tora ohne die Leiter der Taten"@de ;
+    skos:definition "Ascribed to the patriarchs: by the height of their souls to grasp and walk in all the ways of God in the spiritual side of the Torah that flows from cleaving, without first the ladder of its practical commandments, which they could not keep at all."@en ;
+    skos:note "Hebrew term in the text: רוחניותה של התורה, בלי הקדם הסולם של המעשיות (ruhaniyuta shel ha-Tora)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Ascribed to exceptional souls only; the text offers it to no one as a path."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §19 (יט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHathalatTiqqunHaOlam a pm:Conceptualizing ;
+    rdfs:label "The correction begun with one nation"@en, "Die Berichtigung mit einem Volk begonnen"@de ;
+    skos:definition "One nation suffices only for the beginning of the world's correction, since starting with every nation together was impossible: they were sunk in self-love above their noses, in adultery, robbery and murder, so that one could not even speak with them about leaving it."@en ;
+    skos:note "Hebrew term in the text: התחלת תיקון העולם (hathalat tiqqun ha-olam)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §19 (יט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAmSegula a pm:Naming ;
+    rdfs:label "Israel, the treasured people"@en, "Israel, das auserwählte Volk"@de ;
+    skos:definition "Israel is held to have been chosen of necessity and not from nationalism, as the only people fit for the Torah through the merit of the patriarchs and the suffering of Egypt; its task toward the world is that of the patriarchs toward it."@en ;
+    pm:nameForm "am segula" ;
+    pm:nameRole "the one nation made fit to begin the correction, through which purification passes to all the others" ;
+    skos:note "Hebrew term in the text: עם סגולה מכל העמים (am segula)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§19 (יט), 20 (כ), 23 (כג), 24 (כד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAvotYisraelVeKolHaOlam a pm:Sequencing ;
+    rdfs:label "From the patriarchs through Israel to the whole world"@en, "Von den Vätern über Israel zur ganzen Welt"@de ;
+    skos:definition "Three stages in the order the source gives them: the patriarchs, who kept the Torah before it was given; Israel at Sinai, made fit by their merit, as one man with one heart; the whole world, made fit by Israel's work until it tips to merit."@en ;
+    rdf:_1 pmc:KabbalahAshlagRuhaniyutaShelHaTora ;
+    rdf:_2 pmc:KabbalahAshlagKeIshEhadBeLevEhad ;
+    rdf:_3 pmc:KabbalahAshlagRovZekhuyot ;
+    pm:seriesStatement "The source sets the task of Israel toward the world as the task of the patriarchs toward Israel: as their merit made the nation fit for the Torah, so the nation's engagement for its own sake is to make all humankind fit for love of others. Each stage prepares the next, and none could begin with the last." ;
+    skos:note "Written by the integrator from the reading of §§19-20 (יט-כ)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§19 (יט), 20 (כ), 24 (כד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §20
+#
+
+pmc:KabbalahAshlagGmarTiqqunHaOlam a pm:Conceptualizing ;
+    rdfs:label "The end of the correction only with all of humankind"@en, "Das Ende der Berichtigung nur mit der ganzen Menschheit"@de ;
+    skos:definition "The completion of the world's correction cannot be except when all who come into the world enter His service; the verse says \"on that day\" the Lord will be one, and not before."@en ;
+    skos:note "Hebrew term in the text: גמר של תיקון העולם; ביום ההוא (gmar tiqqun ha-olam)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §20 (כ), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagMitzvaLishmaLeHakhraatHaOlam a pm:Practicing ;
+    rdfs:label "Each commandment for its own sake as a weight for the world"@en, "Jedes Gebot um seiner selbst willen als Gewicht für die Welt"@de ;
+    skos:definition "Israel engages in Torah and commandments for their own sake, each act done to give contentment to the Maker and not for any reward or self-love, so as to fit itself and the whole world for love of others; each such act adds a measure to the development of all humankind, little by little, until the sum tips the world."@en ;
+    skos:note "Hebrew term in the text: הכרעת כף הזכות (hakhraat kaf ha-zekhut)."@en ;
+    skos:note "Differs from pmp:KabbalahAshlagTzaarImHaTzibbur (Haqdama le-Talmud Eser ha-Sefirot, §§122, 125): there one tips the whole world by grieving over the public as over oneself; here every commandment done for its own sake by any one of Israel is itself a share in the tipping."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§20 (כ), 21 (כא), 22 (כב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMitzvaLishmaRovZekhuyot a pm:Yielding ;
+    rdfs:label "Commandments for their own sake yield the world's tipping"@en, "Gebote um ihrer selbst willen ergeben die Neigung der Welt"@de ;
+    skos:definition "The sparks of purification that pass through Israel's acts for its own sake are said to grow day by day, like deposits in a treasury, until the nations develop to understand the sweetness of love of others and tip themselves to merit."@en ;
+    pm:byPractice pmp:KabbalahAshlagMitzvaLishmaLeHakhraatHaOlam ;
+    pm:yieldsCapacity pmc:KabbalahAshlagRovZekhuyot ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§20 (כ), 21 (כא), 24 (כד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §21
+#
+
+pmc:KabbalahAshlagRovZekhuyot a pm:Conceptualizing ;
+    rdfs:label "The world tipped to merit"@en, "Die Welt zum Verdienst geneigt"@de ;
+    skos:definition "A collective attainment: humankind reaches a measure of purification at which the pan of merit, the high understanding of the worth and the sweetness of love of others, outweighs filthy self-love; then the nations can consent and say \"we will do and we will hear\" as Israel did, take His yoke on themselves, and the pan of guilt is cleared from the earth."@en ;
+    skos:note "Hebrew term in the text: רוב זכויות; הנועם והשלווה השרויים בגרעין של אהבת זולתו (rov zekhuyot)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagHakhraatKolHaOlam (Haqdama le-Talmud Eser ha-Sefirot, §121): there one person comes to see how all will reach repentance from love and so reaches the fourth love; here the whole world reaches the majority of merit through the sparks of purification gathered from Israel's deeds."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§21 (כא), 24 (כד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShoqelShumshemin a pm:Conceptualizing ;
+    rdfs:label "The weigher of sesame grains"@en, "Der Wieger der Sesamkörner"@de ;
+    skos:definition "Tipping the pan means completing the weight the weigher wants; as one weighing sesame adds grain after grain until the pan tips, each grain shares in the tipping and without it the tipping would be short, so each single deed of Israel shares in tipping the whole world."@en ;
+    skos:note "Hebrew term in the text: שוקל שומשומין; כף זכות, כף חובה (shoqel shumshemin)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagOlamNidonAharRubo (Haqdama le-Talmud Eser ha-Sefirot, §120): there the one commandment of love tips a person's pan full of sins to merit at once; here the tipping is a slow sum of grains over all the world, and no single act completes it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§21 (כא), 22 (כב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAhavaAtzmitMakhraa a pm:Conceptualizing ;
+    rdfs:label "Before the majority of merit the nations refuse"@en, "Vor der Mehrheit des Verdiensts weigern sich die Völker"@de ;
+    skos:definition "Before the world reaches a majority of merits, self-love certainly tips the balance, so that the nations refuse to take His yoke on themselves."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagRovZekhuyot fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §21 (כא), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §22
+#
+
+pmc:KabbalahAshlagBliTiqvaShelAhavaAtzmit a pm:Cautioning ;
+    rdfs:label "Every commandment without hope of any return"@en, "Jedes Gebot ohne Hoffnung auf eine Rückkehr"@de ;
+    skos:definition "Every commandment must be done for its own sake, without any expectation serving self-love, no light or expectation returning to oneself from the effort, whether as payment, honour or the like; only at this high point do love of God and love of the fellow join into one."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia ;
+    skos:note "Hebrew term in the text: בלי שום תקוה של אהבה עצמית."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §22 (כב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAhavatHashemVeAhavatHaveroLeAhat a pm:Conceptualizing ;
+    rdfs:label "At the summit the two loves are one"@en, "Auf dem Gipfel sind die beiden Lieben eins"@de ;
+    skos:definition "The stirring one feels in the commandments toward God is wholly the same as that in the commandments toward the fellow when both are done for their own sake; at that point love of God and love of the fellow become truly one, and every act moves all humankind a step on the ladder of love of others."@en ;
+    skos:note "Hebrew term in the text: מתחברים אהבת ה׳ ואהבת חברו לאחת ממש."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §22 (כב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHoteEhadDehifaAhornit a pm:Conceptualizing ;
+    rdfs:label "One sin pushes the whole world back"@en, "Eine Sünde stößt die ganze Welt zurück"@de ;
+    skos:definition "A transgression means that one could not overcome filthy self-love and broke out in theft or the like; the revealed self-love strengthens again the low nature of creation, takes a grain back from the pan of merit and so pushes the spirituality of the whole world backward."@en ;
+    skos:note "Hebrew term in the text: וחוטא אחד יאבד טובה הרבה; דחיפה אחורנית (dehifa ahornit)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagRovZekhuyot fails or is lost."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagHoteEhadYeabbedTovaHarbe (Haqdama le-Talmud Eser ha-Sefirot, §§117, 121): there one sin loses a person all his attainment and returns him to concealment; here the same verse is read of the world, from whose tipping the sinner takes back a grain."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §22 (כב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §23
+#
+
+pmc:KabbalahAshlagShahorKeLavanKeTzahov a pm:Conceptualizing ;
+    rdfs:label "The aim laid on all humankind alike"@en, "Das Ziel liegt auf der ganzen Menschheit gleich"@de ;
+    skos:definition "Beyond any dispute, the purpose of creation lies on the whole human species, black, white and yellow, with no difference at root; only the descent of human nature into a self-love ruling without bounds left no way to speak with the nations and bring them to consent, even by a bare promise, to leave their narrow frame."@en ;
+    skos:note "Hebrew term in the text: שחור כלבן כצהוב (shahor ke-lavan ke-tzahov)."@en ;
+    skos:note "This answers the question the author raised at Matan Tora §5, why the Torah was given to Israel alone."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §23 (כג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagYissurinMemarqin a pm:Conceptualizing ;
+    rdfs:label "Suffering in Egypt purified the body"@en, "Leiden in Ägypten läuterte den Körper"@de ;
+    skos:definition "Four hundred years of great and terrible suffering under the savage rule of Egypt are said to have brought the body a great purification, after the sages' saying that as salt sweetens meat, sufferings scour a man's sins; with the purification of the patriarchs, which is the chief thing, these two made Israel fit."@en ;
+    skos:note "Hebrew term in the text: מה מלח ממתק את הבשר כן יסורין ממרקין (yissurin memarqin)."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagDerekhYissurin (Haqdama le-Sefer ha-Zohar, §§16, 19): there afflictions scour the body and force the turning of the will over a long time, the path of those who do not merit; here the suffering of Egypt was a past preparation of one people for consent, joined to the merit of the patriarchs."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §23 (כג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKeIshEhadBeLevEhad a pm:Conceptualizing ;
+    rdfs:label "As one man with one heart"@en, "Wie ein Mann mit einem Herzen"@de ;
+    skos:definition "At Sinai each member of the nation is said to have removed himself wholly from self-love, his only aim to benefit his fellow, so that all the individuals were welded into one heart and one man; only then were they fit to receive the Torah."@en ;
+    skos:note "Hebrew term in the text: כאיש אחד בלב אחד; ויחן שם ישראל (ke-ish ehad be-lev ehad)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "The author reads Rashi on Exodus 19:2, after the Mekhilta, and the singular of the verse; the reading is entered as attested by this work. Two antecedents are named for it, the suffering of Egypt and the patriarchs' purification, entered as pmc:KabbalahAshlagYissurinMemarqin and pmc:KabbalahAshlagRuhaniyutaShelHaTora."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §23 (כג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §24
+#
+
+pmc:KabbalahAshlagSegulaMiKolHaAmim a pm:Conceptualizing ;
+    rdfs:label "Israel as the passage for the sparks of purification"@en, "Israel als Durchgang der Funken der Läuterung"@de ;
+    skos:definition "Since the Torah could go only to the seed of the patriarchs, the nation was set up as a passage through which sparks of purification flow to all humankind; this is the covenant of \"a treasure among all peoples\", since the other nations are not ready yet, and the closing words of the verse say that all peoples belong to Him and will in the end cleave to Him."@en ;
+    skos:note "Hebrew term in the text: מעבר; ניצוצי ההזדככות; סגולה מכל העמים; כי לי כל הארץ (maavar; segula mi-kol ha-amim)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§24 (כד), 28 (כח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §26
+#
+
+pmc:KabbalahAshlagHatzaaVeHaskama a pm:Conceptualizing ;
+    rdfs:label "An offer must show the work and its wage"@en, "Ein Angebot muss Arbeit und Lohn zeigen"@de ;
+    skos:definition "Reason requires that whoever proposes a task to another and wants his consent show him a sample of its content and its wage, so that he can weigh refusing or agreeing; the author reads the invitation before Sinai (Exodus 19:5-8) as just such an offer and acceptance."@en ;
+    skos:note "Hebrew term in the text: הצעה והסכמה (hatzaa ve-haskama)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§26 (כו), 27 (כז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKiBeMashmaAfAlPi a pm:Conceptualizing ;
+    rdfs:label "Against reading \"ki\" as \"although\""@en, "Gegen die Lesung von „ki“ als „obwohl“"@de ;
+    skos:definition "The three Targumim and the commentators strain over the verse's closing words; Ibn Ezra brings in the name of R. Marinus that \"ki\" means \"although\" and leans to it; the author objects that this does not fit the sages, who give the word four senses, to which Ibn Ezra adds a fifth."@en ;
+    skos:note "Hebrew term in the text: כי משמש בארבע לשונות; אע״פ (ki; af al pi)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §26 (כו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §27
+#
+
+pmp:KabbalahAshlagMamlekhetKohanim a pm:Practicing ;
+    rdfs:label "A kingdom of priests: a nation without private property"@en, "Ein Königreich von Priestern: ein Volk ohne Privateigentum"@de ;
+    skos:definition "Steps as the source gives them: all, small and great, become like the priests, who have no portion and no possession in the land, God being their inheritance; the land and all in it is consecrated to Him; no one occupies himself with it except to keep His commandments and to fill the needs of others, so that no one need care for himself."@en ;
+    skos:note "Hebrew term in the text: ממלכת כהנים (mamlekhet kohanim)."@en ;
+    skos:note "The author fixes the sense by excluding the others: not the offering of sacrifices, for who would offer for the whole nation; not the gifts of the priests, for who would give them; not their holiness, which \"a holy nation\" already says."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §27 (כז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagQotzerKeMaqrivQorban a pm:Conceptualizing ;
+    rdfs:label "Reaping to feed another as offering a sacrifice"@en, "Ernten, um einen anderen zu nähren, wie ein Opfer darbringen"@de ;
+    skos:definition "In such a nation even the profane labours, reaping and sowing, are like the sacrificial service of the priests in the Temple: the one who harvests his field to feed another is like one who offers a sacrifice to God, and reason holds love of the neighbour weightier still."@en ;
+    skos:note "Hebrew term in the text: עבודות של חולין (avodot shel hullin)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §27 (כז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagGoyQadosh a pm:Conceptualizing ;
+    rdfs:label "\"A holy nation\" names the reward"@en, "„Ein heiliges Volk“ benennt den Lohn"@de ;
+    skos:definition "The whole Torah with its commandments serves only to purify the body, after which one merits the true reward, cleaving to Him, the purpose of creation; this reward is what \"a holy nation\" expresses, since by cleaving one becomes holy. \"Kingdom of priests\" gives the form of the work, \"holy nation\" the form of the wage."@en ;
+    skos:note "Hebrew term in the text: גוי קדוש (goy qadosh)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§27 (כז), 28 (כח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §28
+#
+
+pmc:KabbalahAshlagMosheRabbenu a pm:Naming ;
+    rdfs:label "Moses our teacher"@en, "Mose, unser Lehrer"@de ;
+    skos:definition "Moses is held to be the messenger of the invitation before Sinai, trusted in all God's house, and yet warned \"these are the words\", no less and no more, lest he soften the demand or enlarge on the reward."@en ;
+    pm:nameForm "Moshe Rabbenu" ;
+    pm:nameRole "the messenger who sets the offer of the Torah before the people" ;
+    skos:note "Hebrew term in the text: משה רבינו."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §§28 (כח), 29 (כט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Arvut §29
+#
+
+pmc:KabbalahAshlagLoPahot a pm:Cautioning ;
+    rdfs:label "\"Not less\": the full demand at once"@en, "„Nicht weniger“: die volle Forderung auf einmal"@de ;
+    skos:definition "Moses might have thought to hold back and not reveal at once so lofty a form of the work, fearing that the people would not agree to give up all their possessions; hence the warning \"not less\": the true character of the work must be offered with all its height."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagMamlekhetKohanim ;
+    skos:note "Hebrew term in the text: לא פחות (lo pahot)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §29 (כט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagVeLoYoter a pm:Cautioning ;
+    rdfs:label "\"Not more\": the reward stays veiled"@en, "„Nicht mehr“: der Lohn bleibt verhüllt"@de ;
+    skos:definition "Moses might have thought to explain at length the sweetness hidden in cleaving so as to win their consent; hence \"not more\": the reward named by \"a holy nation\" must stay closed and unexplained."@en ;
+    pm:cautionsAbout pmc:KabbalahAshlagUleDovqaVo ;
+    skos:note "Hebrew term in the text: ולא יותר (ve-lo yoter)."@en ;
+    skos:note "A caution of the text against its own promise: to describe the reward is to corrupt the service, entered as pmc:KabbalahAshlagKavvanaMesoreset."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §29 (כט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKavvanaMesoreset a pm:Conceptualizing ;
+    rdfs:label "Service taken on for the reward corrupts the intention"@en, "Dienst um des Lohnes willen verdirbt die Absicht"@de ;
+    skos:definition "Had the wonder of the reward been revealed, they would of necessity have gone astray and accepted His service in order to gain the good reward for themselves; such service would count as serving oneself, which is self-love, so that the intention would be wholly castrated."@en ;
+    skos:note "Hebrew term in the text: הכוונה מסורסת (ha-kavvana mesoreset)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagTorahUMitzvotAlMenatLeHashpia fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Arvut, §29 (כט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §1
+#
+
+pmc:KabbalahAshlagHashpaaLeZulato a pm:Conceptualizing ;
+    rdfs:label "Love of others named bestowal on others"@en, "Liebe zum Anderen als Geben an andere benannt"@de ;
+    skos:definition "The whole of God's service is love of others; in its practical side it shows only as doing good to others, so it is best named bestowal on others, a name fitted to its content that keeps one from forgetting the intention."@en ;
+    skos:note "Hebrew term in the text: השפעה לזולתו (hashpaa le-zulato)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §1 (א), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagBiqoretHaTevunaHaNisyonit a pm:Conceptualizing ;
+    rdfs:label "An experiential proof of the obligation of service"@en, "Ein Erfahrungsbeweis der Pflicht zum Dienst"@de ;
+    skos:definition "The essay asks whether this service rests on faith alone or also on an experiential basis, and undertakes to show the latter: from a simple recognition no one disputes, analytically up to the highest subject, and back synthetically to show the service confirmed in practice; at its end the author says he has given such a study of the absolute obligation of all creatures to take on God's service."@en ;
+    skos:note "Hebrew term in the text: ביקורת התבונה הניסיונית; דרך אנאליטית, דרך סינתטית (biqoret ha-tevuna ha-nisyonit)."@en ;
+    skos:note "The essay's subtitle: a scientific study on an experiential basis concerning the obligation of the service of God."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §§1 (א), 10 (י), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaFilosofiyaHaTzuratit a pm:Conceptualizing ;
+    rdfs:label "Against formal philosophy"@en, "Gegen die formale Philosophie"@de ;
+    skos:definition "The author says he is no lover of formal philosophy and hates inquiries built on a theoretical basis; most of his generation agree, having learned that such bases are shaky and that when the foundation moves the building falls."@en ;
+    skos:note "Hebrew term in the text: הפילוסופיה הצורתית; בסיס עיוני (ha-filosofiya ha-tzuratit)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §1 (א), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §2
+#
+
+pmc:KabbalahAshlagShneiHafakhimBaHashgaha a pm:Conceptualizing ;
+    rdfs:label "Two opposites in providence"@en, "Zwei Gegensätze in der Vorsehung"@de ;
+    skos:definition "Whoever looks at reality finds two extremes: in the coming to be and keeping of the creatures a providence of wondrous wisdom, shown in the conception, gestation, birth and rearing of a child and alike in beasts, plants and the still; in their livelihood and sustenance disorder, as though no one led, the wicked growing strong and the righteous trampled."@en ;
+    skos:note "Hebrew term in the text: הניגוד והסתירה בדבר ההשגחה (ha-niggud ve-ha-stira be-dvar ha-hashgaha)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §2 (ב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §3
+#
+
+pmc:KabbalahAshlagShitatHaTeva a pm:Conceptualizing ;
+    rdfs:label "First system: nature without mind"@en, "Erstes System: Natur ohne Geist"@de ;
+    skos:definition "An ancient view: finding no way to bring the two opposites together, it held that the maker and keeper of reality has no mind or feeling, since a knowing, feeling one would not allow such ruin without pity; so there is no one to complain to or pray to."@en ;
+    skos:note "Hebrew term in the text: שיטה א׳, הטבע (shita alef, ha-teva)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §3 (ג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShteiReshuyot a pm:Conceptualizing ;
+    rdfs:label "Second system: two powers"@en, "Zweites System: zwei Mächte"@de ;
+    skos:definition "The wiser could not accept a mindless provider, since no one gives what he lacks and chance cannot order a work by wisdom or secure its lasting; they posited two providers, the one making and keeping the good, the other making and keeping the evil."@en ;
+    skos:note "Hebrew term in the text: שיטה ב׳, שתי רשויות (shtei reshuyot)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §3 (ג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagRibbuiElohuyot a pm:Conceptualizing ;
+    rdfs:label "Third system: many gods"@en, "Drittes System: viele Götter"@de ;
+    skos:definition "Born from the second: each general working, power, wealth, rule and beauty, famine, death and tumult, was separated and given its own maker and provider."@en ;
+    skos:note "Hebrew term in the text: שיטה ג׳, ריבוי אלהיות (ribbui elohuyot)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §3 (ג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAzavPeulato a pm:Conceptualizing ;
+    rdfs:label "Fourth system: He left His work"@en, "Viertes System: Er verließ Sein Werk"@de ;
+    skos:definition "When knowledge grew and the tight bond of all parts of creation was seen, many gods became impossible and the question returned; the new view held the provider wise and feeling, but so exalted that our world is to Him a mustard seed, not worth attending to, which is why our livelihood is so spoiled."@en ;
+    skos:note "Hebrew term in the text: שיטה ד׳, עזב פעולתו (azav peulato)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagMitHakkemimAzivatHaBeria (Haqdama le-Sefer ha-Zohar, §4): there the view that the Creator abandoned His work is refuted from the perfection of the maker; here it is the latest of four systems in a historical order, each born of the failure of the one before, and all four are answered only by their common failure to close the rift."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §3 (ג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagArbaShitotBaHashgaha a pm:Sequencing ;
+    rdfs:label "The four systems in their historical order"@en, "Die vier Systeme in ihrer geschichtlichen Folge"@de ;
+    skos:definition "Four systems in the order the source gives them: nature without mind; two powers; many gods; a wise provider who left His work."@en ;
+    rdf:_1 pmc:KabbalahAshlagShitatHaTeva ;
+    rdf:_2 pmc:KabbalahAshlagShteiReshuyot ;
+    rdf:_3 pmc:KabbalahAshlagRibbuiElohuyot ;
+    rdf:_4 pmc:KabbalahAshlagAzavPeulato ;
+    pm:seriesStatement "The source orders the four by time and descent: the first is very ancient, the second came from those who were wiser, the third was born from the bosom of the second, and the fourth came last, when knowledge had grown. All four arose from one rift between the two providences and tried to mend it; the order shows a mending that kept being renewed and never held." ;
+    skos:note "The author sets aside the religious systems of divine unity that ruled alongside these and does not discuss them (§3)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §§3 (ג), 4 (ד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §4
+#
+
+pmc:KabbalahAshlagHaQeraMitrahev a pm:Conceptualizing ;
+    rdfs:label "The rift not mended but widening"@en, "Der Riss nicht geheilt, sondern sich weitend"@de ;
+    skos:definition "All the systems came only to mend the rift between the two providences, yet the world goes its way and the rift not only stays open but widens into a dreadful abyss with no way out in sight; the attempts of some thousands of years have not helped."@en ;
+    skos:note "Hebrew term in the text: הקרע הגדול והנורא (ha-qera ha-gadol ve-ha-nora)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagArbaShitotBaHashgaha fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §4 (ד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaTiqqunBeYadenu a pm:Conceptualizing ;
+    rdfs:label "The mending lies in our own hands"@en, "Die Heilung liegt in unserer eigenen Hand"@de ;
+    skos:definition "Seeing that every attempt has failed, the author asks whether the mending of the rift should be sought not from the provider at all but whether the whole great correction lies in our own hands."@en ;
+    skos:note "Hebrew term in the text: כל התיקון הגדול הזה מצוי בידינו עצמנו."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §4 (ד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §5
+#
+
+pmc:KabbalahAshlagHayyeiHevra a pm:Conceptualizing ;
+    rdfs:label "Man compelled to social life"@en, "Der Mensch zum Leben in Gesellschaft gezwungen"@de ;
+    skos:definition "From a simple recognition all see that the human species must live in society: a person cannot subsist and sustain himself except with the help of society."@en ;
+    skos:note "Hebrew term in the text: מין האדם מוכרח לחיי חברה (hayyei hevra)."@en ;
+    skos:note "The uncontested starting point of the analytic way announced at §1."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §5 (ה), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPoreshMinHaHevra a pm:Conceptualizing ;
+    rdfs:label "Leaving society forfeits complaint and pity"@en, "Wer die Gesellschaft verlässt, verliert Klage und Mitleid"@de ;
+    skos:definition "One who withdraws from society to a desolate place and lives there in sorrow and great suffering, too weak to supply his own needs, has no right to complain of providence or his lot; complaining only proclaims his folly, and pity for him is forbidden, for he acts contrary to how creation is made while counsel to live as providence decreed lay open to him."@en ;
+    skos:note "Hebrew term in the text: אסור לרחם עליו (assur le-rahem alav)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagHayyeiHevra fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §5 (ה), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMeqalqelHoqMeHuqqeiHaTeva a pm:Conceptualizing ;
+    rdfs:label "Spoiling one law of nature harms the aim"@en, "Wer ein Naturgesetz verdirbt, schadet dem Ziel"@de ;
+    skos:definition "The author gives the judgement a religious form: providence comes from a Creator who has an aim, and the aim is built on all the laws of nature together, none missing, as a wise worker adds or omits not a hair; whoever spoils one law harms that aim, so nature punishes him, and we may not pity him."@en ;
+    skos:note "Hebrew term in the text: המקלקל חוק אחד (ha-meqalqel hoq ehad)."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §5 (ה), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaMotivHekhrehiVeTakhliti a pm:Conceptualizing ;
+    rdfs:label "One judgement, two motives"@en, "Ein Urteil, zwei Beweggründe"@de ;
+    skos:definition "Whether the provider is called nature, without mind or aim, or a wise and feeling Supervisor with an aim, all agree that we must keep the commandments of providence, the laws of nature, and that whoever breaks them deserves nature's punishment; the only difference is the motive, necessary for them, purposive for the author."@en ;
+    skos:note "Hebrew term in the text: מוטיב (מניע) — הכרחי, מטרתי (motiv hekhrehi, takhliti)."@en ;
+    pm:attestedBy pm:firstPersonReport ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §5 (ה), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaTevaBeGematriaElohim a pm:Conceptualizing ;
+    rdfs:label "\"Nature\" equals \"God\" in number"@en, "„Natur“ gleich „Gott“ an Zahl"@de ;
+    skos:definition "So as not to carry both words further, the author takes the kabbalists' saying that \"the nature\" has the numerical value of Elohim, eighty-six, so that the laws of God may be called the commandments of nature and the reverse."@en ;
+    skos:note "Hebrew term in the text: הטבע עולה בחשבון אלהים, פ״ו (ha-teva = Elohim = 86)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §5 (ה), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §6
+#
+
+pmc:KabbalahAshlagHistakkelutBeMitzvotHaTeva a pm:Cautioning ;
+    rdfs:label "Look into nature's commandments lest it punish"@en, "Die Gebote der Natur prüfen, damit sie nicht straft"@de ;
+    skos:definition "It is called very important to look into the commandments of nature and learn its demands, so that it does not punish without mercy."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagHashpaaLaHevraBeKholHaShiur ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShteiMitzvotHaHevra a pm:Systematizing ;
+    rdfs:label "Two commandments of social life: receiving and bestowing"@en, "Zwei Gebote des Lebens in Gesellschaft: Empfangen und Geben"@de ;
+    skos:definition "The author holds that within society nature imposes only two commandments, receiving, by which each member takes his needs from society, and bestowing, by which each works for its good; whoever breaks either is punished without mercy."@en ;
+    pm:compiledBy "Yehuda Leib Ashlag, in the essay Ha-Shalom" ;
+    dcterms:date "1931"^^xsd:gYear ;
+    skos:note "Hebrew term in the text: קבלה והשפעה (qabbala ve-hashpaa)."@en ;
+    skos:note "The ordering is the author's; the date is the first year of the composition as Sefaria's index gives it (1931-1935), since the edition read (2019) is not the date of the act."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagOnshBiltiYashar a pm:Conceptualizing ;
+    rdfs:label "Receiving punished at once, bestowing late and indirectly"@en, "Empfangen sofort bestraft, Geben spät und mittelbar"@de ;
+    skos:definition "The commandment of receiving needs little watching, since its punishment is collected at once and it is never neglected; the punishment for neglecting bestowal on society comes neither at once nor directly, so that commandment is not kept as it should be."@en ;
+    skos:note "Hebrew term in the text: העונש מגיע אלינו ביחס בלתי ישר (be-yahas bilti yashar)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMarheshetAyuma a pm:Conceptualizing ;
+    rdfs:label "Neglected bestowal: humanity fried in a pan"@en, "Vernachlässigtes Geben: die Menschheit in der Pfanne gebraten"@de ;
+    skos:definition "Because bestowal is neglected, humankind is fried on the fire in a dreadful pan, and sword and famine with what follows them have not ceased; nature, like an expert judge, punishes in step with development, so that the more humankind develops, the more pains in winning its livelihood."@en ;
+    skos:note "Hebrew term in the text: מטוגנת האנושות על האש במרחשת איומה (marheshet ayuma)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagHashpaaLaHevraBeKholHaShiur fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagHashpaaLaHevraBeKholHaShiur a pm:Practicing ;
+    rdfs:label "Bestowal on society at its full measure"@en, "Geben an die Gesellschaft in vollem Maß"@de ;
+    skos:definition "Keeping with all one's might and with exactness the commandment of bestowal on others, so that no member does less than the whole measure that secures the success and happiness of society, and not being slack in it."@en ;
+    skos:note "Hebrew term in the text: השפעה לזולתו בתכלית הדיוק."@en ;
+    skos:note "Called by the author the scientific experiential basis that providence commands this (§6)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §6 (ו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaTevaYenatzhenu a pm:Conceptualizing ;
+    rdfs:label "Nature keeps punishing until it prevails"@en, "Die Natur straft weiter, bis sie siegt"@de ;
+    skos:definition "As long as we are slack in full bestowal, and as long as people refuse to enter the covenant of God's service in its full measure, nature and its laws stand ready to take revenge and will not let go; from the blows of the present and the sword drawn for the future the author concludes that nature will win in the end and all will have to join hands to keep its commandments."@en ;
+    skos:note "Hebrew term in the text: סוף סוף ינצחנו הטבע; לעשות יד אחת (yenatzhenu ha-teva)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagHashpaaLeZulatoLeNahatRuah fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §§6 (ו), 10 (י), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §7
+#
+
+pmc:KabbalahAshlagHevraShitufit a pm:Conceptualizing ;
+    rdfs:label "Against the communal society without God"@en, "Gegen die gemeinschaftliche Gesellschaft ohne Gott"@de ;
+    skos:definition "History is offered as the experiment: a society of hundreds of millions, with land beyond all Europe and unmatched raw materials, agreed to live a communal life, abolished private property and seemed to have gained bestowal in full; instead of rising above the bourgeois states it sank until it cannot even secure its workers bread and clothing."@en ;
+    skos:note "Hebrew term in the text: מדינת רוסיה; חיי חברה שיתופית (hayyei hevra shitufit)."@en ;
+    skos:note "A dispute entered as a concept: the opposing view is reported by the author and not read in a work of its own. The author does not read the doctrine he rejects; he reports a state of affairs he takes as seen by all."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §7 (ז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §8
+#
+
+pmc:KabbalahAshlagLoLiShmoEinZekhutQiyyum a pm:Conceptualizing ;
+    rdfs:label "Bestowal for humanity's sake has no right to last"@en, "Geben um der Menschheit willen hat kein Recht zu bestehen"@de ;
+    skos:definition "One sin that nation sinned which God will not forgive: the precious work of bestowal it began must be for God's sake and not for humanity's; since the work is not done for His name, nature itself grants it no right to exist."@en ;
+    skos:note "Hebrew term in the text: אין להם זכות קיום (ein lahem zekhut qiyyum)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagHashpaaLaHevraBeKholHaShiur fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §8 (ח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagOlimBeOshramAlKolHaAratzot a pm:Conceptualizing ;
+    rdfs:label "A society working for God would surpass all lands"@en, "Eine Gesellschaft, die für Gott arbeitet, würde alle Länder übertreffen"@de ;
+    skos:definition "Were each member to keep love of God with all heart, soul and might, care for his fellow's needs at the measure of caring for his own, and expect by his work for society to cleave to God, then within a few years that society would exceed all the lands of the world together in wealth and be a model to them."@en ;
+    skos:note "Counted as a sign of success: the text announces it as the mark that bestowal is done for God's sake, announced as a counterfactual."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §8 (ח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagPrintzipYavesh a pm:Conceptualizing ;
+    rdfs:label "A dry principle gives no motive power"@en, "Ein trockenes Prinzip gibt keine Antriebskraft"@de ;
+    skos:definition "When the whole measure of bestowal rests on society alone the foundation is shaky: nothing obliges the single person to exert himself, his bread neither grows nor shrinks with his effort, and a lifeless principle can never produce motive power; overseers do not help, for whence would they take theirs; it is like driving an engine without fuel, and its sentence is to perish."@en ;
+    skos:note "Hebrew term in the text: פרנציפ יבש; מוטיב־פאוער; מכונה בלי תת לה חומרי דלק (printzip yavesh; motiv-pauer)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagHashpaaLaHevraBeKholHaShiur fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §§8 (ח), 9 (ט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMotivPauer a pm:Conceptualizing ;
+    rdfs:label "No motion without motive power"@en, "Keine Bewegung ohne Antriebskraft"@de ;
+    skos:definition "Known to the natural scientists, the author says: a person will not make even the smallest motion without motive power, some good to himself; one moves the hand from chair to table only because it seems the hand will enjoy more there, and otherwise it would stay put all seventy years."@en ;
+    skos:note "Hebrew term in the text: מוטיב־פאוער (motive power)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §8 (ח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §9
+#
+
+pmc:KabbalahAshlagHashpaaLeShemShamayimDevekut a pm:Yielding ;
+    rdfs:label "Bestowal as God's service yields cleaving"@en, "Geben als Dienst an Gott ergibt das Anhaften"@de ;
+    skos:definition "Acts of bestowal done as service of God are said to lead to the purpose of creation, cleaving to Him, which comes to the worker as His pleasant abundance growing until he rises in knowing His truth to \"no eye has seen\"."@en ;
+    pm:byPractice pmp:KabbalahAshlagHashpaaLeZulatoLeNahatRuah ;
+    pm:yieldsCapacity pmc:KabbalahAshlagUleDovqaVo ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §9 (ט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMotivPauerBeSippuqGamur a pm:Conceptualizing ;
+    rdfs:label "Ample motive power for great toil"@en, "Reichliche Antriebskraft für große Mühe"@de ;
+    skos:definition "Were farmer and labourer to feel this aim before their eyes while labouring for the happiness of society, they would need no overseers, having motive power enough for great toil, until they raise society to the heights of happiness."@en ;
+    skos:note "Hebrew term in the text: מוטיב־פאוער בסיפוק גמור."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §9 (ט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMatrataMotivPauer a pm:Yielding ;
+    rdfs:label "The aim of cleaving yields motive power"@en, "Das Ziel des Anhaftens ergibt Antriebskraft"@de ;
+    skos:definition "Keeping the aim of cleaving before one's eyes while working for society is said to supply full motive power for the work."@en ;
+    pm:byPractice pmp:KabbalahAshlagHashpaaLeZulatoLeNahatRuah ;
+    pm:yieldsCapacity pmc:KabbalahAshlagMotivPauerBeSippuqGamur ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §9 (ט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTippulRavVeSedarimNeemanim a pm:Cautioning ;
+    rdfs:label "Grasping the aim needs much care"@en, "Das Ziel zu fassen braucht viel Sorgfalt"@de ;
+    skos:definition "The author grants that understanding the matter in this form needs much handling and reliable arrangements, though stubborn nature, which knows no compromise, leaves no other right to exist."@en ;
+    pm:cautionsAbout pmp:KabbalahAshlagHashpaaLeZulatoLeNahatRuah ;
+    skos:note "Hebrew term in the text: צריכה לטיפול רב ובסדרים נאמנים."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §9 (ט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §10
+#
+
+pmp:KabbalahAshlagHashpaaLeZulatoLeNahatRuah a pm:Practicing ;
+    rdfs:label "Bestowal on others to give contentment to God"@en, "Geben an andere, um Gott Freude zu bereiten"@de ;
+    skos:definition "Steps as the source gives them, after two verses: the measure of the work after \"love your neighbour as yourself\", toiling for others and for the happiness of society no less than one cares for oneself and even putting their needs first; the aim after the verse of loving God with heart, soul and might, before one's eyes while toiling for one's fellow, to labour only to find favour before the Creator."@en ;
+    skos:note "Hebrew term in the text: השפעה לזולתו כדי לעשות נחת רוח להשי״ת."@en ;
+    skos:note "Called by the author the only remedy for humankind, shown by experiential reason (§10)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §10 (י), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagYehdalEvyon a pm:Conceptualizing ;
+    rdfs:label "The needy cease from the land"@en, "Der Bedürftige verschwindet aus dem Land"@de ;
+    skos:definition "If they are willing and obey (Isaiah 1:19), the poor and every tormented and exploited one will cease from the land, and each one's happiness will rise beyond all measure."@en ;
+    skos:note "Hebrew term in the text: כי יחדל אביון (ki yehdal evyon)."@en ;
+    skos:note "Counted as a sign of success: the text announces it as the mark that humankind has taken on bestowal for God's sake."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §10 (י), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §12
+#
+
+pmc:KabbalahAshlagGalgalShinuiHaTzura a pm:Conceptualizing ;
+    rdfs:label "The wheel of change of form: a fixed sum of souls"@en, "Das Rad des Formwandels: eine feste Summe von Seelen"@de ;
+    skos:definition "After the sages, bodies change from generation to generation but souls, the essence of the body, are not lost; they pass from body to body, from the generation of the Flood to Babel, Egypt, the exodus and down to ours, until the end of correction; there are no new souls, only a fixed sum turning on the wheel, so that all generations count as one generation living thousands of years until it comes to its correction."@en ;
+    skos:note "Hebrew term in the text: גלגל שינוי הצורה; סוד גלגול הנשמות (galgal shinui ha-tzura; gilgul ha-neshamot)."@en ;
+    skos:note "The author says the wisdom of the transmigration of souls has many proofs and is not explained here."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §12 (יב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKolDavarHaiHayyimNitzhiyim a pm:Conceptualizing ;
+    rdfs:label "Every tangible thing turns without loss"@en, "Jedes greifbare Ding wandelt sich ohne Verlust"@de ;
+    skos:definition "The secret of transmigration is said to hold for every detail of tangible reality: though things seem to come to be and pass away, each detail never rests but turns on the wheel of change of form without losing anything of its being, as the physicists have shown at length."@en ;
+    skos:note "Hebrew term in the text: כל דבר לפי דרכו חי חיים נצחיים."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §12 (יב), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §13
+#
+
+pmc:KabbalahAshlagHaKolNatunBeEravon a pm:Conceptualizing ;
+    rdfs:label "\"All is given on pledge; a net spread over all the living\""@en, "„Alles ist gegen Pfand gegeben; ein Netz über alles Lebende“"@de ;
+    skos:definition "As a lender to a partner in business takes a pledge so as not to lose his money, God, who made creation for people to work in and earn at last the aim of cleaving to Him, gave nothing as ownerless but secured Himself: He spread over humankind a net from which none escapes, so that all must in the end take His service on themselves."@en ;
+    skos:note "Hebrew term in the text: הכל נתון בערבון ומצודה פרוסה על כל החיים (eravon; metzuda perusa)."@en ;
+    skos:note "The author reads the mishna Avot 3:16 and interprets it clause by clause (§§11-17); the reading is entered as attested by this work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §13 (יג), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §14
+#
+
+pmc:KabbalahAshlagHaHanutPetuha a pm:Conceptualizing ;
+    rdfs:label "The open shop and the shopkeeper who gives credit"@en, "Der offene Laden und der Krämer, der Kredit gibt"@de ;
+    skos:definition "Though this world looks like an open shop with no owner, from which every passer takes freely, there is a shopkeeper; that he does not ask for payment is because he gives on credit."@en ;
+    skos:note "Hebrew term in the text: החנות פתוחה והחנווני מקיף (ha-hanut petuha ve-ha-henvani maqif)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §14 (יד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHoqHaHitpathut a pm:Conceptualizing ;
+    rdfs:label "The law of development"@en, "Das Gesetz der Entwicklung"@de ;
+    skos:definition "The open ledger is the law of development God set in humankind, which drives it ever forward: each state lasts only as long as its evil needs to grow until the public can no longer bear it; then the public gathers, destroys it and arranges a better one; the new one lasts until its sparks of wickedness ripen past bearing, and so on, degree after degree, until a state comes with no evil spark in it."@en ;
+    skos:note "Hebrew term in the text: חוק ההתפתחות (hoq ha-hitpathut)."@en ;
+    skos:note "Not entered as a series: the source orders an open repetition of one cycle and names no stages that hold a place of their own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §14 (יד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagTovVeRaAlPiHaMatara a pm:Conceptualizing ;
+    rdfs:label "Good and evil measured by the aim"@en, "Gut und Böse am Ziel gemessen"@de ;
+    skos:definition "The spoiled conducts in human affairs are themselves what bring about the good states, each good state the fruit of the bad one before it; good and evil are not judged by the state in itself but by the general aim: what brings humankind nearer is called good, what takes it away is called evil."@en ;
+    skos:note "Hebrew term in the text: ערכי טוב ורע ... על פי המטרה הכללית."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §14 (יד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaPinkasPatuahVeHaYadKotevet a pm:Conceptualizing ;
+    rdfs:label "Every wickedness written in the ledger"@en, "Jede Bosheit ins Hauptbuch geschrieben"@de ;
+    skos:definition "The seeds from which good states grow are the spoiled deeds themselves: every wickedness of the wicked of a generation is recorded and adds up until its weight is past bearing and the state is pulled down; each state is a ledger and each evildoer a writing hand, so that every single wickedness becomes a push toward the right state."@en ;
+    skos:note "Hebrew term in the text: הפנקס פתוח והיד כותבת (ha-pinkas patuah ve-ha-yad kotevet)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §14 (יד), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §15
+#
+
+pmp:KabbalahAshlagHaRotzeLilvot a pm:Practicing ;
+    rdfs:label "Taking from the world as a loan"@en, "Von der Welt als Darlehen nehmen"@de ;
+    skos:definition "Steps as the source gives them: believe that the world is no ownerless shop but has an owner who asks the price of what is taken; before stretching out one's hand to take anything from it, take it as a loan at the fixed price; undertake to work in His service during all the days one lives from the shop, so as to come to His aim, and so repay the debt."@en ;
+    skos:note "Hebrew term in the text: כל הרוצה ללוות יבוא וילוה (ha-rotze lilvot)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §15 (טו), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShneiSugeiAnashim a pm:Systematizing ;
+    rdfs:label "Two kinds of people and two ways of paying"@en, "Zwei Arten von Menschen und zwei Weisen zu zahlen"@de ;
+    skos:definition "Reading Rabbi Akiva, the author divides humankind into two kinds: those who take the world for an open shop with no owner, whose deeds are written all the same by the law of development and who pay without knowing, driven from behind through suffering; and those who wish to borrow, who pay knowingly and of their own will, drawn from in front by love. The distance between them is that of a light of delight over a darkness of pain."@en ;
+    pm:compiledBy "Yehuda Leib Ashlag, in the essay Ha-Shalom" ;
+    dcterms:date "1931"^^xsd:gYear ;
+    skos:note "Hebrew term in the text: מדעתו ושלא מדעתו (mi-daato ve-shelo mi-daato)."@en ;
+    skos:note "The ordering is the author's; the date is the first year of the composition as Sefaria's index gives it (1931-1935), since the edition read (2019) is not the date of the act."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagShneiDerakhimBehira (Haqdama le-Sefer ha-Zohar, §16): there God prepared two paths to the third state, Torah and commandments or suffering, and choice lies only between them; here the two are kinds of people in Rabbi Akiva's mishna, both certain to pay their debt in full, and they differ in knowing it."@en ;
+    pm:attestedBy pm:compilerInference ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §§15 (טו), 16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §16
+#
+
+pmc:KabbalahAshlagHaGabbaimMahzirin a pm:Conceptualizing ;
+    rdfs:label "Two sets of collectors take the debt daily"@en, "Zwei Reihen von Eintreibern nehmen die Schuld täglich"@de ;
+    skos:definition "Both kinds pay their debt alike, a portion every day, until it is paid in full: the special forces that appear through engagement in His service are faithful collectors, and so are the mighty forces set in the law of development."@en ;
+    skos:note "Hebrew term in the text: והגבאים מחזירין תדיר בכל יום; כוחות סגוליים; כוחות האיתנים (gabbaim)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagNifraimShelloMiDaatam a pm:Conceptualizing ;
+    rdfs:label "Paying unknowingly, through great suffering"@en, "Unwissend zahlen, durch großes Leiden"@de ;
+    skos:definition "Those whose debt is collected by the forces of development pay it against their will: the storming waves of development come on them, the revealed forces of evil push them from behind, and the debt is exacted with great torments."@en ;
+    skos:note "Hebrew term in the text: נפרעין שלא מדעתו; וִיז אַ טֶערְגֹא (vis a tergo)."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagHaRotzeLilvot fails or is lost."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagBeIttahBeYissurin (Haqdama le-Sefer ha-Zohar, §16): there one who does not merit is corrected in its time through sufferings over a long time; here the suffering is the collection of a debt by the law of development, which works on whole generations through the wickedness of the wicked."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmp:KabbalahAshlagHaAvodotHaSegulyot a pm:Practicing ;
+    rdfs:label "Pursuing the special works that hasten the sense of evil"@en, "Die besonderen Werke suchen, die den Sinn für das Böse beschleunigen"@de ;
+    skos:definition "Seeking of one's own will the special works of His service, which speed the development of the sense of recognising evil; the author refers their detail to his essay on the essence and aim of religion, §6."@en ;
+    skos:note "Hebrew term in the text: העבודות הסגוליות הממהרות את התפתחות חוש הכרת הרע."@en ;
+    skos:note "The procedure is only named here; its detail stands in Mahut ha-Dat u-Matarata, §6, declared as pmw:MahutHaDatUMatarata and not opened."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHushHakkaratHaRa a pm:Conceptualizing ;
+    rdfs:label "The sense of recognising evil"@en, "Der Sinn für das Erkennen des Bösen"@de ;
+    skos:definition "A faculty whose development the special works of God's service are said to hasten."@en ;
+    skos:note "Hebrew term in the text: חוש הכרת הרע (hush hakkarat ha-ra)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAvodotSegulyotHakkaratHaRa a pm:Yielding ;
+    rdfs:label "The special works hasten the sense of evil"@en, "Die besonderen Werke beschleunigen den Sinn für das Böse"@de ;
+    skos:definition "The special works of His service are said to speed the development of the sense of recognising evil."@en ;
+    pm:byPractice pmp:KabbalahAshlagHaAvodotHaSegulyot ;
+    pm:yieldsCapacity pmc:KabbalahAshlagHushHakkaratHaRa ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHesheqMagneti a pm:Conceptualizing ;
+    rdfs:label "Drawn from in front by love, without suffering"@en, "Von vorn durch Liebe gezogen, ohne Leiden"@de ;
+    skos:definition "The first gain of those who pay knowingly: the forces revealed through His service stand before them as a drawing force like a magnetic longing, and they hurry after it of their own will in the spirit of love, spared all the sorrow and suffering of the first kind."@en ;
+    skos:note "Hebrew term in the text: חשק מגנטי; וִיז אַ פרָאנטא (hesheq magneti; vis a fronte)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMemaharimHaTakhlit a pm:Conceptualizing ;
+    rdfs:label "Hastening the aim"@en, "Das Ziel beschleunigen"@de ;
+    skos:definition "The second gain: they hasten the desired end for themselves; such are the prophets and righteous, who in every generation merit and reach the aim."@en ;
+    skos:note "Hebrew term in the text: ממהרים להם התכלית הרצויה."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    skos:note "Differs from pmc:KabbalahAshlagAhishennaTiqqun (Haqdama le-Sefer ha-Zohar, §16): there the whole correction is hastened for one who merits by Torah and commandments; here single persons in each generation, the righteous and the prophets, reach the aim ahead of the rest by the special works."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAvodotSegulyotHesheqMagneti a pm:Yielding ;
+    rdfs:label "The special works yield the drawing of love"@en, "Die besonderen Werke ergeben das Ziehen der Liebe"@de ;
+    skos:definition "Through the special works, the forces of His service are said to appear before the worker as a magnetic drawing, so that he goes after it willingly."@en ;
+    pm:byPractice pmp:KabbalahAshlagHaAvodotHaSegulyot ;
+    pm:yieldsCapacity pmc:KabbalahAshlagHesheqMagneti ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagAvodotSegulyotMemaharim a pm:Yielding ;
+    rdfs:label "The special works hasten the aim"@en, "Die besonderen Werke beschleunigen das Ziel"@de ;
+    skos:definition "The same work is said to hasten the end for those who do it; and for those who pay knowingly Rabbi Akiva promises \"they have what to rely on\": the quality of His service has much power to bring them to the lofty aim."@en ;
+    pm:byPractice pmp:KabbalahAshlagHaAvodotHaSegulyot ;
+    pm:yieldsCapacity pmc:KabbalahAshlagMemaharimHaTakhlit ;
+    skos:note "Hebrew term in the text: ויש להם על מה שיסמוכו."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §§16 (טז), 17 (יז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagHaTzaddiqimVeHaNeviim a pm:Naming ;
+    rdfs:label "The righteous and the prophets"@en, "Die Gerechten und die Propheten"@de ;
+    skos:definition "The righteous and the prophets are held to be those of the knowing kind who merit and reach the aim of creation in each generation."@en ;
+    pm:nameForm "ha-tzaddiqim ve-ha-neviim" ;
+    pm:nameRole "those who reach the aim in every generation by paying knowingly" ;
+    skos:note "Hebrew term in the text: הצדיקים והנביאים."@en ;
+    skos:note "The author refers for this to his essay Mahut Hokhmat ha-Qabbala, §2, declared as pmw:MahutHokhmatHaQabbala and not opened."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §16 (טז), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §17
+#
+
+pmc:KabbalahAshlagHaKolMetuqanLaSeuda a pm:Conceptualizing ;
+    rdfs:label "\"A true judgement\": everything made ready for the meal"@en, "„Ein wahres Urteil, und alles ist für das Mahl bereitet“"@de ;
+    skos:definition "Against wondering why providence allows all the spoiling and suffering, the judgement is called true because everything is made ready for the meal: the toil and pain of the generations are like a host who labours hard to prepare a great meal for invited guests, and the aim that must at last be revealed is the meal itself; from the beginning all creatures were written down as invited guests, and the Creator's thought obliges them to come, knowingly or not."@en ;
+    skos:note "Hebrew term in the text: והדין דין אמת והכל מתוקן לסעודה (ha-kol metuqan la-seuda)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §§17 (יז), 18 (יח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §18
+#
+
+pmc:KabbalahAshlagHaMalakhimBeVriatHaAdam a pm:Naming ;
+    rdfs:label "The ministering angels at the creation of man"@en, "Die dienenden Engel bei der Erschaffung des Menschen"@de ;
+    skos:definition "In the midrash the angels are held to have foreseen the pains coming upon humankind and asked why God should take this trouble; told of a king with a tower full of good and no guests, they weighed its pleasures against the coming suffering, judged it worth bearing, and consented to the creation of man."@en ;
+    pm:nameForm "ha-malakhim" ;
+    pm:nameRole "the angels who weigh the suffering of humankind against the good prepared for it and consent to its creation" ;
+    skos:note "Hebrew term in the text: מה אנוש כי תזכרנו; מגדל מלא כל טוב (migdal male kol tuv)."@en ;
+    skos:note "The author reads Bereshit Rabba 8:6 and interprets it; the reading is entered as attested by this work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §18 (יח), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §19
+#
+
+pmp:KabbalahAshlagQabbalatOloBeDaatHashem a pm:Practicing ;
+    rdfs:label "Taking His yoke on oneself in knowledge of God"@en, "Sein Joch in Erkenntnis Gottes auf sich nehmen"@de ;
+    skos:definition "Directing all one's deeds to the will of God and to His aim, as He thought of humankind before creation; the author calls it the only counsel left."@en ;
+    skos:note "Hebrew term in the text: קבלת עולו ית׳ בדעת את ה׳ (qabbalat ulo be-daat et Hashem)."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §19 (יט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShlomHaOlam a pm:Conceptualizing ;
+    rdfs:label "World peace: one body with one heart"@en, "Weltfrieden: ein Körper mit einem Herzen"@de ;
+    skos:definition "With His service every trace of envy and hatred will be wiped from humankind, and all its members will be welded into one body with one heart full of the knowledge of God; peace in the world and the knowledge of God are one thing."@en ;
+    skos:note "Hebrew term in the text: שלום העולם; ימחה זכר הקנאה והשנאה (shlom ha-olam)."@en ;
+    skos:note "Counted as a capacity: a state the text holds attainable."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §19 (יט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagDaatHashemShlomHaOlam a pm:Yielding ;
+    rdfs:label "Taking His yoke yields world peace"@en, "Sein Joch auf sich nehmen ergibt Weltfrieden"@de ;
+    skos:definition "When people direct their deeds to God's will and aim, it is said to be plain to all that envy and hatred are wiped out and humankind becomes one body."@en ;
+    pm:byPractice pmp:KabbalahAshlagQabbalatOloBeDaatHashem ;
+    pm:yieldsCapacity pmc:KabbalahAshlagShlomHaOlam ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §19 (יט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagShlomHaOlamPresupposesDaatHashem a pm:Presupposing ;
+    rdfs:label "World peace hangs on the knowledge of God"@en, "Weltfrieden hängt an der Erkenntnis Gottes"@de ;
+    skos:definition "The prophet makes the peace of the whole world depend on the earth's filling with knowing God; the hard egoistic opposition between people, with which national relations grow sharp, will leave the world by no human counsel or device."@en ;
+    pm:dependentStep pmc:KabbalahAshlagShlomHaOlam ;
+    pm:priorStep pmp:KabbalahAshlagQabbalatOloBeDaatHashem ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "Without the knowledge of God the egoistic enmity between people and nations is not removed by any human scheme; the turns to the extreme right and the extreme left made the illness worse." ;
+    skos:note "Written by the integrator from the reading of §19 (יט). The second pass held it as a prerequisite; the first held it as a concept."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §19 (יט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagYaminQitzoniVeSmolQitzoni a pm:Conceptualizing ;
+    rdfs:label "Extreme right and extreme left worsened the illness"@en, "Extreme Rechte und extreme Linke verschlimmerten die Krankheit"@de ;
+    skos:definition "Like a wretched patient turning from side to side in unbearable pain, humankind threw itself to the extreme right, as Germany did, and to the extreme left, as Russia did; not only did this not ease the state, it made the illness and pain worse."@en ;
+    skos:note "Hebrew term in the text: ימין קיצוני כמעשה גרמניה, שמאל קיצוני כמעשה רוסיה."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmc:KabbalahAshlagShlomHaOlam fails or is lost."@en ;
+    skos:note "The author rejects every human counsel and device for removing the enmity between people; the political schemes he names are reported and not read in a work of their own."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §19 (יט), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagMiDaatHashemLeKibbutzGaluyot a pm:Sequencing ;
+    rdfs:label "From the knowledge of God to the ingathering"@en, "Von der Erkenntnis Gottes zur Sammlung"@de ;
+    skos:definition "Three stages in the order the source gives them: taking His yoke in knowledge of God; the peace of the whole world; the ingathering of the exiles."@en ;
+    rdf:_1 pmp:KabbalahAshlagQabbalatOloBeDaatHashem ;
+    rdf:_2 pmc:KabbalahAshlagShlomHaOlam ;
+    rdf:_3 pmc:KabbalahAshlagKibbutzGaluyot ;
+    pm:seriesStatement "The source reads Isaiah 11 as one order: the earth filled with knowledge of God brings the wolf to dwell with the lamb, the peace of the world; and on that day, after it, the Lord gathers the remnant of His people. Peace is the middle place, the vessel without which the blessing of the land cannot be held." ;
+    skos:note "Written by the integrator from the reading of §§19-20 (יט-כ)."@en ;
+    skos:note "The source names consequences of skipping the first and the second place, entered as pmc:KabbalahAshlagShlomHaOlamPresupposesDaatHashem and pmc:KabbalahAshlagKibbutzGaluyotPresupposesShlomHaOlam."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §§19 (יט), 20 (כ), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+
+#
+# Ha-Shalom §20
+#
+
+pmc:KabbalahAshlagKibbutzGaluyot a pm:Conceptualizing ;
+    rdfs:label "The ingathering of the exiles"@en, "Die Sammlung der Zerstreuten"@de ;
+    skos:definition "The prophecy continues: on that day God will reach out a second time to redeem what is left of His people and collect Judah's dispersed from the ends of the earth; read with the close of Uktzin, this is the strength God will give His people, its lasting revival."@en ;
+    skos:note "Hebrew term in the text: קיבוץ גלויות; ה׳ עוז לעמו יתן (kibbutz galuyot)."@en ;
+    skos:note "Written by the integrator from the reading of §20 (כ). Both passes held it only inside the prerequisite that rests on it."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §20 (כ), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKibbutzGaluyotPresupposesShlomHaOlam a pm:Presupposing ;
+    rdfs:label "World peace before the ingathering of the exiles"@en, "Weltfrieden vor der Sammlung der Zerstreuten"@de ;
+    skos:definition "From the order of Isaiah 11 and the end of Uktzin: God first blesses His people with the peace of the whole world, and only then gives it strength and gathers the dispersed; only peace can hold the blessing, as its sole vessel."@en ;
+    pm:dependentStep pmc:KabbalahAshlagKibbutzGaluyot ;
+    pm:priorStep pmc:KabbalahAshlagShlomHaOlam ;
+    pm:prerequisiteStrength pm:statedNecessity ;
+    pm:consequenceOfSkipping "As long as self-love rules among the nations, Israel too cannot serve God in purity of bestowal; experience shows that the entry into the land and the Temple could not hold or receive the blessings sworn to the fathers." ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §20 (כ), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagBiatHaAretzLoHehziqa a pm:Conceptualizing ;
+    rdfs:label "The land and the Temple could not hold"@en, "Das Land und der Tempel konnten nicht bestehen"@de ;
+    skos:definition "Experience shows, the author says, that the coming into the land and the building of the Temple could not stand or receive the blessings God swore to the fathers, since while egoism rules among the nations Israel cannot serve in pure bestowal; so the oath of a lasting inheritance has not yet been kept."@en ;
+    skos:note "Hebrew term in the text: ביאת הארץ ובנין בית המקדש לא יכלו להחזיק מעמד."@en ;
+    skos:note "Counted as a failure condition: the text names an outcome that does not come about or is lost, and its cause. It names how pmp:KabbalahAshlagMamlekhetKohanim fails or is lost."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §20 (כ), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
+
+pmc:KabbalahAshlagKliMahaziqBerakha a pm:Conceptualizing ;
+    rdfs:label "Peace as the only vessel that holds the blessing"@en, "Frieden als einziges Gefäß, das den Segen hält"@de ;
+    skos:definition "Reading the end of Uktzin: until now Israel had no vessel to hold the blessing of the fathers, and so the oath that it would inherit the land for ever was not kept; only the peace of the whole world is that vessel."@en ;
+    skos:note "Hebrew term in the text: לא מצא הקב״ה כלי מחזיק ברכה לישראל אלא השלום (keli mahaziq berakha)."@en ;
+    skos:note "The author reads the saying of R. Shimon ben Halafta at the end of the mishna Uktzin and interprets it; the reading is entered as attested by this work."@en ;
+    pm:attestedBy pm:textualAttestation ;
+    pm:withinTradition pmt:Kabbalah ;
+    pm:fromWork pmw:MatanToraHaArvutHaShalom ;
+    dcterms:source "Ashlag, Ha-Shalom, §20 (כ), Hebrew text of the Sefaria library, version Sefer Matan Torah, ed. Zohar HaSulam, 2019 (edition from Sefaria's version record; no title page in the text layer)" .
