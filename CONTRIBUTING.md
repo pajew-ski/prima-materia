@@ -459,6 +459,16 @@ kumulieren und sind damit zugleich das Protokoll der Suchabdeckung:
   Kommentar stehen und hier eine junge Übertragung mit eigenen Gründern; die
   Buddhismusforschung geht als `pm:evidenceFrom` ein, nie als Quelle)
 
+- `korpus:mceo` (Ashayana Deane, Voyagers I und II, und die Kursmaterialien
+  der MCEO Freedom Teachings, also die Lehren von `pmt:KeylonticScience`; die
+  Forschung dazu geht als `pm:evidenceFrom` ein, nie als Quelle)
+
+- `korpus:golden-dawn` (die Ordensdokumente des Hermetic Order of the Golden
+  Dawn von Mathers und Westcott, veröffentlicht durch Regardie, The Golden
+  Dawn, 1937 bis 1940; von `korpus:thelema` getrennt geführt, weil dort
+  Crowley steht und hier der Orden, aus dem er kam; die Esoterikforschung geht
+  als `pm:evidenceFrom` ein, nie als Quelle)
+
 Die Werte dieses Blocks benennen Korpora, für die noch keine Datei
 existiert. Das ist beabsichtigt: nach `SPEC.md §14` ist ein solches Label
 bereits die Nachfragemeldung, und ein zweites Verzeichnis dafür wird
