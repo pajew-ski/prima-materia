@@ -1,9 +1,12 @@
 // Search over the compiled ontology. Everything here is pure: it takes the
-// same ontology-data.json the graph is drawn from and returns ranked results.
-// No DOM, no network, no index shipped alongside the data — three hundred
-// terms is small enough that building the index in the browser costs a few
-// milliseconds, and one implementation of the tokenizer cannot drift from
-// another the way a build-time index and a query-time parser would.
+// same data the graph is drawn from and returns ranked results. No DOM, no
+// network. The index is built in the browser, so one implementation of the
+// tokenizer cannot drift from another the way a build-time index and a
+// query-time parser would. That stopped being cheap: over 16275 terms the full
+// text took 20 s and 1.3 GB of heap to index (2026-11-18), three quarters of
+// it in the associations. The page therefore indexes what the skeleton carries
+// (names, labels, classes, traditions, scales) and the prose only on request,
+// reusing the associations of the first index.
 //
 // Four layers, each answering a failure of the one before it:
 //
@@ -107,7 +110,7 @@ const values = (langMap) => [...new Set(Object.values(langMap ?? {}))];
  * fields per document, plus the two derived structures the semantic layers
  * need — term associations and an adjacency list.
  */
-export function buildIndex(data) {
+export function buildIndex(data, { associations = null } = {}) {
   const byId = new Map(data.nodes.map((node) => [node.id, node]));
 
   // Tradition membership and claim class live in edges and types; search wants
@@ -226,7 +229,10 @@ export function buildIndex(data) {
       data.nodes.filter((node) => node.kind === "tradition").map((node) => fold(local(node.id))),
     ),
   };
-  index.associations = buildAssociations(index);
+  // The associations are the expensive part, by an order of magnitude over the
+  // postings. A rebuild over the full text hands in the ones already computed
+  // over the names, rather than freezing the page to count them again.
+  index.associations = associations ?? buildAssociations(index);
   return index;
 }
 
@@ -405,12 +411,16 @@ function matchesFilter(doc, filter, index) {
       return doc.node.sources.some((source) => contains(source));
     case "lang":
       return Object.keys(doc.node.labels).includes(filter.value);
-    case "has":
+    case "has": {
+      // The page loads the prose of a term only when it is read, and says in
+      // node.has which prose there is, so the audit filters answer before it.
+      const stated = (key, present) => present || (doc.node.has ?? []).includes(key);
       switch (filter.value) {
-        case "source": return doc.node.sources.length > 0;
-        case "definition": return Object.keys(doc.node.definition).length > 0;
+        case "source": return stated("sources", doc.node.sources.length > 0);
+        case "definition": return stated("definition", Object.keys(doc.node.definition).length > 0);
         case "note":
-          return Object.keys(doc.node.note).length > 0 || Object.keys(doc.node.comment).length > 0;
+          return stated("note", Object.keys(doc.node.note).length > 0) ||
+            stated("comment", Object.keys(doc.node.comment).length > 0);
         case "tradition": return doc.traditions.length > 0;
         // -has:coverage finds the transmissions the scale was never applied
         // to, which is a different silence from being at its first step.
@@ -421,6 +431,7 @@ function matchesFilter(doc, filter, index) {
         // translated, -has:de what has not.
         default: return Object.keys(doc.node.labels).includes(filter.value);
       }
+    }
     default:
       return true;
   }
@@ -773,8 +784,12 @@ function clip(text, start) {
  * "popular searches": each one answers a question the repository says it cares
  * about, and the first of them reports where the corpus is unsourced.
  */
-export function hints(index) {
-  const tradition = index.docs.find((doc) => doc.node.kind === "tradition");
+export function hints(source) {
+  // Takes the data or an index: the openings are shown before anything has
+  // been indexed, and building an index to find one tradition froze the page.
+  const nodes = source.nodes ?? source.docs.map((doc) => doc.node);
+  const found = nodes.find((node) => node.kind === "tradition");
+  const tradition = found && { id: found.id, node: found };
   return [
     { query: "type:Disputing", label: "where the witnesses disagree" },
     { query: "type:Converging", label: "where traditions meet" },

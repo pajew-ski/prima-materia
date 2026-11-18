@@ -677,10 +677,139 @@ function coveragePositions(data, ctx) {
 }
 
 // ---------------------------------------------------------------------------
+// What is drawn as a line
+// ---------------------------------------------------------------------------
+
+/**
+ * The edges that are relations between terms rather than attributes of one.
+ *
+ * A claim's class, its tradition, its mode of attestation and its place on a
+ * scale are edges in the data, but they say what the claim is, not what it is
+ * connected to. Every arrangement already shows them by where it puts a term,
+ * and drawn as lines they were four in five of all edges: the picture spent its
+ * ink on the attributes and buried the relations. The rule is structural, so a
+ * new scale or claim form needs no entry: a link from content into the
+ * vocabulary or onto a tradition is an attribute.
+ */
+export function drawnEdges(data, ctx = context(data)) {
+  return data.edges.filter((edge) => {
+    if (edge.source.startsWith("pm:")) return true;
+    return !edge.target.startsWith("pm:") && ctx.byId.get(edge.target)?.kind !== "tradition";
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Overlay — what holds more than one claim together
+// ---------------------------------------------------------------------------
+
+// The claim forms whose meaning no single claim carries: a generalization and
+// its members, a convergence and the concepts it equates, a dispute and the
+// claim it is about, a test and what it examines, a reworking and its original.
+const FINDING_LINKS = new Set(["generalizedFrom", "convergingConcept", "disputedClaim", "tests", "reworkedClaim"]);
+
+/**
+ * The traditions on the rim, the claims the findings rest on in their
+ * tradition's sector, and the findings inside, nearer the centre the more
+ * traditions they reach. This is the map SPEC §0 names as the actual work: the
+ * old traditions laid over each other where they meet, disagree and have been
+ * put to a test. It draws a few hundred terms where the other views draw every
+ * one, which is what lets it be the first picture of a corpus of any size.
+ */
+function overlayPositions(data, ctx) {
+  const positions = {};
+  const place = polarPlacer(positions);
+
+  const members = new Map();
+  for (const edge of data.edges) {
+    if (!FINDING_LINKS.has(edge.rel)) continue;
+    if (!members.has(edge.source)) members.set(edge.source, []);
+    members.get(edge.source).push(edge.target);
+  }
+  const findings = [...members.keys()].sort();
+  const isFinding = new Set(findings);
+  const claims = [...new Set([...members.values()].flat())].filter((id) => !isFinding.has(id)).sort();
+
+  // A claim stands in its tradition's sector; one outside every tradition (a
+  // modern ordering, say) gets a sector of its own without a heading.
+  const OUTSIDE = "";
+  const byTradition = groupBy(claims, (id) => ctx.traditionOf.get(id) ?? OUTSIDE);
+  const groups = sectors(
+    [...byTradition]
+      .map(([id, ids]) => ({ id, ids }))
+      .sort((a, b) => b.ids.length - a.ids.length || a.id.localeCompare(b.id)),
+    { floor: 3 },
+  );
+
+  // How many traditions a finding reaches, through its members and, for a test
+  // of a generalization, through the generalization's members in turn.
+  const reach = new Map();
+  const traditionsOf = (id, seen = new Set()) => {
+    if (seen.has(id)) return new Set();
+    seen.add(id);
+    if (!isFinding.has(id)) return new Set([ctx.traditionOf.get(id)].filter(Boolean));
+    const out = new Set();
+    for (const member of members.get(id)) for (const t of traditionsOf(member, seen)) out.add(t);
+    return out;
+  };
+  for (const id of findings) reach.set(id, traditionsOf(id).size);
+  const widest = Math.max(1, ...reach.values());
+
+  // Findings first, ring by ring from the widest reach inward-out, so that the
+  // radius of the innermost ring decides where the sectors may begin.
+  const levels = groupBy(findings, (id) => reach.get(id));
+  let radius = 0;
+  const pending = [];
+  for (let level = widest; level >= 0; level--) {
+    const ids = levels.get(level);
+    if (!ids) continue;
+    radius = Math.max(radius + RING_GAP * 2, (ids.length * ITEM_GAP) / TAU);
+    pending.push({ ids, radius });
+  }
+  const inner = radius + RING_GAP * 3;
+
+  const angleOf = new Map();
+  groups.forEach((group, position) => {
+    if (group.id !== OUTSIDE) {
+      place(group.id, inner + (position % 2 ? 0 : 46), (group.from + group.to) / 2);
+    }
+    fillSector(group.ids, {
+      from: group.from,
+      to: group.to,
+      inner: inner + RING_GAP * 2,
+      place: (id, r, angle) => {
+        place(id, r, angle);
+        angleOf.set(id, angle);
+      },
+    });
+  });
+
+  // A finding sits at the mean direction of what it rests on; placeRing keeps
+  // that order and spaces the ring evenly, so two findings over the same claims
+  // never land on one point.
+  const anchorOf = (id, seen = new Set()) => {
+    if (angleOf.has(id)) return angleOf.get(id);
+    if (seen.has(id) || !members.has(id)) return null;
+    seen.add(id);
+    return meanAngle(members.get(id).map((member) => anchorOf(member, seen)).filter((a) => a != null));
+  };
+  for (const { ids, radius: r } of pending) placeRing(ids, r, (id) => anchorOf(id), place);
+  return positions;
+}
+
+// ---------------------------------------------------------------------------
 // The registry
 // ---------------------------------------------------------------------------
 
 export const VIEWS = [
+  {
+    id: "overlay",
+    name: "Overlay",
+    question: "Where do the traditions meet, disagree, and get tested? The traditions on the rim, the claims the findings rest on in their sectors, and every generalization, convergence, dispute and test inside, nearer the centre the more traditions it reaches. Only these are drawn; every other term is a search or a view away.",
+    positions: overlayPositions,
+    // The view draws a selection, not the corpus: the other views place every
+    // term and are where a term outside the findings is seen.
+    subset: true,
+  },
   {
     id: "rings",
     name: "Rings",

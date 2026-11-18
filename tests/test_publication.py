@@ -27,6 +27,7 @@ REQUIRED_ASSETS = (
     "search.js",
     "layouts.js",
     "matrix.js",
+    "corpus.js",
     "ontology/index.html",
 )
 
@@ -125,6 +126,39 @@ def test_every_literal_reaches_the_site() -> None:
         )
 
 
+def test_the_skeleton_and_the_prose_together_are_the_data() -> None:
+    # The page reads two pieces; whatever the cut leaves out of both never
+    # reaches it. test_every_literal_reaches_the_site checks build_data against
+    # the graph, and this closes the chain from build_data to the files.
+    data = _full_data()
+    skeleton, chunks = publish_script.split_data(data, chunk=97)
+    assert len(chunks) == -(-len(data["nodes"]) // 97)
+    prose: dict[str, dict] = {}
+    for chunk in chunks:
+        assert not prose.keys() & chunk.keys(), "a term's prose is in two files"
+        prose.update(chunk)
+    rels = skeleton["rels"]
+    rebuilt_edges = [
+        {"source": skeleton["nodes"][s]["id"], "rel": rels[r], "target": skeleton["nodes"][t]["id"]}
+        for s, r, t in skeleton["edges"]
+    ]
+    assert rebuilt_edges == data["edges"]
+    for position, original in enumerate(data["nodes"]):
+        lean = dict(skeleton["nodes"][position])
+        has = lean.pop("has", [])
+        assert lean["id"] == original["id"]
+        # The chunk a term's prose is in follows from its position alone.
+        assert (original["id"] in prose) == bool(has)
+        if has:
+            assert original["id"] in chunks[position // 97]
+        lean.setdefault("label", original["labels"].get("en") or original["labels"].get(""))
+        rebuilt = {**{k: type(original[k])() for k in publish_script.PROSE}, **lean,
+                   **prose.get(original["id"], {})}
+        expected = {k: v for k, v in original.items() if k != "iri"}
+        assert rebuilt == expected, f"{original['id']} did not survive the cut"
+        assert sorted(has) == sorted(k for k in publish_script.PROSE if original[k])
+
+
 def test_statements_are_named_by_the_property_that_makes_them() -> None:
     nodes = _by_id(_full_data())
     statements = {s["property"]: s for s in nodes["pmc:HawkinsConsciousnessScale"]["statements"]}
@@ -195,12 +229,16 @@ def test_publish_writes_a_complete_site(tmp_path: Path) -> None:
         ]
     )
 
-    for name in (*REQUIRED_ASSETS, "ontology-data.json", "prima-materia.ttl",
+    for name in (*REQUIRED_ASSETS, publish_script.SKELETON_FILE, "prima-materia.ttl",
                  "prima-materia.jsonld", "context.jsonld", ".nojekyll"):
         assert (output / name).is_file(), f"{name} is missing from the built site"
 
-    data = json.loads((output / "ontology-data.json").read_text(encoding="utf-8"))
+    data = json.loads((output / publish_script.SKELETON_FILE).read_text(encoding="utf-8"))
     assert data["nodes"] and data["edges"]
+    # One file of prose for every chunk of terms the skeleton names, and no other.
+    chunks = sorted(p.name for p in (output / publish_script.DETAILS_DIR).iterdir())
+    expected = -(-len(data["nodes"]) // data["meta"]["chunk"])
+    assert chunks == sorted(f"{n}.json" for n in range(expected))
     assert data["meta"]["triples"] == len(
         compile_script.compile_graph([ONTOLOGY_DIR, TRADITIONS_DIR])
     )

@@ -5,10 +5,11 @@
 //
 //   node --test tests/site.test.mjs
 //
-// With PRIMA_MATERIA_DATA pointing at a built ontology-data.json the file also
-// runs the assertions that need the real corpus. tests/test_site_modules.py
-// compiles the graph and sets it; without it those are skipped and the rest
-// still runs against the fixture below.
+// With PRIMA_MATERIA_DATA pointing at the full page data (publish.build_data)
+// and PRIMA_MATERIA_SKELETON at the graph.json cut from it, the file also runs
+// the assertions that need the real corpus. tests/test_site_modules.py compiles
+// the graph and sets both; without them those are skipped and the rest still
+// runs against the fixture below.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -19,8 +20,9 @@ import {
   search, snippetFor, splitCamel, tokenize,
 } from "../site/search.js";
 import {
-  CONTACT_SCALE, COVERAGE_SCALE, VIEWS, context, positionsFor, viewById,
+  CONTACT_SCALE, COVERAGE_SCALE, VIEWS, context, drawnEdges, positionsFor, viewById,
 } from "../site/layouts.js";
+import { PROSE, absorb, expand } from "../site/corpus.js";
 import { ACROSS, UNSTATED, crosstab, queryFor, registerQueryFor, registerTab } from "../site/matrix.js";
 
 // A miniature corpus with the shape of the real one: two traditions, a claim
@@ -395,7 +397,7 @@ test("the openings offered are queries the engine can actually run", () => {
 test("every arrangement places every term exactly once", () => {
   const ctx = context(FIXTURE);
   for (const view of VIEWS) {
-    if (view.matrix) continue;
+    if (view.matrix || view.subset) continue;
     const positions = positionsFor(view.id, FIXTURE, ctx);
     assert.equal(
       Object.keys(positions).length,
@@ -420,6 +422,123 @@ test("no arrangement stacks two terms on the same point", () => {
       seen.add(key);
     }
   }
+});
+
+// A convergence over the two traditions, a dispute inside one, and a test of
+// the convergence: the three ways a finding reaches its claims.
+const WITH_FINDINGS = {
+  ...FIXTURE,
+  nodes: [
+    ...FIXTURE.nodes,
+    node("pm:Converging", "class", ["owl:Class"], "Converging"),
+    node("pmc:BreathMeetsQi", "instance", ["pm:Converging"], "Breath and qi converge"),
+    node("pmc:PitiDisputed", "instance", ["pm:Disputing"], "Whether rapture is a factor"),
+    node("pmc:BreathQiTested", "instance", ["pm:Testing"], "The convergence put to a test"),
+  ],
+  edges: [
+    ...FIXTURE.edges,
+    edge("pmc:BreathMeetsQi", "convergingConcept", "pmp:Anapanasati"),
+    edge("pmc:BreathMeetsQi", "convergingConcept", "pmc:Qi"),
+    edge("pmc:PitiDisputed", "disputedClaim", "pmc:AnapanasatiYieldsPiti"),
+    edge("pmc:BreathQiTested", "tests", "pmc:BreathMeetsQi"),
+  ],
+};
+
+test("the overlay draws the findings, what they rest on, and the traditions they reach", () => {
+  const ctx = context(WITH_FINDINGS);
+  const positions = positionsFor("overlay", WITH_FINDINGS, ctx);
+  assert.deepEqual(
+    Object.keys(positions).sort(),
+    [
+      "pmc:AnapanasatiYieldsPiti", "pmc:BreathMeetsQi", "pmc:BreathQiTested", "pmc:PitiDisputed",
+      "pmc:Qi", "pmp:Anapanasati", "pmt:Daoist", "pmt:Theravada",
+    ],
+  );
+  const distance = (id) => Math.hypot(positions[id].x, positions[id].y);
+  // Two traditions reached sit nearer the centre than one; the claims and the
+  // traditions sit outside every finding.
+  assert.ok(distance("pmc:BreathMeetsQi") < distance("pmc:PitiDisputed"));
+  assert.ok(distance("pmc:BreathQiTested") < distance("pmc:PitiDisputed"));
+  for (const id of ["pmc:Qi", "pmp:Anapanasati", "pmt:Daoist", "pmt:Theravada"]) {
+    assert.ok(distance(id) > distance("pmc:PitiDisputed"), `${id} is inside a finding`);
+  }
+  const seen = new Set(Object.values(positions).map((p) => `${p.x.toFixed(3)} ${p.y.toFixed(3)}`));
+  assert.equal(seen.size, Object.keys(positions).length, "the overlay stacked two terms");
+  // A corpus without findings draws nothing rather than failing.
+  assert.deepEqual(positionsFor("overlay", FIXTURE, context(FIXTURE)), {});
+});
+
+test("the view the page opens on draws a selection, and says so", () => {
+  assert.equal(VIEWS[0].id, "overlay");
+  assert.ok(VIEWS[0].subset);
+});
+
+test("a claim's class, tradition and scale are not drawn as lines", () => {
+  const drawn = drawnEdges(WITH_FINDINGS).map((e) => `${e.source} ${e.rel} ${e.target}`);
+  assert.ok(drawn.includes("pmc:AnapanasatiYieldsPiti byPractice pmp:Anapanasati"));
+  assert.ok(drawn.includes("pmc:BreathMeetsQi convergingConcept pmc:Qi"));
+  // The vocabulary's own structure is relation, not attribute.
+  assert.ok(drawn.includes("pm:Yielding subClassOf pm:Process"));
+  for (const rel of ["instanceOf", "withinTradition", "coverageState", "contactRoute"]) {
+    assert.ok(!drawn.some((line) => line.split(" ")[1] === rel), `${rel} is drawn`);
+  }
+});
+
+// ---------------------------------------------------------------------------
+// The skeleton and the prose
+// ---------------------------------------------------------------------------
+
+/** What publish.split_data does, in miniature, for the fixture. */
+function skeletonOf(data, chunk) {
+  const position = new Map(data.nodes.map((n, i) => [n.id, i]));
+  const rels = [...new Set(data.edges.map((e) => e.rel))].sort();
+  const chunks = [];
+  const nodes = data.nodes.map((n, i) => {
+    const { iri, ...rest } = n;
+    const lean = Object.fromEntries(Object.entries(rest).filter(([k]) => !PROSE.includes(k)));
+    const has = PROSE.filter((k) => (Array.isArray(n[k]) ? n[k].length : Object.keys(n[k]).length));
+    if (has.length) lean.has = has;
+    if (lean.label === n.labels.en) delete lean.label;
+    const number = Math.floor(i / chunk);
+    chunks[number] ??= {};
+    chunks[number][n.id] = Object.fromEntries(has.map((k) => [k, n[k]]));
+    return lean;
+  });
+  const edges = data.edges.map((e) => [position.get(e.source), rels.indexOf(e.rel), position.get(e.target)]);
+  return { skeleton: { meta: { ...data.meta, chunk }, rels, nodes, edges }, chunks };
+}
+
+test("the skeleton and the prose put back together are the data", () => {
+  const { skeleton, chunks } = skeletonOf(FIXTURE, 4);
+  const data = expand(skeleton);
+  assert.deepEqual(data.edges, FIXTURE.edges);
+  const byId = new Map(data.nodes.map((n) => [n.id, n]));
+  for (const chunk of chunks) absorb(byId, chunk);
+  for (const original of FIXTURE.nodes) {
+    const { iri, ...expected } = original;
+    const { chunk, has, ...actual } = byId.get(original.id);
+    assert.deepEqual(actual, expected, `${original.id} did not survive the cut`);
+  }
+});
+
+test("the audit filters answer before any prose is loaded", () => {
+  const lean = expand(skeletonOf(FIXTURE, 4).skeleton);
+  const before = buildIndex(lean);
+  for (const query of ["-has:source", "has:source", "has:definition", "has:note"]) {
+    assert.deepEqual(
+      ids(search(before, query, { limit: 1000 })).sort(),
+      ids(search(fixtureIndex, query, { limit: 1000 })).sort(),
+      `${query} needs the prose to answer`,
+    );
+  }
+  // The openings need no index at all.
+  assert.deepEqual(hints(lean), hints(fixtureIndex));
+});
+
+test("a rebuild handed the associations keeps them", () => {
+  const rebuilt = buildIndex(FIXTURE, { associations: fixtureIndex.associations });
+  assert.equal(rebuilt.associations, fixtureIndex.associations);
+  assert.deepEqual(ids(search(rebuilt, "rapture")), ids(search(fixtureIndex, "rapture")));
 });
 
 test("every arrangement states the question it answers", () => {
@@ -565,7 +684,11 @@ test("the query a cell offers returns exactly the cell's count", () => {
 
 const dataPath = process.env.PRIMA_MATERIA_DATA;
 const corpus = dataPath ? JSON.parse(readFileSync(dataPath, "utf8")) : null;
-const onlyWithCorpus = { skip: corpus ? false : "set PRIMA_MATERIA_DATA to a built ontology-data.json" };
+const skeletonPath = process.env.PRIMA_MATERIA_SKELETON;
+const skeleton = skeletonPath ? JSON.parse(readFileSync(skeletonPath, "utf8")) : null;
+const onlyWithCorpus = {
+  skip: corpus && skeleton ? false : "set PRIMA_MATERIA_DATA and PRIMA_MATERIA_SKELETON",
+};
 
 test("the whole corpus indexes, searches and arranges", onlyWithCorpus, () => {
   const index = buildIndex(corpus);
@@ -581,7 +704,23 @@ test("the whole corpus indexes, searches and arranges", onlyWithCorpus, () => {
   for (const view of VIEWS) {
     if (view.matrix) continue;
     const positions = positionsFor(view.id, corpus, ctx);
+    if (view.subset) {
+      assert.ok(Object.keys(positions).length > 0, `${view.id} drew nothing`);
+      for (const id of Object.keys(positions)) assert.ok(ctx.byId.has(id), `${view.id} placed ${id}`);
+      continue;
+    }
     assert.equal(Object.keys(positions).length, corpus.nodes.length, `${view.id} left a term unplaced`);
+  }
+
+  // The page reads the skeleton, not the data: it has to carry every term and
+  // every edge, and answer the audit filters the matrix and the openings use.
+  const lean = expand(skeleton);
+  assert.equal(lean.nodes.length, corpus.nodes.length);
+  assert.deepEqual(lean.edges, corpus.edges);
+  for (const [position, original] of corpus.nodes.entries()) {
+    const node = lean.nodes[position];
+    assert.equal(node.id, original.id);
+    assert.equal(node.label, original.label, `${original.id} lost its label`);
   }
 
   const matrix = crosstab(corpus, ctx);
