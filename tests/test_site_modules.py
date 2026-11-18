@@ -31,25 +31,29 @@ requires_node = pytest.mark.skipif(NODE is None, reason="node is not installed")
 
 
 @pytest.fixture(scope="module")
-def corpus(tmp_path_factory) -> Path:
-    """The site's data file, built from the sources exactly as publish.py does."""
+def corpus(tmp_path_factory) -> tuple[Path, Path]:
+    """The full page data and the skeleton cut from it, exactly as publish.py does."""
     graph = compile_script.compile_graph(publish_script.DEFAULT_INPUTS)
-    path = tmp_path_factory.mktemp("corpus") / "ontology-data.json"
-    path.write_text(
-        json.dumps(publish_script.build_data(graph), ensure_ascii=False),
-        encoding="utf-8",
+    data = publish_script.build_data(graph)
+    folder = tmp_path_factory.mktemp("corpus")
+    full = folder / "ontology-data.json"
+    full.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    skeleton = folder / publish_script.SKELETON_FILE
+    skeleton.write_text(
+        json.dumps(publish_script.split_data(data)[0], ensure_ascii=False), encoding="utf-8"
     )
-    return path
+    return full, skeleton
 
 
 @requires_node
-def test_site_modules(corpus: Path) -> None:
+def test_site_modules(corpus: tuple[Path, Path]) -> None:
+    full, skeleton = corpus
     result = subprocess.run(
         # The reporter is pinned because the markers below are TAP: node's default
         # reporter changed to spec on the ubuntu-26.04 runner (24.10.2026).
         [NODE, "--test", "--test-reporter=tap", str(SUITE)],
         cwd=REPO_ROOT,
-        env={**os.environ, "PRIMA_MATERIA_DATA": str(corpus)},
+        env={**os.environ, "PRIMA_MATERIA_DATA": str(full), "PRIMA_MATERIA_SKELETON": str(skeleton)},
         capture_output=True,
         text=True,
     )
@@ -65,6 +69,6 @@ def test_the_javascript_suite_is_not_orphaned() -> None:
     page = (ASSETS_DIR / "index.html").read_text(encoding="utf-8")
     entry = (ASSETS_DIR / "ontology.js").read_text(encoding="utf-8")
     assert 'src="ontology.js"' in page
-    for module in ("search.js", "layouts.js", "matrix.js", "theme.js"):
+    for module in ("search.js", "layouts.js", "matrix.js", "theme.js", "corpus.js"):
         assert f'"./{module}"' in entry, f"ontology.js does not import {module}"
         assert (ASSETS_DIR / module).is_file()

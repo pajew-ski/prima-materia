@@ -52,6 +52,16 @@ SOURCE_REPO = "https://github.com/pajew-ski/prima-materia"
 # the project and not a remainder. So the cut is vocabulary, one part per
 # tradition, and one part for everything that belongs to none.
 PARTS_DIR = "parts"
+
+# The page loads in two steps. graph.json is the skeleton every view, the
+# matrix and the search over names need; the prose is cut into files of
+# DETAIL_CHUNK terms in skeleton order and read when a term is opened. One file
+# of everything was 29.7 MB on 2026-11-18, and the page had to parse all of it
+# before it could draw a single term. site/corpus.js reads both.
+SKELETON_FILE = "graph.json"
+DETAILS_DIR = "details"
+DETAIL_CHUNK = 256
+PROSE = ("definition", "note", "comment", "sources", "statements")
 VOCABULARY_BASE = "https://pajew.ski/prima-materia/ontology"
 
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
@@ -267,6 +277,51 @@ def build_data(graph: Graph) -> dict:
     }
 
 
+def split_data(data: dict, chunk: int = DETAIL_CHUNK) -> tuple[dict, list[dict]]:
+    """Cut the page data into the skeleton and the files of prose.
+
+    The skeleton keeps everything but the prose and the IRI, which is the CURIE
+    expanded and costs a megabyte to say again. Each node notes in ``has`` which
+    prose it carries, so the audit filters (``-has:source``) answer before any
+    prose is loaded. Edges are index triples into the node list, and a label
+    equal to the English one is left for the reader to derive. Nothing is
+    dropped: the skeleton and the files together are the data, which the tests
+    check by putting them back together.
+    """
+    nodes = data["nodes"]
+    position = {node["id"]: i for i, node in enumerate(nodes)}
+    rels = sorted({edge["rel"] for edge in data["edges"]})
+    rel_position = {rel: i for i, rel in enumerate(rels)}
+    lean = []
+    for node in nodes:
+        entry = {k: v for k, v in node.items() if k not in PROSE and k != "iri"}
+        # The label is the English one, said a second time; corpus.js derives it.
+        if entry["label"] == (node["labels"].get("en") or node["labels"].get("")):
+            del entry["label"]
+        has = [key for key in PROSE if node.get(key)]
+        if has:
+            entry["has"] = has
+        lean.append(entry)
+    skeleton = {
+        "meta": {**data["meta"], "chunk": chunk},
+        "rels": rels,
+        "nodes": lean,
+        "edges": [
+            [position[e["source"]], rel_position[e["rel"]], position[e["target"]]]
+            for e in data["edges"]
+        ],
+    }
+    chunks = [
+        {node["id"]: {k: node[k] for k in PROSE if node.get(k)} for node in nodes[i : i + chunk]}
+        for i in range(0, len(nodes), chunk)
+    ]
+    return skeleton, chunks
+
+
+def _compact(value) -> str:
+    return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+
+
 def _slug(subject: URIRef) -> str:
     """pmt:SaivaSakta -> saiva-sakta."""
     local = curie(subject).split(":", 1)[-1]
@@ -465,10 +520,12 @@ def publish(
         shutil.rmtree(output)
     shutil.copytree(assets, output)
 
-    (output / "ontology-data.json").write_text(
-        json.dumps(data, indent=2, sort_keys=False, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
+    skeleton, chunks = split_data(data)
+    (output / SKELETON_FILE).write_text(_compact(skeleton), encoding="utf-8")
+    details = output / DETAILS_DIR
+    details.mkdir()
+    for number, chunk in enumerate(chunks):
+        (details / f"{number}.json").write_text(_compact(chunk), encoding="utf-8")
 
     # The distributable serialisations ship with the site so that the namespace
     # host answers for the ontology it names, not just for the page about it.

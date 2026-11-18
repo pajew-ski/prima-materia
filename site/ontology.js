@@ -1,9 +1,10 @@
 import { onThemeChange } from "./theme.js";
-import { buildIndex, search, hints } from "./search.js";
+import { buildIndex, search, hints, parseQuery } from "./search.js";
 import {
-  VIEWS, DEFAULT_VIEW, viewById, context, positionsFor, landmarksFor,
+  VIEWS, DEFAULT_VIEW, viewById, context, positionsFor, landmarksFor, drawnEdges,
   COVERAGE_SCALE, CONTACT_SCALE,
 } from "./layouts.js";
+import { expand, absorb } from "./corpus.js";
 import { crosstab, registerTab, renderMatrix, queryFor, registerQueryFor } from "./matrix.js";
 
 // One shape per kind of term. The distinction the ontology cares about most —
@@ -137,10 +138,31 @@ function graphStyle() {
   ];
 }
 
-const data = await (await fetch("ontology-data.json")).json();
+const data = expand(await (await fetch("graph.json")).json());
 const panel = document.querySelector("#panel");
 const nodesById = new Map(data.nodes.map((n) => [n.id, n]));
 const graphContext = context(data);
+
+// The prose of a term lives in a file of its own chunk, read the first time a
+// term in that chunk is opened. The promise is kept, so two clicks in one chunk
+// cost one request.
+const chunks = new Map();
+const loaded = new Set();
+function loadChunk(number) {
+  if (!chunks.has(number)) {
+    chunks.set(
+      number,
+      fetch(`details/${number}.json`)
+        .then((response) => response.json())
+        .then((chunk) => {
+          absorb(nodesById, chunk);
+          loaded.add(number);
+        }),
+    );
+  }
+  return chunks.get(number);
+}
+const chunkCount = Math.ceil(data.nodes.length / data.meta.chunk);
 
 // The prose above the graph counts the vocabulary. Take those numbers from the
 // same data the visualization is drawn from, so adding a term can never leave
@@ -196,26 +218,17 @@ const cy =
   typeof cytoscape === "function"
     ? cytoscape({
         container: canvas,
-        elements: [
-          ...data.nodes.map((n) => ({
-            data: { id: n.id, kind: n.kind, label: n.label },
-            classes: graphContext.isLandmark(n.id) ? "landmark" : "",
-          })),
-          ...data.edges.map((e) => ({
-            data: { id: `${e.source}~${e.rel}~${e.target}`, source: e.source, target: e.target, rel: e.rel },
-          })),
-        ],
+        // Filled by setView with what the view draws, not the whole corpus.
+        elements: [],
         style: graphStyle(),
-        layout: {
-          name: "preset",
-          positions: positionsFor(DEFAULT_VIEW, data, graphContext),
-          padding: 32,
-          fit: true,
-        },
+        // Past a few thousand elements a canvas redraw per frame is what makes
+        // panning stutter; these draw a cached bitmap while the view moves.
+        textureOnViewport: true,
+        hideEdgesOnViewport: true,
         // The floor must sit below the fit zoom of the smallest phones (~0.11 on
         // a 320px viewport), or fit() clamps and crops the graph instead of
         // fitting it.
-        minZoom: 0.06,
+        minZoom: 0.02,
         maxZoom: 3,
       })
     : null;
@@ -243,6 +256,28 @@ for (const view of VIEWS) {
   button.title = view.question;
   button.addEventListener("click", () => setView(view.id));
   viewBar.append(button);
+}
+
+// Lines are the relations between terms; the attributes a view shows by
+// position (class, tradition, attestation, scale) are not drawn twice.
+const relations = drawnEdges(data, graphContext);
+
+/** Bring the drawing to exactly the terms a view places, and the lines between them. */
+function draw(positions) {
+  const wanted = new Set(Object.keys(positions));
+  cy.batch(() => {
+    cy.nodes().filter((node) => !wanted.has(node.id())).remove();
+    const missing = [...wanted].filter((id) => cy.$id(id).empty());
+    cy.add(missing.map((id) => ({ group: "nodes", data: { id, kind: nodesById.get(id).kind, label: nodesById.get(id).label } })));
+    cy.add(
+      relations
+        .filter((e) => wanted.has(e.source) && wanted.has(e.target))
+        .map((e) => ({ group: "edges", data: { id: `${e.source}~${e.rel}~${e.target}`, source: e.source, target: e.target, rel: e.rel } }))
+        .filter((e) => cy.$id(e.data.id).empty()),
+    );
+  });
+  if (lastResults) markMatches(lastResults);
+  if (state.selected) cy.$id(state.selected).select();
 }
 
 function setView(id, { rememberUrl = true } = {}) {
@@ -301,10 +336,11 @@ function setView(id, { rememberUrl = true } = {}) {
     // Which terms this arrangement names is the arrangement's own decision, so
     // the class is set per view rather than once at load.
     const landmarks = landmarksFor(view.id, data, graphContext);
+    const positions = positionsFor(view.id, data, graphContext);
+    draw(positions);
     cy.batch(() => {
       for (const node of cy.nodes()) node.toggleClass("landmark", landmarks.has(node.id()));
     });
-    const positions = positionsFor(view.id, data, graphContext);
     // The force layout is seeded from the ring positions rather than started at
     // random, so the same corpus settles the same way twice and a cluster a
     // reader noticed once can be found again.
@@ -323,16 +359,32 @@ const input = document.querySelector("#query");
 const searchStatus = document.querySelector("#search-status");
 const clearButton = document.querySelector("#search-clear");
 
-// The index costs about a tenth of a second to build over the whole corpus.
-// That is nothing to wait for once, and too much to spend before the graph has
-// painted, so it is built when the browser is next idle or the moment someone
-// touches the search box, whichever comes first.
+// Two indexes. The first covers what the skeleton carries (names, labels,
+// classes, traditions, scales). The second adds the prose and is built only when asked for, or
+// when a query filters on it: every chunk of prose has to be fetched for it.
 let index = null;
+let fullText = null; // null, "loading", or "ready"
 function ensureIndex() {
   if (!index) index = buildIndex(data);
   return index;
 }
-(window.requestIdleCallback ?? ((fn) => setTimeout(fn, 400)))(() => ensureIndex());
+// shortcut: the index over names takes about 3 s of main thread at 16275
+// terms (2026-11-18), so it is built once the browser is idle after the first
+// paint, or on first touch of the search box. Past twice that size the index
+// has to be built at publish time and read in pieces (prima-materia#944).
+input.addEventListener("focus", () => ensureIndex(), { once: true });
+(window.requestIdleCallback ?? ((fn) => setTimeout(fn, 400)))(() => ensureIndex(), { timeout: 4000 });
+
+async function loadFullText() {
+  if (fullText) return;
+  fullText = "loading";
+  searchStatus.textContent = `reading the full text, ${chunkCount} files`;
+  await Promise.all(Array.from({ length: chunkCount }, (_, number) => loadChunk(number)));
+  index = buildIndex(data, { associations: ensureIndex().associations });
+  fullText = "ready";
+  runSearch({ rememberUrl: false });
+}
+const wantsProse = (query) => parseQuery(query).filters.some((filter) => filter.field === "source");
 
 let lastResults = null;
 let activeResult = -1;
@@ -351,10 +403,19 @@ function runSearch({ rememberUrl = true } = {}) {
     if (rememberUrl) syncUrl();
     return;
   }
+  if (!fullText && wantsProse(query)) loadFullText();
   const results = search(ensureIndex(), query);
   lastResults = results;
   activeResult = -1;
   searchStatus.textContent = results.total === 1 ? "1 term" : `${results.total} terms`;
+  if (!fullText) {
+    const more = element("button", "search-more", "search the full text too");
+    more.type = "button";
+    more.addEventListener("click", () => loadFullText());
+    searchStatus.append(" · ", more);
+  } else if (fullText === "loading") {
+    searchStatus.append(" · reading the full text");
+  }
   markMatches(results);
   showResults(results);
   if (rememberUrl) syncUrl();
@@ -478,6 +539,13 @@ function statementList(statements) {
 
 function showNode(id) {
   const node = nodesById.get(id);
+  // Drawn at once from the skeleton, and again when the prose has arrived, if
+  // the reader is still on this term.
+  if (node.has.length && !loaded.has(node.chunk)) {
+    loadChunk(node.chunk).then(() => {
+      if (state.selected === id) showNode(id);
+    });
+  }
   const parts = [];
 
   // A term reached from a result list keeps the way back to it. Without this
@@ -619,7 +687,7 @@ function showResults(results) {
 
 function hintList() {
   const box = element("div", "hints");
-  for (const hint of hints(ensureIndex())) {
+  for (const hint of hints(data)) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "hint";
@@ -675,7 +743,15 @@ function select(id, { keepFocus = false } = {}) {
   if (viewById(state.view).matrix) setView(state.lastGraphView);
   cy.elements().unselect();
   const node = cy.$id(id);
-  if (node.empty()) return;
+  // A view that draws a selection may not draw this term; its panel and its
+  // address are still there to be read.
+  if (node.empty()) {
+    state.selected = id;
+    showNode(id);
+    syncUrl();
+    if (keepFocus) input.focus();
+    return;
+  }
   node.select();
   cy.animate({ center: { eles: node } }, { duration: 256 });
   if (keepFocus) input.focus();
