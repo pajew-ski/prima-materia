@@ -494,10 +494,12 @@ verschiedene Zeilen führt git dagegen ohne Handzusammenführung zusammen.
 
 Scripts in `scripts/` must remain offline-reproducible. No network calls.
 
-## Distribution Repository
+## Distribution
 
-Never edit `pajew-ski/prima-materia-dist` directly — it is auto-generated
-by the `distribute.yml` GitHub Action on each push to `main`.
+Everything is served from the namespace host by the `Pages` workflow. The
+jsDelivr mirror `pajew-ski/prima-materia-dist` was retired on 2026-11-19
+(`SPEC.md` §1); do not revive it without checking that it can serve the
+largest file of the graph.
 
 ## Scope
 

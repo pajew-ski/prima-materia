@@ -40,7 +40,7 @@ Was hier steht, steht nirgends sonst: Kommandos, die Konventionen von `site/`, d
 
 ## Projekt
 
-**prima-materia** — Open-Data-Ontologie für magisches/esoterisches Wissen, gestaltet nach einem **bewusstsein-ersten** Designprinzip. Source-Repo (manuell) → GitHub Actions (validate/compile/transmute) → Distribution-Repo (auto-generiert) → jsDelivr CDN.
+**prima-materia** — Open-Data-Ontologie für magisches/esoterisches Wissen, gestaltet nach einem **bewusstsein-ersten** Designprinzip. Source-Repo (manuell) → GitHub Actions (validate, Pages) → Namensraum-Host `https://pajew.ski/prima-materia/` mit Seite, Serialisierungen und Teilen. Der jsDelivr-Spiegel `prima-materia-dist` ist seit dem 2026-11-19 stillgelegt (`SPEC.md` §1).
 
 ## Kommandos
 
@@ -117,14 +117,11 @@ Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im I
 ## Repositories
 
 - **Source (dieses Repo):** `pajew-ski/prima-materia` — manuell editieren
-- **Distribution:** `pajew-ski/prima-materia-dist` — auto-generiert, nie manuell anfassen
+- **Distribution:** keine eigene mehr. `pajew-ski/prima-materia-dist` ist stillgelegt und wird nicht mehr beschrieben
 
 ## Manuelle User-Aktionen (nicht Agent-automatisierbar)
 
 - Aktivieren von GitHub Pages: **Settings → Pages → Source: GitHub Actions**. Der Workflow kann die Quelle nicht selbst umstellen.
-- Setzen des `DIST_REPO_TOKEN`-Secrets im Source-Repo (Personal Access Token mit Write-Access auf `prima-materia-dist`)
-- Anlage des `prima-materia-dist`-Repos in GitHub
-- jsDelivr-Cache-Purge bei Bedarf
 
 Nicht mehr auf dieser Liste: **Änderungen an `.github/workflows/*`.** Der Vermerk, das Agenten-Token trage keinen `workflows`-Scope und jeder Schreibversuch ende mit `403`, galt bis zum 2026-09-02 und ist überholt. Die beiden Änderungen aus prima-materia#352 (`validate.yml` läuft nicht mehr beim bloßen Anlegen eines Branches) und prima-materia#353 (`distribute.yml` bekommt eine serialisierende `concurrency`-Gruppe) sind vom Agenten geschrieben. Das Soll steht weiter in `SPEC.md` §7, und eine Änderung am eigenen Prüflauf gehört ausdrücklich in die PR-Begründung: eine Lockerung an `validate.yml` fällt niemandem auf, weil danach alles grün ist.
 
