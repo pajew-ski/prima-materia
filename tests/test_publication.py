@@ -290,6 +290,24 @@ def test_publish_is_idempotent(tmp_path: Path) -> None:
     assert (output / "index.html").is_file()
 
 
+def test_llms_txt_keeps_the_register_apart_from_the_holdings() -> None:
+    graph = compile_script.compile_graph(publish_script.DEFAULT_INPUTS)
+    text = publish_script.build_llms_txt(graph)
+    carrying, registered = text.split("### Carrying passages", 1)[1].split("### Registered only", 1)
+    registered = registered.split("## Optional", 1)[0]
+    named = {
+        publish_script.curie(t)
+        for t in graph.subjects(publish_script.PM.coverageState, publish_script.PM.corpusNamed)
+    }
+    assert named, "the corpus has no registered transmission to test against"
+    for term in named:
+        assert f"#{term})" in registered and f"#{term})" not in carrying, term
+    # Every claim form a client can meet is explained before it is met.
+    reading = text.split("## How to read a claim", 1)[1].split("## Loading", 1)[0]
+    for term in ("pm:Generalizing", "pm:Naming", "pm:Situating", "pm:Sequencing", "pm:Converging"):
+        assert f"`{term}`" in reading, term
+
+
 def test_llms_txt_lists_every_tradition_in_the_graph() -> None:
     """The discovery file is derived, not kept by hand.
 

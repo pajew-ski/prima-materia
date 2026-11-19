@@ -469,6 +469,22 @@ def build_llms_txt(graph: Graph) -> str:
         "  series of attempts, and it is where a falsifying condition usually comes from.",
         "- The absence of a `pm:Testing` node means nobody has taken the examination up.",
         "  It does not mean the claim was examined and found wanting.",
+        "- `pm:Generalizing` is a statement no source makes. It is formed from at least",
+        "  two attested claims, named by `pm:generalizedFrom`, carries",
+        "  `pm:compilerInference` and never a `dcterms:source` or a tradition. Read it",
+        "  as a derivation that can be contested at its members, not as a received",
+        "  claim; it is what a `pm:Testing` node puts at risk.",
+        "- `pm:Naming` says that a transmission calls a being by this name and takes it",
+        "  for this (`pm:nameForm`, `pm:nameRole`). That a working under the name",
+        "  achieves anything is a separate `pm:Yielding`, never a field of the name.",
+        "- `pm:Situating` places a node on one of the consciousness axes. The",
+        "  coordinate is a compiler's ordering act (`pm:compilerInference`, with",
+        "  `pm:situationGround`): no source names a coordinate, and disputing the",
+        "  placement leaves the placed claim untouched. An unplaced node means nobody",
+        "  asked; the axis's not-stated value means a source was asked and is silent.",
+        "- `pm:Sequencing` is a series a source itself hands down as a whole",
+        "  (`rdf:_1`, `rdf:_2`, ...). An order made by a later compiler is",
+        "  `pm:Systematizing` instead.",
         "",
         "## Loading less than the whole graph",
         "",
@@ -482,18 +498,47 @@ def build_llms_txt(graph: Graph) -> str:
         "",
         "Turtle is listed; the same parts exist as `.jsonld` beside them.",
         "",
-        "## Traditions",
-        "",
     ]
 
-    for subject in traditions:
-        labels = _langs(graph, subject, RDFS.label)
-        label = labels.get("en") or labels.get("") or curie(subject).split(":", 1)[-1]
+    # A registered transmission is a name with a corpus nobody has opened yet.
+    # Listed beside the ones that carry passages and counted together, the
+    # register reads as holdings, the same confusion as a claim read without
+    # its attestation, one level up (#93).
+    def _label_of(node: Node) -> str:
+        labels = _langs(graph, node, RDFS.label)
+        return labels.get("en") or labels.get("") or curie(node).split(":", 1)[-1]
+
+    def _entry(subject: URIRef) -> str:
         definitions = _langs(graph, subject, SKOS.definition)
         definition = definitions.get("en") or definitions.get("")
-        entry = f"- [{label}]({SITE_BASE}#{curie(subject)})"
+        route = graph.value(subject, PM.contactRoute)
+        state = graph.value(subject, PM.coverageState)
+        facts = [f"coverage: {_label_of(state) if state else 'not stated'}"]
+        if route is not None:
+            facts.append(f"contact route: {_label_of(route)}")
+        entry = f"- [{_label_of(subject)}]({SITE_BASE}#{curie(subject)}) ({'; '.join(facts)})"
         part = f" [[part]({SITE_BASE}{PARTS_DIR}/{_slug(subject)}.ttl)]"
-        lines.append((f"{entry}: {definition}" if definition else entry) + part)
+        return (f"{entry}: {definition}" if definition else entry) + part
+
+    registered = [t for t in traditions if graph.value(t, PM.coverageState) == PM.corpusNamed]
+    carried = [t for t in traditions if t not in set(registered)]
+    lines += [
+        "## Traditions",
+        "",
+        f"{len(carried)} transmissions carry passages read in a work; {len(registered)} more are",
+        "registered only. A registered transmission (`pm:coverageState pm:corpusNamed`)",
+        "is a name and a corpus nobody has opened yet: it asserts nothing, attests",
+        "nothing, and counts for no convergence. Where its contact route is absent, it",
+        "is a candidate for independent attestation once it is read.",
+        "",
+        "### Carrying passages",
+        "",
+        *(_entry(t) for t in carried),
+        "",
+        "### Registered only",
+        "",
+        *(_entry(t) for t in registered),
+    ]
 
     lines += [
         "",
