@@ -23,7 +23,10 @@ import {
   CONTACT_SCALE, COVERAGE_SCALE, VIEWS, context, drawnEdges, positionsFor, viewById,
 } from "../site/layouts.js";
 import { PROSE, absorb, expand } from "../site/corpus.js";
-import { ACROSS, UNSTATED, crosstab, queryFor, registerQueryFor, registerTab } from "../site/matrix.js";
+import {
+  ACROSS, INDEPENDENT, TRANSMITTED, UNSTATED, convergenceFacts, convergenceQueryFor, convergenceTab,
+  crosstab, queryFor, registerQueryFor, registerTab,
+} from "../site/matrix.js";
 
 // A miniature corpus with the shape of the real one: two traditions, a claim
 // that pairs a practice with a capacity, a transliterated term glossed in
@@ -468,6 +471,25 @@ test("the overlay draws the findings, what they rest on, and the traditions they
   assert.deepEqual(positionsFor("overlay", FIXTURE, context(FIXTURE)), {});
 });
 
+test("a convergence shows its breadth and how it splits, never the breadth alone", () => {
+  const data = {
+    ...WITH_FINDINGS,
+    edges: [...WITH_FINDINGS.edges, edge("pmc:BreathMeetsQi", "independentAttestation", "pmt:Daoist")],
+  };
+  const ctx = context(data);
+  assert.deepEqual(convergenceFacts(data, ctx).get("pmc:BreathMeetsQi"), {
+    breadth: 2, independent: 1, transmitted: 1, reworked: 0,
+  });
+  const table = convergenceTab(data, ctx);
+  assert.deepEqual(table.rows, [{ id: "pmc:BreathMeetsQi", label: "Breath and qi converge", total: 2 }]);
+  // No reworking yet, so no column promising one.
+  assert.deepEqual(table.columns.map((c) => c.id), [INDEPENDENT, TRANSMITTED]);
+  assert.equal(table.count("pmc:BreathMeetsQi", INDEPENDENT) + table.count("pmc:BreathMeetsQi", TRANSMITTED), 2);
+  // The query a row offers finds that convergence first.
+  const found = search(buildIndex(data), convergenceQueryFor("pmc:BreathMeetsQi"));
+  assert.equal(found.results[0].id, "pmc:BreathMeetsQi");
+});
+
 test("the view the page opens on draws a selection, and says so", () => {
   assert.equal(VIEWS[0].id, "overlay");
   assert.ok(VIEWS[0].subset);
@@ -721,6 +743,17 @@ test("the whole corpus indexes, searches and arranges", onlyWithCorpus, () => {
     const node = lean.nodes[position];
     assert.equal(node.id, original.id);
     assert.equal(node.label, original.label, `${original.id} lost its label`);
+  }
+
+  const convergences = convergenceTab(corpus, ctx);
+  assert.ok(convergences.rows.length > 0, "the corpus has convergences and the table shows none");
+  for (const row of convergences.rows) {
+    assert.equal(
+      convergences.count(row.id, INDEPENDENT) + convergences.count(row.id, TRANSMITTED),
+      row.total,
+      `${row.label}: the split does not add up to the breadth`,
+    );
+    assert.equal(search(index, convergenceQueryFor(row.id)).results[0]?.id, row.id, `${row.label} cannot be opened`);
   }
 
   const matrix = crosstab(corpus, ctx);

@@ -138,6 +138,87 @@ export function registerTab(data, ctx, { coverageScale, contactScale }) {
   };
 }
 
+/**
+ * Two numbers per convergence, side by side, because either alone misleads
+ * (SPEC §14, #261): how many traditions its concepts stand in, and how many of
+ * those are attested independently rather than reached along a documented
+ * route. Many witnesses on one cable and many witnesses on three look alike
+ * when only the breadth is shown, which is the impression pm:independenceGround
+ * was introduced against. Reworking stations on the members are counted beside
+ * them, as a third number and outside the breadth.
+ */
+export function convergenceFacts(data, ctx) {
+  const facts = new Map();
+  const reworked = new Map();
+  for (const edge of data.edges) {
+    if (edge.rel === "reworkedClaim") reworked.set(edge.target, (reworked.get(edge.target) ?? 0) + 1);
+  }
+  const of = (id) => {
+    if (!facts.has(id)) facts.set(id, { members: [], traditions: new Set(), independent: new Set() });
+    return facts.get(id);
+  };
+  for (const edge of data.edges) {
+    if (edge.rel === "convergingConcept") {
+      const entry = of(edge.source);
+      entry.members.push(edge.target);
+      const tradition = ctx.traditionOf.get(edge.target);
+      if (tradition) entry.traditions.add(tradition);
+    }
+    if (edge.rel === "independentAttestation") of(edge.source).independent.add(edge.target);
+  }
+  const out = new Map();
+  for (const [id, { members, traditions, independent }] of facts) {
+    if (!members.length) continue;
+    const free = [...traditions].filter((t) => independent.has(t)).length;
+    out.set(id, {
+      breadth: traditions.size,
+      independent: free,
+      transmitted: traditions.size - free,
+      reworked: members.reduce((sum, member) => sum + (reworked.get(member) ?? 0), 0),
+    });
+  }
+  return out;
+}
+
+export const INDEPENDENT = "independent";
+export const TRANSMITTED = "transmitted";
+export const REWORKED = "reworked";
+
+/** The convergences as a table: breadth split by how the agreement may be counted. */
+export function convergenceTab(data, ctx) {
+  const facts = convergenceFacts(data, ctx);
+  const label = (id) => ctx.byId.get(id)?.label ?? local(id);
+  const ids = [...facts.keys()].sort(
+    (a, b) => facts.get(b).breadth - facts.get(a).breadth || label(a).localeCompare(label(b)),
+  );
+  // The third column appears with the first reworking on a member; an empty
+  // column before then would promise a count the corpus cannot yet give.
+  const anyReworked = ids.some((id) => facts.get(id).reworked > 0);
+  const columns = [
+    { id: INDEPENDENT, label: "Attested independently" },
+    { id: TRANSMITTED, label: "Along a documented route" },
+    ...(anyReworked ? [{ id: REWORKED, label: "Reworking stations" }] : []),
+  ];
+  const key = { [INDEPENDENT]: "independent", [TRANSMITTED]: "transmitted", [REWORKED]: "reworked" };
+  const count = (row, column) => facts.get(row)?.[key[column]] ?? 0;
+  const cells = ids.flatMap((id) => columns.map((column) => count(id, column.id)));
+  return {
+    rows: ids.map((id) => ({ id, label: label(id), total: facts.get(id).breadth })),
+    columns: columns.map((column) => ({
+      ...column,
+      total: ids.reduce((sum, id) => sum + count(id, column.id), 0),
+    })),
+    count,
+    filled: cells.filter(Boolean).length,
+    total: ids.length,
+    peak: Math.max(1, ...cells),
+  };
+}
+
+/** A convergence cell opens the convergence; a column lists them all. */
+export function convergenceQueryFor(rowId) {
+  return rowId ? `${local(rowId)} type:Converging` : "type:Converging";
+}
 
 /** The query that would list exactly the terms counted in one claim-form cell. */
 export function queryFor(rowId, columnId) {

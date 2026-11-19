@@ -5,7 +5,10 @@ import {
   COVERAGE_SCALE, CONTACT_SCALE,
 } from "./layouts.js";
 import { expand, absorb } from "./corpus.js";
-import { crosstab, registerTab, renderMatrix, queryFor, registerQueryFor } from "./matrix.js";
+import {
+  crosstab, registerTab, convergenceTab, convergenceFacts, renderMatrix, queryFor, registerQueryFor,
+  convergenceQueryFor,
+} from "./matrix.js";
 
 // One shape per kind of term. The distinction the ontology cares about most —
 // process classes against the instances asserted under them — is the one the
@@ -262,6 +265,7 @@ for (const view of VIEWS) {
 // Lines are the relations between terms; the attributes a view shows by
 // position (class, tradition, attestation, scale) are not drawn twice.
 const relations = drawnEdges(data, graphContext);
+const convergenceShapes = convergenceFacts(data, graphContext);
 
 /** Bring the drawing to exactly the terms a view places, and the lines between them. */
 function draw(positions) {
@@ -304,6 +308,7 @@ function setView(id, { rememberUrl = true } = {}) {
       input.focus();
     };
     const claims = crosstab(data, graphContext);
+    const convergences = convergenceTab(data, graphContext);
     const register = registerTab(data, graphContext, {
       coverageScale: COVERAGE_SCALE,
       contactScale: CONTACT_SCALE,
@@ -329,6 +334,15 @@ function setView(id, { rememberUrl = true } = {}) {
             `and whether a route of contact is known. A route decides how an agreement may be counted ` +
             `and not what it is worth: documented bars counting the same statement twice, absent makes ` +
             `the transmission a candidate for independent attestation.`,
+        },
+        {
+          matrix: convergences,
+          queryFor: convergenceQueryFor,
+          caption:
+            `${convergences.total} convergences, each by how many traditions its concepts stand in ` +
+            `(the last column) and how that breadth splits: witnesses attested independently, which ` +
+            `may be counted, against witnesses reached along a documented route, which may not be ` +
+            `counted twice. Breadth alone would make many witnesses on one cable look like many on three.`,
         },
       ],
       { onSelect },
@@ -579,6 +593,17 @@ function showNode(id) {
   // A property's signature, including targets outside this graph. An absent
   // domain or range is no constraint at all, so it reads as "any" rather than
   // as a blank the reader has to interpret.
+  // A convergence states its breadth and how it splits, never the breadth alone (#261).
+  const shape = convergenceShapes.get(id);
+  if (shape) {
+    parts.push(paragraph(
+      `Reaches ${shape.breadth} ${shape.breadth === 1 ? "tradition" : "traditions"}: ` +
+        `${shape.independent} attested independently, ${shape.transmitted} along a documented route` +
+        (shape.reworked ? `; ${shape.reworked} reworking ${shape.reworked === 1 ? "station" : "stations"} on its members.` : "."),
+      "panel-aside",
+    ));
+  }
+
   if (node.domain || node.range) {
     const side = (values) => (values ?? ["any"]).join(", ");
     parts.push(paragraph(`${side(node.domain)} → ${side(node.range)}`, "panel-aside"));
