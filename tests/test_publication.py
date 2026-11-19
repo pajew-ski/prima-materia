@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from rdflib import RDF, RDFS, Graph, Literal, Namespace, URIRef
@@ -28,6 +29,7 @@ REQUIRED_ASSETS = (
     "layouts.js",
     "matrix.js",
     "corpus.js",
+    "vendor/cytoscape.min.js",
     "ontology/index.html",
 )
 
@@ -246,6 +248,31 @@ def test_publish_writes_a_complete_site(tmp_path: Path) -> None:
     # The serialisations shipped with the site must be the same graph.
     assert len(Graph().parse(output / "prima-materia.ttl", format="turtle")) == data["meta"]["triples"]
     assert len(Graph().parse(output / "prima-materia.jsonld", format="json-ld")) == data["meta"]["triples"]
+
+
+# What makes a browser fetch something on its own: a script, a stylesheet, a
+# module import, a CSS import or url(). A link a reader may follow is not one.
+_FETCHES = re.compile(
+    r"""<script[^>]+src\s*=\s*["']https?:|<link[^>]+href\s*=\s*["']https?:"""
+    r"""|\bimport\s[^;]*?from\s*["']https?:|\bimport\s*\(\s*["']https?:"""
+    r"""|@import\s+(?:url\()?\s*["']?https?:|url\(\s*["']?https?:""",
+    re.IGNORECASE,
+)
+
+
+def test_the_site_loads_nothing_from_another_host() -> None:
+    # A new version on someone else's server changes the published page without
+    # a commit here, an outage takes the graph, and every visit is reported to
+    # a third party (#695). The vendored file itself is not scanned: it is
+    # code we did not write, and its strings are not what the page loads.
+    for path in sorted(ASSETS_DIR.rglob("*")):
+        if path.suffix not in {".html", ".js", ".css", ".mjs"} or "vendor" in path.parts:
+            continue
+        hit = _FETCHES.search(path.read_text(encoding="utf-8"))
+        assert hit is None, f"{path.relative_to(ASSETS_DIR)} fetches from another host: {hit.group(0)}"
+    assert _FETCHES.search('<script src="https://cdn.example/x.js" defer></script>')
+    assert _FETCHES.search('<link rel="stylesheet" href="https://fonts.example/a.css">')
+    assert not _FETCHES.search('<a href="https://github.com/x">source</a>')
 
 
 def test_namespace_page_hands_over_to_the_site() -> None:

@@ -166,7 +166,7 @@ const chunkCount = Math.ceil(data.nodes.length / data.meta.chunk);
 
 // The prose above the graph counts the vocabulary. Take those numbers from the
 // same data the visualization is drawn from, so adding a term can never leave
-// the sentence behind. It runs before cytoscape is touched, so a failed CDN
+// the sentence behind. It runs before cytoscape is touched, so a failed script
 // load costs the graph but not the text.
 const ONES = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
   "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
@@ -209,11 +209,12 @@ const matrixBox = document.querySelector("#matrix");
 const viewNote = document.querySelector("#view-note");
 const viewBar = document.querySelector("#views");
 
-// Cytoscape comes off a CDN, and a CDN is a thing that can be blocked, cached
-// wrong, or simply down. Everything else on this page — the search, the panel,
-// the cross-tabulation, the term URLs — is served from the same origin as the
-// data and has no reason to fail with it, so the drawing is treated as the one
-// optional part rather than as the thing the rest hangs off.
+// Cytoscape is the one script the page did not write (site/vendor/, pinned,
+// #695), and a 440 kB script is the thing a slow or filtered connection drops
+// first. Everything else on this page — the search, the panel, the
+// cross-tabulation, the term URLs — has no reason to fail with it, so the
+// drawing is treated as the one optional part rather than as the thing the
+// rest hangs off.
 const cy =
   typeof cytoscape === "function"
     ? cytoscape({
