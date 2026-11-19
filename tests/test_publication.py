@@ -237,6 +237,10 @@ def test_publish_writes_a_complete_site(tmp_path: Path) -> None:
 
     data = json.loads((output / publish_script.SKELETON_FILE).read_text(encoding="utf-8"))
     assert data["nodes"] and data["edges"]
+    # jsDelivr serves no single file above 20 MB from GitHub, and the parts are
+    # what the mirror is loaded through since the full graph outgrew that.
+    for part in (output / publish_script.PARTS_DIR).iterdir():
+        assert part.stat().st_size < 20 * 1024 * 1024, f"{part.name} is too large for jsDelivr"
     # One file of prose for every chunk of terms the skeleton names, and no other.
     chunks = sorted(p.name for p in (output / publish_script.DETAILS_DIR).iterdir())
     expected = -(-len(data["nodes"]) // data["meta"]["chunk"])

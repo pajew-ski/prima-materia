@@ -51,12 +51,18 @@ jobs:
             --input build/prima-materia.ttl \
             --context context/prima-materia-context.jsonld \
             --output build/prima-materia.jsonld
+          # The parts, cut as the site cuts them. jsDelivr serves no single file
+          # above 20 MB from GitHub: the full JSON-LD crossed that on 2026-11-18
+          # and answers 403 there, the Turtle is about to. A part stays small.
+          python scripts/publish.py --output build/site
 
       - name: Sync artefacts to dist
         run: |
           cp source/build/prima-materia.ttl dist/prima-materia.ttl
           cp source/build/prima-materia.jsonld dist/prima-materia.jsonld
           cp source/context/prima-materia-context.jsonld dist/context.jsonld
+          rm -rf dist/parts
+          cp -r source/build/site/parts dist/parts
           python - <<'PY'
           import datetime, json, os, textwrap
           sha = os.environ["GITHUB_SHA"]
@@ -86,10 +92,14 @@ jobs:
               ## This is not the address
 
               The identifiers in this ontology resolve to <https://pajew.ski/prima-materia/>.
-              That host carries the same serialisations, plus `llms.txt` and the
-              independently loadable parts under `parts/`. This mirror exists for consumers
-              that prefer to load from jsDelivr; it carries the complete serialisations and
-              nothing else.
+              That host carries the same serialisations, plus `llms.txt`. This mirror
+              exists for consumers that prefer to load from jsDelivr.
+
+              **jsDelivr serves no single file above 20 MB.** The complete serialisations
+              have outgrown that (the JSON-LD answers 403 there), so load from `parts/`:
+              `vocabulary` with any other part, `findings` for everything that belongs to
+              no single tradition, and one part per tradition. Each part is a subset of
+              the full graph and names every node it points at.
 
               ## Contents
 
@@ -98,6 +108,7 @@ jobs:
               | `prima-materia.ttl` | the compiled ontology, Turtle |
               | `prima-materia.jsonld` | the same graph, JSON-LD |
               | `context.jsonld` | the JSON-LD context |
+              | `parts/*.ttl`, `parts/*.jsonld` | the graph cut into independently loadable parts |
               | `version.json` | build date, source commit, build timestamp |
 
               ## Source, specification, issues

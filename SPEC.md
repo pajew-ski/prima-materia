@@ -329,7 +329,7 @@ Der fünfte Stand ist keine mildere Fassung des dritten. Dort sagt die Behauptun
 2. Von hier an wächst der Korpus nicht mehr nach Plan, sondern nach den zwei Eingängen in Abschnitt 14: dem Bedarf aus offenen Behauptungs-Issues und dem Engpass der unabhängigen Bezeugung.
 3. ~~`traditions/opus-purum-axioms.ttl`~~ — **gestrichen.** Der Richtungssinn in Abschnitt 10 schließt das aus: prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden. Die Axiome sind unveröffentlichtes eigenes Material und tragen keine Quelle im Sinne dieser Spezifikation. Ihre Bestandteile können einzeln eingehen, sobald sie gegen überliefertes Schrifttum gegroundet sind, dann aber unter der Tradition, aus der der Beleg stammt, nicht unter dem Namen des Entwurfs.
 4. `prima-materia-dist`-Repository deployen — automatischer Build & Push via Action `distribute.yml`.
-5. jsDelivr-CDN-Verifikation — Distribution-URLs sind via `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.jsonld` abrufbar.
+5. jsDelivr-CDN-Verifikation: die Distribution ist unter `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/` abrufbar, aber jsDelivr liefert aus GitHub keine Einzeldatei über 20 MB. Die volle JSON-LD-Serialisierung hat das am 2026-11-18 überschritten (403), die Turtle-Datei steht knapp darunter. Über das CDN tragen deshalb die Teile unter `parts/` (§1, Selektives Laden), die `distribute.yml` seither mitspiegelt; `test_publish_writes_a_complete_site` hält jeden Teil unter der Grenze.
 
 **Akzeptanzkriterien Phase 1:**
 

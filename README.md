@@ -63,7 +63,9 @@ generated. Do not edit `build/site/` — it is rebuilt from scratch on every run
 - **Distribution:** `pajew-ski/prima-materia-dist` — auto-generated, do not
   edit manually
 - **CDN:** jsDelivr serves the distribution repo under
-  `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/`
+  `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/`,
+  but no single file above 20 MB: the full serialisations have outgrown
+  that, so load the parts under `parts/` from there
 
 See `SPEC.md` for the full specification and `CLAUDE.md` for the
 operational constraints used by agent contributors.
