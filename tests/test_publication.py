@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 import re
 from pathlib import Path
 
@@ -241,6 +242,13 @@ def test_publish_writes_a_complete_site(tmp_path: Path) -> None:
     # what the mirror is loaded through since the full graph outgrew that.
     for part in (output / publish_script.PARTS_DIR).iterdir():
         assert part.stat().st_size < 20 * 1024 * 1024, f"{part.name} is too large for jsDelivr"
+    # The search index the page loads as files, built from the same data: one
+    # file per key the meta file names, and the document count of the skeleton.
+    if shutil.which("node"):
+        search = output / publish_script.SEARCH_DIR
+        meta = json.loads((search / "meta.json").read_text(encoding="utf-8"))
+        assert meta["docs"] == len(data["nodes"])
+        assert sorted(p.stem for p in search.iterdir() if p.name != "meta.json") == sorted(meta["keys"])
     # One file of prose for every chunk of terms the skeleton names, and no other.
     chunks = sorted(p.name for p in (output / publish_script.DETAILS_DIR).iterdir())
     expected = -(-len(data["nodes"]) // data["meta"]["chunk"])
@@ -290,7 +298,7 @@ def test_namespace_page_hands_over_to_the_site() -> None:
 def test_publish_is_idempotent(tmp_path: Path) -> None:
     output = tmp_path / "site"
     for _ in range(2):
-        publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
+        publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output, search_index=False)
     assert (output / "index.html").is_file()
 
 

@@ -1,5 +1,7 @@
 import { onThemeChange } from "./theme.js";
-import { buildIndex, search, hints, parseQuery } from "./search.js";
+import {
+  buildIndex, search, hints, parseQuery, shippedIndex, absorbShard, missingShards,
+} from "./search.js";
 import {
   VIEWS, DEFAULT_VIEW, viewById, context, positionsFor, landmarksFor, drawnEdges,
   COVERAGE_SCALE, CONTACT_SCALE,
@@ -160,6 +162,8 @@ function loadChunk(number) {
         .then((chunk) => {
           absorb(nodesById, chunk);
           loaded.add(number);
+          // A shipped index made its documents before this prose was here.
+          if (shipped) for (const id of Object.keys(chunk)) index.docs[index.byId.get(id)].refresh();
         }),
     );
   }
@@ -374,38 +378,87 @@ const input = document.querySelector("#query");
 const searchStatus = document.querySelector("#search-status");
 const clearButton = document.querySelector("#search-clear");
 
-// Two indexes. The first covers what the skeleton carries (names, labels,
-// classes, traditions, scales). The second adds the prose and is built only when asked for, or
-// when a query filters on it: every chunk of prose has to be fetched for it.
+// The index comes as files when the site was built with node (#944): the
+// vocabulary first, then for each query the files of the words it needs. A
+// site built without node has no search/ beside it, and the page falls back to
+// two indexes of its own: one over what the skeleton carries, built when the
+// browser is idle, and one with the prose, built only when asked for.
 let index = null;
-let fullText = null; // null, "loading", or "ready"
+let shipped = false;
+let prose = null; // null, "loading", or "ready": every file of prose read
+const ready = fetch("search/meta.json")
+  .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+  .then((meta) => {
+    index = shippedIndex(data, meta);
+    shipped = true;
+  })
+  .catch(() => {
+    // shortcut: the fallback index over names takes about 3 s of main thread
+    // at 16275 terms; it only runs where publish.py had no node.
+    (window.requestIdleCallback ?? ((fn) => setTimeout(fn, 400)))(() => ensureIndex(), { timeout: 4000 });
+  });
 function ensureIndex() {
   if (!index) index = buildIndex(data);
   return index;
 }
-// shortcut: the index over names takes about 3 s of main thread at 16275
-// terms (2026-11-18), so it is built once the browser is idle after the first
-// paint, or on first touch of the search box. Past twice that size the index
-// has to be built at publish time and read in pieces (prima-materia#944).
-input.addEventListener("focus", () => ensureIndex(), { once: true });
-(window.requestIdleCallback ?? ((fn) => setTimeout(fn, 400)))(() => ensureIndex(), { timeout: 4000 });
 
-async function loadFullText() {
-  if (fullText) return;
-  fullText = "loading";
+// A file that fails to arrive counts as read, so a query never waits on it
+// twice; the terms in it go unmatched until the next visit.
+const shardRequests = new Map();
+function loadShard(key) {
+  if (!shardRequests.has(key)) {
+    shardRequests.set(
+      key,
+      fetch(`search/${key}.json`)
+        .then((response) => (response.ok ? response.json() : Promise.reject(response.status)))
+        .then((shard) => absorbShard(index, key, shard))
+        .catch(() => index.loaded.add(key)),
+    );
+  }
+  return shardRequests.get(key);
+}
+async function prepare(query) {
+  for (let missing = missingShards(index, query); missing.length; missing = missingShards(index, query)) {
+    await Promise.all(missing.map(loadShard));
+  }
+}
+
+async function loadProse() {
+  if (prose) return;
+  prose = "loading";
   searchStatus.textContent = `reading the full text, ${chunkCount} files`;
   await Promise.all(Array.from({ length: chunkCount }, (_, number) => loadChunk(number)));
-  index = buildIndex(data, { associations: ensureIndex().associations });
-  fullText = "ready";
-  runSearch({ rememberUrl: false });
+  if (!shipped) index = buildIndex(data, { associations: ensureIndex().associations });
+  prose = "ready";
+  runSearch({ rememberUrl: false, panel: !state.selected });
 }
-const wantsProse = (query) => parseQuery(query).filters.some((filter) => filter.field === "source");
+// A source filter reads the citations and a phrase reads the running text; a
+// shipped index has neither until the prose is in.
+const wantsProse = (query) => {
+  const parsed = parseQuery(query);
+  return parsed.phrases.length > 0 || parsed.negatedPhrases.length > 0 ||
+    parsed.filters.some((filter) => filter.field === "source");
+};
+
+// The passage under a result is read from the prose; the first screenful of
+// results fetches the files it is in, and the list is drawn again.
+const SNIPPETS = 12;
+function fillSnippets(results) {
+  const missing = [...new Set(results.results.slice(0, SNIPPETS).map((r) => nodesById.get(r.id).chunk))]
+    .filter((number) => !loaded.has(number));
+  if (!missing.length) return;
+  const query = state.query;
+  Promise.all(missing.map(loadChunk)).then(() => {
+    if (state.query === query) runSearch({ rememberUrl: false, panel: !state.selected });
+  });
+}
 
 let lastResults = null;
 let activeResult = -1;
 let debounce;
 
-function runSearch({ rememberUrl = true } = {}) {
+let searchSeq = 0;
+async function runSearch({ rememberUrl = true, panel: draw = true } = {}) {
   const query = input.value.trim();
   state.query = query;
   clearButton.hidden = query === "";
@@ -418,21 +471,27 @@ function runSearch({ rememberUrl = true } = {}) {
     if (rememberUrl) syncUrl();
     return;
   }
-  if (!fullText && wantsProse(query)) loadFullText();
-  const results = search(ensureIndex(), query);
+  // Typing outruns the network: only the latest query is drawn.
+  const seq = ++searchSeq;
+  await ready;
+  if (shipped) await prepare(query);
+  if (seq !== searchSeq) return;
+  if (!prose && wantsProse(query)) loadProse();
+  const results = search(shipped ? index : ensureIndex(), query);
   lastResults = results;
   activeResult = -1;
   searchStatus.textContent = results.total === 1 ? "1 term" : `${results.total} terms`;
-  if (!fullText) {
+  if (!prose && !shipped) {
     const more = element("button", "search-more", "search the full text too");
     more.type = "button";
-    more.addEventListener("click", () => loadFullText());
+    more.addEventListener("click", () => loadProse());
     searchStatus.append(" · ", more);
-  } else if (fullText === "loading") {
+  } else if (prose === "loading") {
     searchStatus.append(" · reading the full text");
   }
+  if (shipped) fillSnippets(results);
   markMatches(results);
-  showResults(results);
+  if (draw) showResults(results);
   if (rememberUrl) syncUrl();
 }
 
@@ -840,12 +899,13 @@ function readAddress({ scroll = false } = {}) {
   else setView(state.view, { rememberUrl: false });
 
   const query = params.get("q") ?? "";
+  const id = decodeURIComponent(location.hash.slice(1));
   if (query !== input.value) {
     input.value = query;
-    runSearch({ rememberUrl: false });
+    // The results arrive after the term below is opened; they must not cover it.
+    runSearch({ rememberUrl: false, panel: !nodesById.has(id) });
   }
 
-  const id = decodeURIComponent(location.hash.slice(1));
   if (nodesById.has(id)) {
     select(id);
     if (scroll) document.querySelector("#graph").scrollIntoView({ block: "start" });
@@ -866,5 +926,9 @@ window.pm = {
   views: VIEWS,
   setView,
   crosstab: () => crosstab(data, graphContext),
-  search: (query, options) => search(ensureIndex(), query, options),
+  search: async (query, options) => {
+    await ready;
+    if (shipped) await prepare(query);
+    return search(shipped ? index : ensureIndex(), query, options);
+  },
 };

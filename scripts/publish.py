@@ -13,6 +13,8 @@ import json
 import os
 import re
 import shutil
+import subprocess
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
@@ -62,6 +64,12 @@ SKELETON_FILE = "graph.json"
 DETAILS_DIR = "details"
 DETAIL_CHUNK = 256
 PROSE = ("definition", "note", "comment", "sources", "statements")
+
+# The search index, built once here instead of in every browser (#944). It is
+# site/search.js run under node, so there is one tokenizer; without node the
+# site is published without it and the page builds a smaller index itself.
+SEARCH_DIR = "search"
+SEARCH_SCRIPT = REPO_ROOT / "scripts" / "search_index.mjs"
 VOCABULARY_BASE = "https://pajew.ski/prima-materia/ontology"
 
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
@@ -552,11 +560,31 @@ def build_llms_txt(graph: Graph) -> str:
     return "\n".join(lines)
 
 
+def build_search_index(data: dict, output: Path) -> bool:
+    """Write search/ beside the page, or say why not. True when written."""
+    node = shutil.which("node")
+    if node is None:
+        print("node is not installed: publishing without a search index; the page builds one itself")
+        return False
+    with tempfile.TemporaryDirectory() as scratch:
+        source = Path(scratch) / "data.json"
+        source.write_text(_compact(data), encoding="utf-8")
+        # buildIndex holds the whole corpus and its term pairs at once; the
+        # default heap of a node process is too small for it past about ten
+        # thousand terms.
+        subprocess.run(
+            [node, "--max-old-space-size=6144", str(SEARCH_SCRIPT), str(source), str(output / SEARCH_DIR)],
+            check=True,
+        )
+    return True
+
+
 def publish(
     assets: Path,
     inputs: Iterable[Path],
     context: Path,
     output: Path,
+    search_index: bool = True,
 ) -> dict:
     graph = compile_script.compile_graph(inputs)
     data = build_data(graph)
@@ -571,6 +599,8 @@ def publish(
     details.mkdir()
     for number, chunk in enumerate(chunks):
         (details / f"{number}.json").write_text(_compact(chunk), encoding="utf-8")
+    if search_index:
+        build_search_index(data, output)
 
     # The distributable serialisations ship with the site so that the namespace
     # host answers for the ontology it names, not just for the page about it.

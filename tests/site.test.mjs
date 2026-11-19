@@ -16,8 +16,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 import {
-  buildIndex, editDistance, expandTerm, fold, fuzzyBudget, hints, parseQuery,
-  search, snippetFor, splitCamel, tokenize,
+  absorbShard, buildIndex, editDistance, expandTerm, fold, fuzzyBudget, hints, missingShards,
+  packIndex, parseQuery, search, shippedIndex, snippetFor, splitCamel, tokenize,
 } from "../site/search.js";
 import {
   CONTACT_SCALE, COVERAGE_SCALE, VIEWS, context, drawnEdges, positionsFor, viewById,
@@ -557,6 +557,55 @@ test("the audit filters answer before any prose is loaded", () => {
   assert.deepEqual(hints(lean), hints(fixtureIndex));
 });
 
+/** Load a shipped index the way the page does: round after round until nothing is missing. */
+function loadFor(index, shards, query) {
+  for (let missing = missingShards(index, query); missing.length; missing = missingShards(index, query)) {
+    for (const key of missing) absorbShard(index, key, shards[key]);
+  }
+}
+
+/** What a result list says, without the snippet, which needs the prose. */
+const ranked = (result) => result.results.map((entry) => [entry.id, entry.score.toFixed(9), entry.reason]);
+
+function assertShippedAgrees(data, built, queries) {
+  const { meta, shards } = JSON.parse(JSON.stringify(packIndex(built)));
+  const lean = expand(skeletonOf(data, 4).skeleton);
+  const shipped = shippedIndex(lean, meta);
+  for (const query of queries) {
+    loadFor(shipped, shards, query);
+    assert.deepEqual(ranked(search(shipped, query)), ranked(search(built, query)), `“${query}” ranks otherwise`);
+  }
+  return shipped;
+}
+
+test("the index shipped as files answers as the one built in the browser", () => {
+  const queries = [
+    "rapture", "piti", "pitti", "ana", "verzuckung", "mindfulness breath", "baraqijal", "-piti rapture",
+    "tradition:theravada", "kind:instance -has:source", "type:Yielding rapture", "qi",
+    ...hints(fixtureIndex).map((hint) => hint.query),
+  ];
+  const shipped = assertShippedAgrees(FIXTURE, fixtureIndex, queries);
+  // It reads only the files a query needs.
+  const fresh = shippedIndex(expand(skeletonOf(FIXTURE, 4).skeleton), packIndex(fixtureIndex).meta);
+  assert.ok(missingShards(fresh, "rapture").every((key) => key === "ra"));
+  assert.ok(shipped.loaded.size < packIndex(fixtureIndex).meta.keys.length);
+});
+
+test("a shipped document takes up prose that arrives after the index was made", () => {
+  const { skeleton, chunks } = skeletonOf(FIXTURE, 4);
+  const lean = expand(skeleton);
+  const { meta, shards } = packIndex(fixtureIndex);
+  const shipped = shippedIndex(lean, meta);
+  loadFor(shipped, shards, "rapture");
+  const before = search(shipped, "rapture").results.find((r) => r.id === "pmc:Piti");
+  assert.equal(before.snippet.field, "label");
+  absorb(new Map(lean.nodes.map((n) => [n.id, n])), chunks.flatMap((c) => Object.entries(c)).reduce((o, [k, v]) => ({ ...o, [k]: v }), {}));
+  for (const doc of shipped.docs) doc.refresh();
+  const after = search(shipped, "rapture").results.find((r) => r.id === "pmc:Piti");
+  assert.equal(after.snippet.field, "definition");
+  assert.throws(() => shippedIndex(FIXTURE, { ...meta, docs: 1 }), /other data/);
+});
+
 test("a rebuild handed the associations keeps them", () => {
   const rebuilt = buildIndex(FIXTURE, { associations: fixtureIndex.associations });
   assert.equal(rebuilt.associations, fixtureIndex.associations);
@@ -706,6 +755,25 @@ test("the query a cell offers returns exactly the cell's count", () => {
 
 const dataPath = process.env.PRIMA_MATERIA_DATA;
 const corpus = dataPath ? JSON.parse(readFileSync(dataPath, "utf8")) : null;
+// A row and a column each, not every cell: the cells are checked against the
+// built index below, and the same filters make up a row query and a cell.
+function matrixQueries(matrix, queryFor) {
+  return [
+    ...matrix.rows.map((row) => queryFor(row.id, null)),
+    ...matrix.columns.map((column) => queryFor(null, column.id)),
+    queryFor(matrix.rows[0].id, matrix.columns[0].id),
+  ];
+}
+
+function assertShippedAgreesOnCorpus(full, skeletonFile, built, queries) {
+  const { meta, shards } = JSON.parse(JSON.stringify(packIndex(built)));
+  const shipped = shippedIndex(expand(skeletonFile), meta);
+  for (const query of queries) {
+    loadFor(shipped, shards, query);
+    assert.deepEqual(ranked(search(shipped, query)), ranked(search(built, query)), `“${query}” ranks otherwise`);
+  }
+}
+
 const skeletonPath = process.env.PRIMA_MATERIA_SKELETON;
 const skeleton = skeletonPath ? JSON.parse(readFileSync(skeletonPath, "utf8")) : null;
 const onlyWithCorpus = {
@@ -733,6 +801,17 @@ test("the whole corpus indexes, searches and arranges", onlyWithCorpus, () => {
     }
     assert.equal(Object.keys(positions).length, corpus.nodes.length, `${view.id} left a term unplaced`);
   }
+
+  // The index the page loads as files has to answer every query the page
+  // offers exactly as the one built here: the openings, and every cell of the
+  // tables, which promise their own counts.
+  const cellQueries = [
+    ...hints(corpus).map((hint) => hint.query),
+    ...matrixQueries(crosstab(corpus, ctx), queryFor),
+    ...matrixQueries(registerTab(corpus, ctx, { coverageScale: COVERAGE_SCALE, contactScale: CONTACT_SCALE }), registerQueryFor),
+    "rapture", "jhana", "verzuckung", "breath qi", "angel watcher", "-has:source kind:instance",
+  ];
+  assertShippedAgreesOnCorpus(corpus, skeleton, index, cellQueries);
 
   // The page reads the skeleton, not the data: it has to carry every term and
   // every edge, and answer the audit filters the matrix and the openings use.
