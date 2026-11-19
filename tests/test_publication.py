@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import shutil
+import re
 from pathlib import Path
 
 from rdflib import RDF, RDFS, Graph, Literal, Namespace, URIRef
@@ -28,6 +30,7 @@ REQUIRED_ASSETS = (
     "layouts.js",
     "matrix.js",
     "corpus.js",
+    "vendor/cytoscape.min.js",
     "ontology/index.html",
 )
 
@@ -235,6 +238,13 @@ def test_publish_writes_a_complete_site(tmp_path: Path) -> None:
 
     data = json.loads((output / publish_script.SKELETON_FILE).read_text(encoding="utf-8"))
     assert data["nodes"] and data["edges"]
+    # The search index the page loads as files, built from the same data: one
+    # file per key the meta file names, and the document count of the skeleton.
+    if shutil.which("node"):
+        search = output / publish_script.SEARCH_DIR
+        meta = json.loads((search / "meta.json").read_text(encoding="utf-8"))
+        assert meta["docs"] == len(data["nodes"])
+        assert sorted(p.stem for p in search.iterdir() if p.name != "meta.json") == sorted(meta["keys"])
     # One file of prose for every chunk of terms the skeleton names, and no other.
     chunks = sorted(p.name for p in (output / publish_script.DETAILS_DIR).iterdir())
     expected = -(-len(data["nodes"]) // data["meta"]["chunk"])
@@ -248,6 +258,31 @@ def test_publish_writes_a_complete_site(tmp_path: Path) -> None:
     assert len(Graph().parse(output / "prima-materia.jsonld", format="json-ld")) == data["meta"]["triples"]
 
 
+# What makes a browser fetch something on its own: a script, a stylesheet, a
+# module import, a CSS import or url(). A link a reader may follow is not one.
+_FETCHES = re.compile(
+    r"""<script[^>]+src\s*=\s*["']https?:|<link[^>]+href\s*=\s*["']https?:"""
+    r"""|\bimport\s[^;]*?from\s*["']https?:|\bimport\s*\(\s*["']https?:"""
+    r"""|@import\s+(?:url\()?\s*["']?https?:|url\(\s*["']?https?:""",
+    re.IGNORECASE,
+)
+
+
+def test_the_site_loads_nothing_from_another_host() -> None:
+    # A new version on someone else's server changes the published page without
+    # a commit here, an outage takes the graph, and every visit is reported to
+    # a third party (#695). The vendored file itself is not scanned: it is
+    # code we did not write, and its strings are not what the page loads.
+    for path in sorted(ASSETS_DIR.rglob("*")):
+        if path.suffix not in {".html", ".js", ".css", ".mjs"} or "vendor" in path.parts:
+            continue
+        hit = _FETCHES.search(path.read_text(encoding="utf-8"))
+        assert hit is None, f"{path.relative_to(ASSETS_DIR)} fetches from another host: {hit.group(0)}"
+    assert _FETCHES.search('<script src="https://cdn.example/x.js" defer></script>')
+    assert _FETCHES.search('<link rel="stylesheet" href="https://fonts.example/a.css">')
+    assert not _FETCHES.search('<a href="https://github.com/x">source</a>')
+
+
 def test_namespace_page_hands_over_to_the_site() -> None:
     # The ontology namespace IRI has to resolve to the page that documents it,
     # and a dereferenced term IRI has to land on that term.
@@ -259,8 +294,26 @@ def test_namespace_page_hands_over_to_the_site() -> None:
 def test_publish_is_idempotent(tmp_path: Path) -> None:
     output = tmp_path / "site"
     for _ in range(2):
-        publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output)
+        publish_script.publish(ASSETS_DIR, [ONTOLOGY_DIR, TRADITIONS_DIR], CONTEXT, output, search_index=False)
     assert (output / "index.html").is_file()
+
+
+def test_llms_txt_keeps_the_register_apart_from_the_holdings() -> None:
+    graph = compile_script.compile_graph(publish_script.DEFAULT_INPUTS)
+    text = publish_script.build_llms_txt(graph)
+    carrying, registered = text.split("### Carrying passages", 1)[1].split("### Registered only", 1)
+    registered = registered.split("## Optional", 1)[0]
+    named = {
+        publish_script.curie(t)
+        for t in graph.subjects(publish_script.PM.coverageState, publish_script.PM.corpusNamed)
+    }
+    assert named, "the corpus has no registered transmission to test against"
+    for term in named:
+        assert f"#{term})" in registered and f"#{term})" not in carrying, term
+    # Every claim form a client can meet is explained before it is met.
+    reading = text.split("## How to read a claim", 1)[1].split("## Loading", 1)[0]
+    for term in ("pm:Generalizing", "pm:Naming", "pm:Situating", "pm:Sequencing", "pm:Converging"):
+        assert f"`{term}`" in reading, term
 
 
 def test_llms_txt_lists_every_tradition_in_the_graph() -> None:

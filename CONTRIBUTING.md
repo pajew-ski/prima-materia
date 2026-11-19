@@ -107,6 +107,9 @@ niemandem auffällt.
 | `befund:ontologie` | Vokabular, Shapes, fehlende Prädikate. Erledigt, wenn die Ontologie geändert ist |
 | `befund:bestand` | falsche, doppelte oder fehlende Daten im Graphen. Erledigt, wenn die Daten korrigiert sind |
 | `befund:verfahren` | Regeln in `SPEC.md`, `AGENTS.md`, `CONTRIBUTING.md`, Workflows. Erledigt, wenn die Regel geändert ist |
+| `wartet` | die Entscheidung liegt beim Menschen; seit EN6 nur noch die bewusste Sperre und die Umbenennung ausgelieferter Adressen nach der Bekanntmachung (`SPEC.md` §13) |
+| `bereit` | entschieden, die Ausführung steht aus. Eine hinzufügende Entscheidung trifft der Agent selbst, begründet in der ersten Kommentarzeile `Entscheidung (Agent, EN6): …`, und tauscht `wartet` gegen `bereit` (`SPEC.md` §13) |
+| `ernte` | historisch: ein Ernteauftrag als Issue. Nicht mehr vergeben, seit der Branch den Lease hält (`AGENTS.md` „Ernte"); an geschlossenen Issues stehen lassen |
 
 **Jedes Issue trägt entweder `behauptung` oder `befund`.** Damit ist
 `is:issue is:open no:label` eine stehende Prüfung, die leer sein muss;
@@ -491,10 +494,12 @@ verschiedene Zeilen führt git dagegen ohne Handzusammenführung zusammen.
 
 Scripts in `scripts/` must remain offline-reproducible. No network calls.
 
-## Distribution Repository
+## Distribution
 
-Never edit `pajew-ski/prima-materia-dist` directly — it is auto-generated
-by the `distribute.yml` GitHub Action on each push to `main`.
+Everything is served from the namespace host by the `Pages` workflow. The
+jsDelivr mirror `pajew-ski/prima-materia-dist` was retired on 2026-11-19
+(`SPEC.md` §1); do not revive it without checking that it can serve the
+largest file of the graph.
 
 ## Scope
 

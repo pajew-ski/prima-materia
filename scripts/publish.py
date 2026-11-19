@@ -13,6 +13,8 @@ import json
 import os
 import re
 import shutil
+import subprocess
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
@@ -62,6 +64,12 @@ SKELETON_FILE = "graph.json"
 DETAILS_DIR = "details"
 DETAIL_CHUNK = 256
 PROSE = ("definition", "note", "comment", "sources", "statements")
+
+# The search index, built once here instead of in every browser (#944). It is
+# site/search.js run under node, so there is one tokenizer; without node the
+# site is published without it and the page builds a smaller index itself.
+SEARCH_DIR = "search"
+SEARCH_SCRIPT = REPO_ROOT / "scripts" / "search_index.mjs"
 VOCABULARY_BASE = "https://pajew.ski/prima-materia/ontology"
 
 # Prefixes the site renders as CURIEs. Longest IRI first so pm: never swallows
@@ -469,6 +477,22 @@ def build_llms_txt(graph: Graph) -> str:
         "  series of attempts, and it is where a falsifying condition usually comes from.",
         "- The absence of a `pm:Testing` node means nobody has taken the examination up.",
         "  It does not mean the claim was examined and found wanting.",
+        "- `pm:Generalizing` is a statement no source makes. It is formed from at least",
+        "  two attested claims, named by `pm:generalizedFrom`, carries",
+        "  `pm:compilerInference` and never a `dcterms:source` or a tradition. Read it",
+        "  as a derivation that can be contested at its members, not as a received",
+        "  claim; it is what a `pm:Testing` node puts at risk.",
+        "- `pm:Naming` says that a transmission calls a being by this name and takes it",
+        "  for this (`pm:nameForm`, `pm:nameRole`). That a working under the name",
+        "  achieves anything is a separate `pm:Yielding`, never a field of the name.",
+        "- `pm:Situating` places a node on one of the consciousness axes. The",
+        "  coordinate is a compiler's ordering act (`pm:compilerInference`, with",
+        "  `pm:situationGround`): no source names a coordinate, and disputing the",
+        "  placement leaves the placed claim untouched. An unplaced node means nobody",
+        "  asked; the axis's not-stated value means a source was asked and is silent.",
+        "- `pm:Sequencing` is a series a source itself hands down as a whole",
+        "  (`rdf:_1`, `rdf:_2`, ...). An order made by a later compiler is",
+        "  `pm:Systematizing` instead.",
         "",
         "## Loading less than the whole graph",
         "",
@@ -482,18 +506,47 @@ def build_llms_txt(graph: Graph) -> str:
         "",
         "Turtle is listed; the same parts exist as `.jsonld` beside them.",
         "",
-        "## Traditions",
-        "",
     ]
 
-    for subject in traditions:
-        labels = _langs(graph, subject, RDFS.label)
-        label = labels.get("en") or labels.get("") or curie(subject).split(":", 1)[-1]
+    # A registered transmission is a name with a corpus nobody has opened yet.
+    # Listed beside the ones that carry passages and counted together, the
+    # register reads as holdings, the same confusion as a claim read without
+    # its attestation, one level up (#93).
+    def _label_of(node: Node) -> str:
+        labels = _langs(graph, node, RDFS.label)
+        return labels.get("en") or labels.get("") or curie(node).split(":", 1)[-1]
+
+    def _entry(subject: URIRef) -> str:
         definitions = _langs(graph, subject, SKOS.definition)
         definition = definitions.get("en") or definitions.get("")
-        entry = f"- [{label}]({SITE_BASE}#{curie(subject)})"
+        route = graph.value(subject, PM.contactRoute)
+        state = graph.value(subject, PM.coverageState)
+        facts = [f"coverage: {_label_of(state) if state else 'not stated'}"]
+        if route is not None:
+            facts.append(f"contact route: {_label_of(route)}")
+        entry = f"- [{_label_of(subject)}]({SITE_BASE}#{curie(subject)}) ({'; '.join(facts)})"
         part = f" [[part]({SITE_BASE}{PARTS_DIR}/{_slug(subject)}.ttl)]"
-        lines.append((f"{entry}: {definition}" if definition else entry) + part)
+        return (f"{entry}: {definition}" if definition else entry) + part
+
+    registered = [t for t in traditions if graph.value(t, PM.coverageState) == PM.corpusNamed]
+    carried = [t for t in traditions if t not in set(registered)]
+    lines += [
+        "## Traditions",
+        "",
+        f"{len(carried)} transmissions carry passages read in a work; {len(registered)} more are",
+        "registered only. A registered transmission (`pm:coverageState pm:corpusNamed`)",
+        "is a name and a corpus nobody has opened yet: it asserts nothing, attests",
+        "nothing, and counts for no convergence. Where its contact route is absent, it",
+        "is a candidate for independent attestation once it is read.",
+        "",
+        "### Carrying passages",
+        "",
+        *(_entry(t) for t in carried),
+        "",
+        "### Registered only",
+        "",
+        *(_entry(t) for t in registered),
+    ]
 
     lines += [
         "",
@@ -507,11 +560,31 @@ def build_llms_txt(graph: Graph) -> str:
     return "\n".join(lines)
 
 
+def build_search_index(data: dict, output: Path) -> bool:
+    """Write search/ beside the page, or say why not. True when written."""
+    node = shutil.which("node")
+    if node is None:
+        print("node is not installed: publishing without a search index; the page builds one itself")
+        return False
+    with tempfile.TemporaryDirectory() as scratch:
+        source = Path(scratch) / "data.json"
+        source.write_text(_compact(data), encoding="utf-8")
+        # buildIndex holds the whole corpus and its term pairs at once; the
+        # default heap of a node process is too small for it past about ten
+        # thousand terms.
+        subprocess.run(
+            [node, "--max-old-space-size=6144", str(SEARCH_SCRIPT), str(source), str(output / SEARCH_DIR)],
+            check=True,
+        )
+    return True
+
+
 def publish(
     assets: Path,
     inputs: Iterable[Path],
     context: Path,
     output: Path,
+    search_index: bool = True,
 ) -> dict:
     graph = compile_script.compile_graph(inputs)
     data = build_data(graph)
@@ -526,6 +599,8 @@ def publish(
     details.mkdir()
     for number, chunk in enumerate(chunks):
         (details / f"{number}.json").write_text(_compact(chunk), encoding="utf-8")
+    if search_index:
+        build_search_index(data, output)
 
     # The distributable serialisations ship with the site so that the namespace
     # host answers for the ontology it names, not just for the page about it.

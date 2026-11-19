@@ -41,8 +41,8 @@ traditions against claim forms whose empty cells are the finding. The
 arrangement, the query and the term are all in the URL, so a particular
 reading of the corpus can be sent rather than described.
 
-The site is built from the same sources as the distribution artefacts and
-deployed by the `Pages` workflow on every push to `main`. It also serves
+The site is built from the sources and deployed by the `Pages` workflow on
+every push to `main`. It also serves
 `prima-materia.ttl`, `prima-materia.jsonld`, and `context.jsonld`, so the
 namespace IRI resolves to the ontology it names: dereferencing
 `https://pajew.ski/prima-materia/ontology#Symbolizing` lands on that term.
@@ -60,10 +60,12 @@ generated. Do not edit `build/site/` — it is rebuilt from scratch on every run
 ## Repository Layout
 
 - **Source (this repo):** `pajew-ski/prima-materia` — manually maintained
-- **Distribution:** `pajew-ski/prima-materia-dist` — auto-generated, do not
-  edit manually
-- **CDN:** jsDelivr serves the distribution repo under
-  `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/`
+- **Serialisations:** only on the namespace host,
+  `https://pajew.ski/prima-materia/` (`prima-materia.ttl`,
+  `prima-materia.jsonld`, `context.jsonld`, the parts under `parts/`).
+  The jsDelivr mirror `pajew-ski/prima-materia-dist` was retired on
+  2026-11-19: jsDelivr serves no single file above 20 MB, and the full
+  graph had outgrown that
 
 See `SPEC.md` for the full specification and `CLAUDE.md` for the
 operational constraints used by agent contributors.
@@ -90,12 +92,8 @@ without errors.
 
 ## Manual Setup Steps (not agent-automatable)
 
-- Create the `pajew-ski/prima-materia-dist` repository on GitHub.
 - Enable GitHub Pages for this repository with **Settings → Pages → Source:
   GitHub Actions**. The `Pages` workflow cannot switch the source on.
-- Set the `DIST_REPO_TOKEN` secret in this repository's settings (Personal
-  Access Token with write access to `prima-materia-dist`).
-- Purge the jsDelivr cache when a release needs to propagate immediately.
 
 ## Naming Conventions
 

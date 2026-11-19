@@ -40,7 +40,7 @@ Was hier steht, steht nirgends sonst: Kommandos, die Konventionen von `site/`, d
 
 ## Projekt
 
-**prima-materia** — Open-Data-Ontologie für magisches/esoterisches Wissen, gestaltet nach einem **bewusstsein-ersten** Designprinzip. Source-Repo (manuell) → GitHub Actions (validate/compile/transmute) → Distribution-Repo (auto-generiert) → jsDelivr CDN.
+**prima-materia** — Open-Data-Ontologie für magisches/esoterisches Wissen, gestaltet nach einem **bewusstsein-ersten** Designprinzip. Source-Repo (manuell) → GitHub Actions (validate, Pages) → Namensraum-Host `https://pajew.ski/prima-materia/` mit Seite, Serialisierungen und Teilen. Der jsDelivr-Spiegel `prima-materia-dist` ist seit dem 2026-11-19 stillgelegt (`SPEC.md` §1).
 
 ## Kommandos
 
@@ -72,12 +72,13 @@ Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im I
 `site/` enthält die handgeschriebenen Assets der GitHub-Pages-Seite (`index.html`, `style.css`, `ontology.js`, `theme.js`, `search.js`, `layouts.js`, `matrix.js`, `corpus.js`, `ontology/index.html`). `scripts/publish.py` kopiert sie nach `build/site/` und legt die aus dem Graphen abgeleiteten Daten sowie die Serialisierungen daneben. Der `Pages`-Workflow deployt das bei jedem Push auf `main`.
 
 - **Die Daten kommen in zwei Teilen.** `graph.json` ist das Skelett: jeder Term mit Namen, Art, Klassen und `has` (welche Prosa er trägt), jede Kante als Indextripel. `details/<n>.json` trägt die Prosa (`definition`, `note`, `comment`, `sources`, `statements`) für je `DETAIL_CHUNK` Terme in Skelettreihenfolge und wird gelesen, wenn ein Term geöffnet oder der Volltext angefordert wird. `split_data()` in `scripts/publish.py` schneidet, `expand()` in `site/corpus.js` setzt zusammen, `test_the_skeleton_and_the_prose_together_are_the_data` hält beide verlustfrei. Grund: eine Datei mit allem war am 2026-11-18 29,7 MB groß, und der Suchindex darüber brauchte 20 s und 1,3 GB Heap. Wer dem Knoten ein neues Prosafeld gibt, trägt es in `PROSE` ein, sonst steht es im Skelett.
+- **Der Suchindex wird beim Bauen erzeugt, nicht im Browser** (#944). `scripts/search_index.mjs` führt `buildIndex` aus `site/search.js` unter node aus, `packIndex` schreibt `search/meta.json` (Vokabular, Dokumentfrequenzen, Feldlängen) und je zweibuchstabigem Termpräfix eine Datei mit Postings und Assoziationen; die Seite lädt über `missingShards` nur die Dateien, die eine Anfrage braucht. Nach Präfix geschnitten, weil die Präfixschicht ein getipptes Wort auf jeden Term mit diesem Anfang erweitert. `test_site_modules` prüft, dass der geladene Index jede Hinweis- und Tabellenanfrage gleich rangiert wie der gebaute. Ohne node veröffentlicht `publish.py` ohne `search/`, und die Seite baut einen kleineren Index selbst.
 - **Gezeichnet wird eine Auswahl, nicht der Korpus.** Die Startansicht `overlay` zeichnet nur die Befunde (`generalizedFrom`, `convergingConcept`, `disputedClaim`, `tests`, `reworkedClaim`), die Behauptungen, auf denen sie stehen, und deren Traditionen; ein `VIEWS`-Eintrag mit `subset: true` darf weniger als alle Terme platzieren. Linien sind nur Relationen: `drawnEdges()` in `site/layouts.js` lässt jede Kante von Inhalt in das Vokabular oder auf eine Tradition weg, weil Klasse, Tradition, Bezeugung und Skalenwert Attribute sind, die die Anordnung schon zeigt. Das waren vier von fünf Kanten.
 
 - Die Seite wird **komplett aus dem kompilierten Graphen** gespeist. Neue Klassen, Properties und Instanzen erscheinen ohne Code-Änderung; Zähler, Legende, Panel, Suchindex, Anordnungen und Matrix leiten sich aus den Daten ab.
 - **Jedes Literal erreicht die Seite, nicht nur die benannten sechs.** `_statements()` in `scripts/publish.py` trägt jedes literalwertige Prädikat außer Label, altLabel, Definition, Note, Comment und Source unter dem Namen der Property, die es aussagt. Eine neue Datatype-Property steht damit am selben Tag im Panel und im Suchindex, an dem sie in `ontology/` steht. Wer hier eine feste Liste einführt, verliert genau die Angaben, die eine Behauptung tragen: `pm:consequenceOfSkipping`, `pm:transmissionPath`, `pm:evidenceFrom`, `pm:compiledBy`, `pm:circulatesAs`. `test_every_literal_reaches_the_site` schlägt dann fehl.
 - `pm:evidenceFrom` wird **nie** mit `dcterms:source` zusammengelegt — die Trennung, die Forschung überhaupt aufnehmbar macht, muss auch in der Darstellung halten.
-- Gestaltung ist Albedo wie in `pajew-ski/temet-nosce` (seit 29.10.2026 Maß aus 2, config#378): der Block zwischen `/* albedo: Anfang */` und `/* albedo: Ende */` am Anfang von `site/style.css` steht dort wörtlich und wird nicht von Hand geändert; achromatische oklch-Tokens, Abstände `--step-2` bis `--step-7` (4 bis 128 px), Schrift `--type-sm` und `--type-0` bis `--type-4`, Zeilenhöhe `--leading` (√2), Canvas/Panel im Verhältnis √2:1, Cytoscape über jsDelivr. Kein φ-Literal und kein `--space-`/`--text-`-Token mehr.
+- Gestaltung ist Albedo wie in `pajew-ski/temet-nosce` (seit 29.10.2026 Maß aus 2, config#378): der Block zwischen `/* albedo: Anfang */` und `/* albedo: Ende */` am Anfang von `site/style.css` steht dort wörtlich und wird nicht von Hand geändert; achromatische oklch-Tokens, Abstände `--step-2` bis `--step-7` (4 bis 128 px), Schrift `--type-sm` und `--type-0` bis `--type-4`, Zeilenhöhe `--leading` (√2), Canvas/Panel im Verhältnis √2:1, Cytoscape als gepinnte Datei unter `site/vendor/` (#695): eine neue Version ist ein bewusster Austausch der Datei samt Prüfsumme im Kopf, kein CDN-Verweis, und `test_the_site_loads_nothing_from_another_host` hält das. Kein φ-Literal und kein `--space-`/`--text-`-Token mehr.
 - Neue Node-Art im Graphen → `KINDS` in `site/ontology.js` erweitern (Shape, Legenden-Name, Plural) und in `_kind()` in `scripts/publish.py` klassifizieren.
 - **Landmarken sind eine Eigenschaft der Zeichnung, nicht der Art.** `ctx.isLandmark()` in `site/layouts.js` markiert, was eine Region *benennt*: Wurzel, Klassen und Traditionen, unter denen etwas steht. Eine nur registrierte Überlieferung benennt nichts, weil nichts neben ihr steht — als das noch an der Art hing, trug jede der 128 registrierten ein großes Label und drückte den Abstand der wirklich benennenden Terme unter die Kollisionsgrenze. Eine Anordnung mit eigenen Überschriften ergänzt sie über `landmarks` im `VIEWS`-Eintrag; `landmarksFor()` setzt die Klasse pro Ansicht.
 - **Der Erschließungsstand ist eine eigene Achse.** Die Claim-Form-Matrix trägt nur die bezeugenden Traditionen und nennt in der Caption, wie viele registrierte sie auslässt; die Registertabelle (`registerTab()`) kreuzt `pm:CoverageState` gegen `pm:ContactRoute`. Eine leere Zeile pro unerschlossener Überlieferung wäre kein Befund, sondern `pm:corpusNamed` hundertfach wiederholt — und würde die Zellen zudecken, die etwas heißen: gelesen und trotzdem ohne diese Behauptungsform.
@@ -85,7 +86,7 @@ Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im I
 - **Aufteilung.** `search.js` (Suche), `layouts.js` (Anordnungen), `matrix.js` (Kreuztabelle) sind DOM-frei und rein; `ontology.js` verdrahtet sie mit Cytoscape und dem Panel. Das ist der Grund, warum sie testbar sind — beim Ändern nicht aufweichen.
 - Neue Anordnung → Eintrag in `VIEWS` in `site/layouts.js` mit `question`: dem Satz, der sagt, welche Frage dieses Bild beantwortet. Eine Anordnung ohne beantwortete Frage ist Dekoration und gehört nicht in die Liste.
 - **Getestet wird JavaScript mit JavaScript.** `tests/site.test.mjs` läuft über `tests/test_site_modules.py` in `pytest tests/` mit, gegen einen Mini-Korpus und gegen den echten kompilierten Graphen. Ohne `node` wird übersprungen, nicht stillschweigend weggelassen.
-- **Cytoscape ist optional, alles andere nicht.** Ein fehlgeschlagener CDN-Load kostet die Zeichnung, nicht die Suche, das Panel oder die Matrix. Wer `ontology.js` erweitert, hält `cy === null` am Leben.
+- **Cytoscape ist optional, alles andere nicht.** Ein fehlgeschlagener Skript-Load kostet die Zeichnung, nicht die Suche, das Panel oder die Matrix. Wer `ontology.js` erweitert, hält `cy === null` am Leben.
 
 ## Namespaces (in jeder neuen TTL-Datei)
 
@@ -116,14 +117,11 @@ Neuer Code bekommt Tests, TDD bevorzugt. Commits klein und atomar, Messages im I
 ## Repositories
 
 - **Source (dieses Repo):** `pajew-ski/prima-materia` — manuell editieren
-- **Distribution:** `pajew-ski/prima-materia-dist` — auto-generiert, nie manuell anfassen
+- **Distribution:** keine eigene mehr. `pajew-ski/prima-materia-dist` ist stillgelegt und wird nicht mehr beschrieben
 
 ## Manuelle User-Aktionen (nicht Agent-automatisierbar)
 
 - Aktivieren von GitHub Pages: **Settings → Pages → Source: GitHub Actions**. Der Workflow kann die Quelle nicht selbst umstellen.
-- Setzen des `DIST_REPO_TOKEN`-Secrets im Source-Repo (Personal Access Token mit Write-Access auf `prima-materia-dist`)
-- Anlage des `prima-materia-dist`-Repos in GitHub
-- jsDelivr-Cache-Purge bei Bedarf
 
 Nicht mehr auf dieser Liste: **Änderungen an `.github/workflows/*`.** Der Vermerk, das Agenten-Token trage keinen `workflows`-Scope und jeder Schreibversuch ende mit `403`, galt bis zum 2026-09-02 und ist überholt. Die beiden Änderungen aus prima-materia#352 (`validate.yml` läuft nicht mehr beim bloßen Anlegen eines Branches) und prima-materia#353 (`distribute.yml` bekommt eine serialisierende `concurrency`-Gruppe) sind vom Agenten geschrieben. Das Soll steht weiter in `SPEC.md` §7, und eine Änderung am eigenen Prüflauf gehört ausdrücklich in die PR-Begründung: eine Lockerung an `validate.yml` fällt niemandem auf, weil danach alles grün ist.
 

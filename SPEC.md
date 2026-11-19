@@ -65,21 +65,16 @@ prima-materia/                  # Source Repository (manuell gepflegt)
 └── .github/
     └── workflows/
         ├── validate.yml         # SHACL und pytest auf main, PR und Abruf
-        ├── pages.yml            # baut und deployt den Namensraum-Host
-        └── distribute.yml       # Auto-Build & Push zu prima-materia-dist
-
-prima-materia-dist/              # Distribution Repository (auto-generiert, nie manuell editieren)
-├── README.md                    # Auto-generiert; verweist auf source repo
-├── LICENSE                      # CC0 1.0
-├── prima-materia.jsonld         # Vollständige kompilierte Ontologie als JSON-LD
-├── prima-materia.ttl            # Vollständige kompilierte Ontologie als Turtle
-├── context.jsonld               # JSON-LD Context (Kopie aus source/context/)
-└── version.json                 # { "version": "...", "git_sha": "...", "built_at": "..." }
+        └── pages.yml            # baut und deployt den Namensraum-Host
 ```
 
-Die `llms.txt` und die Teilgraphen stehen auf dem Namensraum-Host und nicht im
-Spiegel (Abschnitt 8). Das Distributionsrepo führt die vollständigen
-Serialisierungen und sonst nichts.
+Ausgeliefert wird nur vom Namensraum-Host: die vollständigen Serialisierungen,
+die Teilgraphen, die `llms.txt` und die Seite (Abschnitt 7 und 8). Der frühere
+Spiegel `pajew-ski/prima-materia-dist` über jsDelivr ist am 2026-11-19
+stillgelegt: jsDelivr liefert aus GitHub keine Einzeldatei über 20 MB, die
+volle JSON-LD-Serialisierung hatte das überschritten (403), und ein Spiegel,
+der die Hauptdatei nicht ausliefert, ist eine zweite Adresse, die falsch
+antwortet.
 
 ### Selektives Laden
 
@@ -301,7 +296,7 @@ Der fünfte Stand ist keine mildere Fassung des dritten. Dort sagt die Behauptun
 
 **Deliverables:**
 
-1. Beide Repositories anlegen (oder das Source-Repo, falls Distribution per Action erst später deployed wird)
+1. Das Source-Repo anlegen
 2. README.md, LICENSE (CC0 1.0), CONTRIBUTING.md initialisieren
 3. Repository-Struktur gemäß Abschnitt 1 anlegen (leere Platzhalter-Dateien wo nötig)
 4. `ontology/core.ttl` — Meta-Ontologie aus Abschnitt 3
@@ -328,16 +323,14 @@ Der fünfte Stand ist keine mildere Fassung des dritten. Dort sagt die Behauptun
 1. Der Seed-Korpus steht. Er besteht aus den Traditionsdateien in `traditions/`, den traditionsübergreifenden Knoten in `convergences/` und dem ersten Prüfprotokoll in `examinations/`. Die früher an dieser Stelle genannten Dateien `traditions/valentinian.ttl` und `traditions/greek-cosmological.ttl` gehören nicht dazu und wurden nie angelegt. Die Planung ist hier hinter dem Bestand zurückgeblieben; maßgeblich ist der Dateibaum, nicht diese Liste. Wer sie noch anlegt, arbeitet gegen einen Plan statt gegen das Repo.
 2. Von hier an wächst der Korpus nicht mehr nach Plan, sondern nach den zwei Eingängen in Abschnitt 14: dem Bedarf aus offenen Behauptungs-Issues und dem Engpass der unabhängigen Bezeugung.
 3. ~~`traditions/opus-purum-axioms.ttl`~~ — **gestrichen.** Der Richtungssinn in Abschnitt 10 schließt das aus: prima-materia ist die Basis, aus der die Methoden des Opus Purum extrahiert werden. Die Axiome sind unveröffentlichtes eigenes Material und tragen keine Quelle im Sinne dieser Spezifikation. Ihre Bestandteile können einzeln eingehen, sobald sie gegen überliefertes Schrifttum gegroundet sind, dann aber unter der Tradition, aus der der Beleg stammt, nicht unter dem Namen des Entwurfs.
-4. `prima-materia-dist`-Repository deployen — automatischer Build & Push via Action `distribute.yml`.
-5. jsDelivr-CDN-Verifikation — Distribution-URLs sind via `https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.jsonld` abrufbar.
+4. ~~`prima-materia-dist`-Repository deployen~~ — **stillgelegt** am 2026-11-19, siehe Abschnitt 1.
+5. ~~jsDelivr-CDN-Verifikation~~: entfällt mit dem Spiegel.
 
 **Akzeptanzkriterien Phase 1:**
 
 - [ ] Die Tradition-TTL-Dateien existieren und validieren gegen SHACL-Shapes
 - [ ] Keine Verwendung verbotener statischer Substanzklassen (siehe Abschnitt 3, Parameter 1)
 - [ ] Alle Konzepte tragen `dcterms:source` mit Primärquellen-Referenz
-- [ ] Distribution-Repository wird auto-gebaut und gepusht
-- [ ] jsDelivr-CDN liefert die JSON-LD-Datei mit korrekten CORS-Headern
 
 ### Phase 2 — Erweiterung & Integration (außerhalb des aktuellen Agent-Auftrags, hier nur referenziert)
 
@@ -446,15 +439,9 @@ Läuft auf `push` nach `main`, baut die Seite mit `scripts/publish.py` und deplo
 
 Die `concurrency`-Gruppe hier trägt ausdrücklich `cancel-in-progress: false`, anders als bei `validate.yml`. Ein abgebrochener Prüflauf kostet nichts; ein abgebrochenes Deployment kann ein halb hochgeladenes Artefakt zur Live-Seite machen, und die Live-Seite ist der Ort, an dem die Terme geprägt sind.
 
-### `distribute.yml`
+### Kein Spiegel mehr
 
-Läuft auf `push` nach `main` und auf `workflow_dispatch`, validiert, kompiliert, transmutiert und schiebt die Serialisierungen samt `version.json` nach `pajew-ski/prima-materia-dist`, wenn sich etwas geändert hat.
-
-Der Spiegel ist ausdrücklich sekundär. Der Namensraum-Host liefert dieselben Dateien und ist der Ort, den die Bezeichner nennen; `distribute.yml` existiert für Abnehmer, die über jsDelivr laden wollen.
-
-**Eine `concurrency`-Gruppe `distribute` mit `cancel-in-progress: false` serialisiert die Läufe.** Der Schreibschritt endet auf einem nackten `git push` ins Dist-Repo, ohne Retry. Zwei kurz hintereinander gemergte PR — der Normalfall bei einem gestapelten Lauf — starten sonst zwei Läufe, die dasselbe Dist-Repo zum selben Zeitpunkt ausgecheckt haben; der zweite scheitert non-fast-forward. Der Fehler ist still an der Stelle, an der er zählt: `main` ist grün, `version.json` im Spiegel zeigt einen älteren `git_sha`, und erst der nächste Push nach `main` repariert es zufällig mit. Abgebrochen werden darf hier nicht, aus demselben Grund wie bei `pages.yml`: ein abgebrochener Prüflauf kostet nichts, ein abgebrochener Publikationslauf lässt den Spiegel zurückstehen. Fall in prima-materia#353.
-
-**Hinweis für den Agent:** Das `DIST_REPO_TOKEN`-Secret muss vom User manuell in den Repo-Settings gesetzt werden (Personal Access Token mit Write-Access auf prima-materia-dist). Das ist nicht vom Agent automatisierbar.
+`distribute.yml` schob die Serialisierungen bis zum 2026-11-19 nach `pajew-ski/prima-materia-dist` zur Auslieferung über jsDelivr. Gestrichen mit dem Spiegel (Abschnitt 1): jsDelivr liefert keine Einzeldatei über 20 MB, die JSON-LD-Datei antwortete dort mit 403, und der Namensraum-Host trägt dieselben Dateien und dazu die Teile. Wer einen zweiten Auslieferungsort einführt, prüft zuerst, ob er die größte Datei des Bestands ausliefert, und hält das mit einem Test.
 
 ## 8. llms.txt
 

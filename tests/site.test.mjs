@@ -16,14 +16,17 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 import {
-  buildIndex, editDistance, expandTerm, fold, fuzzyBudget, hints, parseQuery,
-  search, snippetFor, splitCamel, tokenize,
+  absorbShard, buildIndex, editDistance, expandTerm, fold, fuzzyBudget, hints, missingShards,
+  packIndex, parseQuery, search, shippedIndex, snippetFor, splitCamel, tokenize,
 } from "../site/search.js";
 import {
   CONTACT_SCALE, COVERAGE_SCALE, VIEWS, context, drawnEdges, positionsFor, viewById,
 } from "../site/layouts.js";
 import { PROSE, absorb, expand } from "../site/corpus.js";
-import { ACROSS, UNSTATED, crosstab, queryFor, registerQueryFor, registerTab } from "../site/matrix.js";
+import {
+  ACROSS, INDEPENDENT, TRANSMITTED, UNSTATED, convergenceFacts, convergenceQueryFor, convergenceTab,
+  crosstab, queryFor, registerQueryFor, registerTab,
+} from "../site/matrix.js";
 
 // A miniature corpus with the shape of the real one: two traditions, a claim
 // that pairs a practice with a capacity, a transliterated term glossed in
@@ -468,6 +471,25 @@ test("the overlay draws the findings, what they rest on, and the traditions they
   assert.deepEqual(positionsFor("overlay", FIXTURE, context(FIXTURE)), {});
 });
 
+test("a convergence shows its breadth and how it splits, never the breadth alone", () => {
+  const data = {
+    ...WITH_FINDINGS,
+    edges: [...WITH_FINDINGS.edges, edge("pmc:BreathMeetsQi", "independentAttestation", "pmt:Daoist")],
+  };
+  const ctx = context(data);
+  assert.deepEqual(convergenceFacts(data, ctx).get("pmc:BreathMeetsQi"), {
+    breadth: 2, independent: 1, transmitted: 1, reworked: 0,
+  });
+  const table = convergenceTab(data, ctx);
+  assert.deepEqual(table.rows, [{ id: "pmc:BreathMeetsQi", label: "Breath and qi converge", total: 2 }]);
+  // No reworking yet, so no column promising one.
+  assert.deepEqual(table.columns.map((c) => c.id), [INDEPENDENT, TRANSMITTED]);
+  assert.equal(table.count("pmc:BreathMeetsQi", INDEPENDENT) + table.count("pmc:BreathMeetsQi", TRANSMITTED), 2);
+  // The query a row offers finds that convergence first.
+  const found = search(buildIndex(data), convergenceQueryFor("pmc:BreathMeetsQi"));
+  assert.equal(found.results[0].id, "pmc:BreathMeetsQi");
+});
+
 test("the view the page opens on draws a selection, and says so", () => {
   assert.equal(VIEWS[0].id, "overlay");
   assert.ok(VIEWS[0].subset);
@@ -533,6 +555,55 @@ test("the audit filters answer before any prose is loaded", () => {
   }
   // The openings need no index at all.
   assert.deepEqual(hints(lean), hints(fixtureIndex));
+});
+
+/** Load a shipped index the way the page does: round after round until nothing is missing. */
+function loadFor(index, shards, query) {
+  for (let missing = missingShards(index, query); missing.length; missing = missingShards(index, query)) {
+    for (const key of missing) absorbShard(index, key, shards[key]);
+  }
+}
+
+/** What a result list says, without the snippet, which needs the prose. */
+const ranked = (result) => result.results.map((entry) => [entry.id, entry.score.toFixed(9), entry.reason]);
+
+function assertShippedAgrees(data, built, queries) {
+  const { meta, shards } = JSON.parse(JSON.stringify(packIndex(built)));
+  const lean = expand(skeletonOf(data, 4).skeleton);
+  const shipped = shippedIndex(lean, meta);
+  for (const query of queries) {
+    loadFor(shipped, shards, query);
+    assert.deepEqual(ranked(search(shipped, query)), ranked(search(built, query)), `“${query}” ranks otherwise`);
+  }
+  return shipped;
+}
+
+test("the index shipped as files answers as the one built in the browser", () => {
+  const queries = [
+    "rapture", "piti", "pitti", "ana", "verzuckung", "mindfulness breath", "baraqijal", "-piti rapture",
+    "tradition:theravada", "kind:instance -has:source", "type:Yielding rapture", "qi",
+    ...hints(fixtureIndex).map((hint) => hint.query),
+  ];
+  const shipped = assertShippedAgrees(FIXTURE, fixtureIndex, queries);
+  // It reads only the files a query needs.
+  const fresh = shippedIndex(expand(skeletonOf(FIXTURE, 4).skeleton), packIndex(fixtureIndex).meta);
+  assert.ok(missingShards(fresh, "rapture").every((key) => key === "ra"));
+  assert.ok(shipped.loaded.size < packIndex(fixtureIndex).meta.keys.length);
+});
+
+test("a shipped document takes up prose that arrives after the index was made", () => {
+  const { skeleton, chunks } = skeletonOf(FIXTURE, 4);
+  const lean = expand(skeleton);
+  const { meta, shards } = packIndex(fixtureIndex);
+  const shipped = shippedIndex(lean, meta);
+  loadFor(shipped, shards, "rapture");
+  const before = search(shipped, "rapture").results.find((r) => r.id === "pmc:Piti");
+  assert.equal(before.snippet.field, "label");
+  absorb(new Map(lean.nodes.map((n) => [n.id, n])), chunks.flatMap((c) => Object.entries(c)).reduce((o, [k, v]) => ({ ...o, [k]: v }), {}));
+  for (const doc of shipped.docs) doc.refresh();
+  const after = search(shipped, "rapture").results.find((r) => r.id === "pmc:Piti");
+  assert.equal(after.snippet.field, "definition");
+  assert.throws(() => shippedIndex(FIXTURE, { ...meta, docs: 1 }), /other data/);
 });
 
 test("a rebuild handed the associations keeps them", () => {
@@ -684,6 +755,25 @@ test("the query a cell offers returns exactly the cell's count", () => {
 
 const dataPath = process.env.PRIMA_MATERIA_DATA;
 const corpus = dataPath ? JSON.parse(readFileSync(dataPath, "utf8")) : null;
+// A row and a column each, not every cell: the cells are checked against the
+// built index below, and the same filters make up a row query and a cell.
+function matrixQueries(matrix, queryFor) {
+  return [
+    ...matrix.rows.map((row) => queryFor(row.id, null)),
+    ...matrix.columns.map((column) => queryFor(null, column.id)),
+    queryFor(matrix.rows[0].id, matrix.columns[0].id),
+  ];
+}
+
+function assertShippedAgreesOnCorpus(full, skeletonFile, built, queries) {
+  const { meta, shards } = JSON.parse(JSON.stringify(packIndex(built)));
+  const shipped = shippedIndex(expand(skeletonFile), meta);
+  for (const query of queries) {
+    loadFor(shipped, shards, query);
+    assert.deepEqual(ranked(search(shipped, query)), ranked(search(built, query)), `“${query}” ranks otherwise`);
+  }
+}
+
 const skeletonPath = process.env.PRIMA_MATERIA_SKELETON;
 const skeleton = skeletonPath ? JSON.parse(readFileSync(skeletonPath, "utf8")) : null;
 const onlyWithCorpus = {
@@ -712,6 +802,17 @@ test("the whole corpus indexes, searches and arranges", onlyWithCorpus, () => {
     assert.equal(Object.keys(positions).length, corpus.nodes.length, `${view.id} left a term unplaced`);
   }
 
+  // The index the page loads as files has to answer every query the page
+  // offers exactly as the one built here: the openings, and every cell of the
+  // tables, which promise their own counts.
+  const cellQueries = [
+    ...hints(corpus).map((hint) => hint.query),
+    ...matrixQueries(crosstab(corpus, ctx), queryFor),
+    ...matrixQueries(registerTab(corpus, ctx, { coverageScale: COVERAGE_SCALE, contactScale: CONTACT_SCALE }), registerQueryFor),
+    "rapture", "jhana", "verzuckung", "breath qi", "angel watcher", "-has:source kind:instance",
+  ];
+  assertShippedAgreesOnCorpus(corpus, skeleton, index, cellQueries);
+
   // The page reads the skeleton, not the data: it has to carry every term and
   // every edge, and answer the audit filters the matrix and the openings use.
   const lean = expand(skeleton);
@@ -721,6 +822,17 @@ test("the whole corpus indexes, searches and arranges", onlyWithCorpus, () => {
     const node = lean.nodes[position];
     assert.equal(node.id, original.id);
     assert.equal(node.label, original.label, `${original.id} lost its label`);
+  }
+
+  const convergences = convergenceTab(corpus, ctx);
+  assert.ok(convergences.rows.length > 0, "the corpus has convergences and the table shows none");
+  for (const row of convergences.rows) {
+    assert.equal(
+      convergences.count(row.id, INDEPENDENT) + convergences.count(row.id, TRANSMITTED),
+      row.total,
+      `${row.label}: the split does not add up to the breadth`,
+    );
+    assert.equal(search(index, convergenceQueryFor(row.id)).results[0]?.id, row.id, `${row.label} cannot be opened`);
   }
 
   const matrix = crosstab(corpus, ctx);

@@ -1,12 +1,10 @@
 // Search over the compiled ontology. Everything here is pure: it takes the
 // same data the graph is drawn from and returns ranked results. No DOM, no
-// network. The index is built in the browser, so one implementation of the
-// tokenizer cannot drift from another the way a build-time index and a
-// query-time parser would. That stopped being cheap: over 16275 terms the full
-// text took 20 s and 1.3 GB of heap to index (2026-11-18), three quarters of
-// it in the associations. The page therefore indexes what the skeleton carries
-// (names, labels, classes, traditions, scales) and the prose only on request,
-// reusing the associations of the first index.
+// network. There is one tokenizer: publish.py runs buildIndex from this file
+// under node and ships the result as files (packIndex, shippedIndex, #944),
+// because over 16275 terms building it in the browser took 20 s and 1.3 GB of
+// heap (2026-11-18). Where no index was shipped the page builds a smaller one
+// itself, over the names, and the prose on request.
 //
 // Four layers, each answering a failure of the one before it:
 //
@@ -111,6 +109,51 @@ const values = (langMap) => [...new Set(Object.values(langMap ?? {}))];
  * need — term associations and an adjacency list.
  */
 export function buildIndex(data, { associations = null } = {}) {
+  const index = baseIndex(data, { lazy: false });
+  const { docs } = index;
+
+  // Postings. One flat array per term beats nested maps here: the corpus is a
+  // few thousand terms and every query walks the array end to end anyway.
+  const postings = new Map();
+  const documentFrequency = new Map();
+  const totalLength = Object.fromEntries(FIELD_NAMES.map((field) => [field, 0]));
+  docs.forEach((doc, position) => {
+    const seen = new Set();
+    for (const field of FIELD_NAMES) {
+      totalLength[field] += doc.tokens[field].length;
+      const counts = new Map();
+      for (const { term } of doc.tokens[field]) counts.set(term, (counts.get(term) ?? 0) + 1);
+      for (const [term, frequency] of counts) {
+        if (!postings.has(term)) postings.set(term, []);
+        postings.get(term).push({ doc: position, field, tf: frequency, length: doc.tokens[field].length });
+        seen.add(term);
+      }
+    }
+    for (const term of seen) documentFrequency.set(term, (documentFrequency.get(term) ?? 0) + 1);
+  });
+
+  index.postings = postings;
+  index.documentFrequency = documentFrequency;
+  index.vocabulary = [...postings.keys()];
+  index.averageLength = Object.fromEntries(
+    FIELD_NAMES.map((field) => [field, totalLength[field] / Math.max(docs.length, 1) || 1]),
+  );
+  // The associations are the expensive part, by an order of magnitude over the
+  // postings. A rebuild over the full text hands in the ones already computed
+  // over the names, rather than freezing the page to count them again.
+  index.associations = associations ?? buildAssociations(index);
+  return index;
+}
+
+/**
+ * Everything an index holds that does not depend on the prose having been
+ * read: one document per node with its traditions, classes, scale values and
+ * degree, and the adjacency the structural layer walks. With `lazy` the text
+ * and tokens of a document are computed the first time something reads them,
+ * and again after `doc.refresh()`, which is how a document picks up prose that
+ * arrived after the index was made.
+ */
+function baseIndex(data, { lazy }) {
   const byId = new Map(data.nodes.map((node) => [node.id, node]));
 
   // Tradition membership and claim class live in edges and types; search wants
@@ -150,36 +193,37 @@ export function buildIndex(data, { associations = null } = {}) {
     const types = node.types.filter((type) => type.startsWith("pm:"));
     const coverage = coverageOf.get(node.id) ?? null;
     const contact = contactOf.get(node.id) ?? null;
-    const text = {
-      // An alternate spelling is a name, not a remark: whoever met Baraqel as
-      // Baraqijal should reach it at a label's weight.
-      label: [...values(node.labels), ...(node.altLabels ?? [])].join(" · ") || node.label,
-      name: `${local(node.id)} ${splitCamel(local(node.id))}`,
-      source: node.sources.join(" · "),
-      type: types.map((type) => `${local(type)} ${labelOf(type)}`).join(" · "),
-      tradition: traditions.map(labelOf).join(" · "),
-      definition: values(node.definition).join(" ").trim(),
-      // The property's own name is indexed with its value, so "circulates as"
-      // and "transmission path" are things the corpus can be asked about.
-      statement: [
-        ...(node.statements ?? []).map(
-          (statement) => `${statement.label} ${statement.values.join(" ")}`,
-        ),
-        // Where a tradition stands is something the graph states about it, so
-        // it is read here with the rest of what the graph states.
-        ...[coverage, contact].filter(Boolean).map(labelOf),
-      ]
-        .join(" · ")
-        .trim(),
-      note: [...values(node.note), ...values(node.comment)].join(" ").trim(),
+    const make = () => {
+      const text = {
+        // An alternate spelling is a name, not a remark: whoever met Baraqel as
+        // Baraqijal should reach it at a label's weight.
+        label: [...values(node.labels), ...(node.altLabels ?? [])].join(" · ") || node.label,
+        name: `${local(node.id)} ${splitCamel(local(node.id))}`,
+        source: node.sources.join(" · "),
+        type: types.map((type) => `${local(type)} ${labelOf(type)}`).join(" · "),
+        tradition: traditions.map(labelOf).join(" · "),
+        definition: values(node.definition).join(" ").trim(),
+        // The property's own name is indexed with its value, so "circulates as"
+        // and "transmission path" are things the corpus can be asked about.
+        statement: [
+          ...(node.statements ?? []).map(
+            (statement) => `${statement.label} ${statement.values.join(" ")}`,
+          ),
+          // Where a tradition stands is something the graph states about it, so
+          // it is read here with the rest of what the graph states.
+          ...[coverage, contact].filter(Boolean).map(labelOf),
+        ]
+          .join(" · ")
+          .trim(),
+        note: [...values(node.note), ...values(node.comment)].join(" ").trim(),
+      };
+      const tokens = {};
+      for (const field of FIELD_NAMES) tokens[field] = tokenize(text[field]);
+      return { text, tokens };
     };
-    const tokens = {};
-    for (const field of FIELD_NAMES) tokens[field] = tokenize(text[field]);
-    return {
+    const doc = {
       id: node.id,
       node,
-      text,
-      tokens,
       traditions,
       types,
       coverage,
@@ -187,39 +231,19 @@ export function buildIndex(data, { associations = null } = {}) {
       degree: degree.get(node.id) ?? 0,
       folded: { label: fold(node.label), name: fold(local(node.id)) },
     };
+    if (!lazy) return Object.assign(doc, make());
+    let made = null;
+    Object.defineProperty(doc, "text", { enumerable: true, get: () => (made ??= make()).text });
+    Object.defineProperty(doc, "tokens", { enumerable: true, get: () => (made ??= make()).tokens });
+    doc.refresh = () => {
+      made = null;
+    };
+    return doc;
   });
 
-  // Postings. One flat array per term beats nested maps here: the corpus is a
-  // few thousand terms and every query walks the array end to end anyway.
-  const postings = new Map();
-  const documentFrequency = new Map();
-  const totalLength = Object.fromEntries(FIELD_NAMES.map((field) => [field, 0]));
-  docs.forEach((doc, index) => {
-    const seen = new Set();
-    for (const field of FIELD_NAMES) {
-      totalLength[field] += doc.tokens[field].length;
-      const counts = new Map();
-      for (const { term } of doc.tokens[field]) counts.set(term, (counts.get(term) ?? 0) + 1);
-      for (const [term, frequency] of counts) {
-        if (!postings.has(term)) postings.set(term, []);
-        postings.get(term).push({ doc: index, field, tf: frequency, length: doc.tokens[field].length });
-        seen.add(term);
-      }
-    }
-    for (const term of seen) documentFrequency.set(term, (documentFrequency.get(term) ?? 0) + 1);
-  });
-
-  const averageLength = Object.fromEntries(
-    FIELD_NAMES.map((field) => [field, totalLength[field] / Math.max(docs.length, 1) || 1]),
-  );
-
-  const index = {
+  return {
     docs,
     byId: new Map(docs.map((doc, position) => [doc.id, position])),
-    postings,
-    documentFrequency,
-    vocabulary: [...postings.keys()],
-    averageLength,
     adjacency,
     kinds: [...new Set(data.nodes.map((node) => node.kind))].sort(),
     // The folded local names of the transmissions, so that tradition:Hermetic,
@@ -229,11 +253,105 @@ export function buildIndex(data, { associations = null } = {}) {
       data.nodes.filter((node) => node.kind === "tradition").map((node) => fold(local(node.id))),
     ),
   };
-  // The associations are the expensive part, by an order of magnitude over the
-  // postings. A rebuild over the full text hands in the ones already computed
-  // over the names, rather than freezing the page to count them again.
-  index.associations = associations ?? buildAssociations(index);
+}
+
+// ---------------------------------------------------------------------------
+// The index as files (#944)
+// ---------------------------------------------------------------------------
+//
+// Over the whole corpus buildIndex costs seconds and hundreds of megabytes, so
+// publish.py runs it once, under node, and the page loads the result in
+// pieces: search/meta.json with the vocabulary, the document frequencies and
+// the field lengths, and one file per two-letter term prefix with the postings
+// and associations of the terms that begin with it. Cut by prefix rather than
+// by hash, because the prefix layer expands a typed word to every term that
+// begins with it: "ra" reaches some eight hundred terms, and by hash that
+// would be every file there is. The tokenizer stays this one; the build runs
+// this file, so the index cannot drift from the parser that reads queries.
+
+/** The file a term's postings and associations are in. */
+export const shardKey = (term) => term.slice(0, 2);
+
+/** buildIndex's result as what the page loads. */
+export function packIndex(index) {
+  const fields = FIELD_NAMES.length;
+  const position = new Map(FIELD_NAMES.map((field, i) => [field, i]));
+  const lengths = new Array(index.docs.length * fields).fill(0);
+  index.docs.forEach((doc, d) => {
+    FIELD_NAMES.forEach((field, f) => {
+      lengths[d * fields + f] = doc.tokens[field].length;
+    });
+  });
+  const shards = {};
+  const shard = (term) => (shards[shardKey(term)] ??= { postings: {}, associations: {} });
+  for (const [term, list] of index.postings) {
+    shard(term).postings[term] = list.flatMap((posting) => [posting.doc, position.get(posting.field), posting.tf]);
+  }
+  for (const [term, list] of index.associations) {
+    shard(term).associations[term] = list.map((entry) => [entry.term, entry.weight]);
+  }
+  return {
+    meta: {
+      docs: index.docs.length,
+      fields: FIELD_NAMES,
+      averageLength: index.averageLength,
+      lengths,
+      vocabulary: index.vocabulary.map((term) => [term, index.documentFrequency.get(term)]),
+      keys: Object.keys(shards).sort(),
+    },
+    shards,
+  };
+}
+
+/** An index over the skeleton that reads its postings from packed files as they arrive. */
+export function shippedIndex(data, meta) {
+  if (meta.docs !== data.nodes.length || meta.fields.join() !== FIELD_NAMES.join()) {
+    throw new Error("the search index was built from other data or another tokenizer");
+  }
+  const index = baseIndex(data, { lazy: true });
+  index.vocabulary = meta.vocabulary.map(([term]) => term);
+  index.documentFrequency = new Map(meta.vocabulary);
+  index.averageLength = meta.averageLength;
+  index.lengths = meta.lengths;
+  index.keys = new Set(meta.keys);
+  index.loaded = new Set();
+  index.postings = new Map();
+  index.associations = new Map();
   return index;
+}
+
+/** Put one packed file into a shipped index. */
+export function absorbShard(index, key, shard) {
+  const fields = FIELD_NAMES.length;
+  for (const [term, flat] of Object.entries(shard.postings)) {
+    const list = [];
+    for (let i = 0; i < flat.length; i += 3) {
+      const [doc, field, tf] = [flat[i], flat[i + 1], flat[i + 2]];
+      list.push({ doc, field: FIELD_NAMES[field], tf, length: index.lengths[doc * fields + field] });
+    }
+    index.postings.set(term, list);
+  }
+  for (const [term, list] of Object.entries(shard.associations)) {
+    index.associations.set(term, list.map(([related, weight]) => ({ term: related, weight })));
+  }
+  index.loaded.add(key);
+}
+
+/**
+ * The files a query still needs. Called until it returns nothing: the first
+ * round names the files of the typed words, which carry their associations;
+ * the second the files of everything those words expand to.
+ */
+export function missingShards(index, input, options = {}) {
+  if (!index.loaded) return [];
+  const query = parseQuery(input);
+  const wanted = new Set();
+  for (const word of [...query.terms, ...query.negatedTerms]) {
+    wanted.add(shardKey(word));
+    if (!index.loaded.has(shardKey(word))) continue;
+    for (const variant of expandTerm(index, word, options)) wanted.add(shardKey(variant.term));
+  }
+  return [...wanted].filter((key) => index.keys.has(key) && !index.loaded.has(key));
 }
 
 // A term in fewer nodes than this carries no reliable association; a term in
@@ -307,7 +425,8 @@ function buildAssociations(index) {
     list.sort((x, y) => y.score - x.score);
     const top = list.slice(0, ASSOC_PER_TERM);
     const best = top[0].score;
-    associations.set(term, top.map((entry) => ({ term: entry.term, weight: entry.score / best })));
+    // Rounded so the index shipped as files says exactly what this one does.
+    associations.set(term, top.map((entry) => ({ term: entry.term, weight: Math.round((entry.score / best) * 1e4) / 1e4 })));
   }
   return associations;
 }
@@ -484,7 +603,7 @@ export function expandTerm(index, word, { fuzzy = true, semantic = true } = {}) 
     if (!existing || existing.weight < weight) variants.set(term, { term, weight, how });
   };
 
-  if (index.postings.has(word)) offer(word, 1, "exact");
+  if (index.documentFrequency.has(word)) offer(word, 1, "exact");
 
   const budget = fuzzy ? fuzzyBudget(word.length) : 0;
   for (const term of index.vocabulary) {

@@ -10,7 +10,7 @@ Gegen den kompilierten Graphen, ohne Server:
 
 ```bash
 curl -sL -o prima-materia.ttl \
-  https://cdn.jsdelivr.net/gh/pajew-ski/prima-materia-dist@main/prima-materia.ttl
+  https://pajew.ski/prima-materia/prima-materia.ttl
 python3 -c "
 from rdflib import Graph
 g = Graph(); g.parse('prima-materia.ttl', format='turtle')
